@@ -1,0 +1,201 @@
+id: sunaq-tribe-of-kodiak
+entity_type: native-nation
+names:
+  official: Sun'aq Tribe of Kodiak
+  alternate:
+  - name: Shoonaq' Tribe of Kodiak
+    source: alaska-dcra-federally-recognized-tribes-contacts
+    confidence: medium
+    as_of: '2026-04-02'
+    locator: 'record "Sun''aq Tribe of Kodiak" (community: Kodiak, object 104)'
+    note: Listed in the "Also Known As" field of the State of Alaska tribal contacts list.
+  - name: Sun’aq
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Kodiak"
+    note: Native place name for the community of Kodiak in Sugt'stun (State of Alaska, from the Alaska
+      Native Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sun'aq Tribe of Kodiak
+population:
+- count: 1379
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Sun'aq Tribe of Kodiak (Shoonaq')", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 1054
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2790 (Sun'aq Tribe of Kodiak alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Sun'aq Tribe of Kodiak' (race code 5170) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+contacts:
+- kind: website
+  value: https://www.sunaq.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sun'aq Tribe of Kodiak
+- kind: physical-address
+  value: 312 W Marine Way, Kodiak, AK 99615
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sun'aq Tribe of Kodiak
+- kind: mailing-address
+  value: 312 West Marine Way, Kodiak, AK 99615
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sun'aq Tribe of Kodiak
+- kind: phone
+  value: (907) 531-5009
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sun'aq Tribe of Kodiak
+- kind: fax
+  value: (907) 486-3361
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sun'aq Tribe of Kodiak
+- kind: phone
+  value: +1 (907) 486-4449
+  label: Tribal office main phone
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Sun''aq Tribe of Kodiak" (community: Kodiak, object 104)'
+- kind: email-general
+  value: execadmin@sunaq.org
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Sun''aq Tribe of Kodiak" (community: Kodiak, object 104)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+languages:
+- name: Sugt'stun (Alutiiq)
+  language_tag: ems
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Kodiak"
+  note: Language of the Native place name for the community (Kodiak), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sun'aq Tribe of Kodiak
+governing_documents:
+- kind: law-code
+  title: Climate change resolution
+  year: '2006'
+  link: https://narf.org/nill/triballaw/climate/index.html
+  source: national-indian-law-library-sunaq
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website . Climate
+    change resolution. (2006)".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-sunaq
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Alaska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Alaska. Applies to the nation''s Indian country
+    within Alaska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
+  note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Sun''aq Tribe of Kodiak Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+related_entities:
+- name: Koniag Inc.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sun'aq Tribe of Kodiak
+  note: Regional corporation for the area, as listed in the directory.
+- name: Koniag, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Kodiak"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Kodiak), not
+    for the tribal government by name.
+- name: Kodiak Area Native Association
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Kodiak"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Kodiak), not
+    for the tribal government by name.
+- name: Kodiak Area Native Association
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Kodiak"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Kodiak), not
+    for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

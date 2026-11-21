@@ -1,0 +1,229 @@
+id: chamoru-people
+entity_type: territorial-indigenous-people
+names:
+  official: CHamoru people
+  alternate:
+  - name: Chamorro
+    source: cnmi-constitution
+    confidence: high
+    as_of: '2014'
+    locator: art. XII § 4 ('Northern Marianas Chamorro'); art. XXII § 3
+    note: CNMI law and the U.S. Census Bureau spell the name 'Chamorro'. Guam law since P.L. 33-236 (2017)
+      uses 'CHamoru' (guam-code-5-chapter-88). The official_name uses the Guam spelling as the lead asked;
+      consider whether CNMI records should show 'Chamorro'.
+  self_designation:
+  - name: CHamoru
+    language_tag: ch
+    source: guam-code-5-chapter-88
+    confidence: medium
+    as_of: '2017-01-09'
+    locator: chapter source note
+    note: 'Compiler''s 2017 note: ''The typography of the word “CHamoru” in this chapter reflects the
+      typography as enacted by P.L. 33-236.'' The Guam language commission (Kumisión i Fino'' CHamoru)
+      uses this spelling throughout its site.'
+  official_source: guam-code-21-chapter-75
+recognition:
+- type: territorial-law
+  state: GU
+  legal_basis: 21 G.C.A. ch. 75 (Chamorro Land Trust Act), § 75101(d), enacted by Guam P.L. 12-226 (Feb.
+    4, 1975)
+  since: '1975-02-04'
+  source: guam-code-21-chapter-75
+  confidence: medium
+  as_of: '2021-06-24'
+  locator: § 75101(d); § 75107(a)
+  note: 'Defines ''Native Chamorro'' as ''any person who became a U.S. citizen by virtue of the authority
+    and enactment of the Organic Act of Guam or descendants of such person'' and provides leases of Chamorro
+    homelands to native Chamorros. The commission held its first meeting in March 1993. Compiler note:
+    P.L. 35-112 (Dec. 10, 2020) keeps chapter 75 for leases approved before 2021 and enacted a new chapter
+    75A for later applications (not reviewed). Justia reproduction of the Compiler of Laws text.'
+- type: territorial-law
+  state: GU
+  legal_basis: 1 G.C.A. ch. 21 (Commission on Decolonization for the Implementation and Exercise of Chamorro
+    Self Determination), §§ 2101-2102, created by Guam P.L. 23-147 and reenacted by P.L. 25-106
+  source: guam-code-1-chapter-21
+  confidence: medium
+  as_of: '2011-12-30'
+  locator: § 2101 (findings); § 2102(b) (definition)
+  note: Defines 'Native Inhabitants of Guam' as 'those persons who became U.S. Citizens by virtue of the
+    authority and enactment of the 1950 Organic Act of Guam and descendants of those persons', and intends
+    a plebiscite of Native Inhabitants on independence, free association or statehood. In Davis v. Guam
+    (9th Cir. 2019) the court held that limiting plebiscite voting to 'Native Inhabitants of Guam' violated
+    the Fifteenth Amendment (davis-v-guam-2019). Justia reproduction (compiler revision 2011); later amendments
+    not checked.
+- type: territorial-law
+  state: GU
+  legal_basis: 5 G.C.A. ch. 88 (Commission on CHamoru Language and the Teaching of the History and Culture
+    of the Indigenous People of Guam), added by Guam P.L. 33-236
+  since: '2017-01-09'
+  source: guam-code-5-chapter-88
+  confidence: medium
+  as_of: '2017-01-09'
+  locator: §§ 88102-88104
+  note: Establishes within the government of Guam a commission on the CHamoru language and 'the Indigenous
+    People of Guam'; names I Dipåttamenton I Kaohao Guinahan CHamoru (the Department of Chamoru Affairs)
+    as a member. Justia reproduction of the Compiler of Laws text.
+- type: territorial-law
+  state: MP
+  legal_basis: Constitution of the Northern Mariana Islands, art. XII §§ 1 and 4 (restrictions on alienation
+    of land; 'persons of Northern Marianas descent'), as amended by House Legislative Initiative 18-1
+    (2014)
+  source: cnmi-constitution
+  confidence: high
+  as_of: '2014'
+  locator: art. XII §§ 1, 4
+  note: '§ 1: acquisition of permanent and long-term interests in real property ''shall be restricted
+    to persons of Northern Marianas descent''. § 4: a person of Northern Marianas descent is a U.S. citizen
+    or national ''who has at least some degree of Northern Marianas Chamorro or Northern Marianas Carolinian
+    blood or a combination thereof''. Implements Covenant § 805 (cnmi-covenant). Original provision ratified
+    1977, effective 1978 (exact day not taken from this source). Art. XVIII § 5(c) limits voting on Article
+    XII amendments to persons of Northern Marianas descent; the Ninth Circuit invalidated that limit in
+    Davis v. Commonwealth Election Comm''n, 844 F.3d 1087 (2016), as described in davis-v-guam-2019.'
+- type: territorial-law
+  state: MP
+  legal_basis: Covenant to Establish a Commonwealth of the Northern Mariana Islands, § 805, approved by
+    Pub. L. 94-241, 90 Stat. 263 (1976), 48 U.S.C. § 1801 note
+  since: '1976-03-24'
+  source: cnmi-covenant
+  confidence: high
+  as_of: '1976-03-24'
+  locator: § 805(a)
+  note: 'Federal law approving the Covenant: ''in view of the importance of the ownership of land for
+    the culture and traditions of the people of the Northern Mariana Islands'', the CNMI government will
+    (for 25 years after the trusteeship ends) and may thereafter restrict acquisition of long-term land
+    interests ''to persons of Northern Mariana Islands descent''. Recorded as territorial-law because
+    it is the land-restriction basis of the Commonwealth''s political union; it is not a tribal recognition.'
+- type: territorial-law
+  state: MP
+  legal_basis: Constitution of the Northern Mariana Islands, art. III § 23 (Resident Executive for Indigenous
+    Affairs), Second Const. Conv. Amend. 22 (1985)
+  since: '1985'
+  source: cnmi-constitution
+  confidence: high
+  as_of: '1985'
+  locator: art. III § 23
+  note: Creates an office of resident executive to the governor for indigenous affairs, held by a person
+    of Northern Marianas descent, with duties such as establishing a community foundation 'for the advancement
+    of the indigenous people' and serving as 'an advocate of positions taken by indigenous people'. Covers
+    persons of Northern Marianas descent (Chamorro and Carolinian).
+states:
+- state: GU
+  presence: land
+  source: guam-code-21-chapter-75
+  confidence: medium
+  as_of: '2021-06-24'
+  locator: §§ 75101(c), 75105, 75107
+  note: Chamorro homelands leased to native Chamorros under the Chamorro Land Trust Act.
+- state: MP
+  presence: land
+  source: cnmi-constitution
+  confidence: high
+  as_of: '2014'
+  locator: art. XI § 1; art. XII
+  note: Public lands 'belonging collectively to the people of the Commonwealth who are of Northern Marianas
+    descent' (art. XI § 1) and the land-alienation restriction (art. XII).
+population:
+- count: 50420
+  kind: census-chamorro-alone
+  source: census-2020-island-areas-guam-profile-release
+  confidence: high
+  as_of: '2020-04-01'
+  locator: Guam; 2020 Island Areas Censuses Demographic Profile, DECENNIALDPGU2020.DP1 row DP1_0080C
+  note: Census term 'Chamorro'; a detailed Native Hawaiian and Other Pacific Islander group, not American
+    Indian or Alaska Native. Kind value is new. Guam total population 153,836.
+- count: 63035
+  kind: census-chamorro-alone-or-in-any-combination
+  source: census-2020-island-areas-guam-profile-release
+  confidence: high
+  as_of: '2020-04-01'
+  locator: Guam; DECENNIALDPGU2020.DP1 row DP1_0105C
+  note: Census term 'Chamorro'. Kind value is new.
+- count: 12001
+  kind: census-chamorro-alone
+  source: census-2020-island-areas-cnmi-profile-release
+  confidence: high
+  as_of: '2020-04-01'
+  locator: Commonwealth of the Northern Mariana Islands; DECENNIALDPMP2020.DP1 row DP1_0089C
+  note: Census term 'Chamorro'. Kind value is new. CNMI total population 47,329.
+- count: 17163
+  kind: census-chamorro-alone-or-in-any-combination
+  source: census-2020-island-areas-cnmi-profile-release
+  confidence: high
+  as_of: '2020-04-01'
+  locator: Commonwealth of the Northern Mariana Islands; DECENNIALDPMP2020.DP1 row DP1_0105C
+  note: Census term 'Chamorro'. Kind value is new.
+contacts:
+- kind: phone
+  value: (670) 664-2664
+  label: Indigenous Affairs Office (CNMI territorial agency)
+  source: cnmi-indigenous-affairs-office-report-2019
+  confidence: medium
+  as_of: '2019'
+  locator: page 1
+  note: Given in the FY2019 report as the number to call for copies; the report says 'Website is unavailable'.
+    Not re-verified for 2026.
+- kind: website
+  value: https://kumisionchamoru.guam.gov
+  label: Kumisión i Fino' CHamoru (Guam territorial agency)
+  source: kumision-i-fino-chamoru-website
+  confidence: high
+  as_of: '2026-11-21'
+languages:
+- name: CHamoru
+  language_tag: ch
+  source: guam-code-5-chapter-88
+  confidence: medium
+  as_of: '2017-01-09'
+  locator: §§ 88101-88104
+  note: Tag ch is the ISO 639-1 equivalent of ISO 639-3 cha (source key iso-639-3-cha).
+- name: Chamorro
+  language_tag: ch
+  source: cnmi-constitution
+  confidence: high
+  as_of: '1985'
+  locator: art. XXII § 3
+  note: '''The official language of the Commonwealth shall be Chamorro, Carolinian and English''.'
+related_entities:
+- name: Indigenous Affairs Office (Commonwealth of the Northern Mariana Islands)
+  relation: territorial-agency
+  source: cnmi-indigenous-affairs-office-report-2019
+  confidence: medium
+  as_of: '2019'
+  locator: page 1
+  note: Office created under CNMI Constitution art. III § 23; report older than five years.
+- name: Chamorro Land Trust Commission (Guam)
+  relation: territorial-agency
+  source: guam-code-21-chapter-75
+  confidence: medium
+  as_of: '2021-06-24'
+  locator: § 75101(a); § 75102
+- name: Commission on Decolonization for the Implementation and Exercise of Chamorro Self Determination
+    (Guam)
+  relation: territorial-agency
+  source: guam-code-1-chapter-21
+  confidence: medium
+  as_of: '2011-12-30'
+  locator: § 2104
+- name: Kumisión i Fino' CHamoru yan i Fina'nå'guen (Commission on CHamoru Language and the Teaching of
+    the History and Culture of the Indigenous People of Guam)
+  relation: territorial-agency
+  source: kumision-i-fino-chamoru-website
+  confidence: high
+  as_of: '2026-11-21'
+  locator: site header
+  note: Statutory English name from 5 G.C.A. § 88102 (guam-code-5-chapter-88). The site answered plain
+    requests with HTTP 403 but served its page content.
+- name: I Dipåttamenton I Kaohao Guinahan CHamoru (Department of Chamoru Affairs, Guam)
+  relation: territorial-agency
+  source: guam-code-5-chapter-88
+  confidence: medium
+  as_of: '2017-01-09'
+  locator: § 88103(a)
+  note: Named in the statute as a member of the language commission; its own enabling law was not reviewed.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

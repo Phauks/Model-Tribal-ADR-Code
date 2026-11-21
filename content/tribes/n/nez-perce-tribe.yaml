@@ -1,0 +1,554 @@
+id: nez-perce-tribe
+entity_type: native-nation
+names:
+  official: Nez Perce Tribe
+  self_designation:
+  - name: Nimiipuu
+    language_tag: nez
+    source: nez-perce-tribe-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: site refers to "the Nimiipuu people"
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: ID
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+- state: ID
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2445
+  note: 'Census area with land in this state: Nez Perce Reservation (code 2445). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2445'
+  name: Nez Perce Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2445
+  note: Matched by name. Census class code D2.
+population:
+- count: 3500
+  kind: citizens
+  source: nez-perce-tribe-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"more than 3,500 enrolled citizens"; undated statement on the official site; as_of is the access
+    date'
+- count: 18403
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2445, field POP100
+  note: 'Census area: Nez Perce Reservation (code 2445). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 9331
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3154 (Nez Perce Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Nez Perce Tribe' (race code 6001) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 3552
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Nez Perce Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 4379
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 84, row T33300 'Nez Perce Tribe'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://nezperce.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+- kind: physical-address
+  value: 100 Agency Road, Lapwai, ID 83540
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+- kind: mailing-address
+  value: P.O. Box 305, Lapwai, ID 83540
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+- kind: phone
+  value: (208) 843-2253
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+- kind: fax
+  value: (208) 843-7354
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+languages:
+- name: Nimipuutímt
+  language_tag: nez
+  source: nez-perce-tribe-about
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Nimipuutímt language is an integral part of Nez Perce culture."'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Northern Idaho Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+governing_documents:
+- kind: law-code
+  title: Nez Perce Tribal Code
+  year: '2019'
+  link: https://narf.org/nill/codes/nez_perce/index.html
+  source: national-indian-law-library-code-codes-nez-perce
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Table of Contents Updated: Feburary 2019. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Revised Constitution and Bylaws of the Nez Perce Tribe
+  year: '2005'
+  link: https://narf.org/nill/constitutions/nez_perce/index.html
+  source: national-indian-law-library-constitution-constitutions-nez-perce
+  confidence: medium
+  as_of: '2005'
+  locator: page heading
+  note: 'Revised: 2005. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.nezperce.org/resources/tribal-code/
+  source: national-indian-law-library-nez-perce
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.nezperce.org/wp-content/uploads/2018/01/ConstitutionByLaws.pdf
+  source: national-indian-law-library-nez-perce
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . (pdf)".'
+- kind: law-code
+  title: Nez Perce Tribal Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Idaho section, entry 'Nez Perce Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://nezperce.org/~code/index.htm) returned HTTP 404, so
+    it is not recorded.'
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaker Court
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.nezperce.org/government/law-and-justice/
+  source: national-indian-law-library-nez-perce
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Nez Perce Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Idaho section, entry 'Nez Perce Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.nezperce.org/official/tribalcourt.htm)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court
+    description: A voluntary forum, sitting as a panel of three Peacemakers, for traditional, non-adversarial
+      Nez Perce methods of dispute and conflict resolution as an alternative to the Tribal Court, specialty
+      courts and court-imposed sanctions; it does not ascribe fault and uses dialogue to reach consensus-based
+      solutions.
+    legal_basis: Nez Perce Tribal Code §§ 1-8-1 to 1-8-11
+    case_types:
+    - criminal-diversion
+    - juvenile
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: 'Hears matters on order of a Tribal Court judge or specialty court official:
+      adult criminal matters excluding listed serious and violent offenses, any juvenile delinquency matter,
+      and civil matters other than contract disputes where all parties agree; in criminal and juvenile
+      matters the prosecutor, defendant and victim must agree. Peacemakers report regularly to the referring
+      court.'
+    enforcement: Agreements may be confirmed as a Tribal Court or specialty court judgment or order and
+      enforced like other orders; agreements from minor disputes heard at the parties' own request outside
+      court are not enforceable in court.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
+    source: nez-perce-title-1-chapter-1-8-peacemaker-court
+    confidence: high
+    as_of: '2024-09-24'
+    locator: §§ 1-8-1, 1-8-2, 1-8-6, 1-8-8, 1-8-10, 1-8-11
+    note: The code provides that peacemakers may suggest participation in Nez Perce activities and practices,
+      naming as examples sweat lodge ceremonies, traditional drumming or dancing, and instruction in the
+      Nimiipuu language. Peacemakers are unpaid volunteers unless a program funds a stipend. The court's
+      guidelines are set out in a Peacemaker Court Handbook (§ 1-8-7).
+  provisions:
+  - kind: other
+    title: Available Sentences for All Criminal Offenses
+    citation: N.P.T.R.C. Section 4.10.039
+    link: https://nezperce.org/resources/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/available-sentences-for-all-criminal-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Reducing a Sec Offender Registration Period with Intervention and Treatment
+    citation: N.P.T.R.C. Section 4.10.055; and Section 4.10.061
+    link: https://nezperce.org/resources/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reducing-a-sec-offender-registration-period-with-intervention-and-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: mediation
+    title: '''1-2-3 Mediation and Hearings'
+    citation: '''1-2-3 Mediation and Hearings'
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 'CHAPTER 1-3: ALTERNATIVE DISPUTE RESOLUTION'
+    citation: 'CHAPTER 1-3: ALTERNATIVE DISPUTE RESOLUTION; ''1-3-2 Matters Subject to Mediation; ''1-3-4
+      Certification and Compensation of Mediators; ''1-3-5 Selection of Mediator for Individual Cases;
+      ''1-3-8 Petition to Terminate Mediation'
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: '''6-2-23 Dispute Resolution Process'
+    citation: '''6-2-23 Dispute Resolution Process'
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: '''9-5-13 Conciliation; Contesting Violations; Hearing'
+    citation: '''9-5-13 Conciliation; Contesting Violations; Hearing'
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: §11-9-4 Attorney Fees And Other Arbitration Costs
+    citation: §11-9-4 Attorney Fees And Other Arbitration Costs
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: peacemaking
+    title: Chapter 1-8 – Peacemaker Court
+    citation: Chapter 1-8 – Peacemaker Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Nez Perce Tribe
+    note: 'Native American Rights Fund description (provision itself not read): Provides purpose, definitions,
+      peacemaker qualifications, procedures, peacemaker duties, the creation of a “Peacemaker Handbook,”
+      a list of matters which can be heard by the peacemaking court, and jurisdiction over matters not
+      within ordinary tribal court jurisdiction.'
+  - kind: mediation
+    title: '''1-2-3 Mediation and Hearings'
+    citation: '''1-2-3 Mediation and Hearings'
+    link: https://narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-codes-nez-perce
+    confidence: medium
+    as_of: '2019'
+    locator: 'Table of Contents, under ''CHAPTER 1-2: SMALL CLAIMS'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: 'CHAPTER 1-3: ALTERNATIVE DISPUTE RESOLUTION'
+    citation: 'CHAPTER 1-3: ALTERNATIVE DISPUTE RESOLUTION'
+    link: https://narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-codes-nez-perce
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: '''6-2-23 Dispute Resolution Process'
+    citation: '''6-2-23 Dispute Resolution Process'
+    link: https://narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-codes-nez-perce
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'BACKGROUND INVESTIGATIONS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: §11-9-4 Attorney Fees And Other Arbitration Costs
+    citation: §11-9-4 Attorney Fees And Other Arbitration Costs
+    link: https://narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-codes-nez-perce
+    confidence: medium
+    as_of: '2019'
+    locator: 'Table of Contents, under ''CHAPTER 11-9: ADJUDICATION OF DISPUTES'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: ID
+    status: approved
+    approved: '2003-01-08'
+    federal_register_citation: 68 FR 1068
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-01-08'
+    locator: result page 14 (?page=14), row 19
+    note: 'Listed as: "Nez Perce Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Nez
+      Perce Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.01.08_nez_perce_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/01/08/03-341/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ID
+    status: deemed-approved
+    approved: '2008-10-07'
+    federal_register_citation: 73 FR 58617
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-10-07'
+    locator: result page 14 (?page=14), row 20
+    note: 'Listed as: "Nez Perce Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Nez Perce Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.10.07_nez_perce_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/10/07/E8-23710/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ID
+    status: approved
+    approved: '1995-11-14'
+    federal_register_citation: 60 FR 57246
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-11-14'
+    locator: result page 14 (?page=14), row 21
+    note: 'Listed as: "Nez Perce Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Nez
+      Perce Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.11.14_nez_perce_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/11/14/95-28036/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ID
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the parties meet within 10 working days, and if the
+      dispute is not resolved within 60 days either party may pursue binding arbitration before a three-member
+      panel selected by the American Arbitration Association, with no judicial review of the decision
+      (disputes under Article 6 follow that article's own procedure).
+    dispute_resolution_locator: Article 21 (Dispute Resolution)
+    source: compact-id-coeur-dalene-tribe-1993
+    confidence: medium
+    as_of: '1993-02-12'
+    locator: Article 21 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 1993 Coeur d'Alene Tribe
+      compact; later Idaho compacts and amendments (2003, 2008) were not checked. Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2008-10-07).
+  ordinances:
+  - approved: '1995-02-16'
+    link: https://www.nigc.gov?wpdmdl=10401&ind=10416
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-02-16'
+    locator: table row 166, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '1996-08-23'
+    link: https://www.nigc.gov?wpdmdl=10402&ind=10417
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-08-23'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '1996-12-09'
+    link: https://www.nigc.gov?wpdmdl=10403&ind=10418
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-12-09'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '1999-10-22'
+    link: https://www.nigc.gov?wpdmdl=10404&ind=10419
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-10-22'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '2001-06-27'
+    link: https://www.nigc.gov?wpdmdl=10405&ind=10420
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-06-27'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '2004-02-27'
+    link: https://www.nigc.gov?wpdmdl=10406&ind=10421
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-02-27'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '2009-09-23'
+    link: https://www.nigc.gov?wpdmdl=10407&ind=10422
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-09-23'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '2010-02-22'
+    link: https://www.nigc.gov?wpdmdl=10408&ind=10423
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-02-22'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '2011-08-22'
+    link: https://www.nigc.gov?wpdmdl=10409&ind=10424
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-08-22'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  - approved: '2024-02-21'
+    link: https://www.nigc.gov?wpdmdl=10410&ind=10425
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2024-02-21'
+    locator: table row 166, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 166 lists the nation
+      as "Nez Perce Tribe".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Nez Perce Tribe". Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Idaho assumed civil and criminal enforcement jurisdiction in Indian country only for seven
+    subjects: compulsory school attendance; juvenile delinquency and youth rehabilitation; dependent,
+    neglected and abused children; insanities and mental illness; public assistance; domestic relations;
+    operation of motor vehicles on county or state roads (Idaho Code § 67-5101, 1963).'
+  source: idaho-code-67-5101
+  confidence: medium
+  as_of: '1963'
+  locator: § 67-5101 A-G
+  note: Nation matched to Idaho by office state; statute applies to all Indian country in Idaho for these
+    subjects.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Nez Perce Tribe Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Nez Perce Tribe".
+- organization: Columbia River Inter-Tribal Fish Commission
+  source: columbia-river-inter-tribal-fish-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Nez Perce Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

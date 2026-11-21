@@ -1,0 +1,3582 @@
+{
+ "agent": "other-nonfederal-groups",
+ "sources": [
+  {
+   "key": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "kind": "report",
+   "title": "Indian Issues: Federal Funding for Non-Federally Recognized Tribes (GAO-12-348)",
+   "author": "U.S. Government Accountability Office",
+   "url": "https://www.gao.gov/assets/600/590726.txt",
+   "issued": "2012-04-12",
+   "accessed": "2026-11-21",
+   "notes": "Accessible-text version read through the web-fetch tool (gao.gov returns 403 to curl). Product page https://www.gao.gov/products/gao-12-348; PDF https://www.gao.gov/assets/gao-12-348.pdf. Tables 1, 3, 4 and 6 and body text were read; Appendix IV Table 8 (funding before FY2007) and Appendix V could not be read because the fetched text was cut off partway through Appendix III."
+  },
+  {
+   "key": "census-tiger-2020-aiannh",
+   "kind": "dataset",
+   "title": "TIGER/Line Shapefiles 2020: American Indian/Alaska Native/Native Hawaiian Areas (tl_2020_us_aiannh), attribute table",
+   "author": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/geo/tiger/TIGER2020/AIANNH/tl_2020_us_aiannh.zip",
+   "issued": "2021-01-28",
+   "accessed": "2026-11-21",
+   "notes": "DBF attributes read: AIANNHCE, GEOID, NAMELSAD, CLASSFP (D4 = state American Indian reservation, D9 = State Designated Tribal Statistical Area), AIANNHR (S = state)."
+  },
+  {
+   "key": "census-aiannh-codes-by-state-2020",
+   "kind": "dataset",
+   "title": "2020 Census AIANNH codes by state (national_aiannh_by_state2020.txt)",
+   "author": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/geo/docs/reference/codes2020/national_aiannh_by_state2020.txt",
+   "issued": "2020",
+   "accessed": "2026-11-21"
+  },
+  {
+   "key": "census-aian-geography-definitions",
+   "kind": "web-page",
+   "title": "American Indian and Alaska Native Areas: definitions (Geography Program Glossary)",
+   "author": "U.S. Census Bureau",
+   "url": "https://census.gov/programs-surveys/geography/about/glossary/aian-definitions.html",
+   "accessed": "2026-11-21",
+   "notes": "Defines state American Indian reservations as reservations of state-recognized tribes and SDTSAs as statistical areas delineated for state-recognized tribes that are not federally recognized, through a governor-appointed state liaison."
+  },
+  {
+   "key": "census-2020-ddhca-popgroup-codes",
+   "kind": "dataset",
+   "title": "2020 Census Detailed Demographic and Housing Characteristics File A: POPGROUP (race/ethnic group) code list",
+   "author": "U.S. Census Bureau",
+   "url": "https://api.census.gov/data/2020/dec/ddhca/variables/POPGROUP.json",
+   "issued": "2023-09-21",
+   "accessed": "2026-11-21",
+   "notes": "Code list of detailed groups, including American Indian tribal groupings. Used only as a supporting source for alternate names (confidence low). Population values need an API key and were not retrieved."
+  },
+  {
+   "key": "public-law-85-671-california-rancheria-act",
+   "kind": "federal-statute",
+   "title": "Public Law 85-671, Act of Aug. 18, 1958, 72 Stat. 619 (distribution of land and assets of certain Indian rancherias and reservations in California)",
+   "author": "U.S. Congress",
+   "url": "https://www.govinfo.gov/content/pkg/STATUTE-72/pdf/STATUTE-72-Pg619.pdf",
+   "issued": "1958-08-18",
+   "accessed": "2026-11-21"
+  },
+  {
+   "key": "public-law-88-419-california-rancheria-act-amendment",
+   "kind": "federal-statute",
+   "title": "Public Law 88-419, Act of Aug. 11, 1964, 78 Stat. 390 (amending the 1958 California rancheria distribution act)",
+   "author": "U.S. Congress",
+   "url": "https://www.govinfo.gov/content/pkg/STATUTE-78/pdf/STATUTE-78-Pg390.pdf",
+   "issued": "1964-08-11",
+   "accessed": "2026-11-21"
+  },
+  {
+   "key": "hud-ihbg-fy2026-formula-allocations",
+   "kind": "report",
+   "title": "FY 2026 Indian Housing Block Grant (IHBG) Formula Allocations (congressional notification)",
+   "author": "U.S. Department of Housing and Urban Development, Office of Native American Programs",
+   "url": "https://www.hud.gov/sites/default/files/PIH/documents/FY26-IHBG-Formula-Allocations-Congressional-Notification.pdf",
+   "issued": "2026-04-07",
+   "accessed": "2026-11-21",
+   "notes": "Issued date from PDF metadata. Lists recipient, city and final allocation by state."
+  },
+  {
+   "key": "bia-recognized-entities-2026",
+   "kind": "federal-register-notice",
+   "title": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs (91 FR 4102)",
+   "author": "Bureau of Indian Affairs",
+   "url": "https://www.federalregister.gov/",
+   "issued": "2026-01-30",
+   "accessed": "2026-11-21",
+   "notes": "Defined by the lead; cited here only as the list checked for absence (roster.json)."
+  },
+  {
+   "key": "usaspending-award-90na8457",
+   "kind": "dataset",
+   "title": "USAspending.gov award 90NA8457: THE WYANDOT OF ANDERDON NATION (Assistance Listing 93.612, Native American Programs)",
+   "author": "U.S. Department of the Treasury, USAspending.gov (award data reported by HHS Administration for Children and Families)",
+   "url": "https://www.usaspending.gov/award/ASST_NON_90NA8457_075",
+   "issued": "2022-09-30",
+   "accessed": "2026-11-21",
+   "notes": "Read through the USAspending API (api/v2/awards/ASST_NON_90NA8457_075/ and spending_by_award search for Assistance Listings 93.612, 93.587, 93.581). Project title: SEVEN GENERATIONS: WYANDOT OF ANDERDON NATION CULTURAL AWARENESS, REVITALIZATION, AND PRESERVATION PROJECT. Recipient business categories as recorded: Government; Native American Tribal Government."
+  },
+  {
+   "key": "usaspending-award-90na8504",
+   "kind": "dataset",
+   "title": "USAspending.gov award 90NA8504: THE MUNSEE TRIBE IN KANSAS, INC. (Assistance Listing 93.612, Native American Programs)",
+   "author": "U.S. Department of the Treasury, USAspending.gov (award data reported by HHS Administration for Children and Families)",
+   "url": "https://www.usaspending.gov/award/ASST_NON_90NA8504_075",
+   "issued": "2024-09-30",
+   "accessed": "2026-11-21",
+   "notes": "Read through the USAspending API (api/v2/awards/ASST_NON_90NA8504_075/ and spending_by_award search for Assistance Listings 93.612, 93.587, 93.581). Project title: THE MUNSEE TRIBE IN KANSAS HISTORICAL AND GENEALOGICAL PROGRAM. Recipient business categories as recorded: Higher Education; Higher Education (Private)."
+  },
+  {
+   "key": "usaspending-award-90na8516",
+   "kind": "dataset",
+   "title": "USAspending.gov award 90NA8516: MUSCOGEE NATION OF FLORIDA, INC. (Assistance Listing 93.612, Native American Programs)",
+   "author": "U.S. Department of the Treasury, USAspending.gov (award data reported by HHS Administration for Children and Families)",
+   "url": "https://www.usaspending.gov/award/ASST_NON_90NA8516_075",
+   "issued": "2025-09-30",
+   "accessed": "2026-11-21",
+   "notes": "Read through the USAspending API (api/v2/awards/ASST_NON_90NA8516_075/ and spending_by_award search for Assistance Listings 93.612, 93.587, 93.581). Project title: MUSCOGEE NATION OF FLORIDA TRIBAL MUSEUM. Recipient business categories as recorded: Nonprofit Organization."
+  },
+  {
+   "key": "usaspending-award-90na8343",
+   "kind": "dataset",
+   "title": "USAspending.gov award 90NA8343: JUANENO BAND OF MISSION INDIANS (Assistance Listing 93.612, Native American Programs)",
+   "author": "U.S. Department of the Treasury, USAspending.gov (award data reported by HHS Administration for Children and Families)",
+   "url": "https://www.usaspending.gov/award/ASST_NON_90NA8343_075",
+   "issued": "2018-09-30",
+   "accessed": "2026-11-21",
+   "notes": "Read through the USAspending API (api/v2/awards/ASST_NON_90NA8343_075/ and spending_by_award search for Assistance Listings 93.612, 93.587, 93.581). Project title: ACJACHEMEN NATION FEDERAL ACKNOWLEDGMENT PROJECT. Recipient business categories as recorded: Government; Native American Tribal Government."
+  },
+  {
+   "key": "usaspending-award-90nk0197",
+   "kind": "dataset",
+   "title": "USAspending.gov award 90NK0197: QUTEKCAK NATIVE TRIBE (Assistance Listing 93.612, Native American Programs)",
+   "author": "U.S. Department of the Treasury, USAspending.gov (award data reported by HHS Administration for Children and Families)",
+   "url": "https://www.usaspending.gov/award/ASST_NON_90NK0197_075",
+   "issued": "2022-09-30",
+   "accessed": "2026-11-21",
+   "notes": "Read through the USAspending API (api/v2/awards/ASST_NON_90NK0197_075/ and spending_by_award search for Assistance Listings 93.612, 93.587, 93.581). Project title: UPDATING TECHNOLOGY INFRASTRUCTURE AT THE QNT TRIBAL OFFICE. Recipient business categories as recorded: Government; Native American Tribal Government."
+  },
+  {
+   "key": "usaspending-award-90xn0159",
+   "kind": "dataset",
+   "title": "USAspending.gov award 90XN0159: UNITED HOUMA NATION INC (Assistance Listing 93.587, Promote the Survival and Continuing Vitality of Native American Languages)",
+   "author": "U.S. Department of the Treasury, USAspending.gov (award data reported by HHS Administration for Children and Families)",
+   "url": "https://www.usaspending.gov/award/ASST_NON_90XN0159_075",
+   "issued": "2021-09-01",
+   "accessed": "2026-11-21",
+   "notes": "Read through the USAspending API (api/v2/awards/ASST_NON_90XN0159_075/ and spending_by_award search for Assistance Listings 93.612, 93.587, 93.581). Project title: UNITED HOUMA NATION TRADITIONAL LANGUAGE DOCUMENTATION AND YOUTH ENGAGEMENT PROJECT. Recipient business categories as recorded: Government; Native American Tribal Government."
+  },
+  {
+   "key": "usaspending-award-90xn0025",
+   "kind": "dataset",
+   "title": "USAspending.gov award 90XN0025: MACHIS LOWER CREEK INDIAN TRIBE OF ALABAMA (Assistance Listing 93.587, Promote the Survival and Continuing Vitality of Native American Languages)",
+   "author": "U.S. Department of the Treasury, USAspending.gov (award data reported by HHS Administration for Children and Families)",
+   "url": "https://www.usaspending.gov/award/ASST_NON_90XN0025_075",
+   "issued": "2021-09-01",
+   "accessed": "2026-11-21",
+   "notes": "Read through the USAspending API (api/v2/awards/ASST_NON_90XN0025_075/ and spending_by_award search for Assistance Listings 93.612, 93.587, 93.581). Project title: HONORING OUR ANCESTORS (Creek language program). Recipient business categories as recorded: Government; Native American Tribal Government."
+  }
+ ],
+ "entities": [
+  {
+   "id": "accohannock-indian-tribe",
+   "official_name": "Accohannock Indian Tribe",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "american-indian-council-of-mariposa-county",
+   "official_name": "American Indian Council of Mariposa County",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "burt-lake-band-of-ottawa-and-chippewa-indians",
+   "official_name": "Burt Lake Band of Ottawa and Chippewa Indians, Inc.",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "choctaw-apache-tribe-of-ebarb",
+   "official_name": "Choctaw-Apache Tribe of Ebarb",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "coharie-tribe-of-north-carolina",
+   "official_name": "Coharie Tribe of North Carolina",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "duwamish-tribe",
+   "official_name": "Duwamish Tribe",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "eel-river-tribe-of-indiana",
+   "official_name": "Eel River Tribe of Indiana",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "euchee-tribe-of-indians",
+   "official_name": "Euchee (Yuchi) Tribe of Indians",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "haliwa-saponi-indian-tribe",
+   "official_name": "Haliwa-Saponi Indian Tribe of North Carolina",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "lower-muscogee-creek-tribe",
+   "official_name": "Lower Muskogee Creek Tribe",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "mowa-band-of-choctaw-indians",
+   "official_name": "MOWA Band of Choctaw Indians",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "nanticoke-indian-association",
+   "official_name": "Nanticoke Indian Association",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "nanticoke-lenni-lenape-indians-of-new-jersey",
+   "official_name": "Nanticoke Lenni-Lenape Indians of New Jersey",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "occaneechi-band-of-the-saponi-nation-of-north-carolina",
+   "official_name": "Occaneechi Band of Saponi Nation of North Carolina",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "powhatan-renape-nation",
+   "official_name": "Powhatan Renape Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "saponi-nation-of-missouri",
+   "official_name": "Saponi Nation of Missouri Mahenips Band",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "sappony",
+   "official_name": "Sappony",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "st-francis-sokoki-band-of-abenakis-of-vermont-abenaki-tribal-council",
+   "official_name": "St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "tuscarora-nation-of-indians-of-the-carolinas",
+   "official_name": "Tuscarora Nation of Indians of the Carolinas",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "united-cherokee-ani-yun-wiya-nation",
+   "official_name": "United Cherokee Ani-Yun-Wiya Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "united-houma-nation",
+   "official_name": "United Houma Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "waccamaw-siouan-tribe-of-north-carolina",
+   "official_name": "Waccamaw Siouan Tribe of North Carolina",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "wesget-sipu",
+   "official_name": "Wesget Sipu",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "four-winds-cherokee-tribe",
+   "official_name": "Four Winds Cherokee",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "cache-creek-rancheria",
+   "official_name": "Cache Creek Rancheria",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "mark-west-rancheria",
+   "official_name": "Mark West Rancheria",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "ruffeys-rancheria",
+   "official_name": "Ruffeys Rancheria",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "strawberry-valley-rancheria",
+   "official_name": "Strawberry Valley Rancheria",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "alexander-valley-rancheria",
+   "official_name": "Alexander Valley Rancheria",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "indian-ranch-rancheria",
+   "official_name": "Indian Ranch Rancheria",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "nevada-city-rancheria",
+   "official_name": "Nevada City Rancheria",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "el-dorado-rancheria",
+   "official_name": "El Dorado Rancheria",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "mission-creek-reservation",
+   "official_name": "Mission Creek Reservation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "adai-caddo-indians-of-louisiana",
+   "official_name": "Adai Caddo Indians of Louisiana",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "bayou-lafourche-band-of-biloxi-chitimacha-choctaw",
+   "official_name": "Bayou Lafourche Band of Biloxi-Chitimacha-Choctaw",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "cher-o-creek-intratribal-indians",
+   "official_name": "Cher-O-Creek Intratribal Indians",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "cherokee-tribe-of-northeast-alabama",
+   "official_name": "Cherokee Tribe of Northeast Alabama",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "clifton-choctaw-tribe-of-louisiana",
+   "official_name": "Clifton Choctaw Tribe of Louisiana",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "echota-cherokee-tribe-of-alabama",
+   "official_name": "Echota Cherokee Tribe of Alabama",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "edisto-natchez-kusso-tribe-of-south-carolina",
+   "official_name": "Edisto Natchez-Kusso Tribe of South Carolina",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "georgia-tribe-of-eastern-cherokee",
+   "official_name": "Georgia Tribe of Eastern Cherokee",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "grand-caillou-dulac-band-of-biloxi-chitimacha-choctaw",
+   "official_name": "Grand Caillou/Dulac Band of Biloxi-Chitimacha-Choctaw",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "lenape-indian-tribe-of-delaware",
+   "official_name": "Lenape Indian Tribe of Delaware",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "ma-chis-lower-creek-indian-tribe-of-alabama",
+   "official_name": "Ma-Chis Lower Creek Indian Tribe of Alabama",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "meherrin-tribe-of-north-carolina",
+   "official_name": "Meherrin Tribe of North Carolina",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "nanticoke-indian-tribe-of-delaware",
+   "official_name": "Nanticoke Indian Tribe of Delaware",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "nanticoke-lenni-lenape-tribal-nation",
+   "official_name": "Nanticoke Lenni-Lenape Tribal Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "natchitoches-tribe-of-louisiana",
+   "official_name": "Natchitoches Tribe of Louisiana",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "pointe-au-chien-indian-tribe",
+   "official_name": "Pointe-au-Chien Indian Tribe",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "ramapough-lenape-nation",
+   "official_name": "Ramapough Lenape Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "santee-indian-organization",
+   "official_name": "Santee Indian Organization",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "southeastern-mvskoke-nation",
+   "official_name": "Southeastern Mvskoke Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "pee-dee-indian-nation-of-upper-south-carolina",
+   "official_name": "Pee Dee Indian Nation of Upper South Carolina",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "waccamaw-indian-people",
+   "official_name": "Waccamaw Indian People",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "wassamasaw-tribe-of-varnertown-indians",
+   "official_name": "Wassamasaw Tribe of Varnertown Indians",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "golden-hill-paugussett",
+   "official_name": "Golden Hill Paugussett",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "hassanamisco-nipmuc-tribe",
+   "official_name": "Hassanamisco Nipmuc Tribe",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "mattaponi-indian-tribe",
+   "official_name": "Mattaponi Indian Tribe",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "eastern-pequot-tribal-nation",
+   "official_name": "Eastern Pequot Tribal Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "poospatuck-indian-nation",
+   "official_name": "Poospatuck (Unkechauge) Indian Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "schaghticoke-tribe",
+   "official_name": "Schaghticoke Tribe",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "wyandot-of-anderdon-nation",
+   "official_name": "Wyandot of Anderdon Nation",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "munsee-tribe-in-kansas",
+   "official_name": "The Munsee Tribe in Kansas, Inc.",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "muscogee-nation-of-florida",
+   "official_name": "Muscogee Nation of Florida, Inc.",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "juaneno-band-of-mission-indians",
+   "official_name": "Juaneno Band of Mission Indians",
+   "entity_type": "native-nation"
+  },
+  {
+   "id": "qutekcak-native-tribe",
+   "official_name": "Qutekcak Native Tribe",
+   "entity_type": "native-nation"
+  }
+ ],
+ "facts": [
+  {
+   "nation": "accohannock-indian-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Accohannock Indian Tribe\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $1,926,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No. GAO reports the tribe reported over $1 million in 2009 spending from HHS programs (Community Services Block Grant discretionary awards, Job Opportunities for Low-Income Individuals, ANA Social and Economic Development Strategies) and had not filed its 2009 single audit report. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "accohannock-indian-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "MD",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "american-indian-council-of-mariposa-county",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"American Indian Council of Mariposa County\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $260,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No. GAO notes the group petitioned for federal acknowledgment as the Southern Sierra Miwuk Nation. Not on the 2026 federal list (bia-recognized-entities-2026). Possible match with the petitioning helper record for the Southern Sierra Miwuk Nation (name given by GAO)."
+  },
+  {
+   "nation": "american-indian-council-of-mariposa-county",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "burt-lake-band-of-ottawa-and-chippewa-indians",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Burt Lake Band of Ottawa and Chippewa Indians, Inc.\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $467,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026). Same name (without \"Inc.\") as the state-recognized helper entity; id shared."
+  },
+  {
+   "nation": "burt-lake-band-of-ottawa-and-chippewa-indians",
+   "field": "state-presence",
+   "value": {
+    "state": "MI",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "choctaw-apache-tribe-of-ebarb",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Choctaw-Apache Tribe of Ebarb\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $1,621,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. GAO reports the tribe received Department of Education American Indian Vocational Rehabilitation Services funding through a consortium with Four Winds Cherokee, and found it appeared ineligible because it lacks a statutory reservation. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "choctaw-apache-tribe-of-ebarb",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "coharie-tribe-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Coharie Tribe of North Carolina\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $2,874,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. GAO names it as one of five non-federally recognized Indian Housing Block Grant (HUD) recipients. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "coharie-tribe-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "duwamish-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Duwamish Tribe\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $177,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026). Possible match with the petitioning helper record for the Duwamish Tribal Organization; not verified."
+  },
+  {
+   "nation": "duwamish-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "WA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "eel-river-tribe-of-indiana",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Eel River Tribe of Indiana\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $274,000, Table 3). GAO-reported nonprofit status: No; state recognition per state officials: No. GAO reports Department of Commerce Remote Community Alert Systems Program funding. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "eel-river-tribe-of-indiana",
+   "field": "state-presence",
+   "value": {
+    "state": "IN",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "euchee-tribe-of-indians",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Euchee (Yuchi) Tribe of Indians\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $747,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026). Possible match with the petitioning helper record for the Yuchi Tribal Organization; not verified."
+  },
+  {
+   "nation": "euchee-tribe-of-indians",
+   "field": "state-presence",
+   "value": {
+    "state": "OK",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "haliwa-saponi-indian-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Haliwa-Saponi Indian Tribe of North Carolina\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $4,128,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. GAO names it as one of five Indian Housing Block Grant (HUD) recipients and reports a Department of Education Small, Rural School Achievement grant because it is organized as a local educational agency. Not on the 2026 federal list (bia-recognized-entities-2026). GAO name differs from the state-recognized helper entity only by \"of North Carolina\"; id shared."
+  },
+  {
+   "nation": "haliwa-saponi-indian-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "lower-muscogee-creek-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Lower Muskogee Creek Tribe\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $1,463,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. GAO notes the tribe has a state reservation, according to state officials. Not on the 2026 federal list (bia-recognized-entities-2026). GAO spells the name \"Muskogee\"; id shared with the state-recognized helper entity \"Lower Muscogee Creek Tribe\" (Georgia)."
+  },
+  {
+   "nation": "lower-muscogee-creek-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "GA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "mowa-band-of-choctaw-indians",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"MOWA Band of Choctaw Indians\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $4,268,000, Table 3). GAO-reported nonprofit status: Yes (GAO notes IRS automatic revocation effective May 15, 2010); state recognition per state officials: Yes. GAO names it as one of five Indian Housing Block Grant (HUD) recipients and notes it has a state reservation, according to state officials. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "mowa-band-of-choctaw-indians",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "nanticoke-indian-association",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Nanticoke Indian Association\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $41,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. Not on the 2026 federal list (bia-recognized-entities-2026). Possible match with the state-recognized helper entity nanticoke-indian-tribe-of-delaware; not verified, so a separate id is used."
+  },
+  {
+   "nation": "nanticoke-indian-association",
+   "field": "state-presence",
+   "value": {
+    "state": "DE",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "nanticoke-lenni-lenape-indians-of-new-jersey",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Nanticoke Lenni-Lenape Indians of New Jersey\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $208,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Disputed (GAO: New Jersey's official position is that it has no state-recognized tribes). GAO reports two HHS Community Services Block Grant awards totaling $44,405 (FY2007 and FY2010) and recommended HHS review eligibility. Not on the 2026 federal list (bia-recognized-entities-2026). Possible match with the state-recognized helper entity nanticoke-lenni-lenape-tribal-nation; not verified, so a separate id is used."
+  },
+  {
+   "nation": "nanticoke-lenni-lenape-indians-of-new-jersey",
+   "field": "state-presence",
+   "value": {
+    "state": "NJ",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "occaneechi-band-of-the-saponi-nation-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Occaneechi Band of Saponi Nation of North Carolina\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $130,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. Not on the 2026 federal list (bia-recognized-entities-2026). GAO name differs from the state-recognized helper entity only by \"the\"; id shared."
+  },
+  {
+   "nation": "occaneechi-band-of-the-saponi-nation-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "powhatan-renape-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Powhatan Renape Nation\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $200,000, Table 3). GAO-reported nonprofit status: No; state recognition per state officials: Disputed (GAO: New Jersey's official position is that it has no state-recognized tribes). GAO reports $200,342 in HHS Low-Income Home Energy Assistance Program funding in FY2007 and recommended HHS review eligibility. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "powhatan-renape-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "NJ",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "saponi-nation-of-missouri",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Saponi Nation of Missouri Mahenips Band\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $65,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "saponi-nation-of-missouri",
+   "field": "state-presence",
+   "value": {
+    "state": "MO",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "sappony",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Sappony\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $225,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. GAO gives the alternate names High Plains Indians and Indians of Person County (the name under which it petitioned). Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "sappony",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "st-francis-sokoki-band-of-abenakis-of-vermont-abenaki-tribal-council",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $314,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No (as of GAO's 2011 inquiry). Not on the 2026 federal list (bia-recognized-entities-2026). Possible match with the state-recognized helper entity missisquoi-st-francis-sokoki-band and the petitioning helper record for the St. Francis/Sokoki Band of Abenakis of Vermont; not verified."
+  },
+  {
+   "nation": "st-francis-sokoki-band-of-abenakis-of-vermont-abenaki-tribal-council",
+   "field": "state-presence",
+   "value": {
+    "state": "VT",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "tuscarora-nation-of-indians-of-the-carolinas",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Tuscarora Nation of Indians of the Carolinas\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $382,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No. Distinct from the federally recognized Tuscarora Nation (New York) on the 2026 list. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "tuscarora-nation-of-indians-of-the-carolinas",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "united-cherokee-ani-yun-wiya-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"United Cherokee Ani-Yun-Wiya Nation\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $98,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "united-cherokee-ani-yun-wiya-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "united-houma-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"United Houma Nation\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $2,104,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. GAO reports Department of Education American Indian Vocational Rehabilitation Services funding and found it appeared ineligible because it lacks a statutory reservation. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "united-houma-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "waccamaw-siouan-tribe-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Waccamaw Siouan Tribe of North Carolina\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $1,517,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: Yes. GAO names it as one of five Indian Housing Block Grant (HUD) recipients. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "waccamaw-siouan-tribe-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "wesget-sipu",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1; Table 3",
+   "note": "GAO Table 1 lists \"Wesget Sipu\" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $306,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "wesget-sipu",
+   "field": "state-presence",
+   "value": {
+    "state": "ME",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1, State column",
+   "note": "State as listed by GAO."
+  },
+  {
+   "nation": "american-indian-council-of-mariposa-county",
+   "field": "name-alternate",
+   "value": {
+    "name": "Southern Sierra Miwuk Nation"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1",
+   "note": "GAO: petitioned as Southern Sierra Miwuk Nation."
+  },
+  {
+   "nation": "sappony",
+   "field": "name-alternate",
+   "value": {
+    "name": "High Plains Indians"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1"
+  },
+  {
+   "nation": "sappony",
+   "field": "name-alternate",
+   "value": {
+    "name": "Indians of Person County"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1",
+   "note": "GAO: petitioned as Indians of Person County."
+  },
+  {
+   "nation": "euchee-tribe-of-indians",
+   "field": "name-alternate",
+   "value": {
+    "name": "Yuchi"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Table 1",
+   "note": "GAO writes \"Euchee (Yuchi) Tribe of Indians\"."
+  },
+  {
+   "nation": "four-winds-cherokee-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Highlights; section on likely ineligible awards",
+   "note": "GAO names \"Four Winds Cherokee\" as part of a consortium with the Choctaw-Apache Tribe of Ebarb that received Department of Education American Indian Vocational Rehabilitation Services funding, and found the consortium appeared ineligible because it lacks a statutory reservation. Not on the 2026 federal list. Id shared with the state-recognized helper entity \"Four-Winds Cherokee Tribe\" (Louisiana) by name comparison."
+  },
+  {
+   "nation": "cache-creek-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 26 Fed. Reg. 3073"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"Cache Creek Rancheria\" among nine California tribes whose recognition was terminated and not restored; terminated 1961-04-11 (26 Fed. Reg. 3073). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "cache-creek-rancheria",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "cache-creek-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619"
+   },
+   "source": "public-law-85-671-california-rancheria-act",
+   "confidence": "medium",
+   "as_of": "1958-08-18",
+   "locator": "Section 1, list of rancherias and reservations",
+   "note": "Section 1 names \"Cache Creek\" among the California rancherias and reservations whose lands and assets were to be distributed (the termination statute). Unrestored status rests on GAO Table 6 and absence from the 2026 federal list."
+  },
+  {
+   "nation": "mark-west-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 26 Fed. Reg. 3073"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"Mark West Rancheria\" among nine California tribes whose recognition was terminated and not restored; terminated 1961-04-11 (26 Fed. Reg. 3073). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "mark-west-rancheria",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "mark-west-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619"
+   },
+   "source": "public-law-85-671-california-rancheria-act",
+   "confidence": "medium",
+   "as_of": "1958-08-18",
+   "locator": "Section 1, list of rancherias and reservations",
+   "note": "Section 1 names \"Mark West\" among the California rancherias and reservations whose lands and assets were to be distributed (the termination statute). Unrestored status rests on GAO Table 6 and absence from the 2026 federal list."
+  },
+  {
+   "nation": "ruffeys-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 26 Fed. Reg. 3073"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"Ruffeys Rancheria\" among nine California tribes whose recognition was terminated and not restored; terminated 1961-04-11 (26 Fed. Reg. 3073). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "ruffeys-rancheria",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "ruffeys-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619"
+   },
+   "source": "public-law-85-671-california-rancheria-act",
+   "confidence": "medium",
+   "as_of": "1958-08-18",
+   "locator": "Section 1, list of rancherias and reservations",
+   "note": "Section 1 names \"Ruffeys\" among the California rancherias and reservations whose lands and assets were to be distributed (the termination statute). Unrestored status rests on GAO Table 6 and absence from the 2026 federal list."
+  },
+  {
+   "nation": "strawberry-valley-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 26 Fed. Reg. 3073"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"Strawberry Valley Rancheria\" among nine California tribes whose recognition was terminated and not restored; terminated 1961-04-11 (26 Fed. Reg. 3073). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "strawberry-valley-rancheria",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "strawberry-valley-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619"
+   },
+   "source": "public-law-85-671-california-rancheria-act",
+   "confidence": "medium",
+   "as_of": "1958-08-18",
+   "locator": "Section 1, list of rancherias and reservations",
+   "note": "Section 1 names \"Strawberry Valley\" among the California rancherias and reservations whose lands and assets were to be distributed (the termination statute). Unrestored status rests on GAO Table 6 and absence from the 2026 federal list."
+  },
+  {
+   "nation": "alexander-valley-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 26 Fed. Reg. 6875"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"Alexander Valley Rancheria\" among nine California tribes whose recognition was terminated and not restored; terminated 1961-08-01 (26 Fed. Reg. 6875). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "alexander-valley-rancheria",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "alexander-valley-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619"
+   },
+   "source": "public-law-85-671-california-rancheria-act",
+   "confidence": "medium",
+   "as_of": "1958-08-18",
+   "locator": "Section 1, list of rancherias and reservations",
+   "note": "Section 1 names \"Alexander Valley\" among the California rancherias and reservations whose lands and assets were to be distributed (the termination statute). Unrestored status rests on GAO Table 6 and absence from the 2026 federal list."
+  },
+  {
+   "nation": "indian-ranch-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 29 Fed. Reg. 13146"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"Indian Ranch Rancheria\" among nine California tribes whose recognition was terminated and not restored; terminated 1964-09-22 (29 Fed. Reg. 13146). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "indian-ranch-rancheria",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "indian-ranch-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619"
+   },
+   "source": "public-law-85-671-california-rancheria-act",
+   "confidence": "medium",
+   "as_of": "1958-08-18",
+   "locator": "Section 1, list of rancherias and reservations",
+   "note": "Section 1 names \"Indian Ranch\" among the California rancherias and reservations whose lands and assets were to be distributed (the termination statute). Unrestored status rests on GAO Table 6 and absence from the 2026 federal list."
+  },
+  {
+   "nation": "nevada-city-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 29 Fed. Reg. 13146"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"Nevada City Rancheria\" among nine California tribes whose recognition was terminated and not restored; terminated 1964-09-22 (29 Fed. Reg. 13146). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "nevada-city-rancheria",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "nevada-city-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619"
+   },
+   "source": "public-law-85-671-california-rancheria-act",
+   "confidence": "medium",
+   "as_of": "1958-08-18",
+   "locator": "Section 1, list of rancherias and reservations",
+   "note": "Section 1 names \"Nevada City\" among the California rancherias and reservations whose lands and assets were to be distributed (the termination statute). Unrestored status rests on GAO Table 6 and absence from the 2026 federal list."
+  },
+  {
+   "nation": "el-dorado-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619, as amended by Pub. L. 88-419, 78 Stat. 390 (1964); termination notice 31 Fed. Reg. 9685, 9686"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"El Dorado Rancheria\" among nine California tribes whose recognition was terminated and not restored; terminated 1966-07-16 (31 Fed. Reg. 9685, 9686). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "el-dorado-rancheria",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "el-dorado-rancheria",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Pub. L. 88-419, 78 Stat. 390 (1964), amending Pub. L. 85-671"
+   },
+   "source": "public-law-88-419-california-rancheria-act-amendment",
+   "confidence": "low",
+   "as_of": "1964-08-11",
+   "locator": "Section 1(a)",
+   "note": "The 1964 amendment extended the 1958 Act to any rancheria or reservation wholly within California on majority request; it does not name this group. GAO Table 6 gives the termination notice. Cited for the legal basis only."
+  },
+  {
+   "nation": "mission-creek-reservation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619, as amended by Pub. L. 88-419, 78 Stat. 390 (1964); termination notice 35 Fed. Reg. 11272, 11273"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "GAO Table 6 lists \"Mission Creek Reservation\" among nine California tribes whose recognition was terminated and not restored; terminated 1970-07-14 (35 Fed. Reg. 11272, 11273). Name not found on the 2026 federal list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated, unrestored tribes is not possible."
+  },
+  {
+   "nation": "mission-creek-reservation",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "gao-12-348-federal-funding-non-federally-recognized-tribes",
+   "confidence": "medium",
+   "as_of": "2012-04",
+   "locator": "Appendix II, Table 6",
+   "note": "Former rancheria or reservation in California named by GAO."
+  },
+  {
+   "nation": "mission-creek-reservation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized",
+    "legal_basis": "Pub. L. 88-419, 78 Stat. 390 (1964), amending Pub. L. 85-671"
+   },
+   "source": "public-law-88-419-california-rancheria-act-amendment",
+   "confidence": "low",
+   "as_of": "1964-08-11",
+   "locator": "Section 1(a)",
+   "note": "The 1964 amendment extended the 1958 Act to any rancheria or reservation wholly within California on majority request; it does not name this group. GAO Table 6 gives the termination notice. Cited for the legal basis only."
+  },
+  {
+   "nation": "adai-caddo-indians-of-louisiana",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9510",
+    "name": "Adai Caddo SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9510, GEOID 9510R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "adai-caddo-indians-of-louisiana",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9510",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "adai-caddo-indians-of-louisiana",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9510",
+   "note": "The 2020 Census delineated \"Adai Caddo SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "choctaw-apache-tribe-of-ebarb",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9515",
+    "name": "Apache Choctaw SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9515, GEOID 9515R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list. Census area name \"Apache Choctaw\"; linked to the Choctaw-Apache Tribe of Ebarb by name comparison (Census DDHC-A also lists \"Choctaw-Apache Community of Ebarb\")."
+  },
+  {
+   "nation": "choctaw-apache-tribe-of-ebarb",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9515",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "choctaw-apache-tribe-of-ebarb",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9515",
+   "note": "The 2020 Census delineated \"Apache Choctaw SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "bayou-lafourche-band-of-biloxi-chitimacha-choctaw",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9520",
+    "name": "Bayou Lafourche SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9520, GEOID 9520R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "bayou-lafourche-band-of-biloxi-chitimacha-choctaw",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9520",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "bayou-lafourche-band-of-biloxi-chitimacha-choctaw",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9520",
+   "note": "The 2020 Census delineated \"Bayou Lafourche SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "cher-o-creek-intratribal-indians",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9550",
+    "name": "Cher-O-Creek SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9550, GEOID 9550R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "cher-o-creek-intratribal-indians",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9550",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "cher-o-creek-intratribal-indians",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9550",
+   "note": "The 2020 Census delineated \"Cher-O-Creek SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "cherokee-tribe-of-northeast-alabama",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9560",
+    "name": "Cherokee Tribe of Northeast Alabama SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9560, GEOID 9560R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "cherokee-tribe-of-northeast-alabama",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9560",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "cherokee-tribe-of-northeast-alabama",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9560",
+   "note": "The 2020 Census delineated \"Cherokee Tribe of Northeast Alabama SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "clifton-choctaw-tribe-of-louisiana",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9630",
+    "name": "Clifton Choctaw SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9630, GEOID 9630R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "clifton-choctaw-tribe-of-louisiana",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9630",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "clifton-choctaw-tribe-of-louisiana",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9630",
+   "note": "The 2020 Census delineated \"Clifton Choctaw SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "coharie-tribe-of-north-carolina",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9635",
+    "name": "Coharie SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9635, GEOID 9635R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "coharie-tribe-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9635",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "coharie-tribe-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9635",
+   "note": "The 2020 Census delineated \"Coharie SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "echota-cherokee-tribe-of-alabama",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9680",
+    "name": "Echota Cherokee SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9680, GEOID 9680R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "echota-cherokee-tribe-of-alabama",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9680",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "echota-cherokee-tribe-of-alabama",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9680",
+   "note": "The 2020 Census delineated \"Echota Cherokee SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "edisto-natchez-kusso-tribe-of-south-carolina",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9690",
+    "name": "Edisto Natchez Kusso SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9690, GEOID 9690R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "edisto-natchez-kusso-tribe-of-south-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "SC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9690",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "edisto-natchez-kusso-tribe-of-south-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9690",
+   "note": "The 2020 Census delineated \"Edisto Natchez Kusso SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "four-winds-cherokee-tribe",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9720",
+    "name": "Four Winds Cherokee SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9720, GEOID 9720R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "four-winds-cherokee-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9720",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "four-winds-cherokee-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9720",
+   "note": "The 2020 Census delineated \"Four Winds Cherokee SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "georgia-tribe-of-eastern-cherokee",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9730",
+    "name": "Georgia Tribe of Eastern Cherokee SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9730, GEOID 9730R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "georgia-tribe-of-eastern-cherokee",
+   "field": "state-presence",
+   "value": {
+    "state": "GA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9730",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "georgia-tribe-of-eastern-cherokee",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9730",
+   "note": "The 2020 Census delineated \"Georgia Tribe of Eastern Cherokee SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "grand-caillou-dulac-band-of-biloxi-chitimacha-choctaw",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9735",
+    "name": "Grand Caillou/Dulac SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9735, GEOID 9735R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "grand-caillou-dulac-band-of-biloxi-chitimacha-choctaw",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9735",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "grand-caillou-dulac-band-of-biloxi-chitimacha-choctaw",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9735",
+   "note": "The 2020 Census delineated \"Grand Caillou/Dulac SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "haliwa-saponi-indian-tribe",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9745",
+    "name": "Haliwa-Saponi SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9745, GEOID 9745R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "haliwa-saponi-indian-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9745",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "haliwa-saponi-indian-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9745",
+   "note": "The 2020 Census delineated \"Haliwa-Saponi SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "lenape-indian-tribe-of-delaware",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9800",
+    "name": "Lenape Indian Tribe of Delaware SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9800, GEOID 9800R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "lenape-indian-tribe-of-delaware",
+   "field": "state-presence",
+   "value": {
+    "state": "DE",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9800",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "lenape-indian-tribe-of-delaware",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9800",
+   "note": "The 2020 Census delineated \"Lenape Indian Tribe of Delaware SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "lumbee-tribe-of-north-carolina",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9815",
+    "name": "Lumbee SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9815, GEOID 9815R",
+   "note": "Census class code D9; AIANNHR = S (state). Matched to the federally recognized nation by name comparison. Area delineated as an SDTSA for 2020; the Lumbee Tribe of North Carolina is on the 2026 federal list, so no recognition fact is given here."
+  },
+  {
+   "nation": "lumbee-tribe-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9815",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "ma-chis-lower-creek-indian-tribe-of-alabama",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9820",
+    "name": "MaChis Lower Creek SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9820, GEOID 9820R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "ma-chis-lower-creek-indian-tribe-of-alabama",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9820",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "ma-chis-lower-creek-indian-tribe-of-alabama",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9820",
+   "note": "The 2020 Census delineated \"MaChis Lower Creek SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "meherrin-tribe-of-north-carolina",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9825",
+    "name": "Meherrin SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9825, GEOID 9825R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "meherrin-tribe-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9825",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "meherrin-tribe-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9825",
+   "note": "The 2020 Census delineated \"Meherrin SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "nanticoke-indian-tribe-of-delaware",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9830",
+    "name": "Nanticoke Indian Tribe SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9830, GEOID 9830R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "nanticoke-indian-tribe-of-delaware",
+   "field": "state-presence",
+   "value": {
+    "state": "DE",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9830",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "nanticoke-indian-tribe-of-delaware",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9830",
+   "note": "The 2020 Census delineated \"Nanticoke Indian Tribe SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "nanticoke-lenni-lenape-tribal-nation",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9835",
+    "name": "Nanticoke Lenni Lenape SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9835, GEOID 9835R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list. Linked by name comparison to the state-recognized helper entity; GAO (2012) lists the \"Nanticoke Lenni-Lenape Indians of New Jersey\" (id nanticoke-lenni-lenape-indians-of-new-jersey), which may be the same group."
+  },
+  {
+   "nation": "nanticoke-lenni-lenape-tribal-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "NJ",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9835",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "nanticoke-lenni-lenape-tribal-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9835",
+   "note": "The 2020 Census delineated \"Nanticoke Lenni Lenape SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "natchitoches-tribe-of-louisiana",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9836",
+    "name": "Natchitoches SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9836, GEOID 9836R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "natchitoches-tribe-of-louisiana",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9836",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "natchitoches-tribe-of-louisiana",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9836",
+   "note": "The 2020 Census delineated \"Natchitoches SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "occaneechi-band-of-the-saponi-nation-of-north-carolina",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9838",
+    "name": "Occaneechi-Saponi SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9838, GEOID 9838R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "occaneechi-band-of-the-saponi-nation-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9838",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "occaneechi-band-of-the-saponi-nation-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9838",
+   "note": "The 2020 Census delineated \"Occaneechi-Saponi SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "pointe-au-chien-indian-tribe",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9849",
+    "name": "Pointe-au-Chien SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9849, GEOID 9849R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "pointe-au-chien-indian-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9849",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "pointe-au-chien-indian-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9849",
+   "note": "The 2020 Census delineated \"Pointe-au-Chien SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "ramapough-lenape-nation",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9850",
+    "name": "Ramapough SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9850, GEOID 9850R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "ramapough-lenape-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "NJ",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9850",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "ramapough-lenape-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9850",
+   "note": "The 2020 Census delineated \"Ramapough SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "sappony",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9865",
+    "name": "Sappony SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9865, GEOID 9865R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "sappony",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9865",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "sappony",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9865",
+   "note": "The 2020 Census delineated \"Sappony SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "santee-indian-organization",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9875",
+    "name": "Santee SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9875, GEOID 9875R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list. Census area name \"Santee\"; linked by name comparison to the only South Carolina state-recognized group with Santee in its name in the state-recognized helper list. Census DDHC-A lists both \"Santee Indian Organization\" and \"Santee Indian Nation of South Carolina\"."
+  },
+  {
+   "nation": "santee-indian-organization",
+   "field": "state-presence",
+   "value": {
+    "state": "SC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9875",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "santee-indian-organization",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9875",
+   "note": "The 2020 Census delineated \"Santee SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "southeastern-mvskoke-nation",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9880",
+    "name": "Southeastern Mvskoke Nation SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9880, GEOID 9880R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "southeastern-mvskoke-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9880",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "southeastern-mvskoke-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9880",
+   "note": "The 2020 Census delineated \"Southeastern Mvskoke Nation SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "united-cherokee-ani-yun-wiya-nation",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9950",
+    "name": "United Cherokee Ani-Yun-Wiya Nation SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9950, GEOID 9950R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "united-cherokee-ani-yun-wiya-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9950",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "united-cherokee-ani-yun-wiya-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9950",
+   "note": "The 2020 Census delineated \"United Cherokee Ani-Yun-Wiya Nation SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "united-houma-nation",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9960",
+    "name": "United Houma Nation SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9960, GEOID 9960R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "united-houma-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9960",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "united-houma-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9960",
+   "note": "The 2020 Census delineated \"United Houma Nation SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "pee-dee-indian-nation-of-upper-south-carolina",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9963",
+    "name": "Upper South Carolina Pee Dee SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9963, GEOID 9963R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "pee-dee-indian-nation-of-upper-south-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "SC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9963",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "pee-dee-indian-nation-of-upper-south-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9963",
+   "note": "The 2020 Census delineated \"Upper South Carolina Pee Dee SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "waccamaw-indian-people",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9967",
+    "name": "Waccamaw SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9967, GEOID 9967R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list. Census area name \"Waccamaw\" (South Carolina); linked by name comparison to the South Carolina state-recognized Waccamaw Indian People. Distinct from the Waccamaw Siouan SDTSA in North Carolina."
+  },
+  {
+   "nation": "waccamaw-indian-people",
+   "field": "state-presence",
+   "value": {
+    "state": "SC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9967",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "waccamaw-indian-people",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9967",
+   "note": "The 2020 Census delineated \"Waccamaw SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "waccamaw-siouan-tribe-of-north-carolina",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9970",
+    "name": "Waccamaw Siouan SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9970, GEOID 9970R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "waccamaw-siouan-tribe-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9970",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "waccamaw-siouan-tribe-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9970",
+   "note": "The 2020 Census delineated \"Waccamaw Siouan SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "wassamasaw-tribe-of-varnertown-indians",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9975",
+    "name": "Wassamasaw SDTSA",
+    "area_type": "State Designated Tribal Statistical Area",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9975, GEOID 9975R",
+   "note": "Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "wassamasaw-tribe-of-varnertown-indians",
+   "field": "state-presence",
+   "value": {
+    "state": "SC",
+    "presence": "other"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9975",
+   "note": "State Designated Tribal Statistical Area (statistical area, not land held by the group)."
+  },
+  {
+   "nation": "wassamasaw-tribe-of-varnertown-indians",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State Designated Tribal Statistical Area; area 9975",
+   "note": "The 2020 Census delineated \"Wassamasaw SDTSA\" (State Designated Tribal Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "golden-hill-paugussett",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9100",
+    "name": "Golden Hill Paugussett (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9100, GEOID 9100R",
+   "note": "Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "golden-hill-paugussett",
+   "field": "state-presence",
+   "value": {
+    "state": "CT",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9100",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "golden-hill-paugussett",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State American Indian reservation; area 9100",
+   "note": "The 2020 Census delineated \"Golden Hill Paugussett (state) Reservation\" (State American Indian reservation). The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "hassanamisco-nipmuc-tribe",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9150",
+    "name": "Hassanamisco (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9150, GEOID 9150R",
+   "note": "Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "hassanamisco-nipmuc-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "MA",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9150",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "hassanamisco-nipmuc-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State American Indian reservation; area 9150",
+   "note": "The 2020 Census delineated \"Hassanamisco (state) Reservation\" (State American Indian reservation). The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "mattaponi-indian-tribe",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9230",
+    "name": "Mattaponi (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9230, GEOID 9230R",
+   "note": "Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "mattaponi-indian-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "VA",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9230",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "mattaponi-indian-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State American Indian reservation; area 9230",
+   "note": "The 2020 Census delineated \"Mattaponi (state) Reservation\" (State American Indian reservation). The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "mowa-band-of-choctaw-indians",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9240",
+    "name": "MOWA Choctaw (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9240, GEOID 9240R",
+   "note": "Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "mowa-band-of-choctaw-indians",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9240",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "mowa-band-of-choctaw-indians",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State American Indian reservation; area 9240",
+   "note": "The 2020 Census delineated \"MOWA Choctaw (state) Reservation\" (State American Indian reservation). The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "pamunkey-indian-tribe",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9260",
+    "name": "Pamunkey (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9260, GEOID 9260R",
+   "note": "Census class code D4; AIANNHR = S (state). Matched to the federally recognized nation by name comparison. State reservation retained in the 2020 Census; the Pamunkey Indian Tribe is on the 2026 federal list, so no recognition fact is given here."
+  },
+  {
+   "nation": "pamunkey-indian-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "VA",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9260",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "eastern-pequot-tribal-nation",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9280",
+    "name": "Paucatuck Eastern Pequot (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9280, GEOID 9280R",
+   "note": "Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list. Census area name \"Paucatuck Eastern Pequot (state) Reservation\"; linked by name comparison to the state-recognized helper entity Eastern Pequot Tribal Nation."
+  },
+  {
+   "nation": "eastern-pequot-tribal-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "CT",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9280",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "eastern-pequot-tribal-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "Definition of State American Indian reservation; area 9280",
+   "note": "The 2020 Census delineated \"Paucatuck Eastern Pequot (state) Reservation\" (State American Indian reservation). The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "poospatuck-indian-nation",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9300",
+    "name": "Poospatuck (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9300, GEOID 9300R",
+   "note": "Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list."
+  },
+  {
+   "nation": "poospatuck-indian-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "NY",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9300",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "poospatuck-indian-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "Definition of State American Indian reservation; area 9300",
+   "note": "The 2020 Census delineated \"Poospatuck (state) Reservation\" (State American Indian reservation). The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "schaghticoke-tribe",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9350",
+    "name": "Schaghticoke (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9350, GEOID 9350R",
+   "note": "Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list. Census area name \"Schaghticoke (state) Reservation\"; linked by name comparison to the state-recognized helper entity. The Census file does not name the group that holds the reservation."
+  },
+  {
+   "nation": "schaghticoke-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "CT",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9350",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "schaghticoke-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "Definition of State American Indian reservation; area 9350",
+   "note": "The 2020 Census delineated \"Schaghticoke (state) Reservation\" (State American Indian reservation). The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "shinnecock-indian-nation",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9370",
+    "name": "Shinnecock (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9370, GEOID 9370R",
+   "note": "Census class code D4; AIANNHR = S (state). Matched to the federally recognized nation by name comparison. State reservation in the 2020 Census; the Shinnecock Indian Nation is on the 2026 federal list, so no recognition fact is given here."
+  },
+  {
+   "nation": "shinnecock-indian-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "NY",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "medium",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9370",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "lower-muscogee-creek-tribe",
+   "field": "census-area",
+   "value": {
+    "geographic_identifier": "9400",
+    "name": "Tama (state) Reservation",
+    "area_type": "State American Indian reservation",
+    "vintage": "2020"
+   },
+   "source": "census-tiger-2020-aiannh",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9400, GEOID 9400R",
+   "note": "Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched by name comparison with the state-recognized helper list. Census lists one state American Indian reservation in Georgia, \"Tama (state) Reservation\". Linked to the Lower Muscogee Creek Tribe because GAO-12-348 (Table 1 note) reports that tribe has a state reservation according to state officials, and the Census DDHC-A code list names \"Lower Muscogee Creek Tama Tribal Town\". The Census geography file itself does not name the group."
+  },
+  {
+   "nation": "lower-muscogee-creek-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "GA",
+    "presence": "land"
+   },
+   "source": "census-aiannh-codes-by-state-2020",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "AIANNHCE 9400",
+   "note": "State reservation land."
+  },
+  {
+   "nation": "lower-muscogee-creek-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "census-aian-geography-definitions",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "Definition of State American Indian reservation; area 9400",
+   "note": "The 2020 Census delineated \"Tama (state) Reservation\" (State American Indian reservation). The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes, delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area fact)."
+  },
+  {
+   "nation": "mowa-band-of-choctaw-indians",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "hud-ihbg-fy2026-formula-allocations",
+   "confidence": "high",
+   "as_of": "2026-04",
+   "locator": "AL section, recipient \"MOWA Band of Choctaw Indians\"",
+   "note": "HUD lists \"MOWA Band of Choctaw Indians\" (Mt. Vernon, AL) as an FY2026 Indian Housing Block Grant formula recipient with a final allocation of $4,038,182. The HUD list does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "mowa-band-of-choctaw-indians",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "hud-ihbg-fy2026-formula-allocations",
+   "confidence": "high",
+   "as_of": "2026-04",
+   "locator": "AL section",
+   "note": "HUD gives recipient city Mt. Vernon."
+  },
+  {
+   "nation": "coharie-tribe-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "hud-ihbg-fy2026-formula-allocations",
+   "confidence": "high",
+   "as_of": "2026-04",
+   "locator": "NC section, recipient \"Coharie Tribe\"",
+   "note": "HUD lists \"Coharie Tribe\" (Clinton, NC) as an FY2026 Indian Housing Block Grant formula recipient with a final allocation of $1,046,538. The HUD list does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "coharie-tribe-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "hud-ihbg-fy2026-formula-allocations",
+   "confidence": "high",
+   "as_of": "2026-04",
+   "locator": "NC section",
+   "note": "HUD gives recipient city Clinton."
+  },
+  {
+   "nation": "haliwa-saponi-indian-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "hud-ihbg-fy2026-formula-allocations",
+   "confidence": "high",
+   "as_of": "2026-04",
+   "locator": "NC section, recipient \"Haliwa-Saponi Indian Tribe\"",
+   "note": "HUD lists \"Haliwa-Saponi Indian Tribe\" (Hollister, NC) as an FY2026 Indian Housing Block Grant formula recipient with a final allocation of $1,571,604. The HUD list does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "haliwa-saponi-indian-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "hud-ihbg-fy2026-formula-allocations",
+   "confidence": "high",
+   "as_of": "2026-04",
+   "locator": "NC section",
+   "note": "HUD gives recipient city Hollister."
+  },
+  {
+   "nation": "waccamaw-siouan-tribe-of-north-carolina",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "hud-ihbg-fy2026-formula-allocations",
+   "confidence": "high",
+   "as_of": "2026-04",
+   "locator": "NC section, recipient \"Waccamaw Siouan Tribe\"",
+   "note": "HUD lists \"Waccamaw Siouan Tribe\" (Bolton, NC) as an FY2026 Indian Housing Block Grant formula recipient with a final allocation of $449,989. The HUD list does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "waccamaw-siouan-tribe-of-north-carolina",
+   "field": "state-presence",
+   "value": {
+    "state": "NC",
+    "presence": "other"
+   },
+   "source": "hud-ihbg-fy2026-formula-allocations",
+   "confidence": "high",
+   "as_of": "2026-04",
+   "locator": "NC section",
+   "note": "HUD gives recipient city Bolton."
+  },
+  {
+   "nation": "wyandot-of-anderdon-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "usaspending-award-90na8457",
+   "confidence": "medium",
+   "as_of": "2022-09-30",
+   "locator": "Award summary",
+   "note": "HHS Administration for Native Americans award 90NA8457 (Assistance Listing 93.612, Native American Programs) to recipient \"THE WYANDOT OF ANDERDON NATION\", start 2022-09-30, amount $939,565; project \"SEVEN GENERATIONS: WYANDOT OF ANDERDON NATION CULTURAL AWARENESS, REVITALIZATION, AND PRESERVATION PROJECT\". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026). Id shared with the state-recognized helper entity by name."
+  },
+  {
+   "nation": "wyandot-of-anderdon-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "MI",
+    "presence": "other"
+   },
+   "source": "usaspending-award-90na8457",
+   "confidence": "medium",
+   "as_of": "2022-09-30",
+   "locator": "Place of performance state",
+   "note": "Place of performance state on the award record."
+  },
+  {
+   "nation": "munsee-tribe-in-kansas",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "usaspending-award-90na8504",
+   "confidence": "low",
+   "as_of": "2024-09-30",
+   "locator": "Award summary",
+   "note": "HHS Administration for Native Americans award 90NA8504 (Assistance Listing 93.612, Native American Programs) to recipient \"THE MUNSEE TRIBE IN KANSAS, INC.\", start 2024-09-30, amount $900,000; project \"THE MUNSEE TRIBE IN KANSAS HISTORICAL AND GENEALOGICAL PROGRAM\". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026). Known to this dataset only from this federal award record; the record classifies the recipient as private higher education and does not characterize its status."
+  },
+  {
+   "nation": "munsee-tribe-in-kansas",
+   "field": "state-presence",
+   "value": {
+    "state": "KS",
+    "presence": "other"
+   },
+   "source": "usaspending-award-90na8504",
+   "confidence": "low",
+   "as_of": "2024-09-30",
+   "locator": "Place of performance state",
+   "note": "Place of performance state on the award record."
+  },
+  {
+   "nation": "muscogee-nation-of-florida",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "usaspending-award-90na8516",
+   "confidence": "medium",
+   "as_of": "2025-09-30",
+   "locator": "Award summary",
+   "note": "HHS Administration for Native Americans award 90NA8516 (Assistance Listing 93.612, Native American Programs) to recipient \"MUSCOGEE NATION OF FLORIDA, INC.\", start 2025-09-30, amount $699,670; project \"MUSCOGEE NATION OF FLORIDA TRIBAL MUSEUM\". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026). Award summary refers to 604 tribal citizens (as stated in the award description). Possible match with a petitioning helper record; not verified."
+  },
+  {
+   "nation": "muscogee-nation-of-florida",
+   "field": "state-presence",
+   "value": {
+    "state": "FL",
+    "presence": "other"
+   },
+   "source": "usaspending-award-90na8516",
+   "confidence": "medium",
+   "as_of": "2025-09-30",
+   "locator": "Place of performance state",
+   "note": "Place of performance state on the award record."
+  },
+  {
+   "nation": "juaneno-band-of-mission-indians",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "usaspending-award-90na8343",
+   "confidence": "low",
+   "as_of": "2018-09-30",
+   "locator": "Award summary",
+   "note": "HHS Administration for Native Americans award 90NA8343 (Assistance Listing 93.612, Native American Programs) to recipient \"JUANENO BAND OF MISSION INDIANS\", start 2018-09-30, amount $520,949.22; project \"ACJACHEMEN NATION FEDERAL ACKNOWLEDGMENT PROJECT\". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026). Recipient name as recorded is \"JUANENO BAND OF MISSION INDIANS\" while the project title names the \"Acjachemen Nation\". Two federal acknowledgment petitioners use these names (petitioners 84A and 84B, per Federal Register notices held by the petitioning helper); this record does not show which one."
+  },
+  {
+   "nation": "juaneno-band-of-mission-indians",
+   "field": "state-presence",
+   "value": {
+    "state": "CA",
+    "presence": "other"
+   },
+   "source": "usaspending-award-90na8343",
+   "confidence": "low",
+   "as_of": "2018-09-30",
+   "locator": "Place of performance state",
+   "note": "Place of performance state on the award record."
+  },
+  {
+   "nation": "qutekcak-native-tribe",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "usaspending-award-90nk0197",
+   "confidence": "medium",
+   "as_of": "2022-09-30",
+   "locator": "Award summary",
+   "note": "HHS Administration for Native Americans award 90NK0197 (Assistance Listing 93.612, Native American Programs) to recipient \"QUTEKCAK NATIVE TRIBE\", start 2022-09-30, amount $85,408; project \"UPDATING TECHNOLOGY INFRASTRUCTURE AT THE QNT TRIBAL OFFICE\". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "qutekcak-native-tribe",
+   "field": "state-presence",
+   "value": {
+    "state": "AK",
+    "presence": "other"
+   },
+   "source": "usaspending-award-90nk0197",
+   "confidence": "medium",
+   "as_of": "2022-09-30",
+   "locator": "Place of performance state",
+   "note": "Place of performance state on the award record."
+  },
+  {
+   "nation": "united-houma-nation",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "usaspending-award-90xn0159",
+   "confidence": "medium",
+   "as_of": "2021-09-01",
+   "locator": "Award summary",
+   "note": "HHS Administration for Native Americans award 90XN0159 (Assistance Listing 93.587, Promote the Survival and Continuing Vitality of Native American Languages) to recipient \"UNITED HOUMA NATION INC\", start 2021-09-01, amount $82,609; project \"UNITED HOUMA NATION TRADITIONAL LANGUAGE DOCUMENTATION AND YOUTH ENGAGEMENT PROJECT\". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026)."
+  },
+  {
+   "nation": "united-houma-nation",
+   "field": "state-presence",
+   "value": {
+    "state": "LA",
+    "presence": "other"
+   },
+   "source": "usaspending-award-90xn0159",
+   "confidence": "medium",
+   "as_of": "2021-09-01",
+   "locator": "Place of performance state",
+   "note": "Place of performance state on the award record."
+  },
+  {
+   "nation": "ma-chis-lower-creek-indian-tribe-of-alabama",
+   "field": "recognition",
+   "value": {
+    "type": "unrecognized"
+   },
+   "source": "usaspending-award-90xn0025",
+   "confidence": "medium",
+   "as_of": "2021-09-01",
+   "locator": "Award summary",
+   "note": "HHS Administration for Native Americans award 90XN0025 (Assistance Listing 93.587, Promote the Survival and Continuing Vitality of Native American Languages) to recipient \"MACHIS LOWER CREEK INDIAN TRIBE OF ALABAMA\", start 2021-09-01, amount $82,609; project \"HONORING OUR ANCESTORS (Creek language program)\". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026). Award description writes \"MA-CHIS LOWER CREEK INDIAN TRIBE OF ALABAMA\"."
+  },
+  {
+   "nation": "ma-chis-lower-creek-indian-tribe-of-alabama",
+   "field": "state-presence",
+   "value": {
+    "state": "AL",
+    "presence": "other"
+   },
+   "source": "usaspending-award-90xn0025",
+   "confidence": "medium",
+   "as_of": "2021-09-01",
+   "locator": "Place of performance state",
+   "note": "Place of performance state on the award record."
+  },
+  {
+   "nation": "choctaw-apache-tribe-of-ebarb",
+   "field": "name-alternate",
+   "value": {
+    "name": "Choctaw-Apache Community of Ebarb"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 1724",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "coharie-tribe-of-north-carolina",
+   "field": "name-alternate",
+   "value": {
+    "name": "Coharie Indian Tribe"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 1734",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "lower-muscogee-creek-tribe",
+   "field": "name-alternate",
+   "value": {
+    "name": "Lower Muscogee Creek Tama Tribal Town"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 06B",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "waccamaw-siouan-tribe-of-north-carolina",
+   "field": "name-alternate",
+   "value": {
+    "name": "Waccamaw Siouan Indian Tribe"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 2202",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "juaneno-band-of-mission-indians",
+   "field": "name-alternate",
+   "value": {
+    "name": "Juaneno (Acjachemem)"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 1842",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "euchee-tribe-of-indians",
+   "field": "name-alternate",
+   "value": {
+    "name": "Yuchi"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 2244",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "meherrin-tribe-of-north-carolina",
+   "field": "name-alternate",
+   "value": {
+    "name": "Meherrin Indian Tribe"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 1912",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "edisto-natchez-kusso-tribe-of-south-carolina",
+   "field": "name-alternate",
+   "value": {
+    "name": "Natchez Indian Tribe of South Carolina (Kusso-Natchez; Edisto)"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 2Z9",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "hassanamisco-nipmuc-tribe",
+   "field": "name-alternate",
+   "value": {
+    "name": "Hassanamisco Band of the Nipmuc Nation"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 1816",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "adai-caddo-indians-of-louisiana",
+   "field": "name-alternate",
+   "value": {
+    "name": "Caddo Adais Indians"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 1682",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "eastern-pequot-tribal-nation",
+   "field": "name-alternate",
+   "value": {
+    "name": "Paucatuck Eastern Pequot"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 1990",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  },
+  {
+   "nation": "sappony",
+   "field": "name-alternate",
+   "value": {
+    "name": "Sappony (Indians of Person County)"
+   },
+   "source": "census-2020-ddhca-popgroup-codes",
+   "confidence": "low",
+   "as_of": "2020",
+   "locator": "POPGROUP code 07W",
+   "note": "Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting source."
+  }
+ ],
+ "log": {
+  "queries": [
+   "https://www.gao.gov/products/gao-12-348 (web fetch)",
+   "https://www.gao.gov/assets/600/590726.txt (web fetch, offsets 0, 85000, 90000, 100000)",
+   "https://www.gao.gov/assets/gao-12-348.pdf (curl 403; web fetch, truncated at Appendix III)",
+   "Wayback copies of the GAO report (connection reset by the proxy)",
+   "web search: \"Received Federal Funding before Fiscal Year 2007\" GAO-12-348 table 8",
+   "web search: \"Federal Funding for Non-Federally Recognized Tribes\" accessible text GAO-12-348 html",
+   "https://legistorm.com/reports/view/gao/42045/Federal_Funding_for_Non_Federally_Recognized_Tribes.html (summary only)",
+   "https://www2.census.gov/geo/docs/reference/codes2020/national_aiannh2020.txt",
+   "https://www2.census.gov/geo/docs/reference/codes2020/national_aiannh_by_state2020.txt",
+   "https://www2.census.gov/geo/tiger/TIGER2020/AIANNH/tl_2020_us_aiannh.zip (DBF attributes only)",
+   "https://census.gov/programs-surveys/geography/about/glossary/aian-definitions.html",
+   "web search: census.gov 2020 State Designated Tribal Statistical Area SDTSA list tribe",
+   "https://api.census.gov/data/2020/dec/ddhca/variables/POPGROUP.json",
+   "https://api.census.gov/data/2020/dec/ddhca?get=...&POPGROUP=... (redirects to missing_key; no population values)",
+   "https://www.govinfo.gov/content/pkg/STATUTE-72/pdf/STATUTE-72-Pg619.pdf",
+   "https://www.govinfo.gov/content/pkg/STATUTE-78/pdf/STATUTE-78-Pg390.pdf",
+   "https://www.law.cornell.edu/uscode/text/25/677a (Ute Partition Act definitions; omitted section)",
+   "web search: HUD Indian Housing Block Grant FY 2025 final allocations formula",
+   "https://www.hud.gov/sites/default/files/PIH/documents/FY26-IHBG-Formula-Allocations-Congressional-Notification.pdf",
+   "https://www.hud.gov/sites/default/files/PIH/documents/FY-2025IHBG-Formula-Allocation-Press-Release-Awards-List.pdf",
+   "https://www.hud.gov/sites/dfiles/PIH/documents/FY_25_Grant_Summary.pdf",
+   "https://dol.gov/sites/dolgov/files/ETA/advisories/TEGL/2023/TEGL%2016-23/Attachment%20I%20%28Accessible%20PDF%29.pdf (WIOA Section 166 PY2024 grantees)",
+   "https://acf.gov/ana/current-recipients (page lists only program areas; the awards-list PDF link was not exposed)",
+   "https://acf.gov/ana/grants-funding/awardees and https://acf.gov/sites/default/files/documents/ocs/Table_Allocations_Tribes_2025.05.01.pdf (blocked: client error / 202 empty)",
+   "https://api.usaspending.gov/api/v2/search/spending_by_award/ (Assistance Listings 93.612, 93.587, 93.581; FY2023-FY2026 action dates; 362 award rows)",
+   "https://api.usaspending.gov/api/v2/awards/<id>/ for 7 awards"
+  ],
+  "tools": [
+   "page fetch (web-fetch tool)",
+   "web search",
+   "curl",
+   "pdftotext",
+   "python3 -I (DBF and JSON parsing)"
+  ],
+  "limits": "GAO-12-348: Tables 1, 3, 4, 6 and the body text were read through the web-fetch tool. Appendix IV Table 8 (groups funded before FY2007) and Appendix V could not be read: gao.gov returns 403 to curl, Wayback was unreachable, and the fetched text stopped partway through Appendix III. Table 7 (state-recognized tribes as of Sept. 2011) was not transcribed because another helper covers state recognition. GAO names a single program for only some groups; per-tribe program lists are not in the report. Census: the area-to-group link is by name comparison (Census publishes only area names), so census-area facts are medium or low confidence. Areas not linked to a group because the name fits more than one group: 9525 Beaver Creek SDTSA (SC), 9844 Pee Dee SDTSA (SC), 9775 Isle de Jean Charles SDTSA (LA). The Census DDHC-A population API needs a key, so no population counts were taken. ACF/ANA and OCS pages (acf.gov) blocked automated access, so ANA awards come from USAspending records (FY2023-FY2026 search window, plus earlier awards still showing in that window); the USAspending award records give the recipient name and project but not recognition status. Indian Health Service and Department of Education Title VI eligibility lists that name groups were not found as bulk lists and were not covered. The DOL WIOA Section 166 PY2024 grantee list was checked; its non-federal grantees are intertribal or urban organizations and a consortium, not named groups, so nothing was recorded from it. Termination: only the California Rancheria Act lists were compared with the 2026 list; other termination statutes were reviewed only at the category level (see narrative).",
+  "narrative": "Inclusion rule: a group is included only when a federal government source opened here names it (GAO report table or text, Census geography file, federal statute, HUD allocation list, or a USAspending federal award record), and it is not on the 2026 federal list (roster.json). Groups known only from their own websites or press were not considered. Recognition facts use type unrecognized meaning 'not federally recognized'; each note says what the source states (for example GAO's reported state-recognition status) and makes no judgment about the group. Each source gives its own recognition and state-presence fact. Ids: where a group's name matches an entity already defined by the state-recognized helper (identical, or differing only by 'of North Carolina', 'the', 'Inc.', or the Muskogee/Muscogee spelling), that id is reused so records merge, and the note gives the name exactly as each source writes it. Otherwise the id is a slug of the name as the source writes it, with a 'possible match' note where another helper likely holds the same group under a different name (Nanticoke Indian Association / Nanticoke Indian Tribe of Delaware; Nanticoke Lenni-Lenape Indians of New Jersey / Nanticoke Lenni-Lenape Tribal Nation; St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council / Missisquoi, St. Francis-Sokoki Band). Groups that probably also appear in the petitioning helper's output, by name: American Indian Council of Mariposa County (Southern Sierra Miwuk Nation), Burt Lake Band, Duwamish, Euchee/Yuchi, Eel River Tribe of Indiana, Juaneno Band of Mission Indians, Muscogee Nation of Florida, Qutekcak Native Tribe, Saponi Nation of Missouri Mahenips Band, St. Francis/Sokoki Band, Tuscarora Nation of Indians of the Carolinas, Wesget Sipu. Sources worked: (1) GAO-12-348 Table 1 (26 groups with direct federal funding FY2007-2010) and body text: 23 groups recorded plus Four Winds Cherokee (named in the text as a consortium member). Lumbee Tribe of North Carolina, Mashpee Wampanoag Tribe and Shinnecock Indian Nation appear in Table 1 but are on the 2026 federal list, so no recognition facts were written for them. GAO Table 6: nine California rancherias or reservations terminated and not restored, recorded with the 1958 Act (Pub. L. 85-671) and the 1964 amendment (Pub. L. 88-419) as legal basis. All 41 rancherias named in the 1958 Act were checked against the 2026 list; by name, eleven are not found: the seven in GAO Table 6, plus Montgomery Creek (named inside the Pit River Tribe entry on the 2026 list) and Smith River, Table Bluff and North Fork, which GAO Table 5 lists as restored (Smith River Rancheria; Wiyot Tribe, formerly the Table Bluff Reservation; Northfork Rancheria of Mono Indians). This agrees with GAO. (2) Census 2020 TIGER AIANNH: 35 State Designated Tribal Statistical Areas and 10 state American Indian reservations. 42 were linked to a group by name (3 of them to nations on the 2026 list: Lumbee SDTSA, Pamunkey and Shinnecock state reservations, census-area facts only). Three were left unlinked because they fit more than one group. Tama (state) Reservation, Georgia, was linked to the Lower Muscogee Creek Tribe at low confidence by combining GAO's note and the Census DDHC-A name 'Lower Muscogee Creek Tama Tribal Town'. (3) Termination: other termination acts were reviewed by category. Western Oregon tribes and bands named in the 1954 Western Oregon termination act were excluded because GAO reports Interior's view that many were historic tribes no longer organized at termination, and their descendants are largely citizens of restored confederated nations. Classes of individuals terminated within nations that are still recognized (for example the mixed-blood provisions of the 1954 Ute Partition Act) were excluded because the statute treats them as individuals, not as a separate nation. Nations that were terminated and later restored are on the 2026 list and were skipped. (4) HUD FY2026 IHBG formula allocations: four recipients not on the federal list (MOWA, Coharie, Haliwa-Saponi, Waccamaw Siouan). HHS/ANA awards from USAspending: seven recipients not on the federal list. Other ANA recipients not on the list were intertribal, urban, Native Hawaiian, territorial, educational or nonprofit organizations, not named groups, and were excluded. One recipient, The Munsee Tribe in Kansas, Inc., is documented only by its federal award record; it is recorded at low confidence with the record's own classification. (5) The Census 2020 DDHC-A code list was used only for low-confidence alternate names of groups already documented by another source. No contacts were recorded: none of the sources is an official contact list for these groups."
+ }
+}

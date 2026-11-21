@@ -1,0 +1,580 @@
+id: nottawaseppi-huron-band-of-the-potawatomi
+entity_type: native-nation
+names:
+  official: Nottawaseppi Huron Band of the Potawatomi, Michigan
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 60 FR 66315 (1995-12-21)
+  petition_number: '9'
+  petition_stage: Letter of Intent to Petition 03/11/1972; Acknowledgment effective 3/17/1996 60 FR 66315
+  since: '1996-03-17'
+  source: federal-register-95-31075
+  confidence: high
+  as_of: '1996-03-17'
+  locator: 'Petitioner #9'
+  note: 'Petitioner name: Huron Potawatomi, Inc. (aka Nottawaseppi Huron Potawatomi Band). Also see source(s):
+    ofa-list-of-petitioners-by-state-2013.'
+states:
+- state: MI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1550
+  note: 'Census area with land in this state: Huron Potawatomi Reservation and Off-Reservation Trust Land
+    (code 1550). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1550'
+  name: Huron Potawatomi Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1550
+  note: Matched by name. Census class code D1.
+population:
+- count: 1700
+  kind: citizens
+  source: nottawaseppi-huron-band-of-the-potawatom-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'About page: "more than 1,700 enrolled Tribal Members"; home page says "over 1,500"; undated statement
+    on the official site; as_of is the access date'
+- count: 62
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1550, field POP100
+  note: 'Census area: Huron Potawatomi Reservation and Off-Reservation Trust Land (code 1550). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 950
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3167 (Nottawaseppi Huron Band of the Potawatomi, Michigan alone or
+    in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Nottawaseppi Huron Band of the Potawatomi, Michigan'
+    (race code 6157) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1670
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Nottawaseppi Huron Band of Potawatomi', PDF page 4, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://nhbp-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+- kind: physical-address
+  value: 1485 Mno-Bmadzewen Way, Fulton, MI 49052
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+- kind: mailing-address
+  value: 1485 Mno-Bmadzewen Way, Fulton, MI 49052
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+- kind: phone
+  value: (269) 729-5151
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+- kind: fax
+  value: (269) 729-5920
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+languages:
+- name: Bodéwadmi (Potawatomi)
+  language_tag: pot
+  source: nottawaseppi-huron-band-of-the-potawatom-culture
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Bodéwadmi language classes"'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Michigan Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+governing_documents:
+- kind: law-code
+  title: Nottawaseppi Huron Band of Potawatomi
+  year: '2014'
+  link: https://narf.org/nill/codes/nottawaseppi/index.html
+  source: national-indian-law-library-code-codes-nottawaseppi
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Nottawaseppi Huron Band of Potawatomi - Tribal Constitution
+  year: '2013'
+  link: https://narf.org/nill/constitutions/nottawaseppi/index.html
+  source: national-indian-law-library-constitution-constitutions-nottawaseppi
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Last amended: 2013. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-nottawaseppi-huron-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-code/) returned
+    HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-nottawaseppi-huron-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-code/)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Nottawaseppi Huron Band of the Potawatomi Tribe Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/constitution/) returned HTTP 404,
+    so it is not recorded.'
+- kind: law-code
+  title: Nottawaseppi Huron Band of the Potawatomi Tribal Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/constitution/) returned HTTP 404,
+    so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: tribal-court
+  source: national-indian-law-library-nottawaseppi-huron-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Nottawaseppi Huron Band of Potawatomi Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
+  note: 'Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: CIT Assessment and Facilitation Services
+    citation: NHBP Section 7.3-20 & Section 7.3-21
+    link: https://ecode360.com/NO3540
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/cit-assessment-and-facilitation-services/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: DV Perpetrator to Complete Treatment Program
+    citation: NHBP Section 7.4-30 and 7.3-31 and 7.4-32
+    link: https://ecode360.com/NO3548
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dv-perpetrator-to-complete-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Juvenile Dispositional Alternatives
+    citation: NHBP Section 7.3-53
+    link: https://ecode360.com/NO3544
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-dispositional-alternatives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Juvenile Dispositional Court Report
+    citation: NHBP Section 7.3-52
+    link: https://ecode360.com/NO3543
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-dispositional-court-report/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Juvenile Victim’s Rights
+    citation: NHBP Section 7.3-24
+    link: https://ecode360.com/NO3541
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-victims-rights/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Juvenile’s Rights in Diversion
+    citation: NHBP Section 7.3-25
+    link: https://ecode360.com/NO3542
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juveniles-rights-in-diversion/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Ordering Rehabilitation Programs
+    citation: NHBP Section 8.8-22 and 8.8-23
+    link: https://ecode360.com/NO3560
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ordering-rehabilitation-programs/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Orders Requiring a Pregnant Woman to Treatment Program
+    citation: NHBP Section 7.5-25
+    link: https://ecode360.com/NO3552
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/orders-requiring-a-pregnant-woman-to-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Purpose, Goals, Customs and Traditional Policy of Juvenile Justice
+    citation: NHBP Section 7.3-2, Section 7.3-3, & Section 7.3-5
+    link: https://ecode360.com/NO3539
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-goals-customs-and-traditional-policy-of-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Purpose of the Childrens Protection ode
+    citation: NHBP Section 7.5-1
+    link: https://ecode360.com/NO3551
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-childrens-protection-ode/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Sentencing Discretion for Rehabilitative Program
+    citation: NHBP Section 8.6-66
+    link: https://ecode360.com/NO3558
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-discretion-for-rehabilitative-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: arbitration
+    title: Sec.13.01. Arbitration
+    citation: Sec.13.01. Arbitration
+    link: https://www.narf.org/nill/codes/nottawaseppi/index.html
+    source: national-indian-law-library-code-index-nottawaseppi
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: Sec.14.02. Mediation
+    citation: Sec.14.02. Mediation
+    link: https://www.narf.org/nill/codes/nottawaseppi/index.html
+    source: national-indian-law-library-code-index-nottawaseppi
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: 'Chapter 03: Title VIII-03 Arbitration Ordinance'
+    citation: 'Chapter 03: Title VIII-03 Arbitration Ordinance; Resolution No. 05-01-08-06 Amending the
+      Arbitration Ordinance; Sec.3. Agreements to Arbitrate are Enforceable; Sec.5. Stay of Proceedings
+      and Order to Proceed with Arbitration; Sec.9. Arbitration Award Not Appealable'
+    link: https://www.narf.org/nill/codes/nottawaseppi/index.html
+    source: national-indian-law-library-code-index-nottawaseppi
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: Arbitration
+    citation: Arbitration
+    link: https://narf.org/nill/codes/nottawaseppi/index.html
+    source: national-indian-law-library-code-codes-nottawaseppi
+    confidence: medium
+    as_of: '2014'
+    locator: 'Table of Contents, under ''Article XIII: Resolution of Unfair Labor Practice Charges'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: Mediation
+    citation: Mediation
+    link: https://narf.org/nill/codes/nottawaseppi/index.html
+    source: national-indian-law-library-code-codes-nottawaseppi
+    confidence: medium
+    as_of: '2014'
+    locator: 'Table of Contents, under ''Article XIV: Resolution of Bargaining Impasse'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: Title VIII-03 Arbitration Ordinance
+    citation: Title VIII-03 Arbitration Ordinance
+    link: https://narf.org/nill/codes/nottawaseppi/index.html
+    source: national-indian-law-library-code-codes-nottawaseppi
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 03:'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: Amending the Arbitration Ordinance
+    citation: Amending the Arbitration Ordinance; Agreements to Arbitrate are Enforceable; Stay of Proceedings
+      and Order to Proceed with Arbitration; Arbitration Award Not Appealable
+    link: https://narf.org/nill/codes/nottawaseppi/index.html
+    source: national-indian-law-library-code-codes-nottawaseppi
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Resolution No. 05-01-08-06'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: MI
+    status: approved
+    approved: '2016-12-12'
+    federal_register_citation: 81 FR 89504
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2016-12-12'
+    locator: result page 16 (?page=16), row 19
+    note: 'Listed as: "Nottawaseppi Huron Band of Potawatomi Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Nottawaseppi Huron Band of the Potawatomi, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.12.12%20Nottawaseppi%20Huron%20Band%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/12/12/2016-29744/indian-gaming-approval-of-an-amendment-to-a-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: approved
+    approved: '1999-02-18'
+    federal_register_citation: 64 FR 8111
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1999-02-18'
+    locator: result page 16 (?page=16), row 20
+    note: 'Listed as: "Nottawaseppi Huron Band of Potawatomi Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Nottawaseppi Huron Band of the Potawatomi, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.02.18_nottawaseppi_huron_band_of_potawatomi_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/18/99-4005/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: approved
+    approved: '2009-10-08'
+    federal_register_citation: 74 FR 51875
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-10-08'
+    locator: result page 16 (?page=16), row 21
+    note: 'Listed as: "Nottawaseppi Huron Band of Potawatomi Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Nottawaseppi Huron Band of the Potawatomi, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.10.08_nottawaseppi_huron_band_of_potawatomi_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/10/08/E9-24301/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2016-12-12).
+  ordinances:
+  - approved: '2000-08-07'
+    link: https://www.nigc.gov?wpdmdl=9930&ind=9945
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2000-08-07'
+    locator: table row 102, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 102 lists the nation
+      as "Huron Potawatomi, Inc.". Name matched to roster by spelling variant.
+  - approved: '2000-08-07'
+    link: https://www.nigc.gov?wpdmdl=10460&ind=10475
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2000-08-07'
+    locator: table row 172, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 172 lists the nation
+      as "Nottawaseppi Huron Band of Potawatomi". Name matched to roster by spelling variant.
+  - approved: '2009-08-26'
+    link: https://www.nigc.gov?wpdmdl=10461&ind=10476
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-08-26'
+    locator: table row 172, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
+      as "Nottawaseppi Huron Band of Potawatomi". Name matched to roster by spelling variant.
+  - approved: '2011-02-10'
+    link: https://www.nigc.gov?wpdmdl=10462&ind=10477
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-02-10'
+    locator: table row 172, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
+      as "Nottawaseppi Huron Band of Potawatomi". Name matched to roster by spelling variant.
+  - approved: '2012-09-13'
+    link: https://www.nigc.gov?wpdmdl=10463&ind=10478
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-09-13'
+    locator: table row 172, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
+      as "Nottawaseppi Huron Band of Potawatomi". Name matched to roster by spelling variant.
+  - approved: '2021-09-16'
+    link: https://www.nigc.gov?wpdmdl=10464&ind=10480
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2021-09-16'
+    locator: table row 172, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
+      as "Nottawaseppi Huron Band of Potawatomi". Name matched to roster by spelling variant.
+  - approved: '2025-10-29'
+    link: https://www.nigc.gov?wpdmdl=13303&ind=13304
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2025-10-29'
+    locator: table row 172, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
+      as "Nottawaseppi Huron Band of Potawatomi". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Nottawaseppi Huron Band of Potawatomi,
+      Michigan". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Nottawaseppi Huron Band of the Potawatomi, Michigan Confidence lowered from high by
+    the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2016-03-18 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-nottawaseppi-huron-band-of-the-potawatomi
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Nottawaseppi Huron Band of Potawatomi". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Huron Potawatomi, Inc.". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

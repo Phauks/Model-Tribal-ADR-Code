@@ -1,0 +1,442 @@
+id: hopland-band-of-pomo-indians
+entity_type: native-nation
+names:
+  official: Hopland Band of Pomo Indians, California
+  self_designation:
+  - name: Sho-Ka-Wah
+    language_tag: poo
+    source: hbpi-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''In the Central Pomo language, we call ourselves Sho-Ka-Wah, meaning “east of the
+      river.”'''
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopland Band of Pomo Indians, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1515
+  note: 'Census area with land in this state: Hopland Rancheria (code 1515). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '1515'
+  name: Hopland Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1515
+  note: Matched by name. Census class code D2.
+population:
+- count: 249
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1515, field POP100
+  note: 'Census area: Hopland Rancheria (code 1515). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 501
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3026 (Hopland Band of Pomo Indians alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Hopland Band of Pomo Indians' (race code 6128) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 926
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Hopland Band of Pomo Indians', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.hoplandtribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopland Band of Pomo Indians, California
+- kind: physical-address
+  value: 3000 Shanel Road, Hopland, CA 95449
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopland Band of Pomo Indians, California
+- kind: mailing-address
+  value: 3000 Shanel Road, Hopland, CA 95449
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopland Band of Pomo Indians, California
+- kind: phone
+  value: (707) 472-2100
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopland Band of Pomo Indians, California
+- kind: fax
+  value: (707) 744-1506
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopland Band of Pomo Indians, California
+- kind: website
+  value: https://www.hbpi.gov/
+  label: Official website (directory address https://www.hoplandtribe.com/ redirects here)
+  source: hbpi-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Directory URL works but redirects to hbpi.gov.
+languages:
+- name: Central Pomo
+  language_tag: poo
+  source: hbpi-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Homepage refers to 'the Central Pomo language'.
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopland Band of Pomo Indians, California
+governing_documents:
+- kind: law-code
+  title: Hopland Band of Pomo Indians, California
+  year: '2012'
+  link: https://narf.org/nill/codes/hopland_pomo/index.html
+  source: national-indian-law-library-code-codes-hopland-pomo
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Most recent Update : March 2012. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Hopland Band of Pomo Indians, California - Tribal Constitution
+  year: '2009'
+  link: https://narf.org/nill/constitutions/hopland_pomo/index.html
+  source: national-indian-law-library-constitution-constitutions-hopland-pomo
+  confidence: medium
+  as_of: '2009'
+  locator: page heading
+  note: 'Effective: August 22, 2009. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-hopland-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the link the source gives (https://www.hoplandtribe.com/tribal-constitution-and-laws)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.tribalcourt.org/laws-ordinances
+  source: national-indian-law-library-hopland-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Northern California
+    Intertribal Court System''s website .".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-hopland-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the link the source gives (https://www.hoplandtribe.com/tribal-constitution-and-laws)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: https://www.tribalcourt.org/laws-ordinances
+  source: national-indian-law-library-hopland-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Nothern
+    California Intertribal Court System''s website .".'
+- kind: constitution
+  title: Hopland Band of Pomo Indians Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Hopland Band of Pomo Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.hoplandtribe.com/sites/default/files/2017-05/Hopland%20Constitution%20effective%208-22-09.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Hopland Tribal Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Hopland Band of Pomo Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.hoplandtribe.com/tribal-constitution-and-laws) returned
+    HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-hopland-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.hoplandtribe.com/tribal-court) returned HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Hopland Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Hopland Band of Pomo Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.hoplandtribe.com/tribal-court) returned
+    HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker conference (Peace Making Roster)
+    description: An optional, consent-based way of resolving disputes in which a peacemaker from a roster
+      of tribal members mediates before or instead of trial; peacemakers conduct informal conferences
+      and encourage an agreement acceptable to all parties.
+    legal_basis: Hopland Tribal Code, Title 12, Chapter 12-1, Sections 12-1.20.020 and 12-1.100.010 to
+      12-1.100.070
+    case_types:
+    - civil
+    - other
+    participation: voluntary
+    relationship_to_court: Parties file a request with the Court Clerk and the judge refers the case to
+      a rostered peacemaker if no party objects; no lawsuit need be pending, and parties may continue
+      in Tribal Court if peacemaking fails.
+    enforcement: A written settlement signed by the parties and the peacemaker is an enforceable agreement;
+      if a lawsuit is pending it is filed and treated as the final judgment.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: hopland-title-12-tribal-court
+    confidence: medium
+    as_of: '2025'
+    locator: Sections 12-1.20.020, 12-1.100.020-070
+    note: Roster kept by Tribal Council with advice of the Chief Judge and Culture Committee; peacemakers
+      must be tribal members at least 50 years old. Counsel not allowed; a party may have a Big Talker
+      (a non-lawyer tribal member or relative) only as needed to understand the proceedings. Discussions
+      are confidential. as_of is NARF posting year.
+  - kind: other
+    name: Presentation of claims to Tribal Council (Tribal Claims Ordinance)
+    description: Claims for money or damages against the Tribe or its business enterprises, including
+      employee wage claims, must be presented to and acted on by the Tribal Council before suit.
+    legal_basis: Hopland Tribal Code, Title 12, Chapter 12-4, Sections 12-4.10 to 12-4.150
+    case_types:
+    - employment
+    - commercial
+    - civil
+    participation: required
+    relationship_to_court: A prerequisite to filing suit.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: hopland-title-12-tribal-court
+    confidence: medium
+    as_of: '2025'
+    locator: Sections 12-4.10, 12-4.20
+  provisions:
+  - kind: peacemaking
+    title: Tribal Court Ordinance – Peacemakers
+    citation: Hopland Tribal Code, Title 12, Chapter 12-1, Section 12-1.100
+    summary: Creates a Peacemaker roster and sets qualifications, duties, request procedure, representation
+      rules and enforceability of settlements.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: hopland-title-12-tribal-court
+    confidence: medium
+    as_of: '2025'
+  - kind: arbitration
+    title: Validity and Enforceability of Arbitration Agreements
+    citation: Hopland Tribal Code, Title 12, Chapter 12-3 (Ordinance No. 02-17-07)
+    summary: Gives the Tribal Court authority to determine validity of arbitration agreements, compel
+      or enjoin arbitration, appoint arbitrators, and confirm, correct or vacate awards.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: hopland-title-12-tribal-court
+    confidence: medium
+    as_of: '2025'
+    locator: Sections 12-3.10 to 12-3.160
+  - kind: other
+    title: Community Service for Elders in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/community-service-for-elders-in-lieu-of-fines/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-for-elders-in-lieu-of-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Community Service or Treatment in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/community-service-or-treatment-in-lieu-of-fines/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-or-treatment-in-lieu-of-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Referral for Treatment in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/referral-for-treatment-in-lieu-of-fines/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/referral-for-treatment-in-lieu-of-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: peacemaking
+    title: Title 12, Chapter 12-1 – Tribal Court Ordinance
+    citation: Title 12, Chapter 12-1 – Tribal Court Ordinance
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Hopland Band of Pomo Indians, California
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      procedures, qualifications, and authority to lead community-related peace activities.'
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2024-01-31'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-01-31'
+    locator: result page 7 (?page=7), row 17
+    note: 'Listed as: "Hopland Band of Pomo Indians Secretarial Procedures" (Secretarial Procedures);
+      list''s Tribe column: "Hopland Band of Pomo Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.01.31_hopland_band_of_pomo_indians_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 7 (?page=7), row 18
+    note: 'Listed as: "Hopland Band of Pomo Indians Tribal State Gaming Compact" (Extensions); list''s
+      Tribe column: "Hopland Band of Pomo Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_hopland_band_of_pomo_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 7 (?page=7), row 19
+    note: 'Listed as: "Hopland Band of Pomo Indians Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Hopland Band of Pomo Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_hopland_band_of_pomo_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-06-30).
+  ordinances:
+  - approved: '1996-09-04'
+    link: https://www.nigc.gov?wpdmdl=9926&ind=9941
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-09-04'
+    locator: table row 100, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 100 lists the nation
+      as "Hopland Band of Pomo Indians".
+  - approved: '2000-04-27'
+    link: https://www.nigc.gov?wpdmdl=9927&ind=9942
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-04-27'
+    locator: table row 100, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 100 lists the nation
+      as "Hopland Band of Pomo Indians".
+  - approved: '2001-03-19'
+    link: https://www.nigc.gov?wpdmdl=9928&ind=9943
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-03-19'
+    locator: table row 100, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 100 lists the nation
+      as "Hopland Band of Pomo Indians".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Hopland Band of Pomo Indians, California Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

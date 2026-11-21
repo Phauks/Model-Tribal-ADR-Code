@@ -1,0 +1,179 @@
+id: big-lagoon-rancheria
+entity_type: native-nation
+names:
+  official: Big Lagoon Rancheria, California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Lagoon Rancheria, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0240
+  note: 'Census area with land in this state: Big Lagoon Rancheria (code 0240). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '0240'
+  name: Big Lagoon Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0240
+  note: Matched by name. Census class code D2.
+population:
+- count: 17
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0240, field POP100
+  note: 'Census area: Big Lagoon Rancheria (code 0240). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 52
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2866 (Big Lagoon Rancheria alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Big Lagoon Rancheria' (race code 6347) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 17
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Big Lagoon Rancheria', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://caltribalfamilies.org/places/big-lagoon-rancheria/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Lagoon Rancheria, California
+- kind: physical-address
+  value: 708 9th Street, Arcata, CA 95521
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Lagoon Rancheria, California
+- kind: mailing-address
+  value: P.O. Box 3060, Trinidad, CA 95570
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Lagoon Rancheria, California
+- kind: phone
+  value: (707) 826-2079
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Lagoon Rancheria, California
+- kind: fax
+  value: (707) 826-0495
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Lagoon Rancheria, California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Northern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Lagoon Rancheria, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.nigc.gov/images/uploads/gamingordinances/biglagoonrncha-ordappr081094.pdf
+  source: national-indian-law-library-big-lagoon
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At National Indian
+    Gaming Commission website , tribe''s gaming ordinance.".'
+- kind: constitution
+  title: Constitution and By-laws of the Big Lagoon Rancheria
+  year: '1985'
+  link: https://narf.org/nill/constitutions/big_lagoon/index.html
+  source: national-indian-law-library-constitution-constitutions-big-lagoon
+  confidence: medium
+  as_of: '1985'
+  locator: page heading
+  note: 'Last amended: 1985. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2018-08-24'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-24'
+    locator: result page 4 (?page=4), row 16
+    note: 'Listed as: "Big Lagoon Rancheria Secretarial Procedures" (Secretarial Procedures); list''s
+      Tribe column: "Big Lagoon Rancheria, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.24%20Big%20Lagoon%20Procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  ordinances:
+  - approved: '1994-08-10'
+    link: https://www.nigc.gov?wpdmdl=3390&ind=3392
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-08-10'
+    locator: table row 15, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 15 lists the nation
+      as "Big Lagoon Rancheria".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Big Lagoon Rancheria, California Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

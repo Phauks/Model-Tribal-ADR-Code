@@ -1,0 +1,449 @@
+id: poarch-band-of-creek-indians
+entity_type: native-nation
+names:
+  official: Poarch Band of Creek Indians
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 49 FR 24083
+  petition_number: '13'
+  petition_stage: Letter of Intent to Petition 05/15/1975; Acknowledgment effective 08/10/1984 49 FR 24083
+  since: '1984-08-10'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1984-08-10'
+  locator: 'Petitioner #13'
+- type: state
+  state: AL
+  legal_basis: Code of Alabama 1975, Section 41-9-708 (Acts 1984, No. 84-257)
+  source: alabama-code-41-9-708
+  confidence: high
+  as_of: '2025'
+  locator: Section 41-9-708(b)
+  note: Statute names 'The Poarch Band of Creeks of Escambia County' as a member tribe of the Alabama
+    Indian Affairs Commission; the commission lists it as also federally recognized.
+- type: state
+  state: AL
+  legal_basis: Alabama Administrative Code Rule 475-X-1-.02
+  source: alabama-administrative-code-475-x-1-2026
+  confidence: high
+  as_of: '2026-07-31'
+  locator: Rule 475-X-1-.02 Members
+states:
+- state: AL
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Poarch Band of Creek Indians
+- state: AL
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2865
+  note: 'Census area with land in this state: Poarch Creek Reservation and Off-Reservation Trust Land
+    (code 2865). Area matched to the nation by name.'
+- state: FL
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2865
+  note: 'Census area with land in this state: Poarch Creek Reservation and Off-Reservation Trust Land
+    (code 2865). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2865'
+  name: Poarch Creek Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2865
+  note: Matched by name. Census class code D1.
+population:
+- count: 287
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2865, field POP100
+  note: 'Census area: Poarch Creek Reservation and Off-Reservation Trust Land (code 2865). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 6237
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3214 (Poarch Band of Creeks alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Poarch Band of Creeks' (race code 5744) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label matched by name variant.
+- count: 2885
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Poarch Band of Creeks', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1914
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 85, row T38500 'Poarch Band of Creek Indians of Alabama'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://pci-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Poarch Band of Creek Indians
+- kind: physical-address
+  value: 5811 Jack Springs Road, Atmore, AL 36502
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Poarch Band of Creek Indians
+- kind: mailing-address
+  value: 5811 Jack Springs Road, Atmore, AL 36502
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Poarch Band of Creek Indians
+- kind: phone
+  value: (251) 368-9136
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Poarch Band of Creek Indians
+- kind: fax
+  value: (251) 368-1026
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Poarch Band of Creek Indians
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Poarch Band of Creek Indians
+governing_documents:
+- kind: law-code
+  title: Poarch Band of Creek Indians
+  year: '2019'
+  link: https://narf.org/nill/codes/poarchcode/index.html
+  source: national-indian-law-library-code-codes-poarchcode
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Table of Contents Updated: May 2019. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution of the Poarch Band of Creek Indians
+  year: '2016'
+  link: https://narf.org/nill/constitutions/poarch_creek/index.html
+  source: national-indian-law-library-constitution-constitutions-poarch-creek
+  confidence: medium
+  as_of: '2016'
+  locator: page heading
+  note: 'Amended: March 8, 2016. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal Code/Code of Ordinances
+  link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+  source: national-indian-law-library-poarch-creek
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
+    . Tribal Code/Code of Ordinances.".'
+- kind: law-code
+  title: Individual Ordinances
+  link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/ordinances/code_of_ordinances
+  source: national-indian-law-library-poarch-creek
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
+    . Individual Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances?nodeId=TRCO
+  source: national-indian-law-library-poarch-creek
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Municode
+    website .".'
+- kind: constitution
+  title: Poarch Band of Creek Indians Constitution – Muni Code
+  link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances?nodeId=TRCO
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alabama section, entry 'Poarch Band of Creek Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Poarch Band of Creek Indians Tribal Code – Muni Code
+  link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alabama section, entry 'Poarch Band of Creek Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-poarch-creek
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.poarchcreekindians.org/westminster/tribal_court.html) returned HTTP
+    404, so it is not recorded.'
+- kind: tribal-court
+  name: Poarch Band of Creek Indians Tribal Court
+  link: http://pci-nsn.gov/westminster/tribal_court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alabama section, entry 'Poarch Band of Creek Indians'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternative Sentencing for Domestic Violence Crimes
+    citation: Poarch Band of Creek Indians Code Sec. 8A-2-15
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-domestic-violence-crimes/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Conditions and Purpose of the Healing to Wellness Court
+    citation: Poarch Band of Creek Indians Code Sec. 3-3-1 and Sec. 3-3-5 and 3-3-6
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/conditions-and-purpose-of-the-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Dispositional Hearing for Dispositional Alternatives for Juveniles
+    citation: Poarch Band of Creek Indians Code Sec. 10-2-14 and 10-2-15
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-hearing-for-dispositional-alternatives-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Domestic Abuse Counseling / Family Counseling for Protection Order
+    citation: Poarch Band of Creek Indians Code Sec. 15-2-3
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-abuse-counseling-family-counseling-for-protection-order/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: DUI Court program / Drug Court Program
+    citation: Poarch Band of Creek Indians Code Sec. 8-8-1
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dui-court-program-drug-court-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Adjustment or Conference for Juveniles
+    citation: Poarch Band of Creek Indians Code Sec. 10-2-11
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-or-conference-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Juvenile Justice Code Policy and Purpose
+    citation: Poarch Band of Creek Indians Code Sec. 10-2-2
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-justice-code-policy-and-purpose/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Perpetrator Accountability Program for Domestic Violence
+    citation: Poarch Band of Creek Indians Code Sec. 8A-2-4
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/perpetrator-accountability-program-for-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Revocation of Participation in Wellness Court
+    citation: Poarch Band of Creek Indians Code Sec. 3-3-8
+    link: https://library.municode.com/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/revocation-of-participation-in-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Sec. 41-1-9 Enforcement and Dispute Resolution
+    citation: Sec. 41-1-9 Enforcement and Dispute Resolution
+    link: https://www.narf.org/nill/codes/poarchcode/index.html
+    source: national-indian-law-library-code-index-poarchcode
+    confidence: medium
+    as_of: 2019-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Sec. 44-4-7 Dispute Resolution
+    citation: Sec. 44-4-7 Dispute Resolution
+    link: https://www.narf.org/nill/codes/poarchcode/index.html
+    source: national-indian-law-library-code-index-poarchcode
+    confidence: medium
+    as_of: 2019-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: 41-1-9 Enforcement and Dispute Resolution
+    citation: 41-1-9 Enforcement and Dispute Resolution
+    link: https://narf.org/nill/codes/poarchcode/index.html
+    source: national-indian-law-library-code-codes-poarchcode
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'TITLE 41 - REVENUE ALLOCATION PLAN'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2019); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: other
+    title: 44-4-7 Dispute Resolution
+    citation: 44-4-7 Dispute Resolution
+    link: https://narf.org/nill/codes/poarchcode/index.html
+    source: national-indian-law-library-code-codes-poarchcode
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'TITLE 44 - TRIBAL SUPPORT AND BENEFITS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2019); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+gaming:
+  ordinances:
+  - approved: '1993-08-02'
+    link: https://www.nigc.gov?wpdmdl=10636&ind=10669
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-08-02'
+    locator: table row 194, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 194 lists the nation
+      as "Poarch Band of Creek Indians".
+  - approved: '2010-07-30'
+    link: https://www.nigc.gov?wpdmdl=10653&ind=10670
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-07-30'
+    locator: table row 194, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
+      as "Poarch Band of Creek Indians".
+  - approved: '2013-08-22'
+    link: https://www.nigc.gov?wpdmdl=10654&ind=10671
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-08-22'
+    locator: table row 194, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
+      as "Poarch Band of Creek Indians".
+  - approved: '2015-08-11'
+    link: https://www.nigc.gov?wpdmdl=10655&ind=10672
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-08-11'
+    locator: table row 194, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
+      as "Poarch Band of Creek Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Poarch Band of Creek Indians".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Poarch Band of Creek Indians Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Poarch Band of Creek Indians".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

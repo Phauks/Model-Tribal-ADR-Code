@@ -1,0 +1,271 @@
+id: ottawa-tribe-of-oklahoma
+entity_type: native-nation
+names:
+  official: Ottawa Tribe of Oklahoma
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ottawa Tribe of Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5770
+  note: 'Census area with land in this state: Ottawa OTSA (code 5770). Statistical area only (not a land
+    holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5770'
+  name: Ottawa OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5770
+  note: Matched by name. Census class code D6.
+population:
+- count: 4000
+  kind: citizens
+  source: ottawa-tribe-of-oklahoma-home
+  confidence: high
+  as_of: '2024'
+  note: '"As of 2024, the Ottawa Tribe of Oklahoma has over 4,000 enrolled members"'
+- count: 5388
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5770, field POP100
+  note: 'Census area: Ottawa OTSA (code 5770). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 525
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3182 (Ottawa Tribe of Oklahoma alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Ottawa Tribe of Oklahoma' (race code 6037) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 2536
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Ottawa Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 543
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 85, row T36300 'Ottawa Tribe of Oklahoma'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.ottawatribe.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ottawa Tribe of Oklahoma
+- kind: physical-address
+  value: 13 S. Hwy 69A, Miami, OK 74354
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ottawa Tribe of Oklahoma
+- kind: mailing-address
+  value: P.O. Box 110, Miami, OK 74355
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ottawa Tribe of Oklahoma
+- kind: phone
+  value: (918) 540-1536
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ottawa Tribe of Oklahoma
+- kind: fax
+  value: (918) 542-3214
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ottawa Tribe of Oklahoma
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern Oklahoma
+  bureau_of_indian_affairs_agency: Miami Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ottawa Tribe of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Ottawa Tribe of Oklahoma" among organizations under constitutions approved by
+    the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Ottawa Tribe of Oklahoma) (approved 1938) states it was adopted under Act of June
+    26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-otcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.ottawatribe.gov/publicly-available-documents
+  source: national-indian-law-library-ottawa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Selected codes and ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.ottawatribe.gov/tribal-constitution
+  source: national-indian-law-library-ottawa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Ottawa Tribe of Oklahoma Constitution
+  link: http://www.ottawatribe.org/961-2/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Ottawa Tribe of Oklahoma'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
+- kind: corporate-charter
+  title: Corporate charter (Ottawa Tribe of Oklahoma)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/otchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-otchrtr
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Ottawa Tribe of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/otcons.html
+  source: university-of-oklahoma-indian-reorganization-act-otcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Miami Agency CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.ottawatribe.gov/tribal-court
+  source: national-indian-law-library-ottawa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2005-06-01'
+    federal_register_citation: 70 FR 31499
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-06-01'
+    locator: result page 28 (?page=28), row 17
+    note: 'Listed as: "Ottawa Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Kiowa Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.06.01%20Ottawa%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/06/01/05-10877/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-06-01).
+  ordinances:
+  - approved: '1998-08-28'
+    link: https://www.nigc.gov?wpdmdl=10531&ind=10552
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-08-28'
+    locator: table row 181, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 181 lists the nation
+      as "Ottawa Tribe of Oklahoma".
+  - approved: '1998-12-07'
+    link: https://www.nigc.gov?wpdmdl=10532&ind=10553
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-12-07'
+    locator: table row 181, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 181 lists the nation
+      as "Ottawa Tribe of Oklahoma".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Ottawa Tribe of Oklahoma Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

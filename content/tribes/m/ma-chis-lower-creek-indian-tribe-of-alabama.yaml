@@ -1,0 +1,125 @@
+id: ma-chis-lower-creek-indian-tribe-of-alabama
+entity_type: native-nation
+names:
+  official: Ma-Chis Lower Creek Indian Tribe of Alabama
+  alternate:
+  - name: Machis Lower Creek Indian Tribe of AL
+    source: alabama-indian-affairs-commission-tribes-list-2026
+    confidence: high
+    as_of: 2026-10
+  - name: MaChis Lower Alabama Creek Indian Tribe
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9820
+  note: The 2020 Census delineated "MaChis Lower Creek SDTSA" (State Designated Tribal Statistical Area).
+    The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally
+    recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed
+    state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: unrecognized
+  source: usaspending-award-90xn0025
+  confidence: medium
+  as_of: '2021-09-01'
+  locator: Award summary
+  note: HHS Administration for Native Americans award 90XN0025 (Assistance Listing 93.587, Promote the
+    Survival and Continuing Vitality of Native American Languages) to recipient "MACHIS LOWER CREEK INDIAN
+    TRIBE OF ALABAMA", start 2021-09-01, amount $82,609; project "HONORING OUR ANCESTORS (Creek language
+    program)". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026).
+    Award description writes "MA-CHIS LOWER CREEK INDIAN TRIBE OF ALABAMA".
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 52 FR 34319 (as printed in the Office of Federal
+    Acknowledgment list)
+  petition_number: '87'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 06/27/1983; Declined
+    Acknowledgment effective 08/22/1988 52 FR 34319
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #87'
+  note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
+    list.
+- type: state
+  state: AL
+  legal_basis: Code of Alabama 1975, Section 41-9-708 (Acts 1984, No. 84-257; Acts 1985, No. 85-738; Acts
+    1992, No. 92-134)
+  source: alabama-code-41-9-708
+  confidence: high
+  as_of: '2025'
+  locator: Section 41-9-708(b)
+  note: Statute names the group as 'the Ma-Chis Lower Creek Indian Tribe' among the Indian tribes, bands
+    or groups with a seat on the Alabama Indian Affairs Commission.
+- type: state
+  state: AL
+  legal_basis: Alabama Administrative Code Rule 475-X-1-.02 (Alabama Indian Affairs Commission, effective
+    2026-09-14)
+  source: alabama-administrative-code-475-x-1-2026
+  confidence: high
+  as_of: '2026-07-31'
+  locator: Rule 475-X-1-.02 Members
+- type: state
+  state: AL
+  legal_basis: Listed by the Alabama Indian Affairs Commission as a tribe recognized by the State of Alabama
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  as_of: 2026-10
+states:
+- state: AL
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9820
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: AL
+  presence: other
+  source: usaspending-award-90xn0025
+  confidence: medium
+  as_of: '2021-09-01'
+  locator: Place of performance state
+  note: Place of performance state on the award record.
+- state: AL
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: AL
+  presence: other
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  as_of: 2026-10
+  note: State-recognized in Alabama; Alabama contact address listed.
+census_areas:
+- geographic_identifier: '9820'
+  name: MaChis Lower Creek SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9820, GEOID 9820R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+contacts:
+- kind: website
+  value: https://machistribe.com
+  label: Official website
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  as_of: 2026-10
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

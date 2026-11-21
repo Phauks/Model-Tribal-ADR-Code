@@ -1,0 +1,108 @@
+id: meherrin-tribe-of-north-carolina
+entity_type: native-nation
+names:
+  official: Meherrin Tribe of North Carolina
+  alternate:
+  - name: Meherrin Indian Tribe
+    source: census-2020-ddhca-popgroup-codes
+    confidence: low
+    as_of: '2020'
+    locator: POPGROUP code 1912
+    note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
+      source.
+  - name: Meherrin Indian Tribe
+    source: north-carolina-tribal-communities-2026
+    confidence: high
+    as_of: '2026'
+  self_designation:
+  - name: Kauwets’a·ka
+    language_tag: und
+    source: north-carolina-tribal-communities-2026
+    confidence: high
+    as_of: '2026'
+    note: 'Source: ''The Meherrin People, also known as Kauwets’a·ka (People of the Water)''. The source
+      does not give a language code; it says the Meherrin share a language with the Tuscarora.'
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9825
+  note: The 2020 Census delineated "Meherrin SDTSA" (State Designated Tribal Statistical Area). The Census
+    Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized
+    and have no reservation or off-reservation trust land, delineated with a governor-appointed state
+    liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-7.1 (2003-54, s. 2)
+  since: '1971-07-20'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-7.1
+  note: Statute says the tribe is designated and officially recognized 'from and after' this date.
+- type: state
+  state: NC
+  legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
+    Affairs
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+states:
+- state: NC
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9825
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NC
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+census_areas:
+- geographic_identifier: '9825'
+  name: Meherrin SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9825, GEOID 9825R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+contacts:
+- kind: physical-address
+  value: 852 NC-11 South, Ahoskie, NC 27910
+  label: Tribal physical address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: mailing-address
+  value: PO Box 274, Ahoskie, NC 27910
+  label: Tribal mailing address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: email-general
+  value: meherrincouncil@gmail.com
+  label: Tribal council email
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: http://www.meherrinnation.org/
+  label: Official website
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

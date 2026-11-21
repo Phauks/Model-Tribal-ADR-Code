@@ -1,0 +1,388 @@
+id: tunica-biloxi-indian-tribe
+entity_type: native-nation
+names:
+  official: Tunica-Biloxi Indian Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 46 FR 38411
+  petition_number: '1'
+  petition_stage: Letter of Intent to Petition 09/07/1978; Acknowledgment effective 09/25/1981 46 FR 38411
+  since: '1981-09-25'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1981-09-25'
+  locator: 'Petitioner #1'
+states:
+- state: LA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tunica-Biloxi Indian Tribe
+- state: LA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4315
+  note: 'Census area with land in this state: Tunica-Biloxi Reservation and Off-Reservation Trust Land
+    (code 4315). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4315'
+  name: Tunica-Biloxi Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4315
+  note: Matched by name. Census class code D1.
+population:
+- count: 1500
+  kind: citizens
+  source: tunica-biloxi-indian-tribe-culture
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'culture page: "approximately 1,500 enrolled"; history page: "1,226 enrolled" (conflict)'
+- count: 106
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4315, field POP100
+  note: 'Census area: Tunica-Biloxi Reservation and Off-Reservation Trust Land (code 4315). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1246
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3383 (Tunica Biloxi Indian Tribe of Louisiana alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Tunica Biloxi Indian Tribe of Louisiana' (race code
+    5808) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 1040
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Tunica-Biloxi Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 358
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T50700 'Tunica-Biloxi Indian Tribe of Lousiana'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.tunicabiloxi.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tunica-Biloxi Indian Tribe
+- kind: physical-address
+  value: 150 Melacon Drive, Marksville, LA 71351
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tunica-Biloxi Indian Tribe
+- kind: mailing-address
+  value: P.O. Box 1589, Marksville, LA 71351
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tunica-Biloxi Indian Tribe
+- kind: phone
+  value: (318) 253-9767
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tunica-Biloxi Indian Tribe
+- kind: fax
+  value: (318) 253-9791
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tunica-Biloxi Indian Tribe
+languages:
+- name: Tunica
+  language_tag: tun
+  source: tunica-biloxi-indian-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: revitalization of the Tunica language
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tunica-Biloxi Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Resolutions and Ordinances. Additional codes listed under Tribal Info tab
+  link: https://www.tunicabiloxi.org/resolutions-and-ordinances/
+  source: national-indian-law-library-tunica-biloxi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Resolutions and Ordinances. Additional codes listed under Tribal Info tab.".'
+- kind: law-code
+  title: 'From GPO: Federal Register .  Liquor Control Code'
+  year: '1994'
+  link: http://www.gpo.gov/fdsys/pkg/FR-1994-06-15/html/94-14514.htm
+  source: national-indian-law-library-tunica-biloxi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "From GPO: Federal Register
+    . 1994 Liquor Control Code.".'
+- kind: constitution
+  title: Articles of Incorporation
+  year: '1974'
+  link: https://thorpe.law.ou.edu/constitution/tunica-biloxie/index.html
+  source: national-indian-law-library-tunica-biloxi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . 1974 Articles of Incorporation.".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://tunicabiloxi.org/tribal_court.php
+  source: national-indian-law-library-tunica-biloxi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Tunica-Biloxi Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Louisiana section, entry 'Tunica-Biloxi Tribe of Louisiana'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Disposition of Cases – Treatment, Counseling, and Rehabilitation Options
+    citation: Tunica-Biloxi Tribal Code § 14.24.190
+    link: https://library.municode.com/tribes_and_tribal_nations/tunica-biloxi_tribe_of_louisiana/codes/code_of_ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-of-cases-treatment-counseling-and-rehabilitation-options/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication/Sentencing. Database form of practice:
+      Alternative to incarceration; Counseling; Program; Rehabilitation.'
+gaming:
+  compacts:
+  - state: LA
+    status: approved
+    approved: '2001-01-17'
+    federal_register_citation: 66 FR 4038
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-01-17'
+    locator: result page 15 (?page=15), row 22
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.01.17_tunica_biloxi_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/01/17/01-1262/indian-gaming.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2000-05-12'
+    federal_register_citation: 65 FR 30606
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-12'
+    locator: result page 15 (?page=15), row 23
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.12_tunica_biloxi_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/12/00-11941/indian-gaming.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '1999-11-26'
+    federal_register_citation: 64 FR 66488
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-11-26'
+    locator: result page 15 (?page=15), row 24
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.11.26_tunica_biloxi_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/11/26/99-30725/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2001-10-09'
+    federal_register_citation: 66 FR 51453
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-10-09'
+    locator: result page 15 (?page=15), row 25
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.10.09_tunica_biloxi_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/10/09/01-25124/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2006-01-31'
+    federal_register_citation: 71 FR 5068
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2006-01-31'
+    locator: result page 16 (?page=16), row 1
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2006.01.31_tunica_biloxi_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/01/31/E6-1196/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2001-04-20'
+    federal_register_citation: 66 FR 20325
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-04-20'
+    locator: result page 16 (?page=16), row 2
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.04.20_tunica_biloxi_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/04/20/01-9800/indian-gaming.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '1992-11-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-11-18'
+    locator: result page 16 (?page=16), row 3
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.11.18_tunica_biloxi_indian_tribe_tribal_state_gaming_compact.pdf.'
+  - state: LA
+    status: approved
+    approved: '2013-10-22'
+    federal_register_citation: 78 FR 62649
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2013-10-22'
+    locator: result page 16 (?page=16), row 4
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2013.10.22_tunica_biloxi_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2013/10/22/2013-24348/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2019-12-27'
+    federal_register_citation: 84 FR 71451
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-12-27'
+    locator: result page 16 (?page=16), row 5
+    note: 'Listed as: "Tunica-Biloxi Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Tunica-Biloxi Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant.2019.12.27%20Tunica-Biloxi%20Indian%20Tribe%20of%20Louisiana%20and%20the%20State%20of%20Louisiana%20Tribal%20State%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/12/27/2019-27987/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-louisiana.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2019-12-27'
+    dispute_resolution_summary: Disputes not resolved informally go through written notice and a negotiation
+      period with a meeting within 10 days (45 days in all unless extended), then mandatory mediation
+      under American Arbitration Association commercial mediation rules, and then binding arbitration
+      under American Arbitration Association rules limited to the issues in the mediator's summary report.
+    dispute_resolution_locator: Section 14(D) (Dispute Resolution)
+    source: compact-la-tunica-biloxi-indian-tribe-2019
+    confidence: medium
+    as_of: '2019-12-27'
+    locator: Section 14(D) (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 2019 Tunica-Biloxi Indian
+      Tribe compact; the Coushatta, Chitimacha and Jena Band compacts were not checked.
+  ordinances:
+  - approved: '1994-04-05'
+    link: https://www.nigc.gov?wpdmdl=11434&ind=11481
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-04-05'
+    locator: table row 294, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 294 lists the nation
+      as "Tunica-Biloxi Tribe of Louisiana". Name matched to roster by spelling variant.
+  - approved: '1994-05-13'
+    link: https://www.nigc.gov?wpdmdl=11442&ind=11482
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-05-13'
+    locator: table row 294, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 294 lists the nation
+      as "Tunica-Biloxi Tribe of Louisiana". Name matched to roster by spelling variant.
+  - approved: '1998-01-23'
+    link: https://www.nigc.gov?wpdmdl=11441&ind=11483
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1998-01-23'
+    locator: table row 294, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 294 lists the nation
+      as "Tunica-Biloxi Tribe of Louisiana". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Tunica-Biloxi Indian Tribe of Louisiana".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Tunica-Biloxi Indian Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Tunica-Biloxi Tribe of Louisiana". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

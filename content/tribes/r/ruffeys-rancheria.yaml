@@ -1,0 +1,40 @@
+id: ruffeys-rancheria
+entity_type: native-nation
+names:
+  official: Ruffeys Rancheria
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  legal_basis: Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 26 Fed. Reg. 3073
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Appendix II, Table 6
+  note: GAO Table 6 lists "Ruffeys Rancheria" among nine California tribes whose recognition was terminated
+    and not restored; terminated 1961-04-11 (26 Fed. Reg. 3073). Name not found on the 2026 federal list
+    (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated,
+    unrestored tribes is not possible.
+- type: unrecognized
+  legal_basis: Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619
+  source: public-law-85-671-california-rancheria-act
+  confidence: medium
+  as_of: '1958-08-18'
+  locator: Section 1, list of rancherias and reservations
+  note: Section 1 names "Ruffeys" among the California rancherias and reservations whose lands and assets
+    were to be distributed (the termination statute). Unrestored status rests on GAO Table 6 and absence
+    from the 2026 federal list.
+states:
+- state: CA
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Appendix II, Table 6
+  note: Former rancheria or reservation in California named by GAO.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

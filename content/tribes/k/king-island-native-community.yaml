@@ -1,0 +1,215 @@
+id: king-island-native-community
+entity_type: native-nation
+names:
+  official: King Island Native Community
+  alternate:
+  - name: Ugiuvak
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "King Island"
+    note: Native place name for the community of King Island in Iñupiaq (State of Alaska, from the Alaska
+      Native Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+population:
+- count: 615
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "King Island", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 372
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2637 (King Island Native Community alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'King Island Native Community' (race code 5233) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+contacts:
+- kind: website
+  value: https://www.kingislandnativecommunity.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+- kind: physical-address
+  value: 704 E. 4th Avenue, Nome, AK 99762
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+- kind: mailing-address
+  value: P.O. Box 682, Nome, AK 99762
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+- kind: phone
+  value: (907) 443-2209
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+- kind: fax
+  value: (907) 443-8049
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+languages:
+- name: Iñupiaq
+  language_tag: ipk
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "King Island"
+  note: Language of the Native place name for the community (King Island), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The King Island Native Community" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May
+    1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (King Island Native Community Alaska) (approved 1939) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-kingiscon
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/IRA/kingiscon.HTML
+  source: national-indian-law-library-king-island
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/40029211/
+  source: national-indian-law-library-king-island
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website .".'
+- kind: corporate-charter
+  title: Corporate charter (King Island Native Community Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/kingischrt.html
+  source: university-of-oklahoma-indian-reorganization-act-kingischrt
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (King Island Native Community Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/kingiscon.HTML
+  source: university-of-oklahoma-indian-reorganization-act-kingiscon
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Alaska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Alaska. Applies to the nation''s Indian country
+    within Alaska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
+  note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: King Island Native Community Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+related_entities:
+- name: Bering Straits Native Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+  note: Regional corporation for the area, as listed in the directory.
+- name: Bering Straits Native Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "King Island"
+  note: State of Alaska lists this affiliation for the community where the nation is based (King Island),
+    not for the tribal government by name.
+- name: Kawerak, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "King Island"
+  note: State of Alaska lists this affiliation for the community where the nation is based (King Island),
+    not for the tribal government by name.
+- name: Eastern Aleutian Tribes, Incorporated
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "King Island"
+  note: State of Alaska lists this affiliation for the community where the nation is based (King Island),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,241 @@
+id: pueblo-of-jemez
+entity_type: native-nation
+names:
+  official: Pueblo of Jemez, New Mexico
+  self_designation:
+  - name: Walatowa
+    language_tag: tow
+    source: pueblo-of-jemez-about
+    confidence: medium
+    as_of: '2026-11-21'
+    note: '"a puebloan village that is known as ''Walatowa'' (a Towa word meaning ''this is the place'')";
+      village name; site text has a leading apostrophe'
+  - name: Hemish
+    language_tag: tow
+    source: pueblo-of-jemez-about-pecos-pueblo
+    confidence: medium
+    as_of: '2026-11-21'
+    note: '"the descendants of the Pecos Pueblo reside with the Hemish"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NM
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Jemez, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1685
+  note: 'Census area with land in this state: Jemez Pueblo (code 1685). Area matched to the nation by
+    name.'
+census_areas:
+- geographic_identifier: '1685'
+  name: Jemez Pueblo
+  area_type: Pueblo
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1685
+  note: Matched by name. Census class code D2.
+population:
+- count: 3400
+  kind: citizens
+  source: pueblo-of-jemez-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Population: 3,400 tribal members"; undated statement on the official site; as_of is the access
+    date'
+- count: 1991
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1685, field POP100
+  note: 'Census area: Jemez Pueblo (code 1685). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 3550
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3237 (Pueblo of Jemez alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pueblo of Jemez' (race code 6170) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 3825
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Jemez Pueblo', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1797
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T39700 'Pueblo of Jemez'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: https://www.jemezpueblo.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Jemez, New Mexico
+- kind: physical-address
+  value: 4471 Highway 4 N, Jemez Pueblo, NM 87024
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Jemez, New Mexico
+- kind: mailing-address
+  value: P.O. Box 100, Jemez Pueblo, NM 87024
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Jemez, New Mexico
+- kind: phone
+  value: (575) 834-7359
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Jemez, New Mexico
+- kind: fax
+  value: (575) 834-7331
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Jemez, New Mexico
+languages:
+- name: Towa
+  language_tag: tow
+  source: pueblo-of-jemez-about
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Language: Towa"'
+federal_administration:
+  bureau_of_indian_affairs_region: Southwest
+  bureau_of_indian_affairs_agency: Southern Pueblos Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Jemez, New Mexico
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-pueblo-jemez
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pueblo of Jemez Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Jemez'
+gaming:
+  compacts:
+  - state: NM
+    status: deemed-approved
+    approved: '2015-06-22'
+    federal_register_citation: 80 FR 35668
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-22'
+    locator: result page 22 (?page=22), row 23
+    note: 'Listed as: "Pueblo of Jemez Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Pueblo of Jemez, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.22_pueblo_of_jemez_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/22/2015-15207/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: disapproved
+    approved: '2014-08-27'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-08-27'
+    locator: result page 22 (?page=22), row 24
+    note: 'Listed as: "Pueblo of Jemez Tribal State Gaming Compact" (Disapproved); list''s Tribe column:
+      "Pueblo of Jemez, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.08.27_pueblo_of_jemez_disapproval_letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-06-22).
+  ordinances:
+  - approved: '2005-04-06'
+    link: https://www.nigc.gov?wpdmdl=10747&ind=10766
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-04-06'
+    locator: table row 203, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 203 lists the nation
+      as "Pueblo of Jemez".
+  - approved: '2005-06-16'
+    link: https://www.nigc.gov?wpdmdl=10748&ind=10767
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-06-16'
+    locator: table row 203, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 203 lists the nation
+      as "Pueblo of Jemez".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pueblo of Jemez, New Mexico Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: All Pueblo Council of Governors
+  source: all-pueblo-council-of-governors-pueblo-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pueblo of Jemez". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

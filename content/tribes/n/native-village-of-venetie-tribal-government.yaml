@@ -1,0 +1,334 @@
+id: native-village-of-venetie-tribal-government
+entity_type: native-nation
+names:
+  official: Native Village of Venetie Tribal Government
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+  note: 'The notice adds in parentheses: Arctic Village and Village of Venetie.'
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
+- state: AK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6140, 7725
+  note: 'Census area with land in this state: Arctic Village ANVSA (code 6140); Venetie ANVSA (code 7725).
+    Statistical area only (not a land holding), so presence is recorded as other. Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '6140'
+  name: Arctic Village ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6140
+  note: Matched by name. The 2026 list entry is Native Village of Venetie Tribal Government (Arctic Village
+    and Village of Venetie). Census class code E1.
+- geographic_identifier: '7725'
+  name: Venetie ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7725
+  note: Matched by name. The 2026 list entry is Native Village of Venetie Tribal Government (Arctic Village
+    and Village of Venetie). Census class code E1.
+population:
+- count: 151
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6140, field POP100
+  note: 'Census area: Arctic Village ANVSA (code 6140). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The
+    area is a Census statistical area, not a land holding. The 2026 list entry is Native Village of Venetie
+    Tribal Government (Arctic Village and Village of Venetie).'
+- count: 205
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7725, field POP100
+  note: 'Census area: Venetie ANVSA (code 7725). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding. The 2026 list entry is Native Village of Venetie Tribal Government
+    (Arctic Village and Village of Venetie).'
+contacts:
+- kind: physical-address
+  value: 110 Woodyard Road, Venetie, AK 99781
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
+- kind: mailing-address
+  value: P.O. Box 81080, Venetie, AK 99781
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
+- kind: phone
+  value: (907) 849-8165
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
+- kind: fax
+  value: (907) 849-8097
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
+- kind: mailing-address
+  value: PO Box 22069, Arctic Village, AK 99722
+  label: 'Arctic Village council office: Tribal office address listed by the State of Alaska'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Arctic Village" (community: Arctic Village, object 16)'
+- kind: phone
+  value: +1 (907) 587-5523
+  label: 'Arctic Village council office: Tribal office main phone'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Arctic Village" (community: Arctic Village, object 16)'
+- kind: email-general
+  value: av_council@hotmail.com
+  label: 'Arctic Village council office: Tribal office email listed by the State of Alaska'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Arctic Village" (community: Arctic Village, object 16)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+- kind: email-general
+  value: venetietribal@yahoo.com
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Native Village of Venetie Tribal Government" (community: Venetie, object 222)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+- kind: mailing-address
+  value: PO Box 81119, Venetie, AK 99781
+  label: 'Village of Venetie council office: Tribal office address listed by the State of Alaska'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Village of Venetie" (community: Venetie, object 223)'
+- kind: phone
+  value: +1 (907) 849-8212
+  label: 'Village of Venetie council office: Tribal office main phone'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Village of Venetie" (community: Venetie, object 223)'
+- kind: email-general
+  value: venetievillagecouncil@yahoo.com
+  label: 'Village of Venetie council office: Tribal office email listed by the State of Alaska'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Village of Venetie" (community: Venetie, object 223)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Fairbanks Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Native Village of Venetie" among organizations under constitutions approved by
+    the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May 1,
+    1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Venetie, Alaska) (approved 1940) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-vencons
+  confidence: medium
+  as_of: '1940'
+  locator: preamble / approval and certification of adoption
+  note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
+    the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
+    constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Climate change resolution
+  year: '2007'
+  link: https://narf.org/nill/triballaw/climate/index.html
+  source: national-indian-law-library-native-venetie
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website
+    . Climate change resolution. (2007)".'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/vencons.html
+  source: national-indian-law-library-native-venetie
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At
+    University of Oklahoma website . Constitution. (1940)".'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: https://www.loc.gov/item/40029069/
+  source: national-indian-law-library-native-venetie
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At
+    Library of Congress website . Constitution. (1940)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/venchrtr.html
+  source: national-indian-law-library-native-venetie
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At
+    University of Oklahoma website . Corporate charter. (1940)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1940'
+  link: https://www.loc.gov/item/40029112/
+  source: national-indian-law-library-native-venetie
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At
+    Library of Congress website . Corporate charter. (1940)".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Venetie, Alaska)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/venchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-venchrtr
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Native Village of Venetie, Alaska)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/vencons.html
+  source: university-of-oklahoma-indian-reorganization-act-vencons
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Arctic Village Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Village of Arctic Village'
+  note: Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
+    Affairs list
+- kind: tribal-court
+  name: Venetie Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Venetie Village Council'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Alaska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Alaska. Applies to the nation''s Indian country
+    within Alaska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
+  note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Arctic Village; Native Village of Venetie Tribal Government (Arctic Village and Village
+    of Venetie); Village of Venetie (See Native Village of Venetie Tribal Government) Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+related_entities:
+- name: Doyon Ltd.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
+  note: Regional corporation for the area, as listed in the directory.
+- name: Doyon, Limited
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Arctic Village"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Arctic Village),
+    not for the tribal government by name.
+- name: Tanana Chiefs Conference
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Arctic Village"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Arctic Village),
+    not for the tribal government by name.
+- name: Council of Athabascan Tribal Governments, Incorporated
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Arctic Village"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Arctic Village),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

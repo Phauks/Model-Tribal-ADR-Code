@@ -1,20 +1,54 @@
-# Example tribe profile using a fictitious nation, to show structure only.
+# Example profile using a fictitious nation, to show structure only.
 # Real profiles are created under the charter's consultation process.
+# Every fact carries a source key and a confidence level (common.schema.json#/$defs/cited).
 id: example-nation
+entity_type: native-nation
 names:
   official: Example Nation of Examplestate
-  self_designation: []
+  official_source: bia-recognized-entities-2026
+  self_designation:
+    - name: Ejémplo Nación
+      language_tag: xx-example
+      source: example-nation-about-page
+      confidence: high
+      as_of: '2026'
+  former:
+    - name: Example Band of Examplestate Indians
+      source: bia-recognized-entities-2026
+      confidence: high
+      as_of: '2026-01-30'
+      note: Listed in the notice as a previous name.
 recognition:
   - type: federal
+    legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104
     source: bia-recognized-entities-2026
+    confidence: high
+    as_of: '2026-01-30'
+    locator: 91 Fed. Reg. 4104
 states:
   - state: NV
-    presence: land
-    source: bia-recognized-entities-2026
+    presence: government-office
+    source: bia-tribal-leaders-directory-2026
+    confidence: high
+    as_of: '2026-11-20'
+population:
+  - count: 1234
+    kind: citizens
+    source: example-nation-about-page
+    confidence: high
+    as_of: '2025'
+contacts:
+  - kind: website
+    value: https://example.org/
+    label: Tribal government office
+    source: bia-tribal-leaders-directory-2026
+    confidence: high
+    as_of: '2026-11-20'
 justice_institutions:
   - kind: tribal-court
     name: Example Nation Tribal Court
     source: example-nation-court-page
+    confidence: high
 dispute_resolution_law:
   - example-nation-peacemaking-code
 review:

@@ -1,0 +1,405 @@
+id: bishop-paiute-tribe
+entity_type: native-nation
+names:
+  official: Bishop Paiute Tribe
+  self_designation:
+  - name: Nu-Mu
+    language_tag: mnr
+    source: bishoppaiute-about-us
+    confidence: low
+    as_of: '2026-11-21'
+    note: About page describes the Nu-Mu as 'the original people of the Owens Valley'. Tag mnr (Mono)
+      assigned by researcher; the page does not name the language. Read via the WebFetch tool because
+      plain fetching was refused (HTTP 403); quote is as extracted by that tool.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bishop Paiute Tribe
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0290
+  note: 'Census area with land in this state: Bishop Reservation (code 0290). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: 0290
+  name: Bishop Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0290
+  note: Matched by name. Census class code D2.
+population:
+- count: 2000
+  kind: citizens
+  source: bishoppaiute-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''the fifth largest tribe in California with over 2,000 enrolled members''; the About
+    page says ''2,000 members''. Undated. Read via the WebFetch tool because plain fetching was refused
+    (HTTP 403); quote is as extracted by that tool.'
+- count: 1907
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0290, field POP100
+  note: 'Census area: Bishop Reservation (code 0290). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1173
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2872 (Bishop Paiute Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Bishop Paiute Tribe' (race code 6072) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 1895
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Bishop Paiute Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 936
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 85, row T36500 'Paiute-Shoshone Indians of the Bishop Community
+    of the Bishop Colony'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.bishoppaiutetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bishop Paiute Tribe
+- kind: physical-address
+  value: 50 Tu Su Lane, Bishop, CA 93514
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bishop Paiute Tribe
+- kind: mailing-address
+  value: 50 Tu Su Lane, Bishop, CA 93514
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bishop Paiute Tribe
+- kind: phone
+  value: (760) 873-3584
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bishop Paiute Tribe
+- kind: fax
+  value: (760) 873-4143
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bishop Paiute Tribe
+- kind: website
+  value: https://bishoppaiute.net/
+  label: Official website (the directory address https://www.bishoppaiutetribe.com/ redirects here)
+  source: bishoppaiute-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Directory URL redirects to bishoppaiute.net.
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bishop Paiute Tribe
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.bishoppaiutetribe.com/tribal-ordinances/
+  source: national-indian-law-library-bishop-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Bishop Paiute Tribe - Tribal Ordinances
+  year: '2018'
+  link: https://narf.org/nill/codes/bishop_paiute/index.html
+  source: national-indian-law-library-code-codes-bishop-paiute
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: September 2018. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Bishop Paiute Tribal Ordinances
+  link: http://www.bishoppaiutetribe.com/tribal-ordinances.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Bishop Paiute Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.bishoppaiutetribe.com/tribal-court/
+  source: national-indian-law-library-bishop-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Bishop Paiute Tribal Court
+  link: http://www.bishoppaiutetribe.com/tribal-court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Bishop Paiute Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Juvenile Healing to Wellness Court
+    citation: Bishop Paiute Tribal Code. Title 3 Tribal Court and Judicial Department. Chapter 3.2 Juvenile
+      Healing to Wellness Court.
+    link: https://bishoppaiute.net/wp-content/uploads/2022/01/2021-01-20-TJHWC-CODE-alena-draft-003-sr-edits.docx.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Section XIV. Dispute Resolution
+    citation: 'Section XIV. Dispute Resolution; Section 13: Binding dispute resolution mechanism'
+    link: https://www.narf.org/nill/codes/bishop_paiute/index.html
+    source: national-indian-law-library-code-index-bishop-paiute
+    confidence: medium
+    as_of: 2018-09
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: Section9. Dispute Resolution
+    citation: Section9. Dispute Resolution; Rule 38 - Mediation and Arbitration; 38.1 Alternative Dispute
+      Resolution Program; 38.2 Mediation and Arbitration Assistance; 38.3 Mediation by Court Order; 38.6
+      Enforcement of Arbitration Awards or Decisions; 38.7 Review of Arbitration Awards or Decisions
+    link: https://www.narf.org/nill/codes/bishop_paiute/index.html
+    source: national-indian-law-library-code-index-bishop-paiute
+    confidence: medium
+    as_of: 2018-09
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Dispute Resolution
+    citation: Dispute Resolution
+    link: https://narf.org/nill/codes/bishop_paiute/index.html
+    source: national-indian-law-library-code-codes-bishop-paiute
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Gaming Revenue Allocation:'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: 'Section 13: Binding dispute resolution mechanism'
+    citation: 'Section 13: Binding dispute resolution mechanism'
+    link: https://narf.org/nill/codes/bishop_paiute/index.html
+    source: national-indian-law-library-code-codes-bishop-paiute
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Labor Relations:'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: Rule 38 - Mediation and Arbitration
+    citation: Rule 38 - Mediation and Arbitration; 38.1 Alternative Dispute Resolution Program; 38.2 Mediation
+      and Arbitration Assistance; 38.3 Mediation by Court Order; 38.6 Enforcement of Arbitration Awards
+      or Decisions; ...
+    link: https://narf.org/nill/codes/bishop_paiute/index.html
+    source: national-indian-law-library-code-codes-bishop-paiute
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Tribal Court Rules / Bishop Paiute Tribe Rules of the Court:'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2024-12-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-12-20'
+    locator: result page 4 (?page=4), row 25
+    note: 'Listed as: "Bishop Paiute Tribe Secretarial Procedures" (Secretarial Procedures); list''s Tribe
+      column: "Bishop Paiute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.12.20_bishop_paiute_tribe_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 5 (?page=5), row 1
+    note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Bishop Paiute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_bishop_paiute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2024-01-08'
+    federal_register_citation: 89 FR 944
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-01-08'
+    locator: result page 5 (?page=5), row 2
+    note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Bishop Paiute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.01.08_bishop_paiute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/01/08/2024-00107/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 5 (?page=5), row 3
+    note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Bishop Paiute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_bishop_paiute_tribetribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2024-01-08).
+  ordinances:
+  - approved: '1995-07-31'
+    link: https://www.nigc.gov?wpdmdl=3413&ind=3417
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-07-31'
+    locator: table row 19, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 19 lists the nation
+      as "Bishop Paiute Tribe".
+  - approved: '2007-04-02'
+    link: https://www.nigc.gov?wpdmdl=3414&ind=3418
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-04-02'
+    locator: table row 19, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
+      as "Bishop Paiute Tribe".
+  - approved: '2007-04-19'
+    link: https://www.nigc.gov?wpdmdl=3415&ind=3419
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-04-19'
+    locator: table row 19, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
+      as "Bishop Paiute Tribe".
+  - approved: '2012-08-20'
+    link: https://www.nigc.gov?wpdmdl=3416&ind=3420
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-08-20'
+    locator: table row 19, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
+      as "Bishop Paiute Tribe".
+  - approved: '1995-07-31'
+    link: https://www.nigc.gov?wpdmdl=10533&ind=10555
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-07-31'
+    locator: table row 182, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 182 lists the nation
+      as "Paiute-Shoshone Indians of the Bishop Community". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bishop Paiute Tribe". Facilities
+      as machine-extracted from the report text (verify): Wanaaha Casino fka Paiute Palace. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Bishop Paiute Tribe Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

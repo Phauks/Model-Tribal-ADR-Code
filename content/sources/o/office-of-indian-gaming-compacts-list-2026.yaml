@@ -1,0 +1,32 @@
+key: office-of-indian-gaming-compacts-list-2026
+kind: dataset
+citation:
+  type: dataset
+  title: Gaming Compacts (searchable list of tribal-state class III gaming compacts, amendments, extensions,
+    deemed approvals, disapprovals and secretarial procedures)
+  author:
+  - literal: U.S. Department of the Interior, Office of the Assistant Secretary - Indian Affairs, Office
+      of Indian Gaming
+  container-title: Indian Affairs (bia.gov)
+  URL: https://www.bia.gov/as-ia/oig/gaming-compacts
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://www.bia.gov/as-ia/oig/gaming-compacts
+retrieved: '2026-11-21'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+found_in:
+- 2026-11-21-gaming
+notes: '48 result pages (?page=0..47), 1,196 rows, fetched directly with curl on 2026-11-21. Columns:
+  State, Tribe, Title (with compact PDF and Federal Register link), Approve or Not Approved, Date. The
+  Tribe column is sometimes misaligned with the compact title; facts use the nation named in the title.'

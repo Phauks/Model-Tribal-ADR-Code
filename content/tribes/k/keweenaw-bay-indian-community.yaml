@@ -1,0 +1,397 @@
+id: keweenaw-bay-indian-community
+entity_type: native-nation
+names:
+  official: Keweenaw Bay Indian Community, Michigan
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: MI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Keweenaw Bay Indian Community, Michigan
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1880
+  note: 'Census area with land in this state: L''Anse Reservation and Off-Reservation Trust Land (code
+    1880). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1880'
+  name: L'Anse Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1880
+  note: Matched by name. L'Anse Reservation is the reservation of the Keweenaw Bay Indian Community; matched
+    by reservation name. Census class code D1.
+population:
+- count: 3396
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1880, field POP100
+  note: 'Census area: L''Anse Reservation and Off-Reservation Trust Land (code 1880). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. L''Anse Reservation is the reservation of the Keweenaw Bay Indian Community;
+    matched by reservation name.'
+- count: 1978
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3054 (Keweenaw Bay Indian Community alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Keweenaw Bay Indian Community' (race code 5656) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3315
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Keweenaw Bay Indian Community', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.kbic-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Keweenaw Bay Indian Community, Michigan
+- kind: physical-address
+  value: 16429 Beartown Road, Baraga, MI 49908
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Keweenaw Bay Indian Community, Michigan
+- kind: mailing-address
+  value: 16429 Beartown Road, Baraga, MI 49908
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Keweenaw Bay Indian Community, Michigan
+- kind: phone
+  value: (906) 353-6623
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Keweenaw Bay Indian Community, Michigan
+- kind: fax
+  value: (906) 353-7540
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Keweenaw Bay Indian Community, Michigan
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Michigan Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Keweenaw Bay Indian Community, Michigan
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "Keweenah Bay Indian Community, Michigan" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Keweenaw Bay Indian Community Michigan) (approved 1936) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-kewecons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Keweenaw Bay Indian Community, Michigan
+  year: '2015'
+  link: https://narf.org/nill/codes/keweenaw_bay/index.html
+  source: national-indian-law-library-code-codes-keweenaw-bay
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2015. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Keweenaw Bay Indian Community, Michigan - Tribal Constitution
+  year: '2014'
+  link: https://narf.org/nill/constitutions/keweenaw_bay/index.html
+  source: national-indian-law-library-constitution-constitutions-keweenaw-bay
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Approved: 1936 Re-typed version: 3-14-2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+  source: national-indian-law-library-keweenaw-bay
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    (via Municode).".'
+- kind: constitution
+  title: Constitution
+  link: https://www.kbic-nsn.gov/tribal-governance/constitution/
+  source: national-indian-law-library-keweenaw-bay
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Keweenaw Bay Indian Community Constitution and Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Keweenaw Bay Indian Community'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.kbic-nsn.gov/sites/default/files/KBIC%20Constitution%20%26%20By-Laws%20compiled%203-26-2014.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Keweenaw Bay Indian Community Tribal Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Keweenaw Bay Indian Community'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.kbic-nsn.gov/content/kbic-tribal-code) returned
+    HTTP 404, so it is not recorded.'
+- kind: corporate-charter
+  title: Corporate charter (Keweenaw Bay Indian Community of the L'Anse Reservation Michigan)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/kewechrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-kewechrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Keweenaw Bay Indian Community Michigan)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/kewecons.html
+  source: university-of-oklahoma-indian-reorganization-act-kewecons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.kbic-nsn.gov/index.php/departments/court
+  source: national-indian-law-library-keweenaw-bay
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Keweenaw Bay Indian Community Tribal Court
+  link: http://www.kbic-nsn.gov/content/court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Keweenaw Bay Indian Community'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Cooperation with Other Jurisdictions – Diversion, Rehabilitation, and Training Programs
+    citation: Title 14 § 14-34(a)
+    link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/cooperation-with-other-jurisdictions-diversion-rehabilitation-and-training-programs/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: General provision. Database form of practice: Diversion;
+      Rehabilitation.'
+  - kind: other
+    title: Least Restrictive Alternative and Family Rehabilitation in Dispositional Reports
+    citation: Title 14 § 14-134(a),(c)
+    link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/least-restrictive-alternative-and-family-rehabilitation-in-dispositional-reports/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication (dispositional hearing). Database
+      form of practice: Alternative; Rehabilitation.'
+  - kind: other
+    title: Pre-Adjudication Diversionary Program for Delinquency Cases
+    citation: Title 14 § 14-137(a)(1)(b)
+    link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-adjudication-diversionary-program-for-delinquency-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Pre-Adjudication Voluntary Diversion for Parents in Dependency/Neglect Cases
+    citation: Title 14 § 14-137(b)(1)(a)
+    link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-adjudication-voluntary-diversion-for-parents-in-dependency-neglect-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Rehabilitation Prospects as Factor in Waiver to Adult Court
+    citation: Title 14 §§ 14-226(2), 14-227(1)
+    link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-prospects-as-factor-in-waiver-to-adult-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Rehabilitation.'
+  - kind: other
+    title: TSS Monitoring and Completion of Diversionary Programs
+    citation: Title 14 § 14-106
+    link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/tss-monitoring-and-completion-of-diversionary-programs/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Voluntary Diversionary Program for Parents in Dependency/Neglect Cases
+    citation: Title 14 § 14-105(b)(2)
+    link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/voluntary-diversionary-program-for-parents-in-dependency-neglect-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+gaming:
+  compacts:
+  - state: MI
+    status: approved
+    approved: '1993-11-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-11-30'
+    locator: result page 16 (?page=16), row 11
+    note: 'Listed as: "Keweenaw Bay Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Keweenaw Bay Indian Community, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.11.30_keweenaw_bay_indian_community_tribal_state_gaming_compact.pdf.'
+  - state: MI
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (1993-11-30).
+  ordinances:
+  - approved: '1994-02-14'
+    link: https://www.nigc.gov?wpdmdl=10039&ind=10052
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-02-14'
+    locator: table row 117, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 117 lists the nation
+      as "Keweenaw Bay Indian Community".
+  - approved: '2006-09-13'
+    link: https://www.nigc.gov?wpdmdl=10040&ind=10053
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-09-13'
+    locator: table row 117, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 117 lists the nation
+      as "Keweenaw Bay Indian Community".
+  - approved: '2010-11-29'
+    link: https://www.nigc.gov?wpdmdl=10041&ind=10054
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-11-29'
+    locator: table row 117, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 117 lists the nation
+      as "Keweenaw Bay Indian Community".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Keweenaw Bay Indian Community".
+      Facilities as machine-extracted from the report text (verify): Ojibwa Casino II; Ojibwa Casino and
+      Resort - Marquette. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Keweenaw Bay Indian Community, Michigan Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Keweenaw Bay Indian Community". Name matched to the roster entry.
+- organization: Great Lakes Indian Fish and Wildlife Commission
+  source: great-lakes-indian-fish-and-wildlife-commission-commission
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Gakiiwe'onaning" (link https://www.kbic-nsn.gov).
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

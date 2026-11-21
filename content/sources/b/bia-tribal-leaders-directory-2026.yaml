@@ -1,0 +1,42 @@
+key: bia-tribal-leaders-directory-2026
+kind: dataset
+citation:
+  type: dataset
+  title: Tribal Leaders Directory
+  author:
+    - literal: U.S. Department of the Interior, Bureau of Indian Affairs
+  publisher: Bureau of Indian Affairs, Branch of Geospatial Support
+  medium: ArcGIS feature service
+  URL: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  issued:
+    date-parts: [[2026, 11, 20]]
+  accessed:
+    date-parts: [[2026, 11, 21]]
+original_link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+retrieved: 2026-11-21
+archives:
+  - service: wayback
+    link: https://web.archive.org/web/20261112202124/https://www.bia.gov/service/tribal-leaders-directory
+    captured: 2026-11-12
+history:
+  last_seen: 2026-11-20
+  status: live
+  last_checked: 2026-11-21
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: >-
+    Only office contact points, Bureau of Indian Affairs region and agency, and
+    Alaska regional corporation are recorded. Names, titles, email addresses
+    and election dates of officials in the dataset are not copied (charter,
+    commitment 1).
+  redistribution: false
+found_in:
+  - 2026-11-21-federal-list-import
+notes: >-
+  The Bureau of Indian Affairs' directory of contact information for each
+  federally recognized Tribal entity, also published as a web map at
+  https://www.bia.gov/service/tribal-leaders-directory. Queried in full
+  (602 rows, including component bands and villages) on 2026-11-21; the
+  service reported its data last edited on 2026-11-20. The archived copy is of
+  the directory's web page, because the query service itself is not archived.

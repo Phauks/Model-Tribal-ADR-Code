@@ -1,0 +1,136 @@
+id: cloverdale-rancheria-of-pomo-indians-of-california
+entity_type: native-nation
+names:
+  official: Cloverdale Rancheria of Pomo Indians of California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cloverdale Rancheria of Pomo Indians of California
+population:
+- count: 600
+  kind: citizens
+  source: cloverdalerancheria-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''includes nearly 600 members''. Undated; as_of is access date.'
+- count: 229
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2933 (Cloverdale Rancheria of Pomo Indians of California alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Cloverdale Rancheria of Pomo Indians of California'
+    (race code 6120) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 436
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Cloverdale Rancheria of Pomo Indians', PDF page 6, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://cloverdalerancheria.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cloverdale Rancheria of Pomo Indians of California
+- kind: physical-address
+  value: 555 S. Cloverdale Boulevard, Suite 1, Cloverdale, CA 95425
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cloverdale Rancheria of Pomo Indians of California
+- kind: mailing-address
+  value: 555 S. Cloverdale Boulevard, Suite 1, Cloverdale, CA 95425
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cloverdale Rancheria of Pomo Indians of California
+- kind: phone
+  value: (707) 894-5775
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cloverdale Rancheria of Pomo Indians of California
+- kind: fax
+  value: (707) 894-5727
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cloverdale Rancheria of Pomo Indians of California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cloverdale Rancheria of Pomo Indians of California
+gaming:
+  ordinances:
+  - approved: '2002-06-24'
+    link: https://www.nigc.gov?wpdmdl=9517&ind=9529
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-06-24'
+    locator: table row 47, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 47 lists the nation
+      as "Cloverdale Rancheria of Pomo Indians of California".
+  - approved: '2005-03-04'
+    link: https://www.nigc.gov?wpdmdl=9518&ind=9530
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-03-04'
+    locator: table row 47, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 47 lists the nation
+      as "Cloverdale Rancheria of Pomo Indians of California".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Cloverdale Rancheria of Pomo Indians of California Confidence lowered from high by
+    the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

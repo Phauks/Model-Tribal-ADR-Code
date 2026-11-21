@@ -1,0 +1,480 @@
+id: suquamish-indian-tribe-of-the-port-madison-reservation
+entity_type: native-nation
+names:
+  official: Suquamish Indian Tribe of the Port Madison Reservation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Suquamish Indian Tribe of the Port Madison Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2925
+  note: 'Census area with land in this state: Port Madison Reservation (code 2925). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '2925'
+  name: Port Madison Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2925
+  note: Matched by name. Census class code D2.
+population:
+- count: 7929
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2925, field POP100
+  note: 'Census area: Port Madison Reservation (code 2925). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1348
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3347 (The Suquamish Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'The Suquamish Tribe' (race code 6208) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label matched by name variant.
+- count: 1386
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Suquamish Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://suquamish.nsn.us/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Suquamish Indian Tribe of the Port Madison Reservation
+- kind: physical-address
+  value: 18490 Suquamish Way, Suquamish, WA 98392
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Suquamish Indian Tribe of the Port Madison Reservation
+- kind: mailing-address
+  value: P.O. Box 498, Suquamish, WA 98392
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Suquamish Indian Tribe of the Port Madison Reservation
+- kind: phone
+  value: (360) 598-3311
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Suquamish Indian Tribe of the Port Madison Reservation
+- kind: fax
+  value: (360) 598-3135
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Suquamish Indian Tribe of the Port Madison Reservation
+languages:
+- name: Lushootseed
+  language_tag: lut
+  source: suquamish-indian-tribe-of-the-port-madis-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The traditional language of the Suquamish People is Lushootseed"'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Suquamish Indian Tribe of the Port Madison Reservation
+governing_documents:
+- kind: law-code
+  title: Suquamish Indian Tribe of the Port Madison Reservation
+  link: https://narf.org/nill/codes/suquamish/index.html
+  source: national-indian-law-library-code-codes-suquamish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Suquamish Indian Tribe of the Port Madison Reservation - Tribal Constitution
+  link: https://narf.org/nill/constitutions/suquamish/index.html
+  source: national-indian-law-library-constitution-constitutions-suquamish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+  source: national-indian-law-library-suquamish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/#toggle-id-2
+  source: national-indian-law-library-suquamish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Suquamish Tribe Constitution and Bylaws
+  link: http://dev.suquamishmuseum.org/wp-content/uploads/2016/11/Suquamish-Tribe-Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Suquamish Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
+- kind: law-code
+  title: Suquamish Tribal Code
+  link: https://suquamish.nsn.us/home/government/tribal-code/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Suquamish Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: other
+  name: Grace Duggan Justice Center
+  link: https://suquamish.nsn.us/home/departments/police-courts/courts/
+  source: national-indian-law-library-suquamish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Suquamish Tribal Court
+  link: https://suquamish.nsn.us/home/departments/police-courts/courts/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Suquamish Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Deferred Prosecution for First-Time Nonviolent Offenses
+    citation: STC 7.31.1
+    link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-for-first-time-nonviolent-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Deferred Prosecution;
+      Diversion.'
+  - kind: other
+    title: Deferred Prosecution for Substance Abuse Treatment
+    citation: STC 7.31.2
+    link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-for-substance-abuse-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Deferred Prosecution.'
+  - kind: other
+    title: Domestic Violence Perpetrator Treatment (Court-Ordered)
+    citation: STC 7.28.14(a)(5)
+    link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-perpetrator-treatment-court-ordered/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Sentencing/Post-conviction. Database form of practice: Rehabilitation.'
+  - kind: other
+    title: Truancy Alternative Resolution – Tribal Custom
+    citation: STC 8.8.4(f)
+    link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-alternative-resolution-tribal-custom/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution.'
+  - kind: other
+    title: Truancy Remedies – Educational and Cultural Alternatives
+    citation: STC 8.8.7
+    link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-remedies-educational-and-cultural-alternatives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative;
+      Healing.'
+  - kind: other
+    title: Youth Diversion Program
+    citation: STC 8.6.11
+    link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/youth-diversion-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Youth Offender Sentencing – Healing and Cultural Programs
+    citation: STC 8.6.12
+    link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/youth-offender-sentencing-healing-and-cultural-programs/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Sentencing. Database form of practice: Cultural Programs;
+      Healing.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4460
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-01-28'
+    locator: result page 43 (?page=43), row 20
+    note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Suquamish Indian Tribe of the Port Madison Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.01.28%20Suquamish%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1930/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-03-31'
+    federal_register_citation: 60 FR 16764
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-03-31'
+    locator: result page 43 (?page=43), row 21
+    note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Suquamish Indian Tribe of the Port Madison Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.03.31_suquamish_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/03/31/95-7941/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 43 (?page=43), row 22
+    note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Suquamish Indian Tribe of the Port Madison Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_suquamish_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 43 (?page=43), row 23
+    note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Suquamish Indian Tribe of the Port Madison Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Suquamish%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-09-01'
+    federal_register_citation: 86 FR 49049
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-01'
+    locator: result page 43 (?page=43), row 24
+    note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Suquamish Indian Tribe of the Port Madison Reservation". Document:
+      https://www.bia.gov/sites/default/files/media_document/2021.09.01_suquamish_indian_tribe_state_gaming_compact_scrivener_s_error_corrected_2023.10.27.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/01/2021-18823/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2023-09-27'
+    federal_register_citation: 88 FR 66499
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-09-27'
+    locator: result page 43 (?page=43), row 25
+    note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Suquamish Indian Tribe of the Port Madison Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.09.27_suquamish_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/09/27/2023-20973/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-suquamish-tribe.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2024-04-23'
+    federal_register_citation: 89 FR 30389
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-04-23'
+    locator: result page 44 (?page=44), row 1
+    note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Suquamish Indian Tribe of the Port Madison Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.04_suquamish_indian_tribe_of_the_port_madison_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/04/23/2024-08661/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-suquamish.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-04-23).
+  ordinances:
+  - approved: '1996-01-05'
+    link: https://www.nigc.gov?wpdmdl=11270&ind=11311
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-01-05'
+    locator: table row 277, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 277 lists the nation
+      as "Suquamish Indian Tribe". Name matched to roster by spelling variant.
+  - approved: '2006-01-04'
+    link: https://www.nigc.gov?wpdmdl=11292&ind=11312
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-01-04'
+    locator: table row 277, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 277 lists the nation
+      as "Suquamish Indian Tribe". Name matched to roster by spelling variant.
+  - approved: '2009-05-14'
+    link: https://www.nigc.gov?wpdmdl=11293&ind=11313
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-05-14'
+    locator: table row 277, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 277 lists the nation
+      as "Suquamish Indian Tribe". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of all jurisdiction exercised by Washington over the Port Madison
+    Indian Reservation, except as provided under RCW 37.12.010-.060. (37 FR 7353)
+  source: federal-register-1972-port-madison-retrocession
+  confidence: high
+  as_of: '1972-04-13'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Suquamish Indian Tribe of the Port Madison Reservation Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2019-04-10 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-suquamish-indian-tribe-of-the-port-madison-reservation
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Suquamish Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Suquamish Tribe". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Suquamish Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,201 @@
+id: santo-domingo-pueblo
+entity_type: native-nation
+names:
+  official: Santo Domingo Pueblo
+  self_designation:
+  - name: Kewa
+    language_tag: kee
+    source: santo-domingo-pueblo-our-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"Santo Domingo Pueblo (also known as Kewa; Santo Domingo was the name given by the Spanish
+      in 1600)"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: NM
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santo Domingo Pueblo
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3585
+  note: 'Census area with land in this state: Santo Domingo Pueblo (code 3585). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '3585'
+  name: Santo Domingo Pueblo
+  area_type: Pueblo
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3585
+  note: Matched by name. Census class code D2.
+population:
+- count: 5000
+  kind: citizens
+  source: santo-domingo-pueblo-home
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'home page: "the 5,000 members"; history page: "more than 4,500 Santo Domingo members" (citing
+    a federal census); census page: "As of May 2025 our current enrolled Tribal count is 1000" (unclear;
+    conflicts)'
+- count: 3160
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3585, field POP100
+  note: 'Census area: Santo Domingo Pueblo (code 3585). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 4306
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3053 (Kewa Pueblo, New Mexico alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Kewa Pueblo, New Mexico' (race code 6180) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label matched by name variant.
+- count: 4492
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Santo Domingo Pueblo', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 3219
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 79, row T17300 'Kewa Pueblo'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: https://santodomingotribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santo Domingo Pueblo
+- kind: physical-address
+  value: 134 Tesuque St., Santo Domingo Pueblo, NM 87052
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santo Domingo Pueblo
+- kind: mailing-address
+  value: P.O. Box 99, Santo Domingo Pueblo, NM 87052
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santo Domingo Pueblo
+- kind: phone
+  value: (505) 465-2214
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santo Domingo Pueblo
+- kind: fax
+  value: (505) 465-2688
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santo Domingo Pueblo
+languages:
+- name: Keres
+  language_tag: kee
+  source: santo-domingo-pueblo-kewa-keres-language-program
+  confidence: high
+  as_of: '2026-11-21'
+  note: Kewa Keres Language Program
+federal_administration:
+  bureau_of_indian_affairs_region: Southwest
+  bureau_of_indian_affairs_agency: Southern Pueblos Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santo Domingo Pueblo
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Albuquerque CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Listed as Kewa Pueblo (New Mexico); the Bureau of Indian Affairs page says it is the only Court
+    of Indian Offenses that keeps only criminal jurisdiction, with the Pueblo keeping all other jurisdiction.
+    Court established 2019 (85 FR 10714). Courts of Indian Offenses are governed by 25 C.F.R. part 11;
+    § 11.100 points to this Bureau of Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://santodomingotribe.org/tribal-courts-2/
+  source: national-indian-law-library-kewa-pueblo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kewa Pueblo Tribal Courts
+  link: http://santodomingotribe.org/tribal-courts-2/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Kewa Pueblo'
+gaming:
+  ordinances:
+  - approved: '1995-08-16'
+    link: https://www.nigc.gov?wpdmdl=10817&ind=10835
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-08-16'
+    locator: table row 213, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 213 lists the nation
+      as "Pueblo of Santo Domingo". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Santo Domingo Pueblo Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: All Pueblo Council of Governors
+  source: all-pueblo-council-of-governors-pueblo-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pueblo of Santo Domingo". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

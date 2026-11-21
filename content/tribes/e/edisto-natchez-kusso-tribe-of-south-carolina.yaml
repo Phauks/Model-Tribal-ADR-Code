@@ -1,0 +1,77 @@
+id: edisto-natchez-kusso-tribe-of-south-carolina
+entity_type: native-nation
+names:
+  official: Edisto Natchez-Kusso Tribe of South Carolina
+  alternate:
+  - name: Natchez Indian Tribe of South Carolina (Kusso-Natchez; Edisto)
+    source: census-2020-ddhca-popgroup-codes
+    confidence: low
+    as_of: '2020'
+    locator: POPGROUP code 2Z9
+    note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
+      source.
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9690
+  note: The 2020 Census delineated "Edisto Natchez Kusso SDTSA" (State Designated Tribal Statistical Area).
+    The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally
+    recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed
+    state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: state
+  state: SC
+  legal_basis: 'South Carolina Code of Laws Section 1-31-40(A)(10); South Carolina Code of Regulations
+    Chapter 139 (category: State Recognized Native American Indian Tribe)'
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: Listed under 'State Recognized Tribes'.
+states:
+- state: SC
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9690
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: SC
+  presence: other
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: State-recognized entity with a South Carolina contact address.
+census_areas:
+- geographic_identifier: '9690'
+  name: Edisto Natchez Kusso SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9690, GEOID 9690R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+contacts:
+- kind: email-general
+  value: edistonatchezkussotribe@gmail.com
+  label: Tribal email listed by the South Carolina commission
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.facebook.com/natchezkussotribe/
+  label: Social media page listed by the state
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: medium
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

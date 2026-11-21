@@ -1,0 +1,456 @@
+id: quileute-tribe-of-the-quileute-reservation
+entity_type: native-nation
+names:
+  official: Quileute Tribe of the Quileute Reservation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quileute Tribe of the Quileute Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3030
+  note: 'Census area with land in this state: Quileute Reservation (code 3030). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '3030'
+  name: Quileute Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3030
+  note: Matched by name. Census class code D2.
+population:
+- count: 808
+  kind: citizens
+  source: quileute-tribe-of-the-quileute-reservati-government-tribal-council
+  confidence: medium
+  as_of: '2018-03-14'
+  note: '"a federally recognized Indian Tribe of 808 enrolled members (as of 3/14/2018)"'
+- count: 404
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3030, field POP100
+  note: 'Census area: Quileute Reservation (code 3030). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1001
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3256 (Quileute Tribe of the Quileute Reservation, Washington alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Quileute Tribe of the Quileute Reservation, Washington'
+    (race code 5594) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 793
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Quileute Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://quileutetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quileute Tribe of the Quileute Reservation
+- kind: physical-address
+  value: 90 Main Street, La Push, WA 98350
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quileute Tribe of the Quileute Reservation
+- kind: mailing-address
+  value: P.O. Box 279, La Push, WA 98350
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quileute Tribe of the Quileute Reservation
+- kind: phone
+  value: (360) 374-6163
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quileute Tribe of the Quileute Reservation
+- kind: fax
+  value: (360) 374-6311
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quileute Tribe of the Quileute Reservation
+languages:
+- name: Quileute
+  language_tag: qui
+  source: quileute-tribe-of-the-quileute-reservati-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"the Quileute language, is still spoken by elders at LaPush"'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Olympic Peninsula Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quileute Tribe of the Quileute Reservation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Quileute Tribe of the Quileute Reservation, Washington" among organizations under
+    constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934),
+    as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Quileute Tribe of the Quileute Reservation Washington) (approved 1936) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-quilcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
+  source: national-indian-law-library-quileute-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://quileutenation.org/wp-content/uploads/2025/02/Constitution-with-amendments-approved-2.3.25.pdf
+  source: national-indian-law-library-quileute-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Quileute Tribe Constitution and By-Laws
+  link: http://quileutenation.org/wp-content/uploads/2017/02/cblqtqr.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Quileute Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Quileute Law and Order Codes
+  link: https://quileutenation.org/court/law-and-order-codes/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Quileute Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Quileute Indian Tribe of the Quileute Indian Reservation Washington)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/quilchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-quilchrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Quileute Tribe of the Quileute Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/quilcons.html
+  source: university-of-oklahoma-indian-reorganization-act-quilcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://quileutenation.org/court/
+  source: national-indian-law-library-quileute-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Quileute Tribal Court
+  link: http://www.quileutenation.org/government/court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Quileute Nation'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Child’s Failure to Attend School Procedures
+    citation: The Quileute Family Code §15.5
+    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/childs-failure-to-attend-school-procedures/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Deferred Penalty Plan for Curfew Violations
+    citation: The Quileute Family Code §14.6
+    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-penalty-plan-for-curfew-violations/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Family Reconciliation Services for Alternative Residential Placement
+    citation: The Quileute Family Code §12.6
+    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-reconciliation-services-for-alternative-residential-placement/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Forms of Relief in Domestic Violence Cases
+    citation: QLOC Art. 14 Section 9
+    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/forms-of-relief-in-domestic-violence-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Hearings for Juvenile Offenders
+    citation: The Quileute Family Code §11.14 and §11.16 and §11.17
+    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearings-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Juvenile Participation in the Elders Panel
+    citation: The Quileute Family Code §17.13 and §17.15
+    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-participation-in-the-elders-panel/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Quileute Elders Panel for Juvenile Offenses
+    citation: The Quileute Family Code §17.1 and §17.2 and §17.3
+    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/quileute-elders-panel-for-juvenile-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '1995-10-06'
+    federal_register_citation: 60 FR 52409
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-10-06'
+    locator: result page 41 (?page=41), row 15
+    note: 'Listed as: "Quileute Tribe of the Quileute Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Quileute Tribe of the Quileute Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.10.06%20Quileute%20Indian%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/10/06/95-24894/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-05-14'
+    federal_register_citation: 64 FR 26435
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-05-14'
+    locator: result page 41 (?page=41), row 16
+    note: 'Listed as: "Quileute Tribe of the Quileute Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Quileute Tribe of the Quileute Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.05.14%20Quileute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/05/14/99-12226/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 41 (?page=41), row 17
+    note: 'Listed as: "Quileute Tribe of the Quileute Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Quileute Tribe of the Quileute Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_quileute_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 41 (?page=41), row 18
+    note: 'Listed as: "Quileute Tribe of the Quileute Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Quileute Tribe of the Quileute Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Quileute%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-02-24'
+    federal_register_citation: 60 FR 10470
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-02-24'
+    locator: result page 41 (?page=41), row 19
+    note: 'Listed as: "Quileute Tribe of the Quileute Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Quileute Tribe of the Quileute Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.02.24_quileute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/02/24/95-4586/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2015-06-04).
+  ordinances:
+  - approved: '1994-03-21'
+    link: https://www.nigc.gov?wpdmdl=10877&ind=10892
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-03-21'
+    locator: table row 221, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 221 lists the nation
+      as "Quileute Tribe of the Quileute Reservation".
+  - approved: '1994-05-20'
+    link: https://www.nigc.gov?wpdmdl=10878&ind=10893
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-05-20'
+    locator: table row 221, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 221 lists the nation
+      as "Quileute Tribe of the Quileute Reservation".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of all criminal jurisdiction exercised by Washington over the
+    Chehalis Reservation, Quileute Indian Reservation and Swinomish Tribal Community, except as provided
+    in RCW 37.12.010 and related 1986 and 1988 Washington laws. (54 FR 19959)
+  source: federal-register-1989-chehalis-quileute-swinomish-retrocession
+  confidence: high
+  as_of: '1989-05-10'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Quileute Tribe of the Quileute Reservation Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Quileute Indian Tribe". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Quileute Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

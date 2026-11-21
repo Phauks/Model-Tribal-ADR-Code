@@ -1,0 +1,431 @@
+id: spokane-tribe-of-the-spokane-reservation
+entity_type: native-nation
+names:
+  official: Spokane Tribe of the Spokane Reservation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spokane Tribe of the Spokane Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3940
+  note: 'Census area with land in this state: Spokane Reservation and Off-Reservation Trust Land (code
+    3940). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3940'
+  name: Spokane Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3940
+  note: Matched by name. Census class code D1.
+population:
+- count: 2900
+  kind: citizens
+  source: spokane-tribe-of-the-spokane-reservation-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"a citizen population of approximately 2,900 enrolled members"; undated statement on the official
+    site; as_of is the access date'
+- count: 2541
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3940, field POP100
+  note: 'Census area: Spokane Reservation and Off-Reservation Trust Land (code 3940). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 4311
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3338 (Spokane Tribe of the Spokane Reservation alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Spokane Tribe of the Spokane Reservation' (race code
+    6322) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 2988
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Spokane Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.spokanetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spokane Tribe of the Spokane Reservation
+- kind: physical-address
+  value: 6195 Ford-Wellpinit  Road, Wellpinit, WA 99040
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spokane Tribe of the Spokane Reservation
+- kind: mailing-address
+  value: P.O. Box 100, Wellpinit, WA 99040
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spokane Tribe of the Spokane Reservation
+- kind: phone
+  value: (509) 458-6500
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spokane Tribe of the Spokane Reservation
+- kind: fax
+  value: (509) 458-6553
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spokane Tribe of the Spokane Reservation
+languages:
+- name: Spokane (SNXʷMENEʔ NQʷLQʷELTN)
+  language_tag: spo
+  source: spokane-tribe-of-the-spokane-reservation-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Spokane Language SNXʷMENEʔ NQʷLQʷELTN"; "a dialect of Interior Salish"'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Spokane Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spokane Tribe of the Spokane Reservation
+governing_documents:
+- kind: law-code
+  title: Spokane Tribe of the Spokane Reservation
+  year: '2001'
+  link: https://narf.org/nill/codes/spokane/index.html
+  source: national-indian-law-library-code-codes-spokane
+  confidence: medium
+  as_of: '2001'
+  locator: page heading
+  note: 'Dated: 2001. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Spokane Tribe of the Spokane Reservation - Tribal Constitution
+  year: '1987'
+  link: https://narf.org/nill/constitutions/spokane/index.html
+  source: national-indian-law-library-constitution-constitutions-spokane
+  confidence: medium
+  as_of: '1987'
+  locator: page heading
+  note: 'Dated: 1987. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.spokanetribe.com/government/legal/
+  source: national-indian-law-library-spokane
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.spokanetribe.com/government/legal/
+  source: national-indian-law-library-spokane
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Spokane Tribe of Indians Constitution
+  link: http://spokanetribe.com/userfiles/file/SLOC%2005-14-2013%20%28Final%29%281%29.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Spokane Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Spokane Tribe of Indians Law and Order Code
+  link: http://spokanetribe.com/userfiles/file/SLOC%2005-14-2013%20%28Final%29%281%29.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Spokane Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Spokane Tribe of the Spokane Reservation Washington)
+  year: '1951'
+  link: https://thorpe.law.ou.edu/IRA/spokcons.html
+  source: university-of-oklahoma-indian-reorganization-act-spokcons
+  confidence: medium
+  as_of: '1951'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.spokanetribe.com/government/court/
+  source: national-indian-law-library-spokane
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Spokane Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Spokane Tribe of Indians'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Dispute Resolution in Parenting Plans
+    citation: RSLOC Chapter 7 § 7-3.12(b)(1)
+    link: https://www.spokanetribe.com/government/legal/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispute-resolution-in-parenting-plans/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Conflict
+      resolution.'
+  - kind: other
+    title: Domestic Violence Treatment Program (Deferred Sentence Option)
+    citation: RSLOC Chapter 29 § 29-4.10
+    link: https://www.spokanetribe.com/government/legal/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-treatment-program-deferred-sentence-option/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Informal Dispute Resolution in Domestic Relations
+    citation: RSLOC Chapter 7 § 7-3.04
+    link: https://www.spokanetribe.com/government/legal/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-dispute-resolution-in-domestic-relations/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Conflict
+      resolution.'
+  - kind: other
+    title: Restitution to Victims
+    citation: RSLOC Chapter 16 § 16-1.04, § 16-2.05
+    link: https://www.spokanetribe.com/government/legal/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-to-victims/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Youth Restitution and Community Service
+    citation: RSLOC Chapter 6 § 6-7.07(a)(5)
+    link: https://www.spokanetribe.com/government/legal/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/youth-restitution-and-community-service/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: arbitration
+    title: Section 4-26 Arbitration.
+    citation: Section 4-26 Arbitration.; 4-26.02 Agreements to Arbitrate are Enforceable.
+    link: https://narf.org/nill/codes/spokane/index.html
+    source: national-indian-law-library-code-codes-spokane
+    confidence: medium
+    as_of: '2001'
+    locator: Table of Contents, under 'CHAPTER 4 - CIVIL ACTIONS.'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
+      2001); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
+  - kind: arbitration
+    title: 4-26.04 Stay of Proceedings and Order to Proceed with Arbitration.
+    citation: 4-26.04 Stay of Proceedings and Order to Proceed with Arbitration.; 4-26.08 Arbitration
+      Award not Appealable.
+    link: https://narf.org/nill/codes/spokane/index.html
+    source: national-indian-law-library-code-codes-spokane
+    confidence: medium
+    as_of: '2001'
+    locator: Table of Contents, under '.'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
+      2001); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
+  - kind: other
+    title: 7-3.04 Informal Dispute Resolution.
+    citation: 7-3.04 Informal Dispute Resolution.
+    link: https://narf.org/nill/codes/spokane/index.html
+    source: national-indian-law-library-code-codes-spokane
+    confidence: medium
+    as_of: '2001'
+    locator: Table of Contents, under 'CHAPTER 7 - DOMESTIC RELATIONS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
+      2001); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2021-09-01'
+    federal_register_citation: 86 FR 49046
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-01'
+    locator: result page 42 (?page=42), row 25
+    note: 'Listed as: "Spokane Tribe of the Spokane Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Spokane Tribe of the Spokane Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.09.01_spokane_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/01/2021-18818/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2023-11-01'
+    federal_register_citation: 88 FR 75016
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-11-01'
+    locator: result page 43 (?page=43), row 1
+    note: 'Listed as: "Spokane Tribe of the Spokane Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Spokane Tribe of the Spokane Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.11.01_spokane_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/11/01/2023-24088/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-spokane-tribe-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-04-30'
+    federal_register_citation: 72 FR 21284
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-04-30'
+    locator: result page 43 (?page=43), row 2
+    note: 'Listed as: "Spokane Tribe of the Spokane Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Spokane Tribe of the Spokane Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.04.30_spokane_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/04/30/E7-8136/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2008-10-24'
+    federal_register_citation: 73 FR 63503
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-10-24'
+    locator: result page 43 (?page=43), row 3
+    note: 'Listed as: "Spokane Tribe of the Spokane Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Spokane Tribe of the Spokane Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.10.24_spokane_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/10/24/E8-25349/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 43 (?page=43), row 4
+    note: 'Listed as: "Spokane Tribe of the Spokane Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Spokane Tribe of the Spokane Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Spokane%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2023-11-01).
+  ordinances:
+  - approved: '1996-03-25'
+    link: https://www.nigc.gov?wpdmdl=11216&ind=11238
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-03-25'
+    locator: table row 270, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 270 lists the nation
+      as "Spokane Tribe of the Spokane Reservation".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Spokane Tribe of the Spokane Reservation Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+memberships:
+- organization: Coalition of Large Tribes
+  source: coalition-of-large-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Spokane Tribe". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Spokane Tribe of Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

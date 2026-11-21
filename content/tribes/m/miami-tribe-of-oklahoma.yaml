@@ -1,0 +1,571 @@
+id: miami-tribe-of-oklahoma
+entity_type: native-nation
+names:
+  official: Miami Tribe of Oklahoma
+  self_designation:
+  - name: Myaamia
+    language_tag: mia
+    source: miami-tribe-of-oklahoma-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"In the Miami language, the Miami Tribe''s name for itself is Myaamia, which means ''the Downstream
+      People''"; plural form myaamiaki also used'
+  - name: myaamiaki
+    language_tag: mia
+    source: miami-tribe-of-oklahoma-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'plural form used on the site: "the people known as myaamiaki"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5730, 5970
+  note: 'Census area with land in this state: Miami OTSA (code 5730); Miami/Peoria joint-use OTSA (code
+    5970). Statistical area only (not a land holding), so presence is recorded as other. Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '5730'
+  name: Miami OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5730
+  note: Matched by name. Census class code D6.
+- geographic_identifier: '5970'
+  name: Miami/Peoria joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5970
+  note: 'Matched by name. Shared with: Peoria Tribe of Indians of Oklahoma. Census class code D0.'
+population:
+- count: 7008
+  kind: tribal-population-estimate
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"The population of the Nation is approximately 7,008 people"; same page also says "over 7,000
+    citizens"; undated statement on the official site; as_of is the access date'
+- count: 257
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5730, field POP100
+  note: 'Census area: Miami OTSA (code 5730). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 4029
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5970, field POP100
+  note: 'Census area: Miami/Peoria joint-use OTSA (code 5970). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: Peoria Tribe of
+    Indians of Oklahoma; the same count applies to the whole area.'
+- count: 1838
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3120 (Miami Tribe of Oklahoma alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Miami Tribe of Oklahoma' (race code 5955) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 7008
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Miami Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.miamination.com
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+- kind: physical-address
+  value: 3410 P. Street NW, Miami, OK 74354
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+- kind: mailing-address
+  value: P.O. Box 1326, Miami, OK 74355
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+- kind: phone
+  value: (918) 541-1300
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+- kind: fax
+  value: (918) 542-7260
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+languages:
+- name: Miami (myaamiaataweenki)
+  language_tag: mia
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  as_of: '2026-11-21'
+  note: site uses "myaamiaataweenki 'the Miami language'"
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern Oklahoma
+  bureau_of_indian_affairs_agency: Miami Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Miami Tribe of Oklahoma" among organizations under constitutions approved by
+    the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Miami Tribe of Oklahoma) (approved 1939) states it was adopted under Act of June
+    26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.miamination.com/miami-tribe-of-oklahoma-court/
+  source: national-indian-law-library-miami-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.miamination.com/tribal-constitution/
+  source: national-indian-law-library-miami-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.narf.org/nill/constitutions/miamiconst/index.html
+  source: national-indian-law-library-miami-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . Table of Contents. See NILL catalog record for the constitution and corporate charter.".'
+- kind: constitution
+  title: Miami Tribe of Oklahoma Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Miami Tribe of Oklahoma'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://miamination.com/node/18) returned HTTP 404, so it is
+    not recorded.'
+- kind: corporate-charter
+  title: Corporate charter (Miami Tribe of Oklahoma)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/okmiachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-okmiachrtr
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Miami Tribe of Oklahoma)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/okmiacons.html
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.miamination.com/miami-tribe-of-oklahoma-court/
+  source: national-indian-law-library-miami-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Miami Tribe of Oklahoma Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Miami Tribe of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (https://miamination.com/node/19) returned HTTP
+    404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Admissibility of Information in Examination or Treatment
+    citation: Miami Tribe of Oklahoma Criminal Procedure Code Section 435
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/admissibility-of-information-in-examination-or-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Alternative Types of Hearings for Juvenile Cases
+    citation: Miami Tribe of Oklahoma Juvenile Code Section 106
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-types-of-hearings-for-juvenile-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Court Discretionary Dismissal in Juvenile Court
+    citation: Miami Tribe of Oklahoma Juvenile Code Section 705
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-discretionary-dismissal-in-juvenile-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Detention and its Limitations in Juvenile Cases
+    citation: Miami Tribe of Oklahoma Juvenile Code Section 404; Section 405; and, Section 907
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/detention-and-its-limitations-in-juvenile-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Diversion Agreements and Conditions in Juvenile Court
+    citation: Miami Tribe of Oklahoma Juvenile Code Section 508
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-agreements-and-conditions-in-juvenile-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Diversion in Youth Cases
+    citation: Miami Tribe of Oklahoma Child Welfare Code Section 21 & Section 26
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-in-youth-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Informal Conference in Juvenile Court
+    citation: Miami Tribe of Oklahoma Juvenile Code Section 501 & Section 503 & Section 504 & Section
+      505
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-in-juvenile-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Informal Dispositional Hearing for Neglected Children Cases
+    citation: Miami Tribe of Oklahoma Child Welfare Code Section 28
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-dispositional-hearing-for-neglected-children-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Mandated Facility for Treatment for Intoxication Cases
+    citation: Miami Tribe of Oklahoma Criminal Offense Code Section 536
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mandated-facility-for-treatment-for-intoxication-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Mandatory Treatment Plan for every Child Welfare Case
+    citation: Miami Tribe of Oklahoma Child Welfare Code Section 31 and Section 30.
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mandatory-treatment-plan-for-every-child-welfare-case/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Predisposition and Dispositonal Reports for Juvenile Deliquency Cases
+    citation: Miami Tribe of Oklahoma Juvenile Code Section 901 & Section 904
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/predisposition-and-dispositonal-reports-for-juvenile-deliquency-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Pretrial Diversion in Criminal Court
+    citation: Miami Tribe of Oklahoma Criminal Procedure Code Section 424 & 425
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pretrial-diversion-in-criminal-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Purpose and Goals of Juvenile Court
+    citation: Miami Tribe of Oklahoma Juvenile Code Section 2 & Section 10
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-goals-of-juvenile-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Rehabilitative Approach of the Court when Sentencing
+    citation: Miami Tribe of Oklahoma Criminal Offense Code Section 8
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitative-approach-of-the-court-when-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Specific Requirments with an Order of Protection for Rehabilitation
+    citation: Miami Tribe of Oklahoma Child Welfare Code Section 33
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/specific-requirments-with-an-order-of-protection-for-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Supervised Work Programs for Child in Need of Supervision
+    citation: Miami Tribe of Oklahoma Child Welfare Code Section 36
+    link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/supervised-work-programs-for-child-in-need-of-supervision/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '1996-02-06'
+    federal_register_citation: 61 FR 4478
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1996-02-06'
+    locator: result page 28 (?page=28), row 4
+    note: 'Listed as: "Miami Tribe and Modoc Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Kialegee Tribal Town". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.02.06%20Miami%20and%20Modoc%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/02/06/96-2449/indian-gaming-oklahoma.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. One compact listed jointly for more than one nation. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '1995-04-20'
+    federal_register_citation: 60 FR 19822
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1995-04-20'
+    locator: result page 28 (?page=28), row 5
+    note: 'Listed as: "Miami Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Kialegee
+      Tribal Town". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.04.20%20Miami%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/04/20/95-9821/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    federal_register_citation: 70 FR 3942
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: result page 28 (?page=28), row 6
+    note: 'Listed as: "Miami Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Kialegee
+      Tribal Town". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.01.27%20Miami%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/01/27/05-1468/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-01-27).
+  ordinances:
+  - approved: '1993-10-27'
+    link: https://www.nigc.gov?wpdmdl=10270&ind=10300
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-10-27'
+    locator: table row 151, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+  - approved: '1994-12-15'
+    link: https://www.nigc.gov?wpdmdl=10271&ind=10301
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-12-15'
+    locator: table row 151, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+  - approved: '1999-04-07'
+    link: https://www.nigc.gov?wpdmdl=10287&ind=10302
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-04-07'
+    locator: table row 151, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+  - approved: '2012-12-03'
+    link: https://www.nigc.gov?wpdmdl=10288&ind=10303
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-12-03'
+    locator: table row 151, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+  - approved: '2021-07-22'
+    link: https://www.nigc.gov?wpdmdl=10289&ind=10304
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-07-22'
+    locator: table row 151, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Miami Tribe of Oklahoma Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,367 @@
+id: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana
+entity_type: native-nation
+names:
+  official: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+  self_designation:
+  - name: Aaniiih
+    language_tag: ats
+    source: ftbelknap-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''Home of the Nakoda and Aaniiih Nations''; ''Gros Ventre (Aaniiih)''. History page
+      spells it ''AH-AH-NE-NIN'', meaning the White Clay People.'
+  - name: Nakoda
+    language_tag: asb
+    source: ftbelknap-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''Assiniboine (Nakoda)''. History page: Nakoda means ''the generous ones''.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: MT
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+- state: MT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1150
+  note: 'Census area with land in this state: Fort Belknap Reservation and Off-Reservation Trust Land
+    (code 1150). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1150'
+  name: Fort Belknap Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1150
+  note: Matched by name. Census class code D1.
+population:
+- count: 7000
+  kind: citizens
+  source: ftbelknap-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''a tribal membership of 7,000 enrolled members''. Undated; as_of is access date.'
+- count: 3382
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1150, field POP100
+  note: 'Census area: Fort Belknap Reservation and Off-Reservation Trust Land (code 1150). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1526
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2994 (Fort Belknap Indian Community of the Fort Belknap Reservation
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Fort Belknap Indian Community of the Fort Belknap Reservation'
+    (race code 5820) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 6304
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Fort Belknap Indian Community', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://ftbelknap.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+- kind: physical-address
+  value: 158 Tribal Way, Harlem, MT 59526
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+- kind: mailing-address
+  value: RR 1, Box 66, Harlem, MT 59526
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+- kind: phone
+  value: (406) 353-2205
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+- kind: fax
+  value: (406) 353-2797
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+federal_administration:
+  bureau_of_indian_affairs_region: Rocky Mountain
+  bureau_of_indian_affairs_agency: Fort Belknap Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "Fort Belknap Indian Community, Montana" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Fort Belknap Indian Community of the Fort Belknap Reservation Montana) (approved
+    1935) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-ftbelcons
+  confidence: medium
+  as_of: '1935'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+  year: '2018'
+  link: https://narf.org/nill/codes/fort_belknap/index.html
+  source: national-indian-law-library-code-codes-fort-belknap
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: January 2018. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana - Tribal Constitution
+  year: '2001'
+  link: https://narf.org/nill/constitutions/fort_belknap/index.html
+  source: national-indian-law-library-constitution-constitutions-fort-belknap
+  confidence: medium
+  as_of: '2001'
+  locator: page heading
+  note: 'Constitution Amended: 2001 Bylaws Adopted: 1935 Corporate Charter Amended: 1964. The National
+    Indian Law Library page gives the table of contents (and may link to the nation''s own copy); full
+    text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://ftbelknap.org/forms%2Fdocuments
+  source: national-indian-law-library-fort-belknap
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Various ordinances and policies.".'
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-fort-belknap
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
+    website .". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/fb/codes) returned
+    HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: https://ftbelknap.org/forms%2Fdocuments
+  source: national-indian-law-library-fort-belknap
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Fort Belknap Indian Community Constitution
+  link: http://ftbelknap.org/documents/1935%20Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Fort Belknap Indian Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Fort Belknap Indian Community'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://ftbelknap.org/documents/By-Laws.pdf) returned HTTP 404,
+    so it is not recorded.'
+- kind: law-code
+  title: Fort Belknap Tribal Code
+  link: http://ftbelknap.org/documents/Fort%20Belknap%20Tribal%20Code.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Fort Belknap Indian Community'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
+- kind: corporate-charter
+  title: Corporate charter (Fort Belknap Indian Community of the Fort Belknap Reservation Montana)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/ftbelchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-ftbelchrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Fort Belknap Indian Community of the Fort Belknap Reservation Montana)
+  year: '1935'
+  link: https://thorpe.law.ou.edu/IRA/ftbelcons.html
+  source: university-of-oklahoma-indian-reorganization-act-ftbelcons
+  confidence: medium
+  as_of: '1935'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-fort-belknap
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Fort Belknap Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Fort Belknap Indian Community'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Assessment and Treatment for Sex Offensers and Victims
+    citation: Fort Belknap Indian Community Code Title IV, Part 7, Section XVII
+    link: https://ftbelknap.org/forms%2Fdocuments
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/assessment-and-treatment-for-sex-offensers-and-victims/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Substance.'
+  - kind: other
+    title: Victim Restitution for Sex Offender Victims
+    citation: Fort Belknap Indian Community Code Title IV, Part 7, Section III
+    link: https://ftbelknap.org/forms%2Fdocuments
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/victim-restitution-for-sex-offender-victims/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: .'
+gaming:
+  compacts:
+  - state: MT
+    status: deemed-approved
+    approved: '2007-12-10'
+    federal_register_citation: 72 FR 69706
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-12-10'
+    locator: result page 20 (?page=20), row 2
+    note: 'Listed as: "Fort Belknap Indian Community of the Fort Belknap Reservation Tribal State Gaming
+      Compact" (Deemed Approved); list''s Tribe column: "Fort Belknap Indian Community of the Fort Belknap
+      Reservation of Montana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.12.10_fort_belknap_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/12/10/E7-23885/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: deemed-approved
+    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
+      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
+      either party may terminate after giving 90 days' written notice and an opportunity to cure.
+    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
+      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2007-12-10).
+  ordinances:
+  - approved: '2002-09-05'
+    link: https://www.nigc.gov?wpdmdl=9822&ind=9835
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-09-05'
+    locator: table row 84, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 84 lists the nation
+      as "Fort Belknap Indian Community". Name matched to roster by spelling variant.
+  - approved: '2009-12-01'
+    link: https://www.nigc.gov?wpdmdl=9823&ind=9836
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-12-01'
+    locator: table row 84, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 84 lists the nation
+      as "Fort Belknap Indian Community". Name matched to roster by spelling variant.
+  - approved: '2026-08-17'
+    link: https://www.nigc.gov?wpdmdl=14513&ind=14514
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2026-08-17'
+    locator: table row 84, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 84 lists the nation
+      as "Fort Belknap Indian Community". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort Belknap Indian Community
+      of the Fort Belknap Reservation, Montana". Facilities as machine-extracted from the report text
+      (verify): Fort Belknap Casino. Name extracted from the PDF by the page-fetch tool and matched to
+      the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+memberships:
+- organization: Rocky Mountain Tribal Leaders Council
+  source: rocky-mountain-tribal-leaders-council-who-we-are
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Fort Belknap Indian Community". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

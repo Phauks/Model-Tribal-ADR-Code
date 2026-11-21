@@ -1,0 +1,330 @@
+id: pueblo-of-acoma
+entity_type: native-nation
+names:
+  official: Pueblo of Acoma, New Mexico
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NM
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Acoma, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0010
+  note: 'Census area with land in this state: Acoma Pueblo and Off-Reservation Trust Land (code 0010).
+    Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0010'
+  name: Acoma Pueblo and Off-Reservation Trust Land
+  area_type: Pueblo and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0010
+  note: Matched by name. Census class code D1.
+population:
+- count: 3230
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0010, field POP100
+  note: 'Census area: Acoma Pueblo and Off-Reservation Trust Land (code 0010). Everyone counted as living
+    in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s
+    citizens.'
+- count: 6101
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3234 (Pueblo of Acoma alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pueblo of Acoma' (race code 6167) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 4819
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Acoma Pueblo', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 2259
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T39400 'Pueblo of Acoma'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.puebloofacoma.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Acoma, New Mexico
+- kind: physical-address
+  value: 25 Pinsbaari Drive, Acoma, NM 87034
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Acoma, New Mexico
+- kind: mailing-address
+  value: P.O. Box 309, Acoma, NM 87034
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Acoma, New Mexico
+- kind: phone
+  value: (505) 552-6604
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Acoma, New Mexico
+- kind: fax
+  value: (505) 552-7204
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Acoma, New Mexico
+federal_administration:
+  bureau_of_indian_affairs_region: Southwest
+  bureau_of_indian_affairs_agency: Southern Pueblos Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Acoma, New Mexico
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+  source: national-indian-law-library-pueblo-acoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.puebloofacoma.org/departments/acoma-tribal-court/
+  source: national-indian-law-library-pueblo-acoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pueblo of Acoma Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Acoma'
+  note: 'Link check 2026-11-21: the link the source gives (http://puebloofacoma.org/Tribal_Courts.aspx)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Goal of Treatment/Recovery for Controlled Substances Cases
+    citation: Pueblo of Acoma Laws 6-12-1 and 6-12-10
+    link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/goal-of-treatment-recovery-for-controlled-substances-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Purpose of the Juvenile Delinquency Chapter
+    citation: Pueblo of Acoma Laws 4-5-1
+    link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-juvenile-delinquency-chapter/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Restorative Justice Policy of Sentencing
+    citation: Pueblo of Acoma Laws 5-1-24
+    link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-justice-policy-of-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Treatment Mandated in a Protective Order
+    citation: Pueblo of Acoma Laws 4-4-12
+    link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-mandated-in-a-protective-order/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Treatment Programs for Juvenile Offenders
+    citation: Pueblo of Acoma Laws 4-5-16
+    link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-programs-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+gaming:
+  compacts:
+  - state: NM
+    status: approved
+    approved: '1995-05-15'
+    federal_register_citation: 60 FR 25978
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-05-15'
+    locator: result page 22 (?page=22), row 15
+    note: 'Listed as: "Pueblo of Acoma Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Acoma, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.05.15_pueblo_of_acoma_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/05/15/95-11760/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2001-12-14'
+    federal_register_citation: 66 FR 64856
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-12-14'
+    locator: result page 22 (?page=22), row 16
+    note: 'Listed as: "Pueblo of Acoma Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Acoma, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.12.14_pueblo_of_acoma_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/12/14/01-30908/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '2015-06-22'
+    federal_register_citation: 80 FR 35668
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-22'
+    locator: result page 22 (?page=22), row 17
+    note: 'Listed as: "Pueblo of Acoma Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Pueblo of Acoma, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.22_pueblo_of_acoma_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/22/2015-15207/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-06-22).
+  ordinances:
+  - approved: '1994-11-03'
+    link: https://www.nigc.gov?wpdmdl=10721&ind=10736
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-11-03'
+    locator: table row 201, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+  - approved: '1998-01-20'
+    link: https://www.nigc.gov?wpdmdl=10722&ind=10737
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-01-20'
+    locator: table row 201, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+  - approved: '2008-12-18'
+    link: https://www.nigc.gov?wpdmdl=10723&ind=10738
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-12-18'
+    locator: table row 201, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+  - approved: '2011-01-31'
+    link: https://www.nigc.gov?wpdmdl=10724&ind=10739
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-01-31'
+    locator: table row 201, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+  - approved: '2016-07-15'
+    link: https://www.nigc.gov?wpdmdl=10725&ind=10740
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-07-15'
+    locator: table row 201, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pueblo of Acoma, New Mexico Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: All Pueblo Council of Governors
+  source: all-pueblo-council-of-governors-pueblo-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pueblo of Acoma". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

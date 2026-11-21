@@ -1,0 +1,492 @@
+id: confederated-tribes-of-the-chehalis-reservation
+entity_type: native-nation
+names:
+  official: Confederated Tribes of the Chehalis Reservation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Chehalis Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0575
+  note: 'Census area with land in this state: Chehalis Reservation and Off-Reservation Trust Land (code
+    0575). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0575'
+  name: Chehalis Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0575
+  note: Matched by name. Census class code D1.
+population:
+- count: 767
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0575, field POP100
+  note: 'Census area: Chehalis Reservation and Off-Reservation Trust Land (code 0575). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1131
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2945 (Confederated Tribes of the Chehalis Reservation alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Confederated Tribes of the Chehalis Reservation' (race
+    code 5590) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 985
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Confederated Tribes of the Chehalis Reservation', PDF page
+    8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.chehalistribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Chehalis Reservation
+- kind: physical-address
+  value: 420 Howanut Road, Oakville, WA 98568
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Chehalis Reservation
+- kind: mailing-address
+  value: P.O. Box 536, Oakville, WA 98568
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Chehalis Reservation
+- kind: phone
+  value: (360) 273-5911
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Chehalis Reservation
+- kind: fax
+  value: (360) 273-5914
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Chehalis Reservation
+- kind: email-general
+  value: info@chehalistribe.org
+  label: General office email shown on the nation's website
+  source: chehalistribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Upper Chehalis
+  language_tag: cjh
+  source: chehalistribe-about
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'About page: ''Upper Chehalis and Lower Chehalis were the predominant languages of the region
+    pre-contact.'''
+- name: Lower Chehalis
+  language_tag: cea
+  source: chehalistribe-about
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'About page: ''Upper Chehalis and Lower Chehalis were the predominant languages of the region
+    pre-contact.'''
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Olympic Peninsula Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Chehalis Reservation
+governing_documents:
+- kind: law-code
+  title: Confederated Tribes of the Chehalis Reservation
+  link: https://narf.org/nill/codes/confederated_chehalis/index.html
+  source: national-indian-law-library-code-codes-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://www.chehalistribe.org/departments/office-of-the-tribal-attorney/
+  source: national-indian-law-library-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    / Code Publishing Co. website .".'
+- kind: law-code
+  title: Tribal code
+  link: http://www.codepublishing.com/WA/ChehalisTribe/
+  source: national-indian-law-library-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    / Code Publishing Co. website .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribeCB.html
+  source: national-indian-law-library-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Code Publishing
+    Co. website .".'
+- kind: constitution
+  title: Confederated Tribes of the Chehalis Reservation - Constitution and Bylaws
+  link: https://narf.org/nill/constitutions/confederated_chehalis/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Confederated Tribes of the Chehalis Reservation Constitution and Bylaws
+  link: http://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribeCB.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Chehalis Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Chehalis Tribal Code – Code Publishing
+  link: http://www.codepublishing.com/WA/ChehalisTribe/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Chehalis Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.chehalistribe.org/departments/public-safety/tribal-court/) returned
+    HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Chehalis Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Chehalis Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (https://www.chehalistribe.org/departments/public-safety/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternative Dispositions in Juvenile Justice
+    citation: Chehalis Tribal Code. Chapter 6.20 Youth In Need Of Care. Section 6.20.140 Predispositional
+      Report & 6.20.150 Dispositional Hearing
+    link: https://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribe06/ChehalisTribe0620.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispositions-in-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Deferred Prosecution for Treatment
+    citation: Chehalis Tribal Code. Chapter 3.30 Criminal Procedures. Section 3.30.490 Request for deferred
+      prosecution, 3.30.500 Drug and alcohol evaluation, 3.30.510 Court order based on evaluation report,
+      3.30.520 Admissibility of evidence, & 3.30.530 Failure to comply with conditions.
+    link: https://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribe03/ChehalisTribe0330.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-for-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Domestic or Family Violence Relational Life Skills Sentencing
+    citation: Chehalis Tribal Code. Chapter 4.80 Criminal Procedures. Section 4.80.045 Judgments and convictions
+      & 4.80.050 Mandatory relational life skills (RLS).
+    link: https://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribe04/ChehalisTribe0480.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-or-family-violence-relational-life-skills-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Domestic or Family Violence Treatment Sentencing
+    citation: Chehalis Tribal Code. Chapter 4.80 Criminal Procedures. Section 4.80.040 Criminal penalties.
+    link: https://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribe04/ChehalisTribe0480.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-or-family-violence-treatment-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Conference in Juvenile Justice
+    citation: Chehalis Tribal Code. Chapter 6.20 Youth In Need Of Care. Section 6.20.070 Investigation
+      By Youth Caseworker & 6.20.080 Informal Conference.
+    link: https://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribe06/ChehalisTribe0620.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-in-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference.'
+  - kind: other
+    title: 15.01.210 Dispute resolution.
+    citation: 15.01.210 Dispute resolution.
+    link: https://www.narf.org/nill/codes/confederated_chehalis/index.html
+    source: national-indian-law-library-code-index-confederated-chehalis
+    confidence: medium
+    as_of: 2025-04
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: 15.01.210 Dispute resolution.
+    citation: 15.01.210 Dispute resolution.
+    link: https://narf.org/nill/codes/confederated_chehalis/index.html
+    source: national-indian-law-library-code-codes-confederated-chehalis
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under '15.01 General Welfare Exclusion Ordinance'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4458
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-01-28'
+    locator: result page 37 (?page=37), row 23
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.01.28_confederated_tribes_of_the_chehalis_reservation_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1926/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-04-20'
+    federal_register_citation: 60 FR 19822
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-04-20'
+    locator: result page 37 (?page=37), row 24
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.04.20%20Confederated%20Tribes%20of%20the%20Chehalis%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/04/20/95-9818/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 37293
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 37 (?page=37), row 25
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Confederated%20Tribes%20of%20the%20Chehalis%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/30/2015-16035/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1993-03-04'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-03-04'
+    locator: result page 38 (?page=38), row 1
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201993.03.04%20Confederated%20Tribes%20of%20the%20Chehalis%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 38 (?page=38), row 2
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.05.31%20Confederated%20Tribes%20of%20the%20Chehalis%20Reservation%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2022-08-09'
+    federal_register_citation: 87 FR 48494
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-08-09'
+    locator: result page 38 (?page=38), row 3
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.08.09_confederated_tribes_of_chehalis_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/08/09/2022-17028/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-confederated.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2024-02-14'
+    federal_register_citation: 89 FR 11312
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-02-14'
+    locator: result page 38 (?page=38), row 4
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.02.14_confederated_tribes_of_the_chehalis_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/02/14/2024-03014/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-confederated.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-02-14).
+  ordinances:
+  - approved: '1993-12-21'
+    link: https://www.nigc.gov?wpdmdl=9607&ind=9631
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-12-21'
+    locator: table row 55, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 55 lists the nation
+      as "Confederated Tribes of the Chehalis Reservation".
+  - approved: '2017-12-01'
+    link: https://www.nigc.gov?wpdmdl=9620&ind=9632
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-12-01'
+    locator: table row 55, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 55 lists the nation
+      as "Confederated Tribes of the Chehalis Reservation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Chehalis
+      Reservation, Washington". Facilities as machine-extracted from the report text (verify): Lucky Eagle
+      Casino and Hotel. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of all criminal jurisdiction exercised by Washington over the
+    Chehalis Reservation, Quileute Indian Reservation and Swinomish Tribal Community, except as provided
+    in RCW 37.12.010 and related 1986 and 1988 Washington laws. (54 FR 19959)
+  source: federal-register-1989-chehalis-quileute-swinomish-retrocession
+  confidence: high
+  as_of: '1989-05-10'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Confederated Tribes of the Chehalis Reservation Confidence lowered from high by the
+    lead session: the notice prints its table as page images, so nation names were read from images and
+    matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2018-10-24 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-confederated-tribes-of-the-chehalis-reservation
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Confederated Tribes of the Chehalis Reservation". Also on the NCAI implementing tribes
+    list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes of the Chehalis Reservation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

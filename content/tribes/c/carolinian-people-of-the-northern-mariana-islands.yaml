@@ -1,0 +1,126 @@
+id: carolinian-people-of-the-northern-mariana-islands
+entity_type: territorial-indigenous-people
+names:
+  official: Carolinian people of the Northern Mariana Islands
+  self_designation:
+  - name: Refaluwasch
+    language_tag: cal
+    source: cnmi-carolinian-affairs-office-report-2021
+    confidence: medium
+    as_of: '2021'
+    locator: page with office name block
+    note: The Carolinian Affairs Office signs its report 'Carolinian Affairs Office / Bwulasiyol Refaluwasch'.
+      The CNMI Constitution uses 'Carolinian' and 'Northern Marianas Carolinian'.
+  alternate:
+  - name: Northern Marianas Carolinian
+    source: cnmi-constitution
+    confidence: high
+    as_of: '2014'
+    locator: art. XII § 4
+  official_source: cnmi-constitution
+recognition:
+- type: territorial-law
+  state: MP
+  legal_basis: Constitution of the Northern Mariana Islands, art. XII §§ 1 and 4 ('persons of Northern
+    Marianas descent', including Northern Marianas Carolinian), as amended by House Legislative Initiative
+    18-1 (2014)
+  source: cnmi-constitution
+  confidence: high
+  as_of: '2014'
+  locator: art. XII §§ 1, 4
+  note: Same provision as for the CHamoru people; descent is defined by Northern Marianas Chamorro or
+    Northern Marianas Carolinian blood or a combination. See the Covenant § 805 basis (cnmi-covenant).
+- type: territorial-law
+  state: MP
+  legal_basis: Constitution of the Northern Mariana Islands, art. III § 18 (Executive Assistant for Carolinian
+    Affairs), as amended by Second Const. Conv. Amend. 18 (1985)
+  source: cnmi-constitution
+  confidence: high
+  as_of: '1985'
+  locator: art. III § 18
+  note: Governor appoints an executive assistant 'acceptable to the Carolinian community' who advises
+    on 'matters affecting persons of Carolinian descent', may investigate complaints and hold hearings,
+    and sits on the governor's council. Original provision 1977 (effective 1978), amended 1985.
+- type: territorial-law
+  state: MP
+  legal_basis: Constitution of the Northern Mariana Islands, art. III § 23 (Resident Executive for Indigenous
+    Affairs), Second Const. Conv. Amend. 22 (1985)
+  since: '1985'
+  source: cnmi-constitution
+  confidence: high
+  as_of: '1985'
+  locator: art. III § 23
+- type: territorial-law
+  state: MP
+  legal_basis: Covenant to Establish a Commonwealth of the Northern Mariana Islands, § 805, approved by
+    Pub. L. 94-241, 90 Stat. 263 (1976)
+  since: '1976-03-24'
+  source: cnmi-covenant
+  confidence: high
+  as_of: '1976-03-24'
+  locator: § 805(a)
+  note: Basis for the land-alienation restriction to persons of Northern Mariana Islands descent.
+states:
+- state: MP
+  presence: land
+  source: cnmi-constitution
+  confidence: high
+  as_of: '2014'
+  locator: art. XI § 1; art. XII
+  note: Public lands belonging collectively to persons of Northern Marianas descent; land-alienation restriction.
+population:
+- count: 2271
+  kind: census-carolinian-alone
+  source: census-2020-cnmi-demographic-profile-dp1
+  confidence: high
+  as_of: '2020-04-01'
+  locator: Commonwealth of the Northern Mariana Islands; DECENNIALDPMP2020.DP1 row DP1_0088C (One Race,
+    Native Hawaiian and Other Pacific Islander, Carolinian)
+  note: 4.8% of CNMI population. The CNMI demographic profile does not report a Carolinian alone-or-in-any-combination
+    count. Not American Indian or Alaska Native. Kind value is new.
+contacts:
+- kind: website
+  value: www.cnmicao.com
+  label: Carolinian Affairs Office (CNMI territorial agency)
+  source: cnmi-carolinian-affairs-office-report-2021
+  confidence: low
+  as_of: '2021'
+  note: Given in the 2021 report; the site was not opened or verified in this session.
+- kind: phone
+  value: 234-6383-5
+  label: Carolinian Affairs Office (CNMI territorial agency)
+  source: cnmi-carolinian-affairs-office-report-2021
+  confidence: medium
+  as_of: '2021'
+  note: Exact text from the report ('For more information call 234-6383-5'), apparently lines 234-6383
+    through 234-6385; CNMI area code is 670 (not stated on that page).
+languages:
+- name: Carolinian
+  language_tag: cal
+  source: cnmi-constitution
+  confidence: high
+  as_of: '1985'
+  locator: art. XXII § 3
+  note: '''The official language of the Commonwealth shall be Chamorro, Carolinian and English''. Tag
+    cal per ISO 639-3 (source key iso-639-3-cal); no ISO 639-1 code exists.'
+related_entities:
+- name: Carolinian Affairs Office (Bwulasiyol Refaluwasch)
+  relation: territorial-agency
+  source: cnmi-carolinian-affairs-office-report-2021
+  confidence: medium
+  as_of: '2021'
+  locator: page 1
+  note: 'Report: the office ''was created by mandate of Article III, Section 18 of the CNMI Constitution''.'
+- name: Indigenous Affairs Office (Commonwealth of the Northern Mariana Islands)
+  relation: territorial-agency
+  source: cnmi-indigenous-affairs-office-report-2019
+  confidence: medium
+  as_of: '2019'
+  locator: page 1
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

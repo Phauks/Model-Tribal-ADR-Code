@@ -1,0 +1,176 @@
+id: cayuga-nation
+entity_type: native-nation
+names:
+  official: Cayuga Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: NY
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cayuga Nation
+- state: NY
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 8100
+  note: 'Census area with land in this state: Cayuga Nation TDSA (code 8100). Statistical area only (not
+    a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '8100'
+  name: Cayuga Nation TDSA
+  area_type: Tribal Designated Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US8100
+  note: Matched by name. Census class code D6.
+population:
+- count: 2572
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US8100, field POP100
+  note: 'Census area: Cayuga Nation TDSA (code 8100). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The area
+    is a Census statistical area, not a land holding.'
+- count: 1891
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2894 (Cayuga Nation alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Cayuga Nation' (race code 5864) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 475
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Cayuga Nation', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 429
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 76, row T04700 'Cayuga Nation of New York'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://cayuganation-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cayuga Nation
+- kind: physical-address
+  value: 2540 NY-89, Seneca Falls, NY 13148
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cayuga Nation
+- kind: mailing-address
+  value: P.O. Box 803, Seneca Falls, NY 13148
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cayuga Nation
+- kind: phone
+  value: 315-568-0750
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cayuga Nation
+- kind: fax
+  value: 315-252-1092
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cayuga Nation
+languages:
+- name: Cayuga
+  language_tag: cay
+  source: cayuganation-nsn-history-culture
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''Our Native language is Cayuga, a vital part of our cultural heritage.'' The page adds
+    that many citizens are also familiar with Seneca.'
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cayuga Nation
+gaming:
+  ordinances:
+  - approved: '2003-11-18'
+    link: https://www.nigc.gov?wpdmdl=9453&ind=9465
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-11-18'
+    locator: table row 34, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 34 lists the nation
+      as "Cayuga Nation of New York".
+  - approved: '2018-07-31'
+    link: https://www.nigc.gov?wpdmdl=9454&ind=9466
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-07-31'
+    locator: table row 34, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 34 lists the nation
+      as "Cayuga Nation of New York".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cayuga Nation". Facilities
+      as machine-extracted from the report text (verify): Lakeside Entertainment I; Lakeside Entertainment
+      II; Lakeside Entertainment III (E3); Lakeside Entertainment IV. Name extracted from the PDF by the
+      page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Cayuga Nation Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Cayuga Nation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

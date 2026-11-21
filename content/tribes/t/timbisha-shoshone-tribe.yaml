@@ -1,0 +1,265 @@
+id: timbisha-shoshone-tribe
+entity_type: native-nation
+names:
+  official: Timbisha Shoshone Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 47 FR 50109
+  petition_number: '51'
+  petition_stage: Letter of Intent to Petition 04/09/1979; Acknowledgment effective 01/03/1983 47 FR 50109
+  since: '1983-01-03'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1983-01-03'
+  locator: 'Petitioner #51'
+  note: 'Petitioner name: Death Valley Timbi-sha Shoshone Tribe.'
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4180
+  note: 'Census area with land in this state: Timbi-Sha Shoshone Reservation and Off-Reservation Trust
+    Land (code 4180). Area matched to the nation by name.'
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4180
+  note: 'Census area with land in this state: Timbi-Sha Shoshone Reservation and Off-Reservation Trust
+    Land (code 4180). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4180'
+  name: Timbi-Sha Shoshone Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4180
+  note: Matched by name. Census spells the area Timbi-Sha Shoshone. Census class code D1.
+population:
+- count: 25
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4180, field POP100
+  note: 'Census area: Timbi-Sha Shoshone Reservation and Off-Reservation Trust Land (code 4180). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens. Census spells the area Timbi-Sha Shoshone.'
+- count: 252
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3371 (Timbisha Shoshone Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Timbisha Shoshone Tribe' (race code 6285) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 391
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Timbisha Shoshone Tribe (Death Valley)', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://timbisha.com/newsite/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+- kind: physical-address
+  value: '621 W Line St #109, Bishop, CA 93514'
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+- kind: mailing-address
+  value: 621 West Line Street, Suite 109, Bishop, CA 93514
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+- kind: phone
+  value: (760) 872-3614
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+- kind: fax
+  value: (760) 872-3670
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+governing_documents:
+- kind: law-code
+  title: Timbisha Shoshone Tribe - Tribal Code - Table of Contents
+  link: https://narf.org/nill/codes/death_valley/index.html
+  source: national-indian-law-library-code-codes-death-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Timbisha Shoshone Tribe - Tribal Constitution
+  link: https://narf.org/nill/constitutions/death_valley/index.html
+  source: national-indian-law-library-constitution-constitutions-death-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Election Ordinance
+  link: http://www.timbisha.com/images/Documents/election%20ordinance.pdf
+  source: national-indian-law-library-death-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Election Ordinance.".'
+- kind: law-code
+  title: Enrollment Ordinance
+  link: http://www.timbisha.com/images/Documents/enrollment%20ordinance.pdf
+  source: national-indian-law-library-death-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Enrollment Ordinance.".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-death-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the link the source gives (http://www.timbisha.com/index.php/constit)
+    returned HTTP 404, so it is not recorded.'
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2024-12-26'
+    federal_register_citation: 89 FR 105090
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-12-26'
+    locator: result page 12 (?page=12), row 12
+    note: 'Listed as: "Timbisha Shoshone Tribe Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Timbisha Shoshone Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.12.26_timbisha_shoshone_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/12/26/2024-30744/indian-gaming-approval-by-operation-of-law-tribal-state-class-iii-gaming-compacts-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2024-12-26).
+  ordinances:
+  - approved: '2004-01-08'
+    link: https://www.nigc.gov?wpdmdl=11342&ind=11363
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-01-08'
+    locator: table row 286, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 286 lists the nation
+      as "Timbisha Shoshone Tribe".
+  - approved: '2026-08-18'
+    link: https://www.nigc.gov?wpdmdl=14506&ind=14507
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2026-08-18'
+    locator: table row 286, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 286 lists the nation
+      as "Timbisha Shoshone Tribe".
+  - approved: '2026-11-17'
+    link: https://www.nigc.gov?wpdmdl=14850&ind=14851
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2026-11-17'
+    locator: table row 286, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 286 lists the nation
+      as "Timbisha Shoshone Tribe".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Timbisha Shoshone Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Timbisha Shoshone Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

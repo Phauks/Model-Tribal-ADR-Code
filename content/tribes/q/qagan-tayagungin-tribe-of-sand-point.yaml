@@ -1,0 +1,247 @@
+id: qagan-tayagungin-tribe-of-sand-point
+entity_type: native-nation
+names:
+  official: Qagan Tayagungin Tribe of Sand Point
+  alternate:
+  - name: QTT
+    source: alaska-dcra-federally-recognized-tribes-contacts
+    confidence: medium
+    as_of: '2026-04-02'
+    locator: 'record "Qagan Tayagungin Tribe of Sand Point Village" (community: Sand Point, object 178)'
+    note: Listed in the "Also Known As" field of the State of Alaska tribal contacts list.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Qagan Tayagungin Tribe of Sand Point
+- state: AK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 7410
+  note: 'Census area with land in this state: Sand Point ANVSA (code 7410). Statistical area only (not
+    a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '7410'
+  name: Sand Point ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7410
+  note: 'Matched by name. Matched by community: the Qagan Tayagungin Tribe is the tribal government of
+    Sand Point. Census class code E1.'
+population:
+- count: 775
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Qagan Tayagungin (Sand Point)", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 536
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7410, field POP100
+  note: 'Census area: Sand Point ANVSA (code 7410). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The area
+    is a Census statistical area, not a land holding. Matched by community: the Qagan Tayagungin Tribe
+    is the tribal government of Sand Point.'
+- count: 404
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2774 (Qagan Tayagungin Tribe of Sand Point Village alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Qagan Tayagungin Tribe of Sand Point Village' (race
+    code 5164) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+contacts:
+- kind: website
+  value: https://www.qttribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Qagan Tayagungin Tribe of Sand Point
+- kind: physical-address
+  value: 100 Main Street Suite 7C, Sand Point, AK 99661
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Qagan Tayagungin Tribe of Sand Point
+- kind: mailing-address
+  value: P.O. Box 447, Sand Point, AK 99661
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Qagan Tayagungin Tribe of Sand Point
+- kind: phone
+  value: (907) 383-5616
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Qagan Tayagungin Tribe of Sand Point
+- kind: email-general
+  value: qttadmin@arctic.net
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Qagan Tayagungin Tribe of Sand Point Village" (community: Sand Point, object 178)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+languages:
+- name: Unangan (Aleut)
+  language_tag: ale
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Sand Point"
+  note: Language of the Native place name for the community (Sand Point), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Qagan Tayagungin Tribe of Sand Point
+governing_documents:
+- kind: law-code
+  title: Qagan Tayagungin Tribe of Sand Point
+  year: '2015'
+  link: https://narf.org/nill/codes/qagan_tayagungin/index.html
+  source: national-indian-law-library-code-codes-qagan-tayagungin
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: February 2015. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Qagan Tayagungin Tribe of Sand Point - Tribal Constitution
+  year: '2004'
+  link: https://narf.org/nill/constitutions/qagan_tayagungin/index.html
+  source: national-indian-law-library-constitution-constitutions-qagan-tayagungin
+  confidence: medium
+  as_of: '2004'
+  locator: page heading
+  note: 'Adopted: March 13, 2004. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Codes and Ordinances
+  link: http://www.qttribe.org/index.asp?Type=B_BASIC&SEC={4AAD77D9-6F8E-4B6D-BDF1-FB858C7BCE35}
+  source: national-indian-law-library-qagan-tayagungin
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Codes and Ordinances.".'
+- kind: law-code
+  title: Resolutions
+  link: http://www.qttribe.org/index.asp?Type=B_BASIC&SEC={5BE49282-796D-4699-A4F6-E82B7C2AF8D1}
+  source: national-indian-law-library-qagan-tayagungin
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Resolutions.".'
+- kind: constitution
+  title: Constitution
+  link: http://www.qttribe.org/index.asp?Type=B_BASIC&SEC={EE48FE37-6A07-4BF8-B840-02DB2B02CA48}
+  source: national-indian-law-library-qagan-tayagungin
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.qttribe.org/index.asp?Type=B_BASIC&amp;SEC={93D3C44F-6DBA-4948-98CE-BFCD5F6C797F}
+  source: national-indian-law-library-qagan-tayagungin
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Alaska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Alaska. Applies to the nation''s Indian country
+    within Alaska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
+  note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Qagan Tayagungin Tribe of Sand Point Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+related_entities:
+- name: The Aleut Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Qagan Tayagungin Tribe of Sand Point
+  note: Regional corporation for the area, as listed in the directory.
+- name: Aleut Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Sand Point"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Sand Point),
+    not for the tribal government by name.
+- name: Aleutian Pribilof Islands Association, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Sand Point"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Sand Point),
+    not for the tribal government by name.
+- name: Eastern Aleutian Tribes, Incorporated
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Sand Point"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Sand Point),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

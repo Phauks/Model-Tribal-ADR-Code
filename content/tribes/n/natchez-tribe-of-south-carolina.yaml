@@ -1,0 +1,37 @@
+id: natchez-tribe-of-south-carolina
+entity_type: native-nation
+names:
+  official: Natchez Tribe of South Carolina
+  official_source: south-carolina-recognized-tribes-advance-sc
+recognition:
+- type: state
+  state: SC
+  legal_basis: 'South Carolina Code of Laws Section 1-31-40(A)(10); South Carolina Code of Regulations
+    Chapter 139 (category: State Recognized Native American Indian Group)'
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: Listed under 'Indian Groups', a separate state category the agency defines as individuals assembled
+    together, composed of Native American Indians and other ethnic races, governed by a tribal council;
+    not the 'Tribe' category.
+states:
+- state: SC
+  presence: other
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: State-recognized entity with a South Carolina contact address.
+contacts:
+- kind: email-general
+  value: natcheztribeofsc@hotmail.com
+  label: Tribe Email
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

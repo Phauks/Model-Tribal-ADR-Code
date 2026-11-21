@@ -1,0 +1,367 @@
+id: hopi-tribe-of-arizona
+entity_type: native-nation
+names:
+  official: Hopi Tribe of Arizona
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopi Tribe of Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1505
+  note: 'Census area with land in this state: Hopi Reservation and Off-Reservation Trust Land (code 1505).
+    Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1505'
+  name: Hopi Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1505
+  note: Matched by name. Census class code D1.
+population:
+- count: 6377
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1505, field POP100
+  note: 'Census area: Hopi Reservation and Off-Reservation Trust Land (code 1505). Everyone counted as
+    living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the
+    nation''s citizens.'
+- count: 22921
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3025 (Hopi Tribe of Arizona alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Hopi Tribe of Arizona' (race code 5851) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 14422
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Hopi Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.hopi-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopi Tribe of Arizona
+- kind: physical-address
+  value: 123 Main Street, Kykotsmovi Village, AZ 86039
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopi Tribe of Arizona
+- kind: mailing-address
+  value: P.O. Box 123, Kykotsmovi, AZ 86039
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopi Tribe of Arizona
+- kind: phone
+  value: (928) 734-3102
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopi Tribe of Arizona
+- kind: fax
+  value: (928) 734-6665
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopi Tribe of Arizona
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Hopi Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hopi Tribe of Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Hopi Tribe, Arizona" among organizations under constitutions approved by the
+    Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Hopi Tribe Arizona) (approved 1936) states it was adopted under Act of June 18,
+    1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-hopicons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Hopi Indian Tribe, Law and Order Code
+  year: '1991'
+  link: https://narf.org/nill/codes/hopicode/index.html
+  source: national-indian-law-library-code-codes-hopicode
+  confidence: medium
+  as_of: '1991'
+  locator: page heading
+  note: 'Dated: 1991. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution of the Hopi Tribe
+  year: '2007'
+  link: https://narf.org/nill/constitutions/hopi/index.html
+  source: national-indian-law-library-constitution-constitutions-hopi
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: 'Received: 2007. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.hopi-nsn.gov/judicial-branch/hopi-code-of-laws-and-rules-of-civil-procedures/
+  source: national-indian-law-library-hopi-arizona
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Constitution, Code, Ordinances and Court Rules
+  link: https://hopitribalcourts.com/hopi-laws/
+  source: national-indian-law-library-hopi-arizona
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Constitution, Code, Ordinances and Court Rules.". Link check 2026-11-21: the site did not
+    respond.'
+- kind: constitution
+  title: Hopi Tribe Constitution and Bylaws
+  link: https://docs.google.com/file/d/0B5iJZdagMNhTOEhVM1ZrMl9QX2M/edit
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hopi Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Hopi Laws
+  link: http://www.hopitribalcourts.com/hopi-laws/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hopi Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
+- kind: constitution
+  title: Constitution (Hopi Tribe Arizona)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/hopicons.html
+  source: university-of-oklahoma-indian-reorganization-act-hopicons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://hopitribalcourts.com/
+  source: national-indian-law-library-hopi-arizona
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    site did not respond.'
+- kind: tribal-court
+  name: Hopi Tribal Courts
+  link: http://www.hopitribalcourts.com/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hopi Tribe'
+  note: 'Link check 2026-11-21: the site did not respond.'
+dispute_resolution:
+  forums:
+  - kind: traditional-forum
+    name: Village authority over family disputes
+    description: The Constitution reserves to each village the power to adjust family disputes and regulate
+      family relations of village members, along with appointing guardians, regulating inheritance and
+      assigning farming land; each village decides how it is organized, and a village that has not chosen
+      another form is considered to be under traditional Hopi organization.
+    legal_basis: Constitution of the Hopi Tribe, Article III, Sections 2-3
+    case_types:
+    - family
+    - probate
+    - property-or-land
+    relationship_to_court: A power reserved to the villages, separate from the courts the Tribal Council
+      may set up under Article VI.
+    link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+    source: hopi-constitution-nill
+    confidence: medium
+    as_of: '1993-12-07'
+    locator: Article III, Sections 2(a)-(d) and 3
+    note: The Constitution states the reserved powers; it does not describe how individual villages carry
+      them out, so no procedure, participation or enforcement is recorded.
+  - kind: other
+    name: Tribal Council hearing of disputes between villages
+    description: When villages dispute any matter, the Kikmongwi of a village party may ask the Chairman
+      to call a special Council meeting; the Council hears representatives and witnesses, decides in a
+      closed meeting by majority vote, and keeps a record of the evidence and its reasons.
+    legal_basis: Constitution of the Hopi Tribe, Article VIII
+    case_types:
+    - intergovernmental
+    participation: voluntary
+    enforcement: A village party that considers the decision unjust may, within ten days, seek review
+      by the Secretary of the Interior.
+    link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+    source: hopi-constitution-nill
+    confidence: medium
+    as_of: '1993-12-07'
+    locator: Article VIII, Sections 1-3
+    note: Participation recorded as voluntary because the text says a village party 'may' ask for the
+      meeting. Secretarial review is as stated in the constitution text read.
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: Powers reserved to the villages
+    citation: Hopi Constitution, Article III, Section 2
+    summary: Reserves to the individual villages the powers to appoint guardians, adjust family disputes,
+      regulate inheritance and assign farming land.
+    link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+    source: hopi-constitution-nill
+    confidence: medium
+    as_of: '1993-12-07'
+  - kind: other
+    title: Disputes Between Villages
+    citation: Hopi Constitution, Article VIII
+    summary: Sets a Tribal Council hearing and decision procedure for disputes between villages, with
+      review by the Secretary of the Interior on a village's request.
+    link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+    source: hopi-constitution-nill
+    confidence: medium
+    as_of: '1993-12-07'
+  - kind: other
+    title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Intoxication
+    citation: 3.15.4 INTOXICATION.
+    link: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-intoxication/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-intoxication/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Possession
+    citation: 3.15.1 USE OR POSSESSION OFFENSES.
+    link: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-possession/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-possession/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Possibility of Diversion as Penalty
+    citation: 3.4.4 OTHER CRIMINAL PENALTIES.
+    link: https://ncorj.org/tribal-law/possibility-of-diversion-as-penalty/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/possibility-of-diversion-as-penalty/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Diversion.'
+gaming:
+  compacts:
+  - state: AZ
+    status: deemed-approved
+    approved: '2018-05-08'
+    federal_register_citation: 83 FR 20852
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-05-08'
+    locator: result page 1 (?page=1), row 6
+    note: 'Listed as: "Hopi Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Hopi Tribe of Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202019.05.08%20Hopi%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/05/08/2018-09800/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-arizona.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: deemed-approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2018-05-08).
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Hopi Tribe of Arizona Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+- topic: tribal-law-and-order-act-enhanced-sentencing
+  value: implementing
+  detail: Listed among tribes exercising enhanced sentencing and incarcerating inmates under the Tribal
+    Law and Order Act (as of 2013 interviews).
+  source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
+  confidence: medium
+  as_of: '2013'
+  locator: p. 3, list of tribes exercising enhanced sentencing
+  note: Listed as "Hopi Tribe".
+memberships:
+- organization: Inter Tribal Council of Arizona
+  source: inter-tribal-council-of-arizona-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Hopi Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

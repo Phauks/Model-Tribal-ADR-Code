@@ -1,0 +1,536 @@
+id: forest-county-potawatomi-community
+entity_type: native-nation
+names:
+  official: Forest County Potawatomi Community, Wisconsin
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: WI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Forest County Potawatomi Community, Wisconsin
+- state: WI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1135
+  note: 'Census area with land in this state: Forest County Potawatomi Community and Off-Reservation Trust
+    Land (code 1135). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1135'
+  name: Forest County Potawatomi Community and Off-Reservation Trust Land
+  area_type: Community and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1135
+  note: Matched by name. Census class code D1.
+population:
+- count: 1400
+  kind: citizens
+  source: wisconsin-dpi-tribal-nations-forest-county-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page, Tribal Statistics: ''There are roughly 1,400 FC Potawatomi tribal members.'' Undated;
+    as_of is access date.'
+- count: 594
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1135, field POP100
+  note: 'Census area: Forest County Potawatomi Community and Off-Reservation Trust Land (code 1135). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 568
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2993 (Forest County Potawatomi Community, Wisconsin alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Forest County Potawatomi Community, Wisconsin' (race
+    code 6154) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1295
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Forest County Potawatomi Community', PDF page 4, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.fcpotawatomi.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Forest County Potawatomi Community, Wisconsin
+- kind: physical-address
+  value: 5416 Everybodys Road, Crandon, WI 54520
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Forest County Potawatomi Community, Wisconsin
+- kind: mailing-address
+  value: Post Office Box 340, Crandon, WI 54520
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Forest County Potawatomi Community, Wisconsin
+- kind: phone
+  value: (715) 478-7200
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Forest County Potawatomi Community, Wisconsin
+- kind: fax
+  value: (715) 478-5280
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Forest County Potawatomi Community, Wisconsin
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Great Lakes Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Forest County Potawatomi Community, Wisconsin
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Forest County Potawatomi Community, Wisconsin" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution and By-Laws of the Forest County Potawatomi Community Wisconsin (approved 1937)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-forestconst
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Forest County Potawatomi Community, Wisconsin - Code of Laws
+  year: '2018'
+  link: https://narf.org/nill/codes/forest_county_potawatomi/index.html
+  source: national-indian-law-library-code-codes-forest-county-potawatomi
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: September 2018. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Forest County Potawatomi Community, Wisconsin - Tribal Constitution
+  link: https://narf.org/nill/constitutions/forest_county_potawatomi/index.html
+  source: national-indian-law-library-constitution-constitutions-forest-county-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Code of Laws
+  link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+  source: national-indian-law-library-forest-county-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Code of Laws.".'
+- kind: court-rules
+  title: Tribal Court Rules
+  link: https://www.fcpotawatomi.com/government/tribal-court/tribal-court-rules/
+  source: national-indian-law-library-forest-county-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At court website .
+    Tribal Court Rules.".'
+- kind: constitution
+  title: Title 1, Chapter 1 of Forest County Potawatomi Community Code of Laws
+  link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+  source: national-indian-law-library-forest-county-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . Title 1, Chapter 1 of Forest County Potawatomi Community Code of Laws.".'
+- kind: constitution
+  title: Forest County Potawatomi Constitution
+  link: https://www.fcpotawatomi.com/wp-content/plugins/fcpview/?pdf=https://www.fcpotawatomi.com/wp-content/uploads/2014/12/1982-Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Forest County Potawatomi'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Forest County Potawatomi Code of Laws
+  link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Forest County Potawatomi'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Forest County Potawatomi Community, Wisconsin)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/forestcharter.html
+  source: university-of-oklahoma-indian-reorganization-act-forestcharter
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution and By-Laws of the Forest County Potawatomi Community Wisconsin
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/forestconst.html
+  source: university-of-oklahoma-indian-reorganization-act-forestconst
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.fcpotawatomi.com/government/tribal-court/
+  source: national-indian-law-library-forest-county-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Forest County Potawatomi Tribal Court
+  link: http://www.fcpotawatomi.com/government/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Forest County Potawatomi'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Court ordered treatment and services for rehabilitation of the family
+    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 3.15
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-treatment-and-services-for-rehabilitation-of-the-family/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: rehabilitate.'
+  - kind: other
+    title: Disposition Options for Truancy
+    citation: Forest County Potawatomi Truancy Ordinance Chapter 3-5, § 8
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-truancy/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Program.'
+  - kind: other
+    title: reasonably appropriate alternative dispositions requirement
+    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 3.14
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reasonably-appropriate-alternative-dispositions-requirement/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Treatment or Habilitation Plan Evaluation
+    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 9.6, & § 9.14
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-or-habilitation-plan-evaluation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: .'
+  - kind: other
+    title: Truancy Prevention Plan
+    citation: Forest County Potawatomi Truancy Ordinance Chapter 3-5, § 6
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-prevention-plan/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Program.'
+  - kind: mediation
+    title: 2-5 Mediation (05/09/2015)
+    citation: 2-5 Mediation (05/09/2015); Mediators; Appointment, Request, and Assignment of a Mediator;
+      Mediation Process
+    link: https://www.narf.org/nill/codes/forest_county_potawatomi/index.html
+    source: national-indian-law-library-code-index-forest-county-potawatomi
+    confidence: medium
+    as_of: 2018-09
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 2-5 Mediation (05/09/2015
+    citation: 2-5 Mediation (05/09/2015
+    link: https://narf.org/nill/codes/forest_county_potawatomi/index.html
+    source: national-indian-law-library-code-codes-forest-county-potawatomi
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under '2-5 Mediation (05/09/2015)'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: WI
+    status: deemed-approved
+    approved: '2006-01-31'
+    federal_register_citation: 71 FR 5068
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2006-01-31'
+    locator: result page 45 (?page=45), row 8
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202006.01.31.Forest%20County%20Potawatomi%20Gaming%20Compact.DEEMED%20APPROVED.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/01/31/E6-1197/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-08-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-08-10'
+    locator: result page 45 (?page=45), row 9
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.08.10%20Forest%20County%20Potawatomi%20Gaming%20Compact.pdf.'
+  - state: WI
+    status: approved
+    approved: '1999-02-01'
+    federal_register_citation: 64 FR 4890
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-01'
+    locator: result page 45 (?page=45), row 10
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.02.01%20Forest%20County%20Potawatomi%20Compact%20Amendment_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/01/99-2278/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: disapproved
+    approved: '2015-01-09'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-01-09'
+    locator: result page 45 (?page=45), row 11
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Disapproved);
+      list''s Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.01.09%20Forest%20County%20Potawatomi%20Tribal%20State%20Gaming%20Compact%20Amendment%20and%20Disapproval%20Letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-05-08'
+    federal_register_citation: 68 FR 24754
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-05-08'
+    locator: result page 45 (?page=45), row 12
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.05.08%20Forest%20County%20Potawatomi%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/05/08/03-11390/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-09-08'
+    federal_register_citation: 68 FR 52953
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-09-08'
+    locator: result page 45 (?page=45), row 13
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.09.08.Forest%20County%20Potawatomi.DEEMED%20APPROVED.09082003.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/09/08/03-22788/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2019-04-16'
+    federal_register_citation: 84 FR 15630
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-04-16'
+    locator: result page 45 (?page=45), row 14
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%2004.16.2019%20Forest%20County%20Potawatomi%20Community%20Compact%20Amendment.1.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/04/16/2019-07490/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-wisconsin.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2022-04-12'
+    federal_register_citation: 87 FR 21667
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-04-12'
+    locator: result page 45 (?page=45), row 15
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.04.12_forest_county_potawatomi_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/04/12/2022-07754/indian-gaming-approval-of-forest-county-potawatomi-community-tribal-state-class-iii-gaming-compact.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: disapproved
+    approved: '2025-04-17'
+    federal_register_citation: 90 FR 16171
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2025-04-17'
+    locator: result page 45 (?page=45), row 16
+    note: 'Listed as: "Forest County Potawatomi Community Tribal State Gaming Compact" (Disapproved);
+      list''s Tribe column: "Forest County Potawatomi Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2025.04.17_forest_county_potawatomi_community_tribal_state_gaming_compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. (Source federal-register-api-gaming-notices.) Federal
+      Register citation found by matching the listed date to the only Indian Gaming notice published that
+      day (not linked in the list).'
+  - state: WI
+    status: approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2022-04-12).
+  ordinances:
+  - approved: '1993-11-08'
+    link: https://www.nigc.gov?wpdmdl=9818&ind=9831
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-11-08'
+    locator: table row 83, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 83 lists the nation
+      as "Forest County Potawatomi Community".
+  - approved: '1995-05-23'
+    link: https://www.nigc.gov?wpdmdl=9819&ind=9832
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-05-23'
+    locator: table row 83, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 83 lists the nation
+      as "Forest County Potawatomi Community".
+  - approved: '1997-12-29'
+    link: https://www.nigc.gov?wpdmdl=9820&ind=9833
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-12-29'
+    locator: table row 83, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 83 lists the nation
+      as "Forest County Potawatomi Community".
+  - approved: '2019-06-17'
+    link: https://www.nigc.gov?wpdmdl=9821&ind=9834
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2019-06-17'
+    locator: table row 83, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 83 lists the nation
+      as "Forest County Potawatomi Community".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Forest County Potawatomi Community,
+      Wisconsin". Facilities as machine-extracted from the report text (verify): Potawatomi Hotel & Casino;
+      Potawatomi Carter Casino Hotel. Name extracted from the PDF by the page-fetch tool and matched to
+      the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Wisconsin is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Wisconsin. Applies to the nation''s Indian
+    country within Wisconsin; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
+  note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Forest County Potawatomi Community, Wisconsin Confidence lowered from high by the
+    lead session: the notice prints its table as page images, so nation names were read from images and
+    matched to the roster.'
+- topic: indian-child-welfare-act
+  value: reassumed-jurisdiction
+  detail: Approval of petition under 25 U.S.C. § 1918 covering the Forest County Potawatomi Communities
+    in Forest, Oconto and Marinette Counties, Wisconsin. (62 FR 1471)
+  source: federal-register-1997-forest-county-potawatomi-icwa-reassumption
+  confidence: high
+  as_of: '1997-01-10'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Forest County Potawatomi Community of Wisconsin". Name matched to the roster entry.
+- organization: Great Lakes Inter-Tribal Council
+  source: great-lakes-inter-tribal-council-tribes-served
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Forest County Potawatomi Community". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

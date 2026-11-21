@@ -1,0 +1,637 @@
+id: kalispel-indian-community-of-the-kalispel-reservation
+entity_type: native-nation
+names:
+  official: Kalispel Indian Community of the Kalispel Reservation
+  alternate:
+  - name: The People of the Oreille
+    source: kalispeltribe-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Homepage: ''Even today we are known as “The People of the Oreille,”''.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kalispel Indian Community of the Kalispel Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1735
+  note: 'Census area with land in this state: Kalispel Reservation and Off-Reservation Trust Land (code
+    1735). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1735'
+  name: Kalispel Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1735
+  note: Matched by name. Census class code D1.
+population:
+- count: 470
+  kind: citizens
+  source: kalispeltribe-our-story
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page, ''Current Demographics'': ''470 Kalispel Tribal Members. 34 percent of current Tribal membership
+    is under age 18''. Undated; as_of is access date.'
+- count: 753
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1735, field POP100
+  note: 'Census area: Kalispel Reservation and Off-Reservation Trust Land (code 1735). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 507
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3047 (Kalispel Indian Community alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Kalispel Indian Community' (race code 5880) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 472
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Kalispel Indian Community', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.kalispeltribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kalispel Indian Community of the Kalispel Reservation
+- kind: physical-address
+  value: 1981 LeClerc Road North, Cusick, WA 99119
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kalispel Indian Community of the Kalispel Reservation
+- kind: mailing-address
+  value: P.O. Box 39, Usk, WA 99180
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kalispel Indian Community of the Kalispel Reservation
+- kind: phone
+  value: (509) 445-1147
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kalispel Indian Community of the Kalispel Reservation
+- kind: fax
+  value: (509) 445-1705
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kalispel Indian Community of the Kalispel Reservation
+languages:
+- name: Salish (Kalispel)
+  language_tag: fla
+  source: kalispeltribe-our-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: Kalispel Language Program to ''reclaim and preserve our Salish Language''.'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Spokane Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kalispel Indian Community of the Kalispel Reservation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Kalispel Indian Community of the Kalispel Reservation, Washington" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Kalispel Indian Community of the Kalispel Reservation Washington) (approved 1938)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-kalcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Law and Order Code of the Kalispel Indian Community
+  year: '2015'
+  link: https://narf.org/nill/codes/kalispelcode/index.html
+  source: national-indian-law-library-code-codes-kalispelcode
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: August 2015. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Kalispel Indian Community - Revised Constitution and Bylaws
+  year: '2019'
+  link: https://narf.org/nill/constitutions/kalispelconst/index.html
+  source: national-indian-law-library-constitution-constitutions-kalispelconst
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Amended: November 11, 2019. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://kalispeltribalcourt.org/law-order-code
+  source: national-indian-law-library-kalispel
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Constitution-and-Bylaws.pdf
+  source: national-indian-law-library-kalispel
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Kalispel Tribe’s Constitution and Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Kalispel Tribe of Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://88e40d44ec63a58b8a49-298f012ea728efea7c302ad9a6f7bba0.r52.cf2.rackcdn.com/pdf-uploads/Kalispel-Tribal-Constitution-By-Laws.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Kalispel Law and Order Code
+  link: http://www.kalispeltribe.com/government/tribal-court/law-order-code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Kalispel Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Kalispel Indian Community of the Kalispel Reservation Washington)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/kalchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-kalchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Kalispel Indian Community of the Kalispel Reservation Washington)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/kalcons.html
+  source: university-of-oklahoma-indian-reorganization-act-kalcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://kalispeltribalcourt.org/
+  source: national-indian-law-library-kalispel
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kalispel Tribal Court
+  link: http://www.kalispeltribe.com/government/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Kalispel Tribe of Indians'
+dispute_resolution:
+  forums:
+  - kind: other
+    name: Traditional Peacemakers Panel
+    description: A panel named in the civil actions chapter that may allow alternative service, decides
+      tolling questions, and in execution of judgments orders the judgment debtor to appear, determines
+      available property and orders seizure.
+    legal_basis: Kalispel Law and Order Code, Chapter 3 – Civil Actions, Sections 3-1, 3-5.01, 3-21 (Execution
+      of Judgments)
+    case_types:
+    - civil
+    participation: required
+    relationship_to_court: Functions within the Tribal Court's civil process as described in Chapter 3.
+    enforcement: Orders seizure and public sale of a judgment debtor's property; failure to appear may
+      be deemed contempt.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
+    source: kalispel-law-and-order-code-chapter-3-civil-actions
+    confidence: medium
+    as_of: '2025-04-09'
+    locator: Sections 3-1.04, 3-5.01, 3-21.01-3-21.03
+    note: Kind 'other' because the chapter shows the panel acting in an adjudicative and enforcement role
+      rather than as a consensual forum; the chapter reviewed does not define the panel's composition.
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: Execution of Judgments (Traditional Peacemakers Panel)
+    citation: Kalispel Law and Order Code, Chapter 3, Sec. 3-21
+    summary: Authorizes the Traditional Peacemakers Panel to examine judgment debtors and order seizure
+      and sale of property, with a hardship exemption and redemption period.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
+    source: kalispel-law-and-order-code-chapter-3-civil-actions
+    confidence: medium
+    as_of: '2025-04-09'
+  - kind: other
+    title: Elder and Vulnerable Adult Protection Family Group Conference and Safety Plan
+    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 27 Elder and Vulnerable
+      Adult Code. Section 27-6: Availability og Alternative Proceedings. 27-6.01 Preventative Measures.'
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/elder-and-vulnerable-adult-protection-family-group-conference-and-safety-plan/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Family conference,
+      Family group conference; Restorative justice.'
+  - kind: other
+    title: Family Protection Plan in Youth In Need Of Care Cases
+    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 7 Kalispel Youth Code.
+      Section 7-23: Disposition Order.'
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-protection-plan-in-youth-in-need-of-care-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Treatment for Elder and Vulnerable Adult Protection Order
+    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 27 Elder and Vulnerable
+      Adult Code. Section 27-12: Elder and Vulnerable Adult Protection Order. 27-12.07 Order of Protection.'
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-elder-and-vulnerable-adult-protection-order/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Treatment for Protection Orders for Domestic Relations
+    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 8 Domestic Relations.
+      Section 8-6: Orders of Protection. 8-6.08 Order of Protection - Temporary & Permanent.'
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-protection-orders-for-domestic-relations/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Treatment for Public Intoxication
+    citation: The Law and Order Code of the Kalispel Tribe of Indians. Chapter 9 Criminal Offenses.
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-public-intoxication/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: arbitration
+    title: CHAPTER 22 � ARBITRATION CODE
+    citation: 'CHAPTER 22 � ARBITRATION CODE; SECTION 22-2: AGREMENTS TO ARBITRATE AND ENFORCEABLE; 22-2.01
+      Agreements to Arbitrate are Enforceable; SECTION 22-4: STAY OF PROCEEDINGS AND ORDER TO PROCEED
+      WITH ARBITRATION; 22-4.01 Stay of Proceedings and Order to Proceed with Arbitration; SECTION 22-8:
+      ARBITRATION AWARD NOT APPEALABLE; 22-8.01 Arbitration Award Not Appealable'
+    link: https://www.narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-index-kalispelcode
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: 23-9.03 Claimant Attorney’s Fees and Other Related Arbitration Costs
+    citation: 23-9.03 Claimant Attorney’s Fees and Other Related Arbitration Costs
+    link: https://www.narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-index-kalispelcode
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: 'Chapter 3 – Civil Actions, Sec. 3-21: Execution of Judgments'
+    citation: 'Chapter 3 – Civil Actions, Sec. 3-21: Execution of Judgments'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Kalispel Tribe of Indians, Washington
+    note: 'Native American Rights Fund description (provision itself not read): Provides authority and
+      procedure.'
+  - kind: arbitration
+    title: 'CHAPTER 22 � ARBITRATION CODE SECTION 22-1: SCOPE OF CODE'
+    citation: 'CHAPTER 22 � ARBITRATION CODE SECTION 22-1: SCOPE OF CODE'
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: 'SECTION 22-2: AGREMENTS TO ARBITRATE AND ENFORCEABLE'
+    citation: 'SECTION 22-2: AGREMENTS TO ARBITRATE AND ENFORCEABLE'
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: 'SECTION 22-4: STAY OF PROCEEDINGS AND ORDER TO PROCEED WITH ARBITRATION'
+    citation: 'SECTION 22-4: STAY OF PROCEEDINGS AND ORDER TO PROCEED WITH ARBITRATION'
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: 'SECTION 22-8: ARBITRATION AWARD NOT APPEALABLE'
+    citation: 'SECTION 22-8: ARBITRATION AWARD NOT APPEALABLE'
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: 23-9.03 Claimant Attorney’s Fees and Other Related Arbitration Costs
+    citation: 23-9.03 Claimant Attorney’s Fees and Other Related Arbitration Costs
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: 'Table of Contents, under ''SECTION 23-9: ADJUDICATION OF DISPUTES'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2021-09-15'
+    federal_register_citation: 86 FR 51374
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-15'
+    locator: result page 39 (?page=39), row 1
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.09.15_kalispel_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/15/2021-19843/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2023-06-14'
+    federal_register_citation: 88 FR 38889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-06-14'
+    locator: result page 39 (?page=39), row 2
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.06.14_kalispel_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/06/14/2023-12681/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2024-02-14'
+    federal_register_citation: 89 FR 11311
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-02-14'
+    locator: result page 39 (?page=39), row 3
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.02.14_kalispel_indian_coimmunity_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/02/14/2024-03012/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-kalispel.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-06-03'
+    federal_register_citation: 64 FR 29874
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-03'
+    locator: result page 39 (?page=39), row 4
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.03%20Kalispel%20Indian%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/03/99-13999/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 39 (?page=39), row 5
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_kalispel_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1998-12-14'
+    federal_register_citation: 63 FR 68787
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-12-14'
+    locator: result page 39 (?page=39), row 6
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.12.14_kalispel_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/12/14/98-33045/bureau-of-indian-affairs-indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 39 (?page=39), row 7
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal-State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Kalispel%20Indian%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-02-14).
+  ordinances:
+  - approved: '1997-09-26'
+    link: https://www.nigc.gov?wpdmdl=10008&ind=10024
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-09-26'
+    locator: table row 113, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2001-02-13'
+    link: https://www.nigc.gov?wpdmdl=10009&ind=10025
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-02-13'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2002-11-04'
+    link: https://www.nigc.gov?wpdmdl=10010&ind=10026
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-11-04'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2008-08-15'
+    link: https://www.nigc.gov?wpdmdl=10011&ind=10027
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-08-15'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2019-05-08'
+    link: https://www.nigc.gov?wpdmdl=10012&ind=10028
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2019-05-08'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2022-06-02'
+    link: https://www.nigc.gov?wpdmdl=10013&ind=10029
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2022-06-02'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2026-09-17'
+    link: https://www.nigc.gov?wpdmdl=14550&ind=14551
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2026-09-17'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kalispel Indian Community
+      of the Kalispel Reservation". Facilities as machine-extracted from the report text (verify): Kalispel
+      Casino; Northern Quest Resort & Casino. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Kalispel Indian Community of the Kalispel Reservation Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Kalispel Tribe of Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

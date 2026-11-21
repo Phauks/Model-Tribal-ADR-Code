@@ -1,0 +1,561 @@
+id: lummi-tribe-of-the-lummi-reservation
+entity_type: native-nation
+names:
+  official: Lummi Tribe of the Lummi Reservation
+  self_designation:
+  - name: Lhaq'temish
+    language_tag: str
+    source: lummi-nsn-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''We are the Lhaq''temish, the Lummi People.'' Tag str (Straits Salish) assigned
+      by researcher.'
+  alternate:
+  - name: Lummi Nation
+    source: lummi-nsn-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''Welcome to Lummi Nation''.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2070
+  note: 'Census area with land in this state: Lummi Reservation (code 2070). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2070'
+  name: Lummi Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2070
+  note: Matched by name. Census class code D2.
+population:
+- count: 5258
+  kind: citizens
+  source: lummi-nation-community-plan-final-draft-2022
+  confidence: high
+  as_of: '2022-11-27'
+  note: 'Community Plan, Population section: ''Based on data from the Lummi enrollment office, the Lummi
+    Nation currently includes an enrolled population of 5,258. This includes 2,920 members on reservation,
+    959 members living in Whatcom County but off reservation, and 1,379 members living outside Whatcom
+    County.'''
+- count: 5748
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2070, field POP100
+  note: 'Census area: Lummi Reservation (code 2070). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 5484
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3096 (Lummi Tribe alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Lummi Tribe' (race code 5924) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label matched by name variant.
+- count: 5265
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Lummi Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.lummi-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+- kind: physical-address
+  value: 2665 Kwina Road, Bellingham, WA 98226
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+- kind: mailing-address
+  value: 2665 Kwina Road, Bellingham, WA 98226
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+- kind: phone
+  value: (360) 312-2000
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+- kind: fax
+  value: (360) 380-6979
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+governing_documents:
+- kind: constitution
+  title: Lummi Tribe of the Lummi Reservation - Constitution and Bylaws
+  year: '2016'
+  link: https://narf.org/nill/constitutions/lummi/index.html
+  source: national-indian-law-library-constitution-constitutions-lummi
+  confidence: medium
+  as_of: '2016'
+  locator: page heading
+  note: 'Amended: February 7, 2006 Signed: February 1, 2016. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.lummi-nsn.gov/Website.php?PageID=831
+  source: national-indian-law-library-lummi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.lummi-nsn.gov/userfiles/831_2006ConstitutionSigned2016.pdf
+  source: national-indian-law-library-lummi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Lummi Tribe of the Lummi Reservation Constitution and Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Lummi Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.narf.org/nill/codes/lummi/Constitution.pdf) returned
+    HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Lummi Code of Laws
+  link: https://www.lummi-nsn.gov/Website.php?PageID=393
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Lummi Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Lummi Tribe of the Lummi Reservation Washinton)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/lummicons.html
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  as_of: '1948'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-lummi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lummi Tribal Court
+  link: http://www.lummi-nsn.org/website/dept_pages/law_order/courts.shtml
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Lummi Nation'
+  note: 'Link check 2026-11-21: the site did not respond.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Ch’qi’n’txw an Offender’s Record of Conviction (Expungement)
+    citation: Lummi Nation Code of Laws, Title 5, Chapter 5.12 (5.12.010 and following)
+    summary: Lets a person who has completed all terms of a Lummi Tribal Court sentence petition to have
+      the conviction ch’qi’n’txw, a term the code gives the same legal effect as expungement, grounded
+      in the community value of forgiveness, with listed offenses excluded.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Lummi-Title5CodeofOffenses.pdf
+    source: lummi-title-5-code-of-offenses
+    confidence: high
+    as_of: '2022'
+    locator: 5.12.010, 5.12.020
+    note: 'A restorative, post-sentencing provision rather than a dispute forum; the code refers to living
+      consistently with Lummi Sche’lang’en. Language tag str (Straits Salish) assigned on the basis that
+      Lummi is a Northern Straits Salish language; the source does not name the language. Own term: ch’qi’n’txw.'
+  - kind: other
+    title: Declaration of Restorative Justice
+    citation: Justice
+    link: https://ncorj.org/tribal-law/declaration-of-restorative-justice/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/declaration-of-restorative-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: N/A. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Disposition Options for Child is Found to Be in Need of Protection
+    citation: Found to Be in Need of Protection.
+    link: https://ncorj.org/tribal-law/disposition-options-for-child-is-found-to-be-in-need-of-protection/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-child-is-found-to-be-in-need-of-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Family Conference in Child Welfare
+    citation: Lummi Nation Code of Laws. Title 8 Children's Code. Chapter 8.01 General Provisions. 8.01.050
+      Grandparent Consultation & Section 8.01.060 Notice to Extended Family; Family Conference.
+    link: https://www.lummi-nsn.gov/userfiles/393_Title_8__Children_s_Code__Resolution__2013-131.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-conference-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
+      of practice: Family conference, Family group conference.'
+  - kind: other
+    title: Family Preservation Plan
+    citation: Lummi Nation Code of Laws. Title 8 Children's Code. Chapter 8.01 General Provisions. Section
+      8.01.030 Family Preservation Plan.
+    link: https://www.lummi-nsn.gov/userfiles/393_Title_8__Children_s_Code__Resolution__2013-131.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-preservation-plan/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: traditional-dispute-resolution
+    title: Grandparents Committee/Elder’s Panel
+    citation: Lummi Nation Code of Laws. Title 8 Children's Code. Chapter 8.01 General Provisions. Section
+      8.01.120 Grandparents Committee.
+    link: https://www.lummi-nsn.gov/userfiles/393_Title_8__Children_s_Code__Resolution__2013-131.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/grandparents-committee-elders-panel/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
+      of practice: Community or Elder Panel.'
+  - kind: other
+    title: Informal Hearing in Child Welfare
+    citation: Children.
+    link: https://ncorj.org/tribal-law/informal-hearing-in-child-welfare/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearing-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: traditional-dispute-resolution
+    title: Prioritization of Family Conference and Grandparents Committee in Child Welfare
+    citation: a Parent and Child.
+    link: https://ncorj.org/tribal-law/prioritization-of-family-conference-and-grandparents-committee-in-child-welfare/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/prioritization-of-family-conference-and-grandparents-committee-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
+      of practice: Community or Elder Panel; Family conference, Family group conference.'
+  - kind: other
+    title: Prioritization of Restorative and Traditional Sentencing
+    citation: Lummi Nation Code of Laws. Title 5 Code of Offenses. Chapter 5.11 Sentencing. 5.11.020 Sentencing
+      Guidelines.
+    link: https://www.lummi-nsn.gov/userfiles/994_Title5CodeofOffensesLIBCResolution2022-031.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/prioritization-of-restorative-and-traditional-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: N/A. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restorative Purpose in Children’s Code
+    citation: Lummi Nation Code of Laws. Title 8 Children's Code. Chapter 8.01 General Provisions. 8.01.010
+      Declaration of Purpose.
+    link: https://www.lummi-nsn.gov/userfiles/393_Title_8__Children_s_Code__Resolution__2013-131.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-purpose-in-childrens-code/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: N/A. Database form of
+      practice: Restorative justice.'
+  - kind: other
+    title: Treatment for Domestic Violence
+    citation: Lummi Nation Code of Laws. Title 5A Domestic Violence Code. Chapter 5A.04 Court Proceedings
+      for Crimes of Domestic Violence. 5A.04.045 Judgments of Conviction.
+    link: https://www.lummi-nsn.gov/userfiles/831_Title5A.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-domestic-violence-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: traditional-dispute-resolution
+    title: 'Title 5: Code of Offenses, Chapter 5.12 – Ch’qi’n’txw an Offender’s Record of Conviction (Expungement)'
+    citation: 'Title 5: Code of Offenses, Chapter 5.12 – Ch’qi’n’txw an Offender’s Record of Conviction
+      (Expungement)'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Lummi-Title5CodeofOffenses.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Lummi Nation of Washington
+    note: 'Native American Rights Fund description (provision itself not read): Full procedures and standards
+      for applying traditional notion related to clearing record of offender upon satisfactory completion
+      of penalty under cultural standards. Innovative sentencing-related provisions.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2001-02-27'
+    federal_register_citation: 66 FR 12542
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-02-27'
+    locator: result page 39 (?page=39), row 12
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.02.27%20Lummi%20Tribe%20Tribal%20State%20Gaming%20Compact._0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/02/27/01-4743/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2014-04-08'
+    federal_register_citation: 79 FR 19353
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-04-08'
+    locator: result page 39 (?page=39), row 13
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202014.04.08%20Lummi%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/04/08/2014-07823/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 39 (?page=39), row 14
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_lummi_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-12-18'
+    federal_register_citation: 60 FR 65064
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-12-18'
+    locator: result page 39 (?page=39), row 15
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.12.18_lummi_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/12/18/95-30339/indian-gaming-lummi-nation-wa.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2006-09-12'
+    federal_register_citation: 71 FR 53706
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2006-09-12'
+    locator: result page 39 (?page=39), row 16
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202006.09.12%20Lummi%20Tribe%20Tribal%20State%20Gaming%20Compact.Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/09/12/E6-15024/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 39 (?page=39), row 17
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.04_lummi_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-12-27'
+    federal_register_citation: 86 FR 73313
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-12-27'
+    locator: result page 39 (?page=39), row 18
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.12.27_lummi_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/12/27/2021-27975/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-09-01'
+    federal_register_citation: 86 FR 49052
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-01'
+    locator: result page 39 (?page=39), row 19
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.09.01_lummi_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/01/2021-18814/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    approved: '2026-02-06'
+    federal_register_citation: 91 FR 5508
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-02-06'
+    locator: result page 39 (?page=39), row 20
+    note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Lummi Tribe of the Lummi Reservation". Document: https://www.bia.gov/sites/default/files/media_document/sixth_amendment_to_lummi_%26_wa_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/02/06/2026-02385/indian-gaming-approval-by-operation-of-law-of-the-sixth-amendment-to-the-tribal-state-compact-for.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2026-02-06).
+  ordinances:
+  - approved: '1994-10-03'
+    link: https://www.nigc.gov?wpdmdl=10193&ind=10222
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-10-03'
+    locator: table row 139, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 139 lists the nation
+      as "Lummi Tribe of the Lummi Reservation".
+  - approved: '2002-04-08'
+    link: https://www.nigc.gov?wpdmdl=10209&ind=10223
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-04-08'
+    locator: table row 139, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 139 lists the nation
+      as "Lummi Tribe of the Lummi Reservation".
+  - approved: '2022-03-11'
+    link: https://www.nigc.gov?wpdmdl=10210&ind=10224
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2022-03-11'
+    locator: table row 139, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 139 lists the nation
+      as "Lummi Tribe of the Lummi Reservation".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Lummi Tribe of the Lummi Reservation Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Lummi Nation". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Lummi Nation". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

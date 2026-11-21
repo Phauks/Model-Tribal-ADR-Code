@@ -1,0 +1,202 @@
+id: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california
+entity_type: native-nation
+names:
+  official: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3020
+  note: 'Census area with land in this state: Quartz Valley Reservation and Off-Reservation Trust Land
+    (code 3020). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3020'
+  name: Quartz Valley Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3020
+  note: Matched by name. Census class code D1.
+population:
+- count: 202
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3020, field POP100
+  note: 'Census area: Quartz Valley Reservation and Off-Reservation Trust Land (code 3020). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 262
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3254 (Quartz Valley Indian Reservation  alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Quartz Valley Indian Reservation ' (race code 6265)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 426
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Quartz Valley Indian Community', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://qvir.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+- kind: physical-address
+  value: 13601 Quartz Valley Road, Fort Jones, CA 96032
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+- kind: mailing-address
+  value: 13601 Quartz Valley Road, Fort Jones, CA 96032
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+- kind: phone
+  value: (530) 468-5907
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+- kind: fax
+  value: (530) 468-5908
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Northern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "Quartz Valley Indian Community, California" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Quartz Valley Indian Community California) (approved 1939) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-quartzcons
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/IRA/quartzcons.html
+  source: national-indian-law-library-quartz-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/39029361/
+  source: national-indian-law-library-quartz-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website.".'
+- kind: corporate-charter
+  title: Corporate charter (Quartz Valley Indian Community California)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/quartzchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-quartzchrtr
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Quartz Valley Indian Community California)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/quartzcons.html
+  source: university-of-oklahoma-indian-reorganization-act-quartzcons
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+gaming:
+  ordinances:
+  - approved: '2008-10-17'
+    link: https://www.nigc.gov?wpdmdl=10858&ind=10873
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-10-17'
+    locator: table row 219, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 219 lists the nation
+      as "Quartz Valley Indian Community". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Quartz Valley Indian Community of the Quartz Valley Reservation of California Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

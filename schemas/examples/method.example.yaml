@@ -1,0 +1,25 @@
+# Example method record. File: content/methods/mediation-arbitration.yaml
+# Shows a hybrid process built from two other methods. A process that fits no
+# existing record is added the same way, with status: proposed.
+id: mediation-arbitration
+name: mediation-arbitration
+also_known_as: [med-arb]
+classification: alternative-dispute-resolution
+tradition: [western-legal, hybrid]
+definition: >-
+  A process that begins as mediation and, for any issues the parties do not
+  settle, continues as arbitration, often before the same neutral
+  [@example-source-key].
+characteristics:
+  who_decides: [the-parties, a-neutral]
+  outcome: [binding-if-parties-agree, binding]
+  neutral_role: [facilitative, adjudicative]
+  participation: [required-by-contract, voluntary]
+  settings: [private]
+  note: >-
+    Whether one person may serve in both roles is debated (project analysis).
+combines: [mediation, arbitration]
+related: [arbitration-mediation]
+sources: [example-source-key]
+basis: source-and-project-analysis
+status: proposed

@@ -1,0 +1,40 @@
+id: choctaw-nation-of-florida
+entity_type: native-nation
+names:
+  official: Choctaw Nation of Florida
+  former:
+  - name: The Hunter Tsalagi-Choctaw Tribe
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #288'
+  official_source: federal-register-2011-10117
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 76 FR 23621 (2011-04-27)
+  petition_number: '288'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 3/2/2005; Declined Acknowledgment
+    4/21/2011 76 FR 23621, see also 75 FR 39703
+  source: federal-register-2011-10117
+  confidence: high
+  as_of: '2011-04-27'
+  locator: 'Petitioner #288'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 3/2/2005; Declined Acknowledgment 4/21/2011 76 FR 23621, see also 75
+    FR 39703. Other Federal Register history: Proposed Finding Against Federal Acknowledgment of the Choctaw
+    Nation of Florida Tribe, 75 FR 39703 (2010-07-12).'
+states:
+- state: FL
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

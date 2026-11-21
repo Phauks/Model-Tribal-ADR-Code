@@ -8,11 +8,12 @@ uses a fictitious nation on purpose.
 | Schema | Validates |
 | --- | --- |
 | `common.schema.json` | Shared types used by the others |
-| `source.schema.json` | `content/sources/*.yaml` |
+| `source.schema.json` | `content/sources/<letter>/*.yaml` |
 | `permission.schema.json` | The `rights` field of a source |
-| `tribe.schema.json` | `content/tribes/*.yaml` |
+| `tribe.schema.json` | `content/tribes/<letter>/*.yaml` |
 | `provision.schema.json` | Front matter of `content/provisions/*.md` |
 | `commentary.schema.json` | Front matter of `content/commentary/*.md` |
 | `glossary.schema.json` | `content/glossary/*.yaml` |
+| `method.schema.json` | `content/methods/*.yaml` |
 | `variable.schema.json` | `content/variables/*.yaml` |
 | `research-session.schema.json` | Front matter of `research/sessions/**/*.md` |

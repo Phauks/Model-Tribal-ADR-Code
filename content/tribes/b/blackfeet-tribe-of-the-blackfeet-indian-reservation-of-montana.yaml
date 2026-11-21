@@ -1,0 +1,364 @@
+id: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+entity_type: native-nation
+names:
+  official: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+  self_designation:
+  - name: Niitsitapi
+    language_tag: bla
+    romanized: nee-itsee-TAH-peh
+    source: mt-tribal-nations-blackfeet
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'State page: ''The tribe call themselves "Niitsitapi" (nee-itsee-TAH-peh) meaning "the real
+      people."'' Secondary (state) source.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: MT
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+- state: MT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0305
+  note: 'Census area with land in this state: Blackfeet Indian Reservation and Off-Reservation Trust Land
+    (code 0305). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0305'
+  name: Blackfeet Indian Reservation and Off-Reservation Trust Land
+  area_type: Indian Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0305
+  note: Matched by name. Census class code D1.
+population:
+- count: 15560
+  kind: citizens
+  source: mt-tribal-nations-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page: ''Of the approximately 15,560 enrolled tribal members, there are about 7,000 living
+    on or near the reservation.'' Undated state page; as_of is access date.'
+- count: 10764
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0305, field POP100
+  note: 'Census area: Blackfeet Indian Reservation and Off-Reservation Trust Land (code 0305). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 297899
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2873 (Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Blackfeet Tribe of the Blackfeet Indian Reservation
+    of Montana' (race code 5536) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 17138
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Blackfeet Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 9299
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 75, row T03400 'Blackfeet Tribe of the Blackfeet Indian Reservation
+    of Montana'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.blackfeetnation.com
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+- kind: physical-address
+  value: 640 All Chiefs Road, Browning, MT 59417
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+- kind: mailing-address
+  value: P.O. Box 850, Browning, MT 59417
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+- kind: phone
+  value: (406) 338-7276
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+- kind: fax
+  value: (406) 338-7530
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+federal_administration:
+  bureau_of_indian_affairs_region: Rocky Mountain
+  bureau_of_indian_affairs_agency: Blackfeet Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Blackfeet Tribe of the Blackfeet Indian Reservation" among organizations under
+    constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934),
+    as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Blackfeet Tribe of the Blackfeet Indian Reservation Montana) (approved 1935) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-blckftcons
+  confidence: medium
+  as_of: '1935'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Code
+  source: national-indian-law-library-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
+    website . Code.". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/bf/codes)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Resolutions
+  source: national-indian-law-library-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
+    website . Resolutions.". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/bf/resolution)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: http://blackfeetnation.com/government/constitution/
+  source: national-indian-law-library-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Montana
+    Indian Law website .". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/bf/constitution)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Blackfeet Tribal Law and Order Code
+  year: '2002'
+  link: https://narf.org/nill/codes/blackfeetcode/index.html
+  source: national-indian-law-library-code-codes-blackfeetcode
+  confidence: medium
+  as_of: '2002'
+  locator: page heading
+  note: 'Received: 2002. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution and By-laws for the Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+  year: '1998'
+  link: https://narf.org/nill/constitutions/blackfeet/index.html
+  source: national-indian-law-library-constitution-constitutions-blackfeet
+  confidence: medium
+  as_of: '1998'
+  locator: page heading
+  note: 'Last Amended: 1998. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Blackfeet Nation Constitution
+  link: http://blackfeetnation.com/government/constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Blackfeet Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Blackfeet Tribe of the Blackfeet Indian Reservation Montana)
+  year: '1935'
+  link: https://thorpe.law.ou.edu/IRA/blckftcons.html
+  source: university-of-oklahoma-indian-reorganization-act-blckftcons
+  confidence: medium
+  as_of: '1935'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Blackfeet Tribe of the Blackfeet Indian Reservation Montana)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/blkftchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-blkftchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Blackfeet Tribal Court
+  link: http://blackfeetnation.com/government/court/
+  source: national-indian-law-library-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Blackfeet Family Court
+  link: http://blackfeetnation.com/government/court/
+  source: national-indian-law-library-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: court-of-appeals
+  name: Blackfeet Court of Appeals
+  link: http://blackfeetnation.com/government/court/
+  source: national-indian-law-library-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Blackfeet Tribal Court
+  link: http://blackfeetnation.com/government/court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Blackfeet Nation'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Informal Conference and Disposition in Child Welfare
+    citation: The Family Code of the Blackfeet Tribe. Section 8 Informal Hearing.
+    link: https://narf.org/nill/codes/blackfeetcode/family_code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-and-disposition-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference; Restorative justice.'
+gaming:
+  compacts:
+  - state: MT
+    status: approved
+    approved: '1996-10-25'
+    federal_register_citation: 61 FR 55312
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-10-25'
+    locator: result page 19 (?page=19), row 16
+    note: 'Listed as: "Blackfeet Tribe of the Blackfeet Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Blackfeet Tribe of the Blackfeet Indian Reservation of Montana".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.10.25_blackfeet_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/10/25/96-27424/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
+      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
+      either party may terminate after giving 90 days' written notice and an opportunity to cure.
+    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
+      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (1996-10-25).
+  ordinances:
+  - approved: '1997-12-01'
+    link: https://www.nigc.gov?wpdmdl=3422&ind=3425
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-12-01'
+    locator: table row 20, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 20 lists the nation
+      as "Blackfeet Tribe of the Blackfeet Indian Reservation".
+  - approved: '2002-04-05'
+    link: https://www.nigc.gov?wpdmdl=3423&ind=3426
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-04-05'
+    locator: table row 20, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 20 lists the nation
+      as "Blackfeet Tribe of the Blackfeet Indian Reservation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Blackfeet Tribe of the Blackfeet
+      Indian Reservation of Montana". Facilities as machine-extracted from the report text (verify): The
+      Peak; Glacier Lil Peaks Casino; Glacier Peaks Casino. Name extracted from the PDF by the page-fetch
+      tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+memberships:
+- organization: Rocky Mountain Tribal Leaders Council
+  source: rocky-mountain-tribal-leaders-council-who-we-are
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Blackfeet Tribe". Name matched to the roster entry.
+- organization: Coalition of Large Tribes
+  source: coalition-of-large-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Blackfeet Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

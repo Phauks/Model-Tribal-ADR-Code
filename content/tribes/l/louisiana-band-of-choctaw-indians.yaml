@@ -1,0 +1,52 @@
+id: louisiana-band-of-choctaw-indians
+entity_type: native-nation
+names:
+  official: Louisiana Band of Choctaw Indians
+  alternate:
+  - name: Louisiana Band of Choctaw Indian
+    source: louisiana-governor-federally-and-state-recognized-tribes
+    confidence: high
+    as_of: '2026'
+  official_source: louisiana-governor-federally-and-state-recognized-tribes
+recognition:
+- type: state
+  state: LA
+  legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+  note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
+    were not retrieved.
+- type: state
+  state: LA
+  legal_basis: Louisiana Revised Statutes 46:2305(B) (Acts 2018, No. 102), Native American Commission
+    membership, listed as 'Louisiana Band of Choctaw Indians'
+  source: louisiana-revised-statutes-46-2305
+  confidence: high
+  as_of: '2018'
+  locator: R.S. 46:2305(B)
+  note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
+    recognition.
+states:
+- state: LA
+  presence: other
+  source: louisiana-governor-indian-affairs
+  confidence: high
+  as_of: '2026'
+  locator: Regional map
+  note: Located in Concordia Parish per the Office of Indian Affairs regional map.
+contacts:
+- kind: mailing-address
+  value: 699 HWY 409, Slaughter, LA 70777
+  label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: medium
+  as_of: '2026'
+  note: Listed under the leader's name; recorded as the tribe's contact address.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

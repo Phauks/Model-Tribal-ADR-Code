@@ -1,0 +1,44 @@
+id: euchee-tribe-of-indians
+entity_type: native-nation
+names:
+  official: Euchee (Yuchi) Tribe of Indians
+  alternate:
+  - name: Yuchi
+    source: gao-12-348-federal-funding-non-federally-recognized-tribes
+    confidence: medium
+    as_of: 2012-04
+    locator: Table 1
+    note: GAO writes "Euchee (Yuchi) Tribe of Indians".
+  - name: Yuchi
+    source: census-2020-ddhca-popgroup-codes
+    confidence: low
+    as_of: '2020'
+    locator: POPGROUP code 2244
+    note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
+      source.
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Euchee (Yuchi) Tribe of Indians" among 26 non-federally recognized tribes
+    that received direct federal funding in FY2007-2010 (total $747,000, Table 3). GAO-reported nonprofit
+    status: Yes; state recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026).
+    Possible match with the petitioning helper record for the Yuchi Tribal Organization; not verified.'
+states:
+- state: OK
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

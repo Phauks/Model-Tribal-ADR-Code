@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/common.schema.json",
   "title": "Shared definitions",
-  "description": "Types reused by every record schema.",
+  "description": "Types reused by every record schema. All text is UTF-8 in Unicode Normalization Form C; scripts/check_text.py enforces that, because JSON Schema cannot.",
   "$defs": {
     "slug": {
       "type": "string",
@@ -28,6 +28,55 @@
       "type": "string",
       "pattern": "^[A-Z]{2}$",
       "description": "Two-letter USPS code for a state, DC or territory (e.g. NV, AK, HI, PR, GU, AS, MP, VI)."
+    },
+    "partialDate": {
+      "type": "string",
+      "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$",
+      "description": "A year, year and month, or full date (YYYY, YYYY-MM or YYYY-MM-DD), for facts whose source gives only part of a date."
+    },
+    "languageTag": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{1,8})*$",
+      "description": "BCP 47 language tag (RFC 5646), e.g. 'chr' (Cherokee), 'nv' (Navajo), 'haw' (Hawaiian), or 'chr-Cher' for Cherokee written in the syllabary."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "description": "How well the cited source supports the value. high: stated directly by a primary official source (the nation itself, a statute, a regulation, the Federal Register, or a federal or state agency list) published or updated within about five years. medium: a reputable secondary source, a primary source older than about five years, or a value that needed names matched between sources. low: a single unofficial source, an undated source, conflicting sources (explained in the note), or a search-result snippet. With no source, the value is left out rather than guessed."
+    },
+    "cited": {
+      "type": "object",
+      "description": "Citation carried by every fact in a profile: the source key, how well it supports the value, when the value was true, and where in the source it appears. Schemas that use it add their own properties and set unevaluatedProperties to false.",
+      "required": ["source", "confidence"],
+      "properties": {
+        "source": { "$ref": "#/$defs/slug", "description": "Key of a record in content/sources/." },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "as_of": { "$ref": "#/$defs/partialDate", "description": "When the value was true or published, as the source states it." },
+        "locator": { "type": "string", "description": "Where in the source: page, section, table or row." },
+        "note": { "type": "string" }
+      }
+    },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "description": "A government or legal order a record concerns.",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["federal", "state", "territory", "tribal", "intertribal", "multiple", "international", "other"],
+          "description": "territory: Puerto Rico, Guam, the U.S. Virgin Islands, the Northern Mariana Islands or American Samoa. multiple: several governments together, such as a tribal-state forum or compact."
+        },
+        "state": { "$ref": "#/$defs/stateCode", "description": "For a state or territory: which one." },
+        "tribe": { "$ref": "#/$defs/slug", "description": "For a nation: its tribe profile id, once one exists." },
+        "note": { "type": "string" }
+      }
+    },
+    "methodIds": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "Ids of dispute resolution method records in content/methods/. The list of methods is open: to name a process that has no record, add one with status 'proposed'."
     },
     "reviewStatus": {
       "type": "string",

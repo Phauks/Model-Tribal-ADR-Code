@@ -1,0 +1,280 @@
+id: pueblo-of-tesuque
+entity_type: native-nation
+names:
+  official: Pueblo of Tesuque, New Mexico
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NM
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Tesuque, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4170
+  note: 'Census area with land in this state: Tesuque Pueblo and Off-Reservation Trust Land (code 4170).
+    Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4170'
+  name: Tesuque Pueblo and Off-Reservation Trust Land
+  area_type: Pueblo and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4170
+  note: Matched by name. Census class code D1.
+population:
+- count: 480
+  kind: citizens
+  source: pueblo-of-tesuque-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'history page: "current population of 480 Tribal members and 400 individuals residing within the
+    exterior portions of Tesuque’s Land Grant"; home page says "population of around 800"'
+- count: 1173
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4170, field POP100
+  note: 'Census area: Tesuque Pueblo and Off-Reservation Trust Land (code 4170). Everyone counted as living
+    in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s
+    citizens.'
+- count: 632
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3248 (Pueblo of Tesuque alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pueblo of Tesuque' (race code 6182) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 527
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Tesuque Pueblo', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 356
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T40800 'Pueblo of Tesuque'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: https://www.tesuquepueblo.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Tesuque, New Mexico
+- kind: physical-address
+  value: 20 TP828 - Administration Building, Santa Fe, NM 87506
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Tesuque, New Mexico
+- kind: mailing-address
+  value: RR 42, Box 360-T, Santa Fe, NM 87506
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Tesuque, New Mexico
+- kind: phone
+  value: (505) 983-2667
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Tesuque, New Mexico
+- kind: fax
+  value: (505) 982-2331
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Tesuque, New Mexico
+languages:
+- name: Tewa
+  language_tag: tew
+  source: pueblo-of-tesuque-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"a traditional Tewa-speaking Tribe"'
+federal_administration:
+  bureau_of_indian_affairs_region: Southwest
+  bureau_of_indian_affairs_agency: Northern Pueblos Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Tesuque, New Mexico
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-pueblo-tesuque
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pueblo of Tesuque Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Tesuque'
+gaming:
+  compacts:
+  - state: NM
+    status: approved
+    approved: '2007-07-05'
+    federal_register_citation: 72 FR 36717
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-07-05'
+    locator: result page 24 (?page=24), row 14
+    note: 'Listed as: "Pueblo of Tesuque Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Pueblo of Tesuque, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.07.05_pueblo_of_tesuque_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/07/05/E7-12904/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '2015-10-23'
+    federal_register_citation: 80 FR 64443
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-10-23'
+    locator: result page 24 (?page=24), row 15
+    note: 'Listed as: "Pueblo of Tesuque Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Pueblo of Tesuque, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.10.23_pueblo_of_tesuque_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/10/23/2015-27082/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2001-12-14'
+    federal_register_citation: 66 FR 64856
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-12-14'
+    locator: result page 24 (?page=24), row 16
+    note: 'Listed as: "Pueblo of Tesuque Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Pueblo of Tesuque, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.12.14_pueblo_of_tesuque_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/12/14/01-30907/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '1995-03-22'
+    federal_register_citation: 60 FR 15194
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-03-22'
+    locator: result page 24 (?page=24), row 17
+    note: 'Listed as: "Pueblo of Tesuque Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Pueblo of Tesuque, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.03.22_pueblo_of_tesuque_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/03/22/95-6966/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-10-23).
+  ordinances:
+  - approved: '1994-11-08'
+    link: https://www.nigc.gov?wpdmdl=10821&ind=10839
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-11-08'
+    locator: table row 215, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 215 lists the nation
+      as "Pueblo of Tesuque".
+  - approved: '1998-01-20'
+    link: https://www.nigc.gov?wpdmdl=10822&ind=10840
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-01-20'
+    locator: table row 215, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 215 lists the nation
+      as "Pueblo of Tesuque".
+  - approved: '2002-07-16'
+    link: https://www.nigc.gov?wpdmdl=10823&ind=10841
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-07-16'
+    locator: table row 215, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 215 lists the nation
+      as "Pueblo of Tesuque".
+  - approved: '2007-12-28'
+    link: https://www.nigc.gov?wpdmdl=10824&ind=10842
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-12-28'
+    locator: table row 215, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 215 lists the nation
+      as "Pueblo of Tesuque".
+  - approved: '2019-03-29'
+    link: https://www.nigc.gov?wpdmdl=10825&ind=10843
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2019-03-29'
+    locator: table row 215, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 215 lists the nation
+      as "Pueblo of Tesuque".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pueblo of Tesuque, New Mexico Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: All Pueblo Council of Governors
+  source: all-pueblo-council-of-governors-pueblo-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pueblo of Tesuque". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

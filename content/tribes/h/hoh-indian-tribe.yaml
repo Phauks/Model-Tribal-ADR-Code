@@ -1,0 +1,371 @@
+id: hoh-indian-tribe
+entity_type: native-nation
+names:
+  official: Hoh Indian Tribe
+  self_designation:
+  - name: Chalat’
+    language_tag: qui
+    source: hohtribe-nsn-culture
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Culture page: ''Those-Who-Live-on-the-Hoh (Chalat’, as the Hoh call themselves)''. Tag qui
+      (Quileute) assigned by researcher.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hoh Indian Tribe
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1460
+  note: 'Census area with land in this state: Hoh Indian Reservation and Off-Reservation Trust Land (code
+    1460). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1460'
+  name: Hoh Indian Reservation and Off-Reservation Trust Land
+  area_type: Indian Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1460
+  note: Matched by name. Census class code D1.
+population:
+- count: 230
+  kind: citizens
+  source: hohtribe-nsn-culture-hoh-indian-tribe-safe-homelands
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'Page about the Hoh Indian Tribe Safe Homelands Act: ''our 230 tribal members''; ''130 tribal
+    members who reside on the Reservation''. The text appears to date from the Act''s passage (around
+    2010), so the figure is likely old.'
+- count: 93
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1460, field POP100
+  note: 'Census area: Hoh Indian Reservation and Off-Reservation Trust Land (code 1460). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 258
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3022 (Hoh Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Hoh Indian Tribe' (race code 5593) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 252
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Hoh Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://hohtribe-nsn.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hoh Indian Tribe
+- kind: physical-address
+  value: 2269 Lower Hoh Road, Forks, WA 98331
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hoh Indian Tribe
+- kind: mailing-address
+  value: P.O. Box 2196, Forks, WA 98331
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hoh Indian Tribe
+- kind: phone
+  value: (360) 374-6582
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hoh Indian Tribe
+- kind: fax
+  value: (360) 374-6549
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hoh Indian Tribe
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Olympic Peninsula Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hoh Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Hoh Indian Tribe
+  link: https://narf.org/nill/codes/hoh/index.html
+  source: national-indian-law-library-code-codes-hoh
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Hoh Indian Tribe - Tribal Constitution
+  year: '1969'
+  link: https://narf.org/nill/constitutions/hoh/index.html
+  source: national-indian-law-library-constitution-constitutions-hoh
+  confidence: medium
+  as_of: '1969'
+  locator: page heading
+  note: 'Adopted: 1969. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://hohtribe-nsn.org/government/law-and-order-code/
+  source: national-indian-law-library-hoh
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Hoh Tribe Law and Order Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Hoh Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://hohtribe-nsn.org/?page_id=1446) returned HTTP 404, so
+    it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://hohtribe-nsn.org/government/tribal-court/
+  source: national-indian-law-library-hoh
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Hoh Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Hoh Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.hohtribe.com/?page_id=43) returned
+    HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternative Sentencing
+    citation: Hoh Tribal Code. Title 2 Tribal Court. Chapter 4.01 Youth Code. § 2.03.270 Alternative Sentencing.
+    link: https://hohtribe-nsn.org/wp-content/uploads/2024/10/2.03-Criminal-Procedure-FINAL-10-02-2024.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Deferred Prosecution for Treatment (Domestic Violence)
+    citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.02 Domestic Violence & Anti-Harrassment
+      Ordinance. § 4.02.100 Special Court Rules for Domestic Violence Crimes.
+    link: https://hohtribe-nsn.org/wp-content/uploads/2024/10/4.02-DV-Anti-Harassment-Ord-FINAL-10-02-2024.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-for-treatment-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Dispositional Alternatives for Youths In Need of Care
+    citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.01 Youth Code. § 4.01.220 Disposition
+    link: https://hohtribe-nsn.org/wp-content/uploads/2025/03/Hoh-Tribal-Code-Title-4-Chapter-4.01-Youth-Code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-youths-in-need-of-care/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Elder and Vulnerable Adult Protection Family Group Conference and Safety Plan
+    citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.06 Elder and Vulnerable Adult Protection.
+      § 4.06.150 Preventative Measures & § 4.06.180 Elder or Vulnerable Adult Protection Plan and Services.
+    link: https://hohtribe-nsn.org/wp-content/uploads/2024/09/4.06-Elder-and-Vulnerable-Adult-Protection-Ordinance.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/elder-and-vulnerable-adult-protection-family-group-conference-and-safety-plan-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Family conference,
+      Family group conference; Restorative justice.'
+  - kind: other
+    title: Family Group Conference
+    citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.01 Youth Code. § 4.01.230 Family Group
+      Conference.
+    link: https://hohtribe-nsn.org/wp-content/uploads/2025/03/Hoh-Tribal-Code-Title-4-Chapter-4.01-Youth-Code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-group-conference-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference; Restorative justice.'
+  - kind: other
+    title: Treatment in Lieu of Confinement (Domestic Violence)
+    citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.02 Domestic Violence & Anti-Harrassment
+      Ordinance. § 4.02.060 Criminal Remedy – Crime of Domestic Violence.
+    link: https://hohtribe-nsn.org/wp-content/uploads/2024/10/4.02-DV-Anti-Harassment-Ord-FINAL-10-02-2024.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-confinement-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form
+      of practice: Restorative justice.'
+  - kind: other
+    title: Treatment in Lieu of Confinement (Stalking)
+    citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.02 Domestic Violence & Anti-Harrassment
+      Ordinance. § 4.02.070 Criminal Remedy – Crime of Stalking.
+    link: https://hohtribe-nsn.org/wp-content/uploads/2024/10/4.02-DV-Anti-Harassment-Ord-FINAL-10-02-2024.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-confinement-stalking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form
+      of practice: Restorative justice.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2001-01-17'
+    federal_register_citation: 66 FR 4038
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-01-17'
+    locator: result page 38 (?page=38), row 15
+    note: 'Listed as: "Hoh Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hoh Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.01.17_hoh_indian_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/01/17/01-1263/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 38 (?page=38), row 16
+    note: 'Listed as: "Hoh Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hoh Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_hoh_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 38 (?page=38), row 17
+    note: 'Listed as: "Hoh Indian Tribe Tribal-State Gaming Compact" (Approve); list''s Tribe column:
+      "Hoh Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.04_hoh_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2015-06-04).
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Hoh Indian Tribe Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Hoh Indian Tribe".
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Hoh Indian Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

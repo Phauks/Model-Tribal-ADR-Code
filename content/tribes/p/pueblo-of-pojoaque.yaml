@@ -1,0 +1,358 @@
+id: pueblo-of-pojoaque
+entity_type: native-nation
+names:
+  official: Pueblo of Pojoaque, New Mexico
+  self_designation:
+  - name: P’o-suwae-geh Owingeh
+    language_tag: tew
+    source: pueblo-of-pojoaque-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"In Tewa ... our community is called ''P’o-suwae-geh Owingeh,'' meaning Water Drinking Place
+      Village"; also written P’osuwäegeh Ówingeh'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NM
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Pojoaque, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2990
+  note: 'Census area with land in this state: Pueblo of Pojoaque and Off-Reservation Trust Land (code
+    2990). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2990'
+  name: Pueblo of Pojoaque and Off-Reservation Trust Land
+  area_type: Pueblo of Pojoaque and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2990
+  note: Matched by name. Census class code D1.
+population:
+- count: 3536
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2990, field POP100
+  note: 'Census area: Pueblo of Pojoaque and Off-Reservation Trust Land (code 2990). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 529
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3241 (Pueblo of Pojoaque alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pueblo of Pojoaque' (race code 6174) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 580
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Pojoaque Pueblo', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 412
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T40100 'Pueblo of Pojoaque'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://pojoaque.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Pojoaque, New Mexico
+- kind: physical-address
+  value: 78 Cities of Gold Road, Santa Fe, NM 87506
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Pojoaque, New Mexico
+- kind: mailing-address
+  value: 78 Cities of Gold Road, Santa Fe, NM 87506
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Pojoaque, New Mexico
+- kind: phone
+  value: (505) 455-2278
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Pojoaque, New Mexico
+- kind: fax
+  value: (505) 455-0174
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Pojoaque, New Mexico
+languages:
+- name: Tewa
+  language_tag: tew
+  source: pueblo-of-pojoaque-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"In Tewa, the Indigenous language of Pojoaque"'
+federal_administration:
+  bureau_of_indian_affairs_region: Southwest
+  bureau_of_indian_affairs_agency: Northern Pueblos Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Pojoaque, New Mexico
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://pojoaque.org/community/legal-department/law-order-code/
+  source: national-indian-law-library-pueblo-pojoaque
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Pueblo of Pojoaque Law and Order Code
+  link: http://pojoaque.org/community/legal-department/law-order-code/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Pojoaque'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-pueblo-pojoaque
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://pojoaque.org/community/tribal-courts/) returned HTTP 404, so it is
+    not recorded.'
+- kind: tribal-court
+  name: Pueblo of Pojoaque Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Pojoaque'
+  note: 'Link check 2026-11-21: the link the source gives (http://pojoaque.org/community/tribal-courts/)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Deferral and Treatment Programs for DUI Cases
+    citation: Pueblo of Pojoaque Law and Order Code M-49
+    link: https://pojoaque.org/legal/law-order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferral-and-treatment-programs-for-dui-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Deferral of Penalties for Ilegal Opiods and Stimulants Control Act
+    citation: Pueblo of Pojoaque Law and Order Code J-25 and M-59
+    link: https://pojoaque.org/legal/law-order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferral-of-penalties-for-ilegal-opiods-and-stimulants-control-act/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Family Plan after Adjudication of Abuse of Neglect
+    citation: Pueblo of Pojoaque Law and Order Code L-16
+    link: https://pojoaque.org/legal/law-order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-plan-after-adjudication-of-abuse-of-neglect/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Path to Wellness Court
+    citation: Pueblo of Pojoaque Law and Order Code B-6 and C-10
+    link: https://pojoaque.org/legal/law-order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/path-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Youth Path to Wellness Court
+    citation: Pueblo of Pojoaque Law and Order Code B-7 and C-11
+    link: https://pojoaque.org/legal/law-order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/youth-path-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative court.'
+gaming:
+  compacts:
+  - state: NM
+    status: deemed-approved
+    approved: '1997-08-29'
+    federal_register_citation: 62 FR 45867
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-08-29'
+    locator: result page 23 (?page=23), row 11
+    note: 'Listed as: "Pueblo of Pojoaque Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Pueblo of Pojoaque, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.08.29_pueblo_of_pojoaque_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/08/29/97-22989/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2005-08-25'
+    federal_register_citation: 70 FR 49942
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-08-25'
+    locator: result page 23 (?page=23), row 12
+    note: 'Listed as: "Pueblo of Pojoaque Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Pueblo of Pojoaque, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2005.08.25_pueblo_of_pojoaque_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/08/25/05-16943/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '1995-03-22'
+    federal_register_citation: 60 FR 15194
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-03-22'
+    locator: result page 23 (?page=23), row 13
+    note: 'Listed as: "Pueblo of Pojoaque Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Pueblo of Pojoaque, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.03.22_pueblo_of_pojoaque_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/03/22/95-6966/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2017-10-26'
+    federal_register_citation: 82 FR 49654
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2017-10-26'
+    locator: result page 23 (?page=23), row 14
+    note: 'Listed as: "Pueblo of Pojoaque Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Pueblo of Pojoaque, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2017.10.26_pueblo_of_pojoaque_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2017/10/26/2017-23343/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-new-mexico.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2017-10-26).
+  ordinances:
+  - approved: '1994-06-13'
+    link: https://www.nigc.gov?wpdmdl=10756&ind=10776
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-06-13'
+    locator: table row 207, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 207 lists the nation
+      as "Pueblo of Pojoaque".
+  - approved: '1998-01-23'
+    link: https://www.nigc.gov?wpdmdl=10757&ind=10777
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-01-23'
+    locator: table row 207, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 207 lists the nation
+      as "Pueblo of Pojoaque".
+  - approved: '2007-02-13'
+    link: https://www.nigc.gov?wpdmdl=10758&ind=10778
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-02-13'
+    locator: table row 207, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 207 lists the nation
+      as "Pueblo of Pojoaque".
+  - approved: '2012-03-16'
+    link: https://www.nigc.gov?wpdmdl=10759&ind=10779
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-03-16'
+    locator: table row 207, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 207 lists the nation
+      as "Pueblo of Pojoaque".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pueblo of Pojoaque, New Mexico Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: All Pueblo Council of Governors
+  source: all-pueblo-council-of-governors-pueblo-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pueblo of Pojoaque". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

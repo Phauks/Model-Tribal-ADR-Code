@@ -1,0 +1,55 @@
+key: nevada-foreclosure-mediation-rules
+kind: court-rule
+citation:
+  type: legislation
+  title: Foreclosure Mediation Rules
+  author:
+  - literal: Supreme Court of Nevada
+  number: ADKT 435
+  issued:
+    date-parts: [[2009, 7, 31]]
+  URL: https://www.leg.state.nv.us/CourtRules/FMR.html
+  accessed:
+    date-parts: [[2026, 11, 21]]
+original_link: https://www.leg.state.nv.us/CourtRules/FMR.html
+retrieved: 2026-11-21
+archives:
+- service: wayback
+  link: >-
+    https://web.archive.org/web/20261112162555/https://www.leg.state.nv.us/courtrules/FMR.html
+  captured: 2026-11-12
+history:
+  status: live
+  last_checked: 2026-11-21
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+methods: [mediation]
+topics: [foreclosure, housing, court-connected-program, mandatory-document-exchange]
+annotation: >-
+  Rules adopted by the Nevada Supreme Court under ADKT 435 (order of June 30, 2009,
+  effective July 31, 2009), with the cover showing amendments through Oct. 31, 2025.
+  They implement the owner-occupied residential foreclosure mediation required by
+  NRS chapter 107 (NRS 107.086). The current Rule 1 limits the rules to defaults
+  and documented hardships 'on or after December 2, 2016, and not sold prior to June
+  12, 2017.' District courts assign mediators, and the AOC keeps the roster. A second
+  source, the Nevada AOC's 'Foreclosure Mediator Program Overview' page, confirms
+  that the AOC 'is responsible for appointing foreclosure mediators' and that 'This
+  list will be used by Nevada's District Courts to assign mediators.' RSI's Nevada
+  page says 'The state launched a foreclosure mediation program in July 2009.' (project
+  analysis) This is mediation tied to a statutory condition on non-judicial sale,
+  with a mandatory document-exchange step. It is classed as 'mediation' rather than
+  a new method; the special features are captured in topics.
+access:
+  open: true
+  pull_from: [free-web]
+  note: >-
+    Second source opened: https://nvcourts.gov/aoc/programs_and_services/foreclosure-mediator-program/overview
+    (WebFetch). Historical program reports are not collected here.
+found_in:
+- 2026-11-21-united-states-dispute-resolution
+notes: Read on the original page. Citator check not yet run.

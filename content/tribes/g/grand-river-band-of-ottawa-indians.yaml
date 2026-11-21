@@ -1,0 +1,66 @@
+id: grand-river-band-of-ottawa-indians
+entity_type: native-nation
+names:
+  official: Grand River Band of Ottawa Indians
+  former:
+  - name: Grand River Band Ottawa Council
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #146'
+  alternate:
+  - name: Grand River Bands of Ottawa Indians
+    source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
+    confidence: low
+    as_of: '2001'
+    note: Plural 'Bands' form; same name used by a federal acknowledgment petitioner.
+  - name: Grand River Bands of Ottawa Indians
+    source: ofa-petitions-in-process
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: ofa-petitions-in-process
+recognition:
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '146'
+  petition_stage: Phase I TA Review
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 146; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/grand-river-bands-ottawa-indians
+  note: 'Federal Register history: Proposed Finding Against Federal Acknowledgment of the Grand River
+    Bands of Ottawa Indians, 88 FR 12401 (2023-02-27); Notice of Documented Petition for Federal Acknowledgment
+    as an American Indian Tribe, 90 FR 19227 (2025-05-06). Office of Federal Acknowledgment list entry
+    #146 (2013 edition): Grand River Bands of Ottawa Indians (formerly Grand River Band Ottawa Council)
+    - Letter of Intent to Petition 10/16/1994.'
+- type: state
+  state: MI
+  legal_basis: Listed as a 'State Historic Tribe' in the Michigan Department of Civil Rights Indian Directory
+    (2016-2017); no statute or executive order identified
+  source: michigan-civil-rights-indian-directory-2016
+  confidence: low
+  as_of: '2016-12-14'
+  locator: Page 6
+  note: Michigan has no formal state-recognition statute found; the 'State Historic Tribes' designation
+    appears only in this older directory, and current state pages list only federally recognized nations.
+states:
+- state: MI
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: MI
+  presence: other
+  source: michigan-civil-rights-indian-directory-2016
+  confidence: low
+  as_of: '2016-12-14'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

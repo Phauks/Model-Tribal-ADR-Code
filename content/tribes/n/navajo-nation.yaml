@@ -1,0 +1,631 @@
+id: navajo-nation
+entity_type: native-nation
+names:
+  official: Navajo Nation, Arizona, New Mexico, & Utah
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
+  note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
+    (code 2430). Area matched to the nation by name.'
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
+  note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
+    (code 2430). Area matched to the nation by name.'
+- state: UT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
+  note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
+    (code 2430). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2430'
+  name: Navajo Nation Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2430
+  note: Matched by name. Census class code D1.
+population:
+- count: 427414
+  kind: citizens
+  source: navajo-nation-arizona-new-mexico-and-uta-260608-navajo-nation-enrollment-continue
+  confidence: high
+  as_of: '2026-06-01'
+  note: 'Office of the President and Vice President news release dated 2026-06-08: "reaching 427,414 enrolled
+    citizens as of June 1, 2026"; page read through the WebFetch tool because the site blocked the plain
+    HTTP client'
+- count: 165158
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2430, field POP100
+  note: 'Census area: Navajo Nation Reservation and Off-Reservation Trust Land (code 2430). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 423412
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3152 (Navajo Nation alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Navajo Nation' (race code 5999) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 277840
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Navajo Nation', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.navajo-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- kind: physical-address
+  value: 100 Parkway, Window Rock, AZ 86515
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- kind: mailing-address
+  value: P.O. Box 7440, Window Rock, AZ 86515
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- kind: phone
+  value: (928) 871-7000
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- kind: fax
+  value: (928) 871-4025
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+federal_administration:
+  bureau_of_indian_affairs_region: Navajo
+  bureau_of_indian_affairs_agency: Navajo Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.nnols.org/navajo-nation-code/
+  source: national-indian-law-library-navajo-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At the Navajo Nation
+    Office of Legislative Services website.".'
+- kind: law-code
+  title: Tribal code
+  link: http://dibb.nnols.org/PublicReporting.aspx
+  source: national-indian-law-library-navajo-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "See also Navajo Nation
+    Office of Legislative Services Public Reports for information about legislation / resolutions.".'
+- kind: law-code
+  title: Navajo Nation Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Navajo Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.navajonationcouncil.org/Code%20Page.html) returned
+    HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: peacemaking-program
+  name: Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.courts.navajo-nsn.gov/
+  source: national-indian-law-library-navajo-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Navajo Nation Judicial Branch
+  link: http://www.navajocourts.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Navajo Nation'
+- kind: court-of-appeals
+  name: Navajo Nation Supreme Court
+  link: http://www.navajocourts.org/indexsuct.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Navajo Nation'
+- kind: tribal-court
+  name: Navajo Nation Judicial District Courts
+  link: http://www.navajocourts.org/indexdistct.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Navajo Nation'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Navajo Nation Peacemaking Program
+    own_term:
+      name: Hózhóójí Naat’áanii
+      language_tag: nv
+      translation: Peacemaking Program (the statutory program name; the Judicial Branch uses hózhóójí
+        naat’áanii for the Peacemaker)
+    description: A program within the Judicial Branch serving as the central point of peacemaking information
+      and coordination; it promotes a non-adversarial forum where parties voluntarily agree or are referred
+      to peacemaking, peacemaking counseling for court clients, sentencing recommendations on request,
+      and education on Navajo culture and traditions.
+    legal_basis: 7 N.N.C. §§ 409-413 (Chapter 3, Subchapter 10, Navajo Nation Peacemaking Program)
+    case_types:
+    - family
+    - child-welfare
+    - juvenile
+    - criminal-sentencing
+    - probate
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Located in the Judicial Branch under the legislative oversight of the Judiciary
+      Committee and a Plan of Operation; per the Plan of Operations, where a court order is sought the
+      matter must first be filed in court and then referred to peacemaking by the court.
+    enforcement: Not specified in the subchapter reviewed.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Navajo-Title-7-Courts-and-Procedure.pdf
+    source: navajo-title-7-courts-and-procedures
+    confidence: medium
+    as_of: '2003-10-24'
+    locator: 7 N.N.C. §§ 409-413; Title 7 annotation citing In the Matter of the Estate of Kindle (Nav.
+      Sup. Ct. 2001)
+    note: own_term spelling taken from NARF's Tribal Peacemaking Laws page ('Hózhóójí Naat’áanii'); the
+      Navajo Nation Code PDF text layer shows 'Hózh==jí Naat'áanii' and the Judicial Branch plan page
+      shows 'hózh̨ǫ́ójí naat’áanii' (font conversion artifacts in both). A Code annotation states local
+      peacemaking programs exist in the seven judicial districts and are also used for probate. Child-welfare
+      and juvenile case types are from the Plan of Operations (family preservation and reunification;
+      Álchíní Bi Beehaz’áannii Act matters).
+  - kind: traditional-forum
+    name: Diné Traditional Peacemaking
+    own_term:
+      name: hózh̨óji naat’aah
+      language_tag: nv
+      translation: Diné traditional peacemaking (as glossed by the Judicial Branch)
+    description: One of several traditional services available through the Peacemaking Program; the Plan
+      of Operations names four kinds of participants (the peacemaker, the decision-making parties called
+      naałchidí, contributing family members and others called atah naaldeehí, and silent observers) and
+      refers to peacemaking principles drawn from the Fundamental Law.
+    legal_basis: Peacemaking Program Plan of Operations, Part I (adopted under 7 N.N.C. § 413)
+    case_types:
+    - family
+    - child-welfare
+    - juvenile
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: May not be initiated in the Program for a dispute in which a court order is
+      sought; such matters are filed in court first and referred by the court for all or part of the dispute.
+    enforcement: The Plan describes finality as established by the participants' agreement; court effect
+      is not described on this page.
+    link: https://courts.navajo-nsn.gov/Peacemaking/Plan/peace.html
+    source: navajo-peacemaking-plan-of-operations
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Plan of Operations, Part I
+    note: Terms copied as displayed on the Judicial Branch page, which uses a legacy Navajo font conversion.
+      A set peacemaker fee called yeel is paid to community-based peacemakers through the Program; the
+      Program may pay it for indigent participants in family preservation and reunification matters and
+      in children's code matters. The page also describes ceremonial elements the Nation has chosen to
+      publish; they are not summarized here. Undated page; as_of is the access date.
+  provisions:
+  - kind: peacemaking
+    title: Subchapter 10. Navajo Nation Peacemaking Program
+    citation: 7 N.N.C. §§ 409-413
+    summary: Recognizes the Peacemaking Program within the Judicial Branch, sets its purposes and authority
+      to conform procedures to traditional concepts including K'é and clanship, and places it under Judiciary
+      Committee oversight and a Plan of Operation.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Navajo-Title-7-Courts-and-Procedure.pdf
+    source: navajo-title-7-courts-and-procedures
+    confidence: medium
+    as_of: '2003-10-24'
+  - kind: other
+    title: Community Services and Programs for Substance/Alcohol Abuse in Education
+    citation: N.C.C. Title 10, § 119
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-services-and-programs-for-substance-alcohol-abuse-in-education/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Counseling & Substance Abuse Counseling for Domestic Violence Perpetrators
+    citation: N.C.C. Title 9, § 1660
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/counseling-substance-abuse-counseling-for-domestic-violence-perpetrators/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Least Restrictive Alternative Available Approach for Elder Protection
+    citation: N.C.C. Title 9, § 1805
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/least-restrictive-alternative-available-approach-for-elder-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Ordered Rehabilitative Treatment for Possession of Liquor
+    citation: N.C.C. Title 17, § 410
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ordered-rehabilitative-treatment-for-possession-of-liquor/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Ordered Rehabilitative Treatment for Possession/Sale of Controlled Substances
+    citation: N.C.C. Title 17, § 394
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ordered-rehabilitative-treatment-for-possession-sale-of-controlled-substances/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Probation to Promote Rehabilitation
+    citation: N.C.C. Title 17, § 1881
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-to-promote-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Purpose of the Navajo Nation Children’s Code
+    citation: N.C.C. Title 9, § 1001
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-navajo-nation-childrens-code/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Purpose of the Peacemaking Program
+    citation: N.C.C. Title 7, § 409, and § 410
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-peacemaking-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Rehabilitation fo Delinquent Children
+    citation: N.C.C. Title 9, § 1152
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-fo-delinquent-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Responsibility and Authority of the Peacemaking Program
+    citation: N.C.C. Title 7, § 411
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/responsibility-and-authority-of-the-peacemaking-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Sentencing for Rehabilitation
+    citation: N.C.C.Title 17, § 220
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-for-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Treatment Plan in Family Court
+    citation: N.C.C. Title 9, § 1117
+    link: https://www.nnols.org/navajo-nation-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-plan-in-family-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
+      practice: Restorative justice.'
+  - kind: peacemaking
+    title: 'Title 7 – Courts and Procedures, Chapter 3: Judicial Branch, Subchapter 10: Navajo Nation
+      Peacemaking Program (Hózh==jí Naat’áanii)'
+    citation: 'Title 7 – Courts and Procedures, Chapter 3: Judicial Branch, Subchapter 10: Navajo Nation
+      Peacemaking Program (Hózh==jí Naat’áanii)'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Navajo-Title-7-Courts-and-Procedure.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Navajo Nation of Arizona, New Mexico & Utah
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and authority to develop standards and conform procedures to traditional Hózhóójí Naat’áanii concepts.
+      The Peacemaking Program Brochure and website contain program information, history, forms, plans
+      of operation, and purpose'
+  published_materials:
+  - kind: rules
+    title: Peacemaking Program Plan of Operations
+    link: https://courts.navajo-nsn.gov/Peacemaking/Plan/peace.html
+    source: navajo-peacemaking-plan-of-operations
+    confidence: high
+    as_of: '2026-11-21'
+  - kind: forms
+    title: Form 1 Peacemaking Referral Form
+    link: https://courts.navajo-nsn.gov/Peacemaking/forms/Form 1 PeacemakingReferralForm 3.29.pdf
+    source: web-search-navajo-peacemaking-2026-11-21
+    confidence: low
+    as_of: '2026-11-21'
+    note: Seen in search results only; not opened.
+  - kind: brochure
+    title: Peacemaking Program Brochure OCT.2025
+    link: https://courts.navajo-nsn.gov/wp-content/uploads/2025/10/Peacemaking-Program-Brochure-OCT.2025.pdf
+    source: web-search-navajo-peacemaking-2026-11-21
+    confidence: low
+    as_of: 2025-10
+    note: Seen in search results only; download failed.
+  - kind: rules
+    title: Peacemaking Program Plan of Operation (2013 copy hosted by Tribal Justice)
+    link: https://tribaljustice.org/wp-content/uploads/2022/04/PPPO2013-2-25.pdf
+    source: web-search-navajo-peacemaking-2026-11-21
+    confidence: low
+    as_of: '2013'
+    note: Seen in search results only; not opened. Title inferred from file name and result title 'PPPO2013
+      2 25'.
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2022-06-14'
+    locator: result page 1 (?page=1), row 17
+    note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
+      Nation, Arizona, New Mexico, & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_navajo_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2003-02-05'
+    federal_register_citation: 68 FR 5912
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: result page 1 (?page=1), row 18
+    note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
+      Nation, Arizona, New Mexico, & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_complaint_2003.02.05_navajo_nation_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/05/03-2787/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-03-25'
+    locator: result page 1 (?page=1), row 19
+    note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
+      Nation, Arizona, New Mexico, & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.03.25_navajo_nation_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-05-24'
+    locator: result page 1 (?page=1), row 20
+    note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
+      Nation, Arizona, New Mexico, & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.05.24%20Navajo%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '2015-06-22'
+    federal_register_citation: 80 FR 35668
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2015-06-22'
+    locator: result page 22 (?page=22), row 8
+    note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico, & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.22_navajo_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/22/2015-15207/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2004-01-16'
+    federal_register_citation: 69 FR 2617
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2004-01-16'
+    locator: result page 22 (?page=22), row 9
+    note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
+      Nation, Arizona, New Mexico, & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20compliant%20Navajo%20Nation%202004.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/01/16/04-1023/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-06-22).
+  ordinances:
+  - approved: '2003-12-09'
+    link: https://www.nigc.gov?wpdmdl=10399&ind=10414
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-12-09'
+    locator: table row 165, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 165 lists the nation
+      as "Navajo Nation". Name matched to roster by spelling variant.
+  - approved: '2019-06-24'
+    link: https://www.nigc.gov?wpdmdl=10400&ind=10415
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2019-06-24'
+    locator: table row 165, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 165 lists the nation
+      as "Navajo Nation". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Navajo Nation". Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Navajo Nation, Arizona, New Mexico & Utah Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+memberships:
+- organization: Coalition of Large Tribes
+  source: coalition-of-large-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Navajo Nation". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false
