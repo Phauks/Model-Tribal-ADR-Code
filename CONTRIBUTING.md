@@ -20,18 +20,24 @@ Please read the charter first.
 1. **Cite everything.** Every factual claim needs a source record in
    `content/sources/` and a citation key in the text. Mark your own analysis as
    analysis. See [docs/citation-style.md](docs/citation-style.md).
-2. **Archive what you cite.** Each web source needs an archived snapshot link
-   and a retrieval date in its source record.
-3. **Record rights before quoting.** Fill in the `rights` field of the source
+2. **Say how you checked it.** Give every fact in a profile a `verification`
+   level: `read-in-full`, `title-only`, `bulk-import` or `inferred` (see
+   [docs/data-model.md](docs/data-model.md)). A pull request that adds or
+   changes a fact without one fails the record lint
+   (`python3 scripts/lint_records.py --base origin/main`).
+3. **Archive what you cite.** Each web source needs an archived snapshot link
+   and a retrieval date in its source record. The lint fails a source record
+   that still has none 30 days after retrieval.
+4. **Record rights before quoting.** Fill in the `rights` field of the source
    record before quoting more than a short passage. See the permission
    statuses in [docs/data-model.md](docs/data-model.md).
-4. **Respect restricted knowledge.** Do not add ceremonial, restricted or
+5. **Respect restricted knowledge.** Do not add ceremonial, restricted or
    community-held knowledge unless the community has approved it in writing.
    When unsure, mark the record `tribal-review-required` and ask.
-5. **Use the project's words.** Follow the [style guide](docs/style-guide.md)
+6. **Use the project's words.** Follow the [style guide](docs/style-guide.md)
    and the [terminology guide](docs/terminology.md), and link defined terms
    with `[[id]]`.
-6. **Log your research.** Add a dated session file under `research/sessions/`
+7. **Log your research.** Add a dated session file under `research/sessions/`
    describing how you found what you added. See
    [research/README.md](research/README.md).
 
