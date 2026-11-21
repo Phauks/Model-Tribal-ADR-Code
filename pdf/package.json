@@ -1,0 +1,23 @@
+{
+  "name": "model-tribal-adr-code-print",
+  "private": true,
+  "description": "Builds the Lulu print interior (PDF) from the files in content/.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node pipeline/build.mjs",
+    "build:specimen": "node pipeline/build.mjs --specimen",
+    "build:every-size": "node pipeline/build-every-size.mjs",
+    "test": "node --test \"tests/*.test.mjs\""
+  },
+  "dependencies": {
+    "citeproc": "2.4.63",
+    "markdown-it": "15.0.3",
+    "markdown-it-container": "4.0.0",
+    "markdown-it-footnote": "4.0.0",
+    "yaml": "2.9.1"
+  }
+}

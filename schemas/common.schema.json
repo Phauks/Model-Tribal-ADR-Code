@@ -56,6 +56,28 @@
         "note": { "type": "string" }
       }
     },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "description": "A government or legal order a record concerns.",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["federal", "state", "territory", "tribal", "intertribal", "multiple", "international", "other"],
+          "description": "territory: Puerto Rico, Guam, the U.S. Virgin Islands, the Northern Mariana Islands or American Samoa. multiple: several governments together, such as a tribal-state forum or compact."
+        },
+        "state": { "$ref": "#/$defs/stateCode", "description": "For a state or territory: which one." },
+        "tribe": { "$ref": "#/$defs/slug", "description": "For a nation: its tribe profile id, once one exists." },
+        "note": { "type": "string" }
+      }
+    },
+    "methodIds": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "Ids of dispute resolution method records in content/methods/. The list of methods is open: to name a process that has no record, add one with status 'proposed'."
+    },
     "reviewStatus": {
       "type": "string",
       "enum": [
