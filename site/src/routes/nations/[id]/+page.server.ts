@@ -227,7 +227,16 @@ export const load: PageServerLoad = ({ params }) => {
 	};
 
 	if (page.withdrawn) {
-		return { page, selfDesignations: [], features: [], glance: [], courts: [], law: [], notes: [] };
+		return {
+			page,
+			selfDesignations: [],
+			pronunciations: [],
+			features: [],
+			glance: [],
+			courts: [],
+			law: [],
+			notes: []
+		};
 	}
 
 	const notes = new Notes();
@@ -238,9 +247,21 @@ export const load: PageServerLoad = ({ params }) => {
 		notes: cite(notes, fact)
 	}));
 
+	// Copied only from an authoritative source, never worked out from the
+	// spelling (docs/data-model.md, "Names and languages").
+	const pronunciations = (record.names.pronunciation ?? []).map((fact) => ({
+		name: fact.name,
+		languageTag: fact.language_tag,
+		respelling: fact.respelling,
+		phoneticTranscription: fact.phonetic_transcription,
+		recording: webLink(fact.recording),
+		notes: cite(notes, fact)
+	}));
+
 	return {
 		page: { ...page, officialNote },
 		selfDesignations,
+		pronunciations,
 		features: recordedFeatures(record, notes),
 		glance: atAGlance(record, notes),
 		courts: courtsAndDisputeResolution(record, notes),
