@@ -28,9 +28,26 @@ Please read the charter first.
 4. **Respect restricted knowledge.** Do not add ceremonial, restricted or
    community-held knowledge unless the community has approved it in writing.
    When unsure, mark the record `tribal-review-required` and ask.
-5. **Log your research.** Add a dated session file under `research/sessions/`
+5. **Use the project's words.** Follow the [style guide](docs/style-guide.md)
+   and the [terminology guide](docs/terminology.md), and link defined terms
+   with `[[id]]`.
+6. **Log your research.** Add a dated session file under `research/sessions/`
    describing how you found what you added. See
    [research/README.md](research/README.md).
+
+## Issues
+
+Use the issue forms on GitHub: Correction, Source, Term or definition,
+Content proposal, Bug, or Idea. Each form adds labels for its type and track,
+and `status: needs triage` until the maintainer reviews it.
+
+Requests from a Native nation to correct, restrict or remove material, and
+anything involving restricted or community-held knowledge, are **not** opened
+as public issues. Use the private route in [docs/requests.md](docs/requests.md)
+([decision record 0009](docs/decisions/0009-private-requests-from-nations.md)).
+
+A pull request that resolves an issue says so in its description, for example
+`Closes #12`, so the issue closes when the pull request merges.
 
 ## Workflow
 
@@ -46,8 +63,10 @@ Please read the charter first.
 3. Sign off each commit (`git commit -s`) to certify, under the
    [Developer Certificate of Origin](https://developercertificate.org/), that you
    have the right to submit it under this project's licenses.
-4. Open a pull request against `main` and fill in the template.
-5. Pull requests are squash-merged. The branch is deleted automatically after
+4. Run the checks locally: `python3 scripts/check_text.py` and, after
+   `pip install -r scripts/requirements.txt`, `python3 scripts/validate_records.py`.
+5. Open a pull request against `main` and fill in the template.
+6. Pull requests are squash-merged. The branch is deleted automatically after
    merge.
 
 Nobody pushes directly to `main`.
