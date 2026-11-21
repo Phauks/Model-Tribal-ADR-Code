@@ -1,0 +1,46 @@
+# Settings for the print edition. To change the book size, change `trim` to
+# any size listed in book-sizes.yaml and rebuild: margins, gutter, type sizes,
+# running heads and the spine width all follow from it.
+trim: us-trade
+
+# 60# uncoated white or cream (Lulu, Retail Distribution Eligible Products
+# Guide, pp. 3-9). Paper does not change the interior layout; the build
+# warns when a channel excludes the paper for the chosen size.
+paper: white
+
+# Standard black-and-white ink and perfect binding are fixed: they are the
+# options eligible for retail distribution (decision record 0005).
+
+# Title, subtitle and author must match on the cover, the title page, the
+# copyright page, running heads and the metadata entered at Lulu, and use
+# Latin characters only (Lulu, Retail Distribution Guide, p. 12).
+metadata:
+  title: Model Tribal ADR Code
+  subtitle: null
+  author: Trevor Goldsmith
+  copyright_holder: Trevor Goldsmith
+  copyright_year: 2026
+  # Required for retail distribution (Retail Distribution Guide, pp. 10 and 13).
+  # The build prints a placeholder and warns until one is assigned.
+  isbn: null
+  edition: Pre-release
+  language: en
+  # The copyright page states the license of each kind of material (LICENSE.md).
+  license_lines:
+    - Model provisions and forms are dedicated to the public domain under CC0 1.0 Universal.
+    - Commentary, essays and glossary are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+    - Works of Native nations quoted or cited in this book remain under each nation's authority and terms.
+
+# Working titles for the book's parts and the chapters of Part II
+# (provisions are grouped by the `chapter` number in their front matter).
+parts:
+  essays:
+    number: Part I
+    title: Essays
+  provisions:
+    number: Part II
+    title: Model Provisions and Commentary
+  methods:
+    number: Part III
+    title: Methods and Manners
+chapters: {}

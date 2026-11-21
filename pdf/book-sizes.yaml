@@ -1,0 +1,212 @@
+# Book sizes the print build supports, and the rules that turn a size into a
+# page layout. Choose the size in book.yaml; nothing in this file needs to
+# change to switch sizes.
+#
+# Sources (Lulu's guides, read from the PDFs shared with the project in
+# November 2026):
+#   Lulu, Book Creation Guide (cited "Book Creation Guide")
+#   Lulu, Retail Distribution Eligible Products Guide ("Eligible Products")
+#   Lulu, Retail Distribution Guide ("Retail Distribution Guide")
+# Values marked "project choice" are the project's own typographic analysis.
+
+# Every Lulu interior page is printed oversized and trimmed. The PDF page is
+# the trim size plus this bleed on every side: a 6 x 9 in book has a
+# 6.25 x 9.25 in page (Book Creation Guide, pp. 10 and 23).
+bleed: 0.125
+
+# Text, images and page numbers stay at least this far inside the trim edge
+# (Book Creation Guide, pp. 8, 17 and 23).
+safety_margin: 0.5
+
+# Typst lets hyphens and punctuation at the end of a justified line hang a
+# little into the margin (about 0.02 in at 10 pt, measured on the specimen),
+# so side margins are kept at least this much wider than the safety margin
+# (project choice).
+overhang_allowance: 0.0625
+
+# Recommended total inside margin (gutter included) by page count (Book
+# Creation Guide, p. 9). Lulu's rows are "Less than 60", "61 to 150",
+# "151 to 400", "400 to 600" and "Over 600"; exactly 60 pages is read as the
+# first row and exactly 400 as the third (project reading).
+inside_margin_by_page_count:
+  - { most_pages: 60, inches: 0.5 }
+  - { most_pages: 150, inches: 0.625 }
+  - { most_pages: 400, inches: 1.0 }
+  - { most_pages: 600, inches: 1.125 }
+  - { most_pages: null, inches: 1.25 }
+
+# Paperback spine width in inches = pages / 444 + 0.06 (Book Creation Guide,
+# p. 13). This is an estimate for planning the cover: Lulu makes the cover
+# template from the uploaded interior, and the spine width for its own print
+# network and for distribution "varies slightly" (Retail Distribution Guide,
+# p. 13).
+spine:
+  pages_per_inch: 444
+  added_inches: 0.06
+  # No spine text below 100 pages (Retail Distribution Guide, p. 14). The
+  # Book Creation Guide, p. 17, says 80 pages; the stricter rule is used.
+  text_minimum_pages: 100
+
+# Paperback, perfect bound, standard black-and-white ink: 32 to 800 pages for
+# every size below (Eligible Products, pp. 3-9).
+page_count:
+  minimum: 32
+  maximum: 800
+
+# Line length cap. Bringhurst gives 45 to 75 characters as the usual range
+# for a single column (Robert Bringhurst, The Elements of Typographic Style
+# § 2.1.2; quoted from memory, not rechecked). Atkinson Hyperlegible Next
+# averages about 0.44 em per character in English text (measured on the
+# sample chapter), so 33 em is about 75 characters. On wide pages the
+# outside margin grows instead of the line (project choice).
+maximum_line_length_em: 33
+# The build warns when a line would hold fewer than 45 characters, the low
+# end of the same range; this happens only on the narrowest sizes with very
+# wide gutters, such as a Pocket Book over 600 pages.
+minimum_line_characters: 45
+average_character_em: 0.44
+
+# Type sizes, line spacing and the minimum top, bottom and outside margins
+# (inches, measured from the trim edge) for each group of sizes. Project
+# choice, starting from the 6 x 9 in layout of the PDF engine test build.
+# line_spacing is the space between lines as a fraction of the font size.
+type_scales:
+  compact:
+    body: 9
+    footnote: 7.5
+    running_head: 7.5
+    chapter_title: 16
+    section_title: 10
+    line_spacing: 0.6
+    top: 0.85
+    bottom: 0.75
+    outside: 0.5
+  standard:
+    body: 10
+    footnote: 8
+    running_head: 8.5
+    chapter_title: 20
+    section_title: 11
+    line_spacing: 0.62
+    top: 0.9
+    bottom: 0.8
+    outside: 0.625
+  large:
+    body: 10.5
+    footnote: 8.5
+    running_head: 8.5
+    chapter_title: 22
+    section_title: 11.5
+    line_spacing: 0.64
+    top: 0.95
+    bottom: 0.85
+    outside: 0.75
+  extra-large:
+    body: 11
+    footnote: 9
+    running_head: 9
+    chapter_title: 24
+    section_title: 12
+    line_spacing: 0.65
+    top: 1.0
+    bottom: 0.9
+    outside: 0.75
+
+# Lulu trim sizes eligible for retail distribution as a paperback, perfect
+# bound, with standard black-and-white ink (Eligible Products, pp. 3-9, first
+# row of each size). Comic Book (6.63 x 10.25 in) is left out: it is eligible
+# only with premium color ink (Eligible Products, p. 6). Dimensions are from
+# the Book Creation Guide, p. 11.
+trims:
+  pocket-book:
+    name: Pocket Book
+    width: 4.25
+    height: 6.875
+    millimeters: 108 x 175
+    type_scale: compact
+    source: Eligible Products, p. 3
+  novella:
+    name: Novella
+    width: 5
+    height: 8
+    millimeters: 127 x 203
+    type_scale: compact
+    source: Eligible Products, p. 3
+  digest:
+    name: Digest
+    width: 5.5
+    height: 8.5
+    millimeters: 140 x 216
+    type_scale: standard
+    source: Eligible Products, p. 4
+  a5:
+    name: A5
+    width: 5.83
+    height: 8.27
+    millimeters: 148 x 210
+    type_scale: standard
+    source: Eligible Products, p. 5
+  us-trade:
+    name: US Trade
+    width: 6
+    height: 9
+    millimeters: 152 x 229
+    type_scale: standard
+    source: Eligible Products, p. 5
+  royal:
+    name: Royal
+    width: 6.14
+    height: 9.21
+    millimeters: 156 x 234
+    type_scale: standard
+    source: Eligible Products, p. 6
+  executive:
+    name: Executive
+    width: 7
+    height: 10
+    millimeters: 178 x 254
+    type_scale: large
+    source: Eligible Products, p. 7
+    excluded_papers: { ingram: [cream] }
+  crown-quarto:
+    name: Crown Quarto
+    width: 7.44
+    height: 9.68
+    millimeters: 189 x 246
+    type_scale: large
+    source: Eligible Products, p. 7
+    excluded_papers: { ingram: [cream] }
+  small-square:
+    name: Small Square
+    width: 7.5
+    height: 7.5
+    millimeters: 190 x 190
+    type_scale: large
+    source: Eligible Products, p. 8
+    # Ingram excludes this size in perfect binding with standard black and
+    # white ink, so it reaches Amazon but not Ingram (Eligible Products, p. 8).
+    excluded_channels: [ingram]
+  a4:
+    name: A4
+    width: 8.27
+    height: 11.69
+    millimeters: 210 x 297
+    type_scale: extra-large
+    source: Eligible Products, p. 8
+    excluded_papers: { ingram: [cream] }
+  us-letter:
+    name: US Letter
+    width: 8.5
+    height: 11
+    millimeters: 216 x 279
+    type_scale: extra-large
+    source: Eligible Products, p. 9
+    excluded_papers: { ingram: [cream] }
+  square:
+    name: Square
+    width: 8.5
+    height: 8.5
+    millimeters: 216 x 216
+    type_scale: extra-large
+    source: Eligible Products, p. 9
+    excluded_papers: { ingram: [cream] }
