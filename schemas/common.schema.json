@@ -139,7 +139,7 @@
     "filingId": {
       "type": "string",
       "pattern": "^filing-[0-9]{4}-[0-9]{4}$",
-      "description": "Identifier of a contribution filing: the private package of forms, files and decisions kept for material that reached the project from a person rather than from a published source, for example filing-2026-0001 (docs/contributions.md; decision record 0019). The filing itself is never in git."
+      "description": "Identifier of a contribution filing: the private package of forms, files and decisions kept for material that reached the project from a person rather than from a published source, for example filing-2026-0001 (docs/contributions.md; decision record 0020). The filing itself is never in git."
     },
     "credit": {
       "type": "object",

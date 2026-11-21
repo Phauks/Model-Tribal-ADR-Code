@@ -20,4 +20,4 @@ uses a fictitious nation on purpose.
 | `research-session.schema.json` | Front matter of `research/sessions/**/*.md` |
 | `outreach-organization.schema.json` | `research/outreach/*.yaml` |
 | `outreach-plan.schema.json` | The private outreach plan, kept outside git (decision record 0012) |
-| `contribution-filing.schema.json` | Private contribution filings, kept outside git (decision record 0019; docs/contributions.md) |
+| `contribution-filing.schema.json` | Private contribution filings, kept outside git (decision record 0020; docs/contributions.md) |

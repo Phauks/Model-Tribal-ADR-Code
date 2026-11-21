@@ -1,4 +1,4 @@
-# 0019. Keep a signed filing for every contribution that comes from a person
+# 0020. Keep a signed filing for every contribution that comes from a person
 
 - **Status:** Proposed
 - **Date:** 2026-11-21

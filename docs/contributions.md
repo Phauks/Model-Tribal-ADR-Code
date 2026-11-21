@@ -15,7 +15,7 @@ lends, a photograph. Nothing published stands behind that material, so the
 project needs its own record of what was given, by whom, on what terms, and
 with whose approval. This page specifies that record, called a **filing**, and
 the forms that go into it. Everything here is project design unless a source
-is cited ([decision record 0019](decisions/0019-file-every-contribution-from-a-person.md)).
+is cited ([decision record 0020](decisions/0020-file-every-contribution-from-a-person.md)).
 
 ## What needs a filing
 
