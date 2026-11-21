@@ -21,6 +21,9 @@ first; no reading content or website code exists yet.
 | [Repository layout](docs/repository-layout.md) | Where everything lives and why |
 | [Data model](docs/data-model.md) | The records behind sources, citations, permissions, tribes and provisions |
 | [Citation style](docs/citation-style.md) | How sources are recorded and cited |
+| [Terminology](docs/terminology.md) | Which words the project uses for Native nations and people, and how terms are linked |
+| [Style guide](docs/style-guide.md) | Tone, writing, drafting and file standards |
+| [Requests from nations](docs/requests.md) | How a nation corrects, restricts, removes or contributes material |
 | [Decision records](docs/decisions/) | Why key choices were made |
 | [Contributing](CONTRIBUTING.md) | How to propose changes |
 | [Licenses](LICENSE.md) | Which license covers which material |
@@ -37,7 +40,7 @@ keeps its own changelog:
 
 ## Authorship
 
-The lead author is a law student who is not Native American. The
+The lead author is Trevor Goldsmith, a law student who is not Native American. The
 [charter](docs/charter.md) explains how that shapes the project's methods,
 including consultation with Native nations and credit for Indigenous authors
 and artists.
