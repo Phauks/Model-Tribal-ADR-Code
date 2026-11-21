@@ -262,13 +262,15 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.nvbarrow.com/court_70.html
+  link: https://nvb-nsn.gov/tribal-courts/
   source: national-indian-law-library-native-barrow
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. The listed link (http://www.nvbarrow.com/court_70.html)
+    no longer reached the court on 2026-11-21; the link is the court's page on the nation's own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Native Village of Barrow Tribal Court
   source: tribal-law-policy-institute-justice-systems

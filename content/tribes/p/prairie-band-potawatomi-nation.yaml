@@ -220,20 +220,26 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: judicial-council.aspx
-  link: http://www.pbpindiantribe.com/judicial-council.aspx
+  link: https://www.pbpindiantribe.com/tribal-court
   source: national-indian-law-library-prairie-band-potawatomi
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: The listed link (http://www.pbpindiantribe.com/judicial-council.aspx) no longer reached the court
+    on 2026-11-21; the link is the court's page on the nation's own site, found in the data gap review
+    (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Prairie Band Potawatomi Nation Judicial Council
-  link: http://www.pbpindiantribe.com/contact_member/tribal-court/
+  link: https://www.pbpindiantribe.com/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Kansas section, entry 'Prairie Band of Potawatomi Nation'
+  note: The listed link (http://www.pbpindiantribe.com/contact_member/tribal-court/) no longer reached
+    the court on 2026-11-21; the link is the court's page on the nation's own site, found in the data
+    gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   forums:
   - kind: peacemaking
@@ -421,15 +427,17 @@ gaming:
     dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
       which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
       or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
-    dispute_resolution_locator: Section 29 (Dispute Resolution)
-    source: compact-ks-wyandotte-nation-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-07-14'
-    locator: Section 29 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
-      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
-      deemed-approved entry for this state in the Office of Indian Gaming list (2023-07-18).
+    dispute_resolution_locator: 'Section 31: Dispute Resolution.'
+    source: compact-ks-prairie-band-potawatomi-nation-1995
+    confidence: high
+    verification: read-in-full
+    as_of: '1995-07-06'
+    locator: 'Section 31: Dispute Resolution.'
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ks-wyandotte-nation-2026 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 148). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2023-07-18).
   ordinances:
   - approved: '1994-07-25'
     link: https://www.nigc.gov?wpdmdl=10688&ind=10702

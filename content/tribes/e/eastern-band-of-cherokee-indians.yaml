@@ -197,14 +197,16 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://ebci.com/government/judicial/
+  link: https://www.ebci.gov/tribal-court/
   source: national-indian-law-library-eastern-band-cherokee
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
-    site did not respond.'
+    site did not respond. The listed link (https://ebci.com/government/judicial/) no longer reached the
+    court on 2026-11-21; the link is the court''s page on the nation''s own site, found in the data gap
+    review (research/reviews/2026-11-21-court-listings.json).'
 - kind: tribal-court
   name: Eastern Band of Cherokee Tribal Court
   source: tribal-law-policy-institute-justice-systems

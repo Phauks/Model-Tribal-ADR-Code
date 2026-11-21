@@ -224,12 +224,14 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Ponca Tribe of Oklahoma Tribal Court
-  link: http://www.ponca.com/121500/123500.html
+  link: https://www.ponca-nsn.gov/tribal-district-court.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Ponca Tribe of Oklahoma'
+  note: The listed link (http://www.ponca.com/121500/123500.html) no longer reached the court on 2026-11-21;
+    the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   provisions:
   - kind: mediation
@@ -281,17 +283,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-10-03).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION
+    source: compact-ok-ponca-tribe-of-indians-of-oklahoma-2005
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-10-03'
+    locator: Part 12. DISPUTE RESOLUTION
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 146). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2005-10-03).
   ordinances:
   - approved: '1995-05-03'
     link: https://www.nigc.gov?wpdmdl=10659&ind=10676

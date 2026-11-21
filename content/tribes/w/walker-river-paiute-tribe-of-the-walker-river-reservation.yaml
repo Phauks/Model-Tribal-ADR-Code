@@ -228,12 +228,14 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Walker River Paiute Tribe Civil Court
-  link: http://www.wrpt.us/court.htm
+  link: https://www.wrpt.org/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Nevada section, entry 'Walker River Paiute – Agai-Dicutta Numu'
+  note: The listed link (http://www.wrpt.us/court.htm) no longer reached the court on 2026-11-21; the
+    link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   provisions:
   - kind: other
