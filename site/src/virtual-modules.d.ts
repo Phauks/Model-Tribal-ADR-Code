@@ -1,5 +1,10 @@
 // Modules that Vite plugins in vite.config.ts generate when the site is built.
 
+declare module 'virtual:map-geometry' {
+	const geometry: import('./lib/map-geometry.ts').MapGeometry;
+	export default geometry;
+}
+
 declare module 'virtual:review-subjects' {
 	/** Content that can be reviewed in the co-author workspace, listed at build time. */
 	export const reviewSubjects: {

@@ -4,6 +4,7 @@ import adapter from '@sveltejs/adapter-cloudflare';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, type Plugin } from 'vite';
 import { designTokensToCss } from './src/lib/design-tokens.ts';
+import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { glossaryForReview, nationsForReview } from './src/lib/server/content.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
@@ -26,6 +27,31 @@ function designTokens(): Plugin {
 			if (identifier !== resolvedDesignTokensModule) return undefined;
 			this.addWatchFile(designTokensPath);
 			return designTokensToCss(JSON.parse(readFileSync(designTokensPath, 'utf8')));
+		}
+	};
+}
+
+const regionsPath = fileURLToPath(
+	new URL('./geography/bureau-of-indian-affairs-regions.json', import.meta.url)
+);
+const mapGeometryModule = 'virtual:map-geometry';
+const resolvedMapGeometryModule = `\0${mapGeometryModule}`;
+
+/**
+ * Serves the map's shapes, projected once at build time, as the module
+ * "virtual:map-geometry" (src/lib/map-geometry.ts). The browser receives
+ * only the finished SVG paths, never a map library (site/DESIGN.md, section 11).
+ */
+function mapGeometry(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:map-geometry',
+		resolveId(identifier) {
+			return identifier === mapGeometryModule ? resolvedMapGeometryModule : undefined;
+		},
+		async load(identifier) {
+			if (identifier !== resolvedMapGeometryModule) return undefined;
+			this.addWatchFile(regionsPath);
+			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath))};`;
 		}
 	};
 }
@@ -95,6 +121,7 @@ function buildInformation(): Plugin {
 export default defineConfig({
 	plugins: [
 		designTokens(),
+		mapGeometry(),
 		reviewSubjects(),
 		buildInformation(),
 		sveltekit({

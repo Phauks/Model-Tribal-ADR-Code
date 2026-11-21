@@ -23,6 +23,10 @@
 		</div>
 	{/if}
 	<p>
+		<a href="/nations/map">See the map</a> of nations by state, with the Bureau of Indian Affairs
+		regions.
+	</p>
+	<p>
 		<strong>Is your nation missing?</strong>
 		<a href="/requests?kind=add-nation">Ask to be added</a>. One federal or state government source
 		that names the nation is enough.
