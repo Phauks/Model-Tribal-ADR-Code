@@ -224,7 +224,7 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   forums:
-  - kind: family-or-talking-circle
+  - kind: family-group-conference
     name: Peacemaker Conference (Youth Code)
     description: An informal conference in youth proceedings, conducted according to a process established
       by the Court, aimed at a written agreed disposition such as a Family Preservation Plan.
@@ -354,45 +354,6 @@ dispute_resolution:
   - kind: arbitration
     title: 8.50.290 Arbitration Agreements
     citation: 8.50.290 Arbitration Agreements
-    link: https://www.narf.org/nill/codes/nisqually/index.html
-    source: national-indian-law-library-code-index-nisqually
-    confidence: medium
-    as_of: 2016-05
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: mediation
-    title: 24.19 MEDIATION OF DISPUTES
-    citation: 24.19 MEDIATION OF DISPUTES; 24.19.01 Request for Mediation; 24.19.02 Mediator
-    link: https://www.narf.org/nill/codes/nisqually/index.html
-    source: national-indian-law-library-code-index-nisqually
-    confidence: medium
-    as_of: 2016-05
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: mediation
-    title: 50.27.03 Mediator
-    citation: 50.27.03 Mediator; 50.33 MEDIATION OF DISPUTES; 50.33.01 Request for Mediation; 50.33.02
-      Mediator; 50.33.03 Time of Mediation Hearing; 50.33.04 Mediation Hearing; 50.33.05 Results of Mediation
-      Hearing
-    link: https://www.narf.org/nill/codes/nisqually/index.html
-    source: national-indian-law-library-code-index-nisqually
-    confidence: medium
-    as_of: 2016-05
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: Title 50 – Youth
-    citation: Title 50 – Youth
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
-    source: narf-youth-family-peacemaking-laws
-    confidence: medium
-    as_of: '2025-08-25'
-    locator: Nisqually Indian Tribe of Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides referral procedures,
-      procedures, and formalization of agreement requirements.'
-  - kind: arbitration
-    title: 8.50.290 Arbitration Agreements
-    citation: 8.50.290 Arbitration Agreements
     link: https://narf.org/nill/codes/nisqually/index.html
     source: national-indian-law-library-code-codes-nisqually
     confidence: medium
@@ -412,6 +373,27 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
       taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: 50.27.03 Mediator
+    citation: 50.27.03 Mediator; 50.33 MEDIATION OF DISPUTES; 50.33.01 Request for Mediation; 50.33.02
+      Mediator; 50.33.03 Time of Mediation Hearing; 50.33.04 Mediation Hearing; 50.33.05 Results of Mediation
+      Hearing
+    link: https://www.narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-codes-nisqually
+    confidence: medium
+    as_of: 2016-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Title 50 – Youth
+    citation: Title 50 – Youth
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
+    source: narf-ipi-youth-family-peacemaking-laws
+    confidence: medium
+    as_of: '2025-08-25'
+    locator: Nisqually Indian Tribe of Washington
+    note: 'Native American Rights Fund description (provision itself not read): Provides referral procedures,
+      procedures, and formalization of agreement requirements.'
   - kind: peacemaking
     title: 50.16 PEACEMAKER CONFERENCE
     citation: 50.16 PEACEMAKER CONFERENCE; 50.16.01 Request for Peacemaker Conference; 50.16.02 Setting

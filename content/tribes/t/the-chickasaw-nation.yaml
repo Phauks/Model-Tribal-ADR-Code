@@ -179,14 +179,14 @@ governing_documents:
 justice_institutions:
 - kind: peacemaking-program
   name: Chickasaw Nation Peacemaking Court
-  source: narf-other-tribal-materials
+  source: narf-ipi-other-tribal-materials
   confidence: medium
   as_of: '2025-10-15'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
 - kind: peacemaking-program
   name: Chickasaw Nation Peacemaking Court
-  source: narf-tribal-peacemaking-laws
+  source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
@@ -420,37 +420,6 @@ dispute_resolution:
       form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
       everything else as other). Not individually reviewed; no summary written. Database practice area:
       Tribal Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation.'
-  - kind: arbitration
-    title: Section 3-3605 Arbitration or Mediation Authorized
-    citation: Section 3-3605 Arbitration or Mediation Authorized
-    link: https://www.narf.org/nill/codes/chickasaw/index.html
-    source: national-indian-law-library-code-index-chickasaw
-    confidence: medium
-    as_of: 2018-09
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: mediation
-    title: Section 6-101.37 Best Interest of Child Considered in Awarding Custody or Appointing Guardian
-      - Joint Custody - Plan - Mediation
-    citation: Section 6-101.37 Best Interest of Child Considered in Awarding Custody or Appointing Guardian
-      - Joint Custody - Plan - Mediation
-    link: https://www.narf.org/nill/codes/chickasaw/index.html
-    source: national-indian-law-library-code-index-chickasaw
-    confidence: medium
-    as_of: 2018-09
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: peacemaking
-    title: Title 5, Courts & Procedures, Chapter 14 – Chickasaw Nation Peacemaking Court
-    citation: Title 5, Courts & Procedures, Chapter 14 – Chickasaw Nation Peacemaking Court
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/The-Chickasaw-Nation-Title-5-5.16.2025.pdf
-    source: narf-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: The Chickasaw Nation of Oklahoma
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      referral standards, procedures, authority for District Court to limit, standards of conduct, confidentiality
-      of statements made in peacemaking, and use of tribal traditions and customary law.'
   - kind: mediation
     title: Section 3-3605 Arbitration or Mediation Authorized
     citation: Section 3-3605 Arbitration or Mediation Authorized
@@ -459,19 +428,6 @@ dispute_resolution:
     confidence: medium
     as_of: '2026-11-21'
     locator: Table of Contents, under 'TITLE 3. BUSINESS REGULATIONS AND LICENSING:'
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
-  - kind: peacemaking
-    title: 'CHAPTER 14: CHICKASAW NATION PEACEMAKING COURT (Nanna alphi’sa ishtaa-asha ikbi'
-    citation: 'CHAPTER 14: CHICKASAW NATION PEACEMAKING COURT (Nanna alphi’sa ishtaa-asha ikbi; Section
-      5-1401.3 Peacemaker of the Court; Section 5-1401.4 Jurisdiction of the Peacemaking Court; Section
-      5-1401.6 Limitations of Peacemaker Authority; Section 5-1401.8 Procedures for Requesting to Transfer
-      as an Existing Action to the Peacemaking Court; ...'
-    link: https://narf.org/nill/codes/chickasaw/index.html
-    source: national-indian-law-library-code-codes-chickasaw
-    confidence: medium
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'TITLE 5. COURTS AND PROCEDURES:'
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
       itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
   - kind: mediation
@@ -484,6 +440,30 @@ dispute_resolution:
     confidence: medium
     as_of: '2026-11-21'
     locator: Table of Contents, under 'TITLE 6. DOMESTIC RELATIONS AND FAMILIES:'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: peacemaking
+    title: Title 5, Courts & Procedures, Chapter 14 – Chickasaw Nation Peacemaking Court
+    citation: Title 5, Courts & Procedures, Chapter 14 – Chickasaw Nation Peacemaking Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/The-Chickasaw-Nation-Title-5-5.16.2025.pdf
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: The Chickasaw Nation of Oklahoma
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      referral standards, procedures, authority for District Court to limit, standards of conduct, confidentiality
+      of statements made in peacemaking, and use of tribal traditions and customary law.'
+  - kind: peacemaking
+    title: 'CHAPTER 14: CHICKASAW NATION PEACEMAKING COURT (Nanna alphi’sa ishtaa-asha ikbi'
+    citation: 'CHAPTER 14: CHICKASAW NATION PEACEMAKING COURT (Nanna alphi’sa ishtaa-asha ikbi; Section
+      5-1401.3 Peacemaker of the Court; Section 5-1401.4 Jurisdiction of the Peacemaking Court; Section
+      5-1401.6 Limitations of Peacemaker Authority; Section 5-1401.8 Procedures for Requesting to Transfer
+      as an Existing Action to the Peacemaking Court; ...'
+    link: https://narf.org/nill/codes/chickasaw/index.html
+    source: national-indian-law-library-code-codes-chickasaw
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'TITLE 5. COURTS AND PROCEDURES:'
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
       itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
   published_materials:
