@@ -17,3 +17,10 @@ Organizations the project may ask for help are kept as records in
 
 The website will generate a browsable index of sessions by month, tool and
 topic.
+
+## Pull lists
+
+`pull-lists/` holds dated lists of what to pull or check in subscription
+databases such as Westlaw (citator checks, treatises, law review articles)
+after a research session. Each item names the source record to update, and
+an item is removed once its check is recorded in that record.
