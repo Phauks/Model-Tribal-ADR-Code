@@ -1,0 +1,496 @@
+id: nooksack-indian-tribe
+entity_type: native-nation
+names:
+  official: Nooksack Indian Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nooksack Indian Tribe
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2475
+  note: 'Census area with land in this state: Nooksack Reservation and Off-Reservation Trust Land (code
+    2475). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2475'
+  name: Nooksack Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2475
+  note: Matched by name. Census class code D1.
+population:
+- count: 2000
+  kind: citizens
+  source: nooksack-indian-tribe-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"about 2,000 Members enrolled in the Nooksack Tribe"; undated statement on the official site;
+    as_of is the access date'
+- count: 876
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2475, field POP100
+  note: 'Census area: Nooksack Reservation and Off-Reservation Trust Land (code 2475). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1752
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3159 (Nooksack Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Nooksack Indian Tribe' (race code 6196) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 1820
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Nooksack Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://nooksacktribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nooksack Indian Tribe
+- kind: physical-address
+  value: 5016 Deming Road, Deming, WA 98244
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nooksack Indian Tribe
+- kind: mailing-address
+  value: P.O. Box 157, Deming, WA 98244
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nooksack Indian Tribe
+- kind: phone
+  value: (360) 592-5176
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nooksack Indian Tribe
+- kind: fax
+  value: (360) 592-2125
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nooksack Indian Tribe
+languages:
+- name: Lhéchalosem
+  language_tag: nok
+  source: nooksack-indian-tribe-cultural-resources-culture-program
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"the original Nooksack language, Lhéchalosem"'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nooksack Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://nooksacktribe.org/departments/nooksack-tribal-court/
+  source: national-indian-law-library-nooksack-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-nooksack-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the link the source gives (https://nooksacktribe.org/wp-content/uploads/2011/11/2016_02_04_11_28_33.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Nooksack Indian Tribe Constitution and Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Nooksack Indian Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.nooksacktribe.org/wp-content/uploads/2011/11/2016_02_04_11_28_33.pdf)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://nooksacktribe.org/departments/nooksack-tribal-court/
+  source: national-indian-law-library-nooksack-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Nooksack Tribal Court
+  link: http://nooksackindiantribe.org/departments/nooksack-tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Nooksack Indian Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Attempted Prevention of Domestic Violence
+    citation: NookSack Indian Tribal Code Section 20A.06.020
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/attempted-prevention-of-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: How the Court Treats Domestic Violence Cases
+    citation: NookSack Indian Tribal Code Section 20A.04.070
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/how-the-court-treats-domestic-violence-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
+      practice: Restorative justice.'
+  - kind: other
+    title: Informal Mediation Process for Elder/Vulnerable Adult Cases
+    citation: NookSack Indian Tribal Code Section 18.06.40
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-mediation-process-for-elder-vulnerable-adult-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Informal Resolution for Child Neglect Cases
+    citation: NookSack Indian Tribal Code Section 15.11.050
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-for-child-neglect-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Ordered Treatment for Protection of Youth and Family
+    citation: NookSack Indian Tribal Code Section 15.13.070
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ordered-treatment-for-protection-of-youth-and-family/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Pre-Sentencing Treatment for Domestic Violence Crimes
+    citation: NookSack Indian Tribal Code Section 20A.02.040
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-sentencing-treatment-for-domestic-violence-crimes/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Purpose and Goals of the Youth Court
+    citation: NookSack Indian Tribal Code Section 15.01.010; and Section 15.04.050
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-goals-of-the-youth-court-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Reasonable and Appropriate Alternatives Reports for Children
+    citation: NookSack Indian Tribal Code Section 15.15.010; and, Section 15.15.050
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reasonable-and-appropriate-alternatives-reports-for-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Senencing Guidelines for Criminal Cases
+    citation: NookSack Indian Tribal Code Section 20.13.010
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/senencing-guidelines-for-criminal-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Treatment/Counseling Required for Vistitation
+    citation: NookSack Indian Tribal Code Section 20A.05.070
+    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-counseling-required-for-vistitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '1994-07-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-07-20'
+    locator: result page 40 (?page=40), row 13
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201994.07.20%20Nooksack%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/07/20/94-17686/indian-gaming-notice-department-of-the-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-04-12'
+    federal_register_citation: 60 FR 186704
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-04-12'
+    locator: result page 40 (?page=40), row 14
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.04.12%20Nooksack%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/04/12/95-9023/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4459
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-01-28'
+    locator: result page 40 (?page=40), row 15
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.01.28%20Nooksack%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1927/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: disapproved
+    approved: '1992-01-17'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-01-17'
+    locator: result page 40 (?page=40), row 16
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Disapproved); list''s Tribe
+      column: "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.01.17%20%20Disapproved%20Nooksack%20Compact%20Letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: WA
+    status: approved
+    approved: '1992-06-23'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-06-23'
+    locator: result page 40 (?page=40), row 17
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.06.23_nooksack_indian_tribe_tribal_state_gaming_compact.pdf.'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 40 (?page=40), row 18
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_nooksack_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2005-12-15'
+    federal_register_citation: 70 FR 74331
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-12-15'
+    locator: result page 40 (?page=40), row 19
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.12.15%20Nooksack%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/12/15/E5-7394/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2019-04-16'
+    federal_register_citation: 84 FR 15634
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-04-16'
+    locator: result page 40 (?page=40), row 20
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2019.04.16_nooksack_indian_tribe_and_state_of_washington_tribal_state_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/04/16/2019-07487/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2019-01-02'
+    federal_register_citation: 84 FR 2
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-01-02'
+    locator: result page 40 (?page=40), row 21
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2019_01.02_nooksack_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/01/02/2018-28369/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: disapproved
+    approved: '1992-05-22'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-05-22'
+    locator: result page 40 (?page=40), row 22
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact" (Disapproved); list''s Tribe
+      column: "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.05.22_nooksack_indian_tribe_tribal_state_gaming_compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: WA
+    status: deemed-approved
+    approved: '2025-11-26'
+    federal_register_citation: 90 FR 54365
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2025-11-26'
+    locator: result page 40 (?page=40), row 23
+    note: 'Listed as: "Nooksack Indian Tribe Tribal State Gaming Compact Eighth Amendment" (Deemed Approved);
+      list''s Tribe column: "Nooksack Indian Tribe". Document: https://www.bia.gov/sites/default/files/media_document/nooksack_deemed_approved_eighth_amendment_508_compliant_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/11/26/2025-21213/indian-gaming-approval-by-operation-of-law-of-the-eighth-amendment-to-the-tribal-state-compact-for.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2025-11-26).
+  ordinances:
+  - approved: '1993-10-27'
+    link: https://www.nigc.gov?wpdmdl=10429&ind=10445
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-10-27'
+    locator: table row 168, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 168 lists the nation
+      as "Nooksack Indian Tribe".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Nooksack Indian Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Nooksack Indian Tribe".
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Nooksack Indian Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

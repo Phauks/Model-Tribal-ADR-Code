@@ -1,0 +1,381 @@
+id: white-mountain-apache-tribe-of-the-fort-apache-reservation
+entity_type: native-nation
+names:
+  official: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1140
+  note: 'Census area with land in this state: Fort Apache Reservation (code 1140). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '1140'
+  name: Fort Apache Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1140
+  note: Matched by name. Census class code D2.
+population:
+- count: 15000
+  kind: citizens
+  source: white-mountain-apache-tribe-of-the-fort-history-html
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"approximately 15,000 members"; undated statement on the official site; as_of is the access date'
+- count: 14340
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1140, field POP100
+  note: 'Census area: Fort Apache Reservation (code 1140). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 20116
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3420 (White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'White Mountain Apache Tribe of the Fort Apache Reservation,
+    Arizona' (race code 5522) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 13230
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'White Mountain Apache (Fort Apache)', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 13014
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 90, row T54800 'White Mountain Apache Tribe of the Fort Apache Reservation'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: http://www.wmat.us
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+- kind: physical-address
+  value: 201 East Walnut Street, Whiteriver, AZ 85941
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+- kind: mailing-address
+  value: P.O. Box 700, Whiteriver, AZ 85941
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+- kind: phone
+  value: (928) 338-2501
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+- kind: fax
+  value: (928) 338-1514
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Fort Apache Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "White Mountain Apache Tribe, Arizona" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution and By- Laws of the White Mountain Apache Tribe of the Fort Apache Indian Reservation
+    Arizona (approved 1938) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-conswhtmtnapache
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: White Mountain Apache Tribal Code
+  year: '2009'
+  link: https://narf.org/nill/codes/whitemountainapache/index.html
+  source: national-indian-law-library-code-codes-whitemountainapache
+  confidence: medium
+  as_of: '2009'
+  locator: page heading
+  note: 'Received: 2009. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution and By-laws of the White Mountain Apache Tribe
+  year: '2009'
+  link: https://narf.org/nill/constitutions/white_mountain_apache/index.html
+  source: national-indian-law-library-constitution-constitutions-white-mountain-apache
+  confidence: medium
+  as_of: '2009'
+  locator: page heading
+  note: 'Received: 2009. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  year: '2000'
+  link: http://www.wmat.nsn.us/Legal/contents.html
+  source: national-indian-law-library-white-mountain
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . 2000 (revised edition).".'
+- kind: constitution
+  title: Constitution
+  link: http://www.wmat.nsn.us/Tribal_Constitution.html
+  source: national-indian-law-library-white-mountain
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: White Mountain Apache Tribe of the Fort Apache Indian Reservation Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'White Mountain Apache Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.wmat.nsn.us/Legal/Constitution.html) returned HTTP
+    404, so it is not recorded.'
+- kind: law-code
+  title: White Mountain Apache Code
+  link: http://www.wmat.nsn.us/Legal/contents.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'White Mountain Apache Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution and By- Laws of the White Mountain Apache Tribe of the Fort Apache Indian Reservation
+    Arizona
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/conswhtmtnapache.pdf
+  source: university-of-oklahoma-indian-reorganization-act-conswhtmtnapache
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.wmat.nsn.us/tribal_court.html
+  source: national-indian-law-library-white-mountain
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: White Mountain Apache Tribal Court
+  link: http://www.wmat.nsn.us/tribal_court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'White Mountain Apache Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Counseling Requirement for Truancy Delinquent Cases
+    citation: White Mountain Apache Truancy Code Section 5.1
+    link: http://www.wmat.nsn.us/Legal/contents.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/counseling-requirement-for-truancy-delinquent-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Referral to WMAT Wellness Court
+    citation: White Mountain Apache Rules of Criminal Procedure Section 3.16
+    link: http://www.wmat.nsn.us/Legal/contents.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/referral-to-wmat-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-05-24'
+    locator: result page 3 (?page=3), row 1
+    note: 'Listed as: "White Mountain Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "White Mountain Apache Tribe of the Fort Apache Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.05.24_white_mountain_apache_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '1993-08-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1993-08-18'
+    locator: result page 3 (?page=3), row 2
+    note: 'Listed as: "White Mountain Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "White Mountain Apache Tribe of the Fort Apache Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20%20Compliant%20White%20Mountain%20Apache%20Tribal%20State%20Gaming%20Compact%201993.pdf.
+      Name matched to roster by spelling variant.'
+  - state: AZ
+    status: approved
+    approved: '2003-02-05'
+    federal_register_citation: 68 FR 5912
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: result page 3 (?page=3), row 3
+    note: 'Listed as: "White Mountain Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "White Mountain Apache Tribe of the Fort Apache Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003%20%20White%20Mountain%20Apache%20Compact%20and%20Approval%20ltr.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/05/03-2787/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-03-25'
+    locator: result page 3 (?page=3), row 4
+    note: 'Listed as: "White Mountain Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "White Mountain Apache Tribe of the Fort Apache Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%20White%20Mountain%20Apache%20Tribe%20AZ%202009.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2022-06-14'
+    locator: result page 3 (?page=3), row 5
+    note: 'Listed as: "White Mountain Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "White Mountain Apache Tribe of the Fort Apache Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_white_mountain_apache_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  ordinances:
+  - approved: '1993-10-12'
+    link: https://www.nigc.gov?wpdmdl=11518&ind=11544
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1993-10-12'
+    locator: table row 308, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 308 lists the nation
+      as "White Mountain Apache Tribe". Name matched to roster by spelling variant.
+  - approved: '2003-12-18'
+    link: https://www.nigc.gov?wpdmdl=11521&ind=11545
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-12-18'
+    locator: table row 308, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 308 lists the nation
+      as "White Mountain Apache Tribe". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "White Mountain Apache Tribe of
+      the Fort Apache Reservation, AZ". Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+memberships:
+- organization: Inter Tribal Council of Arizona
+  source: inter-tribal-council-of-arizona-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "White Mountain Apache Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

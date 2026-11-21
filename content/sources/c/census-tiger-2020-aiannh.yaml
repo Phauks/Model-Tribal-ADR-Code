@@ -1,0 +1,34 @@
+key: census-tiger-2020-aiannh
+kind: dataset
+citation:
+  type: dataset
+  title: 'TIGER/Line Shapefiles 2020: American Indian/Alaska Native/Native Hawaiian Areas (tl_2020_us_aiannh),
+    attribute table'
+  author:
+  - literal: U.S. Census Bureau
+  URL: https://www2.census.gov/geo/tiger/TIGER2020/AIANNH/tl_2020_us_aiannh.zip
+  issued:
+    date-parts:
+    - - 2021
+      - 1
+      - 28
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://www2.census.gov/geo/tiger/TIGER2020/AIANNH/tl_2020_us_aiannh.zip
+retrieved: '2026-11-21'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+found_in:
+- 2026-11-21-other-nonfederal-groups
+notes: 'DBF attributes read: AIANNHCE, GEOID, NAMELSAD, CLASSFP (D4 = state American Indian reservation,
+  D9 = State Designated Tribal Statistical Area), AIANNHR (S = state).'

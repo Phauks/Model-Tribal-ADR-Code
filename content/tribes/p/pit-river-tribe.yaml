@@ -1,0 +1,521 @@
+id: pit-river-tribe
+entity_type: native-nation
+names:
+  official: Pit River Tribe, California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: 'The notice adds in parentheses: includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+    and Roaring Creek Rancherias.'
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+    and Roaring Creek Rancherias)
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0215, 1955, 1980, 2330, 2835, 3185,
+    4680
+  note: 'Census area with land in this state: Big Bend Rancheria (code 0215); Likely Rancheria (code 1955);
+    Lookout Rancheria (code 1980); Montgomery Creek Rancheria (code 2330); Pit River Trust Land (code
+    2835); Roaring Creek Rancheria (code 3185); XL Ranch Rancheria (code 4680). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '0215'
+  name: Big Bend Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0215
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '1955'
+  name: Likely Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1955
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '1980'
+  name: Lookout Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1980
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '2330'
+  name: Montgomery Creek Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2330
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '2835'
+  name: Pit River Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2835
+  note: Matched by name. Census class code D3.
+- geographic_identifier: '3185'
+  name: Roaring Creek Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3185
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '4680'
+  name: XL Ranch Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4680
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+population:
+- count: 5
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0215, field POP100
+  note: 'Census area: Big Bend Rancheria (code 0215). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 0
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1955, field POP100
+  note: 'Census area: Likely Rancheria (code 1955). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 11
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1980, field POP100
+  note: 'Census area: Lookout Rancheria (code 1980). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 33
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2330, field POP100
+  note: 'Census area: Montgomery Creek Rancheria (code 2330). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely,
+    Lookout, Montgomery Creek and Roaring Creek Rancherias).'
+- count: 24
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2835, field POP100
+  note: 'Census area: Pit River Trust Land (code 2835). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 19
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3185, field POP100
+  note: 'Census area: Roaring Creek Rancheria (code 3185). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 117
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4680, field POP100
+  note: 'Census area: XL Ranch Rancheria (code 4680). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 3694
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3212 (Pit River Tribe of California alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Pit River Tribe of California' (race code 6113) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 3109
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Pit River Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://pitrivertribe.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+    and Roaring Creek Rancherias)
+- kind: physical-address
+  value: 36970 Park Avenue, Burney, CA 96013
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+    and Roaring Creek Rancherias)
+- kind: mailing-address
+  value: 36970 Park Avenue, Burney, CA 96013
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+    and Roaring Creek Rancherias)
+- kind: phone
+  value: (530) 335-5421
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+    and Roaring Creek Rancherias)
+- kind: fax
+  value: (530) 335-3140
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+    and Roaring Creek Rancherias)
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Northern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+    and Roaring Creek Rancherias)
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://pitrivertribe.org/tribal-law/
+  source: national-indian-law-library-pit-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the site did not respond.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/codes/pitrivercode/index.html
+  source: national-indian-law-library-pit-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: http://pitrivertribe.org/wp-content/uploads/2017/09/Pit-River-Constitution.pdf
+  source: national-indian-law-library-pit-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the site did not respond.'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/constitutions/pit_river/index.html
+  source: national-indian-law-library-pit-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . See NILL catalog record for all available versions of the constitution.".'
+justice_institutions:
+- kind: peacemaking-program
+  name: Youth Reclamation Program – The Peacemaker Program
+  source: narf-youth-family-peacemaking-laws
+  confidence: medium
+  as_of: '2025-08-25'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+dispute_resolution:
+  forums:
+  - kind: restorative-justice
+    name: Youth Reclamation Program – The Peacemaker Program
+    description: A program to incorporate tribal culture and tradition in the Tribe's response to youth
+      delinquency, using traditional peacemaking methods and restorative justice focused on restitution
+      and healing; a Healing Circle develops a Healing Strategy that is supervised to completion.
+    legal_basis: Pit River Tribe, Title 8, Chapter 15, Sections 101-404 (under Article VI, sec. (1) of
+      the Pit River Constitution)
+    case_types:
+    - juvenile
+    - criminal-diversion
+    participation: voluntary-or-court-referred
+    relationship_to_court: An alternative to formal adjudication in tribal or state court; entry by petition
+      of the prosecutor, child welfare coordinator or law enforcement, by application of family or community
+      members, or by transfer from another jurisdiction with consent. Pending adjudication is stayed during
+      participation.
+    enforcement: Failure to complete the program may lead to full prosecution or return of the child to
+      the transferring jurisdiction; sanctions for non-compliance may be given.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Pit-River-Title-8-%E2%80%93-Chapter-15-Youth-Reclamation-Program-%E2%80%93-The-Peacemaker-Program.pdf
+    source: pit-river-title-8-chapter-15-peacemaker-program
+    confidence: medium
+    as_of: '2011-08-17'
+    locator: Sections 101-102, 201-202, 301-304, 404
+    note: Peacemakers may be chosen by the tribal council, a court or judge, or elected by members; the
+      clerk keeps a list.
+  provisions:
+  - kind: peacemaking
+    title: Chapter 15 – Youth Reclamation Program – The Peacemaker Program
+    citation: Pit River Tribe, Title 8 Family/Children’s Code, Chapter 15
+    summary: Establishes a youth Peacemaker Program using Healing Circles and Healing Strategies as an
+      alternative to adjudication.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Pit-River-Title-8-%E2%80%93-Chapter-15-Youth-Reclamation-Program-%E2%80%93-The-Peacemaker-Program.pdf
+    source: pit-river-title-8-chapter-15-peacemaker-program
+    confidence: medium
+    as_of: '2011-08-17'
+  - kind: other
+    title: Court-Ordered Services and Treatment for Family
+    citation: Pit River Family/Children's Code, Title 8, Ch. 11, § 309(C)(2)
+    link: https://www.narf.org/nill/codes/pitrivercode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-services-and-treatment-for-family/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Indian Child Welfare Committee Informal Adjustment Conference
+    citation: Pit River Family/Children's Code, Title 8, Ch. 1, § 116
+    link: https://www.narf.org/nill/codes/pitrivercode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/indian-child-welfare-committee-informal-adjustment-conference/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Informal hearing.'
+  - kind: peacemaking
+    title: Peacemaker Program for Tribal Youth
+    citation: Chapter 15. Youth Reclamation Program - The Peacemaker Program
+    link: https://ncorj.org/tribal-law/peacemaker-program-for-tribal-youth/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-program-for-tribal-youth/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking;
+      Restorative justice.'
+  - kind: other
+    title: Truancy Court Remedies Including Assessment and Counseling
+    citation: Pit River Family/Children's Code, Title 8, Ch. 13, § 305(D)
+    link: https://www.narf.org/nill/codes/pitrivercode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-court-remedies-including-assessment-and-counseling/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Truancy Intervention Plan with Family Meeting
+    citation: Pit River Family/Children's Code, Title 8, Ch. 13, § 304(A)(2)
+    link: https://www.narf.org/nill/codes/pitrivercode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-intervention-plan-with-family-meeting/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution; Program.'
+  - kind: peacemaking
+    title: 'Title 8 – Chapter 15: Youth Reclamation Program – The Peacemaker Program'
+    citation: 'Title 8 – Chapter 15: Youth Reclamation Program – The Peacemaker Program'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Pit-River-Title-8-%E2%80%93-Chapter-15-Youth-Reclamation-Program-%E2%80%93-The-Peacemaker-Program.pdf
+    source: narf-youth-family-peacemaking-laws
+    confidence: medium
+    as_of: '2025-08-25'
+    locator: Pit River Tribe of California
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      qualifications, and procedures (including authority to use tribally based methods).'
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2024-12-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-12-20'
+    locator: result page 10 (?page=10), row 1
+    note: 'Listed as: "Pit River Tribe Secretarial Procedures" (Secretarial Procedures); list''s Tribe
+      column: "Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
+      and Roaring Creek Rancherias)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.12.20_pit_river_tribe_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 10 (?page=10), row 2
+    note: 'Listed as: "Pit River Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek, and
+      Roaring Creek Rancherias)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_pit_river_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2024-01-08'
+    federal_register_citation: 89 FR 944
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-01-08'
+    locator: result page 10 (?page=10), row 3
+    note: 'Listed as: "Pit River Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek, and
+      Roaring Creek Rancherias)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.01.08_pit_river_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/01/08/2024-00107/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 10 (?page=10), row 4
+    note: 'Listed as: "Pit River Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pit
+      River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek, and Roaring
+      Creek Rancherias)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.16%20Pit%20River%20Tribe%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2024-01-08).
+  ordinances:
+  - approved: '1996-02-07'
+    link: https://www.nigc.gov?wpdmdl=10634&ind=10650
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-02-07'
+    locator: table row 193, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 193 lists the nation
+      as "Pit River Tribe".
+  - approved: '2004-06-10'
+    link: https://www.nigc.gov?wpdmdl=10635&ind=10651
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-06-10'
+    locator: table row 193, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 193 lists the nation
+      as "Pit River Tribe".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pit River Tribe". Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery
+    Creek, and Roaring Creek Rancherias) Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

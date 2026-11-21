@@ -1,0 +1,359 @@
+id: caddo-nation-of-oklahoma
+entity_type: native-nation
+names:
+  official: Caddo Nation of Oklahoma
+  alternate:
+  - name: Hasinai
+    source: mycaddonation-language-preservation
+    confidence: low
+    as_of: '2026-11-21'
+    note: The page gives Hasinai as the name of the Caddo language among its native speakers ('Caddo people
+      typically refer to their own people and language as Caddo when speaking English'). Recorded as an
+      alternate name with care.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Caddo Nation of Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5540, 5955
+  note: 'Census area with land in this state: Caddo-Wichita-Delaware OTSA (code 5540); Kiowa-Comanche-Apache-Ft
+    Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code 5955). Statistical area only (not a land holding),
+    so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5540'
+  name: Caddo-Wichita-Delaware OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5540
+  note: 'Matched by name. Statistical area shared by the Caddo Nation, the Wichita and Affiliated Tribes
+    and the Delaware Nation (the Delaware named in the area is the Delaware Nation of Anadarko). Shared
+    with: Wichita and Affiliated Tribes , Oklahoma; Delaware Nation, Oklahoma. Census class code D6.'
+- geographic_identifier: '5955'
+  name: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955
+  note: 'Matched by name. Shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma;
+    Fort Sill--Chiricahua--Warm Springs--Apache Tribe; Wichita and Affiliated Tribes , Oklahoma; Delaware
+    Nation, Oklahoma. Census class code D0.'
+population:
+- count: 4909
+  kind: citizens
+  source: oklahoma-education-tribal-guide-caddo
+  confidence: medium
+  as_of: 2010-10
+  note: 'State education guide: ''around 4909 enrolled members as of October 2010.'' Old figure.'
+- count: 15107
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5540, field POP100
+  note: 'Census area: Caddo-Wichita-Delaware OTSA (code 5540). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: Wichita and Affiliated
+    Tribes , Oklahoma; Delaware Nation, Oklahoma; the same count applies to the whole area. Statistical
+    area shared by the Caddo Nation, the Wichita and Affiliated Tribes and the Delaware Nation (the Delaware
+    named in the area is the Delaware Nation of Anadarko).'
+- count: 9690
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955, field POP100
+  note: 'Census area: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code
+    5955). Everyone counted as living in the area in the 2020 Census, of any race or tribal affiliation;
+    this is not a count of the nation''s citizens. The area is a Census statistical area, not a land holding.
+    The area is shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
+    Springs--Apache Tribe; Wichita and Affiliated Tribes , Oklahoma; Delaware Nation, Oklahoma; the same
+    count applies to the whole area.'
+- count: 1514
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2886 (Caddo Nation of Oklahoma alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Caddo Nation of Oklahoma' (race code 5553) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 4911
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Caddo Nation', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://mycaddonation.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Caddo Nation of Oklahoma
+- kind: physical-address
+  value: 117 Memorial Lane Binger, OK 73009, Binger, OK 73009
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Caddo Nation of Oklahoma
+- kind: mailing-address
+  value: P.O. Box 487, Binger, OK 73009
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Caddo Nation of Oklahoma
+- kind: phone
+  value: (405) 656-2344
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Caddo Nation of Oklahoma
+- kind: fax
+  value: (405) 656-2892
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Caddo Nation of Oklahoma
+languages:
+- name: Caddo
+  language_tag: cad
+  source: mycaddonation-language-preservation
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''The Caddo language is known as Hasinai (ha-SEE-nay) to its native speakers.'''
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Anadarko Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Caddo Nation of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Caddo Indian Tribe of Oklahoma" among organizations under constitutions approved
+    by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Caddo Indian Tribe of Oklahoma) (approved 1938) states it was adopted under Act
+    of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-cadcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Election Ordinance
+  link: https://mycaddonation.com/election-board
+  source: national-indian-law-library-caddo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Election Ordinance.". Link check 2026-11-21: the site did not respond.'
+- kind: constitution
+  title: Constitution
+  link: https://mycaddonation.com/constitution-project
+  source: national-indian-law-library-caddo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .". Link check 2026-11-21: the site did not respond.'
+- kind: corporate-charter
+  title: Corporate Charter
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/cadchrtr.html
+  source: national-indian-law-library-caddo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At the University
+    of Oklahoma website . Corporate Charter. (1938)".'
+- kind: corporate-charter
+  title: Corporate Charter
+  year: '1938'
+  link: https://www.loc.gov/item/39026289/
+  source: national-indian-law-library-caddo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At the Library
+    of Congress website . Corporate Charter. (1938)".'
+- kind: law-code
+  title: Caddo Nation of Oklahoma
+  year: '2005'
+  link: https://narf.org/nill/codes/caddo/index.html
+  source: national-indian-law-library-code-codes-caddo
+  confidence: medium
+  as_of: '2005'
+  locator: page heading
+  note: 'Dated: 2002-2005. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Caddo Indian Tribe of Oklahoma Constitution and Bylaws
+  link: http://www.caddonation-nsn.gov/Documents/Constitution.PDF
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Caddo Nation of Oklahoma'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
+- kind: corporate-charter
+  title: Corporate charter (Caddo Indian Tribe of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/cadchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-cadchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Caddo Indian Tribe of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/cadcons.html
+  source: university-of-oklahoma-indian-reorganization-act-cadcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2006-09-12'
+    federal_register_citation: 71 FR 53706
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2006-09-12'
+    locator: result page 26 (?page=26), row 7
+    note: 'Listed as: "Caddo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Caddo
+      Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202006.09.12%20Caddo%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/09/12/E6-15031/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2006-09-12).
+  ordinances:
+  - approved: '2001-10-23'
+    link: https://www.nigc.gov?wpdmdl=9423&ind=9440
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-10-23'
+    locator: table row 28, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2003-05-12'
+    link: https://www.nigc.gov?wpdmdl=9422&ind=9441
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-05-12'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2006-05-17'
+    link: https://www.nigc.gov?wpdmdl=9427&ind=9442
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-05-17'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2008-12-16'
+    link: https://www.nigc.gov?wpdmdl=9426&ind=9443
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-12-16'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2016-06-15'
+    link: https://www.nigc.gov?wpdmdl=9438&ind=9444
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-06-15'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2026-10-02'
+    link: https://www.nigc.gov?wpdmdl=14651&ind=1791383933277
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2026-10-02'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Caddo Nation of Oklahoma Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

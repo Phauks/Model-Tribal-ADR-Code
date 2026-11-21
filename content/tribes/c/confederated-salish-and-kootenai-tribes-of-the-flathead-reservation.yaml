@@ -1,0 +1,573 @@
+id: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+entity_type: native-nation
+names:
+  official: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+  self_designation:
+  - name: Ql̓ispé
+    language_tag: fla
+    source: cskt-our-story
+    confidence: high
+    as_of: '2026-11-21'
+    note: Page names 'the Upper Pend d’Oreille (Ql̓ispé)'. One of the three constituent peoples.
+  - name: Ksanka
+    language_tag: kut
+    source: cskt-our-story
+    confidence: high
+    as_of: '2026-11-21'
+    note: Page names 'the Kootenai (Ksanka) people'. One of the three constituent peoples.
+  - name: Séliš
+    language_tag: fla
+    source: cskt-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Used in the name of the nation's Séliš-Ql̓ispé Culture Committee for the Salish people.
+  - name: Ktunaxa
+    language_tag: kut
+    source: mt-tribal-nations-cskt
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'State page: ''the Kootenai call themselves "Ktunaxa"''. Refers to the Kootenai constituent
+      people. Secondary (state) source.'
+  alternate:
+  - name: the Tribes
+    source: cskt-our-story
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Page: ''“Flathead” ... is not a tribal name, we prefer to be called by our actual tribal identities
+      or simply “the Tribes” when referring to us collectively.'''
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: MT
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- state: MT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1110
+  note: 'Census area with land in this state: Flathead Reservation (code 1110). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '1110'
+  name: Flathead Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1110
+  note: Matched by name. Census class code D2.
+population:
+- count: 7753
+  kind: citizens
+  source: mt-tribal-nations-cskt
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'State page: ''Of the approximately 7,753 enrolled tribal members, about 5,000 live on or near
+    the reservation.'' The same page''s Fast Facts gives 7,443 enrolled members, so the page conflicts.
+    Undated.'
+- count: 30849
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1110, field POP100
+  note: 'Census area: Flathead Reservation (code 1110). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 9487
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2942 (Confederated Salish and Kootenai Tribes of the Flathead Nation
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Confederated Salish and Kootenai Tribes of the Flathead
+    Nation' (race code 6238) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 7840
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Confederated Salish and Kootenai Tribes', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 10993
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 77, row T07800 'Confederated Salish and Kootenai Tribes of the Flathead
+    Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://cskt.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: physical-address
+  value: 42487 Complex Boulevard, Pablo, MT 59855
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: mailing-address
+  value: P.O. Box 278, Pablo, MT 59855
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: phone
+  value: (406) 675-2700
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: fax
+  value: (406) 675-2806
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: email-general
+  value: info@cskt.org
+  label: General office email shown on the nation's website
+  source: cskt-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Salish
+  language_tag: fla
+  source: cskt-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Homepage greets in Salish ('Lemlmtš u kʷ cxʷuy').
+- name: Ksanka (Kootenai)
+  language_tag: kut
+  source: cskt-ksanka-culture-committee
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Ksanka Culture Committee page refers to the Ksanka language.
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Flathead Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Confederated Salish and Kootenai Tribes of the Flathead Reservation, Montana"
+    among organizations under constitutions approved by the Secretary of the Interior (Indian Reorganization
+    Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation) (approved
+    1948) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-amflatcons
+  confidence: medium
+  as_of: '1948'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation Montana) (approved
+    1935) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-flatcons
+  confidence: medium
+  as_of: '1935'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+  link: https://narf.org/nill/codes/confederated_salish_kootenai/index.html
+  source: national-indian-law-library-code-codes-confederated-salish-kootenai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://cskt.org/cskt-laws-codified/
+  source: national-indian-law-library-confederated-salish-and-kootenai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribes'' website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://cskt.org/cskt-laws-codified/
+  source: national-indian-law-library-confederated-salish-and-kootenai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribes''
+    website . Included in CSKT Laws Codified.".'
+- kind: constitution
+  title: Confederated Salish and Kootenai Tribes of the Flathead Reservation - Tribal Constitution
+  year: '2016'
+  link: https://narf.org/nill/constitutions/confederated_salish_kootenai/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-salish-kootenai
+  confidence: medium
+  as_of: '2016'
+  locator: page heading
+  note: 'Table of Contents Updated: January 2016. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Confederated Salish and Kootenai Tribes Constitution and Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.cskt.org/documents/gov/cskt_constitution.pdf) returned
+    HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Confederated Salish and Kootenai Tribes Codified Laws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.cskt.org/gov/court-triballawcode.htm) returned HTTP
+    404, so it is not recorded.'
+- kind: constitution
+  title: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/amflatcons.html
+  source: university-of-oklahoma-indian-reorganization-act-amflatcons
+  confidence: medium
+  as_of: '1948'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Salish and Kootenai Tribes of the Flathead Reservation Montana)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/flatchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-flatchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation Montana)
+  year: '1935'
+  link: https://thorpe.law.ou.edu/IRA/flatcons.html
+  source: university-of-oklahoma-indian-reorganization-act-flatcons
+  confidence: medium
+  as_of: '1935'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://cskt.org/tribal-court/
+  source: national-indian-law-library-confederated-salish-and-kootenai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Confederated Salish and Kootenai Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.cskt.org/gov/court.htm) returned
+    HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Dispositional Alternatives for Youth Court I
+    citation: Salish and Kootenai Tribes, Codified. 3-3-805. Dispositional Alternatives.
+    link: https://ncorj.org/tribal-law/dispositional-alternatives-for-youth-court-i/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-youth-court-i/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Dispositional Alternatives for Youth Offender Disposition Proceedings (Youth Court II)
+    citation: Salish and Kootenai Tribes, Codified. 3-3-926. Disposition alternatives
+    link: https://ncorj.org/tribal-law/dispositional-alternatives-for-youth-offender-disposition-proceedings-youth-court-ii/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-youth-offender-disposition-proceedings-youth-court-ii/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Informal Adjustment Conference for Child Welfare
+    citation: Codified. 3-2-404. Informal Adjustment Conference.
+    link: https://ncorj.org/tribal-law/informal-adjustment-conference-for-child-welfare/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Family conference.'
+  - kind: other
+    title: Informal Adjustment Conference for Juveniles
+    citation: Codified. 3-3-903. Informal Adjustment Conference.
+    link: https://ncorj.org/tribal-law/informal-adjustment-conference-for-juveniles/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Family conference.'
+  - kind: other
+    title: Rehabilitation and Treatment as Diversion
+    citation: Salish and Kootenai Tribes, Codified. 2–2–810. Pretrial diversion.
+    link: https://ncorj.org/tribal-law/rehabilitation-and-treatment-as-diversion/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-and-treatment-as-diversion/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Diversion; Rehabilitation.'
+  - kind: other
+    title: Restorative Purpose of Probation
+    citation: Laws of the Confederated Codified. Part 2 - Probation 2–3–201. Declaration of purpose and
+      policy.
+    link: https://ncorj.org/tribal-law/restorative-purpose-of-probation/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-purpose-of-probation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation; Restorative.'
+  - kind: other
+    title: Service Treatment Plans for Child Welfare Cases
+    citation: Salish and Kootenai Tribes, Codified. 3-2-610. Service Treatment Plans.
+    link: https://ncorj.org/tribal-law/service-treatment-plans-for-child-welfare-cases/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/service-treatment-plans-for-child-welfare-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: .'
+gaming:
+  compacts:
+  - state: MT
+    status: approved
+    approved: '2001-12-14'
+    federal_register_citation: 66 FR 64855
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2001-12-14'
+    locator: result page 20 (?page=20), row 3
+    note: 'Listed as: "Kootenai Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Confederated
+      Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.12.14_kootenai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/12/14/01-30906/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2000-05-12'
+    federal_register_citation: 65 FR 30605
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-12'
+    locator: result page 20 (?page=20), row 4
+    note: 'Listed as: "Kootenai Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Confederated
+      Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.12_kootenai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/12/00-11943/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '1997-05-16'
+    federal_register_citation: 62 FR 27065
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1997-05-16'
+    locator: result page 20 (?page=20), row 5
+    note: 'Listed as: "Kootenai Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Confederated
+      Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.05.16_kootenai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/05/16/97-12821/indian-gaming-notice-of-approved-tribal-state-compact.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2000-11-24'
+    federal_register_citation: 65 FR 70609
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-11-24'
+    locator: result page 20 (?page=20), row 6
+    note: 'Listed as: "Kootenai Tribes Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Confederated Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.11.24_kootenai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/11/24/00-30036/indian-gaming.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Matched
+      on the Tribe column because the title spelling did not match the roster. Federal Register citation
+      converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: deemed-approved
+    approved: '2026-01-26'
+    federal_register_citation: 91 FR 3214
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: result page 20 (?page=20), row 16
+    note: 'Listed as: "Salish & Kootenai Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Confederated Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/media_document/2025.10.09_salish_%26_kootenai_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/01/26/2026-01390/indian-gaming-approval-by-operation-of-law-of-the-class-iii-tribal-state-gaming-compact-between-the?utm_campaign=subscription+mailing+list&amp;utm_medium=email&amp;utm_source=federalregister.gov.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: deemed-approved
+    approved: '2026-01-26'
+    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
+      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
+      either party may terminate after giving 90 days' written notice and an opportunity to cure.
+    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+    confidence: high
+    as_of: '2026-01-26'
+    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    note: Dispute-resolution clause read from this nation's own compact document. Read from the 2026 Confederated
+      Salish and Kootenai Tribes compact; other Montana compacts were not checked.
+  ordinances:
+  - approved: '1997-06-04'
+    link: https://www.nigc.gov?wpdmdl=9581&ind=9608
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-06-04'
+    locator: table row 52, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '1999-05-12'
+    link: https://www.nigc.gov?wpdmdl=9574&ind=9609
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-05-12'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '2001-01-24'
+    link: https://www.nigc.gov?wpdmdl=9598&ind=9610
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-01-24'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '2003-06-18'
+    link: https://www.nigc.gov?wpdmdl=9599&ind=9611
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-06-18'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '2004-04-29'
+    link: https://www.nigc.gov?wpdmdl=9600&ind=9612
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-04-29'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '2009-04-01'
+    link: https://www.nigc.gov?wpdmdl=9601&ind=9613
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-04-01'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Salish and Kootenai
+      Tribes of the Flathead Reservation". Facilities as machine-extracted from the report text (verify):
+      Gray Wolf Peak Casino; Big Arm Marina Casino; KwaTaqNuk Resort. Name extracted from the PDF by the
+      page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: Montana assumed criminal jurisdiction over Indians and Indian territory of the Flathead Indian
+    Reservation under Public Law 280 (Mont. Code Ann. § 2-1-301); the current section provides for withdrawal
+    of consent under § 2-1-306. Partly retroceded in 1995 (see separate fact).
+  source: montana-code-annotated-2-1-301
+  confidence: high
+  as_of: '2025'
+  locator: § 2-1-301(1)-(2)
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of partial criminal jurisdiction acquired by Montana under Public
+    Law 280, effective July 1, 1995. (60 FR 33318)
+  source: federal-register-1995-salish-kootenai-retrocession
+  confidence: high
+  as_of: '1995-07-01'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Confederated Salish and Kootenai Tribes of the Flathead Reservation Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+memberships:
+- organization: Rocky Mountain Tribal Leaders Council
+  source: rocky-mountain-tribal-leaders-council-who-we-are
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Confederated Salish & Kootenai Tribes". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

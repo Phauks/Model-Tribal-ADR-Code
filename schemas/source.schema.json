@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/source.schema.json",
   "title": "Source record",
-  "description": "One cited source: its citation data, where to find it, its archived copies and history, and the rights to use it. Stored as content/sources/<key>.yaml.",
+  "description": "One cited source: its citation data, where to find it, its archived copies and history, and the rights to use it. Stored as content/sources/<first letter of key, or _other>/<key>.yaml.",
   "type": "object",
   "additionalProperties": false,
   "required": ["key", "kind", "citation", "retrieved", "rights", "found_in"],

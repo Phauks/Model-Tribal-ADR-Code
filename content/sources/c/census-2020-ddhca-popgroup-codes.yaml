@@ -1,0 +1,47 @@
+key: census-2020-ddhca-popgroup-codes
+kind: dataset
+citation:
+  type: dataset
+  title: '2020 Census Detailed Demographic and Housing Characteristics File A: POPGROUP (race/ethnic group)
+    code list'
+  author:
+  - literal: U.S. Census Bureau
+  URL: https://api.census.gov/data/2020/dec/ddhca/variables/POPGROUP.json
+  issued:
+    date-parts:
+    - - 2023
+      - 9
+      - 21
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://api.census.gov/data/2020/dec/ddhca/variables/POPGROUP.json
+retrieved: '2026-11-21'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+tribes:
+- adai-caddo-indians-of-louisiana
+- choctaw-apache-tribe-of-ebarb
+- coharie-tribe-of-north-carolina
+- eastern-pequot-tribal-nation
+- edisto-natchez-kusso-tribe-of-south-carolina
+- euchee-tribe-of-indians
+- hassanamisco-nipmuc-tribe
+- juaneno-band-of-mission-indians
+- lower-muscogee-creek-tribe
+- meherrin-tribe-of-north-carolina
+- sappony
+- waccamaw-siouan-tribe-of-north-carolina
+found_in:
+- 2026-11-21-other-nonfederal-groups
+notes: Code list of detailed groups, including American Indian tribal groupings. Used only as a supporting
+  source for alternate names (confidence low). Population values need an API key and were not retrieved.

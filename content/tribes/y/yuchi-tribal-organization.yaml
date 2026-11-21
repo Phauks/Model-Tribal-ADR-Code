@@ -1,0 +1,34 @@
+id: yuchi-tribal-organization
+entity_type: native-nation
+names:
+  official: Yuchi Tribal Organization
+  official_source: federal-register-99-33117
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 64 FR 71814 (1999-12-22)
+  petition_number: '121'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 10/05/1990; Declined
+    Acknowledgment effective 3/21/2000 64 FR 71814
+  source: federal-register-99-33117
+  confidence: high
+  as_of: '1999-12-22'
+  locator: 'Petitioner #121'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 10/05/1990; Declined Acknowledgment effective 3/21/2000 64 FR 71814.
+    Other Federal Register history: Proposed Finding Against Federal Acknowledgment of the Yuchi Tribal
+    Organization, 60 FR 54506 (1995-10-24).'
+states:
+- state: OK
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

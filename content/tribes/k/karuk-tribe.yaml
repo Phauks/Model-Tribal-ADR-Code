@@ -1,0 +1,530 @@
+id: karuk-tribe
+entity_type: native-nation
+names:
+  official: Karuk Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1750
+  note: 'Census area with land in this state: Karuk Reservation and Off-Reservation Trust Land (code 1750).
+    Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1750'
+  name: Karuk Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1750
+  note: Matched by name. Census class code D1.
+population:
+- count: 3627
+  kind: citizens
+  source: karuk-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage figures: ''3627 Tribal Members'', ''6222 Tribal Descendants''. Undated; as_of is access
+    date.'
+- count: 578
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1750, field POP100
+  note: 'Census area: Karuk Reservation and Off-Reservation Trust Land (code 1750). Everyone counted as
+    living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the
+    nation''s citizens.'
+- count: 8038
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3048 (Karuk Tribe alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Karuk Tribe' (race code 5882) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 3652
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Karuk Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.karuk.us/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+- kind: physical-address
+  value: 64236 2nd Avenue, Happy Camp, CA 96039
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+- kind: mailing-address
+  value: P.O. Box 1016, Happy Camp, CA 96039
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+- kind: phone
+  value: (530) 493-1600
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+- kind: fax
+  value: (530) 493-5322
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+languages:
+- name: Karuk
+  language_tag: kyh
+  source: karuk-departments-language-program
+  confidence: high
+  as_of: '2026-11-21'
+  note: Language Program page.
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Pacific Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+governing_documents:
+- kind: law-code
+  title: Karuk Tribe
+  link: https://narf.org/nill/codes/karuk/index.html
+  source: national-indian-law-library-code-codes-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Constitution of the Karuk Tribe
+  year: '2008'
+  link: https://narf.org/nill/constitutions/karukconst/index.html
+  source: national-indian-law-library-constitution-constitutions-karukconst
+  confidence: medium
+  as_of: '2008'
+  locator: page heading
+  note: 'Amended: 2008. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://karuk.tribal.codes/
+  source: national-indian-law-library-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    (eCode360).".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (pdf).". Link check 2026-11-21: the link the source gives (http://www.karuk.us/images/docs/hr-files/Tribal%20Constitution%207_19_2008.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: https://karuk.tribal.codes/
+  source: national-indian-law-library-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (eCode360).".'
+- kind: constitution
+  title: Karuk Tribe Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Karuk Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.karuk.us/images/docs/hr-files/Tribal%20Constitution%207_19_2008.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Karuk Tribal Court Ordinances, Codes & Rules of Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Karuk Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.karuk.us/index.php/departments/judicial-system)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaker Mediation Forum
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.karuk.us/index.php/departments/judicial-system) returned HTTP 404,
+    so it is not recorded.'
+- kind: tribal-court
+  name: Karuk Judicial System
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Karuk Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.karuk.us/index.php/departments/judicial-system)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: mediation-program
+    name: Peacemaker Mediation Forum
+    description: A nonadversarial forum within the Tribal Court structure for resolving disputes between
+      Tribal members and others within the Tribe's jurisdiction; guidelines are to reflect the Tribe's
+      historical traditions and modern methods of dispute resolution.
+    legal_basis: Karuk Tribal Code, Section 3.05.100 (Res. 10-R-111 § 10.9)
+    case_types:
+    - civil
+    - other
+    participation: required
+    relationship_to_court: When a petition is filed with the Clerk, the forum is used before proceeding
+      to a formal court hearing; parties may continue in court if mediation fails.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
+    source: karuk-tribal-code-chapter-3-05
+    confidence: high
+    as_of: '2024-09-26'
+    locator: Sections 3.05.010(E), 3.05.100
+    note: Participation recorded as 'required' because the code says the forum shall be used before a
+      formal hearing once a petition is filed.
+  provisions:
+  - kind: mediation
+    title: Peacemaker Mediation Forum
+    citation: Karuk Tribal Code, Section 3.05.100
+    summary: Establishes the Peacemaker Mediation Forum as a step before formal court hearings and directs
+      the court to create forum guidelines.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
+    source: karuk-tribal-code-chapter-3-05
+    confidence: high
+    as_of: '2024-09-26'
+  - kind: other
+    title: Conference/Peacemaker Mediation to Preserve Marriage
+    citation: KTC 10.05.070
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/conference-peacemaker-mediation-to-preserve-marriage/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Culturally Appropriate Forum for Conflict Resolution
+    citation: KTC 3.10.010
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/culturally-appropriate-forum-for-conflict-resolution/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Court General. Database phase: All phases. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Dispute Resolution Process in Parenting Plans
+    citation: KTC 10.05.270(E)(1)
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispute-resolution-process-in-parenting-plans/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Dispute Resolution through Mediation/Peacemaking in Family Relations
+    citation: KTC 10.05.040
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispute-resolution-through-mediation-peacemaking-in-family-relations/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Mandatory Mediation for Parenting Plan Development
+    citation: KTC 10.05.270
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mandatory-mediation-for-parenting-plan-development/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Mediation for Grandparent Visitation Disputes
+    citation: KTC 10.05.290(D)
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-for-grandparent-visitation-disputes/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Restorative justice.'
+  - kind: other
+    title: Nonadversarial Proceedings Involving Children
+    citation: KTC 3.10.170(A)
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/nonadversarial-proceedings-involving-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Restorative justice.'
+  - kind: other
+    title: Peacemaker Mediation Forum in Child Welfare Cases
+    citation: KTC 10.10.270
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-mediation-forum-in-child-welfare-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: All phases. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Peacemaker Mediation Forum
+    citation: KTC 3.05.100
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-mediation-forum/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Civil Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Separation Agreement with Peacemaker/Mediation Services
+    citation: KTC 10.05.160
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/separation-agreement-with-peacemaker-mediation-services/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Tribal Custom and Elder Consultation
+    citation: KTC 3.10.140(B)
+    link: https://karuk.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/tribal-custom-and-elder-consultation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Court General. Database phase: . Database form of practice: Restorative justice.'
+  - kind: peacemaking
+    title: Section 10.9 Peacemaker Mediation Forum
+    citation: 'Section 10.9 Peacemaker Mediation Forum; Section 11: Peacemaker Mediation Forum/Family
+      Unity; A. Peacemaker Mediation Forum / Family Unity; D. Dispute Resolution-Mediation/Peacemaking'
+    link: https://www.narf.org/nill/codes/karuk/index.html
+    source: national-indian-law-library-code-index-karuk
+    confidence: medium
+    as_of: 2016-12
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: peacemaking
+    title: Title 3 – Tribal Court, Sec. 3.05.100 – Peacemaker Mediation Forum
+    citation: Title 3 – Tribal Court, Sec. 3.05.100 – Peacemaker Mediation Forum
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Karuk Tribe of California
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      procedures, and purpose.'
+  - kind: peacemaking
+    title: Section 10.9 Peacemaker Mediation Forum
+    citation: Section 10.9 Peacemaker Mediation Forum
+    link: https://narf.org/nill/codes/karuk/index.html
+    source: national-indian-law-library-code-codes-karuk
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: peacemaking
+    title: 'Section 11: Peacemaker Mediation Forum/Family Unity'
+    citation: 'Section 11: Peacemaker Mediation Forum/Family Unity'
+    link: https://narf.org/nill/codes/karuk/index.html
+    source: national-indian-law-library-code-codes-karuk
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: peacemaking
+    title: Dispute Resolution-Mediation/Peacemaking
+    citation: Dispute Resolution-Mediation/Peacemaking
+    link: https://narf.org/nill/codes/karuk/index.html
+    source: national-indian-law-library-code-codes-karuk
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'SECTION 1. POLICY, PURPOSE AND SCOPE'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66741
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 8 (?page=8), row 3
+    note: 'Listed as: "Karuk Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Karuk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.12.27%20Karuk%20Deemed%20approved%20compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28135/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2014-11-19'
+    federal_register_citation: 79 FR 68910
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-11-19'
+    locator: result page 8 (?page=8), row 4
+    note: 'Listed as: "Karuk Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Karuk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.11.19_karuk_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/11/19/2014-27377/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-12-27).
+  ordinances:
+  - approved: '2003-06-11'
+    link: https://www.nigc.gov?wpdmdl=10014&ind=10043
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-06-11'
+    locator: table row 114, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 114 lists the nation
+      as "Karuk Tribe of California".
+  - approved: '2012-04-09'
+    link: https://www.nigc.gov?wpdmdl=10031&ind=10044
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-04-09'
+    locator: table row 114, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 114 lists the nation
+      as "Karuk Tribe of California".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Karuk Tribe". Facilities as
+      machine-extracted from the report text (verify): Rain Rock Casino. Name extracted from the PDF by
+      the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Karuk Tribe Confidence lowered from high by the lead session: the notice prints its
+    table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

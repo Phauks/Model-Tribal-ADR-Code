@@ -1,0 +1,44 @@
+id: miami-nation-of-indians-of-the-state-of-indiana-inc
+entity_type: native-nation
+names:
+  official: Miami Nation of Indians of the State of Indiana, Inc.
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 57 FR 27312 (as printed in the Office of Federal
+    Acknowledgment list)
+  petition_number: '66'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 04/02/1980; Declined
+    Acknowledgment effective 08/17/1992 57 FR 27312
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #66'
+  note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
+    list.
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83, subpart D (re-petition authorization); notice 90 FR 41409 (2025-08-25)
+  petition_number: R001
+  petition_stage: 'Re-petition request: Awaiting Active Consideration'
+  source: ofa-re-petition-requests
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Re-Petition Requests, row R001
+  note: 'Request for authorization to re-petition; Federal Register notice Receipt of Request for Authorization
+    To Re-Petition for Federal Acknowledgment as an American Indian Tribe, 90 FR 41409 (2025-08-25) (source
+    key federal-register-2025-16220). Earlier petition #66 was denied.'
+states:
+- state: IN
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

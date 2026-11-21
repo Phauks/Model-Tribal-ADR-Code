@@ -1,0 +1,148 @@
+id: sappony
+entity_type: native-nation
+names:
+  official: Sappony
+  alternate:
+  - name: High Plains Indians
+    source: gao-12-348-federal-funding-non-federally-recognized-tribes
+    confidence: medium
+    as_of: 2012-04
+    locator: Table 1
+  - name: Indians of Person County
+    source: gao-12-348-federal-funding-non-federally-recognized-tribes
+    confidence: medium
+    as_of: 2012-04
+    locator: Table 1
+    note: 'GAO: petitioned as Indians of Person County.'
+  - name: Sappony (Indians of Person County)
+    source: census-2020-ddhca-popgroup-codes
+    confidence: low
+    as_of: '2020'
+    locator: POPGROUP code 07W
+    note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
+      source.
+  - name: Sappony Indians of Person County
+    source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
+    confidence: low
+    as_of: '2001'
+  former:
+  - name: Indians of Person County
+    source: north-carolina-general-statutes-chapter-71a
+    confidence: high
+    as_of: '2026'
+    locator: Section 71A-7
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Sappony" among 26 non-federally recognized tribes that received direct federal
+    funding in FY2007-2010 (total $225,000, Table 3). GAO-reported nonprofit status: Yes; state recognition
+    per state officials: Yes. GAO gives the alternate names High Plains Indians and Indians of Person
+    County (the name under which it petitioned). Not on the 2026 federal list (bia-recognized-entities-2026).'
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9865
+  note: The 2020 Census delineated "Sappony SDTSA" (State Designated Tribal Statistical Area). The Census
+    Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized
+    and have no reservation or off-reservation trust land, delineated with a governor-appointed state
+    liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-7 (1997-147, s. 1; 2003-87, s. 1); Chapter
+    22 of the Public-Local Laws of 1913
+  since: '1913-02-03'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-7
+  note: Statute says the tribe is designated and officially recognized 'from and after' this date.
+- type: state
+  state: NC
+  legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
+    Affairs
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+states:
+- state: NC
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: NC
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9865
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NC
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- state: VA
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+  note: Physical address in Virgilina, Virginia; source says part of the High Plains community is in Halifax
+    County, Virginia.
+census_areas:
+- geographic_identifier: '9865'
+  name: Sappony SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9865, GEOID 9865R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+population:
+- count: 850
+  kind: citizens
+  source: north-carolina-tribal-communities-2026
+  confidence: medium
+  as_of: '2026'
+  note: 'Source: ''the tribe''s 850 members''.'
+contacts:
+- kind: mailing-address
+  value: PO Box 3268 Roxboro, NC 27574
+  label: Tribal mailing address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: physical-address
+  value: 4218 Virgilina Rd. Virgilina, VA 24598
+  label: Tribal physical address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: phone
+  value: 434-585-3352
+  label: Tribal phone
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.sappony.org
+  label: Official website
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

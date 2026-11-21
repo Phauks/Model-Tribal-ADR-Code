@@ -1,0 +1,364 @@
+id: oneida-indian-nation
+entity_type: native-nation
+names:
+  official: Oneida Indian Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NY
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Indian Nation
+- state: NY
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2555
+  note: 'Census area with land in this state: Oneida Nation Reservation (code 2555). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '2555'
+  name: Oneida Nation Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2555
+  note: Matched by name. Census class code D2.
+population:
+- count: 1000
+  kind: citizens
+  source: oneida-indian-nation-mission-vision-and-goals
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"THE ONEIDA INDIAN NATION CONSISTS OF APPROXIMATELY 1,000 ENROLLED MEMBERS"; undated statement
+    on the official site; as_of is the access date'
+- count: 62877
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2555, field POP100
+  note: 'Census area: Oneida Nation Reservation (code 2555). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 501
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3175 (Oneida Indian Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Oneida Indian Nation' (race code 5867) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 948
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Oneida Indian Nation of New York', PDF page 4, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 3520
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 84, row T35100 'Oneida Nation of New York'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.oneidaindiannation.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Indian Nation
+- kind: physical-address
+  value: 2037 Dream Catcher Plaza, Oneida, NY 13421
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Indian Nation
+- kind: mailing-address
+  value: 5218 Patrick Road, Verona, NY 13421
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Indian Nation
+- kind: phone
+  value: (315) 829-8900
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Indian Nation
+- kind: fax
+  value: (315) 361-7619
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Indian Nation
+languages:
+- name: 'Onyota’a:ká: (Oneida)'
+  language_tag: one
+  source: oneida-indian-nation-language-learning
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"its indigenous language, Onyota’a:ká:"'
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Indian Nation
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-oneida-newyork
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the link the source gives (http://www.theoneidanation.com/codesandordinances/)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.narf.org/nill/codes/oneida_new_york/index.html
+  source: national-indian-law-library-oneida-newyork
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: law-code
+  title: Oneida Indian Nation Codes, Ordinances and Regulations
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Oneida Indian Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.theoneidanation.com/codesandordinances/) returned
+    HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-oneida-newyork
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Oneida Nation Court
+  link: http://www.oneidaindiannation.com/court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Oneida Indian Nation'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court of the Oneida Indian Nation (Peacemakers division of the Trial Court)
+    description: The Trial Court includes a Peacemakers division; peacemaking is to be encouraged in all
+      cases and is governed by the Peacemaking Rules in effect from time to time. Peacemakers are persons
+      with experience in peacemaking, arbitration or mediation. The Peacemaking Rules establish the Peacemaker
+      Court as part of the Nation Court System to give formal support, structure and enforcement to traditional
+      Oneida Indian Nation methods of resolving disputes; peacemaking uses Nation religious or other traditional
+      ways of mediation and problem-solving.
+    legal_basis: Oneida Indian Nation Ordinance O-97-02, preamble, Article 8 (Peacemaking) and Article
+      12(1)(g); Oneida Indian Nation Peacemaking Rules 1-18
+    case_types:
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: The Chief Judge of the Trial Court appoints a peacemaker in any matter deemed
+      appropriate or where a party requests peacemaking.
+    enforcement: Peacemakers may decide a matter only if all parties agree in writing, and such a decision
+      has the effect of a court judgment when entered by the Nation Court; peacemakers may request contempt
+      for persons who ignore subpoenas.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
+    source: oneida-indian-nation-ordinance-o-97-02
+    confidence: medium
+    as_of: '1997-05-01'
+    locator: Articles 8 and 12
+    note: Peacemaking Rules read from OCR of a scanned copy dated 5/1/97 (source oneida-indian-nation-peacemaking-rules-1997);
+      attorneys are barred unless witnesses or parties (Rule 3). The ordinance also refers to a Claims
+      Commission established by Ordinance O-94-02A.
+  provisions:
+  - kind: peacemaking
+    title: Ordinance O-97-02, Article 8 – Peacemaking
+    citation: Oneida Indian Nation Ordinance O-97-02, Art. 8
+    summary: Directs that peacemaking be encouraged in all cases before the Oneida Nation Court under
+      the Peacemaking Rules.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
+    source: oneida-indian-nation-ordinance-o-97-02
+    confidence: medium
+    as_of: '1997-05-01'
+  - kind: other
+    title: Disposition Alternatives for Juveniles
+    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 401'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Diversion Program for Alcohol and Drug Related Offenses
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 803'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-program-for-alcohol-and-drug-related-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Diversion to Peacemaker Process (Juveniles)
+    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 301'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-to-peacemaker-process-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Drug Education or Training Program Disposition Option
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 704'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/drug-education-or-training-program-disposition-option/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Factors to Consider when Granting Diversion
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 804'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/factors-to-consider-when-granting-diversion/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Sentencing Goal is to Restore the Victim and the Nation
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 702'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-goal-is-to-restore-the-victim-and-the-nation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: peacemaking
+    title: Oneida Indian Nation Peacemaking Rules
+    citation: Oneida Indian Nation Peacemaking Rules
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-rulesofpeacemaking-document.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Oneida Indian Nation of New York
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      referral procedures, civil process authority, standards of conduct, and authority to use Nation
+      religious and traditional ways.'
+  - kind: traditional-dispute-resolution
+    title: Ordinance O-97-02
+    citation: Ordinance O-97-02
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Oneida Indian Nation of New York
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      referral procedures, civil process authority, standards of conduct, and authority to use Nation
+      religious and traditional ways.'
+  published_materials:
+  - kind: rules
+    title: Oneida Indian Nation Peacemaking Rules
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-rulesofpeacemaking-document.pdf
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+gaming:
+  compacts:
+  - state: NY
+    status: approved
+    approved: '1993-06-04'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1993-06-04'
+    locator: result page 25 (?page=25), row 18
+    note: 'Listed as: "Oneida Indian Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Narragansett Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.06.04_oneida_indian_nation_tribal_state_gaming_compact.pdf.
+      The Tribe column and the compact title disagree; the nation named in the title was used.'
+  - state: NY
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 14 days to negotiate, and
+      if no solution is reached within 30 days either party may submit the dispute to binding arbitration
+      under American Arbitration Association rules before three arbitrators, without monetary damages.
+    dispute_resolution_locator: Section 14 (Party Dispute Resolution)
+    source: compact-ny-seneca-nation-of-indians-2002
+    confidence: medium
+    as_of: '2002-12-09'
+    locator: Section 14 (Party Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2002 Seneca Nation of Indians
+      compact; the Saint Regis Mohawk Tribe and Oneida Indian Nation compacts were not checked. Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (1993-06-04).
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Oneida Indian Nation Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Oneida Indian Nation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

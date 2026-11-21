@@ -1,0 +1,485 @@
+id: puyallup-tribe-of-the-puyallup-reservation
+entity_type: native-nation
+names:
+  official: Puyallup Tribe of the Puyallup Reservation
+  self_designation:
+  - name: puyaləpabš
+    language_tag: lut
+    source: puyallup-tribe-of-the-puyallup-reservati-about-our-tribe
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"In our Lushootseed language, we are known as the puyaləpabš"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Puyallup Tribe of the Puyallup Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3000
+  note: 'Census area with land in this state: Puyallup Reservation and Off-Reservation Trust Land (code
+    3000). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3000'
+  name: Puyallup Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3000
+  note: Matched by name. Census class code D1.
+population:
+- count: 54416
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3000, field POP100
+  note: 'Census area: Puyallup Reservation and Off-Reservation Trust Land (code 3000). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 4549
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3251 (Puyallup Tribe of The Puyallup Reservation alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Puyallup Tribe of The Puyallup Reservation' (race code
+    6197) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 6065
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Puyallup Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.puyalluptribe-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Puyallup Tribe of the Puyallup Reservation
+- kind: physical-address
+  value: 3009 East Portland Avenue, Tacoma, WA 98404
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Puyallup Tribe of the Puyallup Reservation
+- kind: mailing-address
+  value: 3009 East Portland Avenue, Tacoma, WA 98404
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Puyallup Tribe of the Puyallup Reservation
+- kind: phone
+  value: (253) 573-7800
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Puyallup Tribe of the Puyallup Reservation
+- kind: fax
+  value: (253) 680-5996
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Puyallup Tribe of the Puyallup Reservation
+languages:
+- name: Lushootseed
+  language_tag: lut
+  source: puyallup-tribe-of-the-puyallup-reservati-about-our-tribe
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"In our Lushootseed language"'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Puyallup Tribe of the Puyallup Reservation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Puyallup Tribe, Washington" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Puyallup Tribe of the Puyallup Reservation Washington) (approved 1936) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Puyallup Tribe of the Puyallup Reservation
+  year: '2025'
+  link: https://narf.org/nill/codes/puyallup/index.html
+  source: national-indian-law-library-code-codes-puyallup
+  confidence: medium
+  as_of: '2025'
+  locator: page heading
+  note: 'Table of Contents Updated: May 2025. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Puyallup Tribe of the Puyallup Reservation - Tribal Constitution
+  year: '2015'
+  link: https://narf.org/nill/constitutions/puyallup/index.html
+  source: national-indian-law-library-constitution-constitutions-puyallup
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: September 2015. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.codepublishing.com/WA/PuyallupTribe/
+  source: national-indian-law-library-puyallup
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.codepublishing.com/WA/PuyallupTribe/#!/PuyallupTribeCN.html
+  source: national-indian-law-library-puyallup
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Puyallup Tribe Constitution and Bylaws - Code Publishing Co.
+  link: http://www.codepublishing.com/WA/PuyallupTribe/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Puyallup Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Puyallup Tribal Codes – Code Publishing, Inc.
+  link: http://www.codepublishing.com/WA/PuyallupTribe/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Puyallup Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Puyallup Tribe of the Puyallup Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/puycons.html
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-puyallup
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.puyallup-tribe.com/court/) returned HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Puyallup Tribal Court
+  link: http://www.puyallup-tribe.com/ourtribe/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Puyallup Tribe of Indians'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Deferred Prosecution and Treatment Plan
+    citation: Puyallup Tribal Codes 4.04.260
+    link: https://www.codepublishing.com/WA/PuyallupTribe/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-and-treatment-plan/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Dispositional Alternatives for Child in need of services
+    citation: Puyallup Tribal Codes 7.20.400
+    link: https://www.codepublishing.com/WA/PuyallupTribe/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-child-in-need-of-services/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Diversion Conference for Juveniles
+    citation: Puyallup Tribal Codes 7.20.190
+    link: https://www.codepublishing.com/WA/PuyallupTribe/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-diversion-conference-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Opportunity for Family Conference for Vulnerable Adult
+    citation: Puyallup Tribal Codes 7.28.170
+    link: https://www.codepublishing.com/WA/PuyallupTribe/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/opportunity-for-family-conference-for-vulnerable-adult/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Ordered Treatment for Domestic Violence
+    citation: Puyallup Tribal Codes 7.16.090
+    link: https://www.codepublishing.com/WA/PuyallupTribe/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ordered-treatment-for-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '1996-07-23'
+    federal_register_citation: 61 FR 38213
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-07-23'
+    locator: result page 41 (?page=41), row 6
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_07.23.1996_puyallup_tribe_of_the_puyallup_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/07/23/96-18620/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2002-07-12'
+    federal_register_citation: 67 FR 46368
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-07-12'
+    locator: result page 41 (?page=41), row 7
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%202002.07.12%20Puyallup%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/07/12/02-17642/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2004-12-29'
+    federal_register_citation: 69 FR 78045
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-12-29'
+    locator: result page 41 (?page=41), row 8
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202004.12.29%20Puyallup%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/12/29/04-28506/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 41 (?page=41), row 9
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_puyallup_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2018-01-17'
+    federal_register_citation: 83 FR 2462
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-01-17'
+    locator: result page 41 (?page=41), row 10
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20.2018.01.17%20Puyallup%20Tribe%20Fifth%20Amendment%20to%20the%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/01/17/2018-00637/indian-gaming-approval-of-an-amendment-to-a-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4459
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-01-28'
+    locator: result page 41 (?page=41), row 11
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.01.28%20Puyallup%20Tribe%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1924/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2004-10-14'
+    federal_register_citation: 69 FR 61036
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-10-14'
+    locator: result page 41 (?page=41), row 12
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202004.10.14%20Puyallup%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/10/14/04-23092/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-09-01'
+    federal_register_citation: 86 FR 49053
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-01'
+    locator: result page 41 (?page=41), row 13
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.09.01_puyallup_tribe_tribal_state_gmign_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/01/2021-18816/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    approved: '2026-01-26'
+    federal_register_citation: 91 FR 3213
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-01-26'
+    locator: result page 41 (?page=41), row 14
+    note: 'Listed as: "Puyallup Tribe of the Puyallup Reservation Tribal State Gaming Compact" (Deemed
+      Approved); list''s Tribe column: "Puyallup Tribe of the Puyallup Reservation". Document: https://www.bia.gov/sites/default/files/media_document/puyallup_tribal_state_compact_seventh_amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/01/26/2026-01394/indian-gaming-approval-by-operation-of-law-of-the-seventh-amendment-to-the-tribal-state-compact-for?utm_campaign=subscription+mailing+list&amp;utm_medium=email&amp;utm_source=federalregister.gov.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2026-01-26).
+  ordinances:
+  - approved: '1994-07-29'
+    link: https://www.nigc.gov?wpdmdl=10826&ind=10860
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-07-29'
+    locator: table row 216, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 216 lists the nation
+      as "Puyallup Tribe of the Puyallup Reservation".
+  - approved: '2000-12-04'
+    link: https://www.nigc.gov?wpdmdl=10846&ind=10861
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-12-04'
+    locator: table row 216, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 216 lists the nation
+      as "Puyallup Tribe of the Puyallup Reservation".
+  - approved: '2011-11-22'
+    link: https://www.nigc.gov?wpdmdl=10847&ind=10862
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-11-22'
+    locator: table row 216, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 216 lists the nation
+      as "Puyallup Tribe of the Puyallup Reservation".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Puyallup Tribe of the Puyallup Reservation Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Puyallup Tribe of Indians". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Puyallup Tribe of Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

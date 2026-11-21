@@ -1,0 +1,647 @@
+id: northern-arapaho-tribe-of-the-wind-river-reservation
+entity_type: native-nation
+names:
+  official: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WY
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+- state: WY
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4610
+  note: 'Census area with land in this state: Wind River Reservation and Off-Reservation Trust Land (code
+    4610). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4610'
+  name: Wind River Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4610
+  note: 'Matched by name. Shared with: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming.
+    Census class code D1.'
+population:
+- count: 25759
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4610, field POP100
+  note: 'Census area: Wind River Reservation and Off-Reservation Trust Land (code 4610). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. The area is shared with: Eastern Shoshone Tribe of the Wind River Reservation,
+    Wyoming; the same count applies to the whole area.'
+- count: 10450
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Northern Arapaho Tribe of the Wind River Reservation', PDF
+    page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 11624
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 75, row T01700 'Arapaho Tribe of the Wind River Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.northernarapaho.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+- kind: physical-address
+  value: 533 Ethete Road, Ethete, WY 82520
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+- kind: mailing-address
+  value: P.O. Box 396, Fort Washakie, WY 82514
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+- kind: phone
+  value: (307) 332-6120
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+- kind: fax
+  value: (307) 332-7543
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+federal_administration:
+  bureau_of_indian_affairs_region: Rocky Mountain
+  bureau_of_indian_affairs_agency: Wind River Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+governing_documents:
+- kind: law-code
+  title: Northern Arapaho Tribal Code
+  source: national-indian-law-library-arapahoe-wind-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Northern Arapaho Tribal Code.". Link check 2026-11-21: the link the source gives (https://www.northernarapaho.com/170/Tribal-Code)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Law and Order Codes of the Shoshone and Arapaho Tribes
+  link: https://www.wrtribalcourt.com/forms/rules-of-court/tribal-codes/
+  source: national-indian-law-library-arapahoe-wind-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Law and Order Codes of the Shoshone and Arapaho Tribes.".'
+- kind: constitution
+  title: Constitution and By-Laws for Governing the Indians of the Wind River Reservation, Wyo
+  year: '1938'
+  link: https://archive.org/stream/tribal-constitutions-rocky-mountains/Shoshone%20and%20Arapaho%20of%20Wind%20River%20Const%20and%20By-laws%2010.7.1938
+  source: national-indian-law-library-arapahoe-wind-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Internet
+    Archive . Constitution and By-Laws for Governing the Indians of the Wind River Reservation, Wyo. (1938).".'
+- kind: law-code
+  title: Northern Arapaho Tribal Code
+  year: '2018'
+  link: https://narf.org/nill/codes/arapaho_wind_river/index.html
+  source: national-indian-law-library-code-codes-arapaho-wind-river
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: June 2018. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: The Law and Order Code of the Shoshone and Arapaho Tribes of the Wind River Indian Reservation,
+    Wyoming
+  year: '2004'
+  link: https://narf.org/nill/codes/shoshonearapaho/index.html
+  source: national-indian-law-library-code-codes-shoshonearapaho
+  confidence: medium
+  as_of: '2004'
+  locator: page heading
+  note: 'Updated: Nov. 1, 2004. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.wrtribalcourt.com/
+  source: national-indian-law-library-arapahoe-wind-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court of the Northern Arapaho Nation
+    description: A department of the Tribal Court intended to give formal support, structure and enforcement
+      to traditional Northern Arapaho methods of resolving disputes through mediation and traditional
+      ways without judges or lawyers.
+    legal_basis: Northern Arapaho Code, Title 7. Peacemaker Code, Sections 101-702
+    case_types:
+    - family
+    - juvenile
+    - civil
+    - commercial
+    - criminal-diversion
+    - criminal-sentencing
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Established as a department of the Tribal Court; a judge may appoint a peacemaker
+      with the parties' concurrence, and civil or criminal cases may be transferred on stipulation or
+      for good cause, with a stay of court proceedings that the court may lift on breach of a condition.
+    enforcement: Resolved disputes may be approved as judgments or orders of the Tribal Court and are
+      enforceable; if all parties agree, a peacemaker may hear all sides and issue a decision that takes
+      effect as a court judgment when entered, appealable under civil appeal rules.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
+    source: northern-arapaho-title-7-peacemaker-code
+    confidence: medium
+    as_of: '2016-08-31'
+    locator: Title 7, Sections 101-107, 202, 601-605
+    note: Listed matters (Sec. 104) include marital and family strife, parent-child disputes, minor neighbor
+      disputes, alcohol use by family or neighbors, and minor community business transactions of $1,500
+      or less. Attorneys barred from proceedings (Sec. 106). Criminal transfers limited to cases without
+      injury, with victim consent, or victimless offenses, or as a probation condition (Sec. 603-604).
+      $10 fee for a judgment or protective order (Sec. 309).
+  - kind: arbitration
+    name: Peacemaker decision by consent of the parties
+    description: If parties agree in writing or orally, a peacemaker may hear all sides of a dispute and
+      issue a decision.
+    legal_basis: Northern Arapaho Code, Title 7, Section 202(f)
+    case_types:
+    - civil
+    - family
+    - other
+    participation: voluntary
+    relationship_to_court: The decision is submitted to the Tribal Court for entry as a written judgment.
+    enforcement: Takes the effect of a court judgment once entered; appealable under the Tribal Court's
+      civil appeal rules.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
+    source: northern-arapaho-title-7-peacemaker-code
+    confidence: medium
+    as_of: '2016-08-31'
+    locator: Section 202(f), 203(a)
+    note: Kind recorded as arbitration because the code allows a binding decision by consent; the code
+      itself calls it a peacemaker decision, not arbitration.
+  provisions:
+  - kind: peacemaking
+    title: Title 7. Peacemaker Code
+    citation: Northern Arapaho Code, Title 7
+    summary: Establishes the Peacemaker Court, peacemaker powers and limits, request and transfer procedures,
+      protective orders, and entry and enforcement of peacemaking judgments.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
+    source: northern-arapaho-title-7-peacemaker-code
+    confidence: medium
+    as_of: '2016-08-31'
+  - kind: other
+    title: Alternative Sentencing Report for Minors
+    citation: NA Code Title 23, Section 502
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-report-for-minors/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Court Ordered Treatment for Offenses Against Persons
+    citation: NA Code Title 20, Section 303, Section 309, and Section 311
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-treatment-for-offenses-against-persons/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Effort to Enforcement to Traditional Methods to Resolving Disputes
+    citation: NA Code Title 7, Section 101, and Section 107
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/effort-to-enforcement-to-traditional-methods-to-resolving-disputes/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Informal Conference with a Peacemaker
+    citation: NA Code Title 7, Section 305
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-with-a-peacemaker/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Limitations of a Peacemaker
+    citation: NA Code Title 7, Section 104, Section 302, and Section 303
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/limitations-of-a-peacemaker/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Misdemeanor Sentencing with Treatment Option
+    citation: NA Code Title 20, Section 103
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/misdemeanor-sentencing-with-treatment-option/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Peacemaker Judgement Process
+    citation: NA Code Title 7, Section 404
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-judgement-process/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice;
+      Restorative practice.'
+  - kind: other
+    title: Powers & Duties of Peacemakers
+    citation: NA Code Title 7, Section 202, and Section 204
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/powers-duties-of-peacemakers/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Probation Reasonable Conditions
+    citation: NA Code Title 21, Section 701
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-reasonable-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Protective Orders in the Peacemaking Process
+    citation: NA Code Title 7, Section 401
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/protective-orders-in-the-peacemaking-process/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Suspension of Sentence Conditions
+    citation: NA Code Title 21, Section 604
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/suspension-of-sentence-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Transferring from Criminal to Peacemaker Court
+    citation: NA Code Title 7, Section 603
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/transferring-from-criminal-to-peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court;
+      Restorative justice.'
+  - kind: arbitration
+    title: Title 1. Arbitration
+    citation: Title 1. Arbitration; 103 Written Agreement to Submit Controversy to Arbitration Valid;
+      104 Duty of Court on Application of Party to Arbitrate; 105 When Court to Appoint Arbitrators; 106
+      Power of Arbitrators; 109 Authority of Arbitrators to Issue Subpoenas and Administer Oaths; Service
+      of Subpoenas; Depositions; Compelling Person to Testify; Witness Fees; 110 Award of Arbitrators;
+      112 Expenses and Fees for Arbitrators
+    link: https://www.narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-index-arapaho-wind-river
+    confidence: medium
+    as_of: 2018-06
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: peacemaking
+    title: Title 7, Peacemaker Code
+    citation: Title 7, Peacemaker Code
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Arapaho Tribe of the Wind River Reservation of Wyoming
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and civil process authority, procedures (including authority to use traditional Northern Arapaho
+      culture), referral standards, authority of Tribal Court to limit, and standards of conduct.'
+  - kind: arbitration
+    title: Title 1. Arbitration
+    citation: Title 1. Arbitration
+    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-codes-arapaho-wind-river
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: Title 7. Peacemaker
+    citation: Title 7. Peacemaker
+    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-codes-arapaho-wind-river
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: 103 Establishment of Peacemaker Court
+    citation: 103 Establishment of Peacemaker Court; 105 Authorities of Tribal Court and Peacemaker
+    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-codes-arapaho-wind-river
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Chapter 1'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: Peacemakers
+    citation: Peacemakers; 202 Powers of Peacemakers; 203 Limitations; Peacemakers not Judges; 204 Duties
+      of Peacemakers
+    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-codes-arapaho-wind-river
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Chapter 2'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: 301 Request for Peacemaking
+    citation: 301 Request for Peacemaking; 302 Who can Request Peacemaking; 303 Place of Peacemaking;
+      305 Appointment of Peacemaker; 307 Compensation of Peacemaker
+    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-codes-arapaho-wind-river
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Chapter 3'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: Conduct of Peacemaker
+    citation: Conduct of Peacemaker; 502 Complaints regarding Peacemakers
+    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-codes-arapaho-wind-river
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Chapter 5'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: Transfer of Cases from Tribal Court to Peacemaker Court
+    citation: Transfer of Cases from Tribal Court to Peacemaker Court
+    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-codes-arapaho-wind-river
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Chapter 6'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989'
+    citation: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989; Peacemakers (Appointment & qualifications
+      -- Powers of peacemakers -- Limitations; peacemakers not judges; agreed arbitration -- Duties of
+      peacemakers -- Reports to tribal court; Procedure (Request for peacemaking -- Requests and objections
+      -- Duties of clerk of tribal court -- Appointment of peacemaker -- Notice to begin proceedings --
+      Compensation of peacemaker -- Subpoena -- Fees)\; Conduct of Peacemakers (General standards -- Complaints
+      regarding peacemakers -- Action on complaint; Transfer of Cases from Tribal Court to Peacemaker
+      Court (General policy -- Civil matters -- Criminal matters -- Criminal probation -- Transfer on
+      probation; ...'
+    link: https://narf.org/nill/codes/shoshonearapaho/index.html
+    source: national-indian-law-library-code-codes-shoshonearapaho
+    confidence: medium
+    as_of: '2004'
+    locator: Table of Contents, under 'History'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
+      Nov. 1, 2004); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: WY
+    status: secretarial-procedures
+    approved: '2007-08-02'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2007-08-02'
+    locator: result page 47 (?page=47), row 17
+    note: 'Listed as: "Arapaho Tribe of the Wind River Reservation Gaming Procedures" (Secretarial Procedures);
+      list''s Tribe column: "Northern Arapaho Tribe of the Wind River Reservation, Wyoming". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%202007.08.02%20Arapaho%20Tribe%20Gaming%20Procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Name matched to roster by spelling variant.'
+  - state: WY
+    status: secretarial-procedures
+    approved: '2014-10-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2014-10-03'
+    locator: result page 47 (?page=47), row 18
+    note: 'Listed as: "Arapaho Tribe of the Wind River Reservation Gaming Procedures" (Secretarial Procedures);
+      list''s Tribe column: "Northern Arapaho Tribe of the Wind River Reservation, Wyoming". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202014.10.03%20Arapaho%20Tribe%20Class%20III%20Gaming%20Procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Name matched to roster by spelling variant.'
+  - state: WY
+    status: secretarial-procedures
+    approved: '2005-09-21'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-09-21'
+    locator: result page 47 (?page=47), row 19
+    note: 'Listed as: "Arapaho Tribe of the Wind River Reservation Secretarial Procedures" (Secretarial
+      Procedures); list''s Tribe column: "Northern Arapaho Tribe of the Wind River Reservation, Wyoming".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.09.21%20Arapaho%20Tribe%20Secretarial%20Procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Name matched to roster by spelling variant.'
+  ordinances:
+  - approved: '1995-10-27'
+    link: https://www.nigc.gov?wpdmdl=10431&ind=10447
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-10-27'
+    locator: table row 170, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2001-11-30'
+    link: https://www.nigc.gov?wpdmdl=10432&ind=10448
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-11-30'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2002-01-29'
+    link: https://www.nigc.gov?wpdmdl=10433&ind=10449
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-01-29'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2005-09-29'
+    link: https://www.nigc.gov?wpdmdl=10434&ind=10450
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-09-29'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2006-10-06'
+    link: https://www.nigc.gov?wpdmdl=10435&ind=10451
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-10-06'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2008-04-04'
+    link: https://www.nigc.gov?wpdmdl=10436&ind=10452
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-04-04'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2010-02-22'
+    link: https://www.nigc.gov?wpdmdl=10437&ind=10453
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-02-22'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2011-12-19'
+    link: https://www.nigc.gov?wpdmdl=10438&ind=10454
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-12-19'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2013-01-03'
+    link: https://www.nigc.gov?wpdmdl=10439&ind=10455
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2013-01-03'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  - approved: '2017-03-31'
+    link: https://www.nigc.gov?wpdmdl=10440&ind=10456
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2017-03-31'
+    locator: table row 170, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
+      as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Northern Arapaho Tribe of the Wind River Reservation, Wyoming Confidence lowered from
+    high by the lead session: the notice prints its table as page images, so nation names were read from
+    images and matched to the roster.'
+memberships:
+- organization: Rocky Mountain Tribal Leaders Council
+  source: rocky-mountain-tribal-leaders-council-who-we-are
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Northern Arapaho Tribal Council". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

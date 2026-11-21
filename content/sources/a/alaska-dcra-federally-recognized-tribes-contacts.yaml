@@ -1,0 +1,35 @@
+key: alaska-dcra-federally-recognized-tribes-contacts
+kind: dataset
+citation:
+  type: dataset
+  title: Federally Recognized Tribes (contacts layer, CDO_Contacts_Federally_Recognized_Tribes)
+  author:
+  - literal: State of Alaska, Department of Commerce, Community, and Economic Development, Division of
+      Community and Regional Affairs
+  container-title: Alaska Community Database / DCRA Open Data (ArcGIS REST)
+  URL: https://maps.commerce.alaska.gov/server/rest/services/Contacts/CDO_Contacts_Federally_Recognized_Tribes/MapServer/0
+  issued:
+    date-parts:
+    - - 2026
+      - 4
+      - 2
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://maps.commerce.alaska.gov/server/rest/services/Contacts/CDO_Contacts_Federally_Recognized_Tribes/MapServer/0
+retrieved: '2026-11-21'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+found_in:
+- 2026-11-21-nations-alaska
+notes: 'Queried with where=1=1&outFields=*&f=json; 230 records, AsOfDate 2026-04-02 (one 2026-04-13).
+  Fields used: Tribe Name, Also Known As, Address, Physical Address, Phone, Alt Phone, Email, Website.'

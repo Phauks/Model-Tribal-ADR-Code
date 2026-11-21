@@ -1,0 +1,247 @@
+id: yomba-shoshone-tribe-of-the-yomba-reservation
+entity_type: native-nation
+names:
+  official: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: NV
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4740
+  note: 'Census area with land in this state: Yomba Reservation (code 4740). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '4740'
+  name: Yomba Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4740
+  note: Matched by name. Census class code D2.
+population:
+- count: 34
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4740, field POP100
+  note: 'Census area: Yomba Reservation (code 4740). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 101
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3444 (Yomba Shoshone Tribe of the Yomba Reservation, Nevada alone or
+    in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Yomba Shoshone Tribe of the Yomba Reservation, Nevada'
+    (race code 6291) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 189
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Yomba Shoshone Tribe', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.yombatribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+- kind: physical-address
+  value: 1 Newe Rd, Austin, NV 89310
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+- kind: mailing-address
+  value: HC61, Box 6275, Austin, NV 89310
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+- kind: phone
+  value: (775) 964-6020
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+- kind: fax
+  value: (775) 964-2443
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Western Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Yomba Shoshone Tribe Nevada" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Yomba Shoshone Tribe of the Yomba Reservation Nevada) (approved 1939) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-yomba
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Yomba Shoshone Tribe Law and Order Code
+  year: '2001'
+  link: https://narf.org/nill/codes/yombacode/index.html
+  source: national-indian-law-library-code-codes-yombacode
+  confidence: medium
+  as_of: '2001'
+  locator: page heading
+  note: 'Approved: 2001. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: YST Ordinances and YST Resolutions
+  link: https://www.yombatribe.com/yst-law
+  source: national-indian-law-library-yomba
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . YST Ordinances and YST Resolutions.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.yombatribe.com/yst-law
+  source: national-indian-law-library-yomba
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/yomba.html
+  source: national-indian-law-library-yomba
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma Law Library website . Constitution. (1940)".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/40029073/
+  source: national-indian-law-library-yomba
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website.".'
+- kind: constitution
+  title: Constitution (Yomba Shoshone Tribe of the Yomba Reservation Nevada)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/yomba.html
+  source: university-of-oklahoma-indian-reorganization-act-yomba
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Yomba Shoshone Tribe of the Yomba Reservation Nevada)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/yomchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-yomchrtr
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Western Region CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Rehabilitation Program in Lieu of Imprisonment or Fine for Substance Use
+    citation: YOMBA SHOSHONE TRIBE LAW AND ORDER CODE. Title 5 Code of Criminal Offenses. Sec. 11 Misuse
+      of Controlled or Hypnotic Substance
+    link: https://www.narf.org/nill/codes/yombacode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-program-in-lieu-of-imprisonment-or-fine-for-substance-use/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation.'
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted Nevada's offer to retrocede all civil and criminal jurisdiction acquired under
+    Public Law 280 (Nevada was an optional state, 1955) over the Yomba Reservation, effective July 1,
+    1975. (40 FR 27501)
+  source: federal-register-1975-nevada-retrocession
+  confidence: high
+  as_of: '1975-07-01'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Yomba Shoshone Tribe of the Yomba Reservation, Nevada Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Yomba Shoshone Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,312 @@
+id: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria
+entity_type: native-nation
+names:
+  official: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0275
+  note: 'Census area with land in this state: Big Valley Rancheria (code 0275). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '0275'
+  name: Big Valley Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0275
+  note: Matched by name. Census class code D2.
+population:
+- count: 191
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0275, field POP100
+  note: 'Census area: Big Valley Rancheria (code 0275). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 528
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2869 (Big Valley Band of Pomo Indians of the Big Valley Rancheria alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Big Valley Band of Pomo Indians of the Big Valley Rancheria'
+    (race code 6118) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1200
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Big Valley Band of Pomo Indians', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.bvrancheria.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+- kind: physical-address
+  value: 2726 Mission Rancheria Road, Lakeport, CA 95453
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+- kind: mailing-address
+  value: 2726 Mission Rancheria Road, Lakeport, CA 95453
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+- kind: phone
+  value: (707) 263-3924
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+- kind: fax
+  value: (707) 263-3977
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Bib Valley Band of Pomo Indians of the Big Valley Racheria, California" among
+    organizations under constitutions approved by the Secretary of the Interior (Indian Reorganization
+    Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Big Valley Band of Pomo Indians of the Big Valley Rancheria California) (approved
+    1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  year: '2011'
+  link: http://emfsafetynetwork.org/wp-content/uploads/2009/11/Big-Valley-Band-of-Pomo-Indians.pdf
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At EMF Safety Network
+    website. Ordinance banning installation of SmartMeters. (2011)".'
+- kind: law-code
+  title: Liquor Control Ordinance
+  year: '2001'
+  link: http://www.gpo.gov/fdsys/granule/FR-2001-01-25/01-2223
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At 66 FR 7771 . Liquor
+    Control Ordinance. (2001)".'
+- kind: law-code
+  title: Tribal code
+  year: '1994'
+  link: http://www.nigc.gov/utility/documents/big-valley-band-of-pomo-indians-go
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At National Indian
+    Gaming Commission website. Gaming Ordinance (1994). Amendment (2002). Amendment (2004)".'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/pomocons.html
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . 1940.".'
+- kind: constitution
+  title: Constitution
+  year: '1936'
+  link: https://www.loc.gov/item/36026355/
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . 1936.".'
+- kind: corporate-charter
+  title: Corporate charter (Big Valley Band of Pomo Indians of the Big Valley Rancheria California)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/pomochrt.html
+  source: university-of-oklahoma-indian-reorganization-act-pomochrt
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Big Valley Band of Pomo Indians of the Big Valley Rancheria California)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/pomocons.html
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '2000-05-05'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-05'
+    locator: result page 4 (?page=4), row 23
+    note: 'Listed as: "Big Valley Band of Pomo Indians of the Big Valley Rancheria Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Big Valley Band of Pomo Indians of the Big Valley Rancheria,
+      California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.16%20Big%20Valley%20Rancheria%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66741
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 4 (?page=4), row 24
+    note: 'Listed as: "Big Valley Band of Pomo Indians of the Big Valley Rancheria Tribal State Gaming
+      Compact" (Deemed Approved); list''s Tribe column: "Big Valley Band of Pomo Indians of the Big Valley
+      Rancheria, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2018.12.27_big_valley_band_of_pomo_indians_tribal_state_gamig_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28135/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-12-27).
+  ordinances:
+  - approved: '1994-05-11'
+    link: https://www.nigc.gov?wpdmdl=3406&ind=3409
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-05-11'
+    locator: table row 18, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 18 lists the nation
+      as "Big Valley Band of Pomo Indians". Name matched to roster by spelling variant.
+  - approved: '2002-08-08'
+    link: https://www.nigc.gov?wpdmdl=3407&ind=3410
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-08-08'
+    locator: table row 18, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 18 lists the nation
+      as "Big Valley Band of Pomo Indians". Name matched to roster by spelling variant.
+  - approved: '2004-12-16'
+    link: https://www.nigc.gov?wpdmdl=3408&ind=3411
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-12-16'
+    locator: table row 18, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 18 lists the nation
+      as "Big Valley Band of Pomo Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Big Valley Band of Pomo Indians".
+      Facilities as machine-extracted from the report text (verify): Konocti Vista Casino Resort & Marina.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

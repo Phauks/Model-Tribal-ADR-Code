@@ -1,0 +1,223 @@
+id: fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation
+entity_type: native-nation
+names:
+  official: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1195
+  note: 'Census area with land in this state: Fort Independence Reservation (code 1195). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '1195'
+  name: Fort Independence Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1195
+  note: Matched by name. Census class code D2.
+population:
+- count: 94
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1195, field POP100
+  note: 'Census area: Fort Independence Reservation (code 1195). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 50
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2996 (Fort Independence Indian Community alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Fort Independence Indian Community' (race code 6049)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 101
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Fort Independence Indian Community of Paiute Indians', PDF
+    page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://fortindependence.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California
+- kind: physical-address
+  value: 131 North Highway 395, Independence, CA 93526
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California
+- kind: mailing-address
+  value: P.O. Box 67, Independence, CA 93526
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California
+- kind: phone
+  value: (760) 878-5160
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California
+- kind: fax
+  value: (760) 878-2311
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California
+- kind: email-general
+  value: info@fortindependence.com
+  label: General office email shown on the nation's website
+  source: fortindependence-contact
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California
+governing_documents:
+- kind: articles-of-association
+  title: Articles of Association of the Fort Independence Indian Community, California
+  year: '1999'
+  link: https://narf.org/nill/constitutions/fort_independence/index.html
+  source: national-indian-law-library-constitution-constitutions-fort-independence
+  confidence: medium
+  as_of: '1999'
+  locator: page heading
+  note: 'Adopted: 1999. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2014-01-17'
+    federal_register_citation: 79 FR 3241
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-01-17'
+    locator: result page 7 (?page=7), row 10
+    note: 'Listed as: "Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation
+      Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column: "Fort Independence Indian
+      Community of Paiute Indians of the Fort Independence Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.01.17_fort_independence_indian_community_of_the_paiute_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/01/17/2014-00898/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2014-01-17).
+  ordinances:
+  - approved: '2008-01-11'
+    link: https://www.nigc.gov?wpdmdl=9824&ind=9837
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-01-11'
+    locator: table row 85, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 85 lists the nation
+      as "Fort Independence Indian Reservation". Name matched to roster by spelling variant.
+  - approved: '2016-11-22'
+    link: https://www.nigc.gov?wpdmdl=9825&ind=9838
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2016-11-22'
+    locator: table row 85, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 85 lists the nation
+      as "Fort Independence Indian Reservation". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort Independence Indian Community
+      of Paiute Indians of Fort Independence Reservation". Facilities as machine-extracted from the report
+      text (verify): Oak Creek Casino. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
+    California Confidence lowered from high by the lead session: the notice prints its table as page images,
+    so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

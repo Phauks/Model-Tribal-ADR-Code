@@ -1,0 +1,197 @@
+id: narragansett-indian-tribe
+entity_type: native-nation
+names:
+  official: Narragansett Indian Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 48 FR 6177
+  petition_number: '59'
+  petition_stage: Letter of Intent to Petition 10/22/1979; Acknowledgment effective 04/11/1983 48 FR 6177
+  since: '1983-04-11'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1983-04-11'
+  locator: 'Petitioner #59'
+states:
+- state: RI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Narragansett Indian Tribe
+- state: RI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2415
+  note: 'Census area with land in this state: Narragansett Reservation (code 2415). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '2415'
+  name: Narragansett Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2415
+  note: Matched by name. Census class code D2.
+population:
+- count: 0
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2415, field POP100
+  note: 'Census area: Narragansett Reservation (code 2415). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 6610
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3149 (Narragansett Indian Tribe alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Narragansett Indian Tribe' (race code 5997) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3453
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Narragansett Indian Tribe', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 2046
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 81, row T23400 'Narragansett Indian Tribe of Rhode Island'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://narragansettindiannation.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Narragansett Indian Tribe
+- kind: physical-address
+  value: 4533 South County Trail, Charlestown, RI 02813
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Narragansett Indian Tribe
+- kind: mailing-address
+  value: P.O. Box 268, Charlestown, RI 02813
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Narragansett Indian Tribe
+- kind: phone
+  value: (401) 364-1100
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Narragansett Indian Tribe
+- kind: fax
+  value: (401) 364-1104
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Narragansett Indian Tribe
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Narragansett Indian Tribe
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-narragansett
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+gaming:
+  compacts:
+  - state: RI
+    status: approved
+    approved: '1994-12-16'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1994-12-16'
+    locator: result page 33 (?page=33), row 22
+    note: 'Listed as: "Narragansett Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Nansemond Indian Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201994.12.16%20Narragansett%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/12/16/94-30880/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: RI
+    status: approved
+    approved: '1994-12-16'
+    dispute_resolution_summary: If either gaming agency finds a non-monetary compliance problem it delivers
+      a notice of non-compliance, and if the problem is not cured within 30 business days (with a possible
+      15-business-day extension for good-faith efforts) the requesting agency may sue in United States
+      District Court; the compact contains no arbitration or mediation clause.
+    dispute_resolution_locator: Section 12(c) (Enforcement by parties)
+    source: compact-ri-narragansett-indian-tribe-1994
+    confidence: medium
+    as_of: '1994-12-16'
+    locator: Section 12(c) (Enforcement by parties)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1994 Narragansett Indian
+      Tribe compact, the only Rhode Island compact in the list.
+  ordinances:
+  - approved: '1995-11-20'
+    link: https://www.nigc.gov?wpdmdl=10381&ind=10412
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-11-20'
+    locator: table row 163, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 163 lists the nation
+      as "Narragansett Indian Tribe".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Narragansett Indian Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Narragansett Indian Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,393 @@
+id: yurok-tribe-of-the-yurok-reservation
+entity_type: native-nation
+names:
+  official: Yurok Tribe of the Yurok Reservation, California
+  self_designation:
+  - name: Oohl
+    language_tag: yur
+    source: yurok-tribe-of-the-yurok-reservation-our-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"When we refer to ourselves we say Oohl, meaning Indian people."'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yurok Tribe of the Yurok Reservation, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4760
+  note: 'Census area with land in this state: Yurok Reservation (code 4760). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '4760'
+  name: Yurok Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4760
+  note: Matched by name. Census class code D2.
+population:
+- count: 5000
+  kind: citizens
+  source: yurok-tribe-of-the-yurok-reservation-our-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"more than 5,000 enrolled members"; undated statement on the official site; as_of is the access
+    date'
+- count: 1236
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4760, field POP100
+  note: 'Census area: Yurok Reservation (code 4760). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 8117
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3448 (Yurok Tribe alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Yurok Tribe' (race code 6455) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label matched by name variant.
+- count: 6471
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Yurok Tribe', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.yuroktribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yurok Tribe of the Yurok Reservation, California
+- kind: physical-address
+  value: 190 Klamath Boulevard, Klamath, CA 95548
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yurok Tribe of the Yurok Reservation, California
+- kind: mailing-address
+  value: P.O. Box 1027, Klamath, CA 95548
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yurok Tribe of the Yurok Reservation, California
+- kind: phone
+  value: (707) 482-1350
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yurok Tribe of the Yurok Reservation, California
+- kind: fax
+  value: (707) 482-1377
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yurok Tribe of the Yurok Reservation, California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Pacific Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Yurok Tribe of the Yurok Reservation, California
+governing_documents:
+- kind: law-code
+  title: Yurok Tribal Code
+  year: '2018'
+  link: https://narf.org/nill/codes/yurokcode/index.html
+  source: national-indian-law-library-code-codes-yurokcode
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: March 2018. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Yurok Tribal Constitution
+  year: '2000'
+  link: https://narf.org/nill/constitutions/yurokconst/index.html
+  source: national-indian-law-library-constitution-constitutions-yurokconst
+  confidence: medium
+  as_of: '2000'
+  locator: page heading
+  note: 'Amended: 2000. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://yurok.tribal.codes/
+  source: national-indian-law-library-yurok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    (eCode360).".'
+- kind: constitution
+  title: Constitution
+  link: https://yurok.tribal.codes/
+  source: national-indian-law-library-yurok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (eCode360).".'
+- kind: constitution
+  title: Yurok Tribe Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Yurok Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.yuroktribe.org/government/councilsupport/documents/Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Yurok Tribal Codes
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Yurok Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.yuroktribe.org/government/councilsupport/YurokTribeOrdinances.htm)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: other
+  name: Yurok Justice Center
+  source: national-indian-law-library-yurok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'Link check 2026-11-21: the link the source gives (http://www.yuroktribe.org/tribalcourt/) returned
+    HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Yurok Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Yurok Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.yuroktribe.org/tribalcourt/) returned
+    HTTP 404, so it is not recorded.'
+- kind: other
+  name: Yurok Justice Center
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Yurok Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Optional Rehabilitation Sentencing for Domestic Violence Offense
+    citation: Sentencing options.
+    link: https://ncorj.org/tribal-law/optional-rehabilitation-sentencing-for-domestic-violence-offense/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/optional-rehabilitation-sentencing-for-domestic-violence-offense/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Process for Dispute Resolution in Parenting Planning
+    citation: Yurok Tribal Code. Title 13 Family Code. 13.25 Child Custody, Parenting Plans, and Visitation.
+      13.25.070 Contents of Parenting Plan.
+    link: https://yurok.tribal.codes/YTC/13.25.070
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/process-for-dispute-resolution-in-parenting-planning/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference; Restorative justice; Restorative practice, Restorative process.'
+  - kind: other
+    title: Restorative Justice Option for Environmental Harms
+    citation: Yurok Tribal Code. Title 21 Environmental Protections. Sections 21.20 Water Pollution Control
+      & 21.55 Wetlands Protection.
+    link: https://yurok.tribal.codes/YTC/21
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-justice-option-for-environmental-harms/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restorative Options in Judgement and Sentencing
+    citation: Yurok Tribal Code. Title 2 Courts. Chapter 2.10 Yurok Tribal Court — Rules of Court. 2.10.1070
+      Judgement and Sentencing.
+    link: https://yurok.tribal.codes/YTC/2.10.1070
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-options-in-judgement-and-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restorative Reunification Efforts
+    citation: Disposition hearings.
+    link: https://ncorj.org/tribal-law/restorative-reunification-efforts/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-reunification-efforts/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: 9.20 Dispute Resolution
+    citation: 9.20 Dispute Resolution
+    link: https://www.narf.org/nill/codes/yurokcode/index.html
+    source: national-indian-law-library-code-index-yurokcode
+    confidence: medium
+    as_of: 2018-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: 9.20 Dispute Resolution
+    citation: 9.20 Dispute Resolution
+    link: https://narf.org/nill/codes/yurokcode/index.html
+    source: national-indian-law-library-code-codes-yurokcode
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Title 9 BUSINESS REGULATIONS – GAMING'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: March 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2007-11-02'
+    federal_register_citation: 72 FR 62264
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-11-02'
+    locator: result page 13 (?page=13), row 16
+    note: 'Listed as: "Yurok Tribe of the Yurok Reservation Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Yurok Tribe of the Yurok Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.11.02_yurok_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/11/02/E7-21624/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2016-10-31'
+    federal_register_citation: 81 FR 75427
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-10-31'
+    locator: result page 13 (?page=13), row 17
+    note: 'Listed as: "Yurok Tribe of the Yurok Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Yurok Tribe of the Yurok Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.10.31%20Yurok%20Tribe%202016%20Compact%20Packet.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/10/31/2016-26251/indian-gaming-approval-of-amendment-to-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2026-07-07'
+    federal_register_citation: 91 FR 41655
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-07-07'
+    locator: result page 13 (?page=13), row 18
+    note: 'Listed as: "Yurok Tribe of the Yurok Reservation Tribal State Gaming Compact Extension" (Extensions);
+      list''s Tribe column: "Yurok Tribe of the Yurok Reservation, California". Document: https://www.bia.gov/sites/default/files/media_document/2026.06.04_yurok_compact_extension_508_compliant.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/07/07/2026-13701/indian-gaming-extension-of-tribal-state-class-iii-gaming-compact-between-the-yurok-tribe-of-the.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2026-07-07).
+  ordinances:
+  - approved: '2000-07-07'
+    link: https://www.nigc.gov?wpdmdl=11598&ind=11606
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2000-07-07'
+    locator: table row 321, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 321 lists the nation
+      as "Yurok Tribe". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Yurok Tribe of the Yurok Reservation".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Yurok Tribe of the Yurok Reservation, California Confidence lowered from high by the
+    lead session: the notice prints its table as page images, so nation names were read from images and
+    matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,213 @@
+id: duckwater-shoshone-tribe
+entity_type: native-nation
+names:
+  official: Duckwater Shoshone Tribe
+  former:
+  - name: Duckwater Shoshone Tribe of the Duckwater Reservation, Nevada
+    source: bia-recognized-entities-2026
+    confidence: high
+    as_of: '2026-01-30'
+    locator: 91 Fed. Reg. 4103
+    note: Listed in the notice as a previous name.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: NV
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation,
+    Nevada)
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0975
+  note: 'Census area with land in this state: Duckwater Reservation (code 0975). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: 0975
+  name: Duckwater Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0975
+  note: Matched by name. Census class code D2.
+population:
+- count: 159
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0975, field POP100
+  note: 'Census area: Duckwater Reservation (code 0975). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 134
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2970 (Duckwater Shoshone Tribe alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Duckwater Shoshone Tribe' (race code 6286) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 387
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Duckwater Shoshone Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://duckwatertribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation,
+    Nevada)
+- kind: physical-address
+  value: 511 Duckwater Falls, Duckwater, NV 89314
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation,
+    Nevada)
+- kind: mailing-address
+  value: P.O. Box 140068, Duckwater, NV 89314
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation,
+    Nevada)
+- kind: phone
+  value: (775) 863-0227
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation,
+    Nevada)
+- kind: fax
+  value: (775) 863-0301
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation,
+    Nevada)
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Eastern Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation,
+    Nevada)
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Duckwater Tribe of the Duckwater Reservation, Nevada" among organizations under
+    constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934),
+    as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Duckwater Shoshone Tribe of the Duckwater Reservation Nevada) (approved 1940)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-shoshcons
+  confidence: medium
+  as_of: '1940'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Duckwater Shoshone Tribe of the Duckwater Reservation - Tribal Constitution
+  year: '2010'
+  link: https://narf.org/nill/constitutions/duckwater/index.html
+  source: national-indian-law-library-constitution-constitutions-duckwater
+  confidence: medium
+  as_of: '2010'
+  locator: page heading
+  note: 'Published: 2010. Full text linked from the National Indian Law Library page.'
+- kind: corporate-charter
+  title: Corporate Charter of the Duckwater Shoshone Tribe
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/duckwtr.html
+  source: university-of-oklahoma-indian-reorganization-act-duckwtr
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Duckwater Shoshone Tribe of the Duckwater Reservation Nevada)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/shoshcons.html
+  source: university-of-oklahoma-indian-reorganization-act-shoshcons
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-duckwater
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Duckwater Shoshone Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nevada section, entry 'Duckwater Shoshone Tribe'
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted Nevada's offer to retrocede all civil and criminal jurisdiction acquired under
+    Public Law 280 (Nevada was an optional state, 1955) over the Duckwater Reservation, effective July
+    1, 1975. (40 FR 27501)
+  source: federal-register-1975-nevada-retrocession
+  confidence: high
+  as_of: '1975-07-01'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Duckwater Shoshone Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Duckwater Shoshone Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

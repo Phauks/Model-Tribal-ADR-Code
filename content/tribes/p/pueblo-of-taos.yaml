@@ -1,0 +1,256 @@
+id: pueblo-of-taos
+entity_type: native-nation
+names:
+  official: Pueblo of Taos, New Mexico
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NM
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Taos, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4140
+  note: 'Census area with land in this state: Taos Pueblo and Off-Reservation Trust Land (code 4140).
+    Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4140'
+  name: Taos Pueblo and Off-Reservation Trust Land
+  area_type: Pueblo and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4140
+  note: Matched by name. Census class code D1.
+population:
+- count: 4704
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4140, field POP100
+  note: 'Census area: Taos Pueblo and Off-Reservation Trust Land (code 4140). Everyone counted as living
+    in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s
+    citizens.'
+- count: 3747
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3247 (Pueblo of Taos alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pueblo of Taos' (race code 6181) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 2611
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Taos Pueblo', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://taospueblo.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Taos, New Mexico
+- kind: physical-address
+  value: 120A Veterans Highway, Taos, NM 87571
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Taos, New Mexico
+- kind: mailing-address
+  value: P.O. Box 1846, Taos, NM 87571
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Taos, New Mexico
+- kind: phone
+  value: (575) 758-9593
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Taos, New Mexico
+- kind: fax
+  value: (575) 758-4604
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Taos, New Mexico
+federal_administration:
+  bureau_of_indian_affairs_region: Southwest
+  bureau_of_indian_affairs_agency: Northern Pueblos Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pueblo of Taos, New Mexico
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://taospueblo.org/tribal-court/
+  source: national-indian-law-library-pueblo-taos
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pueblo of Taos Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Taos'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.taospueblo.org/cms/taos-pueblo-tribal-court)
+    returned HTTP 404, so it is not recorded.'
+gaming:
+  compacts:
+  - state: NM
+    status: approved
+    approved: '1995-03-22'
+    federal_register_citation: 60 FR 15194
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-03-22'
+    locator: result page 24 (?page=24), row 9
+    note: 'Listed as: "Pueblo of Taos Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Taos, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.03.22_pueblo_of_taos_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/03/22/95-6966/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '1997-08-29'
+    federal_register_citation: 62 FR 45867
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-08-29'
+    locator: result page 24 (?page=24), row 10
+    note: 'Listed as: "Pueblo of Taos Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Pueblo of Taos, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.08.23_pueblo_of_taos_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/08/29/97-22989/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2001-12-20'
+    federal_register_citation: 66 FR 65740
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-12-20'
+    locator: result page 24 (?page=24), row 11
+    note: 'Listed as: "Pueblo of Taos Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Taos, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.12.20_pueblo_of_taos_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/12/20/01-31292/indian-gaming-notice.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '2015-07-29'
+    federal_register_citation: 80 FR 45230
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-07-29'
+    locator: result page 24 (?page=24), row 12
+    note: 'Listed as: "Pueblo of Taos Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Pueblo of Taos, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.07.29_pueblo_of_taos_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/07/29/2015-18553/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2007-07-05'
+    federal_register_citation: 72 FR 36717
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-07-05'
+    locator: result page 24 (?page=24), row 13
+    note: 'Listed as: "Pueblo of Taos Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Taos, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.07.05_pueblo_of_taos_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/07/05/E7-12904/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-07-29).
+  ordinances:
+  - approved: '1995-05-26'
+    link: https://www.nigc.gov?wpdmdl=10818&ind=10836
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-05-26'
+    locator: table row 214, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 214 lists the nation
+      as "Pueblo of Taos".
+  - approved: '1994-07-10'
+    link: https://www.nigc.gov?wpdmdl=10819&ind=10837
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-07-10'
+    locator: table row 214, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 214 lists the nation
+      as "Pueblo of Taos".
+  - approved: '2009-01-26'
+    link: https://www.nigc.gov?wpdmdl=10820&ind=10838
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-01-26'
+    locator: table row 214, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 214 lists the nation
+      as "Pueblo of Taos".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pueblo of Taos, New Mexico Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: All Pueblo Council of Governors
+  source: all-pueblo-council-of-governors-pueblo-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pueblo of Taos". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

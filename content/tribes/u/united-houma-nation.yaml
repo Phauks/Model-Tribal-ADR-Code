@@ -1,0 +1,139 @@
+id: united-houma-nation
+entity_type: native-nation
+names:
+  official: United Houma Nation
+  alternate:
+  - name: United Houma Nation, Inc.
+    source: ofa-petitions-in-process
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "United Houma Nation" among 26 non-federally recognized tribes that received
+    direct federal funding in FY2007-2010 (total $2,104,000, Table 3). GAO-reported nonprofit status:
+    Yes; state recognition per state officials: Yes. GAO reports Department of Education American Indian
+    Vocational Rehabilitation Services funding and found it appeared ineligible because it lacks a statutory
+    reservation. Not on the 2026 federal list (bia-recognized-entities-2026).'
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9960
+  note: The 2020 Census delineated "United Houma Nation SDTSA" (State Designated Tribal Statistical Area).
+    The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally
+    recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed
+    state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: unrecognized
+  source: usaspending-award-90xn0159
+  confidence: medium
+  as_of: '2021-09-01'
+  locator: Award summary
+  note: HHS Administration for Native Americans award 90XN0159 (Assistance Listing 93.587, Promote the
+    Survival and Continuing Vitality of Native American Languages) to recipient "UNITED HOUMA NATION INC",
+    start 2021-09-01, amount $82,609; project "UNITED HOUMA NATION TRADITIONAL LANGUAGE DOCUMENTATION
+    AND YOUTH ENGAGEMENT PROJECT". The award record does not state recognition status; not on the 2026
+    federal list (bia-recognized-entities-2026).
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '056'
+  petition_stage: Awaiting Supplement
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 56; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/united-houma-nation-inc
+  note: 'Office of Federal Acknowledgment list entry #56 (2013 edition): United Houma Nation, Inc. - Letter
+    of Intent to Petition 07/10/1979.'
+- type: state
+  state: LA
+  legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+  note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
+    were not retrieved.
+- type: state
+  state: LA
+  legal_basis: Louisiana Revised Statutes 46:2305(B) (Acts 2018, No. 102), Native American Commission
+    membership, listed as 'United Houma Nation'
+  source: louisiana-revised-statutes-46-2305
+  confidence: high
+  as_of: '2018'
+  locator: R.S. 46:2305(B)
+  note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
+    recognition.
+states:
+- state: LA
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: LA
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9960
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: LA
+  presence: other
+  source: usaspending-award-90xn0159
+  confidence: medium
+  as_of: '2021-09-01'
+  locator: Place of performance state
+  note: Place of performance state on the award record.
+- state: LA
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: LA
+  presence: other
+  source: louisiana-governor-indian-affairs
+  confidence: high
+  as_of: '2026'
+  locator: Regional map
+  note: Located in Terrebonne, Lafourche, Jefferson, St. Mary, Plaquemines, and St. Bernard Parishes per
+    the Office of Indian Affairs regional map.
+census_areas:
+- geographic_identifier: '9960'
+  name: United Houma Nation SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9960, GEOID 9960R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+contacts:
+- kind: mailing-address
+  value: 400 Monarch Dr., Houma, LA 70364
+  label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: medium
+  as_of: '2026'
+  note: Listed under the leader's name; recorded as the tribe's contact address.
+- kind: website
+  value: https://unitedhoumanation.org/
+  label: Official website
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

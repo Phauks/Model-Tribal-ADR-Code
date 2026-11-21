@@ -1,0 +1,225 @@
+id: chickaloon-native-village
+entity_type: native-nation
+names:
+  official: Chickaloon Native Village
+  alternate:
+  - name: Dena'ina= Nuk'din'itnu
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Chickaloon"
+    note: Native place name for the community of Chickaloon in Atnakenaege’ (Ahtna) / Dena'ina (State
+      of Alaska, from the Alaska Native Language Center); it names the place, and the source does not
+      state it is the tribal government's self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+- state: AK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6290
+  note: 'Census area with land in this state: Chickaloon ANVSA (code 6290). Statistical area only (not
+    a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '6290'
+  name: Chickaloon ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6290
+  note: Matched by name. Census class code E1.
+population:
+- count: 254
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Chickaloon", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 25487
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6290, field POP100
+  note: 'Census area: Chickaloon ANVSA (code 6290). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The area
+    is a Census statistical area, not a land holding.'
+- count: 110
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2594 (Chickaloon Native Village alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Chickaloon Native Village' (race code 5032) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+contacts:
+- kind: website
+  value: https://www.chickaloon.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+- kind: physical-address
+  value: 9255 N Glenn Highway, Palmer, AK 99645
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+- kind: mailing-address
+  value: P.O. Box 1105, Chickaloon, AK 99674
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+- kind: phone
+  value: (907) 745-0749
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+- kind: fax
+  value: (907) 745-0709
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+- kind: mailing-address
+  value: PO Box 1105, Chickaloon, AK 99674-1105
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Chickaloon Native Village" (community: Chickaloon, object 32)'
+- kind: email-general
+  value: cvadmin@chickaloon.org
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Chickaloon Native Village" (community: Chickaloon, object 32)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+languages:
+- name: Atnakenaege’ (Ahtna)
+  language_tag: aht
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Chickaloon"
+  note: Language of the Native place name for the community (Chickaloon), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+- name: Dena'ina
+  language_tag: tfn
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Chickaloon"
+  note: Language of the Native place name for the community (Chickaloon), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-chickaloon
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Chickaloon Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Chickaloon Native Village'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Alaska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Alaska. Applies to the nation''s Indian country
+    within Alaska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
+  note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Chickaloon Native Village Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+related_entities:
+- name: Cook Inlet Region Inc.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+  note: Regional corporation for the area, as listed in the directory.
+- name: Cook Inlet Region, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chickaloon"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chickaloon),
+    not for the tribal government by name.
+- name: Cook Inlet Tribal Council, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chickaloon"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chickaloon),
+    not for the tribal government by name.
+- name: Southcentral Foundation
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chickaloon"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chickaloon),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

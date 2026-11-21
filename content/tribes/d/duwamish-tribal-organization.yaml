@@ -1,0 +1,42 @@
+id: duwamish-tribal-organization
+entity_type: native-nation
+names:
+  official: Duwamish Tribal Organization
+  alternate:
+  - name: Duwamish Tribe
+    source: ofa-list-of-petitioners-by-state-2008
+    confidence: medium
+    as_of: '2008-09-22'
+    locator: 'Petitioner #25'
+    note: Name as printed on the older Office of Federal Acknowledgment list.
+  official_source: ofa-petitions-in-process
+recognition:
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '025'
+  petition_stage: Awaiting Supplement
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 25; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/duwamish-tribal-organization
+  note: 'Federal Register history: Proposed Finding Against Federal Acknowledgment of the Duwamish Tribal
+    Organization, 61 FR 33762 (1996-06-28); Final Determination Against Federal Acknowledgment of the
+    Duwamish Tribal Organization, 66 FR 49966 (2001-10-01); Final Decision on Remand Against Federal Acknowledgment
+    of the Duwamish Tribal Organization, 80 FR 39142 (2015-07-08); Final Decision on Remand Against Federal
+    Acknowledgment of the Duwamish Tribal Organization, 80 FR 45230 (2015-07-29). Office of Federal Acknowledgment
+    list entry #25 (2008 edition): Duwamish Tribe - Declined Acknowledgment effective 5/8/2002 66 FR 49966.'
+states:
+- state: WA
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

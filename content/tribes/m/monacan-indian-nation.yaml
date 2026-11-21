@@ -1,0 +1,140 @@
+id: monacan-indian-nation
+entity_type: native-nation
+names:
+  official: Monacan Indian Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Public Law 115-121, title V
+  petition_number: '161'
+  petition_stage: Letter of Intent to Petition 07/11/1995
+  since: '2018-01-29'
+  source: public-law-115-121
+  confidence: high
+  as_of: '2018-01-29'
+  locator: 'Petitioner #161'
+  note: 'Also see source(s): ofa-list-of-petitioners-by-state-2008.'
+- type: state
+  state: VA
+  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
+    recognizes (also federally recognized)
+  source: virginia-report-status-of-indian-tribes-2025
+  confidence: high
+  as_of: '2025-12-30'
+- type: state
+  state: VA
+  legal_basis: Virginia General Assembly joint resolution, 1989
+  source: virginiaplaces-state-recognition
+  confidence: medium
+  as_of: '1989'
+  note: Year from a secondary source; resolution number not confirmed from the legislature's own record
+    except where stated.
+states:
+- state: VA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Monacan Indian Nation
+population:
+- count: 3200
+  kind: citizens
+  source: monacan-indian-nation-about-us-html
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"With over 3,200 citizens"; history page says "over 2,000 people" (older text); undated statement
+    on the official site; as_of is the access date'
+- count: 2034
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3135 (Monacan Indian Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Monacan Indian Nation' (race code 5986) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 2801
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Monacan Indian Nation', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.monacannation.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Monacan Indian Nation
+- kind: physical-address
+  value: 111 Highview Drive, Madison Heights, VA 24572
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Monacan Indian Nation
+- kind: mailing-address
+  value: 111 Highview Drive, Madison Heights, VA 24572
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Monacan Indian Nation
+- kind: phone
+  value: 434-363-4864
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Monacan Indian Nation
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Monacan Indian Nation
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://www.monacannation.com/government.html
+  source: national-indian-law-library-monacan
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the site did not respond.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Monacan Indian Nation Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Monacan Indian Nation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,39 @@
+id: brothertown-indians-of-wisconsin
+entity_type: native-nation
+names:
+  official: Brothertown Indians of Wisconsin
+  alternate:
+  - name: Brothertown Indian Nation
+    source: ofa-list-of-petitioners-by-state-2008
+    confidence: medium
+    as_of: '2008-09-22'
+    locator: 'Petitioner #67'
+    note: Name as printed on the Office of Federal Acknowledgment list by state.
+  official_source: federal-register-2012-22380
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 77 FR 56230 (2012-09-12)
+  petition_number: '67'
+  petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 12/11/12)
+  source: federal-register-2012-22380
+  confidence: high
+  as_of: '2012-09-12'
+  locator: 'Petitioner #67'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Denied acknowledgment through 25 CFR 83 (eff. 12/11/12). Other Federal Register history: Proposed
+    Finding Against Acknowledgment of the Brothertown Indian Nation, 74 FR 42683 (2009-08-24).'
+states:
+- state: WI
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

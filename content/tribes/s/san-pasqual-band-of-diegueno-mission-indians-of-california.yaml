@@ -1,0 +1,293 @@
+id: san-pasqual-band-of-diegueno-mission-indians-of-california
+entity_type: native-nation
+names:
+  official: San Pasqual Band of Diegueno Mission Indians of California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: San Pasqual Band of Diegueno Mission Indians of California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3460
+  note: 'Census area with land in this state: San Pasqual Reservation and Off-Reservation Trust Land (code
+    3460). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3460'
+  name: San Pasqual Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3460
+  note: Matched by name. Census class code D1.
+population:
+- count: 1500
+  kind: resident-population
+  source: san-pasqual-band-of-diegueno-mission-ind-about-us
+  confidence: low
+  as_of: '2026-11-21'
+  note: '"the San Pasqual Reservation is a growing community of over 1,500 residents" (residents, not
+    necessarily members); undated statement on the official site; as_of is the access date'
+- count: 1270
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3460, field POP100
+  note: 'Census area: San Pasqual Reservation and Off-Reservation Trust Land (code 3460). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1468
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3288 (San Pasqual Band of Diegueno Mission Indians alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'San Pasqual Band of Diegueno Mission Indians' (race
+    code 5782) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 429
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'San Pasqual Band of Diegueno Mission Indians', PDF page 8,
+    Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 694
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 87, row T44100 'San Pasqual Band of Diegueno Mission Indians of
+    California'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.sanpasqualbandofmissionindians.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: San Pasqual Band of Diegueno Mission Indians of California
+- kind: physical-address
+  value: 16400 Kumeyaay Way, Valley Center, CA 92082
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: San Pasqual Band of Diegueno Mission Indians of California
+- kind: mailing-address
+  value: P.O. Box 365, Valley Center, CA 92082
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: San Pasqual Band of Diegueno Mission Indians of California
+- kind: phone
+  value: (760) 749-3200
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: San Pasqual Band of Diegueno Mission Indians of California
+- kind: fax
+  value: (760) 749-3876
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: San Pasqual Band of Diegueno Mission Indians of California
+languages:
+- name: Kumeyaay
+  language_tag: dih
+  source: san-pasqual-band-of-diegueno-mission-ind-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Kumeyaay language classes are available"'
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Southern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: San Pasqual Band of Diegueno Mission Indians of California
+governing_documents:
+- kind: law-code
+  title: San Pasqual Band of Mission Indians Ordinances
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'San Pasqual Band of Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.sciljc.org/ordinances--codes---laws.html) returned
+    HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: San Pasqual Tribal Court - Intertribal Court of Southern California
+  link: http://www.sciljc.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'San Pasqual Band of Indians'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Referral for Treatment
+    citation: San Pasqual Band of Mission Indians Peace and Security Ordinance. Chapter 6 Penalties. Section
+      6.04 Referral for Treatment.
+    link: https://www.intertribalcourt.org/_files/ugd/f5e5d2_4da97ecd29b4461799f0725a8e9ca412.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/referral-for-treatment-4/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Treatment as Penalty Alternative
+    citation: San Pasqual Band of Mission Indians Peace and Security Ordinance. Chapter 6 Penalties. Section
+      6.01 General Penalty Provisions.
+    link: https://www.intertribalcourt.org/_files/ugd/f5e5d2_4da97ecd29b4461799f0725a8e9ca412.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-as-penalty-alternative/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66741
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 11 (?page=11), row 3
+    note: 'Listed as: "San Pasqual Band of Diegueno Mission Indians Tribal State Gaming Compact" (Deemed
+      Approved); list''s Tribe column: "San Pasqual Band of Diegueno Mission Indians of California". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2018.12.27_san_pasqual_band_of_mission_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28135/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 11 (?page=11), row 4
+    note: 'Listed as: "San Pasqual Band of Diegueno Mission Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "San Pasqual Band of Diegueno Mission Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.16%20San%20Pasqual%20Band%20of%20Diegueno%20Mission%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-12-27).
+  ordinances:
+  - approved: '2000-10-19'
+    link: https://www.nigc.gov?wpdmdl=11006&ind=11028
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-10-19'
+    locator: table row 241, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 241 lists the nation
+      as "San Pasqual Band of Diegueno Mission Indians".
+  - approved: '2015-06-09'
+    link: https://www.nigc.gov?wpdmdl=11007&ind=11029
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-06-09'
+    locator: table row 241, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 241 lists the nation
+      as "San Pasqual Band of Diegueno Mission Indians".
+  - approved: '2026-08-26'
+    link: https://www.nigc.gov?wpdmdl=14731&ind=14732
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2026-08-26'
+    locator: table row 241, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 241 lists the nation
+      as "San Pasqual Band of Diegueno Mission Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "San Pasqual Band of Diegueno Mission
+      Indians of California". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: San Pasqual Band of Diegueno Mission Indians of California Confidence lowered from
+    high by the lead session: the notice prints its table as page images, so nation names were read from
+    images and matched to the roster.'
+memberships:
+- organization: Southern California Tribal Chairmen's Association
+  source: southern-california-tribal-chairmens-association-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "San Pasqual Band of Mission Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

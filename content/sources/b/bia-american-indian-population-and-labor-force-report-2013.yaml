@@ -1,0 +1,39 @@
+key: bia-american-indian-population-and-labor-force-report-2013
+kind: report
+citation:
+  type: report
+  title: 2013 American Indian Population and Labor Force Report
+  author:
+  - literal: U.S. Department of the Interior, Office of the Assistant Secretary - Indian Affairs
+  container-title: bia.gov
+  URL: https://www.bia.gov/sites/default/files/dup/assets/public/pdf/idc1-024782.pdf
+  issued:
+    date-parts:
+    - - 2014
+      - 1
+      - 16
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://www.bia.gov/sites/default/files/dup/assets/public/pdf/idc1-024782.pdf
+retrieved: '2026-11-21'
+archives:
+- service: wayback
+  link: http://web.archive.org/web/20220408054508/https://www.bia.gov/sites/bia.gov/files/assets/public/pdf/idc1-024782.pdf
+  captured: '2022-04-08'
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+found_in:
+- 2026-11-21-population-bulk
+notes: 'Downloaded directly with curl (bia.gov did not block). The report has no tribal enrollment column;
+  Appendix Table 2 (PDF pages 75-91) gives 2010 population indicators: (1) service area population from
+  the 2010 Indian Affairs survey, (2) American Indian and Alaska Native alone-or-in-combination population
+  in the tribal statistical area, (3) the same in nearby counties, (4) information from other sources.'

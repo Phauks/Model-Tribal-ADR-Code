@@ -1,0 +1,69 @@
+id: lenape-indian-tribe-of-delaware
+entity_type: native-nation
+names:
+  official: Lenape Indian Tribe of Delaware
+  former:
+  - name: the Moors
+    source: delaware-code-title-29-chapter-1
+    confidence: high
+    as_of: '2026'
+    note: 'Statute finding: ''The Tribe was formerly known as "the Moors"'' (a term applied in state records).'
+  - name: Moors of Kent County, Delaware
+    source: delaware-code-title-29-chapter-1
+    confidence: high
+    as_of: '2026'
+    note: Name used in a 1948 Smithsonian Institution report cited in the statute findings.
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9800
+  note: The 2020 Census delineated "Lenape Indian Tribe of Delaware SDTSA" (State Designated Tribal Statistical
+    Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are
+    not federally recognized and have no reservation or off-reservation trust land, delineated with a
+    governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name
+    comparison (see census-area fact).
+- type: state
+  state: DE
+  legal_basis: Delaware Code Title 29, Section 106 (80 Del. Laws, c. 367, Section 1)
+  source: delaware-code-title-29-chapter-1
+  confidence: high
+  as_of: '2026'
+  locator: 29 Del. C. Section 106(b)
+  note: Designated and recognized as an American Indian Tribe with a recognized tribal governing body;
+    findings say the Department of State concluded by 2009 that the State had historically acknowledged
+    the Tribe.
+states:
+- state: DE
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9800
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: DE
+  presence: other
+  source: delaware-code-title-29-chapter-1
+  confidence: high
+  as_of: '2026'
+  note: 'Statute findings: settlement and residency in the vicinity of the Town of Cheswold, Kent County.'
+census_areas:
+- geographic_identifier: '9800'
+  name: Lenape Indian Tribe of Delaware SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9800, GEOID 9800R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

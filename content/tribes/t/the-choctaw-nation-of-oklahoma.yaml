@@ -1,0 +1,600 @@
+id: the-choctaw-nation-of-oklahoma
+entity_type: native-nation
+names:
+  official: The Choctaw Nation of Oklahoma
+  self_designation:
+  - name: Chahta
+    language_tag: cho
+    source: the-choctaw-nation-of-oklahoma-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Vision statement: "Living out the Chahta spirit of faith, family and culture"; page read through
+      the WebFetch tool because the site blocked the plain HTTP client'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5590
+  note: 'Census area with land in this state: Choctaw OTSA (code 5590). Statistical area only (not a land
+    holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5590'
+  name: Choctaw OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5590
+  note: Matched by name. Census class code D6.
+population:
+- count: 212000
+  kind: citizens
+  source: the-choctaw-nation-of-oklahoma-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'home page description: "with nearly 212,000 tribal members"; undated statement on the official
+    site; as_of is the access date; page read through the WebFetch tool because the site blocked the plain
+    HTTP client'
+- count: 226984
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5590, field POP100
+  note: 'Census area: Choctaw OTSA (code 5590). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 47955
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2927 (The Choctaw Nation of Oklahoma alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'The Choctaw Nation of Oklahoma' (race code 5690) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 257579
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Choctaw Nation', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 47649
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 76, row T06800 'Choctaw Nation of Oklahoma'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: https://www.choctawnation.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+- kind: physical-address
+  value: 1802 Chukka Hina, Durant, OK 74701
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+- kind: mailing-address
+  value: P.O. Box 1210, Durant, OK 74702
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+- kind: phone
+  value: (580) 924-8280
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+- kind: fax
+  value: (580) 924-1150
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern Oklahoma
+  bureau_of_indian_affairs_agency: Talihina Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-choctaw-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the link the source gives (https://www.choctawnation.com/government/judicial-branch/tribal-codes)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: https://www.choctawnation.com/history-culture/history/historical-documents
+  source: national-indian-law-library-choctaw-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: law-code
+  title: The Choctaw Nation of Oklahoma
+  year: '2018'
+  link: https://narf.org/nill/codes/choctaw/index.html
+  source: national-indian-law-library-code-codes-choctaw
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2018. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and By-laws of the Choctaw Nation of Oklahoma
+  year: '1983'
+  link: https://narf.org/nill/constitutions/choctaw/index.html
+  source: national-indian-law-library-constitution-constitutions-choctaw
+  confidence: medium
+  as_of: '1983'
+  locator: page heading
+  note: 'Approved: 1983. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Choctaw Nation of Oklahoma Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Choctaw Nation of Oklahoma'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.choctawnation.com/sites/default/files/constitution_1983_original.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Choctaw Nation Tribal Codes
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Choctaw Nation of Oklahoma'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.choctawnation.com/government/tribal-court/tribal-codes)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.choctawnationcourt.com/
+  source: national-indian-law-library-choctaw-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Choctaw Nation of Oklahoma Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Choctaw Nation of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.choctawnation.com/government/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemakers of the District Court (Choctaw Nation Peacemaking Act)
+    description: Peacemakers form a division of the District Court operating under the customs and traditions
+      of the Choctaw people, providing a forum for traditional Choctaw methods of peacemaking to resolve
+      disputes fairly, informally and inexpensively.
+    legal_basis: Choctaw Nation Peacemaking Act, Sections 1-11 and following
+    case_types:
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: The District Court assigns and supervises peacemakers; matters come by written
+      request, a party's motion for referral, a joint motion, or the court's own motion with all parties'
+      consent, and unresolved matters return to the District Court.
+    enforcement: A signed agreement and proposed dismissal order are endorsed by the District Court and
+      filed as a final, non-appealable order.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Choctaw-Nation-Peacemaking-Act.pdf
+    source: choctaw-nation-peacemaking-act
+    confidence: high
+    as_of: 2022-04
+    locator: Sections 2, 4, 6-11
+    note: Peacemakers must be familiar with Choctaw history, customs and traditions and may consult tribal
+      elders (Sec. 3, 7). Attorneys may participate only at the peacemaker's discretion (Sec. 11(C)).
+      as_of is the NARF posting year; enactment date not shown. Confidence high because the same file
+      is published on the nation's own website (upload date used as as_of).
+  training_programs:
+  - name: Advanced peacemaker training for community members, tribal officials and staff (September 19-20,
+      2017, Durant)
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund), with the Choctaw Nation
+      of Oklahoma
+    link: https://peacemaking.narf.org/2017/08/training-choctaw-nation-of-oklahoma-september-2017/
+    source: narf-ipi-news-choctaw-training-2017
+    confidence: medium
+    as_of: 2017-09
+    note: Read from excerpts on NARF news listing pages.
+  - name: Peacemaking training for the Choctaw Nation Judicial Branch (October 3-4, 2022, Durant)
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund)
+    link: https://peacemaking.narf.org/2022/10/peacemaking-training-for-the-choctaw-nation/
+    source: narf-ipi-news-choctaw-training-2022
+    confidence: medium
+    as_of: 2022-10
+  provisions:
+  - kind: other
+    title: Alternative Dispute Resolution & Family Group Conferencing
+    citation: 'Title 45: Children and Juvenile Code'
+    link: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution.'
+  - kind: other
+    title: Alternative Problem-Solving Court Program for Child Support
+    citation: CRIMES AND PUNISHMENT
+    link: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Alternative;
+      Program.'
+  - kind: other
+    title: Choctaw Nation Healing to Wellness Court Program
+    citation: Choctaw Nation Criminal Procedure Code
+    link: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Healing to Wellness Court.'
+  - kind: peacemaking
+    title: Choctaw Nation Peacemaking Act
+    citation: Choctaw Nation Peacemaking Act
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/peacemaking-act.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/choctaw-nation-peacemaking-act/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Community -Based Programs in Juvenlie Justice
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-based-programs-in-juvenlie-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: N/A. Database form of practice: Alternative; Diversion;
+      Program.'
+  - kind: other
+    title: Deferral of Delinquency Proceedings
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferral-of-delinquency-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Diversion; Program.'
+  - kind: other
+    title: Diversion for Children-In-Need-Of-Supervision
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-for-children-in-need-of-supervision/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Section 1-4-504. Alternative Dispute Resolution
+    citation: Section 1-4-504. Alternative Dispute Resolution
+    link: https://www.narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-index-choctaw
+    confidence: medium
+    as_of: 2018-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Article XII. Oversight, Dispute Resolution, Enforcement
+    citation: Article XII. Oversight, Dispute Resolution, Enforcement
+    link: https://www.narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-index-choctaw
+    confidence: medium
+    as_of: 2018-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: Section 107.2. Appointment of guardian ad litem--Referral to mediation or counseling--Definitions--False
+      accusations of child abuse or neglect
+    citation: Section 107.2. Appointment of guardian ad litem--Referral to mediation or counseling--Definitions--False
+      accusations of child abuse or neglect
+    link: https://www.narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-index-choctaw
+    confidence: medium
+    as_of: 2018-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: peacemaking
+    title: Choctaw Nation Peacemaking Act
+    citation: Choctaw Nation Peacemaking Act
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Choctaw-Nation-Peacemaking-Act.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Choctaw Nation of Oklahoma
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and purpose, qualifications for peacemakers, permits the use of tradition and customs, as well as
+      tribal customary law, procedures, and inadmissibility of statements in peacemaking.'
+  - kind: other
+    title: Alternative Dispute Resolution
+    citation: Alternative Dispute Resolution
+    link: https://narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-codes-choctaw
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'PART 5. CONDUCT OF HEARINGS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Oversight, Dispute Resolution, Enforcement
+    citation: Oversight, Dispute Resolution, Enforcement
+    link: https://narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-codes-choctaw
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Article 11. Interstate Compact for the Placement of Children'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: Appointment of guardian ad litem--Referral to mediation or counseling--Definitions--False accusations
+      of child abuse or neglect
+    citation: Appointment of guardian ad litem--Referral to mediation or counseling--Definitions--False
+      accusations of child abuse or neglect
+    link: https://narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-codes-choctaw
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Divorce and Alimony'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: Former Judge or Arbitrator
+    citation: Former Judge or Arbitrator
+    link: https://narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-codes-choctaw
+    confidence: medium
+    as_of: '2018'
+    locator: 'Table of Contents, under ''APPENDIX “A” Rules of Professional Conduct for Attorneys Scope
+      of the Rules PREAMBLE: Responsibilities of the Lawyer DEFINITIONS'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: 'Choctaw Nation Peacemaking Act:'
+    citation: 'Choctaw Nation Peacemaking Act:'
+    link: https://narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-codes-choctaw
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41102
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2018-08-17'
+    locator: result page 26 (?page=26), row 20
+    note: 'Listed as: "Choctaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "The
+      Choctaw Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Choctaw%20Nation%20of%20Oklahoma%20Compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17728/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '1997-04-15'
+    federal_register_citation: 62 FR 18357
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1997-04-15'
+    locator: result page 26 (?page=26), row 21
+    note: 'Listed as: "Choctaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "The
+      Choctaw Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.04.15_choctaw_nation_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/04/15/97-9592/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2000-10-02'
+    federal_register_citation: 65 FR 58790
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-10-02'
+    locator: result page 26 (?page=26), row 22
+    note: 'Listed as: "Choctaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "The
+      Choctaw Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.10.02%20Choctaw%20Nation%20Modification%20Compact%20for%20Off%20Track%20Wagering.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/10/02/00-25125/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2001-06-07'
+    federal_register_citation: 66 FR 30748
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2001-06-07'
+    locator: result page 26 (?page=26), row 23
+    note: 'Listed as: "Choctaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "The
+      Choctaw Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.06.07%20Choctaw%20Nation%20Off%20Track%20Wagering%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/06/07/01-14308/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-02-09'
+    federal_register_citation: 70 FR 6903
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-02-09'
+    locator: result page 26 (?page=26), row 24
+    note: 'Listed as: "Choctaw Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "The Choctaw Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.02.09%20Choctaw%20Nation%20Deemed%20Approved%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/02/09/05-2462/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2000-05-12'
+    federal_register_citation: 65 FR 30605
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-12'
+    locator: result page 26 (?page=26), row 25
+    note: 'Listed as: "Choctaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "The
+      Choctaw Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.12%20Choctaw%20Nation%20Off%20Track%20Wagering%20Compact%20Amdt.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/12/00-11942/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1995-12-21'
+    link: https://www.nigc.gov?wpdmdl=9500&ind=9524
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-12-21'
+    locator: table row 45, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 45 lists the nation
+      as "Choctaw Nation of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2006-11-20'
+    link: https://www.nigc.gov?wpdmdl=9513&ind=9525
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-11-20'
+    locator: table row 45, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 45 lists the nation
+      as "Choctaw Nation of Oklahoma". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Choctaw Nation of Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Choctaw Casino - Atoka Travel Plaza;
+      Choctaw Casino - Poteau Travel Plaza; Choctaw Casino - McAlester; Choctaw Casino - Grant Travel
+      Plaza; Choctaw Casino - Stigler; Choctaw Casino - Antlers Travel Plaza; Choctaw Casino - Idabel
+      Travel Plaza; Pocola Travel Plaza; Choctaw Landing-Hochatown; Heavener Travel Plaza; Choctaw Casino
+      - Hugo Travel Center; Choctaw Casino - Broken Bow; Choctaw Casino - Broken Bow Travel Plaza; Choctaw
+      Casino - Durant Travel Plaza (West); Choctaw Casino and Resort - Durant; Choctaw Casino - Durant
+      Travel Plaza (East); Choctaw Casino - Stringtown; Choctaw Casino - Stringtown Travel Plaza; Choctaw
+      Casino Too - McAlester Travel Plaza; Choctaw Casino - Idabel; Choctaw Casino - Pocola; Choctaw Casino
+      - Wilburton Travel Plaza. Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: The Choctaw Nation of Oklahoma Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2015-05-09 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-the-choctaw-nation-of-oklahoma
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Choctaw Nation in Oklahoma". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+memberships:
+- organization: Inter-Tribal Council of the Five Civilized Tribes
+  source: inter-tribal-council-of-the-five-civilized-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Choctaw". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

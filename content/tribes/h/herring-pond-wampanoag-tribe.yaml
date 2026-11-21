@@ -1,0 +1,36 @@
+id: herring-pond-wampanoag-tribe
+entity_type: native-nation
+names:
+  official: Herring Pond Wampanoag Tribe
+  official_source: massachusetts-executive-order-637
+recognition:
+- type: state
+  state: MA
+  legal_basis: Massachusetts Executive Order No. 637 (2024)
+  since: '2024-11-19'
+  source: massachusetts-executive-order-637
+  confidence: high
+  as_of: '2024-11-19'
+  note: Recognized 'consistent with, and for all purposes under, Executive Order No. 126'; the Herring
+    Pond Wampanoag Tribal Council is recognized as its governing body.
+states:
+- state: MA
+  presence: other
+  source: massachusetts-executive-order-637
+  confidence: high
+  as_of: '2024-11-19'
+  note: Ancestral homelands from the Plymouth area to the upper reaches of Cape Cod per the order.
+population:
+- count: 200
+  kind: citizens
+  source: massachusetts-executive-order-637
+  confidence: medium
+  as_of: '2024-11-19'
+  note: Order says the Tribe 'presently contains close to 200 members'; approximate.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

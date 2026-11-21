@@ -1,0 +1,31 @@
+id: butte-tribe-of-bayou-bourbeaux
+entity_type: native-nation
+names:
+  official: Butte Tribe of Bayou Bourbeaux
+  official_source: ofa-petitions-in-process
+recognition:
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '402'
+  petition_stage: Phase I PF
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 402; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/butte-tribe-bayou-bourbeaux
+  note: 'Federal Register history: Receipt of Documented Petition for Federal Acknowledgment as an American
+    Indian Tribe, 88 FR 34890 (2023-05-31).'
+states:
+- state: LA
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

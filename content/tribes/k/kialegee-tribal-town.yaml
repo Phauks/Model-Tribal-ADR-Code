@@ -1,0 +1,225 @@
+id: kialegee-tribal-town
+entity_type: native-nation
+names:
+  official: Kialegee Tribal Town
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kialegee Tribal Town
+population:
+- count: 53
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3055 (Kialegee Tribal Town alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Kialegee Tribal Town' (race code 5739) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 732
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Kialegee Tribal Town', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: physical-address
+  value: 100 Kialegee Drive, Wetumka, OK 74883
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kialegee Tribal Town
+- kind: mailing-address
+  value: P.O. Box 332, Wetumka, OK 74883
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kialegee Tribal Town
+- kind: phone
+  value: (405) 452-3262
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kialegee Tribal Town
+- kind: fax
+  value: (405) 452-3413
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kialegee Tribal Town
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern Oklahoma
+  bureau_of_indian_affairs_agency: Okmulgee Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kialegee Tribal Town
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Kialegge Tribal Town" among organizations under constitutions approved by the
+    Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Kialegee Tribal Town Oklahoma) (approved 1941) states it was adopted under Act
+    of June 18, 1934 (48 Stat. 984); Act of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  as_of: '1941'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/IRA/kiacons.html
+  source: national-indian-law-library-kialegee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/42038416/
+  source: national-indian-law-library-kialegee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website.".'
+- kind: corporate-charter
+  title: Corporate charter (Kialegee Tribal Town Oklahoma)
+  year: '1942'
+  link: https://thorpe.law.ou.edu/IRA/kiachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-kiachrtr
+  confidence: medium
+  as_of: '1942'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Kialegee Tribal Town Oklahoma)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/kiacons.html
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2020-09-08'
+    federal_register_citation: 85 FR 55472
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2020-09-08'
+    locator: result page 27 (?page=27), row 24
+    note: 'Listed as: "Kialegee Tribal Town Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Eastern Shawnee Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.09.08%20Kialegee%20Tribal%20Town%20State%20of%20Oklahoma%20Gaming%20Compact_1.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/09/08/2020-19707/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-oklahoma.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2011-07-19'
+    federal_register_citation: 76 FR 42722
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2011-07-19'
+    locator: result page 27 (?page=27), row 25
+    note: 'Listed as: "Kialegee Tribal Town Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Eastern Shawnee Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202011.07.09%20Kialegee%20Tribal%20Town%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2011/07/19/2011-18079/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2020-09-08).
+  ordinances:
+  - approved: '1997-10-23'
+    link: https://www.nigc.gov?wpdmdl=10042&ind=10069
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-10-23'
+    locator: table row 118, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 118 lists the nation
+      as "Kialegee Tribal Town".
+  - approved: '2009-04-09'
+    link: https://www.nigc.gov?wpdmdl=10056&ind=10070
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-04-09'
+    locator: table row 118, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 118 lists the nation
+      as "Kialegee Tribal Town".
+  - approved: '2011-09-29'
+    link: https://www.nigc.gov?wpdmdl=10057&ind=10071
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-09-29'
+    locator: table row 118, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 118 lists the nation
+      as "Kialegee Tribal Town".
+  - approved: '2022-06-02'
+    link: https://www.nigc.gov?wpdmdl=10058&ind=10072
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2022-06-02'
+    locator: table row 118, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 118 lists the nation
+      as "Kialegee Tribal Town".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Kialegee Tribal Town Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

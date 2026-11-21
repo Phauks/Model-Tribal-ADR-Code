@@ -1,0 +1,250 @@
+id: barona-group-of-capitan-grande-band-of-mission-indians
+entity_type: native-nation
+names:
+  official: Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+  note: Listed as a group within the entry for Capitan Grande Band of Diegueno Mission Indians of California.
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
+    Band of Mission Indians of the Barona Reservation, California'
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0155
+  note: 'Census area with land in this state: Barona Reservation and Off-Reservation Trust Land (code
+    0155). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0155'
+  name: Barona Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0155
+  note: Matched by name. Census class code D1.
+population:
+- count: 756
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0155, field POP100
+  note: 'Census area: Barona Reservation and Off-Reservation Trust Land (code 0155). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 620
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2861 (Barona Group of Capitan Grande Band alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Barona Group of Capitan Grande Band' (race code 5772)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 507
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 75, row T02400 'Barona Group of Capitan Grande Band of Mission Indians
+    of the Barona Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.barona-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
+    Band of Mission Indians of the Barona Reservation, California'
+- kind: physical-address
+  value: 1095 Barona Road, Lakeside, CA 92040
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
+    Band of Mission Indians of the Barona Reservation, California'
+- kind: mailing-address
+  value: 1095 Barona Road, Lakeside, CA 92040
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
+    Band of Mission Indians of the Barona Reservation, California'
+- kind: phone
+  value: (619) 443-6612
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
+    Band of Mission Indians of the Barona Reservation, California'
+- kind: fax
+  value: (619) 443-0681
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
+    Band of Mission Indians of the Barona Reservation, California'
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Southern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
+    Band of Mission Indians of the Barona Reservation, California'
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '1992-06-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1992-06-30'
+    locator: result page 4 (?page=4), row 5
+    note: 'Listed as: "Barona Group of Capitan Grade Band of Mission Indians of the Barona Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Capitan Grande Band of Diegueno Mission
+      Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.06.30_barona_group_of_the_capitan_grande_band_tribal_state_gaming_compact_0.pdf.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant.'
+  - state: CA
+    status: approved
+    approved: '1998-10-22'
+    federal_register_citation: 63 FR 56659
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1998-10-22'
+    locator: result page 4 (?page=4), row 6
+    note: 'Listed as: "Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Capitan Grande Band of Diegueno Mission
+      Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.10.22_barona_band_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/10/22/98-28313/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2016-12-05'
+    federal_register_citation: 81 FR 87585
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2016-12-05'
+    locator: result page 4 (?page=4), row 7
+    note: 'Listed as: "Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation
+      Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column: "Capitan Grande Band of Diegueno
+      Mission Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2016.12.05_barona_band_of_mission_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/12/05/2016-29076/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-16'
+    locator: result page 4 (?page=4), row 8
+    note: 'Listed as: "Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation,
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Capitan Grande Band of Diegueno Mission
+      Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliance_2000.05.16_barona_band_of_mission_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2016-12-05).
+  ordinances:
+  - approved: '1994-02-28'
+    link: https://www.nigc.gov?wpdmdl=3324&ind=3326
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-02-28'
+    locator: table row 11, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 11 lists the nation
+      as "Barona Group of Capitan Grande Band of Mission Indians". Name matched to roster by spelling
+      variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Barona Group of Capitan Grande
+      Band of Mission Indians". Facilities as machine-extracted from the report text (verify): Barona
+      Valley Ranch Resort and Casino. Name extracted from the PDF by the page-fetch tool and matched to
+      the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan
+    Grande Band of Mission Indians of the Barona Reservation, California; Viejas (Baron Long) Group of
+    Capitan Grande Band of Mission Indians of the Viejas Reservation, California) (entry is the Capitan
+    Grande Band listing, whose parenthetical names this group)'
+memberships:
+- organization: Southern California Tribal Chairmen's Association
+  source: southern-california-tribal-chairmens-association-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Barona Band of Mission Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

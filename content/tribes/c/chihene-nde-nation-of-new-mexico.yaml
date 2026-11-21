@@ -1,0 +1,31 @@
+id: chihene-nde-nation-of-new-mexico
+entity_type: native-nation
+names:
+  official: Chihene Nde Nation of New Mexico
+  official_source: ofa-petitions-in-process
+recognition:
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '404'
+  petition_stage: Awaiting Petitioner Response to Phase I TA Review
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 404; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/chihene-nde-nation-new-mexico
+  note: 'Federal Register history: Receipt of Documented Petition for Federal Acknowledgment as an American
+    Indian Tribe, 89 FR 27447 (2024-04-17).'
+states:
+- state: NM
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

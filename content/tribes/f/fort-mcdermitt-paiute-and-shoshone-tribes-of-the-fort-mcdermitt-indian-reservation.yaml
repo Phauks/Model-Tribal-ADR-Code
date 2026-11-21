@@ -1,0 +1,305 @@
+id: fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation
+entity_type: native-nation
+names:
+  official: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
+    and Oregon
+  self_designation:
+  - name: Numu
+    language_tag: pao
+    source: fmpst-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''We refer to ourselves as “Numu” (Paiute) and “Newe” (Shoshone), which roughly translates
+      to “The People”.'''
+  - name: Newe
+    language_tag: shh
+    source: fmpst-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''We refer to ourselves as “Numu” (Paiute) and “Newe” (Shoshone)''.'
+  alternate:
+  - name: Atsakudokwa Tuviwa ga yu
+    source: fmpst-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'History page: ''Our Northern Paiute Band was known as Atsakudokwa Tuviwa ga yu (ITCN 1976a),
+      or People of the Red Mountain.'' Band name.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: NV
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
+    and Oregon
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1210
+  note: 'Census area with land in this state: Fort McDermitt Indian Reservation (code 1210). Area matched
+    to the nation by name.'
+- state: OR
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1210
+  note: 'Census area with land in this state: Fort McDermitt Indian Reservation (code 1210). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '1210'
+  name: Fort McDermitt Indian Reservation
+  area_type: Indian Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1210
+  note: Matched by name. Census class code D2.
+population:
+- count: 267
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1210, field POP100
+  note: 'Census area: Fort McDermitt Indian Reservation (code 1210). Everyone counted as living in the
+    area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 235
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2997 (Fort McDermitt Paiute and Shoshone Tribes of Nevada and Oregon
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Fort McDermitt Paiute and Shoshone Tribes of Nevada
+    and Oregon' (race code 6069) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label matched
+    by name variant.
+- count: 1029
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Fort McDermitt Paiute and Shoshone Tribes', PDF page 7, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.fmpst.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
+    and Oregon
+- kind: physical-address
+  value: 111 North Reservation Road, McDermitt, NV 89421
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
+    and Oregon
+- kind: mailing-address
+  value: P.O. Box 457, McDermitt, NV 89421
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
+    and Oregon
+- kind: phone
+  value: (775) 532-8259
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
+    and Oregon
+- kind: fax
+  value: (775) 532-8487
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
+    and Oregon
+- kind: email-general
+  value: Info@fmpst.org
+  label: General office email shown on the nation's website
+  source: fmpst-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Northern Paiute
+  language_tag: pao
+  source: fmpst-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: History page discusses the Northern Paiute language.
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Western Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
+    and Oregon
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Fort McDermitt Pauite and Shoshone Tribe, Nevada" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Fort McDermitt Paiute and Shoshone Tribe Nevada) (approved 1936) states it was
+    adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-ftmp-s
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution and Bylaws of the Fort McDermitt Paiute and Shoshone Tribe (approved 1936) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-pai-shoconst
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Law and Order Code of the Fort McDermitt Paiute and Shoshone Tribe, Nevada
+  year: '2015'
+  link: https://narf.org/nill/codes/fort_mcdermitt/index.html
+  source: national-indian-law-library-code-codes-fort-mcdermitt
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Most Recent Update Received: July 2015. Full text linked from the National Indian Law Library
+    page.'
+- kind: constitution
+  title: Constitution and By-laws of the Fort McDermitt Paiute and Shoshone Tribe, Nevada
+  year: '1936'
+  link: https://narf.org/nill/constitutions/fort_mcdermitt/index.html
+  source: national-indian-law-library-constitution-constitutions-fort-mcdermitt
+  confidence: medium
+  as_of: '1936'
+  locator: page heading
+  note: 'Approved: 1936. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/IRA/ftmp&s.html
+  source: national-indian-law-library-fort-mcdermitt
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/36026738/
+  source: national-indian-law-library-fort-mcdermitt
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website.".'
+- kind: constitution
+  title: Constitution (Fort McDermitt Paiute and Shoshone Tribe Nevada)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/ftmp&s.html
+  source: university-of-oklahoma-indian-reorganization-act-ftmp-s
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate Charter of the Fort McDermitt Paiute and Shoshone Tribe
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/pai-shochtr.html
+  source: university-of-oklahoma-indian-reorganization-act-pai-shochtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution and Bylaws of the Fort McDermitt Paiute and Shoshone Tribe
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/pai-shoconst.html
+  source: university-of-oklahoma-indian-reorganization-act-pai-shoconst
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://fmpst.org/tribal-court/
+  source: national-indian-law-library-fort-mcdermitt
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+gaming:
+  ordinances:
+  - approved: '1994-12-21'
+    link: https://www.nigc.gov?wpdmdl=9826&ind=9839
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-12-21'
+    locator: table row 86, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 86 lists the nation
+      as "Fort McDermitt Paiute and Shoshone Tribes". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Oregon is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Oregon. Applies to the nation''s Indian country
+    within Oregon; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Oregon"
+  note: Statute is primary; nation matched to Oregon by state named in the nation's official name in the
+    2026 list (multi-state nation), so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation,
+    Nevada and Oregon Confidence lowered from high by the lead session: the notice prints its table as
+    page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Ft. McDermitt Paiute-Shoshone Tribes". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

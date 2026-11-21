@@ -1,0 +1,610 @@
+id: the-muscogee-nation
+entity_type: native-nation
+names:
+  official: The Muscogee Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+  note: 'The notice adds in parentheses: Creek.'
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5620, 5915
+  note: 'Census area with land in this state: Creek OTSA (code 5620); Creek/Seminole joint-use OTSA (code
+    5915). Statistical area only (not a land holding), so presence is recorded as other. Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '5620'
+  name: Creek OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5620
+  note: Matched by name. Census class code D6.
+- geographic_identifier: '5915'
+  name: Creek/Seminole joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5915
+  note: 'Matched by name. Shared with: The Seminole Nation of Oklahoma. Census class code D0.'
+population:
+- count: 103926
+  kind: citizens
+  source: the-muscogee-nation-citizenship
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'site counter: "103926 MUSCOGEE CITIZENS"'
+- count: 813184
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5620, field POP100
+  note: 'Census area: Creek OTSA (code 5620). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 1900
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5915, field POP100
+  note: 'Census area: Creek/Seminole joint-use OTSA (code 5915). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: The Seminole Nation
+    of Oklahoma; the same count applies to the whole area.'
+- count: 121581
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3145 (The Muscogee (Creek) Nation alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'The Muscogee (Creek) Nation' (race code 5735) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 72169
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Muscogee (Creek) Nation', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 68879
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 81, row T23200 'Muscogee (Creek) Nation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.muscogeenation.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+- kind: physical-address
+  value: Hwy. 75 & Loop 56, Muskogee, OK 74447
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+- kind: mailing-address
+  value: P.O. Box 580, Okmulgee, OK 74447
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+- kind: phone
+  value: (800) 482-1979
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+- kind: fax
+  value: (918) 756-2911
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+languages:
+- name: Mvskoke
+  language_tag: mus
+  source: the-muscogee-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Mvskoke Language Program
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern Oklahoma
+  bureau_of_indian_affairs_agency: Okmulgee Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+governing_documents:
+- kind: law-code
+  title: The Muscogee (Creek) Nation
+  year: '2010'
+  link: https://narf.org/nill/codes/muscogee_creek_nation/index.html
+  source: national-indian-law-library-code-codes-muscogee-creek-nation
+  confidence: medium
+  as_of: '2010'
+  locator: page heading
+  note: 'Updated: October 2010 (Second Edition). The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: The Muscogee (Creek) Nation - Tribal Constitution
+  year: '2015'
+  link: https://narf.org/nill/constitutions/muscogee_creek_nation/index.html
+  source: national-indian-law-library-constitution-constitutions-muscogee-creek-nation
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Amended: November 7, 2015. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-muscogee-creek-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the link the source gives (http://www.creeksupremecourt.com/index.php/mcn-code)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: https://creeksupremecourt.com/constitution
+  source: national-indian-law-library-muscogee-creek-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Muscogee Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Muscogee (Creek) Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.creeksupremecourt.com/mcn-constitutiion/) returned
+    HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Muscogee (Creek) Nation Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Muscogee (Creek) Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.creeksupremecourt.com/mcn-code/) returned HTTP 404,
+    so it is not recorded.'
+justice_institutions:
+- kind: court-of-appeals
+  name: Supreme Court
+  link: https://creekdistrictcourt.com/
+  source: national-indian-law-library-muscogee-creek-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Muscogee Creek District Court
+  link: http://muscogeecreektribalcourt.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Muscogee (Creek) Nation'
+  note: 'Link check 2026-11-21: the site did not respond.'
+- kind: court-of-appeals
+  name: Muscogee Creek Supreme Court
+  link: http://creeksupremecourt.com/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Muscogee (Creek) Nation'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Court Diversion by Stipulation in Juvenile Delinquency
+    citation: Muscogee (Creek) Nation Title 6, § 1-705 and § 1-706
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-diversion-by-stipulation-in-juvenile-delinquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Deferred Adjudication and its Conditions
+    citation: Muscogee (Creek) Nation Title 6, § 1-703 and § 1-704
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-adjudication-and-its-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Deferred Sentencing for Protection in Domestic/Family Violence Cases
+    citation: Muscogee (Creek) Nation Title 6, § 3-301 and § 3-312
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-sentencing-for-protection-in-domestic-family-violence-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Dispotition for Child in Need of Treatment
+    citation: Muscogee (Creek) Nation Title 6, § 1–809
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispotition-for-child-in-need-of-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Family Counseling Services for Domestic Violence Abuse
+    citation: Muscogee (Creek) Nation Title 6, § 3-301 and § 3-414
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-counseling-services-for-domestic-violence-abuse/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Informal Hearing Option for Children Cases
+    citation: Muscogee (Creek) Nation Title 6, § 1-402 and § 1-806
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearing-option-for-children-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Informal Review Hearings for Family Treatment Plans
+    citation: Muscogee (Creek) Nation Title 6, § 1–819
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-review-hearings-for-family-treatment-plans/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Program for Intervention for Domestic/Family Violence Perpetrators
+    citation: Muscogee (Creek) Nation Title 6, § 3-502 and § 3-503
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/program-for-intervention-for-domestic-family-violence-perpetrators/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
+      practice: Restorative justice.'
+  - kind: other
+    title: Required Rehabilitative Process in an Order for Protection
+    citation: Muscogee (Creek) Nation Title 6, § 1-406
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/required-rehabilitative-process-in-an-order-for-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Sealing a Record Due to Rehabilitation
+    citation: Muscogee (Creek) Nation Title 6, § 1-406
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sealing-a-record-due-to-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Substance Abuse Treatment as Condition for Probation
+    citation: Muscogee (Creek) Nation Title 6, § 3-313
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/substance-abuse-treatment-as-condition-for-probation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
+      practice: Restorative justice.'
+  - kind: other
+    title: Supervised Work Program for Juvenile Deliquency
+    citation: Muscogee (Creek) Nation Title 6, § 1–812
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/supervised-work-program-for-juvenile-deliquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Treatment Plans for Juvenile Delinquent Families
+    citation: Muscogee (Creek) Nation Title 6, § 1–803
+    link: https://creeksupremecourt.com/code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-plans-for-juvenile-delinquent-families/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2018-08-17'
+    locator: result page 28 (?page=28), row 9
+    note: 'Listed as: "Muscogee (Creek) Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "The Muscogee (Creek) Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Muscogee%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-04-08'
+    federal_register_citation: 70 FR 18041
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-04-08'
+    locator: result page 28 (?page=28), row 10
+    note: 'Listed as: "Muscogee (Creek) Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "The Muscogee (Creek) Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.04.08%20Muscogee%20Creek%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/04/08/05-6986/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1994-11-03'
+    link: https://www.nigc.gov?wpdmdl=10360&ind=10382
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-11-03'
+    locator: table row 162, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '1998-10-09'
+    link: https://www.nigc.gov?wpdmdl=10367&ind=10383
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1998-10-09'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2002-02-22'
+    link: https://www.nigc.gov?wpdmdl=10368&ind=10384
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-02-22'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2003-12-11'
+    link: https://www.nigc.gov?wpdmdl=10369&ind=10385
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-12-11'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2004-05-03'
+    link: https://www.nigc.gov?wpdmdl=10370&ind=10386
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-05-03'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2004-10-25'
+    link: https://www.nigc.gov?wpdmdl=10371&ind=10387
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-10-25'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2005-07-06'
+    link: https://www.nigc.gov?wpdmdl=10372&ind=10388
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-07-06'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2006-06-15'
+    link: https://www.nigc.gov?wpdmdl=10373&ind=10389
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-06-15'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2006-08-23'
+    link: https://www.nigc.gov?wpdmdl=10374&ind=10390
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-08-23'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2010-07-19'
+    link: https://www.nigc.gov?wpdmdl=10375&ind=10391
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-07-19'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2010-11-15'
+    link: https://www.nigc.gov?wpdmdl=10376&ind=10392
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-11-15'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2012-10-15'
+    link: https://www.nigc.gov?wpdmdl=10377&ind=10394
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-10-15'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2012-11-26'
+    link: https://www.nigc.gov?wpdmdl=10378&ind=10393
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-11-26'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '1985-12-02'
+    link: https://www.nigc.gov?wpdmdl=10379&ind=10395
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1985-12-02'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  - approved: '2018-05-11'
+    link: https://www.nigc.gov?wpdmdl=10380&ind=10396
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2018-05-11'
+    locator: table row 162, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
+      as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: The Muscogee (Creek) Nation Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2016-03-28 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-the-muscogee-nation
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Muscogee (Creek) Nation". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: tribal-law-and-order-act-enhanced-sentencing
+  value: implementing
+  detail: Listed among tribes exercising enhanced sentencing and incarcerating inmates under the Tribal
+    Law and Order Act (as of 2013 interviews).
+  source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
+  confidence: medium
+  as_of: '2013'
+  locator: p. 3, list of tribes exercising enhanced sentencing
+  note: Listed as "Muscogee (Creek) Nation of Oklahoma".
+memberships:
+- organization: Inter-Tribal Council of the Five Civilized Tribes
+  source: inter-tribal-council-of-the-five-civilized-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Muscogee". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,110 @@
+id: clifton-choctaw-tribe-of-louisiana
+entity_type: native-nation
+names:
+  official: Clifton Choctaw Tribe of Louisiana
+  alternate:
+  - name: Clifton Choctaw Reservation Inc.
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #30'
+  - name: Clifton-Choctaw Indians
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9630
+  note: The 2020 Census delineated "Clifton Choctaw SDTSA" (State Designated Tribal Statistical Area).
+    The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally
+    recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed
+    state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '30'
+  petition_stage: Letter of Intent to Petition 03/22/1978
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #30'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: LA
+  legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+  note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
+    were not retrieved.
+- type: state
+  state: LA
+  legal_basis: Louisiana Revised Statutes 46:2305(B) (Acts 2018, No. 102), Native American Commission
+    membership, listed as 'Clifton Choctaw Tribe of Louisiana'
+  source: louisiana-revised-statutes-46-2305
+  confidence: high
+  as_of: '2018'
+  locator: R.S. 46:2305(B)
+  note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
+    recognition.
+states:
+- state: LA
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9630
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: LA
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: LA
+  presence: other
+  source: louisiana-governor-indian-affairs
+  confidence: high
+  as_of: '2026'
+  locator: Regional map
+  note: Located in Rapides and Vernon Parishes per the Office of Indian Affairs regional map.
+census_areas:
+- geographic_identifier: '9630'
+  name: Clifton Choctaw SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9630, GEOID 9630R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+contacts:
+- kind: mailing-address
+  value: 1146 Clifton Road, Clifton, LA 71447
+  label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: medium
+  as_of: '2026'
+  note: Listed under the leader's name; recorded as the tribe's contact address.
+- kind: website
+  value: https://cliftonchoctaw.org/
+  label: Official website
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

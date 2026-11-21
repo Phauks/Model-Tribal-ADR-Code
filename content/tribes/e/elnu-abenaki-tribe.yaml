@@ -1,0 +1,27 @@
+id: elnu-abenaki-tribe
+entity_type: native-nation
+names:
+  official: Elnu Abenaki Tribe
+  official_source: vermont-statutes-1-853a
+recognition:
+- type: state
+  state: VT
+  legal_basis: 1 V.S.A. Section 853a (Added 2011, No. 9, Section 1)
+  since: '2011-04-22'
+  source: vermont-statutes-1-853a
+  confidence: high
+  as_of: '2026'
+  locator: Section 853a
+states:
+- state: VT
+  presence: other
+  source: vermont-statutes-title-1-chapter-23
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

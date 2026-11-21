@@ -1,0 +1,443 @@
+id: absentee-shawnee-tribe-of-indians-of-oklahoma
+entity_type: native-nation
+names:
+  official: Absentee-Shawnee Tribe of Indians of Oklahoma
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5600
+  note: 'Census area with land in this state: Citizen Potawatomi Nation-Absentee Shawnee OTSA (code 5600).
+    Statistical area only (not a land holding), so presence is recorded as other. Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '5600'
+  name: Citizen Potawatomi Nation-Absentee Shawnee OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5600
+  note: 'Matched by name. Shared with: Citizen Potawatomi Nation, Oklahoma. Census class code D6.'
+population:
+- count: 4775
+  kind: citizens
+  source: astribe-about-us
+  confidence: high
+  as_of: '2026-06-30'
+  note: 'Page: ''The current membership is 4,775 as of June 30, 2026.'''
+- count: 126987
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5600, field POP100
+  note: 'Census area: Citizen Potawatomi Nation-Absentee Shawnee OTSA (code 5600). Everyone counted as
+    living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the
+    nation''s citizens. The area is a Census statistical area, not a land holding. The area is shared
+    with: Citizen Potawatomi Nation, Oklahoma; the same count applies to the whole area.'
+- count: 3265
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2835 (Absentee Shawnee Tribe of Indians of Oklahoma alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Absentee Shawnee Tribe of Indians of Oklahoma' (race
+    code 6270) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 4675
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Absentee-Shawnee Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.astribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+- kind: physical-address
+  value: 2025 South Gordon Cooper Drive, Shawnee, OK 74801
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+- kind: mailing-address
+  value: 2025 South Gordon Cooper Drive, Shawnee, OK 74801
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+- kind: phone
+  value: (405) 275-4030
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+- kind: fax
+  value: (405) 878-4543
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+languages:
+- name: Shawnee
+  language_tag: sjw
+  source: astribe-about-us
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page mentions 'continuous rejuvenation of the Shawnee language'; site has a Language/Culture Department.
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Southern Plains Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Absentee-Shawnee Tribe of Indians of Oklahoma" among organizations under constitutions
+    approved by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Absentee-Shawnee Tribe of Indians of Oklahoma) (approved 1938) states it was adopted
+    under Act of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-abshawcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: AST Code of Laws
+  link: https://www.astribe.com/court
+  source: national-indian-law-library-absentee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
+    website . AST Code of Laws.".'
+- kind: law-code
+  title: Tax Codes
+  link: https://www.astribe.com/tax-codes
+  source: national-indian-law-library-absentee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Tax Codes.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.astribe.com/assets/Constitution.pdf
+  source: national-indian-law-library-absentee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: law-code
+  title: Absentee-Shawnee Tribe
+  year: '2024'
+  link: https://narf.org/nill/codes/absentee-shawnee/index.html
+  source: national-indian-law-library-code-codes-absentee-shawnee
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Table of Contents Updated: August 2024. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution of the Absentee Shawnee Tribe
+  year: '2019'
+  link: https://narf.org/nill/constitutions/absentee_shawnee_const/index.html
+  source: national-indian-law-library-constitution-constitutions-absentee-shawnee-const
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Ratified: May 10, 2019. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Absentee Shawnee Tribe of Indians of Oklahoma Constitution
+  link: http://www.astribe.com/astribe/resources/pdf/newsletter/AST_Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Absentee-Shawnee Tribe of Indians of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Absentee-Shawnee Tribe of Indians of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/abshawcons.html
+  source: university-of-oklahoma-indian-reorganization-act-abshawcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.astribe.com/court
+  source: national-indian-law-library-absentee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Absentee-Shawnee Tribal Court
+  link: http://www.astribe.com/astribe/?reload
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Absentee-Shawnee Tribe of Indians of Oklahoma'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Child Abuse and Child Neglect Diversion Progam
+    citation: AST Juvenile Code § 319
+    link: https://www.astribe.com/court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-progam-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Court Diversion by Stipulation (For Tribal Youth/Juveniles)
+    citation: AST Juvenile Code § 516-517; 529
+    link: https://www.astribe.com/court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-diversion-by-stipulation-for-tribal-youth-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Deferred Prosecution Agreements/Contracts (For Tribal Parents/Legal Guardians Investigated
+      in Juvenile case)
+    citation: AST Juvenile Code § 514-515
+    link: https://www.astribe.com/court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-agreements-contracts-for-tribal-parents-legal-guardians-investigated-in-juvenile-case/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Dispostional Hearing for Case Plan/Service Plan (Tribal Youth/Juveniles & Families)
+    citation: AST Juvenile Code § 533-538
+    link: https://www.astribe.com/court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispostional-hearing-for-case-plan-service-plan-tribal-youth-juveniles-families/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Domestic Violence Treatment Program
+    citation: AST Domestic Violence Code § 3; 5
+    link: https://www.astribe.com/court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Wellbriety Court Program Code (Tribal Treatment Court Program)
+    citation: Wellbriety Code
+    link: https://www.astribe.com/court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/wellbriety-court-program-code-tribal-treatment-court-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative court.'
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    federal_register_citation: 70 FR 3942
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-01-27'
+    locator: result page 26 (?page=26), row 3
+    note: 'Listed as: "Absentee Shawnee Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Absentee-Shawnee Tribe of Indians of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2005.01.27_absentee_shawnee_tribe_of_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/01/27/05-1468/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2001-05-04'
+    federal_register_citation: 66 FR 22593
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-05-04'
+    locator: result page 26 (?page=26), row 4
+    note: 'Listed as: "Absentee Shawnee Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Absentee-Shawnee Tribe of Indians of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%202001.05.04%20Absentee%20Shawnee%20Tribe%20of%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/05/04/01-11418/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 26 (?page=26), row 5
+    note: 'Listed as: "Absentee Shawnee Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Absentee-Shawnee Tribe of Indians of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Absentee%20%20Shawnee%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1995-01-10'
+    link: https://www.nigc.gov?wpdmdl=3252&ind=3246
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-01-10'
+    locator: table row 1, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2000-03-27'
+    link: https://www.nigc.gov?wpdmdl=3243&ind=3248
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-03-27'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2003-10-03'
+    link: https://www.nigc.gov?wpdmdl=3250&ind=3244
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-10-03'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2005-04-19'
+    link: https://www.nigc.gov?wpdmdl=3251&ind=3245
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-04-19'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2008-03-25'
+    link: https://www.nigc.gov?wpdmdl=3252&ind=3246
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-03-25'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2010-04-13'
+    link: https://www.nigc.gov?wpdmdl=3253&ind=3247
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-04-13'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2023-05-15'
+    link: https://www.nigc.gov?wpdmdl=3254&ind=3255
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2023-05-15'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Absentee Shawnee Tribe of
+      Oklahoma". Facilities as machine-extracted from the report text (verify): Thunderbird Casino - Shawnee;
+      Thunderbird Entertainment Center. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Absentee-Shawnee Tribe of Indians of Oklahoma Confidence lowered from high by the
+    lead session: the notice prints its table as page images, so nation names were read from images and
+    matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

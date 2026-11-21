@@ -1,0 +1,31 @@
+key: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+kind: dataset
+citation:
+  type: dataset
+  title: Restorative Justice Tribal Laws Database
+  author:
+  - literal: National Center on Restorative Justice
+  container-title: National Center on Restorative Justice
+  URL: https://ncorj.org/tribal-laws
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://ncorj.org/tribal-laws
+retrieved: '2026-11-21'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+found_in:
+- 2026-11-21-dispute-resolution-practice
+notes: 940 records retrieved through the site's public WordPress interface (https://ncorj.org/wp-json/wp/v2/tribal-law)
+  and individual record pages; each record quotes a tribal code provision, names the tribe and citation,
+  links to the full text, and is classified by form of practice, phase and practice area. Per-record page
+  URLs are given in each fact's locator.

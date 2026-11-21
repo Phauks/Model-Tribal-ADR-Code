@@ -1,0 +1,80 @@
+id: samoan-people-of-american-samoa
+entity_type: territorial-indigenous-people
+names:
+  official: Samoan people of American Samoa
+  official_source: american-samoa-revised-constitution
+recognition:
+- type: territorial-law
+  state: AS
+  legal_basis: Revised Constitution of American Samoa, art. I § 3 (policy protective legislation)
+  since: '1967-07-01'
+  source: american-samoa-revised-constitution
+  confidence: high
+  as_of: '1967-07-01'
+  locator: art. I § 3
+  note: '''It shall be the policy of the Government of American Samoa to protect persons of Samoan ancestry
+    against alienation of their lands and the destruction of the Samoan way of life and language, contrary
+    to their best interests.'' Legislation may protect ''the lands, customs, culture, and traditional
+    Samoan family organization of persons of Samoan ancestry''; land-alienation law changes need two successive
+    legislatures by two-thirds and the Governor. A 2022 Constitutional Review Committee proposed rewording
+    this section; adoption not checked. Text read through the WebFetch tool.'
+- type: territorial-law
+  state: AS
+  legal_basis: Revised Constitution of American Samoa, art. II §§ 3(d) and 4 (Senators must be registered
+    matai; elected in accordance with Samoan custom by county councils)
+  since: '1967-07-01'
+  source: american-samoa-revised-constitution
+  confidence: high
+  as_of: '1967-07-01'
+  locator: art. II §§ 3(d), 4
+  note: A Senator must 'be the registered matai of a Samoan family who fulfills his obligations as required
+    by Samoan custom'; Senators 'shall be elected in accordance with Samoan custom by the county councils'.
+    This is the constitutional footing of the matai system in the territorial legislature.
+- type: territorial-law
+  state: AS
+  legal_basis: A.S.C.A. § 37.0204 (restrictions on alienation of land)
+  source: american-samoa-code-37-0204
+  confidence: medium
+  locator: § 37.0204(a)-(b)
+  note: Prohibits a matai from alienating communal family lands without the Governor's written approval,
+    and prohibits alienating any lands except freehold lands to a person with 'less than one-half native
+    blood'. FAOLEX reproduction; date of the reproduced text not stated.
+states:
+- state: AS
+  presence: land
+  source: american-samoa-code-37-0204
+  confidence: medium
+  locator: § 37.0204
+  note: Communal family lands controlled by matai.
+population:
+- count: 41382
+  kind: census-samoan-alone
+  source: census-2020-island-areas-american-samoa-profile-release
+  confidence: high
+  as_of: '2020-04-01'
+  locator: American Samoa; DECENNIALDPAS2020.DP1 row DP1_0081C
+  note: A detailed Native Hawaiian and Other Pacific Islander group, not American Indian or Alaska Native.
+    Kind value is new. American Samoa total population 49,710.
+- count: 44461
+  kind: census-samoan-alone-or-in-any-combination
+  source: census-2020-island-areas-american-samoa-profile-release
+  confidence: high
+  as_of: '2020-04-01'
+  locator: American Samoa; DECENNIALDPAS2020.DP1 row DP1_0101C
+  note: Kind value is new.
+languages:
+- name: Samoan
+  language_tag: sm
+  source: american-samoa-revised-constitution
+  confidence: high
+  as_of: '1967-07-01'
+  locator: art. I § 3
+  note: The section protects 'the Samoan way of life and language'. Tag sm is the ISO 639-1 equivalent
+    of ISO 639-3 smo (source key iso-639-3-smo).
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

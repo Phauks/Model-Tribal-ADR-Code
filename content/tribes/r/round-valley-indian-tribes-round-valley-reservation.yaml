@@ -1,0 +1,258 @@
+id: round-valley-indian-tribes-round-valley-reservation
+entity_type: native-nation
+names:
+  official: Round Valley Indian Tribes, Round Valley Reservation, California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Round Valley Indian Tribes, Round Valley Reservation, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3250
+  note: 'Census area with land in this state: Round Valley Reservation and Off-Reservation Trust Land
+    (code 3250). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3250'
+  name: Round Valley Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3250
+  note: Matched by name. Census class code D1.
+population:
+- count: 454
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3250, field POP100
+  note: 'Census area: Round Valley Reservation and Off-Reservation Trust Land (code 3250). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1802
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3271 (Round Valley Indian Tribes alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Round Valley Indian Tribes' (race code 6222) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 4967
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Round Valley Indian Tribes', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.rvit.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Round Valley Indian Tribes, Round Valley Reservation, California
+- kind: physical-address
+  value: 77826 Covelo Road, Covelo, CA 95428
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Round Valley Indian Tribes, Round Valley Reservation, California
+- kind: mailing-address
+  value: 77826 Covelo Road, Covelo, CA 95428
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Round Valley Indian Tribes, Round Valley Reservation, California
+- kind: phone
+  value: (707) 983-6126
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Round Valley Indian Tribes, Round Valley Reservation, California
+- kind: fax
+  value: (707) 983-6128
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Round Valley Indian Tribes, Round Valley Reservation, California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Round Valley Indian Tribes, Round Valley Reservation, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://rvit.org/government/documents-forms
+  source: national-indian-law-library-round-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://rvit.org/government/constitution
+  source: national-indian-law-library-round-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Round Valley Indian Tribes Constitution
+  link: http://www.rvit.org/constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Round Valley Indian Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Round Valley Indian Tribe Tribal Court Code
+  link: http://www.rvit.org/documentsforms.php
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Round Valley Indian Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://rvit.org/government/tribal-court
+  source: national-indian-law-library-round-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Round Valley Indian Tribes Tribal Court
+  link: http://courts.rvit.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Round Valley Indian Tribes'
+  note: 'Link check 2026-11-21: the site did not respond.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: General Penalties for Criminal Offenses
+    citation: R.V.I.T. Law and Order Code 13.01 & 13.03
+    link: https://rvit.org/government/documents-forms
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/general-penalties-for-criminal-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Referring a Defendant for Treatment
+    citation: R.V.I.T. Law and Order Code 13.04
+    link: https://rvit.org/government/documents-forms
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/referring-a-defendant-for-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+gaming:
+  ordinances:
+  - approved: '1996-07-25'
+    link: https://www.nigc.gov?wpdmdl=10920&ind=10959
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-07-25'
+    locator: table row 233, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 233 lists the nation
+      as "Round Valley Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2006-08-01'
+    link: https://www.nigc.gov?wpdmdl=10939&ind=10960
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-08-01'
+    locator: table row 233, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 233 lists the nation
+      as "Round Valley Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2009-04-13'
+    link: https://www.nigc.gov?wpdmdl=10940&ind=10961
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-04-13'
+    locator: table row 233, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 233 lists the nation
+      as "Round Valley Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2012-02-08'
+    link: https://www.nigc.gov?wpdmdl=10941&ind=10962
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-02-08'
+    locator: table row 233, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 233 lists the nation
+      as "Round Valley Indian Tribes". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Round Valley Indian Tribes, Round
+      Valley Reservation, California". Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Round Valley Indian Tribes, Round Valley Reservation, California Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

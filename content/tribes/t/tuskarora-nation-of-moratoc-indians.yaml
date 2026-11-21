@@ -1,0 +1,31 @@
+id: tuskarora-nation-of-moratoc-indians
+entity_type: native-nation
+names:
+  official: Tuskarora Nation of Moratoc Indians
+  official_source: ofa-petitions-in-process
+recognition:
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '407'
+  petition_stage: Awaiting Active Consideration
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 407; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/tuskarora-nation-moratoc-indians
+  note: 'Federal Register history: Receipt of Documented Petition for Federal Acknowledgment as an American
+    Indian Tribe, 89 FR 99903 (2024-12-11).'
+states:
+- state: NC
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

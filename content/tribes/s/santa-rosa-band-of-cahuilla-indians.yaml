@@ -1,0 +1,161 @@
+id: santa-rosa-band-of-cahuilla-indians
+entity_type: native-nation
+names:
+  official: Santa Rosa Band of Cahuilla Indians, California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santa Rosa Band of Cahuilla Indians, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3525
+  note: 'Census area with land in this state: Santa Rosa Reservation (code 3525). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '3525'
+  name: Santa Rosa Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3525
+  note: Matched by name. Census class code D2.
+population:
+- count: 156
+  kind: citizens
+  source: santa-rosa-band-of-cahuilla-indians-culture
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"there are 156 recognized Tribal Members (18 and over)" (adults only); "Approximately 144 individuals
+    live on the Reservation"; undated statement on the official site; as_of is the access date'
+- count: 131
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3525, field POP100
+  note: 'Census area: Santa Rosa Reservation (code 3525). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 166
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3289 (Santa Rosa Band of Cahuilla Indians  alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Santa Rosa Band of Cahuilla Indians ' (race code 5563)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 191
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Santa Rosa Band of Cahuilla Indians', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://santarosa-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santa Rosa Band of Cahuilla Indians, California
+- kind: physical-address
+  value: 65200 State Highway 74, Mountain Center, CA 92561
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santa Rosa Band of Cahuilla Indians, California
+- kind: mailing-address
+  value: P.O. Box 391820, Anza, CA 92539
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santa Rosa Band of Cahuilla Indians, California
+- kind: phone
+  value: (951) 659-2700
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santa Rosa Band of Cahuilla Indians, California
+- kind: fax
+  value: (951) 659-2228
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santa Rosa Band of Cahuilla Indians, California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Southern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Santa Rosa Band of Cahuilla Indians, California
+gaming:
+  ordinances:
+  - approved: '2023-04-06'
+    link: https://www.nigc.gov?wpdmdl=11008&ind=11030
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2023-04-06'
+    locator: table row 242, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 242 lists the nation
+      as "Santa Rosa Band of Cahuilla Indians".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Santa Rosa Band of Cahuilla Indians, California Confidence lowered from high by the
+    lead session: the notice prints its table as page images, so nation names were read from images and
+    matched to the roster.'
+memberships:
+- organization: Southern California Tribal Chairmen's Association
+  source: southern-california-tribal-chairmens-association-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Santa Rosa Band of Cahuilla Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

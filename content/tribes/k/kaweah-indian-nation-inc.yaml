@@ -1,0 +1,34 @@
+id: kaweah-indian-nation-inc
+entity_type: native-nation
+names:
+  official: Kaweah Indian Nation, Inc.
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 50 FR 14302 (as printed in the Office of Federal
+    Acknowledgment list)
+  petition_number: 70A
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 04/28/1980; certified
+    letter returned by P.O. 10/1997; Declined Acknowledgment effective 06/10/1985 50 FR 14302
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #70A'
+  note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
+    list.
+states:
+- state: CA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices. The 2013 list text placed this row near the North Carolina
+    section; the Petitions Resolved page gives California.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

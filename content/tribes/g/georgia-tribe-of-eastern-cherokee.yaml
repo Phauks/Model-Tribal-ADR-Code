@@ -1,0 +1,97 @@
+id: georgia-tribe-of-eastern-cherokee
+entity_type: native-nation
+names:
+  official: Georgia Tribe of Eastern Cherokee
+  alternate:
+  - name: Georgia Tribe of Eastern Cherokees, Inc.
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #41'
+    note: Name as printed on the Office of Federal Acknowledgment list by state.
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9730
+  note: The 2020 Census delineated "Georgia Tribe of Eastern Cherokee SDTSA" (State Designated Tribal
+    Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes
+    that are not federally recognized and have no reservation or off-reservation trust land, delineated
+    with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is
+    by name comparison (see census-area fact).
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 82 FR 61023 (2017-12-26)
+  petition_number: '41'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 01/09/1979
+  source: federal-register-2017-27764
+  confidence: high
+  as_of: '2017-12-26'
+  locator: 'Petitioner #41'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 01/09/1979. Other Federal Register history: Proposed Finding Against
+    Acknowledgment of the Georgia Tribe of Eastern Cherokee, Inc., 81 FR 29910 (2016-05-13).'
+- type: state
+  state: GA
+  legal_basis: Official Code of Georgia Annotated Section 44-12-300(a) (Ga. L. 1993, p. 1813; amended
+    by House Bill 43, 2024)
+  source: georgia-code-44-12-300
+  confidence: high
+  as_of: '2022'
+  locator: Section 44-12-300(a)
+  note: '''The State of Georgia officially recognizes as legitimate American Indian tribes of Georgia
+    the following tribes''. Enacted 1993.'
+- type: state
+  state: GA
+  legal_basis: Official Code of Georgia Annotated Section 44-12-300(a) as amended by House Bill 43 (2024)
+  source: georgia-house-bill-43-2024
+  confidence: high
+  as_of: '2024'
+  locator: Section 2
+states:
+- state: GA
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9730
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: GA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: GA
+  presence: other
+  source: georgia-code-44-12-300
+  confidence: high
+  as_of: '2022'
+census_areas:
+- geographic_identifier: '9730'
+  name: Georgia Tribe of Eastern Cherokee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9730, GEOID 9730R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+contacts:
+- kind: mailing-address
+  value: P.O. Box 1993, Dahlonega, Georgia 30533
+  label: Address given in the statute (2022 edition)
+  source: georgia-code-44-12-300
+  confidence: medium
+  as_of: '2022'
+  note: House Bill 43 (2024) revised the addresses in the statute; the updated address was not confirmed.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

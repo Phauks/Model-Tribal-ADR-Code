@@ -1,0 +1,230 @@
+id: confederated-tribes-of-the-goshute-reservation
+entity_type: native-nation
+names:
+  official: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: UT
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1340
+  note: 'Census area with land in this state: Goshute Reservation (code 1340). Area matched to the nation
+    by name.'
+- state: UT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1340
+  note: 'Census area with land in this state: Goshute Reservation (code 1340). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '1340'
+  name: Goshute Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1340
+  note: Matched by name. Census names the area Goshute Reservation. Census class code D2.
+population:
+- count: 116
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1340, field POP100
+  note: 'Census area: Goshute Reservation (code 1340). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Census names
+    the area Goshute Reservation.'
+- count: 556
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2948 (Confederated Tribes of the Goshute Reservation alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Confederated Tribes of the Goshute Reservation' (race
+    code 6284) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 530
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Confederated Tribes of the Goshute Reservation', PDF page 5,
+    Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.ctgr.us/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+- kind: physical-address
+  value: Commodore Ln, Ibapah, UT
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+- kind: mailing-address
+  value: P.O. Box 6104, Ibapah, UT 84034
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+- kind: phone
+  value: (435) 234-1138
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+- kind: fax
+  value: (435) 234-1162
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Eastern Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Confederated Tribes of the Goshute Reservation in Utah" among organizations under
+    constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934),
+    as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Confederated Tribes of the Goshute Reservation, Utah) (approved 1940) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-goshcons
+  confidence: medium
+  as_of: '1940'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Ordinance Adopting Law and Order Code and Creating Tribal Court, Confederated Tribes of the Goshute
+    Reservation
+  year: '2006'
+  link: https://narf.org/nill/codes/goshute/index.html
+  source: national-indian-law-library-code-codes-goshute
+  confidence: medium
+  as_of: '2006'
+  locator: page heading
+  note: 'Undated; Received: December 2006. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/IRA/goshcons.html
+  source: national-indian-law-library-confederated-goshute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/41050933/
+  source: national-indian-law-library-confederated-goshute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website.".'
+- kind: corporate-charter
+  title: Corporate charter (Confederated Tribes of the Goshute Reservation, Utah)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/goshchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-goshchrtr
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Confederated Tribes of the Goshute Reservation, Utah)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/goshcons.html
+  source: university-of-oklahoma-indian-reorganization-act-goshcons
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-confederated-goshute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.naicja.org/node/1217) returned HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Confederated Tribes of the Goshute Reservation Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Utah section, entry 'Confederated Tribes of the Goshute Reservation'
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted Nevada's offer to retrocede all civil and criminal jurisdiction acquired under
+    Public Law 280 (Nevada was an optional state, 1955) over the Goshute Reservation, effective July 1,
+    1975. (40 FR 27501)
+  source: federal-register-1975-nevada-retrocession
+  confidence: medium
+  as_of: '1975-07-01'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Confederated Tribes of the Goshute Reservation, Nevada and Utah Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes of Goshute". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

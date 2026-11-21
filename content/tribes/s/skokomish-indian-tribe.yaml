@@ -1,0 +1,612 @@
+id: skokomish-indian-tribe
+entity_type: native-nation
+names:
+  official: Skokomish Indian Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skokomish Indian Tribe
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3825
+  note: 'Census area with land in this state: Skokomish Reservation and Off-Reservation Trust Land (code
+    3825). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3825'
+  name: Skokomish Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3825
+  note: Matched by name. Census class code D1.
+population:
+- count: 724
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3825, field POP100
+  note: 'Census area: Skokomish Reservation and Off-Reservation Trust Land (code 3825). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1148
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3325 (Skokomish Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Skokomish Indian Tribe' (race code 6200) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 776
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Skokomish Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://skokomish.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skokomish Indian Tribe
+- kind: physical-address
+  value: 80 North Tribal Center Road, Shelton, WA 98584
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skokomish Indian Tribe
+- kind: mailing-address
+  value: 80 North Tribal Center Road, Shelton, WA 98584
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skokomish Indian Tribe
+- kind: phone
+  value: (360) 426-4232
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skokomish Indian Tribe
+- kind: fax
+  value: (360) 877-5943
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skokomish Indian Tribe
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skokomish Indian Tribe
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Skokomish Indian Tribe of the Skokomish Reservation, Washington" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Skokomish Indian Tribe of the Skokomish Reservation Washington) (approved 1938)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-skokcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Skokomish - Tribal Codes and Ordinances
+  year: '2018'
+  link: https://narf.org/nill/codes/skokomish/index.html
+  source: national-indian-law-library-code-codes-skokomish
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2018. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution of the Skokomish Indian Tribe [and Related Documents]
+  year: '1980'
+  link: https://narf.org/nill/constitutions/skokomish/index.html
+  source: national-indian-law-library-constitution-constitutions-skokomish
+  confidence: medium
+  as_of: '1980'
+  locator: page heading
+  note: 'Amended: March 17, 1980. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.skokomish.org/skokomish-codes-and-ordinances/
+  source: national-indian-law-library-skokomish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.skokomish.org/skokomish-codes-and-ordinances/
+  source: national-indian-law-library-skokomish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Skokomish Indian Tribe Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Skokomish Indian Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.skokomish.org/wp-content/uploads/2017/07/Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Skokomish Codes and Ordinances
+  link: http://www.skokomish.org/skokomish-codes-and-ordinances/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Skokomish Indian Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Skokomish Indian Tribe of the Skokomish Reservation Washington)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/skokcons.html
+  source: university-of-oklahoma-indian-reorganization-act-skokcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.skokomish.org/court/
+  source: national-indian-law-library-skokomish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Skokomish Tribal Court
+  link: http://www.skokomish.org/court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Skokomish Indian Tribe'
+dispute_resolution:
+  forums:
+  - kind: traditional-forum
+    name: Tribal traditional peacemaking forum (Traditional Peacekeeping)
+    description: On the Tribal Court's recommendation, a case involving a class D offense may be referred
+      to a tribal traditional peacemaking forum for adjudication.
+    legal_basis: Skokomish Tribal Code 9.11.030 (Traditional Peacekeeping)
+    case_types:
+    - criminal-diversion
+    - criminal-sentencing
+    participation: court-referred
+    relationship_to_court: The forum submits a case report to the Tribal Court and all parties detailing
+      action taken, restrictions and conditions.
+    enforcement: Failure to comply with requirements in the case report may be treated as a violation
+      of a court order.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
+    source: skokomish-stc-9-11-sentencing
+    confidence: medium
+    as_of: '2017-07-05'
+    locator: S.T.C. 9.11.030
+    note: Sentencing policy (9.11.010) favors restitution to the victim and community.
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: Traditional Peacekeeping
+    citation: Skokomish Tribal Code 9.11.030
+    summary: Allows referral of class D offense cases to a tribal traditional peacemaking forum, whose
+      case report conditions are enforceable as court orders.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
+    source: skokomish-stc-9-11-sentencing
+    confidence: medium
+    as_of: '2017-07-05'
+  - kind: other
+    title: Family Group Conference
+    citation: S.T.C. 3.03.095
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-group-conference/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Alternative; Family conferencing.'
+  - kind: other
+    title: Juvenile Alternative Sentencing
+    citation: S.T.C. 9.12.050
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-alternative-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative; Rehabilitation;
+      Restorative justice.'
+  - kind: other
+    title: Purpose Statement – Restorative Justice Framework
+    citation: S.T.C. 3.03.002
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-statement-restorative-justice-framework/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restitution-Based Sentencing Policy
+    citation: S.T.C. 9.11.010
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-based-sentencing-policy/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative; Restitution; Restorative
+      justice.'
+  - kind: peacemaking
+    title: Traditional Peacemaking Forum
+    citation: S.T.C. 9.11.030
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-peacemaking-forum/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative; Peacemaking.'
+  - kind: other
+    title: FAMILY GROUP CONFERENCE
+    citation: FAMILY GROUP CONFERENCE; 3.03.095 Family Group Conference; PATRON DISPUTE RESOLUTION; 4.02.118
+      Patron Dispute Resolution
+    link: https://www.narf.org/nill/codes/skokomish/index.html
+    source: national-indian-law-library-code-index-skokomish
+    confidence: medium
+    as_of: 2018-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: 'Title 9 – Skokomish Criminal Code, S.T.C. 9.11: Sentencing, Sentencing Guidelines'
+    citation: 'Title 9 – Skokomish Criminal Code, S.T.C. 9.11: Sentencing, Sentencing Guidelines'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Skokomish Indian Tribe of Washington
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      referral procedures, and procedures.'
+  - kind: other
+    title: FAMILY GROUP CONFERENCE
+    citation: FAMILY GROUP CONFERENCE; 3.03.095 Family Group Conference
+    link: https://narf.org/nill/codes/skokomish/index.html
+    source: national-indian-law-library-code-codes-skokomish
+    confidence: medium
+    as_of: '2018'
+    locator: 'Table of Contents, under ''S.T.C. 3.02 SKOKOMISH YOUTH CODE (REPEALED) – Repealed by Res.
+      # 16-24 2/2/2016 S.T.C. 3.03. SKOKOMISH CHILD PROTECTION AND FAMILY PRESERVATION ORDINANCE'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: PATRON DISPUTE RESOLUTION
+    citation: PATRON DISPUTE RESOLUTION; 4.02.118 Patron Dispute Resolution
+    link: https://narf.org/nill/codes/skokomish/index.html
+    source: national-indian-law-library-code-codes-skokomish
+    confidence: medium
+    as_of: '2018'
+    locator: 'Table of Contents, under ''TTITLE FOUR — COMMERCE S.T.C. 4.01 – SKOKOMISH INDIAN TRIBAL
+      ENTERPRISES ORDINANCE AND CORPORATE CHARTER (REPEALED) – Repealed by Res. # 15-118 9/30/2016 S.T.C.
+      4.02 – SKOKOMISH GAMING CODE'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: iii) Submit the dispute to mediation processes provided for under the Tribe s law.
+    citation: iii) Submit the dispute to mediation processes provided for under the Tribe s law.
+    link: https://narf.org/nill/constitutions/skokomish/index.html
+    source: national-indian-law-library-constitution-constitutions-skokomish
+    confidence: medium
+    as_of: '1980'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Amended:
+      March 17, 1980); the provision itself was not read. The heading it falls under is taken from the
+      page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2016-07-18'
+    federal_register_citation: 81 FR 46700
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-07-18'
+    locator: result page 42 (?page=42), row 11
+    note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Skokomish Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.07.18%20Skokomish%20Compact%20Approval.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/07/18/2016-16919/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 42 (?page=42), row 12
+    note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Skokomish Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.05.31%20Skokomish%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-09-06'
+    federal_register_citation: 60 FR 46490
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-09-06'
+    locator: result page 42 (?page=42), row 13
+    note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Skokomish Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.09.06%20Skokomish%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/09/06/95-22046/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-05-14'
+    federal_register_citation: 64 FR 26435
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-05-14'
+    locator: result page 42 (?page=42), row 14
+    note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Skokomish Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.05.14%20Skokomish%20Indian%20Tribe%20Tribal%20State%20%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/05/14/99-12228/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 42 (?page=42), row 15
+    note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Skokomish Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Skokomish%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    approved: '2020-12-11'
+    federal_register_citation: 85 FR 80139
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2020-12-11'
+    locator: result page 42 (?page=42), row 16
+    note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Skokomish Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.12.11%20Skokomish%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/12/11/2020-27219/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2020-12-11).
+  ordinances:
+  - approved: '1996-04-30'
+    link: https://www.nigc.gov?wpdmdl=11157&ind=11191
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-04-30'
+    locator: table row 264, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2000-07-07'
+    link: https://www.nigc.gov?wpdmdl=11172&ind=11192
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-07-07'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2001-03-14'
+    link: https://www.nigc.gov?wpdmdl=11173&ind=11193
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-03-14'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2001-07-03'
+    link: https://www.nigc.gov?wpdmdl=11174&ind=11194
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-07-03'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2003-04-30'
+    link: https://www.nigc.gov?wpdmdl=11177&ind=11195
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-04-30'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2004-10-26'
+    link: https://www.nigc.gov?wpdmdl=11176&ind=11196
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-10-26'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2005-05-25'
+    link: https://www.nigc.gov?wpdmdl=11175&ind=11197
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-05-25'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2007-04-11'
+    link: https://www.nigc.gov?wpdmdl=11178&ind=11198
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-04-11'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2008-02-26'
+    link: https://www.nigc.gov?wpdmdl=11179&ind=11199
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-02-26'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2009-09-25'
+    link: https://www.nigc.gov?wpdmdl=11180&ind=11200
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-09-25'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2012-06-05'
+    link: https://www.nigc.gov?wpdmdl=11181&ind=11201
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-06-05'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2015-09-08'
+    link: https://www.nigc.gov?wpdmdl=11185&ind=11202
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-09-08'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+  - approved: '2021-01-07'
+    link: https://www.nigc.gov?wpdmdl=11184&ind=11203
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-01-07'
+    locator: table row 264, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
+      as "Skokomish Indian Tribe".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of partial criminal jurisdiction acquired by Washington under
+    Public Law 280 and RCW 37.12; accepted November 20, 2024, fully effective May 27, 2025. (89 FR 93336)
+  source: federal-register-2024-skokomish-retrocession
+  confidence: high
+  as_of: '2025-05-27'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Skokomish Indian Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Skokomish Tribe". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Skokomish Indian Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,47 @@
+id: saponi-nation-of-missouri
+entity_type: native-nation
+names:
+  official: Saponi Nation of Missouri Mahenips Band
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Saponi Nation of Missouri Mahenips Band" among 26 non-federally recognized
+    tribes that received direct federal funding in FY2007-2010 (total $65,000, Table 3). GAO-reported
+    nonprofit status: Yes; state recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026).'
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '220'
+  petition_stage: Letter of Intent to Petition 12/14/1999
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #220'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+states:
+- state: MO
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: MO
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false
