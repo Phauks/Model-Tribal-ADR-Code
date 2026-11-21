@@ -1,0 +1,827 @@
+---
+id: 2026-11-21-gaming-compacts-and-ordinances
+date: '2026-11-21'
+researchers:
+- Trevor Goldsmith
+- Claude (AI assistant)
+tools:
+- kind: page-fetch
+  name: curl
+- kind: other
+  name: pdfinfo and pdftotext (poppler-utils)
+- kind: other
+  name: Federal Register API
+- kind: web-search
+  name: web search
+- kind: page-fetch
+  name: page fetch (WebFetch)
+- kind: ai-assistant
+  name: Claude (AI assistant)
+  detail: The lead session wrote the scripts in scripts/gaming/ and built the catalog. Three research
+    assistants (one larger model for case law and regulations, two small models for state-by-state
+    negotiations) searched and returned cited facts; a script then checked every quotation against
+    the cited page. Eighteen small-model reviewers summarized clauses from excerpts of 526 governing
+    compact documents and three larger-model reviewers read the whole text of 116 of them.
+purpose: Collect every Class III gaming compact and amendment and every Tribal gaming ordinance on the
+  federal lists, with the Federal Register notice of each compact's approval, and gather cited context
+  on compact negotiation (good-faith litigation, Secretarial Procedures, compact review rules, revenue
+  sharing, each state's negotiating authority and current talks) for a possible part of the model code
+  on negotiation.
+queries:
+- https://www.bia.gov/as-ia/oig/gaming-compacts?page=0 ... ?page=47 (curl; 1,196 entries, 1,200 documents,
+  all downloaded)
+- https://www.nigc.gov/office-of-general-counsel/gaming-ordinances/ (curl; TablePress table, 321 nations,
+  1,167 document links, each followed to its PDF)
+- 'https://www.federalregister.gov/api/v1/documents.json with conditions[term] "Tribal-State Class III Gaming",
+  "Class III Gaming Compact", "gaming compact", "Class III gaming procedures", "Secretarial Procedures"
+  gaming, "Tribal-State compact", "Indian Gaming", for the Bureau of Indian Affairs and the Department
+  of the Interior (1,171 documents, of which 710 are notices about compacts or procedures)'
+- https://www.federalregister.gov/api/v1/documents/{numbers}.json (the 22 linked notices the searches
+  missed)
+- 'web search and page fetch: IGRA good-faith cases after Seminole Tribe, 25 C.F.R. parts 291 and 293,
+  Interior letters issuing Secretarial Procedures and on revenue sharing, GAO and CRS reports'
+- 'web search and page fetch, state by state: compact negotiation status, renewals, negotiating authority
+  statutes, disputes, sports betting amendments and revenue sharing (28 compact states and AL, AK, GA,
+  ME, SC, TX, UT)'
+sources_added:
+- big-lagoon-rancheria-v-california-2015
+- cfr-25-293-27
+- cfr-25-part-291
+- cfr-25-part-293
+- cherokee-nation-v-stitt-2020
+- cheyenne-river-sioux-tribe-v-south-dakota-1993
+- chicken-ranch-rancheria-of-me-wuk-indians-v-california-2022
+- estom-yumeka-maidu-tribe-of-the-enterprise-rancheria-of-california-v-california-2016
+- federal-register-00-11941
+- federal-register-00-11942
+- federal-register-00-11943
+- federal-register-00-12321
+- federal-register-00-12322
+- federal-register-00-13494
+- federal-register-00-13495
+- federal-register-00-13496
+- federal-register-00-13497
+- federal-register-00-13498
+- federal-register-00-14504
+- federal-register-00-15563
+- federal-register-00-16985
+- federal-register-00-19061
+- federal-register-00-23091
+- federal-register-00-23229
+- federal-register-00-24357
+- federal-register-00-25124
+- federal-register-00-25125
+- federal-register-00-26881
+- federal-register-00-26882
+- federal-register-00-28587
+- federal-register-00-30036
+- federal-register-00-30037
+- federal-register-00-31025
+- federal-register-00-31026
+- federal-register-00-31305
+- federal-register-00-324
+- federal-register-00-6009
+- federal-register-00-8067
+- federal-register-01-11418
+- federal-register-01-11419
+- federal-register-01-1260
+- federal-register-01-1261
+- federal-register-01-1262
+- federal-register-01-1263
+- federal-register-01-14306
+- federal-register-01-14307
+- federal-register-01-14308
+- federal-register-01-16214
+- federal-register-01-17490
+- federal-register-01-22672
+- federal-register-01-23969
+- federal-register-01-25124
+- federal-register-01-25131
+- federal-register-01-26877
+- federal-register-01-30906
+- federal-register-01-30907
+- federal-register-01-30908
+- federal-register-01-31292
+- federal-register-01-3611
+- federal-register-01-4742
+- federal-register-01-4743
+- federal-register-01-6934
+- federal-register-01-9800
+- federal-register-01-9801
+- federal-register-01-9802
+- federal-register-02-13650
+- federal-register-02-13651
+- federal-register-02-14665
+- federal-register-02-17642
+- federal-register-02-19641
+- federal-register-02-20142
+- federal-register-02-20143
+- federal-register-02-23596
+- federal-register-02-23597
+- federal-register-02-28426
+- federal-register-02-3038
+- federal-register-02-3039
+- federal-register-02-3040
+- federal-register-02-3041
+- federal-register-02-30966
+- federal-register-02-30967
+- federal-register-02-30968
+- federal-register-02-31874
+- federal-register-02-3858
+- federal-register-02-3859
+- federal-register-02-3860
+- federal-register-02-3861
+- federal-register-02-7742
+- federal-register-02-8584
+- federal-register-02-9008
+- federal-register-02-904
+- federal-register-03-11390
+- federal-register-03-16824
+- federal-register-03-16825
+- federal-register-03-16826
+- federal-register-03-18631
+- federal-register-03-21464
+- federal-register-03-21805
+- federal-register-03-22788
+- federal-register-03-23578
+- federal-register-03-24298
+- federal-register-03-2787
+- federal-register-03-30504
+- federal-register-03-30634
+- federal-register-03-31474
+- federal-register-03-338
+- federal-register-03-339
+- federal-register-03-340
+- federal-register-03-341
+- federal-register-03-4655
+- federal-register-03-4656
+- federal-register-03-4657
+- federal-register-03-5342
+- federal-register-03-6350
+- federal-register-03-8560
+- federal-register-03-8561
+- federal-register-04-1023
+- federal-register-04-1024
+- federal-register-04-14125
+- federal-register-04-14260
+- federal-register-04-15194
+- federal-register-04-16199
+- federal-register-04-17882
+- federal-register-04-18491
+- federal-register-04-20000
+- federal-register-04-23092
+- federal-register-04-27710
+- federal-register-04-27711
+- federal-register-04-27712
+- federal-register-04-27713
+- federal-register-04-27714
+- federal-register-04-28506
+- federal-register-04-9886
+- federal-register-04-9887
+- federal-register-05-10877
+- federal-register-05-10878
+- federal-register-05-12395
+- federal-register-05-12400
+- federal-register-05-1468
+- federal-register-05-14966
+- federal-register-05-16943
+- federal-register-05-189
+- federal-register-05-19733
+- federal-register-05-2428
+- federal-register-05-2462
+- federal-register-05-3227
+- federal-register-05-4365
+- federal-register-05-4366
+- federal-register-05-4885
+- federal-register-05-5481
+- federal-register-05-5482
+- federal-register-05-5483
+- federal-register-05-6722
+- federal-register-05-6986
+- federal-register-05-813
+- federal-register-05-8241
+- federal-register-2010-16213
+- federal-register-2010-16214
+- federal-register-2010-22784
+- federal-register-2010-25003
+- federal-register-2010-25005
+- federal-register-2010-28187
+- federal-register-2010-28267
+- federal-register-2010-33094
+- federal-register-2010-3399
+- federal-register-2011-14045
+- federal-register-2011-18079
+- federal-register-2011-20273
+- federal-register-2011-20316
+- federal-register-2011-21652
+- federal-register-2011-23389
+- federal-register-2011-25932
+- federal-register-2011-27233
+- federal-register-2011-3179
+- federal-register-2011-4522
+- federal-register-2012-12510
+- federal-register-2012-17042
+- federal-register-2012-17823
+- federal-register-2012-17829
+- federal-register-2012-18676
+- federal-register-2012-19726
+- federal-register-2012-23975
+- federal-register-2012-23978
+- federal-register-2012-2441
+- federal-register-2012-31176
+- federal-register-2012-31177
+- federal-register-2012-31180
+- federal-register-2012-31181
+- federal-register-2013-03326
+- federal-register-2013-03614
+- federal-register-2013-04947
+- federal-register-2013-05596
+- federal-register-2013-06444
+- federal-register-2013-06446
+- federal-register-2013-06447
+- federal-register-2013-10923
+- federal-register-2013-13262
+- federal-register-2013-17680
+- federal-register-2013-21644
+- federal-register-2013-21739
+- federal-register-2013-24348
+- federal-register-2013-24349
+- federal-register-2013-24350
+- federal-register-2013-30915
+- federal-register-2014-00887
+- federal-register-2014-00898
+- federal-register-2014-00901
+- federal-register-2014-02183
+- federal-register-2014-02594
+- federal-register-2014-07823
+- federal-register-2014-11323
+- federal-register-2014-13284
+- federal-register-2014-13645
+- federal-register-2014-17374
+- federal-register-2014-18584
+- federal-register-2014-21931
+- federal-register-2014-25296
+- federal-register-2014-25297
+- federal-register-2014-27004
+- federal-register-2014-27377
+- federal-register-2014-28600
+- federal-register-2015-01973
+- federal-register-2015-01982
+- federal-register-2015-08059
+- federal-register-2015-09541
+- federal-register-2015-13712
+- federal-register-2015-13715
+- federal-register-2015-15207
+- federal-register-2015-16035
+- federal-register-2015-18439
+- federal-register-2015-18553
+- federal-register-2015-19969
+- federal-register-2015-19970
+- federal-register-2015-19972
+- federal-register-2015-25307
+- federal-register-2015-27080
+- federal-register-2015-27082
+- federal-register-2015-27088
+- federal-register-2015-27090
+- federal-register-2015-27091
+- federal-register-2015-29911
+- federal-register-2015-32347
+- federal-register-2015-32741
+- federal-register-2016-02917
+- federal-register-2016-05397
+- federal-register-2016-07620
+- federal-register-2016-07622
+- federal-register-2016-07632
+- federal-register-2016-09328
+- federal-register-2016-15976
+- federal-register-2016-16919
+- federal-register-2016-19877
+- federal-register-2016-20436
+- federal-register-2016-22649
+- federal-register-2016-23214
+- federal-register-2016-26250
+- federal-register-2016-26251
+- federal-register-2016-26252
+- federal-register-2016-26253
+- federal-register-2016-26254
+- federal-register-2016-26255
+- federal-register-2016-26256
+- federal-register-2016-26670
+- federal-register-2016-29076
+- federal-register-2016-29744
+- federal-register-2016-31725
+- federal-register-2017-05813
+- federal-register-2017-05814
+- federal-register-2017-07190
+- federal-register-2017-14881
+- federal-register-2017-15010
+- federal-register-2017-15640
+- federal-register-2017-15641
+- federal-register-2017-16215
+- federal-register-2017-22852
+- federal-register-2017-23343
+- federal-register-2017-26816
+- federal-register-2018-00637
+- federal-register-2018-00793
+- federal-register-2018-01058
+- federal-register-2018-03072
+- federal-register-2018-09800
+- federal-register-2018-11738
+- federal-register-2018-12343
+- federal-register-2018-17548
+- federal-register-2018-17550
+- federal-register-2018-17728
+- federal-register-2018-17729
+- federal-register-2018-18424
+- federal-register-2018-18425
+- federal-register-2018-19732
+- federal-register-2018-20187
+- federal-register-2018-20993
+- federal-register-2018-23920
+- federal-register-2018-26298
+- federal-register-2018-28134
+- federal-register-2018-28135
+- federal-register-2018-28369
+- federal-register-2019-05683
+- federal-register-2019-06296
+- federal-register-2019-07470
+- federal-register-2019-07471
+- federal-register-2019-07472
+- federal-register-2019-07473
+- federal-register-2019-07487
+- federal-register-2019-07488
+- federal-register-2019-07489
+- federal-register-2019-07490
+- federal-register-2019-09468
+- federal-register-2019-16692
+- federal-register-2019-17943
+- federal-register-2019-22452
+- federal-register-2019-27986
+- federal-register-2019-27987
+- federal-register-2019-27988
+- federal-register-2019-27989
+- federal-register-2019-27990
+- federal-register-2019-27994
+- federal-register-2019-27995
+- federal-register-2020-06712
+- federal-register-2020-07994
+- federal-register-2020-09243
+- federal-register-2020-10823
+- federal-register-2020-13062
+- federal-register-2020-13886
+- federal-register-2020-15974
+- federal-register-2020-15975
+- federal-register-2020-18080
+- federal-register-2020-19707
+- federal-register-2020-19928
+- federal-register-2020-23844
+- federal-register-2020-27219
+- federal-register-2020-27221
+- federal-register-2021-00340
+- federal-register-2021-00778
+- federal-register-2021-04254
+- federal-register-2021-04499
+- federal-register-2021-06111
+- federal-register-2021-08950
+- federal-register-2021-10877
+- federal-register-2021-14217
+- federal-register-2021-14218
+- federal-register-2021-14833
+- federal-register-2021-14834
+- federal-register-2021-16041
+- federal-register-2021-16042
+- federal-register-2021-17055
+- federal-register-2021-17858
+- federal-register-2021-17860
+- federal-register-2021-18814
+- federal-register-2021-18815
+- federal-register-2021-18816
+- federal-register-2021-18818
+- federal-register-2021-18819
+- federal-register-2021-18820
+- federal-register-2021-18821
+- federal-register-2021-18822
+- federal-register-2021-18823
+- federal-register-2021-19337
+- federal-register-2021-19839
+- federal-register-2021-19842
+- federal-register-2021-19843
+- federal-register-2021-19844
+- federal-register-2021-20933
+- federal-register-2021-21384
+- federal-register-2021-21854
+- federal-register-2021-23064
+- federal-register-2021-26274
+- federal-register-2021-27975
+- federal-register-2021-27976
+- federal-register-2021-28213
+- federal-register-2021-28214
+- federal-register-2022-07753
+- federal-register-2022-07754
+- federal-register-2022-07965
+- federal-register-2022-08078
+- federal-register-2022-08652
+- federal-register-2022-08736
+- federal-register-2022-12740
+- federal-register-2022-12742
+- federal-register-2022-12743
+- federal-register-2022-13866
+- federal-register-2022-14054
+- federal-register-2022-14292
+- federal-register-2022-14294
+- federal-register-2022-14297
+- federal-register-2022-14298
+- federal-register-2022-14351
+- federal-register-2022-16024
+- federal-register-2022-16517
+- federal-register-2022-17028
+- federal-register-2022-20319
+- federal-register-2022-21607
+- federal-register-2022-24446
+- federal-register-2022-25038
+- federal-register-2022-25615
+- federal-register-2022-25617
+- federal-register-2022-25634
+- federal-register-2022-25741
+- federal-register-2022-27470
+- federal-register-2022-27471
+- federal-register-2023-00078
+- federal-register-2023-00082
+- federal-register-2023-01279
+- federal-register-2023-02624
+- federal-register-2023-07399
+- federal-register-2023-07416
+- federal-register-2023-07990
+- federal-register-2023-08509
+- federal-register-2023-09747
+- federal-register-2023-12644
+- federal-register-2023-12648
+- federal-register-2023-12681
+- federal-register-2023-14084
+- federal-register-2023-14894
+- federal-register-2023-15139
+- federal-register-2023-18982
+- federal-register-2023-20968
+- federal-register-2023-20969
+- federal-register-2023-20970
+- federal-register-2023-20971
+- federal-register-2023-20973
+- federal-register-2023-22027
+- federal-register-2023-22029
+- federal-register-2023-24088
+- federal-register-2023-24604
+- federal-register-2023-26376
+- federal-register-2023-27539
+- federal-register-2023-28198
+- federal-register-2023-28230
+- federal-register-2023-28295
+- federal-register-2023-28711
+- federal-register-2024-00107
+- federal-register-2024-00543
+- federal-register-2024-01231
+- federal-register-2024-01700
+- federal-register-2024-01701
+- federal-register-2024-02350
+- federal-register-2024-03012
+- federal-register-2024-03014
+- federal-register-2024-03456
+- federal-register-2024-05276
+- federal-register-2024-05558
+- federal-register-2024-06124
+- federal-register-2024-07507
+- federal-register-2024-08661
+- federal-register-2024-14350
+- federal-register-2024-18044
+- federal-register-2024-18835
+- federal-register-2024-18836
+- federal-register-2024-19223
+- federal-register-2024-19946
+- federal-register-2024-19947
+- federal-register-2024-21562
+- federal-register-2024-21609
+- federal-register-2024-23787
+- federal-register-2024-23989
+- federal-register-2024-29450
+- federal-register-2024-30744
+- federal-register-2025-00121
+- federal-register-2025-00772
+- federal-register-2025-02848
+- federal-register-2025-04735
+- federal-register-2025-06606
+- federal-register-2025-12057
+- federal-register-2025-16224
+- federal-register-2025-17697
+- federal-register-2025-18304
+- federal-register-2025-20696
+- federal-register-2025-21213
+- federal-register-2025-22802
+- federal-register-2025-22803
+- federal-register-2026-01390
+- federal-register-2026-01391
+- federal-register-2026-01392
+- federal-register-2026-01394
+- federal-register-2026-01395
+- federal-register-2026-02378
+- federal-register-2026-02379
+- federal-register-2026-02385
+- federal-register-2026-04667
+- federal-register-2026-07174
+- federal-register-2026-11661
+- federal-register-2026-13701
+- federal-register-2026-14130
+- federal-register-2026-19928
+- federal-register-2026-20896
+- federal-register-2026-21475
+- federal-register-2026-23404
+- federal-register-94-14788
+- federal-register-94-17686
+- federal-register-94-23272
+- federal-register-94-24337
+- federal-register-94-25705
+- federal-register-94-27728
+- federal-register-94-27729
+- federal-register-94-30879
+- federal-register-94-30880
+- federal-register-94-31375
+- federal-register-94-3397
+- federal-register-94-5465
+- federal-register-94-976
+- federal-register-94-9901
+- federal-register-95-11759
+- federal-register-95-11760
+- federal-register-95-12288
+- federal-register-95-14355
+- federal-register-95-15405
+- federal-register-95-16598
+- federal-register-95-16599
+- federal-register-95-18014
+- federal-register-95-20651
+- federal-register-95-20652
+- federal-register-95-20653
+- federal-register-95-2192
+- federal-register-95-2193
+- federal-register-95-22046
+- federal-register-95-24893
+- federal-register-95-24894
+- federal-register-95-28035
+- federal-register-95-28036
+- federal-register-95-30339
+- federal-register-95-30466
+- federal-register-95-30467
+- federal-register-95-30655
+- federal-register-95-3840
+- federal-register-95-3841
+- federal-register-95-4586
+- federal-register-95-4587
+- federal-register-95-4992
+- federal-register-95-4993
+- federal-register-95-6412
+- federal-register-95-6966
+- federal-register-95-6968
+- federal-register-95-7939
+- federal-register-95-7940
+- federal-register-95-7941
+- federal-register-95-9023
+- federal-register-95-9024
+- federal-register-95-9818
+- federal-register-95-9819
+- federal-register-95-9821
+- federal-register-96-14907
+- federal-register-96-15295
+- federal-register-96-17429
+- federal-register-96-17944
+- federal-register-96-18620
+- federal-register-96-19679
+- federal-register-96-21213
+- federal-register-96-22437
+- federal-register-96-22438
+- federal-register-96-22439
+- federal-register-96-22440
+- federal-register-96-22950
+- federal-register-96-2447
+- federal-register-96-2448
+- federal-register-96-2449
+- federal-register-96-2450
+- federal-register-96-2451
+- federal-register-96-2452
+- federal-register-96-26322
+- federal-register-96-27424
+- federal-register-96-6534
+- federal-register-97-12821
+- federal-register-97-13201
+- federal-register-97-16789
+- federal-register-97-19430
+- federal-register-97-22989
+- federal-register-97-244
+- federal-register-97-245
+- federal-register-97-2551
+- federal-register-97-27292
+- federal-register-97-2824
+- federal-register-97-29300
+- federal-register-97-31918
+- federal-register-97-4597
+- federal-register-97-5885
+- federal-register-97-5886
+- federal-register-97-9592
+- federal-register-98-10260
+- federal-register-98-10261
+- federal-register-98-11895
+- federal-register-98-12260
+- federal-register-98-12261
+- federal-register-98-13218
+- federal-register-98-13219
+- federal-register-98-13220
+- federal-register-98-1409
+- federal-register-98-14384
+- federal-register-98-15717
+- federal-register-98-219
+- federal-register-98-22493
+- federal-register-98-22494
+- federal-register-98-22495
+- federal-register-98-25035
+- federal-register-98-26492
+- federal-register-98-27932
+- federal-register-98-27933
+- federal-register-98-27934
+- federal-register-98-27935
+- federal-register-98-28308
+- federal-register-98-28309
+- federal-register-98-28310
+- federal-register-98-28311
+- federal-register-98-28312
+- federal-register-98-28313
+- federal-register-98-28314
+- federal-register-98-29743
+- federal-register-98-31405
+- federal-register-98-33045
+- federal-register-98-33798
+- federal-register-98-33799
+- federal-register-98-5070
+- federal-register-98-5071
+- federal-register-98-5072
+- federal-register-98-5073
+- federal-register-98-5074
+- federal-register-98-8274
+- federal-register-99-10676
+- federal-register-99-12226
+- federal-register-99-12227
+- federal-register-99-12228
+- federal-register-99-13726
+- federal-register-99-13727
+- federal-register-99-13728
+- federal-register-99-13729
+- federal-register-99-13730
+- federal-register-99-13999
+- federal-register-99-17116
+- federal-register-99-17117
+- federal-register-99-1924
+- federal-register-99-1925
+- federal-register-99-1926
+- federal-register-99-1927
+- federal-register-99-1928
+- federal-register-99-1929
+- federal-register-99-1930
+- federal-register-99-1931
+- federal-register-99-1932
+- federal-register-99-1933
+- federal-register-99-1934
+- federal-register-99-1935
+- federal-register-99-20931
+- federal-register-99-20932
+- federal-register-99-22705
+- federal-register-99-22706
+- federal-register-99-2276
+- federal-register-99-2277
+- federal-register-99-2278
+- federal-register-99-24362
+- federal-register-99-25506
+- federal-register-99-2912
+- federal-register-99-29547
+- federal-register-99-29548
+- federal-register-99-30553
+- federal-register-99-30554
+- federal-register-99-30555
+- federal-register-99-30725
+- federal-register-99-30726
+- federal-register-99-30727
+- federal-register-99-4005
+- federal-register-99-6065
+- federal-register-99-7514
+- federal-register-99-8910
+- federal-register-c0-12321
+- federal-register-c1-2021-18819
+- federal-register-c3-18631
+- federal-register-c3-8560
+- federal-register-e5-7394
+- federal-register-e5-7698
+- federal-register-e6-11138
+- federal-register-e6-11139
+- federal-register-e6-1196
+- federal-register-e6-1197
+- federal-register-e6-15024
+- federal-register-e6-15027
+- federal-register-e6-15031
+- federal-register-e6-17703
+- federal-register-e6-8811
+- federal-register-e7-10397
+- federal-register-e7-12904
+- federal-register-e7-20197
+- federal-register-e7-21624
+- federal-register-e7-23885
+- federal-register-e7-23886
+- federal-register-e7-24563
+- federal-register-e7-24564
+- federal-register-e7-24565
+- federal-register-e7-24566
+- federal-register-e7-25628
+- federal-register-e7-4903
+- federal-register-e7-4904
+- federal-register-e7-4905
+- federal-register-e7-514
+- federal-register-e7-5955
+- federal-register-e7-8134
+- federal-register-e7-8136
+- federal-register-e8-17851
+- federal-register-e8-20923
+- federal-register-e8-23710
+- federal-register-e8-25197
+- federal-register-e8-25208
+- federal-register-e8-25349
+- federal-register-e8-28882
+- federal-register-e8-29420
+- federal-register-e8-29500
+- federal-register-e8-4059
+- federal-register-e8-5198
+- federal-register-e8-6884
+- federal-register-e8-8494
+- federal-register-e8-894
+- federal-register-e9-14260
+- federal-register-e9-19886
+- federal-register-e9-19887
+- federal-register-e9-24300
+- federal-register-e9-24301
+- federal-register-e9-3501
+- federal-register-e9-6585
+- federal-register-e9-9258
+- federal-register-e9-9260
+- federal-register-e9-9263
+- federal-register-x94-10426
+- federal-register-x96-20802
+- florida-v-seminole-tribe-of-florida-1999
+- in-re-indian-gaming-related-cases-2003
+- mashantucket-pequot-tribe-v-connecticut-1990
+- maverick-gaming-llc-v-united-states-2024
+- new-mexico-v-department-of-the-interior-2017
+- ponca-tribe-of-oklahoma-v-oklahoma-1994
+- rincon-band-of-luiseno-mission-indians-of-the-rincon-reservation-v-schwarzenegger-2010
+- seneca-nation-of-indians-v-new-york-2021
+- spokane-tribe-of-indians-v-washington-state-1994
+- texas-v-united-states-2007
+- treat-v-stitt-2021
+- west-flagler-associates-ltd-v-haaland-2023
+limits: 'Documents: all 1,200 compact documents were saved; 38 are scans with no text layer, so their
+  clauses could not be read. 1,166 of 1,167 ordinance
+  documents were saved; 266 are scans with no text layer, and the ordinance clauses were not read. The PDFs are kept privately with the project''s working
+  files, not in the repository. Federal Register: 159 list rows have no citation, mostly compacts approved
+  1990 to mid-1994, before the Federal Register API''s coverage; 23 citations were matched by rule (verification
+  inferred); 43 notices matched no list row. Nations: taken from the profile facts that already cite the
+  same list row or link; 21 compact rows have none. Clauses: excerpts were cut by heading, so the first
+  pass missed clauses with unusual headings; every quotation was checked against the extracted text by
+  a script, but every summary is AI-written and is a lead. Context: a fact is read-in-full only when its
+  quotation was found word for word on the cited page; assistants sometimes quoted a fetch tool''s summary,
+  and those facts are title-only. Cases need KeyCite and several need reporter citations (Westlaw list,
+  section 8). News reports on current talks are as of their dates and are medium or low confidence.'
+---
+
+## What was done
+
+The Office of Indian Gaming list was scraped page by page and every linked
+document downloaded with `scripts/gaming/compact_list.py`; the National Indian
+Gaming Commission ordinance table was parsed and each link followed with
+`scripts/gaming/ordinance_list.py`. `pdfinfo` and `pdftotext` recorded page
+counts and text. `scripts/gaming/build_catalog.py` joined each row to the
+profile fact that already cites it, to its Federal Register notice (the
+list's link, or by rule when there is none), and wrote a source record for
+each notice in the Indigo Book form.
+
+For context, a larger model researched good-faith litigation, Secretarial
+Procedures, the part 293 rule and revenue sharing; two small models researched
+each state's negotiating authority and current talks.
+`scripts/gaming/check_quotes.py` fetched every cited page and looked for each
+quotation; `scripts/gaming/build_context.py` set the verification level from
+that check and wrote source records for the cases, regulations and rules.
+
+For clauses, `scripts/gaming/clause_evidence.py` chose each nation's governing
+documents for each state (the latest full compact, the amendments after it,
+and any Secretarial Procedures), cut out the sections under headings about
+dispute resolution, renegotiation, term, revenue sharing and immunity, and
+batched them for small-model reviewers. A script checked every quotation.
+A larger model then read the whole text of the 86 governing documents whose
+dispute clause the first pass could not find and audited a random 30 of the
+rest.
+
+## Output
+
+`research/gaming/` (see its README) and
+`research/analyses/2026-11-21-gaming-compact-negotiation.md`. Items that need
+Westlaw are in section 8 of the project's Westlaw list.
