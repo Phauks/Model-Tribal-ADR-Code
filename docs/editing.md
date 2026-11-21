@@ -149,8 +149,9 @@ design.
 1. A signed-in person opens a draft at `/workspace/drafts/<id>`. The page
    loads the editor and connects a WebSocket to the Worker.
 2. The Worker checks the session and the person's access level for that
-   document (the permission tiers work in the thread "Design permission tiers
-   and admin controls": comment, contribute, full) before passing the
+   document (comment, contribute or full;
+   [decision record 0023](decisions/0023-permission-levels-per-document.md))
+   before passing the
    connection to the draft's Durable Object. The object is never reachable
    except through the Worker.
 3. The object keeps the draft as a Yjs document in its own SQLite storage and
