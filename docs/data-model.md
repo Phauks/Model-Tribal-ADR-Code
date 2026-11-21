@@ -1,0 +1,109 @@
+# Data model
+
+Every piece of content is a plain file with structured fields, checked against
+a JSON Schema in [`schemas/`](../schemas/). The website, the print edition and
+any future templates or API all read these same records. This document explains
+each record type; the schemas are the exact definition.
+
+Schemas use [JSON Schema draft 2020-12](https://json-schema.org/draft/2020-12),
+and records are written in YAML (or YAML front matter on a Markdown file). One
+valid example of each record is in [`schemas/examples/`](../schemas/examples/).
+
+## How the records connect
+
+```text
+research session ──found──▶ source ◀──cites── provision / commentary / essay
+                              │                     │
+                              ├─ rights (permission) ├─ variables (placeholders)
+                              ├─ archives, history   └─ tribes ──▶ tribe profile
+                              └─ tribes ─────────────────────────▶ (states, review)
+```
+
+- A **research session** records how a source was found; the source points back
+  with `found_in`.
+- A **source** holds the citation data, archived copies, change history and
+  rights. Text cites a source by its key, written `[@key]`.
+- **Provisions**, **commentary** and **essays** cite sources and name the tribes
+  they discuss.
+- A **tribe profile** cites sources for every fact, including recognition and
+  state presence.
+- A **glossary entry** defines a term or acronym and cites its sources. Any
+  text links to it as `[[id]]` (see [terminology.md](terminology.md)).
+
+## Record types
+
+| Record | Schema | Stored as | Purpose |
+| --- | --- | --- | --- |
+| Source | [source.schema.json](../schemas/source.schema.json) | `content/sources/<key>.yaml` | Citation data (CSL-JSON), original URL, archives, change history, citator check, rights |
+| Rights | [permission.schema.json](../schemas/permission.schema.json) | the `rights` field of a source | Permission status, legal basis, redistribution, request log |
+| Tribe profile | [tribe.schema.json](../schemas/tribe.schema.json) | `content/tribes/<id>.yaml` | Names, recognition, state presence, justice institutions, published ADR law, review status |
+| Provision | [provision.schema.json](../schemas/provision.schema.json) | `content/provisions/<chapter>-<section>.md` | Model text with alternatives and placeholders |
+| Commentary | [commentary.schema.json](../schemas/commentary.schema.json) | `content/commentary/<chapter>-<section>.md` | Comment, Illustrations and Source Note for one provision |
+| Glossary entry | [glossary.schema.json](../schemas/glossary.schema.json) | `content/glossary/<id>.yaml` | A defined term or acronym, its usage status and sources; linked from text as `[[id]]` |
+| Variables | [variable.schema.json](../schemas/variable.schema.json) | `content/variables/<group>.yaml` | Placeholders such as `{{nation.name}}` and their model text |
+| Research session | [research-session.schema.json](../schemas/research-session.schema.json) | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | How research was done and what it produced |
+| Shared types | [common.schema.json](../schemas/common.schema.json) | n/a | Slugs, dates, versions, state codes, review status, sensitivity flags |
+
+## Permission statuses
+
+The build refuses to publish a quotation beyond a short passage unless the
+source's rights status allows it.
+
+| Status | Meaning |
+| --- | --- |
+| `not-assessed` | Default for a new source |
+| `no-permission-needed` | Facts only, fair use, public domain, a U.S. government work, or an open license; the `basis` field says which |
+| `permission-requested` | Request sent; the `log` records when and to which office |
+| `granted` | Permission given; `scope` and `conditions` record its limits |
+| `denied` | Link only; never reproduce |
+| `tribal-review-required` | Community material that needs the nation's approval regardless of copyright |
+
+The legal bases come from U.S. copyright law: no copyright in works of the
+U.S. government ([17 U.S.C. § 105](https://www.law.cornell.edu/uscode/text/17/105)),
+fair use ([17 U.S.C. § 107](https://www.law.cornell.edu/uscode/text/17/107)),
+and the government edicts doctrine applied to official state legal texts in
+[Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)](https://www.supremecourt.gov/opinions/19pdf/18-1150_7m58.pdf).
+Whether the edicts doctrine reaches tribal law is unsettled, and respect for
+tribal sovereignty points toward asking, so the default for tribal legal texts
+is `link-only` until a nation says otherwise (project analysis, not legal
+advice).
+
+## Review statuses
+
+Records about a nation carry a consultation status, from
+`drafted-from-public-sources` through `sent-to-nation`, `reviewed-by-nation` and
+`approved-by-nation`, or `withdrawn-at-request` when a nation asks for a record
+to be removed. A withdrawal request always wins (see the
+[charter](charter.md)).
+
+## Sensitivity flags
+
+`sensitivity.restricted: true` means a record is never published, exported,
+cached for offline use or served through any API. `tribal_review_required`
+holds a record back until the nation approves. `local_contexts_notices` are
+Notices this project applies; `local_contexts_labels` are Labels a community
+applies through the [Local Contexts Hub](https://localcontexts.org/labels/about-the-labels/),
+which only communities can do
+([DataCite guidance](https://support.datacite.org/docs/local-contexts-notices-and-labels)).
+
+## Built for templates
+
+Provisions and forms write nation-specific words as placeholders, such as
+`{{nation.name}}`, defined in `content/variables/`. The book prints each
+placeholder's model text (for example "[Name of Nation]"); a future template
+builder can substitute a nation's own values. Alternatives carry letter ids so a
+builder can let a nation choose among them.
+
+## Map data
+
+The tribal map is drawn from each profile's `states` list: it shows which
+states a nation has a presence in and does not draw boundaries
+([decision record 0007](decisions/0007-map-shows-state-presence.md)).
+
+## Validation
+
+A check in continuous integration (to be added) will validate every record
+against its schema, confirm every `[@key]` in the text resolves to a source,
+confirm every `[[id]]` resolves to a glossary entry, flag unlinked first uses
+of glossary terms and any use of an "avoid" term outside a quotation, and
+confirm every `found_in` names an existing research session.

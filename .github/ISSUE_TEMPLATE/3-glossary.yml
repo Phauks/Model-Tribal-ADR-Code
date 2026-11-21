@@ -1,0 +1,38 @@
+name: Term or definition
+description: Propose a new glossary term or acronym, or a change to an existing one
+title: "Glossary: "
+labels: ["type: glossary", "track: content", "status: needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The project dictionary is in `content/glossary/` and explained in [docs/terminology.md](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/terminology.md). If you are asking, on behalf of a nation, that its name or a term from its language be written differently or not used, please use the [private route](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/requests.md#until-the-website-is-live).
+  - type: input
+    id: term
+    attributes:
+      label: Term or acronym
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: What would you like?
+      options:
+        - Add a new entry
+        - Change an existing definition
+        - Change how the term should be used (preferred, acceptable, context only, avoid)
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed definition or usage
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Who uses or recommends this term? Native-led sources and the nation's own usage carry the most weight.
+    validations:
+      required: true

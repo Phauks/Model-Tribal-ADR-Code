@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/tribe.schema.json",
+  "title": "Tribe profile",
+  "description": "One Native nation or community: names, recognition, state presence, justice institutions and published dispute-resolution law. Stored as content/tribes/<id>.yaml. Every fact cites a source key.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "names", "recognition", "states", "review"],
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/slug" },
+    "names": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["official"],
+      "properties": {
+        "official": { "type": "string", "description": "Name as it appears in the recognizing authority." },
+        "self_designation": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Names the nation uses for itself, including in its own language, as the nation publishes them."
+        },
+        "former": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "recognition": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "source"],
+        "properties": {
+          "type": { "type": "string", "enum": ["federal", "state", "unrecognized", "petitioning"] },
+          "state": { "$ref": "common.schema.json#/$defs/stateCode", "description": "For state recognition: which state." },
+          "source": { "$ref": "common.schema.json#/$defs/slug", "description": "Source key of the recognizing authority (e.g. the BIA list notice)." },
+          "since": { "$ref": "common.schema.json#/$defs/calendarDate" }
+        }
+      }
+    },
+    "states": {
+      "type": "array",
+      "minItems": 1,
+      "description": "States where the nation has a presence. Drives the map; no boundaries are drawn.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["state", "source"],
+        "properties": {
+          "state": { "$ref": "common.schema.json#/$defs/stateCode" },
+          "presence": { "type": "string", "enum": ["land", "government-office", "service-area", "other"] },
+          "source": { "$ref": "common.schema.json#/$defs/slug" }
+        }
+      }
+    },
+    "justice_institutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "name", "source"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["tribal-court", "peacemaking-program", "court-of-appeals", "healing-to-wellness-court", "elders-council", "other"] },
+          "name": { "type": "string" },
+          "source": { "$ref": "common.schema.json#/$defs/slug" }
+        }
+      }
+    },
+    "dispute_resolution_law": {
+      "type": "array",
+      "description": "Source keys of the nation's published laws on peacemaking, mediation, arbitration or related processes.",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "last_verified"],
+      "properties": {
+        "status": { "$ref": "common.schema.json#/$defs/reviewStatus" },
+        "last_verified": { "$ref": "common.schema.json#/$defs/calendarDate" },
+        "note": { "type": "string" }
+      }
+    },
+    "sensitivity": { "$ref": "common.schema.json#/$defs/sensitivity" }
+  }
+}

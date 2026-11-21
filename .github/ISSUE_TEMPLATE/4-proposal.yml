@@ -1,0 +1,41 @@
+name: Content proposal
+description: Propose a model provision, commentary, illustration or essay
+title: "Proposal: "
+labels: ["type: proposal", "track: content", "status: needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you start:** issues here are public. If your request concerns restricted, ceremonial or community-held knowledge, or you are writing on behalf of a nation to restrict or remove material, please use the [private route](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/requests.md#until-the-website-is-live) instead.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What are you proposing?
+      options:
+        - Model provision (or an alternative to one)
+        - Commentary or illustration
+        - Essay
+        - Form or template
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What it covers and why the book needs it.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: The Tribal laws, cases, programs or scholarship it draws on.
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Project rules
+      options:
+        - label: I have read the [charter](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/charter.md) and the [style guide](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/style-guide.md).
+          required: true
+        - label: This does not include restricted, ceremonial or community-held knowledge without the community's written approval.
+          required: true

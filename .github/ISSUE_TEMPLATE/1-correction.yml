@@ -1,0 +1,36 @@
+name: Correction
+description: Report a factual error in published content that involves no sensitive material
+title: "Correction: "
+labels: ["type: correction", "track: content", "status: needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you start:** issues here are public. If your request concerns restricted, ceremonial or community-held knowledge, or you are writing on behalf of a nation to restrict or remove material, please use the [private route](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/requests.md#until-the-website-is-live) instead.
+  - type: input
+    id: location
+    attributes:
+      label: Where is the error?
+      description: A page URL, section number (for example § 2-104) or file path.
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: What is wrong, and what should it say?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the correction
+      description: A citation or link that supports the correction.
+    validations:
+      required: true
+  - type: checkboxes
+    id: sensitivity
+    attributes:
+      label: Sensitivity
+      options:
+        - label: This correction does not involve restricted, ceremonial or community-held knowledge.
+          required: true

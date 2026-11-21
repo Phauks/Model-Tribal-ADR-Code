@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/glossary.schema.json",
+  "title": "Glossary entry",
+  "description": "content/glossary/<id>.yaml: one defined term, acronym or phrase. Text links to an entry with [[id]] or [[id|shown text]]; the website and the print and ebook editions resolve every link to this record. See docs/terminology.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "term", "kind", "usage", "definition"],
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Stable identifier used in [[id]] links. Must match the file name."
+    },
+    "term": {
+      "type": "string",
+      "description": "The headword as it should normally be written, with its capitalization (e.g. 'Native nations', 'ADR')."
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["term", "acronym", "legal-term", "phrase"],
+      "description": "term: a word the project defines for its own usage; acronym: an abbreviation (needs 'expansion'); legal-term: a term defined by a statute, regulation or court, which must cite that source; phrase: a set expression."
+    },
+    "expansion": {
+      "type": "string",
+      "description": "For acronyms: the words written out, e.g. 'alternative dispute resolution'. The first link in each chapter or web page prints the expansion followed by the acronym."
+    },
+    "usage": {
+      "type": "string",
+      "enum": ["preferred", "acceptable", "context-only", "avoid"],
+      "description": "preferred: use by default; acceptable: correct but not the default; context-only: use only in the stated context (e.g. quoting a statute); avoid: do not use in the project's own voice. The text checker flags 'avoid' terms outside quotations."
+    },
+    "definition": {
+      "type": "string",
+      "description": "Markdown. May cite sources with [@key] and link other entries with [[id]]."
+    },
+    "usage_note": {
+      "type": "string",
+      "description": "Markdown. When and how to use the term, and what to write instead where relevant."
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "Other spellings and forms (plurals, possessives) that the text checker treats as this term when it looks for unlinked uses."
+    },
+    "use_instead": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "For 'avoid' and 'context-only' entries: the ids of the entries to use instead."
+    },
+    "see_also": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true
+    },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "uniqueItems": true,
+      "description": "Keys of content/sources records relied on for the definition or usage. A 'legal-term' entry needs at least one."
+    },
+    "basis": {
+      "type": "string",
+      "enum": ["source", "project-analysis", "source-and-project-analysis"],
+      "description": "Whether the entry restates sources, records the project's own choice, or both (charter, commitment 8)."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "adopted", "retired"],
+      "default": "draft"
+    },
+    "since": {
+      "$ref": "common.schema.json#/$defs/version",
+      "description": "Content version in which the entry was first published."
+    },
+    "redirect_to": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "For a retired entry: where old [[id]] links now point. Ids are never reused."
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "acronym" } } },
+      "then": { "required": ["expansion"] }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "legal-term" } } },
+      "then": { "required": ["sources"], "properties": { "sources": { "minItems": 1 } } }
+    },
+    {
+      "if": { "properties": { "usage": { "enum": ["avoid", "context-only"] } } },
+      "then": { "required": ["use_instead"] }
+    },
+    {
+      "if": { "properties": { "status": { "const": "retired" } } },
+      "then": { "required": ["redirect_to"] }
+    }
+  ]
+}
