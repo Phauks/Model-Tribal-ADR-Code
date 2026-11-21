@@ -76,8 +76,8 @@ YAML fields rather than that vocabulary (project choice).
   first record found two: the Ak-Chin Indian Community's compact dispute
   clause, and the Yavapai-Prescott Indian Tribe's, which cites the Ak-Chin
   copy of the 2003 Arizona compact.
-- The Federal Register notices of approval become `approval.source` once
-  their source records are merged (pull request #42).
+- The Federal Register notices of approval that pull request #42 recorded
+  are each version's `approval.source`.
 
 ## Sources
 
