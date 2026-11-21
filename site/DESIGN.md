@@ -28,7 +28,7 @@ not findings from user research, which has not been done (project analysis).
 | --- | --- | --- |
 | Reader: a Tribal council member or court clerk drafting an ordinance | Compare the alternatives in a section and understand what each choice does | They compare alternatives and read the comment without leaving the page |
 | Researcher: a law student or scholar | Find which nations have published dispute resolution or peacemaking law, and cite it | Every fact is one step from its source, and a citation names the version |
-| Nation representative: staff of a nation's court, legal department or cultural office | Check what the project says about the nation, and correct, restrict or remove it | A request takes minutes, needs no account, and protects first |
+| Nation representative: staff of a nation's court, legal department or cultural office | Check what the project says about the nation, and correct, restrict or remove it; or, if the nation is missing, ask to add it with proof from a government source | A request takes minutes, needs no account, and protects first |
 | Contributor: a peacemaker, Indigenous author, reviewer or co-author | Offer sources, review, preferred terms or text, and be credited as they choose | They contribute without a GitHub account |
 
 User research with people in each role is the most important next step for
@@ -147,11 +147,11 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Section | Contents rail, text, margin | "Model text, not law in force" notice with the version and last change; hanging section number; status chips; text with alternatives and placeholders; Comment, Illustrations, Source note; previous and next; margin: On this page, notes, "Cite this section," "Adapt this section" |
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
-| Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice |
+| Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice; "Is your nation missing? Ask to be added", also shown when a search finds no nation |
 | Glossary entry | Entry rail, text, margin | Term, usage status, definition with sources, how the project uses it, where it appears, see also, "Suggest a change to this term" |
 | Source record | Text and margin | Citation, original link, archived copies, change history, quotation basis, what cites it |
 | Changelog | One column with tabs | Content, Website, Print and Requests log; each version's entries; comparison of a section between versions |
-| Request | One question per page | Start page; what would you like to do; which material; how can we reply; details; credit (contribute only); check your request; request sent |
+| Request | One question per page | Start page; what would you like to do; which material; how can we reply; details; credit (contribute only); check your request; request sent. Adding a missing nation branches to: which nation; which government source names it (kind, citation or upload); how can we reply; who is making this request (statement); check your request; request sent; and later a written decision with reasons and buttons to apply again or ask for reconsideration ([requests.md](../docs/requests.md#adding-a-nation-that-is-missing)) |
 | Read offline | One column | Install the site; save the code, the profiles or both; PDF and EPUB downloads; what is saved and as of when |
 
 ### Nation pages
@@ -287,37 +287,97 @@ names are spelled out, like every identifier in the project
 
 ### Color
 
-The palette below is a first pass and will change; see
-[section 13](#13-open-questions-and-next-steps), item 5.
+The palette is deep teal and burnt orange on warm paper. Trevor chose the two
+hues on Nov. 20, 2026, after finding the first pass (white, near-black and
+blue) stale and somewhat sad. It is still a placeholder: the commissioned
+Native art may change it (see [Color and Native design](#color-and-native-design)
+below and [section 13](#13-open-questions-and-next-steps), item 5).
 
 Every text color passes WCAG's 4.5:1 minimum for text[^wcag-143] on the
 backgrounds it is used on, and control borders pass the 3:1 minimum for
 non-text contrast.[^wcag-1411] Ratios were computed with the WCAG relative
 luminance formula (project calculation).
 
-| Token | Light | Ratio on paper | Dark | Ratio on paper |
+| Token | Light | Ratio | Dark | Ratio |
 | --- | --- | --- | --- | --- |
-| paper | `#FFFFFF` | | `#121619` | |
-| surface | `#F2F4F6` | | `#1A2026` | |
-| ink | `#1A2027` | 16.4:1 | `#E9EDF0` | 15.5:1 |
-| ink-muted | `#4B5662` | 7.5:1 | `#A7B1BA` | 8.4:1 |
-| link, action, ADR track | `#1F4FA3` | 7.8:1 | `#8CB4FF` | 8.7:1 |
-| link-visited | `#5A3D8C` | 8.5:1 | `#C3A8F0` | 8.8:1 |
-| track-peacemaking | `#1C6B47` | 6.5:1 | `#6CCB9C` | 9.2:1 |
-| control-border | `#66717D` | 5.0:1 | `#8A949E` | 5.9:1 |
-| danger | `#B42318` | 6.6:1 | `#FF8A80` | 8.0:1 |
+| paper | `#FFFAF5` | | `#0F1E21` | |
+| surface | `#F6EEE6` | | `#16292D` | |
+| band (masthead) | `#0F4C54` | white text 9.6:1 | `#0A3237` | |
+| ink | `#22201E` | 15.7:1 | `#F3EFEA` | 14.9:1 |
+| ink-muted | `#5A524C` | 7.4:1 | `#B9C4C4` | 9.6:1 |
+| link, peacemaking track | `#1A6D76` | 5.8:1 | `#6CCAD3` | 9.0:1 |
+| action, ADR track | `#B4461A` | 5.3:1; white text on it 5.5:1 | `#FF9A66` | 8.2:1 |
+| link-visited | `#6B3F7A` | 7.7:1 | `#D7B3E6` | 9.4:1 |
+| control-border | `#7A6F66` | 4.7:1 | `#7F9599` | 5.4:1 |
+| danger | `#9C1C10` | 7.8:1 | `#FF8A80` | |
 | placeholder-background | `#FFF0B3` | ink 14.4:1 | `#4A3B00` | ink 9.3:1 |
 | focus | `#FFD34D` with a 3 px ink ring | | `#FFD34D` | |
 
+Ratios are against each theme's paper unless stated.
+
 Rules (project choice):
 
-- Color only marks meaning: links, the two tracks, placeholders, focus,
-  errors and the map classes. Everything else is ink on paper.
+- Color marks meaning and structure: the masthead band, links, the two
+  tracks, the main action, placeholders, focus, errors and the map classes.
+  Reading text stays dark ink on warm paper.
 - Color is never the only cue. Links are underlined; tracks are named;
   compared text is struck through or underlined as well as highlighted;
   map tiles print their counts.
-- The two track colors differ in lightness as well as hue, so they stay apart
-  for readers who do not see the difference between blue and green.
+- The track colors are close in lightness, so they rely on hue and on their
+  labels. Orange and teal remain distinct for the common red-green color
+  vision differences, which is why the pair suits the tracks (project
+  analysis), but the words "ADR track" and "Peacemaking track" always appear.
+
+### Color and Native design
+
+The lead author asked the project to look into "Native American color
+theory." The research session
+[2026-11-21-color-research](../research/sessions/2026/2026-11-21-color-research.md)
+found that there is no single one, and that some color sets are sacred:
+
+- "There is no single American Indian culture or language."[^nk360] Color
+  meanings belong to each nation. In the Arizona Department of Education's
+  *Tribal Seals and Flags*, the same color means different things for
+  different nations, and its entry for the White Mountain Apache Tribe
+  describes "the four Sacred colors, black, blue, yellow and white."[^arizona-seals] The Navajo
+  Nation describes its flag's colors as those of "the four sacred mountains
+  that define balance and order in Diné life," inspired by "the sacred
+  practice of sandpainting."[^navajo-flag]
+- The International Indigenous Design Charter, written "for both
+  non-Indigenous and Indigenous designers," asks for design that is
+  Indigenous led and community specific, and warns that "secret and sacred
+  material is often restricted under customary law and therefore unsuitable
+  for publication."[^design-charter]
+- Sadie Red Wing (Lakota, Spirit Lake Nation): "If you do not know what you
+  are communicating by using Native American symbols, don't use them," and
+  "You cannot represent the tribes of California with New Mexican
+  anything."[^red-wing]
+- Native-led organizations use saturated, contemporary color. The live
+  stylesheets of the Native Governance Center and the National Congress of
+  American Indians, for example, pair deep teals with warm reds, clay or
+  marigold (observed in each site's CSS, not in a published brand
+  guide).[^org-palettes] The artist Jeffrey Gibson, who represented the
+  United States at the 2024 Venice Biennale, has said, "We've been dismissed
+  as garish and too much because of our use of color."[^gibson]
+
+What the project does (project analysis):
+
+- Treats color as design, not as "Native meaning." The site's colophon says
+  the palette carries no tribal symbolism, and later names the artist whose
+  work informs it.
+- Never uses a nation's directional, ceremonial or flag colors, or a
+  medicine-wheel set, as decoration.
+- Keeps teal and orange as plain fields. No feathers, patterns or borders
+  that turn the palette into a "Southwest" costume standing in for 575
+  nations. No Native-authored source found names that palette as a cliché;
+  avoiding it follows from the guidance against pan-Indian imagery above.
+- Brings the commissioned Native artist in as a co-designer of the palette,
+  not a reviewer at the end, as IllumiNative's industry guide advises against
+  consultants brought in "to only rubber stamp or fix an issue at the end of
+  the creative process."[^illuminative]
+- Keeps the nation profile template neutral, so one aesthetic is not wrapped
+  around every nation. A nation's own seal or flag appears only with its
+  permission and is never recolored.
 
 ### Type
 
@@ -448,15 +508,10 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 3. **Icon set:** to be chosen; it must not draw on Native motifs.
 4. **Art:** sizes for the cover, part openers and the home page space, to
    give to the art contest.
-5. **Color needs another pass.** Trevor's review on Nov. 20, 2026: the
-   layout and the separation of information work, but the palette feels
-   stale and somewhat sad, and the community it serves is vibrant. The next
-   pass moves away from the black, white and blue scheme toward warmer, more
-   vivid color, once the site is built and can be judged in place. Guardrails
-   (project analysis): no stock "Native" palettes that stand in for any
-   nation's art; ideally the palette is set with the commissioned Native
-   artists or drawn from their work; every pair still meets the contrast rules
-   in section 7. Only `design-tokens.json` changes.
+5. **Color, second pass.** Trevor's review on Nov. 20, 2026 found the first
+   palette stale and somewhat sad; he chose teal and burnt orange, now in the
+   tokens. Judge it again once the site is built, and set the final palette
+   with the commissioned Native artist ([Color and Native design](#color-and-native-design)).
 6. **Template builder:** how placeholders and alternatives become a nation's
    draft ordinance.
 
@@ -464,6 +519,12 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 
 [^illuminative]: IllumiNative, *Industry Guide* (June 2022), [illuminative.org](https://illuminative.org/wp-content/uploads/2022/06/IllumiNative_industry-guide_June-2022.pdf), as summarized in the earlier design notes (project files `design/website-exploration/reference-sites-and-ideas.md`).
 [^nk360]: Smithsonian National Museum of the American Indian, *Native Knowledge 360°: Essential Understandings*, [americanindian.si.edu/nk360/about/understandings](https://americanindian.si.edu/nk360/about/understandings) (accessed Nov. 21, 2026).
+[^arizona-seals]: Arizona Department of Education, Office of Indian Education, *Tribal Seals and Flags* (Fall 2022), [naair.arizona.edu](https://naair.arizona.edu/sites/default/files/2024-08/Tribal%20Seals%20and%20Flags.pdf) (accessed Nov. 21, 2026).
+[^navajo-flag]: Navajo Nation Office of the President and Vice President, *A Flag That Remembers* (Jan. 7, 2026), [opvp.navajo-nsn.gov](https://opvp.navajo-nsn.gov/260107-a-flag-that-remembers) (accessed Nov. 21, 2026).
+[^design-charter]: Russell Kennedy, Meghan Kelly, Jefa Greenaway and Brian Martin, *International Indigenous Design Charter* (2018), [ico-D](https://www.theicod.org/resources/international-indigenous-design-charter) (accessed Nov. 21, 2026).
+[^red-wing]: Sadie Red Wing, *Decolonizing Native American Design*, Communication Arts, [commarts.com](https://www.commarts.com/columns/decolonizing-native-american-design) (accessed Nov. 21, 2026).
+[^org-palettes]: Native Governance Center stylesheet, [nativegov.org](https://nativegov.org/wp-content/themes/ngc/dist/css/spm.min.css); National Congress of American Indians, [ncai.org](https://www.ncai.org/) (both read Nov. 21, 2026). Colors were taken from live CSS, not from published brand guides.
+[^gibson]: Colossal, article on Jeffrey Gibson's U.S. Pavilion at the 2024 Venice Biennale (Apr. 2024), [thisiscolossal.com](https://www.thisiscolossal.com/2024/04/jeffrey-gibson-us-pavilion/) (accessed Nov. 21, 2026).
 [^uswds-banner]: U.S. Web Design System, *Banner*, [designsystem.digital.gov/components/banner](https://designsystem.digital.gov/components/banner/) (accessed Nov. 21, 2026).
 [^govuk-one-thing]: Government Digital Service, *Structuring forms: start with one thing per page*, [gov.uk/service-manual/design/form-structure](https://www.gov.uk/service-manual/design/form-structure#start-with-one-thing-per-page) (accessed Nov. 21, 2026).
 [^govuk-a11y]: GOV.UK Design System, *Accessibility statement*, [design-system.service.gov.uk/accessibility-statement](https://design-system.service.gov.uk/accessibility-statement/) (accessed Nov. 21, 2026).

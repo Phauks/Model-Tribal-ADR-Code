@@ -98,7 +98,8 @@ heritage."[^undrip-31] Therefore:
 ### 6. The right to correct, restrict or withdraw
 
 A Native nation may ask that material about it be corrected, restricted or
-removed, and may contribute to it. The nation's request wins. This is the
+removed, and may contribute to it. A nation the project has missed may ask
+to be added. The nation's request wins. This is the
 project's implementation of CARE's "Authority to control" (project analysis).
 
 **Who may ask.** A nation speaks through its own government or an office it
@@ -116,6 +117,7 @@ name, words or contribution.
 | Restrict | Hides the material from the website, exports, offline copies and any API while the request is reviewed, or permanently marks it restricted (commitment 5). |
 | Remove | Withdraws the record, sets its review status to "withdrawn at request", and leaves a notice that says only that material was withdrawn at the nation's request. |
 | Contribute | Adds the nation's sources, review comments, preferred terms or authored text, credited as the contributor chooses (commitment 7). |
+| Add | Adds a nation the project has missed when a federal or state government source names it, after checking that source; explains the reasons in writing if it declines, and accepts new proof at any time or a request for reconsideration ([requests.md](requests.md#adding-a-nation-that-is-missing)). |
 
 **How the project responds.**
 
