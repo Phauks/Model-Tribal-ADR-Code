@@ -212,6 +212,53 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Washoe Tribe of Nevada & California (Carson Colony, Dresslerville Colony, Woodfords Community,
     Stewart Community, & Washoe Ranches)
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by state named in the nation's official name
+    in the 2026 list (multi-state nation), so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted Nevada's offer to retrocede all civil and criminal jurisdiction acquired under
+    Public Law 280 (Nevada was an optional state, 1955) over the Carson Colony, Dresslerville Colony,
+    Washoe Tribal Farms and Washoe Pinenut Allotment, effective July 1, 1975. (40 FR 27501)
+  source: federal-register-1975-nevada-retrocession
+  confidence: medium
+  as_of: '1975-07-01'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Washoe Tribe of Nevada & California (Carson Colony, Dresslerville Colony, Woodfords
+    Community, Stewart Community, & Washoe Ranches) Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+- topic: indian-child-welfare-act
+  value: reassumed-jurisdiction
+  detail: Approval of petition under 25 U.S.C. § 1918 covering Washoe trust lands in Alpine County, California
+    (Woodfords Indian Community, the Wade Property and Sacramento public domain trust allotments). (61
+    FR 1779)
+  source: federal-register-1996-washoe-icwa-reassumption
+  confidence: high
+  as_of: '1996-01-23'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Carson Colony Community Council; Dresslerville Community Council; Stewart Community
+    Council; Washoe Tribe of Nevada and California; Woodfords Community Council". Name matched to the
+    roster entry.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

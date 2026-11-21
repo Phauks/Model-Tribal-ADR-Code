@@ -124,6 +124,59 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of all civil and criminal jurisdiction over the Pascua Yaqui
+    Indian Reservation that had been vested in Arizona by the Act of September 18, 1978 (25 U.S.C. 1300f(c))
+    and the Act of December 23, 1982; this was state jurisdiction under the nation's recognition statute
+    rather than an assumption under Public Law 280 section 7. (50 FR 34555)
+  source: federal-register-1985-pascua-yaqui-retrocession
+  confidence: high
+  as_of: '1985-08-27'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pascua Yaqui Tribe of Arizona Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2014-02-20 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-pascua-yaqui-tribe-of-arizona
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Pascua Yaqui Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Department of Justice granted the nation's Violence Against Women Act 2013 Pilot Project application,
+    approved February 6, 2014 (pilot project).
+  source: department-of-justice-violence-against-women-act-2013-pilot-project
+  confidence: medium
+  as_of: '2014-02-06'
+  locator: List of granted Pilot Project applications
+  note: Primary source but describes the 2014-2015 pilot period; page updated April 7, 2023.
+- topic: tribal-law-and-order-act-enhanced-sentencing
+  value: implementing
+  detail: Listed among tribes exercising enhanced sentencing and incarcerating inmates under the Tribal
+    Law and Order Act (as of 2013 interviews).
+  source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
+  confidence: medium
+  as_of: '2013'
+  locator: p. 3, list of tribes exercising enhanced sentencing
+  note: Listed as "Pascua Yaqui".
+memberships:
+- organization: Inter Tribal Council of Arizona
+  source: inter-tribal-council-of-arizona-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pascua Yaqui Tribe". Name matched to the roster entry.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

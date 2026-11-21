@@ -108,6 +108,37 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Warm Springs Reservation of Oregon
+jurisdiction:
+- topic: public-law-280
+  value: excepted
+  detail: 'Statutory exception: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a) list Oregon as "All Indian
+    country within the State, except the Warm Springs Reservation."'
+  source: us-code-title-18-section-1162
+  confidence: high
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) table; 28 U.S.C. § 1360(a) table
+  note: Statute text current as amended through Pub. L. 111-211 (2010).
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Confederated Tribes of the Warm Springs Reservation of Oregon Confidence lowered from
+    high by the lead session: the notice prints its table as page images, so nation names were read from
+    images and matched to the roster.'
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes of Warm Springs". Name matched to the roster entry.
+- organization: Columbia River Inter-Tribal Fish Commission
+  source: columbia-river-inter-tribal-fish-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes of the Warm Springs Reservation of Oregon".
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

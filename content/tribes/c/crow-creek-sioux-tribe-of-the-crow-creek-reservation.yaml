@@ -117,6 +117,23 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+memberships:
+- organization: Great Plains Tribal Leaders Health Board
+  source: great-plains-tribal-leaders-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Crow Creek Sioux Tribe". Name matched to the roster entry.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

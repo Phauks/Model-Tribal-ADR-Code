@@ -108,6 +108,49 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Squaxin Island Tribe of the Squaxin Island Reservation
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Squaxin Island Tribe of the Squaxin Island Reservation Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Squaxin Island Tribe". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Squaxin Island Tribe". Name matched to the roster entry.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

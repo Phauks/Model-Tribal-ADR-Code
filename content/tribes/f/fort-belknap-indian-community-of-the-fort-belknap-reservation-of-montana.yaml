@@ -107,6 +107,23 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+memberships:
+- organization: Rocky Mountain Tribal Leaders Council
+  source: rocky-mountain-tribal-leaders-council-who-we-are
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Fort Belknap Indian Community". Name matched to the roster entry.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

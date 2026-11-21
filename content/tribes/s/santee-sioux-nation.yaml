@@ -114,6 +114,29 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Santee Sioux Nation, Nebraska
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of civil and criminal jurisdiction acquired by Nebraska under
+    Public Law 280, effective February 15, 2006. Nebraska is otherwise a mandatory state. (71 FR 7994)
+  source: federal-register-2006-santee-sioux-retrocession
+  confidence: high
+  as_of: '2006-02-15'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Santee Sioux Nation, Nebraska Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Great Plains Tribal Leaders Health Board
+  source: great-plains-tribal-leaders-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Santee Sioux Tribe of Nebraska". Name matched to the roster entry.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

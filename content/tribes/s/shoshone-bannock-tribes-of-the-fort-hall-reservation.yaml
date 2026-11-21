@@ -139,6 +139,45 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Shoshone-Bannock Tribes of the Fort Hall Reservation
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Idaho assumed civil and criminal enforcement jurisdiction in Indian country only for seven
+    subjects: compulsory school attendance; juvenile delinquency and youth rehabilitation; dependent,
+    neglected and abused children; insanities and mental illness; public assistance; domestic relations;
+    operation of motor vehicles on county or state roads (Idaho Code § 67-5101, 1963).'
+  source: idaho-code-67-5101
+  confidence: medium
+  as_of: '1963'
+  locator: § 67-5101 A-G
+  note: Nation matched to Idaho by office state; statute applies to all Indian country in Idaho for these
+    subjects.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Shoshone-Bannock Tribes of the Fort Hall Reservation Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+memberships:
+- organization: Rocky Mountain Tribal Leaders Council
+  source: rocky-mountain-tribal-leaders-council-who-we-are
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Shoshone Bannock Tribes of Ft. Hall". Name matched to the roster entry.
+- organization: Coalition of Large Tribes
+  source: coalition-of-large-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Shoshone-Bannock Tribes". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Shoshone-Bannock Tribes of the Fort Hall Reservation".
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

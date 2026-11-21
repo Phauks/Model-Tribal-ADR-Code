@@ -246,6 +246,69 @@ federal_administration:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Minnesota is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Minnesota. Applies to the nation''s Indian
+    country within Minnesota; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Minnesota"
+  note: Statute is primary; nation matched to Minnesota by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: public-law-280
+  value: retroceded
+  detail: 'Bois Forte Band (Nett Lake) only: Interior accepted retrocession of all criminal jurisdiction
+    exercised by Minnesota over the Bois Forte Indian Reservation at Nett Lake. Other component reservations
+    of the Minnesota Chippewa Tribe are not covered. (40 FR 4026)'
+  source: federal-register-1975-bois-forte-retrocession
+  confidence: medium
+  as_of: '1975-01-27'
+- topic: public-law-280
+  value: concurrent-federal-jurisdiction-accepted
+  detail: 'Mille Lacs Band only: the Deputy Attorney General granted the Mille Lacs Band of Ojibwe request
+    for United States assumption of concurrent federal criminal jurisdiction under 18 U.S.C. § 1162(d),
+    effective January 1, 2017 (81 FR 4335).'
+  source: federal-register-2016-mille-lacs-concurrent-federal-jurisdiction
+  confidence: high
+  as_of: '2017-01-01'
+- topic: public-law-280
+  value: concurrent-federal-jurisdiction-accepted
+  detail: 'White Earth Band only: listed by the Tribal Court Clearinghouse as granted United States concurrent
+    jurisdiction under 18 U.S.C. § 1162(d).'
+  source: tribal-court-clearinghouse-public-law-280
+  confidence: medium
+  as_of: '2013'
+  note: Secondary source; the 2016 Office of Tribal Justice compilation (footnote 3) gives June 1, 2013.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12. Listed separately
+    for each of the six component bands.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Minnesota Chippewa Tribe - Bois Forte Band (Nett Lake); Minnesota Chippewa Tribe -
+    Fond du Lac Band; Minnesota Chippewa Tribe - Grand Portage Band; Minnesota Chippewa Tribe - Leech
+    Lake Band; Minnesota Chippewa Tribe - Mille Lacs Band; Minnesota Chippewa Tribe - White Earth Band'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Bois Forte Reservation Business Committee; Fond du Lac Reservation Business Committee;
+    Grand Portage Reservation Business Committee; Leech Lake Reservation Business Committee; Mille Lacs
+    Band Assembly Minnesota Agency:; Minnesota Chippewa Tribe; White Earth Reservation Business Committee".
+    Name matched to the roster entry. Component bands of the Minnesota Chippewa Tribe are listed separately
+    as members.
+- organization: Great Lakes Indian Fish and Wildlife Commission
+  source: great-lakes-indian-fish-and-wildlife-commission-commission
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Nagaajiwanaang" (link https://www.fdlrez.com/); "Misi-zaaga'iganiing" (link https://www.millelacsband.com/).
+    Fond du Lac Band and Mille Lacs Band, component bands of the Minnesota Chippewa Tribe.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
