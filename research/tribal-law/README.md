@@ -23,6 +23,7 @@ kept as a separate track.
 | [`no-provision-passages.json`](no-provision-passages.json) | Passage that matched a search term but held no provision, with the reason (for example, the term was used in another sense, or the passage was a table of contents). For tables of contents it also lists the headings, so chapters not yet fetched can be found | `collect_law_texts.py` `merge` |
 | [`counts.json`](counts.json) | Totals by status, method, setting, subject area, scope, confidence and second-pass verdict | both scripts |
 | [`briefs/`](briefs/) | The instructions the first and second readers followed | — |
+| [`evidence-spike-passages.csv`](evidence-spike-passages.csv) | Passage about rules of evidence, proof of custom, traditional privileges or compromise offers, classified by machine for the [evidence spike](../analyses/2026-11-21-tribal-rules-of-evidence.md). No quotations; not checked by a person | [`scripts/law/evidence_spike_extract.py`](../../scripts/law/evidence_spike_extract.py), then smaller-model helpers |
 
 ## How the provisions were found
 
