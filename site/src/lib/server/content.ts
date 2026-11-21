@@ -142,7 +142,13 @@ export interface NationRecord {
 	};
 	recognition?: (CitedFact & { type: string; legal_basis?: string })[];
 	states?: (CitedFact & { state: string; presence?: string })[];
-	contacts?: (CitedFact & { kind: string; value: string; label?: string })[];
+	contacts?: (CitedFact & {
+		kind: string;
+		value: string;
+		label?: string;
+		link_status?: 'live' | 'lapsed';
+		link_checked?: string;
+	})[];
 	languages?: (CitedFact & { name?: string })[];
 	federal_administration?: CitedFact & {
 		bureau_of_indian_affairs_region?: string;

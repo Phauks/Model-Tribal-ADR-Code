@@ -40,10 +40,24 @@ function cited(sources: SourceUses, section: string, fact: CitedFact, item: Fact
 }
 
 /** A contact as the page shows it, with a link a reader can act on where one makes sense. */
-function contactItem(fact: { kind: string; value: string; label?: string }): FactItem {
+function contactItem(fact: {
+	kind: string;
+	value: string;
+	label?: string;
+	link_status?: string;
+	link_checked?: string;
+}): FactItem {
 	const detail = fact.label;
 	switch (fact.kind) {
 		case 'website':
+			// A lapsed domain no longer belongs to the nation, so it is never linked.
+			if (fact.link_status === 'lapsed') {
+				const checked = fact.link_checked ? ` (checked ${fact.link_checked})` : '';
+				return {
+					text: fact.value,
+					detail: [detail, `No longer the nation's website${checked}`].filter(Boolean).join('; ')
+				};
+			}
 			return { text: fact.value, link: webLink(fact.value), detail };
 		case 'physical-address':
 		case 'mailing-address':
