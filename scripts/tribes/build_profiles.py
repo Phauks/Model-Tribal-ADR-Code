@@ -102,8 +102,8 @@ def date_parts(value):
 
 
 def letter_folder(name):
-    """First letter of an id or key, or 'other' for any other first character."""
-    return name[:1] if "a" <= name[:1] <= "z" else "other"
+    """First letter of an id or key, or '_other' for any other first character."""
+    return name[:1] if "a" <= name[:1] <= "z" else "_other"
 
 
 def source_path(key):

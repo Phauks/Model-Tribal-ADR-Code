@@ -5,7 +5,7 @@ Checks:
   - each example in schemas/examples/ and each record in content/ and
     research/sessions/ validates against its schema
   - file names match record ids and keys, and tribe profiles and source records
-    sit in the folder named for their first letter ('other' for any other first character)
+    sit in the folder named for their first letter ('_other' for any other first character)
   - every [@key] and every glossary 'sources' entry names a source record
   - every [[id]], 'see_also', 'use_instead' and 'redirect_to' names a glossary entry
   - every 'found_in' names a research session
@@ -73,11 +73,11 @@ def dates_as_text(value):
 
 
 def letter_folder(name: str) -> str:
-    """Folder for a tribe profile or source record: its first letter, or 'other' when
+    """Folder for a tribe profile or source record: its first letter, or '_other' when
     the name starts with anything else (ids and keys allow only a-z and 0-9, so in
     practice a digit)."""
     first = name[:1]
-    return first if "a" <= first <= "z" else "other"
+    return first if "a" <= first <= "z" else "_other"
 
 
 def cited_source_keys(value):

@@ -70,7 +70,7 @@ or removed record leaves a redirect entry instead.
 Tribe profiles and source records sit in a subfolder named for the first
 letter of their id or key (`content/tribes/n/`, `content/sources/u/`). An id or
 key that starts with anything else (ids allow only a to z and 0 to 9, so in
-practice a digit) goes in `other/`. These
+practice a digit) goes in `_other/`, whose leading underscore sorts it above the letter folders. These
 folders will hold thousands of records, and a folder that large is hard to
 browse on GitHub and in editors. The first letter is the only grouping that
 never moves a file: status, state and region can all change, but an id cannot.
