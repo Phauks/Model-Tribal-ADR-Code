@@ -1,8 +1,29 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	const columns: TableColumn[] = [
+		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'states', header: 'States', sortable: true, searchable: true },
+		{ key: 'review', header: 'Review status', sortable: true, searchable: true }
+	];
+
+	/** Groups this long get a search box; a short list is quicker to scan. */
+	const searchFrom = 10;
+
+	function rowsOf(group: PageProps['data']['groups'][number]): TableRow[] {
+		return group.rows.map((row) => ({
+			key: row.id,
+			cells: {
+				name: { text: row.name, href: `/nations/${row.id}` },
+				states: { text: row.states },
+				review: { text: row.review }
+			}
+		}));
+	}
 </script>
 
 <svelte:head>
@@ -42,25 +63,21 @@
 	<section aria-labelledby="group-{group.entityType}">
 		<h2 id="group-{group.entityType}">{group.label}</h2>
 		<p class="small muted">{group.rows.length.toLocaleString('en-US')} pages</p>
-		<div class="table-scroll" role="region" aria-label="Table: {group.label}" {@attach keyboardScroll}>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">States</th>
-						<th scope="col">Review status</th>
-					</tr>
-				</thead>
-				<tbody>
-					{#each group.rows as row (row.id)}
-						<tr>
-							<td><a href="/nations/{row.id}">{row.name}</a></td>
-							<td>{row.states}</td>
-							<td>{row.review}</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+		<DataTable
+			identifier="nations-{group.entityType}"
+			label="Table: {group.label}"
+			{columns}
+			rows={rowsOf(group)}
+			defaultSort={{ key: 'name', direction: 'ascending' }}
+			searchLabel={group.rows.length >= searchFrom ? `Search ${group.label}` : undefined}
+			rowName={['page', 'pages']}
+		>
+			{#snippet empty(query)}
+				<p>
+					No page in this list matches “{query}”. <strong>Is your nation missing?</strong>
+					<a href="/requests?kind=add-nation">Ask to be added</a>.
+				</p>
+			{/snippet}
+		</DataTable>
 	</section>
 {/each}
