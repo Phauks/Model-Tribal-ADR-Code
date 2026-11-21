@@ -64,3 +64,18 @@ and fill in the `verification` level from [decision record 0014](../docs/decisio
 | `review/compact_clauses.py` | `gather` downloads each nation's own gaming compacts for every compact dispute clause copied from another nation's compact, extracts the text and writes evidence files with the dispute resolution sections; it never changes a profile | `pip install -r scripts/requirements.txt`, plus `curl` and `pdftotext` |
 | `review/court_listings.py` | `gather` fetches the listed link, the nation's website and its court pages for every court listed from a directory, and keeps the passages that mention a court; it never changes a profile | `pip install -r scripts/requirements.txt requests beautifulsoup4` |
 | `review/gap_review.py` | `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md); `levels` sets `verification` on every profile fact that has none (except provisions) from the fact's note or its group's level in `research/reviews/2026-11-21-verification-levels.json`, adding only that key | `pip install -r scripts/requirements.txt` |
+
+## Gaming compacts and ordinances
+
+Run by hand, never in continuous integration. They build the catalog in
+[`research/gaming/`](../research/gaming/README.md) and never change a profile.
+The documents they download stay private, outside the repository.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `gaming/compact_list.py` | `scrape` reads every page of the Office of Indian Gaming compact list; `download` saves each linked document and records its SHA-256, page count and text | `curl`, `pdfinfo`, `pdftotext` |
+| `gaming/ordinance_list.py` | The same for the National Indian Gaming Commission's list of approved gaming ordinances | `curl`, `pdfinfo`, `pdftotext` |
+| `gaming/build_catalog.py` | Joins both lists to the profiles and to Federal Register notices, writes the catalog files and a source record for each notice | `scripts/requirements.txt` |
+| `gaming/check_quotes.py` | Fetches each cited page and marks whether each quotation appears on it word for word | `curl`, `pdftotext` |
+| `gaming/build_context.py` | Merges the checked context research into `research/gaming/compact-context.*` and adds source records for its cases, regulations and rules | `scripts/requirements.txt`, `curl` |
+| `gaming/clause_evidence.py` | `gather` cuts clause sections from the governing documents for reviewers; `check` checks their quotations against the text; `merge` writes `research/gaming/compact-clauses.*` | Python 3 standard library and the saved text |
