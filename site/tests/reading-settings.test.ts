@@ -42,6 +42,7 @@ describe('reading settings', () => {
 			textSize: undefined,
 			font: undefined,
 			textSpacing: undefined,
+			textAlignment: undefined,
 			contrast: undefined
 		});
 		expect(settingsAttributes({ ...defaultSettings, textSpacing: 'wide' }).textSpacing).toBe('wide');
@@ -70,6 +71,11 @@ describe('global.css', () => {
 	const tokens = JSON.parse(
 		readFileSync(new URL('../design-tokens.json', import.meta.url), 'utf8')
 	) as { font: { family: Record<string, unknown> } };
+
+	it('hyphenates justified text and keeps links whole', () => {
+		expect(styles).toMatch(/\[data-text-alignment='justified'\][^{]*\{[^}]*text-align: justify;[^}]*hyphens: auto;/);
+		expect(styles).toMatch(/\[data-text-alignment='justified'\][^{]* a \{[^}]*hyphens: manual;/);
+	});
 
 	it('has a rule and a font token for every font other than the default', () => {
 		for (const font of fonts.filter((name) => name !== defaultSettings.font)) {
