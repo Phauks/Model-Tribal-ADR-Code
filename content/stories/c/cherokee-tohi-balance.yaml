@@ -1,0 +1,41 @@
+id: cherokee-tohi-balance
+title: Tohi (balance or peace)
+titles_in_language:
+- text: tohi
+  language: chr
+  source: museum-of-the-cherokee-people-cherokee-history-page
+nations:
+- eastern-band-of-cherokee-indians
+kind: teaching
+length: paragraph
+summary: The Museum of the Cherokee People explains tohi, a Cherokee idea it says is often rendered in English as
+  balance or peace, and the intention to keep that balance.
+methods: []
+topics:
+- balance
+- values
+tellings:
+- id: motcp-history-page
+  source: museum-of-the-cherokee-people-cherokee-history-page
+  published_by: Museum of the Cherokee People
+  authority: native-organization
+  verification: read-in-full
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+  note: The museum's relation to the Eastern Band's government was not confirmed.
+access: *id001
+anthology:
+  candidate: false
+  reason: A short teaching; cite it (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

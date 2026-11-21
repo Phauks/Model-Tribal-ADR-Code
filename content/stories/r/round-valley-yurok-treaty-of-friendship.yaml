@@ -1,0 +1,49 @@
+id: round-valley-yurok-treaty-of-friendship
+title: Treaty of Friendship between the Round Valley Indian Tribes and the Yurok Tribe
+nations:
+- round-valley-indian-tribes-round-valley-reservation
+- yurok-tribe-of-the-yurok-reservation
+kind: historical-account
+length: paragraph
+summary: A news item from the Round Valley Indian Tribes on a Treaty of Friendship with the Yurok Tribe, pledging
+  joint work to restore the Eel River. A present-day agreement between two nations, not a dispute story.
+methods:
+- negotiation
+topics:
+- peace-between-nations
+- treaties
+- present-day
+tellings:
+- id: rvit-news-2026
+  source: rvit-2026-yurok-treaty-of-friendship
+  as_of: '2026-04-30'
+  published_by: Round Valley Indian Tribes
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+access: *id001
+anthology:
+  candidate: true
+  reason: If both nations agree, the treaty text itself would be a strong present-day example of nation-to-nation
+    agreement (project analysis).
+  permission_from:
+  - holder: Round Valley Indian Tribes
+    for: both
+    nation: round-valley-indian-tribes-round-valley-reservation
+  - holder: Yurok Tribe
+    for: both
+    nation: yurok-tribe-of-the-yurok-reservation
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

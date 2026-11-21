@@ -1,0 +1,49 @@
+id: seminole-green-corn-disputes-settled
+title: Disputes settled at the Green Corn Dance
+nations:
+- seminole-tribe-of-florida
+kind: teaching
+length: paragraph
+summary: The Tribe's public page says Tribal disputes are settled during the time of the Green Corn Dance. Nothing
+  else about the ceremony is recorded.
+methods:
+- customary-dispute-resolution
+topics:
+- ceremony
+tellings:
+- id: semtribe-page
+  source: seminole-tribe-of-florida-green-corn-dance-page
+  published_by: Seminole Tribe of Florida
+  authority: nation-cultural-office
+  verification: read-in-full
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+protocols:
+- kind: ceremonial
+  statement: The page calls the Green Corn Dance a special spiritual event.
+  source: seminole-tribe-of-florida-green-corn-dance-page
+  how_the_project_follows_it: The ceremony is not described.
+- kind: setting
+  statement: The page says it is held at undisclosed locations.
+  source: seminole-tribe-of-florida-green-corn-dance-page
+  how_the_project_follows_it: No place is recorded.
+- kind: seasonal
+  statement: The page says it is held each spring.
+  source: seminole-tribe-of-florida-green-corn-dance-page
+  how_the_project_follows_it: Recorded as context only.
+access: *id001
+anthology:
+  candidate: false
+  reason: Ceremonial; only the one published fact may be cited (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

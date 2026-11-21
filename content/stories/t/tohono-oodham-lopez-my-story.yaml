@@ -1,0 +1,56 @@
+id: tohono-oodham-lopez-my-story
+title: My Story
+nations:
+- tohono-oodham-nation-of-arizona
+kind: oral-history
+length: long
+summary: A Tohono O'odham elder's memoir, written for future O'odham, which notes that although matters now go to
+  Tribal court, many O'odham, and even lawyers, still try to settle matters the traditional way, and criticizes
+  how family matters involving women are handled.
+methods:
+- customary-dispute-resolution
+topics:
+- family-dispute
+- memoir
+- himdag
+tellings:
+- id: aildi-pdf
+  source: lopez-my-story-aildi
+  teller:
+    form: name-and-nation
+    name: Danny Lopez
+    nation: tohono-oodham-nation-of-arizona
+    role: elder
+  published_by: American Indian Language Development Institute, University of Arizona
+  authority: member-author
+  verification: read-in-full
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+access: *id001
+anthology:
+  candidate: true
+  reason: A first-person account by a Tohono O'odham elder, written to be shared with his people (project analysis).
+    Only a short part concerns disputes; an excerpt is more likely than the whole.
+  telling: aildi-pdf
+  permission_from:
+  - holder: The author's family or estate
+    for: copyright
+  - holder: American Indian Language Development Institute, University of Arizona
+    for: copyright
+    where_to_ask: https://aildi.arizona.edu/
+  - holder: Tohono O'odham Nation (office to be identified)
+    for: cultural-authority
+    nation: tohono-oodham-nation-of-arizona
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

@@ -1,0 +1,74 @@
+# Example story record using the fictitious nation from tribe.example.yaml,
+# to show structure only. The record never holds the story's text. Each
+# telling cites its own source record directly, or a private contributor
+# filing for a story that came to the project from a person.
+id: example-nation-river-peace
+title: How the Two Towns Made Peace at the River
+titles_in_language:
+  - text: Example title in the nation's language
+    language: xx
+    source: example-nation-cultural-office-stories-2024
+nations: [example-nation]
+community: River Town
+kind: historical-account
+length: short
+summary: >-
+  An account of how two towns of the nation ended a dispute over fishing
+  places by meeting at the river with elders as go-betweens, and the
+  agreement that followed.
+methods: [peacemaking]
+topics: [peace-between-communities, role-of-elders]
+tellings:
+  - id: cultural-office-2024
+    source: example-nation-cultural-office-stories-2024
+    locator: third story on the page
+    as_of: '2024'
+    teller:
+      form: name-and-nation
+      name: Example Elder
+      nation: example-nation
+      role: elder
+    published_by: Example Nation Cultural Preservation Office
+    authority: nation-cultural-office
+    verification: read-in-full
+    permitted_uses:
+      level: reference-only
+      scope: [web, print, ebook, offline-pack]
+    access:
+      level: nation-review-first
+  - id: contributed-2027
+    filing: filing-2027-0004
+    teller:
+      form: role
+      role: peacemaker
+    authority: contributor
+    permitted_uses:
+      level: quote
+      scope: [web, print]
+    access:
+      level: nation-review-first
+    cultural_authority:
+      granted_by: Cultural Preservation Officer
+      nation: example-nation
+      date: '2027-03-01'
+      filing: filing-2027-0005
+protocols:
+  - kind: seasonal
+    statement: The cultural office says this story is told in winter.
+    source: example-nation-cultural-office-stories-2024
+    how_the_project_follows_it: Shown on the website only from November through February.
+access:
+  level: nation-review-first
+anthology:
+  candidate: true
+  reason: A short, complete account published by the nation's own office.
+  telling: cultural-office-2024
+  permission_from:
+    - holder: Example Nation Cultural Preservation Office
+      for: both
+      nation: example-nation
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in: [2026-11-21-peacemaking-stories]

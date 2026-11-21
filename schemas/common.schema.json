@@ -109,6 +109,67 @@
       ],
       "description": "Where a record stands in consultation with the nation it describes (charter, commitment 4)."
     },
+    "filingId": {
+      "type": "string",
+      "pattern": "^filing-[0-9]{4}-[0-9]{4}$",
+      "description": "Id of a private contributor filing (the signed contributor statement and permissions), kept outside the repository, e.g. filing-2026-0001. Public records carry only this id and the public-safe fields below."
+    },
+    "credit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["form"],
+      "description": "How a teller, author or contributor is credited. For a contribution, the form the contributor chose; for a published work, the credit the publisher gives.",
+      "properties": {
+        "form": { "type": "string", "enum": ["name", "name-and-nation", "role", "pseudonym", "none"] },
+        "name": { "type": "string" },
+        "nation": { "$ref": "#/$defs/slug", "description": "Tribe profile id (content/tribes/) of the nation the person names as theirs." },
+        "role": { "type": "string", "description": "e.g. elder, peacemaker, judge, storyteller, cultural office." },
+        "pseudonym": { "type": "string" }
+      }
+    },
+    "permittedUses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "description": "What the project may do with a story or contribution. For a published source it follows from the source's rights record; for a contribution it is what the contributor granted.",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["background-only", "reference-only", "quote", "publish-in-full"],
+          "description": "background-only: informs the work but is never named, described or quoted. reference-only: may be cited, described or paraphrased with credit, not quoted. quote: short quotations. publish-in-full: the whole text may be reproduced."
+        },
+        "scope": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["web", "print", "ebook", "offline-pack", "api"] },
+          "uniqueItems": true,
+          "description": "Where the use is allowed; the same list as permission.schema.json."
+        }
+      }
+    },
+    "accessLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "description": "Who may see a story or contribution. nation-review-first: not published until the nation has reviewed it (charter, commitment 4). embargoed: not published before `until`. restricted: never published, exported, cached offline or served by any API (charter, commitment 5).",
+      "properties": {
+        "level": { "type": "string", "enum": ["public", "nation-review-first", "embargoed", "restricted"] },
+        "until": { "$ref": "#/$defs/calendarDate" }
+      },
+      "if": { "properties": { "level": { "const": "embargoed" } } },
+      "then": { "required": ["until"] }
+    },
+    "culturalAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["granted_by", "nation"],
+      "description": "Who, with authority under the nation's or community's own protocols, approved sharing. Separate from copyright: a story can be free to quote under copyright law and still need this.",
+      "properties": {
+        "granted_by": { "type": "string", "description": "Role or office, never a private person's contact details, e.g. 'Tribal Historic Preservation Officer', 'clan leader', 'Council of Elders'." },
+        "nation": { "$ref": "#/$defs/slug" },
+        "date": { "$ref": "#/$defs/calendarDate" },
+        "filing": { "$ref": "#/$defs/filingId", "description": "Private filing holding the signed authority form." }
+      }
+    },
     "sensitivity": {
       "type": "object",
       "additionalProperties": false,
