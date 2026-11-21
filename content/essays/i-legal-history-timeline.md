@@ -78,7 +78,7 @@ exist. One is based on what can be called an American paradigm of justice,
 and the other is based on what can be called an indigenous paradigm"
 [@melton-indigenous-justice-systems-and-tribal-society-1995]. Robert Yazzie,
 then Chief Justice of the Navajo Nation, set out Navajo justice concepts in
-1994 [@yazzie-life-comes-from-it-1994]. The Navajo Nation's judiciary
+1994 [@yazzie-1994-life-comes-from-it]. The Navajo Nation's judiciary
 describes peacemaking in its own public guide as grounded in Navajo
 fundamental law
 [@navajo-nation-judicial-branch-courts-and-peacemaking].
@@ -437,13 +437,13 @@ self-governance" [@ncai-tribal-nations-and-the-united-states, p. 13].
   Contractor, including the tribal court of the Contractor," or "to
   mediation processes provided for under the laws, policies, or procedures
   of the Contractor," and binds the Secretary to the result with a narrow
-  exception [@usc-25-5329]. This is the clearest federal statutory
+  exception [@usc-25-5329-c-model-agreement-disputes]. This is the clearest federal statutory
   endorsement found of a nation's own court and mediation as forums whose
   decisions bind a federal agency (project analysis).
 - **1996. Seminole Tribe of Florida v. Florida.** Held that Congress could
   not abrogate state sovereign immunity under the Indian Commerce Clause, so
   a nation cannot sue an unconsenting state under the gaming act's
-  good-faith provision [@seminole-tribe-of-florida-v-florida].
+  good-faith provision [@seminole-tribe-v-florida-1996].
 
 ### Recognition, enforcement and full faith and credit
 
@@ -456,31 +456,31 @@ self-governance" [@ncai-tribal-nations-and-the-united-states, p. 13].
 - **1994. Federally Recognized Indian Tribe List Act.** Requires an annual
   list of recognized nations and states that recognition may come from an
   Act of Congress, the Part 83 process or a court decision
-  [@federally-recognized-indian-tribe-list-act-1994, sec. 103(3)]. Most
+  [@usc-25-5130, sec. 103(3)]. Most
   state rules for enforcing Tribal judgments apply only to courts of
   federally recognized nations, so list status can decide whether an
   outcome is enforceable off the reservation (project analysis).
 - **1994. Protection orders.** The Violence Against Women Act requires each
   state, nation and territory to give "full faith and credit" to the others'
-  qualifying protection orders [@usc-18-2265-full-faith-and-credit-protection-orders,
+  qualifying protection orders [@usc-18-2265,
   (a)]. Since 2013, a Tribal court has "full civil jurisdiction to issue and
   enforce protection orders involving any person"
-  [@usc-18-2265-full-faith-and-credit-protection-orders, (e)].
+  [@usc-18-2265, (e)].
 - **1994. Child support orders.** The federal full faith and credit statute
   for child support defines "State" to include "Indian country (as defined
   in section 1151 of title 18)"
-  [@usc-28-1738b-full-faith-and-credit-child-support-orders, (b)(9)].
+  [@usc-28-1738b, (b)(9)].
 - **1997 to 2003. Comity cases.** Wilson v. Marchington set out when federal
   courts in the Ninth Circuit recognize Tribal judgments as a matter of
-  comity [@wilson-v-marchington], and the Wisconsin Supreme Court's two
+  comity [@wilson-v-marchington-1997], and the Wisconsin Supreme Court's two
   Teague decisions addressed competing state and Tribal judgments
   [@teague-v-bad-river-band-2000; @teague-v-bad-river-band-2003]. See the
   case digest for these and later decisions.
 - **Enforcement under federal law today.** Federal statutes require full
   faith and credit for Tribal orders in three areas: child custody (Indian
   Child Welfare Act), protection orders and child support
-  [@indian-child-welfare-act-1978; @usc-18-2265-full-faith-and-credit-protection-orders;
-  @usc-28-1738b-full-faith-and-credit-child-support-orders]. Outside those
+  [@indian-child-welfare-act-1978; @usc-18-2265;
+  @usc-28-1738b]. Outside those
   areas, recognition depends on comity and state rules (project analysis).
 
 ### Tribal justice systems
@@ -534,7 +534,7 @@ self-governance" [@ncai-tribal-nations-and-the-united-states, p. 13].
   arbitration clause, with consent to judicial enforcement of the award and
   a choice of Oklahoma law, waived the Nation's immunity
   from a suit to enforce the award
-  [@c-and-l-enterprises-v-citizen-band-potawatomi, p. 414]. In 2023 it held
+  [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 414]. In 2023 it held
   that the Bankruptcy Code abrogates Tribal immunity
   [@lac-du-flambeau-band-v-coughlin]. For a model code, these cases make
   the drafting of waiver, forum and enforcement clauses one of the most
@@ -640,7 +640,7 @@ This thread runs across the eras above.
   nation's own terms (project analysis).
 - **Custom in Tribal courts.** Scholarship on how Tribal courts find and
   apply custom includes Gloria Valencia-Weber's 1994 article
-  [@valencia-weber-tribal-courts-custom-and-innovative-law-1994] and Matthew
+  [@valencia-weber-1994-tribal-courts-custom-innovative-law] and Matthew
   L.M. Fletcher's 2007 article, which argues that "tribal judges have a
   great deal to learn from H.L.A. Hart's theory of primary and secondary
   rules" [@fletcher-rethinking-customary-law-tribal-court-jurisprudence-2007].
@@ -665,7 +665,7 @@ below were verified to the extent stated in each source record.
 | Oklahoma | Okla. Stat. tit. 12, § 728 [@oklahoma-statutes-title-12-section-728] | Supreme Court standards, reciprocity | Includes Courts of Indian Offenses |
 | North Dakota | N.D. R. Ct. 7.2 [@north-dakota-rule-of-court-7-2] | Recognized unless a party objects | Amended effective Mar. 1, 2025 |
 | Minnesota | Minn. Gen. R. Prac. 10 [@minnesota-general-rules-of-practice-rule-10] | Mandatory where law requires; otherwise discretionary factors | Petition procedure for other orders |
-| California | Cal. Civ. Proc. Code §§ 1730 to 1741 [@california-code-of-civil-procedure-1730-tribal-court-civil-money-judgment-act] | Dedicated procedure | Money judgments only |
+| California | Cal. Civ. Proc. Code §§ 1730 to 1741 [@california-tribal-court-civil-money-judgment-act-sb-406-2014] | Dedicated procedure | Money judgments only |
 | Arizona | Rules of Procedure for the Recognition of Tribal Court Civil Judgments [@arizona-rules-of-procedure-recognition-tribal-court-civil-judgments] | Court rules | Text not yet read |
 
 Most of these rules apply only to courts of federally recognized nations,

@@ -81,8 +81,6 @@ sources_added:
   - becerra-v-san-carlos-apache-tribe
   - bird-v-glacier-electric-cooperative
   - bryan-v-itasca-county
-  - c-and-l-enterprises-v-citizen-band-potawatomi
-  - california-code-of-civil-procedure-1730-tribal-court-civil-money-judgment-act
   - california-v-cabazon-band-of-mission-indians
   - canby-american-indian-law-in-a-nutshell-8th-2025
   - cfr-25-part-11-courts-of-indian-offenses
@@ -98,7 +96,6 @@ sources_added:
   - duro-v-reina
   - elk-v-wilkins
   - ex-parte-crow-dog
-  - federally-recognized-indian-tribe-list-act-1994
   - fisher-v-district-court
   - fletcher-rethinking-customary-law-tribal-court-jurisprudence-2007
   - general-allotment-act-1887
@@ -143,7 +140,6 @@ sources_added:
   - meriam-report-1928
   - merrion-v-jicarilla-apache-tribe
   - miami-tribe-of-oklahoma-illinois-land-claim-settlement-2026
-  - michigan-court-rule-2-615
   - michigan-v-bay-mills-indian-community
   - minnesota-general-rules-of-practice-rule-10
   - mississippi-band-of-choctaw-indians-v-holyfield
@@ -168,12 +164,10 @@ sources_added:
   - plains-commerce-bank-v-long-family-land-and-cattle-company
   - pommersheim-braid-of-feathers-1995
   - public-law-83-280
-  - restatement-of-the-law-the-law-of-american-indians
   - rice-v-cayetano
   - richland-deer-introduction-to-tribal-legal-studies-3d-2016
   - rules-governing-court-of-indian-offenses-1883
   - santa-clara-pueblo-v-martinez
-  - seminole-tribe-of-florida-v-florida
   - smith-v-hopland-band-of-pomo-indians
   - sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates
   - solicitor-opinion-powers-of-indian-tribes-1934
@@ -196,27 +190,33 @@ sources_added:
   - united-states-v-wheeler
   - united-states-v-winans
   - us-commission-on-civil-rights-indian-civil-rights-act-report-1991
-  - usc-18-2265-full-faith-and-credit-protection-orders
   - usc-25-1301
-  - usc-25-5329
-  - usc-25-5331
-  - usc-28-1738b-full-faith-and-credit-child-support-orders
   - val-u-construction-company-v-rosebud-sioux-tribe
-  - valencia-weber-tribal-courts-custom-and-innovative-law-1994
   - violence-against-women-act-reauthorization-act-2022-title-viii
   - violence-against-women-reauthorization-act-2013-title-ix
-  - washington-superior-court-civil-rule-82-5
   - white-mountain-apache-tribe-v-bracker
   - williams-v-lee
-  - wilson-v-marchington
   - winters-v-united-states
   - wisconsin-statutes-806-245
   - worcester-v-georgia
-  - yazzie-life-comes-from-it-1994
   - yellen-v-confederated-tribes-of-chehalis-reservation
   - ysleta-del-sur-pueblo-v-texas
   - zuni-cruz-southwest-intertribal-court-of-appeals-1994
 sources_updated:
+  - ali-2022-restatement-law-of-american-indians
+  - c-and-l-enterprises-v-citizen-band-potawatomi-2001
+  - california-tribal-court-civil-money-judgment-act-sb-406-2014
+  - michigan-court-rule-2-615
+  - seminole-tribe-v-florida-1996
+  - usc-18-2265
+  - usc-25-5130
+  - usc-25-5329-c-model-agreement-disputes
+  - usc-25-5331
+  - usc-28-1738b
+  - valencia-weber-1994-tribal-courts-custom-innovative-law
+  - washington-superior-court-civil-rule-82-5
+  - wilson-v-marchington-1997
+  - yazzie-1994-life-comes-from-it
   - ncai-tribal-nations-and-the-united-states
   - narf-ipi-home
 limits: >-

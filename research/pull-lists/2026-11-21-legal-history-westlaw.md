@@ -82,9 +82,9 @@ specific question to answer.
 | `duro-v-reina` | Duro v. Reina, 495 U.S. 676 (1990) | KeyCite will show "superseded by statute"; confirm the current text of 25 U.S.C. § 1301(2). |
 | `oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe` | Oklahoma Tax Commission v. Citizen Band Potawatomi Indian Tribe of Oklahoma, 498 U.S. 505 (1991) | Check KeyCite. |
 | `sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates` | Sokaogon Gaming Enterprise Corp. v. Tushie-Montgomery Associates, Inc., 86 F.3d 656 (7th Cir. 1996) | Read in full on Westlaw: confirm decision date, panel, vote, holding and the quoted sentence and its page. |
-| `seminole-tribe-of-florida-v-florida` | Seminole Tribe of Florida v. Florida, 517 U.S. 44 (1996) | Check KeyCite; 25 C.F.R. part 291 and its litigation history (timeline). |
+| `seminole-tribe-v-florida-1996` | Seminole Tribe of Florida v. Florida, 517 U.S. 44 (1996) | Check KeyCite; 25 C.F.R. part 291 and its litigation history (timeline). |
 | `strate-v-a-1-contractors` | Strate v. A-1 Contractors, 520 U.S. 438 (1997) | Check KeyCite for how circuits treat rights-of-way and the "plainly lacking" exhaustion exception. |
-| `wilson-v-marchington` | Wilson v. Marchington, 127 F.3d 805 (9th Cir. 1997) | Confirm F.3d pinpoints (the list of mandatory and discretionary grounds is cited at 810; the "necessary predicate" sentence at 811). KeyCite for circuit adoption elsewhere. |
+| `wilson-v-marchington-1997` | Wilson v. Marchington, 127 F.3d 805 (9th Cir. 1997) | Confirm F.3d pinpoints (the list of mandatory and discretionary grounds is cited at 810; the "necessary predicate" sentence at 811). KeyCite for circuit adoption elsewhere. |
 | `alaska-v-native-village-of-venetie-tribal-government` | Alaska v. Native Village of Venetie Tribal Government, 522 U.S. 520 (1998) | Check KeyCite and later Alaska developments (e.g., trust land acquisitions in Alaska). |
 | `kiowa-tribe-v-manufacturing-technologies` | Kiowa Tribe of Oklahoma v. Manufacturing Technologies, Inc., 523 U.S. 751 (1998) | Check KeyCite. |
 | `val-u-construction-company-v-rosebud-sioux-tribe` | Val-U Construction Co. v. Rosebud Sioux Tribe, 146 F.3d 573 (8th Cir. 1998) | Read the earlier opinion, Rosebud Sioux Tribe v. Val-U Constr. Co., 50 F.3d 560 (8th Cir. 1995), which decided the waiver question; confirm pinpoints. KeyCite. |
@@ -92,7 +92,7 @@ specific question to answer.
 | `rice-v-cayetano` | Rice v. Cayetano, 528 U.S. 495 (2000) | Check KeyCite and later OHA litigation (e.g., Davis v. Guam (9th Cir.) for territorial analogs). |
 | `ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority` | Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority, 207 F.3d 21 (1st Cir. 2000) | Confirm pinpoints; KeyCite for First Circuit and district court applications. |
 | `teague-v-bad-river-band-2000` | Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians, 2000 WI 79, 236 Wis. 2d 384, 612 N.W.2d 709 (2000) | Confirm parallel citations (236 Wis. 2d 384; 612 N.W.2d 709 verified via CourtListener citation lookup and the 2003 opinion). KeyCite; check Wisconsin's later discretionary-transfer rule (Wis. Stat. § 801.54) as a response. |
-| `c-and-l-enterprises-v-citizen-band-potawatomi` | C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma, 532 U.S. 411 (2001) | KeyCite later cases applying C & L to AAA clauses, "sue and be sued" clauses, and limited waivers; check whether the waiver reaches federal court enforcement under the FAA. |
+| `c-and-l-enterprises-v-citizen-band-potawatomi-2001` | C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma, 532 U.S. 411 (2001) | KeyCite later cases applying C & L to AAA clauses, "sue and be sued" clauses, and limited waivers; check whether the waiver reaches federal court enforcement under the FAA. |
 | `atkinson-trading-company-v-shirley` | Atkinson Trading Co. v. Shirley, 532 U.S. 645 (2001) | Check KeyCite. The LII text renders the dashes in the first quote as hyphens; confirm em dashes against the official reporter. |
 | `nevada-v-hicks` | Nevada v. Hicks, 533 U.S. 353 (2001) | Check KeyCite; review how circuits limit Hicks to state officers. |
 | `bird-v-glacier-electric-cooperative` | Bird v. Glacier Electric Cooperative, Inc., 255 F.3d 1136 (9th Cir. 2001) | Confirm F.3d pinpoints and KeyCite for later reliance on Bird. |
@@ -143,14 +143,14 @@ listed only where a note asks for something.
 | `american-indian-religious-freedom-act-1978` | American Indian Religious Freedom Act | KeyCite 42 U.S.C. § 1996. |
 | `indian-gaming-regulatory-act-1988` | Indian Gaming Regulatory Act | KeyCite 25 U.S.C. § 2710; pull sample compact dispute-resolution clauses (NIGC/Interior compact library) separately. |
 | `usc-25-5331` | ISDEAA § 110, Contract disputes and claims (25 U.S.C. § 5331) | KeyCite 25 U.S.C. § 5331 and 25 C.F.R. Part 900 subpart N (not opened). |
-| `usc-25-5329` | ISDEAA § 108 model agreement, § 1(b)(12) 'Disputes' (25 U.S.C. § 5329(c)) | KeyCite 25 U.S.C. § 5329; check whether the 2020 amendments altered ¶ (12). |
+| `usc-25-5329-c-model-agreement-disputes` | ISDEAA § 108 model agreement, § 1(b)(12) 'Disputes' (25 U.S.C. § 5329(c)) | KeyCite 25 U.S.C. § 5329; check whether the 2020 amendments altered ¶ (12). |
 | `usc-25-1301` | 'Duro fix' amending 25 U.S.C. § 1301(2) and adding § 1301(4) | KeyCite 25 U.S.C. § 1301; Duro v. Reina (1990) and United States v. Lara (2004) are in the case digest. |
 | `indian-tribal-justice-act-1993` | Indian Tribal Justice Act | KeyCite 25 U.S.C. §§ 3601–3631. |
 | `native-hawaiian-apology-resolution-1993` | Joint Resolution to acknowledge the 100th anniversary of the January 17, 1893 overthrow of the Kingdom of Hawaii (Apology Resolution) | KeyCite Pub. L. 103-150 for later treatment. |
 | `tribal-self-governance-act-1994` | Tribal Self-Governance Act of 1994 (ISDEAA Title IV) | KeyCite 25 U.S.C. § 5361 et seq. and 25 C.F.R. Part 1000 (not opened). |
-| `federally-recognized-indian-tribe-list-act-1994` | Federally Recognized Indian Tribe List Act of 1994 | KeyCite 25 U.S.C. § 5131; pull the current Federal Register list. |
-| `usc-18-2265-full-faith-and-credit-protection-orders` | Full faith and credit given to protection orders (18 U.S.C. § 2265) | KeyCite 18 U.S.C. § 2265. |
-| `usc-28-1738b-full-faith-and-credit-child-support-orders` | Full faith and credit for child support orders (28 U.S.C. § 1738B) | KeyCite 28 U.S.C. § 1738B. |
+| `usc-25-5130` | Federally Recognized Indian Tribe List Act of 1994 | KeyCite 25 U.S.C. § 5131; pull the current Federal Register list. |
+| `usc-18-2265` | Full faith and credit given to protection orders (18 U.S.C. § 2265) | KeyCite 18 U.S.C. § 2265. |
+| `usc-28-1738b` | Full faith and credit for child support orders (28 U.S.C. § 1738B) | KeyCite 28 U.S.C. § 1738B. |
 | `indian-tribal-justice-technical-and-legal-assistance-act-2000` | Indian Tribal Justice Technical and Legal Assistance Act of 2000 | KeyCite 25 U.S.C. §§ 3651–3682. |
 | `tribal-law-and-order-act-2010` | Tribal Law and Order Act of 2010 | KeyCite 25 U.S.C. §§ 1302, 2801 et seq. |
 | `violence-against-women-reauthorization-act-2013-title-ix` | Violence Against Women Reauthorization Act of 2013, Title IX (Safety for Indian Women), §§ 904–905 | KeyCite 25 U.S.C. § 1304 (current version reflects 2022 amendments). |
@@ -166,7 +166,7 @@ listed only where a note asks for something.
 | `oklahoma-statutes-title-12-section-728` | Okla. Stat. tit. 12, § 728, Standards for recognizing records and proceedings of tribal courts – Reciprocity | Pull 12 O.S. § 728 and Okla. Dist. Ct. R. 30 on Westlaw; OSCN blocked automated access. |
 | `north-dakota-rule-of-court-7-2` | N.D. R. Ct. 7.2, Recognition of Tribal Court Orders and Judgments | KeyCite N.D. R. Ct. 7.2 and compare the pre-2025 version (version history link on the court site). |
 | `minnesota-general-rules-of-practice-rule-10` | Minn. Gen. R. Prac. 10, Tribal Court Orders and Judgments | KeyCite Minn. Gen. R. Prac. 10. |
-| `california-code-of-civil-procedure-1730-tribal-court-civil-money-judgment-act` | Tribal Court Civil Money Judgment Act, Cal. Code Civ. Proc. §§ 1730 et seq. | Pull current Cal. Civ. Proc. Code §§ 1730–1741 on Westlaw to confirm the sunset was removed and get chapter numbers. |
+| `california-tribal-court-civil-money-judgment-act-sb-406-2014` | Tribal Court Civil Money Judgment Act, Cal. Code Civ. Proc. §§ 1730 et seq. | Pull current Cal. Civ. Proc. Code §§ 1730–1741 on Westlaw to confirm the sunset was removed and get chapter numbers. |
 | `arizona-rules-of-procedure-recognition-tribal-court-civil-judgments` | Arizona Rules of Procedure for the Recognition of Tribal Court Civil Judgments | Pull the full rule set on Westlaw (Arizona Rules of Court, Tribal Court Civil Judgments). |
 
 ## 4. Secondary sources
@@ -176,11 +176,11 @@ Westlaw, the note says where to find it.
 
 | Source record | Work | Where and what |
 | --- | --- | --- |
-| `yazzie-life-comes-from-it-1994` | Robert Yazzie, “Life Comes from It”: Navajo Justice Concepts, 24 N.M. L. Rev. 175 (1994) | Pull on Westlaw for the pinpoint pages and to KeyCite citing references. An open copy is at UNM Digital Repository. |
+| `yazzie-1994-life-comes-from-it` | Robert Yazzie, “Life Comes from It”: Navajo Justice Concepts, 24 N.M. L. Rev. 175 (1994) | Pull on Westlaw for the pinpoint pages and to KeyCite citing references. An open copy is at UNM Digital Repository. |
 | `melton-indigenous-justice-systems-and-tribal-society-1995` | Ada Pecos Melton, Indigenous Justice Systems and Tribal Society, 79 Judicature (No. 3, Nov.–Dec. 1995) | Pull on Westlaw or HeinOnline to confirm the first page of the Judicature printing. |
 | `martin-cherokee-supreme-court-1823-1835-dissertation-2018` | James M. Martin, The Cherokee Supreme Court: 1823-1835 (2018) (Ph.D. dissertation, University of Nevada, Reno) | Not on Westlaw; open repository. |
 | `cohens-handbook-of-federal-indian-law-2024` | Cohen's Handbook of Federal Indian Law (Nell Jessup Newton & Kevin K. Washburn eds. in chief, 2024 ed.) | Published by LexisNexis. It is generally on Lexis+, not Westlaw, so the author should plan to use a print copy or a law library's Lexis access. Availability on Westlaw was not checked directly. |
-| `restatement-of-the-law-the-law-of-american-indians` | Restatement of the Law, The Law of American Indians (Am. L. Inst. 2022) (approved May 14, 2021) | ALI Restatements are on Westlaw (the Berkeley catalog shows an online version through Thomson Reuters, record 1193202). Pull the black-letter sections and Reporters' Notes from there. |
+| `ali-2022-restatement-law-of-american-indians` | Restatement of the Law, The Law of American Indians (Am. L. Inst. 2022) (approved May 14, 2021) | ALI Restatements are on Westlaw (the Berkeley catalog shows an online version through Thomson Reuters, record 1193202). Pull the black-letter sections and Reporters' Notes from there. |
 | `canby-american-indian-law-in-a-nutshell-8th-2025` | William C. Canby, Jr., American Indian Law in a Nutshell (8th ed. 2025) | West Academic study aids are usually reached through a law school's West Academic subscription, not Westlaw. Westlaw availability was not checked. |
 | `getches-cases-and-materials-on-federal-indian-law-8th-2025` | David H. Getches, Charles F. Wilkinson, Robert A. Williams, Jr., Matthew L.M. Fletcher, Kristen A. Carpenter & Wenona T. Singel, Cases and Materials on Federal Indian Law (8th ed. 2025) | Casebooks are not on Westlaw; use a print copy or West Academic's casebook platform. |
 | `pommersheim-braid-of-feathers-1995` | Frank Pommersheim, Braid of Feathers: American Indian Law and Contemporary Tribal Life (1995) | A book. Westlaw does not carry it; use a library copy. |
@@ -192,7 +192,7 @@ Westlaw, the note says where to find it.
 | `clinton-tribal-courts-and-the-federal-union-1990` | Robert N. Clinton, Tribal Courts and the Federal Union, 26 Willamette L. Rev. 841 (1990) | Pull on Westlaw or HeinOnline to confirm the citation and the page range. |
 | `deer-tatum-tribal-efforts-violence-against-women-act-full-faith-and-credit-2003` | Sarah Deer & Melissa L. Tatum, Tribal Efforts to Comply with VAWA's Full Faith and Credit Requirements: A Response to Sandra Schmieder, 39 Tulsa L. Rev. 403 (2003) | Pull on Westlaw for pinpoints; open copy at TU Law Digital Commons. |
 | `goldberg-overextended-borrowing-tribal-peacemaking-1997` | Carole E. Goldberg, Overextended Borrowing: Tribal Peacemaking Applied in Non-Indian Disputes, 72 Wash. L. Rev. 1003 (1997) | Pull on Westlaw for the last page and pinpoints; open copy at UW Law Digital Commons. |
-| `valencia-weber-tribal-courts-custom-and-innovative-law-1994` | Gloria Valencia-Weber, Tribal Courts: Custom and Innovative Law, 24 N.M. L. Rev. 225 (1994) | Pull on Westlaw for pinpoints; open copy at UNM Digital Repository. |
+| `valencia-weber-1994-tribal-courts-custom-innovative-law` | Gloria Valencia-Weber, Tribal Courts: Custom and Innovative Law, 24 N.M. L. Rev. 225 (1994) | Pull on Westlaw for pinpoints; open copy at UNM Digital Repository. |
 | `zuni-cruz-southwest-intertribal-court-of-appeals-1994` | Christine Zuni Cruz, The Southwest Intertribal Court of Appeals, 24 N.M. L. Rev. 309 (1994) | Pull on Westlaw for pinpoints; open copy at UNM Digital Repository. |
 | `fletcher-rethinking-customary-law-tribal-court-jurisprudence-2007` | Matthew L.M. Fletcher, Rethinking Customary Law in Tribal Court Jurisprudence, 13 Mich. J. Race & L. 57 (2007) | Pull on Westlaw for pinpoints; open copy at the University of Michigan Law School Scholarship Repository. |
 

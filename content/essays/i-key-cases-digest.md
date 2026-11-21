@@ -788,7 +788,7 @@ Nations: Sokaogon Chippewa Community (Mole Lake Band of Lake Superior Chippewa).
 
 ### Seminole Tribe of Florida v. Florida (1996)
 
-*517 U.S. 44 (1996)* [@seminole-tribe-of-florida-v-florida]. Supreme Court of the United States; opinion by Rehnquist, C.J.; 5-4 (Stevens, J., dissenting; Souter, J., joined by Ginsburg and Breyer, JJ., dissenting).
+*517 U.S. 44 (1996)* [@seminole-tribe-v-florida-1996]. Supreme Court of the United States; opinion by Rehnquist, C.J.; 5-4 (Stevens, J., dissenting; Souter, J., joined by Ginsburg and Breyer, JJ., dissenting).
 Nations: Seminole Tribe of Florida.
 
 **Question.** May Congress, under the Indian Commerce Clause, authorize a Tribe to sue a State in federal court to compel good-faith negotiation of a gaming compact under the Indian Gaming Regulatory Act?
@@ -797,12 +797,12 @@ Nations: Seminole Tribe of Florida.
 
 **In the court's words.**
 
-> “Even when the Constitution vests in Congress complete lawmaking authority over a particular area, the Eleventh Amendment prevents congressional authorization of suits by private parties against unconsenting States” [@seminole-tribe-of-florida-v-florida, p. 72]
+> “Even when the Constitution vests in Congress complete lawmaking authority over a particular area, the Eleventh Amendment prevents congressional authorization of suits by private parties against unconsenting States” [@seminole-tribe-v-florida-1996, p. 72]
 
-> “Article I cannot be used to circumvent the constitutional limitations placed upon federal jurisdiction” [@seminole-tribe-of-florida-v-florida, p. 73]
+> “Article I cannot be used to circumvent the constitutional limitations placed upon federal jurisdiction” [@seminole-tribe-v-florida-1996, p. 73]
 
 **Later treatment.**
-- The opinion itself overrules Pennsylvania v. Union Gas Co. (1989). [@seminole-tribe-of-florida-v-florida]
+- The opinion itself overrules Pennsylvania v. Union Gas Co. (1989). [@seminole-tribe-v-florida-1996]
 - Lead to check, not verified in this research: after Seminole, the Interior Department adopted "Secretarial procedures" for compacts (25 C.F.R. part 291).
 
 **Why it matters here (project analysis).** Removes the federal-court remedy against a State that will not negotiate a gaming compact in good faith, which increases the importance of negotiated dispute-resolution and waiver clauses in Tribal-state compacts.
@@ -833,7 +833,7 @@ Nations: Mandan, Hidatsa and Arikara Nation (Three Affiliated Tribes of the Fort
 
 ### Wilson v. Marchington (1997)
 
-*127 F.3d 805 (9th Cir. 1997)* [@wilson-v-marchington]. United States Court of Appeals for the Ninth Circuit; opinion by Thomas, J. (panel: Wright, Reinhardt and Thomas, JJ.); 3-0 (no separate opinion shown in the text read).
+*127 F.3d 805 (9th Cir. 1997)* [@wilson-v-marchington-1997]. United States Court of Appeals for the Ninth Circuit; opinion by Thomas, J. (panel: Wright, Reinhardt and Thomas, JJ.); 3-0 (no separate opinion shown in the text read).
 Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation of Montana).
 
 **Question.** Must a federal court give full faith and credit to a Blackfeet Tribal Court tort judgment, and if not, when should it recognize the judgment under comity?
@@ -842,13 +842,13 @@ Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation o
 
 **In the court's words.**
 
-> “We conclude that the principles of comity, not full faith and credit, govern whether a district court should recognize and enforce a tribal court judgment.” (127 F.3d 805 (opening paragraph; F.3d page not verified)) [@wilson-v-marchington]
+> “We conclude that the principles of comity, not full faith and credit, govern whether a district court should recognize and enforce a tribal court judgment.” (127 F.3d 805 (opening paragraph; F.3d page not verified)) [@wilson-v-marchington-1997]
 
-> “federal courts must neither recognize nor enforce tribal judgments if: (1) the tribal court did not have both personal and subject matter jurisdiction; or (2) the defendant was not afforded due process of law.” (127 F.3d at 810 (page as cited in AT&T Corp. v. Coeur d'Alene Tribe, citing "127 F.3d 805, 810," and in Bird v. Glacier Electric, citing "127 F.3d at 810")) [@wilson-v-marchington]
+> “federal courts must neither recognize nor enforce tribal judgments if: (1) the tribal court did not have both personal and subject matter jurisdiction; or (2) the defendant was not afforded due process of law.” (127 F.3d at 810 (page as cited in AT&T Corp. v. Coeur d'Alene Tribe, citing "127 F.3d 805, 810," and in Bird v. Glacier Electric, citing "127 F.3d at 810")) [@wilson-v-marchington-1997]
 
-> “the existence of both personal and subject matter jurisdiction is a necessary predicate for federal court recognition and enforcement of a tribal judgment” (127 F.3d at 811 (as quoted in AT&T Corp. v. Coeur d'Alene Tribe)) [@wilson-v-marchington]
+> “the existence of both personal and subject matter jurisdiction is a necessary predicate for federal court recognition and enforcement of a tribal judgment” (127 F.3d at 811 (as quoted in AT&T Corp. v. Coeur d'Alene Tribe)) [@wilson-v-marchington-1997]
 
-> “Extending comity to tribal judgments is not an invitation for the federal courts to exercise unnecessary judicial paternalism in derogation of tribal self-governance.” (127 F.3d 805 (F.3d page not verified; ¶ 34 of the law.resource.org text)) [@wilson-v-marchington]
+> “Extending comity to tribal judgments is not an invitation for the federal courts to exercise unnecessary judicial paternalism in derogation of tribal self-governance.” (127 F.3d 805 (F.3d page not verified; ¶ 34 of the law.resource.org text)) [@wilson-v-marchington-1997]
 
 **Later treatment.** Applied in Bird v. Glacier Electric Cooperative (9th Cir. 2001) [@bird-v-glacier-electric-cooperative] and AT&T Corp. v. Coeur d'Alene Tribe (9th Cir. 2002) [@att-corporation-v-coeur-dalene-tribe].
 
@@ -1001,7 +1001,7 @@ Nations: Bad River Band of the Lake Superior Tribe of Chippewa Indians.
 
 ### C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma (2001)
 
-*532 U.S. 411 (2001)* [@c-and-l-enterprises-v-citizen-band-potawatomi]. Supreme Court of the United States; opinion by Ginsburg, J.; 9-0.
+*532 U.S. 411 (2001)* [@c-and-l-enterprises-v-citizen-band-potawatomi-2001]. Supreme Court of the United States; opinion by Ginsburg, J.; 9-0.
 Nations: Citizen Potawatomi Nation.
 
 **Question.** Did the Nation waive its sovereign immunity from suit to enforce an arbitration award by agreeing to a standard-form construction contract with an arbitration clause and an Oklahoma choice-of-law clause?
@@ -1010,11 +1010,11 @@ Nations: Citizen Potawatomi Nation.
 
 **In the court's words.**
 
-> “We hold that, by the clear import of the arbitration clause, the Tribe is amenable to a state-court suit to enforce an arbitral award in favor of contractor C & L” [@c-and-l-enterprises-v-citizen-band-potawatomi, p. 414]
+> “We hold that, by the clear import of the arbitration clause, the Tribe is amenable to a state-court suit to enforce an arbitral award in favor of contractor C & L” [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 414]
 
-> “the contract specifically authorizes judicial enforcement of the resolution arrived at through arbitration” [@c-and-l-enterprises-v-citizen-band-potawatomi, p. 422]
+> “the contract specifically authorizes judicial enforcement of the resolution arrived at through arbitration” [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 422]
 
-> “The Tribe proposed and prepared the contract; C & L foisted no form on a quiescent Tribe” [@c-and-l-enterprises-v-citizen-band-potawatomi, p. 423]
+> “The Tribe proposed and prepared the contract; C & L foisted no form on a quiescent Tribe” [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 423]
 
 **Later treatment.**
 - Cited in Michigan v. Bay Mills Indian Community (2014) for the rule that a Tribe may waive immunity by contract. [@michigan-v-bay-mills-indian-community]
