@@ -48,6 +48,7 @@ and makes each edition reproducible
 │   ├── terminology.md       How terms are chosen, defined and linked
 │   ├── style-guide.md       Tone and writing standards
 │   ├── requests.md          Correction, restriction, removal and contribution flow
+│   ├── editing.md           Editing drafts on the website (proposal)
 │   ├── roadmap.md           Order of work and review gates toward drafting
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records
