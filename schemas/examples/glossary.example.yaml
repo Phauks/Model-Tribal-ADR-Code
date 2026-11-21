@@ -1,0 +1,19 @@
+id: adr
+term: ADR
+kind: acronym
+expansion: alternative dispute resolution
+usage: preferred
+definition: >-
+  Processes for resolving disputes outside a full court trial, such as
+  negotiation, mediation and arbitration. In this book the term does not
+  include [[peacemaking]], which the project treats as its own track
+  [@narf-ipi-home].
+usage_note: >-
+  Write the expansion on first use in each chapter; the build does this
+  automatically for the first [[adr]] link. Do not call traditional
+  peacemaking a form of ADR.
+aliases: [ADR]
+see_also: [peacemaking]
+sources: [narf-ipi-home]
+basis: source-and-project-analysis
+status: draft

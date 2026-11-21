@@ -1,0 +1,43 @@
+name: Source
+description: Suggest a source to cite, or report a source that has changed or moved
+title: "Source: "
+labels: ["type: source", "track: content", "status: needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you start:** issues here are public. If your request concerns restricted, ceremonial or community-held knowledge, or you are writing on behalf of a nation to restrict or remove material, please use the [private route](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/requests.md#until-the-website-is-live) instead.
+  - type: input
+    id: citation
+    attributes:
+      label: Source
+      description: Title, author or publisher, and a link if it is online.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of source is it?
+      options:
+        - Tribal code, constitution or court rule
+        - Tribal court decision
+        - Federal or state law or case
+        - Book, article or report
+        - Web page
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What does it support, or what changed?
+    validations:
+      required: true
+  - type: dropdown
+    id: published-by-nation
+    attributes:
+      label: If it is a nation's own material, did the nation publish it itself?
+      options:
+        - Not a nation's material
+        - Yes, published by the nation
+        - No, or not sure

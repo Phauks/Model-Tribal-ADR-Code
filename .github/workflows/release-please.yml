@@ -1,0 +1,22 @@
+# Opens and updates one release pull request that bumps the version and
+# writes the changelog of each track (content, site, pdf) changed since the
+# last release. Uses only the automatic per-run GITHUB_TOKEN; no stored secret.
+name: release-please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/commentary.schema.json",
+  "title": "Commentary (front matter)",
+  "description": "YAML front matter of content/commentary/<chapter>-<section>.md. The body has three headed parts in the Restatement pattern: Comment, Illustrations, and Source Note.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["provision", "authors", "status"],
+  "properties": {
+    "provision": { "type": "string", "pattern": "^[0-9]{2}-[0-9]{3}[A-Z]?$" },
+    "authors": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "illustration_sources": {
+      "type": "array",
+      "description": "Source keys behind each illustration drawn from a nation's practice.",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true
+    },
+    "tribes": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" }, "uniqueItems": true },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "common.schema.json#/$defs/reviewStatus" },
+        "last_verified": { "$ref": "common.schema.json#/$defs/calendarDate" }
+      }
+    },
+    "status": { "type": "string", "enum": ["draft", "in-review", "stable", "withdrawn"] },
+    "sensitivity": { "$ref": "common.schema.json#/$defs/sensitivity" }
+  }
+}

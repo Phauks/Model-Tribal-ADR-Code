@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/source.schema.json",
+  "title": "Source record",
+  "description": "One cited source: its citation data, where to find it, its archived copies and history, and the rights to use it. Stored as content/sources/<key>.yaml.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["key", "kind", "citation", "retrieved", "rights", "found_in"],
+  "properties": {
+    "key": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Citation key used in text as [@key]. Must equal the file name."
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "tribal-code", "tribal-constitution", "tribal-court-rule", "tribal-case",
+        "federal-statute", "federal-regulation", "federal-register-notice", "federal-case",
+        "state-statute", "state-case", "uniform-act", "model-law",
+        "book", "book-chapter", "journal-article", "report", "web-page", "dataset", "interview", "other"
+      ]
+    },
+    "citation": {
+      "type": "object",
+      "description": "Citation Style Language JSON item (https://docs.citationstyles.org/). Rendered into footnotes by citeproc. 'id' is filled from 'key' at build time.",
+      "required": ["type", "title"],
+      "properties": {
+        "type": { "type": "string" },
+        "title": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "original_link": {
+      "$ref": "common.schema.json#/$defs/link",
+      "description": "Where the original is published, if online."
+    },
+    "retrieved": {
+      "$ref": "common.schema.json#/$defs/calendarDate",
+      "description": "Date the source was last consulted."
+    },
+    "archives": {
+      "type": "array",
+      "description": "Archived copies. At least one is expected for every web source.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["service", "link", "captured"],
+        "properties": {
+          "service": { "type": "string", "enum": ["wayback", "perma", "archive-today", "project-r2"] },
+          "link": { "$ref": "common.schema.json#/$defs/link" },
+          "captured": { "$ref": "common.schema.json#/$defs/calendarDate" }
+        }
+      }
+    },
+    "file": {
+      "type": "object",
+      "description": "A copy stored in the project's R2 bucket. Served publicly only when rights.redistribution is true.",
+      "additionalProperties": false,
+      "required": ["storage_key", "checksum", "media_type"],
+      "properties": {
+        "storage_key": { "type": "string", "description": "Object key of the stored copy in the project's R2 bucket." },
+        "checksum": { "type": "string", "pattern": "^[a-f0-9]{64}$", "description": "SHA-256 hash of the stored file, in lowercase hexadecimal." },
+        "media_type": { "type": "string" },
+        "bytes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "history": {
+      "type": "object",
+      "description": "Change history from the Internet Archive and scheduled re-checks.",
+      "additionalProperties": false,
+      "properties": {
+        "first_seen": { "$ref": "common.schema.json#/$defs/calendarDate" },
+        "last_seen": { "$ref": "common.schema.json#/$defs/calendarDate" },
+        "status": { "type": "string", "enum": ["live", "changed-since-cited", "moved", "removed", "unknown"] },
+        "last_checked": { "$ref": "common.schema.json#/$defs/calendarDate" },
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["date", "summary"],
+            "properties": {
+              "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+              "before": { "$ref": "common.schema.json#/$defs/link" },
+              "after": { "$ref": "common.schema.json#/$defs/link" },
+              "summary": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "citator": {
+      "type": "object",
+      "description": "Negative-treatment check for cases and statutes (e.g. KeyCite).",
+      "additionalProperties": false,
+      "required": ["service", "result", "checked"],
+      "properties": {
+        "service": { "type": "string", "enum": ["keycite", "shepards", "other"] },
+        "result": { "type": "string", "enum": ["no-negative-treatment", "some-negative-treatment", "overruled-or-repealed", "not-applicable"] },
+        "detail": { "type": "string" },
+        "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
+      }
+    },
+    "rights": { "$ref": "permission.schema.json" },
+    "tribes": {
+      "type": "array",
+      "description": "Tribe profile ids this source concerns.",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true
+    },
+    "sensitivity": { "$ref": "common.schema.json#/$defs/sensitivity" },
+    "found_in": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Research session ids (file names without .md) that found or updated this source.",
+      "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$" }
+    },
+    "notes": { "type": "string" }
+  }
+}

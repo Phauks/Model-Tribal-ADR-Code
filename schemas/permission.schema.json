@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/permission.schema.json",
+  "title": "Rights and permission record",
+  "description": "Whether and how a source may be quoted, reproduced or redistributed, and the trail of any permission request. Embedded as the 'rights' field of a source record. Basis notes are the project's analysis, not legal advice.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["not-assessed", "no-permission-needed", "permission-requested", "granted", "denied", "tribal-review-required"],
+      "description": "The build refuses quotations beyond a short passage unless status is no-permission-needed or granted."
+    },
+    "basis": {
+      "type": "string",
+      "enum": ["fact-only", "fair-use", "public-domain", "us-government-work", "government-edict", "open-license", "permission", "link-only"],
+      "description": "Why use is allowed (or that the source is linked only)."
+    },
+    "basis_note": { "type": "string", "description": "One or two sentences explaining the basis." },
+    "license": { "type": "string", "description": "SPDX identifier or name of the source's own license, if any." },
+    "redistribution": {
+      "type": "boolean",
+      "default": false,
+      "description": "True only when the project may serve a copy of the file itself."
+    },
+    "scope": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["web", "print", "ebook", "offline-pack", "api"] },
+      "uniqueItems": true,
+      "description": "Where a granted permission applies."
+    },
+    "conditions": { "type": "string" },
+    "log": {
+      "type": "array",
+      "description": "Dated steps in the permission process. Name roles or offices, not private contact details.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "event"],
+        "properties": {
+          "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+          "event": { "type": "string", "enum": ["assessed", "requested", "followed-up", "granted", "denied", "revoked", "note"] },
+          "with": { "type": "string", "description": "Role or office contacted, e.g. 'Tribal Court Administrator'." },
+          "note": { "type": "string" },
+          "evidence_private": { "type": "boolean", "description": "True when a copy of the correspondence is kept privately outside the repository." }
+        }
+      }
+    }
+  }
+}

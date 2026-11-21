@@ -1,0 +1,18 @@
+# Schemas
+
+JSON Schemas (draft 2020-12) for every record type. See
+[docs/data-model.md](../docs/data-model.md) for what each record is for and how
+they connect. `examples/` holds one valid example per schema; the tribe example
+uses a fictitious nation on purpose.
+
+| Schema | Validates |
+| --- | --- |
+| `common.schema.json` | Shared types used by the others |
+| `source.schema.json` | `content/sources/*.yaml` |
+| `permission.schema.json` | The `rights` field of a source |
+| `tribe.schema.json` | `content/tribes/*.yaml` |
+| `provision.schema.json` | Front matter of `content/provisions/*.md` |
+| `commentary.schema.json` | Front matter of `content/commentary/*.md` |
+| `glossary.schema.json` | `content/glossary/*.yaml` |
+| `variable.schema.json` | `content/variables/*.yaml` |
+| `research-session.schema.json` | Front matter of `research/sessions/**/*.md` |
