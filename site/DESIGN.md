@@ -294,9 +294,22 @@ exactly. Rules:
 - In print, Typst draws `currentColor` as black, which suits the black-and-white
   interior.
 
+**Modal.** One shared modal dialog, `src/lib/components/Modal.svelte`, for
+every dialog on the site. It is the browser's own `<dialog>` opened as a
+modal: focus moves into it, stays in it, Escape closes it, and the page
+behind is inert.[^mdn-dialog] With sections it has two panels, as Trevor asked
+on Nov. 21, 2026: a list of sections on the left and the chosen section on the
+right. The list follows the WAI-ARIA tabs pattern, so arrow keys move between
+sections and Home and End jump to the first and last.[^apg-tabs] The chosen
+section is marked by a bar and bold type as well as a fill. On narrow screens
+the list wraps above the section. Buttons such as "Done" sit along the
+bottom.
+
 **Settings.** A "Settings" button with Lucide's `settings` icon at the right
-end of the masthead opens a dialog where the reader picks (project choice,
-asked for by Trevor on Nov. 21, 2026):
+end of the masthead opens the Modal with five sections (project choice, asked
+for by Trevor on Nov. 21, 2026): **Text** (size, font, spacing, alignment),
+**Colors** (theme, contrast), **Citations**, **Glossary** and **Saved for
+offline**. The reading settings are:
 
 - **Text size:** Standard, Large, Larger or Largest (100, 112.5, 125 or 150
   percent). Every size on the site is in rem, so the whole page scales.
@@ -318,19 +331,30 @@ asked for by Trevor on Nov. 21, 2026):
 - **Theme:** Match this device, Light or Dark (see [section 8](#8-themes)).
 - **Contrast:** Standard or More. More turns gray text to ink and light
   dividing lines to the control border color; no new colors are added.
+- **When you select a note number** (Citations): go to the notes at the end
+  of the page (the default), or show the note under the paragraph. The number
+  stays a link to the note, so without scripts it always jumps.
+- **Links to sources** (Citations): the original page and the archived copy
+  (the default), the original only, or the archived copy where there is one.
+  An archived copy still opens when the original has moved or gone, which
+  matters for tribal codes whose addresses change
+  ([citation style](../docs/citation-style.md)).
+- **Glossary cards** (Glossary): on (the default) or off. See
+  [Glossary link and hover card](#6-components) below.
+
+"Saved for offline" is described in [section 10](#10-offline-and-installable).
 
 Each change applies at once and is kept in the browser's local storage on
 that device only, so it works offline and nothing is sent to the server. An
 inline script in `app.html` applies the stored settings before the page
-paints. "Reset to defaults" clears them. The dialog is the browser's own
-modal `<dialog>`: focus moves into it, stays in it, Escape closes it, and
-focus returns to the button.[^mdn-dialog] Choices are radio buttons in
+paints. "Reset settings to defaults" clears them, but leaves saved pages
+alone. Focus returns to the Settings button when the dialog closes. Choices
+are radio buttons in
 fieldsets, labels above hints. Without scripts the Settings and theme buttons
 are hidden, since they cannot work. The theme stays a one-press button in the
 masthead as well as a choice in the dialog, because the button is the faster
 way for the most common change and Trevor chose it on Nov. 21, 2026; the
-dialog adds "Match this device," which the button lacks. When glossary hover
-cards are built, the setting that turns them off goes in this dialog.
+dialog adds "Match this device," which the button lacks.
 
 **Notices.** One style for status: "This is a working draft" on the home
 page; "Model text, not law in force" with the version and last change on
@@ -354,8 +378,12 @@ nation."
 The card opens on hover after a short delay and on keyboard focus, stays open
 while the pointer is over it, and closes with Escape, as WCAG 1.4.13 requires
 for content on hover or focus.[^wcag-1413] The link itself goes to the full
-entry, so the card is never the only way to the content. A setting turns cards
-off.
+entry, so the card is never the only way to the content. The card shows the
+term, its expansion and a one-line summary, holds no links of its own
+(`role="tooltip"`, tied to the link with `aria-describedby`), and appears for a
+mouse pointer or keyboard focus, not a touch, since a tap follows the link.
+Summaries come from `/glossary/terms.json`, which the glossary pages are built
+with, fetched once when first needed. The Glossary setting turns cards off.
 
 **Glossary pages.** The glossary page and each entry's page are built from
 one module, `src/lib/server/glossary-entries.ts`, and one component,
@@ -370,7 +398,11 @@ citations, for the hover cards and for saving offline.
 **Citations.** In prose, such as a section's commentary or a glossary entry,
 a numbered marker in the text; on wide screens the note sits in the margin
 beside the line, and on narrow screens it opens inline under the paragraph.
-Each note links to its source record and archived copy. Data pages, such as
+Until the margin layout is built, the marker links to the notes at the end,
+and the Citations setting can open the note under the paragraph instead.
+Each note links to the original page and, where the source record has one,
+its archived copy with the capture date, for example "archived copy, Nov. 21,
+2026"; the Citations setting can hide either link. Data pages, such as
 a nation's facts, put no marker beside a fact; their sources are listed in a
 Sources section at the end (see [Nation pages](#nation-pages)).
 
@@ -623,9 +655,19 @@ accessibility statement is published at `/about/accessibility`.
   files whose names (which carry a hash of the content) have not changed.
   Sections, profiles, the glossary and sources use stale-while-revalidate, following web.dev's
   and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry
-  the content version so a release replaces the old copy.
-- **What is saved:** on `/offline`, a reader saves the code, the nation
-  profiles, or both, and sees how much space each takes and the version saved.
+  the build version, so each build replaces the old copy once the reader
+  updates (see Updates below).
+- **What is saved:** every page a reader opens is saved as they read it. In
+  Settings, "Saved for offline" (also on `/offline`) lists each collection,
+  how many of its pages are saved, and the space they take, with a button to
+  save the rest and one to remove them. The collections are Nation profiles,
+  Glossary and Other pages; the model code joins them when its pages are
+  built. A collection the reader saves is "kept": it is saved again from each
+  new version. The section shows the space the whole site uses, from the
+  Storage API's estimate, and offers "Keep saved pages when space runs low,"
+  which asks the browser for persistent storage, since otherwise the browser
+  may clear the site's data under storage pressure.[^mdn-storage] Saving runs
+  six files at a time inside the service worker, with a progress bar.
 - **Never cached:** any record with `sensitivity.restricted: true`, which is
   never published, exported, cached offline or served by any API
   ([data model, sensitivity flags](../docs/data-model.md#sensitivity-flags)).
@@ -633,6 +675,57 @@ accessibility statement is published at `/about/accessibility`.
   every saved copy.
 - **Offline notice:** "You are offline. Showing content as of [version,
   date]."
+
+### Updates
+
+How a reader who keeps the site on a device gets a new edition (project
+design, asked for by Trevor on Nov. 21, 2026). Each build has its own build
+version, the website version plus the build time, and the service worker
+names its cache after it. The three track versions come from release-please
+(`content/version.txt`, `site/version.txt`, `pdf/version.txt`), so a build can
+change the website without changing the content.
+
+1. **Detect.** The browser checks the service worker script on every
+   navigation, and a new build always changes it, because the script
+   contains the build version.[^webdev-lifecycle] SvelteKit also checks the
+   build version when the tab regains focus, on data responses and on a
+   timer; when it sees a new build, the page asks the browser to check the
+   worker at once.[^sveltekit-updated] "Check for updates" in Settings does
+   both on demand.
+2. **Install in the background.** The new worker saves the new build's
+   scripts, styles and core pages into its own cache and then waits. It does
+   not take over on its own: taking over mid-visit would mix two versions in
+   one page.[^webdev-lifecycle] While it waits, the old worker keeps saving
+   pages it reads only if they come from its own build (each built page names
+   its build), so saved copies never point at scripts they lack.
+3. **Withdrawals first.** As soon as the new worker installs, every saved
+   page that is not in the new build is deleted from the saved copies, without
+   waiting for the reader. A nation's request to withdraw material therefore
+   reaches every device on its next visit online
+   ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
+4. **Ask.** A notice under the masthead says what the update brings, read
+   from `/edition.json` on the network: "It brings content version 0.3.0; you
+   are reading 0.2.0," or that only the website changed. It offers "Update
+   now," "What changed" (the changelog) and "Later." It is a notice, not an
+   alert, so it does not take focus.
+5. **Apply.** "Update now" tells the waiting worker to take over
+   (`skipWaiting`), and the page reloads once it has.[^mdn-skip-waiting] "Later"
+   hides the notice for the visit; the browser applies the update by itself
+   once every tab of the site has closed.[^webdev-lifecycle] The new worker
+   deletes the old cache, keeping font files that have not changed and the
+   list of kept collections.
+6. **Save again.** On the next page load, the page asks the new worker to save
+   the kept collections from the new build, and a status line shows the
+   progress. If the connection drops, it continues on a later visit.
+7. **What the reader sees offline.** The offline notice names the content
+   version of the copy being read, and Settings shows the content and website
+   versions and the build date, so a stale copy is always labeled.
+
+**Downloaded books.** A PDF or EPUB on the reader's device cannot be updated
+by the site. Each edition will print its edition number and the address
+`/downloads?edition=<number>`; that page compares the number with the current
+print version and says whether a newer edition is out, with a link to what
+changed. The print templates do not print the address yet.
 
 ## 11. Performance and hosting
 
@@ -726,6 +819,11 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^wcag-1412]: W3C, *Understanding Success Criterion 1.4.12: Text Spacing*, [w3.org/WAI/WCAG22/Understanding/text-spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing).
 [^mdn-hyphens]: MDN Web Docs, *hyphens*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens).
 [^wcag-148]: W3C, *Understanding Success Criterion 1.4.8: Visual Presentation*, [w3.org/WAI/WCAG22/Understanding/visual-presentation](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation).
+[^apg-tabs]: W3C WAI, *ARIA Authoring Practices Guide: Tabs Pattern*, [w3.org/WAI/ARIA/apg/patterns/tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
+[^webdev-lifecycle]: Jake Archibald, *The service worker lifecycle*, web.dev, [web.dev/articles/service-worker-lifecycle](https://web.dev/articles/service-worker-lifecycle) (accessed Nov. 21, 2026). Sections "Updating the service worker," "Waiting" and "Skip the waiting phase."
+[^sveltekit-updated]: SvelteKit, *$app/state: updated*, [svelte.dev/docs/kit/$app-state#updated](https://svelte.dev/docs/kit/$app-state#updated); the same text is in `@sveltejs/kit` 3.4.0's type definitions.
+[^mdn-skip-waiting]: MDN Web Docs, *ServiceWorkerGlobalScope: skipWaiting() method*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting).
+[^mdn-storage]: MDN Web Docs, *Storage quotas and eviction criteria*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria), and *StorageManager: persist() method*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist).
 [^mdn-dialog]: MDN Web Docs, *&lt;dialog&gt;: The Dialog element*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog).
 [^wery]: J. J. Wery and J. A. Diliberto, *The effect of a specialized dyslexia font, OpenDyslexic, on reading rate and accuracy*, 67 Annals of Dyslexia 114 (2017), [doi.org/10.1007/s11881-016-0127-1](https://doi.org/10.1007/s11881-016-0127-1).
 [^ofl-faq]: SIL International, *OFL-FAQ*, entries 2.2 and 2.6, [openfontlicense.org/ofl-faq](https://openfontlicense.org/ofl-faq/) (accessed Nov. 21, 2026).

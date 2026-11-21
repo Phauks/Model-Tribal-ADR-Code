@@ -43,7 +43,10 @@ describe('reading settings', () => {
 			font: undefined,
 			textSpacing: undefined,
 			textAlignment: undefined,
-			contrast: undefined
+			contrast: undefined,
+			noteDisplay: undefined,
+			sourceLinks: undefined,
+			glossaryCards: undefined
 		});
 		expect(settingsAttributes({ ...defaultSettings, textSpacing: 'wide' }).textSpacing).toBe('wide');
 	});
@@ -62,7 +65,8 @@ describe('the inline script in app.html', () => {
 	it('uses the same storage keys and setting names', () => {
 		expect(page).toContain(`localStorage.getItem('${themeStorageKey}')`);
 		expect(page).toContain(`localStorage.getItem('${settingsStorageKey}')`);
-		expect(page).toContain(`[${settingNames.map((name) => `'${name}'`).join(', ')}]`);
+		const compact = page.replace(/\s+/g, '');
+		expect(compact).toContain(`[${settingNames.map((name) => `'${name}'`).join(',')}]`);
 	});
 });
 
@@ -71,6 +75,11 @@ describe('global.css', () => {
 	const tokens = JSON.parse(
 		readFileSync(new URL('../design-tokens.json', import.meta.url), 'utf8')
 	) as { font: { family: Record<string, unknown> } };
+
+	it('hides the right source link for each setting', () => {
+		expect(styles).toContain(`[data-source-links='original'] .source-archived`);
+		expect(styles).toContain(`[data-source-links='archived'] .has-archive .source-original`);
+	});
 
 	it('hyphenates justified text and keeps links whole', () => {
 		expect(styles).toMatch(/\[data-text-alignment='justified'\][^{]*\{[^}]*text-align: justify;[^}]*hyphens: auto;/);

@@ -1,24 +1,32 @@
 <script lang="ts">
 	// Settings button and dialog (site/DESIGN.md, section 6, "Settings"). The
-	// reader changes text size, font, text spacing, theme and contrast; each
-	// change applies at once and is kept on this device only, through
-	// src/lib/reading-settings.ts, so it works offline. The dialog is the
-	// browser's own modal <dialog>: it keeps focus inside, closes with Escape
-	// and returns focus to the button. Without scripts the button is hidden
-	// (the needs-scripts class in global.css).
+	// dialog is the shared two-panel Modal: sections on the left (Text,
+	// Colors, Citations, Glossary, Saved for offline) and the chosen section on
+	// the right. Reading settings apply at once and are kept on this device
+	// only, through src/lib/reading-settings.ts, so they work offline. Without
+	// scripts the button is hidden (the needs-scripts class in global.css).
+	import BookA from '@lucide/svelte/icons/book-a';
+	import HardDriveDownload from '@lucide/svelte/icons/hard-drive-download';
+	import Palette from '@lucide/svelte/icons/palette';
+	import Quote from '@lucide/svelte/icons/quote';
 	import Settings from '@lucide/svelte/icons/settings';
-	import X from '@lucide/svelte/icons/x';
+	import Type from '@lucide/svelte/icons/type';
+	import Modal from './Modal.svelte';
+	import OfflineSaving from './OfflineSaving.svelte';
 	import {
 		contrastChoices,
 		defaultSettings,
 		downloadFont,
 		fontChoices,
+		glossaryCardOptions,
 		loadSettings,
 		loadTheme,
+		noteDisplayChoices,
 		saveSettings,
 		saveTheme,
-		textSizeChoices,
+		sourceLinkOptions,
 		textAlignmentChoices,
+		textSizeChoices,
 		textSpacingChoices,
 		themeChoices,
 		type Choice,
@@ -26,19 +34,30 @@
 		type Theme
 	} from '#lib/reading-settings.ts';
 
-	let dialog: HTMLDialogElement | undefined = $state();
+	type SectionIdentifier = 'text' | 'colors' | 'citations' | 'glossary' | 'offline';
+
+	const sections = [
+		{ id: 'text', label: 'Text', icon: Type },
+		{ id: 'colors', label: 'Colors', icon: Palette },
+		{ id: 'citations', label: 'Citations', icon: Quote },
+		{ id: 'glossary', label: 'Glossary', icon: BookA },
+		{ id: 'offline', label: 'Saved for offline', icon: HardDriveDownload }
+	] satisfies { id: SectionIdentifier; label: string; icon: unknown }[];
+
+	let modal: Modal<SectionIdentifier> | undefined = $state();
 	let opener: HTMLButtonElement | undefined = $state();
+	let selected = $state<SectionIdentifier>('text');
 	let settings = $state<ReadingSettings>({ ...defaultSettings });
 	let theme = $state<Theme>('device');
 
 	function open() {
 		settings = loadSettings();
 		theme = loadTheme();
-		dialog?.showModal();
+		modal?.open();
 	}
 
 	function close() {
-		dialog?.close();
+		modal?.close();
 	}
 
 	function returnFocus() {
@@ -105,49 +124,87 @@
 	<span>Settings</span>
 </button>
 
-<dialog bind:this={dialog} class="settings-dialog" aria-labelledby="settings-heading" onclose={returnFocus}>
-	<div class="dialog-top">
-		<h2 id="settings-heading">Settings</h2>
-		<button class="button button-quiet close-button" type="button" onclick={close}>
-			<X size={20} strokeWidth={1.75} />
-			<span>Close</span>
-		</button>
-	</div>
-	<p class="hint">
-		Changes apply at once. They are saved on this device only, so they also work offline, and
-		nothing is sent to the site.
-	</p>
-	<form onsubmit={(event) => event.preventDefault()}>
-		{@render choiceGroup('Text size', 'text-size', textSizeChoices, settings.textSize, (value) =>
-			change('textSize', value)
-		)}
-		{@render choiceGroup('Font', 'font', fontChoices, settings.font, (value) =>
-			change('font', value)
-		)}
-		{@render choiceGroup(
-			'Text spacing',
-			'text-spacing',
-			textSpacingChoices,
-			settings.textSpacing,
-			(value) => change('textSpacing', value)
-		)}
-		{@render choiceGroup(
-			'Text alignment',
-			'text-alignment',
-			textAlignmentChoices,
-			settings.textAlignment,
-			(value) => change('textAlignment', value)
-		)}
-		{@render choiceGroup('Theme', 'theme', themeChoices, theme, changeTheme)}
-		{@render choiceGroup('Contrast', 'contrast', contrastChoices, settings.contrast, (value) =>
-			change('contrast', value)
-		)}
-	</form>
-	<div class="dialog-actions">
+<Modal
+	bind:this={modal}
+	bind:selected
+	title="Settings"
+	sections={sections}
+	onclose={returnFocus}
+>
+	{#snippet section(id: SectionIdentifier)}
+		<h3 class="section-heading">{sections.find((item) => item.id === id)?.label}</h3>
+		{#if id === 'text'}
+			{@render choiceGroup('Text size', 'text-size', textSizeChoices, settings.textSize, (value) =>
+				change('textSize', value)
+			)}
+			{@render choiceGroup('Font', 'font', fontChoices, settings.font, (value) =>
+				change('font', value)
+			)}
+			{@render choiceGroup(
+				'Text spacing',
+				'text-spacing',
+				textSpacingChoices,
+				settings.textSpacing,
+				(value) => change('textSpacing', value)
+			)}
+			{@render choiceGroup(
+				'Text alignment',
+				'text-alignment',
+				textAlignmentChoices,
+				settings.textAlignment,
+				(value) => change('textAlignment', value)
+			)}
+		{:else if id === 'colors'}
+			{@render choiceGroup('Theme', 'theme', themeChoices, theme, changeTheme)}
+			{@render choiceGroup('Contrast', 'contrast', contrastChoices, settings.contrast, (value) =>
+				change('contrast', value)
+			)}
+		{:else if id === 'citations'}
+			<p class="hint">
+				Pages cite their sources with numbered notes, and nation pages list their sources at the end.
+			</p>
+			{@render choiceGroup(
+				'When you select a note number',
+				'note-display',
+				noteDisplayChoices,
+				settings.noteDisplay,
+				(value) => change('noteDisplay', value)
+			)}
+			{@render choiceGroup(
+				'Links to sources',
+				'source-links',
+				sourceLinkOptions,
+				settings.sourceLinks,
+				(value) => change('sourceLinks', value)
+			)}
+		{:else if id === 'glossary'}
+			<p class="hint">
+				Terms the project defines are marked with a dotted underline and link to their glossary
+				entries.
+			</p>
+			{@render choiceGroup(
+				'Glossary cards',
+				'glossary-cards',
+				glossaryCardOptions,
+				settings.glossaryCards,
+				(value) => change('glossaryCards', value)
+			)}
+			<p><a href="/glossary" onclick={close}>Open the glossary</a></p>
+		{:else if id === 'offline'}
+			<OfflineSaving headingLevel={4} />
+		{/if}
+		{#if id !== 'offline'}
+			<p class="hint saved-note">
+				Changes apply at once. They are saved on this device only, so they also work offline, and
+				nothing is sent to the site.
+			</p>
+		{/if}
+	{/snippet}
+	{#snippet actions()}
 		<button class="button" type="button" onclick={close}>Done</button>
-		<button class="button button-quiet" type="button" onclick={reset}>Reset to defaults</button>
-	</div>
-</dialog>
+		<button class="button button-quiet" type="button" onclick={reset}>Reset settings to defaults</button>
+	{/snippet}
+</Modal>
 
 <style>
 	.settings-button {
@@ -165,52 +222,18 @@
 		cursor: pointer;
 	}
 
-	/* The dialog sits inside the masthead in the page, so it resets the band's colors. */
-	.settings-dialog {
-		width: min(36rem, calc(100% - 2 * var(--space-4)));
-		max-height: calc(100% - 2 * var(--space-4));
-		padding: var(--space-4) var(--space-5) var(--space-5);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-panel);
-		background: var(--color-paper);
-		color: var(--color-ink);
-	}
-
-	.settings-dialog::backdrop {
-		background: var(--color-band);
-		opacity: 0.6;
-	}
-
-	.settings-dialog label {
-		color: var(--color-ink);
-	}
-
-	.dialog-top {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--space-3);
-	}
-
-	.dialog-top h2 {
-		margin: 0;
-	}
-
-	.close-button,
-	.dialog-actions .button {
-		gap: var(--space-2);
+	.section-heading {
+		margin: 0 0 var(--space-2);
 	}
 
 	.setting {
-		margin: var(--space-5) 0 0;
+		margin: var(--space-4) 0 0;
 		padding: 0;
 		border: 0;
 	}
 
 	.setting legend {
 		font-weight: var(--font-weight-bold);
-		font-size: var(--font-size-lead);
 		margin-bottom: var(--space-1);
 	}
 
@@ -239,12 +262,7 @@
 		margin: 0;
 	}
 
-	.dialog-actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-3);
+	.saved-note {
 		margin-top: var(--space-5);
-		padding-top: var(--space-4);
-		border-top: 1px solid var(--color-line);
 	}
 </style>
