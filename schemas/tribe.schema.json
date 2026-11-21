@@ -255,7 +255,7 @@
             "properties": {
               "kind": {
                 "$ref": "common.schema.json#/$defs/slug",
-                "description": "Kind of method, from an open vocabulary: any lowercase hyphenated term is accepted, so methods not yet listed still validate. Use one of these where it fits: peacemaking, traditional-forum, mediation-program, arbitration, family-or-talking-circle, elders-council, restorative-justice, settlement-conference, family-group-conference, sentencing-circle, healing-circle, negotiation-assistance, ombudsperson, other. A kind that becomes common gets a glossary record (content/glossary/<kind>.yaml) rather than a schema change."
+                "description": "Kind of method, from an open vocabulary: any lowercase hyphenated term is accepted, so methods not yet listed still validate. Use one of these where it fits: peacemaking, traditional-forum, mediation-program, arbitration, family-or-talking-circle, elders-council, restorative-justice, settlement-conference, family-group-conference, sentencing-circle, healing-circle, negotiation-assistance, ombudsperson, other. A kind that becomes common gets its own record (a method record in content/methods/ once that record type exists, or a glossary entry) rather than a schema change."
               },
               "own_term": {
                 "type": "object",
