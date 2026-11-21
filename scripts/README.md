@@ -11,6 +11,10 @@ add a job to the workflow and list it under `all-checks.needs`.
 | --- | --- | --- |
 | `check_text.py` | Every text file is UTF-8 without a byte order mark, in Unicode Normalization Form C, with LF line endings and a final newline | Python 3 standard library |
 | `validate_records.py` | Every schema, example and content record is valid, and every citation key, glossary link and research session reference resolves | `pip install -r scripts/requirements.txt` |
+| `lint_records.py` | Catches unchecked data (decision record 0014): profile facts with no `verification` level, two source records at one address, forum kinds with no method record, sources still unarchived 30 days after retrieval, and sources cited by content headed for an edition that are unarchived, lack a citator result or are marked unverified. With `--base <ref>` it fails only on problems the pull request adds or changes; run it with `--edition` before exporting an edition | `scripts/requirements.txt` |
+| `coverage_report.py` | Counts how much of the dataset has been checked and how closely: facts by section and verification level, dispute resolution coverage by region, archives, citator checks, method and glossary status. With `--base <ref>` it shows each count beside the base's. In continuous integration the report goes to the job summary | `scripts/requirements.txt` |
+
+`record_facts.py` holds the helpers both share.
 
 ## Analysis
 

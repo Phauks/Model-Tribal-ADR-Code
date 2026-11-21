@@ -25,5 +25,6 @@ and says so.
 | [0012](0012-outreach-list-split-public-and-private.md) | Keep outreach organizations public and the outreach plan private | Accepted |
 | [0012](0012-open-list-of-dispute-resolution-methods.md) | Keep the list of dispute resolution methods open | Accepted |
 | [0013](0013-sign-in-with-auth0.md) | Sign in co-authors with Auth0; keep roles in the site's database | Accepted |
+| [0014](0014-verification-levels-and-record-lint.md) | Record how each fact was checked, and lint for unchecked data | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.
