@@ -79,6 +79,13 @@ community has availed itself of this opportunity"
 records these sources side by side without resolving the question (project
 choice).
 
+Where the list of recognized entities names bands only inside another
+entity's entry, as it does for the six component reservations of the
+Minnesota Chippewa Tribe, each band has its own profile with `part_of` set to
+that entity's id. Its recognition cites the same entry, and counts of
+recognized entities leave it out so that no entity is counted twice
+([decision record 0016](decisions/0016-component-bands-own-profiles.md)).
+
 ### Every fact is cited
 
 Every value in a profile carries the same citation fields

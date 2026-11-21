@@ -1,13 +1,15 @@
 {
-  "profiles": 948,
-  "profiles_with_any_dispute_resolution_record": 184,
+  "profiles": 954,
+  "profiles_with_any_dispute_resolution_record": 186,
   "federally_recognized_profiles": 575,
-  "federally_recognized_profiles_with_any_record": 184,
-  "profiles_with_a_record_besides_database_listings": 104,
+  "federally_recognized_profiles_with_any_record": 183,
+  "component_profiles": 6,
+  "component_profiles_with_any_record": 3,
+  "profiles_with_a_record_besides_database_listings": 106,
   "coverage_by_recognition": {
     "federal": {
       "profiles": 560,
-      "with_record": 179
+      "with_record": 178
     },
     "unrecognized": {
       "profiles": 280,
@@ -28,6 +30,10 @@
     "federal+state": {
       "profiles": 15,
       "with_record": 5
+    },
+    "component-of-minnesota-chippewa-tribe": {
+      "profiles": 6,
+      "with_record": 3
     },
     "petitioning+state+unrecognized": {
       "profiles": 3,
@@ -73,8 +79,8 @@
     },
     "Midwest": {
       "federally_recognized": 30,
-      "with_any_record": 26,
-      "with_forum": 11
+      "with_any_record": 25,
+      "with_forum": 10
     },
     "Navajo": {
       "federally_recognized": 1,
@@ -115,7 +121,7 @@
   "sections": {
     "forums": {
       "items": 77,
-      "nations": 54,
+      "nations": 56,
       "kinds": {
         "peacemaking": 42,
         "elders-council": 6,
@@ -144,7 +150,7 @@
     },
     "provisions": {
       "items": 323,
-      "nations": 96,
+      "nations": 98,
       "kinds": {
         "peacemaking": 107,
         "other": 84,
@@ -219,7 +225,7 @@
     },
     "database_listings": {
       "items": 938,
-      "nations": 165,
+      "nations": 167,
       "kinds": {
         "None": 938
       },
@@ -250,7 +256,7 @@
   "provisions_with_summary": 48,
   "nations_by_strongest_evidence": {
     "bulk_database_records_only": 80,
-    "has_text_read_or_curated_record": 59,
+    "has_text_read_or_curated_record": 61,
     "bulk_database_records_and_section_titles_only": 34,
     "section_titles_only": 11
   },
@@ -276,7 +282,7 @@
     "nations_by_kind": {
       "peacemaking": 38,
       "restorative-justice": 6,
-      "elders-council": 5,
+      "elders-council": 6,
       "mediation": 5,
       "arbitration": 4,
       "customary-dispute-resolution": 4,
@@ -319,7 +325,7 @@
       },
       "consent_of_parties_required_for_referral_or_transfer": {
         "forums": 45,
-        "nations": 36
+        "nations": 37
       },
       "case_returns_to_court_if_unresolved": {
         "forums": 19,
@@ -409,8 +415,8 @@
   "review_flags": {
     "provisions_repeating_a_title_within_one_profile": 19,
     "urls_with_more_than_one_source_record": 4,
-    "source_records_without_an_archived_copy": 2206,
-    "source_records": 2351,
+    "source_records_without_an_archived_copy": 2494,
+    "source_records": 2639,
     "method_records_found": 33,
     "record_kinds_without_a_method_record": [
       "traditional-dispute-resolution"

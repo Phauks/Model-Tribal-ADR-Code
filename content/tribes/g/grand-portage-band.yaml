@@ -1,0 +1,139 @@
+id: grand-portage-band
+entity_type: native-nation
+part_of: minnesota-chippewa-tribe
+names:
+  official: Grand Portage Band
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
+    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
+    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
+    White Earth Band).'
+states:
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1355
+  note: 'Census area with land in this state: Grand Portage Reservation and Off-Reservation Trust Land
+    (code 1355). Area matched to the band by name.'
+census_areas:
+- geographic_identifier: '1355'
+  name: Grand Portage Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1355
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+population:
+- count: 618
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: bulk-import
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1355, field POP100
+  note: 'Census area: Grand Portage Reservation and Off-Reservation Trust Land (code 1355). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Minnesota Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: inferred
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
+    Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
+    taken from its entry.
+governing_documents:
+- kind: law-code
+  title: Formerly at Minnesota Indian Bar Association (MAIBA)'s website . Judicial code
+  link: https://web.archive.org/web/20211019172320/https://maiba.org/pdf/GrandPortageJudicialCode.pdf
+  source: national-indian-law-library-minn-chippewa-grand-portage
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Code'' as: "Formerly
+    at Minnesota Indian Bar Association (MAIBA)''s website . Judicial code.".'
+- kind: law-code
+  title: Water quality standards
+  link: http://water.epa.gov/scitech/swguidance/standards/upload/2006_11_06_standards_wqslibrary_tribes_grand-portage-band.pdf
+  source: national-indian-law-library-minn-chippewa-grand-portage
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Code'' as: "At EPA
+    website . Water quality standards.".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-minn-chippewa-grand-portage
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Constitution'' as:
+    "At Minnesota Chippewa Tribe''s website .". Link check 2026-11-21: the link the source gives (http://www.mnchippewatribe.org/pdf/constitution_revised.pdf)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-minn-chippewa-grand-portage
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
+    Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name.'
+- kind: tribal-court
+  name: Grand Portage Band of Chippewa Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: bulk-import
+  as_of: '2022'
+  locator: Minnesota section, entry 'Grand Portage Band of Chippewa Indians'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band'
+gaming:
+  ordinances:
+  - approved: '1993-11-23'
+    link: https://www.nigc.gov?wpdmdl=9873&ind=9889
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '1993-11-23'
+    locator: table row 91, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 91 lists the nation
+      as "Grand Portage Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant.
+      Ordinance of the Grand Portage Band, a component reservation of the Minnesota Chippewa Tribe; the
+      roster lists only the Minnesota Chippewa Tribe.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Created on 2026-11-21 from records first kept on the Minnesota Chippewa Tribe profile; not yet
+    sent to the band for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

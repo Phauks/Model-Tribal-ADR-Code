@@ -1,0 +1,187 @@
+id: fond-du-lac-band
+entity_type: native-nation
+part_of: minnesota-chippewa-tribe
+names:
+  official: Fond du Lac Band
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
+    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
+    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
+    White Earth Band).'
+states:
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1125
+  note: 'Census area with land in this state: Fond du Lac Reservation and Off-Reservation Trust Land (code
+    1125). Area matched to the band by name.'
+- state: WI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1125
+  note: 'Census area with land in this state: Fond du Lac Reservation and Off-Reservation Trust Land (code
+    1125). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1125'
+  name: Fond du Lac Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1125
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+population:
+- count: 4184
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: bulk-import
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1125, field POP100
+  note: 'Census area: Fond du Lac Reservation and Off-Reservation Trust Land (code 1125). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Minnesota Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: inferred
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
+    Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
+    taken from its entry.
+governing_documents:
+- kind: law-code
+  title: Codes and ordinances
+  link: https://www.fdlband.org/government/ordinances.php
+  source: national-indian-law-library-minn-chippewa-fond-du-lac
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Code'' as: "At band''s
+    website . Codes and ordinances.".'
+- kind: law-code
+  title: Water quality standards
+  link: https://www.epa.gov/wqs-tech/epa-approvals-tribal-water-quality-standards
+  source: national-indian-law-library-minn-chippewa-fond-du-lac
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Code'' as: "At EPA
+    website . Water quality standards.".'
+- kind: law-code
+  title: Fond du Lac Ordinances
+  link: http://www.fdlrez.com/government/fdlordinances.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: title-only
+  as_of: '2022'
+  locator: Minnesota section, entry 'Fond du Lac Band of Lake Superior Chippewa'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band. Title is the link text
+    in the directory; link not re-checked and may be out of date.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.fdlband.org/government/tribal_court/index.php
+  source: national-indian-law-library-minn-chippewa-fond-du-lac
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band of the Minnesota Chippewa
+    Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name.'
+- kind: tribal-court
+  name: Fond du Lac Band of Chippewa Tribal Court
+  link: http://www.fdlrez.com/government/courtmain.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: bulk-import
+  as_of: '2022'
+  locator: Minnesota section, entry 'Fond du Lac Band of Lake Superior Chippewa'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band'
+gaming:
+  compacts:
+  - state: MN
+    status: approved
+    approved: '2024-10-17'
+    federal_register_citation: 89 FR 83698
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2024-10-17'
+    locator: result page 17 (?page=17), row 6
+    note: 'Listed as: "Fond du Lac Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Minnesota Chippewa Tribe - Fond du Lac Band". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_com%5Bpliant_2024.10.17_fond_du_lac_band_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/10/17/2024-23989/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-between-the-fond-du-lac-band-of-lake.
+      Name matched to roster by spelling variant. Compact is with the Fond du Lac Band, a component reservation
+      of the Minnesota Chippewa Tribe; the roster lists only the Minnesota Chippewa Tribe. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  ordinances:
+  - approved: '1993-09-23'
+    link: https://www.nigc.gov?wpdmdl=9799&ind=9828
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '1993-09-23'
+    locator: table row 82, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 82 lists the nation
+      as "Fond du Lac Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant. Ordinance
+      of the Fond du Lac Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
+      only the Minnesota Chippewa Tribe.
+  - approved: '2003-06-24'
+    link: https://www.nigc.gov?wpdmdl=9816&ind=9829
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2003-06-24'
+    locator: table row 82, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 82 lists the nation
+      as "Fond du Lac Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant. Ordinance
+      of the Fond du Lac Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
+      only the Minnesota Chippewa Tribe.
+  - approved: '2016-07-12'
+    link: https://www.nigc.gov?wpdmdl=9817&ind=9830
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2016-07-12'
+    locator: table row 82, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 82 lists the nation
+      as "Fond du Lac Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant. Ordinance
+      of the Fond du Lac Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
+      only the Minnesota Chippewa Tribe.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Created on 2026-11-21 from records first kept on the Minnesota Chippewa Tribe profile; not yet
+    sent to the band for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -288,6 +288,11 @@ def main() -> int:
 
     check_outreach(records.get("outreach-organization.schema.json", []), errors)
 
+    tribe_ids = {record.get("id") for _, record in records.get("tribe.schema.json", [])}
+    for path, record in records.get("tribe.schema.json", []):
+        if record.get("part_of") and record["part_of"] not in tribe_ids:
+            errors.append(f"{path}: part_of names a missing profile '{record['part_of']}'")
+
     unmatched_kinds: dict[str, int] = {}
     for path, record in records.get("tribe.schema.json", []):
         for forum in (record.get("dispute_resolution") or {}).get("forums", []):
