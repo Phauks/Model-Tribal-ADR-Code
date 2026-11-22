@@ -94,7 +94,22 @@ versions:
     change: not-compared
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1991-text-2
+  label: 1991 constitution and bylaws (tribal code, Chapter 1)
+  event: edition
+  status: in-effect
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text-2
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin/2f82ff0bc8e86f07.pdf
+    sha256: 2f82ff0bc8e86f079a3929f2ca9e1db5bd7cf5daf232a47f22cf9fb6f5b34d49
+    pages: 19
+  note: Chapter 1 of the Red Cliff tribal code; gives no date of its own and says it supersedes the 1936
+    constitution. Its words match the 1991-text copy (project comparison of the two text layers). Version,
+    status and dates read from the copy by the project (Claude), not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

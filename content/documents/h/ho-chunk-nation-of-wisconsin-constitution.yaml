@@ -41,7 +41,7 @@ versions:
 - id: 1994-text
   label: 1994 constitution
   event: revision
-  status: unknown
+  status: superseded
   dates:
     adopted: '1994-09-17'
     approved: '1994-11-01'
@@ -59,8 +59,8 @@ versions:
     path: research/captures/constitutions/ho-chunk-nation-of-wisconsin/2e5d63f2b169e97c.pdf
     sha256: 2e5d63f2b169e97cd57283d8171ae1f03b2d9024d75f0baa2b2b4495ea4bd07a
     pages: 19
-  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
-    author.
+  note: 'Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author. Marked superseded on 2026-11-22: the 2016 constitution, as amended (2016-text) is newer.'
   clauses:
   - topic: judicial-power
     locator: Article XIII (including those which reverse decisions of the Judiciary interpreting this)
@@ -118,7 +118,53 @@ versions:
     change: added
     verification: inferred
     note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 2016-text
+  label: 2016 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2016-01-26'
+  supersedes:
+  - 1994-text
+  source: constitution-ho-chunk-nation-of-wisconsin-2016-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/ho-chunk-nation-of-wisconsin/d55948c03963b8d5.pdf
+    sha256: d55948c03963b8d56655a1a5cb40739b7a6320ee0069f557b08998759521e453
+    pages: 64
+  note: The 1994 constitution with bracketed amendment notes; the newest are Amendments XV and XVI, adopted
+    Jan. 26, 2016 (effective Feb. 11, 2016), recorded as listed. Marked in effect because it is the newest
+    dated text found; a later amendment may not be posted. Version, status and dates read from the copy
+    by the project (Claude), not yet checked by the lead author.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: judicial-power
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: peacemaking
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: removal-and-recall
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: sovereign-immunity
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

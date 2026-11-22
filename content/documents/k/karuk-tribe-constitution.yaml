@@ -44,7 +44,24 @@ versions:
     locator: Article IX (Vacancies and Removal from Office)
     summary: Article headed "Vacancies and Removal from Office"; found by its heading and not yet read.
     verification: title-only
+- id: 2008-text-2
+  label: 2008 constitution, as amended (Wayback copy)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2008-07-19'
+  source: constitution-karuk-tribe-2008-text-2
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/karuk-tribe/7928d6dc1ef97b6b.pdf
+    sha256: 7928d6dc1ef97b6b52e6a7d595a9d93ab557587f094052870f7ba4bb21996fde
+    pages: 11
+  note: Footed "Original Constitution Adopted April 6, 1985; Amendments Adopted by Special Election July
+    19, 2008". Same text as the 2008-text copy (project comparison of the two text layers). Version, status
+    and dates read from the copy by the project (Claude), not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

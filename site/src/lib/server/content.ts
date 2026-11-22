@@ -109,8 +109,12 @@ export interface GlossaryRecord {
 	term: string;
 	kind: 'term' | 'acronym' | 'legal-term' | 'phrase';
 	expansion?: string;
+	part_of_speech?: 'noun' | 'adjective' | 'verb' | 'adverb';
 	usage: 'preferred' | 'acceptable' | 'context-only' | 'avoid';
 	definition: string;
+	other_senses?: { label?: string; definition: string }[];
+	/** The id of the model code provision that enacts a definition of the term, such as 01-102. */
+	code_definition?: string;
 	usage_note?: string;
 	aliases?: string[];
 	use_instead?: string[];
@@ -184,7 +188,13 @@ export interface NationRecord {
 		bureau_of_indian_affairs_agency?: string;
 	};
 	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string })[];
-	justice_institutions?: (CitedFact & { kind: string; name: string; link?: string })[];
+	justice_institutions?: (CitedFact & {
+		kind: string;
+		name: string;
+		link?: string;
+		/** Where the court's appeals go: another court in this record, with its own citation. */
+		appeals_to?: CitedFact & { court: string };
+	})[];
 	dispute_resolution_law?: string[];
 	dispute_resolution?: { forums?: (CitedFact & { kind: string; name?: string; link?: string })[] };
 	review: { status: string; last_verified?: string; note?: string };

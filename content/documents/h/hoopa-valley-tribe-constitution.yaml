@@ -12,7 +12,7 @@ versions:
 - id: 2008-text
   label: 2008 constitution and bylaws, as amended
   event: edition
-  status: unknown
+  status: superseded
   dates:
     listed: '2008'
   source: constitution-hoopa-valley-tribe-2008-text
@@ -22,9 +22,10 @@ versions:
     path: research/captures/constitutions/hoopa-valley-tribe/c398a1f3c2421bc8.pdf
     sha256: c398a1f3c2421bc8d638b88fa00a8f19d67625b7960f7d77b7795b4dc1fee0d7
     pages: 24
-  note: The text also prints adopted 1950-05-13, approved 1952-09-04, which belong to the earlier text
+  note: 'The text also prints adopted 1950-05-13, approved 1952-09-04, which belong to the earlier text
     it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
     Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+    Marked superseded on 2026-11-22: the 2012 constitution and bylaws, as amended (2012-text) is newer.'
   clauses:
   - topic: dispute-resolution
     locator: Article VI (~ - NOMINATIONS AND ELECTIONS)
@@ -49,7 +50,42 @@ versions:
     locator: Article VII (VACANCIES AND REMOVAL FROM OFFICE)
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
+- id: 2012-text
+  label: 2012 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2012-06-19'
+  supersedes:
+  - 2008-text
+  source: constitution-hoopa-valley-tribe-2012-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/hoopa-valley-tribe/ea5a56ed109f9d7e.pdf
+    sha256: ea5a56ed109f9d7e4d51f19e70b53ee07ef5afe6595b7a42d96459157c2a8bbc
+    pages: 12
+  note: Scanned; the first page reads "(Amended June 19, 2012)". Marked in effect because it is the newest
+    dated text found; a later amendment may not be posted. Version, status and dates read from the copy
+    by the project (Claude), not yet checked by the lead author.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2008-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: election-disputes
+    compared_with: 2008-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: removal-and-recall
+    compared_with: 2008-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

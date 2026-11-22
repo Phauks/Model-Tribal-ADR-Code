@@ -33,7 +33,25 @@ versions:
     summary: Article headed "JUDiCiARy PAGE 12"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+- id: 2008-text-2
+  label: 2008 constitution, as amended (Wayback copy)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2008-06-11'
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text-2
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/standing-rock-sioux-tribe-of-north-and-south-dakota/36c93eacc0569604.pdf
+    sha256: 36c93eacc05696047fae2a5eeb85ef5a2434e5e39f8bd39138c804567647f909
+    pages: 14
+  note: Scanned; the cover reads "Approved April 24, 1959, with amendments through June 11, 2008". Taken
+    to be the text of the 2008-text version, which the catalog dates only to 2008 (not compared word for
+    word, since this copy has no text layer). Version, status and dates read from the copy by the project
+    (Claude), not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

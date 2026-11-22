@@ -12,6 +12,7 @@
 	import { downloadFor } from '#lib/page-downloads.ts';
 	import AccountLink from './AccountLink.svelte';
 	import PrintOptions from './PrintOptions.svelte';
+	import ReportProblem from './ReportProblem.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
 	import SiteSearch from './SiteSearch.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
@@ -29,9 +30,11 @@
 	];
 
 	/**
-	 * "Report a problem" goes to the request form, where the reader picks
-	 * what is wrong, including "Add a nation that is missing". On a nation or
-	 * glossary page, or a story's page, it names that record, so the report says which page it is
+	 * "Report a problem" opens a dialog with the request form (ReportProblem),
+	 * where the reader picks what is wrong, including "Add a nation that is
+	 * missing"; without scripts it goes to the request page. On a nation or
+	 * glossary page, or a story's page, it names that record, so the report
+	 * says which page it is
 	 * about. Trevor asked on Nov. 22, 2026 for this one link in the masthead in
 	 * place of a link on each page.
 	 */
@@ -94,7 +97,7 @@
 						</a>
 					</li>
 				{/if}
-				<li><a href={reportLink}>Report a problem</a></li>
+				<li><ReportProblem link={reportLink} /></li>
 				<li><a class="button" href="/requests?kind=contribute">Contribute</a></li>
 			</ul>
 		</nav>
