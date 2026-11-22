@@ -180,13 +180,14 @@ export const sourceLinkOptions: Choice<SourceLinks>[] = [
 	}
 ];
 
+/** Previews of defined terms and of nation pages (LinkPreviews.svelte). The stored name predates nation previews. */
 export const glossaryCardOptions: Choice<GlossaryCards>[] = [
 	{
 		value: 'on',
-		label: 'Show a short definition',
-		hint: 'When you point at a defined term, or move to it with the keyboard'
+		label: 'Show a short preview',
+		hint: 'When you point at a defined term or a link to a nation’s page, or move to it with the keyboard'
 	},
-	{ value: 'off', label: 'Off', hint: 'Defined terms are still links to their glossary entries' }
+	{ value: 'off', label: 'Off', hint: 'Links still go to the glossary entry or the nation’s page' }
 ];
 
 function isAllowed<Name extends keyof ReadingSettings>(
