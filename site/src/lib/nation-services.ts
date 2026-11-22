@@ -12,6 +12,7 @@
  * the court (schemas/tribe.schema.json); it is never worked out from a
  * court's name or kind.
  */
+import type { CitationMark } from './citation-marks.ts';
 import type { CitedFact } from './server/content.ts';
 import { webLink } from './contact-links.ts';
 import { humanize } from './nation-labels.ts';
@@ -32,6 +33,14 @@ export interface ServiceEntry {
 	text: string;
 	link?: string;
 	detail?: string;
+	/** The markers of the sources that list the service (src/lib/citation-marks.ts). */
+	citations: CitationMark[];
+}
+
+/** One step up a path of appeal: the court appeals go to, and the markers of the sources that say so. */
+export interface AppealStep {
+	court: ServiceEntry;
+	citations: CitationMark[];
 }
 
 /** One path of appeal, from the court that hears a case first to the highest court it can reach. */
@@ -39,7 +48,7 @@ export interface AppealPath {
 	/** The courts where cases on this path start; several when they share the rest of the path. */
 	first: ServiceEntry[];
 	/** Each court appeals go to, in order. */
-	then: ServiceEntry[];
+	then: AppealStep[];
 }
 
 /** The services of one kind, under one heading. */
@@ -52,8 +61,11 @@ export interface ServiceCategory {
 	entries: ServiceEntry[];
 }
 
-/** Records that a fact supports a line on the page, for the Sources section. */
-export type Cite = (fact: CitedFact, section: string, text: string) => void;
+/**
+ * Records that a fact supports a line on the page, for the Sources section,
+ * and adds its source's marker to `marks`, the markers shown beside that line.
+ */
+export type Cite = (fact: CitedFact, section: string, text: string, marks: CitationMark[]) => void;
 
 /**
  * The heading for each kind in the records' open vocabularies (decision
@@ -227,7 +239,7 @@ function entryFor(entry: Merged): ServiceEntry {
 			if (special && !special.unlessNamed.test(text)) detail = special.detail;
 		}
 	}
-	return { text, link, detail };
+	return { text, link, detail, citations: [] };
 }
 
 /**
@@ -270,11 +282,13 @@ export function nationServices(facts: ServiceFact[], cite: Cite): ServiceCategor
 	const shown = new Map(merged.map((entry) => [entry, entryFor(entry)]));
 	for (const entry of merged) {
 		const text = shown.get(entry)!.text;
-		for (const fact of entry.facts) cite(fact, entry.category.heading, text);
+		for (const fact of entry.facts) cite(fact, entry.category.heading, text, shown.get(entry)!.citations);
 	}
 
 	const courts = merged.filter((entry) => entry.category.id === 'courts');
 	const appealsTo = new Map<Merged, Merged>();
+	// The markers for "Appeals go to" above each court, from every appeals_to fact that names it.
+	const appealMarks = new Map<Merged, CitationMark[]>();
 	for (const entry of courts) {
 		for (const fact of entry.facts) {
 			const appeal = fact.appeals_to;
@@ -285,10 +299,13 @@ export function nationServices(facts: ServiceFact[], cite: Cite): ServiceCategor
 			);
 			if (!target) continue;
 			appealsTo.set(entry, target);
+			const marks = appealMarks.get(target) ?? [];
+			appealMarks.set(target, marks);
 			cite(
 				appeal,
 				categories.courts.heading,
-				`Appeals from ${shown.get(entry)!.text} go to ${shown.get(target)!.text}`
+				`Appeals from ${shown.get(entry)!.text} go to ${shown.get(target)!.text}`,
+				marks
 			);
 		}
 	}
@@ -326,7 +343,10 @@ export function nationServices(facts: ServiceFact[], cite: Cite): ServiceCategor
 	if (courtCategory) {
 		courtCategory.appealPaths = [...pathsByRoute.values()].map((path) => ({
 			first: path.first.map((court) => shown.get(court)!),
-			then: path.then.map((court) => shown.get(court)!)
+			then: path.then.map((court) => ({
+				court: shown.get(court)!,
+				citations: appealMarks.get(court) ?? []
+			}))
 		}));
 	}
 

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import NationBrowse from '#lib/components/NationBrowse.svelte';
 	import NationTable from '#lib/components/NationTable.svelte';
-	import PageTools from '#lib/components/PageTools.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -24,13 +23,8 @@
 	<p>
 		{data.total.toLocaleString('en-US')} pages. To find one nation, search its name in the search box at the top of every page. To browse, pick a first letter or a state below, or <a href="/nations/map">see the map</a> of nations by state, with the Bureau of Indian Affairs regions.
 	</p>
-	<p>
-		<strong>Is your nation missing?</strong>
-		<a href="/requests?kind=add-nation">Ask to be added</a>. One federal or state government source that names the nation is enough.
-	</p>
 </div>
 
-<PageTools downloads={[{ label: 'Download the full list', format: 'CSV', link: '/nations/nations.csv' }]} />
 
 <section aria-labelledby="by-letter">
 	<h2 id="by-letter">Native nations by first letter</h2>

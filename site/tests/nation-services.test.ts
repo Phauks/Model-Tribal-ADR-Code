@@ -3,9 +3,11 @@ import { nationServices, type ServiceFact } from '#lib/nation-services.ts';
 
 function run(facts: ServiceFact[]) {
 	const cited: { source?: string; section: string; text: string }[] = [];
-	const categories = nationServices(facts, (fact, section, text) =>
-		cited.push({ source: fact.source, section, text })
-	);
+	const categories = nationServices(facts, (fact, section, text, marks) => {
+		cited.push({ source: fact.source, section, text });
+		const number = cited.length;
+		marks.push({ number, anchor: `cite-${number}-1` });
+	});
 	return { categories, cited };
 }
 
@@ -21,7 +23,7 @@ describe('nationServices', () => {
 			'Peacemaking',
 			'Mediation'
 		]);
-		expect(categories[1].entries).toEqual([{ text: 'Example Peacemaking Program', link: undefined, detail: undefined }]);
+		expect(categories[1].entries).toMatchObject([{ text: 'Example Peacemaking Program', link: undefined, detail: undefined }]);
 	});
 
 	it('lists one service once when two sources name it', () => {
@@ -41,13 +43,14 @@ describe('nationServices', () => {
 			}
 		]);
 		expect(categories).toHaveLength(1);
-		expect(categories[0].entries).toEqual([
+		expect(categories[0].entries).toMatchObject([
 			{
 				text: 'Example Peacemaking Program (Own Name)',
 				link: 'https://example.org/peacemaking',
 				detail: undefined
 			}
 		]);
+		expect(categories[0].entries[0].citations).toHaveLength(2);
 		expect(cited.map((use) => use.source)).toEqual(['list', 'law']);
 	});
 
@@ -95,13 +98,15 @@ describe('nationServices', () => {
 			'Example District Court',
 			'Example Family Court'
 		]);
-		expect(courts.appealPaths[0].then.map((entry) => entry.text)).toEqual([
+		expect(courts.appealPaths[0].then.map((step) => step.court.text)).toEqual([
 			'Example Court of Appeals',
 			'Example Supreme Court'
 		]);
-		expect(courts.entries).toEqual([
+		expect(courts.entries).toMatchObject([
 			{ text: 'Example Regional Court', link: undefined, detail: 'Court of Indian Offenses' }
 		]);
+		// The markers above the Court of Appeals come from both courts' appeals_to facts.
+		expect(courts.appealPaths[0].then[0].citations).toHaveLength(2);
 		expect(cited).toContainEqual({
 			source: 'constitution',
 			section: 'Courts',

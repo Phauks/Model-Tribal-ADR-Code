@@ -201,13 +201,14 @@
 
 <button
 	bind:this={opener}
-	class="settings-button needs-scripts"
+	class="icon-button needs-scripts"
 	type="button"
 	aria-haspopup="dialog"
+	aria-label="Settings"
+	title="Settings"
 	onclick={open}
 >
-	<Settings size={20} strokeWidth={1.75} />
-	<span>Settings</span>
+	<Settings size={24} />
 </button>
 
 <Modal
@@ -290,21 +291,7 @@
 </Modal>
 
 <style>
-	.settings-button {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-band-text);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
-		cursor: pointer;
-	}
-
+	/* Icon only, the same size as the theme button beside it (Trevor, Nov. 22, 2026). */
 	.section-heading {
 		margin: 0 0 var(--space-2);
 	}

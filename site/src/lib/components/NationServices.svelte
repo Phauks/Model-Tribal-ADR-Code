@@ -2,10 +2,12 @@
 	// A nation's courts and dispute resolution services, one heading per kind
 	// of service, so the kind is said once (src/lib/nation-services.ts).
 	// Where sources record it, the courts show how appeals move, from the
-	// court that hears a case first to the highest court. Each fact's source
-	// is listed in the page's Sources section, not beside it.
+	// court that hears a case first to the highest court. Each service ends
+	// with the markers of its sources (CitationMarks), and "Appeals go to"
+	// with the markers of the sources that set the path of appeal.
 	import ArrowDown from '@lucide/svelte/icons/arrow-down';
 	import type { ServiceCategory, ServiceEntry } from '#lib/nation-services.ts';
+	import CitationMarks from './CitationMarks.svelte';
 
 	let { categories }: { categories: ServiceCategory[] } = $props();
 </script>
@@ -15,7 +17,7 @@
 			>{entry.text}<span class="visually-hidden">{" "}(opens in a new tab)</span></a
 		>{:else}{entry.text}{/if}{#if entry.detail}{' '}<span
 			class="muted small">({entry.detail})</span
-		>{/if}
+		>{/if}<CitationMarks marks={entry.citations} />
 {/snippet}
 
 <dl class="summary-list">
@@ -37,12 +39,14 @@
 								</ul>
 							{/if}
 						</li>
-						{#each path.then as entry, index (index)}
+						{#each path.then as step, index (index)}
 							<li>
 								<span class="step small muted"
-									><ArrowDown aria-hidden="true" size="1em" /> Appeals go to</span
+									><ArrowDown aria-hidden="true" size="1em" /><span
+										>Appeals go to<CitationMarks marks={step.citations} /></span
+									></span
 								>
-								{@render service(entry)}
+								{@render service(step.court)}
 							</li>
 						{/each}
 					</ol>
