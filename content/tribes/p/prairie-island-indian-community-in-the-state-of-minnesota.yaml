@@ -237,14 +237,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://prairieisland.org/our-government/constitution
+  link: https://prairieisland.org/uploads/Documents/Current_Constitution_and_Bylaws_as_Amended_02-22-2017.pdf
   source: national-indian-law-library-prairie-island
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://prairieisland.org/our-government/constitution,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Prairie Island Indian Community Constitution and By-Laws
   source: tribal-law-policy-institute-justice-systems
@@ -306,30 +307,7 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'Prairie Island Indian Community'
-dispute_resolution:
-  database_listings:
-  - title: Authorization to Create a Healing to Wellness Court
-    citation: Prairie Island Indian Community Child Welfare Ordinance Section 6
-    link: https://prairieisland.org/our-government/ordinances
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/authorization-to-create-a-healing-to-wellness-court/
-  - title: Purpose and Goals when Treating Child Welfare Cases
-    citation: Prairie Island Indian Community Child Welfare Ordinance Section 2
-    link: https://prairieisland.org/our-government/ordinances
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-goals-when-treating-child-welfare-cases/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: MN

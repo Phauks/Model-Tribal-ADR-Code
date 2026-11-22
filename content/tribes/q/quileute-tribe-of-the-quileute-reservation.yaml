@@ -206,13 +206,15 @@ governing_documents:
     text names the kind, nation and title; the second gap review also confirmed this link.'
 - kind: constitution
   title: Quileute Tribe Constitution and By-Laws
-  link: http://quileutenation.org/wp-content/uploads/2017/02/cblqtqr.pdf
+  link: https://quileutetribe.com/wp-content/uploads/2026/10/Constitution-Amended-9.17.26.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Quileute Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Link changed
+    on 2026-11-22 from http://quileutenation.org/wp-content/uploads/2017/02/cblqtqr.pdf, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).
 - kind: law-code
   title: Quileute Law and Order Codes
   link: https://quileutenation.org/court/law-and-order-codes/
@@ -269,28 +271,6 @@ justice_institutions:
     2026-11-21; the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   database_listings:
-  - title: Child’s Failure to Attend School Procedures
-    citation: The Quileute Family Code §15.5
-    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/childs-failure-to-attend-school-procedures/
-  - title: Deferred Penalty Plan for Curfew Violations
-    citation: The Quileute Family Code §14.6
-    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-penalty-plan-for-curfew-violations/
   - title: Family Reconciliation Services for Alternative Residential Placement
     citation: The Quileute Family Code §12.6
     link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
@@ -302,17 +282,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-reconciliation-services-for-alternative-residential-placement/
-  - title: Forms of Relief in Domestic Violence Cases
-    citation: QLOC Art. 14 Section 9
-    link: https://quileutenation.org/government/tribal-court/law-and-order-codes/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/forms-of-relief-in-domestic-violence-cases/
   - title: Informal Hearings for Juvenile Offenders
     citation: The Quileute Family Code §11.14 and §11.16 and §11.17
     link: https://quileutenation.org/government/tribal-court/law-and-order-codes/

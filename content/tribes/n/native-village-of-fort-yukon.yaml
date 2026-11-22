@@ -202,14 +202,15 @@ governing_documents:
     . Ordinances.".'
 - kind: constitution
   title: Constitution
-  link: https://www.fortyukon.org/tribal-governance
+  link: https://www.fortyukon.org/s/Constitution.pdf
   source: national-indian-law-library-native-fort-yukon
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.fortyukon.org/tribal-governance, a page that
+    leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: corporate-charter
   title: Corporate charter (Native Village of Fort Yukon, Alaska)
   year: '1940'
@@ -254,17 +255,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   database_listings:
-  - title: A Social Study for Child Welfare Cases
-    citation: GZGTG Ordinance Section 3.06.09
-    link: https://www.fortyukon.org/tribal-governance
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/a-social-study-for-child-welfare-cases/
   - title: Counseling, Treatment, and Community Service Sentencing
     citation: GZGTG Ordinance Section 2.02.03
     link: https://www.fortyukon.org/tribal-governance
@@ -287,39 +277,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-conferences-justice-circles-in-child-welfare-cases/
-  - title: Informal Hearings for Custody/Removal of Children
-    citation: GZGTG Ordinance Section 3.06.03
-    link: https://www.fortyukon.org/tribal-governance
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-hearings-for-custody-removal-of-children/
-  - title: Intervention and Appropriate Steps for Reunification of a Family
-    citation: GZGTG Ordinance Section 3.06.05; and, 3.06.08
-    link: https://www.fortyukon.org/tribal-governance
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/intervention-and-appropriate-steps-for-reunification-of-a-family/
-  - title: Tribe’s Counseling and Supportive Services for Families
-    citation: GZGTG Ordinance Section 3.12.01
-    link: https://www.fortyukon.org/tribal-governance
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/tribes-counseling-and-supportive-services-for-families/
   - title: Use of Sentencing Circles and the Procedures
     citation: GZGTG Ordinance Section 2.01.06; Section 2.01.12; and, Section 2.02.07
     link: https://www.fortyukon.org/tribal-governance

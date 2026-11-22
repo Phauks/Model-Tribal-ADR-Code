@@ -277,6 +277,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/nottawaseppi/index.html
     source: national-indian-law-library-code-codes-nottawaseppi
     confidence: medium
+    verification: title-only
     as_of: '2014'
     locator: 'Table of Contents, under ''Article XIII: Resolution of Unfair Labor Practice Charges'''
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -288,6 +289,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/nottawaseppi/index.html
     source: national-indian-law-library-code-codes-nottawaseppi
     confidence: medium
+    verification: title-only
     as_of: '2014'
     locator: 'Table of Contents, under ''Article XIV: Resolution of Bargaining Impasse'''
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -301,32 +303,10 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/nottawaseppi/index.html
     source: national-indian-law-library-code-codes-nottawaseppi
     confidence: medium
+    verification: title-only
     as_of: 2014-10
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: arbitration
-    title: Title VIII-03 Arbitration Ordinance
-    citation: Title VIII-03 Arbitration Ordinance
-    link: https://narf.org/nill/codes/nottawaseppi/index.html
-    source: national-indian-law-library-code-codes-nottawaseppi
-    confidence: medium
-    as_of: '2014'
-    locator: Table of Contents, under 'Chapter 03:'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: arbitration
-    title: Amending the Arbitration Ordinance
-    citation: Amending the Arbitration Ordinance; Agreements to Arbitrate are Enforceable; Stay of Proceedings
-      and Order to Proceed with Arbitration; Arbitration Award Not Appealable
-    link: https://narf.org/nill/codes/nottawaseppi/index.html
-    source: national-indian-law-library-code-codes-nottawaseppi
-    confidence: medium
-    as_of: '2014'
-    locator: Table of Contents, under 'Resolution No. 05-01-08-06'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   database_listings:
   - title: CIT Assessment and Facilitation Services
     citation: NHBP Section 7.3-20 & Section 7.3-21
@@ -339,39 +319,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/cit-assessment-and-facilitation-services/
-  - title: DV Perpetrator to Complete Treatment Program
-    citation: NHBP Section 7.4-30 and 7.3-31 and 7.4-32
-    link: https://ecode360.com/NO3548
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dv-perpetrator-to-complete-treatment-program/
-  - title: Juvenile Dispositional Alternatives
-    citation: NHBP Section 7.3-53
-    link: https://ecode360.com/NO3544
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-dispositional-alternatives/
-  - title: Juvenile Dispositional Court Report
-    citation: NHBP Section 7.3-52
-    link: https://ecode360.com/NO3543
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-dispositional-court-report/
   - title: Juvenile Victim’s Rights
     citation: NHBP Section 7.3-24
     link: https://ecode360.com/NO3541
@@ -394,61 +341,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/juveniles-rights-in-diversion/
-  - title: Ordering Rehabilitation Programs
-    citation: NHBP Section 8.8-22 and 8.8-23
-    link: https://ecode360.com/NO3560
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/ordering-rehabilitation-programs/
-  - title: Orders Requiring a Pregnant Woman to Treatment Program
-    citation: NHBP Section 7.5-25
-    link: https://ecode360.com/NO3552
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/orders-requiring-a-pregnant-woman-to-treatment-program/
-  - title: Purpose, Goals, Customs and Traditional Policy of Juvenile Justice
-    citation: NHBP Section 7.3-2, Section 7.3-3, & Section 7.3-5
-    link: https://ecode360.com/NO3539
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-goals-customs-and-traditional-policy-of-juvenile-justice/
-  - title: Purpose of the Childrens Protection ode
-    citation: NHBP Section 7.5-1
-    link: https://ecode360.com/NO3551
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-the-childrens-protection-ode/
-  - title: Sentencing Discretion for Rehabilitative Program
-    citation: NHBP Section 8.6-66
-    link: https://ecode360.com/NO3558
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-discretion-for-rehabilitative-program/
 gaming:
   compacts:
   - state: MI

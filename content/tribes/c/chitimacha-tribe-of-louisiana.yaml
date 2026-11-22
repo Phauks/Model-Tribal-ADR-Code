@@ -190,14 +190,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: http://www.chitimacha.gov/tribal-government/constitution-and-comprehensive-codes-justice
+  link: http://www.chitimacha.gov/sites/default/files/Amended%20Constitution%20and%20Bylaws%20of%20Chitimacha%20Tribe%20of%20Louisiana%20%28June%208%2C%202019%29.pdf
   source: national-indian-law-library-chitimacha
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from http://www.chitimacha.gov/tribal-government/constitution-and-comprehensive-codes-justice,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: law-code
   title: Chitimacha Comprehensive Codes of Justice
   year: '2022'
@@ -308,85 +309,20 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
     source: chitimacha-title-1a-peacemaker-court
     confidence: medium
+    verification: read-in-full
     as_of: '1990-08-14'
-  - kind: mediation
+  - kind: other
     title: Sec. 625. Mediation and Alternative Justice Prohibited
     citation: Sec. 625. Mediation and Alternative Justice Prohibited
     link: https://narf.org/nill/codes/chitimachacode/index.html
     source: national-indian-law-library-code-codes-chitimachacode
     confidence: medium
+    verification: title-only
     as_of: '2022'
     locator: Table of Contents, under 'Title III - Criminal Offenses'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: June 2022); the provision itself was not read. The heading it falls under is
       taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: Title 1-A – Peacemaker Court
-    citation: Title 1-A – Peacemaker Court
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Chitimacha Tribe of Louisiana
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      referral procedures, civil process authority, standards of conduct, and authority of Tribal Court
-      to limit.'
-  - kind: peacemaking
-    title: Title IA - Peacemaker Court
-    citation: Title IA - Peacemaker Court
-    link: https://narf.org/nill/codes/chitimachacode/index.html
-    source: national-indian-law-library-code-codes-chitimachacode
-    confidence: medium
-    as_of: '2022'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: June 2022); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
-  database_listings:
-  - title: Chitimacha Peacemaker Court
-    citation: TITLE I-A – CHITIMACHA PEACEMAKER COURT
-    link: https://www.chitimacha.gov/sites/default/files/CCCJ%20Title%20IA%20-%20Chitimacha%20Peacemaker%20Court.pdf
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/chitimacha-peacemaker-court/
-  - title: Diversion Before Trial
-    citation: Chitimacha Comprehensive Codes of Justice TITLE II - CRIMINAL PROCEDURE
-    link: https://www.chitimacha.gov/sites/default/files/Title%20II%20-%20Criminal%20Procedure.pdf
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-before-trial/
-  - title: Diversion for Deliquent Children
-    citation: Chitimacha Comprehensive Codes of Justice TITLE V - CHILD WELFARE CODE
-    link: https://www.chitimacha.gov/sites/default/files/Title%20V%20-%20Child%20Welfare%20Code.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-for-deliquent-children/
-  - title: Informal Resolution in Child Welfare Cases
-    citation: Chitimacha Comprehensive Codes of Justice TITLE V - CHILD WELFARE CODE
-    link: https://www.chitimacha.gov/sites/default/files/Title%20V%20-%20Child%20Welfare%20Code.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Alternative; Restorative
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-resolution-in-child-welfare-cases/
 gaming:
   compacts:
   - state: LA

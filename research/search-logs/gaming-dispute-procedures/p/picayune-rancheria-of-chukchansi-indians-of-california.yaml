@@ -1,0 +1,127 @@
+profile: content/tribes/p/picayune-rancheria-of-chukchansi-indians-of-california.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-picayuneord062796.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This ordinance listed 1996-06-27 has no text layer on most pages (13 of 13 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-picayuneamend120301.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other,
+    court-review, licensing-hearing) in this amendment listed 2001-12-03; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-picayuneamend021502.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (dispute-other, court-review)
+    in this amendment listed 2002-02-15; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-picayuneamend120903.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2003-12-09 has no text layer on most pages (56 of 58 pages have no text
+    layer and the readable pages have no candidate section; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-picayuneranord011108.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2008-01-11 has no text layer on most pages (61 of 61 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-Picayune32709OrdAmenApp.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2009-03-27 has no text layer on most pages (61 of 61 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-Amend-Appr-04.16.2010.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2010-04-16 has no text layer on most pages (60 of 60 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20151005_Ltr_re_ordinance_amendment_approval-Picayune.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other,
+    licensing-hearing) in this amendment listed 2015-10-05; reviewers read a newer document with the same
+    kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20161216PicayuneRancheriaofChukchansiIndian.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2016-12-16
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#picayune-rancheria-of-the-chukchansi-indians-amendment-2016-12-16#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2026/06/2026.06.02-Picayune-Ord-Amend-Apprv.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2025-06-02 has no text layer on most pages (22 of 23 pages have no text
+    layer (only the approval letter has text); no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/09/2025.09.30-Picayune-Rancheria-of-the-Chukchansi-Indians-Gam-Ord-Amend.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2025-09-30 has no text layer on most pages (15 of 16 pages have no text
+    layer (only the approval letter has text); no OCR available).
+next_steps: Read the scanned ordinance listed 1996-06-27 (https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-picayuneord062796.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2003-12-09 (https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-picayuneamend120903.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2008-01-11 (https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-picayuneranord011108.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2009-03-27 (https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-Picayune32709OrdAmenApp.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2010-04-16 (https://www.nigc.gov/wp-content/uploads/2025/03/picayunerancheria-Amend-Appr-04.16.2010.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2025-06-02 (https://www.nigc.gov/wp-content/uploads/2026/06/2026.06.02-Picayune-Ord-Amend-Apprv.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2025-09-30 (https://www.nigc.gov/wp-content/uploads/2025/09/2025.09.30-Picayune-Rancheria-of-the-Chukchansi-Indians-Gam-Ord-Amend.pdf)
+  with OCR or by hand.

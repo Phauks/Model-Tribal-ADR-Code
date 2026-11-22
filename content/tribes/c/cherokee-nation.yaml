@@ -192,14 +192,15 @@ governing_documents:
     . Legislative Research Center.".'
 - kind: constitution
   title: Constitution
-  link: https://www.cherokee.org/our-government/cherokee-nation-constitution/
+  link: https://www.cherokee.org/media/lsufapj1/constitution-of-the-cherokee-nation-1999-online.pdf
   source: national-indian-law-library-cherokee-nation
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.cherokee.org/our-government/cherokee-nation-constitution/,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution
   link: https://attorneygeneral.cherokee.org/Tribal-Code
@@ -293,6 +294,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/cherokee_nation/index.html
     source: national-indian-law-library-code-codes-cherokee-nation
     confidence: medium
+    verification: title-only
     as_of: 2016-07
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -302,89 +304,33 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/cherokee_nation/index.html
     source: national-indian-law-library-code-codes-cherokee-nation
     confidence: medium
+    verification: title-only
     as_of: 2016-07
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
+  - kind: arbitration
     title: CHAPTER 2 DISPUTE RESOLUTION
     citation: Title 85 (Workers' Compensation), CHAPTER 2 DISPUTE RESOLUTION; § 47. Arbitration
     link: https://www.narf.org/nill/codes/cherokee_nation/index.html
     source: national-indian-law-library-code-codes-cherokee-nation
     confidence: medium
+    verification: title-only
     as_of: 2016-07
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: arbitration
-    title: CHAPTER 8 UNIFORM ARBITRATION ACT
-    citation: CHAPTER 8 UNIFORM ARBITRATION ACT; Effect of agreement to arbitrate—Nonwaivable provisions;
-      Validity of agreement to arbitrate; Petition to compel or stay arbitration; Initiation of arbitration;
-      ...
-    link: https://narf.org/nill/codes/cherokee_nation/index.html
-    source: national-indian-law-library-code-codes-cherokee-nation
-    confidence: medium
-    as_of: '2014'
-    locator: Table of Contents, under 'Title 12. Civil Procedures'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Published:
-      2014); the provision itself was not read. The heading it falls under is taken from the page layout
-      and may be imprecise.'
   - kind: arbitration
     title: ARBITRATORS
     citation: ARBITRATORS
     link: https://narf.org/nill/codes/cherokee_nation/index.html
     source: national-indian-law-library-code-codes-cherokee-nation
     confidence: medium
+    verification: title-only
     as_of: '2014'
     locator: Table of Contents, under 'APPENDIX I TO TITLE 20'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Published:
       2014); the provision itself was not read. The heading it falls under is taken from the page layout
       and may be imprecise.'
-  - kind: arbitration
-    title: CHAPTER 2 DISPUTE RESOLUTION
-    citation: CHAPTER 2 DISPUTE RESOLUTION; Arbitration
-    link: https://narf.org/nill/codes/cherokee_nation/index.html
-    source: national-indian-law-library-code-codes-cherokee-nation
-    confidence: medium
-    as_of: '2014'
-    locator: Table of Contents, under 'TITLE 85 WORKERS' COMPENSATION'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Published:
-      2014); the provision itself was not read. The heading it falls under is taken from the page layout
-      and may be imprecise.'
   database_listings:
-  - title: Community Service Sentencing Program (Alternative to Incarceration)
-    citation: completion—Immunity from tort liability.
-    link: https://ncorj.org/tribal-law/community-service-sentencing-program-alternative-to-incarceration/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-sentencing-program-alternative-to-incarceration/
-  - title: Deferral for Juvenile Delinquency
-    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-404. Deferral of
-      delinquency proceedings.
-    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferral-for-juvenile-delinquency/
-  - title: Diversion Services for Child-In-Need-Of-Supervision
-    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104.1. Diversion
-      services.
-    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-services-for-child-in-need-of-supervision/
   - title: Informal Adjustment for Juveniles
     citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104. Preliminary
       inquiry--Petition.

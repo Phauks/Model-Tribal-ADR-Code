@@ -1,0 +1,42 @@
+profile: content/tribes/s/st-croix-chippewa-indians-of-wisconsin.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/stcroixchippewa-stcroixord032395.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other)
+    in this ordinance listed 1995-03-23; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/stcroixchippewa-St-Croix-Chippewa-Deskewed.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2006-10-27 has no text layer on most pages (29 of 42 pages have no text
+    layer and the readable pages have no candidate section; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20210927StCroixOrdAmendApproval.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2021-09-27
+    and recorded 4 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#st-croix-chippewa-indians-of-wisconsin-amendment-2021-09-27#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#st-croix-chippewa-indians-of-wisconsin-amendment-2021-09-27#i2
+  - research/reviews/2026-11-22-ordinance-disputes.json#st-croix-chippewa-indians-of-wisconsin-amendment-2021-09-27#i3
+  - research/reviews/2026-11-22-ordinance-disputes.json#st-croix-chippewa-indians-of-wisconsin-amendment-2021-09-27#i4
+next_steps: Read the scanned amendment listed 2006-10-27 (https://www.nigc.gov/wp-content/uploads/2025/03/stcroixchippewa-St-Croix-Chippewa-Deskewed.pdf)
+  with OCR or by hand.

@@ -233,14 +233,15 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Constitution
-  link: https://meskwakicourt.org/tribal-code-%26-court-rules
+  link: https://img1.wsimg.com/blobby/go/a1a4fd11-f884-4d95-8763-e75c1d7e1fa8/downloads/1a0a91d9-4894-48d7-845b-49315e780511/CONSTITUTION%20AND%20BYLAWS.pdf?ver=1795120702350
   source: national-indian-law-library-sac-fox-mississippi-iowa
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribal Court''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://meskwakicourt.org/tribal-code-%26-court-rules,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Sac & Fox Tribe of the Mississippi in Iowa Constitution
   link: http://www.meskwaki.org/Constitution.html
@@ -297,43 +298,11 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/sac_fox_miss_ia/index.html
     source: national-indian-law-library-code-codes-sac-fox-miss-ia
     confidence: medium
+    verification: title-only
     as_of: 2017-09
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: Title 5. Dispute Resolution
-    citation: Title 5. Dispute Resolution
-    link: https://narf.org/nill/codes/sac_fox_miss_ia/index.html
-    source: national-indian-law-library-code-codes-sac-fox-miss-ia
-    confidence: medium
-    as_of: '2017'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: September 2017); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   database_listings:
-  - title: Condition for Participation in Wellness Court
-    citation: Sac & Fox Tribe of the Mississippi in Iowa Sec. 24-3102
-    link: https://www.meskwaki.org/constitution/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/condition-for-participation-in-wellness-court/
-  - title: Dispositions for Juvenile Offenders
-    citation: Sac & Fox Tribe of the Mississippi in Iowa Sec. 20-2203
-    link: https://www.meskwaki.org/constitution/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositions-for-juvenile-offenders/
   - title: Informal Proceedings for Juvenile Offenders
     citation: Sac & Fox Tribe of the Mississippi in Iowa Sec. 20-2201
     link: https://www.meskwaki.org/constitution/
@@ -345,50 +314,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-proceedings-for-juvenile-offenders/
-  - title: Policy and Purpose in Youth Cases
-    citation: Sac & Fox Tribe of the Mississippi in Iowa Sec. 20-1101 & Sec. 20-1102
-    link: https://www.meskwaki.org/constitution/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/policy-and-purpose-in-youth-cases/
-  - title: Purpose of the Child Welfare Code
-    citation: Sac & Fox Tribe of the Mississippi in Iowa Sec. 7-1102
-    link: https://www.meskwaki.org/constitution/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-the-child-welfare-code/
-  - title: Purpose of the Family Relations Code
-    citation: Sac & Fox Tribe of the Mississippi in Iowa Sec. 6-1101
-    link: https://www.meskwaki.org/constitution/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-the-family-relations-code/
-  - title: Treatment Requirement for Vulnerable Adult Protection Order
-    citation: Sac & Fox Tribe of the Mississippi in Iowa Sec. 24-3108
-    link: https://www.meskwaki.org/constitution/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-requirement-for-vulnerable-adult-protection-order/
 gaming:
   compacts:
   - state: IA

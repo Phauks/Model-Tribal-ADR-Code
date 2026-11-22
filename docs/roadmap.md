@@ -76,14 +76,11 @@ Gate 1 is passed when Trevor has:
    *Decided Nov. 21, 2026: a separate field,
    `dispute_resolution.database_listings`
    ([decision record 0015](decisions/0015-database-listings-apart-from-provisions.md)).*
-2. **Triaged the bulk records** in line with that decision: kept, relabeled or
-   dropped. Sampling is acceptable if the sample and its result are recorded.
+2. **Triaged the bulk records** in line with that decision: kept, relabeled or dropped. Sampling is acceptable if the sample and its result are recorded. *Decided Nov. 22, 2026: the pre-review's recommendations accepted, with diversion to a consensual process and restorative justice kept; 258 listings and 229 provisions remain, and 41 records wait for their sources ([decision record 0027](decisions/0027-diversion-and-restorative-justice-in-the-research-base.md)).*
 3. **Confirmed the text-read tier** for every record a draft is likely to rely
    on: forums, clauses and text-read provisions, re-reading OCR and
    summary-tool reads where they matter (analysis, review queue item 10).
-4. **Resolved the duplicates**: 71 repeated provision titles, four doubled
-   source records and forums recorded under two kinds (review queue items 3
-   to 5).
+4. **Resolved the duplicates**: 71 repeated provision titles, four doubled source records and forums recorded under two kinds (review queue items 3 to 5). *Provision duplicates removed Nov. 22, 2026 (decision record 0027).*
 5. **Decided how bands inside one profile are counted**, starting with the
    Minnesota Chippewa Tribe profile (review queue item 7).
    *Decided Nov. 21, 2026: each of the six component bands has its own
@@ -156,6 +153,7 @@ used yet; remove it when the work is picked up (project choice, Nov. 22, 2026).
 
 | Topic | Where it is | Comes back at | Next step when it does |
 | --- | --- | --- | --- |
+| Provision pre-review: records kept but not yet read | [Pre-review files](../research/reviews/2026-11-21-provision-pre-review.md) (PR #19; `lead_author_decision` column filled per decision record 0027) | Phase 1 reading of the evidence; drafting of any section that cites a nation's code | Read and summarize the 258 kept listings before moving any to `provisions`; apply the relabel notes on titles and citations; settle the 41 unverified records when the pull list (sections 1e, 2f, 4c) returns their texts |
 | Indigenous dispute resolution in Canada (comparative sidebar) | [Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md) (PR #62; PR #70 adds its Gate 2 scope question and Phase 2 sidebar step) | Gate 2 scope question on nations divided by a border; Phase 2 sidebar drafting | Review the draft sidebar in section 8 of the note; clear Westlaw list section 12; follow-ups from section 9 |
 | Indigenous dispute resolution in Mexico (comparative sidebar) | [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md) (PR #59) | Same as Canada: Gate 2 border question; Phase 2 sidebar drafting | Check whether Mexico's general law on Indigenous rights has passed; clear Westlaw list section 11 |
 | Peacemaking programs (peacemaking track) | [Peacemaking note](../research/analyses/2026-11-21-peacemaking-programs.md) (PRs #49, #56) | Drafting of the model peacemaking code ([outline, Part III](outline.md#part-iii-the-model-peacemaking-code)) | Outcome evidence is thin (one comparison study); weigh the domestic violence critique; start further sweeps from the gaps in section 7 |

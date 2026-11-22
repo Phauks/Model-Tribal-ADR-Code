@@ -291,14 +291,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.srpmic-nsn.gov/government/ordinances/
+  link: https://srpmic-nsn.gov/wp-content/uploads/2025/06/Constitution.pdf
   source: national-indian-law-library-salt-river-community
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.srpmic-nsn.gov/government/ordinances/, a page
+    that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Salt River Pima-Maricopa Indian Community Constitution
   source: tribal-law-policy-institute-justice-systems
@@ -311,13 +312,15 @@ governing_documents:
     returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Salt River Pima-Maricopa Indian Community Code of Ordinances
-  link: http://www.srpmic-nsn.gov/government/ordinances/
+  link: https://srpmic-nsn.gov/wp-content/uploads/2026/05/SRPMIC-Complete-Code-of-Ordinances_April-2026.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Salt River Pima-Maricopa Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Link changed
+    on 2026-11-22 from http://www.srpmic-nsn.gov/government/ordinances/, a page that leads to the text,
+    to the text itself (research/reviews/2026-11-22-governing-documents-full.md).
 - kind: constitution
   title: Constitution (Salt River Pima-Maricopa Indian Community, Arizona)
   year: '1940'
@@ -376,20 +379,10 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/salt-river/index.html
     source: national-indian-law-library-code-codes-salt-river
     confidence: medium
+    verification: title-only
     as_of: 2019-04
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
-    citation: DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
-    link: https://narf.org/nill/codes/salt-river/index.html
-    source: national-indian-law-library-code-codes-salt-river
-    confidence: medium
-    as_of: '2019'
-    locator: Table of Contents, under 'CHAPTER 23 LABOR AND EMPLOYMENT'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: April 2019); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   database_listings:
   - title: Diversion/Informal Adjustment – Juvenile Offenses
     citation: STBC 11-130
@@ -412,17 +405,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
-  - title: Probation with Rehabilitative Conditions
-    citation: STBC 8-6(b)
-    link: https://srpmic-nsn.gov/government/ordinances/
-    practice_area: Tribal Justice
-    phase: Post-Conviction Sentencing
-    form_of_practice: Counseling; Probation; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/probation-with-rehabilitative-conditions/
 gaming:
   compacts:
   - state: AZ

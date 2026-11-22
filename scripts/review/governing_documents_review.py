@@ -4,6 +4,7 @@ document is often a page that lists the document, not the document itself.
 
     python3 scripts/review/governing_documents_review.py gather WORK_DIRECTORY
     python3 scripts/review/governing_documents_review.py merge WORK_DIRECTORY
+    python3 scripts/review/governing_documents_review.py apply WORK_DIRECTORY
 
 `gather` downloads every `governing_documents[].link` in the profiles (files
 already in WORK_DIRECTORY/files are reused) and sorts each link by what the
@@ -34,7 +35,8 @@ for every needs-review and not-fetched item and for a random calibration sample 
 script's own calls, writing WORK_DIRECTORY/verdicts-*.json. `merge` writes
 research/reviews/2026-11-22-governing-documents-full.json, .csv (with an empty
 `lead_author_decision` column) and -counts.json. Neither command edits a
-profile.
+profile. `apply` makes the plain corrections the review found (see its
+docstring) and leaves every judgment call to the lead author.
 """
 
 import collections
@@ -52,6 +54,8 @@ import sys
 import threading
 import urllib.error
 import urllib.parse
+
+import yaml
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import second_gap_review as base  # noqa: E402
@@ -364,8 +368,112 @@ def merge(work):
     print(json.dumps(counts, indent=1, ensure_ascii=False))
 
 
+# `apply` ------------------------------------------------------------------
+# The plain corrections from the review, made on Nov. 22, 2026 after it merged.
+
+HIJACKED = {  # Addresses that now serve unrelated gambling pages (reviewer verdicts).
+    "http://www.stcciw.com/tribal-constitution",
+    "https://www.tolc-nsn.gov/tohono-oodham-code/",
+}
+# Another nation's documents: the National Indian Law Library's Lumbee page lists the Native
+# Village of Buckland, Alaska constitution and charter of 1950, and the Buckland profile already
+# has the same four links.
+WRONG_NATION = {"lumbee-tribe-of-north-carolina": {
+    "https://thorpe.law.ou.edu/IRA/buckcons.html", "https://www.loc.gov/item/51061618/",
+    "https://thorpe.law.ou.edu/IRA/buckchrtr.html", "https://www.loc.gov/item/51061567/"}}
+# Direct links that passed the automatic check but are not the whole document the fact names:
+# one part of a code, a single amendment, rules of conduct, an ERIC report, an unclear court file.
+NOT_THE_DOCUMENT = {
+    "https://www.cherokeecourts.org/LinkClick.aspx?fileticket=hwF-vw5YNeI%3d&tabid=364&portalid=11",
+    "https://www.gilariver.org/view/download.php/government/ordinances/criminal-code-2018",
+    "http://files.eric.ed.gov/fulltext/ED046553.pdf",
+    "http://klamathtribalcourts.com/documents/49/Constitution_Amendment_to_Article_III.pdf",
+    "https://ltbbodawa-nsn.gov/wp-content/uploads/2020/12/Constitutionally-Mandated-Rules-of-Conduct-for-All-Levels-of-Tribal-Government.pdf",
+}
+OPENING_WORDS = {"constitution": ["constitution"], "corporate-charter": ["charter"],
+                 "articles-of-association": ["articles of association"],
+                 "law-code": ["code", "ordinance", "title", "chapter", "law"], "court-rules": ["rule"]}
+REVIEW_FILE = "research/reviews/2026-11-22-governing-documents-full.md"
+
+
+def direct_text(item, link, folder):
+    """Why `link` is not confirmed as the text of the document, or None if it is."""
+    if link in NOT_THE_DOCUMENT:
+        return "not the whole document"
+    result = cached_download(link, folder)
+    if not result.get("file"):
+        return f"could not fetch ({result.get('error') or result.get('code')})"
+    text, _, title, kind = read_page(result["file"])
+    facts = describe(text, item)
+    opening = base.normalized(title + " " + text[:1500])
+    long_enough = facts["words"] >= 300 if kind.startswith("pdf") else (facts["words"] >= 800 and facts["headings"] >= 3)
+    if facts["blocked"] or not (facts["names_nation"] and facts["names_kind"] and long_enough):
+        return "text not confirmed"
+    if not any(w in opening for w in OPENING_WORDS.get(item["kind"], [""])):
+        return "does not open as the document"
+    return None
+
+
+def add_note(fact, sentence):
+    fact["note"] = (str(fact["note"]).rstrip() + " " + sentence) if fact.get("note") else sentence
+
+
+def apply(work):
+    """Remove hijacked links, drop another nation's documents, and point links at the text
+    where a reviewer (or, for a constitution or charter, the script) found it and the text
+    checks out. Everything else waits for the lead author's decision column."""
+    review = {(r["profile"], r["index"]): r for r in json.loads(OUT.with_suffix(".json").read_text())}
+    tree = base.record_facts.Tree(ROOT)
+    by_id = {profile["id"]: (path, profile) for path, profile in tree.profiles.items()}
+    counts, skipped, changed = collections.Counter(), collections.Counter(), set()
+    for (profile_id, index), row in sorted(review.items()):
+        reviewer = row.get("reviewer") or {}
+        if row["final"] in ("page-linking-to-it", "contents-page-with-text") and reviewer.get("direct_link") \
+                and reviewer["direct_link"] != row["link"]:
+            target = reviewer["direct_link"]
+        elif row["script"] == "links-to-document" and row["final"] == "page-linking-to-it" and row.get("document_link") \
+                and row["kind"] in ("constitution", "corporate-charter", "articles-of-association"):
+            target = row["document_link"]
+        else:
+            continue
+        if profile_id in WRONG_NATION:
+            continue
+        path, profile = by_id[profile_id]
+        fact = (profile.get("governing_documents") or [])[index]
+        if fact.get("link") != row["link"]:
+            skipped["profile changed since the review"] += 1
+            continue
+        problem = direct_text(row, target, work / "files")
+        if problem:
+            skipped[problem] += 1
+            continue
+        fact["link"] = target
+        add_note(fact, f"Link changed on 2026-11-22 from {row['link']}, a page that leads to the text, "
+                       f"to the text itself ({REVIEW_FILE}).")
+        counts["pointed at the text"] += 1
+        changed.add(path)
+    for path, profile in tree.profiles.items():
+        documents = profile.get("governing_documents") or []
+        for fact in documents:
+            if fact.get("link") in HIJACKED:
+                add_note(fact, f"Link {fact.pop('link')} removed on 2026-11-22: the address now serves an "
+                               f"unrelated gambling page ({REVIEW_FILE}).")
+                counts["hijacked link removed"] += 1
+                changed.add(path)
+        drop = WRONG_NATION.get(profile.get("id"), set())
+        kept = [fact for fact in documents if fact.get("link") not in drop]
+        if len(kept) != len(documents):
+            counts["another nation's document removed"] += len(documents) - len(kept)
+            profile["governing_documents"] = kept
+            changed.add(path)
+    for path in changed:
+        record = {k: v for k, v in tree.profiles[path].items() if not k.startswith("_")}
+        (ROOT / path).write_text(yaml.safe_dump(record, allow_unicode=True, sort_keys=False, width=100),
+                                 encoding="utf-8")
+    print(json.dumps(dict(changed=dict(counts), skipped=dict(skipped), profiles=len(changed)), indent=1))
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 3 or sys.argv[1] not in ("gather", "merge"):
+    if len(sys.argv) != 3 or sys.argv[1] not in ("gather", "merge", "apply"):
         sys.exit(__doc__)
-    directory = pathlib.Path(sys.argv[2])
-    gather(directory) if sys.argv[1] == "gather" else merge(directory)
+    {"gather": gather, "merge": merge, "apply": apply}[sys.argv[1]](pathlib.Path(sys.argv[2]))

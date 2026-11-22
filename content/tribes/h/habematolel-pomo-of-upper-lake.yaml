@@ -210,14 +210,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.hpultribe-nsn.gov/tribal-law/
+  link: https://www.hpultribe-nsn.gov/wp-content/uploads/2026/07/HPUL-Constitution-6.13.2026-revision-dc-IP-NG-signatures.pdf
   source: national-indian-law-library-habematolel-pomo
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.hpultribe-nsn.gov/tribal-law/, a page that
+    leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution (Upper Lake Band of Pomo Indians of the Upper Lake Rancheria California)
   year: '1936'
@@ -274,18 +275,6 @@ dispute_resolution:
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/associate-judges-as-peacemakers/
   database_listings:
-  - title: Alternative Remedies for Abuse to Child/Disabled Adult/Elder
-    citation: HABEMATOLEL POMO OF UPPER LAKE CHAPTER 3. CHILDREN, ELDERS AND DISABLED ADULTS' PROTECTION
-      CODE SECTION 11.2. OTHER REMEDIES
-    link: https://ncorj.org/tribal-law/alternative-remedies-for-abuse-to-child-disabled-adult-elder/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-remedies-for-abuse-to-child-disabled-adult-elder/
   - title: Associate Judges as Peacemakers
     citation: CHAPTER 1. JUDICIAL CODE SECTION 5.2. TRIBAL COURT JUDGES
     link: https://ncorj.org/tribal-law/associate-judges-as-peacemakers/
@@ -297,28 +286,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/associate-judges-as-peacemakers/
-  - title: Confidentiality of Wellness Plan Records
-    citation: CHAPTER 2.3 TRIAL COURT RULES OF PROCEDURE SECTION 5.14. TRIBAL COURT RECORDS
-    link: https://ncorj.org/tribal-law/confidentiality-of-wellness-plan-records/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Substance
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/confidentiality-of-wellness-plan-records/
-  - title: Diversion in Family Court & Family Drug Treatment Court
-    citation: Children and Families Code SECTION 17. DIVERSION/FAMILY TEAM DECISION MAKING (A)
-    link: https://ncorj.org/tribal-law/diversion-in-family-court-family-drug-treatment-court/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Diversion; Drug; Substance
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-in-family-court-family-drug-treatment-court/
   - title: Diversion Referrals During Status Review Hearings
     citation: Children and Families Code SECTION 20. STATUS REVIEW HEARINGS
     link: https://ncorj.org/tribal-law/diversion-referrals-during-status-review-hearings/
@@ -341,39 +308,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-team-decision-making/
-  - title: Option to Request Alternative Sentencing
-    citation: CHAPTER 2.3 TRIAL COURT RULES OF PROCEDURE SECTION 7.3. FIRST HEARING
-    link: https://ncorj.org/tribal-law/option-to-request-alternative-sentencing/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Alternative; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/option-to-request-alternative-sentencing/
-  - title: Placement Disposition Alternatives and Treatment for Reunification
-    citation: Children and Families Code SECTION1 9. PLACEMENTA ND DISPOSITIONO R SERVICESH EARING
-    link: https://ncorj.org/tribal-law/placement-disposition-alternatives-and-treatment-for-reunification/
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Alternative; Substance
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/placement-disposition-alternatives-and-treatment-for-reunification/
-  - title: Referral to Wellness Board for Wellness Plan
-    citation: HABEMATOLEL POMO OF UPPER LAKE CHAPTER 3. CHILDREN, ELDERS AND DISABLED ADULTS' PROTECTION
-      CODE ARTICLE 9. REFERRAL TO WELLNESS BOARD
-    link: https://ncorj.org/tribal-law/referral-to-wellness-board-for-wellness-plan/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/referral-to-wellness-board-for-wellness-plan/
 gaming:
   compacts:
   - state: CA

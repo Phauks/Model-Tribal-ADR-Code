@@ -56,6 +56,7 @@ Run by hand, never in continuous integration:
 | Script | Does | Needs |
 | --- | --- | --- |
 | `review/provision_pre_review.py` | `gather` fetches the source cited by every provision record in `content/tribes/` into a local cache and writes evidence batches for reviewers; `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md). It never changes a profile | `pip install -r scripts/requirements.txt`, plus `curl` and `pdftotext` for `gather` |
+| `review/apply_provision_decisions.py` | Applies the lead author's decisions on the provision pre-review to the profiles (decision record 0027) and fills the pre-review's `lead_author_decision` column; `--check` only reports | `pip install -r scripts/requirements.txt` |
 
 ## Data gap review
 
@@ -81,6 +82,14 @@ writes the [search logs](../research/search-logs/README.md) of decision record
 | Script | Does | Needs |
 | --- | --- | --- |
 | `review/coverage_search.py` | `gather` reads what the project already holds for every federally recognized nation with no dispute resolution record (tribal law texts, constitution readings, justice institutions, raw facts, peacemaking sources, the Alaska Court System's restorative justice plans), then fetches its National Indian Law Library page, its website (home page, sitemap, site search and linked law and court pages), court pages and code links with an honestly named link checker that obeys robots.txt and logs a refusal as `blocked`, keeping passages around dispute resolution words in a private work folder; `batches` writes review batches and a fixed 10 percent sample of nations with nothing found; `second` re-fetches the evidence page of every first-pass candidate for the second reader; `merge` drops candidates the second reader set aside and writes `research/reviews/2026-11-22-dispute-resolution-coverage.{json,csv}` (empty decision column), a counts file and one search log per profile | `pip install -r scripts/requirements.txt requests beautifulsoup4`, plus `pdftotext` |
+
+## Gaming ordinance dispute procedures
+
+Run by hand, never in continuous integration. It reads the gaming ordinances already captured for [`research/gaming/`](../research/gaming/README.md), downloads nothing, writes the [search logs](../research/search-logs/README.md) of topic `gaming-dispute-procedures` and never changes a profile.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/ordinance_disputes.py` | `batches` reads the saved text of every ordinance and amendment in `research/gaming/ordinance-documents.json`, marks pages with no text layer, approval letter pages and tables of contents, finds sections on patron disputes, employee grievances, licensing hearings and appeals, mediation, arbitration, peacemaking and Tribal court review by heading and keyword, picks each nation's newest document with each kind of procedure, records every document checked (scanned ones as `scanned-unreadable`; no OCR) and writes review batches for reviewers following [the brief](../research/reviews/briefs/2026-11-22-ordinance-disputes.md) into a private work folder; `merge` checks every reviewer snippet against the document text, queues low-confidence and garbled items for a second look and applies its verdicts, and writes `research/reviews/2026-11-22-ordinance-disputes.{json,csv}` (empty decision column), a counts file, one search log per profile and a private file of the snippets | Python 3 standard library and the saved text (`pdftotext` only for a missing text file); `merge` also `scripts/requirements.txt` |
 
 ## Applying the second gap review, Nov. 22, 2026
 

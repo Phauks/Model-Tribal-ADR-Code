@@ -1,0 +1,50 @@
+profile: content/tribes/s/snoqualmie-indian-tribe.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/snoqualmietribe-snoqualmieord052202.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This ordinance listed 2002-05-22 has no text layer on most pages (29 of 29 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/snoqualmietribe-Ord-appr-1.10.07.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2007-01-10 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/snoqualmietribe-20150306LetterreOrdinanceamendmentsapprovalSnoqualmie.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2015-03-06 has no text layer on most pages (36 of 36 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/?wpdmdl=14653&ind=1791408881280
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2025-05-06
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#snoqualmie-tribe-amendment-2025-05-06#i1
+next_steps: Read the scanned ordinance listed 2002-05-22 (https://www.nigc.gov/wp-content/uploads/2025/03/snoqualmietribe-snoqualmieord052202.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2015-03-06 (https://www.nigc.gov/wp-content/uploads/2025/03/snoqualmietribe-20150306LetterreOrdinanceamendmentsapprovalSnoqualmie.pdf)
+  with OCR or by hand.

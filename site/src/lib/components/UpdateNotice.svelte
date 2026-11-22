@@ -1,7 +1,9 @@
 <script lang="ts">
 	// Tells the reader that a newer edition is ready and asks before using it
-	// (site/DESIGN.md, section 10, "Updates"). A notice, not an alert: it does
-	// not interrupt reading or take focus.
+	// (site/DESIGN.md, section 10, "Updates"). A small card fixed at the
+	// bottom left of the window, not a block in the page, as Trevor asked on
+	// Nov. 22, 2026. A notice, not an alert: it does not interrupt reading or
+	// take focus.
 	import { onMount } from 'svelte';
 	import { updated } from '$app/state';
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
@@ -22,42 +24,70 @@
 	const contentChanged = $derived(available !== undefined && available.content !== versions.content);
 </script>
 
-{#if siteUpdates.waiting && !siteUpdates.dismissed}
-	<div class="notice page-width update-notice no-print" role="note" aria-labelledby="update-heading">
-		<p id="update-heading">
-			<strong>An update to this site is ready.</strong>
-			{#if available && contentChanged}
-				It brings content version {available.content}; you are reading {versions.content}.
-			{:else if available && available.site !== versions.site}
-				It brings website version {available.site}; the content stays at {versions.content}.
-			{:else}
-				It brings changes to the website; the content stays at {versions.content}.
-			{/if}
-			Pages you keep for offline reading are saved again from the new version.
-		</p>
-		<p class="update-actions">
-			<button class="button" type="button" onclick={() => siteUpdates.apply()}>
-				<RefreshCw size={20} strokeWidth={1.75} />
-				Update now
-			</button>
-			<a class="button button-quiet" href="/changelog">What changed</a>
-			<button class="button button-quiet" type="button" onclick={() => siteUpdates.later()}>
-				Later
-			</button>
-		</p>
-	</div>
-{/if}
+<div class="update-toasts no-print">
+	{#if siteUpdates.waiting && !siteUpdates.dismissed}
+		<div class="notice update-toast" role="note" aria-labelledby="update-heading">
+			<p id="update-heading">
+				<strong>An update to this site is ready.</strong>
+				{#if available && contentChanged}
+					It brings content version {available.content}; you are reading {versions.content}.
+				{:else if available && available.site !== versions.site}
+					It brings website version {available.site}; the content stays at {versions.content}.
+				{:else}
+					It brings changes to the website; the content stays at {versions.content}.
+				{/if}
+				Pages you keep for offline reading are saved again from the new version.
+			</p>
+			<p class="update-actions">
+				<button class="button" type="button" onclick={() => siteUpdates.apply()}>
+					<RefreshCw size={20} strokeWidth={1.75} />
+					Update now
+				</button>
+				<a class="button button-quiet" href="/changelog">What changed</a>
+				<button class="button button-quiet" type="button" onclick={() => siteUpdates.later()}>
+					Later
+				</button>
+			</p>
+		</div>
+	{/if}
 
-{#if siteUpdates.resaving}
-	<div class="notice page-width no-print" role="status">
-		<p>
-			Saving the latest copies of the pages you keep: {siteUpdates.resaving.done} of {siteUpdates
-				.resaving.total} files.
-		</p>
-	</div>
-{/if}
+	{#if siteUpdates.resaving}
+		<div class="notice update-toast" role="status">
+			<p>
+				Saving the latest copies of the pages you keep: {siteUpdates.resaving.done} of {siteUpdates
+					.resaving.total} files.
+			</p>
+		</div>
+	{/if}
+</div>
 
 <style>
+	/* Fixed to the bottom left, above the page; on a phone it spans the width less the side gutters. */
+	.update-toasts {
+		position: fixed;
+		left: var(--space-4);
+		bottom: var(--space-4);
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+		width: min(28rem, calc(100% - 2 * var(--space-4)));
+		pointer-events: none;
+	}
+
+	.update-toast {
+		pointer-events: auto;
+		margin: 0;
+		border: 2px solid var(--color-control-border);
+		border-left-width: 6px;
+		border-left-color: var(--color-link);
+		font-size: var(--font-size-small);
+	}
+
+	.update-toast p:not(:last-child) {
+		margin: 0 0 var(--space-3);
+	}
+
 	.update-actions {
 		display: flex;
 		flex-wrap: wrap;

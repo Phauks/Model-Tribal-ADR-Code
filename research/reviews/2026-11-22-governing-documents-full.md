@@ -67,3 +67,7 @@ One shared page needed a rule. Thirty-four profiles link the National Indian Law
 ## Limits
 
 The script read the first 15 pages of each PDF and OCR'd the first 2 pages of scanned ones. Reviewers are a small model; their verdicts on pages they could open are leads, and on pages they could not open they record what failed.
+
+## Applied, Nov. 22
+
+`python3 scripts/review/governing_documents_review.py apply` made the plain corrections in a separate content change: it removed the 2 hijacked links (each note keeps the old address), removed the 4 Buckland documents from the Lumbee profile (the Buckland profile already lists the same four links), and pointed 62 links at the document's text where a reviewer found a direct link, or the script found a PDF of a constitution, charter or articles of association, and a fresh download named the nation and opened as the document (each note keeps the old link). It left 73 suggested direct links alone: 54 whose text could not be confirmed, 10 it could not fetch, 6 that are not the whole document (a criminal code linked as the whole code, a single amendment, rules of conduct, an ERIC report and an unclear court file) and 3 that do not open as the document. Every other row waits for the decision column.

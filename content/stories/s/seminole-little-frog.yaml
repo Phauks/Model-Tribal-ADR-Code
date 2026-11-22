@@ -1,0 +1,71 @@
+id: seminole-little-frog
+title: Little Frog
+nations:
+- seminole-tribe-of-florida
+kind: traditional-story
+length: paragraph
+excerpts:
+- telling: semtribe-storyteller-page
+  locator: paragraph beginning ""I don't have to do anything,""
+  text: '"I don''t have to do anything," said the irritated little frog. But that pretty ol'' pesky rabbit kept
+    on until the little frog got really mad and told him, "I''ll fix you up."'
+  words: 33
+  sha256: bef0a4a9781aa9e1a14eb17c5716b4a96657e739c634165b98e5663b52b963b0
+- telling: semtribe-storyteller-page
+  locator: paragraph beginning "So little frog started singing"
+  text: So little frog started singing his funny little song or noise he makes to call the rain. Within a few minutes,
+    the black cloud came and the wind started blowing. Then the rains came and soaked the ol' rabbit so much he
+    got cold and ran home.
+  words: 47
+  sha256: aab58ec97ca412cd813ed27f105768834eea32ff4aecca1bd3f4750b6a65ed6b
+topics:
+- quarrel-between-animals
+- retaliation
+- teaching-story
+tellings:
+- id: semtribe-storyteller-page
+  source: seminole-tribe-of-florida-legendary-storyteller-page
+  teller:
+    form: name-and-nation
+    name: Betty Mae Jumper
+    nation: seminole-tribe-of-florida
+    role: storyteller; second chairperson of the Seminole Tribe of Florida
+  published_by: Seminole Tribe of Florida
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: The page gives the story as an excerpt from Betty Mae Jumper's book Legends of the Seminoles, and says she
+    heard it from her grandmother.
+protocols:
+- kind: other
+  statement: 'The Tribe''s page says: "The recipient of a legend must do his or her best to retell the story as
+    close to the original version as possible."'
+  source: seminole-tribe-of-florida-legendary-storyteller-page
+  how_the_project_follows_it: The project quotes the teller's exact words and never retells the story.
+access:
+  level: nation-review-first
+anthology:
+  candidate: true
+  reason: A short, complete traditional story by a named Seminole storyteller and Tribal leader, published by the
+    Tribe; a light story of a quarrel and its consequence (project analysis).
+  telling: semtribe-storyteller-page
+  permission_from:
+  - holder: Seminole Tribe of Florida
+    for: cultural-authority
+    nation: seminole-tribe-of-florida
+  - holder: Holder of the copyright in Legends of the Seminoles (to identify)
+    for: copyright
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-traditional-stories

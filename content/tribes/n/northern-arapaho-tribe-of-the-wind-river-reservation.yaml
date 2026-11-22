@@ -187,14 +187,16 @@ governing_documents:
 - kind: constitution
   title: Constitution and By-Laws for Governing the Indians of the Wind River Reservation, Wyo
   year: '1938'
-  link: https://archive.org/stream/tribal-constitutions-rocky-mountains/Shoshone%20and%20Arapaho%20of%20Wind%20River%20Const%20and%20By-laws%2010.7.1938
+  link: https://archive.org/download/tribal-constitutions-rocky-mountains/Shoshone%20and%20Arapaho%20of%20Wind%20River%20Const%20and%20By-laws%2010.7.1938.pdf
   source: national-indian-law-library-arapahoe-wind-river
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Internet
-    Archive . Constitution and By-Laws for Governing the Indians of the Wind River Reservation, Wyo. (1938).".'
+    Archive . Constitution and By-Laws for Governing the Indians of the Wind River Reservation, Wyo. (1938).".
+    Link changed on 2026-11-22 from https://archive.org/stream/tribal-constitutions-rocky-mountains/Shoshone%20and%20Arapaho%20of%20Wind%20River%20Const%20and%20By-laws%2010.7.1938,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: law-code
   title: Northern Arapaho Tribal Code
   year: '2018'
@@ -276,6 +278,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
     source: northern-arapaho-title-7-peacemaker-code
     confidence: medium
+    verification: read-in-full
     as_of: '2016-08-31'
   - kind: arbitration
     title: Title 1. Arbitration
@@ -287,48 +290,17 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/arapaho_wind_river/index.html
     source: national-indian-law-library-code-codes-arapaho-wind-river
     confidence: medium
+    verification: title-only
     as_of: 2018-06
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: peacemaking
-    title: Title 7, Peacemaker Code
-    citation: Title 7, Peacemaker Code
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Arapaho Tribe of the Wind River Reservation of Wyoming
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and civil process authority, procedures (including authority to use traditional Northern Arapaho
-      culture), referral standards, authority of Tribal Court to limit, and standards of conduct.'
-  - kind: arbitration
-    title: Title 1. Arbitration
-    citation: Title 1. Arbitration
-    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
-    source: national-indian-law-library-code-codes-arapaho-wind-river
-    confidence: medium
-    as_of: '2018'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: Title 7. Peacemaker
-    citation: Title 7. Peacemaker
-    link: https://narf.org/nill/codes/arapaho_wind_river/index.html
-    source: national-indian-law-library-code-codes-arapaho-wind-river
-    confidence: medium
-    as_of: '2018'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: June 2018); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
   - kind: peacemaking
     title: 103 Establishment of Peacemaker Court
     citation: 103 Establishment of Peacemaker Court; 105 Authorities of Tribal Court and Peacemaker
     link: https://narf.org/nill/codes/arapaho_wind_river/index.html
     source: national-indian-law-library-code-codes-arapaho-wind-river
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'Chapter 1'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -341,6 +313,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/arapaho_wind_river/index.html
     source: national-indian-law-library-code-codes-arapaho-wind-river
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'Chapter 2'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -353,6 +326,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/arapaho_wind_river/index.html
     source: national-indian-law-library-code-codes-arapaho-wind-river
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'Chapter 3'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -364,6 +338,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/arapaho_wind_river/index.html
     source: national-indian-law-library-code-codes-arapaho-wind-river
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'Chapter 5'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -375,6 +350,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/arapaho_wind_river/index.html
     source: national-indian-law-library-code-codes-arapaho-wind-river
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'Chapter 6'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -393,34 +369,13 @@ dispute_resolution:
     link: https://narf.org/nill/codes/shoshonearapaho/index.html
     source: national-indian-law-library-code-codes-shoshonearapaho
     confidence: medium
+    verification: title-only
     as_of: '2004'
     locator: Table of Contents, under 'History'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
       Nov. 1, 2004); the provision itself was not read. The heading it falls under is taken from the page
       layout and may be imprecise.'
   database_listings:
-  - title: Alternative Sentencing Report for Minors
-    citation: NA Code Title 23, Section 502
-    link: https://www.northernarapaho.com/170/Tribal-Code
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-sentencing-report-for-minors/
-  - title: Court Ordered Treatment for Offenses Against Persons
-    citation: NA Code Title 20, Section 303, Section 309, and Section 311
-    link: https://www.northernarapaho.com/170/Tribal-Code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-ordered-treatment-for-offenses-against-persons/
   - title: Effort to Enforcement to Traditional Methods to Resolving Disputes
     citation: NA Code Title 7, Section 101, and Section 107
     link: https://www.northernarapaho.com/170/Tribal-Code
@@ -454,17 +409,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/limitations-of-a-peacemaker/
-  - title: Misdemeanor Sentencing with Treatment Option
-    citation: NA Code Title 20, Section 103
-    link: https://www.northernarapaho.com/170/Tribal-Code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/misdemeanor-sentencing-with-treatment-option/
   - title: Peacemaker Judgement Process
     citation: NA Code Title 7, Section 404
     link: https://www.northernarapaho.com/170/Tribal-Code
@@ -487,17 +431,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/powers-duties-of-peacemakers/
-  - title: Probation Reasonable Conditions
-    citation: NA Code Title 21, Section 701
-    link: https://www.northernarapaho.com/170/Tribal-Code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/probation-reasonable-conditions/
   - title: Protective Orders in the Peacemaking Process
     citation: NA Code Title 7, Section 401
     link: https://www.northernarapaho.com/170/Tribal-Code
@@ -509,17 +442,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/protective-orders-in-the-peacemaking-process/
-  - title: Suspension of Sentence Conditions
-    citation: NA Code Title 21, Section 604
-    link: https://www.northernarapaho.com/170/Tribal-Code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/suspension-of-sentence-conditions/
   - title: Transferring from Criminal to Peacemaker Court
     citation: NA Code Title 7, Section 603
     link: https://www.northernarapaho.com/170/Tribal-Code

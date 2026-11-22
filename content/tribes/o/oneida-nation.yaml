@@ -224,14 +224,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://oneida-nsn.gov/government/register/laws/#ONEIDA-NATION-CONSTITUTION
+  link: https://oneida-nsn.gov/wp-content/uploads/2018/05/2015-06-16-Tribal-Constitution.pdf
   source: national-indian-law-library-oneida-nation
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://oneida-nsn.gov/government/register/laws/#ONEIDA-NATION-CONSTITUTION,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Oneida Nation Constitution and By-Laws
   source: tribal-law-policy-institute-justice-systems
@@ -360,8 +361,9 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
     source: oneida-wi-8-oc-801-judiciary
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
-  - kind: mediation
+  - kind: peacemaking
     title: Divorce, Annulment, Legal Separation – Peacemaking and Mediation
     citation: Oneida Code of Laws 7 O.C. 702.6
     summary: Allows referral of divorce, annulment and legal separation parties to peacemaking or mediation
@@ -369,13 +371,15 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-702-Divorce-Annulment-Legal-Separation-BC-05-15-14-B.pdf
     source: oneida-wi-7-oc-702-divorce
     confidence: medium
+    verification: read-in-full
     as_of: '2014-05-15'
-  - kind: mediation
+  - kind: peacemaking
     title: Child Custody, Placement and Visitation – Peacemaking and Mediation
     citation: Oneida Code of Laws 7 O.C. 705.7
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-705-Child-Custody-Placement-and-Visitation-BC-05-15-14-E.pdf
     source: oneida-wi-7-oc-705-custody
     confidence: medium
+    verification: read-in-full
     as_of: '2014-05-15'
     note: Section heading confirmed; contents not reviewed in detail. NARF summarizes 702.6 and 705.7
       together as providing authorization, procedures, appeals policies and referral standards.
@@ -385,62 +389,21 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-09-29'
     locator: Oneida Nation of Wisconsin
     note: 'Native American Rights Fund description (provision itself not read): Provides procedures, qualifications,
       referral procedures, standards of conduct, and authority of Tribal Court or Cultural Heritage Department
       to appoint peacemakers.'
-  - kind: peacemaking
-    title: Title 8. Judicial System, Chapter 801.6. Peacemaking and Mediation Division
-    citation: Title 8. Judicial System, Chapter 801.6. Peacemaking and Mediation Division
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Oneida-Trial-Court-Rules.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Oneida Nation of Wisconsin
-    note: 'Native American Rights Fund description (provision itself not read): Provides procedures, qualifications,
-      referral procedures, standards of conduct, and authority of Tribal Court or Cultural Heritage Department
-      to appoint peacemakers.'
-  - kind: peacemaking
-    title: Chapter 702. Divorce, Annulment, Legal Separation, 702.6. Peacemaking and Mediation
-    citation: Chapter 702. Divorce, Annulment, Legal Separation, 702.6. Peacemaking and Mediation
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-702-Divorce-Annulment-Legal-Separation-BC-05-15-14-B.pdf
-    source: narf-ipi-youth-family-peacemaking-laws
-    confidence: medium
-    as_of: '2025-08-25'
-    locator: Oneida Nation of Wisconsin
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      procedures, appeals policies, and referral standards.'
-  - kind: peacemaking
-    title: Chapter 705. Child Custody, Placement and Visitation, 705.7. Peacemaking and Mediation
-    citation: Chapter 705. Child Custody, Placement and Visitation, 705.7. Peacemaking and Mediation
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-705-Child-Custody-Placement-and-Visitation-BC-05-15-14-E.pdf
-    source: narf-ipi-youth-family-peacemaking-laws
-    confidence: medium
-    as_of: '2025-08-25'
-    locator: Oneida Nation of Wisconsin
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      procedures, appeals policies, and referral standards.'
   - kind: peacemaking
     title: Peacemaking and Mediation
     citation: Peacemaking and Mediation
     link: https://narf.org/nill/codes/oneidacode_wi/index.html
     source: national-indian-law-library-code-codes-oneidacode-wi
     confidence: medium
+    verification: title-only
     as_of: '2019'
     locator: Table of Contents, under 'TITLE 7. CHILDREN, ELDERS & FAMILY'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: April 2019); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: Peacemaking and Mediation Division
-    citation: Peacemaking and Mediation Division; Peacemaking and Mediation; Former Judge, Mediator, or
-      Peacemaker
-    link: https://narf.org/nill/codes/oneidacode_wi/index.html
-    source: national-indian-law-library-code-codes-oneidacode-wi
-    confidence: medium
-    as_of: '2019'
-    locator: Table of Contents, under 'TITLE 8. JUDICIAL SYSTEM'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: April 2019); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
@@ -457,72 +420,6 @@ dispute_resolution:
       (application, background check, interview). It is a qualification process rather than a training
       course.
   database_listings:
-  - title: Alternative Dispositional Recommendations for a Child in Need of Protection or Services
-    citation: 7 O.C. 708.22-1 & 708.22-3
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-dispositional-recommendations-for-a-child-in-need-of-protection-or-services/
-  - title: Community Service and Counseling as a Penalty (Curfew)
-    citation: 7 O.C. 308.7-1
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-and-counseling-as-a-penalty-curfew/
-  - title: Community Service and Counseling as a Penalty (Public Peace)
-    citation: 7 O.C. 309.11-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-and-counseling-as-a-penalty-public-peace/
-  - title: Confidentiality of the Healing to Wellness Court
-    citation: 7 O.C. 808.5-7
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/confidentiality-of-the-healing-to-wellness-court/
-  - title: Healing to Wellness Ocurt Program
-    citation: 7 O.C. 808.4-3
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/healing-to-wellness-ocurt-program/
-  - title: Jurisdiction of the Healing to Wellness Court
-    citation: 7 O.C. 808.4-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/jurisdiction-of-the-healing-to-wellness-court/
   - title: Peacemaking and Mediation
     citation: 7 O.C. 708.45-1 & 708.45-2
     link: https://www.oneidaindiannation.com/ordinances-regulations/
@@ -545,39 +442,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/peacemaking-for-termination-of-parental-rights/
-  - title: Purpose and Policy of the Healing to Wellness Court
-    citation: 7 O.C. 808.1-1 & 808.1-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-policy-of-the-healing-to-wellness-court/
-  - title: Service Plan for Child Welfare Cases
-    citation: 7 O.C. 708.22-5
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/service-plan-for-child-welfare-cases/
-  - title: Use of Cultural Wellness Facilitator and Healer for Child Welfare Proceedings
-    citation: 7 O.C. 708.10-1 & 708.10-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/use-of-cultural-wellness-facilitator-and-healer-for-child-welfare-proceedings/
 gaming:
   compacts:
   - state: WI

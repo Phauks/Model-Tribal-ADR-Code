@@ -233,14 +233,15 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Constitution
-  link: https://www.miamination.com/tribal-constitution/
+  link: https://www.miamination.com/wp-content/uploads/2024/04/Constitution_02.01.2008-All-Signatures.pdf
   source: national-indian-law-library-miami-oklahoma
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.miamination.com/tribal-constitution/, a page
+    that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution
   link: http://www.narf.org/nill/constitutions/miamiconst/index.html
@@ -305,28 +306,6 @@ justice_institutions:
     404, so it is not recorded.'
 dispute_resolution:
   database_listings:
-  - title: Admissibility of Information in Examination or Treatment
-    citation: Miami Tribe of Oklahoma Criminal Procedure Code Section 435
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/admissibility-of-information-in-examination-or-treatment/
-  - title: Alternative Types of Hearings for Juvenile Cases
-    citation: Miami Tribe of Oklahoma Juvenile Code Section 106
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-types-of-hearings-for-juvenile-cases/
   - title: Court Discretionary Dismissal in Juvenile Court
     citation: Miami Tribe of Oklahoma Juvenile Code Section 705
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
@@ -338,28 +317,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/court-discretionary-dismissal-in-juvenile-court/
-  - title: Detention and its Limitations in Juvenile Cases
-    citation: Miami Tribe of Oklahoma Juvenile Code Section 404; Section 405; and, Section 907
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/detention-and-its-limitations-in-juvenile-cases/
-  - title: Diversion Agreements and Conditions in Juvenile Court
-    citation: Miami Tribe of Oklahoma Juvenile Code Section 508
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-agreements-and-conditions-in-juvenile-court/
   - title: Diversion in Youth Cases
     citation: Miami Tribe of Oklahoma Child Welfare Code Section 21 & Section 26
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
@@ -383,105 +340,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-in-juvenile-court/
-  - title: Informal Dispositional Hearing for Neglected Children Cases
-    citation: Miami Tribe of Oklahoma Child Welfare Code Section 28
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-dispositional-hearing-for-neglected-children-cases/
-  - title: Mandated Facility for Treatment for Intoxication Cases
-    citation: Miami Tribe of Oklahoma Criminal Offense Code Section 536
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mandated-facility-for-treatment-for-intoxication-cases/
-  - title: Mandatory Treatment Plan for every Child Welfare Case
-    citation: Miami Tribe of Oklahoma Child Welfare Code Section 31 and Section 30.
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mandatory-treatment-plan-for-every-child-welfare-case/
-  - title: Predisposition and Dispositonal Reports for Juvenile Deliquency Cases
-    citation: Miami Tribe of Oklahoma Juvenile Code Section 901 & Section 904
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/predisposition-and-dispositonal-reports-for-juvenile-deliquency-cases/
-  - title: Pretrial Diversion in Criminal Court
-    citation: Miami Tribe of Oklahoma Criminal Procedure Code Section 424 & 425
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/pretrial-diversion-in-criminal-court/
-  - title: Purpose and Goals of Juvenile Court
-    citation: Miami Tribe of Oklahoma Juvenile Code Section 2 & Section 10
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-goals-of-juvenile-court/
-  - title: Rehabilitative Approach of the Court when Sentencing
-    citation: Miami Tribe of Oklahoma Criminal Offense Code Section 8
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitative-approach-of-the-court-when-sentencing/
-  - title: Specific Requirments with an Order of Protection for Rehabilitation
-    citation: Miami Tribe of Oklahoma Child Welfare Code Section 33
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/specific-requirments-with-an-order-of-protection-for-rehabilitation/
-  - title: Supervised Work Programs for Child in Need of Supervision
-    citation: Miami Tribe of Oklahoma Child Welfare Code Section 36
-    link: https://miamination.com/miami-tribe-of-oklahoma-court/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/supervised-work-programs-for-child-in-need-of-supervision/
 gaming:
   compacts:
   - state: OK

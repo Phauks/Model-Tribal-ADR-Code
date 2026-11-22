@@ -225,14 +225,15 @@ governing_documents:
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
 - kind: constitution
   title: Constitution
-  link: https://law.mohican.com/
+  link: https://law.mohican.com/us/nsn/mohican/council/constitution
   source: national-indian-law-library-stockbridge
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://law.mohican.com/, a page that leads to the text,
+    to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Stockbridge-Munsee Community Constitution and By-Laws
   source: tribal-law-policy-institute-justice-systems
@@ -333,6 +334,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Stockbridge-Munsee-TCT.04-Peacemaker-Ordinance.pdf
     source: stockbridge-munsee-tct-04-peacemaker-ordinance
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
   - kind: peacemaking
     title: Employee Rights Ordinance – peacemaking for employee disputes
@@ -341,19 +343,9 @@ dispute_resolution:
     link: https://narf.org/nill/codes/stockbridge/53employee10.pdf
     source: stockbridge-munsee-chapter-53-employee-rights
     confidence: medium
+    verification: read-in-full
     as_of: '2010-08-17'
     locator: Section 53.5(H)
-  - kind: peacemaking
-    title: Title TCT, Chapter TCT.04 – Peacemaker Ordinance
-    citation: Title TCT, Chapter TCT.04 – Peacemaker Ordinance
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Stockbridge-Munsee-TCT.04-Peacemaker-Ordinance.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Stockbridge Munsee Community of Wisconsin
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and guiding principles, qualifications, procedures, authority of Tribal Court to limit, referral
-      standards, and standards of conduct, authority to use traditional ways and instruct on tribal teachings.'
   clauses:
   - context: employment-code
     kind: mediation-clause
@@ -379,26 +371,6 @@ dispute_resolution:
     as_of: '2010-08-17'
     locator: Section 53.5(F)-(G)
   database_listings:
-  - title: Alternative Sentences for Juvenile Curfew/Hitchhiking Violations
-    citation: YAE.07.06(g) - Alternative Sentences
-    link: https://law.mohican.com
-    practice_area: Tribal Juvenile/Youth Justice
-    form_of_practice: Alternative sentencing; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-sentences-for-juvenile-curfew-hitchhiking-violations/
-  - title: Community-Based Treatment and Services (Youth in Need of Care Disposition)
-    citation: YAE.01.02(a)(9)-(10); YAE.02.16(i) - Community-Based Services
-    link: https://law.mohican.com
-    practice_area: Tribal Child Welfare/Family
-    form_of_practice: Community-based programs; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-based-treatment-and-services-youth-in-need-of-care-disposition/
   - title: Criminal Probation Condition – Peacemaker System
     citation: TCT.04.30
     link: https://law.mohican.com
@@ -421,39 +393,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/establishment-of-peacemaker-system-2/
-  - title: Healing to Wellness Court Integration with Child Welfare Cases
-    citation: TCT.06.04(e)
-    link: https://law.mohican.com
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Family conferencing; Healing
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-integration-with-child-welfare-cases/
-  - title: Healing to Wellness Court – Program Elements with Treatment and Incentives
-    citation: TCT.06.06
-    link: https://law.mohican.com
-    practice_area: Tribal Justice
-    phase: Post-adjudication; Pre-adjudication
-    form_of_practice: Alternative; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-program-elements-with-treatment-and-incentives/
-  - title: Healing to Wellness Court – Purpose and Authority
-    citation: TCT.06.01
-    link: https://law.mohican.com
-    practice_area: Tribal Justice
-    phase: Post-adjudication; Pre-adjudication
-    form_of_practice: Alternative; Diversion; Healing
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-purpose-and-authority/
   - title: Healing to Wellness Court – Voluntary Participation and Deferred Sentencing
     citation: TCT.06.04(c)-(d)
     link: https://law.mohican.com

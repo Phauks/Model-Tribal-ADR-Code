@@ -1,0 +1,54 @@
+profile: content/tribes/j/jicarilla-apache-nation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/jicarillaapachetribe-ordappr041194.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, court-review, licensing-hearing) in this ordinance listed 1994-04-11; reviewers read
+    a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/Amend_Appr_6.12.09.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2009-06-08
+    and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#jicarilla-apache-tribe-amendment-2009-06-08#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#jicarilla-apache-tribe-amendment-2009-06-08#i2
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/jicarillaapachetribe-20100719LtrtoTrbsCoslfrNIGCChairwomanreOrdamendappl.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2010-07-19
+    and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#jicarilla-apache-tribe-amendment-2010-07-19#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#jicarilla-apache-tribe-amendment-2010-07-19#i2
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/04032020JicarillaApacheNationOrdAmendApproval.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2020-04-03 has no text layer on most pages (45 of 46 pages have no text
+    layer (only the approval letter has text); no OCR available).
+next_steps: Read the scanned amendment listed 2020-04-03 (https://www.nigc.gov/wp-content/uploads/2025/03/04032020JicarillaApacheNationOrdAmendApproval.pdf)
+  with OCR or by hand.
