@@ -11,11 +11,10 @@
 import { atLeast, type AccessLevel } from '../permissions.ts';
 import { essayDateTime } from '../essays/dates.ts';
 import { lineChanges } from '../essays/merge.ts';
-import { renderEssay } from '../essays/render.ts';
 import { splitFrontMatter } from '../essays/syntax.ts';
 import type { SourceEntry } from './source-uses.ts';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
-import { essayLibrary } from './essay-pages.ts';
+import { renderWithGenerated } from './essay-pages.ts';
 import { latestVersion, publications, readVersionText, version as versionRow } from './essays.ts';
 
 export interface EssayPageState {
@@ -53,7 +52,8 @@ export async function essayPageState(
 	if (!published?.sha256 || published.sha256 !== latest.sha256) {
 		const before = published?.object_key ? splitFrontMatter(await readVersionText(bucket, { object_key: published.object_key })).body : '';
 		const lines = lineChanges(before, splitFrontMatter(text).body);
-		const rendered = renderEssay(text, essayLibrary, { lines });
+		// A generated page (the index of cases by topic) is built from the newest texts; only its own text is marked.
+		const rendered = await renderWithGenerated(text, 'saved', { lines });
 		draft = {
 			html: rendered.html,
 			sources: rendered.sources,
