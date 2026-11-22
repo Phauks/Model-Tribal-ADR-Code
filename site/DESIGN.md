@@ -269,12 +269,7 @@ size, because the book's trim size is not yet decided (project choice).
 
 **Page tools.** Print and, where the page has a file to offer, Download sit together under a page's title (`PageTools.svelte`), as quiet buttons. Each download is a file built with the site: a nation's record as JSON, the full nations index as CSV, and the glossary's terms as JSON. The book and the data exports stay on the Downloads page.
 
-**Icons.** All icons but one (the GitHub mark, the last rule below) come from Lucide,[^lucide-license] chosen on Nov. 21,
-2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)).
-The site imports single icons from `@lucide/svelte`, so only the icons used are
-bundled.[^lucide-svelte] The book and the ebook use the same drawings from
-`lucide-static`, at the same version number, which `site/package.json` pins
-exactly. Rules:
+**Icons.** All icons but one (the GitHub mark, the last rule below) come from Lucide,[^lucide-license] chosen on Nov. 21, 2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)). The site imports single icons from `@lucide/svelte`, so only the icons used are bundled.[^lucide-svelte] The book and the ebook use the same drawings from `lucide-static`, at the same version number, which `site/package.json` pins exactly. Rules:
 
 - An icon sits beside words. The only icon-only controls are the theme button and the profile button (Trevor asked for a profile icon on Nov. 22, 2026), and each carries an `aria-label` that names it, because Lucide hides icons from screen readers by default.[^lucide-a11y] The text alignment choice in Settings also shows only symbols, as Trevor asked on Nov. 22, 2026; each symbol is a radio button with a hidden name that screen readers read, and the picked choice's name and hint show in words just below it.
 - Beside 18 px body text, icons are 20 px with `strokeWidth` 1.75, which

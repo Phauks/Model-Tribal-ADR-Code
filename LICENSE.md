@@ -1,8 +1,6 @@
 # Licenses
 
-Different parts of this repository are licensed differently, because each part
-has different users with different needs.<!-- repository-only --> The reasons for each choice are in
-[decision record 0002](docs/decisions/0002-license-by-material.md).<!-- /repository-only -->
+Different parts of this repository are licensed differently, because each part has different users with different needs.<!-- repository-only --> The reasons for each choice are in [decision record 0002](docs/decisions/0002-license-by-material.md).<!-- /repository-only -->
 
 | Material | Where it lives | License | Full text |
 | --- | --- | --- | --- |

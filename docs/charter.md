@@ -61,13 +61,7 @@ Rights Fund's Indigenous Peacemaking Initiative, which collects nations'
 peacemaking laws, describes peacemaking as "traditional ways of resolving
 conflict in Indigenous communities."[^narf-ipi]
 
-The project therefore keeps peacemaking as its own track. Its model
-peacemaking provisions and commentary are kept apart from the alternative
-dispute resolution provisions, under their own heading. They set up or
-recognize a nation's peacemaking forum and connect it to the nation's court
-and other forums. They do not define how peacemaking is done, which each
-nation decides by its own tradition<!-- repository-only -->
-([decision record 0026](decisions/0026-model-peacemaking-code.md))<!-- /repository-only -->.
+The project therefore keeps peacemaking as its own track. Its model peacemaking provisions and commentary are kept apart from the alternative dispute resolution provisions, under their own heading. They set up or recognize a nation's peacemaking forum and connect it to the nation's court and other forums. They do not define how peacemaking is done, which each nation decides by its own tradition<!-- repository-only --> ([decision record 0026](decisions/0026-model-peacemaking-code.md))<!-- /repository-only -->.
 
 ### 4. Consultation before publication
 
@@ -146,8 +140,7 @@ name, words or contribution.
   from the repository's history and asks archive services to remove copies,
   where they allow it. Printed copies already sold cannot be recalled; the
   next printing omits the material.
-- A nation's preferred names and terms are added to the project dictionary<!-- repository-only -->
-  ([terminology.md](terminology.md))<!-- /repository-only --> and apply from then on.
+- A nation's preferred names and terms are added to the project dictionary<!-- repository-only --> ([terminology.md](terminology.md))<!-- /repository-only --> and apply from then on.
 
 <!-- repository-only -->
 The website's request page and the steps behind it are specified in
@@ -161,8 +154,7 @@ The website's request page and the steps behind it are specified in
 - Cover and interior art is to be made by Native artists, chosen through a
   contest, credited, and paid where the project can do so; terms are set in a
   written agreement with each artist.
-- Contributors keep credit for their work under the project's
-  [licenses by material](../LICENSE.md).
+- Contributors keep credit for their work under the project's [licenses by material](../LICENSE.md).
 
 ### 8. Evidence and citation
 
