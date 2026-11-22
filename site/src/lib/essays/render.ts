@@ -16,7 +16,7 @@ import type MarkdownIt from 'markdown-it';
 import type Token from 'markdown-it/lib/token.mjs';
 import { markAnchor, marksHtml, type CitationMark } from '../citation-marks.ts';
 import type { SourceEntry } from '../server/source-uses.ts';
-import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, type CitationReference } from './syntax.ts';
+import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 
 export interface EssayLibrary {
 	/** The full citation of a source, as HTML in the project's Indigo Book style. */
@@ -29,6 +29,12 @@ export interface EssayLibrary {
 	 * vote and opinions (src/lib/server/case-facts.ts).
 	 */
 	facts?(box: 'case' | 'law', key: string): [string, string][];
+	/**
+	 * The address of the page that holds a case or law box ("case-<key>"),
+	 * for links to a box on another page, such as those in the index of
+	 * cases by topic.
+	 */
+	boxPage?(anchor: string): string | undefined;
 }
 
 /** One heading in the essay, for the page's outline. */
@@ -140,6 +146,26 @@ function markAttributions(tokens: Token[]): void {
 	}
 }
 
+/**
+ * The paragraph inside a case box's Topics part ("Gaming; Sovereign
+ * immunity") is shown as a list of tags, which the index of cases by topic
+ * is built from (case-topics.ts).
+ */
+function markTopics(tokens: Token[]): void {
+	let inTopics = false;
+	for (const token of tokens) {
+		if (token.type === 'container_topics_open') inTopics = true;
+		else if (token.type === 'container_topics_close') inTopics = false;
+		else if (inTopics && token.type === 'paragraph_open') token.type = 'topics_open';
+		else if (inTopics && token.type === 'paragraph_close') token.type = 'topics_close';
+		else if (inTopics && token.type === 'inline') {
+			token.meta = { topics: topicsIn(token.content) };
+			token.type = 'topics_list';
+			token.children = [];
+		}
+	}
+}
+
 function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 	const rules = markdown.renderer.rules;
 
@@ -193,11 +219,17 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 		rules[`container_${kind}_open`] = () => `<div class="essay-case-part essay-case-${kind}">\n${label(text)}`;
 		rules[`container_${kind}_close`] = () => '</div>\n';
 	}
+	rules.topics_open = () => '<ul class="essay-topics">';
+	rules.topics_list = (tokens, index) =>
+		(tokens[index].meta.topics as string[]).map((topic) => `<li>${escapeHtml(topic)}</li>`).join('');
+	rules.topics_close = () => '</ul>\n';
 	rules.container_quote_open = () => '<figure class="essay-quote">\n';
 	rules.container_quote_close = () => '</figure>\n';
 	rules.container_analysis_open = (tokens, index) => {
 		const title = essayBlocks.analysis.exec(tokens[index].info.trim())?.[1]?.trim();
-		return `<aside class="essay-analysis">\n${label(title ? `Analysis: ${escapeHtml(title)}` : 'Analysis')}`;
+		// The title names what the box analyzes; a case name in it is written in *italics*.
+		const shown = title ? escapeHtml(title.replaceAll("'", '’')).replace(/\*([^*]+)\*/g, '<em>$1</em>') : '';
+		return `<aside class="essay-analysis">\n${label(shown ? `Analysis: ${shown}` : 'Analysis')}`;
 	};
 	rules.container_analysis_close = () => '</aside>\n';
 	return markdown;
@@ -268,7 +300,15 @@ export function renderEssay(text: string, library: EssayLibrary): RenderedEssay 
 		tokens = tokens.slice(3);
 	}
 	markAttributions(tokens);
-	const html = markdown.renderer.render(tokens, markdown.options, environment);
+	markTopics(tokens);
+	// A link to a case or law box that is not on this page goes to the page that holds it.
+	const html = markdown.renderer
+		.render(tokens, markdown.options, environment)
+		.replace(/href="#((?:case|law)-[a-z0-9-]+)"/g, (link, anchor: string) => {
+			if (state.slugs.has(anchor)) return link;
+			const page = library.boxPage?.(anchor);
+			return page ? `href="${escapeHtml(page)}#${anchor}"` : link;
+		});
 	return {
 		title: title || 'Untitled',
 		html,

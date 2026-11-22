@@ -13,7 +13,9 @@
  *    compares the fingerprints of the build being read (saved by its worker)
  *    with the new build's, to say whether the update changes this page.
  * 4. Apply. "Update now" tells the waiting worker to take over; the page
- *    reloads once it does. "Later" hides the notice for this visit; the
+ *    reloads once it does. The notice shows only once the new worker has
+ *    installed, and the worker tidies the old cache only after it has taken
+ *    over, so the reload is not held up. "Later" hides the notice for this visit; the
  *    browser applies the update on its own once every tab of the site has
  *    been closed.
  * 5. Save again. On the first page load under the new worker, the page asks
