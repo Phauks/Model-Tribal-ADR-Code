@@ -14,6 +14,15 @@
 </nav>
 
 <h1 class="visually-hidden">{data.canEdit ? 'Edit' : 'Read'} {data.title}</h1>
+{#if data.gitConflict > 0}
+	<div class="notice" role="status">
+		<p>
+			Git changed {data.gitConflict === 1 ? 'a paragraph' : `${data.gitConflict} paragraphs`} that were also edited
+			here, so its text was not merged. Settle it on the <a href="/workspace/essays">Essays</a> page, or edit the
+			paragraph here to the wording you want.
+		</p>
+	</div>
+{/if}
 <p class="small muted">Started from version {data.version}, saved {data.savedAt}. Double-click a citation to change it.</p>
 
 {#key data.identifier}

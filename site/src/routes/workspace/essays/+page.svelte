@@ -52,22 +52,39 @@
 	</ul>
 {/if}
 
-{#if data.gitChanges.length > 0}
+{#if data.fromGit.length > 0}
+	<div class="notice" role="status">
+		<p>Text merged in git was saved as a new version, not yet published:</p>
+		<ul>
+			{#each data.fromGit as change (change.identifier)}
+				<li>
+					<a href="/workspace/essays/{change.identifier}">{change.identifier}</a>, version {change.version}{change.merged
+						? ', merged with the edits made here'
+						: ''}
+				</li>
+			{/each}
+		</ul>
+	</div>
+{/if}
+
+{#if data.gitConflicts.length > 0}
 	<section class="panel">
-		<h2>Text in git</h2>
+		<h2>Changed both here and in git</h2>
 		<p class="small">
-			These essays in git differ from their newest version here, or are not here yet. Bringing one in saves
-			the git text as a new version; nothing here is overwritten. Use it for text other threads changed in
-			git, such as the Foundations chapters.
+			Git changed paragraphs that were also edited here since its text last came in, so nothing was saved for
+			these essays. Edit the paragraphs here to match what you want, or save the git text as a new version;
+			either way every earlier version stays in the history to compare.
 		</p>
 		<ul class="git-list">
-			{#each data.gitChanges as copy (copy.identifier)}
+			{#each data.gitConflicts as conflict (conflict.identifier)}
 				<li>
 					<form method="post" action="?/bringIn">
-						<input type="hidden" name="essay" value={copy.identifier} />
-						<code>{copy.identifier}</code>
-						<span class="small muted">{copy.inBucket ? 'differs from the newest version' : 'not here yet'}</span>
-						<button class="button button-quiet" type="submit">Bring in</button>
+						<input type="hidden" name="essay" value={conflict.identifier} />
+						<a href="/workspace/essays/{conflict.identifier}">{conflict.identifier}</a>
+						<span class="small muted"
+							>{conflict.conflicts === 1 ? '1 place' : `${conflict.conflicts} places`} changed on both sides since version {conflict.latestVersion}</span
+						>
+						<button class="button button-quiet" type="submit">Use the git text</button>
 					</form>
 				</li>
 			{/each}
