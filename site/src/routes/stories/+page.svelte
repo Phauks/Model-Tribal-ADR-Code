@@ -15,14 +15,14 @@
 <div class="reading">
 	<h1>Stories</h1>
 	<p class="lead">
-		Stories, accounts and teachings about resolving disputes, making peace and restoring relationships, as Native nations and their people tell them. The project does not retell or summarize them. Each page quotes short passages in the teller’s own words and links to where the nation or teller published the story, so you can read it there in full.
+		Stories, accounts and teachings about resolving disputes, making peace and restoring relationships, as Native nations and their people tell them. They are never retold or summarized here. Each page quotes short passages in the teller’s own words and links to where the nation or teller published the story, so you can read it there in full.
 	</p>
 
 	{#if data.awaitingReview > 0}
 		<div class="notice" role="note">
 			<p>
 				<strong>Not yet reviewed by the nations.</strong>
-				{data.awaitingReview === data.count ? 'None' : `${data.awaitingReview} of the ${data.count}`} of these stories {data.awaitingReview === data.count ? 'has' : 'have'} been reviewed by the nation{data.awaitingReview === 1 ? '' : 's'} they come from yet. They are shown while the project asks each nation to review them. Each story page has a link to ask for it to be removed.
+				{data.awaitingReview === data.count ? 'None' : `${data.awaitingReview} of the ${data.count}`} of these stories {data.awaitingReview === data.count ? 'has' : 'have'} been reviewed by the nation{data.awaitingReview === 1 ? '' : 's'} they come from yet. They are shown while each nation is asked to review them. Each story page has a link to ask for it to be removed.
 			</p>
 		</div>
 	{/if}

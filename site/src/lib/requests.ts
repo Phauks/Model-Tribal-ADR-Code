@@ -31,7 +31,7 @@ export const requestKindHints: Record<RequestKind, string> = {
 	'add-nation':
 		'A nation is not listed. One federal or state government source that names it is enough.',
 	contribute: 'Offer sources, review, preferred terms or writing.',
-	question: 'Anything else about the project.'
+	question: 'Anything else about the site, the code or the book.'
 };
 
 export function isRequestKind(value: unknown): value is RequestKind {
@@ -105,7 +105,7 @@ export const authorityStatementLabels: Record<AuthorityStatement, string> = {
 	'authorized-by-government':
 		'I am authorized by this nation’s government to make this request, and the information I gave is accurate to the best of my knowledge.',
 	'not-writing-for-government':
-		'I am not writing for the nation’s government. The project will contact the nation itself.'
+		'I am not writing for the nation’s government. We will contact the nation ourselves.'
 };
 
 const day = 24 * 60 * 60 * 1000;
