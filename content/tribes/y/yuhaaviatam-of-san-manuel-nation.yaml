@@ -137,12 +137,44 @@ contacts:
   as_of: '2026-11-20'
   locator: Yuhaaviatam of San Manuel Nation (previously listed as San Manuel Band of Mission Indians,
     California)
+official_images:
+- kind: logo
+  image_link: https://upload.wikimedia.org/wikipedia/commons/3/38/Yuhaaviatam_of_San_Manuel_Nation_logo.png
+  credit: A copy on Wikimedia Commons, uploaded in 2025 with sanmanuel-nsn.gov given as its source.
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 04f1b081a7f0c773877ee381b9f13060c36900fae2c1aa686a4a17dec8f39503
+  private_copy: nation-images/yuhaaviatam-of-san-manuel-nation/logo-04f1b081a7f0.png
+  reuse:
+    status: restricted
+    checked: '2026-11-22'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89003219
+      serial_number: '89003219'
+      note: The nation filed a similar design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89003218
+      serial_number: '89003218'
+      note: The nation filed a similar design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+  source: wikimedia-commons-yuhaaviatam-of-san-manuel-nation-logo
+  confidence: medium
+  as_of: '2026-11-22'
+  verification: read-in-full
 tribal_insignia_database_entries:
 - serial_number: '89003210'
   wordmark: SAN MANUEL BAND OF MISSION INDIANS
   filed: '2024-08-21'
   record_link: https://tsdr.uspto.gov/#caseNumber=89003210&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: different-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'
@@ -152,7 +184,7 @@ tribal_insignia_database_entries:
   wordmark: YUHAAVIATAM OF SAN MANUEL NATION
   filed: '2025-11-13'
   record_link: https://tsdr.uspto.gov/#caseNumber=89003218&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: similar-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'
@@ -162,7 +194,7 @@ tribal_insignia_database_entries:
   wordmark: YUHAAVIATAM OF SAN MANUEL NATION
   filed: '2025-11-13'
   record_link: https://tsdr.uspto.gov/#caseNumber=89003219&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: similar-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'

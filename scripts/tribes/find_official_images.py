@@ -21,7 +21,9 @@ keeps only the nation's own seal, flag or logo, and records it in the profile's
 official_images list (docs/data-model.md). The downloaded files stay outside the repository.
 
 Run from the repository root:
-    python3 scripts/tribes/find_official_images.py candidates.json private-image-folder
+    python3 scripts/tribes/find_official_images.py candidates.json private-image-folder [only.txt]
+The optional third argument names a file of profile ids, one per line, to read only those nations
+(for example, the ones that still have no image).
 Uses only the Python standard library and PyYAML (scripts/requirements.txt).
 """
 
@@ -322,16 +324,17 @@ def search(profile: dict, folder: pathlib.Path) -> dict:
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
+    if len(sys.argv) not in (3, 4):
         print(__doc__)
         return 2
     folder = pathlib.Path(sys.argv[2])
+    only = set(pathlib.Path(sys.argv[3]).read_text(encoding="utf-8").split()) if len(sys.argv) == 4 else None
     folder.mkdir(parents=True, exist_ok=True)
     profiles = []
     for path in sorted(pathlib.Path("content/tribes").glob("*/*.yaml")):
         record = yaml.safe_load(path.read_text(encoding="utf-8"))
         sites = [(c["value"], c.get("source")) for c in record.get("contacts", []) if c.get("kind") == "website" and c.get("link_status") != "lapsed"]
-        if sites:
+        if sites and (only is None or record["id"] in only):
             profiles.append({"id": record["id"], "name": record["names"]["official"], "sites": sites})
     with concurrent.futures.ThreadPoolExecutor(max_workers=24) as pool:
         results = list(pool.map(lambda profile: search(profile, folder), profiles))
