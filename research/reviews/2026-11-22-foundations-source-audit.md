@@ -47,7 +47,7 @@ Counts are by record kind, per chapter (project analysis).
 
 These go to the pull list (`/mnt/project-files/research/documents-to-get.md`) or to the notes for later sessions:
 
-- KeyCite for the 54 digest cases not yet checked, and for the 14 cases added here (the four bad-men cases, Flying Horse, Downes, Tuaua, Fitisemanu, Wabol and Davis).
+- KeyCite for the 54 digest cases not yet checked, and for the 10 cases added here (the four bad-men cases, Flying Horse, Downes, Tuaua, Fitisemanu, Wabol and Davis).
 - Library copies of Cohen's Handbook (2024), which is on Lexis rather than Westlaw, and of Deloria and Lytle's *American Indians, American Justice*, for pinpoints the timeline can cite.
 - The NCAI guide's era quotations, the 1790 and 1817 acts, the Alaska IRA amendment and House Concurrent Resolution 108 were read from scans too noisy to confirm by machine. Each should be checked against a clean page image.
 - The CNMI Constitution's own text (article XII is quoted from Wabol), the Chamorro Land Trust Act's 1975 session law, and the official American Samoa and Guam code texts (read here from mirrors).
