@@ -53,6 +53,7 @@ and makes each edition reproducible
 │   ├── contributions.md     Filings for material that comes from people, not publications
 │   ├── contributor-forms/   Consent, release and permission forms for those filings
 │   ├── roadmap.md           Order of work and review gates toward drafting
+│   ├── outline.md           Working outline of the code, book and website
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records
 ├── LICENSES/                Full license texts

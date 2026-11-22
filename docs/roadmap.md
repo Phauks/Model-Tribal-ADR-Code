@@ -104,7 +104,9 @@ research session ([research/README.md](../research/README.md)).
 
 ### Scope questions for Gate 2
 
-Each question comes from what the data shows (project analysis):
+Each question comes from what the data shows (project analysis). The
+[working outline](outline.md#open-scope-questions) restates them with a
+recommendation for each and adds four more:
 
 | Question | Why it arises |
 | --- | --- |
@@ -117,6 +119,11 @@ Each question comes from what the data shows (project analysis):
 | Does the code or its commentary address nations divided by an international border? | Akwesasne, the Blackfoot Confederacy, Tohono O'odham and others live on both sides of the Canadian or Mexican border, and each country sets their status by its own law ([Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md#7-what-the-comparison-suggests-project-analysis); [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md)) |
 
 ### Candidate outline, to confirm at Gate 2
+
+The full working outline of the code, the book and the website, with
+recommendations on each scope question, is now kept in
+[outline.md](outline.md) (version 0.1, Nov. 22, 2026). The list below is the
+starting point it grew from, kept for history.
 
 A starting point for discussion, not a decision. It follows the provision
 schema's tracks (general, peacemaking, mediation, arbitration, restorative,
