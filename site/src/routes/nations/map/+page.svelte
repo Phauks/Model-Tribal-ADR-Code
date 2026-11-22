@@ -497,6 +497,37 @@
 		fill: var(--color-focus);
 	}
 
+	/* Small islands are only a few map units across, so on hover their outline
+	   also gets a wide stroke in the focus color, and the line to their marker
+	   darkens, so that the place itself visibly lights up. */
+	.map-drawing :global(a:hover .island),
+	.map-drawing :global(a:focus .island) {
+		stroke: var(--color-focus);
+		stroke-width: 3;
+	}
+	.map-drawing :global(a:hover .marker-line),
+	.map-drawing :global(a:focus .marker-line),
+	.map-drawing :global(.unlinked:hover .marker-line) {
+		stroke: var(--color-ink);
+		stroke-width: 1.2;
+	}
+
+	/* Places with no table row to go to are not links, but still outline on
+	   hover so a reader sees which place the tooltip names. */
+	.map-drawing :global(.unlinked:hover .state) {
+		stroke: var(--color-ink);
+		stroke-width: 1.5;
+	}
+
+	/* An invisible wide band around each small island that takes the pointer. */
+	.map-drawing :global(.hit-area) {
+		fill: none;
+		stroke: transparent;
+		stroke-width: 12;
+		stroke-linejoin: round;
+		pointer-events: stroke;
+	}
+
 	.map-drawing :global(.state-borders) {
 		fill: none;
 		stroke: var(--color-control-border);

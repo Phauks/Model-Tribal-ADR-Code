@@ -8,7 +8,6 @@
 			label?: string;
 			text: string;
 			link?: string;
-			linkHint?: string;
 			detail?: string;
 			/** A detail with linked citations, such as a recognition status's legal basis. */
 			detailParts?: { text: string; link?: string }[];
@@ -26,11 +25,7 @@
 				<ul>
 					{#each group.items as item, index (index)}
 						<li>
-							{#if item.label}{item.label}:{' '}{/if}{#if item.link}<a href={item.link}
-									>{item.text}{#if item.linkHint}<span class="visually-hidden">
-											{item.linkHint}</span
-										>{/if}</a
-								>{:else}{item.text}{/if}
+							{#if item.label}{item.label}:{' '}{/if}{#if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}
 							{#if item.detailParts}{' '}<span class="muted small"
 									>({#each item.detailParts as part, partIndex (partIndex)}{#if part.link}<a
 												href={part.link}>{part.text}</a

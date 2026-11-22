@@ -138,6 +138,13 @@ const markerOffsets: Record<string, [number, number]> = {
 const labelsOnTheLeft = new Set(['GU', 'MP']);
 
 /**
+ * Island places that sit alone, or nearly alone, in their boxes. Their shapes
+ * are a few map units across, so the full map gives each a wider invisible
+ * area to point at, and the small map keeps their full detail.
+ */
+const islands = new Set(['GU', 'MP', 'AS', 'VI']);
+
+/**
  * Where a region's label sits, as a shift in map units from the center of the
  * region's largest piece, where the center alone would put the label on top
  * of a neighbor's (checked by eye).
@@ -179,6 +186,8 @@ export interface StateShape {
 	path: string;
 	/** Where a small place's marker sits, and the line from the place to it. */
 	marker?: { x: number; y: number; fromX: number; fromY: number; labelSide: 'left' | 'right' };
+	/** True for small islands, which get a wider area to point at. */
+	island?: boolean;
 	/** Where the state's label sits: the center of its largest piece (small map only). */
 	center?: { x: number; y: number };
 }
@@ -448,6 +457,7 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 				labelSide: labelsOnTheLeft.has(code) ? 'left' : 'right'
 			};
 		}
+		if (islands.has(code)) shape.island = true;
 		return shape;
 	};
 	const stateShapes = states.map((state) => shapeOf(state, (panel) => round(panel.path(state))));
@@ -457,7 +467,7 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 	// Simplifying the whole atlas wipes out the smallest islands, which left the
 	// boxes for Guam, the Northern Mariana Islands, American Samoa and the
 	// Virgin Islands empty, so those four keep their full detail.
-	const keptWhole = new Set(['GU', 'MP', 'AS', 'VI']);
+	const keptWhole = islands;
 	const fullDetail = new Map(states.map((state) => [codeOf(state), state]));
 	const smallStates = (
 		feature(simplified, simplified.objects.states) as FeatureCollection<Polygon | MultiPolygon>

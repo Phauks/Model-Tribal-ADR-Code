@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import geometry from 'virtual:map-geometry';
-import { emailLink, mapSearchLink, phoneLink, webLink } from '#lib/contact-links.ts';
+import { webLink } from '#lib/contact-links.ts';
+import { contactOffices, contactsHeading, type ContactOffice } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
@@ -26,8 +27,6 @@ interface FactItem {
 	label?: string;
 	text: string;
 	link?: string;
-	/** Words for screen readers after the link, such as "on Google Maps". */
-	linkHint?: string;
 	detail?: string;
 	/** A detail with linked citations, such as a status's legal basis; shown in place of detail. */
 	detailParts?: CitationPart[];
@@ -50,43 +49,16 @@ function cited(sources: SourceUses, section: string, fact: CitedFact, item: Fact
 	return item;
 }
 
-/** A contact as the page shows it, with a link a reader can act on where one makes sense. */
-function contactItem(fact: {
-	kind: string;
-	value: string;
-	label?: string;
-	link_status?: string;
-	link_checked?: string;
-}): FactItem {
-	const detail = fact.label;
-	switch (fact.kind) {
-		case 'website':
-			// A lapsed domain no longer belongs to the nation, so it is never linked.
-			if (fact.link_status === 'lapsed') {
-				const checked = fact.link_checked ? ` (checked ${fact.link_checked})` : '';
-				return {
-					text: fact.value,
-					detail: [detail, `No longer the nation's website${checked}`].filter(Boolean).join('; ')
-				};
-			}
-			return { text: fact.value, link: webLink(fact.value), detail };
-		case 'physical-address':
-		case 'mailing-address':
-			return {
-				label: humanize(fact.kind),
-				text: fact.value,
-				link: mapSearchLink(fact.value),
-				linkHint: 'on Google Maps',
-				detail
-			};
-		case 'phone':
-			return { label: 'Phone', text: fact.value, link: phoneLink(fact.value), detail };
-		case 'email-general':
-			return { label: 'Email', text: fact.value, link: emailLink(fact.value), detail };
-		default:
-			// Fax numbers and anything else are shown as text: a fax cannot be dialed from a page.
-			return { label: humanize(fact.kind), text: fact.value, detail };
+/**
+ * The contact card: the record's contacts grouped by office, each office
+ * named once. Each contact's source is listed under "Government contacts".
+ */
+function contactCard(record: NationRecord, sources: SourceUses): ContactOffice[] {
+	const facts = record.contacts ?? [];
+	for (const fact of facts) {
+		sources.use(fact, contactsHeading, `${humanize(fact.kind)}: ${fact.value}`);
 	}
+	return contactOffices(facts);
 }
 
 function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -110,7 +82,6 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	}
 
 	const recognitionLabel = 'Recognition';
-	const contactsLabel = 'Government contacts';
 	const regionLabel = 'Bureau of Indian Affairs region';
 	const languagesLabel = 'Heritage languages';
 	const administration = record.federal_administration;
@@ -128,11 +99,6 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 			})
 		),
 		...group('states', statesLabel, [...stateItems.values()]),
-		...group(
-			'contacts',
-			contactsLabel,
-			(record.contacts ?? []).map((fact) => cited(sources, contactsLabel, fact, contactItem(fact)))
-		),
 		...group(
 			'federal_administration',
 			regionLabel,
@@ -311,6 +277,7 @@ export const load: PageServerLoad = ({ params }) => {
 			pronunciations: [],
 			features: [],
 			glance: [],
+			contacts: [],
 			courts: [],
 			law: [],
 			documents: [],
@@ -372,6 +339,7 @@ export const load: PageServerLoad = ({ params }) => {
 		pronunciations,
 		features: recordedFeatures(record, sources),
 		glance: atAGlance(record, sources),
+		contacts: contactCard(record, sources),
 		map: presenceMap(record, sources),
 		courts: courtsAndDisputeResolution(record, sources),
 		law: publishedLaw(record, sources),

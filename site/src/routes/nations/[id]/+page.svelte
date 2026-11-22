@@ -1,9 +1,11 @@
 <script lang="ts">
 	import Collapsible from '#lib/components/Collapsible.svelte';
+	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
+	import { contactsHeading } from '#lib/contact-card.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -119,13 +121,17 @@
 
 	{#if !page.withdrawn}
 		<!-- 4. At a glance, with the map of states -->
-		{#if data.glance.length > 0 || data.map}
+		{#if data.glance.length > 0 || data.contacts.length > 0 || data.map}
 			<div class="profile-glance">
 				<Collapsible heading="At a glance" identifier="glance-heading">
 					{#if data.map}
 						<StatePresenceMap map={data.map} nationName={page.officialName} />
 					{/if}
 					<FactGroups groups={data.glance} />
+					{#if data.contacts.length > 0}
+						<h3 id="contacts-heading">{contactsHeading}</h3>
+						<ContactCard offices={data.contacts} headingLevel={4} />
+					{/if}
 				</Collapsible>
 			</div>
 		{/if}
