@@ -31,15 +31,9 @@
 			<dt>Status</dt>
 			<dd>{statusLabels[entry.status] ?? entry.status}</dd>
 		</div>
-		{#if entry.aliases.length > 0}
-			<div>
-				<dt>Other forms</dt>
-				<dd>{entry.aliases.join(', ')}</dd>
-			</div>
-		{/if}
 		<div>
-			<dt>On the glossary page</dt>
-			<dd><a href="/glossary#{entry.id}">/glossary#{entry.id}</a></dd>
+			<dt>In the glossary</dt>
+			<dd><a href="/glossary#{entry.id}">See {entry.term} among all the terms</a></dd>
 		</div>
 	</dl>
 
@@ -52,5 +46,36 @@
 		</ul>
 	{/if}
 
+	<nav class="nearby" aria-labelledby="nearby-heading">
+		<h2 id="nearby-heading">Entries near {entry.term}</h2>
+		<ol>
+			{#each data.nearby.before as other (other.id)}
+				<li><a href="/glossary/{other.id}">{other.term}</a></li>
+			{/each}
+			<li aria-current="page"><b>{entry.term}</b></li>
+			{#each data.nearby.after as other (other.id)}
+				<li><a href="/glossary/{other.id}">{other.term}</a></li>
+			{/each}
+		</ol>
+	</nav>
+
 	<SourceList sources={data.sources} />
 </div>
+
+<style>
+	.nearby ol {
+		list-style: none;
+		margin: 0 0 var(--space-5);
+		padding: 0;
+		border-left: 2px solid var(--color-line);
+	}
+
+	.nearby li {
+		padding: var(--space-1) var(--space-4);
+	}
+
+	.nearby li[aria-current='page'] {
+		margin-left: -2px;
+		border-left: 2px solid var(--color-track-alternative-dispute-resolution);
+	}
+</style>

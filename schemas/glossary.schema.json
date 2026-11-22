@@ -24,6 +24,11 @@
       "type": "string",
       "description": "For acronyms: the words written out, e.g. 'alternative dispute resolution'. The first link in each chapter or web page prints the expansion followed by the acronym."
     },
+    "part_of_speech": {
+      "type": "string",
+      "enum": ["noun", "adjective", "verb", "adverb"],
+      "description": "For a term or legal term: the part of speech, shown in italics after the headword as a dictionary gives it. Acronyms show 'abbreviation' and phrases 'phrase' instead. Defaults to noun."
+    },
     "usage": {
       "type": "string",
       "enum": ["preferred", "acceptable", "context-only", "avoid"],
@@ -33,9 +38,28 @@
       "type": "string",
       "description": "Markdown. May cite sources with [@key] and link other entries with [[id]]."
     },
+    "other_senses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["definition"],
+        "properties": {
+          "label": { "type": "string", "description": "A label that applies to this sense only, shown in italics before it, such as 'often capitalized'." },
+          "definition": { "type": "string", "description": "Markdown, as for 'definition'." }
+        }
+      },
+      "description": "Further senses of the term, after the one in 'definition'. The website and the book number the senses 1, 2, 3 when there is more than one."
+    },
+    "code_definition": {
+      "type": "string",
+      "pattern": "^[0-9]{2}-[0-9]{3}[A-Z]?$",
+      "description": "The id of the model code provision that enacts a definition of this term, such as 01-102. The entry then points readers to that section, whose definition is the one with legal effect."
+    },
     "usage_note": {
       "type": "string",
-      "description": "Markdown. When and how to use the term, and what to write instead where relevant."
+      "description": "Markdown. When and how to use the term, and what to write instead where relevant. Shown under the heading \"As used here\"."
     },
     "aliases": {
       "type": "array",

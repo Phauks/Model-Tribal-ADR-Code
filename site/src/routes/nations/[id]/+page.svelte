@@ -137,16 +137,16 @@
 
 	{#if !page.withdrawn}
 		<!-- 4. At a glance, with the map of states -->
-		{#if data.glance.length > 0 || data.contacts.length > 0 || data.map}
+		{#if data.glance.length > 0 || data.contacts.websites.length > 0 || data.contacts.offices.length > 0 || data.map}
 			<div class="profile-glance">
 				<Collapsible heading="At a glance" identifier="glance-heading">
 					{#if data.map}
 						<StatePresenceMap map={data.map} nationName={page.officialName} />
 					{/if}
 					<FactGroups groups={data.glance} />
-					{#if data.contacts.length > 0}
+					{#if data.contacts.websites.length > 0 || data.contacts.offices.length > 0}
 						<h3 id="contacts-heading">{contactsHeading}</h3>
-						<ContactCard offices={data.contacts} headingLevel={4} />
+						<ContactCard cards={data.contacts} headingLevel={4} />
 					{/if}
 				</Collapsible>
 			</div>
@@ -214,7 +214,12 @@
 		max-width: var(--layout-measure);
 	}
 
-	@media (min-width: 64rem) {
+	/*
+	 * Two columns once the page itself is wide enough. This follows the width
+	 * of the page's own column (the layout makes <main> a size container), so
+	 * it changes when the sidebar is shown or hidden, not only with the window.
+	 */
+	@container page (min-width: 62rem) {
 		.profile {
 			display: grid;
 			grid-template-columns: minmax(0, var(--layout-measure)) minmax(22rem, 1fr);
@@ -245,12 +250,12 @@
 		}
 
 		.profile-glance {
-			container-type: inline-size;
+			container: glance / inline-size;
 		}
 	}
 
 	/* In a narrow fact box, each label sits above its values. */
-	@container (max-width: 30rem) {
+	@container glance (max-width: 30rem) {
 		.profile-glance :global(.summary-list) {
 			grid-template-columns: 1fr;
 		}
@@ -261,7 +266,7 @@
 		}
 	}
 
-	@container (min-width: 30rem) {
+	@container glance (min-width: 30rem) {
 		.profile-glance :global(.summary-list) {
 			grid-template-columns: minmax(7rem, 11rem) 1fr;
 		}
