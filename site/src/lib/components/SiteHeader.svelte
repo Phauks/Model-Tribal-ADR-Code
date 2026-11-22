@@ -1,9 +1,9 @@
 <script lang="ts">
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
 	// site's name, Report a problem and Contribute, then the reader's controls:
-	// search, Print and Download as icons (Download only where the page has a
-	// file), theme, Settings, and sign-in or the account menu at the far right
-	// (Trevor, Nov. 22, 2026). Print and Download act on the page the reader is on. The
+	// search, Star, Print and Download as icons (Star only where the page can
+	// be starred, Download only where the page has a file), theme, Settings, and sign-in or the account menu at the far right
+	// (Trevor, Nov. 22, 2026). Star, Print and Download act on the page the reader is on. The
 	// site's sections are in the sidebar (SiteSidebar.svelte), so the masthead
 	// has no menu row. The content version shows only on paper; on screen it
 	// is in the footer.
@@ -16,6 +16,7 @@
 	import ReportProblem from './ReportProblem.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
 	import SiteSearch from './SiteSearch.svelte';
+	import StarButton from './StarButton.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
 
 	let { contentVersion }: { contentVersion: string } = $props();
@@ -63,6 +64,7 @@
 		</ul>
 		<div class="masthead-tools no-print">
 			<SiteSearch />
+			<StarButton />
 			<PrintOptions />
 			{#if download}
 				<a
