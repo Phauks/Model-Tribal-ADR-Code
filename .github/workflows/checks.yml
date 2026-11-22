@@ -1,5 +1,10 @@
 # Checks every pull request and every push to main. Uses no secrets.
 #
+# It can also be started by hand or by another workflow (workflow_dispatch).
+# The archive workflow's catch-up job uses that: pull requests opened by the
+# workflow token start no workflows, so it starts these checks on its branch
+# itself, and the required "All checks" result lands on the branch's head.
+#
 # The main branch ruleset requires only the final "All checks" job
 # (decision record 0008). To add a check, add a job here and list it under
 # all-checks.needs; the ruleset never needs editing.
@@ -9,6 +14,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
