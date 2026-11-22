@@ -369,7 +369,7 @@ class Captures:
                     "origin": "tribal-law-provision", "place_kind": "project-capture",
                     "kind": p.get("method") or "other", "name": p.get("locator"), "citation": p.get("citation"),
                     "summary": p.get("summary"), "evidence_url": p.get("url"), "sha256": p.get("sha256"),
-                    "first_reader": "research/tribal-law/provisions.json (Haiku reading, quote checked: "
+                    "first_reader": "research/tribal-law/provisions.json (small-model reading, quote checked: "
                                     f"{p.get('quote_check')}; second pass: {(p.get('second_pass') or {}).get('verdict') or 'not sampled'})",
                     "record": f"research/tribal-law/provisions.json#{p.get('id')}",
                     "scope": p.get("scope"), "confidence": p.get("confidence")})
@@ -402,7 +402,7 @@ class Captures:
                     "name": f"{a['article']} of {a.get('anchor') or 'the constitution'}", "citation": a["article"],
                     "summary": a["summary"], "evidence_url": a["url"], "sha256": a["sha256"],
                     "methods": a["methods"],
-                    "first_reader": "constitutions catalog article reading (Haiku, confirmed by a second reading)",
+                    "first_reader": "constitutions catalog article reading (small-model reading, confirmed by a second reading)",
                     "record": "private constitutions catalog summaries-all.json"})
             place("project-capture", "constitutions catalog (private article readings)", "found",
                   f"The constitutions catalog's readings mark {len(articles)} article(s) of this nation's constitution "
@@ -926,7 +926,7 @@ def merge(arguments):
         if kept:
             searches.append({"date": TODAY, "searched_by": SEARCHER, "method": "ai-review",
                              "place_kind": "other", "address": f"{REVIEW}.json",
-                             "query": "first and second reading (Claude Opus 5.5) of the gathered passages and leads",
+                             "query": "first and second reading (Claude (AI assistant)) of the gathered passages and leads",
                              "outcome": "found",
                              "reason": f"{len(kept)} candidate(s) kept for the lead author's review (Gate 1); none is in the profile yet.",
                              "records": ids[:20]})
@@ -938,7 +938,7 @@ def merge(arguments):
                             + " ".join(sorted({str(c.get('second_note')) for c in dropped}))[:600])
             searches.append({"date": TODAY, "searched_by": SEARCHER, "method": "ai-review",
                              "place_kind": "other", "address": f"{REVIEW}.json",
-                             "query": "reading (Claude Opus 5.5) of the gathered passages and leads",
+                             "query": "reading (Claude (AI assistant)) of the gathered passages and leads",
                              "outcome": "not-found",
                              "reason": reviewed or "No passage on any page read mentioned a dispute resolution term, and "
                                                    "the project's own captures held no lead."})

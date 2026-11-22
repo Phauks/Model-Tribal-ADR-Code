@@ -12,9 +12,9 @@ tools:
     that obeys robots.txt and waits one second between requests to a site.
 - kind: ai-assistant
   name: Claude (AI assistant)
-  detail: Claude Opus 5.5 made both the first reading of the passages and leads and the second
+  detail: Claude (AI assistant) made both the first reading of the passages and leads and the second
     reading of every candidate and of a 10 percent sample of nations with nothing found. No
-    Haiku or Sonnet subagents were used.
+    separate small-model or larger-model subagents were used.
 - kind: other
   name: pdftotext
   detail: Extracted text from fetched PDFs; scanned PDFs without a text layer were not read.
@@ -59,8 +59,8 @@ pages and kept short passages around dispute resolution words.
 ## Who read the results
 
 The project's subagent tool was not available in this session, so the
-reviews planned for Haiku (first reading) and Sonnet (second reading) were
-both done by Claude Opus 5.5 in the session itself. The first reading judged
+reviews planned for a small model (first reading) and a larger model (second reading) were
+both done by Claude (AI assistant) in the session itself. The first reading judged
 the passages and leads of 118 nations against the
 [brief](../../reviews/briefs/2026-11-22-dispute-resolution-coverage.md). The
 second reading re-opened every candidate's evidence page and re-read a fixed

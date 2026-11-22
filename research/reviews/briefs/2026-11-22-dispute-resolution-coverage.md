@@ -96,7 +96,7 @@ percent of the nations with no passages (`none-found-sample.json`, seed
 ## Who read this run
 
 This run's subagent tool was not available to the worker, so both readings
-were made by Claude (Opus 5.5) in the worker session itself, the first from
+were made by Claude (Claude (AI assistant)) in the worker session itself, the first from
 the passages and the second by re-fetching each evidence page; the readers
-are named in each row. A later run can repeat the first pass with Haiku
-batches and the second with Sonnet from the same batch files.
+are named in each row. A later run can repeat the first pass with small-model
+batches and the second with a larger model from the same batch files.

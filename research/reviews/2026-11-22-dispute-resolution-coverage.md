@@ -54,14 +54,14 @@ other groups without a record) have a log marked `not-searched`.
 ## Who read the results
 
 This run had no subagent tool, so both readings were made by Claude
-(Opus 5.5) in the worker session itself, following the
+(Claude (AI assistant)) in the worker session itself, following the
 [brief](briefs/2026-11-22-dispute-resolution-coverage.md). The first reading
 judged the passages and capture leads of the 118 nations that had any. The
 second reading re-opened the evidence page of every first-pass candidate (or,
 for four scanned constitutions, the project's private OCR text of the same
 PDF) and re-read a fixed random sample of 28 of the nations with nothing to
-review (seed 20261122). A later run can repeat the first reading with Haiku
-batches and the second with Sonnet from the same batch files.
+review (seed 20261122). A later run can repeat the first reading with small-model
+batches and the second with a larger model from the same batch files.
 
 ## Results by region
 
