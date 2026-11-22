@@ -530,23 +530,14 @@ accessibility statement is published at `/about/accessibility`.
 
 - **Install:** a web app manifest and a service worker make the site
   installable.
-- **Caching:** the app shell and Atkinson Hyperlegible Next are cached
-  first; Noto fallbacks and the fonts picked in Settings are cached the first
-  time they are used, and picking a font downloads all its weights at once so
-  it also works on pages read later offline. A new build keeps saved font
-  files whose names (which carry a hash of the content) have not changed.
-  Sections, profiles, the glossary and sources use stale-while-revalidate, following web.dev's
-  and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry
-  the build version, so each build replaces the old copy once the reader
-  updates (see Updates below).
+- **Caching:** the app shell and Atkinson Hyperlegible Next are cached first; Noto fallbacks and the fonts picked in Settings are cached the first time they are used, and picking a font downloads all its weights at once so it also works on pages read later offline. A new build keeps saved font files whose names (which carry a hash of the content) have not changed. Sections, profiles, the glossary and sources use stale-while-revalidate, following web.dev's and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry the build version, so each build replaces the old copy once the reader updates (see Updates below). Saved files that did not change are carried into the new copy rather than downloaded again.
 - **What is saved:** every page a reader opens is saved as they read it. In Settings, under Data (also on `/offline`), the site lists each collection, how many of its pages are saved, the space they take, and about how much saving the rest would take (asked for by Trevor on Nov. 22, 2026), with a button to save the rest and one to remove them. The collections are Nation profiles, Glossary and Other pages; the model code joins them when its pages are built. A collection the reader saves is "kept": it is saved again from each new version. The section shows the space the whole site uses, from the Storage API's estimate, and offers "Keep saved pages when space runs low," which asks the browser for persistent storage, since otherwise the browser may clear the site's data under storage pressure.[^mdn-storage] Saving runs six files at a time inside the service worker, with a progress bar. The sizes come from `/offline-sizes.json`, which `tools/write-offline-sizes.mjs` writes after each build by adding up the built pages and data files of each collection; offline, or without the file, the sizes are left out.
 - **Never cached:** any record with `sensitivity.restricted: true`, which is
   never published, exported, cached offline or served by any API
   ([data model, sensitivity flags](../docs/data-model.md#sensitivity-flags)).
   When a record is withdrawn, the next service worker update deletes it from
   every saved copy.
-- **Offline notice:** "You are offline. Showing content as of [version,
-  date]."
+- **Offline notice:** "You are offline. Showing content as of [version, date]."
 
 ### Updates
 
@@ -557,51 +548,25 @@ names its cache after it. The three track versions come from release-please
 (`content/version.txt`, `site/version.txt`, `pdf/version.txt`), so a build can
 change the website without changing the content.
 
-1. **Detect.** The browser checks the service worker script on every
-   navigation, and a new build always changes it, because the script
-   contains the build version.[^webdev-lifecycle] SvelteKit also checks the
-   build version when the tab regains focus, on data responses and on a
-   timer; when it sees a new build, the page asks the browser to check the
-   worker at once.[^sveltekit-updated] "Check for updates" in Settings does
-   both on demand.
-2. **Install in the background.** The new worker saves the new build's
-   scripts, styles and core pages into its own cache and then waits. It does
-   not take over on its own: taking over mid-visit would mix two versions in
-   one page.[^webdev-lifecycle] While it waits, the old worker keeps saving
-   pages it reads only if they come from its own build (each built page names
-   its build), so saved copies never point at scripts they lack.
+1. **Detect.** The browser checks the service worker script on every navigation, and a new build always changes it, because the script contains the build version.[^webdev-lifecycle] SvelteKit also checks the build version when the tab regains focus, on data responses and on a timer; when it sees a new build, the page asks the browser to check the worker at once.[^sveltekit-updated] The worker never saves SvelteKit's version file (`/_app/version.json`), so that check always reaches the server; a saved copy would hide a new build from an open tab until the next check. "Check for updates" in Settings does both on demand.
+2. **Install in the background.** The new worker saves the new build's scripts, styles and core pages into its own cache and then waits. It downloads only what changed, as Trevor asked on Nov. 22, 2026. Every page carries its build version, so every page differs from the last build's copy even when nothing on it changed: in a test, two builds of the same files differed in all 1,108 pages, and only there. So each build publishes `/offline-fingerprints.json`, a fingerprint of every file a reader may save, taken with the build version blanked out (`tools/write-offline-sizes.mjs`, `src/lib/offline-fingerprints.ts`). The new worker takes the same fingerprint of each saved file in the old cache. When the two match, it writes the new version into the old copy and saves that instead of downloading it; the result is exactly the file the server holds. Script, style and font files carry a hash of their content in their names, so one with the same name is copied as it is. Saved pages that changed are listed and downloaded on the next page load. This covers every saved page, not only kept collections, so a page the reader opened still opens offline after an update. In a test of a one-line change to one nation's page, a reader keeping Nation profiles made 8 requests (about 1 MB) instead of 3,155 (121 MB). It does not take over on its own: taking over mid-visit would mix two versions in one page.[^webdev-lifecycle] While it waits, the old worker keeps saving pages it reads only if they come from its own build (each built page names its build), so saved copies never point at scripts they lack.
 3. **Withdrawals first.** As soon as the new worker installs, every saved
    page that is not in the new build is deleted from the saved copies, without
    waiting for the reader. A nation's request to withdraw material therefore
    reaches every device on its next visit online
    ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
-4. **Ask.** A small card fixed at the bottom left of the window (not a block in the page, as Trevor asked on Nov. 22, 2026) says what the update brings, read from `/edition.json` on the network: "It brings content version 0.3.0; you are reading 0.2.0," or that only the website changed. Below that it lists the pull requests merged since the build the reader is running ("#91 Rework Settings controls…"), up to eight and then "and N more," as Trevor asked on Nov. 22, 2026: each build reads its recent merges from git (`vite.config.ts`, `src/lib/recent-changes.ts`) and serves them in `/edition.json`. A build from a shallow clone may list fewer. It offers "Update now," "What changed" (the changelog) and "Later." It is a notice, not an alert, so it does not take focus.
-5. **Apply.** "Update now" tells the waiting worker to take over
-   (`skipWaiting`), and the page reloads once it has.[^mdn-skip-waiting] "Later"
-   hides the notice for the visit; the browser applies the update by itself
-   once every tab of the site has closed.[^webdev-lifecycle] The new worker
-   deletes the old cache, keeping font files that have not changed and the
-   list of kept collections.
-6. **Save again.** On the next page load, the page asks the new worker to save
-   the kept collections from the new build, and a status line shows the
-   progress. If the connection drops, it continues on a later visit.
+4. **Ask.** A small card fixed at the bottom left of the window (not a block in the page, as Trevor asked on Nov. 22, 2026) says what the update brings, read from `/edition.json` on the network: "It brings content version 0.3.0; you are reading 0.2.0," or that only the website changed. Below that it lists the pull requests merged since the build the reader is running ("#91 Rework Settings controls…"), up to eight and then "and N more," as Trevor asked on Nov. 22, 2026: each build reads its recent merges from git (`vite.config.ts`, `src/lib/recent-changes.ts`) and serves them in `/edition.json`. A build from a shallow clone may list fewer. When both builds' fingerprints can be read, it also says whether the update changes, keeps or removes the page being read. That comparison leaves out the names of the page's script files, so a change to the scripts alone does not count. It offers "Update now," "What changed" (the changelog) and "Later." It is a notice, not an alert, so it does not take focus.
+5. **Apply.** "Update now" tells the waiting worker to take over (`skipWaiting`), and the page reloads once it has.[^mdn-skip-waiting] "Later" hides the notice for the visit; the browser applies the update by itself once every tab of the site has closed.[^webdev-lifecycle] The new worker first carries forward, as in step 2, any page the reader opened while it waited, then deletes the old cache, keeping font files that have not changed and the list of kept collections.
+6. **Save again.** On the next page load, the page asks the new worker to save the saved pages that changed and whatever the kept collections still lack from the new build, and a status line shows the progress. If the connection drops, it continues on a later visit.
 7. **What the reader sees offline.** The offline notice names the content
    version of the copy being read, and Settings shows the content and website
    versions and the build date, so a stale copy is always labeled.
 
-**Downloaded books.** A PDF or EPUB on the reader's device cannot be updated
-by the site. Each edition will print its edition number and the address
-`/downloads?edition=<number>`; that page compares the number with the current
-print version and says whether a newer edition is out, with a link to what
-changed. The print templates do not print the address yet.
+**Downloaded books.** A PDF or EPUB on the reader's device cannot be updated by the site. Each edition will print its edition number and the address `/downloads?edition=<number>`; that page compares the number with the current print version and says whether a newer edition is out, with a link to what changed. The print templates do not print the address yet.
 
 ## 11. Performance and hosting
 
-- **Stack:** SvelteKit and TypeScript with `@sveltejs/adapter-cloudflare`,
-  deployed to Cloudflare Workers with static assets, as Cloudflare's SvelteKit
-  guide describes.[^cloudflare-sveltekit] Content pages are prerendered at
-  build time; only the request form, and later sign-in and review, run on the
-  server.
+- **Stack:** SvelteKit and TypeScript with `@sveltejs/adapter-cloudflare`, deployed to Cloudflare Workers with static assets, as Cloudflare's SvelteKit guide describes.[^cloudflare-sveltekit] Content pages are prerendered at build time; only the request form, and later sign-in and review, run on the server.
 - **Budgets (project choice):** under 100 KB of JavaScript compressed on a
   section page; no map library in the browser (the map is a static SVG, per
   the map spike); fonts subset to the characters used.
@@ -615,8 +580,7 @@ changed. The print templates do not print the address yet.
 
 ## 12. Words in the interface
 
-The interface follows the style guide's voice: plain verbs, sentence case,
-"they" for people, no praise or alarm. In addition (project choice):
+The interface follows the style guide's voice: plain verbs, sentence case, "they" for people, no praise or alarm. In addition (project choice):
 
 - Name things by what readers know: "Make a request," not "Submit a ticket."
 - Errors say what went wrong and how to fix it, in the interface's voice.
