@@ -9,15 +9,21 @@
  */
 import { error } from '@sveltejs/kit';
 import { version as siteBuild } from '$app/env';
-import { essayBoxFacts, essayCitations, essayTerms } from 'virtual:essay-library';
+import { essayBoxFacts, essayCaseNames, essayCitations, essayTerms, essaysInGit } from 'virtual:essay-library';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
 import { essayDateTime } from '../essays/dates.ts';
+import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
+import { casesByTopicMarkdown, taggedCases } from '../essays/case-topics.ts';
+import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
 import { workerEnvironment } from './environment.ts';
 import {
+	boxPages,
 	essayPath,
 	essayRow,
 	identifierFromPath,
+	latestVersion,
+	allListedPublications,
 	listEssays,
 	publications,
 	readVersionText,
@@ -25,10 +31,13 @@ import {
 	type PublicationRow
 } from './essays.ts';
 
+let boxPageList: Record<string, string> | undefined;
+
 export const essayLibrary: EssayLibrary = {
 	citation: (key) => essayCitations[key],
 	term: (id) => essayTerms[id],
-	facts: (box, key) => (box === 'law' ? essayBoxFacts.laws[key] : essayBoxFacts.cases[key]) ?? []
+	facts: (box, key) => (box === 'law' ? essayBoxFacts.laws[key] : essayBoxFacts.cases[key]) ?? [],
+	boxPage: (anchor) => (boxPageList ??= boxPages(essaysInGit))[anchor]
 };
 
 export function storageForPages(): { database: D1Database; bucket: R2Bucket } {
@@ -37,15 +46,63 @@ export function storageForPages(): { database: D1Database; bucket: R2Bucket } {
 	return { database: environment.database, bucket: environment.sourceDocuments };
 }
 
-/** Renders a version, reusing an earlier rendering of the same file in the same build. */
-export async function renderedVersion(bucket: R2Bucket, row: { object_key: string; sha256: string }): Promise<RenderedEssay> {
+/**
+ * Which text of each essay a generated page is built from: the newest
+ * published version for the public pages, the newest saved one in the
+ * workspace. An essay the bucket does not hold yet is read from git.
+ */
+export type EssayTexts = 'published' | 'saved';
+
+async function currentTexts(which: EssayTexts): Promise<Record<string, string>> {
+	const texts: Record<string, string> = { ...essaysInGit };
+	const { database, bucket } = storageForPages();
+	if (which === 'published') {
+		const newest = new Map<string, PublicationRow>();
+		for (const row of await allListedPublications(database)) newest.set(row.essay_identifier, row);
+		for (const [identifier, row] of newest) if (row.object_key) texts[identifier] = await readVersionText(bucket, { object_key: row.object_key });
+	} else {
+		for (const essay of await listEssays(database)) {
+			const row = await latestVersion(database, essay.identifier);
+			if (row) texts[essay.identifier] = await readVersionText(bucket, row);
+		}
+	}
+	return texts;
+}
+
+/** Whether a page is generated, such as the index of cases by topic ("generated: cases-by-topic"). */
+export function generatedKind(text: string): string | undefined {
+	return frontMatterField(splitFrontMatter(text).frontMatter, 'generated')?.trim() || undefined;
+}
+
+/**
+ * Renders an essay. A page that says "generated: cases-by-topic" is followed
+ * by the index built from the Topics parts of every other essay's case boxes,
+ * each linked to the page that holds its box (case-topics.ts).
+ */
+export async function renderWithGenerated(text: string, which: EssayTexts): Promise<RenderedEssay> {
+	if (generatedKind(text) !== 'cases-by-topic') return renderEssay(text, essayLibrary);
+	const texts = Object.fromEntries(Object.entries(await currentTexts(which)).filter(([, other]) => !generatedKind(other)));
+	const tagged = Object.values(texts).flatMap((other) => taggedCases(other));
+	const index = casesByTopicMarkdown(tagged, (key) => essayCaseNames[key]);
+	const pages = boxPages(texts);
+	return renderEssay(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] });
+}
+
+/**
+ * Renders a version, reusing an earlier rendering of the same file in the
+ * same build. A generated page is rendered afresh each time, since the
+ * essays it is built from change without it.
+ */
+export async function renderedVersion(bucket: R2Bucket, row: { object_key: string; sha256: string }, which: EssayTexts = 'published'): Promise<RenderedEssay> {
+	const text = await readVersionText(bucket, row);
+	if (generatedKind(text)) return renderWithGenerated(text, which);
 	const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
 	const cacheKey = `https://essay-cache.invalid/${encodeURIComponent(siteBuild)}/${row.sha256}`;
 	if (cache) {
 		const cached = await cache.match(cacheKey).catch(() => undefined);
 		if (cached) return (await cached.json()) as RenderedEssay;
 	}
-	const rendered = renderEssay(await readVersionText(bucket, row), essayLibrary);
+	const rendered = renderEssay(text, essayLibrary);
 	if (cache) {
 		await cache
 			.put(cacheKey, new Response(JSON.stringify(rendered), { headers: { 'Cache-Control': 'max-age=31536000' } }))
@@ -82,6 +139,8 @@ function outlineOf(title: string, headings: EssayHeading[]) {
 export async function essayPage(part: EssayPart, slug: string, publicationNumber?: number) {
 	const identifier = identifierFromPath(part, slug);
 	const { database, bucket } = storageForPages();
+	// Text merged in git since the build is saved as a draft version; readers see it once published.
+	await syncEssaysFromGitOnce(database, bucket);
 	const essay = await essayRow(database, identifier);
 	if (!essay || essay.part !== part) error(404, 'No essay has this address.');
 	const listed = await publications(database, identifier, true);

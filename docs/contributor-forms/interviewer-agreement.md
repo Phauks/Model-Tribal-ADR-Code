@@ -14,7 +14,7 @@ For anyone other than the lead author who interviews people or collects material
 
 ## 2. You agree to
 
-- ☐ Follow [contributions.md](../contributions.md) and use only approved forms.
+- ☐ Follow the project's [rules for contributions](../contributions.md) and use only approved forms.
 - ☐ Contact a nation's community through its offices first.
 - ☐ Check for the nation's research code or review board before any interview.
 - ☐ Explain the forms before recording.

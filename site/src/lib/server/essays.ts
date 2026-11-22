@@ -14,12 +14,13 @@ import { eventStatement } from './events.ts';
 import { now } from './identifiers.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
 
-export const essayParts = ['foundations', 'essays'] as const;
+export const essayParts = ['foundations', 'essays', 'back-matter'] as const;
 export type EssayPart = (typeof essayParts)[number];
 
 export const essayPartLabels: Record<EssayPart, string> = {
 	foundations: 'Foundations',
-	essays: 'Essays'
+	essays: 'Essays',
+	'back-matter': 'Back Matter'
 };
 
 /** The largest essay file accepted, well above the longest essay (about 250 KB). */
@@ -67,16 +68,38 @@ export interface EssaySummary extends EssayRow {
 	published: { number: number; versionNumber: number; publishedAt: string; title: string } | null;
 }
 
-/** An essay's part, from its id ("i-…" is Part I, the Foundations) or its front matter. */
+/**
+ * An essay's part, from its id ("i-…" is Part I, the Foundations) or its
+ * front matter. Back matter, such as the index of cases by topic, says
+ * "part: back-matter".
+ */
 export function partOf(identifier: string, frontMatter = ''): EssayPart {
 	const part = frontMatterField(frontMatter, 'part');
+	if (part === 'back-matter') return 'back-matter';
 	if (part === 'i' || identifier.startsWith('i-')) return 'foundations';
 	return 'essays';
 }
 
 /** The address of an essay's page: Part I chapters sit under Foundations, without the "i-". */
 export function essayPath(identifier: string, part: EssayPart): string {
-	return part === 'foundations' ? `/foundations/${identifier.replace(/^i-/, '')}` : `/essays/${identifier}`;
+	if (part === 'foundations') return `/foundations/${identifier.replace(/^i-/, '')}`;
+	return part === 'back-matter' ? `/back-matter/${identifier}` : `/essays/${identifier}`;
+}
+
+/**
+ * The page each case or law box sits on ("case-<key>" to its essay's
+ * address), so that a link such as "#case-<key>" on another page, for
+ * example in the index of cases by topic, can point to the box.
+ */
+export function boxPages(texts: Record<string, string>): Record<string, string> {
+	const pages: Record<string, string> = {};
+	for (const [identifier, text] of Object.entries(texts)) {
+		const path = essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter));
+		for (const match of text.matchAll(/^:{4,}[ \t]*(case|law)[ \t]+([a-z0-9]+(?:-[a-z0-9]+)*)[ \t]*$/gm)) {
+			pages[`${match[1]}-${match[2]}`] ??= path;
+		}
+	}
+	return pages;
 }
 
 /** The essay a page address names, the reverse of essayPath. */
@@ -231,7 +254,8 @@ export interface SaveInput {
 	text: string;
 	/** The version the writer started from; null for a new essay. */
 	basedOn: number | null;
-	personIdentifier: string;
+	/** Who saved it; null when the site saved text that came from git. */
+	personIdentifier: string | null;
 	note?: string | null;
 	origin: VersionRow['origin'];
 	/** For a new essay. */
@@ -268,7 +292,7 @@ export async function saveVersion(
 		onlyIf: new Headers({ 'If-None-Match': '*' }) as unknown as R2Conditional,
 		sha256,
 		httpMetadata: { contentType: 'text/markdown; charset=utf-8' },
-		customMetadata: { essay: input.identifier, version: String(number), savedBy: input.personIdentifier }
+		customMetadata: { essay: input.identifier, version: String(number), savedBy: input.personIdentifier ?? 'git' }
 	});
 	// null: a file with this name exists already, which can only be the same
 	// text saved by a request that failed before it was recorded.

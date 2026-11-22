@@ -8,7 +8,8 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
-import { essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
+import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
+import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import {
 	essaysForReview,
 	glossary,
@@ -227,8 +228,32 @@ function essayLibrary(): Plugin {
 				`export const essayCitations = ${JSON.stringify(everyFullCitation())};`,
 				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
 				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
-				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`
+				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,
+				`export const essayCaseNames = ${JSON.stringify(caseNames())};`
 			].join('\n');
+		}
+	};
+}
+
+const formsModule = 'virtual:forms';
+const resolvedFormsModule = `\0${formsModule}`;
+
+/**
+ * The forms at /forms, built from docs/contributor-forms/ and content/forms/
+ * (src/lib/server/form-catalog.ts). Bundled into the Worker, which answers a
+ * form sent online and cannot read the repository.
+ */
+function formCatalog(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:forms',
+		resolveId(identifier) {
+			return identifier === formsModule ? resolvedFormsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedFormsModule) return undefined;
+			const forms = buildFormCatalog();
+			for (const form of forms) this.addWatchFile(fileURLToPath(new URL(`../${form.file}`, import.meta.url)));
+			return `export const forms = ${JSON.stringify(forms)};`;
 		}
 	};
 }
@@ -283,6 +308,7 @@ export default defineConfig({
 		publicCopiesList(),
 		sourceCitations(),
 		essayLibrary(),
+		formCatalog(),
 		buildInformation(),
 		sveltekit({
 			compilerOptions: {
