@@ -1,11 +1,11 @@
 <script lang="ts">
 	// "Show the note under the paragraph" (site/DESIGN.md, section 6,
 	// "Citations"). With that setting, selecting a note number opens a copy of
-	// the note right under the paragraph instead of jumping to the notes at
-	// the end; selecting it again closes it. Markers point to their entry in
-	// the Sources section (src/lib/components/SourceList.svelte), which is
-	// shown without the facts it supports. The number stays a link to the
-	// note, so without scripts, or with the default setting, it jumps as before.
+	// the note right under the paragraph instead of a window beside the
+	// number (CitationPopup.svelte); selecting it again closes it. The copy is
+	// the source's entry in the Sources section (SourceList.svelte) without
+	// the facts it supports. The number stays a link to the entry, so without
+	// scripts it goes to the Sources list.
 	import { onMount } from 'svelte';
 	import { noteBlock, noteCopy } from '#lib/note-copies.ts';
 

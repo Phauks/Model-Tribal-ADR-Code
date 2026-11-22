@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
@@ -61,18 +62,30 @@
 					{#if data.image.foundOn}<a href={data.image.foundOn}>the nation’s website</a
 						>{:else}the nation’s website{/if} publishes it. It belongs to the nation, which does
 					not endorse this project.
-					<a class="no-print" href={removalRequest}>Ask for it to be removed</a>.
+					<a class="no-print" href={removalRequest}>Ask for it to be removed</a>.<CitationMarks
+						marks={data.image.citations}
+					/>
 				</figcaption>
 			</figure>
 		{/if}
 		{#if !page.withdrawn}
 			{#if page.listedName !== page.officialName}
-				<p class="small muted">Listed as “{page.listedName}” on the list that recognizes it.</p>
+				<p class="small muted">
+					Listed as “{page.listedName}” on the list that recognizes it.<CitationMarks
+						marks={data.nameCitations}
+					/>
+				</p>
 			{:else}
-				<p class="small muted">Name as the recognizing list gives it.</p>
+				<p class="small muted">
+					Name as the recognizing list gives it.<CitationMarks marks={data.nameCitations} />
+				</p>
 			{/if}
 			{#each data.selfDesignations as designation (designation.name)}
-				<p class="lead" lang={designation.languageTag}>{designation.name}</p>
+				<p class="lead">
+					<span lang={designation.languageTag}>{designation.name}</span><CitationMarks
+						marks={designation.citations}
+					/>
+				</p>
 			{/each}
 			<!-- Pronunciation: copied from the cited source, never worked out from the spelling -->
 			{#each data.pronunciations as entry, index (index)}
@@ -81,7 +94,9 @@
 					<span lang={entry.languageTag}>{entry.name}</span>:
 					{#if entry.respelling}{entry.respelling}{/if}
 					{#if entry.phoneticTranscription}/{entry.phoneticTranscription}/{/if}
-					{#if entry.recording}<a href={entry.recording}>Listen to the recording</a>{/if}
+					{#if entry.recording}<a href={entry.recording}>Listen to the recording</a>{/if}<CitationMarks
+						marks={entry.citations}
+					/>
 				</p>
 			{/each}
 		{/if}
@@ -111,7 +126,7 @@
 					<h3>Recorded features</h3>
 					<ul>
 						{#each data.features as feature, index (index)}
-							<li>{feature.text}</li>
+							<li>{feature.text}<CitationMarks marks={feature.citations} /></li>
 						{/each}
 					</ul>
 				{/if}
