@@ -1,6 +1,6 @@
 # 0007. Map shows state presence, not boundaries
 
-- **Status:** Accepted
+- **Status:** Accepted; amended by [0027](0027-map-adds-census-land-areas.md), which adds a land areas view
 - **Date:** 2026-11-20
 
 ## Context

@@ -2,10 +2,10 @@
 	import { onMount, tick } from 'svelte';
 	import { replaceState } from '$app/navigation';
 	import PageTools from '#lib/components/PageTools.svelte';
-	import { repositoryLink } from '#lib';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
+	import type { LandAreaRow } from '#lib/server/nations-map.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
@@ -18,9 +18,38 @@
 	 */
 	const views: { key: NationsMapView; label: string; heading: string }[] = [
 		{ key: 'states', label: 'Nations by state', heading: 'by-state-heading' },
-		{ key: 'regions', label: 'Bureau of Indian Affairs regions', heading: 'bureau-of-indian-affairs-regions' }
+		{ key: 'regions', label: 'Bureau of Indian Affairs regions', heading: 'bureau-of-indian-affairs-regions' },
+		{ key: 'lands', label: 'Land areas', heading: 'land-areas' }
 	];
 	let current = $state<NationsMapView>('states');
+
+	/**
+	 * The "Land areas" view is fetched the first time it is shown, because its
+	 * outlines are heavier than the rest of the page together.
+	 */
+	let lands = $state<{ drawing: string; rows: LandAreaRow[] } | undefined>();
+	let landsFailed = $state(false);
+	let landsLoading: Promise<void> | undefined;
+
+	function loadLands(): Promise<void> {
+		landsLoading ??= fetch('/nations/map/land-areas.json')
+			.then((response) => {
+				if (!response.ok) throw new Error(String(response.status));
+				return response.json();
+			})
+			.then((body) => {
+				lands = body;
+			})
+			.catch(() => {
+				landsFailed = true;
+				landsLoading = undefined;
+			});
+		return landsLoading;
+	}
+
+	$effect(() => {
+		if (current === 'lands' && !lands) void loadLands();
+	});
 	let tabs: HTMLButtonElement[] = $state([]);
 
 	function choose(index: number, remember = true): void {
@@ -49,16 +78,18 @@
 	 * "?view=" when the reader shared a view.
 	 */
 	async function showAddressedView(): Promise<void> {
-		const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+		const anchor = location.hash ? decodeURIComponent(location.hash.slice(1)) : '';
+		let target = anchor ? document.getElementById(anchor) : null;
 		const panel = target?.closest<HTMLElement>('[data-map-view]');
 		const named = new URLSearchParams(location.search).get('view');
-		const view = panel?.dataset.mapView ?? named;
+		// A land area's row exists only once the view has been fetched.
+		const view = anchor.startsWith('land-area-') ? 'lands' : (panel?.dataset.mapView ?? named);
 		if (!view || !views.some((entry) => entry.key === view)) return;
 		current = view as NationsMapView;
-		if (target) {
-			await tick();
-			target.scrollIntoView();
-		}
+		if (view === 'lands') await loadLands();
+		await tick();
+		target ??= anchor ? document.getElementById(anchor) : null;
+		target?.scrollIntoView();
 	}
 
 	onMount(() => {
@@ -72,7 +103,8 @@
 	const nationsByRow = $derived(
 		new Map<string, ListedNation[]>([
 			...data.stateRows.map((row) => [`state-${row.code}`, row.nations] as const),
-			...data.regionRows.map((row) => [row.anchor, row.nations] as const)
+			...data.regionRows.map((row) => [row.anchor, row.nations] as const),
+			...(lands?.rows ?? []).map((row) => [row.anchor, row.nations] as const)
 		])
 	);
 
@@ -111,10 +143,32 @@
 			}
 		}))
 	);
+
+	const landAreaColumns: TableColumn[] = [
+		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true },
+		{ key: 'kind', header: 'Kind', sortable: true },
+		{ key: 'count', header: 'Nations linked', type: 'number', sortable: true },
+		{ key: 'names', header: 'Names', custom: true }
+	];
+	const landAreaRows: TableRow[] = $derived(
+		(lands?.rows ?? []).map((row) => ({
+			key: row.anchor,
+			anchor: row.anchor,
+			cells: {
+				area: { text: row.name },
+				kind: { text: row.kindLabel },
+				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
+				names: { text: row.nations.map((nation) => nation.name).join(', ') }
+			}
+		}))
+	);
 </script>
 
 {#snippet cell(row: TableRow)}
 	{@const nations = nationsByRow.get(row.key) ?? []}
+	{#if nations.length === 0}
+		<span class="muted">None recorded</span>
+	{:else}
 	<details>
 		<summary>Show {nations.length === 1 ? 'the nation' : `all ${nations.length}`}</summary>
 		<ul>
@@ -123,6 +177,7 @@
 			{/each}
 		</ul>
 	</details>
+	{/if}
 {/snippet}
 
 <svelte:head>
@@ -152,10 +207,13 @@
 		<p>The map has more than one view. Choose one with the buttons above the map.</p>
 		<ul>
 			<li>
-				<strong>Nations by state</strong> shades each state and territory by how many nations the project’s sources record as having a presence there. It draws no nation’s land. A nation with land or offices in several states is counted in each (<a href="{repositoryLink}/blob/main/docs/decisions/0007-map-shows-state-presence.md">decision record 0007</a>).
+				<strong>Nations by state</strong> shades each state and territory by how many nations the project’s sources record as having a presence there. A nation with land or offices in several states is counted in each.
 			</li>
 			<li>
 				<strong>Bureau of Indian Affairs regions</strong> shows the Bureau’s twelve regions as the Bureau draws them. They are the areas its regional offices serve, not the lands of any nation. The Navajo Region’s outline follows the Navajo Nation’s land, as the Bureau draws it.
+			</li>
+			<li>
+				<strong>Land areas</strong> shows reservations, trust lands and statistical areas as the Census Bureau drew them for the 2020 census. The statistical areas are drawn by the Census Bureau, with tribal input, for counting people; they are not legal boundaries.
 			</li>
 		</ul>
 		<p>Alaska, Hawaiʻi and the five territories are drawn in boxes below the other states. Each box has its own scale, shown by its scale bar, and no box is in its true place. Each view has a table below the map with the same information.</p>
@@ -193,8 +251,19 @@
 		<h2 id={view.heading} class="view-heading">{view.label}</h2>
 		<figure class="map-figure" data-print-part="maps">
 			<div class="map-drawing" data-nations-map={view.key === 'states' ? '' : undefined}>
-				<!-- svelte-ignore hydration_html_changed -->
-				{@html data.drawings[view.key]}
+				{#if view.key === 'lands'}
+					{#if lands}
+						{@html lands.drawing}
+					{:else if landsFailed}
+						<p class="map-status">The land areas could not be loaded. Check your connection and choose the view again.</p>
+					{:else}
+						<p class="map-status">Loading the land areas…</p>
+						<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
+					{/if}
+				{:else}
+					<!-- svelte-ignore hydration_html_changed -->
+					{@html data.drawings[view.key]}
+				{/if}
 			</div>
 			{#if view.key === 'states'}
 				<figcaption>
@@ -205,6 +274,17 @@
 					</ul>
 					<p class="small muted">
 						Select a state to go to its row in the table. Each nation’s states, with their sources, are on the nation’s own page. {@render insetNote()}
+					</p>
+				</figcaption>
+			{:else if view.key === 'lands'}
+				<figcaption>
+					<ul class="legend" aria-label="Key">
+						{#each data.landAreaGroups as group (group.key)}
+							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
+						{/each}
+					</ul>
+					<p class="small muted">
+						Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot. Outlines are from the Census Bureau’s 2020 cartographic boundary file, simplified for a national map. {@render insetNote()}
 					</p>
 				</figcaption>
 			{:else if view.key === 'regions'}
@@ -221,6 +301,16 @@
 				columns={stateColumns}
 				rows={stateRows}
 				defaultSort={{ key: 'state', direction: 'ascending' }}
+				{cell}
+			/>
+		{:else if view.key === 'lands' && lands}
+			<DataTable
+				identifier="land-areas"
+				label="Table: land areas"
+				caption="American Indian and Alaska Native areas in the 2020 census, and the nations whose entries name them"
+				columns={landAreaColumns}
+				rows={landAreaRows}
+				defaultSort={{ key: 'area', direction: 'ascending' }}
 				{cell}
 			/>
 		{:else if view.key === 'regions'}
@@ -306,6 +396,11 @@
 		}
 	}
 
+	.map-status {
+		padding: var(--space-6) 0;
+		text-align: center;
+	}
+
 	.notice-heading {
 		font-size: var(--font-size-body);
 		margin-top: 0;
@@ -363,6 +458,34 @@
 		fill: var(--color-map-class-0);
 		stroke: var(--color-control-border);
 		stroke-width: 0.5;
+	}
+
+	.map-drawing :global(.land-federal),
+	.swatch.land-federal {
+		fill: var(--color-map-class-4);
+		background: var(--color-map-class-4);
+	}
+	.map-drawing :global(.land-state),
+	.swatch.land-state {
+		fill: var(--color-map-class-3);
+		background: var(--color-map-class-3);
+	}
+	.map-drawing :global(.land-statistical),
+	.swatch.land-statistical {
+		fill: var(--color-map-class-2);
+		background: var(--color-map-class-2);
+	}
+	.map-drawing :global(.land-area) {
+		stroke: var(--color-ink-muted);
+		stroke-width: 0.4;
+	}
+	.map-drawing :global(.land-area.dot) {
+		stroke: var(--color-paper);
+		stroke-width: 0.8;
+	}
+	.map-drawing :global(a:hover .land-area),
+	.map-drawing :global(a:focus .land-area) {
+		fill: var(--color-focus);
 	}
 
 	.map-drawing :global(.region) {
