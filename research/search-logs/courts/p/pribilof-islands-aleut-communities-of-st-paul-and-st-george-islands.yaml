@@ -1,0 +1,99 @@
+profile: content/tribes/p/pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: No website on record in the profile
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: no-site
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: The profile lists no official website for
+    the nation (Tribal Leaders Directory contact).'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “George”)'
+  outcome: found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: Alaska Court System court directory: 2022
+    Alaska Tribal Court Directory (prepared by Alaska Legal Services Corporation): lists this nation;
+    the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: Bureau of Indian Affairs, Court of Indian
+    Offenses: list of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: List of Courts of Indian Offenses, 85 Fed.
+    Reg. 645 (Jan. 7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: Northwest Intertribal Court System, Tribal
+    Courts: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: American Indian Law Center, Southwest Intertribal
+    Court of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.tananachiefs.org/services/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: Tanana Chiefs Conference, services (Tribal
+    Court and Governance): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Pribilof”)'
+  outcome: not-found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: Tribal Court Clearinghouse (Tribal Law and
+    Policy Institute), Tribal Courts list: names this nation; it is a supporting source that cannot confirm
+    a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://tribal-institute.org/lists/alaska.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: Tribal Court Clearinghouse (Tribal Law and
+    Policy Institute), Alaska tribal courts: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Aleut Community of St. Paul Island Tribal Court”: Claude read the gathered evidence against
+    the review brief; verdict confirmed, from https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-240

@@ -232,20 +232,23 @@ governing_documents:
   link: https://www.southernute-nsn.gov/government/constitution/
   source: national-indian-law-library-southern-ute
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Document opened on 2026-11-22 (the copy the constitution catalog work saved); its opening
+    text names the kind, nation and title; the second gap review also confirmed this link.'
 - kind: corporate-charter
   title: Corporate charter (Southern Ute Tribe, Colorado)
   year: '1938'
   link: https://thorpe.law.ou.edu/IRA/sutechrtr.html
   source: university-of-oklahoma-indian-reorganization-act-sutechrtr
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1938'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1938; the second gap review also confirmed this link.
 - kind: constitution
   title: Constitution (Southern Ute Tribe of the Southern Ute Reservation Colorado)
   year: '1936'
@@ -459,10 +462,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30717 (Tribe column of the designated agent table)
   note: 'Listed as: Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado Confidence lowered
     from high by the lead session: the notice prints its table as page images, so nation names were read
-    from images and matched to the roster.'
+    from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
+    PDF has no text layer for the table); verification level unchanged because the name was not matched
+    word for word in machine-read text.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

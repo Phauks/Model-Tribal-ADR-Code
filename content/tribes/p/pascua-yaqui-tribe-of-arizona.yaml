@@ -196,14 +196,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
+  link: https://www.pascuayaqui-nsn.gov/wp-content/uploads/PDF/Enrollment/constitution-of-the-pascua-yaqui-tribe.pdf
   source: national-indian-law-library-pascua-yaqui
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.pascuayaqui-nsn.gov/tribal-code-v1/, a page
+    that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Pascua Yaqui Tribe Constitution
   link: http://www.pascuayaqui-nsn.gov/_static_pages/tribalcodes/index.php
@@ -625,9 +626,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30720 (Tribe column of the designated agent table)
   note: 'Listed as: Pascua Yaqui Tribe of Arizona Confidence lowered from high by the lead session: the
-    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+    notice prints its table as page images, so nation names were read from images and matched to the roster.
+    Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
+    level unchanged because the name was not matched word for word in machine-read text.'
 - topic: violence-against-women-act-special-tribal-criminal-jurisdiction
   value: exercising
   detail: Exercising jurisdiction since 2014-02-20 (start date given by NCAI; jurisdiction began under

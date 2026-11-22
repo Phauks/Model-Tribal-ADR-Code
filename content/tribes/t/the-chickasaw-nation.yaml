@@ -206,14 +206,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://chickasaw.net/Our-Nation/Government/Chickasaw-Constitution.aspx
+  link: https://law.chickasaw.net/us/nsn/chickasaw/legislature/constitution
   source: national-indian-law-library-chickasaw
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://chickasaw.net/Our-Nation/Government/Chickasaw-Constitution.aspx,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: law-code
   title: The Chickasaw Nation
   link: https://narf.org/nill/codes/chickasaw/index.html
@@ -237,13 +238,15 @@ governing_documents:
     may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Chickasaw Nation Constitution
-  link: https://www.chickasaw.net/Our-Nation/Government/Chickasaw-Constitution.aspx
+  link: https://law.chickasaw.net/us/nsn/chickasaw/legislature/constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: title-only
   as_of: '2022'
   locator: Oklahoma section, entry 'Chickasaw Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Link changed
+    on 2026-11-22 from https://www.chickasaw.net/Our-Nation/Government/Chickasaw-Constitution.aspx, a
+    page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).
 - kind: law-code
   title: Chickasaw Nation Code
   link: https://www.chickasaw.net/Our-Nation/Government/Chickasaw-Code.aspx
@@ -668,9 +671,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30689 (Tribe column of the designated agent table)
   note: 'Listed as: The Chickasaw Nation Confidence lowered from high by the lead session: the notice
-    prints its table as page images, so nation names were read from images and matched to the roster.'
+    prints its table as page images, so nation names were read from images and matched to the roster.
+    Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
+    level unchanged because the name was not matched word for word in machine-read text.'
 - topic: violence-against-women-act-special-tribal-criminal-jurisdiction
   value: exercising
   detail: Listed by NCAI as implementing special Tribal criminal jurisdiction (list updated May 2022).

@@ -1,5 +1,5 @@
 <script lang="ts">
-	// "Saved for offline" (site/DESIGN.md, section 10): what is saved on this
+	// Saving for offline, in Settings under "Data" (site/DESIGN.md, section 10): what is saved on this
 	// device, buttons to save or remove whole collections, the space used, and
 	// the edition saved, with a check for updates. Used in the Settings dialog
 	// and on the /offline page. Everything here talks to the service worker

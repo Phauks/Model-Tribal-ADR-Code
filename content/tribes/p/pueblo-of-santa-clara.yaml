@@ -221,11 +221,12 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/nmsccons.html
   source: national-indian-law-library-pueblo-santa-clara
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
-    of Oklahoma website.".'
+    of Oklahoma website.". Document opened on 2026-11-22 (the copy the constitution catalog work saved);
+    its opening text names the kind, nation and title; the second gap review also confirmed this link.'
 - kind: constitution
   title: Constitution
   link: https://www.loc.gov/item/36026302/
@@ -420,10 +421,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30717 (Tribe column of the designated agent table)
   note: 'Listed as: Pueblo of Santa Clara, New Mexico Confidence lowered from high by the lead session:
     the notice prints its table as page images, so nation names were read from images and matched to the
-    roster.'
+    roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
+    verification level unchanged because the name was not matched word for word in machine-read text.'
 - topic: violence-against-women-act-special-tribal-criminal-jurisdiction
   value: exercising
   detail: Exercising jurisdiction since 2020-08-24 (start date given by NCAI; jurisdiction began under

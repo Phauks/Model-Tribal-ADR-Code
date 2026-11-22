@@ -1,0 +1,191 @@
+profile: content/tribes/m/mashantucket-pequot-indian-tribe.yaml
+topic: courts
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.mashantucket.com/tribalcourt.aspx
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: blocked
+  reason: '“Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 403; its reviewer found cannot-tell.'
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.mptn-nsn.gov/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: blocked
+  reason: 'Every court listed for this nation: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 403; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.mashantucket.com/tribalcourt.aspx
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: '“Tribal Court”: The listed link answered with status 403 and redirected to https://www.mptn-nsn.gov/;
+    it does not show this court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.mptn-nsn.gov/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: 'Every court listed for this nation: Home page status 403; 0 links mention a court; the site
+    refused or failed the request.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.mashantucket.com/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: '“Tribal Court”: Home page status 403; 0 links mention a court; the site refused or failed the
+    request.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Bureau of Indian Affairs, Court of Indian Offenses: list
+    of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan.
+    7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Northwest Intertribal Court System, Tribal Courts: does
+    not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: American Indian Law Center, Southwest Intertribal Court
+    of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Mashantucket Pequot”)'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Tribal Court Clearinghouse (Tribal Law and Policy Institute),
+    Tribal Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/mashantucket_pequot.html
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Court”: The National Indian Law Library nation page is the directory the listing came
+    from or a directory like it; it cannot confirm that the court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://law.mptn-nsn.gov/globalassets/laws/title-24-probate-law-current-as-of--tcr072723-01-of-03.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://law.mptn-nsn.gov/globalassets/laws/titles-1---23.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://law.mptn-nsn.gov/globalassets/laws/titles-24---end.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://narf.org/nill/codes/mashantucket_pequot/index.html
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Tribal Court”: Claude read the gathered evidence against the review brief; verdict cannot-tell.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-107
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.mptn-nsn.gov/tribalcourt.aspx
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: blocked
+  reason: '“Mashantucket Pequot Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 403; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.mptn-nsn.gov/tribalcourt.aspx
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: '“Mashantucket Pequot Tribal Court”: The listed link answered with status 403; it does not show
+    this court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Mashantucket Pequot Tribal Court”: Claude read the gathered evidence against the review brief;
+    verdict cannot-tell.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-108
+next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-107,
+  cannot-tell); Mashantucket Pequot Tribal Court (court-108, cannot-tell). A person could open in a browser
+  the pages that refused the project''s link checker: http://www.mashantucket.com/, http://www.mashantucket.com/tribalcourt.aspx,
+  https://www.mptn-nsn.gov/, https://www.mptn-nsn.gov/tribalcourt.aspx. No website of the nation''s own
+  could be read; the Tribe''s office could be asked whether it runs a court.'

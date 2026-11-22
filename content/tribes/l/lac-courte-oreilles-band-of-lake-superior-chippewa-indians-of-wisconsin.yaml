@@ -202,14 +202,15 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Constitution
-  link: https://www.narf.org/nill/triballaw/us/nsn/lco/council/constitution/
+  link: https://law.lco-nsn.gov/us/nsn/lco/council/constitution/index.full.html
   source: national-indian-law-library-lac-courte-oreilles-chippewa
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
-    .".'
+    .". Link changed on 2026-11-22 from https://www.narf.org/nill/triballaw/us/nsn/lco/council/constitution/,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Lac Courte Oreilles Lake Superior Chippewa Indians Constitution
   source: tribal-law-policy-institute-justice-systems
@@ -447,10 +448,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30693 (Tribe column of the designated agent table)
   note: 'Listed as: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin Confidence
     lowered from high by the lead session: the notice prints its table as page images, so nation names
-    were read from images and matched to the roster.'
+    were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
+    govinfo PDF has no text layer for the table); verification level unchanged because the name was not
+    matched word for word in machine-read text.'
 - topic: indian-child-welfare-act
   value: reassumed-jurisdiction
   detail: Approval of petition under 25 U.S.C. § 1918 to reassume exclusive jurisdiction over child custody

@@ -195,14 +195,15 @@ government_structure:
 governing_documents:
 - kind: constitution
   title: Constitution
-  link: https://chilkat-nsn.gov/constitution/
+  link: https://chilkat-nsn.gov/sites/default/files/CIV_Constitution.pdf
   source: national-indian-law-library-chilkat
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://chilkat-nsn.gov/constitution/, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Chilkat Indian Village - Constitution
   year: '2006'
@@ -271,10 +272,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30669 (Tribe column of the designated agent table)
   note: 'Listed as: Chilkat Indian Village (Klukwan) Confidence lowered from high by the lead session:
     the notice prints its table as page images, so nation names were read from images and matched to the
-    roster.'
+    roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
+    verification level unchanged because the name was not matched word for word in machine-read text.'
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

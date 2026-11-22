@@ -291,14 +291,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.srpmic-nsn.gov/government/ordinances/
+  link: https://srpmic-nsn.gov/wp-content/uploads/2025/06/Constitution.pdf
   source: national-indian-law-library-salt-river-community
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.srpmic-nsn.gov/government/ordinances/, a page
+    that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Salt River Pima-Maricopa Indian Community Constitution
   source: tribal-law-policy-institute-justice-systems
@@ -311,13 +312,15 @@ governing_documents:
     returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Salt River Pima-Maricopa Indian Community Code of Ordinances
-  link: http://www.srpmic-nsn.gov/government/ordinances/
+  link: https://srpmic-nsn.gov/wp-content/uploads/2026/05/SRPMIC-Complete-Code-of-Ordinances_April-2026.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Salt River Pima-Maricopa Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Link changed
+    on 2026-11-22 from http://www.srpmic-nsn.gov/government/ordinances/, a page that leads to the text,
+    to the text itself (research/reviews/2026-11-22-governing-documents-full.md).
 - kind: constitution
   title: Constitution (Salt River Pima-Maricopa Indian Community, Arizona)
   year: '1940'
@@ -589,10 +592,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30720 (Tribe column of the designated agent table)
   note: 'Listed as: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona Confidence
     lowered from high by the lead session: the notice prints its table as page images, so nation names
-    were read from images and matched to the roster.'
+    were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
+    govinfo PDF has no text layer for the table); verification level unchanged because the name was not
+    matched word for word in machine-read text.'
 - topic: violence-against-women-act-special-tribal-criminal-jurisdiction
   value: exercising
   detail: Listed by NCAI as implementing special Tribal criminal jurisdiction (list updated May 2022).
