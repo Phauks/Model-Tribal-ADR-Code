@@ -242,6 +242,48 @@ current fact but no current constitution listed. These are the profiles to
 search for a current constitution, recording the search in the per-nation
 search log if nothing is found.
 
+## Applied
+
+After this review was merged, a second, independent check of rows 21, 8 and
+10 was run, and only the clear, mechanical changes that both checks agree on
+were made to records, each with a dated note. Everything that needs judgment
+stays in this review's files above for the lead author; no new review file
+was added. Scripts: `scripts/review/source_links.py`,
+`scripts/review/child_welfare_agents.py` and
+`scripts/review/governing_documents.py` (see `scripts/README.md`).
+
+### Source links (row 21)
+
+Session: [2026-11-22-source-link-check](../sessions/2026/2026-11-22-source-link-check.md).
+The second check requested 2,902 of the 4,617 addresses before it was
+stopped.
+
+| Change | Sources |
+| --- | ---: |
+| `history.status: removed` (gone in both checks) | 9 |
+| `history.status: moved`, new address in `history.changes` (same new address in both checks) | 2 |
+
+The nine removed are the two National Indian Gaming Commission gaming tribe
+reports, the 2008 petitioner list, Tulalip Resolution 2024-473, two Guam court
+documents, a Navajo Judicial Branch quarterly report, the 2016 Michigan Indian
+directory and a vLex journal page. The two moved are Mont. Code Ann. § 2-1-301
+(archive.legmt.gov to mca.legmt.gov) and an Oneida Indian Nation page (.com to
+.org). `archives` was not touched.
+
+Not applied, because the checks disagree: five sources this review lists as
+gone answered 200 to the second check (three Cherokee Nation pages and two
+Crown-Indigenous Relations pages), and two others it lists as gone redirect to
+a longer address on the same site (Crown-Indigenous Relations). The lead
+author can decide these from the spreadsheet as before.
+
+Correction to the table above: 760 of the 769 sources listed as "loads, but
+moved to another site" are FederalRegister.gov notices whose redirect goes to
+unblock.federalregister.gov, the site's CAPTCHA page for scripts. The second
+check looked up 316 of them through the FederalRegister.gov API by document
+number, and all 316 exist at their recorded addresses. They have not moved.
+Six more are Uniform Law Commission download addresses that hand the file to
+a signed link on a file host; the addresses still work.
+
 ## Still for the lead author or Westlaw
 
 Rows 5 (KeyCite the legal history cases), 9 (Public Law 280), 13 (Alaska

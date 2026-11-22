@@ -81,6 +81,19 @@ writes the [search logs](../research/search-logs/README.md) of decision record
 | --- | --- | --- |
 | `review/coverage_search.py` | `gather` reads what the project already holds for every federally recognized nation with no dispute resolution record (tribal law texts, constitution readings, justice institutions, raw facts, peacemaking sources, the Alaska Court System's restorative justice plans), then fetches its National Indian Law Library page, its website (home page, sitemap, site search and linked law and court pages), court pages and code links with an honestly named link checker that obeys robots.txt and logs a refusal as `blocked`, keeping passages around dispute resolution words in a private work folder; `batches` writes review batches and a fixed 10 percent sample of nations with nothing found; `second` re-fetches the evidence page of every first-pass candidate for the second reader; `merge` drops candidates the second reader set aside and writes `research/reviews/2026-11-22-dispute-resolution-coverage.{json,csv}` (empty decision column), a counts file and one search log per profile | `pip install -r scripts/requirements.txt requests beautifulsoup4`, plus `pdftotext` |
 
+## Applying the second gap review, Nov. 22, 2026
+
+Run by hand, never in continuous integration. They re-check rows 21, 8 and
+10 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md)
+independently of the [second gap review](../research/reviews/2026-11-22-second-gap-review.md)
+and write to records only the clear results both checks agree on (its
+"Applied" section). Everything else stays in that review's files for the lead
+author. None of them tries to get past a site that refuses scripts.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/source_links.py` | `check` requests every source record's address (HEAD, then GET for HTML pages; FederalRegister.gov documents through its API) and caches the result; `apply --agree` sets `history.status` to `removed` or `moved` (with the new address in `history.changes`) and `history.last_checked` where the review's `2026-11-22-source-links.csv` agrees, editing only the `history` block | `pip install -r scripts/requirements.txt requests` |
+
 ## Gaming compacts and ordinances
 
 Run by hand, never in continuous integration. They build the catalog in
