@@ -26,7 +26,7 @@ export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic'] as 
 export const textSpacings = ['standard', 'wide'] as const;
 export const textAlignments = ['left', 'justified'] as const;
 export const contrasts = ['standard', 'more'] as const;
-export const noteDisplays = ['end', 'inline'] as const;
+export const noteDisplays = ['popup', 'end', 'inline'] as const;
 export const sourceLinkChoices = ['both', 'original', 'archived'] as const;
 export const glossaryCardChoices = ['on', 'off'] as const;
 export const themes = ['device', 'light', 'dark'] as const;
@@ -70,7 +70,7 @@ export const defaultSettings: ReadingSettings = {
 	textSpacing: 'standard',
 	textAlignment: 'left',
 	contrast: 'standard',
-	noteDisplay: 'end',
+	noteDisplay: 'popup',
 	sourceLinks: 'both',
 	glossaryCards: 'on'
 };
@@ -143,7 +143,12 @@ export const contrastChoices: Choice<Contrast>[] = [
 ];
 
 export const noteDisplayChoices: Choice<NoteDisplay>[] = [
-	{ value: 'end', label: 'Go to the notes at the end of the page' },
+	{
+		value: 'popup',
+		label: 'Show the source beside the number',
+		hint: 'On a phone, the source opens at the bottom of the screen'
+	},
+	{ value: 'end', label: 'Go to the Sources list at the end of the page' },
 	{ value: 'inline', label: 'Show the note under the paragraph' }
 ];
 

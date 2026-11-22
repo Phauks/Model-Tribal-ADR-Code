@@ -1,10 +1,12 @@
 /**
  * Groups a nation's contact facts for the contact cards on its page: the
  * websites in a card of their own, then one card for each office, named once,
- * where each contact is a labeled row with the link a reader can act on. The source of every contact stays in the page's
- * Sources section, so the record's label is read only for what it says about
- * the office, not for the list the contact came from.
+ * where each contact is a labeled row with the link a reader can act on and
+ * the marker of its source, which links to the page's Sources section. The
+ * record's label is read only for what it says about the office, not for the
+ * list the contact came from.
  */
+import type { CitationMark } from './citation-marks.ts';
 import { emailLink, mapSearchLink, phoneLink, webLink } from './contact-links.ts';
 
 export type ContactKind =
@@ -18,6 +20,8 @@ export type ContactKind =
 
 export interface ContactRow {
 	kind: ContactKind;
+	/** The markers of the contact's source (src/lib/citation-marks.ts). */
+	citations?: CitationMark[];
 	/** The field's name, such as "Phone" or "Mailing address". */
 	label: string;
 	/** The value, split into lines; an address shows its street and its town on separate lines. */
@@ -269,9 +273,14 @@ function labelFor(kind: string): string {
 /**
  * Groups contact facts by office, in the order the offices first appear, with
  * rows in a fixed order, and moves every website into a group of its own.
+ * cite, when given, returns the markers for a fact's source; it is called
+ * only for the rows shown, in the order they are shown: websites first.
  */
-export function contactCards(facts: ContactFact[]): ContactCards {
-	const offices = new Map<string, { fact: ContactFact; row: ContactRow }[]>();
+export function contactCards<Fact extends ContactFact>(
+	facts: Fact[],
+	cite?: (fact: Fact) => CitationMark[] | undefined
+): ContactCards {
+	const offices = new Map<string, { fact: Fact; row: ContactRow }[]>();
 	for (const fact of facts) {
 		if (typeof fact.value !== 'string' || fact.value.trim().length === 0) continue;
 		const { office, note: labelNote } = officeAndNote(fact.label);
@@ -318,21 +327,38 @@ export function contactCards(facts: ContactFact[]): ContactCards {
 			(entry) =>
 				!(entry.row.kind === 'website' && leadsHere.includes(displayWebAddress(entry.fact.value)))
 		);
-		return { name, rows: shown.map((entry) => entry.row) };
+		return { name, entries: shown };
 	});
 
 	// A website belongs to no office's address; one listed for another office names that office.
-	const websites = grouped.flatMap((office) =>
-		office.rows
-			.filter((entry) => entry.kind === 'website')
+	const websiteEntries = grouped.flatMap((office) =>
+		office.entries
+			.filter((entry) => entry.row.kind === 'website')
 			.map((entry) =>
 				office.name === defaultOfficeName
 					? entry
-					: { ...entry, note: [office.name, entry.note].filter(Boolean).join('. ') }
+					: {
+							...entry,
+							row: { ...entry.row, note: [office.name, entry.row.note].filter(Boolean).join('. ') }
+						}
 			)
 	);
-	const officeCards = grouped
-		.map((office) => ({ ...office, rows: office.rows.filter((entry) => entry.kind !== 'website') }))
-		.filter((office) => office.rows.length > 0);
+	const officeEntries = grouped
+		.map((office) => ({
+			name: office.name,
+			entries: office.entries.filter((entry) => entry.row.kind !== 'website')
+		}))
+		.filter((office) => office.entries.length > 0);
+
+	// Source markers are numbered in the order the rows appear on the page.
+	const withCitations = (entry: { fact: Fact; row: ContactRow }): ContactRow => {
+		const citations = cite?.(entry.fact);
+		return citations && citations.length > 0 ? { ...entry.row, citations } : entry.row;
+	};
+	const websites = websiteEntries.map(withCitations);
+	const officeCards = officeEntries.map((office) => ({
+		name: office.name,
+		rows: office.entries.map(withCitations)
+	}));
 	return { websites, offices: officeCards };
 }

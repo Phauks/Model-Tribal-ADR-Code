@@ -247,6 +247,12 @@ export interface MapGeometry {
 	 * light. Shared borders stay shared, so no gaps open between states.
 	 */
 	smallStates: StateShape[];
+	/**
+	 * The same places with more detail, for a nation page whose small map
+	 * draws a box larger than the full map does (src/lib/presence-map.ts).
+	 * Only the places in view go into that page.
+	 */
+	zoomedStates: { code: string; path: string }[];
 }
 
 /**
@@ -254,6 +260,9 @@ export interface MapGeometry {
  * checked by eye at the size the nation pages draw the map.
  */
 const smallMapDetail = 0.05;
+
+/** Share of the outline points kept for a zoomed small map (project choice, checked by eye). */
+const zoomedMapDetail = 0.15;
 
 const round = (pathData: string | null): string =>
 	(pathData ?? '').replace(/(\d+\.\d{1})\d+/g, '$1');
@@ -480,6 +489,17 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 		return { ...shape, center: { x, y } };
 	});
 
+	// A zoomed small map draws each place by its own box's projection, to a
+	// tenth of a unit; the islands keep their full detail, as above.
+	const zoomSimplified = simplify(weighted, quantile(weighted, zoomedMapDetail)) as typeof atlas;
+	const zoomedStates = (
+		feature(zoomSimplified, zoomSimplified.objects.states) as FeatureCollection<Polygon | MultiPolygon>
+	).features.map((simplifiedState) => {
+		const code = codeOf(simplifiedState);
+		const state = keptWhole.has(code) ? (fullDetail.get(code) ?? simplifiedState) : simplifiedState;
+		return { code, path: round(panelOf(code).path(state)) };
+	});
+
 	// Lines between states and the merged land, each drawn by its own part of the map.
 	const geometriesIn = (panel: Panel) =>
 		atlas.objects.states.geometries.filter((geometry) => panel.codes.has(codeOf(geometry)));
@@ -577,6 +597,7 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 			retrieved: landTopology.metadata.retrieved
 		},
 		frames,
-		smallStates
+		smallStates,
+		zoomedStates
 	};
 }
