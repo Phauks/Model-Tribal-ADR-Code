@@ -82,6 +82,17 @@ a:visited {
 	color: var(--color-link);
 }
 
+/*
+ * A long web address or file path in the text breaks where it must rather
+ * than widen the page and force readers to scroll sideways (Trevor,
+ * Nov. 22, 2026; WCAG 1.4.10, reflow). Button-styled links keep their words
+ * whole.
+ */
+main a:not(.button),
+main code {
+	overflow-wrap: anywhere;
+}
+
 a:hover {
 	text-decoration-thickness: 3px;
 }
@@ -389,6 +400,8 @@ th[scope='row'] {
 }
 
 select {
+	/* A long option, such as a nation's full name, cannot widen the page. */
+	max-width: 100%;
 	font: inherit;
 	font-size: var(--font-size-small);
 	min-height: var(--layout-target-minimum);

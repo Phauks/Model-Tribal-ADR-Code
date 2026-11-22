@@ -4,30 +4,79 @@
 	// "Sign in" until the browser reads the signed-in hint
 	// (src/lib/signed-in-hint.ts). Once someone has signed in, a profile button
 	// takes its place (Trevor asked for this on Nov. 22, 2026). It opens a
-	// short list of links, following the WAI-ARIA disclosure pattern rather
-	// than a menu, since the items are plain links and a form: Your profile,
-	// Workspace and Sign out. Workspace sends a person without workspace access
-	// to their profile (requirePerson in src/lib/server/workspace.ts). Without
-	// scripts the link stays "Sign in", which still works: a signed-in person
-	// who follows it is told so there. Nobody needs to sign in to read the
-	// site or to make a request.
+	// short list, following the WAI-ARIA disclosure pattern rather than a
+	// menu, since the items are plain links and a form: who is signed in, Your
+	// profile, Workspace (for people with workspace access), Password and Sign
+	// out. Trevor asked on Nov. 22, 2026 for "Signed in as" and Sign out to
+	// live here rather than across the top of the workspace and profile pages.
+	//
+	// The workspace and profile pages know who is signed in; they keep the name
+	// on this device (localStorage), so the pages built ahead of time can show
+	// it too. Signing out forgets it. Without scripts the link stays "Sign in",
+	// which still works: a signed-in person who follows it is told so there.
+	// Nobody needs to sign in to read the site or to make a request.
 	import { onMount } from 'svelte';
+	import { page } from '$app/state';
+	import KeyRound from '@lucide/svelte/icons/key-round';
 	import LogIn from '@lucide/svelte/icons/log-in';
 	import LogOut from '@lucide/svelte/icons/log-out';
 	import UserRound from '@lucide/svelte/icons/user-round';
 	import LayoutDashboard from '@lucide/svelte/icons/layout-dashboard';
-	import { signedInHintCookie } from '#lib/signed-in-hint.ts';
+	import { roleLabels, type Role } from '#lib/permissions.ts';
+	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 
-	let signedIn = $state(false);
+	interface SignedInAs {
+		name: string;
+		/** How the person takes part, such as "lead author"; empty without workspace access. */
+		role: string;
+	}
+
+	const nameStorageKey = 'signed-in-as';
+
+	let hintSignedIn = $state(false);
+	let hintHasWorkspace = $state(false);
+	let remembered = $state<SignedInAs | undefined>(undefined);
 	let open = $state(false);
 	let container: HTMLDivElement | undefined = $state();
 	let button: HTMLButtonElement | undefined = $state();
 
-	onMount(() => {
-		signedIn = document.cookie
-			.split(';')
-			.some((entry) => entry.trim() === `${signedInHintCookie}=1`);
+	// Who the page itself says is signed in: the workspace's pages name the
+	// person and their role, the profile pages give the email address.
+	const fromPage = $derived.by((): SignedInAs | undefined => {
+		const person = page.data.person as { displayName: string; role: Role } | undefined;
+		if (person) return { name: person.displayName, role: roleLabels[person.role].toLocaleLowerCase('en-US') };
+		const email = page.data.email as string | undefined;
+		if (email && page.url.pathname.startsWith('/profile')) return { name: email, role: '' };
+		return undefined;
 	});
+	const signedInAs = $derived(fromPage ?? remembered);
+	// The pages the Worker renders know at once; the others wait for the hint.
+	const signedIn = $derived(hintSignedIn || fromPage !== undefined);
+	const hasWorkspace = $derived(hintHasWorkspace || page.data.person !== undefined);
+
+	onMount(() => {
+		const hint = readSignedInHint(document.cookie);
+		hintSignedIn = hint.signedIn;
+		hintHasWorkspace = hint.workspacePageNames.length > 0;
+		try {
+			if (fromPage) localStorage.setItem(nameStorageKey, JSON.stringify(fromPage));
+			else if (!signedIn) localStorage.removeItem(nameStorageKey);
+			else {
+				const stored = JSON.parse(localStorage.getItem(nameStorageKey) ?? 'null') as SignedInAs | null;
+				if (stored && typeof stored.name === 'string') remembered = { name: stored.name, role: String(stored.role ?? '') };
+			}
+		} catch {
+			// Storage can be blocked; the menu then says only that someone is signed in.
+		}
+	});
+
+	function forgetName() {
+		try {
+			localStorage.removeItem(nameStorageKey);
+		} catch {
+			// Nothing was kept.
+		}
+	}
 
 	function closeOnOutside(event: FocusEvent | MouseEvent) {
 		const target = (event instanceof FocusEvent ? event.relatedTarget : event.target) as Node | null;
@@ -60,20 +109,37 @@
 			<UserRound size={24} />
 		</button>
 		<ul id="account-links" class="account-links" hidden={!open}>
+			<li class="signed-in-as">
+				{#if signedInAs}
+					<span class="small">Signed in as</span>
+					<strong>{signedInAs.name}</strong>
+					{#if signedInAs.role}<span class="small muted">{signedInAs.role}</span>{/if}
+				{:else}
+					<span>You are signed in.</span>
+				{/if}
+			</li>
 			<li>
 				<a href="/profile" data-sveltekit-reload>
 					<UserRound size={20} strokeWidth={1.75} />
 					Your profile
 				</a>
 			</li>
+			{#if hasWorkspace}
+				<li>
+					<a href="/workspace" data-sveltekit-reload>
+						<LayoutDashboard size={20} strokeWidth={1.75} />
+						Workspace
+					</a>
+				</li>
+			{/if}
 			<li>
-				<a href="/workspace" data-sveltekit-reload>
-					<LayoutDashboard size={20} strokeWidth={1.75} />
-					Workspace
+				<a href="/profile/password" data-sveltekit-reload>
+					<KeyRound size={20} strokeWidth={1.75} />
+					Password
 				</a>
 			</li>
 			<li>
-				<form method="post" action="/sign-out">
+				<form method="post" action="/sign-out" onsubmit={forgetName}>
 					<button type="submit">
 						<LogOut size={20} strokeWidth={1.75} />
 						Sign out
@@ -168,6 +234,18 @@
 	.account-links a:hover,
 	.account-links button:hover {
 		text-decoration: underline;
+	}
+
+	/* Who is signed in: text, not a link, above the links. */
+	.account-links .signed-in-as {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1rem;
+		padding: var(--space-2) var(--space-4) var(--space-3);
+		margin-bottom: var(--space-1);
+		border-bottom: 1px solid var(--color-line);
+		overflow-wrap: anywhere;
+		max-width: 20rem;
 	}
 
 	.account-links form {

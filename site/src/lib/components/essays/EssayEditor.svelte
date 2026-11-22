@@ -787,8 +787,11 @@
 </dialog>
 
 <style>
+	/* One column no wider than the page, so a wide table or a long web address
+	   in the essay cannot push the page sideways. */
 	.essay-editor {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: var(--space-3);
 	}
 
@@ -842,6 +845,13 @@
 
 	.editor-area {
 		max-width: var(--layout-measure);
+		min-width: 0;
+	}
+
+	/* A wide table scrolls in its own box, as it does on the published page. */
+	.editor-area :global(.ProseMirror table) {
+		display: block;
+		overflow-x: auto;
 	}
 
 	.editor-area :global(.ProseMirror) {
@@ -865,7 +875,11 @@
 		border-radius: var(--radius-control);
 		padding: 0 var(--space-1);
 		background: var(--color-surface);
-		white-space: nowrap;
+		/* A citation to several sources is long: it wraps, keeping its fill on
+		   each line, rather than run off the page. */
+		overflow-wrap: anywhere;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
 	}
 
 	.editor-area :global(.essay-citation-chip) {
