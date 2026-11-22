@@ -48,7 +48,7 @@ versions:
     a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
     (Claude Haiku), not yet checked by the lead author.
 - id: 1974-text-2
-  label: Constitution and Bylaws of the Tule River Indian Tribe of California as amended through Amendment
+  label: CONSTITUTION AND BYLAWS OF THE TULE RIVER INDIAN TRIBE, CALIFORNIA as amended through Amendment
     V, approved 1974-03-04
   event: edition
   status: superseded
@@ -60,51 +60,13 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
-    path: research/captures/constitutions/tule-river-indian-tribe-of-the-tule-river-reservation/8b45c1385396e432.html
-    sha256: 8b45c1385396e4325c85f2e32e85768f95c4f152d144e9776494672dd6016800
-  note: The text also prints approved 1936, which belong to the earlier text it compiles. The date recorded
-    as listed is that of the latest amendment the text says it includes. Marked superseded because a later
-    dated text was found (project inference). Type and dates read from the text by an AI reviewer (Claude
-    Haiku), not yet checked by the lead author.
-  clauses:
-  - topic: removal-and-recall
-    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
-    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
-    verification: title-only
-  - topic: judicial-power
-    locator: Article V (TRIBAL COURT (JUDICIAL CODE))
-    summary: Article headed "TRIBAL COURT (JUDICIAL CODE)"; found by its heading and not yet read.
-    verification: title-only
-  changes:
-  - topic: judicial-power
-    compared_with: 1974-text
-    change: added
-    verification: inferred
-    note: A word match found an article on this topic in this text and none in the earlier one.
-  - topic: removal-and-recall
-    compared_with: 1974-text
-    change: added
-    verification: inferred
-    note: A word match found an article on this topic in this text and none in the earlier one.
-- id: 1974-text-3
-  label: CONSTITUTION AND BYLAWS OF THE TULE RIVER INDIAN TRIBE, CALIFORNIA as amended through Amendment
-    V, approved 1974-03-04
-  event: edition
-  status: unknown
-  dates:
-    listed: '1974-03-04'
-  supersedes:
-  - 1974-text-2
-  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-3
-  confidence: medium
-  verification: read-in-full
-  capture:
     path: research/captures/constitutions/tule-river-indian-tribe-of-the-tule-river-reservation/bc46778ab8157044.pdf
     sha256: bc46778ab8157044092b61e3a02e8c69992ff50474a2cdad6c574e3c12293e30
     pages: 18
   note: The text also prints approved 1936-01-15, which belong to the earlier text it compiles. The date
-    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
-    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
   clauses:
   - topic: removal-and-recall
     locator: Article V (Vacancies and Removal from Office)
@@ -124,15 +86,58 @@ versions:
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:
   - topic: judicial-power
+    compared_with: 1974-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1974-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1974-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 1974-text-3
+  label: Constitution and Bylaws of the Tule River Indian Tribe of California as amended through Amendment
+    V, approved 1974-03-04
+  event: edition
+  status: unknown
+  dates:
+    listed: '1974-03-04'
+  supersedes:
+  - 1974-text-2
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tule-river-indian-tribe-of-the-tule-river-reservation/8b45c1385396e432.html
+    sha256: 8b45c1385396e4325c85f2e32e85768f95c4f152d144e9776494672dd6016800
+  note: The text also prints approved 1936, which belong to the earlier text it compiles. The date recorded
+    as listed is that of the latest amendment the text says it includes. Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article V (TRIBAL COURT (JUDICIAL CODE))
+    summary: Article headed "TRIBAL COURT (JUDICIAL CODE)"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
     compared_with: 1974-text-2
     change: not-compared
     verification: inferred
     note: The article texts differ (word-run overlap 0.77, by script); not yet read side by side.
   - topic: dispute-resolution
     compared_with: 1974-text-2
-    change: added
+    change: removed
     verification: inferred
-    note: A word match found an article on this topic in this text and none in the earlier one.
+    note: A word match found an article on this topic in the earlier text and none in this one.
   - topic: removal-and-recall
     compared_with: 1974-text-2
     change: not-compared

@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: organized-village-of-kasaan
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-10-15
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1938-10-15
   to 1938-10-15. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
@@ -29,7 +29,7 @@ versions:
 - id: 1938-text-2
   label: CONSTITUTION AND BY-LAWS (1938)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     listed: '1938-10-15'
   supersedes:
@@ -43,8 +43,9 @@ versions:
   note: 'The text prints an approval date (1938-08-22) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. The text also prints adopted 1938-10-15, which belong
     to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
-    says it includes. Dates read from another copy of the same text: adopted 1938-10-15. Dates read by
-    rule from the certificates on the library page.'
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1938-10-15. Dates read by rule from the certificates
+    on the library page.'
   clauses:
   - topic: removal-and-recall
     locator: Article VII (REMOVAL OF OFFICERS)
@@ -53,6 +54,32 @@ versions:
   changes:
   - topic: removal-and-recall
     compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1938-text-3
+  label: Constitution and By-laws of the Organized Village of Kasaan, Alaska (1938)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1938-10-15'
+  supersedes:
+  - 1938-text-2
+  source: constitution-organized-village-of-kasaan-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-kasaan/deb69be0794cdb9f.pdf
+    sha256: deb69be0794cdb9fb8ebf23df852eba4ff8fd4c8cd4cd5833d36d1c5653299f4
+    pages: 8
+  note: The text prints an approval date (1938-08-22) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1938-10-15, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text-2
     change: not-compared
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.

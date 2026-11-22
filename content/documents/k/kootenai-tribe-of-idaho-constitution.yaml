@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: kootenai-tribe-of-idaho
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1947-04-10
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1947-04-10
   to 1947-06-16. Versions are only those found; others may exist.'
 versions:
 - id: 1947-text
@@ -24,9 +24,9 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1947-text-2
-  label: CONSTITUTION AND BYLAWS OF THE KOOTENAI TRIBE OF IDAHO (1947)
+  label: Constitution and Bylaws of the Kootenai Tribe of Idaho (1947)
   event: edition
-  status: in-effect
+  status: superseded
   dates:
     approved: '1947-06-16'
   approval:
@@ -39,13 +39,32 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
+    path: research/captures/constitutions/kootenai-tribe-of-idaho/5e3c71cf748c5c00.pdf
+    sha256: 5e3c71cf748c5c00f01bfbb9f053991fbaecefcfaead28197e542e84486b9510
+    pages: 6
+  note: The text also prints adopted 1947-04-10, which belong to the earlier text it compiles. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1947-text-3
+  label: CONSTITUTION AND BYLAWS OF THE KOOTENAI TRIBE OF IDAHO (1947)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1947-06-16'
+  supersedes:
+  - 1947-text-2
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
     path: research/captures/constitutions/kootenai-tribe-of-idaho/4cd6dfcebea6859b.pdf
     sha256: 4cd6dfcebea6859b403e03b781000e162b31a5307234a12ab24d43616711762b
     pages: 5
-  note: The text also prints adopted 1947-04-10, which belong to the earlier text it compiles. Marked
-    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
-    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
-    yet checked by the lead author.
+  note: The text also prints adopted 1947-04-10, approved 1947-06-16, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,

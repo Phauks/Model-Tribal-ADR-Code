@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: king-island-native-community
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1938-09-17
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1938-09-17
   to 1939-01-31. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
@@ -28,7 +28,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1939-text
-  label: Constitution and By-Laws of the King Island Native Community (1939)
+  label: Constitution and By-laws of the King Island Native Community, Alaska (1939)
   event: edition
   status: superseded
   dates:
@@ -39,20 +39,41 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
+    path: research/captures/constitutions/king-island-native-community/22a80c43a62560dc.pdf
+    sha256: 22a80c43a62560dcc584052f3946dc28725a7826f9d3a6d0704f8444de19c670
+    pages: 9
+  note: The text prints an approval date (1938-09-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: Constitution and By-Laws of the King Island Native Community (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-01-31'
+  supersedes:
+  - 1939-text
+  source: constitution-king-island-native-community-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
     path: research/captures/constitutions/king-island-native-community/c08ab5f1a52e590c.pdf
     sha256: c08ab5f1a52e590c10430de4d87d87d470f7e9489d3c437d5a861573a995ced3
     pages: 8
-  note: Marked superseded because a later dated text was found (project inference). Type and dates read
-    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
-- id: 1939-text-2
+  note: The text also prints adopted 1939-01-31, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+- id: 1939-text-3
   label: Constitution and By-Laws of the King Island Native Community (1939)
   event: edition
   status: unknown
   dates:
     listed: '1939-01-31'
   supersedes:
-  - 1939-text
-  source: constitution-king-island-native-community-1939-text-2
+  - 1939-text-2
+  source: constitution-king-island-native-community-1939-text-3
   confidence: medium
   verification: read-in-full
   capture:

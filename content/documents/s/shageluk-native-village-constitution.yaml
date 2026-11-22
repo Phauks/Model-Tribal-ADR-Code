@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: shageluk-native-village
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1949-08-19
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1949-08-19
   to 1949-11-01. Versions are only those found; others may exist.'
 versions:
 - id: 1949-text
@@ -28,9 +28,9 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1949-text-2
-  label: CONSTITUTION AND BY-LAWS OF THE SHAGELUK NATIVE VILLAGE, ALASKA (1949)
+  label: Constitution and By-laws of the Shageluk Native Village, Alaska (1949)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     adopted: '1949-11-01'
   supersedes:
@@ -39,12 +39,33 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
+    path: research/captures/constitutions/shageluk-native-village/d9cdbe30a7c51263.pdf
+    sha256: d9cdbe30a7c51263d018f3f2bfd39409b054a3718f7017b45991ec7f9a480558
+    pages: 6
+  note: The text prints an approval date (1949-08-19) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1949-text-3
+  label: CONSTITUTION AND BY-LAWS OF THE SHAGELUK NATIVE VILLAGE, ALASKA (1949)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1949-11-01'
+  supersedes:
+  - 1949-text-2
+  source: constitution-shageluk-native-village-1949-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
     path: research/captures/constitutions/shageluk-native-village/ebfda8ef13c5f4d6.pdf
     sha256: ebfda8ef13c5f4d64ea8bd2e8c4dc2927bd11d4bd84310bb8b41d46a007d868d
     pages: 5
   note: The text prints an approval date (1949-08-19) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
-    (Claude Haiku), not yet checked by the lead author.
+    to hold the election, so it is left out of dates. The text also prints adopted 1949-11-01, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
 found_in:
 - 2026-11-21-constitutions
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,

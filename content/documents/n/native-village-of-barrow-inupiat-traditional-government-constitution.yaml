@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-barrow-inupiat-traditional-government
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-05-23
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-23
   to 1940-03-21. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
@@ -28,9 +28,9 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1940-text
-  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF BARROW (1940)
+  label: Constitution and By-laws of the Native Village of Barrow (1940)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     adopted: '1940-03-21'
   supersedes:
@@ -39,12 +39,33 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
+    path: research/captures/constitutions/native-village-of-barrow-inupiat-traditional-government/645174b36a0a475f.pdf
+    sha256: 645174b36a0a475f93f39e6c13a9ba8eabd3271df855e093eac86e1d43804eb9
+    pages: 5
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1940-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF BARROW (1940)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1940-03-21'
+  supersedes:
+  - 1940-text
+  source: constitution-native-village-of-barrow-inupiat-traditional-government-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
     path: research/captures/constitutions/native-village-of-barrow-inupiat-traditional-government/ee10b4d4a129154a.pdf
     sha256: ee10b4d4a129154af440e4efd64009c2fc71112eb305ef6ee49dcb572f2401f5
     pages: 5
   note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
-    (Claude Haiku), not yet checked by the lead author.
+    to hold the election, so it is left out of dates. The text also prints adopted 1940-03-21, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
 found_in:
 - 2026-11-21-constitutions
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,

@@ -6,15 +6,34 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-minto
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-12-30
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-12-30
   to 1939-12-30. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
-  label: CONSTITUTION AND BY-LAWS (1939)
+  label: Constitution and By-laws of the Native Village of Minto, Alaska (1939)
   event: original
   status: superseded
   dates:
     adopted: '1939-12-30'
+  source: constitution-native-village-of-minto-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-minto/51555d58831eb4a4.pdf
+    sha256: 51555d58831eb4a4126cdcb81b724787b3fe294fb732acd369078edd027e13bc
+    pages: 6
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-12-30'
+  supersedes:
+  - 1939-text
   source: university-of-oklahoma-indian-reorganization-act-mintocons
   confidence: medium
   verification: inferred
@@ -22,18 +41,20 @@ versions:
     path: research/captures/constitutions/native-village-of-minto/cfbfc70cf1d7f4e9.html
     sha256: cfbfc70cf1d7f4e9b70785aefcb7b9d83dd9efccf46b6ccbdfa17dcd94d9e214
   note: 'The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
-    found (project inference). Dates read from another copy of the same text: adopted 1939-12-30. Dates
-    read by rule from the certificates on the library page.'
-- id: 1939-text-2
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-12-30, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1939-12-30. Dates read by rule from the certificates
+    on the library page.'
+- id: 1939-text-3
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF MINTO (1939)
   event: edition
   status: unknown
   dates:
     listed: '1939-12-30'
   supersedes:
-  - 1939-text
-  source: constitution-native-village-of-minto-1939-text-2
+  - 1939-text-2
+  source: constitution-native-village-of-minto-1939-text-3
   confidence: medium
   verification: read-in-full
   capture:

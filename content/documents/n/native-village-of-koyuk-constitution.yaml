@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-koyuk
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1946-08-16
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1946-08-16
   to 1946-08-16. Versions are only those found; others may exist.'
 versions:
 - id: 1946-text
@@ -27,13 +27,33 @@ versions:
     found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
     yet checked by the lead author.
 - id: 1946-text-2
+  label: Constitution and By-laws of the Native Village of Koyuk (1946)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1946-08-16'
+  supersedes:
+  - 1946-text
+  source: constitution-native-village-of-koyuk-1946-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-koyuk/9178a2831abffd28.pdf
+    sha256: 9178a2831abffd286dec1c3109313d40118a71a918e69f2cbbf1a5ed00ec0b1f
+    pages: 6
+  note: The text prints an approval date (1946-07-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1946-08-16, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1946-text-3
   label: CONSTITUTION AND BY-LAWS (1946)
   event: edition
   status: unknown
   dates:
     listed: '1946-08-16'
   supersedes:
-  - 1946-text
+  - 1946-text-2
   source: university-of-oklahoma-indian-reorganization-act-koyukcon
   confidence: medium
   verification: inferred

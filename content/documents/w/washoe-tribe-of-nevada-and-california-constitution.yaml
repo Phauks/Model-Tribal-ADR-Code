@@ -80,7 +80,7 @@ versions:
     verification: inferred
     note: An amendment changes only what it names; compare by hand.
 - id: 1990-text
-  label: CONSTITUTION AND BYLAWS OF THE WASHOE TRIBE OF NEVADA AND CALIFORNIA (1990)
+  label: Constitution and Bylaws of the Washoe Tribe of Nevada and California (1990)
   event: edition
   status: superseded
   dates:
@@ -91,19 +91,19 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
-    path: research/captures/constitutions/washoe-tribe-of-nevada-and-california/792fab2f9b093fe0.pdf
-    sha256: 792fab2f9b093fe0724ad0f61288f89f1073fd49a9322941f15a3064797c9655
-    pages: 14
+    path: research/captures/constitutions/washoe-tribe-of-nevada-and-california/f5c5faf80d5c81dc.pdf
+    sha256: f5c5faf80d5c81dc7520c400a81e0d7c7a6285278fb2b719049124ab3d66586e
+    pages: 15
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
   clauses:
   - topic: removal-and-recall
-    locator: Article V (VACANCIES AND REMOVAL ¥ROM OFFICE)
-    summary: Article headed "VACANCIES AND REMOVAL ¥ROM OFFICE"; found by its heading and not yet read.
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
   - topic: removal-and-recall
-    locator: Article IX (~ REFERENDUM, INITIATIVE AND RECALL)
-    summary: Article headed "~ REFERENDUM, INITIATIVE AND RECALL"; found by its heading and not yet read.
+    locator: Article IX (REFERENDUM. INITIATIVE AND RECALL)
+    summary: Article headed "REFERENDUM. INITIATIVE AND RECALL"; found by its heading and not yet read.
     verification: title-only
   changes:
   - topic: election-disputes
@@ -115,11 +115,11 @@ versions:
     compared_with: 1935-text
     change: not-compared
     verification: inferred
-    note: The article texts differ (word-run overlap 0.10, by script); not yet read side by side.
+    note: The article texts differ (word-run overlap 0.12, by script); not yet read side by side.
 - id: 1990-text-2
-  label: Constitution and Bylaws of the Washoe Tribe of Nevada and California (1990)
+  label: CONSTITUTION AND BYLAWS OF THE WASHOE TRIBE OF NEVADA AND CALIFORNIA (1990)
   event: edition
-  status: unknown
+  status: in-effect
   dates:
     listed: '1990-06-23'
   supersedes:
@@ -128,20 +128,22 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
-    path: research/captures/constitutions/washoe-tribe-of-nevada-and-california/f5c5faf80d5c81dc.pdf
-    sha256: f5c5faf80d5c81dc7520c400a81e0d7c7a6285278fb2b719049124ab3d66586e
-    pages: 15
+    path: research/captures/constitutions/washoe-tribe-of-nevada-and-california/792fab2f9b093fe0.pdf
+    sha256: 792fab2f9b093fe0724ad0f61288f89f1073fd49a9322941f15a3064797c9655
+    pages: 14
   note: The text also prints adopted 1990-06-23, which belong to the earlier text it compiles. The date
-    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
-    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
   clauses:
   - topic: removal-and-recall
-    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
-    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    locator: Article V (VACANCIES AND REMOVAL ¥ROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL ¥ROM OFFICE"; found by its heading and not yet read.
     verification: title-only
   - topic: removal-and-recall
-    locator: Article IX (REFERENDUM. INITIATIVE AND RECALL)
-    summary: Article headed "REFERENDUM. INITIATIVE AND RECALL"; found by its heading and not yet read.
+    locator: Article IX (~ REFERENDUM, INITIATIVE AND RECALL)
+    summary: Article headed "~ REFERENDUM, INITIATIVE AND RECALL"; found by its heading and not yet read.
     verification: title-only
   changes:
   - topic: removal-and-recall

@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-shaktoolik
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-15
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-05-15
   to 1940-01-27. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
@@ -49,7 +49,7 @@ versions:
 - id: 1940-text-2
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF SHAKTOOLIK (1940)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     listed: '1940-01-27'
   supersedes:
@@ -60,6 +60,26 @@ versions:
   capture:
     path: research/captures/constitutions/native-village-of-shaktoolik/850c728ed820891c.pdf
     sha256: 850c728ed820891c8e545dd99c1107b9ecea48d995af0b19bbc4ef368a36c47f
+    pages: 6
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1940-01-27, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1940-text-3
+  label: Constitution and By-Laws of the Native Village of Shaktoolik (1940)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1940-01-27'
+  supersedes:
+  - 1940-text-2
+  source: constitution-native-village-of-shaktoolik-1940-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-shaktoolik/e2d2c25f1ddd8a5d.pdf
+    sha256: e2d2c25f1ddd8a5dbd1954b510d62e7e7fda5c35b72c4f1fcbce38c0a7b7e067
     pages: 6
   note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. The text also prints adopted 1940-01-27, which belong

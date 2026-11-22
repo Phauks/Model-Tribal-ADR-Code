@@ -6,12 +6,32 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: manchester-band-of-pomo-indians-of-the-manchester-rancheria
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-03-22
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-03-11
   to 1981. Versions are only those found; others may exist.'
 versions:
+- id: 1936-text
+  label: Constitution and Bylaws of the Manchester Band of Pomo Indians of the Manchester Rancheria, California
+    (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-03-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/manchester-band-of-pomo-indians-of-the-manchester-rancheria/5881ebb535b25bc0.pdf
+    sha256: 5881ebb535b25bc0677c28b2c04d0a9945a0d23e5fbf08a5604c08f745e65b20
+    pages: 7
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1939-text
   label: CONSTITUTION AND BYLAWS OF THE (1939)
-  event: original
+  event: edition
   status: superseded
   dates:
     approved: '1939-03-22'
@@ -19,6 +39,8 @@ versions:
     authority: secretary-of-the-interior
     action: approved
     locator: approval certificate
+  supersedes:
+  - 1936-text
   source: university-of-oklahoma-indian-reorganization-act-manpomocons
   confidence: medium
   verification: inferred

@@ -6,17 +6,39 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1937-11-12
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1936-01-15
   to 2001-04-10. Versions are only those found; others may exist.'
 versions:
+- id: 1936-text
+  label: Constitution and Bylaws for the Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria, California
+    (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-01-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california/1380211f904a96d7.pdf
+    sha256: 1380211f904a96d7d2f3235fbac7846bc5d9f54fe7d69f2680317cc89d00370c
+    pages: 8
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1937-text
   label: Constitution and Bylaws for the Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of
     California (1937)
-  event: original
+  event: edition
   status: superseded
   dates:
     adopted: '1937-11-12'
     effective: '1937-11-12'
+  supersedes:
+  - 1936-text
   source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-1937-text
   confidence: medium
   verification: read-in-full

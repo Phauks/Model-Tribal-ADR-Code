@@ -6,15 +6,34 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: stebbins-community-association
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-12-05
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-12-05
   to 1939-12-05. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
-  label: CONSTITUTION AND BY-LAWS (1939)
+  label: Constitution and By-laws of the Stebbins Community Association, Alaska (1939)
   event: original
   status: superseded
   dates:
     adopted: '1939-12-05'
+  source: constitution-stebbins-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/stebbins-community-association/63c68b161a51909c.pdf
+    sha256: 63c68b161a51909cef4fd8c53fa4dc59ec513d79984e1624951f5be33ad384ec
+    pages: 6
+  note: The text prints an approval date (1939-05-10) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-12-05'
+  supersedes:
+  - 1939-text
   source: university-of-oklahoma-indian-reorganization-act-stebcons
   confidence: medium
   verification: inferred
@@ -22,18 +41,20 @@ versions:
     path: research/captures/constitutions/stebbins-community-association/7b8f4a56f05e32d7.html
     sha256: 7b8f4a56f05e32d7e20387dcacf9d8f78bc2de2248bfcc1a127decf0130ea581
   note: 'The text prints an approval date (1939-05-10) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
-    found (project inference). Dates read from another copy of the same text: adopted 1939-12-05. Dates
-    read by rule from the certificates on the library page.'
-- id: 1939-text-2
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-12-05, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1939-12-05. Dates read by rule from the certificates
+    on the library page.'
+- id: 1939-text-3
   label: CONSTITUTION AND BY-LAWS OF THE STEBBINS COMMUNITY ASSOCIATION (1939)
   event: edition
   status: unknown
   dates:
     listed: '1939-12-05'
   supersedes:
-  - 1939-text
-  source: constitution-stebbins-community-association-1939-text-2
+  - 1939-text-2
+  source: constitution-stebbins-community-association-1939-text-3
   confidence: medium
   verification: read-in-full
   capture:

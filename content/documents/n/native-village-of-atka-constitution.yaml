@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-atka
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-15
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-05-15
   to 1939-05-23. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
@@ -47,14 +47,34 @@ versions:
     found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
     yet checked by the lead author.
 - id: 1939-text-3
+  label: Constitution and By-laws of the Native Village of Atka, Alaska (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-05-23'
+  supersedes:
+  - 1939-text-2
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-atka/68792ec4cf724042.pdf
+    sha256: 68792ec4cf7240420a92670d04b13f26a229f71aeec0d66d51f53c90ece70777
+    pages: 5
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-05-23, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1939-text-4
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF ATKA (1939)
   event: edition
   status: unknown
   dates:
     listed: '1939-05-23'
   supersedes:
-  - 1939-text-2
-  source: constitution-native-village-of-atka-1939-text-3
+  - 1939-text-3
+  source: constitution-native-village-of-atka-1939-text-4
   confidence: medium
   verification: read-in-full
   capture:

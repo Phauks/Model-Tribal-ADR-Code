@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-tatitlek
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-23
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-05-23
   to 1946-12-31. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
@@ -49,7 +49,7 @@ versions:
 - id: 1946-text
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF TATITLEK (1946)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     adopted: '1946-12-31'
   supersedes:
@@ -62,8 +62,29 @@ versions:
     sha256: 6770ea105cf834686597ac0993604f0f168ef26c120ba50e8c3dfa27a77c4633
     pages: 6
   note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
-    (Claude Haiku), not yet checked by the lead author.
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1946-text-2
+  label: Constitution and By-Laws of the Native Village of Tatitlek (1946)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1946-12-31'
+  supersedes:
+  - 1946-text
+  source: constitution-native-village-of-tatitlek-1946-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-tatitlek/a46108898c88f157.pdf
+    sha256: a46108898c88f15740b4eed286fa861b4334c7d4c2f27d383370ad54b73fc1e4
+    pages: 6
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1946-12-31, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
 found_in:
 - 2026-11-21-constitutions
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,

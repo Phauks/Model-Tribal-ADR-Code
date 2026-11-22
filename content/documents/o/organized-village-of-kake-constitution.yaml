@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: organized-village-of-kake
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1947-11-17
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1947-11-17
   to 1948-01-27. Versions are only those found; others may exist.'
 versions:
 - id: 1947-text
@@ -60,7 +60,7 @@ versions:
 - id: 1948-text-2
   label: CONSTITUTION AND BY-LAWS OF THE ORGANIZED VILLAGE OF KAKE, ALASKA (1948)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     listed: '1948-01-27'
   supersedes:
@@ -72,6 +72,26 @@ versions:
     path: research/captures/constitutions/organized-village-of-kake/8fd94c8ae086574f.pdf
     sha256: 8fd94c8ae086574f3a4eaa641d5dbc7f4577b29fc746fbcc2738b05a65e1ba02
     pages: 9
+  note: The text prints an approval date (1947-11-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1948-01-27, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1948-text-3
+  label: Constitution and By-Laws of the Organized Village of Kake, Alaska (1948)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1948-01-27'
+  supersedes:
+  - 1948-text-2
+  source: constitution-organized-village-of-kake-1948-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-kake/db54894591ac9eac.pdf
+    sha256: db54894591ac9eacc3b1cc5f25ca870d2d724fb29b8fe6f27f72500acc84f2ec
+    pages: 10
   note: The text prints an approval date (1947-11-17) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. The text also prints adopted 1948-01-27, which belong
     to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text

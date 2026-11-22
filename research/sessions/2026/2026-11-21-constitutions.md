@@ -14,10 +14,15 @@ tools:
   name: Internet Archive
   detail: Downloaded the 478 PDFs and their text in the 11 "US Tribal Constitutions" items (Bureau of
     Indian Affairs files released under the Freedom of Information Act, posted by The Memory Hole 2).
+- kind: library-database
+  name: Library of Congress (loc.gov JSON item views)
+  detail: On Nov. 22, 2026, downloaded the PDF of each Library of Congress item the profiles cite (116 of
+    120; two items returned no data), one request a second.
 - kind: archive
   name: Wayback Machine
-  detail: Availability lookups for dead links; web.archive.org refused connections from the research
-    environment, so no capture was opened.
+  detail: Availability lookups for dead links; web.archive.org resets connections from the research
+    environment during the secure handshake (its network access is unrestricted), so no capture was
+    opened.
 - kind: other
   name: pdftotext, pdftoppm and Tesseract
   detail: Text of each PDF; optical character recognition at 200 dots per inch for 189 scans without a
@@ -25,7 +30,7 @@ tools:
 - kind: ai-assistant
   name: Claude (AI assistant)
   detail: The lead session wrote scripts/constitutions/ and built the catalog and histories. Small-model
-    reviewers (Claude Haiku) classified 1,029 documents in 29 batches and confirmed and summarized 1,107
+    reviewers (Claude Haiku) classified 1,144 documents in 33 batches and confirmed and summarized 1,107
     article topics in 22 batches; their answers are marked as AI readings not yet checked by the lead
     author.
 purpose: Gather the current constitution of every federally recognized nation in the dataset, with
@@ -41,6 +46,7 @@ queries:
 - https://www.tribal-institute.org/lists/constitutions.htm (Tribal Law and Policy Institute list, matched
   to nations by name)
 - https://archive.org/details/tribal-constitutions-<region> (11 items, 478 PDFs)
+- https://www.loc.gov/item/<id>/?fo=json for the 120 Library of Congress items the profiles cite
 - https://archive.org/wayback/available for 94 dead links (no captures opened)
 sources_added:
 - constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
@@ -53,8 +59,10 @@ sources_added:
 - constitution-alabama-coushatta-tribe-of-texas-2016-text
 - constitution-alabama-coushatta-tribe-of-texas-2023-text
 - constitution-alabama-quassarte-tribal-town-1939-text
+- constitution-alabama-quassarte-tribal-town-1939-text-2
 - constitution-allakaket-village-1996-text
 - constitution-alutiiq-tribe-of-old-harbor-1970-text
+- constitution-angoon-community-association-1939-text
 - constitution-angoon-community-association-1963-amendment
 - constitution-angoon-community-association-1964-text
 - constitution-apache-tribe-of-oklahoma-1987-text
@@ -65,6 +73,7 @@ sources_added:
 - constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
 - constitution-bay-mills-indian-community-1936-text-2
 - constitution-big-lagoon-rancheria-1985-text
+- constitution-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-1936-text
 - constitution-birch-creek-tribe-1999-text
 - constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1935-text-2
 - constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1950-amendment
@@ -73,6 +82,7 @@ sources_added:
 - constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
 - constitution-blue-lake-rancheria-2001-text
 - constitution-bridgeport-indian-colony-1994-text
+- constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
 - constitution-caddo-nation-of-oklahoma-1976-text
 - constitution-caddo-nation-of-oklahoma-2002-amendment
 - constitution-caddo-nation-of-oklahoma-2002-text
@@ -92,6 +102,7 @@ sources_added:
 - constitution-chilkat-indian-village-2006-text
 - constitution-chilkoot-indian-association-1941-text
 - constitution-chilkoot-indian-association-1941-text-2
+- constitution-chilkoot-indian-association-1941-text-3
 - constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
 - constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-3
 - constitution-chitimacha-tribe-of-louisiana-2010-text
@@ -99,6 +110,7 @@ sources_added:
 - constitution-citizen-potawatomi-nation-1987-text
 - constitution-colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-1975-text
 - constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+- constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
 - constitution-confederated-tribes-of-the-umatilla-indian-reservation-1949-text-2
 - constitution-confederated-tribes-of-the-umatilla-indian-reservation-1992-text
 - constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
@@ -141,8 +153,10 @@ sources_added:
 - constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-1993-text
 - constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-1993-text-2
 - constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+- constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1936-text
 - constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
 - constitution-fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation-1972-text
+- constitution-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation-1936-text
 - constitution-fort-sill-chiricahua-warm-springs-apache-tribe-1977-text
 - constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
 - constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
@@ -158,6 +172,7 @@ sources_added:
 - constitution-havasupai-tribe-of-the-havasupai-reservation-2005-amendment
 - constitution-ho-chunk-nation-of-wisconsin-1963-text
 - constitution-ho-chunk-nation-of-wisconsin-1994-text
+- constitution-hoonah-indian-association-1939-text-2
 - constitution-hoopa-valley-tribe-2008-text
 - constitution-hopi-tribe-of-arizona-1936-text-2
 - constitution-hopi-tribe-of-arizona-1993-text
@@ -165,7 +180,8 @@ sources_added:
 - constitution-hopland-band-of-pomo-indians-2009-text
 - constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
 - constitution-huslia-village-1995-text
-- constitution-hydaburg-cooperative-association-1938-text-2
+- constitution-hydaburg-cooperative-association-1938-text
+- constitution-hydaburg-cooperative-association-1938-text-3
 - constitution-iipay-nation-of-santa-ysabel-2018-text
 - constitution-ione-band-of-miwok-indians-of-california-2002-text
 - constitution-iowa-tribe-of-kansas-and-nebraska-1973-text
@@ -197,11 +213,13 @@ sources_added:
 - constitution-kenaitze-indian-tribe-1997-text-2
 - constitution-kenaitze-indian-tribe-2019-text
 - constitution-keweenaw-bay-indian-community-1936-text
+- constitution-kialegee-tribal-town-1941-text-2
 - constitution-kickapoo-traditional-tribe-of-texas-2018-text
 - constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
 - constitution-kickapoo-tribe-of-oklahoma-1977-text
 - constitution-king-island-native-community-1939-text
 - constitution-king-island-native-community-1939-text-2
+- constitution-king-island-native-community-1939-text-3
 - constitution-kiowa-tribe-1982-text
 - constitution-kiowa-tribe-2017-text
 - constitution-klamath-tribes-2013-text
@@ -211,6 +229,7 @@ sources_added:
 - constitution-knik-tribe-1991-text
 - constitution-kokhanok-village-2004-text
 - constitution-kootenai-tribe-of-idaho-1947-text-2
+- constitution-kootenai-tribe-of-idaho-1947-text-3
 - constitution-koyukuk-native-village-1994-text
 - constitution-la-jolla-band-of-luiseno-indians-1962-text
 - constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
@@ -232,6 +251,8 @@ sources_added:
 - constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
 - constitution-lumbee-tribe-of-north-carolina-2003-text
 - constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text
+- constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text-2
+- constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1936-text
 - constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
 - constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
 - constitution-mashantucket-pequot-indian-tribe-1988-text
@@ -242,6 +263,7 @@ sources_added:
 - constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
 - constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1981-text
 - constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+- constitution-metlakatla-indian-community-annette-island-reserve-1944-text-2
 - constitution-miami-tribe-of-oklahoma-1964-amendment
 - constitution-miami-tribe-of-oklahoma-2008-text
 - constitution-miccosukee-tribe-of-indians-1977-text
@@ -259,14 +281,20 @@ sources_added:
 - constitution-native-village-of-akutan-1991-text
 - constitution-native-village-of-atka-1939-text-2
 - constitution-native-village-of-atka-1939-text-3
+- constitution-native-village-of-atka-1939-text-4
 - constitution-native-village-of-barrow-inupiat-traditional-government-1940-text
+- constitution-native-village-of-barrow-inupiat-traditional-government-1940-text-2
+- constitution-native-village-of-buckland-1950-text-2
 - constitution-native-village-of-cantwell-1968-text
 - constitution-native-village-of-chenega-1940-text
+- constitution-native-village-of-chenega-1940-text-2
 - constitution-native-village-of-chignik-lagoon-2026-text
 - constitution-native-village-of-chitina-2026-text
 - constitution-native-village-of-deering-1945-text
 - constitution-native-village-of-diomede-1940-text
+- constitution-native-village-of-diomede-1940-text-2
 - constitution-native-village-of-eagle-1989-text
+- constitution-native-village-of-elim-1939-text-2
 - constitution-native-village-of-eyak-1980-text
 - constitution-native-village-of-eyak-2023-text
 - constitution-native-village-of-false-pass-1990-text
@@ -278,55 +306,86 @@ sources_added:
 - constitution-native-village-of-kanatak-1941-text
 - constitution-native-village-of-kanatak-2001-text
 - constitution-native-village-of-karluk-1939-text
+- constitution-native-village-of-karluk-1939-text-2
 - constitution-native-village-of-kivalina-1940-text
+- constitution-native-village-of-kivalina-1940-text-2
 - constitution-native-village-of-kotzebue-1947-text
+- constitution-native-village-of-kotzebue-1947-text-2
 - constitution-native-village-of-koyuk-1946-text
+- constitution-native-village-of-koyuk-1946-text-2
 - constitution-native-village-of-kwigillingok-1949-text
-- constitution-native-village-of-minto-1939-text-2
+- constitution-native-village-of-kwinhagak-1948-text-2
+- constitution-native-village-of-mekoryuk-1940-text-2
+- constitution-native-village-of-minto-1939-text
+- constitution-native-village-of-minto-1939-text-3
 - constitution-native-village-of-nanwalek-1995-text
 - constitution-native-village-of-napaimute-2002-text
-- constitution-native-village-of-noatak-1939-text-2
+- constitution-native-village-of-napakiak-1946-text-2
+- constitution-native-village-of-nikolski-1939-text-2
+- constitution-native-village-of-noatak-1939-text
+- constitution-native-village-of-noatak-1939-text-3
 - constitution-native-village-of-nunapitchuk-1940-text
+- constitution-native-village-of-nunapitchuk-1940-text-2
 - constitution-native-village-of-perryville-1950-text
+- constitution-native-village-of-perryville-1950-text-2
 - constitution-native-village-of-point-hope-1940-text
+- constitution-native-village-of-point-hope-1940-text-2
 - constitution-native-village-of-point-lay-1946-text
 - constitution-native-village-of-point-lay-1946-text-2
+- constitution-native-village-of-point-lay-1946-text-3
+- constitution-native-village-of-saint-michael-1948-text-2
 - constitution-native-village-of-savoonga-1940-text
 - constitution-native-village-of-savoonga-1940-text-2
+- constitution-native-village-of-savoonga-1940-text-3
 - constitution-native-village-of-selawik-1940-text
+- constitution-native-village-of-selawik-1940-text-2
 - constitution-native-village-of-shaktoolik-1940-text
 - constitution-native-village-of-shaktoolik-1940-text-2
+- constitution-native-village-of-shaktoolik-1940-text-3
+- constitution-native-village-of-shishmaref-1939-text
 - constitution-native-village-of-shungnak-1946-text-2
+- constitution-native-village-of-shungnak-1946-text-3
+- constitution-native-village-of-stevens-1939-text-2
 - constitution-native-village-of-stevens-1990-text
 - constitution-native-village-of-stevens-1990-text-2
 - constitution-native-village-of-tanacross-1942-text
 - constitution-native-village-of-tanacross-1942-text-2
+- constitution-native-village-of-tanacross-1942-text-3
 - constitution-native-village-of-tanana-1939-text
 - constitution-native-village-of-tanana-1947-text
 - constitution-native-village-of-tanana-1989-text
 - constitution-native-village-of-tanana-1989-text-2
 - constitution-native-village-of-tatitlek-1939-text-2
 - constitution-native-village-of-tatitlek-1946-text
+- constitution-native-village-of-tatitlek-1946-text-2
 - constitution-native-village-of-tetlin-1940-text
 - constitution-native-village-of-tetlin-1940-text-2
+- constitution-native-village-of-tetlin-1940-text-3
 - constitution-native-village-of-tununak-1939-text
 - constitution-native-village-of-tununak-1947-text
 - constitution-native-village-of-tyonek-1939-text-2
 - constitution-native-village-of-tyonek-1939-text-3
+- constitution-native-village-of-tyonek-1939-text-4
 - constitution-native-village-of-unalakleet-1939-text-2
+- constitution-native-village-of-unalakleet-1939-text-3
 - constitution-native-village-of-unga-1989-text
 - constitution-native-village-of-venetie-tribal-government-1940-text
 - constitution-native-village-of-venetie-tribal-government-1940-text-2
+- constitution-native-village-of-venetie-tribal-government-1940-text-3
 - constitution-native-village-of-wales-1939-text-2
+- constitution-native-village-of-wales-1939-text-3
 - constitution-native-village-of-white-mountain-1939-text
+- constitution-native-village-of-white-mountain-1939-text-2
 - constitution-nez-perce-tribe-2005-text
 - constitution-ninilchik-village-2010-text
 - constitution-nisqually-indian-tribe-1994-text
 - constitution-nome-eskimo-community-1939-text
 - constitution-nome-eskimo-community-1939-text-2
+- constitution-nome-eskimo-community-1939-text-3
 - constitution-nooksack-indian-tribe-2013-text
 - constitution-noorvik-native-community-1939-text-2
 - constitution-noorvik-native-community-1939-text-3
+- constitution-noorvik-native-community-1939-text-4
 - constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text
 - constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
 - constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
@@ -342,12 +401,17 @@ sources_added:
 - constitution-oglala-sioux-tribe-2008-text
 - constitution-omaha-tribe-of-nebraska-2025-text
 - constitution-oneida-nation-2015-text
+- constitution-organized-village-of-grayling-1948-text-2
 - constitution-organized-village-of-grayling-1964-amendment
 - constitution-organized-village-of-kake-1948-text
 - constitution-organized-village-of-kake-1948-text-2
+- constitution-organized-village-of-kake-1948-text-3
 - constitution-organized-village-of-kasaan-1938-text
+- constitution-organized-village-of-kasaan-1938-text-3
 - constitution-organized-village-of-kwethluk-1940-text
 - constitution-organized-village-of-kwethluk-1940-text-2
+- constitution-organized-village-of-kwethluk-1940-text-3
+- constitution-organized-village-of-saxman-1941-text
 - constitution-otoe-missouria-tribe-of-indians-2009-text
 - constitution-ottawa-tribe-of-oklahoma-1980-text
 - constitution-ottawa-tribe-of-oklahoma-1980-text-2
@@ -365,7 +429,8 @@ sources_added:
 - constitution-peoria-tribe-of-indians-of-oklahoma-1939-text-2
 - constitution-peoria-tribe-of-indians-of-oklahoma-1981-text
 - constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
-- constitution-petersburg-indian-association-1948-text-2
+- constitution-petersburg-indian-association-1948-text
+- constitution-petersburg-indian-association-1948-text-3
 - constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
 - constitution-pit-river-tribe-1987-text
 - constitution-pit-river-tribe-1987-text-2
@@ -382,16 +447,19 @@ sources_added:
 - constitution-prairie-island-indian-community-in-the-state-of-minnesota-1936-text-3
 - constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
 - constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+- constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-3
 - constitution-pueblo-of-isleta-1947-text
 - constitution-pueblo-of-isleta-1947-text-2
 - constitution-pueblo-of-isleta-1970-text
 - constitution-pueblo-of-isleta-2014-text
 - constitution-pueblo-of-santa-clara-1935-text-2
 - constitution-pueblo-of-santa-clara-1939-text
+- constitution-pueblo-of-santa-clara-1939-text-2
 - constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
 - constitution-qagan-tayagungin-tribe-of-sand-point-2004-text
 - constitution-qawalangin-tribe-of-unalaska-1997-text
 - constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+- constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-3
 - constitution-quechan-tribe-of-the-fort-yuma-indian-reservation-1974-text
 - constitution-quileute-tribe-of-the-quileute-reservation-2026-text
 - constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1936-text-2
@@ -420,6 +488,7 @@ sources_added:
 - constitution-saint-regis-mohawk-tribe-1995-text
 - constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
 - constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1947-text
+- constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
 - constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
 - constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
 - constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
@@ -436,6 +505,7 @@ sources_added:
 - constitution-seneca-nation-of-indians-1898-text
 - constitution-seneca-nation-of-indians-2026-text
 - constitution-shageluk-native-village-1949-text-2
+- constitution-shageluk-native-village-1949-text-3
 - constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1969-text
 - constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
 - constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
@@ -458,8 +528,10 @@ sources_added:
 - constitution-spokane-tribe-of-the-spokane-reservation-2020-text
 - constitution-spokane-tribe-of-the-spokane-reservation-2021-text
 - constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+- constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
 - constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
-- constitution-stebbins-community-association-1939-text-2
+- constitution-stebbins-community-association-1939-text
+- constitution-stebbins-community-association-1939-text-3
 - constitution-stillaguamish-tribe-of-indians-of-washington-1953-text
 - constitution-stillaguamish-tribe-of-indians-of-washington-1986-text
 - constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
@@ -489,6 +561,7 @@ sources_added:
 - constitution-the-osage-nation-2024-text
 - constitution-the-seminole-nation-of-oklahoma-1969-text
 - constitution-the-seminole-nation-of-oklahoma-1989-text
+- constitution-thlopthlocco-tribal-town-1938-text
 - constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1974-amendment
 - constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
 - constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1986-amendment
@@ -505,12 +578,14 @@ sources_added:
 - constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
 - constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-3
 - constitution-tuluksak-native-community-1949-text
+- constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-1936-text
 - constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-1937-text
 - constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
 - constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-1990-text
 - constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
 - constitution-twenty-nine-palms-band-of-mission-indians-of-california-1972-text
 - constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+- constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text-3
 - constitution-upper-mattaponi-tribe-2023-text
 - constitution-upper-sioux-community-1995-text
 - constitution-upper-skagit-indian-tribe-1977-text
@@ -533,6 +608,7 @@ sources_added:
 - constitution-winnemucca-indian-colony-of-nevada-1971-text
 - constitution-winnemucca-indian-colony-of-nevada-1971-text-2
 - constitution-wrangell-cooperative-association-1947-text
+- constitution-wrangell-cooperative-association-1947-text-2
 - constitution-wyandotte-nation-1937-text-2
 - constitution-wyandotte-nation-1985-text
 - constitution-wyandotte-nation-1999-text
@@ -540,12 +616,13 @@ sources_added:
 - constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
 - constitution-yavapai-prescott-indian-tribe-1975-text
 - constitution-yocha-dehe-wintun-nation-1976-text
+- constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
 - constitution-yomba-shoshone-tribe-of-the-yomba-reservation-2014-text
 - constitution-yurok-tribe-of-the-yurok-reservation-1993-text
 - constitution-zuni-tribe-of-the-zuni-reservation-2014-text
 limits: >-
-  The 120 Library of Congress copies that profiles cite were not fetched (the site blocks automated
-  access), and Wayback Machine copies of dead links could not be opened. AI reviewers read the title,
+  Wayback Machine copies of dead links could not be opened, and two cited Library of Congress items
+  returned no data. AI reviewers read the title,
   opening, closing and headings of each document and at most 3,500 characters of each article; none of
   their readings has been checked by the lead author. Scanned texts have reading errors, and 154
   documents have no legible date. Changes between versions are inferred by script and none was read
@@ -554,15 +631,16 @@ limits: >-
 ---
 
 Output: the catalog in [`research/constitutions/`](../../constitutions/README.md)
-(coverage by nation, documents and articles), 200 version histories in
-`content/documents/`, 500 source records, and a `document_version` on 300
+(coverage by nation, documents and articles), 219 version histories in
+`content/documents/`, 571 source records, and a `document_version` on 330
 profile facts that cite a text a later version replaced, naming the version
 they describe. The scripts are in `scripts/constitutions/`.
 
 Method: governing-document links already in the profiles were the starting
 point; each nation's own site was then crawled for constitution links, and the
-National Indian Law Library, the Tribal Law and Policy Institute list and the
-Bureau of Indian Affairs files on the Internet Archive were added. Each
+National Indian Law Library, the Tribal Law and Policy Institute list, the
+Bureau of Indian Affairs files on the Internet Archive and (on Nov. 22) the
+Library of Congress copies the profiles cite were added. Each
 document was read (text layer, page text, or optical character recognition)
 and split into articles; a word match tied articles to tracked topics. The
 University of Oklahoma pages were classified and dated by rule; every other
@@ -572,22 +650,24 @@ articles of each nation's newest text summarized by AI reviewers.
 
 Findings:
 
-- 125 nations have a current text on their own site; 51 more have a dated
+- 128 nations have a current text on their own site; 48 more have a dated
   text whose currency is not known; 174 have only the University of Oklahoma
-  pages or the Bureau's files, which are often decades old.
-- 200 nations have two or more dated versions, 540 versions in all. The
+  pages, the Library of Congress copies or the Bureau's files, which are often
+  decades old.
+- 219 nations have two or more dated versions, 630 versions in all. The
   Bureau's files hold many texts no other source had, especially for Alaska
   villages and California rancherias.
 - In the newest texts, the AI reviewers confirmed 134 articles on judicial
   power, 99 on dispute resolution, 75 on election disputes, 58 on sovereign
   immunity and 11 on peacemaking or traditional dispute resolution.
-- 189 distinct texts say amendments need the Secretary of the Interior's approval; 3
+- 212 distinct texts say amendments need the Secretary of the Interior's approval; 3
   say that requirement was removed.
 - The Native Village of Eek's council wrote in 2013 that it has no written
   constitution; it is recorded as the nation's statement.
 - Many documents were filed under the wrong nation by the sources (Tanana
   Chiefs Conference articles under several villages; Montana and Wyoming
-  scans under one nation); 81 were moved to the nation the text names.
+  scans under one nation); 83 were moved to the nation the text names. The
+  Lumbee Tribe's profile cites two Library of Congress items that are the
+  Native Village of Buckland's constitution and charter.
 
-Ruled out: the Federal Register (few constitution notices); scraping the
-Library of Congress around its access check.
+Ruled out: the Federal Register (few constitution notices).

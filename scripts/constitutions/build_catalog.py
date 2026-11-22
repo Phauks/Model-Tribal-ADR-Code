@@ -67,6 +67,8 @@ AI_REVIEWER = "AI reviewer (Claude Haiku), not yet checked by the lead author"
 LIBRARY = "national-indian-law-library"
 UNIVERSITY = "university-of-oklahoma-law-library"
 FEDERAL_FILES = "bureau-of-indian-affairs-files"
+CONGRESS_LIBRARY = "library-of-congress"
+ARCHIVAL = (UNIVERSITY, FEDERAL_FILES, CONGRESS_LIBRARY)
 SCANNED = {"optical-character-recognition", "internet-archive-optical-character-recognition"}
 
 
@@ -180,6 +182,8 @@ def publisher_kind(document):
         return UNIVERSITY
     if "narf.org" in host:
         return LIBRARY
+    if host == "www.loc.gov" or host == "tile.loc.gov":
+        return CONGRESS_LIBRARY
     if host == "archive.org" and "tribal-constitutions" in document["url"]:
         return FEDERAL_FILES
     if "tribal-institute.org" in host:
@@ -377,7 +381,7 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
 
     def preference(row):
         live = 0 if not row["wayback_timestamp"] else 1
-        own = {"nation-or-other-site": 0, LIBRARY: 1, "code-publisher": 2, UNIVERSITY: 3, FEDERAL_FILES: 4}.get(row["publisher"], 5)
+        own = {"nation-or-other-site": 0, LIBRARY: 1, "code-publisher": 2, UNIVERSITY: 3, CONGRESS_LIBRARY: 4, FEDERAL_FILES: 5}.get(row["publisher"], 6)
         layer = 0 if row["capture"]["text_method"] not in SCANNED else 1
         return (live, own, layer, row["key"])
 
@@ -414,7 +418,16 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
         versions_rows = [
             row for row in chosen if row["document_type"] in HISTORY_TYPES and row["sort_date"]
         ]
-        versions_rows.sort(key=lambda row: (row["sort_date"], row["document_type"] == "amendment", row["key"]))
+        # On the same date, archival copies come before a live one, so the
+        # live copy stays the newest version.
+        versions_rows.sort(
+            key=lambda row: (
+                row["sort_date"],
+                row["document_type"] == "amendment",
+                row["publisher"] not in ARCHIVAL,
+                row["key"],
+            )
+        )
         if not versions_rows:
             continue
         history_id = f"{nation}-constitution"
@@ -703,6 +716,8 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
             citation["container-title"] = "National Indian Law Library Tribal Law Gateway (Native American Rights Fund)"
         elif row["publisher"] == UNIVERSITY:
             citation["container-title"] = "Native American Constitution and Law Digitization Project (University of Oklahoma Law Library)"
+        elif row["publisher"] == CONGRESS_LIBRARY:
+            citation["container-title"] = "Library of Congress"
         elif row["publisher"] == FEDERAL_FILES:
             citation["container-title"] = (
                 "US Tribal Constitutions (Bureau of Indian Affairs records released under the Freedom of Information "
@@ -817,10 +832,11 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
         in_effect = [version for version in (history or {}).get("versions", []) if version["status"] == "in-effect"]
         if in_effect:
             status = "current-text-found"
-        elif history and any(row["publisher"] not in (UNIVERSITY, FEDERAL_FILES) for row in constitution_rows):
+        elif history and any(row["publisher"] not in ARCHIVAL for row in constitution_rows):
             status = "text-found-currency-unknown"
         elif history:
-            # Only the university library's pages or the Bureau's own files:
+            # Only the university library's pages, the Library of Congress
+            # copies or the Bureau's own files:
             # texts as the federal government holds them, often decades old.
             status = "archival-copies-only"
         elif constitution_rows:

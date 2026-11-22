@@ -6,8 +6,8 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: pueblo-of-santa-clara
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1935-11-23
-  to 1939. Versions are only those found; others may exist.'
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1935-11-23
+  to 1939-12-19. Versions are only those found; others may exist.'
 versions:
 - id: 1935-text
   label: CONSTITUTION AND BYLAWS (1935)
@@ -64,7 +64,7 @@ versions:
   label: Constitution and Bylaws of the Pueblo of Santa Clara, New Mexico as amended through Amendment
     I, December 19, 1939
   event: edition
-  status: in-effect
+  status: superseded
   dates:
     listed: '1939'
   supersedes:
@@ -77,10 +77,28 @@ versions:
     sha256: 5a975cd15c995180679b578c3925a3b52994c5b408827900911cfd11bbd3bbf2
     pages: 10
   note: The text also prints approved 1935-12-20, which belong to the earlier text it compiles. The date
-    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
-    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
-    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
-    by the lead author.
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+- id: 1939-text-2
+  label: Constitution and Bylaws of the Pueblo of Santa Clara, New Mexico as amended through Amendment,
+    1939-12-19
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-12-19'
+  supersedes:
+  - 1939-text
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pueblo-of-santa-clara/86a88c908ace2927.pdf
+    sha256: 86a88c908ace29277da2bf14230a1728db77b57106020952c7e366614df22d51
+    pages: 13
+  note: The text also prints approved 1935-12-20, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,

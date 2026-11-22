@@ -22,9 +22,9 @@ version they describe.
 
 | Coverage status | Nations | Meaning |
 | --- | ---: | --- |
-| `current-text-found` | 125 | The newest dated text came from the nation's own site (or another live site) on Nov. 21, 2026 |
-| `text-found-currency-unknown` | 51 | A dated text from a live site or library, but not shown to be the latest |
-| `archival-copies-only` | 174 | Only the University of Oklahoma Law Library pages or the Bureau of Indian Affairs files below, often decades old |
+| `current-text-found` | 128 | The newest dated text came from the nation's own site (or another live site) on Nov. 21, 2026 |
+| `text-found-currency-unknown` | 48 | A dated text from a live site or library, but not shown to be the latest |
+| `archival-copies-only` | 174 | Only the University of Oklahoma Law Library pages, the Library of Congress copies or the Bureau of Indian Affairs files below, often decades old |
 | `undated-text-only` | 41 | A text was found but no date could be read from it |
 | `listed-but-not-retrieved` | 29 | A profile or list cites a link that could not be fetched |
 | `nation-says-no-written-constitution` | 1 | A document from the nation says so (Native Village of Eek, 2013 letter) |
@@ -35,9 +35,9 @@ villages and California rancherias have constitutions that are not online,
 and some nations keep theirs to citizens; the project records what it found
 and does not guess.
 
-Totals: 1,164 documents (10,669 pages) for 396 nations, of which 1,017 are
-distinct texts; 200 version histories (nations with two or more dated
-versions) holding 540 versions; 500 new source records; 2,012 article rows.
+Totals: 1,279 documents (11,374 pages) for 396 nations, of which 1,130 are
+distinct texts; 219 version histories (nations with two or more dated
+versions) holding 630 versions; 571 new source records; 2,012 article rows.
 
 ## Files
 
@@ -63,15 +63,15 @@ A nation with one dated version gets a source record but no history record
 | --- | ---: | --- |
 | Bureau of Indian Affairs files ("US Tribal Constitutions", 11 Internet Archive items) | 497 | Scans of the Bureau's own constitution files released under the Freedom of Information Act and posted by The Memory Hole 2 with the Public Domain Mark; the National Indian Law Library's constitutions page describes the set. Text is the Internet Archive's optical character recognition. |
 | University of Oklahoma Law Library, Native American Constitution and Law Digitization Project | 357 | Mostly texts of 1934 to the 1970s with their approval certificates. Classified by the page's file name and dated by rule from the certificates. |
+| Library of Congress | 115 | The copies the profiles cite, downloaded on Nov. 22, 2026 through each item's JSON view (`?fo=json`); 2 of the 120 cited items returned no data. Mostly 1930s and 1940s printed texts, with a text layer. |
 | Nation websites and other live sites | 258 | Crawled from each profile's official website (home page, up to eight navigation pages, two links deep). |
 | National Indian Law Library Tribal Law Gateway (Native American Rights Fund) | 51 | |
 | Tribal Law and Policy Institute constitutions list | 1 | The list was matched to nations; most of its links point to the sites above. |
 
-The Library of Congress copies that profiles cite (120 links, tile.loc.gov)
-were not fetched: the site's automated-access check blocks scripts, and the
-project did not try to get around it. They are on the pull list. The Wayback
-Machine (web.archive.org) refused connections from the research environment,
-so dead links were not opened there; they are on the pull list too.
+The Wayback Machine (web.archive.org) resets connections from the research
+environment during the secure handshake (the environment's own network access
+is unrestricted), so dead links were not opened there; they are on the pull
+list.
 
 ## How rows were classified
 
@@ -79,7 +79,7 @@ so dead links were not opened there; they are on the pull list too.
   (`cons`) or charter (`chrt`); adoption and approval dates come from the
   last certificates on the page, skipping the dates of the acts the nation
   organized under (June 18, 1934; May 1, 1936; June 26, 1936).
-- **Everything else:** an AI reviewer (Claude Haiku, 29 batches) read the
+- **Everything else:** an AI reviewer (Claude Haiku, 33 batches) read the
   title, opening, closing and article headings of each document and gave its
   type, whether it belongs to the nation searched for, printed title,
   completeness, dates, amendments named, whether the text requires the
@@ -88,13 +88,15 @@ so dead links were not opened there; they are on the pull list too.
   author yet.
 - **Wrong nation:** a document the reviewer said belongs to another nation is
   moved to that nation only when the name matches one federally recognized
-  nation closely (81 documents); otherwise it is left out.
+  nation closely (83 documents); otherwise it is left out.
 - **Copies:** texts of the same year and kind that share at least 90% of
   their three-word runs are one version; a date one copy prints and another
   lacks is taken from the copy that has it, and the note says so. The
   primary copy is the live one, preferring the nation's own site, then the
-  National Indian Law Library, a code publisher, the University of Oklahoma
-  and the Bureau's files, and a text layer over scanned text.
+  National Indian Law Library, a code publisher, the University of Oklahoma,
+  the Library of Congress and the Bureau's files, and a text layer over
+  scanned text. On the same date, archival copies are ordered before a live
+  one.
 
 ## Versions, statuses and changes
 
@@ -127,7 +129,7 @@ so dead links were not opened there; they are on the pull list too.
 
 ## The documents themselves
 
-The PDFs and pages (2,456 files, about 1.9 GB with their text) are kept
+The PDFs and pages (2,688 files, about 2.0 GB with their text) are kept
 privately with the project's working files under
 `research/captures/constitutions/`, not in this repository. Constitutions are
 the nations' own law: the project cites and links them and records facts from
@@ -149,7 +151,7 @@ nation organizing under the Act adopts its constitution, and amendments, in an
 election called by the Secretary of the Interior, and the Secretary approves
 them; many of the approval certificates in these texts are that approval.
 Some nations have since amended their constitutions to remove the
-Secretarial approval requirement; 189 of the distinct texts here say
+Secretarial approval requirement; 212 of the distinct texts here say
 amendments need the Secretary's approval, and 3 say the requirement was
 removed (reviewer readings, not checked). The election rules are in 25 C.F.R.
 part 81 (Secretarial Elections), and Oklahoma and Alaska nations organized
@@ -170,7 +172,7 @@ record yet; they are on the pull list.
   name and moved back only when the reviewer named the right one.
 - `added` and `removed` changes rest on word matches and are the weakest
   rows here.
-- The Library of Congress copies, Wayback Machine copies of dead links, and
+- Wayback Machine copies of dead links, 2 Library of Congress items, and
   constitutions not online were not reached.
 - Citation form: The Bluebook's 22nd edition adds a rule for Tribal Nations
   (Rule 22, constitutions at 22.2); the source records use the project's

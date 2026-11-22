@@ -6,15 +6,34 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: angoon-community-association
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-11-15
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-11-15
   to 1964-08-06. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
-  label: CONSTITUTION AND BY-LAWS (1939)
+  label: Constitution and By-laws of the Angoon Community Association, Alaska (1939)
   event: original
   status: superseded
   dates:
     adopted: '1939-11-15'
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/angoon-community-association/45a7f5d1500c2fd3.pdf
+    sha256: 45a7f5d1500c2fd383f6223dbd246d08c3cf737452e9e9be4d6f16daf213a083
+    pages: 8
+  note: The text prints an approval date (1939-05-10) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-11-15'
+  supersedes:
+  - 1939-text
   source: university-of-oklahoma-indian-reorganization-act-consangoon
   confidence: medium
   verification: inferred
@@ -23,9 +42,11 @@ versions:
     sha256: 6872aedfaeaacb1838c07a186f37e43eebf49bfa753895cf626141a716d001b7
     pages: 7
   note: 'The text prints an approval date (1939-05-10) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
-    found (project inference). Dates read from another copy of the same text: adopted 1939-11-15. Dates
-    read by rule from the certificates on the library page.'
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-11-15, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1939-11-15. Dates read by rule from the certificates
+    on the library page.'
 - id: 1963-amendment
   label: AMENDMENTS TO THE CONSTITUTION AND BYLAWS OF THE ANGOON COMMUNITY ASSOCIATION (1963)
   event: amendment
@@ -37,7 +58,7 @@ versions:
     action: approved
     locator: approval certificate
   amends:
-  - 1939-text
+  - 1939-text-2
   source: constitution-angoon-community-association-1963-amendment
   confidence: medium
   verification: read-in-full
@@ -55,7 +76,7 @@ versions:
   dates:
     listed: '1964-08-06'
   supersedes:
-  - 1939-text
+  - 1939-text-2
   source: constitution-angoon-community-association-1964-text
   confidence: medium
   verification: read-in-full

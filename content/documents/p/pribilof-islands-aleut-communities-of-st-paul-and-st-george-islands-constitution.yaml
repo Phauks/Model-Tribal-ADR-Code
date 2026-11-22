@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1950-05-03
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1950-05-03
   to 1950-06-12. Versions are only those found; others may exist.'
 versions:
 - id: 1950-text
@@ -28,9 +28,9 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1950-text-2
-  label: CONSTITUTION AND BY-LAWS OF THE ALEUT COMMUNITY OF ST. PAUL ISLAND, TERRITORY OF ALASKA (1950)
+  label: Constitution and Bylaws of the Aleut Community of St. Paul Island, Territory of Alaska (1950)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     adopted: '1950-06-12'
   supersedes:
@@ -39,12 +39,33 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
+    path: research/captures/constitutions/pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands/720cc2d36a18d472.pdf
+    sha256: 720cc2d36a18d47220160f5ba445afff4eb886cc331842c482831e522c1aaabb
+    pages: 7
+  note: The text prints an approval date (1950-05-03) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1950-text-3
+  label: CONSTITUTION AND BY-LAWS OF THE ALEUT COMMUNITY OF ST. PAUL ISLAND, TERRITORY OF ALASKA (1950)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1950-06-12'
+  supersedes:
+  - 1950-text-2
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
     path: research/captures/constitutions/pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands/fc536a3b070650ae.pdf
     sha256: fc536a3b070650ae14d775efb180747f825069e301a029d8199e44bda03b4a46
     pages: 7
   note: The text prints an approval date (1950-05-03) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
-    (Claude Haiku), not yet checked by the lead author.
+    to hold the election, so it is left out of dates. The text also prints adopted 1950-06-12, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
 found_in:
 - 2026-11-21-constitutions
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,

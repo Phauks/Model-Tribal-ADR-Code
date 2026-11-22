@@ -6,15 +6,34 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: petersburg-indian-association
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1948-05-21
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1948-05-21
   to 1948-05-21. Versions are only those found; others may exist.'
 versions:
 - id: 1948-text
-  label: CONSTITUTION AND BY-LAWS (1948)
+  label: Constitution and By-laws of the Petersburg Indian Association, Alaska (1948)
   event: original
   status: superseded
   dates:
     adopted: '1948-05-21'
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/petersburg-indian-association/b1f123386fc4069a.pdf
+    sha256: b1f123386fc4069aa094f3bbb77c9290ee6fe1b5d8f665487ab9915648a81ce0
+    pages: 9
+  note: The text prints an approval date (1948-03-22) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1948-text-2
+  label: CONSTITUTION AND BY-LAWS (1948)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1948-05-21'
+  supersedes:
+  - 1948-text
   source: university-of-oklahoma-indian-reorganization-act-petecons
   confidence: medium
   verification: inferred
@@ -22,23 +41,31 @@ versions:
     path: research/captures/constitutions/petersburg-indian-association/b36125782089e85e.html
     sha256: b36125782089e85e1b6aefc7ef3d3568a36913fe480629f5769ee6d64143f275
   note: 'The text prints an approval date (1948-03-22) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
-    found (project inference). Dates read from another copy of the same text: adopted 1948-05-21. Dates
-    read by rule from the certificates on the library page.'
+    to hold the election, so it is left out of dates. The text also prints adopted 1948-05-21, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1948-05-21. Dates read by rule from the certificates
+    on the library page.'
   clauses:
   - topic: removal-and-recall
     locator: Article VII (REMOVAL OF OFFICERS)
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
-- id: 1948-text-2
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1948-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1948-text-3
   label: CONSTITUTION AND BY-LAWS OF THE PETERSBURG INDIAN ASSOCIATION, ALASKA (1948)
   event: edition
   status: unknown
   dates:
     listed: '1948-05-21'
   supersedes:
-  - 1948-text
-  source: constitution-petersburg-indian-association-1948-text-2
+  - 1948-text-2
+  source: constitution-petersburg-indian-association-1948-text-3
   confidence: medium
   verification: read-in-full
   capture:
@@ -52,7 +79,7 @@ versions:
     by the lead author.
   changes:
   - topic: removal-and-recall
-    compared_with: 1948-text
+    compared_with: 1948-text-2
     change: removed
     verification: inferred
     note: A word match found an article on this topic in the earlier text and none in this one.

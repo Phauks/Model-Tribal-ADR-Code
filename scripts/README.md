@@ -111,6 +111,7 @@ between steps) go in a scratch folder.
 | `constitutions/collect_seeds.py` | Lists each federal profile's governing-document links and official websites | `scripts/requirements.txt` |
 | `constitutions/fetch_documents.py` | Fetches those links and crawls each nation's site for constitution links (one request a second per host), saving each document and its text | `pip install requests beautifulsoup4 lxml`, `pdftotext` |
 | `constitutions/find_more_versions.py` | `listed` adds the Tribal Law and Policy Institute list and looks up dead links in the Wayback Machine; `versions` lists earlier captures of known links | `requests` |
+| `constitutions/fetch_library_of_congress.py` | Downloads the PDF of each Library of Congress item the profiles cite, through the item's JSON view | `pip install requests`, `pdfinfo`, `pdftotext` |
 | `constitutions/fetch_archive_collection.py` | Downloads the Bureau of Indian Affairs constitution files on the Internet Archive and matches each file name to a nation | `requests` |
 | `constitutions/combine_found.py` | Joins the fetched lists into one | Python 3 standard library |
 | `constitutions/read_documents.py` | Reads each document (optical character recognition for scans), splits it into articles and tags articles by topic | `pdftotext`, `pdftoppm`, `tesseract` |

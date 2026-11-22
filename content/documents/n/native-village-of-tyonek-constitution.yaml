@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-tyonek
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-23
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-05-23
   to 1939-11-27. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
@@ -47,14 +47,34 @@ versions:
     found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
     yet checked by the lead author.
 - id: 1939-text-3
+  label: Constitution and By-Laws of the Native Village of Tyonek (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-11-27'
+  supersedes:
+  - 1939-text-2
+  source: constitution-native-village-of-tyonek-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-tyonek/9385faf1ed5bdc62.pdf
+    sha256: 9385faf1ed5bdc625e9d74c19da6fe6f3f1ee6f41baec4971c69252605fb7912
+    pages: 6
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-11-27, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1939-text-4
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF TYONEK (1939)
   event: edition
   status: unknown
   dates:
     listed: '1939-11-27'
   supersedes:
-  - 1939-text-2
-  source: constitution-native-village-of-tyonek-1939-text-3
+  - 1939-text-3
+  source: constitution-native-village-of-tyonek-1939-text-4
   confidence: medium
   verification: read-in-full
   capture:

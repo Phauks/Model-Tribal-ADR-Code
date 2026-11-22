@@ -6,13 +6,13 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: organized-village-of-grayling
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1948-09-10
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1948-09-10
   to 1964-06-06. Versions are only those found; others may exist.'
 versions:
 - id: 1948-text
   label: CONSTITUTION AND BY-LAWS (1948)
   event: original
-  status: unknown
+  status: superseded
   dates:
     adopted: '1948-09-10'
   source: university-of-oklahoma-indian-reorganization-act-holicons
@@ -22,8 +22,29 @@ versions:
     path: research/captures/constitutions/organized-village-of-grayling/52e2b4bb53e17f57.html
     sha256: 52e2b4bb53e17f574224da1d8a02ee4bbaf46b67890e7f0c69bb969c00954ace
   note: 'The text prints an approval date (1948-05-17) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Dates read from another copy of the same text: adopted
-    1948-09-10. Dates read by rule from the certificates on the library page.'
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1948-09-10. Dates
+    read by rule from the certificates on the library page.'
+- id: 1948-text-2
+  label: Constitution and By-Laws of the Organized Village of Holikachuk (1948)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1948-09-10'
+  supersedes:
+  - 1948-text
+  source: constitution-organized-village-of-grayling-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-grayling/e5b545f51a22e582.pdf
+    sha256: e5b545f51a22e5826f28d1278db9467db668424377f9a258fa0c9ae7e5811731
+    pages: 6
+  note: The text prints an approval date (1948-05-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1948-09-10, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
 - id: 1964-amendment
   label: Amendment I to the Constitution and Bylaws of the Organized Village of Holikachuk, Alaska as
     amended through Amendment I (Corporate Charter), 1964-06-06
@@ -32,7 +53,7 @@ versions:
   dates:
     adopted: '1964-06-06'
   amends:
-  - 1948-text
+  - 1948-text-2
   source: constitution-organized-village-of-grayling-1964-amendment
   confidence: medium
   verification: read-in-full

@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-nunapitchuk
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-05-23
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-23
   to 1940-01-02. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
@@ -30,7 +30,7 @@ versions:
 - id: 1940-text
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF NUNAPITCHUK (1940)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     adopted: '1940-01-02'
   supersedes:
@@ -43,8 +43,29 @@ versions:
     sha256: 9f3afb522931bd36bbc13a20457c3463712a44aaa693638e273744b87a29348b
     pages: 6
   note: The text prints an approval date (1939-05) before the adoption date; it may be the approval to
-    hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
-    (Claude Haiku), not yet checked by the lead author.
+    hold the election, so it is left out of dates. Marked superseded because a later dated text was found
+    (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+- id: 1940-text-2
+  label: Constitution and By-laws of the Native Village of Nunapitchuk (1940)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1940-01-02'
+  supersedes:
+  - 1940-text
+  source: constitution-native-village-of-nunapitchuk-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-nunapitchuk/b888d4e4685f8a7a.pdf
+    sha256: b888d4e4685f8a7a703e5e35aaaaf66dbd11bfc591a597f15f1d3a691489ecc8
+    pages: 5
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1940-01-02, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
 found_in:
 - 2026-11-21-constitutions
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,

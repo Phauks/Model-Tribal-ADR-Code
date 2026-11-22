@@ -6,12 +6,32 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1941-12-18
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-01-28
   to 1971-07. Versions are only those found; others may exist.'
 versions:
+- id: 1936-text
+  label: Constitution and By-laws of the Fort Bidwell Indian Community of the Fort Bidwell Reservation,
+    California (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california/889b42039301620c.pdf
+    sha256: 889b42039301620c1f7b57d26f8b7c6df2b5826ea64cf18d4220b3faa7cbb9b2
+    pages: 7
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1941-text
   label: CONSTITUTION AND BY-LAWS OF THE (1941)
-  event: original
+  event: edition
   status: superseded
   dates:
     approved: '1941-12-18'
@@ -19,6 +39,8 @@ versions:
     authority: secretary-of-the-interior
     action: approved
     locator: approval certificate
+  supersedes:
+  - 1936-text
   source: university-of-oklahoma-indian-reorganization-act-ftbidcons
   confidence: medium
   verification: inferred
@@ -32,6 +54,12 @@ versions:
     locator: Article VII (VACANCIES AND REMOVAL FROM OFFICE)
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1971-text
   label: CONSTITUTION AND BY-LAWS OF THE FORT BIDWELL INDIAN COMMUNITY OF THE FORT BIDWELL RESERVATION
     OF CALIFORNIA as amended through Amendment XII, 1971-07

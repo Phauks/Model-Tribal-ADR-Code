@@ -6,7 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-point-lay
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-23
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-05-23
   to 1946-03-22. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
@@ -49,7 +49,7 @@ versions:
 - id: 1946-text-2
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF POINT LAY (1946)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     listed: '1946-03-22'
   supersedes:
@@ -61,6 +61,26 @@ versions:
     path: research/captures/constitutions/native-village-of-point-lay/ada6ddd3b5538b3f.pdf
     sha256: ada6ddd3b5538b3f84d3d6fa9ce976f84f8751af413ff73efaed45139b02d74e
     pages: 6
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1946-03-22, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1946-text-3
+  label: Constitution and By-laws of the Native Village of Point Lay (1946)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1946-03-22'
+  supersedes:
+  - 1946-text-2
+  source: constitution-native-village-of-point-lay-1946-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-point-lay/e250dcf51229019c.pdf
+    sha256: e250dcf51229019c0d56fa3547450099b3d8aae1099a9bf82a5c5e9abc0da223
+    pages: 5
   note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. The text also prints adopted 1946-03-22, which belong
     to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text

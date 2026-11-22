@@ -6,8 +6,8 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-selawik
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-05-15
-  to 1940-03. Versions are only those found; others may exist.'
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-15
+  to 1940-03-15. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
   label: CONSTITUTION AND BY-LAWS (1939)
@@ -30,7 +30,7 @@ versions:
 - id: 1940-text
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF SELAWIK (1940)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     adopted: 1940-03
   supersedes:
@@ -42,6 +42,25 @@ versions:
     path: research/captures/constitutions/native-village-of-selawik/0fb6abc62103215a.pdf
     sha256: 0fb6abc62103215a19bd1fdedac78c23c00ca44e89e72d778625a57de20c7057
     pages: 5
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1940-text-2
+  label: Constitution and By-Laws of the Native Village of Selawik (1940)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1940-03-15'
+  supersedes:
+  - 1940-text
+  source: constitution-native-village-of-selawik-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-selawik/a90fec888bd77de4.pdf
+    sha256: a90fec888bd77de4ebb4ca4ccd434afebda2824e0dbab6bd397c4c7a04865819
+    pages: 6
   note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
     (Claude Haiku), not yet checked by the lead author.

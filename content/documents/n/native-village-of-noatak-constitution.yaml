@@ -6,15 +6,34 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: native-village-of-noatak
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-12-28
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-12-28
   to 1939-12-28. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
-  label: CONSTITUTION AND BY-LAWS (1939)
+  label: Constitution and By-laws of the Native Village of Noatak (1939)
   event: original
   status: superseded
   dates:
     adopted: '1939-12-28'
+  source: constitution-native-village-of-noatak-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-noatak/43a1738cb40c3d72.pdf
+    sha256: 43a1738cb40c3d72d79e45174fc0958154f6842fbeafa961a66199a4f9eb2ca6
+    pages: 6
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-12-28'
+  supersedes:
+  - 1939-text
   source: university-of-oklahoma-indian-reorganization-act-noacons
   confidence: medium
   verification: inferred
@@ -22,18 +41,20 @@ versions:
     path: research/captures/constitutions/native-village-of-noatak/476c027eebd7ee32.html
     sha256: 476c027eebd7ee32e42e30f2fe607b305bd94ef6ec63b64870abde47effd17e9
   note: 'The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
-    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
-    found (project inference). Dates read from another copy of the same text: adopted 1939-12-28. Dates
-    read by rule from the certificates on the library page.'
-- id: 1939-text-2
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-12-28, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1939-12-28. Dates read by rule from the certificates
+    on the library page.'
+- id: 1939-text-3
   label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF NOATAK (1939)
   event: edition
   status: unknown
   dates:
     listed: '1939-12-28'
   supersedes:
-  - 1939-text
-  source: constitution-native-village-of-noatak-1939-text-2
+  - 1939-text-2
+  source: constitution-native-village-of-noatak-1939-text-3
   confidence: medium
   verification: read-in-full
   capture:

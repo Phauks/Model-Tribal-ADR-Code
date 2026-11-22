@@ -1,0 +1,77 @@
+id: kialegee-tribal-town-constitution
+kind: constitution
+title: Constitution of the Kialegee Tribal Town
+nations:
+- kialegee-tribal-town
+jurisdictions:
+- level: tribal
+  tribe: kialegee-tribal-town
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1941-06-12
+  to 1941-06-12. Versions are only those found; others may exist.'
+versions:
+- id: 1941-text
+  label: CONSTITUTION AND BY-LAWS (1941)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1941-06-12'
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/kialegee-tribal-town/4452c4b33a2b7d7b.html
+    sha256: 4452c4b33a2b7d7b397a273e943ade53cb0f7d008dbd6b3e7b7006207b8becbd
+  note: 'The text prints an approval date (1941-04-14) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1941-06-12. Dates
+    read by rule from the certificates on the library page.'
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article VIII (REMOVAL OF OFFICERS)
+    summary: Has the Grievance Committee investigate complaints of officer misconduct, and lets the membership
+      remove an officer by majority vote after a hearing.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1941-text-2
+  label: Constitution and By-laws of the Kialegee Tribal Town, Oklahoma (1941)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1941-06-12'
+  supersedes:
+  - 1941-text
+  source: constitution-kialegee-tribal-town-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kialegee-tribal-town/4a54e1789a942b2d.pdf
+    sha256: 4a54e1789a942b2daca616b7cf702ed8f555d19ce13cf60acea14adb8fc1072e
+    pages: 8
+  note: The text prints an approval date (1941-04-14) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1941-06-12, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1941-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1941-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -6,11 +6,11 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: united-keetoowah-band-of-cherokee-indians-in-oklahoma
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1950-10-03
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1950-10-03
   to 1950-10-03. Versions are only those found; others may exist.'
 versions:
 - id: 1950-text
-  label: CONSTITUTION AND BY-LAWS OF THE UNITED KEETOOWAH BAND OF CHEROKEE INDIANS IN OKLAHOMA (1950)
+  label: Constitution and By-laws of the United Keetoowah Band of Cherokee Indians in Oklahoma (1950)
   event: original
   status: superseded
   dates:
@@ -19,9 +19,9 @@ versions:
   confidence: medium
   verification: read-in-full
   capture:
-    path: research/captures/constitutions/united-keetoowah-band-of-cherokee-indians-in-oklahoma/8472e8b213f6c913.pdf
-    sha256: 8472e8b213f6c913337ac01c90bbf680fb9299d927e3a07dc2b55a84f1a8e2ac
-    pages: 5
+    path: research/captures/constitutions/united-keetoowah-band-of-cherokee-indians-in-oklahoma/b91a2900265b13de.pdf
+    sha256: b91a2900265b13de58c0b3fe1ad16eedc10846324a9e6e8adb40801bd7973b08
+    pages: 9
   note: The text prints an approval date (1950-05-08) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. Marked superseded because a later dated text was
     found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
@@ -29,7 +29,7 @@ versions:
 - id: 1950-text-2
   label: CONSTITUTION AND BY-LAWS (1950)
   event: edition
-  status: unknown
+  status: superseded
   dates:
     listed: '1950-10-03'
   supersedes:
@@ -43,8 +43,9 @@ versions:
   note: 'The text prints an approval date (1950-05-08) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. The text also prints adopted 1950-10-03, which belong
     to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
-    says it includes. Dates read from another copy of the same text: adopted 1950-10-03. Dates read by
-    rule from the certificates on the library page.'
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1950-10-03. Dates read by rule from the certificates
+    on the library page.'
   clauses:
   - topic: removal-and-recall
     locator: Article VIII (VACANCIES)
@@ -57,9 +58,36 @@ versions:
   changes:
   - topic: removal-and-recall
     compared_with: 1950-text
-    change: added
+    change: not-compared
     verification: inferred
-    note: A word match found an article on this topic in this text and none in the earlier one.
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1950-text-3
+  label: CONSTITUTION AND BY-LAWS OF THE UNITED KEETOOWAH BAND OF CHEROKEE INDIANS IN OKLAHOMA (1950)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1950-10-03'
+  supersedes:
+  - 1950-text-2
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/united-keetoowah-band-of-cherokee-indians-in-oklahoma/8472e8b213f6c913.pdf
+    sha256: 8472e8b213f6c913337ac01c90bbf680fb9299d927e3a07dc2b55a84f1a8e2ac
+    pages: 5
+  note: The text prints an approval date (1950-05-08) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1950-10-03, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked in effect because it is the newest dated text found, on the nation's own
+    site, on 2026-11-21; a later amendment may not be posted. Type and dates read from the text by an
+    AI reviewer (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1950-text-2
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
 found_in:
 - 2026-11-21-constitutions
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
