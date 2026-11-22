@@ -78,3 +78,23 @@ export function searchEntries(entries: SearchEntry[], query: string): SearchResu
 	}
 	return results.sort((first, second) => second.score - first.score);
 }
+
+let indexRequest: Promise<SearchEntry[]> | undefined;
+
+/**
+ * The search index, fetched once per visit and shared by the masthead's
+ * search panel and the search page. A failed fetch is forgotten so the next
+ * try fetches again.
+ */
+export function loadSearchIndex(): Promise<SearchEntry[]> {
+	indexRequest ??= fetch('/search/index.json')
+		.then((response) => {
+			if (!response.ok) throw new Error(`${response.status}`);
+			return response.json() as Promise<SearchEntry[]>;
+		})
+		.catch((problem: unknown) => {
+			indexRequest = undefined;
+			throw problem;
+		});
+	return indexRequest;
+}
