@@ -236,9 +236,7 @@ size, because the book's trim size is not yet decided (project choice).
 **Icons.** All icons but one (the GitHub mark, the last rule below) come from Lucide,[^lucide-license] chosen on Nov. 21, 2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)). The site imports single icons from `@lucide/svelte`, so only the icons used are bundled.[^lucide-svelte] The book and the ebook use the same drawings from `lucide-static`, at the same version number, which `site/package.json` pins exactly. Rules:
 
 - An icon sits beside words. The only icon-only controls are the search icon, the theme button, the Settings cog, the profile button (Trevor asked for the search icon, the cog and the profile icon on Nov. 22, 2026), the Star button, the X that closes the search panel and the Modal's close button (an X, asked for by Trevor the same day). They share the `icon-button` class: no box around them, since the icon shows it is a control (Trevor, Nov. 22, 2026), with a 44px target, a faint fill on hover and the usual focus ring. Each carries an `aria-label` that names it and a matching `title` tooltip, because Lucide hides icons from screen readers by default.[^lucide-a11y] The text alignment choice in Settings also shows only symbols, as Trevor asked on Nov. 22, 2026; each symbol is a radio button with a hidden name that screen readers read, and the picked choice's name and hint show in words just below it.
-- Beside body text, icons are 20 px with `strokeWidth` 1.75, which
-  matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project
-  measurement). Standalone controls use 24 px and the default 2 px stroke.
+- Beside body text, icons are 20 px with `strokeWidth` 1.75, which matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project measurement). Standalone controls use 24 px and the default 2 px stroke.
 - Never use icons that read as Native imagery, even where Lucide offers them:
   `feather`, `tent`, `tent-tree` and `bow-arrow`.
 - In print, Typst draws `currentColor` as black, which suits the black-and-white
