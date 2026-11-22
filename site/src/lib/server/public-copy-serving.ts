@@ -83,6 +83,10 @@ function copyHeaders(copy: ServableCopy, etag?: string): Headers {
 		'X-Content-Type-Options': 'nosniff',
 		'Cross-Origin-Resource-Policy': 'same-origin'
 	});
+	if (copy.mediaType === 'text/html') {
+		// A saved web page runs nothing and loads nothing: its text and layout show, its scripts, frames and images do not.
+		headers.set('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; sandbox");
+	}
 	if (etag) headers.set('ETag', etag);
 	return headers;
 }

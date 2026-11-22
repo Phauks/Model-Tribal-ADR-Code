@@ -42,6 +42,7 @@ and says so.
 | [0028](0028-map-adds-census-land-areas.md) | Add a land areas view to the map, from the Census Bureau's boundaries | Accepted |
 | [0029](0029-show-stories-while-nations-review-them.md) | Show story records on the website while their nations review them | Accepted |
 | [0030](0030-keep-research-captures-in-the-private-bucket.md) | Keep research captures in the private bucket, with an index in git | Accepted |
+| [0031](0031-serve-copies-of-documents-from-the-private-bucket.md) | Serve the project's copies of cited documents, including nations' constitutions and laws | Accepted |
 | [0032](0032-starred-pages-and-shared-collections-on-the-reader-s-device.md) | Starred pages, private notes and shared collections, kept on the reader's device | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.
