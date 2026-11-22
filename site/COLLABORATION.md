@@ -307,11 +307,13 @@ or with a link from the lead author, and `/sign-in` says so.
 
 ### 2. The first lead author
 
-Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**:
-`LEAD_AUTHOR_EMAIL`, the lead author's email address. It is set in the
-dashboard rather than in `wrangler.jsonc` only because that file is public.
-Settings made in the dashboard are kept when the Worker is deployed again
-(Cloudflare, ["Wrangler configuration: source of
+Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**,
+type **Secret**: `LEAD_AUTHOR_EMAIL`, the lead author's email address. It is
+set in the dashboard rather than in `wrangler.jsonc` only because that file
+is public. It must be the **Secret** type even though an email address is not
+really secret: each deploy replaces plain-text variables set in the dashboard
+with the ones in `wrangler.jsonc`, but never deletes secrets (Cloudflare,
+["Wrangler configuration: source of
 truth"](https://developers.cloudflare.com/workers/wrangler/configuration/#source-of-truth)).
 
 ### Database

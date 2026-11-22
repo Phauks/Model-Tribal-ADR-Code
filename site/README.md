@@ -76,7 +76,8 @@ resource can be renamed or replaced by editing that file.
 | `signInEmail` | Email Service | Sends sign-in codes from the `SIGN_IN_EMAIL_FROM` address in `vars` ([COLLABORATION.md](COLLABORATION.md#setting-up-sign-in)). |
 
 No secrets are needed. One setting, `LEAD_AUTHOR_EMAIL`, is made in the
-Cloudflare dashboard because this repository is public. For trying sign-in on
+Cloudflare dashboard, as the Secret type so that deploys keep it, because
+this repository is public. For trying sign-in on
 a computer, put it in `site/.dev.vars`, which git ignores; codes are then
 shown on the sign-in page instead of being emailed.
 

@@ -53,7 +53,7 @@ move.
 
 - No outside sign-in service, no per-user cost, and no secret keys to keep.
   The only dashboard setting is `LEAD_AUTHOR_EMAIL`, kept out of the public
-  repository.
+  repository and stored as the Secret type so that deploys do not remove it.
 - Codes can only be emailed from a domain onboarded in Email Service on the
   same Cloudflare account. Until `SIGN_IN_EMAIL_FROM` is set, people sign in
   with a password or an invitation link.
