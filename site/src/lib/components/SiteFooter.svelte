@@ -18,7 +18,7 @@
 			<li><a href="/copies">Copies of documents</a></li>
 			<li><a href="/licenses">Licenses by material</a></li>
 			<li><a href="{repositoryLink}"><GithubMark /><span>GitHub</span></a></li>
-			<li><a href="/join">Help with the project</a></li>
+			<li><a href="/join">Help with this work</a></li>
 			<li><a href="/workspace" data-sveltekit-reload>Co-author sign-in</a></li>
 		</ul>
 		<p class="small muted">

@@ -13,7 +13,7 @@
 <div class="reading">
 	<h1>Native nations</h1>
 	<p class="lead">
-		One page for every nation and community, drafted from public sources, with a way for each nation to correct, restrict or remove what the project says about it.
+		One page for every nation and community, drafted from public sources, with a way for each nation to correct, restrict or remove what the page says about it.
 	</p>
 	{#if data.example}
 		<div class="notice" role="note">
@@ -28,7 +28,7 @@
 
 <section aria-labelledby="by-letter">
 	<h2 id="by-letter">Native nations by first letter</h2>
-	<p class="small muted">{data.nationCount.toLocaleString('en-US')} pages, listed by the official name the project’s sources give.</p>
+	<p class="small muted">{data.nationCount.toLocaleString('en-US')} pages, listed by the official name their sources give.</p>
 	<NationBrowse letters={data.letters} />
 </section>
 

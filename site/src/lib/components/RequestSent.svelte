@@ -23,12 +23,12 @@
 </div>
 <svelte:element this={`h${headingLevel}`}>What happens next</svelte:element>
 <ul>
-	<li>The project acknowledges the request within 7 days, using the contact details you gave.</li>
+	<li>We acknowledge the request within 7 days, using the contact details you gave.</li>
 	{#if sent.kind === 'restrict' || sent.kind === 'remove'}
 		<li>The material you named is taken out of public view within 7 days, before it is reviewed.</li>
 	{/if}
 	{#if sent.kind === 'add-nation'}
-		<li>The project checks each source in the government’s own publication, then searches its list for the nation under other names. Usually a decision follows within 30 days of the acknowledgment.</li>
+		<li>We check each source in the government’s own publication, then search our list for the nation under other names. Usually a decision follows within 30 days of the acknowledgment.</li>
 	{/if}
 	<li>A request about a nation is confirmed with that nation’s own office before it is final.</li>
 	<li>Your request and any files you sent are kept private. They are never published.</li>
