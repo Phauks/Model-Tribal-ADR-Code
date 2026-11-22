@@ -521,9 +521,10 @@ def add(args) -> None:
             "topic": args.topic, "title": args.title or "", "nations": args.nations or "",
             "obtained": f"{args.obtained}, {dt.date.today().isoformat()}", "link": " ".join(args.link or []), "captured": dt.date.today().isoformat(),
             "records": args.record or "", "record_kinds": "source" if args.record else "", "listed_in": "",
-            "catalog": "", "derived_from": "", "rights": args.rights or TOPIC_RIGHTS.get(args.topic, DEFAULT_RIGHTS),
+            "catalog": "", "derived_from": main_file_for(key, {r["key"] for r in rows} | {key}) or "", "rights": args.rights or TOPIC_RIGHTS.get(args.topic, DEFAULT_RIGHTS),
             "redistribution": "no" if args.topic in NEVER_SERVED else args.redistribution,
-            "keep_local": "no", "orphan": "no" if args.record else "yes",
+            "keep_local": "yes" if key.endswith(TEXT_SUFFIXES) else "no",
+            "orphan": "no" if args.record else "yes",
         })
         if s3 is not None and not args.keep_local:
             target.unlink()

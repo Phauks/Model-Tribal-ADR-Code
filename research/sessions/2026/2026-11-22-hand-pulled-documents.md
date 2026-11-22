@@ -125,7 +125,9 @@ Findings recorded in records:
 - **Southern Ute**: no peacemaking program in Title 1 or the Appendix C court rules; Title 1 provides for advisors on custom and for hearing officers to consult elders (`southern-ute-title-1-general-provisions-2026`).
 - The National Indian Gaming Commission report and H.R. 1502 are U.S. government works, so their records now allow the site to serve the copies.
 
-# Hand-pulled documents, batch 4
+Batch 3 (same day): Trevor sent six Part 1 files (the NMAI floor plan, three Navajo Peacemaking Program items, the Navajo Judicial Branch FY 2026 fourth quarter report and R. v. Powley) and said the other Part 1 links failed. He then sent 16 constitution files for Part 2e (14 new, 2 repeats) and the contents page of the Navajo Rules for Declaratory Rulings. All are indexed in `research/capture-index.csv` and wait for the next upload run. The brochure record was checked against the October 2025 PDF. The write-up is `research/pull-results/2026-11-22-hand-pulled-batch-3.md` in the project files.
+
+## Hand-pulled documents, batch 4
 
 The lead author sent 13 files for the Foundations thread: Westlaw prints, with KeyCite flags, of nine cases on the pull list (Tsosie, Elk, Richard, Jones, Downes v. Bidwell, Tuaua, Fitisemanu, Wabol v. Villacrusis and Davis v. Guam) and four book reviews. All were new, filed in the bucket and checked by download and hash (13 of 13). The case prints are filed under `westlaw/` and never served; their records are in the Foundations pull request, which adds the `file` blocks. The reviews got source records of their own. Full list: the pull-results write-up for batch 4 in the project files.
 

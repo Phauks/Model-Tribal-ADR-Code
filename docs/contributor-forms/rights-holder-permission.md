@@ -1,59 +1,47 @@
-# Rights holder permission
+# Owner's permission
 
-Form `rights-holder-permission`, version 0.1.0 (draft). Filing
-`{{filing.identifier}}`.
+Form `rights-holder-permission`, version 0.2.0. Filing `{{filing.identifier}}`.
 
-Use this form when the person who gave the project an item did not make it,
-or does not hold all rights in it: for example a letter written by a
-grandparent, a photograph taken by someone else, a recording of an elder who
-has died, or a program's unpublished document.
+Use this form when the person who gave us an item didn't make it or doesn't own all of it. Examples: a grandparent's letter, someone else's photograph, a recording of an elder who has died, or a program's unpublished document.
 
 ## 1. The item
 
 | | |
 | --- | --- |
 | What it is | {{item.title}} |
-| Who made it | |
-| When | |
-| Given to the project by | {{contributor.credit_to_rights_holder}} |
+| Made by | |
+| Date | |
+| Given to us by | {{contributor.credit_to_rights_holder}} |
 
-## 2. Your connection to it
+## 2. How you're connected to it
 
-☐ I made it. ☐ I hold the copyright or other rights. ☐ I am the heir,
-executor or family representative of the person who made it, who has died.
-☐ I sign for an organization or office that holds rights: ______
-☐ Other: ______
+- ☐ I made it.
+- ☐ I own the copyright or other rights.
+- ☐ I'm the heir, executor or family representative of the maker, who has died.
+- ☐ I sign for an organization or office that owns it: ______
+- ☐ Other: ______
 
-If the person who made it or appears in it has died, are there family or
-community practices about sharing their words, image or name after death that
-the project should follow? ☐ No ☐ Yes: ______
+If the maker, or someone in the item, has died, should we follow any family or community practice about using their words, image or name? ☐ No ☐ Yes: ______
 
-## 3. What you allow
+## 3. Your choices
 
-The same choices as the [contributor statement](contributor-statement.md),
-section 5, apply. Mark them here, or write "as in the contributor statement".
+These match section 5 of the [contributor statement](contributor-statement.md). Mark them here, or write "same as the contributor statement."
 
-- **Use:** ☐ Background only ☐ Describe, do not quote ☐ Quote parts
-  ☐ Publish in full
+- **Use:** ☐ Background only ☐ Describe it ☐ Quote parts ☐ Publish all of it
 - **Where:** ☐ Website ☐ Printed book ☐ Ebook ☐ Offline copy ☐ Public data
-- **When:** ☐ Public ☐ After the nation reviews it ☐ Not before ______
-  ☐ Never public
+- **When:** ☐ When ready ☐ After the nation reviews it ☐ Not before ______ ☐ Never
 - **Credit:** ______
-- **Permission:** ☐ To the project only (nonexclusive; you keep all rights)
-  ☐ Also under CC BY 4.0 ☐ Also under CC BY-NC 4.0
+- **Copyright:** ☐ The project only (nonexclusive; you keep all rights) ☐ Also CC BY 4.0 ☐ Also CC BY-NC 4.0
 - **Conditions:** ______
 
-You can ask the project at any time to change or withdraw this permission
-([request form](change-or-withdrawal-request.md)), with the limits explained
-in section 6 of the contributor statement.
+You can change or withdraw this permission at any time ([Change or withdrawal](change-or-withdrawal-request.md)). The limits are in section 6 of the contributor statement.
 
 ## 4. Signature
 
-☐ I have the right to give this permission, or I have told the project who
-does.
+- ☐ I have the right to give this permission, or I told you who does.
 
 | | |
 | --- | --- |
-| Name and capacity | |
-| Signature, or typed name | |
+| Name and role | |
+| Signature or typed name | |
 | Date | |

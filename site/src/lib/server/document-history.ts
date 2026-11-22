@@ -2,7 +2,9 @@
  * The "Document history" section of a nation page: each document of the
  * nation that has recorded versions (content/documents/, decision record
  * 0018), oldest version first, with what each version did to the ones before
- * it and how its key clauses changed. Like every fact on the page, each
+ * it. The records' clause comparisons and summaries, which a small model read
+ * from excerpts, are not shown (Trevor, Nov. 22, 2026), nor is the record's
+ * generated summary. Like every fact on the page, each
  * version carries the markers of its sources, which link to the page's
  * Sources section.
  */
@@ -17,12 +19,6 @@ import {
 } from './content.ts';
 import type { CitationMark, SourceUses } from './source-uses.ts';
 
-export interface VersionChangeView {
-	topic: string;
-	change: string;
-	summary?: string;
-}
-
 export interface VersionView {
 	id: string;
 	label: string;
@@ -35,7 +31,6 @@ export interface VersionView {
 	dates?: string;
 	/** What the version did to earlier ones, e.g. "Replaced the 1993 compact". */
 	relation?: string;
-	changes: VersionChangeView[];
 	/** The markers of the version's source and of its approval notice. */
 	citations: CitationMark[];
 }
@@ -44,7 +39,6 @@ export interface DocumentHistoryView {
 	id: string;
 	title: string;
 	kind: string;
-	summary?: string;
 	/** The versions in effect, as one phrase, e.g. "2021 compact, as amended by …". */
 	inEffect?: string;
 	versions: VersionView[];
@@ -75,16 +69,6 @@ const EVENT_LABELS: Record<string, string> = {
 	disapproval: 'Disapproval',
 	withdrawal: 'Withdrawal',
 	other: 'Other'
-};
-
-const CHANGE_LABELS: Record<string, string> = {
-	added: 'added',
-	removed: 'removed',
-	changed: 'changed',
-	reworded: 'reworded, same process',
-	renumbered: 'renumbered',
-	unchanged: 'unchanged',
-	'not-compared': 'not compared yet'
 };
 
 function sentenceCase(text: string): string {
@@ -169,11 +153,6 @@ export function documentHistoryView(
 			link: textLink(version.source),
 			dates: datesPhrase(version),
 			relation: relationPhrase(version, byId),
-			changes: (version.changes ?? []).map((change) => ({
-				topic: humanize(change.topic),
-				change: CHANGE_LABELS[change.change] ?? change.change,
-				summary: change.summary
-			})),
 			citations
 		};
 	});
@@ -181,7 +160,6 @@ export function documentHistoryView(
 		id: record.id,
 		title: record.title,
 		kind: humanize(record.kind),
-		summary: record.summary,
 		inEffect: inEffectPhrase(record.versions),
 		versions
 	};

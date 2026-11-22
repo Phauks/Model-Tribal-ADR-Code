@@ -95,7 +95,7 @@ export function nationsMapPage() {
 	});
 	sources.add('census-cartographic-boundary-states-2017', {
 		section: 'State and territory outlines',
-		text: 'every state, DC and the five inhabited territories, through us-atlas 3.0.1'
+		text: 'every state, DC, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands, through us-atlas 3.0.1'
 	});
 
 	const regions = geometry.regions.map((shape) => ({

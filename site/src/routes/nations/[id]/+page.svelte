@@ -7,6 +7,7 @@
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
+	import { newTabNoteId, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import type { PageProps } from './$types';
 
@@ -16,11 +17,6 @@
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
-	const removalRequest = $derived(
-		`/requests?${new URLSearchParams({ kind: 'remove', record, field: 'official_images' })
-			.toString()
-			.replaceAll('%2F', '/')}`
-	);
 </script>
 
 <svelte:head>
@@ -33,10 +29,13 @@
 
 <!--
 	On wide screens the page has two columns: the text, held to a readable
-	line length, and beside it "At a glance" with the map. On narrow screens
-	the parts stack in the order of site/DESIGN.md, "Nation pages".
+	line length, and beside it "At a glance" with the map, set off by a rule.
+	"At a glance" comes after the text in the page's order, so a selection in
+	one column stays in it; on narrow screens it sits after Document history,
+	before Sources.
 -->
-<article class="profile">
+<span id={newTabNoteId} hidden>Opens in a new tab</span>
+<article class="profile" {@attach outsideLinksOpenInNewTab}>
 	<div class="profile-introduction">
 		{#if page.example}
 			<div class="notice" role="note">
@@ -58,15 +57,6 @@
 					decoding="async"
 					onerror={() => (imageFailed = true)}
 				/>
-				<figcaption class="small muted">
-					{data.image.kind} of {page.officialName}, as
-					{#if data.image.foundOn}<a href={data.image.foundOn}>the nation’s website</a
-						>{:else}the nation’s website{/if} publishes it. It belongs to the nation, which does
-					not endorse this project.
-					<a class="no-print" href={removalRequest}>Ask for it to be removed</a>.<CitationMarks
-						marks={data.image.citations}
-					/>
-				</figcaption>
 			</figure>
 		{/if}
 		{#if !page.withdrawn}
@@ -75,10 +65,6 @@
 					Listed as “{page.listedName}” on the list that recognizes it.<CitationMarks
 						marks={data.nameCitations}
 					/>
-				</p>
-			{:else}
-				<p class="small muted">
-					Name as the recognizing list gives it.<CitationMarks marks={data.nameCitations} />
 				</p>
 			{/if}
 			{#each data.selfDesignations as designation (designation.name)}
@@ -102,56 +88,31 @@
 			{/each}
 		{/if}
 
-		<!-- 2. Review panel -->
-		<section class="panel panel-filled" aria-labelledby="review-heading" data-print-part="reviewStatus">
-			<h2 id="review-heading">Review status: {page.review.label}</h2>
-			<p>{page.review.meaning}</p>
-			{#if page.review.lastVerified}
-				<p class="small muted">Sources last checked {page.review.lastVerified}.</p>
-			{/if}
-			<p class="no-print">
-				<a class="button" href="/requests?record={record}">Is this about your nation? Make a request</a>
-			</p>
-		</section>
+		<!-- 2. Review status: a small badge and one line, not a panel (Trevor, Nov. 22, 2026) -->
+		<p class="review-status small" id="review-status" data-print-part="reviewStatus">
+			<span class="visually-hidden">Review status:</span>
+			<span class="status-badge">{page.review.label}</span>
+			<span class="muted">
+				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources last checked {page.review.lastVerified}.{/if}
+			</span>
+			<a class="no-print" href="/requests?record={record}">Is this about your nation? Make a request</a>
+		</p>
 
-		{#if !page.withdrawn}
-			<!-- 3. About this Nation (formerly "What is distinctive here") -->
+		{#if !page.withdrawn && data.features.length > 0}
+			<!-- 3. About this Nation: the recorded features. The placeholder for the
+			     nation's own description was removed (Trevor, Nov. 22, 2026); the
+			     description is shown once a nation writes or approves one. -->
 			<Collapsible heading="About this Nation" identifier="about-heading">
-				<h3>In the nation’s own words</h3>
-				<p class="muted">
-					This space is for a short description that the nation writes or approves. The project does not
-					write it for the nation.
-					<a href="/requests?kind=contribute&record={record}">Contribute a description</a>.
-				</p>
-				{#if data.features.length > 0}
-					<h3>Recorded features</h3>
-					<ul>
-						{#each data.features as feature, index (index)}
-							<li>{feature.text}<CitationMarks marks={feature.citations} /></li>
-						{/each}
-					</ul>
-				{/if}
+				<ul>
+					{#each data.features as feature, index (index)}
+						<li>{feature.text}<CitationMarks marks={feature.citations} /></li>
+					{/each}
+				</ul>
 			</Collapsible>
 		{/if}
 	</div>
 
 	{#if !page.withdrawn}
-		<!-- 4. At a glance, with the map of states -->
-		{#if data.glance.length > 0 || data.contacts.websites.length > 0 || data.contacts.offices.length > 0 || data.map}
-			<div class="profile-glance">
-				<Collapsible heading="At a glance" identifier="glance-heading">
-					{#if data.map}
-						<StatePresenceMap map={data.map} nationName={page.officialName} />
-					{/if}
-					<FactGroups groups={data.glance} />
-					{#if data.contacts.websites.length > 0 || data.contacts.offices.length > 0}
-						<h3 id="contacts-heading">{contactsHeading}</h3>
-						<ContactCard cards={data.contacts} headingLevel={4} />
-					{/if}
-				</Collapsible>
-			</div>
-		{/if}
-
 		<div class="profile-details">
 			<!-- 5. Courts and dispute resolution -->
 			{#if data.courts.length > 0}
@@ -171,45 +132,72 @@
 			{#if data.documents.length > 0}
 				<div data-print-part="documentHistory">
 				<Collapsible heading="Document history" identifier="documents-heading">
-					<p class="small muted">
-						Each document below lists every version the project has found, what each version did to the ones before it, and how its key clauses changed.
-					</p>
 					<DocumentHistoryList documents={data.documents} />
 				</Collapsible>
 				</div>
 			{/if}
+		</div>
 
-			<!-- 9. Sources -->
-			<p class="no-print">
-				Know of a published source we have missed?
-				<a href="/requests?kind=contribute&record={record}">Add it</a>.
-			</p>
+		<!--
+			4. At a glance, with the map of states. It comes after the main text in
+			the page's order, so selecting text in the main column never takes in
+			the fact box (Trevor, Nov. 22, 2026); on wide pages it sits beside the
+			text, set off by a rule.
+		-->
+		{#if data.glance.length > 0 || data.contacts.websites.length > 0 || data.contacts.offices.length > 0 || data.map}
+			<aside class="profile-glance" aria-labelledby="glance-heading">
+				<Collapsible heading="At a glance" identifier="glance-heading">
+					{#if data.map}
+						<StatePresenceMap map={data.map} nationName={page.officialName} />
+					{/if}
+					<FactGroups groups={data.glance} />
+					{#if data.contacts.websites.length > 0 || data.contacts.offices.length > 0}
+						<h3 id="contacts-heading">{contactsHeading}</h3>
+						<ContactCard cards={data.contacts} headingLevel={4} />
+					{/if}
+				</Collapsible>
+			</aside>
+		{/if}
+
+
+		<!-- 9. Sources -->
+		<div class="profile-sources">
 			<SourceList sources={data.sources} />
 		</div>
 	{/if}
 </article>
 
 <style>
+	.review-status {
+		margin: var(--space-3) 0 var(--space-5);
+	}
+
+	.status-badge {
+		display: inline-block;
+		margin-right: var(--space-2);
+		padding: 0 var(--space-2);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+		background: var(--color-surface);
+		font-weight: var(--font-weight-semibold);
+	}
+
 	.nation-image {
-		display: flex;
-		align-items: center;
-		gap: var(--space-4);
 		margin: var(--space-3) 0;
 	}
 
+	/* Seals are square and logos are often wide, so the box sets only the limits. */
 	.nation-image img {
-		flex: none;
-		width: 6rem;
-		height: 6rem;
-		object-fit: contain;
-	}
-
-	.nation-image figcaption {
-		margin: 0;
+		display: block;
+		width: auto;
+		height: auto;
+		max-width: min(18rem, 100%);
+		max-height: 6rem;
 	}
 
 	.profile-introduction,
 	.profile-details,
+	.profile-sources,
 	.profile-glance {
 		max-width: var(--layout-measure);
 	}
@@ -223,7 +211,7 @@
 		.profile {
 			display: grid;
 			grid-template-columns: minmax(0, var(--layout-measure)) minmax(22rem, 1fr);
-			column-gap: var(--space-7);
+			column-gap: var(--space-6);
 			align-items: start;
 		}
 
@@ -237,12 +225,21 @@
 			grid-row: 2;
 		}
 
+		.profile-sources {
+			grid-column: 1;
+			grid-row: 3;
+		}
+
+		/* A rule between the columns marks the fact box as its own region. */
 		.profile-glance {
 			grid-column: 2;
-			grid-row: 1 / span 2;
+			grid-row: 1 / span 3;
+			align-self: stretch;
 			max-width: var(--layout-side-column);
 			/* Lines up with the page's first heading. */
 			margin-top: var(--space-5);
+			padding-left: var(--space-6);
+			border-left: 1px solid var(--color-line);
 		}
 
 		.profile-glance > :global(.collapsible) {
