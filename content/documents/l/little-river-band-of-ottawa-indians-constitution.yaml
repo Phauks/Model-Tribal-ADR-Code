@@ -12,7 +12,7 @@ versions:
 - id: 1998-text
   label: 1998 constitution
   event: original
-  status: unknown
+  status: superseded
   dates:
     adopted: '1998-05-27'
     approved: '1998-07-10'
@@ -29,7 +29,8 @@ versions:
     sha256: 4629f5247cc281db448327d24c21a67b077d17cc00c401c5ed4a77e6aadd62ac
     pages: 20
   note: 'Dates read from another copy of the same text: effective 1998-07-10. Type and dates read from
-    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.'
+    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author. Marked superseded on
+    2026-11-22: the 2016 constitution, as amended (2016-text) is newer.'
   clauses:
   - topic: judicial-power
     locator: Article VI (TRIBAL COURT)
@@ -50,7 +51,48 @@ versions:
     summary: Article headed "RESIGNATION, RECALL, OR REMOVAL OF ELECTED OFFICIALS"; found by its heading
       and not yet read.
     verification: title-only
+- id: 2016-text
+  label: 2016 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2016-08-24'
+  supersedes:
+  - 1998-text
+  source: constitution-little-river-band-of-ottawa-indians-2016-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/little-river-band-of-ottawa-indians/1ab32472a0e14832.pdf
+    sha256: 1ab32472a0e14832e998c02ffe833c8b9cc10ee46a2fd4edcf22547ac6be780d
+    pages: 22
+  note: Scanned. The last page carries the Bureau of Indian Affairs Midwest Regional Director's approvals
+    of Amendments VIII, IX and X, dated Aug. 24, 2016, recorded as listed. Marked in effect because it
+    is the newest dated text found; a later amendment may not be posted. Version, status and dates read
+    from the copy by the project (Claude), not yet checked by the lead author.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: election-disputes
+    compared_with: 1998-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: judicial-power
+    compared_with: 1998-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: removal-and-recall
+    compared_with: 1998-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

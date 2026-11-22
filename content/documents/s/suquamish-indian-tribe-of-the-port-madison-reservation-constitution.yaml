@@ -40,7 +40,7 @@ versions:
 - id: 1965-text-2
   label: 1965 constitution and bylaws (website copy)
   event: edition
-  status: in-effect
+  status: superseded
   dates:
     listed: '1965-07-02'
   supersedes:
@@ -52,11 +52,12 @@ versions:
     path: research/captures/constitutions/suquamish-indian-tribe-of-the-port-madison-reservation/02f3bcd8809298df.pdf
     sha256: 02f3bcd8809298df6851ccdbd6fa87e6ee40aee5112ab5b80dbb1915269f34d5
     pages: 9
-  note: The text also prints approved 1965-07-02, which belong to the earlier text it compiles. The date
+  note: 'The text also prints approved 1965-07-02, which belong to the earlier text it compiles. The date
     recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
-    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    it is the newest dated text found, on the nation''s own site, on 2026-11-21; a later amendment may
     not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
-    by the lead author.
+    by the lead author. Marked superseded on 2026-11-22: the 1983 constitution and bylaws, as amended
+    (1983-text) is newer.'
   changes:
   - topic: election-disputes
     compared_with: 1965-text
@@ -101,7 +102,28 @@ versions:
     change: not-compared
     verification: inferred
     note: An amendment changes only what it names; compare by hand.
+- id: 1983-text
+  label: 1983 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1983-09-29'
+  supersedes:
+  - 1965-text-2
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1983-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/suquamish-indian-tribe-of-the-port-madison-reservation/03fd9707d6a77343.pdf
+    sha256: 03fd9707d6a773438c67308f1dfde47bfcc65deee007872dd3a87667d8f4519c
+    pages: 9
+  note: The 1965 constitution with bracketed amendment notes of 1978, 1980 and 1983; the newest were approved
+    by the Area Director on Sept. 29, 1983, recorded as listed. Close to the 1965-text-2 website copy
+    (project comparison), which shows fewer amendments. Marked in effect because it is the newest dated
+    text found. Version, status and dates read from the copy by the project (Claude), not yet checked
+    by the lead author.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

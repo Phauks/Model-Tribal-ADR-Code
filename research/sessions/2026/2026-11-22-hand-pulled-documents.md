@@ -71,8 +71,10 @@ limits: >-
   searched for evidence passages, not read in full. The Arizona petition shows
   only that the rules existed by 2014. Batch 2 settled Gladue paras. 66 and 93
   and the fate of H.R. 1502; the Arizona rules' original adoption date is still
-  open. The batch 2 constitutions were filed but not read or added to the
-  constitution catalog.
+  open. The batch 2 constitutions were added to the version histories by hand,
+  with dates and statuses read from each copy's first and last pages; their
+  articles were not read, and they are not in the constitution catalog's
+  documents.json.
 ---
 
 # Hand-pulled documents, batch 1
@@ -106,7 +108,7 @@ The lead author sent 68 files on 2026-11-22 (16 in the thread, 52 placed at the 
 
 What the batch holds:
 
-- 29 constitutions and charters from the pull list (Wayback Machine and Library of Congress copies), filed under `constitutions/<nation>/` by hash. They are indexed by nation but not yet read into the constitution catalog, so they cite no record yet. The two Library of Congress items are corporate charters, not constitutions (Native Village of Barrow, 1940; United Keetoowah Band, 1950).
+- 29 constitutions and charters from the pull list (Wayback Machine and Library of Congress copies), filed under `constitutions/<nation>/` by hash. Each is now a version in its nation's history (`content/documents/`) with its own source record; Siletz and Sauk-Suiattle got new histories, and the two charters got charter histories of their own. Dates and statuses were read from each copy's first and last pages; where a copy is newer than the version the history had marked in effect, the older one is now marked superseded (Lummi, Salish and Kootenai, Sitka, Little River, Tlingit and Haida, Ho-Chunk, Hoopa Valley, Tonkawa, Suquamish). Copies whose words match a version already recorded are listed beside it as second copies. The two Library of Congress items are corporate charters, not constitutions (Native Village of Barrow, 1940; United Keetoowah Band, 1950).
 - 10 law review articles and a dissertation, the 5 Uniform Law Commission acts, the National Indian Gaming Commission's Dec. 10, 2024 Gaming Tribe Report, and the official R. v. Gladue report, each filed against its existing record.
 - New records for the Navajo Rules of Evidence and of Civil Procedure, a 2012 Tribal Law Journal handbook on the Navajo Nation courts, the Southern Ute court rules (Appendix C) and Title 1, the Washington Tribal court directory, and the Every Step education materials.
 

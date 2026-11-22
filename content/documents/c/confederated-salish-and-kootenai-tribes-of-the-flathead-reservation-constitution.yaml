@@ -39,7 +39,7 @@ versions:
 - id: 1948-text
   label: 1948 constitution and bylaws
   event: edition
-  status: unknown
+  status: superseded
   dates:
     approved: '1948-10-14'
   approval:
@@ -54,7 +54,8 @@ versions:
   capture:
     path: research/captures/constitutions/confederated-salish-and-kootenai-tribes-of-the-flathead-reservation/565a22dab844e65d.html
     sha256: 565a22dab844e65de0760312f5380b3edbce04744cd9c387a362b1d452fd44fe
-  note: Dates read by rule from the certificates on the library page.
+  note: 'Dates read by rule from the certificates on the library page. Marked superseded on 2026-11-22:
+    the 1981 constitution and bylaws, as amended (1981-text) is newer.'
   changes:
   - topic: election-disputes
     compared_with: 1935-text
@@ -66,7 +67,27 @@ versions:
     change: not-compared
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1981-text
+  label: 1981 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1981-10-08'
+  supersedes:
+  - 1948-text
+  source: constitution-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation-1981-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/confederated-salish-and-kootenai-tribes-of-the-flathead-reservation/5cd8eb28a142216c.pdf
+    sha256: 5cd8eb28a142216c480b72fe9998c46111e62d267f561028ce749543edebe6d0
+    pages: 15
+  note: The text lists the constitution effective Oct. 28, 1935 and Amendments I to VII, the last effective
+    Oct. 8, 1981; the date recorded as listed is that of Amendment VII. Marked in effect because it is
+    the newest dated text found; a later amendment may not be posted. Version, status and dates read from
+    the copy by the project (Claude), not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.
