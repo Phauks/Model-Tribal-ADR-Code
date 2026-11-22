@@ -303,6 +303,36 @@ combined rows), because their names were matched word for word only in the
 transcription, not in machine-read text. The six Minnesota Chippewa band
 profiles were left without a fact for the lead author, as above.
 
+### Governing documents (row 10)
+
+Session: [2026-11-22-governing-documents-opened](../sessions/2026/2026-11-22-governing-documents-opened.md).
+Of the 1,760 governing document facts still recorded by title only, the
+second check set aside 151 that the constitutions pull request (#55, merged
+since) edits,
+520 law codes and court rules that the tribal law texts work fetched, and 192
+with no link. For the other 897 it read the text of each document from the
+copies the constitution catalog and tribal law texts work saved, without
+fetching anything new.
+
+| Change | Facts |
+| --- | ---: |
+| `verification: read-in-full`: the document's heading gives its own title for its kind, it names the nation and the fact's title words and year, it is a full text, and this review also confirmed the link | 301 |
+
+The 301 are 147 constitutions and 154 corporate charters: 271 University of
+Oklahoma transcriptions of the 1930s and 1940s texts and 30 copies on other
+sites, almost all the nations' own or their courts'. The check was tightened
+after reading the opening of every copy outside the University of Oklahoma
+pages that passed a looser version: a page that only mentions a
+constitution, such as a convention page, a code's definitions or a National
+Indian Law Library table of contents, does not count. The rest stay title-only
+and are covered by the spreadsheet above. No dead link was replaced, because
+no replacement was clear in both checks.
+
+One lead for the lead author: four facts recorded as a constitution link to a
+University of Oklahoma corporate charter page (Angoon Community Association,
+Klawock Cooperative Association, Native Village of Barrow Inupiat Traditional
+Government, Native Village of Kotzebue); their kind or link needs correcting.
+
 ## Still for the lead author or Westlaw
 
 Rows 5 (KeyCite the legal history cases), 9 (Public Law 280), 13 (Alaska
