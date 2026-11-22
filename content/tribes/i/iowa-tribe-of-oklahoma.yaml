@@ -268,6 +268,14 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-108.'
+- kind: supreme-court
+  name: Iowa Tribe Supreme Court
+  link: https://iowanation.org/government/tribal-court/
+  source: iowa-tribe-of-oklahoma-district-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Iowa Tribe Supreme Court is made up of Justice Lisa B. Otipoby-Herbert”. Named on the District Court page with its justices; the page gives no location or appeal route for it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, iowa-tribe-of-oklahoma#2).'
 dispute_resolution:
   database_listings:
   - title: Restorative Sentencing Policy – Restitution, Reconciliation, and Restoration

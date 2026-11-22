@@ -203,6 +203,14 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
     2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-182.'
+- kind: traditional-forum
+  name: Traditional Tribal Court
+  link: https://www.eyak-nsn.gov/tribal-court/
+  source: native-village-of-eyak-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Traditional Tribal Court”. Appears as a heading on the same page above a description of Traditional Peacekeeping Circles and the 3-panel system. It may be a form of the Tribal Court rather than a separate body, so the reviewer should decide whether to show it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, native-village-of-eyak#2).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -1,0 +1,29 @@
+profile: content/tribes/m/mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.mesagrandeband-nsn.gov/tribal-government-2/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page loaded (status 200) and names the court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: The ICSC member and MOA lists do not name Mesa Grande.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Directory has no Mesa Grande row.

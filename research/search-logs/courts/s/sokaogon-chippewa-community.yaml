@@ -21,3 +21,11 @@ searches:
     page, then directory entry): own-page, https://sokaogonchippewa.com/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-352
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://sokaogonchippewa.com/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: The page returns a 'Please wait while your request is being verified' bot-challenge interstitial; it was not bypassed.

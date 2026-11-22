@@ -351,6 +351,16 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Salt River Pima-Maricopa Indian Community'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://www.srpmic-nsn.gov/government/court/
+  location:
+    state: AZ
+  source: salt-river-pima-maricopa-indian-community-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Court of Appeals”. Link label under the Court section; no address or appeals statement. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation#2).'
 dispute_resolution:
   forums:
   - kind: family-group-conference

@@ -189,3 +189,19 @@ searches:
     then directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-043
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 2022 directory text read; Chilkat Indian Village entry says active with a 'Council' justice system.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://chilkat-nsn.gov/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: fetch.py returned 200 with only a 'One moment, please...' interstitial and no content, which looks like a bot challenge.

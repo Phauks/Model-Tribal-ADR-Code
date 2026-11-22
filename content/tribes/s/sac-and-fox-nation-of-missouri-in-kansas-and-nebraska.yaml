@@ -220,6 +220,21 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-336.'
+  appeals_to:
+    court: Sac and Fox Appellate Court
+    source: sac-fox-nation-of-missouri-in-tribal-court
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Sac and Fox Appellate Court hears appeals from the Tribal Court.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, sac-and-fox-nation-of-missouri-in-kansas-and-nebraska#1).'
+- kind: court-of-appeals
+  name: Sac and Fox Appellate Court
+  link: https://sacandfoxks.com/entities/tribal-court
+  source: sac-fox-nation-of-missouri-in-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Sac and Fox Appellate Court hears appeals from the Tribal Court.”. Checked with fetch.py. The page has a three-justice Appellate Court section and does not say where its decisions go. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, sac-and-fox-nation-of-missouri-in-kansas-and-nebraska#2).'
 dispute_resolution:
   database_listings:
   - title: Limitations of Court in Domestic Violence Cases

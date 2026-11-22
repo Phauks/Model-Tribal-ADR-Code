@@ -159,3 +159,27 @@ searches:
     page, then directory entry): own-page, https://www.ktik-nsn.gov/judical-center.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-121
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.ktik-nsn.gov/district-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's District Court page names the Kickapoo District Court (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.ktik-nsn.gov/judical-center
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Judicial Center page gives the Horton, KS address and links to the District Court page (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Kickapoo Tribe Kansas judicial center district court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search showed nation document pages and older case law; no other court name was confirmed.

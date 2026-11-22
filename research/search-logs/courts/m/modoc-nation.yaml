@@ -1,0 +1,29 @@
+profile: content/tribes/m/modoc-nation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: BIA list names the Miami Agency CFR Court and the Modoc Tribe of Oklahoma among the tribes it serves.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://modocnation.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nation's homepage fetched (status 200) and no court, judicial branch or tribal court text found.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: "Modoc Nation" tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Search returned no official Modoc Nation court page; results were news, Wikipedia and the BIA list.

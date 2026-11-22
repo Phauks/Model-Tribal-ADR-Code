@@ -253,6 +253,18 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
     2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-123.'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.kootenai.org/tribal-court
+  location:
+    place: Bonners Ferry
+    state: ID
+    address: 100 Circle Drive
+  source: kootenai-tribe-of-idaho-tribal-court-id
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Kootenai Tribal Court serves as the judicial body of the Kootenai Tribe of Idaho”. Checked on fetch.py: the page gives ''Address: 100 Circle Drive, Bonners Ferry, ID 83805'' and P.O. Box 1269. The batch lists this court twice (''Tribal Court'' and ''Kootenai Tribe of Idaho Tribal Court'') on the same page. The page does not say where appeals go. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, kootenai-tribe-of-idaho#1).'
 gaming:
   compacts:
   - state: ID

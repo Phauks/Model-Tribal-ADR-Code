@@ -311,6 +311,13 @@ justice_institutions:
     is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with status
     200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
     see research/reviews/2026-11-22-service-links.json, service-333.'
+  appeals_to:
+    court: Inter-Tribal Court of Appeals of Nevada
+    source: reno-sparks-indian-colony-tribal-court-nv
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “Inter-Tribal Court of Appeals of Nevada”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, reno-sparks-indian-colony#1).'
 - kind: tribal-court
   name: Reno-Sparks Indian Colony Court Services
   link: https://www.rsic.org/202/Tribal-Court
@@ -323,6 +330,26 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
     see research/reviews/2026-11-22-service-links.json, service-334.'
+- kind: healing-to-wellness-court
+  name: Wellness Court
+  link: https://www.rsic.org/206/Wellness-Court
+  source: reno-sparks-indian-colony-wellness-court-nv
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The RSIC Tribal Court has two wellness court grant positions”. A wellness court within the RSIC Tribal Court; no separate address. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, reno-sparks-indian-colony#2).'
+- kind: intertribal-court-of-appeals
+  name: Inter-Tribal Court of Appeals of Nevada
+  link: https://www.rsic.org/202/Tribal-Court
+  location:
+    place: Reno
+    state: NV
+    address: 10 State Street, Reno, Nevada, 89501
+  source: reno-sparks-indian-colony-tribal-court-nv
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Inter-Tribal Court of Appeals of Nevada”. Named on the RSIC Tribal Court page as the appeals court; the ITCAN''s own site was not read. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, reno-sparks-indian-colony#3).'
 dispute_resolution:
   provisions:
   - kind: mediation

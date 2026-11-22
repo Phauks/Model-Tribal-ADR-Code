@@ -1,0 +1,53 @@
+profile: content/tribes/y/yomba-shoshone-tribe-of-the-yomba-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: CFR Courts list names the Western Region CFR Court as serving Yomba Shoshone Tribe (Nevada).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/regional-offices/western/court-indian-offenses
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Western Region court page lists Yomba Shoshone Tribe as served and names the Court of Indian Appeals as appellate court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/regional-offices/western/court-indian-offenses/court-rules
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court rules page covers the laws of the Yomba Shoshone Tribe; it names no separate tribal court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/regional-offices/western/tribes-served
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Western Region tribes-served list includes Yomba Shoshone Tribe.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.yombatribe.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nation's homepage fetched; no court or judicial page is mentioned in its text or links.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nvcourts.gov/__data/assets/pdf_file/0031/48496/Nevada_Tribal_Jurisdictions_and_Services_Resource_1.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nevada directory lists the Yomba Shoshone Tribe but names no court for it.

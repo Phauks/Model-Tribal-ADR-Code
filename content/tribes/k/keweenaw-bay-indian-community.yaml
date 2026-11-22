@@ -262,6 +262,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Michigan section, entry 'Keweenaw Bay Indian Community'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.kbic-nsn.gov/content/court
+  location:
+    place: Baraga
+    state: MI
+    address: 472 N. Superior Ave., Baraga, MI 49908
+  source: keweenaw-bay-indian-community-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Tribal Court was established by Tribal Council authority under Article VI Section 1.”. The page heading reads ''Court''; the name is taken from the page''s own sentence. The page also says ''The Trial Court interprets the laws and ordinances passed by the Tribal Council'', which appears to describe the same court. No appellate court is named on the page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, keweenaw-bay-indian-community#1).'
 dispute_resolution: {}
 gaming:
   compacts:

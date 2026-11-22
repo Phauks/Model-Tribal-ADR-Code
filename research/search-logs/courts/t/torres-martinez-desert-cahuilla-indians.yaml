@@ -153,3 +153,19 @@ searches:
     (own page, then directory entry): directory, https://www.intertribalcourt.org/member-tribes.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-380
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: ICSC member list includes Torres Martinez Desert Cahuilla Indians.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://torresmartinez.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Homepage fetched with fetch.py; it contains no court text.

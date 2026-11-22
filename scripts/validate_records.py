@@ -511,6 +511,17 @@ def main() -> int:
         institutions = record.get("justice_institutions") or []
         names = [institution.get("name", "") for institution in institutions]
         for institution in institutions:
+            # A court's part_of names its group, another entry in the same
+            # profile, so the page can list the court under the group.
+            group = institution.get("part_of")
+            if group is not None:
+                if group == institution.get("name"):
+                    errors.append(f"{path}: {institution.get('name')} part_of names itself")
+                elif group not in names:
+                    errors.append(
+                        f"{path}: {institution.get('name')} part_of names '{group}', "
+                        "which is not an entry in justice_institutions"
+                    )
             appeal = institution.get("appeals_to")
             if not appeal:
                 continue

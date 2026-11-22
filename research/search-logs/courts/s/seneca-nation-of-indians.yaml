@@ -83,3 +83,11 @@ searches:
   reason: '“Seneca Nation of New York – Cattaraugus Reservation Court of Appeals”: Claude weighed the evidence against the lead author''s order (own page, then directory entry): own-page, https://sni.org/about-our-government/judicial/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-345
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sni.org/about-our-government/judicial/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Judicial page describes all courts and appeals.

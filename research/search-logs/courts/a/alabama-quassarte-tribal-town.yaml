@@ -166,6 +166,22 @@ searches:
     (own page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-010
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://alabama-quassarte.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nation's homepage fetched (status 200); it mentions no court, judicial branch or tribal court in its text or links.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nill.narf.org/tribes/alabama_quassarte.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Search lead only (NARF tribal profile); not fetched, so it is not used as evidence.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-010,
   not-found-after-search); Alabama-Quassarte Tribal Court (court-011, not-found-after-search). No page
   or official directory entry was found on 2026-11-22 for “Tribal Court”; “Alabama-Quassarte Tribal Court”

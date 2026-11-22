@@ -120,3 +120,19 @@ searches:
     then directory entry): directory, https://bia.gov/CFRCourts.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-422
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: BIA list places the Wichita and Affiliated Tribes in the Southern Plains CFR Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://wichitatribe.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'Fetch failed: the proxy closed the connection before a response.'

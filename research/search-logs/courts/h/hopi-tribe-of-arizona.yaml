@@ -1,0 +1,21 @@
+profile: content/tribes/h/hopi-tribe-of-arizona.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.hopi-nsn.gov/judicial-branch/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Placeholder judicial branch page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: Hopi Tribe trial court appellate court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Only Ballotpedia/NARF/code results, not official.

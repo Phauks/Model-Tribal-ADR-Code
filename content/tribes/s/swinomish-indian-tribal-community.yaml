@@ -247,6 +247,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Swinomish Indian Tribal Community'
+- kind: tribal-court
+  name: Swinomish Tribal Court
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  location:
+    place: LaConner
+    state: WA
+    address: 17337 Reservation Rd
+  source: washington-state-courts-administrative-office-of-court-direc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Swinomish Tribal Court”. From the state directory only. The nation''s own tribal court page returned a bot challenge (HTTP 403) and was not read. The batch''s generic ''Tribal Court'' entry is the same court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, swinomish-indian-tribal-community#1).'
 dispute_resolution:
   provisions:
   - kind: arbitration

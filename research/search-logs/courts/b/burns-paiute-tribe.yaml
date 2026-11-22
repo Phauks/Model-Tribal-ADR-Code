@@ -32,3 +32,11 @@ searches:
     page, then directory entry): own-page, https://burnspaiute-nsn.gov/burns-tribal-agency-and-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-031
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://burnspaiute-nsn.gov/burns-tribal-agency-and-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Burns Tribal Agency and Court page (status 200) lists the court's address, staff and hours.

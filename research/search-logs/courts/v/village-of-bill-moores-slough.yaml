@@ -131,3 +131,19 @@ searches:
     directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-402
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 'Bill Moore''s Slough entry: Active Court Yes; Type of Justice System Inter-Tribal Court with Kotlik Hamilton, and Wellness Court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Alaska Court System Court Directory landing page (200) links to the Tribal Court Directory; found with WebSearch.

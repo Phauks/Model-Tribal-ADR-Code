@@ -300,6 +300,29 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html)
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Tribal Courts page on the nation''s
     website (fetched with status 200 on 2026-11-22).'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://ldftribe.com/tribal-operations/tribal-courts/
+  location:
+    place: Lac du Flambeau
+    state: WI
+    address: 623 Peace Pipe Road
+  source: lac-du-flambeau-band-of-lake-tribal-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Rules of the Tribal Court”. The page''s main court is ''Tribal Court'', under the ''Tribal Court Information'' heading, with the Tribal Court Code and Chapter 80 cited. The address is the Gilbert Chapman Sr. Judicial Center, which the page names; the street address appears in the page''s embedded map link, not in the visible text. The page says appeals are heard by a ''Three-member panel of judges'' without naming a court, so no appeals_to is recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin#1).'
+- kind: healing-to-wellness-court
+  name: Zaagiibagaa Healing to Wellness Court
+  link: https://ldftribe.com/tribal-operations/tribal-courts/
+  location:
+    place: Lac du Flambeau
+    state: WI
+  source: lac-du-flambeau-band-of-lake-tribal-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Zaagiibagaa Healing to Wellness Court”. Listed on the same page as a separate court program. The page does not give a separate address for it, so none is recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin#2).'
 dispute_resolution:
   provisions:
   - kind: other

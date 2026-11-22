@@ -311,6 +311,29 @@ justice_institutions:
   locator: List of CFR Courts and the Tribes they Serve
   note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
     Indian Affairs list.
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court
+  link: https://www.bia.gov/CFRCourts/southern-plains-cfr-court
+  source: bureau-of-indian-affairs-southern-plains-cfr-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tribes located in the Southern Plains CFR Court”. The BIA page lists ''Caddo Nation of Oklahoma'' among the tribes located in the court. The page has no street location. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, caddo-nation-of-oklahoma#1).'
+  appeals_to:
+    court: Court of Indian Appeals
+    source: bureau-of-indian-affairs-southern-plains-cfr-court
+    confidence: medium
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “Appeals may be taken from the trial court to the Court of Indian Appeals.”.'
+- kind: court-of-appeals
+  name: Court of Indian Appeals
+  link: https://www.bia.gov/CFRCourts/southern-plains-cfr-court
+  source: bureau-of-indian-affairs-southern-plains-cfr-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Appeals may be taken from the trial court to the Court of Indian Appeals.”. Appellate court for the Southern Plains CFR Court, as the BIA names it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, caddo-nation-of-oklahoma#2).'
 gaming:
   compacts:
   - state: OK

@@ -22,3 +22,11 @@ searches:
     order (own page, then directory entry): own-page, https://www.miamination.com/miami-tribe-of-oklahoma-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-155
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.miamination.com/miami-tribe-of-oklahoma-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Official Miami Tribe court page names the District Court and the Court of Appeals.

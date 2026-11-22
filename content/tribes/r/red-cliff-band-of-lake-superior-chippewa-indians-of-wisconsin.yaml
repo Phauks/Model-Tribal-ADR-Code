@@ -329,6 +329,36 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-331.'
+- kind: tribal-court
+  name: Red Cliff Tribal Court
+  link: https://www.redcliff-nsn.gov/government/tribal_court___legal_dept/
+  location:
+    place: Bayfield
+    state: WI
+    address: 37290 Community Rd
+  source: red-cliff-band-of-lake-superior-tribal-court-legal
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Red Cliff Tribal Court is vested with jurisdiction over all violations of the Red Cliff Codes of Law”. The physical address ''Physical Address: 37290 Community Rd, Bayfield WI'' is from the page; the mailing address 88455 Pike Rd was not used. The page lists a Chief Judge, two Associate Judges, a Reserve Judge and Magistrates, with no separate sub-courts named. Batch entry ''Tribal Court'' points to the same page. appeals_to comes from the page''s own ''Appeals:'' line under the court section. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin#1).'
+  appeals_to:
+    court: Three Judge Panel
+    source: red-cliff-band-of-lake-superior-tribal-court-legal
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “Appeals: Three Judge Panel consisting of Judges from other Tribes”.'
+- kind: court-of-appeals
+  name: Three Judge Panel
+  link: https://www.redcliff-nsn.gov/government/tribal_court___legal_dept/
+  location:
+    place: Bayfield
+    state: WI
+  source: red-cliff-band-of-lake-superior-tribal-court-legal
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Appeals: Three Judge Panel consisting of Judges from other Tribes”. The page''s ''Appeals:'' line names this panel; it is an appellate body made of judges from other tribes. It is not called a court by the page, so the kind is a classification. Location is the nation''s Bayfield address, which the page does not tie to the panel. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin#2).'
 dispute_resolution:
   provisions:
   - kind: other

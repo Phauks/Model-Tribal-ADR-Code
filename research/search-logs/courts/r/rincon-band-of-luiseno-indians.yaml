@@ -27,3 +27,27 @@ searches:
   query: where appeals from each listed court go (path of appeal)
   outcome: found
   reason: 'Rincon Tribal Code § 3.310 (amended April 2, 2026), § 3.315(j)(1): appeals from the Rincon Civil Trial Court go to the Rincon Court of Appeals. The preamble also names a Court of Appeals within the Intertribal Court, so the route for cases still in the Intertribal Court is unsettled here.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://rincontribalcourt.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Rincon court site loaded (status 200) and lists the civil trial court, the court of appeals and the Intertribal Court of Southern California.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://rincontribalcourt.org/court-system/rincon-court-of-appeals/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court of Appeals page loaded (status 200) and states what appeals it hears.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Directory lists 'Rincon Band of Luiseno Indians' in San Diego County with the rincontribalcourt.org link; no separate court name.

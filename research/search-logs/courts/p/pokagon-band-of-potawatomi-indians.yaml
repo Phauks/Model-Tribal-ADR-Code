@@ -21,3 +21,19 @@ searches:
     directory entry): own-page, https://www.pokagonband-nsn.gov/government/tribal-courts/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-294
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.pokagonband-nsn.gov/government/tribal-courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Courts page describes the tribal court system and gives the Sink Road address (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Pokagon Band tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search showed the nation's court pages and a Michigan legal help page, which I did not fetch.

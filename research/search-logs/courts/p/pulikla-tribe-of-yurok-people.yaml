@@ -1,6 +1,6 @@
 profile: content/tribes/p/pulikla-tribe-of-yurok-people.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-21'
@@ -146,6 +146,30 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-325
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://puliklatribe.gov/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Home page loaded (status 200) with no court text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://yuroktribalcourt.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Yurok Tribal Court site loaded (status 200) and names the court and a Yurok Wellness Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Directory lists 'Yurok Tribal Court' in Del Norte and Humboldt counties; no entry names Pulikla.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-250,
   not-found-after-search). No page or official directory entry was found on 2026-11-22 for “Tribal Court”
   (research/reviews/2026-11-22-service-links.json).'

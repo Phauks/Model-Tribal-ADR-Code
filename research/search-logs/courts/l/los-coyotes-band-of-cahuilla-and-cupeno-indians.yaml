@@ -197,3 +197,19 @@ searches:
     evidence against the review brief; verdict served-by-intertribal-court, from https://www.intertribalcourt.org/member-tribes.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-097
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.loscoyotestribe.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Home page loaded (status 200) with no court text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: ICSC member page lists Los Coyotes Band of Cahuilla and Cupeño Indians as a member tribe.

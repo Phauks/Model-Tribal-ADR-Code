@@ -309,6 +309,28 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Citizen Potawatomi Nation'
+- kind: district-court
+  name: District Court
+  link: https://www.potawatomi.org/government/judicial-branch/
+  part_of: Tribal Court
+  location:
+    state: OK
+  source: citizen-potawatomi-nation-judicial-branch-org
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Judges of the District Court”. Page lists a Chief District Judge and Associate District Judge; three district court judges. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, citizen-potawatomi-nation#2).'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://www.potawatomi.org/government/judicial-branch/
+  part_of: Tribal Court
+  location:
+    state: OK
+  source: citizen-potawatomi-nation-judicial-branch-org
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “JUSTICES OF THE SUPREME COURT”. Seven supreme court justices; page does not say explicitly that district court appeals go here. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, citizen-potawatomi-nation#3).'
 dispute_resolution:
   database_listings:
   - title: Restorative Sentencing Guidelines

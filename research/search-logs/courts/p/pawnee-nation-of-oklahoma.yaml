@@ -21,3 +21,19 @@ searches:
     then directory entry): own-page, https://pawneenation.org/pawnee-nation-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-288
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: "Pawnee Nation" court judicial'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned the nation's court page and its law and order code pages.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pawneenation.org/pawnee-nation-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's court page names the Pawnee Nation District Court (with address) and the Pawnee Nation Supreme Court.

@@ -198,3 +198,27 @@ searches:
     page, then directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-185
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.fortyukon.org/tribal-governance
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's governance page fetched (200) and lists TRIBAL COURT and COURT OF APPEALS.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.fortyukon.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Homepage fetched (200) and has no court text; the court sections are on the tribal-governance page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: fetch.py returns no text for the directory PDF; an earlier partial read showed the Fort Yukon entry as type 'Tribal Court' but that could not be re-checked.

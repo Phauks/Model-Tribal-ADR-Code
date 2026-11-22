@@ -244,6 +244,26 @@ justice_institutions:
   locator: Arizona section, entry 'Pascua Yaqui Tribe'
   note: The listed link (http://www.pycourts.org/) no longer reached the court on 2026-11-21; the link
     is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.pascuayaqui-nsn.gov/judicial-branch/
+  location:
+    place: Tucson
+    state: AZ
+    address: 7777 S Camino Huivism, Tucson, AZ 85757
+  source: pascua-yaqui-tribe-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tribal Court”. Page lists only a link label to /tribal-court/ (not fetched). Address given is for the Judicial Branch office, not stated for the court alone. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pascua-yaqui-tribe-of-arizona#1).'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://www.pascuayaqui-nsn.gov/judicial-branch/
+  source: pascua-yaqui-tribe-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Court of Appeals”. Link label only on the judicial branch page; its own page /court-of-appeals/ was not fetched. No appeals statement on the page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pascua-yaqui-tribe-of-arizona#2).'
 dispute_resolution:
   forums:
   - kind: mediation

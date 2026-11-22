@@ -202,6 +202,15 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-290.'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://www.penobscotnation.org/government/tribal_court/index.php
+  part_of: Tribal Court
+  source: penobscot-nation-me
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The culturally-based Healing to Wellness Court program is available to Penobscot Nation tribal members”. A program listed on the Tribal Court page. Recorded as a separate healing court because the page names it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, penobscot-nation#2).'
 dispute_resolution: {}
 jurisdiction:
 - topic: indian-child-welfare-act

@@ -259,6 +259,16 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Montana section, entry 'Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation'
+- kind: tribal-court
+  name: Fort Peck Tribal Court
+  link: https://fptc.org/
+  location:
+    address: 807 Court Avenue
+  source: fort-peck-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Fort Peck Tribal Court”. The court''s own site (fptc.org, reached via http://www.fptc.org/ redirect) names the court and lists the address 807 Court Avenue; the page does not name the town or state, so place and state are left out. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation#1).'
 dispute_resolution: {}
 gaming:
   compacts:

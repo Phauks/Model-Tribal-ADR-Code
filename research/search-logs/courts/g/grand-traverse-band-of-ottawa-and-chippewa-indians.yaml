@@ -1,0 +1,21 @@
+profile: content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.gtbindians.org/tribal_court.asp
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names the Tribal Court and the Tribal Appellate Court (checked with fetch.py; the http variant redirected to the same page).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Grand Traverse Band tribal court Peacemaking Court Healing to Wellness'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned the nation's page and non-official pages; no Peacemaking or Healing court page for this nation surfaced among official results.

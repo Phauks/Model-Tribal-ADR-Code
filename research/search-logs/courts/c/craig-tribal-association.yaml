@@ -21,3 +21,19 @@ searches:
     directory entry): own-page, http://www.craigtribe.org/tribal-court.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-071
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.craigtribe.org/tribal-court.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Fetched with fetch.py (200); the 'Tribal Court' page exists but describes no operating court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 2022 directory text read; Craig Tribal Association entry says the court is 'Not currently, but is interested in developing.'

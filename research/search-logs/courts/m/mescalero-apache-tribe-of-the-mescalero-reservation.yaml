@@ -238,4 +238,28 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-153
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mescaleroapachetribe.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Home page links to news and services, with no court text on the fetched page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mescaleroapachetribe.com/mtc/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Mescalero Tribal Court page names the court and its staff.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: Mescalero Apache tribal court official'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned the nation's Tribal Court page and related judge announcements.
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court” (research/reviews/2026-11-22-service-links.json).

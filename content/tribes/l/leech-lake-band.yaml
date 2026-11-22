@@ -147,6 +147,27 @@ justice_institutions:
   as_of: '2022'
   locator: Minnesota section, entry 'Leech Lake Band of Ojibwe'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band'
+- kind: tribal-court
+  name: Leech Lake Tribal Court
+  link: https://www.llojibwe.org/court/court.html
+  location:
+    place: Cass Lake
+    state: MN
+    address: 190 Sailstar Drive NW, Cass Lake, MN 56633
+  source: leech-lake-band-of-ojibwe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The first component is the trial court, with its judges, lawyers, cases, hearings, orders and appeals.”. The page''s heading is ''Tribal Court''; it names the trial court as the first of two components of the Tribal Court and gives the courtroom address. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, leech-lake-band#1).'
+- kind: healing-to-wellness-court
+  name: Family Drug Court
+  link: https://www.llojibwe.org/court/court.html
+  part_of: Peacemaker Tribunal (BaMeNim Anishinaabeg Program), Leech Lake Band
+  source: leech-lake-band-of-ojibwe-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “the Family Drug Court (FDC) is now operational”. The page says the FDC can handle up to ten participants with substance abuse issues and a pending child protection case; it is listed as a program of the Bamenim Anishinabeg program. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, leech-lake-band#2).'
 dispute_resolution:
   forums:
   - kind: arbitration

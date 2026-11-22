@@ -169,6 +169,24 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Lower Elwha Klallam Tribe'
+- kind: court-of-appeals
+  name: Appellate Court
+  link: https://www.elwha.org/departments/tribal-court/
+  part_of: Lower Elwha Klallam Tribal Court
+  source: lower-elwha-klallam-tribe-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “a trial court and an appellate court”. The Judicial Code (section 1.4) provides for an appellate court, but the page gives it no separate name, address or location, so the name is generic. Recorded because the official source names it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lower-elwha-tribal-community#2).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://www.elwha.org/departments/tribal-court/
+  part_of: Lower Elwha Klallam Tribal Court
+  source: lower-elwha-klallam-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “adult and family Healing to Wellness Court”. The page calls it the ''adult and family Healing to Wellness Court''; it gives no location for this program. Criminal and traffic sessions of the trial court are not recorded as separate courts. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lower-elwha-tribal-community#3).'
 gaming:
   compacts:
   - state: WA

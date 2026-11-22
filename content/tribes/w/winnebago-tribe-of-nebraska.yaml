@@ -336,6 +336,14 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Nebraska section, entry 'Winnebago Tribe of Nebraska'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://winnebagotribe.com/tribal-court/
+  source: winnebago-tribe-of-nebraska-tribal-court-tribal-court-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “SUPREME COURT JUDGES”. Named only by a page heading (''SUPREME COURT JUDGES'', rendered here in normal capitals). The page gives no further description. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, winnebago-tribe-of-nebraska#2).'
 dispute_resolution: {}
 gaming:
   compacts:

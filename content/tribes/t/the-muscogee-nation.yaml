@@ -288,6 +288,66 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Muscogee (Creek) Nation'
+- kind: tribal-court
+  name: Criminal Court
+  link: https://creekdistrictcourt.com/
+  part_of: Muscogee Creek District Court
+  location:
+    place: Okmulgee
+    state: OK
+  source: district-court-of-the-muscogee-creek
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Judge Otipoby (Criminal Court)”. Listed as a judge''s docket on the District Court page; the page does not call it a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-muscogee-nation#2).'
+- kind: family-court
+  name: Family Court
+  link: https://creekdistrictcourt.com/
+  part_of: Muscogee Creek District Court
+  location:
+    place: Okmulgee
+    state: OK
+  source: district-court-of-the-muscogee-creek
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Judge Masters (Family Court)”. Listed as a judge''s docket on the District Court page; the page does not call it a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-muscogee-nation#3).'
+- kind: tribal-court
+  name: Civil/Domestic Violence
+  link: https://creekdistrictcourt.com/
+  part_of: Muscogee Creek District Court
+  location:
+    place: Okmulgee
+    state: OK
+  source: district-court-of-the-muscogee-creek
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Judge Campbell (Civil/Domestic Violence)”. Listed as a judge''s docket on the District Court page; the page does not call it a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-muscogee-nation#4).'
+- kind: tribal-court
+  name: Traffic/DUI
+  link: https://creekdistrictcourt.com/
+  part_of: Muscogee Creek District Court
+  location:
+    place: Okmulgee
+    state: OK
+  source: district-court-of-the-muscogee-creek
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Judge Smith (Traffic/DUI)”. Listed as a judge''s docket on the District Court page; the page does not call it a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-muscogee-nation#5).'
+- kind: tribal-court
+  name: Small Claims
+  link: https://creekdistrictcourt.com/
+  part_of: Muscogee Creek District Court
+  location:
+    place: Okmulgee
+    state: OK
+  source: district-court-of-the-muscogee-creek
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Judge Barnes (Small Claims)”. Listed as a judge''s docket on the District Court page; the page does not call it a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-muscogee-nation#6).'
 dispute_resolution:
   database_listings:
   - title: Court Diversion by Stipulation in Juvenile Delinquency

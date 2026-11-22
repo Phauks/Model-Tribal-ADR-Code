@@ -152,4 +152,20 @@ searches:
     page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-070
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cowcreek-nsn.gov/?p=4429
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: The nation's Tribal Government page returned only a 'Please wait while your request is being verified' bot challenge, so no court content was read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: Cow Creek Band of Umpqua Tribal Court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Results were peacekeeper application and training notices and the Oregon and NARF pages, with no verified court page.
 next_steps: No page or official directory entry was found on 2026-11-22 for “Cow Creek Tribal Court” (research/reviews/2026-11-22-service-links.json).

@@ -218,6 +218,50 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.santaana-nsn.gov/tribalcourt/index.html)
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Tribal Court front page on the
     nation''s website (fetched with status 200 on 2026-11-22).'
+- kind: tribal-court
+  name: Pueblo of Santa Ana Contemporary Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  location:
+    place: Santa Ana Pueblo
+    state: NM
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “As a court of general jurisdiction, the Contemporary Court adjudicates”. The page describes a Contemporary Court of general jurisdiction; it is unclear whether this is the same court as the Santa Ana Tribal Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-santa-ana#2).'
+- kind: tribal-court
+  name: Santa Ana Trial Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  location:
+    place: Santa Ana Pueblo
+    state: NM
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Contemporary Court shall serve as the Santa Ana Trial Court”. A rule on the page says the Contemporary Court serves as the Santa Ana Trial Court for certain requests; likely the same court as the Contemporary Court, recorded separately because the page names it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-santa-ana#3).'
+- kind: traditional-forum
+  name: Traditional Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  location:
+    place: Santa Ana Pueblo
+    state: NM
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Petition to Open Traditional Court Case”. The page has a traditional court judge line and a form to open a traditional court case; no address or description given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-santa-ana#4).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  location:
+    place: Santa Ana Pueblo
+    state: NM
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Healing to Wellness Court Judge:”. The page lists a judge for the Healing to Wellness Court and a Healing to Wellness Program Manager; no address given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-santa-ana#5).'
 gaming:
   compacts:
   - state: NM

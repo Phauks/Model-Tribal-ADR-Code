@@ -1,0 +1,21 @@
+profile: content/tribes/p/pit-river-tribe.yaml
+topic: courts
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pitrivertribe.gov/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Returned a 'One moment, please...' placeholder with no page text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: The directory has no Pit River row.

@@ -183,6 +183,29 @@ justice_institutions:
     Court System court directory: 2022 Alaska Tribal Court Directory (prepared by Alaska Legal Services
     Corporation); no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
     service-403).'
+- kind: other
+  name: Council
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  location:
+    place: Chefornak
+    state: AK
+  source: alaska-legal-services-corporation-hosted-at-2022-tribal-cour
+  confidence: medium
+  verification: read-in-full
+  as_of: '2022'
+  note: 'The page names the court: “Type of Justice System Council (Established), including a Wellness Court.”. Directory says the justice system is a council (established); the batch''s ''Tribal Court'' may be this body, but the directory does not name a tribal court, so existing is left null. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, village-of-chefornak#1).'
+- kind: healing-to-wellness-court
+  name: Wellness Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  part_of: Council
+  location:
+    place: Chefornak
+    state: AK
+  source: alaska-legal-services-corporation-hosted-at-2022-tribal-cour
+  confidence: medium
+  verification: read-in-full
+  as_of: '2022'
+  note: 'The page names the court: “Type of Justice System Council (Established), including a Wellness Court.”. Wellness Court named in the directory''s justice-system field. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, village-of-chefornak#2).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

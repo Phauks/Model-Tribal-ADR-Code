@@ -201,3 +201,19 @@ searches:
     order (own page, then directory entry): own-page, https://santaana-nsn.gov/tribalcourt-front-page/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-318
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://santaana-nsn.gov/tribalcourt-front-page/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal court front page names the Tribal Court, Contemporary Court, Traditional Court and Healing to Wellness Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/contact/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: New Mexico tribal-state directory lists 'Pueblo of Santa Ana – Tribal Court' at 2 Dove Court (address differs from the nation's page).

@@ -197,6 +197,18 @@ justice_institutions:
   note: 'The page gives a contact for a tribal court without a fuller name. Review 2026-11-21: the link
     the source gives (https://narf.org/nill/tribes/www.itcn.org/Tribes.html) is malformed or is not a
     page about this item, so it is not recorded.'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://winnemuccaindiancolony.org/
+  location:
+    place: Winnemucca
+    state: NV
+    address: 341 W. South St., Winnemucca, NV 89445
+  source: winnemuccaindiancolony-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “WIC Court Information”. The colony''s own homepage has a ''WIC Court Information'' section and a ''Court Physical Address'' line (341 W. South St.), and links ''TRIBAL COURT FEES''. The page has no date on the court content. Its ''INTER-TRIBAL COURT OF APPEALS RULES'' link does not say where appeals go, so none is recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, winnemucca-indian-colony-of-nevada#1).'
 dispute_resolution:
   database_listings:
   - title: Sentencing for Criminal Offenses

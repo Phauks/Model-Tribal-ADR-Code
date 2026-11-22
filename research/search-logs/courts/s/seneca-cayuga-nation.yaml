@@ -1,0 +1,21 @@
+profile: content/tribes/s/seneca-cayuga-nation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: BIA list names the Miami Agency CFR Court and lists the Seneca-Cayuga Tribe of Oklahoma among its tribes.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sctribe.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nation's homepage fetched (status 200); no court text found.

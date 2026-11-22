@@ -363,6 +363,14 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-295.'
+- kind: court-of-appeals
+  name: Appellate Court
+  link: https://poncatribe-ne.gov/tribal-court-home/
+  source: ponca-tribe-of-nebraska-tribal-court-home
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Appellate Court”. Named only as a navigation link on the Tribal Court Home page, with no description. Its relationship to the Tribal Court is not stated beyond that, so no appeals_to is given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, ponca-tribe-of-nebraska#2).'
 dispute_resolution:
   provisions:
   - kind: mediation

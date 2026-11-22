@@ -22,3 +22,43 @@ searches:
     the lead author''s order (own page, then directory entry): own-page, https://ltbbodawa-nsn.gov/judicial-branch/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-135
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ltbbodawa-nsn.gov/judicial-branch/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Judicial branch page fetched with fetch.py (200); names the Tribal Court, Tribal Appellate Court, address and peacemaking link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ltbbodawa-nsn.gov/judicial-branch/contact-us/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Contact page fetched with fetch.py (200); names the Court of General Jurisdiction (Tribal Court), Tribal Appellate Court and the two alternative courts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ltbbodawa-nsn.gov/?p=3165
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Fetched with fetch.py (200); redirects to the contact page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ltbbodawa-nsn.gov/judicial-branch/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: WebFetch returned a bot challenge; the page was then read with fetch.py, which succeeded.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Little Traverse Bay Bands of Odawa Indians judicial branch tribal court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned nation pages; the judicial branch and contact pages above were confirmed by fetch.

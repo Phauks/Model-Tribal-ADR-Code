@@ -186,6 +186,18 @@ justice_institutions:
   locator: Washington section, entry 'Upper Skagit Indian Tribe'
   note: 'Link is the entry in the Washington State Court Directory: Tribal Courts; no page of the court''s
     own was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-393).'
+- kind: tribal-court
+  name: Upper Skagit Tribal Court (NICS)
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  location:
+    place: Sedro Woolley
+    state: WA
+    address: 25933 Community Plaza Way
+  source: washington-state-courts-administrative-office-of-court-direc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Upper Skagit Tribal Court (NICS)”. Listed on the Washington state tribal court directory as the only court for this tribe; the directory footer reads Copyright AOC 2014, so the listing may be dated. The existing entry ''Upper Skagit Court System'' is not named on this page and was not verified. The ''(NICS)'' suffix is the directory''s own label. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, upper-skagit-indian-tribe#1).'
 gaming:
   compacts:
   - state: WA

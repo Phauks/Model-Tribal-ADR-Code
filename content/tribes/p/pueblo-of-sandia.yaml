@@ -177,6 +177,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Sandia'
+- kind: tribal-court
+  name: Pueblo of Sandia Tribal Court
+  link: https://tribalstate.nmcourts.gov/contact/
+  location:
+    place: Bernalillo
+    state: NM
+    address: 481 Sandia Loop
+  source: new-mexico-courts-tribal-state-judicial-contact
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Pueblo of Sandia – Tribal Court”. Found only in the official NM tribal-state directory, which gives the court a street address. The nation''s own site names no court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-sandia#1).'
 gaming:
   compacts:
   - state: NM

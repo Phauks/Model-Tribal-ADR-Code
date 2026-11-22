@@ -202,3 +202,19 @@ searches:
     confirmed, from https://www.courts.wa.gov/court_dir/orgs/134.html.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-277
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.swinomish-nsn.gov/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Returned an HTTP 403 bot challenge page; not bypassed.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists this nation's court.

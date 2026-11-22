@@ -176,3 +176,19 @@ searches:
     directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-176
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.curarpaluk.com/history
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Chuathbaluk community site history page fetched (200); it names no court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: fetch.py returns no text for the directory PDF, so the Chuathbaluk entry could not be checked.

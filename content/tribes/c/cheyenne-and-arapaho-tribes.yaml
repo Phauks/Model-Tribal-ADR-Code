@@ -306,6 +306,45 @@ justice_institutions:
   note: 'Link check 2026-11-21: the site did not respond. The listed link (https://www.c-a-tribes.org/staff/judicial-branch)
     no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
     found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
+- kind: other
+  name: Judicial Branch
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  location:
+    place: Concho
+    state: OK
+    address: 100 W. Black Kettle Boulevard
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Tribal Justice Center, located on 100 W. Black Kettle Boulevard, in Concho, OK is the permanent home of the Judicial Branch.”. Group record for the court system. The batch''s ''judicial-branch'' tribal-court entry points to this same page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cheyenne-and-arapaho-tribes#1).'
+- kind: tribal-court
+  name: Trial Court
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  part_of: Cheyenne and Arapaho Tribes Judicial Branch
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Judicial Branch is comprised of one Supreme Court, and one Trial Court”. The page has a Trial Court docket link. The Judicial Commission named on the page is not a court and is left out. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cheyenne-and-arapaho-tribes#2).'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  part_of: Cheyenne and Arapaho Tribes Judicial Branch
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Supreme Court of the Cheyenne and Arapaho Tribes meets monthly”. The page does not say where Trial Court appeals go, so no appeals_to is recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cheyenne-and-arapaho-tribes#3).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  part_of: Cheyenne and Arapaho Tribes Judicial Branch
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Healing to Wellness Court empowers tribal members to live soberly”. Listed on the Judicial Branch page; the page gives no separate location or details for this court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cheyenne-and-arapaho-tribes#4).'
 dispute_resolution:
   database_listings:
   - title: Restorative Sentencing

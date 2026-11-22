@@ -213,6 +213,14 @@ justice_institutions:
   as_of: '2022'
   locator: Michigan section, entry 'Lac Vieux Desert Band of Lake Superior Chippewa Indians'
   note: 'Link check 2026-11-21: the site did not respond.'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://lvd-nsn.gov/Content/Tribal_Court.cfm
+  source: lac-vieux-desert-band-of-lake
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Healing to wellness court”. Named only as a link in the team section of the Tribal Court page; the linked page was not fetched, so its location and details are unknown. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan#2).'
 dispute_resolution:
   database_listings:
   - title: Informal Adjustment Conference – Pre-Petition Diversion

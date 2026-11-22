@@ -158,3 +158,19 @@ searches:
     then directory entry): directory, https://www.intertribalcourt.org/member-tribes.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-364
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: ICSC member list includes Sycuan Band of the Kumeyaay Nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sycuantribe.com/sycuan-legal-dept/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Legal department page fetched; it describes the department and names no tribal court.

@@ -200,3 +200,43 @@ searches:
     page, then directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-154
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.metlakatla.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nation's homepage fetched (200); it names no tribal court or Northwest Intertribal Court System.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.metlakatla.com/tribal-council/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Tribal Council page fetched (200); it names no tribal court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: http://www.codepublishing.com/WA/NICS/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Returns HTTP 403 with a 'Just a moment' bot challenge, so it was not read and the challenge was not bypassed.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: fetch.py returns no text for the directory PDF, so the Metlakatla entry could not be checked against it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://tlingitandhaida.gov/service/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Tlingit & Haida Tribal Court page fetched (200); it is that tribe's court in Juneau and does not name Metlakatla.

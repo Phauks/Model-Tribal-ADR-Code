@@ -1,0 +1,21 @@
+profile: content/tribes/n/nooksack-indian-tribe.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://nooksacktribe.org/nooksack-tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names the Nooksack Tribal Court and its staff, forms and schedule.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists Nooksack Tribal Court in Deming.

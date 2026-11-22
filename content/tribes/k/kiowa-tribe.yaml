@@ -289,6 +289,14 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
+- kind: supreme-court
+  name: Supreme Court
+  link: https://www.kiowatribe.org/judicial
+  source: kiowa-tribe-judicial
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Supreme Court Opinions”. The page has a Supreme Court Opinions list (for example SC-2026-01). The name ''Supreme Court'' is taken from the section heading. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, kiowa-tribe#2).'
 dispute_resolution:
   forums:
   - kind: peacemaking

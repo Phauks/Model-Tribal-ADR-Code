@@ -273,6 +273,17 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
     2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-320.'
+- kind: juvenile-court
+  name: Children's Court
+  link: https://www.santaclarapueblo.org/tribal-court/
+  location:
+    place: Santa Clara Pueblo
+    state: NM
+  source: santa-clara-pueblo-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Santa Clara Pueblo Tribal Court also has a Children’s Court”. Described as handling abused and neglected children, families in need of services, guardianship and adoptions; no separate address. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-santa-clara#2).'
 gaming:
   compacts:
   - state: NM

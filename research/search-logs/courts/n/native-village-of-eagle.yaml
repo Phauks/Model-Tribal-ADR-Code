@@ -285,6 +285,22 @@ searches:
     then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-178
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.tananachiefs.org/about/communities/eagle/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Tanana Chiefs Conference community page fetched (200); it is a regional organization's page and names no court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: fetch.py returns no text for the directory PDF, so the Eagle entry could not be checked.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-142,
   cannot-tell); Eagle Tribal Court (court-143, cannot-tell). No page or official directory entry was found
   on 2026-11-22 for “Tribal Court”; “Eagle Tribal Court” (research/reviews/2026-11-22-service-links.json).'

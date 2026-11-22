@@ -319,6 +319,17 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
     2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see
     research/reviews/2026-11-22-service-links.json, service-340.'
+- kind: juvenile-court
+  name: Juvenile Court
+  link: https://www.scat-nsn.gov/tribalcourt/
+  location:
+    place: Peridot
+    state: AZ
+  source: san-carlos-apache-tribe-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “THE JUVENILE court”. Named in the Juvenile Code excerpt; shares the Tribal Court address, may not be a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, san-carlos-apache-tribe-of-the-san-carlos-reservation#2).'
 dispute_resolution: {}
 gaming:
   compacts:
