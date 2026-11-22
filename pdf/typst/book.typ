@@ -115,6 +115,17 @@
     },
     footer: context {
       let number = here().page()
+      // A box that runs onto the next page says so at the foot of the page.
+      // (Decided here, not in the box's own footer, where here() is not
+      // reliable inside a repeated table footer.)
+      let box-pages = (:)
+      for marker in query(<boxed-page>) {
+        let key = str(marker.value)
+        box-pages.insert(key, box-pages.at(key, default: ()) + (marker.location().page(),))
+      }
+      if box-pages.values().any(pages => number in pages and (number + 1) in pages) {
+        align(right, text(size: type.running_head * 1pt, style: "italic", [Continued on next page]))
+      }
       if page-has(<no-header>, number) and not page-has(<no-folio>, number) and not is-blank(number) {
         align(center, text(size: type.running_head * 1pt, counter(page).display()))
       }
@@ -310,42 +321,69 @@
   body
 }
 
-// A court case set apart from the text: its full citation as the heading,
-// what the court held, then its "Quotes" and "Treatment" parts.
-#let case-block(citation, facts, body) = block(
-  width: 100%,
-  breakable: true,
-  stroke: 0.6pt + black,
-  inset: (x: 0.9em, top: 0.8em, bottom: 0.9em),
-  above: 1.3em,
-  below: 1.3em,
-  {
-    set par(first-line-indent: 0em, justify: false)
-    block(below: 0.6em, sticky: true, text(weight: "semibold", citation))
-    // The nations the case concerns and, for a Supreme Court case, who
-    // decided it: the Court, the vote and each justice's part.
-    if facts.len() > 0 {
-      block(below: 0.8em, sticky: true, {
-        set text(size: 0.85em)
-        grid(
-          columns: (auto, 1fr),
-          column-gutter: 0.8em,
-          row-gutter: 0.4em,
-          ..facts.map(((label, value)) => (text(weight: "semibold", label), value)).flatten(),
-        )
-      })
-    }
-    body
-  },
-)
+// A box set apart from the text (cases, laws, analysis). When it runs onto
+// another page, its heading repeats at the top with "(continued)", and the
+// page it leaves says "Continued on next page" at its foot (page footer
+// above) (lead author, Nov. 22, 2026).
+#let boxed-counter = counter("boxed-block")
+#let boxed(heading, body, stroke: 0.6pt + black) = {
+  boxed-counter.step()
+  context {
+    let id = boxed-counter.get().first()
+    // The footer repeats on every page the box reaches, so its markers give
+    // the box's first and last pages.
+    let pages = query(<boxed-page>).filter(item => item.value == id).map(item => item.location().page())
+    let first-page = if pages.len() > 0 { calc.min(..pages) } else { 0 }
+    let side = (left: stroke, right: stroke)
+    block(above: 1.3em, below: 1.3em, table(
+      columns: (1fr,),
+      inset: (x: 0.9em, y: 0pt),
+      stroke: (x, y) => side,
+      table.header(repeat: true, table.cell(stroke: (top: stroke, ..side), inset: (x: 0.9em, top: 0.8em, bottom: 0.6em), context {
+        set par(first-line-indent: 0em, justify: false)
+        text(weight: "semibold", heading)
+        if first-page > 0 and here().page() > first-page { text(weight: "regular", style: "italic", [ (continued)]) }
+      })),
+      table.cell(inset: (x: 0.9em, top: 0pt, bottom: 0.2em), {
+        set par(first-line-indent: 0em, justify: false)
+        body
+      }),
+      table.footer(repeat: true, table.cell(stroke: (bottom: stroke, ..side), inset: (x: 0.9em, top: 0pt, bottom: 0.7em), {
+        [#metadata(id) <boxed-page>]
+      })),
+    ))
+  }
+}
+
+// The lines under a box's heading: when a case was decided, the nations it
+// concerns and, for a Supreme Court case, who decided it.
+#let box-facts(facts) = if facts.len() > 0 {
+  block(below: 0.8em, sticky: true, {
+    set text(size: 0.85em)
+    grid(
+      columns: (auto, 1fr),
+      column-gutter: 0.8em,
+      row-gutter: 0.4em,
+      ..facts.map(((label, value)) => (text(weight: "semibold", label), value)).flatten(),
+    )
+  })
+}
+
+// A court case: its full citation as the heading, then its Question,
+// Holding, Quotes and Treatment parts.
+#let case-block(citation, facts, body) = boxed(citation, { box-facts(facts); body })
+
+// An act or other law: its full citation as the heading, then What it does,
+// Quotes and Treatment. A heavier rule tells it from a case.
+#let law-block(citation, facts, body) = boxed(citation, { box-facts(facts); body }, stroke: 1.4pt + black)
 
 #let case-part(label, body) = {
-  block(above: 1em, below: 0.55em, sticky: true, text(size: 0.85em, weight: "semibold", tracking: 0.06em, upper(label)))
+  block(above: 0.9em, below: 0.5em, sticky: true, text(size: 0.85em, weight: "semibold", tracking: 0.06em, upper(label)))
   body
 }
 
-// A quotation, indented on both sides with a rule at its left. A paragraph
-// that begins with an em dash names the source, set right.
+// A quotation, in italics, indented on both sides with a rule at its left.
+// A paragraph that is only a citation names the source, set right.
 #let quote-block(body) = block(
   width: 100%,
   inset: (left: 1.5em, right: 1.5em),
@@ -353,27 +391,22 @@
   below: 0.9em,
   block(width: 100%, stroke: (left: 1.2pt + black), inset: (left: 0.8em, y: 0.2em), {
     set par(first-line-indent: 0em)
-    set text(size: 0.95em)
+    set text(size: 0.95em, style: "italic")
     body
   }),
 )
 
-#let attribution(body) = align(right, text(size: 0.9em, body))
+#let attribution(body) = align(right, text(size: 0.9em, style: "normal", body))
 
 // The author's own analysis, boxed apart from the sourced text.
-#let analysis-block(title, body) = block(
-  width: 100%,
-  breakable: true,
+#let analysis-block(title, body) = boxed(
+  if title == none [Analysis] else [Analysis: #title],
+  body,
   stroke: (paint: black, thickness: 0.6pt, dash: "dashed"),
-  inset: (x: 0.9em, top: 0.8em, bottom: 0.9em),
-  above: 1.3em,
-  below: 1.3em,
-  {
-    set par(first-line-indent: 0em, justify: false)
-    block(below: 0.7em, sticky: true, text(weight: "semibold", if title == none [Analysis] else [Analysis: #title]))
-    body
-  },
 )
+
+// A case named in an index, with the page its box starts on.
+#let case-ref(target, body) = [#link(target, body), #context [p. #locate(target).page()]]
 
 // Endnotes (book.yaml, notes: endnotes): a numbered mark in the text that
 // links to the note, and the chapter's notes gathered at its end.
@@ -386,7 +419,9 @@
 ))
 
 #let endnotes-section(body) = {
-  block(above: 2em, below: 0.9em, sticky: true, text(weight: "semibold", tracking: 0.04em, [Notes]))
+  // The notes start on a page of their own (lead author, Nov. 22, 2026).
+  pagebreak(weak: true)
+  block(above: 0em, below: 0.9em, sticky: true, text(weight: "semibold", tracking: 0.04em, [Notes]))
   set text(size: 0.85em)
   set par(justify: false, first-line-indent: 0em, leading: 0.5em)
   body

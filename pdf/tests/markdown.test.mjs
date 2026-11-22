@@ -100,12 +100,12 @@ const plain = (typst) => typst.replace(/\\(.)/g, "$1");
 
 test("a case block takes its heading from the source record, with Quotes and Treatment parts", () => {
   const typst = plain(essay(
-    ":::: case worcester\nWhat the Court held.\n\n::: quotes\n> The Cherokee nation, then, is a distinct community.\n\n— [@worcester, at 561]\n:::\n\n::: treatment\nLater cases.\n:::\n::::",
+    ":::: case worcester\nWhat the Court held.\n\n::: quotes\n> The Cherokee nation, then, is a distinct community.\n\n[@worcester, at 561]\n:::\n\n::: treatment\nLater cases.\n:::\n::::",
   ));
   assert.ok(typst.startsWith("#case-block([#emph[Worcester v. Georgia], 31 U.S. 515 (1832)], ())[What the Court held."), typst);
   assert.ok(typst.includes('#case-part("Quotes")[#quote-block[The Cherokee nation, then, is a distinct community.]'), typst);
   // The source line prints its citation in place, not as a note.
-  assert.ok(typst.includes("#attribution[— #emph[Worcester v. Georgia], 31 U.S. 515, 561 (1832)]"), typst);
+  assert.ok(typst.includes("#attribution[#emph[Worcester v. Georgia], 31 U.S. 515, 561 (1832)]"), typst);
   assert.ok(!typst.includes("#footnote"), typst);
   assert.ok(typst.includes('#case-part("Treatment")[Later cases.]'), typst);
 });
@@ -144,8 +144,8 @@ test("a Supreme Court case block lists the nations, the Court, the vote and each
   assert.ok(text.includes('("Nation", [Cabazon Band of Mission Indians])'), text);
   assert.ok(text.includes('("Court", [Rehnquist Court])'), text);
   assert.ok(text.includes('("Vote", [6–3])'), text);
-  assert.ok(text.includes('("Majority", [White (opinion of the Court), Marshall])'), text);
-  assert.ok(text.includes('("Dissent", [Stevens (dissenting), O\'Connor, Scalia])'), text);
+  assert.ok(text.includes('("Majority", [#strong[White] (opinion of the Court), Marshall])'), text);
+  assert.ok(text.includes('("Dissent", [#strong[Stevens] (dissenting opinion), O\'Connor, Scalia])'), text);
 });
 
 test("a case block labels peoples that are not Tribes as peoples, and shows votes the report leaves open", () => {
@@ -167,4 +167,26 @@ test("a case block labels peoples that are not Tribes as peoples, and shows vote
   assert.ok(facts.includes('("People", [Native Hawaiians])'), facts);
   assert.ok(facts.includes('("Decision", [Affirmed by an equally divided Court])'), facts);
   assert.ok(facts.includes('("Vote not recorded", [Kennedy])'), facts);
+});
+
+test("case boxes give the decision date, take Background, Question and Holding parts, and law boxes take What it does", () => {
+  const facts = plain(caseFacts({ citation: { issued: { "date-parts": [[1831, 3, 18]] } } }));
+  assert.ok(facts.includes('("Decided", [March 18, 1831])'), facts);
+  const typst = plain(essay(":::: case worcester\n::: background\nThe facts.\n:::\n\n::: question\nA question?\n:::\n\n::: holding\nNo.\n:::\n::::"));
+  assert.ok(typst.includes('#case-part("Background")[The facts.]'), typst);
+  assert.ok(typst.includes('#case-part("Question")[A question?]'), typst);
+  assert.ok(typst.includes('#case-part("Holding")[No.]'), typst);
+  assert.ok(/<case-worcester>$/.test(typst), typst);
+  const law = plain(essay(":::: law act\n::: summary\nWhat it did.\n:::\n::::"));
+  assert.ok(law.startsWith("#law-block(["), law);
+  assert.ok(law.includes('#case-part("What it does")[What it did.]'), law);
+});
+
+test("a link to #case-KEY prints the page of that case's box", () => {
+  assert.equal(plain(essay("[*Worcester* (1832)](#case-worcester)")), "#case-ref(<case-worcester>)[#emph[Worcester] (1832)]");
+});
+
+test("a quotation from a separate opinion names it after the citation", () => {
+  const typst = plain(essay("::: quote\n> A dissent's words.\n\n[@worcester, at 563] (Baldwin, J., dissenting)\n:::"));
+  assert.ok(typst.includes("#attribution[#emph[Worcester v. Georgia], 31 U.S. 515, 563 (1832) (Baldwin, J., dissenting)]"), typst);
 });

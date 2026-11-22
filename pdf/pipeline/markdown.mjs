@@ -57,6 +57,11 @@ export function createMarkdown({ sourceKeys, glossaryIds }) {
     // ("::: analysis" with an optional title). A paragraph that begins with an
     // em dash inside a quotation names its source.
     .use(container, "case", { validate: (info) => /^case\s+[a-z0-9-]+$/.test(info.trim()) })
+    .use(container, "law", { validate: (info) => /^law\s+[a-z0-9-]+$/.test(info.trim()) })
+    .use(container, "background", { validate: (info) => info.trim() === "background" })
+    .use(container, "question", { validate: (info) => info.trim() === "question" })
+    .use(container, "holding", { validate: (info) => info.trim() === "holding" })
+    .use(container, "summary", { validate: (info) => info.trim() === "summary" })
     .use(container, "quotes", { validate: (info) => info.trim() === "quotes" })
     .use(container, "treatment", { validate: (info) => info.trim() === "treatment" })
     .use(container, "quote", { validate: (info) => info.trim() === "quote" })

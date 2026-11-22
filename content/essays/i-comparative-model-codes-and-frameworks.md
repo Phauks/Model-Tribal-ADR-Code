@@ -1,5 +1,5 @@
 ---
-title: "Comparing model codes and dispute frameworks"
+title: "Comparing Model Codes and Dispute Frameworks"
 part: i
 status: draft
 review_status: drafted-from-public-sources
@@ -7,7 +7,7 @@ updated: 2026-11-22
 research_session: 2026-11-21-comparative-model-codes
 ---
 
-# Comparing model codes and dispute frameworks
+# Comparing Model Codes and Dispute Frameworks
 
 The chapter compares the existing models a drafter of a model Tribal [[adr]] code can learn from. It covers four groups. The first is the uniform acts of the Uniform Law Commission. The second is models written for [[native-nations|Native nations]] and the arbitration ordinances nations have enacted. The third is the dispute clauses of Tribal-state gaming compacts, and the fourth is international and Indigenous frameworks, including the United Nations Declaration on the Rights of Indigenous Peoples and practice in Aotearoa New Zealand, Canada and Australia.
 
@@ -17,7 +17,7 @@ This is research, not drafting. No model provision is drafted until the data on 
 
 [[peacemaking|Peacemaking]] is treated as its own track, not as a kind of ADR. The Native American Rights Fund's Indigenous Peacemaking Initiative states that "peacemaking is not alternative dispute resolution" and that the term "refers to traditional ways of resolving conflict in Indigenous communities" [@narf-ipi-home]. Section 3 explains what that means for this comparison.
 
-## How to read the comparison
+## How to Read the Comparison
 
 Quotations are checked against the source named in the citation. Each source record says how it was read, including where a summarizing tool was used. Boxes labeled "Analysis" give a reading of what a framework means for a model code; they are not statements of any source and not legal advice.
 
@@ -71,7 +71,7 @@ The first table shows what each framework is and how parties enter it. The secon
 
 Sources for each row are cited in the sections below. The tables summarize those sections.
 
-## 1. Uniform acts of the Uniform Law Commission
+## 1. Uniform Acts of the Uniform Law Commission
 
 The Uniform Law Commission drafts acts for states to enact. Four of its acts govern dispute resolution processes directly. Adoption data for each is in its source record and in the United States bibliography of dispute resolution law.
 
@@ -153,9 +153,9 @@ The act's screening and child-protection sections are its most transferable part
 Because it can be adopted as court rules, the act fits a nation whose court has rulemaking power. Its disqualification rule assumes a supply of lawyers; where few lawyers practice in a nation's court, the rule may limit who can take part.
 :::
 
-## 2. Model laws for nations and Tribal ordinances
+## 2. Model Laws for Nations and Tribal Ordinances
 
-### 2.1 No intertribal model ADR code was found
+### 2.1 No Intertribal Model ADR Code Was Found
 
 No published intertribal model code was found for civil mediation, arbitration or other ADR. The Tribal Law and Policy Institute's Tribal Legal Code Resource series covers criminal sentencing and jurisdiction, juvenile justice, domestic violence, sexual assault and stalking, and crimes against children. Its juvenile guide addresses "specialized court dockets such as juvenile wellness courts, peacemaking courts, and teen courts" [@tribal-law-and-policy-institute-publications-list]. The search was not exhaustive; older model codes held only in library catalogs were not searched (see the research session's limits).
 
@@ -173,7 +173,7 @@ The judges' model is a starting point for ethics rules for neutrals who are not 
 This is the nearest precedent for the model code's own method: a template for adaptation, written with Tribal officials, explained by commentary, and compatible with neighboring systems.
 :::
 
-### 2.2 Enacted Tribal arbitration ordinances
+### 2.2 Enacted Tribal Arbitration Ordinances
 
 A provisional review of the dataset of nations' published laws found four commercial arbitration ordinances, of the Ho-Chunk Nation, the Pascua Yaqui Tribe, the Little River Band of Ottawa Indians and the Jamestown S'Klallam Tribe [@ho-chunk-2-hcc-13-arbitration; @pascua-yaqui-7-pytc-6-arbitration; @little-river-arbitration-code-01-300-02; @jamestown-title-2-arbitration]. The four share a shape in their records: written agreements to arbitrate are enforceable, the Tribal court confirms awards with limited or no appeal, and claims against the nation proceed only where a separate instrument waives immunity.
 
@@ -183,11 +183,11 @@ The Ho-Chunk Nation's ordinance, read in full, shows the shape in full. A writte
 Compared with the Revised Uniform Arbitration Act, the ordinance in the sections read removes judicial review of the merits and appeals altogether, and says nothing about arbitrator disclosure, non-waivable rights or confidentiality. Whether the ordinances share a common model is an open question, not a conclusion.
 :::
 
-### 2.3 Court-connected forums in the dataset
+### 2.3 Court-Connected Forums in the Dataset
 
 The provisional review also found recurring features among 77 forum records: forums inside the Tribal court system, consent to enter, and agreements entered as judgments. Another recurring feature is a return path to court when a process does not resolve the matter. Examples include the Chickasaw Nation's peacemaking court as a division of the District Court [@chickasaw-title-5-courts-and-procedures] and the Oneida Nation's Peacemaking and Mediation Division with a training rule for mediators [@oneida-wi-8-oc-801-judiciary]. Most of that data is not yet reviewed (Gate 1), so these features are hypotheses to test, not findings.
 
-## 3. Peacemaking, kept as its own track
+## 3. Peacemaking, Kept as Its Own Track
 
 The Native American Rights Fund's Indigenous Peacemaking Initiative says "peacemaking is not alternative dispute resolution" [@narf-ipi-home]. Peacemaking codes are therefore not compared here with the ADR frameworks above as if they were alternatives to one another.
 
@@ -201,9 +201,9 @@ Two points from the peacemaking sources matter for an ADR code's design all the 
 The comparative question for the outline is not how an ADR code would regulate peacemaking but where the two tracks meet. The questions are whether an ADR code says anything about referral between them, about a matter that returns from peacemaking to court, or about recognition of agreements. A further question is how it avoids defining or limiting a process that each nation governs itself.
 :::
 
-## 4. Gaming compact dispute resolution
+## 4. Gaming Compact Dispute Resolution
 
-### 4.1 The federal frame
+### 4.1 The Federal Frame
 
 The Indian Gaming Regulatory Act lists subjects a Tribal-State compact "may include," among them "remedies for breach of contract" [@usc-25-2710, (d)(3)(C)(v)]. If a state fails to negotiate in good faith, the act's court process ends with each side submitting "a proposed compact that represents their last best offer" to a court-appointed mediator, who "shall select from the two proposed compacts" [@usc-25-2710, (d)(7)(B)(iv)]. That last step is final-offer selection, not facilitative mediation. The Supreme Court held that the Eleventh Amendment bars Congress from authorizing such suits against a state that has not consented [@seminole-tribe-v-florida-1996].
 
@@ -211,7 +211,7 @@ The Indian Gaming Regulatory Act lists subjects a Tribal-State compact "may incl
 In practice, after *Seminole Tribe*, compact disputes depend on the clauses the parties negotiate.
 :::
 
-### 4.2 State templates
+### 4.2 State Templates
 
 The dataset behind the model code holds 286 compact dispute summaries for 276 nations in 28 states. When the comparison was first drafted, most had been copied from a state's model compact. A recheck finished on Nov. 22, 2026 read them against each nation's own compact or Secretarial Procedures: 279 now cite the nation's own document, they fall into 127 distinct summaries, and five await the lead author's review. Many nations in a state still signed the same model, so the rows below are state patterns, each shown by one nation's compact.
 
@@ -234,7 +234,7 @@ Source for the steps: the compact dispute summaries for the example compact, che
 Three features recur and are worth testing in the outline. First, almost every template begins with written notice and a meeting between governments, which is a negotiation step framed as a matter of government-to-government relations. Second, mediation is usually optional. Third, the binding stage is where the templates differ most, and where immunity waivers are written most narrowly, often to declaratory and injunctive relief.
 :::
 
-### 4.3 The Oklahoma lesson
+### 4.3 The Oklahoma Lesson
 
 Oklahoma's model compact, enacted as state law, provides for arbitration and then lets "either party to the Compact ... bring an action against the other in a federal district court for the de novo review of any arbitration award" [@oklahoma-model-tribal-gaming-compact-3a-281, Part 12(3)]. In Citizen Potawatomi Nation v. Oklahoma, the Tenth Circuit held that clause invalid under Hall Street Associates. Because de novo review was "a material aspect of the parties' agreement to engage in binding arbitration," it held the obligation to arbitrate unenforceable and directed that the Nation's award be vacated [@citizen-potawatomi-nation-v-oklahoma-2018, slip op. at 2-3, 30; @hall-street-associates-v-mattel-2008].
 
@@ -242,7 +242,7 @@ Oklahoma's model compact, enacted as state law, provides for arbitration and the
 The lesson for any intergovernmental clause is that a negotiated review route the governing arbitration law does not allow can take the whole arbitration clause down with it. A drafter can ask, at the outline stage, which arbitration law governs an intergovernmental clause, and whether review is better placed before the award (for example an appellate arbitration panel) than in a court.
 :::
 
-### 4.4 Other federal-Tribal models
+### 4.4 Other Federal-Tribal Models
 
 Outside gaming, the statutory model self-determination contract lets the Secretary and a Tribal contractor jointly submit disputes to third-party mediation, to "the adjudicatory body of the Contractor, including the tribal court of the Contractor," or to other processes [@usc-25-5329-c-model-agreement-disputes].
 
@@ -250,7 +250,7 @@ Outside gaming, the statutory model self-determination contract lets the Secreta
 The model agreement is the clearest federal text that treats a nation's own forum as a place to resolve disputes with the federal government.
 :::
 
-## 5. International and Indigenous frameworks
+## 5. International and Indigenous Frameworks
 
 ### 5.1 UNDRIP
 
@@ -333,7 +333,7 @@ This is the clearest documented caution in the comparison: a binding fallback is
 
 **Practice research.** A 2009 report commissioned by the National Alternative Dispute Resolution Advisory Council studied "effective practices for managing conflict involving Indigenous people" through case studies. The case studies include a mediation at Halls Creek and a youth diversion unit on the Tiwi Islands [@bauman-et-al-2009-solid-work-you-mob-are-doing]. A seminar from the same research program lists the principle that "Decisions and processes must be fully informed and owned for outcomes to be sustainable" [@bauman-et-al-2009-solid-work-you-mob-are-doing]. The report itself was not read; its findings need checking before the commentary relies on them.
 
-## 6. Comparison across the five questions
+## 6. Comparison across the Five Questions
 
 The comparison below draws together the sections above. Its questions, in the Analysis boxes, are for the outline, not provisions.
 
@@ -366,7 +366,7 @@ The uniform acts split confidentiality into an evidentiary privilege, which the 
 how confidentiality interacts with a small community, with a nation's open records law, and with exceptions for safety and child protection like those in the mediation act [@uniform-law-commission-mediation-act, § 6(a)].
 :::
 
-### 6.4 Appeals and review
+### 6.4 Appeals and Review
 
 The range runs from no review at all (Ho-Chunk ordinance) through narrow statutory vacatur (the arbitration acts; the Federal Arbitration Act [@usc-9-9-11]) and narrow judicial review (land management framework, Specific Claims Tribunal) [@ho-chunk-2-hcc-13-arbitration, § 9; @uniform-law-commission-arbitration-act-2000, §§ 23, 28; @framework-agreement-first-nation-land-management-2022, cl. 47.5; @canada-specific-claims-tribunal-act-2008, s 34]. At the far end is a negotiated de novo review that a court struck down with the whole clause (Oklahoma) [@citizen-potawatomi-nation-v-oklahoma-2018].
 
@@ -374,7 +374,7 @@ The range runs from no review at all (Ho-Chunk ordinance) through narrow statuto
 whether review belongs in the nation's courts, inside the process (for example an appellate panel), or nowhere, and how the choice holds up if a state or federal court applies the Federal Arbitration Act.
 :::
 
-### 6.5 Fit with sovereignty
+### 6.5 Fit with Sovereignty
 
 Every uniform act is written for a state; nations appear only in optional brackets. The models that start from a nation's own authority are the nations' own codes, the Framework Agreement's requirement that each nation establish its own forum, and the international texts that ask for "due consideration" or recognition of Indigenous law [@framework-agreement-first-nation-land-management-2022, cl. 5.2(h); @un-general-assembly-2007-declaration-rights-indigenous-peoples, art. 40; @oas-2016-american-declaration-rights-indigenous-peoples, art. XXII(2)]. Immunity is the sovereignty question that runs through every binding process: an arbitration clause can itself be a waiver [@c-and-l-enterprises-v-citizen-band-potawatomi-2001], and compact templates limit waivers to narrow relief [@nevada-te-moak-tribe-gaming-compact-2014].
 
@@ -382,7 +382,7 @@ Every uniform act is written for a state; nations appear only in optional bracke
 whether the model code is built as a state-style uniform act adapted for nations, or starts from each nation's own institutions and offers the uniform-act provisions as optional modules.
 :::
 
-## Limits and items to check
+## Limits and Items to Check
 
 - The Native Title Act's sections were not read; the Australian section relies on the Australian Law Reform Commission's summary.
 - The OAS declaration, the New Zealand amendment act and the Australian practice report were read through a summarizing tool; their records say so.
@@ -391,6 +391,6 @@ whether the model code is built as a state-style uniform act adapted for nations
 - The gaming compact patterns are state templates; 256 of 286 summaries have not been checked against the nation's own compact.
 - No intertribal model ADR code was found, but the search did not cover library-only collections.
 
-## CARE and terminology notes
+## CARE and Terminology Notes
 
 Only published law and published research are described. Nothing ceremonial, restricted or community-held is described. No nation is ranked or offered as a standard for others; nations are named only to show what a recorded code or agreement provides. Laws of other countries are used as comparative models. "First Nations" is used only for nations in Canada, as the Canadian sources do, and "[[native-nations|Native nations]]" for nations in the United States. Each nation named here may correct, restrict or remove what is recorded about it.

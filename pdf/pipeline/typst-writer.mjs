@@ -53,74 +53,106 @@ export function titleCase(text) {
 // The facts a case block lists under its heading, from the source record:
 // the nations the case concerns, and for a Supreme Court case the Court,
 // the vote and each justice's part (lead author, Nov. 22, 2026).
+// What each justice wrote, as it reads after the justice's name. A justice
+// listed with no label joined the side's opinion without writing.
 const OPINION_LABELS = {
   majority: "opinion of the Court",
   plurality: "plurality opinion",
-  concurrence: "concurring",
-  "special concurrence": "concurring in the judgment",
+  concurrence: "concurring opinion",
+  "special concurrence": "opinion concurring in the judgment",
   "concurrence in the result": "concurring in the result",
-  judgment: "announcing the judgment",
-  dissent: "dissenting",
+  judgment: "opinion announcing the judgment",
+  dissent: "dissenting opinion",
 };
 // Decisions with no signed opinion of the Court, shown as their own line.
 const DECISION_LABELS = { "per curiam": "Per curiam", "equally divided Court": "Affirmed by an equally divided Court", "judgment of the Court": "No opinion for a majority" };
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function surname(name) {
   const plain = name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, "").trim();
   return plain.split(/\s+/).pop();
 }
+// Typst markup: a justice who wrote is set in bold with the opinion named.
 function justiceList(justices) {
   return justices
     .map((justice) => {
       const label = justice.opinion ? OPINION_LABELS[justice.opinion] || justice.opinion : null;
-      return label ? `${surname(justice.name)} (${label})` : surname(justice.name);
+      const name = escapeTypst(surname(justice.name));
+      return label ? `#strong[${name}] (${escapeTypst(label)})` : name;
     })
     .join(", ");
 }
+/** The full decision date of a case record, such as "March 18, 1831", or null. */
+export function decisionDate(record) {
+  const parts = record?.citation?.issued?.["date-parts"]?.[0] || [];
+  if (parts.length < 3) return null;
+  return `${MONTHS[parts[1] - 1]} ${parts[2]}, ${parts[0]}`;
+}
+
+/**
+ * The lines under a case box's heading, as a Typst array of (label, [value]):
+ * when it was decided, the nations or peoples it concerns, and for the
+ * Supreme Court of the United States the Court, the vote and who wrote and
+ * joined what.
+ */
 export function caseFacts(record, nationNames = new Map(), peopleIds = new Set()) {
   const facts = [];
+  const text = (label, value) => facts.push([label, escapeTypst(value)]);
+  const decided = decisionDate(record);
+  if (decided) text("Decided", decided);
   if (record && Array.isArray(record.tribes) && record.tribes.length) {
     const names = record.tribes.map((id) => nationNames.get(id) || id);
     const peoples = record.tribes.filter((id) => peopleIds.has(id)).length;
     const plural = names.length > 1;
     const label = peoples === 0 ? (plural ? "Nations" : "Nation") : peoples === names.length ? (plural ? "Peoples" : "People") : "Nations and peoples";
-    facts.push([label, names.join("; ")]);
+    text(label, names.join("; "));
   }
   const bench = record && record.supreme_court;
   if (bench) {
-    facts.push(["Court", bench.court]);
+    text("Court", bench.court);
     const { majority, minority } = bench.vote || {};
-    if (Number.isInteger(majority) && Number.isInteger(minority)) facts.push(["Vote", `${majority}–${minority}`]);
-    if (DECISION_LABELS[bench.decision_type]) facts.push(["Decision", DECISION_LABELS[bench.decision_type]]);
+    if (Number.isInteger(majority) && Number.isInteger(minority)) text("Vote", `${majority}–${minority}`);
+    if (DECISION_LABELS[bench.decision_type]) text("Decision", DECISION_LABELS[bench.decision_type]);
     const justices = bench.justices || [];
     const inMajority = justices.filter((justice) => justice.vote === "majority");
     const inMinority = justices.filter((justice) => justice.vote === "minority");
     const unrecorded = justices.filter((justice) => justice.vote === "not recorded");
     const absent = justices.filter((justice) => !["majority", "minority", "not recorded"].includes(justice.vote));
-    // Opinion writers first, in the order the reports print them.
-    const writersFirst = (list) => [...list.filter((justice) => justice.opinion === "majority" || justice.opinion === "plurality"), ...list.filter((justice) => justice.opinion && justice.opinion !== "majority" && justice.opinion !== "plurality"), ...list.filter((justice) => !justice.opinion)];
+    // Opinion writers first: the opinion of the Court, then other opinions,
+    // then the justices who joined without writing.
+    const leads = (justice) => ["majority", "plurality", "judgment"].includes(justice.opinion);
+    const writersFirst = (list) => [...list.filter(leads), ...list.filter((justice) => justice.opinion && !leads(justice)), ...list.filter((justice) => !justice.opinion)];
     if (inMajority.length) facts.push(["Majority", justiceList(writersFirst(inMajority))]);
     if (inMinority.length) facts.push(["Dissent", justiceList(writersFirst(inMinority))]);
     if (unrecorded.length) facts.push(["Vote not recorded", justiceList(unrecorded)]);
-    if (absent.length) facts.push(["Not taking part", justiceList(absent)]);
+    if (absent.length) facts.push(["Did not participate", justiceList(absent)]);
   }
   if (!facts.length) return "()";
-  return `(${facts.map(([label, value]) => `(${typstString(label)}, [${escapeTypst(value)}])`).join(", ")},)`;
+  return `(${facts.map(([label, value]) => `(${typstString(label)}, [${value}])`).join(", ")},)`;
+}
+
+/** The lines under a law box's heading: the nations or peoples it names. */
+export function lawFacts(record, nationNames = new Map(), peopleIds = new Set()) {
+  return caseFacts(record ? { tribes: record.tribes } : record, nationNames, peopleIds);
 }
 
 // About as many characters as fill a page in a narrow table column.
 const LONG_ROW_CHARACTERS = 900;
 
-// A paragraph that begins with an em dash names the source of a quotation.
+// A paragraph that is nothing but a citation names the source of the
+// quotation above it. No dash is used (lead author, Nov. 22, 2026). A quote
+// from a separate opinion adds its Indigo Book parenthetical after the
+// citation: [@key, p. 17] (Gorsuch, J., dissenting).
 function isAttribution(inline) {
-  return /^—\s/.test(inline.content || "");
+  return /^\[@[^\]]+\](?:\s+\([^()]+\))?$/.test((inline.content || "").trim());
 }
 
 export class ChapterWriter {
-  constructor({ citations, glossary, printedGlossaryIds, notes = "footnotes", chapterIndex = 0, sourceRecords = new Map(), nationNames = new Map(), peopleIds = new Set() }) {
+  constructor({ citations, glossary, printedGlossaryIds, notes = "footnotes", chapterIndex = 0, sourceRecords = new Map(), nationNames = new Map(), peopleIds = new Set(), boxedKeys = new Set() }) {
     this.citations = citations;
     this.sourceRecords = sourceRecords;
     this.nationNames = nationNames;
     this.peopleIds = peopleIds;
+    this.boxedKeys = boxedKeys;
     this.endnotes = notes === "endnotes" ? [] : null;
     this.chapterIndex = chapterIndex;
     this.glossary = glossary;
@@ -184,11 +216,29 @@ export class ChapterWriter {
       case "blockquote":
       case "container_quote":
         return `#quote-block[${this.blocks(node.children)}]`;
-      case "container_case": {
+      case "container_case":
+      case "container_law": {
         const key = token.info.trim().split(/\s+/)[1];
         const heading = this.citations.standalone([{ key }]);
-        return `#case-block([${heading}], ${caseFacts(this.sourceRecords.get(key), this.nationNames, this.peopleIds)})[${this.blocks(node.children)}]`;
+        const record = this.sourceRecords.get(key);
+        // The first box for a case carries a label, so an index can point to its page.
+        let label = "";
+        if (node.type === "container_case" && !this.boxedKeys.has(key)) {
+          this.boxedKeys.add(key);
+          label = ` <case-${key}>`;
+        }
+        const facts = node.type === "container_case" ? caseFacts(record, this.nationNames, this.peopleIds) : lawFacts(record, this.nationNames, this.peopleIds);
+        const kind = node.type === "container_case" ? "case-block" : "law-block";
+        return `#${kind}([${heading}], ${facts})[${this.blocks(node.children)}]${label}`;
       }
+      case "container_background":
+        return `#case-part("Background")[${this.blocks(node.children)}]`;
+      case "container_question":
+        return `#case-part("Question")[${this.blocks(node.children)}]`;
+      case "container_holding":
+        return `#case-part("Holding")[${this.blocks(node.children)}]`;
+      case "container_summary":
+        return `#case-part("What it does")[${this.blocks(node.children)}]`;
       case "container_quotes":
         return `#case-part("Quotes")[${this.blocks(node.children)}]`;
       case "container_treatment":
@@ -301,9 +351,13 @@ export class ChapterWriter {
         case "code_inline":
           out += `#raw(${typstString(token.content)})`;
           break;
-        case "link_open":
-          out += `#link(${typstString(token.attrGet("href"))})[`;
+        case "link_open": {
+          // "#case-KEY" points to a case box elsewhere in the book, and prints its page.
+          const href = token.attrGet("href") || "";
+          const caseLink = /^#(case-[a-z0-9-]+)$/.exec(href);
+          out += caseLink ? `#case-ref(<${caseLink[1]}>)[` : `#link(${typstString(href)})[`;
           break;
+        }
         case "footnote_ref": {
           const body = this.document.footnotes.get(token.meta.id) || [];
           out += this.note(this.inline(body, { inNote: true }));

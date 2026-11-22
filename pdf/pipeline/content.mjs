@@ -89,7 +89,12 @@ export function loadContent(contentDirectory) {
     .filter((file) => path.basename(file) !== "README.md")
     .map(readMarkdownRecord)
     .filter((record) => publishable(record.data));
-  return { sources, nationNames, peopleIds, glossary, variables, provisions, commentary, essays, frontMatter };
+  // Back matter pages that print after the glossary, such as the index of cases by topic.
+  const backMatter = listFiles(path.join(contentDirectory, "back-matter"), ".md")
+    .filter((file) => path.basename(file) !== "README.md")
+    .map(readMarkdownRecord)
+    .filter((record) => publishable(record.data));
+  return { sources, nationNames, peopleIds, glossary, variables, provisions, commentary, essays, frontMatter, backMatter };
 }
 
 // Part II chapters: provisions grouped by chapter, in section order.

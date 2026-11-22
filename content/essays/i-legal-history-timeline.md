@@ -1,5 +1,5 @@
 ---
-title: "Federal Indian law and Tribal justice: a timeline"
+title: "Federal Indian Law and Tribal Justice: A Timeline"
 part: i
 status: draft
 review_status: drafted-from-public-sources
@@ -7,19 +7,19 @@ updated: 2026-11-22
 research_session: 2026-11-21-legal-history-and-key-cases
 ---
 
-# Federal Indian law and Tribal justice: a timeline
+# Federal Indian Law and Tribal Justice: A Timeline
 
-The statutes, regulations, executive acts and court decisions below shaped how [[native-nations|Native nations]] resolve disputes today, and how far other governments respect the results. They run by era, from before contact to the present. The leading court decisions sit in their place in each era, in boxes that give the question, the holding, the court's own words and what later courts made of them. Thematic sections follow the eras. One traces the development of [[tribal-court|Tribal courts]] and [[peacemaking]]. One covers Hawaiʻi, Puerto Rico, American Samoa, the Northern Mariana Islands and Guam. One sets out the state rules that decide whether a Tribal judgment is enforced off the [[reservation]], and the last indexes the cases by topic.
+The statutes, regulations, executive acts and court decisions below shaped how [[native-nations|Native nations]] resolve disputes today, and how far other governments respect the results. They run by era, from before contact to the present. The leading court decisions sit in their place in each era, in boxes that give the question, the holding, the court's own words and what later courts made of them. Thematic sections follow the eras. One traces the development of [[tribal-court|Tribal courts]] and [[peacemaking]]. One covers Hawaiʻi, Puerto Rico, American Samoa, the Northern Mariana Islands and Guam. The last sets out the state rules that decide whether a Tribal judgment is enforced off the [[reservation]]. An index of the cases by topic is at the back of the book.
 
-## How to read the entries
+## How to Read the Entries
 
-### Years, cases and analysis
+### Years, Cases and Analysis
 
 Each entry opens with its year. A court decision of lasting importance has a box of its own. The box heading gives the full citation. Beneath it are the nations involved, named as the Bureau of Indian Affairs list or the nation itself writes its name today. For a decision of the Supreme Court of the United States, the box also names the Court as it sat (the Marshall Court, the Warren Court and so on), gives the vote and lists each justice's part. These come from Oyez's case data or, where Oyez has none, from the official report [@oyez-supreme-court-case-data]. The box then states the question and the holding. Under "Quotes" it gives the court's own words, and under "Treatment" it gives later decisions or statutes that applied, limited, distinguished or declined to extend the case.
 
 Boxes labeled "Analysis" give a reading of what an entry means for a model code. They are interpretation, not statements of the sources and not legal advice. A holding stated here is a starting point for research, not a statement of current law.
 
-### Sources and words
+### Sources and Words
 
 Each entry cites its sources in the notes at the end of the chapter. Quotations were checked word for word against the official reports, the court's own publication or the statute as enacted. Where only an unofficial copy of an opinion was available, the quotation is cited without a page. Older opinions use language about Native people that is offensive today; quotations are chosen for their legal content and are reproduced as written. Holdings use the courts' own legal categories, such as "non-Indian" and "nonmember," because the rule depends on them.
 
@@ -27,7 +27,7 @@ Statutes and opinions use "Indian," "tribe" and "member." Those words appear in 
 
 Traditional justice systems are described only from what nations and Native scholars have published. Nothing ceremonial or community-held is described. The standard histories and treatises behind the entries are listed, with what each covers, in *Federal Indian law and Tribal justice: standard works*.
 
-## Eras and where the boundaries come from
+## Eras and Where the Boundaries Come From
 
 The National Congress of American Indians (NCAI) divides federal Indian policy into periods. They are "1492–1828 COLONIAL PERIOD," "1828–1887 REMOVAL, RESERVATION, & TREATY PERIOD," "1887–1934 ALLOTMENT & ASSIMILATION PERIOD," "1934–1945 INDIAN REORGANIZATION PERIOD," "1945–1968 TERMINATION PERIOD," "1968–2000 SELF-DETERMINATION PERIOD" and "2000–PRESENT NATION-TO-NATION PERIOD" [@ncai-tribal-nations-and-the-united-states, pp. 12-13]. The eras below follow those names because they come from an organization of Native nations, but some boundaries move so that related laws sit together:
 
@@ -44,7 +44,7 @@ The National Congress of American Indians (NCAI) divides federal Indian policy i
 
 The boundaries are editorial choices, not legal facts.
 
-## Before contact, and traditional justice
+## Before Contact, and Traditional Justice
 
 The NCAI guide states: "In the thousands of years preceding the arrival of the Europeans in North America, Native peoples lived in organized societies with their own forms of government—engaging in diplomacy, commerce, and cultural exchange" [@ncai-tribal-nations-and-the-united-states, p. 13].
 
@@ -52,43 +52,59 @@ Those systems are not only history. Writing in *Judicature*, Ada Pecos Melton ob
 
 How a particular nation resolves disputes is described in that nation's own published sources, and only with its agreement where the material is community-held.
 
-## Treaty era (1492 to 1871)
+## Treaty Era (1492 to 1871)
 
 NCAI summarizes the colonial period: "These colonies acquired Indian lands under the so-called Discovery doctrine and signed treaties with the tribes" [@ncai-tribal-nations-and-the-united-states, p. 12].
 
-### Federal statutes and the discovery doctrine
+### Federal Statutes and the Discovery Doctrine
 
-**1787. Northwest Ordinance.** Article 3 promised that "The utmost good faith shall always be observed towards the Indians; their lands and property shall never be taken from them without their consent" [@northwest-ordinance-1787, art. 3]. The First Congress reenacted the ordinance in 1789.
+:::: law northwest-ordinance-1787
+::: summary
+Article 3 promised that "The utmost good faith shall always be observed towards the Indians; their lands and property shall never be taken from them without their consent" [@northwest-ordinance-1787, art. 3]. The First Congress reenacted the ordinance in 1789.
+:::
+::::
 
 ::: analysis
 A duty of good faith and consent is a theme a code can draw on for dispute resolution between governments.
 :::
 
-**1790. Trade and Intercourse Act.** Required federal licenses to trade. It declared that no sale of land by "any nation or tribe of Indians" was valid "unless the same shall be made and duly executed at some public treaty, held under the authority of the United States" [@trade-and-intercourse-act-1790, sec. 4].
+:::: law trade-and-intercourse-act-1790
+::: summary
+Required federal licenses to trade. It declared that no sale of land by "any nation or tribe of Indians" was valid "unless the same shall be made and duly executed at some public treaty, held under the authority of the United States" [@trade-and-intercourse-act-1790, sec. 4].
+:::
+::::
 
 ::: analysis
 This is the origin of the federal restraint on selling Tribal land, which still limits how a land dispute can be settled by private agreement.
 :::
 
-**1817. General Crimes Act.** Extended federal criminal law into "Indian boundaries" but not "to any offence committed by one Indian against another" [@general-crimes-act-1817, sec. 2]. Its successor, 18 U.S.C. § 1152, still excludes an offender "who has been punished by the local law of the tribe" [@usc-18-1152].
+:::: law general-crimes-act-1817
+::: summary
+Extended federal criminal law into "Indian boundaries" but not "to any offence committed by one Indian against another" [@general-crimes-act-1817, sec. 2]. Its successor, 18 U.S.C. § 1152, still excludes an offender "who has been punished by the local law of the tribe" [@usc-18-1152].
+:::
+::::
 
 ::: analysis
 That exception leaves room for a nation's own justice system, including restorative processes, to handle offenses among its own people.
 :::
 
 :::: case johnson-v-mintosh
-**Question.** Can a title to land bought directly from Native nations by private purchasers before the Revolution be recognized in United States courts over a later federal patent?
+::: question
+Can a title to land bought directly from Native nations by private purchasers before the Revolution be recognized in United States courts over a later federal patent?
+:::
 
-**Holding.** No. The Court held that, under the "discovery" doctrine, the discovering European sovereign (and then the United States) acquired the exclusive right to extinguish Native title by purchase or conquest. The Illinois and Piankeshaw could therefore convey only their right of occupancy, and only to that sovereign. The private purchasers' title could not be sustained against the federal grantee.
+::: holding
+No. The Court held that, under the "discovery" doctrine, the discovering European sovereign (and then the United States) acquired the exclusive right to extinguish Native title by purchase or conquest. The Illinois and Piankeshaw could therefore convey only their right of occupancy, and only to that sovereign. The private purchasers' title could not be sustained against the federal grantee.
+:::
 
 ::: quotes
-> discovery gave title to the government by whose subjects, or by whose authority, it was made, against all other European governments, which title might be consummated by possession
+> ... discovery gave title to the government by whose subjects, or by whose authority, it was made, against all other European governments, which title might be consummated by possession ...
 
-— [@johnson-v-mintosh, p. 573]
+[@johnson-v-mintosh, p. 573]
 
-> They were admitted to be the rightful occupants of the soil, with a legal as well as just claim to retain possession of it, and to use it according to their own discretion; but their rights to complete sovereignty, as independent nations, were necessarily diminished
+> They were admitted to be the rightful occupants of the soil, with a legal as well as just claim to retain possession of it, and to use it according to their own discretion; but their rights to complete sovereignty, as independent nations, were necessarily diminished ...
 
-— [@johnson-v-mintosh, p. 574]
+[@johnson-v-mintosh, p. 574]
 :::
 
 ::: treatment
@@ -102,15 +118,23 @@ Three later decisions distinguish it, among them *Alliance to Save the Mattaponi
 Foundational to how U.S. law describes Native land title and the limits it places on nations' power to sell land. Useful background for any commentary on property-related disputes and on why federal law, not state law, governs Native title.
 :::
 
-**1834. Trade and Intercourse Act.** The permanent act. It defined "Indian country," restated the bar on acquiring land except by treaty (now 25 U.S.C. § 177), and extended federal enclave criminal law to Indian country except for crimes by one Indian against another [@trade-and-intercourse-act-1834, secs. 12, 25].
+:::: law trade-and-intercourse-act-1834
+::: summary
+The permanent act. It defined "Indian country," restated the bar on acquiring land except by treaty (now 25 U.S.C. § 177), and extended federal enclave criminal law to Indian country except for crimes by one Indian against another [@trade-and-intercourse-act-1834, secs. 12, 25].
+:::
+::::
 
-**1871. End of treaty-making.** A proviso in the Indian appropriations act declared that no nation "shall be acknowledged or recognized as an independent nation, tribe, or power with whom the United States may contract by treaty," while keeping existing treaties in force [@indian-appropriation-act-1871]. NCAI counts 370 treaties signed from 1778 to 1871 [@ncai-tribal-nations-and-the-united-states, p. 13].
+:::: law indian-appropriation-act-1871
+::: summary
+A proviso in the Indian appropriations act declared that no nation "shall be acknowledged or recognized as an independent nation, tribe, or power with whom the United States may contract by treaty," while keeping existing treaties in force [@indian-appropriation-act-1871]. NCAI counts 370 treaties signed from 1778 to 1871 [@ncai-tribal-nations-and-the-united-states, p. 13].
+:::
+::::
 
 ::: analysis
 After 1871, terms between governments, including terms for resolving disputes, take the form of statutes, compacts and agreements rather than treaties.
 :::
 
-### Dispute clauses in the treaties
+### Dispute Clauses in the Treaties
 
 Many treaties said how the parties would handle a wrong done by one side's people to the other's.
 
@@ -138,29 +162,39 @@ Prucha's history of treaty-making and Williams's study of early treaty diplomacy
 
 NCAI describes "pressure on eastern tribal nations to move west, resulting in forced migration" [@ncai-tribal-nations-and-the-united-states, p. 12].
 
-**1827. Cherokee Nation constitution.** Before removal, the Cherokee Nation's 1827 constitution vested "The Judicial Powers" in "the Supreme Court, and such Circuit and Inferior Courts, as the General Council may, from time to time, ordain and establish" [@cherokee-nation-constitution-1827-article-v, art. V, sec. 1]. The section on Tribal courts and peacemaking below follows that judiciary forward.
+:::: law cherokee-nation-constitution-1827-article-v
+::: summary
+Before removal, the Cherokee Nation's 1827 constitution vested "The Judicial Powers" in "the Supreme Court, and such Circuit and Inferior Courts, as the General Council may, from time to time, ordain and establish" [@cherokee-nation-constitution-1827-article-v, art. V, sec. 1]. The section on Tribal courts and peacemaking below follows that judiciary forward.
+:::
+::::
 
-**1830. Indian Removal Act.** Authorized the President to exchange lands west of the Mississippi for nations' lands in the states and to "solemnly assure" each nation that "the United States will forever secure and guaranty to them" the new country [@indian-removal-act-1830, sec. 3].
+:::: law indian-removal-act-1830
+::: summary
+Authorized the President to exchange lands west of the Mississippi for nations' lands in the states and to "solemnly assure" each nation that "the United States will forever secure and guaranty to them" the new country [@indian-removal-act-1830, sec. 3].
+:::
+::::
 
 :::: case cherokee-nation-v-georgia
-Decided March 18, 1831 [@supreme-court-library-dates-of-decisions-1791-1882, p. 30].
+::: question
+Is the Cherokee Nation a "foreign State" that may bring an original action in the Supreme Court against Georgia?
+:::
 
-**Question.** Is the Cherokee Nation a "foreign State" that may bring an original action in the Supreme Court against Georgia?
-
-**Holding.** No. The Court held that a Native nation within the United States is not a "foreign state" under Article III, so the Court lacked original jurisdiction over the Cherokee Nation's suit to stop Georgia from enforcing its laws in Cherokee territory. The opinion described Native nations as "domestic dependent nations" whose relation to the United States "resembles that of a ward to his guardian."
+::: holding
+No. The Court held that a Native nation within the United States is not a "foreign state" under Article III, so the Court lacked original jurisdiction over the Cherokee Nation's suit to stop Georgia from enforcing its laws in Cherokee territory. The opinion described Native nations as "domestic dependent nations" whose relation to the United States "resembles that of a ward to his guardian."
+:::
 
 ::: quotes
-> They may, more correctly, perhaps, be denominated domestic dependent nations
+> They may, more correctly, perhaps, be denominated domestic dependent nations ...
 
-— [@cherokee-nation-v-georgia, p. 17]
+[@cherokee-nation-v-georgia, p. 17]
 
-> Their relation to the United States resembles that of a ward to his guardian
+> Their relation to the United States resembles that of a ward to his guardian ...
 
-— [@cherokee-nation-v-georgia, p. 17]
+[@cherokee-nation-v-georgia, p. 17]
 
-> an Indian tribe or nation within the United States is not a foreign state in the sense of the constitution, and cannot maintain an action in the courts of the United States
+> ... an Indian tribe or nation within the United States is not a foreign state in the sense of the constitution, and cannot maintain an action in the courts of the United States ...
 
-— [@cherokee-nation-v-georgia, p. 20]
+[@cherokee-nation-v-georgia, p. 20]
 :::
 
 ::: treatment
@@ -175,24 +209,26 @@ Source of the "domestic dependent nations" and trust ("ward") framing that still
 :::
 
 :::: case worcester-v-georgia
-Decided March 3, 1832 [@supreme-court-library-dates-of-decisions-1791-1882, p. 32].
+::: question
+May Georgia apply its criminal laws to a non-Indian missionary living in the Cherokee Nation under federal license?
+:::
 
-**Question.** May Georgia apply its criminal laws to a non-Indian missionary living in the Cherokee Nation under federal license?
-
-**Holding.** No. The Court held that the Cherokee Nation is a distinct political community in which state law has no force. Relations with it are vested exclusively in the federal government under the Constitution, treaties and federal statutes. Georgia's statute and Worcester's conviction were void.
+::: holding
+No. The Court held that the Cherokee Nation is a distinct political community in which state law has no force. Relations with it are vested exclusively in the federal government under the Constitution, treaties and federal statutes. Georgia's statute and Worcester's conviction were void.
+:::
 
 ::: quotes
-> The Indian nations had always been considered as distinct, independent political communities, retaining their original natural rights, as the undisputed possessors of the soil, from time immemorial
+> The Indian nations had always been considered as distinct, independent political communities, retaining their original natural rights, as the undisputed possessors of the soil, from time immemorial ...
 
-— [@worcester-v-georgia, p. 559]
+[@worcester-v-georgia, p. 559]
 
-> A weak state, in order to provide for its safety, may place itself under the protection of one more powerful, without stripping itself of the right of government, and ceasing to be a state
+> A weak state, in order to provide for its safety, may place itself under the protection of one more powerful, without stripping itself of the right of government, and ceasing to be a state ...
 
-— [@worcester-v-georgia, p. 561]
+[@worcester-v-georgia, p. 561]
 
-> The Cherokee nation, then, is a distinct community occupying its own territory, with boundaries accurately described, in which the laws of Georgia can have no force
+> The Cherokee nation, then, is a distinct community occupying its own territory, with boundaries accurately described, in which the laws of Georgia can have no force ...
 
-— [@worcester-v-georgia, p. 561]
+[@worcester-v-georgia, p. 561]
 :::
 
 ::: treatment
@@ -206,31 +242,39 @@ Decided March 3, 1832 [@supreme-court-library-dates-of-decisions-1791-1882, p. 3
 The core statement of inherent Native sovereignty and of the federal-Tribal relationship excluding state law; the starting point for any model code provision asserting a nation's territorial jurisdiction and its own dispute-resolution forums.
 :::
 
-## Reservations and allotment (1871 to 1934)
+## Reservations and Allotment (1871 to 1934)
 
 NCAI writes that "Settlers' increasing desire for the land within reservations and the push to assimilate Indians into mainstream American life led to the General Allotment Act of 1887" [@ncai-tribal-nations-and-the-united-states, p. 12].
 
-### Courts of Indian Offenses and federal criminal law
+### Courts of Indian Offenses and Federal Criminal Law
 
-**1883. Courts of Indian Offenses.** The Commissioner of Indian Affairs issued rules creating a "Court of Indian Offenses" at most agencies. Judges were drawn from agency police. Orders were subject to the agent's approval and "an appeal to and final revision by the Indian office" [@rules-governing-court-of-indian-offenses-1883, p. 89]. The rules made ceremonial and family practices punishable, and the Interior Secretary's letter that prompted them called "the influence of the medicine men" a "great hindrance" [@rules-governing-court-of-indian-offenses-1883, p. 87]. The National Indian Law Library notes that "there was no actual Congressional authorization for the Code of Indian Offenses" [@nill-civilization-regulations-and-policy].
+:::: law rules-governing-court-of-indian-offenses-1883
+::: summary
+The Commissioner of Indian Affairs issued rules creating a "Court of Indian Offenses" at most agencies. Judges were drawn from agency police. Orders were subject to the agent's approval and "an appeal to and final revision by the Indian office" [@rules-governing-court-of-indian-offenses-1883, p. 89]. The rules made ceremonial and family practices punishable, and the Interior Secretary's letter that prompted them called "the influence of the medicine men" a "great hindrance" [@rules-governing-court-of-indian-offenses-1883, p. 87]. The National Indian Law Library notes that "there was no actual Congressional authorization for the Code of Indian Offenses" [@nill-civilization-regulations-and-policy].
+:::
+::::
 
 ::: analysis
 The first federal courts on reservations were built to suppress traditional practice. A code that restores traditional dispute resolution answers that history in part.
 :::
 
 :::: case ex-parte-crow-dog
-**Question.** Did a federal territorial court have jurisdiction to try and sentence a Lakota man for killing another Lakota man within the Great Sioux Reservation?
+::: question
+Did a federal territorial court have jurisdiction to try and sentence a Lakota man for killing another Lakota man within the Great Sioux Reservation?
+:::
 
-**Holding.** No. The Court held that neither the general federal criminal statutes nor the 1868 treaty and 1877 agreement extended federal jurisdiction to a crime by one Indian against another in Indian country. Such a crime remained subject to the nation's own law and processes. The writ of habeas corpus issued.
+::: holding
+No. The Court held that neither the general federal criminal statutes nor the 1868 treaty and 1877 agreement extended federal jurisdiction to a crime by one Indian against another in Indian country. Such a crime remained subject to the nation's own law and processes. The writ of habeas corpus issued.
+:::
 
 ::: quotes
-> that of self-government, the regulation by themselves of their own domestic affairs
+> ... that of self-government, the regulation by themselves of their own domestic affairs ...
 
-— [@ex-parte-crow-dog, p. 568]
+[@ex-parte-crow-dog, p. 568]
 
-> It tries them, not by their peers, nor by the customs of their people, nor the law of their land, but by superiors of a different race
+> It tries them, not by their peers, nor by the customs of their people, nor the law of their land, but by superiors of a different race ...
 
-— [@ex-parte-crow-dog, p. 571]
+[@ex-parte-crow-dog, p. 571]
 :::
 
 ::: treatment
@@ -244,21 +288,29 @@ Most later decisions that treat it negatively describe it as superseded by statu
 Recognizes a nation's own process for resolving even a homicide as law the federal courts must respect absent clear congressional action; a key historical anchor for commentary on traditional and restorative dispute resolution.
 :::
 
-**1885. Major Crimes Act.** Section 9 of the 1885 appropriations act subjected "all Indians" who committed seven listed crimes to territorial or federal law and courts [@major-crimes-act-1885, sec. 9]. Today's list, at 18 U.S.C. § 1153, is longer [@major-crimes-act-1885]. Congress acted in response to *Crow Dog*, as the Supreme Court explained the next year [@united-states-v-kagama].
+:::: law major-crimes-act-1885
+::: summary
+Section 9 of the 1885 appropriations act subjected "all Indians" who committed seven listed crimes to territorial or federal law and courts [@major-crimes-act-1885, sec. 9]. Today's list, at 18 U.S.C. § 1153, is longer [@major-crimes-act-1885]. Congress acted in response to *Crow Dog*, as the Supreme Court explained the next year [@united-states-v-kagama].
+:::
+::::
 
 :::: case united-states-v-kagama
-**Question.** Does Congress have power to make crimes by one Indian against another within a reservation federal offenses (the Major Crimes Act)?
+::: question
+Does Congress have power to make crimes by one Indian against another within a reservation federal offenses (the Major Crimes Act)?
+:::
 
-**Holding.** Yes. The Court rejected the Commerce Clause as the source of power. It upheld the Major Crimes Act as an exercise of federal power arising from the Native nations' dependence on, and the duty of protection owed by, the federal government. State courts were not the proper forum.
+::: holding
+Yes. The Court rejected the Commerce Clause as the source of power. It upheld the Major Crimes Act as an exercise of federal power arising from the Native nations' dependence on, and the duty of protection owed by, the federal government. State courts were not the proper forum.
+:::
 
 ::: quotes
-> These Indian tribes are the wards of the nation. They are communities dependent on the United States
+> These Indian tribes are the wards of the nation. They are communities dependent on the United States ...
 
-— [@united-states-v-kagama, p. 383-384]
+[@united-states-v-kagama, p. 383-384]
 
-> Because of the local ill feeling, the people of the States where they are found are often their deadliest enemies. From their very weakness and helplessness, so largely due to the course of dealing of the Federal Government with them and the treaties in which it has been promised, there arises the duty of protection, and with it the power
+> Because of the local ill feeling, the people of the States where they are found are often their deadliest enemies. From their very weakness and helplessness, so largely due to the course of dealing of the Federal Government with them and the treaties in which it has been promised, there arises the duty of protection, and with it the power ...
 
-— [@united-states-v-kagama, p. 384]
+[@united-states-v-kagama, p. 384]
 :::
 
 ::: treatment
@@ -270,23 +322,31 @@ Recognizes a nation's own process for resolving even a homicide as law the feder
 The doctrinal root of federal "plenary power" and of federal criminal jurisdiction in Indian country, which limits how far a nation's own criminal or restorative forums can reach for major crimes.
 :::
 
-### Allotment and the plenary power
+### Allotment and the Plenary Power
 
-**1887. General Allotment Act.** Authorized allotment of reservation land to individuals and sale of "surplus" land, and made allottees "subject to the laws, both civil and criminal, of the State or Territory" [@general-allotment-act-1887, sec. 6]. NCAI states that "More than 90 million acres—nearly two-thirds of reservation land—were taken from tribes" [@ncai-tribal-nations-and-the-united-states, p. 12].
+:::: law general-allotment-act-1887
+::: summary
+Authorized allotment of reservation land to individuals and sale of "surplus" land, and made allottees "subject to the laws, both civil and criminal, of the State or Territory" [@general-allotment-act-1887, sec. 6]. NCAI states that "More than 90 million acres—nearly two-thirds of reservation land—were taken from tribes" [@ncai-tribal-nations-and-the-united-states, p. 12].
+:::
+::::
 
 ::: analysis
 Allotment left checkerboard land ownership and fractionated heirship, the source of many disputes over jurisdiction, land and probate that a nation's forums are asked to resolve today.
 :::
 
 :::: case talton-v-mayes
-**Question.** Does the Fifth Amendment's grand jury requirement apply to a murder prosecution under Cherokee Nation law in Cherokee courts?
+::: question
+Does the Fifth Amendment's grand jury requirement apply to a murder prosecution under Cherokee Nation law in Cherokee courts?
+:::
 
-**Holding.** No. The Court held that the Cherokee Nation's powers of local self-government existed before the Constitution and are not limited by the Fifth Amendment, so a Cherokee grand jury of five persons did not violate the Constitution.
+::: holding
+No. The Court held that the Cherokee Nation's powers of local self-government existed before the Constitution and are not limited by the Fifth Amendment, so a Cherokee grand jury of five persons did not violate the Constitution.
+:::
 
 ::: quotes
-> as the powers of local self government enjoyed by the Cherokee nation existed prior to the Constitution, they are not operated upon by the Fifth Amendment
+> ... as the powers of local self government enjoyed by the Cherokee nation existed prior to the Constitution, they are not operated upon by the Fifth Amendment ...
 
-— [@talton-v-mayes, p. 384]
+[@talton-v-mayes, p. 384]
 :::
 
 ::: treatment
@@ -298,21 +358,29 @@ Allotment left checkerboard land ownership and fractionated heirship, the source
 Establishes that Tribal courts and processes are not bound by the federal Bill of Rights as such. That is why the Indian Civil Rights Act and each nation's own law, not the Constitution, set procedural protections in Tribal forums.
 :::
 
-**1898. Curtis Act.** Extended allotment to Indian Territory and provided that "all tribal courts in Indian Territory shall be abolished" [@curtis-act-1898, sec. 28]. The Cherokee Nation's judiciary describes the Act as having "abolished all tribal courts in Indian Territory, and took away the authority of court officials" [@cherokee-nation-judicial-branch-history].
+:::: law curtis-act-1898
+::: summary
+Extended allotment to Indian Territory and provided that "all tribal courts in Indian Territory shall be abolished" [@curtis-act-1898, sec. 28]. The Cherokee Nation's judiciary describes the Act as having "abolished all tribal courts in Indian Territory, and took away the authority of court officials" [@cherokee-nation-judicial-branch-history].
+:::
+::::
 
 :::: case lone-wolf-v-hitchcock
-**Question.** May Congress allot and open reservation land in breach of the 1867 Medicine Lodge Treaty's requirement that three-fourths of adult men consent to any cession?
+::: question
+May Congress allot and open reservation land in breach of the 1867 Medicine Lodge Treaty's requirement that three-fourths of adult men consent to any cession?
+:::
 
-**Holding.** Yes. The Court held that Congress has plenary authority over Tribal relations, including power to abrogate treaty provisions. The exercise of that power is political and not reviewable by the courts. The 1900 allotment act was presumed to be a good-faith exercise of guardianship.
+::: holding
+Yes. The Court held that Congress has plenary authority over Tribal relations, including power to abrogate treaty provisions. The exercise of that power is political and not reviewable by the courts. The 1900 allotment act was presumed to be a good-faith exercise of guardianship.
+:::
 
 ::: quotes
-> Plenary authority over the tribal relations of the Indians has been exercised by Congress from the beginning, and the power has always been deemed a political one, not subject to be controlled by the judicial department of the government
+> Plenary authority over the tribal relations of the Indians has been exercised by Congress from the beginning, and the power has always been deemed a political one, not subject to be controlled by the judicial department of the government ...
 
-— [@lone-wolf-v-hitchcock, p. 565]
+[@lone-wolf-v-hitchcock, p. 565]
 
-> When, therefore, treaties were entered into between the United States and a tribe of Indians it was never doubted that the power to abrogate existed in Congress
+> When, therefore, treaties were entered into between the United States and a tribe of Indians it was never doubted that the power to abrogate existed in Congress ...
 
-— [@lone-wolf-v-hitchcock, p. 566]
+[@lone-wolf-v-hitchcock, p. 566]
 :::
 
 ::: treatment
@@ -326,17 +394,21 @@ Later decisions recognize that it has been abrogated in part, among them *Little
 The high-water mark of "plenary power"; commentary on treaty-based dispute provisions and on the stability of agreements with the United States should account for Congress's asserted power to abrogate treaties.
 :::
 
-### Treaty rights, citizenship and status
+### Treaty Rights, Citizenship and Status
 
 :::: case elk-v-wilkins
-**Question.** Was a Native man born in Tribal relations who later moved away and lived among non-Indians a U.S. citizen under the Fourteenth Amendment entitled to vote?
+::: question
+Was a Native man born in Tribal relations who later moved away and lived among non-Indians a U.S. citizen under the Fourteenth Amendment entitled to vote?
+:::
 
-**Holding.** No. The Court held that Native people born members of a Tribe were not "subject to the jurisdiction" of the United States within the Citizenship Clause. Leaving the Tribe did not make Elk a citizen without naturalization or other action by Congress.
+::: holding
+No. The Court held that Native people born members of a Tribe were not "subject to the jurisdiction" of the United States within the Citizenship Clause. Leaving the Tribe did not make Elk a citizen without naturalization or other action by Congress.
+:::
 
 ::: quotes
-> Indians born within the territorial limits of the United States, members of, and owing immediate allegiance to, one of the Indian tribes (an alien, though dependent, power), although in a geographical sense born in the United States, are no more "born in the United States and subject to the jurisdiction thereof," within the meaning of the first section of the Fourteenth Amendment, than the children 'of subjects of any foreign government born within the domain of that government
+> Indians born within the territorial limits of the United States, members of, and owing immediate allegiance to, one of the Indian tribes (an alien, though dependent, power), although in a geographical sense born in the United States, are no more "born in the United States and subject to the jurisdiction thereof," within the meaning of the first section of the Fourteenth Amendment, than the children 'of subjects of any foreign government born within the domain of that government ...
 
-— [@elk-v-wilkins, p. 102]
+[@elk-v-wilkins, p. 102]
 :::
 
 ::: treatment
@@ -351,18 +423,22 @@ Background for the dual political status of citizens of Native nations, which af
 :::
 
 :::: case united-states-v-winans
-**Question.** Does the Yakama Nation's 1855 treaty right to take fish at "usual and accustomed places" survive private ownership of riverbank land?
+::: question
+Does the Yakama Nation's 1855 treaty right to take fish at "usual and accustomed places" survive private ownership of riverbank land?
+:::
 
-**Holding.** Yes. The Court held that the treaty reserved the fishing right as a servitude that burdens later private titles, so private owners could not exclude Yakama fishers from the usual and accustomed places; treaties are construed as Native signatories understood them.
+::: holding
+Yes. The Court held that the treaty reserved the fishing right as a servitude that burdens later private titles, so private owners could not exclude Yakama fishers from the usual and accustomed places; treaties are construed as Native signatories understood them.
+:::
 
 ::: quotes
-> the treaty was not a grant of rights to the Indians, but a grant of rights from them
+> ... the treaty was not a grant of rights to the Indians, but a grant of rights from them ...
 
-— [@united-states-v-winans, p. 381]
+[@united-states-v-winans, p. 381]
 
-> a reservation of those not granted
+> ... a reservation of those not granted ...
 
-— [@united-states-v-winans, p. 381]
+[@united-states-v-winans, p. 381]
 :::
 
 ::::
@@ -372,18 +448,22 @@ Source of the reserved-rights doctrine: rights not expressly ceded are retained 
 :::
 
 :::: case winters-v-united-states
-**Question.** Did the agreement creating the Fort Belknap Reservation impliedly reserve water from the Milk River for the reservation, as against later upstream settlers?
+::: question
+Did the agreement creating the Fort Belknap Reservation impliedly reserve water from the Milk River for the reservation, as against later upstream settlers?
+:::
 
-**Holding.** Yes. The Court held that the agreement impliedly reserved the water needed to make the reservation lands valuable. The federal government had power to reserve the water and exempt it from state appropriation. The reservation's rights prevailed over later appropriators.
+::: holding
+Yes. The Court held that the agreement impliedly reserved the water needed to make the reservation lands valuable. The federal government had power to reserve the water and exempt it from state appropriation. The reservation's rights prevailed over later appropriators.
+:::
 
 ::: quotes
-> command of all their beneficial use
+> ... command of all their beneficial use ...
 
-— [@winters-v-united-states, p. 576]
+[@winters-v-united-states, p. 576]
 
-> The power of the Government to reserve the waters and exempt them from appropriation under the state laws is not denied, and could not be
+> The power of the Government to reserve the waters and exempt them from appropriation under the state laws is not denied, and could not be ...
 
-— [@winters-v-united-states, p. 577]
+[@winters-v-united-states, p. 577]
 :::
 
 ::: treatment
@@ -396,18 +476,22 @@ Basis of reserved water rights; water disputes are a likely subject for intergov
 :::
 
 :::: case united-states-v-sandoval
-**Question.** May Congress prohibit bringing liquor into Pueblo lands in New Mexico, even though the Pueblos held fee title?
+::: question
+May Congress prohibit bringing liquor into Pueblo lands in New Mexico, even though the Pueblos held fee title?
+:::
 
-**Holding.** Yes. The Court held that the Pueblos are dependent Indian communities under federal guardianship and that Congress could bring them and their lands within federal Indian liquor laws, but that Congress may not arbitrarily label a group an Indian Tribe.
+::: holding
+Yes. The Court held that the Pueblos are dependent Indian communities under federal guardianship and that Congress could bring them and their lands within federal Indian liquor laws, but that Congress may not arbitrarily label a group an Indian Tribe.
+:::
 
 ::: quotes
-> the power and the duty of exercising a fostering care and protection over all dependent Indian communities within its borders
+> ... the power and the duty of exercising a fostering care and protection over all dependent Indian communities within its borders ...
 
-— [@united-states-v-sandoval, p. 46]
+[@united-states-v-sandoval, p. 46]
 
-> it is not meant by this that Congress may bring a community or body of people within the range of this power by arbitrarily calling them an Indian tribe
+> ... it is not meant by this that Congress may bring a community or body of people within the range of this power by arbitrarily calling them an Indian tribe ...
 
-— [@united-states-v-sandoval, p. 46]
+[@united-states-v-sandoval, p. 46]
 :::
 
 ::: treatment
@@ -419,7 +503,11 @@ The "dependent Indian communities" concept was codified in 18 U.S.C. § 1151(b) 
 Defines the federal relationship with the Pueblos and the "dependent Indian community" category of Indian country, which matters for the territorial reach of a nation's forums. The opinion contains openly racist descriptions of Pueblo people; any quotation in the book should be chosen and framed with care.
 :::
 
-**1924. Indian Citizenship Act.** Declared Native people born in the United States to be U.S. citizens, without impairing "the right of any Indian to tribal or other property" [@indian-citizenship-act-1924].
+:::: law indian-citizenship-act-1924
+::: summary
+Declared Native people born in the United States to be U.S. citizens, without impairing "the right of any Indian to tribal or other property" [@indian-citizenship-act-1924].
+:::
+::::
 
 ::: analysis
 Citizens of Native nations therefore hold two citizenships, and can use state and federal forums as well as their nation's own.
@@ -431,7 +519,11 @@ Citizens of Native nations therefore hold two citizenships, and can use state an
 
 NCAI: "The federal government, under the Indian Reorganization Act of 1934, ended the discredited policy of allotment" [@ncai-tribal-nations-and-the-united-states, p. 12].
 
-**1934. Indian Reorganization Act.** Ended allotment and authorized nations to adopt constitutions and bylaws by referendum (now 25 U.S.C. § 5123) [@indian-reorganization-act-1934, sec. 16]. Many constitutions adopted under the Indian Reorganization Act (IRA) set up Tribal courts or gave the council judicial power [@indian-reorganization-act-1934].
+:::: law indian-reorganization-act-1934
+::: summary
+Ended allotment and authorized nations to adopt constitutions and bylaws by referendum (now 25 U.S.C. § 5123) [@indian-reorganization-act-1934, sec. 16]. Many constitutions adopted under the Indian Reorganization Act (IRA) set up Tribal courts or gave the council judicial power [@indian-reorganization-act-1934].
+:::
+::::
 
 ::: analysis
 A code may need to fit within, or work around, a constitution of the IRA era.
@@ -443,9 +535,17 @@ A code may need to fit within, or work around, a constitution of the IRA era.
 This early federal statement covers decisions based on custom, not only formal judgments.
 :::
 
-**1936. Alaska and Oklahoma.** Congress extended organization under the IRA to Alaska Native groups "having a common bond of occupation, or association, or residence" [@alaska-indian-reorganization-act-amendment-1936, sec. 1] and to "Any recognized tribe or band of Indians residing in Oklahoma" [@oklahoma-indian-welfare-act-1936, sec. 3].
+:::: law alaska-indian-reorganization-act-amendment-1936
+::: summary
+Congress extended organization under the IRA to Alaska Native groups "having a common bond of occupation, or association, or residence" [@alaska-indian-reorganization-act-amendment-1936, sec. 1] and to "Any recognized tribe or band of Indians residing in Oklahoma" [@oklahoma-indian-welfare-act-1936, sec. 3].
+:::
+::::
 
-**1946. Indian Claims Commission Act.** Created a commission to hear claims against the United States, including "claims based upon fair and honorable dealings that are not recognized by any existing rule of law or equity" [@indian-claims-commission-act-1946, sec. 2]. Relief was money only.
+:::: law indian-claims-commission-act-1946
+::: summary
+Created a commission to hear claims against the United States, including "claims based upon fair and honorable dealings that are not recognized by any existing rule of law or equity" [@indian-claims-commission-act-1946, sec. 2]. Relief was money only.
+:::
+::::
 
 ::: analysis
 The commission is an early example of a special forum, outside the courts, for disputes between a nation and the United States.
@@ -455,27 +555,43 @@ The commission is an early example of a special forum, outside the courts, for d
 
 NCAI: "Congress decided to terminate federal recognition and assistance to more than 100 tribes. Public Law 280, passed in 1953, imposed state criminal and civil jurisdiction on many tribes in California, Minnesota, Nebraska, Oregon, and Wisconsin" [@ncai-tribal-nations-and-the-united-states, p. 13].
 
-### Termination, Public Law 280 and relocation
+### Termination, Public Law 280 and Relocation
 
-**1953. House Concurrent Resolution 108.** Declared the "sense of Congress" that named nations "should be freed from Federal supervision and control" at "the earliest possible time" [@house-concurrent-resolution-108-1953].
+:::: law house-concurrent-resolution-108-1953
+::: summary
+Declared the "sense of Congress" that named nations "should be freed from Federal supervision and control" at "the earliest possible time" [@house-concurrent-resolution-108-1953].
+:::
+::::
 
-**1953. Public Law 280.** Gave five states, and later Alaska, criminal jurisdiction and civil adjudicatory jurisdiction over most Indian country in those states, and invited other states to assume jurisdiction without Tribal consent [@public-law-83-280, sec. 7].
+:::: law public-law-83-280
+::: summary
+Gave five states, and later Alaska, criminal jurisdiction and civil adjudicatory jurisdiction over most Indian country in those states, and invited other states to assume jurisdiction without Tribal consent [@public-law-83-280, sec. 7].
+:::
+::::
 
 ::: analysis
 In these states Tribal and state courts generally have concurrent jurisdiction, so a nation's forum operates alongside a state forum.
 :::
 
-**1954. Menominee Termination Act.** Provided for "orderly termination of Federal supervision over the property and members of the Menominee Indian Tribe of Wisconsin" [@menominee-termination-act-1954, sec. 1].
+:::: law menominee-termination-act-1954
+::: summary
+Provided for "orderly termination of Federal supervision over the property and members of the Menominee Indian Tribe of Wisconsin" [@menominee-termination-act-1954, sec. 1].
+:::
+::::
 
 :::: case tee-hit-ton-indians-v-united-states
-**Question.** Is the taking of timber from aboriginal Tlingit land that Congress never recognized a compensable taking under the Fifth Amendment?
+::: question
+Is the taking of timber from aboriginal Tlingit land that Congress never recognized a compensable taking under the Fifth Amendment?
+:::
 
-**Holding.** No. The Court held that original Native title not recognized by Congress is a right of occupancy that the United States may extinguish without compensation under the Fifth Amendment.
+::: holding
+No. The Court held that original Native title not recognized by Congress is a right of occupancy that the United States may extinguish without compensation under the Fifth Amendment.
+:::
 
 ::: quotes
-> Indian occupation of land without government recognition of ownership creates no rights against taking or extinction by the United States protected by the Fifth Amendment or any other principle of law
+> Indian occupation of land without government recognition of ownership creates no rights against taking or extinction by the United States protected by the Fifth Amendment or any other principle of law ...
 
-— [@tee-hit-ton-indians-v-united-states, p. 285]
+[@tee-hit-ton-indians-v-united-states, p. 285]
 :::
 
 ::: treatment
@@ -487,27 +603,35 @@ Aboriginal claims in Alaska were later settled by Congress in the Alaska Native 
 Explains why Alaska Native land claims were settled by statute rather than litigation. That shapes the distinctive Alaska setting (few reservations, the Alaska Native Claims Settlement Act corporations) in which Alaska Native Tribal forums operate.
 :::
 
-**1956. Relocation.** An adult vocational training act became the core of the federal relocation program [@indian-vocational-training-act-1956, sec. 1].
+:::: law indian-vocational-training-act-1956
+::: summary
+An adult vocational training act became the core of the federal relocation program [@indian-vocational-training-act-1956, sec. 1].
+:::
+::::
 
 ::: analysis
 Relocation helped create large urban Native populations living outside any nation's territory, which a code may reach only by consent or citizenship.
 :::
 
-### Tribal courts and the Constitution
+### Tribal Courts and the Constitution
 
 :::: case williams-v-lee
-**Question.** May an Arizona state court hear a non-Indian trader's suit to collect a debt from Navajo citizens for goods sold on the Navajo Reservation?
+::: question
+May an Arizona state court hear a non-Indian trader's suit to collect a debt from Navajo citizens for goods sold on the Navajo Reservation?
+:::
 
-**Holding.** No. The Court held that state-court jurisdiction would infringe on the right of reservation Indians to make their own laws and be ruled by them. It would also undermine the authority of the Navajo courts. The claim therefore belonged in the Navajo courts.
+::: holding
+No. The Court held that state-court jurisdiction would infringe on the right of reservation Indians to make their own laws and be ruled by them. It would also undermine the authority of the Navajo courts. The claim therefore belonged in the Navajo courts.
+:::
 
 ::: quotes
-> Essentially, absent governing Acts of Congress, the question has always been whether the state action infringed on the right of reservation Indians to make their own laws and be ruled by them
+> Essentially, absent governing Acts of Congress, the question has always been whether the state action infringed on the right of reservation Indians to make their own laws and be ruled by them ...
 
-— [@williams-v-lee, p. 220]
+[@williams-v-lee, p. 220]
 
-> There can be no doubt that to allow the exercise of state jurisdiction here would undermine the authority of the tribal courts over Reservation affairs and hence would infringe on the right of the Indians to govern themselves
+> There can be no doubt that to allow the exercise of state jurisdiction here would undermine the authority of the tribal courts over Reservation affairs and hence would infringe on the right of the Indians to govern themselves ...
 
-— [@williams-v-lee, p. 223]
+[@williams-v-lee, p. 223]
 :::
 
 ::: treatment
@@ -522,18 +646,22 @@ The leading case protecting Tribal forums from state-court encroachment over on-
 **1959. Navajo Nation Courts.** The same year, the Navajo Nation Council "did away with the Courts of Indian Offenses and in its place created the Navajo Nation Courts on April 1, 1959" [@navajo-nation-judicial-branch-history-of-the-courts].
 
 :::: case native-american-church-v-navajo-tribal-council
-**Question.** Do federal courts have jurisdiction to hear a First Amendment challenge to a Navajo Tribal Council ordinance prohibiting peyote on the reservation?
+::: question
+Do federal courts have jurisdiction to hear a First Amendment challenge to a Navajo Tribal Council ordinance prohibiting peyote on the reservation?
+:::
 
-**Holding.** No. The court held that the First Amendment does not bind Native nations because no constitutional provision or act of Congress makes it applicable to them. The federal courts therefore lacked jurisdiction over the challenge to the Navajo ordinance, and the dismissal was affirmed.
+::: holding
+No. The court held that the First Amendment does not bind Native nations because no constitutional provision or act of Congress makes it applicable to them. The federal courts therefore lacked jurisdiction over the challenge to the Navajo ordinance, and the dismissal was affirmed.
+:::
 
 ::: quotes
 > Indian tribes are not states. They have a status higher than that of states.
 
-— [@native-american-church-v-navajo-tribal-council]
+[@native-american-church-v-navajo-tribal-council]
 
 > No provision in the Constitution makes the First Amendment applicable to Indian nations nor is there any law of Congress doing so.
 
-— [@native-american-church-v-navajo-tribal-council]
+[@native-american-church-v-navajo-tribal-council]
 :::
 
 ::: treatment
@@ -545,29 +673,41 @@ Congress later imposed free-exercise and other protections on Tribal governments
 Confirms that federal constitutional limits do not apply directly to Tribal governments, so procedural guarantees in Tribal forums come from the Indian Civil Rights Act and each nation's own law. A model code should state its own due-process guarantees.
 :::
 
-## Self-determination (1968 to 1987)
+## Self-Determination (1968 to 1987)
 
 NCAI: "A resurgence of tribal government involvement in federal policy development ended the termination era and prompted the development of a policy of self-determination and self-governance" [@ncai-tribal-nations-and-the-united-states, p. 13].
 
-### Civil rights and consent
+### Civil Rights and Consent
 
-**1968. Indian Civil Rights Act.** Title II applies most Bill of Rights guarantees to Tribal governments by statute (25 U.S.C. § 1302). It makes federal habeas corpus available "to test the legality of his detention by order of an Indian tribe" [@indian-civil-rights-act-1968, sec. 203]. Title III directed the Interior Secretary to recommend "a model code to govern the administration of justice by courts of Indian offenses" [@indian-civil-rights-act-1968, sec. 301]. Several states measure Tribal judgments against its due-process standard (see the state rules below).
+:::: law indian-civil-rights-act-1968
+::: summary
+Title II applies most Bill of Rights guarantees to Tribal governments by statute (25 U.S.C. § 1302). It makes federal habeas corpus available "to test the legality of his detention by order of an Indian tribe" [@indian-civil-rights-act-1968, sec. 203]. Title III directed the Interior Secretary to recommend "a model code to govern the administration of justice by courts of Indian offenses" [@indian-civil-rights-act-1968, sec. 301]. Several states measure Tribal judgments against its due-process standard (see the state rules below).
+:::
+::::
 
-**1968. Tribal consent to state jurisdiction.** Title IV requires a nation's consent, by majority vote at a special election, before a state assumes jurisdiction under Public Law 280 [@indian-civil-rights-act-title-iv-tribal-consent-1968, sec. 406]. Where a state does exercise civil jurisdiction, a Tribal "ordinance or custom" not inconsistent with state civil law "shall ... be given full force and effect" [@indian-civil-rights-act-title-iv-tribal-consent-1968, sec. 402(c); @usc-25-1322, (c)].
+:::: law indian-civil-rights-act-title-iv-tribal-consent-1968
+::: summary
+Title IV requires a nation's consent, by majority vote at a special election, before a state assumes jurisdiction under Public Law 280 [@indian-civil-rights-act-title-iv-tribal-consent-1968, sec. 406]. Where a state does exercise civil jurisdiction, a Tribal "ordinance or custom" not inconsistent with state civil law "shall ... be given full force and effect" [@indian-civil-rights-act-title-iv-tribal-consent-1968, sec. 402(c); @usc-25-1322, (c)].
+:::
+::::
 
 ::: analysis
 That is a federal instruction that state courts apply Tribal custom.
 :::
 
 :::: case menominee-tribe-v-united-states
-**Question.** Did the Menominee Termination Act of 1954 silently abrogate the Menominee's treaty hunting and fishing rights?
+::: question
+Did the Menominee Termination Act of 1954 silently abrogate the Menominee's treaty hunting and fishing rights?
+:::
 
-**Holding.** No. Reading the Termination Act together with Public Law 280, the Court held that the treaty hunting and fishing rights survived termination because Congress did not clearly abrogate them, and it declined to infer abrogation from ambiguous language.
+::: holding
+No. Reading the Termination Act together with Public Law 280, the Court held that the treaty hunting and fishing rights survived termination because Congress did not clearly abrogate them, and it declined to infer abrogation from ambiguous language.
+:::
 
 ::: quotes
-> We decline to construe the Termination Act as a backhanded way of abrogating the hunting and fishing rights of these Indians
+> We decline to construe the Termination Act as a backhanded way of abrogating the hunting and fishing rights of these Indians ...
 
-— [@menominee-tribe-v-united-states, p. 412]
+[@menominee-tribe-v-united-states, p. 412]
 :::
 
 ::: treatment
@@ -579,25 +719,33 @@ Congress restored federal recognition to the Menominee Indian Tribe of Wisconsin
 A clear-statement rule protecting treaty rights from implied abrogation; supports interpretive provisions in the model code requiring clear language before a nation's rights or immunities are treated as surrendered.
 :::
 
-### Self-determination as federal policy
+### Self-Determination as Federal Policy
 
 **1970. Special message on Indian affairs.** President Nixon called for "a new era in which the Indian future is determined by Indian acts and Indian decisions" [@nixon-special-message-indian-affairs-1970]. He said that "Self-determination among the Indian people can and must be encouraged without the threat of eventual termination" [@nixon-special-message-indian-affairs-1970].
 
-**1971. Alaska Native Claims Settlement Act.** Settled Alaska Native land claims by statute, through regional and village corporations, with a finding that the settlement be reached "without litigation" and "without creating a reservation system" [@alaska-native-claims-settlement-act-1971, sec. 2(b)].
+:::: law alaska-native-claims-settlement-act-1971
+::: summary
+Settled Alaska Native land claims by statute, through regional and village corporations, with a finding that the settlement be reached "without litigation" and "without creating a reservation system" [@alaska-native-claims-settlement-act-1971, sec. 2(b)].
+:::
+::::
 
 ::: analysis
 Because land went to corporations, most Alaska Native Tribal courts work without a territorial base.
 :::
 
 :::: case mcclanahan-v-arizona-state-tax-commission
-**Question.** May Arizona impose its personal income tax on a Navajo citizen whose income came wholly from reservation sources?
+::: question
+May Arizona impose its personal income tax on a Navajo citizen whose income came wholly from reservation sources?
+:::
 
-**Holding.** No. The Court held that the state tax was preempted by the Navajo treaty and federal statutes, read against the backdrop of Navajo sovereignty, so Arizona had no authority to tax a reservation Navajo's on-reservation income.
+::: holding
+No. The Court held that the state tax was preempted by the Navajo treaty and federal statutes, read against the backdrop of Navajo sovereignty, so Arizona had no authority to tax a reservation Navajo's on-reservation income.
+:::
 
 ::: quotes
-> The Indian sovereignty doctrine is relevant, then, not because it provides a definitive resolution of the issues in this suit, but because it provides a backdrop against which the applicable treaties and federal statutes must be read
+> The Indian sovereignty doctrine is relevant, then, not because it provides a definitive resolution of the issues in this suit, but because it provides a backdrop against which the applicable treaties and federal statutes must be read ...
 
-— [@mcclanahan-v-arizona-state-tax-commission, p. 172]
+[@mcclanahan-v-arizona-state-tax-commission, p. 172]
 :::
 
 ::::
@@ -606,21 +754,29 @@ Because land went to corporations, most Alaska Native Tribal courts work without
 States the modern "backdrop" approach to sovereignty and preemption, which commentary can use to explain how Tribal, state and federal authority are sorted in disputes involving reservation activity.
 :::
 
-**1973. Menominee Restoration Act.** "Federal recognition is hereby extended to the Menominee Indian Tribe of Wisconsin" [@menominee-restoration-act-1973, sec. 3(a)].
+:::: law menominee-restoration-act-1973
+::: summary
+"Federal recognition is hereby extended to the Menominee Indian Tribe of Wisconsin" [@menominee-restoration-act-1973, sec. 3(a)].
+:::
+::::
 
 :::: case morton-v-mancari
-**Question.** Does the Bureau of Indian Affairs' statutory employment preference for Indians violate the Equal Employment Opportunity Act of 1972 or due process?
+::: question
+Does the Bureau of Indian Affairs' statutory employment preference for Indians violate the Equal Employment Opportunity Act of 1972 or due process?
+:::
 
-**Holding.** No. The Court held that the 1972 Act did not implicitly repeal the preference and that the preference is political rather than racial, being granted to members of federally recognized Tribes. It survives because it is rationally tied to Congress's unique obligation toward Native nations.
+::: holding
+No. The Court held that the 1972 Act did not implicitly repeal the preference and that the preference is political rather than racial, being granted to members of federally recognized Tribes. It survives because it is rationally tied to Congress's unique obligation toward Native nations.
+:::
 
 ::: quotes
-> The preference, as applied, is granted to Indians not as a discrete racial group, but, rather, as members of quasi-sovereign tribal entities
+> The preference, as applied, is granted to Indians not as a discrete racial group, but, rather, as members of quasi-sovereign tribal entities ...
 
-— [@morton-v-mancari, p. 554]
+[@morton-v-mancari, p. 554]
 
-> As long as the special treatment can be tied rationally to the fulfillment of Congress' unique obligation toward the Indians, such legislative judgments will not be disturbed
+> As long as the special treatment can be tied rationally to the fulfillment of Congress' unique obligation toward the Indians, such legislative judgments will not be disturbed ...
 
-— [@morton-v-mancari, p. 555]
+[@morton-v-mancari, p. 555]
 :::
 
 ::: treatment
@@ -634,23 +790,31 @@ States the modern "backdrop" approach to sovereignty and preemption, which comme
 The political-classification principle supports membership-based eligibility rules (for example, for panels of elders, peacemakers or Tribal-court bar admission) in a model code.
 :::
 
-**1975. Indian Self-Determination and Education Assistance Act.** Lets nations contract to run federal programs, recognizing "the strong expression of the Indian people for self-determination" [@indian-self-determination-and-education-assistance-act-1975, sec. 3(a)]. Tribal courts and justice programs are commonly funded through these contracts [@indian-self-determination-and-education-assistance-act-1975].
+:::: law indian-self-determination-and-education-assistance-act-1975
+::: summary
+Lets nations contract to run federal programs, recognizing "the strong expression of the Indian people for self-determination" [@indian-self-determination-and-education-assistance-act-1975, sec. 3(a)]. Tribal courts and justice programs are commonly funded through these contracts [@indian-self-determination-and-education-assistance-act-1975].
+:::
+::::
 
-### Tribal courts and Tribal authority
+### Tribal Courts and Tribal Authority
 
 :::: case fisher-v-district-court
-**Question.** Does a Montana state court have jurisdiction over an adoption proceeding in which all parties are Northern Cheyenne citizens residing on the reservation?
+::: question
+Does a Montana state court have jurisdiction over an adoption proceeding in which all parties are Northern Cheyenne citizens residing on the reservation?
+:::
 
-**Holding.** No. The Court held that the Northern Cheyenne Tribal Court's jurisdiction, established by Tribal ordinance under the Indian Reorganization Act, was exclusive. State jurisdiction would interfere with Tribal self-government. Denying the Indian plaintiffs a state forum was not impermissible racial discrimination.
+::: holding
+No. The Court held that the Northern Cheyenne Tribal Court's jurisdiction, established by Tribal ordinance under the Indian Reorganization Act, was exclusive. State jurisdiction would interfere with Tribal self-government. Denying the Indian plaintiffs a state forum was not impermissible racial discrimination.
+:::
 
 ::: quotes
-> State-court jurisdiction plainly would interfere with the powers of self-government conferred upon the Northern Cheyenne Tribe and exercised through the Tribal Court
+> State-court jurisdiction plainly would interfere with the powers of self-government conferred upon the Northern Cheyenne Tribe and exercised through the Tribal Court ...
 
-— [@fisher-v-district-court, p. 387]
+[@fisher-v-district-court, p. 387]
 
-> The exclusive jurisdiction of the Tribal Court does not derive from the race of the plaintiff but rather from the quasi-sovereign status of the Northern Cheyenne Tribe under federal law
+> The exclusive jurisdiction of the Tribal Court does not derive from the race of the plaintiff but rather from the quasi-sovereign status of the Northern Cheyenne Tribe under federal law ...
 
-— [@fisher-v-district-court, p. 390]
+[@fisher-v-district-court, p. 390]
 :::
 
 ::: treatment
@@ -663,18 +827,22 @@ Shows that a nation's own ordinance allocating jurisdiction to its forum can dis
 :::
 
 :::: case bryan-v-itasca-county
-**Question.** Does Public Law 280 authorize a State to impose a personal property tax on a Native person's mobile home on trust land within a reservation?
+::: question
+Does Public Law 280 authorize a State to impose a personal property tax on a Native person's mobile home on trust land within a reservation?
+:::
 
-**Holding.** No. The Court held that Public Law 280's civil provision gave States jurisdiction over private civil litigation involving reservation Indians in state court, not general civil regulatory or taxing power over reservations.
+::: holding
+No. The Court held that Public Law 280's civil provision gave States jurisdiction over private civil litigation involving reservation Indians in state court, not general civil regulatory or taxing power over reservations.
+:::
 
 ::: quotes
-> nothing in its legislative history remotely suggests that Congress meant the Act's extension of civil jurisdiction to the States should result in the undermining or destruction of such tribal governments as did exist
+> ... nothing in its legislative history remotely suggests that Congress meant the Act's extension of civil jurisdiction to the States should result in the undermining or destruction of such tribal governments as did exist ...
 
-— [@bryan-v-itasca-county, p. 388]
+[@bryan-v-itasca-county, p. 388]
 
-> are to be liberally construed, doubtful expressions being resolved in favor of the Indians
+> ... are to be liberally construed, doubtful expressions being resolved in favor of the Indians ...
 
-— [@bryan-v-itasca-county, p. 392]
+[@bryan-v-itasca-county, p. 392]
 :::
 
 ::: treatment
@@ -687,18 +855,22 @@ Essential for nations in Public Law 280 States (including Alaska and California)
 :::
 
 :::: case oliphant-v-suquamish-indian-tribe
-**Question.** Do Tribal courts have inherent criminal jurisdiction over non-Indians?
+::: question
+Do Tribal courts have inherent criminal jurisdiction over non-Indians?
+:::
 
-**Holding.** No. The Court held that, absent authorization by Congress, Native nations lack inherent criminal jurisdiction to try and punish non-Indians, reasoning that such power is inconsistent with their dependent status.
+::: holding
+No. The Court held that, absent authorization by Congress, Native nations lack inherent criminal jurisdiction to try and punish non-Indians, reasoning that such power is inconsistent with their dependent status.
+:::
 
 ::: quotes
-> Indian tribes do not have inherent jurisdiction to try and to punish non-Indians
+> Indian tribes do not have inherent jurisdiction to try and to punish non-Indians ...
 
-— [@oliphant-v-suquamish-indian-tribe, p. 212]
+[@oliphant-v-suquamish-indian-tribe, p. 212]
 
-> Indian tribes are prohibited from exercising both those powers of autonomous states that are expressly terminated by Congress and those powers "inconsistent with their status"
+> Indian tribes are prohibited from exercising both those powers of autonomous states that are expressly terminated by Congress and those powers "inconsistent with their status" ...
 
-— [@oliphant-v-suquamish-indian-tribe, p. 208]
+[@oliphant-v-suquamish-indian-tribe, p. 208]
 :::
 
 ::: treatment
@@ -711,18 +883,22 @@ Defines the main limit on Tribal criminal forums; restorative or diversion progr
 :::
 
 :::: case united-states-v-wheeler
-**Question.** Does the Double Jeopardy Clause bar a federal prosecution of a Navajo citizen after his conviction in Navajo Tribal court for an offense arising from the same incident?
+::: question
+Does the Double Jeopardy Clause bar a federal prosecution of a Navajo citizen after his conviction in Navajo Tribal court for an offense arising from the same incident?
+:::
 
-**Holding.** No. The Court held that the Navajo Nation's power to punish its own members is an aspect of retained, inherent sovereignty, not delegated federal power, so Tribal and federal prosecutions are by separate sovereigns.
+::: holding
+No. The Court held that the Navajo Nation's power to punish its own members is an aspect of retained, inherent sovereignty, not delegated federal power, so Tribal and federal prosecutions are by separate sovereigns.
+:::
 
 ::: quotes
-> The sovereignty that the Indian tribes retain is of a unique and limited character. It exists only at the sufferance of Congress and is subject to complete defeasance
+> The sovereignty that the Indian tribes retain is of a unique and limited character. It exists only at the sufferance of Congress and is subject to complete defeasance ...
 
-— [@united-states-v-wheeler, p. 323]
+[@united-states-v-wheeler, p. 323]
 
-> the power to punish offenses against tribal law committed by Tribe members, which was part of the Navajos' primeval sovereignty, has never been taken away from them
+> ... the power to punish offenses against tribal law committed by Tribe members, which was part of the Navajos' primeval sovereignty, has never been taken away from them ...
 
-— [@united-states-v-wheeler, p. 328]
+[@united-states-v-wheeler, p. 328]
 :::
 
 ::: treatment
@@ -735,26 +911,30 @@ Confirms that Tribal justice systems exercise inherent, not delegated, authority
 :::
 
 :::: case santa-clara-pueblo-v-martinez
-**Question.** Does the Indian Civil Rights Act authorize a federal civil action against a Pueblo and its officer to challenge a membership ordinance as sex discrimination?
+::: question
+Does the Indian Civil Rights Act authorize a federal civil action against a Pueblo and its officer to challenge a membership ordinance as sex discrimination?
+:::
 
-**Holding.** No. The Court held that the Pueblo's sovereign immunity bars suit against it under the Indian Civil Rights Act. The Indian Civil Rights Act also creates no implied federal cause of action against Tribal officers beyond habeas corpus. Its rights are to be enforced in Tribal forums, including nonjudicial ones.
+::: holding
+No. The Court held that the Pueblo's sovereign immunity bars suit against it under the Indian Civil Rights Act. The Indian Civil Rights Act also creates no implied federal cause of action against Tribal officers beyond habeas corpus. Its rights are to be enforced in Tribal forums, including nonjudicial ones.
+:::
 
 ::: quotes
-> As separate sovereigns pre-existing the Constitution, tribes have historically been regarded as unconstrained by those constitutional provisions framed specifically as limitations on federal or state authority
+> As separate sovereigns pre-existing the Constitution, tribes have historically been regarded as unconstrained by those constitutional provisions framed specifically as limitations on federal or state authority ...
 
-— [@santa-clara-pueblo-v-martinez, p. 56]
+[@santa-clara-pueblo-v-martinez, p. 56]
 
-> Tribal courts have repeatedly been recognized as appropriate forums for the exclusive adjudication of disputes affecting important personal and property interests of both Indians and non-Indians
+> Tribal courts have repeatedly been recognized as appropriate forums for the exclusive adjudication of disputes affecting important personal and property interests of both Indians and non-Indians ...
 
-— [@santa-clara-pueblo-v-martinez, p. 65]
+[@santa-clara-pueblo-v-martinez, p. 65]
 
-> Nonjudicial tribal institutions have also been recognized as competent law-applying bodies
+> Nonjudicial tribal institutions have also been recognized as competent law-applying bodies ...
 
-— [@santa-clara-pueblo-v-martinez, p. 66]
+[@santa-clara-pueblo-v-martinez, p. 66]
 
-> A tribe's right to define its own membership for tribal purposes has long been recognized as central to its existence as an independent political community
+> A tribe's right to define its own membership for tribal purposes has long been recognized as central to its existence as an independent political community ...
 
-— [@santa-clara-pueblo-v-martinez, p. 72 n.32]
+[@santa-clara-pueblo-v-martinez, p. 72 n.32]
 :::
 
 ::::
@@ -763,33 +943,45 @@ Confirms that Tribal justice systems exercise inherent, not delegated, authority
 The most important Supreme Court authority for Tribal ADR. It recognizes Tribal courts and nonjudicial Tribal institutions as competent forums for enforcing civil rights and resolving disputes, and leaves the Indian Civil Rights Act enforcement (except habeas) to them. A model ADR code should cite it for the legitimacy of non-court forums.
 :::
 
-**1978. Indian Child Welfare Act.** Gives nations exclusive jurisdiction over child custody proceedings for children domiciled on the reservation. It requires "full faith and credit to the public acts, records, and judicial proceedings of any Indian tribe applicable to Indian child custody proceedings," and authorizes agreements between states and nations on jurisdiction [@indian-child-welfare-act-1978, secs. 101(d), 109(a)].
+:::: law indian-child-welfare-act-1978
+::: summary
+Gives nations exclusive jurisdiction over child custody proceedings for children domiciled on the reservation. It requires "full faith and credit to the public acts, records, and judicial proceedings of any Indian tribe applicable to Indian child custody proceedings," and authorizes agreements between states and nations on jurisdiction [@indian-child-welfare-act-1978, secs. 101(d), 109(a)].
+:::
+::::
 
 ::: analysis
 Agreements under section 109 are a ready model for terms on transfer and dispute resolution between governments.
 :::
 
-**1978. American Indian Religious Freedom Act.** Declared a federal policy "to protect and preserve for American Indians their inherent right of freedom to believe, express, and exercise the traditional religions" [@american-indian-religious-freedom-act-1978, sec. 1].
+:::: law american-indian-religious-freedom-act-1978
+::: summary
+Declared a federal policy "to protect and preserve for American Indians their inherent right of freedom to believe, express, and exercise the traditional religions" [@american-indian-religious-freedom-act-1978, sec. 1].
+:::
+::::
 
 ::: analysis
 The act reversed the official hostility of the 1883 rules.
 :::
 
-### Civil jurisdiction, exhaustion and gaming
+### Civil Jurisdiction, Exhaustion and Gaming
 
 :::: case white-mountain-apache-tribe-v-bracker
-**Question.** May Arizona impose motor carrier and fuel taxes on a non-Indian logging company working exclusively for a Tribal enterprise on the reservation?
+::: question
+May Arizona impose motor carrier and fuel taxes on a non-Indian logging company working exclusively for a Tribal enterprise on the reservation?
+:::
 
-**Holding.** No. The Court held the state taxes preempted by comprehensive federal regulation of Tribal timber harvesting, applying a particularized inquiry into the federal, Tribal and state interests at stake.
+::: holding
+No. The Court held the state taxes preempted by comprehensive federal regulation of Tribal timber harvesting, applying a particularized inquiry into the federal, Tribal and state interests at stake.
+:::
 
 ::: quotes
-> The two barriers are independent because either, standing alone, can be a sufficient basis for holding state law inapplicable to activity undertaken on the reservation or by tribal members
+> The two barriers are independent because either, standing alone, can be a sufficient basis for holding state law inapplicable to activity undertaken on the reservation or by tribal members ...
 
-— [@white-mountain-apache-tribe-v-bracker, p. 143]
+[@white-mountain-apache-tribe-v-bracker, p. 143]
 
-> particularized inquiry into the nature of the state, federal, and tribal interests at stake
+> ... particularized inquiry into the nature of the state, federal, and tribal interests at stake ...
 
-— [@white-mountain-apache-tribe-v-bracker, p. 145]
+[@white-mountain-apache-tribe-v-bracker, p. 145]
 :::
 
 ::: treatment
@@ -802,22 +994,26 @@ Supplies the balancing test for state authority over non-Indians on reservations
 :::
 
 :::: case montana-v-united-states
-**Question.** May the Crow Tribe regulate hunting and fishing by nonmembers on land within the reservation owned in fee by non-Indians?
+::: question
+May the Crow Tribe regulate hunting and fishing by nonmembers on land within the reservation owned in fee by non-Indians?
+:::
 
-**Holding.** No. The Court held that the bed of the Big Horn River passed to Montana at statehood. It also held that, as a general rule, the inherent sovereign powers of a nation do not extend to nonmember activities on non-Indian fee land. There are two exceptions: consensual relationships with the Tribe or its members, and conduct threatening or directly affecting the Tribe's political integrity, economic security, or health or welfare.
+::: holding
+No. The Court held that the bed of the Big Horn River passed to Montana at statehood. It also held that, as a general rule, the inherent sovereign powers of a nation do not extend to nonmember activities on non-Indian fee land. There are two exceptions: consensual relationships with the Tribe or its members, and conduct threatening or directly affecting the Tribe's political integrity, economic security, or health or welfare.
+:::
 
 ::: quotes
-> exercise of tribal power beyond what is necessary to protect tribal self-government or to control internal relations is inconsistent with the dependent status of the tribes, and so cannot survive without express congressional delegation
+> ... exercise of tribal power beyond what is necessary to protect tribal self-government or to control internal relations is inconsistent with the dependent status of the tribes, and so cannot survive without express congressional delegation ...
 
-— [@montana-v-united-states, p. 564]
+[@montana-v-united-states, p. 564]
 
-> A tribe may regulate, through taxation, licensing, or other means, the activities of nonmembers who enter consensual relationships with the tribe or its members, through commercial dealing, contracts, leases, or other arrangements
+> A tribe may regulate, through taxation, licensing, or other means, the activities of nonmembers who enter consensual relationships with the tribe or its members, through commercial dealing, contracts, leases, or other arrangements ...
 
-— [@montana-v-united-states, p. 565]
+[@montana-v-united-states, p. 565]
 
-> A tribe may also retain inherent power to exercise civil authority over the conduct of non-Indians on fee lands within its reservation when that conduct threatens or has some direct effect on the political integrity, the economic security, or the health or welfare of the tribe
+> A tribe may also retain inherent power to exercise civil authority over the conduct of non-Indians on fee lands within its reservation when that conduct threatens or has some direct effect on the political integrity, the economic security, or the health or welfare of the tribe ...
 
-— [@montana-v-united-states, p. 566]
+[@montana-v-united-states, p. 566]
 :::
 
 ::: treatment
@@ -830,18 +1026,22 @@ The governing test for Tribal civil jurisdiction over nonmembers. Its consensual
 :::
 
 :::: case merrion-v-jicarilla-apache-tribe
-**Question.** May the Jicarilla Apache Nation impose a severance tax on oil and gas extracted by non-Indian lessees from Tribal lands?
+::: question
+May the Jicarilla Apache Nation impose a severance tax on oil and gas extracted by non-Indian lessees from Tribal lands?
+:::
 
-**Holding.** Yes. The Court held that the power to tax is an inherent attribute of Tribal sovereignty, not merely a landlord's contract right, and that the Nation did not surrender it by entering leases that were silent on taxation.
+::: holding
+Yes. The Court held that the power to tax is an inherent attribute of Tribal sovereignty, not merely a landlord's contract right, and that the Nation did not surrender it by entering leases that were silent on taxation.
+:::
 
 ::: quotes
-> The power to tax is an essential attribute of Indian sovereignty because it is a necessary instrument of self-government and territorial management
+> The power to tax is an essential attribute of Indian sovereignty because it is a necessary instrument of self-government and territorial management ...
 
-— [@merrion-v-jicarilla-apache-tribe, p. 137]
+[@merrion-v-jicarilla-apache-tribe, p. 137]
 
-> To presume that a sovereign forever waives the right to exercise one of its sovereign powers unless it expressly reserves the right to exercise that power in a commercial agreement turns the concept of sovereignty on its head
+> To presume that a sovereign forever waives the right to exercise one of its sovereign powers unless it expressly reserves the right to exercise that power in a commercial agreement turns the concept of sovereignty on its head ...
 
-— [@merrion-v-jicarilla-apache-tribe, p. 148]
+[@merrion-v-jicarilla-apache-tribe, p. 148]
 :::
 
 ::: treatment
@@ -854,18 +1054,22 @@ Teaches that commercial agreements do not silently waive sovereign powers; a dra
 :::
 
 :::: case national-farmers-union-insurance-companies-v-crow-tribe
-**Question.** May a non-Indian party go directly to federal court to challenge a Tribal court's civil jurisdiction, and must it first exhaust Tribal court remedies?
+::: question
+May a non-Indian party go directly to federal court to challenge a Tribal court's civil jurisdiction, and must it first exhaust Tribal court remedies?
+:::
 
-**Holding.** The Court held that whether a Tribal court has exceeded its jurisdiction is a federal question under 28 U.S.C. § 1331. But the question should ordinarily be decided first by the Tribal court itself, so Tribal remedies must be exhausted before a federal court considers it.
+::: holding
+The Court held that whether a Tribal court has exceeded its jurisdiction is a federal question under 28 U.S.C. § 1331. But the question should ordinarily be decided first by the Tribal court itself, so Tribal remedies must be exhausted before a federal court considers it.
+:::
 
 ::: quotes
-> Congress is committed to a policy of supporting tribal self-government and self-determination
+> Congress is committed to a policy of supporting tribal self-government and self-determination ...
 
-— [@national-farmers-union-insurance-companies-v-crow-tribe, p. 856]
+[@national-farmers-union-insurance-companies-v-crow-tribe, p. 856]
 
-> Exhaustion of tribal court remedies, moreover, will encourage tribal courts to explain to the parties the precise basis for accepting jurisdiction, and will also provide other courts with the benefit of their expertise in such matters in the event of further judicial review
+> Exhaustion of tribal court remedies, moreover, will encourage tribal courts to explain to the parties the precise basis for accepting jurisdiction, and will also provide other courts with the benefit of their expertise in such matters in the event of further judicial review ...
 
-— [@national-farmers-union-insurance-companies-v-crow-tribe, p. 857]
+[@national-farmers-union-insurance-companies-v-crow-tribe, p. 857]
 :::
 
 ::: treatment
@@ -878,22 +1082,26 @@ Creates the Tribal-exhaustion doctrine: Tribal forums get the first opportunity 
 :::
 
 :::: case iowa-mutual-insurance-company-v-laplante
-**Question.** Does the Tribal-exhaustion requirement apply when federal jurisdiction rests on diversity of citizenship?
+::: question
+Does the Tribal-exhaustion requirement apply when federal jurisdiction rests on diversity of citizenship?
+:::
 
-**Holding.** Yes. The Court held that federal policy supporting Tribal self-government requires exhaustion of Tribal remedies in diversity cases too. Civil jurisdiction over non-Indian activities on reservation lands presumptively lies in Tribal courts. Unless the Tribal court lacked jurisdiction, its resolution of issues may not be relitigated in federal court.
+::: holding
+Yes. The Court held that federal policy supporting Tribal self-government requires exhaustion of Tribal remedies in diversity cases too. Civil jurisdiction over non-Indian activities on reservation lands presumptively lies in Tribal courts. Unless the Tribal court lacked jurisdiction, its resolution of issues may not be relitigated in federal court.
+:::
 
 ::: quotes
-> Tribal authority over the activities of non-Indians on reservation lands is an important part of tribal sovereignty
+> Tribal authority over the activities of non-Indians on reservation lands is an important part of tribal sovereignty ...
 
-— [@iowa-mutual-insurance-company-v-laplante, p. 18]
+[@iowa-mutual-insurance-company-v-laplante, p. 18]
 
-> Civil jurisdiction over such activities presumptively lies in the tribal courts unless affirmatively limited by a specific treaty provision or federal statute
+> Civil jurisdiction over such activities presumptively lies in the tribal courts unless affirmatively limited by a specific treaty provision or federal statute ...
 
-— [@iowa-mutual-insurance-company-v-laplante, p. 18]
+[@iowa-mutual-insurance-company-v-laplante, p. 18]
 
-> Unless a federal court determines that the Tribal Court lacked jurisdiction, however, proper deference to the tribal court system precludes relitigation of issues raised by the LaPlantes' bad-faith claim and resolved in the Tribal Courts
+> Unless a federal court determines that the Tribal Court lacked jurisdiction, however, proper deference to the tribal court system precludes relitigation of issues raised by the LaPlantes' bad-faith claim and resolved in the Tribal Courts ...
 
-— [@iowa-mutual-insurance-company-v-laplante, p. 19]
+[@iowa-mutual-insurance-company-v-laplante, p. 19]
 :::
 
 ::: treatment
@@ -908,14 +1116,18 @@ Supports finality of Tribal-forum decisions: once a Tribal forum with jurisdicti
 :::
 
 :::: case california-v-cabazon-band-of-mission-indians
-**Question.** May California and Riverside County enforce their bingo and card-game laws on the Cabazon and Morongo reservations?
+::: question
+May California and Riverside County enforce their bingo and card-game laws on the Cabazon and Morongo reservations?
+:::
 
-**Holding.** No. The Court held that California's gaming laws were civil/regulatory rather than criminal/prohibitory, so Public Law 280 did not authorize their enforcement. State regulation was also preempted given the strong federal and Tribal interests in Tribal gaming as a source of revenue.
+::: holding
+No. The Court held that California's gaming laws were civil/regulatory rather than criminal/prohibitory, so Public Law 280 did not authorize their enforcement. State regulation was also preempted given the strong federal and Tribal interests in Tribal gaming as a source of revenue.
+:::
 
 ::: quotes
-> if the intent of a state law is generally to prohibit certain conduct, it falls within Pub. L. 280's grant of criminal jurisdiction, but if the state law generally permits the conduct at issue, subject to regulation, it must be classified as civil/regulatory
+> ... if the intent of a state law is generally to prohibit certain conduct, it falls within Pub. L. 280's grant of criminal jurisdiction, but if the state law generally permits the conduct at issue, subject to regulation, it must be classified as civil/regulatory ...
 
-— [@california-v-cabazon-band-of-mission-indians, p. 209]
+[@california-v-cabazon-band-of-mission-indians, p. 209]
 :::
 
 ::: treatment
@@ -929,37 +1141,49 @@ Congress adopted the Indian Gaming Regulatory Act (1988) in response to *Cabazon
 The origin of the Indian Gaming Regulatory Act and of Tribal-state compacting, whose dispute-resolution clauses are a major real-world example of intergovernmental ADR.
 :::
 
-## Modern era (1988 to the present)
+## Modern Era (1988 to the Present)
 
 NCAI: "By the new millennium, tribal governments made substantial gains in self-governance" [@ncai-tribal-nations-and-the-united-states, p. 13].
 
-### Gaming, contracts and claims against the United States
+### Gaming, Contracts and Claims against the United States
 
-**1988. Indian Gaming Regulatory Act.** Created the three-class framework. A Class III compact may cover "the allocation of criminal and civil jurisdiction between the State and the Indian tribe" and "remedies for breach of contract" [@indian-gaming-regulatory-act-1988, sec. 11(d)(3)(C)]. If a state does not negotiate in good faith, the statute moves from court-ordered negotiation to a court-appointed mediator who picks one side's last best offer, then to Secretarial procedures [@indian-gaming-regulatory-act-1988, sec. 11(d)(7)(B)].
+:::: law indian-gaming-regulatory-act-1988
+::: summary
+Created the three-class framework. A Class III compact may cover "the allocation of criminal and civil jurisdiction between the State and the Indian tribe" and "remedies for breach of contract" [@indian-gaming-regulatory-act-1988, sec. 11(d)(3)(C)]. If a state does not negotiate in good faith, the statute moves from court-ordered negotiation to a court-appointed mediator who picks one side's last best offer, then to Secretarial procedures [@indian-gaming-regulatory-act-1988, sec. 11(d)(7)(B)].
+:::
+::::
 
 ::: analysis
 The gaming act is the main federal statute that writes a mediation step into relations between states and nations.
 :::
 
-**1988 and 1994. Self-determination contract disputes.** The 1988 amendments gave federal courts jurisdiction over contract claims and applied the Contract Disputes Act [@usc-25-5331]. The 1994 model agreement lets the parties send a dispute "to the adjudicatory body of the Contractor, including the tribal court of the Contractor," or "to mediation processes provided for under the laws, policies, or procedures of the Contractor," and binds the Secretary to the result with a narrow exception [@usc-25-5329-c-model-agreement-disputes].
+:::: law usc-25-5331
+::: summary
+The 1988 amendments gave federal courts jurisdiction over contract claims and applied the Contract Disputes Act [@usc-25-5331]. The 1994 model agreement lets the parties send a dispute "to the adjudicatory body of the Contractor, including the tribal court of the Contractor," or "to mediation processes provided for under the laws, policies, or procedures of the Contractor," and binds the Secretary to the result with a narrow exception [@usc-25-5329-c-model-agreement-disputes].
+:::
+::::
 
 ::: analysis
 This is the clearest federal statutory endorsement found of a nation's own court and mediation as forums whose decisions bind a federal agency.
 :::
 
 :::: case seminole-tribe-v-florida-1996
-**Question.** May Congress, under the Indian Commerce Clause, authorize a Tribe to sue a State in federal court to compel good-faith negotiation of a gaming compact under the Indian Gaming Regulatory Act?
+::: question
+May Congress, under the Indian Commerce Clause, authorize a Tribe to sue a State in federal court to compel good-faith negotiation of a gaming compact under the Indian Gaming Regulatory Act?
+:::
 
-**Holding.** No. The Court held that the Eleventh Amendment bars Congress from abrogating state sovereign immunity under its Article I powers, including the Indian Commerce Clause, overruled Pennsylvania v. Union Gas, and held that Ex parte Young could not be used to enforce the Indian Gaming Regulatory Act's remedial scheme against the Governor.
+::: holding
+No. The Court held that the Eleventh Amendment bars Congress from abrogating state sovereign immunity under its Article I powers, including the Indian Commerce Clause, overruled Pennsylvania v. Union Gas, and held that Ex parte Young could not be used to enforce the Indian Gaming Regulatory Act's remedial scheme against the Governor.
+:::
 
 ::: quotes
-> Even when the Constitution vests in Congress complete lawmaking authority over a particular area, the Eleventh Amendment prevents congressional authorization of suits by private parties against unconsenting States
+> Even when the Constitution vests in Congress complete lawmaking authority over a particular area, the Eleventh Amendment prevents congressional authorization of suits by private parties against unconsenting States ...
 
-— [@seminole-tribe-v-florida-1996, p. 72]
+[@seminole-tribe-v-florida-1996, p. 72]
 
-> Article I cannot be used to circumvent the constitutional limitations placed upon federal jurisdiction
+> Article I cannot be used to circumvent the constitutional limitations placed upon federal jurisdiction ...
 
-— [@seminole-tribe-v-florida-1996, p. 73]
+[@seminole-tribe-v-florida-1996, p. 73]
 :::
 
 ::: treatment
@@ -972,14 +1196,18 @@ Removes the federal-court remedy against a State that will not negotiate a gamin
 :::
 
 :::: case yellen-v-confederated-tribes-of-chehalis-reservation
-**Question.** Are Alaska Native Corporations "Indian tribes" under ISDA, and so eligible for CARES Act Title V funds?
+::: question
+Are Alaska Native Corporations "Indian tribes" under ISDA, and so eligible for CARES Act Title V funds?
+:::
 
-**Holding.** Yes. The Court held that Alaska Native corporations fall within ISDA's definition of "Indian tribe" whether or not they are federally recognized Tribes, and so qualify for CARES Act Title V funding.
+::: holding
+Yes. The Court held that Alaska Native corporations fall within ISDA's definition of "Indian tribe" whether or not they are federally recognized Tribes, and so qualify for CARES Act Title V funding.
+:::
 
 ::: quotes
-> Under the plain meaning of ISDA, ANCs are Indian tribes, regardless of whether they are also federally recognized tribes
+> Under the plain meaning of ISDA, ANCs are Indian tribes, regardless of whether they are also federally recognized tribes ...
 
-— [@yellen-v-confederated-tribes-of-chehalis-reservation, p. 351]
+[@yellen-v-confederated-tribes-of-chehalis-reservation, p. 351]
 :::
 
 ::::
@@ -989,14 +1217,18 @@ Clarifies the distinct legal status of Alaska Native corporations versus federal
 :::
 
 :::: case ysleta-del-sur-pueblo-v-texas
-**Question.** Does the 1987 Restoration Act subject all of the Pueblo's gaming to Texas gaming regulations, or only bar games that Texas prohibits outright?
+::: question
+Does the 1987 Restoration Act subject all of the Pueblo's gaming to Texas gaming regulations, or only bar games that Texas prohibits outright?
+:::
 
-**Holding.** The Court held that the Restoration Act bans on the Pueblo's lands only gaming activities that Texas prohibits, not those it merely regulates, adopting the prohibitory/regulatory distinction from *California v. Cabazon Band*.
+::: holding
+The Court held that the Restoration Act bans on the Pueblo's lands only gaming activities that Texas prohibits, not those it merely regulates, adopting the prohibitory/regulatory distinction from *California v. Cabazon Band*.
+:::
 
 ::: quotes
-> The Restoration Act bans as a matter of federal law on tribal lands only those gaming activities also banned in Texas
+> The Restoration Act bans as a matter of federal law on tribal lands only those gaming activities also banned in Texas ...
 
-— [@ysleta-del-sur-pueblo-v-texas, p. 708]
+[@ysleta-del-sur-pueblo-v-texas, p. 708]
 :::
 
 ::::
@@ -1006,14 +1238,18 @@ Shows how statute-specific gaming regimes for particular nations work, which mat
 :::
 
 :::: case arizona-v-navajo-nation
-**Question.** Does the 1868 Treaty with the Navajos require the United States to take affirmative steps to assess and secure water for the Navajo Nation?
+::: question
+Does the 1868 Treaty with the Navajos require the United States to take affirmative steps to assess and secure water for the Navajo Nation?
+:::
 
-**Holding.** No. The Court held that the treaty reserved water rights under *Winters* but imposed no affirmative duty on the United States to assess the Nation's water needs or build infrastructure, so the Nation's breach-of-trust claim failed.
+::: holding
+No. The Court held that the treaty reserved water rights under *Winters* but imposed no affirmative duty on the United States to assess the Nation's water needs or build infrastructure, so the Nation's breach-of-trust claim failed.
+:::
 
 ::: quotes
-> In light of the treaty’s text and history, we conclude that the treaty does not require the United States to take those affirmative steps
+> In light of the treaty’s text and history, we conclude that the treaty does not require the United States to take those affirmative steps ...
 
-— [@arizona-v-navajo-nation, p. 559]
+[@arizona-v-navajo-nation, p. 559]
 :::
 
 ::::
@@ -1023,14 +1259,18 @@ Limits judicial enforcement of trust duties unless specific duties are written i
 :::
 
 :::: case becerra-v-san-carlos-apache-tribe
-**Question.** Must the Indian Health Service pay contract support costs that a Tribe incurs when it collects and spends third-party "program income" under an the Indian Self-Determination and Education Assistance Act self-determination contract?
+::: question
+Must the Indian Health Service pay contract support costs that a Tribe incurs when it collects and spends third-party "program income" under an Indian Self-Determination and Education Assistance Act self-determination contract?
+:::
 
-**Holding.** Yes. The Court held that the Indian Self-Determination and Education Assistance Act requires the Indian Health Service to pay contract support costs a Tribe incurs in spending program income to further the federal programs transferred to it under a self-determination contract.
+::: holding
+Yes. The Court held that the Indian Self-Determination and Education Assistance Act requires the Indian Health Service to pay contract support costs a Tribe incurs in spending program income to further the federal programs transferred to it under a self-determination contract.
+:::
 
 ::: quotes
-> Because a self-determination contract requires a tribe to spend program income to further the programs transferred to it in the contract, these provisions require IHS to pay contract support costs when a tribe does so, just as IHS must pay contract support costs to support a tribe’s spending of the Secretarial amount
+> Because a self-determination contract requires a tribe to spend program income to further the programs transferred to it in the contract, these provisions require IHS to pay contract support costs when a tribe does so, just as IHS must pay contract support costs to support a tribe’s spending of the Secretarial amount ...
 
-— [@becerra-v-san-carlos-apache-tribe, p. 233]
+[@becerra-v-san-carlos-apache-tribe, p. 233]
 :::
 
 ::::
@@ -1039,29 +1279,33 @@ Limits judicial enforcement of trust duties unless specific duties are written i
 The only Indian-law merits decision of October Terms 2023-2025. It arose from contract disputes under the Indian Self-Determination and Education Assistance Act, whose Contract Disputes Act procedures are a federal ADR model the commentary can compare with Tribal ADR.
 :::
 
-### Sovereign immunity and arbitration
+### Sovereign Immunity and Arbitration
 
 ::: analysis
 From 1991 to 2023 the Supreme Court repeatedly held that a nation is immune from suit unless Congress or the nation waives immunity, including for commercial conduct, and that an arbitration clause can be such a waiver. For a model code, these cases make the drafting of waiver, forum and enforcement clauses one of the most important practical subjects.
 :::
 
 :::: case oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe
-**Question.** Did the Nation waive its sovereign immunity from the State's counterclaim to collect cigarette taxes by suing to enjoin the tax assessment?
+::: question
+Did the Nation waive its sovereign immunity from the State's counterclaim to collect cigarette taxes by suing to enjoin the tax assessment?
+:::
 
-**Holding.** No. The Court held that Tribal sovereign immunity barred the State's counterclaim absent clear waiver or congressional abrogation, but that the State could tax sales to nonmembers and had other remedies, including agreements with the Tribe.
+::: holding
+No. The Court held that Tribal sovereign immunity barred the State's counterclaim absent clear waiver or congressional abrogation, but that the State could tax sales to nonmembers and had other remedies, including agreements with the Tribe.
+:::
 
 ::: quotes
-> Suits against Indian tribes are thus barred by sovereign immunity absent a clear waiver by the tribe or congressional abrogation
+> Suits against Indian tribes are thus barred by sovereign immunity absent a clear waiver by the tribe or congressional abrogation ...
 
-— [@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe, p. 509]
+[@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe, p. 509]
 
-> There is no doubt that sovereign immunity bars the State from pursuing the most efficient remedy, but we are not persuaded that it lacks any adequate alternatives
+> There is no doubt that sovereign immunity bars the State from pursuing the most efficient remedy, but we are not persuaded that it lacks any adequate alternatives ...
 
-— [@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe, p. 514]
+[@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe, p. 514]
 
-> States may also enter into agreements with the tribes to adopt a mutually satisfactory regime for the collection of this sort of tax
+> States may also enter into agreements with the tribes to adopt a mutually satisfactory regime for the collection of this sort of tax ...
 
-— [@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe, p. 514]
+[@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe, p. 514]
 :::
 
 ::: treatment
@@ -1074,14 +1318,18 @@ Sets the "clear waiver" standard that any ADR clause must meet, and expressly po
 :::
 
 :::: case sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates
-**Question.** Did a Tribal gaming enterprise waive its sovereign immunity by agreeing to an arbitration clause in an architect's contract?
+::: question
+Did a Tribal gaming enterprise waive its sovereign immunity by agreeing to an arbitration clause in an architect's contract?
+:::
 
-**Holding.** Yes. The court held that the enterprise waived its immunity in the arbitration clause and reversed the partial summary judgment for the Tribe; it did not decide whether bringing the suit was also a waiver. The First Circuit in *Ninigret* cites it as finding waiver at 86 F.3d at 659-60.
+::: holding
+Yes. The court held that the enterprise waived its immunity in the arbitration clause and reversed the partial summary judgment for the Tribe; it did not decide whether bringing the suit was also a waiver. The First Circuit in *Ninigret* cites it as finding waiver at 86 F.3d at 659-60.
+:::
 
 ::: quotes
 > It waived it in the arbitration clause.
 
-— [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates, p. 661]
+[@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates, p. 661]
 :::
 
 ::: treatment
@@ -1096,22 +1344,26 @@ An early, influential holding (by Judge Posner) that an ordinary arbitration cla
 :::
 
 :::: case kiowa-tribe-v-manufacturing-technologies
-**Question.** Does Tribal sovereign immunity bar a state-court suit on a promissory note signed for off-reservation commercial activity?
+::: question
+Does Tribal sovereign immunity bar a state-court suit on a promissory note signed for off-reservation commercial activity?
+:::
 
-**Holding.** Yes. The Court held that Tribes enjoy immunity from suits on contracts, whether governmental or commercial and whether made on or off a reservation, unless Congress has authorized the suit or the Tribe has waived immunity. It left any narrowing of the doctrine to Congress.
+::: holding
+Yes. The Court held that Tribes enjoy immunity from suits on contracts, whether governmental or commercial and whether made on or off a reservation, unless Congress has authorized the suit or the Tribe has waived immunity. It left any narrowing of the doctrine to Congress.
+:::
 
 ::: quotes
-> As a matter of federal law, an Indian tribe is subject to suit only where Congress has authorized the suit or the tribe has waived its immunity
+> As a matter of federal law, an Indian tribe is subject to suit only where Congress has authorized the suit or the tribe has waived its immunity ...
 
-— [@kiowa-tribe-v-manufacturing-technologies, p. 754]
+[@kiowa-tribe-v-manufacturing-technologies, p. 754]
 
-> Tribes enjoy immunity from suits on contracts, whether those contracts involve governmental or commercial activities and whether they were made on or off a reservation
+> Tribes enjoy immunity from suits on contracts, whether those contracts involve governmental or commercial activities and whether they were made on or off a reservation ...
 
-— [@kiowa-tribe-v-manufacturing-technologies, p. 760]
+[@kiowa-tribe-v-manufacturing-technologies, p. 760]
 
-> There are reasons to doubt the wisdom of perpetuating the doctrine
+> There are reasons to doubt the wisdom of perpetuating the doctrine ...
 
-— [@kiowa-tribe-v-manufacturing-technologies, p. 758]
+[@kiowa-tribe-v-manufacturing-technologies, p. 758]
 :::
 
 ::: treatment
@@ -1124,14 +1376,18 @@ Because immunity covers commercial contracts, the only path to binding ADR with 
 :::
 
 :::: case val-u-construction-company-v-rosebud-sioux-tribe
-**Question.** Is an arbitration award entered against a Tribe that refused to participate in the arbitration valid and preclusive, given the Tribe's sovereign-immunity objection?
+::: question
+Is an arbitration award entered against a Tribe that refused to participate in the arbitration valid and preclusive, given the Tribe's sovereign-immunity objection?
+:::
 
-**Holding.** Yes. Relying on its earlier ruling in the same dispute that the contract's arbitration clause waived the Tribe's immunity, the court held that the award was valid. The Tribe's contract claims were barred by the award because it chose not to take part. The court affirmed summary judgment for the contractor (and the denial of prejudgment interest).
+::: holding
+Yes. Relying on its earlier ruling in the same dispute that the contract's arbitration clause waived the Tribe's immunity, the court held that the award was valid. The Tribe's contract claims were barred by the award because it chose not to take part. The court affirmed summary judgment for the contractor (and the denial of prejudgment interest).
+:::
 
 ::: quotes
 > We conclude that the Tribe's breach of contract claims are barred by the arbitration award. The Tribe was given a full and fair opportunity to litigate the issues at the arbitration hearing, but chose not to participate in the hearing, knowing full well that an award would be entered against it by the arbitrator.
 
-— [@val-u-construction-company-v-rosebud-sioux-tribe]
+[@val-u-construction-company-v-rosebud-sioux-tribe]
 :::
 
 ::: treatment
@@ -1144,18 +1400,22 @@ A nation that has agreed to arbitrate may be bound by an award even if it refuse
 :::
 
 :::: case ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority
-**Question.** Did a Tribal housing authority waive immunity through a contract clause sending disputes to the Tribal Council and then to a Tribal Court-appointed arbitration board, and must the contractor exhaust Tribal remedies?
+::: question
+Did a Tribal housing authority waive immunity through a contract clause sending disputes to the Tribal Council and then to a Tribal Court-appointed arbitration board, and must the contractor exhaust Tribal remedies?
+:::
 
-**Holding.** The court held that the contract's explicit, mandatory dispute-resolution clause (read with the Tribal "sue and be sued" ordinance) waived the housing authority's immunity. But the Tribal exhaustion doctrine applied, so the Tribal forum must first interpret the forum-selection clause and its own jurisdiction. It vacated and remanded.
+::: holding
+The court held that the contract's explicit, mandatory dispute-resolution clause (read with the Tribal "sue and be sued" ordinance) waived the housing authority's immunity. But the Tribal exhaustion doctrine applied, so the Tribal forum must first interpret the forum-selection clause and its own jurisdiction. It vacated and remanded.
+:::
 
 ::: quotes
-> we believe that explicit language broadly relegating dispute resolution to arbitration constitutes a waiver of tribal sovereign immunity, whereas language that is ambiguous rather than definite, cryptic rather than explicit, or precatory rather than mandatory, usually will not achieve that end.
+> ... we believe that explicit language broadly relegating dispute resolution to arbitration constitutes a waiver of tribal sovereign immunity, whereas language that is ambiguous rather than definite, cryptic rather than explicit, or precatory rather than mandatory, usually will not achieve that end.
 
-— [@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]
+[@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]
 
 > The tribal exhaustion doctrine is not jurisdictional in nature, but, rather, is a product of comity and related considerations.
 
-— [@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]
+[@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]
 :::
 
 ::::
@@ -1165,22 +1425,26 @@ A real tiered clause (Tribal Council, then a Tribal Court-appointed arbitration 
 :::
 
 :::: case c-and-l-enterprises-v-citizen-band-potawatomi-2001
-**Question.** Did the Nation waive its sovereign immunity from suit to enforce an arbitration award by agreeing to a standard-form construction contract with an arbitration clause and an Oklahoma choice-of-law clause?
+::: question
+Did the Nation waive its sovereign immunity from suit to enforce an arbitration award by agreeing to a standard-form construction contract with an arbitration clause and an Oklahoma choice-of-law clause?
+:::
 
-**Holding.** Yes. The Court held that the Nation clearly waived immunity from a state-court suit to enforce the award. It did so by agreeing to arbitrate all contract disputes, to have judgment entered on the award in any court having jurisdiction, and to have Oklahoma law govern (which makes Oklahoma courts competent to enforce arbitration agreements). It noted that the Nation itself proposed and prepared the contract.
+::: holding
+Yes. The Court held that the Nation clearly waived immunity from a state-court suit to enforce the award. It did so by agreeing to arbitrate all contract disputes, to have judgment entered on the award in any court having jurisdiction, and to have Oklahoma law govern (which makes Oklahoma courts competent to enforce arbitration agreements). It noted that the Nation itself proposed and prepared the contract.
+:::
 
 ::: quotes
-> We hold that, by the clear import of the arbitration clause, the Tribe is amenable to a state-court suit to enforce an arbitral award in favor of contractor C & L
+> We hold that, by the clear import of the arbitration clause, the Tribe is amenable to a state-court suit to enforce an arbitral award in favor of contractor C & L ...
 
-— [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 414]
+[@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 414]
 
-> the contract specifically authorizes judicial enforcement of the resolution arrived at through arbitration
+> ... the contract specifically authorizes judicial enforcement of the resolution arrived at through arbitration ...
 
-— [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 422]
+[@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 422]
 
-> The Tribe proposed and prepared the contract; C & L foisted no form on a quiescent Tribe
+> The Tribe proposed and prepared the contract; C & L foisted no form on a quiescent Tribe ...
 
-— [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 423]
+[@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 423]
 :::
 
 ::: treatment
@@ -1193,18 +1457,22 @@ The key Supreme Court case for Tribal ADR drafting: an arbitration clause plus e
 :::
 
 :::: case smith-v-hopland-band-of-pomo-indians
-**Question.** Did the Tribe waive sovereign immunity from a state-court suit by signing an architect's contract with an arbitration clause and choice of law?
+::: question
+Did the Tribe waive sovereign immunity from a state-court suit by signing an architect's contract with an arbitration clause and choice of law?
+:::
 
-**Holding.** Yes. The court held that by entering into the contract containing the arbitration clause, the Tribe clearly and explicitly waived its sovereign immunity, and it reversed the dismissal and remanded. The reasoning also relies on the Tribal council's resolutions: the council authorized the chairperson to sign, knew the arbitration and California-law terms, and approved the contract by resolution.
+::: holding
+Yes. The court held that by entering into the contract containing the arbitration clause, the Tribe clearly and explicitly waived its sovereign immunity, and it reversed the dismissal and remanded. The reasoning also relies on the Tribal council's resolutions: the council authorized the chairperson to sign, knew the arbitration and California-law terms, and approved the contract by resolution.
+:::
 
 ::: quotes
-> entered into a contract with Smith that clearly and explicitly waived the Tribe's sovereign immunity
+> ... entered into a contract with Smith that clearly and explicitly waived the Tribe's sovereign immunity ...
 
-— [@smith-v-hopland-band-of-pomo-indians, p. 12]
+[@smith-v-hopland-band-of-pomo-indians, p. 12]
 
 > We hold only that the Tribe waived its sovereign immunity by entering into a contract containing the arbitration clause.
 
-— [@smith-v-hopland-band-of-pomo-indians, n. 11]
+[@smith-v-hopland-band-of-pomo-indians, n. 11]
 :::
 
 ::::
@@ -1214,22 +1482,26 @@ A state appellate application of reasoning like that in *C & L Enterprises*; sho
 :::
 
 :::: case michigan-v-bay-mills-indian-community
-**Question.** Does Tribal sovereign immunity bar a State's suit to enjoin a Tribe's operation of a casino outside Indian lands?
+::: question
+Does Tribal sovereign immunity bar a State's suit to enjoin a Tribe's operation of a casino outside Indian lands?
+:::
 
-**Holding.** Yes. The Court held that the Indian Gaming Regulatory Act abrogates immunity only for suits to enjoin class III gaming on Indian lands, and that the suit concerned gaming off Indian lands. Reaffirming *Kiowa*, it held that Tribal immunity extends to off-reservation commercial activity unless Congress decides otherwise. The State has other remedies, including bargaining for a waiver.
+::: holding
+Yes. The Court held that the Indian Gaming Regulatory Act abrogates immunity only for suits to enjoin class III gaming on Indian lands, and that the suit concerned gaming off Indian lands. Reaffirming *Kiowa*, it held that Tribal immunity extends to off-reservation commercial activity unless Congress decides otherwise. The State has other remedies, including bargaining for a waiver.
+:::
 
 ::: quotes
-> Among the core aspects of sovereignty that tribes possess—subject, again, to congressional action—is the “common-law immunity from suit traditionally enjoyed by sovereign powers”
+> Among the core aspects of sovereignty that tribes possess—subject, again, to congressional action—is the “common-law immunity from suit traditionally enjoyed by sovereign powers” ...
 
-— [@michigan-v-bay-mills-indian-community, p. 788]
+[@michigan-v-bay-mills-indian-community, p. 788]
 
-> the State need only bargain for a waiver of immunity
+> ... the State need only bargain for a waiver of immunity ...
 
-— [@michigan-v-bay-mills-indian-community, p. 796]
+[@michigan-v-bay-mills-indian-community, p. 796]
 
-> it is fundamentally Congress’s job, not ours, to determine whether or how to limit tribal immunity
+> ... it is fundamentally Congress’s job, not ours, to determine whether or how to limit tribal immunity ...
 
-— [@michigan-v-bay-mills-indian-community, p. 800]
+[@michigan-v-bay-mills-indian-community, p. 800]
 :::
 
 ::::
@@ -1239,18 +1511,22 @@ Reaffirms broad Tribal immunity and expressly points to negotiated waivers in co
 :::
 
 :::: case lewis-v-clarke
-**Question.** Does Tribal sovereign immunity bar a negligence suit against a Tribal gaming authority employee sued in his individual capacity for driving on the job?
+::: question
+Does Tribal sovereign immunity bar a negligence suit against a Tribal gaming authority employee sued in his individual capacity for driving on the job?
+:::
 
-**Holding.** No. The Court held that in an individual-capacity suit the employee, not the Tribe, is the real party in interest, so Tribal immunity does not apply, and that the Tribe's indemnification of the employee does not extend immunity to him.
+::: holding
+No. The Court held that in an individual-capacity suit the employee, not the Tribe, is the real party in interest, so Tribal immunity does not apply, and that the Tribe's indemnification of the employee does not extend immunity to him.
+:::
 
 ::: quotes
-> in a suit brought against a tribal employee in his individual capacity, the employee, not the tribe, is the real party in interest and the tribe's sovereign immunity is not implicated
+> ... in a suit brought against a tribal employee in his individual capacity, the employee, not the tribe, is the real party in interest and the tribe's sovereign immunity is not implicated ...
 
-— [@lewis-v-clarke, p. 158]
+[@lewis-v-clarke, p. 158]
 
-> We hold that an indemnification provision cannot, as a matter of law, extend sovereign immunity to individual employees who would otherwise not fall under its protective cloak
+> We hold that an indemnification provision cannot, as a matter of law, extend sovereign immunity to individual employees who would otherwise not fall under its protective cloak ...
 
-— [@lewis-v-clarke, p. 164-165]
+[@lewis-v-clarke, p. 164-165]
 :::
 
 ::::
@@ -1260,18 +1536,22 @@ Tribal immunity does not shield employees sued personally; a Tribal claims or AD
 :::
 
 :::: case lac-du-flambeau-band-v-coughlin
-**Question.** Does the Bankruptcy Code abrogate Tribal sovereign immunity?
+::: question
+Does the Bankruptcy Code abrogate Tribal sovereign immunity?
+:::
 
-**Holding.** Yes. The Court held that the Bankruptcy Code's abrogation for "governmental units," including any "other foreign or domestic government," unequivocally covers federally recognized Tribes, so a debtor could pursue the Band's lending business for violating the automatic stay.
+::: holding
+Yes. The Court held that the Bankruptcy Code's abrogation for "governmental units," including any "other foreign or domestic government," unequivocally covers federally recognized Tribes, so a debtor could pursue the Band's lending business for violating the automatic stay.
+:::
 
 ::: quotes
-> The Code unequivocally abrogates the sovereign immunity of all governments, categorically. Tribes are indisputably governments. Therefore, § 106(a) unmistakably abrogates their sovereign immunity too
+> The Code unequivocally abrogates the sovereign immunity of all governments, categorically. Tribes are indisputably governments. Therefore, § 106(a) unmistakably abrogates their sovereign immunity too ...
 
-— [@lac-du-flambeau-band-v-coughlin, p. 393]
+[@lac-du-flambeau-band-v-coughlin, p. 393]
 
-> Federally recognized tribes undeniably fit that description
+> Federally recognized tribes undeniably fit that description ...
 
-— [@lac-du-flambeau-band-v-coughlin, p. 388]
+[@lac-du-flambeau-band-v-coughlin, p. 388]
 :::
 
 ::::
@@ -1280,21 +1560,25 @@ Tribal immunity does not shield employees sued personally; a Tribal claims or AD
 A congressional abrogation that applies to Tribal enterprises in bankruptcy; a model code on commercial ADR should flag statutes like this where immunity does not apply regardless of contract language.
 :::
 
-### Civil jurisdiction over nonmembers
+### Civil Jurisdiction over Nonmembers
 
 :::: case strate-v-a-1-contractors
-**Question.** Does a Tribal court have jurisdiction over a tort suit between nonmembers arising from a highway accident on a state right-of-way within the reservation?
+::: question
+Does a Tribal court have jurisdiction over a tort suit between nonmembers arising from a highway accident on a state right-of-way within the reservation?
+:::
 
-**Holding.** No. The Court held that a Tribe's adjudicative jurisdiction over nonmembers does not exceed its legislative jurisdiction. The state highway right-of-way is equivalent to non-Indian fee land for *Montana* purposes, and neither *Montana* exception applied. Exhaustion was not required because Tribal jurisdiction was plainly lacking.
+::: holding
+No. The Court held that a Tribe's adjudicative jurisdiction over nonmembers does not exceed its legislative jurisdiction. The state highway right-of-way is equivalent to non-Indian fee land for *Montana* purposes, and neither *Montana* exception applied. Exhaustion was not required because Tribal jurisdiction was plainly lacking.
+:::
 
 ::: quotes
-> As to nonmembers, we hold, a tribe's adjudicative jurisdiction does not exceed its legislative jurisdiction
+> As to nonmembers, we hold, a tribe's adjudicative jurisdiction does not exceed its legislative jurisdiction ...
 
-— [@strate-v-a-1-contractors, p. 453]
+[@strate-v-a-1-contractors, p. 453]
 
-> Opening the Tribal Court for her optional use is not necessary to protect tribal self-government
+> Opening the Tribal Court for her optional use is not necessary to protect tribal self-government ...
 
-— [@strate-v-a-1-contractors, p. 459]
+[@strate-v-a-1-contractors, p. 459]
 :::
 
 ::: treatment
@@ -1307,18 +1591,22 @@ Limits Tribal adjudication of disputes between nonmembers absent consent; a Trib
 :::
 
 :::: case alaska-v-native-village-of-venetie-tribal-government
-**Question.** Are lands conveyed to Alaska Native village corporations under the Alaska Native Claims Settlement Act "Indian country" as a "dependent Indian community" under 18 U.S.C. § 1151(b)?
+::: question
+Are lands conveyed to Alaska Native village corporations under the Alaska Native Claims Settlement Act "Indian country" as a "dependent Indian community" under 18 U.S.C. § 1151(b)?
+:::
 
-**Holding.** No. The Court held that a dependent Indian community requires federal set-aside and federal superintendence. The Alaska Native Claims Settlement Act lands meet neither, because the Alaska Native Claims Settlement Act revoked reservations and conveyed land to state-chartered corporations. Venetie therefore could not tax a contractor on those lands as Indian country.
+::: holding
+No. The Court held that a dependent Indian community requires federal set-aside and federal superintendence. The Alaska Native Claims Settlement Act lands meet neither, because the Alaska Native Claims Settlement Act revoked reservations and conveyed land to state-chartered corporations. Venetie therefore could not tax a contractor on those lands as Indian country.
+:::
 
 ::: quotes
-> Equally clearly, ANCSA ended federal superintendence over the Tribe's lands
+> Equally clearly, ANCSA ended federal superintendence over the Tribe's lands ...
 
-— [@alaska-v-native-village-of-venetie-tribal-government, p. 533]
+[@alaska-v-native-village-of-venetie-tribal-government, p. 533]
 
-> Whether the concept of Indian country should be modified is a question entirely for Congress
+> Whether the concept of Indian country should be modified is a question entirely for Congress ...
 
-— [@alaska-v-native-village-of-venetie-tribal-government, p. 534]
+[@alaska-v-native-village-of-venetie-tribal-government, p. 534]
 :::
 
 ::: treatment
@@ -1331,18 +1619,22 @@ Central for Alaska Native nations. Territorial (Indian country) jurisdiction is 
 :::
 
 :::: case atkinson-trading-company-v-shirley
-**Question.** May the Navajo Nation impose a hotel occupancy tax on nonmember guests of a hotel on non-Indian fee land within the reservation?
+::: question
+May the Navajo Nation impose a hotel occupancy tax on nonmember guests of a hotel on non-Indian fee land within the reservation?
+:::
 
-**Holding.** No. The Court held that *Montana*'s general rule governs Tribal taxation of nonmember activity on non-Indian fee land, that the guests' receipt of Tribal services did not create a consensual relationship, and that the second *Montana* exception did not apply.
+::: holding
+No. The Court held that *Montana*'s general rule governs Tribal taxation of nonmember activity on non-Indian fee land, that the guests' receipt of Tribal services did not create a consensual relationship, and that the second *Montana* exception did not apply.
+:::
 
 ::: quotes
-> An Indian tribe's sovereign power to tax-whatever its derivation-reaches no further than tribal land
+> An Indian tribe's sovereign power to tax-whatever its derivation-reaches no further than tribal land ...
 
-— [@atkinson-trading-company-v-shirley, p. 653]
+[@atkinson-trading-company-v-shirley, p. 653]
 
-> a nonmember's actual or potential receipt of tribal police, fire, and medical services does not create the requisite connection
+> ... a nonmember's actual or potential receipt of tribal police, fire, and medical services does not create the requisite connection ...
 
-— [@atkinson-trading-company-v-shirley, p. 655]
+[@atkinson-trading-company-v-shirley, p. 655]
 :::
 
 ::::
@@ -1352,18 +1644,22 @@ Shows that services alone do not create consent; ADR provisions binding nonmembe
 :::
 
 :::: case nevada-v-hicks
-**Question.** Does a Tribal court have jurisdiction over a member's civil-rights and tort claims against state game wardens for executing a search warrant on his trust land on the reservation?
+::: question
+Does a Tribal court have jurisdiction over a member's civil-rights and tort claims against state game wardens for executing a search warrant on his trust land on the reservation?
+:::
 
-**Holding.** No. The Court held that the Tribe lacked regulatory (and therefore adjudicative) authority over state officers enforcing state law for off-reservation crimes. Tribal courts are not courts of general jurisdiction able to hear 42 U.S.C. § 1983 claims. Exhaustion was not required.
+::: holding
+No. The Court held that the Tribe lacked regulatory (and therefore adjudicative) authority over state officers enforcing state law for off-reservation crimes. Tribal courts are not courts of general jurisdiction able to hear 42 U.S.C. § 1983 claims. Exhaustion was not required.
+:::
 
 ::: quotes
-> State sovereignty does not end at a reservation's border
+> State sovereignty does not end at a reservation's border ...
 
-— [@nevada-v-hicks, p. 361]
+[@nevada-v-hicks, p. 361]
 
-> Respondents' contention that tribal courts are courts of "general jurisdiction" is also quite wrong
+> Respondents' contention that tribal courts are courts of "general jurisdiction" is also quite wrong ...
 
-— [@nevada-v-hicks, p. 367]
+[@nevada-v-hicks, p. 367]
 :::
 
 ::: treatment
@@ -1376,18 +1672,22 @@ Limits Tribal-forum jurisdiction over state officials and federal claims; interg
 :::
 
 :::: case plains-commerce-bank-v-long-family-land-and-cattle-company
-**Question.** Does a Tribal court have jurisdiction over a discrimination claim by Tribal-member-owned company against a non-Indian bank concerning the bank's sale of fee land it owned on the reservation?
+::: question
+Does a Tribal court have jurisdiction over a discrimination claim by Tribal-member-owned company against a non-Indian bank concerning the bank's sale of fee land it owned on the reservation?
+:::
 
-**Holding.** No. The Court held that *Montana* does not permit Tribal regulation of the sale of non-Indian fee land, so the Tribal court lacked jurisdiction over the discrimination claim; it also held the bank had standing to challenge Tribal-court jurisdiction.
+::: holding
+No. The Court held that *Montana* does not permit Tribal regulation of the sale of non-Indian fee land, so the Tribal court lacked jurisdiction over the discrimination claim; it also held the bank had standing to challenge Tribal-court jurisdiction.
+:::
 
 ::: quotes
-> *Montana* and its progeny permit tribal regulation of nonmember conduct inside the reservation that implicates the tribe’s sovereign interests
+> *Montana* and its progeny permit tribal regulation of nonmember conduct inside the reservation that implicates the tribe’s sovereign interests ...
 
-— [@plains-commerce-bank-v-long-family-land-and-cattle-company, p. 332]
+[@plains-commerce-bank-v-long-family-land-and-cattle-company, p. 332]
 
-> The Bill of Rights does not apply to Indian tribes
+> The Bill of Rights does not apply to Indian tribes ...
 
-— [@plains-commerce-bank-v-long-family-land-and-cattle-company, p. 337]
+[@plains-commerce-bank-v-long-family-land-and-cattle-company, p. 337]
 :::
 
 ::: treatment
@@ -1400,14 +1700,18 @@ Even where a nonmember has consensual dealings with members, Tribal jurisdiction
 :::
 
 :::: case dollar-general-corporation-v-mississippi-band-of-choctaw-indians
-**Question.** Does a Tribal court have jurisdiction over tort claims by a member against a nonmember business that entered a consensual relationship with the Tribe (a youth employment program) under *Montana*'s first exception?
+::: question
+Does a Tribal court have jurisdiction over tort claims by a member against a nonmember business that entered a consensual relationship with the Tribe (a youth employment program) under *Montana*'s first exception?
+:::
 
-**Holding.** The Court affirmed the Fifth Circuit's judgment (746 F.3d 167) upholding Tribal-court jurisdiction by an equally divided vote, without opinion; the affirmance has no precedential value beyond the case.
+::: holding
+The Court affirmed the Fifth Circuit's judgment (746 F.3d 167) upholding Tribal-court jurisdiction by an equally divided vote, without opinion; the affirmance has no precedential value beyond the case.
+:::
 
 ::: quotes
-> The judgment is affirmed by an equally divided Court
+> The judgment is affirmed by an equally divided Court ...
 
-— [@dollar-general-corporation-v-mississippi-band-of-choctaw-indians, p. 546]
+[@dollar-general-corporation-v-mississippi-band-of-choctaw-indians, p. 546]
 :::
 
 ::::
@@ -1416,39 +1720,55 @@ Even where a nonmember has consensual dealings with members, Tribal jurisdiction
 Leaves open whether Tribal courts may hear tort claims against nonmembers who consent to commercial relationships; ADR clauses that expressly cover torts related to the relationship reduce this uncertainty.
 :::
 
-### Recognition, enforcement and full faith and credit
+### Recognition, Enforcement and Full Faith and Credit
 
-**1994. Federally Recognized Indian Tribe List Act.** Requires an annual list of recognized nations and states that recognition may come from an Act of Congress, the Part 83 process or a court decision [@usc-25-5130, sec. 103(3)].
+:::: law usc-25-5130
+::: summary
+Requires an annual list of recognized nations and states that recognition may come from an Act of Congress, the Part 83 process or a court decision [@usc-25-5130, sec. 103(3)].
+:::
+::::
 
 ::: analysis
 Most state rules for enforcing Tribal judgments apply only to courts of federally recognized nations, so list status can decide whether an outcome is enforceable off the reservation.
 :::
 
-**1994. Protection orders.** The Violence Against Women Act requires each state, nation and territory to give "full faith and credit" to the others' qualifying protection orders [@usc-18-2265, (a)]. Since 2013, a Tribal court has "full civil jurisdiction to issue and enforce protection orders involving any person" [@usc-18-2265, (e)].
+:::: law usc-18-2265
+::: summary
+The Violence Against Women Act requires each state, nation and territory to give "full faith and credit" to the others' qualifying protection orders [@usc-18-2265, (a)]. Since 2013, a Tribal court has "full civil jurisdiction to issue and enforce protection orders involving any person" [@usc-18-2265, (e)].
+:::
+::::
 
-**1994. Child support orders.** The federal full faith and credit statute for child support defines "State" to include "Indian country (as defined in section 1151 of title 18)" [@usc-28-1738b, (b)(9)].
+:::: law usc-28-1738b
+::: summary
+The federal full faith and credit statute for child support defines "State" to include "Indian country (as defined in section 1151 of title 18)" [@usc-28-1738b, (b)(9)].
+:::
+::::
 
 :::: case wilson-v-marchington-1997
-**Question.** Must a federal court give full faith and credit to a Blackfeet Tribal Court tort judgment, and if not, when should it recognize the judgment under comity?
+::: question
+Must a federal court give full faith and credit to a Blackfeet Tribal Court tort judgment, and if not, when should it recognize the judgment under comity?
+:::
 
-**Holding.** The court held that comity, not full faith and credit, governs federal recognition of Tribal judgments. Federal courts must refuse recognition if the Tribal court lacked personal or subject-matter jurisdiction or denied due process, and may decline on listed equitable grounds. Because, after *Strate*, the Tribal court lacked jurisdiction over the highway accident between a member and a nonmember, the judgment could not be recognized; the district court's enforcement judgment was reversed.
+::: holding
+The court held that comity, not full faith and credit, governs federal recognition of Tribal judgments. Federal courts must refuse recognition if the Tribal court lacked personal or subject-matter jurisdiction or denied due process, and may decline on listed equitable grounds. Because, after *Strate*, the Tribal court lacked jurisdiction over the highway accident between a member and a nonmember, the judgment could not be recognized; the district court's enforcement judgment was reversed.
+:::
 
 ::: quotes
 > We conclude that the principles of comity, not full faith and credit, govern whether a district court should recognize and enforce a tribal court judgment.
 
-— [@wilson-v-marchington-1997]
+[@wilson-v-marchington-1997]
 
-> federal courts must neither recognize nor enforce tribal judgments if: (1) the tribal court did not have both personal and subject matter jurisdiction; or (2) the defendant was not afforded due process of law.
+> ... federal courts must neither recognize nor enforce tribal judgments if: (1) the tribal court did not have both personal and subject matter jurisdiction; or (2) the defendant was not afforded due process of law.
 
-— [@wilson-v-marchington-1997]
+[@wilson-v-marchington-1997]
 
-> the existence of both personal and subject matter jurisdiction is a necessary predicate for federal court recognition and enforcement of a tribal judgment
+> ... the existence of both personal and subject matter jurisdiction is a necessary predicate for federal court recognition and enforcement of a tribal judgment ...
 
-— [@wilson-v-marchington-1997]
+[@wilson-v-marchington-1997]
 
 > Extending comity to tribal judgments is not an invitation for the federal courts to exercise unnecessary judicial paternalism in derogation of tribal self-governance.
 
-— [@wilson-v-marchington-1997]
+[@wilson-v-marchington-1997]
 :::
 
 ::: treatment
@@ -1461,18 +1781,22 @@ The leading federal framework for recognizing Tribal judgments. The equitable gr
 :::
 
 :::: case john-v-baker
-**Question.** Does an Alaska Native village without Indian country retain inherent authority to adjudicate a custody dispute between its members, and must Alaska courts respect the resulting Tribal decision?
+::: question
+Does an Alaska Native village without Indian country retain inherent authority to adjudicate a custody dispute between its members, and must Alaska courts respect the resulting Tribal decision?
+:::
 
-**Holding.** Yes. The court held that Alaska Native Tribes, as sovereign nations, retain inherent, membership-based (non-territorial) authority to resolve domestic disputes between their members. It also held that Alaska courts should, as a general rule, respect Tribal court decisions under the comity doctrine, subject to exceptions for lack of jurisdiction, denial of due process, and public policy. It reversed and remanded for a comity determination.
+::: holding
+Yes. The court held that Alaska Native Tribes, as sovereign nations, retain inherent, membership-based (non-territorial) authority to resolve domestic disputes between their members. It also held that Alaska courts should, as a general rule, respect Tribal court decisions under the comity doctrine, subject to exceptions for lack of jurisdiction, denial of due process, and public policy. It reversed and remanded for a comity determination.
+:::
 
 ::: quotes
 > [W]e hold that Alaska Native tribes, by virtue of their inherent powers as sovereign nations, do possess that authority.
 
-— [@john-v-baker, pp. 748-749]
+[@john-v-baker, pp. 748-749]
 
 > We therefore hold that, as a general rule, our courts should respect tribal court decisions under the comity doctrine.
 
-— [@john-v-baker, p. 763]
+[@john-v-baker, p. 763]
 :::
 
 ::: treatment
@@ -1485,18 +1809,22 @@ The leading authority that Alaska Native Tribal forums operate on membership-bas
 :::
 
 :::: case teague-v-bad-river-band-2000
-**Question.** May a Wisconsin court deny full faith and credit to a Tribal court judgment under the state "prior action pending" rule because the same dispute was filed first in state court?
+::: question
+May a Wisconsin court deny full faith and credit to a Tribal court judgment under the state "prior action pending" rule because the same dispute was filed first in state court?
+:::
 
-**Holding.** No. The court held that the prior-action-pending rule does not apply to a Tribal court, a court of an independent sovereign. But comity required the state and Tribal courts, aware of each other's parallel proceedings, to confer to allocate jurisdiction. It reversed and remanded for such a judicial conference.
+::: holding
+No. The court held that the prior-action-pending rule does not apply to a Tribal court, a court of an independent sovereign. But comity required the state and Tribal courts, aware of each other's parallel proceedings, to confer to allocate jurisdiction. It reversed and remanded for such a judicial conference.
+:::
 
 ::: quotes
 > We now hold that the prior action pending rule of Syver does not apply to these circumstances because an Indian tribal court is a court of an independent sovereign.
 
-— [@teague-v-bad-river-band-2000, ¶ 2]
+[@teague-v-bad-river-band-2000, ¶ 2]
 
 > However, under the circumstances of this case, principles of comity required that the state and tribal courts confer for purposes of allocating jurisdiction between them, in order to avoid both the race to judgment and inconsistent results that occurred here.
 
-— [@teague-v-bad-river-band-2000, ¶ 2]
+[@teague-v-bad-river-band-2000, ¶ 2]
 :::
 
 ::: treatment
@@ -1509,14 +1837,18 @@ A model of court-to-court communication (judicial conferencing) to resolve concu
 :::
 
 :::: case bird-v-glacier-electric-cooperative
-**Question.** May a federal court recognize a Blackfeet Tribal Court jury verdict against a non-member-owned cooperative when the plaintiff's closing argument appealed to racial and ethnic prejudice?
+::: question
+May a federal court recognize a Blackfeet Tribal Court jury verdict against a non-member-owned cooperative when the plaintiff's closing argument appealed to racial and ethnic prejudice?
+:::
 
-**Holding.** No. Applying *Wilson v. Marchington*, the court held that the closing argument's appeals to racial prejudice offended fundamental fairness and denied due process, so the Tribal judgment was not entitled to comity; it reversed with instructions to enter judgment denying recognition.
+::: holding
+No. Applying *Wilson v. Marchington*, the court held that the closing argument's appeals to racial prejudice offended fundamental fairness and denied due process, so the Tribal judgment was not entitled to comity; it reversed with instructions to enter judgment denying recognition.
+:::
 
 ::: quotes
 > We hold that Glacier Construction's appeal to racial prejudice in closing argument in its civil case in tribal court offended fundamental fairness and violated due process owed the Co-op.
 
-— [@bird-v-glacier-electric-cooperative]
+[@bird-v-glacier-electric-cooperative]
 :::
 
 ::::
@@ -1526,18 +1858,22 @@ Shows the due-process ground for refusing recognition in practice; a model code'
 :::
 
 :::: case att-corporation-v-coeur-dalene-tribe
-**Question.** Must a federal court enforce a Coeur d'Alene Tribal Court judgment ordering AT&T to provide toll-free service for the Tribe's national lottery?
+::: question
+Must a federal court enforce a Coeur d'Alene Tribal Court judgment ordering AT&T to provide toll-free service for the Tribe's national lottery?
+:::
 
-**Holding.** The court reaffirmed that federal courts must recognize Tribal judgments under comity unless the Tribal court lacked jurisdiction or denied due process, and may not relitigate issues a Tribal court with jurisdiction decided. But it held the Tribal Court lacked jurisdiction because the Federal Communications Act claim had to be brought before the FCC or in federal district court. It vacated the district court's ruling that the lottery violated the Indian Gaming Regulatory Act because AT&T was not the proper party to raise that question.
+::: holding
+The court reaffirmed that federal courts must recognize Tribal judgments under comity unless the Tribal court lacked jurisdiction or denied due process, and may not relitigate issues a Tribal court with jurisdiction decided. But it held the Tribal Court lacked jurisdiction because the Federal Communications Act claim had to be brought before the FCC or in federal district court. It vacated the district court's ruling that the lottery violated the Indian Gaming Regulatory Act because AT&T was not the proper party to raise that question.
+:::
 
 ::: quotes
 > As a general rule, federal courts must recognize and enforce tribal court judgments under principles of comity.
 
-— [@att-corporation-v-coeur-dalene-tribe]
+[@att-corporation-v-coeur-dalene-tribe]
 
-> federal courts may not readjudicate questions — whether of federal, state or tribal law — already resolved in tribal court absent a finding that the tribal court lacked jurisdiction or that its judgment be denied comity for some other valid reason.
+> ... federal courts may not readjudicate questions — whether of federal, state or tribal law — already resolved in tribal court absent a finding that the tribal court lacked jurisdiction or that its judgment be denied comity for some other valid reason.
 
-— [@att-corporation-v-coeur-dalene-tribe]
+[@att-corporation-v-coeur-dalene-tribe]
 :::
 
 ::: treatment
@@ -1550,18 +1886,22 @@ Combines a strong statement of comity with a reminder that subject-matter limits
 :::
 
 :::: case teague-v-bad-river-band-2003
-**Question.** After the parallel state and Tribal cases both reached judgment, must Wisconsin give full faith and credit to the earlier Tribal-court judgment voiding the employment contracts?
+::: question
+After the parallel state and Tribal cases both reached judgment, must Wisconsin give full faith and credit to the earlier Tribal-court judgment voiding the employment contracts?
+:::
 
-**Holding.** The court reversed the order refusing to reopen the circuit court's judgment and remanded for dismissal of the state action. The lead opinion would give full faith and credit to the first-in-time Tribal judgment under Wis. Stat. § 806.245; the four-justice concurrence reached the same result through comity, stressing that courts exercising concurrent jurisdiction should stop, consult, and decide which court proceeds.
+::: holding
+The court reversed the order refusing to reopen the circuit court's judgment and remanded for dismissal of the state action. The lead opinion would give full faith and credit to the first-in-time Tribal judgment under Wis. Stat. § 806.245; the four-justice concurrence reached the same result through comity, stressing that courts exercising concurrent jurisdiction should stop, consult, and decide which court proceeds.
+:::
 
 ::: quotes
 > I would hold that the circuit court was required by Wis. Stat. § 806.245 to give full faith and credit to the tribal court judgment declaring the employment contracts at issue void and, thus, unenforceable.
 
-— [@teague-v-bad-river-band-2003, ¶ 2]
+[@teague-v-bad-river-band-2003, ¶ 2]
 
 > Rather, each court should stop its proceedings, consult with the other, and as a matter of comity decide which court should proceed.
 
-— [@teague-v-bad-river-band-2003, ¶ 58]
+[@teague-v-bad-river-band-2003, ¶ 58] (Abrahamson, C.J., concurring)
 :::
 
 ::::
@@ -1576,17 +1916,21 @@ Illustrates the costs of uncoordinated parallel proceedings and the fractured ap
 Outside those three areas, recognition depends on comity and on state rules.
 :::
 
-### Children and families
+### Children and Families
 
 :::: case mississippi-band-of-choctaw-indians-v-holyfield
-**Question.** Under the Indian Child Welfare Act, were twin children born off the reservation to parents domiciled on it "domiciled" on the reservation, so that the Tribal court had exclusive jurisdiction over their adoption?
+::: question
+Under the Indian Child Welfare Act, were twin children born off the reservation to parents domiciled on it "domiciled" on the reservation, so that the Tribal court had exclusive jurisdiction over their adoption?
+:::
 
-**Holding.** Yes. The Court held that "domicile" under the Indian Child Welfare Act is a matter of federal law, and that the children took their mother's reservation domicile. The Tribe's exclusive jurisdiction under 25 U.S.C. § 1911(a) could not be defeated by the parents' deliberate off-reservation birth and consent to adoption.
+::: holding
+Yes. The Court held that "domicile" under the Indian Child Welfare Act is a matter of federal law, and that the children took their mother's reservation domicile. The Tribe's exclusive jurisdiction under 25 U.S.C. § 1911(a) could not be defeated by the parents' deliberate off-reservation birth and consent to adoption.
+:::
 
 ::: quotes
-> Tribal jurisdiction under § 1911(a) was not meant to be defeated by the actions of individual members of the tribe, for Congress was concerned not solely about the interests of Indian children and families, but also about the impact on the tribes themselves of the large numbers of Indian children adopted by non-Indians
+> Tribal jurisdiction under § 1911(a) was not meant to be defeated by the actions of individual members of the tribe, for Congress was concerned not solely about the interests of Indian children and families, but also about the impact on the tribes themselves of the large numbers of Indian children adopted by non-Indians ...
 
-— [@mississippi-band-of-choctaw-indians-v-holyfield, p. 49]
+[@mississippi-band-of-choctaw-indians-v-holyfield, p. 49]
 :::
 
 ::: treatment
@@ -1599,18 +1943,22 @@ Shows that a nation's jurisdiction over family matters protects collective as we
 :::
 
 :::: case haaland-v-brackeen
-**Question.** Is the Indian Child Welfare Act within Congress's power and consistent with the anticommandeering principle and equal protection?
+::: question
+Is the Indian Child Welfare Act within Congress's power and consistent with the anticommandeering principle and equal protection?
+:::
 
-**Holding.** The Court rejected the Article I and anticommandeering challenges to the Indian Child Welfare Act on the merits and held that the individual petitioners and Texas lacked standing to raise the equal-protection and nondelegation challenges.
+::: holding
+The Court rejected the Article I and anticommandeering challenges to the Indian Child Welfare Act on the merits and held that the individual petitioners and Texas lacked standing to raise the equal-protection and nondelegation challenges.
+:::
 
 ::: quotes
-> Our cases leave little doubt that Congress’s power in this field is muscular, superseding both tribal and state authority
+> Our cases leave little doubt that Congress’s power in this field is muscular, superseding both tribal and state authority ...
 
-— [@haaland-v-brackeen, p. 273]
+[@haaland-v-brackeen, p. 273]
 
-> But the bottom line is that we reject all of petitioners’ challenges to the statute, some on the merits and others for lack of standing
+> But the bottom line is that we reject all of petitioners’ challenges to the statute, some on the merits and others for lack of standing ...
 
-— [@haaland-v-brackeen, p. 264]
+[@haaland-v-brackeen, p. 264]
 :::
 
 ::::
@@ -1619,35 +1967,55 @@ Shows that a nation's jurisdiction over family matters protects collective as we
 Upholds the Indian Child Welfare Act, including the role of Tribal courts and Tribal placement preferences; relevant to family dispute-resolution and child-welfare provisions in the model code.
 :::
 
-### Tribal justice systems
+### Tribal Justice Systems
 
-**1993. Indian Tribal Justice Act.** Congress found that "Congress and the Federal courts have repeatedly recognized tribal justice systems as the appropriate forums for the adjudication of disputes affecting personal and property rights" [@indian-tribal-justice-act-1993, sec. 2(6)-(7)]. It found that "traditional tribal justice practices are essential to the maintenance of the culture and identity of Indian tribes" [@indian-tribal-justice-act-1993, sec. 2(6)-(7)]. It defines a "tribal justice system" to include "traditional methods and forums for dispute resolution" and "alternative dispute resolution systems" [@indian-tribal-justice-act-1993, sec. 3(8)]. It also bars the federal office it created from imposing "justice standards on Indian tribes" (25 U.S.C. § 3611(d)) [@indian-tribal-justice-act-1993].
+:::: law indian-tribal-justice-act-1993
+::: summary
+Congress found that "Congress and the Federal courts have repeatedly recognized tribal justice systems as the appropriate forums for the adjudication of disputes affecting personal and property rights" [@indian-tribal-justice-act-1993, sec. 2(6)-(7)]. It found that "traditional tribal justice practices are essential to the maintenance of the culture and identity of Indian tribes" [@indian-tribal-justice-act-1993, sec. 2(6)-(7)]. It defines a "tribal justice system" to include "traditional methods and forums for dispute resolution" and "alternative dispute resolution systems" [@indian-tribal-justice-act-1993, sec. 3(8)]. It also bars the federal office it created from imposing "justice standards on Indian tribes" (25 U.S.C. § 3611(d)) [@indian-tribal-justice-act-1993].
+:::
+::::
 
 ::: analysis
 This is the core federal statutory recognition that traditional and alternative dispute resolution are part of a nation's justice system.
 :::
 
-**2000. Indian Tribal Justice Technical and Legal Assistance Act.** Repeats the findings with "the most appropriate forums" and the same inclusive definition [@indian-tribal-justice-technical-and-legal-assistance-act-2000, secs. 2(6), 4(8)].
+:::: law indian-tribal-justice-technical-and-legal-assistance-act-2000
+::: summary
+Repeats the findings with "the most appropriate forums" and the same inclusive definition [@indian-tribal-justice-technical-and-legal-assistance-act-2000, secs. 2(6), 4(8)].
+:::
+::::
 
-**2010. Tribal Law and Order Act.** The act found that "tribal justice systems are often the most appropriate institutions for maintaining law and order in Indian country" [@tribal-law-and-order-act-2010, secs. 202(a)(2)(B), 234(a)]. It allowed sentences up to three years per offense when a nation provides licensed defense counsel, a law-trained judge, published laws and a record [@tribal-law-and-order-act-2010, secs. 202(a)(2)(B), 234(a)].
+:::: law tribal-law-and-order-act-2010
+::: summary
+The act found that "tribal justice systems are often the most appropriate institutions for maintaining law and order in Indian country" [@tribal-law-and-order-act-2010, secs. 202(a)(2)(B), 234(a)]. It allowed sentences up to three years per offense when a nation provides licensed defense counsel, a law-trained judge, published laws and a record [@tribal-law-and-order-act-2010, secs. 202(a)(2)(B), 234(a)].
+:::
+::::
 
 ::: analysis
 Diversion or restorative options in serious cases have to be designed around those conditions.
 :::
 
-**2013 and 2022. Violence Against Women Act reauthorizations.** The 2013 act recognized the inherent power of "participating tribes" to exercise "special domestic violence criminal jurisdiction" over non-Indians [@violence-against-women-reauthorization-act-2013-title-ix, sec. 904]. The 2022 act broadened it to "special Tribal criminal jurisdiction" over more crimes, included participating nations in Maine, and recognized the inherent authority of Alaska nations "to exercise criminal and civil jurisdiction over all Indians present in the Village" [@violence-against-women-act-reauthorization-act-2022-title-viii, sec. 813]. These acts partly answer *Oliphant* [@united-states-v-bryant].
+:::: law violence-against-women-reauthorization-act-2013-title-ix
+::: summary
+The 2013 act recognized the inherent power of "participating tribes" to exercise "special domestic violence criminal jurisdiction" over non-Indians [@violence-against-women-reauthorization-act-2013-title-ix, sec. 904]. The 2022 act broadened it to "special Tribal criminal jurisdiction" over more crimes, included participating nations in Maine, and recognized the inherent authority of Alaska nations "to exercise criminal and civil jurisdiction over all Indians present in the Village" [@violence-against-women-act-reauthorization-act-2022-title-viii, sec. 813]. These acts partly answer *Oliphant* [@united-states-v-bryant].
+:::
+::::
 
-### Criminal jurisdiction
+### Criminal Jurisdiction
 
 :::: case duro-v-reina
-**Question.** May a Native nation exercise criminal jurisdiction over an Indian who is not one of its members?
+::: question
+May a Native nation exercise criminal jurisdiction over an Indian who is not one of its members?
+:::
 
-**Holding.** No. The Court held that a Tribe's retained sovereignty does not include authority to impose criminal sanctions on a nonmember Indian.
+::: holding
+No. The Court held that a Tribe's retained sovereignty does not include authority to impose criminal sanctions on a nonmember Indian.
+:::
 
 ::: quotes
-> the retained sovereignty of the tribe as a political and social organization to govern its own affairs does not include the authority to impose criminal sanctions against a citizen outside its own membership
+> ... the retained sovereignty of the tribe as a political and social organization to govern its own affairs does not include the authority to impose criminal sanctions against a citizen outside its own membership ...
 
-— [@duro-v-reina, p. 679]
+[@duro-v-reina, p. 679]
 :::
 
 ::: treatment
@@ -1662,14 +2030,18 @@ Historical example of Congress restoring Tribal jurisdiction after an adverse de
 **1990 and 1991. The "Duro fix."** After *Duro*, Congress amended the Indian Civil Rights Act to recognize "the inherent power of Indian tribes, hereby recognized and affirmed, to exercise criminal jurisdiction over all Indians" [@usc-25-1301].
 
 :::: case united-states-v-lara
-**Question.** After a Tribal prosecution of a nonmember Indian under the 1990 the Indian Civil Rights Act amendment, does the Double Jeopardy Clause bar a federal prosecution for the same conduct?
+::: question
+After a Tribal prosecution of a nonmember Indian under the 1990 amendment to the Indian Civil Rights Act, does the Double Jeopardy Clause bar a federal prosecution for the same conduct?
+:::
 
-**Holding.** No. The Court held that Congress has constitutional power to relax restrictions on the Tribes' inherent criminal jurisdiction over nonmember Indians. The Spirit Lake prosecution was therefore an exercise of inherent Tribal power, and the later federal prosecution was by a separate sovereign.
+::: holding
+No. The Court held that Congress has constitutional power to relax restrictions on the Tribes' inherent criminal jurisdiction over nonmember Indians. The Spirit Lake prosecution was therefore an exercise of inherent Tribal power, and the later federal prosecution was by a separate sovereign.
+:::
 
 ::: quotes
-> the Constitution authorizes Congress to permit tribes, as an exercise of their inherent tribal authority, to prosecute nonmember Indians
+> ... the Constitution authorizes Congress to permit tribes, as an exercise of their inherent tribal authority, to prosecute nonmember Indians ...
 
-— [@united-states-v-lara, p. 210]
+[@united-states-v-lara, p. 210]
 :::
 
 ::::
@@ -1679,14 +2051,18 @@ Confirms Congress can restore (recognize) inherent jurisdiction; supports code c
 :::
 
 :::: case united-states-v-bryant
-**Question.** May uncounseled Tribal-court misdemeanor convictions that complied with the Indian Civil Rights Act serve as predicates for the federal habitual domestic-assault offense, 18 U.S.C. § 117(a)?
+::: question
+May uncounseled Tribal-court misdemeanor convictions that complied with the Indian Civil Rights Act serve as predicates for the federal habitual domestic-assault offense, 18 U.S.C. § 117(a)?
+:::
 
-**Holding.** Yes. The Court held that because the Sixth Amendment does not apply in Tribal courts and Bryant's convictions complied with the Indian Civil Rights Act, they were valid when entered and their use as predicates does not violate the Constitution.
+::: holding
+Yes. The Court held that because the Sixth Amendment does not apply in Tribal courts and Bryant's convictions complied with the Indian Civil Rights Act, they were valid when entered and their use as predicates does not violate the Constitution.
+:::
 
 ::: quotes
-> Because Bryant's tribal-court convictions occurred in proceedings that complied with ICRA and were therefore valid when entered, use of those convictions as predicate offenses in a § 117(a) prosecution does not violate the Constitution
+> Because Bryant's tribal-court convictions occurred in proceedings that complied with ICRA and were therefore valid when entered, use of those convictions as predicate offenses in a § 117(a) prosecution does not violate the Constitution ...
 
-— [@united-states-v-bryant, p. 157]
+[@united-states-v-bryant, p. 157]
 :::
 
 ::::
@@ -1696,22 +2072,26 @@ Federal law gives effect to Tribal-court judgments that comply with the Indian C
 :::
 
 :::: case mcgirt-v-oklahoma
-**Question.** Does land reserved for the Muscogee (Creek) Nation since the 19th century remain "Indian country" for purposes of the Major Crimes Act?
+::: question
+Does land reserved for the Muscogee (Creek) Nation since the 19th century remain "Indian country" for purposes of the Major Crimes Act?
+:::
 
-**Holding.** Yes. The Court held that Congress never disestablished the Creek Reservation, so it remains Indian country under the Major Crimes Act, and Oklahoma lacked jurisdiction to prosecute McGirt, a Native person, for crimes committed there.
+::: holding
+Yes. The Court held that Congress never disestablished the Creek Reservation, so it remains Indian country under the Major Crimes Act, and Oklahoma lacked jurisdiction to prosecute McGirt, a Native person, for crimes committed there.
+:::
 
 ::: quotes
-> Today we are asked whether the land these treaties promised remains an Indian reservation for purposes of federal criminal law
+> Today we are asked whether the land these treaties promised remains an Indian reservation for purposes of federal criminal law ...
 
-— [@mcgirt-v-oklahoma, p. 897-898]
+[@mcgirt-v-oklahoma, p. 897-898]
 
-> To determine whether a tribe continues to hold a reservation, there is only one place we may look: the Acts of Congress
+> To determine whether a tribe continues to hold a reservation, there is only one place we may look: the Acts of Congress ...
 
-— [@mcgirt-v-oklahoma, p. 903]
+[@mcgirt-v-oklahoma, p. 903]
 
-> Because Congress has not said otherwise, we hold the government to its word
+> Because Congress has not said otherwise, we hold the government to its word ...
 
-— [@mcgirt-v-oklahoma, p. 898]
+[@mcgirt-v-oklahoma, p. 898]
 :::
 
 ::: treatment
@@ -1724,14 +2104,18 @@ Reservation status determines the territorial scope of a nation's forums; after 
 :::
 
 :::: case united-states-v-cooley
-**Question.** May a Tribal police officer temporarily detain and search a non-Indian on a public right-of-way within a reservation for apparent violations of state or federal law?
+::: question
+May a Tribal police officer temporarily detain and search a non-Indian on a public right-of-way within a reservation for apparent violations of state or federal law?
+:::
 
-**Holding.** Yes. The Court held that under *Montana*'s second exception a Tribe retains inherent authority to detain and search non-Indians on such rights-of-way for a reasonable time. That authority applies when the officer has reason to believe the person may commit or has committed a crime. It vacated the Ninth Circuit judgment affirming suppression and remanded.
+::: holding
+Yes. The Court held that under *Montana*'s second exception a Tribe retains inherent authority to detain and search non-Indians on such rights-of-way for a reasonable time. That authority applies when the officer has reason to believe the person may commit or has committed a crime. It vacated the Ninth Circuit judgment affirming suppression and remanded.
+:::
 
 ::: quotes
-> To deny a tribal police officer authority to search and detain for a reasonable time any person he or she believes may commit or has committed a crime would make it difficult for tribes to protect themselves against ongoing threats
+> To deny a tribal police officer authority to search and detain for a reasonable time any person he or she believes may commit or has committed a crime would make it difficult for tribes to protect themselves against ongoing threats ...
 
-— [@united-states-v-cooley, p. 350-351]
+[@united-states-v-cooley, p. 350-351]
 :::
 
 ::::
@@ -1741,14 +2125,18 @@ First modern Supreme Court application of *Montana*'s second exception in favor 
 :::
 
 :::: case denezpi-v-united-states
-**Question.** Does the Double Jeopardy Clause bar a federal prosecution after a conviction in a Court of Indian Offenses for a Tribal-law offense arising from the same act?
+::: question
+Does the Double Jeopardy Clause bar a federal prosecution after a conviction in a Court of Indian Offenses for a Tribal-law offense arising from the same act?
+:::
 
-**Holding.** No. The Court held that the Clause bars successive prosecutions only for the same offense. Because the Court of Indian Offenses prosecution was for a Tribal-ordinance offense and the federal prosecution was for a federal offense, the second prosecution did not violate the Clause, whatever the source of that court's prosecutorial power.
+::: holding
+No. The Court held that the Clause bars successive prosecutions only for the same offense. Because the Court of Indian Offenses prosecution was for a Tribal-ordinance offense and the federal prosecution was for a federal offense, the second prosecution did not violate the Clause, whatever the source of that court's prosecutorial power.
+:::
 
 ::: quotes
-> Because Denezpi's second prosecution did not place him in jeopardy again “for the same offence,” that prosecution did not violate the Double Jeopardy Clause
+> Because Denezpi's second prosecution did not place him in jeopardy again “for the same offence,” that prosecution did not violate the Double Jeopardy Clause ...
 
-— [@denezpi-v-united-states, p. 599]
+[@denezpi-v-united-states, p. 599]
 :::
 
 ::::
@@ -1758,18 +2146,22 @@ Concerns Courts of Indian Offenses, which still serve some nations [@cfr-25-part
 :::
 
 :::: case oklahoma-v-castro-huerta
-**Question.** Does the federal government have exclusive jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country?
+::: question
+Does the federal government have exclusive jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country?
+:::
 
-**Holding.** No. The Court held that the federal government and the State have concurrent jurisdiction over such crimes. It reasoned that Indian country is part of the State and that neither the General Crimes Act, Public Law 280, nor *Bracker* balancing preempts state jurisdiction.
+::: holding
+No. The Court held that the federal government and the State have concurrent jurisdiction over such crimes. It reasoned that Indian country is part of the State and that neither the General Crimes Act, Public Law 280, nor *Bracker* balancing preempts state jurisdiction.
+:::
 
 ::: quotes
-> Indian country is part of the State, not separate from the State
+> Indian country is part of the State, not separate from the State ...
 
-— [@oklahoma-v-castro-huerta, p. 636]
+[@oklahoma-v-castro-huerta, p. 636]
 
-> the Federal Government and the State have concurrent jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country
+> ... the Federal Government and the State have concurrent jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country ...
 
-— [@oklahoma-v-castro-huerta, p. 633]
+[@oklahoma-v-castro-huerta, p. 633]
 :::
 
 ::::
@@ -1778,23 +2170,35 @@ Concerns Courts of Indian Offenses, which still serve some nations [@cfr-25-part
 Increases state criminal authority in Indian country, making Tribal-state cooperative agreements (and their dispute clauses) more important.
 :::
 
-### Recent statutes (2024 to 2026)
+### Recent Statutes (2024 to 2026)
 
-**2024. Native American Child Protection Act.** Directs the Indian Health Service to "encourage the use of culturally appropriate treatment services and programs that respond to the unique cultural values, customs, and traditions of applicant Indian Tribes" [@native-american-child-protection-act-2024, sec. 2(2)(E)].
+:::: law native-american-child-protection-act-2024
+::: summary
+Directs the Indian Health Service to "encourage the use of culturally appropriate treatment services and programs that respond to the unique cultural values, customs, and traditions of applicant Indian Tribes" [@native-american-child-protection-act-2024, sec. 2(2)(E)].
+:::
+::::
 
-**2025. Lumbee Fairness Act.** "Federal recognition is extended to the Lumbee Tribe of North Carolina" [@lumbee-fairness-act-2025]. North Carolina keeps criminal and civil jurisdiction, with a path to transfer it to the United States by an agreement between the Tribe and the state, and the act preserves agreements under section 109 of the Indian Child Welfare Act [@lumbee-fairness-act-2025]. Counts of federally recognized nations published before the act, such as the 574 in the NCAI guide, are now out of date.
+:::: law lumbee-fairness-act-2025
+::: summary
+"Federal recognition is extended to the Lumbee Tribe of North Carolina" [@lumbee-fairness-act-2025]. North Carolina keeps criminal and civil jurisdiction, with a path to transfer it to the United States by an agreement between the Tribe and the state, and the act preserves agreements under section 109 of the Indian Child Welfare Act [@lumbee-fairness-act-2025]. Counts of federally recognized nations published before the act, such as the 574 in the NCAI guide, are now out of date.
+:::
+::::
 
-**2026. Miami Tribe of Oklahoma land claim.** Congress gave the Court of Federal Claims jurisdiction for one year to decide the Nation's claim under the 1805 Treaty of Grouseland, without regard to limitations or delay defenses [@miami-tribe-of-oklahoma-illinois-land-claim-settlement-2026, sec. 1(a)(1)].
+:::: law miami-tribe-of-oklahoma-illinois-land-claim-settlement-2026
+::: summary
+Congress gave the Court of Federal Claims jurisdiction for one year to decide the Nation's claim under the 1805 Treaty of Grouseland, without regard to limitations or delay defenses [@miami-tribe-of-oklahoma-illinois-land-claim-settlement-2026, sec. 1(a)(1)].
+:::
+::::
 
 ::: analysis
 The Miami claim continues a pattern of Congress resolving land disputes by assigning them to a chosen forum.
 :::
 
-## Tribal courts and peacemaking
+## Tribal Courts and Peacemaking
 
 This thread runs across the eras above.
 
-### Constitutional courts before federal courts
+### Constitutional Courts before Federal Courts
 
 The Cherokee Nation had a Supreme Court from 1823; a 2018 dissertation calls itself "the first legal history of the Cherokee Supreme Court" [@martin-cherokee-supreme-court-1823-1835-dissertation-2018]. The 1827 constitution vested judicial power in that court and lower courts [@cherokee-nation-constitution-1827-article-v, art. V, sec. 1].
 
@@ -1802,7 +2206,7 @@ The Cherokee Nation had a Supreme Court from 1823; a 2018 dissertation calls its
 A constitutional judiciary existed decades before any federal court on a reservation, which supports describing Tribal courts as an exercise of inherent sovereignty.
 :::
 
-### Imposed courts, abolition and rebuilding
+### Imposed Courts, Abolition and Rebuilding
 
 Courts of Indian Offenses followed in 1883 [@rules-governing-court-of-indian-offenses-1883]. William T. Hagan's history of these courts and the Indian police is subtitled *Experiments in Acculturation and Control* [@hagan-indian-police-and-judges]. The Curtis Act abolished the courts of Indian Territory in 1898 [@curtis-act-1898, sec. 28]. The Cherokee Nation created its Judicial Appeals Tribunal under its 1975 Constitution and re-established its District Court "by Legislative Act in 1991" [@cherokee-nation-judicial-branch-history].
 
@@ -1810,11 +2214,11 @@ The Navajo Nation's judiciary states that "In 1892, the Navajo Courts of Indian 
 
 Federal regulations at 25 C.F.R. Part 11 still provide Courts of Indian Offenses "in those areas of Indian country where tribes retain jurisdiction over Indians that is exclusive of State jurisdiction but where tribal courts have not been established," and direct each court to "apply the customs of the tribe" consistent with the regulations [@cfr-25-part-11-courts-of-indian-offenses, secs. 11.102, 11.110].
 
-### National organizations
+### National Organizations
 
 The National American Indian Court Judges Association was established in 1969 [@national-american-indian-court-judges-association-history] and published a long-range planning report on Indian courts in 1978 [@national-american-indian-court-judges-association-indian-courts-and-the-future-1978]. The Tribal Law and Policy Institute's Tribal Court Clearinghouse was "established in June 1997" [@tribal-court-clearinghouse-tribal-law-and-policy-institute].
 
-### Peacemaking is not Alternative Dispute Resolution
+### Peacemaking Is Not Alternative Dispute Resolution
 
 The Native American Rights Fund's Indigenous Peacemaking Initiative, founded in 1992, states: "PEACEMAKING IS NOT ALTERNATIVE DISPUTE RESOLUTION" and "THE TERM REFERS TO TRADITIONAL WAYS OF RESOLVING CONFLICT IN INDIGENOUS COMMUNITIES" [@narf-ipi-home]. Writing about outside courts borrowing peacemaking, Carole Goldberg asks: "But has the rhetoric merely shifted from condescension to impractical romanticizing?" [@goldberg-overextended-borrowing-tribal-peacemaking-1997].
 
@@ -1822,7 +2226,7 @@ The Native American Rights Fund's Indigenous Peacemaking Initiative, founded in 
 A code titled as an ADR code needs to keep each nation's traditional processes distinct from its mediation and arbitration modules, and describe them only in the nation's own terms.
 :::
 
-### Custom in Tribal courts
+### Custom in Tribal Courts
 
 Scholarship on how Tribal courts find and apply custom includes Gloria Valencia-Weber's 1994 article [@valencia-weber-1994-tribal-courts-custom-innovative-law] and Matthew L.M. Fletcher's 2007 article, which argues that "tribal judges have a great deal to learn from H.L.A. Hart's theory of primary and secondary rules" [@fletcher-rethinking-customary-law-tribal-court-jurisprudence-2007]. Christine Zuni Cruz describes the Southwest Intertribal Court of Appeals, a shared appellate court [@zuni-cruz-southwest-intertribal-court-of-appeals-1994].
 
@@ -1836,19 +2240,27 @@ Native Hawaiians, the CHamoru people of Guam and the Northern Mariana Islands, t
 
 **1893 to 1898. Overthrow and annexation.** In 1993 Congress apologized "to Native Hawaiians on behalf of the people of the United States for the overthrow of the Kingdom of Hawaii on January 17, 1893 with the participation of agents and citizens of the United States." The same resolution says that "Nothing in this Joint Resolution is intended to serve as a settlement of any claims against the United States" [@apology-resolution-1993, secs. 1, 3].
 
-**1921 and 1959. Trust lands.** The Hawaiian Homes Commission Act set aside lands for homesteading by native Hawaiians [@hawaiian-homes-commission-act-1920], and section 5(f) of the Admission Act made the betterment of native Hawaiians one purpose of the ceded-lands trust [@hawaii-admission-act-1959, sec. 5(f)]. Jon M. Van Dyke's history covers the Crown lands behind many of these disputes [@van-dyke-who-owns-the-crown-lands-of-hawaii-2008].
+:::: law hawaiian-homes-commission-act-1920
+::: summary
+The Hawaiian Homes Commission Act set aside lands for homesteading by native Hawaiians [@hawaiian-homes-commission-act-1920], and section 5(f) of the Admission Act made the betterment of native Hawaiians one purpose of the ceded-lands trust [@hawaii-admission-act-1959, sec. 5(f)]. Jon M. Van Dyke's history covers the Crown lands behind many of these disputes [@van-dyke-who-owns-the-crown-lands-of-hawaii-2008].
+:::
+::::
 
 **1978. State constitutional amendments.** The 1978 convention created the Office of Hawaiian Affairs and added a protection of "all rights, customarily and traditionally exercised for subsistence, cultural and religious purposes and possessed by ahupua'a tenants who are descendants of native Hawaiians who inhabited the Hawaiian Islands prior to 1778" [@hawaii-constitution, art. XII, secs. 5, 7].
 
 :::: case rice-v-cayetano
-**Question.** May Hawaiʻi limit voting for trustees of the Office of Hawaiian Affairs to "Hawaiians" defined by ancestry?
+::: question
+May Hawaiʻi limit voting for trustees of the Office of Hawaiian Affairs to "Hawaiians" defined by ancestry?
+:::
 
-**Holding.** No. The Court held that the ancestry-based voter qualification was a racial classification that violated the Fifteenth Amendment, distinguishing *Morton v. Mancari* because the Office of Hawaiian Affairs election is a state election.
+::: holding
+No. The Court held that the ancestry-based voter qualification was a racial classification that violated the Fifteenth Amendment, distinguishing *Morton v. Mancari* because the Office of Hawaiian Affairs election is a state election.
+:::
 
 ::: quotes
-> Ancestry can be a proxy for race. It is that proxy here
+> Ancestry can be a proxy for race. It is that proxy here ...
 
-— [@rice-v-cayetano, p. 514]
+[@rice-v-cayetano, p. 514]
 :::
 
 ::::
@@ -1864,14 +2276,18 @@ For Native Hawaiian institutions, this limits ancestry-based eligibility in stat
 ### Puerto Rico and the Insular Cases
 
 :::: case downes-v-bidwell-1901
-**Question.** Was Puerto Rico, after its cession by Spain, part of "the United States" for the Constitution's rule that duties be uniform throughout the United States?
+::: question
+Was Puerto Rico, after its cession by Spain, part of "the United States" for the Constitution's rule that duties be uniform throughout the United States?
+:::
 
-**Holding.** No. A duty on goods shipped from Puerto Rico to New York under the Foraker Act was upheld. No opinion spoke for a majority. Justice White's concurrence, joined by Justices Shiras and McKenna, set out the distinction between territories incorporated into the United States and those merely belonging to it, which later decisions adopted.
+::: holding
+No. A duty on goods shipped from Puerto Rico to New York under the Foraker Act was upheld. No opinion spoke for a majority. Justice White's concurrence, joined by Justices Shiras and McKenna, set out the distinction between territories incorporated into the United States and those merely belonging to it, which later decisions adopted.
+:::
 
 ::: quotes
-> foreign to the United States in a domestic sense, because the island had not been incorporated into the United States, but was merely appurtenant thereto as a possession
+> ... foreign to the United States in a domestic sense, because the island had not been incorporated into the United States, but was merely appurtenant thereto as a possession ...
 
-— [@downes-v-bidwell-1901]
+[@downes-v-bidwell-1901] (White, J., concurring)
 :::
 
 ::: treatment
@@ -1893,15 +2309,21 @@ That is a required, non-binding step run by American Samoa's own customary offic
 
 ### Northern Mariana Islands
 
-**1976. The Covenant.** The Covenant lets the Commonwealth restrict long-term land ownership to persons of Northern Marianas descent, "in view of the importance of the ownership of land for the culture and traditions of the people" [@cnmi-covenant, § 805].
+:::: law cnmi-covenant
+::: summary
+The Covenant lets the Commonwealth restrict long-term land ownership to persons of Northern Marianas descent, "in view of the importance of the ownership of land for the culture and traditions of the people" [@cnmi-covenant, § 805].
+:::
+::::
 
 :::: case wabol-v-villacrusis-1990
-**Holding.** The Ninth Circuit upheld the Covenant's restriction on long-term land ownership against a challenge under the Constitution, treating the protection of local culture and land as a commitment the United States made in the Trusteeship Agreement.
+::: holding
+The Ninth Circuit upheld the Covenant's restriction on long-term land ownership against a challenge under the Constitution, treating the protection of local culture and land as a commitment the United States made in the Trusteeship Agreement.
+:::
 
 ::: quotes
-> a solemn and binding undertaking memorialized in the Trusteeship Agreement
+> ... a solemn and binding undertaking memorialized in the Trusteeship Agreement ...
 
-— [@wabol-v-villacrusis-1990, p. 1461]
+[@wabol-v-villacrusis-1990, p. 1461]
 :::
 ::::
 
@@ -1909,17 +2331,23 @@ That is a required, non-binding step run by American Samoa's own customary offic
 
 ### Guam
 
-**1950. Organic Act.** The Organic Act of 1950 made Guam an unincorporated territory [@usc-48-1421a]. Guam's Chamorro Land Trust Act provides land leases for Native Chamorros [@guam-code-21-chapter-75].
+:::: law usc-48-1421a
+::: summary
+The Organic Act of 1950 made Guam an unincorporated territory [@usc-48-1421a]. Guam's Chamorro Land Trust Act provides land leases for Native Chamorros [@guam-code-21-chapter-75].
+:::
+::::
 
 :::: case davis-v-guam-2019
-**Holding.** The Ninth Circuit held that limiting a political status plebiscite to "Native Inhabitants of Guam" violated the Fifteenth Amendment [@davis-v-guam-2019, p. 843].
+::: holding
+The Ninth Circuit held that limiting a political status plebiscite to "Native Inhabitants of Guam" violated the Fifteenth Amendment [@davis-v-guam-2019, p. 843].
+:::
 ::::
 
 ::: analysis Island governments and custom
 Two patterns here matter for a model code. American Samoa shows a court system built around customary officials and a required meeting before litigation. Hawaiʻi shows a family practice that its own scholars ask outsiders not to turn into a commercial process. Both are context for the code, not templates for it.
 :::
 
-## How states recognize Tribal judgments
+## How States Recognize Tribal Judgments
 
 Robert Laurence's primer explains the choice. "When a state court is asked to enforce a foreign-nation judgment, as opposed to a sister-state judgment, then comity, not full faith and credit, is the governing principle," and "no consistent rule exists among the jurisdictions" [@laurence-enforcement-of-money-judgments-primer-2002, pt. II].
 
@@ -1941,31 +2369,7 @@ Most of these rules apply only to courts of federally recognized nations, severa
 A nation that wants mediated or peacemaking outcomes enforced elsewhere may therefore enter them as judgments with findings on jurisdiction, notice and hearing, and enact reciprocity provisions.
 :::
 
-## Cases by topic
-
-The decisions in the boxes above are grouped here by the subject each bears on most. A decision can appear under more than one subject.
-
-**Dispute resolution and arbitration.** *Ex parte Crow Dog* (1883); *Santa Clara Pueblo v. Martinez* (1978); *Oklahoma Tax Commission v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (1991); *Seminole Tribe of Florida v. Florida* (1996); *Sokaogon Gaming Enterprise Corp. v. Tushie-Montgomery Associates, Inc.* (1996); *Val-U Construction Co. v. Rosebud Sioux Tribe* (1998); *John v. Baker* (1999); *Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority* (2000); *C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (2001); *Smith v. Hopland Band of Pomo Indians* (2002); *Michigan v. Bay Mills Indian Community* (2014); *Lewis v. Clarke* (2017); *Becerra v. San Carlos Apache Tribe* (2024).
-
-**Recognition of Tribal judgments (comity).** *Iowa Mutual Insurance Co. v. LaPlante* (1987); *Wilson v. Marchington* (1997); *John v. Baker* (1999); *Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority* (2000); *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2000); *Bird v. Glacier Electric Cooperative, Inc.* (2001); *AT&T Corp. v. Coeur d'Alene Tribe* (2002); *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2003); *United States v. Bryant* (2016).
-
-**Enforcement of awards, orders and judgments.** *Iowa Mutual Insurance Co. v. LaPlante* (1987); *Sokaogon Gaming Enterprise Corp. v. Tushie-Montgomery Associates, Inc.* (1996); *Wilson v. Marchington* (1997); *Kiowa Tribe of Oklahoma v. Manufacturing Technologies, Inc.* (1998); *Val-U Construction Co. v. Rosebud Sioux Tribe* (1998); *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2000); *Bird v. Glacier Electric Cooperative, Inc.* (2001); *C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (2001); *AT&T Corp. v. Coeur d'Alene Tribe* (2002); *Smith v. Hopland Band of Pomo Indians* (2002); *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2003); *Michigan v. Bay Mills Indian Community* (2014); *United States v. Bryant* (2016); *Lac du Flambeau Band of Lake Superior Chippewa Indians v. Coughlin* (2023).
-
-**Sovereign immunity.** *Cherokee Nation v. Georgia* (1831); *Santa Clara Pueblo v. Martinez* (1978); *Oklahoma Tax Commission v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (1991); *Seminole Tribe of Florida v. Florida* (1996); *Sokaogon Gaming Enterprise Corp. v. Tushie-Montgomery Associates, Inc.* (1996); *Kiowa Tribe of Oklahoma v. Manufacturing Technologies, Inc.* (1998); *Val-U Construction Co. v. Rosebud Sioux Tribe* (1998); *Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority* (2000); *C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (2001); *Smith v. Hopland Band of Pomo Indians* (2002); *Michigan v. Bay Mills Indian Community* (2014); *Lewis v. Clarke* (2017); *Lac du Flambeau Band of Lake Superior Chippewa Indians v. Coughlin* (2023).
-
-**Exhaustion of Tribal remedies.** *National Farmers Union Insurance Cos. v. Crow Tribe of Indians* (1985); *Iowa Mutual Insurance Co. v. LaPlante* (1987); *Strate v. A-1 Contractors* (1997); *Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority* (2000); *Nevada v. Hicks* (2001).
-
-**Tribal courts.** *Ex parte Crow Dog* (1883); *Talton v. Mayes* (1896); *Native American Church v. Navajo Tribal Council* (1959); *Williams v. Lee* (1959); *Fisher v. District Court* (1976); *Oliphant v. Suquamish Indian Tribe* (1978); *Santa Clara Pueblo v. Martinez* (1978); *United States v. Wheeler* (1978); *Montana v. United States* (1981); *National Farmers Union Insurance Cos. v. Crow Tribe of Indians* (1985); *Iowa Mutual Insurance Co. v. LaPlante* (1987); *Mississippi Band of Choctaw Indians v. Holyfield* (1989); *Duro v. Reina* (1990); *Strate v. A-1 Contractors* (1997); *Wilson v. Marchington* (1997); *John v. Baker* (1999); *Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority* (2000); *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2000); *Bird v. Glacier Electric Cooperative, Inc.* (2001); *Nevada v. Hicks* (2001); *AT&T Corp. v. Coeur d'Alene Tribe* (2002); *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2003); *United States v. Lara* (2004); *Plains Commerce Bank v. Long Family Land & Cattle Co.* (2008); *Dollar General Corp. v. Mississippi Band of Choctaw Indians* (2016); *United States v. Bryant* (2016); *Denezpi v. United States* (2022).
-
-**Civil jurisdiction.** *Williams v. Lee* (1959); *Bryan v. Itasca County* (1976); *Fisher v. District Court* (1976); *White Mountain Apache Tribe v. Bracker* (1980); *Montana v. United States* (1981); *Merrion v. Jicarilla Apache Tribe* (1982); *National Farmers Union Insurance Cos. v. Crow Tribe of Indians* (1985); **California v. Cabazon Band* of Mission Indians* (1987); *Iowa Mutual Insurance Co. v. LaPlante* (1987); *Strate v. A-1 Contractors* (1997); *Wilson v. Marchington* (1997); *Alaska v. Native Village of Venetie Tribal Government* (1998); *Atkinson Trading Co. v. Shirley* (2001); *Nevada v. Hicks* (2001); *AT&T Corp. v. Coeur d'Alene Tribe* (2002); *Plains Commerce Bank v. Long Family Land & Cattle Co.* (2008); *Dollar General Corp. v. Mississippi Band of Choctaw Indians* (2016).
-
-**Criminal jurisdiction.** *Ex parte Crow Dog* (1883); *United States v. Kagama* (1886); *Talton v. Mayes* (1896); *Oliphant v. Suquamish Indian Tribe* (1978); *United States v. Wheeler* (1978); *Duro v. Reina* (1990); *United States v. Lara* (2004); *United States v. Bryant* (2016); *McGirt v. Oklahoma* (2020); *United States v. Cooley* (2021); *Denezpi v. United States* (2022); *Oklahoma v. Castro-Huerta* (2022).
-
-**Child welfare.** *Fisher v. District Court* (1976); *Mississippi Band of Choctaw Indians v. Holyfield* (1989); *John v. Baker* (1999); *Haaland v. Brackeen* (2023).
-
-**Gaming.** **California v. Cabazon Band* of Mission Indians* (1987); *Seminole Tribe of Florida v. Florida* (1996); *AT&T Corp. v. Coeur d'Alene Tribe* (2002); *Michigan v. Bay Mills Indian Community* (2014); *Ysleta del Sur Pueblo v. Texas* (2022).
-
-## Threads for the model code
+## Threads for the Model Code
 
 ::: analysis
 **Forums and their legitimacy.** *Santa Clara Pueblo*, *Williams v. Lee*, *Fisher*, *Wheeler*, the Indian Tribal Justice Act and the 2000 act treat nonjudicial and traditional forums as part of a nation's justice system. The code can rely on that recognition.
@@ -1979,7 +2383,7 @@ The decisions in the boxes above are grouped here by the subject each bears on m
 **Peacemaking.** The leading national program says peacemaking is not ADR, so the code should treat it as each nation's own process.
 :::
 
-## Gaps and open questions
+## Gaps and Open Questions
 
 - The treaty clauses above are a sample of nine treaties. A full survey of dispute and injury clauses across Kappler's volume 2 has not been done, and each treaty's Kappler page is taken from the treaty database rather than a page image.
 - The Hawaiʻi entries rely on one treatise current to about 2014 and on primary records; the treatise's print page numbers are not yet available, so it is cited by chapter and section.
