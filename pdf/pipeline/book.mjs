@@ -66,8 +66,14 @@ export function assembleBook({ book, content: records }) {
   const printedGlossaryIds = new Set(entries.map((entry) => entry.id));
   if (entries.length) {
     const pieces = entries.map((entry) => {
-      const text = [entry.definition];
-      if (entry.usage_note) text.push(`*Usage.* ${entry.usage_note}`);
+      // Senses as a dictionary sets them: a bold colon before each, numbered when there are two or more.
+      const senses = [{ definition: entry.definition }, ...(entry.other_senses || [])];
+      const text = senses.map((sense, index) =>
+        [senses.length > 1 ? `**${index + 1}**` : "", sense.label ? `*${sense.label}*` : "", `**:** ${sense.definition}`]
+          .filter(Boolean)
+          .join(" "),
+      );
+      if (entry.usage_note) text.push(`*As used here.* ${entry.usage_note}`);
       if (entry.use_instead && entry.use_instead.length) {
         text.push(`*Use instead:* ${entry.use_instead.map((id) => `[[${id}]]`).join(", ")}.`);
       }
@@ -90,13 +96,14 @@ export function assembleBook({ book, content: records }) {
       for (const { document } of chapter.glossary) writer.numberNotes(document);
       for (const { entry, document } of chapter.glossary) {
         const expansion = entry.kind === "acronym" && entry.expansion ? content(entry.expansion) : "none";
+        const label = typstString(functionalLabel(entry));
         const usage = USAGE_LABELS[entry.usage] ? typstString(USAGE_LABELS[entry.usage]) : "none";
         const seeAlso = (entry.see_also || []).filter((id) => glossary.has(id));
         const seeAlsoMarkup = seeAlso.length
           ? `[${seeAlso.map((id) => `#link(<glossary-${id}>)[${escapeTypst(glossary.get(id).term)}]`).join(", ")}]`
           : "none";
         output.push(
-          `#glossary-entry(${content(entry.term)}, ${expansion}, ${usage}, ${seeAlsoMarkup})[${writer.write(document)}] <glossary-${entry.id}>`,
+          `#glossary-entry(${content(entry.term)}, ${label}, ${expansion}, ${usage}, ${seeAlsoMarkup})[${writer.write(document)}] <glossary-${entry.id}>`,
         );
       }
       continue;
@@ -118,4 +125,12 @@ export function assembleBook({ book, content: records }) {
     "",
   ].join("\n\n");
   return { body, warnings };
+}
+
+/** The italic label after a glossary headword, as the website shows it (site/src/lib/server/glossary-entries.ts). */
+function functionalLabel(entry) {
+  if (entry.kind === "acronym") return "abbreviation";
+  if (entry.kind === "phrase") return "phrase";
+  const partOfSpeech = entry.part_of_speech || "noun";
+  return entry.kind === "legal-term" ? `${partOfSpeech}, legal term` : partOfSpeech;
 }
