@@ -193,6 +193,22 @@ a:visited:focus-visible {
 	margin-bottom: 0;
 }
 
+/* A quotation in a teller's own words, with its credit underneath (story pages). */
+blockquote {
+	border-left: 4px solid var(--color-line);
+	margin: var(--space-3) 0;
+	padding: var(--space-1) 0 var(--space-1) var(--space-4);
+	max-width: var(--layout-measure);
+}
+
+blockquote > p {
+	margin: 0 0 var(--space-1);
+}
+
+blockquote > footer {
+	color: var(--color-ink-muted);
+}
+
 /* Panels: outlined or filled, one per purpose. */
 .panel {
 	border: 1px solid var(--color-line);

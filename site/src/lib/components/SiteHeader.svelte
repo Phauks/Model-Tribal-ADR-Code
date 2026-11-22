@@ -22,7 +22,7 @@
 	/**
 	 * "Report a problem" goes to the request form, where the reader picks
 	 * what is wrong, including "Add a nation that is missing". On a nation or
-	 * glossary page it names that record, so the report says which page it is
+	 * glossary page, or a story's page, it names that record, so the report says which page it is
 	 * about. Trevor asked on Nov. 22, 2026 for this one link in the masthead in
 	 * place of a link on each page.
 	 */
@@ -30,14 +30,17 @@
 		const path = page.url.pathname;
 		const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
 		const term = /^\/glossary\/([^/]+)$/.exec(path)?.[1];
+		const story = /^\/stories\/([^/]+)$/.exec(path)?.[1];
 		const record =
 			nation && nation !== 'map'
 				? `tribes/${nation}`
 				: term
 					? `glossary/${term}`
-					: path === '/glossary'
-						? 'glossary'
-						: undefined;
+					: story
+						? `stories/${story}`
+						: path === '/glossary' || path === '/stories'
+							? path.slice(1)
+							: undefined;
 		return record ? `/requests?record=${encodeURIComponent(record).replaceAll('%2F', '/')}` : '/requests';
 	});
 

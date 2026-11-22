@@ -48,7 +48,7 @@ Keeping the code and its commentary in separate parts also keeps their licenses 
 | Preface | Why the project exists, and the lead author's positionality statement ([charter, commitment 10](charter.md#10-positionality-and-transparency)) | To write |
 | How to use this book | A model, not law in force; adapt it through a nation's own law-making; how parts, divisions, alternatives and placeholders work | To write |
 | Words used in this book | Short note on terms, pointing to the glossary and [terminology rules](terminology.md) | To write |
-| Acknowledgments and credits | Contributors, reviewers and artists, credited as each chooses ([charter, commitment 7](charter.md#7-credit-authorship-and-art)) | Grows over time |
+| Acknowledgments and credits | Contributors, reviewers and artists, credited as each chooses ([charter, commitment 7](charter.md#7-credit-authorship-and-art)), and a land acknowledgment for the William S. Boyd School of Law | Started: land acknowledgment in [`content/front-matter/acknowledgments.md`](../content/front-matter/acknowledgments.md), on the website and in the book; credits grow over time |
 
 ### Part I. Foundations
 

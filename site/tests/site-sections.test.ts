@@ -20,12 +20,13 @@ describe('site sections for the sidebar', () => {
 		expect(sectionOf('/nations')?.label).toBe('Nations');
 		expect(sectionOf('/nations/navajo-nation')?.label).toBe('Nations');
 		expect(sectionOf('/glossary/adr')?.label).toBe('Glossary');
+		expect(sectionOf('/stories/some-story')?.label).toBe('Methods and stories');
 		expect(sectionOf('/')).toBeUndefined();
 		expect(sectionOf('/nationsx')).toBeUndefined();
 	});
 
 	it('links only sections whose pages exist', () => {
 		const built = siteSections.filter((section) => section.built).map((section) => section.link);
-		expect(built).toEqual(['/nations', '/glossary']);
+		expect(built).toEqual(['/stories', '/nations', '/glossary']);
 	});
 });

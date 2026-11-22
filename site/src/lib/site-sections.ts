@@ -34,7 +34,8 @@ export const siteSections: SiteSection[] = [
 	{ label: 'Peacemaking', link: '/peacemaking', built: false },
 	{ label: 'Foundations', link: '/foundations', built: false },
 	{ label: 'Essays', link: '/essays', built: false },
-	{ label: 'Methods and stories', link: '/methods', built: false },
+	// Only the stories are published so far; the methods catalog joins them later.
+	{ label: 'Methods and stories', link: '/stories', built: true },
 	{ label: 'Nations', link: '/nations', built: true },
 	{ label: 'Library', link: '/library', built: false },
 	{ label: 'Glossary', link: '/glossary', built: true },

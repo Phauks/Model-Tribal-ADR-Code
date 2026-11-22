@@ -10,6 +10,7 @@ import {
 	type CitedFact,
 	type NationRecord
 } from '#lib/server/content.ts';
+import { layoutPresenceMap } from '#lib/presence-map.ts';
 import { documentHistoriesFor } from '#lib/server/document-history.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
@@ -240,10 +241,13 @@ function recordedFeatures(record: NationRecord, sources: SourceUses): FactItem[]
 
 /**
  * The small map of the states where sources record the nation's presence
- * (decision record 0007: state presence only, never the nation's land). It
- * reuses the shapes of the nations map, simplified for a small drawing, and
- * is left out when no state is recorded.
+ * (state presence only, never the nation's land). It reuses the shapes of the
+ * nations map, simplified for a small drawing, and shows only the boxes that
+ * hold the nation's states, the main one zoomed to them (src/lib/presence-map.ts).
+ * It is left out when no state is recorded.
  */
+const zoomedPaths = new Map(geometry.zoomedStates.map((state) => [state.code, state.path]));
+
 function presenceMap(record: NationRecord, sources: SourceUses) {
 	const present = new Set((record.states ?? []).map((fact) => fact.state));
 	if (present.size === 0) return undefined;
@@ -252,14 +256,8 @@ function presenceMap(record: NationRecord, sources: SourceUses) {
 		text: 'state and territory outlines, through us-atlas 3.0.1'
 	});
 	return {
-		width: geometry.width,
-		height: geometry.height,
-		frames: geometry.frames.map(({ key, x, y, width, height }) => ({ key, x, y, width, height })),
-		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
-		states: geometry.smallStates
-			.map((shape) => ({ ...shape, name: stateName(shape.code), present: present.has(shape.code) }))
-			// Shaded states are drawn last, so their outlines sit on top of their neighbors'.
-			.sort((first, second) => Number(first.present) - Number(second.present))
+		...layoutPresenceMap(geometry.frames, geometry.smallStates, present, zoomedPaths),
+		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en'))
 	};
 }
 
