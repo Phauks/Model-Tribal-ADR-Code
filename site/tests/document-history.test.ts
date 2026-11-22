@@ -1,19 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import type { DocumentHistoryRecord } from '#lib/server/content.ts';
 import { documentHistoryView } from '#lib/server/document-history.ts';
+import { SourceUses } from '#lib/server/source-uses.ts';
 
+/** A Sources collector that cites each source by its key, so no source records are needed. */
 function recorder() {
-	const used: { key: string; section: string; text: string }[] = [];
-	return {
-		used,
-		add(key: string, use: { section: string; text: string }): number {
-			used.push({ key, section: use.section, text: use.text });
-			return new Set(used.map((entry) => entry.key)).size;
-		},
-		use(fact: { source?: string } | undefined, section: string, text: string) {
-			if (fact?.source) used.push({ key: fact.source, section, text });
-		}
-	};
+	return new SourceUses((key) => key);
 }
 
 const record: DocumentHistoryRecord = {
@@ -76,12 +68,29 @@ describe('documentHistoryView', () => {
 	it('lists every version and approval notice under the document in the Sources section', () => {
 		const sources = recorder();
 		documentHistoryView(record, sources);
-		expect(sources.used.map((use) => use.key)).toEqual([
+		expect(sources.list.map((entry) => entry.key)).toEqual([
 			'compact-1993',
 			'compact-2003',
 			'notice-2003',
 			'amendment-2009'
 		]);
-		expect(new Set(sources.used.map((use) => use.section))).toEqual(new Set([record.title]));
+		expect(new Set(sources.list.flatMap((entry) => entry.groups.map((group) => group.section)))).toEqual(
+			new Set([record.title])
+		);
+	});
+
+	it('gives each version a marker for its source and its approval notice, linked both ways', () => {
+		const sources = recorder();
+		const view = documentHistoryView(record, sources);
+		expect(view.versions[1].citations).toEqual([
+			{ number: 2, anchor: 'cite-2-1', where: undefined },
+			{ number: 3, anchor: 'cite-3-1', where: undefined }
+		]);
+		expect(sources.list.map((entry) => entry.backlinks)).toEqual([
+			['cite-1-1'],
+			['cite-2-1'],
+			['cite-3-1'],
+			['cite-4-1']
+		]);
 	});
 });

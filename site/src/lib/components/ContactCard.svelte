@@ -12,6 +12,7 @@
 	import Phone from '@lucide/svelte/icons/phone';
 	import Printer from '@lucide/svelte/icons/printer';
 	import type { ContactKind, ContactOffice } from '#lib/contact-card.ts';
+	import CitationMarks from './CitationMarks.svelte';
 
 	let { offices, headingLevel = 3 }: { offices: ContactOffice[]; headingLevel?: 3 | 4 } = $props();
 
@@ -44,7 +45,8 @@
 							{row.label}
 						</dt>
 						<dd>
-							{#if row.link}<a
+							<span class="contact-value"
+								>{#if row.link}<a
 									href={row.link}
 									target={row.external ? '_blank' : undefined}
 									rel={row.external ? 'noopener noreferrer' : undefined}
@@ -55,7 +57,8 @@
 										/><span class="visually-hidden"> (opens in a new tab)</span>{/if}</a
 								>{:else}<span
 									>{#each row.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}</span
-								>{/if}
+								>{/if}<CitationMarks marks={row.citations} /></span
+							>
 							{#if row.mapLink}
 								<a class="contact-map" href={row.mapLink} target="_blank" rel="noopener noreferrer">
 									<MapIcon size={18} strokeWidth={iconStroke} />
@@ -72,6 +75,19 @@
 </div>
 
 <style>
+	/*
+	 * A row's source marker stands apart from its links rather than inside a
+	 * sentence, so it gets the 24 pixel target WCAG 2.2, 2.5.8 asks for.
+	 */
+	.contact-row :global(.note-marker) {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		line-height: 24px;
+		text-align: center;
+		vertical-align: top;
+	}
+
 	.contact-offices {
 		display: grid;
 		gap: var(--space-4);
