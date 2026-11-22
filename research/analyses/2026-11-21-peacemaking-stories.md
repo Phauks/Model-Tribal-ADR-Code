@@ -220,9 +220,7 @@ story the nation chooses to share. Others to follow:
   contributor intake forms, rather than from the web (project analysis). The
   second search, which found program pages far more often than stories,
   supports this.
-- **Pulls.** The library copies, Westlaw searches and pages blocked to
-  automated requests are on the lead author's list of documents to get by
-  hand (`research/documents-to-get.md` in the project's working files).
+- **Pulls.** The library copies, Westlaw searches and pages blocked to automated requests are on the lead author's list of documents to get by hand (`research/documents-to-get.md` in the project's working files).
 
 ## 8. Second search: more nations
 
