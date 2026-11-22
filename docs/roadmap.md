@@ -76,16 +76,11 @@ Gate 1 is passed when Trevor has:
    *Decided Nov. 21, 2026: a separate field,
    `dispute_resolution.database_listings`
    ([decision record 0015](decisions/0015-database-listings-apart-from-provisions.md)).*
-2. **Triaged the bulk records** in line with that decision: kept, relabeled or
-   dropped. Sampling is acceptable if the sample and its result are recorded.
-   *Decided Nov. 22, 2026: the pre-review's recommendations accepted, with diversion to a consensual process and restorative justice kept; 258 listings and 229 provisions remain, and 41 records wait for their sources ([decision record 0027](decisions/0027-diversion-and-restorative-justice-in-the-research-base.md)).*
+2. **Triaged the bulk records** in line with that decision: kept, relabeled or dropped. Sampling is acceptable if the sample and its result are recorded. *Decided Nov. 22, 2026: the pre-review's recommendations accepted, with diversion to a consensual process and restorative justice kept; 258 listings and 229 provisions remain, and 41 records wait for their sources ([decision record 0027](decisions/0027-diversion-and-restorative-justice-in-the-research-base.md)).*
 3. **Confirmed the text-read tier** for every record a draft is likely to rely
    on: forums, clauses and text-read provisions, re-reading OCR and
    summary-tool reads where they matter (analysis, review queue item 10).
-4. **Resolved the duplicates**: 71 repeated provision titles, four doubled
-   source records and forums recorded under two kinds (review queue items 3
-   to 5).
-   *Provision duplicates removed Nov. 22, 2026 (decision record 0027).*
+4. **Resolved the duplicates**: 71 repeated provision titles, four doubled source records and forums recorded under two kinds (review queue items 3 to 5). *Provision duplicates removed Nov. 22, 2026 (decision record 0027).*
 5. **Decided how bands inside one profile are counted**, starting with the
    Minnesota Chippewa Tribe profile (review queue item 7).
    *Decided Nov. 21, 2026: each of the six component bands has its own
