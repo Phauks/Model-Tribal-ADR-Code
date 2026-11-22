@@ -12,12 +12,13 @@ function field(value: string): string {
 }
 
 export const GET: RequestHandler = () => {
-	const header = ['identifier', 'name', 'group', 'recognition', 'legal_basis', 'states', 'review_status', 'page'];
+	const header = ['identifier', 'name', 'listed_name', 'group', 'recognition', 'legal_basis', 'states', 'review_status', 'page'];
 	// Addresses are written from the site's root, since the file is built before the site has a domain.
 	const lines = nationIndexRows().map((row) =>
 		[
 			row.id,
 			row.name,
+			row.listedName,
 			entityTypeLabels[row.entityType] ?? row.entityType,
 			row.recognition.map((view) => view.label).join('; '),
 			row.recognition

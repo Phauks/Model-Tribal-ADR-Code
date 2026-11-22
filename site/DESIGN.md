@@ -170,15 +170,11 @@ distinctive about each nation.
 nation's staff always know where to look, as the Tribal Law Gateway does with
 its fixed sections on each nation's page:
 
-1. Name as the recognizing list gives it, and the nation's own name for
-   itself, exactly as the nation writes it, once the nation confirms it. Beside it, the nation's seal or
-   logo when its reuse status allows showing it, credited to the nation's
-   website, with a link to ask for its removal
-   ([official-images.md](../docs/official-images.md)).
+1. The nation's name, and the nation's own name for itself, exactly as the nation writes it, once the nation confirms it. The name shown, in the title and in every list, is the name on the recognizing list without the states the list adds after a comma: "Navajo Nation, Arizona, New Mexico, & Utah" shows as "Navajo Nation" (Trevor, Nov. 22, 2026; `displayName` in `src/lib/nation-labels.ts`). A state that belongs to the name stays, as in "Paiute Indian Tribe of Utah". When the two differ, a line under the title gives the listed name, which the search also finds and the CSV download keeps. Beside it, the nation's seal or logo when its reuse status allows showing it, credited to the nation's website, with a link to ask for its removal ([official-images.md](../docs/official-images.md)).
 2. Review panel: the review status (drafted from public sources, sent to the
    nation, reviewed by the nation, approved by the nation), what that means,
    and "Is this about your nation? Make a request."
-3. What is distinctive here (below).
+3. About this Nation (below; called "What is distinctive here" until Trevor renamed it on Nov. 22, 2026).
 4. At a glance: a small map of the states with a presence, then recognition,
    states with a presence, government contacts, federal region.
 5. Courts and dispute resolution: each forum with its kind, source and date.
@@ -189,9 +185,9 @@ its fixed sections on each nation's page:
 9. Sources, each followed by the facts on the page that come from it, and
    the date the page was last checked.
 
-Each section from "What is distinctive here" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review panel stays open.
+Each section from "About this Nation" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review panel stays open.
 
-**What is distinctive here** has two parts:
+**About this Nation** has two parts:
 
 - **In the nation's own words.** A short description the nation writes or
   approves. Until then the space says so and offers a link to contribute;

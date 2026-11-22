@@ -87,7 +87,7 @@
 		grid-template-columns: minmax(0, var(--layout-measure)) minmax(14rem, 1fr);
 		gap: var(--space-5) var(--space-7);
 		align-items: center;
-		margin-bottom: var(--space-6);
+		margin: var(--space-5) 0 var(--space-6);
 	}
 
 	.home-logo {

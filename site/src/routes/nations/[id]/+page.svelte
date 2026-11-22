@@ -64,7 +64,11 @@
 			</figure>
 		{/if}
 		{#if !page.withdrawn}
-			<p class="small muted">Name as the recognizing list gives it.</p>
+			{#if page.listedName !== page.officialName}
+				<p class="small muted">Listed as “{page.listedName}” on the list that recognizes it.</p>
+			{:else}
+				<p class="small muted">Name as the recognizing list gives it.</p>
+			{/if}
 			{#each data.selfDesignations as designation (designation.name)}
 				<p class="lead" lang={designation.languageTag}>{designation.name}</p>
 			{/each}
@@ -93,8 +97,8 @@
 		</section>
 
 		{#if !page.withdrawn}
-			<!-- 3. What is distinctive here -->
-			<Collapsible heading="What is distinctive here" identifier="distinctive-heading">
+			<!-- 3. About this Nation (formerly "What is distinctive here") -->
+			<Collapsible heading="About this Nation" identifier="about-heading">
 				<h3>In the nation’s own words</h3>
 				<p class="muted">
 					This space is for a short description that the nation writes or approves. The project does not
@@ -137,7 +141,6 @@
 			<!-- 6. Published dispute resolution law: linked, not reproduced -->
 			{#if data.law.length > 0}
 				<Collapsible heading="Published law" identifier="law-heading">
-					<p class="small muted">Laws are linked, not reproduced, until the nation permits more.</p>
 					<FactGroups groups={data.law} />
 				</Collapsible>
 			{/if}

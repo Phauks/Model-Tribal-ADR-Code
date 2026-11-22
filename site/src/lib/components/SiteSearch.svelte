@@ -155,6 +155,11 @@
 		opacity: 1;
 	}
 
+	/* The close button already clears and folds the box; one X is enough. */
+	.site-search input::-webkit-search-cancel-button {
+		appearance: none;
+	}
+
 	.site-search button {
 		display: inline-flex;
 		align-items: center;
