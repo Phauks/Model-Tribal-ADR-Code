@@ -8,17 +8,15 @@
 	// in place of a fact.
 	import { backlinkLetter, sourceAnchor } from '#lib/citation-marks.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
+	import Collapsible from './Collapsible.svelte';
 
-	let {
-		sources,
-		introduction = 'Each source below is followed by the facts on this page that come from it.'
-	}: { sources: SourceEntry[]; introduction?: string } = $props();
+	// Trevor asked on Nov. 22, 2026 that the section carry no sentence explaining it.
+	let { sources }: { sources: SourceEntry[] } = $props();
 </script>
 
 {#if sources.length > 0}
-	<section class="notes" aria-labelledby="sources-heading" data-print-part="sources">
-		<h2 id="sources-heading">Sources</h2>
-		<p>{introduction}</p>
+	<div class="notes" data-print-part="sources">
+	<Collapsible heading="Sources" identifier="sources-heading">
 		<ol class="source-list">
 			{#each sources as source (source.key)}
 				<li id={sourceAnchor(source.number)}>
@@ -49,5 +47,6 @@
 				</li>
 			{/each}
 		</ol>
-	</section>
+	</Collapsible>
+	</div>
 {/if}

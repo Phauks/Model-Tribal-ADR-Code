@@ -2,8 +2,8 @@ import { error, json } from '@sveltejs/kit';
 import { nations } from '#lib/server/content.ts';
 import type { EntryGenerator, RequestHandler } from './$types';
 
-// One nation's record as JSON, for the Download button on its page
-// (PageTools.svelte). Only published records are built, the same ones the
+// One nation's record as JSON, for the masthead's Download link on its page
+// (src/lib/page-downloads.ts). Only published records are built, the same ones the
 // page shows; the record carries every fact's citation.
 export const prerender = true;
 

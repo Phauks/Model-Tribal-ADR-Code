@@ -38,7 +38,7 @@ const recognitionTypeLabels: Record<string, string> = {
 	federal: 'Federally recognized',
 	state: 'State recognized',
 	petitioning: 'Petitioning for federal acknowledgment',
-	unrecognized: 'No current recognition',
+	unrecognized: 'No federal recognition',
 	'congressional-special-relationship': 'Special relationship recognized by Congress',
 	'territorial-law': 'Status under territorial law'
 };
@@ -71,6 +71,33 @@ export const stateNames: Record<string, string> = {
 
 export function stateName(code: string): string {
 	return stateNames[code] ?? code;
+}
+
+const stateNamePattern = Object.values(stateNames)
+	.map((name) => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+	.sort((first, second) => second.length - first.length)
+	.join('|');
+/** ", Arizona, New Mexico, & Utah" or ", Nevada and Utah" at the end of a name. */
+const trailingStates = new RegExp(`,\\s*(?:${stateNamePattern})(?:(?:,\\s*|,?\\s+(?:&|and)\\s+)(?:${stateNamePattern}))*\\s*$`, 'u');
+/** A name whose last words before the list are "of <State>", as in "Fort Mojave Indian Tribe of Arizona, California & Nevada". */
+const endsWithOfState = new RegExp(`\\bof\\s+(?:the\\s+State\\s+of\\s+)?(?:${stateNamePattern})$`, 'u');
+
+/**
+ * A nation's name as pages show it: the name on the recognizing list without
+ * the states the list adds after a comma, so "Navajo Nation, Arizona, New
+ * Mexico, & Utah" shows as "Navajo Nation" (Trevor, Nov. 22, 2026). States
+ * that belong to the name itself stay: "Paiute Indian Tribe of Utah" has no
+ * comma, and "Fort Mojave Indian Tribe of Arizona, California & Nevada" is
+ * left whole because its list continues an "of Arizona". The listed name
+ * stays in the record and is shown on the nation's page.
+ */
+export function displayName(listedName: string): string {
+	const name = listedName.trim().replace(/,$/, '').trim();
+	const match = trailingStates.exec(name);
+	if (!match) return name;
+	const before = name.slice(0, match.index).trim();
+	if (before === '' || endsWithOfState.test(before)) return name;
+	return before;
 }
 
 /**
