@@ -135,6 +135,14 @@ contacts:
   as_of: '2026-11-20'
   locator: Rincon Band of Luiseno Indians (previously listed as Rincon Band of Luiseno Mission Indians
     of Rincon Reservation, California)
+- kind: contact-page
+  value: https://rincon-nsn.gov/government/contact-us/
+  label: Contact page on the nation's website
+  source: rincon-nsn-government-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Us – The Rincon Band of Luiseño Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://rincon-nsn.gov/wp-content/uploads/2019/05/cropped-RinconIcon.png

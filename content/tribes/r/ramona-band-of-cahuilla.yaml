@@ -121,6 +121,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
+- kind: contact-page
+  value: https://ramona-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: ramona-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact – Ramona Band of Cahuilla". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: admin@ramona-nsn.gov
+  label: General office email shown on the nation's website
+  source: ramona-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://ramona-nsn.gov/wp-content/uploads/2025/06/apple-touch-icon.png

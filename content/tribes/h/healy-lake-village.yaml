@@ -141,6 +141,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Healy Lake Village" (community: Healy Lake, object 74)'
+- kind: email-general
+  value: info@healylake.org
+  label: General office email shown on the nation's website
+  source: healylake-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/v1/5f4708d785ed353c33eddd26/1602201545077-S556I0TXG8FQU59EL9G9/favicon.ico

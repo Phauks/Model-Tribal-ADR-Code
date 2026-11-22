@@ -133,6 +133,14 @@ contacts:
   locator: 'record "Algaaciq Native Village" (community: St. Mary''s, object 193)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.algaaciq.org/contact/
+  label: Contact page on the nation's website
+  source: algaaciq-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Algaaciq Tribal Government - St. Mary's, Alaska". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: ATG logo

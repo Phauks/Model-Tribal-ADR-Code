@@ -122,6 +122,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Penobscot Nation
+- kind: contact-page
+  value: https://www.penobscotnation.org/contact_us/index.php
+  label: Contact page on the nation's website
+  source: penobscotnation-contact-us-index-php
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Penobscot Nation, ME". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Penobscot Nation, ME

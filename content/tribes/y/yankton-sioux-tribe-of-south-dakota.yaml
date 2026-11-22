@@ -138,6 +138,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yankton Sioux Tribe of South Dakota
+- kind: contact-page
+  value: https://www.yanktonsiouxtribe.net/contact-us
+  label: Contact page on the nation's website
+  source: yanktonsiouxtribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us — Yankton Sioux Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/v1/536a55bce4b02107859b5875/923ff04d-6bbb-4f58-b4a9-36cd4f8a2926/YST_Logo2017.jpg?format=2500w

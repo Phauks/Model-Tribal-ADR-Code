@@ -130,6 +130,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Knik Tribe" (community: Wasilla, object 226)'
+- kind: email-general
+  value: info@kniktribe.org
+  label: General office email shown on the nation's website
+  source: kniktribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/d8a3e1_95beffd1cfd44adc90bca1cde694a084~mv2.png

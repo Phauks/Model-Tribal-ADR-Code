@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
+- kind: contact-page
+  value: https://www.karuk.us/contact
+  label: Contact page on the nation's website
+  source: karuk-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Karuk Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Untitled UI logomark

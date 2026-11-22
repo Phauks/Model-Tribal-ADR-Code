@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Puyallup Tribe of the Puyallup Reservation
+- kind: email-general
+  value: info@puyalluptribe-nsn.gov
+  label: General office email shown on the nation's website
+  source: puyalluptribe-nsn-directory-faqs
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Puyallup Tribe

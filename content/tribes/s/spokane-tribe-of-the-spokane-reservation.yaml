@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Spokane Tribe of the Spokane Reservation
+- kind: contact-page
+  value: https://www.spokanetribe.com/contact-us/
+  label: Contact page on the nation's website
+  source: spokanetribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT US". Its title is "CONTACT US – Spokane Tribe of Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.spokanetribe.com/wp-content/uploads/2020/01/Spokane-Tribe-of-Indians-Footer-Logo.png

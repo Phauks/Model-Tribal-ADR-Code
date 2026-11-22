@@ -1,0 +1,21 @@
+profile: content/tribes/e/esselen-coastanoan-tribe-of-monterey-county.yaml
+topic: contacts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Esselen/Coastanoan Tribe of Monterey County official website contact
+  outcome: found
+  reason: Returned esselentribe.org pages; the group's own site uses the name Esselen Tribe of Monterey County.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://esselentribe.org/
+  query: official website, contact page, general email
+  outcome: found
+  reason: Claude found the site by web search; a script opened it and found each value on the page named.

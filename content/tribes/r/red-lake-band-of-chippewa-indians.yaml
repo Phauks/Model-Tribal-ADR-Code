@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Lake Band of Chippewa Indians, Minnesota
+- kind: contact-page
+  value: https://www.redlakenation.org/contact-us/
+  label: Contact page on the nation's website
+  source: redlakenation-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". The page answered with a bot check, so only the link was read. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Red Lake Nation Logo

@@ -128,6 +128,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Village of Salamatoff" (community: Salamatof, object 177)'
+- kind: contact-page
+  value: https://www.salamatof.com/contactus
+  label: Contact page on the nation's website
+  source: salamatof-contactus
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | SNAI". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@salamatof.com
+  label: General office email shown on the nation's website
+  source: salamatof-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office

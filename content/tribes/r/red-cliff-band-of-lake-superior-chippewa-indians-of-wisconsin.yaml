@@ -140,6 +140,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
+- kind: contact-page
+  value: https://www.redcliff-nsn.gov/how_do_i/citizen_comment_center.php
+  label: Contact page on the nation's website
+  source: redcliff-nsn-how-do-i-citizen-comment-center-php
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Welcome to Red Cliff Band of Lake Superior Chippewa". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: navigation logo

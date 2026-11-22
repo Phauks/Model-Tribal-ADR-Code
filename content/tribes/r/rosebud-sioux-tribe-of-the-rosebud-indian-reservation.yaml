@@ -148,6 +148,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
+- kind: email-general
+  value: info@rst-nsn.gov
+  label: General office email shown on the nation's website
+  source: rosebudsiouxtribe-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/ed1fef_ba00136e98dd44fd9105b5955d6de3c0%7Emv2_d_1700_1700_s_2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/ed1fef_ba00136e98dd44fd9105b5955d6de3c0%7Emv2_d_1700_1700_s_2.png

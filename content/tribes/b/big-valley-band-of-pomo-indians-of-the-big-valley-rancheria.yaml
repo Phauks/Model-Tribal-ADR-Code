@@ -111,6 +111,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+- kind: contact-page
+  value: https://www.bvrancheria.com/contact
+  label: Contact page on the nation's website
+  source: bvrancheria-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Big Valley Pomo". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/d9f60b_18ab916a08a1496abdf983064fd80f19%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/d9f60b_18ab916a08a1496abdf983064fd80f19%7Emv2.png

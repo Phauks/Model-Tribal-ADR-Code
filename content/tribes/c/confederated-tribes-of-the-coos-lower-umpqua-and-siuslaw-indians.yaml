@@ -130,6 +130,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+- kind: contact-page
+  value: https://ctclusi.org/contact-us/
+  label: Contact page on the nation's website
+  source: ctclusi-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians

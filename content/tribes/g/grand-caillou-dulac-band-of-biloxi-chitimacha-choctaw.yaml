@@ -103,6 +103,14 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+- kind: email-general
+  value: gcdbcc1@gmail.com
+  label: General office email shown on the nation's website
+  source: gcdbcc-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://primary.jwwb.nl/public/g/v/m/temp-rsswgmnhrylmygcufdqw/gcd-tribal-logo-2026-high.jpg?enable-io=true&enable=upscale&height=60

@@ -152,6 +152,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Muscogee (Creek) Nation
+- kind: contact-page
+  value: https://www.muscogeenation.com/emergency-contacts/
+  label: Contact page on the nation's website
+  source: muscogeenation-emergency-contacts
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "EMERGENCY CONTACTS". Its title is "Emergency Contacts | MuscogeeNation.com :MuscogeeNation.com". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: Great Seal of the Muscogee Nation

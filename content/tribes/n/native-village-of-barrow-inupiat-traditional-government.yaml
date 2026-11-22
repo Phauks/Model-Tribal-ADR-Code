@@ -144,6 +144,14 @@ contacts:
     221)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://nvb-nsn.gov/contact-us/
+  label: Contact page on the nation's website
+  source: nvb-nsn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "contact us". Its title is "Native Village of Barrow | Contact Us". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://nvb-nsn.gov/wp-content/uploads/2024/09/nvb_white-logo.webp

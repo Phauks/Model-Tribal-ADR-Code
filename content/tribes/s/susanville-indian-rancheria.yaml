@@ -130,6 +130,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Susanville Indian Rancheria, California
+- kind: contact-page
+  value: https://www.sir-nsn.gov/contact.html
+  label: Contact page on the nation's website
+  source: sir-nsn-contact-html
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | SIR | Susanville Indian Rancheria". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: tribaloffice@sir-nsn.gov
+  label: General office email shown on the nation's website
+  source: sir-nsn-contact-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Sir Logo

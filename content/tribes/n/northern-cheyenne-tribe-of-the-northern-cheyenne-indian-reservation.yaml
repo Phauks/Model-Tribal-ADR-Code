@@ -159,6 +159,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana
+- kind: contact-page
+  value: https://www.cheyennenation.com/contact.html
+  label: Contact page on the nation's website
+  source: cheyennenation-contact-html
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact". Found by scripts/tribes/find_contacts.py.
 federal_administration:
   bureau_of_indian_affairs_region: Rocky Mountain
   bureau_of_indian_affairs_agency: Northern Cheyenne Agency

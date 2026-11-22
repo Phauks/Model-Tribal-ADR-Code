@@ -111,6 +111,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
+- kind: contact-page
+  value: https://www.quinaultindiannation.com/m/directory
+  label: Contact page on the nation's website
+  source: quinaultindiannation-m-directory
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Staff Directory • Quinault Indian Nation, WA • CivicEngage". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Home Page

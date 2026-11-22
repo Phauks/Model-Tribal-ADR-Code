@@ -137,6 +137,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Nebraska
+- kind: contact-page
+  value: https://poncatribe-ne.gov/contact/
+  label: Contact page on the nation's website
+  source: poncatribe-ne-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Ponca Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@poncatribe-ne.gov
+  label: General office email shown on the nation's website
+  source: ponca-tribe-of-nebraska-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://poncatribe-ne.gov/wp-content/uploads/2026/06/apple-touch-icon.png

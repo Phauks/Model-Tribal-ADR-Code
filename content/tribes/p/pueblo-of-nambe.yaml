@@ -139,6 +139,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Nambe, New Mexico
+- kind: contact-page
+  value: https://www.nambepueblo.org/contact-us/
+  label: Contact page on the nation's website
+  source: nambepueblo-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Nambé Pueblo | Nambé Falls – Contact Us". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Nambé Pueblo | Nambé Falls

@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sault Ste. Marie Tribe of Chippewa Indians, Michigan
+- kind: contact-page
+  value: https://www.saulttribe.com/about-us/contact-us
+  label: Contact page on the nation's website
+  source: saulttribe-about-us-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - The Sault Tribe of Chippewa Indians Official Web Site". Found by scripts/tribes/find_contacts.py.
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency

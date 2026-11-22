@@ -122,6 +122,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cayuga Nation
+- kind: contact-page
+  value: https://cayuganation-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: cayuganation-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact – Cayuga Nation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://cayuganation-nsn.gov/wp-content/uploads/2026/06/site-logo-light-300x96.png

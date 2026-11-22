@@ -142,6 +142,14 @@ contacts:
   locator: 'record "Craig Tribal Association" (community: Craig, object 45)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: http://www.craigtribe.org/contact.html
+  label: Contact page on the nation's website
+  source: craigtribe-contact-html
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://nebula.wsimg.com/5e8dfbe22c27f6a84195e734584e8286?AccessKeyId=2096B79E07C2F274F44C&disposition=0&alloworigin=1

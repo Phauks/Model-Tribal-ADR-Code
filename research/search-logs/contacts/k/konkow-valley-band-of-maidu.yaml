@@ -1,0 +1,21 @@
+profile: content/tribes/k/konkow-valley-band-of-maidu.yaml
+topic: contacts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Konkow Valley Band of Maidu official website contact
+  outcome: found
+  reason: Returned the tribe's Google Sites home page, which lists the phone and Oroville address.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://sites.google.com/view/konkowvalleybandofmaiduindians/home
+  query: official website, contact page, general email
+  outcome: found
+  reason: Claude found the site by web search; a script opened it and found each value on the page named.

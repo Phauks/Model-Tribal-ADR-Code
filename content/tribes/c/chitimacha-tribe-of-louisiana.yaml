@@ -129,6 +129,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.chitimacha.gov/about-us/contact-us
+  label: Contact page on the nation's website
+  source: chitimacha-about-us-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Chitimacha Tribe of Louisiana". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Home

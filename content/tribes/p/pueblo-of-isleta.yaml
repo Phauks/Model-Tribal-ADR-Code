@@ -122,6 +122,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
+- kind: contact-page
+  value: https://www.isletapueblo.com/contact-us/
+  label: Contact page on the nation's website
+  source: isletapueblo-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Isleta Pueblo". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.isletapueblo.com/wp-content/uploads/2018/07/Pueblo-of-Isleta-logomark-300x300.png

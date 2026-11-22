@@ -154,6 +154,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.cheyenneandarapaho-nsn.gov/contact
+  label: Contact page on the nation's website
+  source: cheyenneandarapaho-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact | Cheyenne and Arapaho Tribes". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://cdn.prod.website-files.com/625854e97e951a489dc03c1c/625854e97e951a15ecc03cbc_Tribes-LogoRB_reverse.png

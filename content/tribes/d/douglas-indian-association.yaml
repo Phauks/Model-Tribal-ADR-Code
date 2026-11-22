@@ -112,6 +112,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Douglas Indian Association
+- kind: contact-page
+  value: https://diataku.com/contact/
+  label: Contact page on the nation's website
+  source: diataku-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT". Its title is "Contact - Douglas Indian Association - DIATaku". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Douglas Indian Association – DIATaku Logo

@@ -121,6 +121,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
+- kind: contact-page
+  value: https://northforkrancheria-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: northforkrancheria-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact – North Fork Rancheria of Mono Indians of California". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: nfrancheria@nfr-nsn.gov
+  label: General office email shown on the nation's website
+  source: northforkrancheria-nsn-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 languages:
 - name: Nim (Mono)
   language_tag: mnr

@@ -25,6 +25,31 @@ states:
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+contacts:
+- kind: website
+  value: https://gabrielinotongva.org
+  label: Official website
+  source: gabrielinotongva-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://gabrielinotongva.org/contact/
+  label: Contact page on the nation's website
+  source: gabrielinotongva-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: email-general
+  value: info@gabrielinotongva.org
+  label: General office email shown on the nation's website
+  source: gabrielinotongva-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address as shown on the page.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

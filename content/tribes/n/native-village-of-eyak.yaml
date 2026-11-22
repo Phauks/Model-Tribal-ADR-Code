@@ -139,6 +139,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Native Village of Eyak" (community: Eyak, object 61)'
+- kind: contact-page
+  value: https://www.eyak-nsn.gov/contact-us/
+  label: Contact page on the nation's website
+  source: eyak-nsn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Native Village of Eyak - Contact Us". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@eyak-nsn.gov
+  label: General office email shown on the nation's website
+  source: eyak-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.eyak-nsn.gov/wp-content/uploads/2020/07/NVE-LOGO.jpg

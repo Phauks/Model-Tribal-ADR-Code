@@ -121,6 +121,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.chehalistribe.org/contact/
+  label: Contact page on the nation's website
+  source: chehalistribe-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Chehalis Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.chehalistribe.org/wp-content/uploads/2025/02/chehalis-footer-logo.svg

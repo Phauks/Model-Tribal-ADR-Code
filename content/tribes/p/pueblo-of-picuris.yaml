@@ -111,6 +111,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Picuris, New Mexico
+- kind: contact-page
+  value: https://www.picurispueblo.org/contact
+  label: Contact page on the nation's website
+  source: picurispueblo-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: 'The nation''s own website links this page as "Contact". Its title is "Contact :: Picuris Pueblo". Found by scripts/tribes/find_contacts.py.'
 official_images:
 - kind: logo
   image_link: https://cdn.prod.website-files.com/680942b8c276b52337ba073d/69fb73c864eb2e1d1386b634_Picuris%20LogoWeb.png

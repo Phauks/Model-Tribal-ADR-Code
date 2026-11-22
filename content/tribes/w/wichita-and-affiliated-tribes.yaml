@@ -152,6 +152,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+- kind: contact-page
+  value: https://wichitatribe.com/contact/
+  label: Contact page on the nation's website
+  source: wichitatribe-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Wichita and Affiliated Tribes". Found by scripts/tribes/find_contacts.py.
 tribal_insignia_database_entries:
 - serial_number: '89003191'
   wordmark: SEAL OF THE WICHITA AND AFFILIATED TRIBES

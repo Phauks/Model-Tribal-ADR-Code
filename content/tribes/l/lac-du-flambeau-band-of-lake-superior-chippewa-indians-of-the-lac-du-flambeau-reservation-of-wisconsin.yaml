@@ -127,6 +127,14 @@ contacts:
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
+- kind: contact-page
+  value: https://ldftribe.com/contact/
+  label: Contact page on the nation's website
+  source: ldftribe-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact - Lac du Flambeau Band of Lake Superior Chippewa Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://ldftribe.com/wp-content/uploads/2026/04/LDF-Mobile-Logo-1-1536x506.png

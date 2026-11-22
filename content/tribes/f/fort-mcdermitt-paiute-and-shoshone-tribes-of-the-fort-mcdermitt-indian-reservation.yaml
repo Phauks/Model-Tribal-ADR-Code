@@ -161,6 +161,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.fmpst.org/contact-us-1
+  label: Contact page on the nation's website
+  source: fmpst-contact-us-1
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT US". Its title is "Contact 2 — Fort McDermitt Paiute". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/v1/66be51ae58bde40037ec818b/9c4a19ca-24cf-4826-b1e8-d245d59c26b8/FMPST+Logo_Feather.png?format=1500w

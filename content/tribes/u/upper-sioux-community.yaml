@@ -127,6 +127,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Upper Sioux Community, Minnesota
+- kind: contact-page
+  value: https://www.uppersiouxcommunity-nsn.gov/contact-us
+  label: Contact page on the nation's website
+  source: uppersiouxcommunity-nsn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Upper Sioux Community Pezihutazizi Oyate". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Upper Sioux Community Pezihutazizi Oyate - Any Estimate, Anywhere, Any Time

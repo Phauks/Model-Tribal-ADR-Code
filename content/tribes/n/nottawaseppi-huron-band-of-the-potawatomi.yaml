@@ -133,6 +133,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+- kind: contact-page
+  value: https://nhbp-nsn.gov/contact-us/
+  label: Contact page on the nation's website
+  source: nhbp-nsn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact | NHBP". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://nhbp-nsn.gov/wp-content/uploads/2017/05/cropped-abbreviated-NHBP-logo_color-180x180.png

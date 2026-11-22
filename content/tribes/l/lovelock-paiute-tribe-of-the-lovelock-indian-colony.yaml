@@ -131,6 +131,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+- kind: contact-page
+  value: https://www.paiutetribelovelock.org/contact-us.html
+  label: Contact page on the nation's website
+  source: paiutetribelovelock-contact-us-html
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Picture

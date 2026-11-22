@@ -130,6 +130,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Prairie Band Potawatomi Nation
+- kind: contact-page
+  value: https://www.pbpindiantribe.com/contact-us
+  label: Contact page on the nation's website
+  source: pbpindiantribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Prairie Band Potawatomi Nation - Prairie Band Potawatomi Nation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.pbpindiantribe.com/media/Favicon/fav-iconPBPN.ico?v=jjMgCmiRsyB8t2KYexVtVcttws4pzRInhffD1qhvero

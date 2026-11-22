@@ -178,6 +178,14 @@ contacts:
   locator: 'record "Galena Village" (community: Galena, object 65)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.loudentribe.org/contact-1
+  label: Contact page on the nation's website
+  source: loudentribe-contact-1
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact 1 — Louden Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Louden Tribe

@@ -140,6 +140,14 @@ contacts:
   locator: 'record "Pedro Bay Village" (community: Pedro Bay, object 158)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.pedrobaycorp.com/contact
+  label: Contact page on the nation's website
+  source: pedrobaycorp-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact — Pedro Bay Corporation". Found by scripts/tribes/find_contacts.py.
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office

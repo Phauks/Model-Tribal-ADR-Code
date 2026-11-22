@@ -170,6 +170,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
+- kind: email-general
+  value: info@fortpecktribes.net
+  label: General office email shown on the nation's website
+  source: fortpecktribes-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 federal_administration:
   bureau_of_indian_affairs_region: Rocky Mountain
   bureau_of_indian_affairs_agency: Fort Peck Agency

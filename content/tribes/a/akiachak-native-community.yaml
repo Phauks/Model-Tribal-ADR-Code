@@ -140,6 +140,14 @@ contacts:
   locator: 'record "Akiachak Native Community" (community: Akiachak, object 3)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://akiachak.org/index.php/contact-information/
+  label: Contact page on the nation's website
+  source: akiachak-index-php-contact-information
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Information – Akiachak Native Community". Found by scripts/tribes/find_contacts.py.
 languages:
 - name: Central Yup'ik
   language_tag: esu

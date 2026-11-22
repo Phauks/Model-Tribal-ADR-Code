@@ -113,6 +113,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Squaxin Island Tribe of the Squaxin Island Reservation
+- kind: contact-page
+  value: https://squaxinisland.org/community/contact-information/
+  label: Contact page on the nation's website
+  source: squaxinisland-community-contact-information
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Information – Squaxin Island Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://squaxinisland.org/wp-content/uploads/2025/11/Official-SIT-Logo-solo-300x236.png

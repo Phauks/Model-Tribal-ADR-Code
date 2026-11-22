@@ -128,6 +128,22 @@ contacts:
   verification: bulk-import
   as_of: 2026-10
   note: Listed beside the chief's name; recorded as the nation's contact address.
+- kind: contact-page
+  value: https://www.mowachoctawindians.com/contact
+  label: Contact page on the nation's website
+  source: mowachoctawindians-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact — MOWA Band of Choctaw Indians". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: office@mowachoctaw.org
+  label: General office email shown on the nation's website
+  source: mowachoctawindians-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/v1/671186b3fb2fda640b27386c/c23939f5-0ef5-4a98-b692-ec04a9a36162/MOWA+Logo+.png?format=1500w
