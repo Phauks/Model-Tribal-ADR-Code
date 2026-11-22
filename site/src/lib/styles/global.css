@@ -66,8 +66,10 @@ a {
 	text-underline-offset: 0.18em;
 }
 
+/* Visited links keep the link color (Trevor, 2026-11-22): the site is a
+ * reference that readers return to, and a second color only adds noise. */
 a:visited {
-	color: var(--color-link-visited);
+	color: var(--color-link);
 }
 
 a:hover {

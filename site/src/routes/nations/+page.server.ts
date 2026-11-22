@@ -1,25 +1,16 @@
 import { nations } from '#lib/server/content.ts';
-import { entityTypeLabels, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
+import { groupsOf, letterLinks, nationIndexRows, stateLinks } from '#lib/server/nation-index.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = () => {
-	const records = nations();
-	const groups = Object.keys(entityTypeLabels)
-		.map((entityType) => ({
-			entityType,
-			label: entityTypeLabels[entityType],
-			rows: records
-				.filter((record) => record.entity_type === entityType)
-				.map((record) => ({
-					id: record.id,
-					name: record.names.official,
-					states: [...new Set((record.states ?? []).map((fact) => fact.state))]
-						.map(stateName)
-						.join(', '),
-					review: reviewStatusLabels[record.review?.status]?.label ?? record.review?.status ?? ''
-				}))
-		}))
-		.filter((group) => group.rows.length > 0);
-
-	return { groups, example: records.some((record) => record.example) };
+	const rows = nationIndexRows();
+	return {
+		total: rows.length,
+		letters: letterLinks(),
+		states: stateLinks(),
+		// The small groups are listed here in full; the Native nations are browsed by letter or state.
+		otherGroups: groupsOf(rows.filter((row) => row.entityType !== 'native-nation')),
+		nationCount: rows.filter((row) => row.entityType === 'native-nation').length,
+		example: nations().some((record) => record.example)
+	};
 };
