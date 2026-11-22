@@ -1,0 +1,154 @@
+profile: content/tribes/b/bishop-paiute-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bishoppaiute.net/wp-content/uploads/2022/01/Tribal-Labor-Relations.pdf
+  outcome: found
+  reason: Linked from the Bishop Paiute Tribe's tribal-ordinances page; the PDF has a text layer and Section
+    13 was read.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/bishop_paiute/index.html
+  query: Section XIV Dispute Resolution
+  outcome: found
+  reason: Heading listed on the NILL page; no text.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bishoppaiute.net/tribal-ordinances/
+  query: Gaming Revenue Allocation
+  outcome: found
+  reason: Ordinances page lists GamingRevenueAllocationPlan.pdf.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bishoppaiute.net/wp-content/uploads/2022/01/GamingRevenueAllocationPlan.pdf
+  query: Section XIV Dispute Resolution
+  outcome: found
+  reason: Image-only PDF, 13 pages, OCR'd with tesseract; Section XIV is on page 11.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/bishop_paiute/index.html
+  query: Dispute Resolution
+  outcome: found
+  reason: Re-fetched; 'Section XIV. Dispute Resolution' sits between 'Section XIII. Distribution Payments'
+    and 'Section XV. Effective Date' in the Gaming Revenue Allocation list.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bishoppaiute.net/tribal-court/
+  query: Tribal Rules of Court
+  outcome: found
+  reason: Tribal court page links the Tribal Rules of Court PDF; the PDF has no text layer, so pages 12
+    and 13 were OCR'd and read.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/bishop_paiute/index.html
+  outcome: found
+  reason: Table of contents lists Rule 38 headings; it links to no text.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bishoppaiute.net/tribal-ordinances/
+  query: workers compensation
+  outcome: found
+  reason: Ordinances page links WorkmansCompOrdPPC-compressed.pdf.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bishoppaiute.net/wp-content/uploads/2022/01/WorkmansCompOrdPPC-compressed.pdf
+  query: Section 9 Dispute Resolution
+  outcome: found
+  reason: Image-only PDF, OCR'd; Section 9 is on pages 5 to 8.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/bishop_paiute/index.html
+  query: Section9. Dispute Resolution
+  outcome: found
+  reason: 'Re-fetched; heading found under ''Worker''s Compensation: - Paiute Palace Casino''.'
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/bishop_paiute/index.html
+  outcome: found
+  reason: Table of contents lists the heading; no text.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bishoppaiute.net/wp-content/uploads/2022/01/Tribal-Labor-Relations.pdf
+  query: Section 13
+  outcome: found
+  reason: Downloaded and read with pdftotext; Section 13(a) to (d) and the adopting ordinance page read.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bishoppaiute.net/wp-content/uploads/2025/02/Tribal-Rules-of-Court-1.pdf
+  query: Rule 38
+  outcome: found
+  reason: Downloaded; no text layer; pages 1-2 and 11-14 OCR'd and read.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/ (Bishop Paiute captures)
+  query: dispute resolution
+  outcome: found
+  reason: Only Section 13 of the labor relations text matched; no separate 'Dispute Resolution' heading
+    found.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/bishop_paiute/index.html
+  query: Dispute Resolution
+  outcome: found
+  reason: 'Searched the whole page for ''dispute'': only Section XIV, Section9, Section 13 (binding dispute
+    resolution mechanism), Section 328 (Patron Disputes) and Rule 38 headings occur; no stand-alone ''Dispute
+    Resolution''.'

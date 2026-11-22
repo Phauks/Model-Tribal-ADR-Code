@@ -20,8 +20,9 @@
 export const settingsStorageKey = 'reading-settings';
 export const themeStorageKey = 'theme';
 
-export const textSizes = ['standard', 'large', 'larger', 'largest'] as const;
-export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic', 'device'] as const;
+/** Text size as a percentage of the standard size; the slider in Settings steps through these. */
+export const textSizes = ['100', '112.5', '125', '137.5', '150', '175', '200'] as const;
+export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic'] as const;
 export const textSpacings = ['standard', 'wide'] as const;
 export const textAlignments = ['left', 'justified'] as const;
 export const contrasts = ['standard', 'more'] as const;
@@ -64,7 +65,7 @@ export const settingNames = [
 ] as const;
 
 export const defaultSettings: ReadingSettings = {
-	textSize: 'standard',
+	textSize: '100',
 	font: 'atkinson-hyperlegible-next',
 	textSpacing: 'standard',
 	textAlignment: 'left',
@@ -91,35 +92,34 @@ export interface Choice<Value extends string> {
 	hint?: string;
 }
 
-export const textSizeChoices: Choice<TextSize>[] = [
-	{ value: 'standard', label: 'Standard', hint: 'Reading text at 18 pixels' },
-	{ value: 'large', label: 'Large', hint: 'One eighth larger' },
-	{ value: 'larger', label: 'Larger', hint: 'One quarter larger' },
-	{ value: 'largest', label: 'Largest', hint: 'One half larger' }
-];
+/** The standard size of reading text, in pixels (font.size.body in design-tokens.json). */
+export const standardTextPixels = 18;
+
+export const textSizeChoices: Choice<TextSize>[] = textSizes.map((value) => {
+	const pixels = (standardTextPixels * Number(value)) / 100;
+	return {
+		value,
+		label: `${value}%`,
+		hint: `Reading text at ${Number.isInteger(pixels) ? pixels : pixels.toFixed(1)} pixels${value === '100' ? ', the standard size' : ''}`
+	};
+});
 
 export const fontChoices: Choice<Font>[] = [
-	{
-		value: 'atkinson-hyperlegible-next',
-		label: 'Atkinson Hyperlegible Next',
-		hint: 'The site’s font, drawn so that similar letters are easy to tell apart'
-	},
-	{ value: 'serif', label: 'Noto Serif', hint: 'A serif font, like many printed books' },
-	{ value: 'opendyslexic', label: 'OpenDyslexic', hint: 'A font designed for readers with dyslexia' },
-	{ value: 'device', label: 'Your device’s font', hint: 'The font your device uses for menus' }
+	{ value: 'atkinson-hyperlegible-next', label: 'Atkinson Hyperlegible Next' },
+	{ value: 'serif', label: 'Noto Serif' },
+	{ value: 'opendyslexic', label: 'OpenDyslexic' }
 ];
 
 /** Each font's design token, so the font dropdown in Settings can show every choice in its own typeface. */
 export const fontFamilyTokens: Record<Font, string> = {
 	'atkinson-hyperlegible-next': '--font-family-atkinson-hyperlegible-next',
 	serif: '--font-family-serif',
-	opendyslexic: '--font-family-opendyslexic',
-	device: '--font-family-device'
+	opendyslexic: '--font-family-opendyslexic'
 };
 
 export const textSpacingChoices: Choice<TextSpacing>[] = [
 	{ value: 'standard', label: 'Standard' },
-	{ value: 'wide', label: 'Wide', hint: 'More space between lines, paragraphs, letters and words' }
+	{ value: 'wide', label: 'Wide' }
 ];
 
 export const textAlignmentChoices: Choice<TextAlignment>[] = [
@@ -269,7 +269,7 @@ const fontFamilyNames: Partial<Record<Font, string>> = {
  * Asks the browser for every weight and style of a picked font at once, so
  * the service worker saves all of them while the reader is online and the
  * font still works on pages read later offline. Atkinson Hyperlegible Next is
- * saved when the service worker installs, and the device's font needs no files.
+ * saved when the service worker installs.
  */
 export function downloadFont(font: Font): void {
 	const family = fontFamilyNames[font];

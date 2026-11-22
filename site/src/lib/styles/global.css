@@ -529,16 +529,28 @@ sup.citation {
  * outranks the token rules of both themes, whatever order the style sheets
  * load in.
  */
-:root:root[data-text-size='large'] {
+:root:root[data-text-size='112.5'] {
 	--text-scale: 1.125;
 }
 
-:root:root[data-text-size='larger'] {
+:root:root[data-text-size='125'] {
 	--text-scale: 1.25;
 }
 
-:root:root[data-text-size='largest'] {
+:root:root[data-text-size='137.5'] {
+	--text-scale: 1.375;
+}
+
+:root:root[data-text-size='150'] {
 	--text-scale: 1.5;
+}
+
+:root:root[data-text-size='175'] {
+	--text-scale: 1.75;
+}
+
+:root:root[data-text-size='200'] {
+	--text-scale: 2;
 }
 
 :root:root[data-font='serif'] {
@@ -547,10 +559,6 @@ sup.citation {
 
 :root:root[data-font='opendyslexic'] {
 	--font-family-reading: var(--font-family-opendyslexic);
-}
-
-:root:root[data-font='device'] {
-	--font-family-reading: var(--font-family-device);
 }
 
 /* Wide spacing uses the values WCAG 2.2, 1.4.12 Text Spacing tests. */

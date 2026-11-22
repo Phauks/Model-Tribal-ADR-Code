@@ -1,0 +1,38 @@
+profile: content/tribes/c/coeur-dalene-tribe.yaml
+topic: dispute-resolution
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/coeur_dalene/index.html
+  outcome: blocked
+  reason: The page gives no link to the full code and says the tribe has not allowed full-text posting.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Coeur d'Alene Tribal Arbitration Act code "Validity of agreement to arbitrate"
+  outcome: not-found
+  reason: Results were state arbitration statutes and the NILL page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Coeur d'Alene Tribe tribal code "4-28" arbitration act pdf cdatribe-nsn.gov
+  outcome: not-found
+  reason: No copy of the Act appeared in the results.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/
+  outcome: not-public
+  reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
+    not worked around.
+next_steps: The provisions this nation's profile lists by section title are still unread. A person could
+  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.

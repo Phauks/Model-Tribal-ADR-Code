@@ -1,0 +1,55 @@
+profile: content/tribes/y/yurok-tribe-of-the-yurok-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/yurokcode/index.html
+  query: 9.20 Dispute Resolution
+  outcome: found
+  reason: Heading listed under Title 9 Gaming; the NILL page links to the tribe's code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://yurok.tribal.codes/
+  query: '9.20'
+  outcome: blocked
+  reason: Direct fetch returned a 403 bot-check page on the first attempt; the site was not used directly
+    again.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://yurok.tribal.codes/YTC/9.20.010
+  query: Yurok Tribe code 9.20 Dispute Resolution gaming commission
+  outcome: found
+  reason: Search returned the section URL on yurok.tribal.codes, read through a summarizing fetch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://yurok.tribal.codes/YTC/9.20.010
+  query: '9.20'
+  outcome: blocked
+  reason: Direct fetch returns a 403 bot-check page ('Just a moment...') on retry with a browser user
+    agent.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.nigc.gov/images/uploads/gamingordinances/yuroktribe-ordappr070700.pdf
+  query: dispute resolution
+  outcome: dead-link
+  reason: Approved 2000 gaming ordinance URL from search returned 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Yurok Title 9 Dispute Resolution gaming commission
+  outcome: found
+  reason: Search again surfaced only the tribal.codes page and compacts; no raw text copy.

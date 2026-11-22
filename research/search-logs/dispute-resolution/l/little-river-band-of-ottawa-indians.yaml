@@ -1,0 +1,80 @@
+profile: content/tribes/l/little-river-band-of-ottawa-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
+  query: Arbitration Ordinance
+  outcome: found
+  reason: The ordinance is printed in this copy and was read; §§ 4.02, 6, 8, 9 and 10 were checked in
+    detail.
+  records:
+  - content/tribes/l/little-river-band-of-ottawa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://lrboi-nsn.gov/government/tribal-code
+  query: Title 02 - Arbitration Ordinance
+  outcome: found
+  reason: The tribal code listing names the ordinance, but it is a listing and not the text.
+  records:
+  - content/tribes/l/little-river-band-of-ottawa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
+  query: Arbitration Code
+  outcome: found
+  reason: Downloaded and read with pdftotext in full.
+  records:
+  - content/tribes/l/little-river-band-of-ottawa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/little_river_band/index.html
+  query: Title 02 - Arbitration Ordinance
+  outcome: found
+  reason: Re-fetched; Chapter 300 lists Title 02 - Arbitration Ordinance and a 'see also' for the Commercial
+    Court.
+  records:
+  - content/tribes/l/little-river-band-of-ottawa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://lrboi-nsn.gov/government/tribal-code
+  query: Arbitration Ordinance (Commercial Court)
+  outcome: found
+  reason: The listing contains the entry, which points to the Arbitration Code, but does not contain the
+    text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
+  query: Commercial Court Division
+  outcome: found
+  reason: Section 10.03 is printed in this copy and was read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
+  query: 10.03 Commercial Court
+  outcome: found
+  reason: Downloaded and read; section 10.03 read in full.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
+  query: Title 02 - Arbitration Ordinance
+  outcome: found
+  reason: The same ordinance is printed in this copy.

@@ -1,0 +1,53 @@
+profile: content/tribes/p/port-gamble-sklallam-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/8e97f3a722c09922137a.txt
+  query: 15.10.04 Mediation Not Allowed
+  outcome: found
+  reason: The captured Title 15 copy contains section 15.10.04 with the printed heading.
+  records:
+  - content/tribes/p/port-gamble-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-15-1.24.23.pdf
+  query: 15.10.04
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/pg15.txt) and the section read directly.'
+  records:
+  - content/tribes/p/port-gamble-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/8e97f3a722c09922137a.txt
+  query: patron dispute resolution
+  outcome: not-found
+  reason: The captured copy is Title 15 only and has no patron dispute text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Port Gamble S'Klallam Tribe Title 20 gaming Patron Dispute Resolution 20.01.13 pdf
+  outcome: found
+  reason: The search returned the nation's Title 20 Gaming Code PDF, which contains section 20.01.13.
+  records:
+  - content/tribes/p/port-gamble-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (pg.txt)
+  query: 20.01.13
+  outcome: found
+  reason: Downloaded the Title 20 PDF and read 20.01.13 with pdftotext; the footer prints Amended 11/23/2015.
+  records:
+  - content/tribes/p/port-gamble-sklallam-tribe.yaml#dispute_resolution.provisions

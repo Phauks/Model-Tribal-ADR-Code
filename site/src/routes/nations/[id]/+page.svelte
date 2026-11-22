@@ -1,11 +1,13 @@
 <script lang="ts">
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
+	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
 	import PageTools from '#lib/components/PageTools.svelte';
 	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
+	import { contactsHeading } from '#lib/contact-card.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -132,13 +134,17 @@
 
 	{#if !page.withdrawn}
 		<!-- 4. At a glance, with the map of states -->
-		{#if data.glance.length > 0 || data.map}
+		{#if data.glance.length > 0 || data.contacts.length > 0 || data.map}
 			<section class="profile-glance" aria-labelledby="glance-heading">
 				<h2 id="glance-heading">At a glance</h2>
 				{#if data.map}
 					<StatePresenceMap map={data.map} nationName={page.officialName} />
 				{/if}
 				<FactGroups groups={data.glance} />
+				{#if data.contacts.length > 0}
+					<h3 id="contacts-heading">{contactsHeading}</h3>
+					<ContactCard offices={data.contacts} headingLevel={4} />
+				{/if}
 			</section>
 		{/if}
 

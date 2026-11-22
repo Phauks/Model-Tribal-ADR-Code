@@ -1,0 +1,180 @@
+profile: content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/confederated_siletz/index.html
+  outcome: found
+  reason: The NILL page links all Siletz code entries to the nation's tribal ordinances page, and does
+    not link this section directly.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Siletz Workers Compensation Claims Ordinance dispute resolution request for arbitration or mediation
+    pdf
+  outcome: found
+  reason: The search returned the nation's own copy of the Workers' Compensation Claims Ordinance (amended
+    2023-03-16), which contains sections 5.561 to 5.572.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents (Siletz captures)
+  query: dispute resolution; request for arbitration; discovery; burden of proof
+  outcome: not-found
+  reason: The two captured Siletz Community Law Court copies do not contain this ordinance.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctsi.nsn.us/wp-content/uploads/2023/03/Siletz-Workers-Compensation-Claims-Ordinance-03-16-2023.pdf
+  query: 5.561-5.572
+  outcome: found
+  reason: Downloaded and extracted raw text; sections 5.560-5.572 read in full.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents (Siletz Community Law Court captures)
+  query: judicial officers; chief judge; mediators; tribal bar
+  outcome: not-found
+  reason: Neither captured Siletz Community Law Court copy contains a court personnel chapter.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/confederated_siletz/index.html
+  outcome: found
+  reason: The page identifies the Tribal Court Rules and Procedures (12-17-10) as the source of court
+    personnel provisions, and all its links go to a generic ordinances page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctsi.nsn.us/tribal-government/court-justice/
+  outcome: not-found
+  reason: The court page lists no code PDFs.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Siletz Tribal Court Rules and Procedures court personnel mediators tribal bar
+  outcome: not-found
+  reason: No search result was the Tribal Court Rules and Procedures text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctsi.nsn.us/tribal-government/court-justice/
+  outcome: blocked
+  reason: Cloudflare challenge to scripted fetch; the page fetch tool saw no document links. Searches
+    for the Tribal Court Rules and Procedures (12-17-10) found only the Community Law Court PDFs already
+    captured.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/0a82fb16869fface7456.txt
+  query: GWE-SHVT-NAGA/PEACEMAKERS
+  outcome: found
+  reason: The 2025 Siletz Community Law Court capture contains Chapter 2, sections 3.303 to 3.307.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/2617696ac8c02fdd40c6.txt
+  query: GWE-SHVT-NAGA/PEACEMAKERS
+  outcome: found
+  reason: The 2005 capture has the same chapter, which was checked against the 2025 text.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
+  query: Chapter 2
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/siletz.txt) and the section read directly.'
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/0a82fb16869fface7456.txt
+  query: REQUEST FOR PEACEMAKING; APPOINTMENT OF GWE-SHVT-NAGA/PEACEMAKER
+  outcome: found
+  reason: The 2025 capture contains Chapter 3, sections 3.308 to 3.316.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/0a82fb16869fface7456.txt
+  query: CHAPTER 3 PEACEMAKING
+  outcome: found
+  reason: Raw text of Chapter 3 (3.308-3.316) read in full; the ordinance header gives Original Date September
+    21, 2001, amended by Resolution 2025-223 dated June 20, 2025.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/0a82fb16869fface7456.txt
+  query: CONDUCT OF GWE-SHVT-NAGA/PEACEMAKERS
+  outcome: found
+  reason: The 2025 capture contains Chapter 5, sections 3.322 to 3.324.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/0a82fb16869fface7456.txt
+  query: CONDUCT OF GWE-SHVT-NAGA/PEACEMAKERS
+  outcome: found
+  reason: Raw text of Chapter 5 (3.322-3.324) read in full.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents (Siletz Community Law Court captures)
+  query: judicial officers; removal of judges; court interpreters; tribal bar
+  outcome: not-found
+  reason: Neither captured copy contains these headings.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/confederated_siletz/index.html
+  outcome: found
+  reason: The page names the Tribal Court Rules and Procedures (12-17-10) as the source, but links only
+    a generic ordinances page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Siletz Tribal Court Rules and Procedures court personnel judicial officers tribal bar
+  outcome: not-found
+  reason: No search result was the Tribal Court Rules and Procedures text.

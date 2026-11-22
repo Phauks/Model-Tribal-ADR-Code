@@ -1,0 +1,69 @@
+profile: content/tribes/t/tolowa-dee-ni-nation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/ (no Tolowa captures)
+  outcome: not-found
+  reason: No Tolowa captured documents were provided.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/smith_river/index.html
+  outcome: found
+  reason: Index lists the heading (dated 2006-2008) with no text; links to PDFs.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.tolowa-nsn.gov/wp-content/uploads/2010/11/ChildrensCode2.pdf
+  outcome: dead-link
+  reason: Linked PDF returned HTTP 404 (dead link).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.tolowa-nsn.gov/wp-content/uploads/2010/11/Smith+River+Tribal+Court+Ordinance11.pdf
+  outcome: dead-link
+  reason: Linked PDF returned HTTP 404 (dead link).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Tolowa Dee-ni' Nation Smith River code diversion mediation family unit
+  outcome: not-found
+  reason: Results were NILL and childwelfare.gov pages without the code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://nill.narf.org/codes/smith_river/index.html
+  outcome: not-found
+  reason: Second search found only the NILL page and childwelfare.gov summaries; the linked PDFs remain
+    dead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/smith_river/index.html
+  outcome: found
+  reason: Heading listed; no text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.tolowa-nsn.gov/wp-content/uploads/2010/11/DomesticRelationsCode1.pdf
+  outcome: dead-link
+  reason: Linked PDF not retrieved; the sibling links on the same host returned HTTP 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Tolowa Smith River diversion mediation family unit programs
+  outcome: not-found
+  reason: No code text found.

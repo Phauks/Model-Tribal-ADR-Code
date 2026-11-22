@@ -1,0 +1,54 @@
+profile: content/tribes/l/little-traverse-bay-bands-of-odawa-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/5cbaffbac49ce512d522.txt
+  query: 7.412 PATRON DISPUTE RESOLUTION
+  outcome: found
+  reason: Section 7.412 is in the captured Title VII text.
+  records:
+  - content/tribes/l/little-traverse-bay-bands-of-odawa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (ltb7.txt)
+  query: '7.412'
+  outcome: found
+  reason: Downloaded the Title VII PDF and read 7.412 with pdftotext.
+  records:
+  - content/tribes/l/little-traverse-bay-bands-of-odawa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/3478bf677872463b6b75.txt
+  query: ARBITRATION WITH DROPBOX
+  outcome: found
+  reason: The waiver text is in the captured full-code text at this heading.
+  records:
+  - content/tribes/l/little-traverse-bay-bands-of-odawa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+  query: ARBITRATION WITH DROPBOX
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (research/captures/tribal-law/documents/3478bf677872463b6b75.txt)
+    and the section read directly.'
+  records:
+  - content/tribes/l/little-traverse-bay-bands-of-odawa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+  query: download
+  outcome: blocked
+  reason: Direct download returned 403 (one browser-agent attempt); a second attempt was not made.

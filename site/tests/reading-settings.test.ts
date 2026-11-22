@@ -9,6 +9,7 @@ import {
 	settingNames,
 	settingsAttributes,
 	settingsStorageKey,
+	textSizes,
 	themeStorageKey
 } from '#lib/reading-settings.ts';
 
@@ -23,9 +24,9 @@ describe('reading settings', () => {
 	});
 
 	it('keeps known values', () => {
-		expect(parseSettings('{"textSize":"larger","font":"opendyslexic"}')).toEqual({
+		expect(parseSettings('{"textSize":"125","font":"opendyslexic"}')).toEqual({
 			...defaultSettings,
-			textSize: 'larger',
+			textSize: '125',
 			font: 'opendyslexic'
 		});
 	});
@@ -84,6 +85,12 @@ describe('global.css', () => {
 	it('hyphenates justified text and keeps links whole', () => {
 		expect(styles).toMatch(/\[data-text-alignment='justified'\][^{]*\{[^}]*text-align: justify;[^}]*hyphens: auto;/);
 		expect(styles).toMatch(/\[data-text-alignment='justified'\][^{]* a \{[^}]*hyphens: manual;/);
+	});
+
+	it('has a text scale for every text size other than the default', () => {
+		for (const size of textSizes.filter((name) => name !== defaultSettings.textSize)) {
+			expect(styles).toContain(`[data-text-size='${size}'] {\n\t--text-scale: ${Number(size) / 100};`);
+		}
 	});
 
 	it('has a rule and a font token for every font other than the default', () => {
