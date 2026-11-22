@@ -4,9 +4,9 @@
  * reach the browser once, in the page itself, and not a second time in the
  * data the page hydrates from (src/routes/nations/map/+page.ts explains how).
  *
- * Each view is one drawing over the same layout: the 48 contiguous states and
- * DC on top, and framed boxes for Alaska, Hawaiʻi and the territories below,
- * each with its own label and scale bar (src/lib/map-geometry.ts). To add a
+ * Each view is one drawing over the same layout: a framed box for the
+ * contiguous United States on top, and framed boxes for Alaska, Hawaiʻi and
+ * the territories below, each with its own label and scale bar (src/lib/map-geometry.ts). To add a
  * view, add its drawing to `drawNationsMaps` and its entry to the page's list
  * of views.
  *
@@ -80,16 +80,13 @@ const drawScaleBar = (bar: ScaleBar) =>
 	`<path class="scale-bar" d="M${bar.x},${bar.y - 5}V${bar.y}H${bar.x + bar.length}V${bar.y - 5}"/>` +
 	`<text class="map-label scale-label" x="${bar.x + bar.length + 6}" y="${bar.y + 1}">${escape(bar.label)}</text>`;
 
-/**
- * The frames under the main map, drawn behind the shapes: one box for each
- * place drawn apart from the contiguous states.
- */
+/** The map's frames, drawn behind the shapes. */
 const drawFrames = (geometry: MapGeometry) =>
 	`<g class="inset-frames" aria-hidden="true">` +
-	geometry.insets
+	geometry.frames
 		.map(
-			(inset) =>
-				`<rect class="inset-frame" x="${inset.x}" y="${inset.y}" width="${inset.width}" height="${inset.height}" rx="3"/>`
+			(frame) =>
+				`<rect class="inset-frame" x="${frame.x}" y="${frame.y}" width="${frame.width}" height="${frame.height}" rx="3"/>`
 		)
 		.join('') +
 	`</g>`;
@@ -100,21 +97,20 @@ const drawFrames = (geometry: MapGeometry) =>
  */
 const drawFrameLabels = (geometry: MapGeometry) =>
 	`<g class="inset-labels" aria-hidden="true">` +
-	geometry.insets
-		.map((inset) => {
-			const lines = inset.label
+	geometry.frames
+		.map((frame) => {
+			const lines = frame.label
 				.map(
 					(line, index) =>
-						`<tspan x="${inset.x + 10}" dy="${index === 0 ? 0 : '1.15em'}">${escape(line)}</tspan>`
+						`<tspan x="${frame.x + 10}" dy="${index === 0 ? 0 : '1.15em'}">${escape(line)}</tspan>`
 				)
 				.join('');
 			return (
-				`<text class="map-label inset-label" x="${inset.x + 10}" y="${inset.y + 20}">${lines}</text>` +
-				drawScaleBar(inset.scaleBar)
+				`<text class="map-label inset-label" x="${frame.x + 10}" y="${frame.y + 20}">${lines}</text>` +
+				drawScaleBar(frame.scaleBar)
 			);
 		})
 		.join('') +
-	drawScaleBar(geometry.mainScaleBar) +
 	`</g>`;
 
 function drawStates(geometry: MapGeometry, counts: Map<string, StateCount>): string {

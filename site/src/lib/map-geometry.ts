@@ -14,10 +14,11 @@
  *   geography/README.md). These are federal administrative areas, not the
  *   lands of any nation.
  *
- * The layout puts the 48 contiguous states and DC on top. Alaska, Hawaiʻi and
- * the territories sit in a row of framed, labeled boxes underneath. Each box
- * has its own projection, fitted to its box, and its own scale bar, because
- * the boxes are drawn at very different scales and none is in its true place.
+ * The layout puts the contiguous United States (the 48 contiguous states and
+ * DC) in a framed, labeled box on top. Alaska, Hawaiʻi and the territories sit
+ * in a row of smaller framed, labeled boxes underneath. Every box has its own
+ * projection, fitted to the box, and its own scale bar, because the boxes are
+ * drawn at very different scales and none is in its true place.
  * Every shape is drawn only by the projection of the box it belongs to, so a
  * place can never turn up in another place's box.
  *
@@ -156,8 +157,8 @@ export interface ScaleBar {
 	label: string;
 }
 
-/** One of the framed boxes under the main map. */
-export interface InsetFrame {
+/** One of the map's framed boxes: the contiguous United States, or a box under it. */
+export interface MapFrame {
 	key: string;
 	/** The box's label, one entry a line. */
 	label: string[];
@@ -199,10 +200,11 @@ export interface MapGeometry {
 	regionBorders: string;
 	/** Where the region boundaries came from and when (geography/bureau-of-indian-affairs-regions.json). */
 	regionSource: { source: string; retrieved: string };
-	/** The boxes for Alaska, Hawaiʻi and the territories. */
-	insets: InsetFrame[];
-	/** The main map's own scale bar, for the 48 contiguous states and DC. */
-	mainScaleBar: ScaleBar;
+	/**
+	 * The framed boxes, each with a label and a scale bar: the contiguous
+	 * United States first, then Alaska, Hawaiʻi and the territories.
+	 */
+	frames: MapFrame[];
 	/**
 	 * The same states, simplified and rounded to whole map units for the small
 	 * map on every nation's page, which is drawn into 980 pages and so must be
@@ -294,14 +296,32 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 		features: states.filter((state) => codes.has(codeOf(state)))
 	});
 
-	// The main map: the 48 contiguous states and DC, in the Albers projection
+	// The main box: the 48 contiguous states and DC, in the Albers projection
 	// the Census Bureau and USGS use for them, fitted to the full width.
 	const mainCodes = new Set(Object.values(postalCodeByCensusCode).filter((code) => !insetCodes.has(code)));
-	const mainProjection = geoAlbers().fitWidth(mapWidth - 2 * margin, statesWith(mainCodes));
-	const [[, mainTop], [, mainBottom]] = geoPath(mainProjection).bounds(statesWith(mainCodes));
+	const mainLabel = ['Contiguous United States'];
+	const mainContentTop = margin + mainLabel.length * insetLabelLine + 16;
+	const mainProjection = geoAlbers().fitWidth(mapWidth - 2 * margin - 20, statesWith(mainCodes));
+	const [[mainLeft, mainTop], [, mainBottom]] = geoPath(mainProjection).bounds(statesWith(mainCodes));
 	const [translateX, translateY] = mainProjection.translate();
-	mainProjection.translate([translateX + margin, translateY + margin - mainTop]);
-	const mainHeight = mainBottom - mainTop;
+	mainProjection.translate([translateX + margin + 10 - mainLeft, translateY + mainContentTop - mainTop]);
+	const mainFrameHeight = Math.round(mainContentTop - margin + (mainBottom - mainTop) + scaleBarRoom + 6);
+	const frames: MapFrame[] = [
+		{
+			key: 'main',
+			label: mainLabel,
+			x: margin,
+			y: margin,
+			width: mapWidth - 2 * margin,
+			height: mainFrameHeight,
+			scaleBar: scaleBar(
+				mainProjection,
+				[mapWidth / 2, mainContentTop + (mainBottom - mainTop) / 2],
+				[margin + 10, margin + mainFrameHeight - 12],
+				160
+			)
+		}
+	];
 
 	const panels: Panel[] = [
 		{
@@ -311,8 +331,7 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 			wholeUnits: geoPath(mainProjection).digits(0)
 		}
 	];
-	const insets: InsetFrame[] = [];
-	const insetTop = Math.round(margin + mainHeight + 2 * margin);
+	const insetTop = margin + mainFrameHeight + margin;
 	let left = margin;
 	for (const plan of insetPlans) {
 		const labelHeight = plan.label.length * insetLabelLine + 10;
@@ -323,7 +342,7 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 			],
 			statesWith(new Set(plan.codes))
 		);
-		insets.push({
+		frames.push({
 			key: plan.key,
 			label: plan.label,
 			x: left,
@@ -374,9 +393,16 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 
 	const weighted = presimplify(atlas, sphericalTriangleArea);
 	const simplified = simplify(weighted, quantile(weighted, smallMapDetail)) as typeof atlas;
+	// Simplifying the whole atlas wipes out the smallest islands, which left the
+	// boxes for Guam, the Northern Mariana Islands, American Samoa and the
+	// Virgin Islands empty, so those four keep their full detail.
+	const keptWhole = new Set(['GU', 'MP', 'AS', 'VI']);
+	const fullDetail = new Map(states.map((state) => [codeOf(state), state]));
 	const smallStates = (
 		feature(simplified, simplified.objects.states) as FeatureCollection<Polygon | MultiPolygon>
-	).features.map((state) => {
+	).features.map((simplifiedState) => {
+		const code = codeOf(simplifiedState);
+		const state = keptWhole.has(code) ? (fullDetail.get(code) ?? simplifiedState) : simplifiedState;
 		const shape = shapeOf(state, (panel) => panel.wholeUnits(state) ?? '');
 		const path = panelOf(shape.code).path;
 		const [x, y] = path.centroid(largestPiece(state, (piece) => path.area(piece))).map(Math.round);
@@ -412,12 +438,12 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 		const panel = regionPanel(name);
 		const [x, y] = panel.path.centroid(largestPiece(region, (piece) => panel.path.area(piece)));
 		const [shiftX, shiftY] = regionLabelShifts[name] ?? [0, 0];
-		const inset = insets.find((frame) => frame.key === panel.key);
+		const frame = frames.find((candidate) => candidate.key === panel.key);
 		return {
 			name,
 			path: round(panel.path(region)),
 			label: { x: x + shiftX, y: y + shiftY },
-			showLabel: !inset?.label.includes(name)
+			showLabel: !frame?.label.includes(name)
 		};
 	});
 	const regionBorders = [...new Set(regions.map((region) => regionPanel(region.properties.name)))]
@@ -434,13 +460,6 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 		)
 		.join('');
 
-	const mainScaleBar = scaleBar(
-		mainProjection,
-		[mapWidth / 2, margin + mainHeight / 2],
-		[margin + 8, margin + mainHeight - 10],
-		120
-	);
-
 	return {
 		width: mapWidth,
 		height,
@@ -453,8 +472,7 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 			source: regionsTopology.metadata.source,
 			retrieved: regionsTopology.metadata.retrieved
 		},
-		insets,
-		mainScaleBar,
+		frames,
 		smallStates
 	};
 }

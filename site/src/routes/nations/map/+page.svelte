@@ -432,7 +432,7 @@
 	}
 
 	.map-drawing :global(.scale-label) {
-		font-size: 12px;
+		font-size: 13px;
 	}
 
 	.map-drawing :global(.region-label) {

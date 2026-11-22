@@ -5,13 +5,13 @@
 	// The shapes are projected when the site is built, so the browser gets only
 	// SVG paths (src/lib/map-geometry.ts). The same states are listed in words
 	// under "At a glance", so the map is never the only way to the facts.
-	import type { InsetFrame, StateShape } from '#lib/map-geometry.ts';
+	import type { MapFrame, StateShape } from '#lib/map-geometry.ts';
 
 	interface PresenceMap {
 		width: number;
 		height: number;
-		/** The boxes for Alaska, Hawaiʻi and the territories, each drawn at its own scale. */
-		insets: Pick<InsetFrame, 'key' | 'x' | 'y' | 'width' | 'height'>[];
+		/** The framed boxes: the contiguous United States, then Alaska, Hawaiʻi and the territories, each at its own scale. */
+		frames: Pick<MapFrame, 'key' | 'x' | 'y' | 'width' | 'height'>[];
 		stateNames: string[];
 		states: (StateShape & { name: string; present: boolean })[];
 	}
@@ -27,8 +27,8 @@
 	<svg viewBox="0 0 {map.width} {map.height}" role="img" aria-labelledby="presence-map-title">
 		<title id="presence-map-title">{title}</title>
 		<g aria-hidden="true">
-			{#each map.insets as inset (inset.key)}
-				<rect class="inset-frame" x={inset.x} y={inset.y} width={inset.width} height={inset.height} rx="3" />
+			{#each map.frames as frame (frame.key)}
+				<rect class="inset-frame" x={frame.x} y={frame.y} width={frame.width} height={frame.height} rx="3" />
 			{/each}
 		</g>
 		{#each map.states as state (state.code)}

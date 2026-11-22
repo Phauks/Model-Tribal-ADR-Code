@@ -271,7 +271,7 @@ function presenceMap(record: NationRecord, sources: SourceUses) {
 	return {
 		width: geometry.width,
 		height: geometry.height,
-		insets: geometry.insets.map(({ key, x, y, width, height }) => ({ key, x, y, width, height })),
+		frames: geometry.frames.map(({ key, x, y, width, height }) => ({ key, x, y, width, height })),
 		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
 		states: geometry.smallStates
 			.map((shape) => ({ ...shape, name: stateName(shape.code), present: present.has(shape.code) }))
