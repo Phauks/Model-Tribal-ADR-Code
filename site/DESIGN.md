@@ -183,12 +183,7 @@ its fixed sections on each nation's page:
 5. Courts and dispute resolution: each forum with its kind, source and date.
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
-7. Document history: each of the nation's documents that has recorded
-   versions, such as a gaming compact or a constitution, with every version
-   oldest first, its dates, what it did to earlier versions (amended,
-   replaced), whether it is in effect, and how its key clauses changed
-   ([decision record 0018](../docs/decisions/0018-document-version-history.md)).
-   A line under each title names the versions in effect. Each version ends with the markers of its sources, which are also listed under the document's title in Sources.
+7. Document history: each of the nation's documents that has recorded versions, such as a gaming compact or a constitution, with every version oldest first, its dates, what it did to earlier versions (amended, replaced), whether it is in effect, and how its key clauses changed ([decision record 0018](../docs/decisions/0018-document-version-history.md)). A line under each title names the versions in effect. Each version ends with the markers of its sources, which are also listed under the document's title in Sources.
 8. Notices and Labels from Local Contexts.
 9. Sources, each with links back to the markers that cite it, followed by the facts on the page that come from it, and the date the page was last checked.
 
@@ -197,16 +192,7 @@ its fixed sections on each nation's page:
 - **In the nation's own words.** A short description the nation writes or
   approves. Until then the space says so and offers a link to contribute;
   the project never writes it for the nation.
-- **Recorded features.** Short sentences generated from the record's cited
-  facts, each followed by the markers of its sources, for example: a peacemaking program beside the
-  Tribal court (`justice_institutions`, `dispute_resolution.forums`); a
-  published peacemaking or mediation law (`dispute_resolution_law`); a court
-  of appeals; presence in more than one state (`states`); a heritage language
-  as the nation writes it (`languages`); jurisdiction facts such as Public Law
-  280 (`jurisdiction`). A feature appears only when a source documents it,
-  never inferred from silence, and features describe the one nation without
-  comparing it with others
-  ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
+- **Recorded features.** Short sentences generated from the record's cited facts, each followed by the markers of its sources, for example: a peacemaking program beside the Tribal court (`justice_institutions`, `dispute_resolution.forums`); a published peacemaking or mediation law (`dispute_resolution_law`); a court of appeals; presence in more than one state (`states`); a heritage language as the nation writes it (`languages`); jurisdiction facts such as Public Law 280 (`jurisdiction`). A feature appears only when a source documents it, never inferred from silence, and features describe the one nation without comparing it with others ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
 
 **Layout.** On screens at least 64 rem wide (1,024 px at the default text
 size) the page has two columns: the text, held to the reading measure, and
@@ -330,9 +316,7 @@ mouse pointer or keyboard focus, not a touch, since a tap follows the link.
 Summaries come from `/glossary/terms.json`, which the glossary pages are built
 with, fetched once when first needed. The Glossary setting turns cards off.
 
-**Glossary pages.** The glossary page and each entry's page are built from one module, `src/lib/server/glossary-entries.ts`, and one component, `GlossaryEntry.svelte`. An entry's citation is a numbered marker in its text (see Citations below) for a source in the page's Sources section, where each source is listed once, in the project's Indigo Book style (formatted at build time by citeproc-js with `pdf/styles/project-law-review.csl`, as the print edition is), with links back to its markers and followed by every entry that cites it, as on nation pages. `/glossary/terms.json`
-lists every entry's term, usage and a one or two sentence summary with no
-citations, for the hover cards and for saving offline.
+**Glossary pages.** The glossary page and each entry's page are built from one module, `src/lib/server/glossary-entries.ts`, and one component, `GlossaryEntry.svelte`. An entry's citation is a numbered marker in its text (see Citations below) for a source in the page's Sources section, where each source is listed once, in the project's Indigo Book style (formatted at build time by citeproc-js with `pdf/styles/project-law-review.csl`, as the print edition is), with links back to its markers and followed by every entry that cites it, as on nation pages. `/glossary/terms.json` lists every entry's term, usage and a one or two sentence summary with no citations, for the hover cards and for saving offline.
 
 **Citations.** Every page cites the way Wikipedia does (Trevor asked on Nov. 22, 2026, because a marker that jumps to the end of the page loses the reader's place). A claim, a fact or a sentence ends with a small number in square brackets, such as [3], one for each source; the number is the source's place in the page's Sources section, numbered in the order the page first cites it. Prose (commentary, glossary entries, stories and essays) gets its markers from `[@key]` citations in Markdown (`src/lib/server/markdown.ts`); data pages, such as a nation's facts, get them from the facts' sources (`src/lib/server/source-uses.ts`, `CitationMarks.svelte`). Both write the same HTML (`src/lib/citation-marks.ts`).
 

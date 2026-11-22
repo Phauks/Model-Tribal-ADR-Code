@@ -29,9 +29,7 @@ updates before the 1st Edition.[^indigo]
    `[@navajo-peacemaking-plan, sec. 3]`. This is the citation syntax used by
    Pandoc's Markdown (project choice; Pandoc's documentation was not reviewed
    for this decision).
-3. **The build formats them.** A CSL processor turns each key into a footnote in the PDF and, on the website, a numbered marker in square brackets whose citation opens beside it, with the full citation in the page's Sources list ([site/DESIGN.md, "Citations"](../site/DESIGN.md#6-components)), handling short forms and *id.* automatically. The processor is
-   [citeproc-js](https://github.com/Juris-M/citeproc-js), which "when run in
-   CSL-M mode … can handle multilingual and legal content."[^citeproc]
+3. **The build formats them.** A CSL processor turns each key into a footnote in the PDF and, on the website, a numbered marker in square brackets whose citation opens beside it, with the full citation in the page's Sources list ([site/DESIGN.md, "Citations"](../site/DESIGN.md#6-components)), handling short forms and *id.* automatically. The processor is [citeproc-js](https://github.com/Juris-M/citeproc-js), which "when run in CSL-M mode … can handle multilingual and legal content."[^citeproc]
 4. **Changing style is one file.** Switching to another style means replacing
    the style file and rebuilding; no text changes.
 
