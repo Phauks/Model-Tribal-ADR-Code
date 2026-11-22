@@ -555,7 +555,7 @@ limits: >-
 
 Output: the catalog in [`research/constitutions/`](../../constitutions/README.md)
 (coverage by nation, documents and articles), 200 version histories in
-`content/documents/`, 500 source records, and a `document_version` on 302
+`content/documents/`, 500 source records, and a `document_version` on 300
 profile facts that cite a text a later version replaced, naming the version
 they describe. The scripts are in `scripts/constitutions/`.
 

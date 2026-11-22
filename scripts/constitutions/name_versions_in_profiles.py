@@ -48,7 +48,11 @@ def main():
                         block.append(next_line)
                     else:
                         break
-                if not any(item.strip().startswith("document_version:") for item in block):
+                # Facts with no verification level (most provisions) are left
+                # alone: editing them would make the record lint treat them as
+                # new and require a level this script cannot judge.
+                has_level = any(item.strip().startswith("verification:") for item in block)
+                if has_level and not any(item.strip().startswith("document_version:") for item in block):
                     document, version = versions[match.group(2)]
                     out.append(f"{indent}document_version:")
                     out.append(f"{indent}  document: {document}")
