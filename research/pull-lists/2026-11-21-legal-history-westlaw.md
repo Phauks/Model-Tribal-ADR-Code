@@ -4,7 +4,7 @@
 project's single list of Westlaw pulls and KeyCite checks, which also covers
 the dispute resolution sources and the dataset gap audit. Work from that list.
 It is kept with the project's working files rather than in this repository,
-as `research/documents-to-get.md` (called `westlaw-links.md` until 2026-11-22).
+as `research/documents-to-get.md`.
 
 This list covered the timeline
 (`content/essays/i-legal-history-timeline.md`) and the case digest
