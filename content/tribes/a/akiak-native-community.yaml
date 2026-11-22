@@ -200,18 +200,22 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/akiakchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-akiakchrtr
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1949'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1949; the second gap review also confirmed this link.
 - kind: constitution
   title: Constitution and By-Laws of the Akiak Native Community
   year: '1949'
   link: https://thorpe.law.ou.edu/IRA/akiakcons.html
   source: university-of-oklahoma-indian-reorganization-act-akiakcons
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1949'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1949; the second gap review also confirmed this link.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -248,9 +252,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30667 (Tribe column of the designated agent table)
   note: 'Listed as: Akiak Native Community Confidence lowered from high by the lead session: the notice
-    prints its table as page images, so nation names were read from images and matched to the roster.'
+    prints its table as page images, so nation names were read from images and matched to the roster.
+    Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
+    level unchanged because the name was not matched word for word in machine-read text.'
 memberships:
 - organization: Association of Village Council Presidents
   source: association-of-village-council-presidents-tribal-office-directory

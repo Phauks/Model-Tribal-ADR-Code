@@ -15,8 +15,14 @@ original_link: https://www.oneidaindiannation.com/stories-and-heritage
 retrieved: '2026-11-21'
 archives: []
 history:
-  status: live
-  last_checked: '2026-11-21'
+  status: moved
+  last_checked: '2026-11-22'
+  changes:
+  - date: '2026-11-22'
+    before: https://www.oneidaindiannation.com/stories-and-heritage
+    after: https://www.oneidaindiannation.org/stories-and-heritage
+    summary: The address redirects to this page (HTTP 200 there); found by scripts/review/source_links.py
+      and the second gap review.
 rights:
   status: no-permission-needed
   basis: fair-use

@@ -209,10 +209,12 @@ governing_documents:
   link: https://static1.squarespace.com/static/57b33d10d1758eeaa57d6899/t/57be13d6b3db2ba07a783b91/1472074710812/2005+web+edition+CONSTITUTION+AND+BY.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2022'
   locator: Washington section, entry 'Confederated Tribes of the Colville Reservation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation and title; the second gap review also confirmed this link.
 - kind: law-code
   title: Colville Tribal Business Council Rules of Procedure Law and Order Code Amendment and Codification
   link: https://static1.squarespace.com/static/57b33d10d1758eeaa57d6899/t/57be1488197aeadebcd4b65c/1472074888785/CBC+PROCEDURAL+RULES.pdf
@@ -483,10 +485,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30697 (Tribe column of the designated agent table)
   note: 'Listed as: Confederated Tribes of the Colville Reservation Confidence lowered from high by the
     lead session: the notice prints its table as page images, so nation names were read from images and
-    matched to the roster.'
+    matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
+    layer for the table); verification level unchanged because the name was not matched word for word
+    in machine-read text.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

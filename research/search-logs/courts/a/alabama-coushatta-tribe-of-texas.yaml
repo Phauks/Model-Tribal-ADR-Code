@@ -1,0 +1,158 @@
+profile: content/tribes/a/alabama-coushatta-tribe-of-texas.yaml
+topic: courts
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.alabama-coushatta.com/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: 'Every court listed for this nation: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found not-found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.alabama-coushatta.com/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Home page status 200; 0 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.alabama-coushatta.com/sitemap.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Sitemap read; 1 addresses mention a court or judiciary.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.alabama-coushatta.com/tribal-courts/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: dead-link
+  reason: 'Every court listed for this nation: Court-related page on the nation''s site, status 404.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Bureau of Indian Affairs, Court of Indian Offenses: list
+    of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan.
+    7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Northwest Intertribal Court System, Tribal Courts: does
+    not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: American Indian Law Center, Southwest Intertribal Court
+    of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Alabama-Coushatta”)'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Tribal Court Clearinghouse (Tribal Law and Policy Institute),
+    Tribal Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/alabama_coushatta.html
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Courts”: The National Indian Law Library nation page is the directory the listing came
+    from or a directory like it; it cannot confirm that the court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Alabama-Coushatta-Peacemaker-Code.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Alabama-Coushatta-Tribe-of-Texas-Consistition-and-By-Law.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.tribal-institute.org/actt/Current%20Title%20I%20-%20Judicial%20Code.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.tribal-institute.org/actt/Current%20Title%20II%20-%20Peacemaker%20Code%20Rev%20to%20Sup%2011-24-14.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Tribal Courts”: Claude read the gathered evidence against the review brief; verdict not-found-after-search.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-008
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Alabama-Coushatta Tribe of Texas Tribal Judicial System”: Claude read the gathered evidence
+    against the review brief; verdict not-found-after-search.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-009
+next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Courts
+  (court-008, not-found-after-search); Alabama-Coushatta Tribe of Texas Tribal Judicial System (court-009,
+  not-found-after-search).'

@@ -1,0 +1,283 @@
+profile: content/tribes/c/comanche-nation.yaml
+topic: courts
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://comanchenation.com/departments/family-services/tribal-court
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: error
+  reason: '“Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status None; its reviewer found cannot-tell.'
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.comanchenation.com/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: error
+  reason: 'Every court listed for this nation: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status None; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://comanchenation.com/departments/family-services/tribal-court
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: error
+  reason: '“Tribal Court”: The listed link answered with status None; it does not show this court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.comanchenation.com/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: error
+  reason: 'Every court listed for this nation: Home page status None; 0 links mention a court; the site
+    refused or failed the request.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://comanchenation.com/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: error
+  reason: '“Tribal Court”: Home page status None; 0 links mention a court; the site refused or failed
+    the request.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Bureau of Indian Affairs, Court of Indian Offenses: list
+    of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan.
+    7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Northwest Intertribal Court System, Tribal Courts: does
+    not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: American Indian Law Center, Southwest Intertribal Court
+    of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Comanche”)'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Tribal Court Clearinghouse (Tribal Law and Policy Institute),
+    Tribal Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: state-court-directory
+  address: No OK state court directory of tribal courts found
+  outcome: not-found
+  reason: 'Every court listed for this nation: No Oklahoma state court system list of tribal courts was
+    found by web search on 2026-11-22.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/comanche.html
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Court”: The National Indian Law Library nation page is the directory the listing came
+    from or a directory like it; it cannot confirm that the court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://ncorj.org/tribal-law/preventive-and-treatment-services-to-at-risk-families/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    mentions a court in its title; no passage establishing a court was found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://ncorj.org/tribal-law/treatment-in-protective-orders/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    mentions a court in its title; no passage establishing a court was found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Tribal Court”: Claude read the gathered evidence against the review brief; verdict cannot-tell.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-045
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.comanchenation.com/index.php?option=com_k2&amp;view=itemlist&amp;layout=category&amp;task=category&amp;id=82&amp;Itemid=194
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: error
+  reason: '“Comanche Nation Judiciary”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 503; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.comanchenation.com/index.php?option=com_k2&amp;view=itemlist&amp;layout=category&amp;task=category&amp;id=82&amp;Itemid=194
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: error
+  reason: '“Comanche Nation Judiciary”: The listed link answered with status 503; it does not show this
+    court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.comanchenation.com/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: '“Comanche Nation Judiciary”: Home page status 403; 0 links mention a court; the site refused
+    or failed the request.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Comanche Nation Judiciary”: Claude read the gathered evidence against the review brief; verdict
+    cannot-tell.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-046
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.potawatomi.org/government/judicial-branch/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.potawatomi.org/government/judicial-branch/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: The listed link answered with status 200; it does not show
+    this court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.potawatomi.org/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: Home page status 200; 0 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.potawatomi.org/sitemap_index.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: Sitemap read; 30 addresses mention a court or judiciary.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.potawatomi.org/blog/2013/02/06/supreme-court-justice-robert-coulter-visits-cpn-eagle-aviary/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.potawatomi.org/blog/2013/06/17/indian-child-welfare-always-in-the-mind-of-foster-care-and-adoption-specialist-darla-courtney/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.potawatomi.org/blog/2013/09/03/citizen-potawatomi-nation-court-available-for-all-native-americans/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.potawatomi.org/blog/2014/07/02/johnson-and-carney-win-elections-braugh-re-appointed-to-supreme-court/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.potawatomi.org/blog/2014/11/05/tribal-judge-phil-lujan-honored-for-time-in-the-court-room/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Comanche Nation Children’s Court”: Claude read the gathered evidence against the review brief;
+    verdict cannot-tell.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-047
+next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-045,
+  cannot-tell); Comanche Nation Judiciary (court-046, cannot-tell); Comanche Nation Children’s Court (court-047,
+  cannot-tell). A person could open in a browser the pages that refused the project''s link checker: http://www.comanchenation.com/.'

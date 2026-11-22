@@ -226,11 +226,12 @@ governing_documents:
   link: http://www.nezperce.org/wp-content/uploads/2018/01/ConstitutionByLaws.pdf
   source: national-indian-law-library-nez-perce
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website . (pdf)".'
+    website . (pdf)". Document opened on 2026-11-22 (the copy the constitution catalog work saved); its
+    opening text names the kind, nation and title; the second gap review also confirmed this link.'
 - kind: law-code
   title: Nez Perce Tribal Code
   source: tribal-law-policy-institute-justice-systems
@@ -579,11 +580,13 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
-  verification: inferred
+  verification: read-in-full
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30699 (Tribe column of the designated agent table)
   note: 'Listed as: Nez Perce Tribe Confidence lowered from high by the lead session: the notice prints
-    its table as page images, so nation names were read from images and matched to the roster.'
+    its table as page images, so nation names were read from images and matched to the roster. Row re-read
+    on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
+    (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
