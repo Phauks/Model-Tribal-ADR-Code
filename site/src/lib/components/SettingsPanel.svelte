@@ -171,7 +171,7 @@
 
 <button
 	bind:this={opener}
-	class="settings-button needs-scripts"
+	class="icon-button needs-scripts"
 	type="button"
 	aria-haspopup="dialog"
 	aria-label="Settings"
@@ -259,19 +259,6 @@
 
 <style>
 	/* Icon only, the same size as the theme button beside it (Trevor, Nov. 22, 2026). */
-	.settings-button {
-		display: inline-grid;
-		place-items: center;
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
-		padding: 0;
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-band-text);
-		cursor: pointer;
-	}
-
 	.section-heading {
 		margin: 0 0 var(--space-2);
 	}

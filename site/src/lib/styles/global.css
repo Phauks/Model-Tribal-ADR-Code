@@ -326,6 +326,42 @@ th[scope='row'] {
 	color: var(--color-ink);
 }
 
+/*
+ * A button that shows only an icon, such as the theme switch, the Settings
+ * cog, the profile icon or a close X. It has no box around it (Trevor, Nov.
+ * 22, 2026): the icon says it is a control. It keeps the 44px target, a faint
+ * fill on hover and the site's focus ring. Every one carries aria-label and
+ * title (DESIGN.md, section 6).
+ */
+.icon-button {
+	display: inline-grid;
+	place-items: center;
+	min-width: var(--layout-target-minimum);
+	min-height: var(--layout-target-minimum);
+	padding: 0;
+	border: 0;
+	border-radius: var(--radius-control);
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+}
+
+.icon-button:hover {
+	background: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+/* The rule above would hide the focus fill, so restore it. */
+.icon-button:focus-visible {
+	background-color: var(--color-focus);
+	color: var(--focus-text);
+}
+
+@media (forced-colors: active) {
+	.icon-button:hover {
+		outline: 1px solid ButtonText;
+	}
+}
+
 select {
 	font: inherit;
 	font-size: var(--font-size-small);

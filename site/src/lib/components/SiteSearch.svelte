@@ -89,7 +89,7 @@
 			<Search size={20} strokeWidth={1.75} />
 			<span>Search</span>
 		</button>
-		<button class="close" type="button" aria-label="Close search" title="Close search" onclick={close}>
+		<button class="icon-button close" type="button" aria-label="Close search" title="Close search" onclick={close}>
 			<X size={20} strokeWidth={1.75} />
 		</button>
 	</form>
@@ -181,12 +181,6 @@
 	}
 
 	.close {
-		min-width: var(--layout-target-minimum);
-		margin-left: var(--space-2);
-		padding: 0;
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-band-text);
+		margin-left: var(--space-1);
 	}
 </style>
