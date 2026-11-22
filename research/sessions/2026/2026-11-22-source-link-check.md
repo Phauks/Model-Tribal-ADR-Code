@@ -41,22 +41,8 @@ limits: >-
   recorded as blocked and not tried another way. No publication dates were filled in.
 ---
 
-Output: `history.status` set on 11 source records (9 `removed`, 2 `moved`
-with the new address in `history.changes`) and the comparison written up in
-the "Applied" section of
-[the second gap review](../../reviews/2026-11-22-second-gap-review.md).
+Output: `history.status` set on 11 source records (9 `removed`, 2 `moved` with the new address in `history.changes`) and the comparison written up in the "Applied" section of [the second gap review](../../reviews/2026-11-22-second-gap-review.md).
 
-Method: `scripts/review/source_links.py check` requested each address and
-classed the answer: live (200 at the same address, or a download handed to a
-file host), moved (a redirect that keeps the page's own name), removed (404 or
-410 to both requests), blocked (401, 403, 429 or a bot-check page) or unclear.
-`apply --agree research/reviews/2026-11-22-source-links.csv` wrote a status
-only where the second gap review's check found the same: gone for removed,
-moved to the same address for moved. It edited only the `history` block, so
-`archives`, comments and every other line stay as they were.
+Method: `scripts/review/source_links.py check` requested each address and classed the answer: live (200 at the same address, or a download handed to a file host), moved (a redirect that keeps the page's own name), removed (404 or 410 to both requests), blocked (401, 403, 429 or a bot-check page) or unclear. `apply --agree research/reviews/2026-11-22-source-links.csv` wrote a status only where the second gap review's check found the same: gone for removed, moved to the same address for moved. It edited only the `history` block, so `archives`, comments and every other line stay as they were.
 
-Found on the way: 760 of the 769 sources that the second gap review lists as
-"moved to another site" are FederalRegister.gov notices whose redirect goes to
-unblock.federalregister.gov, the site's CAPTCHA page for scripts. All 316 of
-those this run checked through the FederalRegister.gov API exist at their
-recorded addresses, so they have not moved.
+Found on the way: 760 of the 769 sources that the second gap review lists as "moved to another site" are FederalRegister.gov notices whose redirect goes to unblock.federalregister.gov, the site's CAPTCHA page for scripts. All 316 of those this run checked through the FederalRegister.gov API exist at their recorded addresses, so they have not moved.

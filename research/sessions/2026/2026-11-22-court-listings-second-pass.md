@@ -49,38 +49,21 @@ limits: >-
 Output:
 
 - [the report](../../reviews/2026-11-22-court-listings-second-pass.md);
-- one record per court, in [`.json`](../../reviews/2026-11-22-court-listings-second-pass.json)
-  and [`.csv`](../../reviews/2026-11-22-court-listings-second-pass.csv), with an
-  empty `lead_author_decision` column;
-- every place searched, as one [search log](../../search-logs/README.md) per
-  nation (226) under `research/search-logs/courts/`;
+- one record per court, in [`.json`](../../reviews/2026-11-22-court-listings-second-pass.json) and [`.csv`](../../reviews/2026-11-22-court-listings-second-pass.csv), with an empty `lead_author_decision` column;
+- every place searched, as one [search log](../../search-logs/README.md) per nation (226) under `research/search-logs/courts/`;
 - the [brief](../../reviews/briefs/2026-11-22-court-listings-second-pass.md).
 
-Results: 133 confirmed, 16 confirmed under another name, 10 served by an
-intertribal court, 1 served by a Court of Indian Offenses, 4 with a dead link
-and the court found elsewhere, 82 not found after search and 82 that cannot be
-told. The four dead links (three Navajo Nation court pages and the Red Lake
-court page) now link to the court's page on the nation's or the court's own
-website. Each note keeps the listed link. Only `justice_institutions` was
-changed. No court was removed.
+Results: 133 confirmed, 16 confirmed under another name, 10 served by an intertribal court, 1 served by a Court of Indian Offenses, 4 with a dead link and the court found elsewhere, 82 not found after search and 82 that cannot be told. The four dead links (three Navajo Nation court pages and the Red Lake court page) now link to the court's page on the nation's or the court's own website. Each note keeps the listed link. Only `justice_institutions` was changed. No court was removed.
 
-Method: the script gathered the evidence for each court and wrote a log of
-every fetch. Claude read each item against the brief and wrote a verdict that
-cites an address from that log. The merge step checked every cited address
-against the fetch log, or against `research/tribal-law/documents.json` for law
-codes, and found none fetched with a status other than 200.
+Method: the script gathered the evidence for each court and wrote a log of every fetch. Claude read each item against the brief and wrote a verdict that cites an address from that log. The merge step checked every cited address against the fetch log, or against `research/tribal-law/documents.json` for law codes, and found none fetched with a status other than 200.
 
 The second reading found three gaps in the first gathering:
 
-- a profile that names only one of a nation's states (Washoe, whose court is
-  in the California directory);
+- a profile that names only one of a nation's states (Washoe, whose court is in the California directory);
 - a website on record that says the site has moved (Las Vegas Paiute);
-- a second website on record that the gathering had skipped (San Carlos
-  Apache, Oglala Sioux).
+- a second website on record that the gathering had skipped (San Carlos Apache, Oglala Sioux).
 
-The script was changed to search the first two websites on record, plus a
-site's announced new address. It was run again from its cache, and the new
-evidence was read.
+The script was changed to search the first two websites on record, plus a site's announced new address. It was run again from its cache, and the new evidence was read.
 
 Data errors found are listed in the report for the lead author, including:
 

@@ -84,12 +84,7 @@ writes the [search logs](../research/search-logs/README.md) of decision record
 
 ## Applying the second gap review, Nov. 22, 2026
 
-Run by hand, never in continuous integration. They re-check rows 21, 8 and
-10 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md)
-independently of the [second gap review](../research/reviews/2026-11-22-second-gap-review.md)
-and write to records only the clear results both checks agree on (its
-"Applied" section). Everything else stays in that review's files for the lead
-author. None of them tries to get past a site that refuses scripts.
+Run by hand, never in continuous integration. They re-check rows 21, 8 and 10 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) independently of the [second gap review](../research/reviews/2026-11-22-second-gap-review.md) and write to records only the clear results both checks agree on (its "Applied" section). Everything else stays in that review's files for the lead author. None of them tries to get past a site that refuses scripts.
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -99,9 +94,7 @@ author. None of them tries to get past a site that refuses scripts.
 
 ## Gaming compacts and ordinances
 
-Run by hand, never in continuous integration. They build the catalog in
-[`research/gaming/`](../research/gaming/README.md) and never change a profile.
-The documents they download stay private, outside the repository.
+Run by hand, never in continuous integration. They build the catalog in [`research/gaming/`](../research/gaming/README.md) and never change a profile. The documents they download stay private, outside the repository.
 
 | Script | Does | Needs |
 | --- | --- | --- |

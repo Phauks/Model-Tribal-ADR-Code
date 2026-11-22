@@ -35,19 +35,8 @@ limits: >-
   was replaced.
 ---
 
-Output: `verification: read-in-full` on 301 governing document facts (147
-constitutions and 154 corporate charters), each with a dated note, described
-in the "Applied" section of
-[the second gap review](../../reviews/2026-11-22-second-gap-review.md).
+Output: `verification: read-in-full` on 301 governing document facts (147 constitutions and 154 corporate charters), each with a dated note, described in the "Applied" section of [the second gap review](../../reviews/2026-11-22-second-gap-review.md).
 
-Method: `scripts/review/governing_documents.py gather --no-fetch` read the
-text of each document from saved copies and recorded whether its heading gives
-the document's own title for its kind, whether the nation, the fact's title
-words and its year appear, and whether the text is a full document;
-National Indian Law Library index pages always count as tables of contents,
-as the second gap review found. `apply --agree` wrote the level only where the
-second gap review had also confirmed the same link.
+Method: `scripts/review/governing_documents.py gather --no-fetch` read the text of each document from saved copies and recorded whether its heading gives the document's own title for its kind, whether the nation, the fact's title words and its year appear, and whether the text is a full document; National Indian Law Library index pages always count as tables of contents, as the second gap review found. `apply --agree` wrote the level only where the second gap review had also confirmed the same link.
 
-Ruled out: links were not replaced and no title, kind or year was changed;
-facts whose kind does not match the linked page are listed in the review's
-Applied section for the lead author.
+Ruled out: links were not replaced and no title, kind or year was changed; facts whose kind does not match the linked page are listed in the review's Applied section for the lead author.

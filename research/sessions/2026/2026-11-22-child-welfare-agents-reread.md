@@ -27,18 +27,8 @@ limits: >-
   read-in-full only for the 70 facts whose name that OCR text also matched word for word.
 ---
 
-Output: the transcription of the table's Tribe column,
-[`2026-11-22-child-welfare-agents-table.csv`](../../reviews/2026-11-22-child-welfare-agents-table.csv)
-(582 rows with the printed page), and changes to the 575 profile facts that
-cite the notice, described in the "Applied" section of
-[the second gap review](../../reviews/2026-11-22-second-gap-review.md).
+Output: the transcription of the table's Tribe column, [`2026-11-22-child-welfare-agents-table.csv`](../../reviews/2026-11-22-child-welfare-agents-table.csv) (582 rows with the printed page), and changes to the 575 profile facts that cite the notice, described in the "Applied" section of [the second gap review](../../reviews/2026-11-22-second-gap-review.md).
 
-Method: every profile fact's "Listed as" name was matched to the
-transcription, ignoring case, punctuation and "&" against "and". All 575 were
-found, the multi-row ones (Minnesota Chippewa Tribe, Passamaquoddy Tribe,
-Pribilof Islands, Native Village of Venetie, and the shared Capitan Grande
-Band row) row by row. Every table row matched a fact.
+Method: every profile fact's "Listed as" name was matched to the transcription, ignoring case, punctuation and "&" against "and". All 575 were found, the multi-row ones (Minnesota Chippewa Tribe, Passamaquoddy Tribe, Pribilof Islands, Native Village of Venetie, and the shared Capitan Grande Band row) row by row. Every table row matched a fact.
 
-Ruled out: no agent office or contact was added to any profile; the six
-Minnesota Chippewa band profiles still have no fact, because that needs the
-lead author's decision.
+Ruled out: no agent office or contact was added to any profile; the six Minnesota Chippewa band profiles still have no fact, because that needs the lead author's decision.

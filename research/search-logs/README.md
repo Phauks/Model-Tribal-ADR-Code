@@ -12,8 +12,7 @@ searched, searched and nothing found, or blocked at certain places.
   letter).
 - Fields: [`schemas/search-log.schema.json`](../../schemas/search-log.schema.json);
   example: [`schemas/examples/search-log.example.yaml`](../../schemas/examples/search-log.example.yaml).
-- Topics in use: `dispute-resolution`, `courts`. A new topic is a new folder; the
-  schema does not change.
+- Topics in use: `dispute-resolution`, `courts`. A new topic is a new folder; the schema does not change.
 
 ## Adding a search
 
