@@ -121,9 +121,11 @@ What needs a decision:
   "Capitalize the term Indian Country"); `nation.yaml` quotes "Red Lake
   Nation Tribe" from Native Governance Center, How to Talk About Native
   Nations, p. 3. No change is needed.
-- **Cannot check.** `content/methods/screening-panel.yaml` cites Sander
-  (1976), which has no free online copy. This one belongs on the project's
-  Westlaw pull list or goes to the library.
+- **Cannot check, since checked.** `content/methods/screening-panel.yaml`
+  cites Sander (1976), which has no free online copy. On Nov. 22 its three
+  quotations ("screening-adjudication model", "costing out" or "screening
+  out", and the three-person Board sentence) were found word for word in the
+  project's Westlaw copy of 70 F.R.D. 79, at *128-29.
 
 Caveats: the two Samoan sources were read through a web fetch tool, and the
 Organized Village of Kake source through OCR of a scanned PDF.
