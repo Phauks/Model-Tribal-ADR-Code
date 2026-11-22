@@ -78,6 +78,9 @@ jobs:
   site:
     name: Website build
     runs-on: ubuntu-latest
+    # A normal run takes about ten minutes; this stops a stuck one long before
+    # GitHub's six-hour limit, so the merge queue is not held up.
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: site
@@ -100,8 +103,11 @@ jobs:
       - name: Check the built pages, manifest and service worker
         run: npm run check:built-site
       - name: Install Chromium for the accessibility check
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps --only-shell chromium
       - name: Accessibility check (axe-core, every page, both themes)
+        # The script limits each page and stops itself when nothing finishes for
+        # five minutes; this is the last guard if the browser itself stalls.
+        timeout-minutes: 20
         run: npm run check:accessibility
 
   print:
