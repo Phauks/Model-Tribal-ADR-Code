@@ -1,0 +1,63 @@
+profile: content/tribes/t/the-osage-nation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-osageord041698.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 1998-04-16
+    and recorded 2 procedure(s): employee-grievance, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#osage-tribe-ordinance-1998-04-16#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#osage-tribe-ordinance-1998-04-16#i2
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-osageamend070703.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2003-07-07 has no text layer on most pages (7 of 7 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-amendappr052705.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2005-05-27 has no text layer on most pages (46 of 46 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-osageordamend022707.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2007-02-27 has no text layer on most pages (36 of 36 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-ordamd01182011.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2011-01-18 has no text layer on most pages (42 of 42 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 2003-07-07 (https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-osageamend070703.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2005-05-27 (https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-amendappr052705.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2007-02-27 (https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-osageordamend022707.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2011-01-18 (https://www.nigc.gov/wp-content/uploads/2025/03/osagenation-ordamd01182011.pdf)
+  with OCR or by hand.

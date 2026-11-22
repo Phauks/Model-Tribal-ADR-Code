@@ -1,0 +1,27 @@
+profile: content/tribes/p/pueblo-of-jemez.yaml
+topic: gaming-dispute-procedures
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/pueblojemez-jemezord040605.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This ordinance listed 2005-04-06 has no text layer on most pages (26 of 27 pages have no text
+    layer (only the approval letter has text); no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/pueblojemez-ClarificationLetter061605.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2005-06-16 and found no candidate
+    section (the file is the Commission's approval letter only, with no ordinance text).
+next_steps: Read the scanned ordinance listed 2005-04-06 (https://www.nigc.gov/wp-content/uploads/2025/03/pueblojemez-jemezord040605.pdf)
+  with OCR or by hand.

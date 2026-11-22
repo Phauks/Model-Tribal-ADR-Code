@@ -1,0 +1,84 @@
+profile: content/tribes/p/pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/paumabandluisenomission-paumabandord091800.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other)
+    in this ordinance listed 2000-09-18; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/paumabandluisenomission-paumaamend041505.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2005-04-15 has no text layer on most pages (135 of 136 pages have no text
+    layer (only the approval letter has text); no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/paumabandluisenomission-paumabandord070706.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other)
+    in this amendment listed 2006-07-07; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/paumabandluisenomission-Amd-approval-04.22.2010.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2010-04-22 has no text layer on most pages (38 of 38 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/paumabandluisenomission-20110321.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2011-03-21 has no text layer on most pages (5 of 5 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20220919_Pauma_Ord_Amend_Approval.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2022-09-19
+    and recorded 3 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#pauma-band-of-luiseno-mission-indians-of-the-pauma-yuima-reservation-amendment-2022-09-19#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#pauma-band-of-luiseno-mission-indians-of-the-pauma-yuima-reservation-amendment-2022-09-19#i2
+  - research/reviews/2026-11-22-ordinance-disputes.json#pauma-band-of-luiseno-mission-indians-of-the-pauma-yuima-reservation-amendment-2022-09-19#i3
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20241120_Pauma_Band_Gam_Ord_Amend.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2024-11-20 has no text layer on most pages (11 of 13 pages have no text
+    layer (only the approval letter has text); no OCR available).
+next_steps: Read the scanned amendment listed 2005-04-15 (https://www.nigc.gov/wp-content/uploads/2025/03/paumabandluisenomission-paumaamend041505.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2010-04-22 (https://www.nigc.gov/wp-content/uploads/2025/03/paumabandluisenomission-Amd-approval-04.22.2010.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2011-03-21 (https://www.nigc.gov/wp-content/uploads/2025/03/paumabandluisenomission-20110321.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2024-11-20 (https://www.nigc.gov/wp-content/uploads/2025/03/20241120_Pauma_Band_Gam_Ord_Amend.pdf)
+  with OCR or by hand.

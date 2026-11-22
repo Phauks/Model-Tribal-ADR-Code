@@ -1,0 +1,30 @@
+profile: content/tribes/e/eastern-shoshone-tribe-of-the-wind-river-reservation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/easternshoshonetribe-OrdAppr31004.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 2004-03-10
+    and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#eastern-shoshone-tribe-of-the-windriver-reservation-ordinance-2004-03-10#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#eastern-shoshone-tribe-of-the-windriver-reservation-ordinance-2004-03-10#i2
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/shoshonetribe-shoshoneord031004.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This ordinance listed 2004-03-10 has no text layer on most pages (24 of 24 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned ordinance listed 2004-03-10 (https://www.nigc.gov/wp-content/uploads/2025/03/shoshonetribe-shoshoneord031004.pdf)
+  with OCR or by hand.

@@ -1,0 +1,51 @@
+profile: content/tribes/r/round-valley-indian-tribes-round-valley-reservation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyord072596.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 1996-07-25
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#round-valley-indian-tribes-ordinance-1996-07-25#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyamend080106.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2006-08-01 has no text layer on most pages (26 of 26 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyordappr41309.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2009-04-13 has no text layer on most pages (4 of 4 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-02082012ltrtoChairwomanLoriRayRoundValIndTrbGam.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2012-02-08 has no text layer on most pages (25 of 25 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 2006-08-01 (https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyamend080106.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2009-04-13 (https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyordappr41309.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2012-02-08 (https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-02082012ltrtoChairwomanLoriRayRoundValIndTrbGam.pdf)
+  with OCR or by hand.

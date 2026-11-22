@@ -1,0 +1,73 @@
+profile: content/tribes/s/sac-and-fox-nation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-sacfoxord040194.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (dispute-other) in this ordinance
+    listed 1994-04-01; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-amendappr083104.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2004-08-31
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#sac-fox-nation-of-oklahoma-amendment-2004-08-31#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-Amend-Appr-11.20.08.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2008-11-20 has no text layer on most pages (49 of 49 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-Amdappr12142010.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2010-12-14 has no text layer on most pages (7 of 7 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-20120227LtrtoPrnChieffrNIGCChairwomanreSacFoxNatgamord.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2012-02-27 has no text layer on most pages (2 of 2 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20180928OrdAmendAppr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2018-09-26 has no text layer on most pages (157 of 157 pages have no text
+    layer; no OCR available).
+next_steps: Some pages of the amendment listed 2004-08-31 (https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-amendappr083104.pdf)
+  have no text layer; read them with OCR. Read the scanned amendment listed 2008-11-20 (https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-Amend-Appr-11.20.08.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2010-12-14 (https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-Amdappr12142010.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2012-02-27 (https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxnationok-20120227LtrtoPrnChieffrNIGCChairwomanreSacFoxNatgamord.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2018-09-26 (https://www.nigc.gov/wp-content/uploads/2025/03/20180928OrdAmendAppr.pdf)
+  with OCR or by hand.

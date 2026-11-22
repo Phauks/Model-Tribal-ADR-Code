@@ -1,0 +1,29 @@
+profile: content/tribes/c/central-council-of-the-tlingit-and-haida-indian-tribes.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/OrdinanceApprovalCentralCouncil20160513.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 2016-05-13
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#central-council-of-tlingit-and-haida-indian-tribes-of-alaska-ordinance-2016-05-13#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/07/2025.01.17-Tlingit-Haida-Ordinance.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2025-01-17 has no text layer on most pages (32 of 42 pages have no text
+    layer and the readable pages have no candidate section; no OCR available).
+next_steps: Read the scanned amendment listed 2025-01-17 (https://www.nigc.gov/wp-content/uploads/2025/07/2025.01.17-Tlingit-Haida-Ordinance.pdf)
+  with OCR or by hand.

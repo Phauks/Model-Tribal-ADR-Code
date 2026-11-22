@@ -1,0 +1,40 @@
+profile: content/tribes/f/fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/fortbelknapindiancomnity-ordappr090502.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other,
+    court-review, licensing-hearing) in this ordinance listed 2002-09-05; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/fortbelknapindiancomnity-2009.12.01-FB-Ord-Amen-Appr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2009-12-01
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#fort-belknap-indian-community-amendment-2009-12-01#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2026/08/Fort-Belknap-Deemed-Approve-August-17-2026.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2026-08-17 has no text layer on most pages (2 of 5 pages have no text
+    layer and the readable pages have no candidate section; no OCR available).
+next_steps: Read the scanned amendment listed 2026-08-17 (https://www.nigc.gov/wp-content/uploads/2026/08/Fort-Belknap-Deemed-Approve-August-17-2026.pdf)
+  with OCR or by hand.
