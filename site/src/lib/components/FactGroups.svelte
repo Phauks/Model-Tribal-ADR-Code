@@ -67,15 +67,12 @@
 	/*
 	 * A fact here is often only a link, such as a region or a law's title, so
 	 * its markers are not inside running text and need a full 24 by 24 pixel
-	 * target (WCAG 2.2, 2.5.8 Target Size (Minimum)).
+	 * target (WCAG 2.2, 2.5.8 Target Size (Minimum)). Padding gives the room
+	 * and keeps the marker inline, so it never wraps away from the fact's last
+	 * word; the room is after the number, which stays against the words.
 	 */
 	.summary-list :global(.note-marker) {
-		display: inline-block;
-		min-width: 24px;
-		min-height: 24px;
-		line-height: 24px;
-		/* The number stays against the fact's words; the extra room is after it. */
-		text-align: start;
+		padding: 2px 6px 2px 0.05em;
 	}
 
 	.fact-detail {
