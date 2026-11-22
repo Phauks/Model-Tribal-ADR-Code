@@ -15,8 +15,10 @@ import {
 	nationsForReview,
 	publicCopies,
 	servableImages,
-	sources
+	sources,
+	storyRecords
 } from './src/lib/server/content.ts';
+import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibility.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
 const designTokensModule = 'virtual:design-tokens.css';
@@ -172,7 +174,7 @@ const resolvedSourceCitationsModule = `\0${sourceCitationsModule}`;
 
 /**
  * The full citation, in the project's Indigo Book style, of every source the
- * glossary cites, formatted with citeproc-js while the site is built
+ * glossary and the story pages cite, formatted with citeproc-js while the site is built
  * (src/lib/server/citations.ts). Only the finished text is bundled, never the
  * citation processor.
  */
@@ -190,6 +192,9 @@ function sourceCitations(): Plugin {
 				const prose = `${entry.definition} ${entry.usage_note ?? ''}`;
 				for (const match of prose.matchAll(/@([a-z0-9-]+)/g)) keys.add(match[1]);
 			}
+			const today = isoDate(new Date());
+			const shownStories = storyRecords().filter((record) => storyIsShown(record, today));
+			for (const key of storySourceKeys(shownStories)) keys.add(key);
 			const records = [...keys].flatMap((key) => {
 				const record = sources().get(key);
 				return record ? [record] : [];

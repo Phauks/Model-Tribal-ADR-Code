@@ -3,7 +3,7 @@ title: "Comparing model codes and dispute frameworks"
 part: i
 status: draft
 review_status: drafted-from-public-sources
-updated: 2026-11-21
+updated: 2026-11-22
 research_session: 2026-11-21-comparative-model-codes
 ---
 
@@ -13,7 +13,7 @@ This essay compares the existing models a drafter of a model Tribal [[adr]] code
 
 For each framework the essay asks the same questions: how it is built, which provisions matter for drafting, and how it handles consent, enforceability, confidentiality and appeals. It then asks how the framework fits a nation's [[sovereignty]].
 
-This is research, not drafting. Under the project roadmap, no model provision is written until the lead author has reviewed the dataset (Gate 1) and the scope and outline are approved (Gate 2) (`docs/roadmap.md`). Where the essay says what a framework suggests for the model code, that is project analysis, labeled as such, and it is framed as a question for the outline rather than as text.
+This is research, not drafting. The project drafts no model provision until the lead author has reviewed the project's dataset and the scope and outline have been approved with the faculty advisors. Where the essay says what a framework suggests for the model code, that is project analysis, labeled as such, and it is framed as a question for the outline rather than as text.
 
 [[peacemaking|Peacemaking]] is treated as its own track, not as a kind of ADR. The Native American Rights Fund's Indigenous Peacemaking Initiative states that "peacemaking is not alternative dispute resolution" and that the term "refers to traditional ways of resolving conflict in Indigenous communities" [@narf-ipi-home]. Section 3 explains what that means for this comparison.
 
@@ -147,15 +147,15 @@ Two models show how codes for Native nations have been built.
 
 ### 2.2 Enacted Tribal arbitration ordinances
 
-The project's provisional analysis found four commercial arbitration ordinances, of the Ho-Chunk Nation, the Pascua Yaqui Tribe, the Little River Band of Ottawa Indians and the Jamestown S'Klallam Tribe [@ho-chunk-2-hcc-13-arbitration; @pascua-yaqui-7-pytc-6-arbitration; @little-river-arbitration-code-01-300-02; @jamestown-title-2-arbitration]. The four share a shape in their records: written agreements to arbitrate are enforceable, the Tribal court confirms awards with limited or no appeal, and claims against the nation proceed only where a separate instrument waives immunity (`research/analyses/2026-11-21-dispute-resolution-practice.md`, section 4).
+The project's provisional analysis found four commercial arbitration ordinances, of the Ho-Chunk Nation, the Pascua Yaqui Tribe, the Little River Band of Ottawa Indians and the Jamestown S'Klallam Tribe [@ho-chunk-2-hcc-13-arbitration; @pascua-yaqui-7-pytc-6-arbitration; @little-river-arbitration-code-01-300-02; @jamestown-title-2-arbitration]. The four share a shape in their records: written agreements to arbitrate are enforceable, the Tribal court confirms awards with limited or no appeal, and claims against the nation proceed only where a separate instrument waives immunity (project analysis of the project's dataset).
 
 The Ho-Chunk Nation's ordinance, read for this essay, shows the shape in full. A written agreement to arbitrate a future or existing dispute is valid, irrevocable and enforceable [@ho-chunk-2-hcc-13-arbitration, § 3]. A party may apply to the Tribal forum within one year to confirm an award; the forum confirms the award as the arbitrator made it, without review or modification, and the judgment is enforced like a civil judgment [@ho-chunk-2-hcc-13-arbitration, § 8]. No appeal lies from an order enforcing an agreement or an award [@ho-chunk-2-hcc-13-arbitration, § 9]. Where the nation or its entity is a party, the forum's jurisdiction depends on an explicit waiver of immunity in the contract, and the ordinance itself waives nothing [@ho-chunk-2-hcc-13-arbitration, §§ 10, 12]. Tribal police carry out the forum's orders [@ho-chunk-2-hcc-13-arbitration, § 13].
 
-Compared with the Revised Uniform Arbitration Act, the ordinance in the sections read removes judicial review of the merits and appeals altogether, and says nothing about arbitrator disclosure, non-waivable rights or confidentiality (project analysis). Whether the ordinances share a common model is a question for the review queue, not a conclusion.
+Compared with the Revised Uniform Arbitration Act, the ordinance in the sections read removes judicial review of the merits and appeals altogether, and says nothing about arbitrator disclosure, non-waivable rights or confidentiality (project analysis). Whether the ordinances share a common model is an open question, not a conclusion.
 
 ### 2.3 Court-connected forums in the dataset
 
-The provisional analysis also found recurring features among 77 forum records: forums inside the Tribal court system, consent to enter, and agreements entered as judgments. Another recurring feature is a return path to court when a process does not resolve the matter (`research/analyses/2026-11-21-dispute-resolution-practice.md`, sections 2 and 8). Examples include the Chickasaw Nation's peacemaking court as a division of the District Court [@chickasaw-title-5-courts-and-procedures] and the Oneida Nation's Peacemaking and Mediation Division with a training rule for mediators [@oneida-wi-8-oc-801-judiciary]. Most of that data is not yet reviewed (Gate 1), so these features are hypotheses to test, not findings.
+The provisional analysis also found recurring features among 77 forum records: forums inside the Tribal court system, consent to enter, and agreements entered as judgments. Another recurring feature is a return path to court when a process does not resolve the matter (project analysis of the project's dataset). Examples include the Chickasaw Nation's peacemaking court as a division of the District Court [@chickasaw-title-5-courts-and-procedures] and the Oneida Nation's Peacemaking and Mediation Division with a training rule for mediators [@oneida-wi-8-oc-801-judiciary]. Most of that data is not yet reviewed (Gate 1), so these features are hypotheses to test, not findings.
 
 ## 3. Peacemaking, kept as its own track
 
@@ -176,7 +176,7 @@ The Indian Gaming Regulatory Act lists subjects a Tribal-State compact "may incl
 
 ### 4.2 State templates
 
-The project holds 286 compact dispute summaries for 276 nations in 28 states, but only 28 distinct texts: 256 were taken from a state's model compact without checking the nation's own compact (`research/analyses/2026-11-21-dispute-resolution-practice.md`, section 6). The patterns below are therefore state templates, not evidence of individual nations' choices.
+The project holds 286 compact dispute summaries for 276 nations in 28 states. When this essay was first drafted, most had been copied from a state's model compact. A recheck finished on Nov. 22, 2026 read them against each nation's own compact or Secretarial Procedures: 279 now cite the nation's own document, they fall into 127 distinct summaries, and five await the lead author's review (project dataset). Many nations in a state still signed the same model, so the rows below are state patterns, each shown by one nation's compact.
 
 | State template (example record) | Steps | Binding outcome |
 | --- | --- | --- |
@@ -191,7 +191,7 @@ The project holds 286 compact dispute summaries for 276 nations in 28 states, bu
 | New York [@compact-ny-seneca-nation-of-indians-2002] | Notice, meeting within 14 days, 30 days to resolve | Binding arbitration, no money damages |
 | Florida [@compact-fl-seminole-tribe-of-florida-2021] | Notice, meeting within 30 days, mediation under American Arbitration Association procedures | Federal court, or a named state court if federal jurisdiction is lacking |
 
-Source for the steps: the project's compact summaries, from each state's template, as recorded against the example compact.
+Source for the steps: the project's compact summaries for the example compact, checked against the rechecked summaries on Nov. 22, 2026 (the rows still match).
 
 In the project's view, three features recur and are worth testing in the outline. First, almost every template begins with written notice and a meeting between governments, which is a negotiation step framed as a matter of government-to-government relations. Second, mediation is usually optional. Third, the binding stage is where the templates differ most, and where immunity waivers are written most narrowly, often to declaratory and injunctive relief.
 
@@ -314,7 +314,7 @@ Every uniform act is written for a state; nations appear only in optional bracke
 - The Native Title Act's sections were not read; the Australian section relies on the Australian Law Reform Commission's summary.
 - The OAS declaration, the New Zealand amendment act and the Australian practice report were read through a summarizing tool; their records say so.
 - The Nisg̱a'a elders advisory council appendix and the 2009 Australian report were not read.
-- Oklahoma's Part 12 was read as quoted by the Tenth Circuit; the reporter citation and certiorari denial for Citizen Potawatomi Nation v. Oklahoma are on the Westlaw list.
+- Oklahoma's Part 12 was read as quoted by the Tenth Circuit; the reporter citation and certiorari denial for Citizen Potawatomi Nation v. Oklahoma have not yet been confirmed.
 - The gaming compact patterns are state templates; 256 of 286 summaries have not been checked against the nation's own compact.
 - No intertribal model ADR code was found, but the search did not cover library-only collections.
 - No citator checks have been run.

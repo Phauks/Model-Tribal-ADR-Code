@@ -47,6 +47,12 @@
 			{/if}
 		</p>
 	</section>
+	{#if data.storyCount > 0}
+		<section class="panel" aria-labelledby="stories-heading">
+			<h3 id="stories-heading"><a href="/stories">Stories</a></h3>
+			<p>{data.storyCount} stories, accounts and teachings about making peace, quoted in the words of the nations and people who tell them.</p>
+		</section>
+	{/if}
 	<section class="panel" aria-labelledby="glossary-heading">
 		<h3 id="glossary-heading"><a href="/glossary">Glossary</a></h3>
 		<p>{data.glossaryCount} terms the project defines, with how and when to use them.</p>
