@@ -4,10 +4,11 @@
 	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
+	import GlancePanel from '#lib/components/GlancePanel.svelte';
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import NationMap from '#lib/components/NationMap.svelte';
-	import { newTabNoteId, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
+	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import Clock from '@lucide/svelte/icons/clock';
 	import type { PageProps } from './$types';
@@ -30,15 +31,13 @@
 </nav>
 
 <!--
-	On wide screens the page has two columns: the text, held to a readable
-	line length, and beside it "At a glance" (the seal, key facts and map) and
-	the contacts, set off by a rule (site/DESIGN.md, "Nation pages"). In the
-	page's order "At a glance" comes right after the title, so on a narrow
-	screen it comes first, and the main column's sections all follow it.
+	A record page (site/DESIGN.md, "Record pages", "Nation pages"): the text on
+	the left, held to a readable line length, and beside it "At a glance" (the
+	seal, key facts and map) and the contacts. On a narrow screen "At a glance"
+	comes right after the title, so the key facts come first.
 -->
-<span id={newTabNoteId} hidden>Opens in a new tab</span>
-<article class="profile" {@attach outsideLinksOpenInNewTab}>
-	<div class="profile-introduction">
+<RecordPage glance={!page.withdrawn && (data.glance.length > 0 || data.map || hasContacts) ? glance : undefined}>
+	{#snippet introduction()}
 		{#if page.example}
 			<div class="notice" role="note">
 				<p>
@@ -88,107 +87,99 @@
 				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
 			</span>
 		</p>
-	</div>
+	{/snippet}
 
 	{#if !page.withdrawn}
-		<!--
-			3. At a glance, with the seal and the map, then the contacts. On wide
-			pages it is the right-hand column, set off by a rule; in the page's
-			order it comes right after the title, so on a phone the key facts come
-			first. Selecting text in the main column never takes it in, because the
-			main column's sections all follow it.
-		-->
-		{#if data.glance.length > 0 || data.map || hasContacts}
-			<aside class="profile-glance" aria-label="At a glance">
-				{#if data.glance.length > 0 || data.map}
-					<div class="glance-box">
-						{#if data.image && !imageFailed}
-							<figure class="nation-image" data-print-part="officialImages">
-								<img
-									src={data.image.src}
-									alt="{data.image.kind} of {page.officialName}"
-									loading="lazy"
-									decoding="async"
-									onerror={() => (imageFailed = true)}
-								/>
-							</figure>
-						{/if}
-						<Collapsible heading="At a glance" identifier="glance-heading">
-							<FactGroups groups={data.glance} />
-							{#if data.map}
-								<div class="glance-map">
-									<NationMap map={data.map} nationName={page.officialName} />
-								</div>
-							{/if}
-						</Collapsible>
-					</div>
-				{/if}
-				{#if hasContacts}
-					<Collapsible heading={contactsHeading} identifier="contacts-heading">
-						<ContactCard cards={data.contacts} headingLevel={3} />
-					</Collapsible>
-				{/if}
-			</aside>
+		<!-- 4. Courts and dispute resolution -->
+		{#if data.courts.length > 0}
+			<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
+				<NationServices categories={data.courts} />
+			</Collapsible>
 		{/if}
 
-		<div class="profile-details">
-			<!-- 4. Courts and dispute resolution -->
-			{#if data.courts.length > 0}
-				<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
-					<NationServices categories={data.courts} />
+		<!-- 5. Laws and agreements: where the nation publishes its laws, linked, not
+		     reproduced, and each document with recorded versions, oldest first
+		     (decision record 0018). -->
+		{#if data.law.length > 0 || data.documents.length > 0}
+			<div data-print-part="documentHistory">
+				<Collapsible heading="Laws and agreements" identifier="law-heading">
+					{#if data.law.length > 0}
+						<FactGroups groups={data.law} />
+					{/if}
+					<DocumentHistoryList documents={data.documents} />
 				</Collapsible>
-			{/if}
+			</div>
+		{/if}
 
-			<!-- 5. Laws and agreements: where the nation publishes its laws, linked, not
-			     reproduced, and each document with recorded versions, oldest first
-			     (decision record 0018). -->
-			{#if data.law.length > 0 || data.documents.length > 0}
-				<div data-print-part="documentHistory">
-					<Collapsible heading="Laws and agreements" identifier="law-heading">
-						{#if data.law.length > 0}
-							<FactGroups groups={data.law} />
+		<!-- 6. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
+		{#if data.jurisdiction.length > 0}
+			<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
+				<FactGroups groups={data.jurisdiction} />
+			</Collapsible>
+		{/if}
+
+		<!-- 7. Other nations in the same states: plain lists, never a ranking -->
+		{#if data.neighbors.length > 0}
+			<div class="no-print">
+				<Collapsible heading="Other nations in the same states" identifier="neighbors-heading">
+					{#each data.neighbors as entry (entry.state)}
+						<h3 class="neighbors-state">{entry.stateName}</h3>
+						{#if entry.nations.length > 0}
+							<ul class="neighbors">
+								{#each entry.nations as nation (nation.id)}
+									<li><a href="/nations/{nation.id}">{nation.name}</a></li>
+								{/each}
+							</ul>
+						{:else}
+							<p>
+								<a href={entry.link}>All {entry.count} other nations in {entry.stateName}</a>
+							</p>
 						{/if}
-						<DocumentHistoryList documents={data.documents} />
-					</Collapsible>
-				</div>
-			{/if}
-
-			<!-- 6. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
-			{#if data.jurisdiction.length > 0}
-				<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
-					<FactGroups groups={data.jurisdiction} />
+					{/each}
 				</Collapsible>
-			{/if}
+			</div>
+		{/if}
+	{/if}
 
-			<!-- 7. Other nations in the same states: plain lists, never a ranking -->
-			{#if data.neighbors.length > 0}
-				<div class="no-print">
-					<Collapsible heading="Other nations in the same states" identifier="neighbors-heading">
-						{#each data.neighbors as entry (entry.state)}
-							<h3 class="neighbors-state">{entry.stateName}</h3>
-							{#if entry.nations.length > 0}
-								<ul class="neighbors">
-									{#each entry.nations as nation (nation.id)}
-										<li><a href="/nations/{nation.id}">{nation.name}</a></li>
-									{/each}
-								</ul>
-							{:else}
-								<p>
-									<a href={entry.link}>All {entry.count} other nations in {entry.stateName}</a>
-								</p>
-							{/if}
-						{/each}
-					</Collapsible>
+	{#snippet sources()}
+		<!-- 8. Sources -->
+		{#if !page.withdrawn}
+			<SourceList sources={data.sources} />
+		{/if}
+	{/snippet}
+</RecordPage>
+
+<!-- 3. At a glance, with the seal and the map, then the contacts. -->
+{#snippet glance()}
+	{#if data.glance.length > 0 || data.map}
+		<GlancePanel>
+			{#snippet picture()}
+				{#if data.image && !imageFailed}
+					<figure class="nation-image" data-print-part="officialImages">
+						<img
+							src={data.image.src}
+							alt="{data.image.kind} of {page.officialName}"
+							loading="lazy"
+							decoding="async"
+							onerror={() => (imageFailed = true)}
+						/>
+					</figure>
+				{/if}
+			{/snippet}
+			<FactGroups groups={data.glance} />
+			{#if data.map}
+				<div class="glance-map">
+					<NationMap map={data.map} nationName={page.officialName} />
 				</div>
 			{/if}
-		</div>
-
-		<!-- 8. Sources -->
-		<div class="profile-sources">
-			<SourceList sources={data.sources} />
-		</div>
+		</GlancePanel>
 	{/if}
-</article>
+	{#if hasContacts}
+		<Collapsible heading={contactsHeading} identifier="contacts-heading">
+			<ContactCard cards={data.contacts} headingLevel={3} />
+		</Collapsible>
+	{/if}
+{/snippet}
 
 <style>
 	.review-status {
@@ -205,18 +196,6 @@
 		border-radius: 999px;
 		background: var(--color-surface);
 		font-weight: var(--font-weight-semibold);
-	}
-
-	/* The fact box: a filled panel, like a reference work's, with the seal on top. */
-	.glance-box {
-		padding: var(--space-4);
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-panel);
-		background: var(--color-surface);
-	}
-
-	.glance-box > :global(.collapsible) {
-		margin-top: 0;
 	}
 
 	.glance-map {
@@ -237,17 +216,6 @@
 		max-height: 7rem;
 	}
 
-	/*
-	 * Sources is one of the page's folding sections, spaced like the others;
-	 * the rule other pages draw above their notes would sit right under the
-	 * last fact table's own line.
-	 */
-	.profile-sources :global(.notes) {
-		margin-top: 0;
-		padding-top: 0;
-		border-top: 0;
-	}
-
 	.neighbors-state {
 		font-size: var(--font-size-body);
 	}
@@ -259,78 +227,5 @@
 
 	.neighbors li {
 		break-inside: avoid;
-	}
-
-	.profile-introduction,
-	.profile-details,
-	.profile-sources,
-	.profile-glance {
-		max-width: var(--layout-measure);
-	}
-
-	/*
-	 * Two columns once the page itself is wide enough. This follows the width
-	 * of the page's own column (the layout makes <main> a size container), so
-	 * it changes when the sidebar is shown or hidden, not only with the window.
-	 */
-	@container page (min-width: 62rem) {
-		.profile {
-			display: grid;
-			grid-template-columns: minmax(0, var(--layout-measure)) minmax(22rem, 1fr);
-			/* The last row takes any height the right-hand column needs beyond the text's. */
-			grid-template-rows: auto auto 1fr;
-			column-gap: var(--space-6);
-			align-items: start;
-		}
-
-		.profile-introduction {
-			grid-column: 1;
-			grid-row: 1;
-		}
-
-		.profile-details {
-			grid-column: 1;
-			grid-row: 2;
-		}
-
-		.profile-sources {
-			grid-column: 1;
-			grid-row: 3;
-		}
-
-		/* The fact box and contacts form the right-hand column. */
-		.profile-glance {
-			grid-column: 2;
-			grid-row: 1 / span 3;
-			max-width: var(--layout-side-column);
-			/* Lines up with the page's title. */
-			margin-top: var(--space-4);
-		}
-
-		.profile-glance > :global(.collapsible) {
-			margin-top: 0;
-		}
-
-		.profile-glance {
-			container: glance / inline-size;
-		}
-	}
-
-	/* In a narrow fact box, each label sits above its values. */
-	@container glance (max-width: 18rem) {
-		.profile-glance :global(.summary-list) {
-			grid-template-columns: 1fr;
-		}
-
-		.profile-glance :global(.summary-list dt) {
-			border-bottom: 0;
-			padding-bottom: 0;
-		}
-	}
-
-	@container glance (min-width: 18rem) {
-		.profile-glance :global(.summary-list) {
-			grid-template-columns: minmax(6.5rem, 9rem) 1fr;
-		}
 	}
 </style>
