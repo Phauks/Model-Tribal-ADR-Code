@@ -1,10 +1,11 @@
 /**
  * Saves the editor's text as a new version (contribute access or above).
+ * Saving the same text again with a note names the newest version instead.
  * Answers 409 with the newest version's number and text when someone saved
  * after the writer started, so the editor can show both.
  */
 import { error, json } from '@sveltejs/kit';
-import { SaveConflict, latestVersion, readVersionText, saveVersion } from '#lib/server/essays.ts';
+import { SaveConflict, latestVersion, nameVersion, readVersionText, saveVersion } from '#lib/server/essays.ts';
 import { essayAccess } from '#lib/server/essay-workspace.ts';
 import type { RequestHandler } from './$types';
 
@@ -25,6 +26,8 @@ export const POST: RequestHandler = async (event) => {
 			origin: 'editor',
 			note
 		});
+		// Naming the version just saved: the text is the same, so the note goes on it.
+		if (saved.unchanged && note && note !== saved.version.note) await nameVersion(database, identifier, saved.version.number, note);
 		return json({ number: saved.version.number, unchanged: saved.unchanged, title: saved.version.title });
 	} catch (problem) {
 		if (problem instanceof SaveConflict) {

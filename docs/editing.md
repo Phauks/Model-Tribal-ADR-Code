@@ -93,6 +93,15 @@ A case or law box is headed by the full citation of its source record, so the wr
 
 **Underline** is a plain underline in the text color, in every edition; links keep the site's link color and underline (lead author's decision, Nov. 22, 2026). The Indigo Book's italics remain the form for case names and titles (docs/citation-style.md).
 
+## On the essay page
+
+Review and editing happen on the essay's own page, not in a separate place (lead author, Nov. 22, 2026: "integrate it into where it would actually show up, and just delineate there its current status"). Readers see the published text only; the draft and its status show only to people with access to the essay (lead author's choice, Nov. 22, 2026).
+
+- **The page is the same for everyone.** It is rendered from the published version and cached. When the browser holds the signed-in hint (`site/src/lib/signed-in-hint.ts`), the newest publication asks `/workspace/essays/<id>/page` what this person may do. That answer is never cached and is refused to anyone without at least comment access (`site/src/lib/server/essay-page-state.ts`).
+- **The bar above the text** says where the draft stands (the newest version, who saved it, how many blocks changed, which version readers see) and holds two choices: **Show** (Published only, or With drafts) and, for contribute access and above, **Mode** (Reading or Editing). It links to the essay's History, and a person with full access can publish the draft from it.
+- **With drafts** shows the newest version with each changed block marked "Draft" (a solid bar in the margin) and each new block marked "New" (a dashed bar). The marks come from a line comparison of the published and newest bodies (`lineChanges` in `site/src/lib/essays/merge.ts`); a removed paragraph is not marked yet.
+- **Editing** opens the editor in place of the text, loaded only then. It saves by itself a few seconds after typing stops, at least every half minute while typing goes on, and when the tab is hidden or the editor closes. Those versions carry the note "Auto-saved", and the History page folds a run of them under the newest. "Name this version" gives the newest version a note of its own; only the note changes, never the saved text.
+
 ## Where published essays live
 
 The first version of this design kept drafts in Cloudflare and sent each finished essay to git by pull request. The lead author asked why the text should go to GitHub at all, and on Nov. 22, 2026 chose the bucket as the home for essays with an automatic copy in git. Three ways were compared (project analysis):
@@ -132,7 +141,7 @@ Any two saved versions can be compared, paragraph by paragraph and word by word 
 
 ## Built so far and still to build
 
-Built (pull request "Edit essays on the website"): the editor with its Markdown view and preview, saved versions in the bucket, conflict protection, compare, restore, publish, hold back, the public essay pages and their version lists, the public copy, the hourly git copy, and bringing in the git text.
+Built (pull request "Edit essays on the website"): the editor with its Markdown view and preview, saved versions in the bucket, conflict protection, compare, restore, publish, hold back, the public essay pages and their version lists, the public copy, the hourly git copy, and bringing in the git text. Then (pull request "Edit essays in place"): the essay page's bar, the With drafts view, and editing in place with saving by itself.
 
 Next, in this order:
 

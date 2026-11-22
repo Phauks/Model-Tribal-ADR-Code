@@ -353,6 +353,14 @@ export async function saveVersion(
 	};
 }
 
+/**
+ * Gives a saved version a note ("Name this version" in the editor). Only the
+ * note changes; the text of a version never does.
+ */
+export async function nameVersion(database: D1Database, identifier: string, number: number, note: string): Promise<void> {
+	await database.prepare('UPDATE essay_versions SET note = ? WHERE essay_identifier = ? AND number = ?').bind(note, identifier, number).run();
+}
+
 /** Publishes a saved version: it becomes the essay's page. */
 export async function publishVersion(
 	database: D1Database,
