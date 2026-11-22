@@ -117,8 +117,9 @@ limits: >-
   stories, replacing the project's summaries.
 - The catalog and anthology shortlist in
   [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
-- Nine library and database pulls, added as section 10 of the project's single
-  Westlaw list.
+- Nine library and database pulls, added to the lead author's list of
+  documents to get by hand (`research/documents-to-get.md` in the project's
+  working files).
 
 ## What the helpers found, in brief
 
