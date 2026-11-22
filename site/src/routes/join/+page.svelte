@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-	<title>Help with the project · Model Tribal ADR Code</title>
+	<title>Help with this work · Model Tribal ADR Code</title>
 	<meta
 		name="description"
 		content="Register to help write, review, research or share knowledge for the Model Tribal ADR Code, and choose how you are credited."
@@ -10,9 +10,9 @@
 </svelte:head>
 
 <div class="reading">
-	<h1>Help with the project</h1>
+	<h1>Help with this work</h1>
 	<p class="lead">
-		The project gathers how Native nations resolve disputes and writes model provisions and essays
+		We gather how Native nations resolve disputes and write model provisions and essays
 		that nations may choose to adapt. People help by writing, reviewing drafts, finding sources,
 		translating, making art, and sharing what they know.
 	</p>

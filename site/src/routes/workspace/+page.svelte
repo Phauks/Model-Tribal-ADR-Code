@@ -143,7 +143,7 @@
 <section>
 	<h2>How content changes</h2>
 	<p>
-		The text of the code, the essays and the nation records lives in the project’s files and changes
+		The text of the code, the essays and the nation records lives in the repository’s files and changes
 		only by pull request, so every change has a history. This workspace records who approved which
 		version, handles requests from nations, and manages who can do what.
 	</p>

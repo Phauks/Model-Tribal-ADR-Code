@@ -18,12 +18,12 @@
 
 {#if data.deleted}
 	<div class="notice" role="status">
-		<p>Your profile and everything in it are deleted. Thank you for your interest in the project.</p>
+		<p>Your profile and everything in it are deleted. Thank you for your interest.</p>
 	</div>
 {/if}
 
 {#if !profile}
-	<h1>Help with the project</h1>
+	<h1>Help with this work</h1>
 	<p class="lead">
 		Tell us a little about yourself and how you would like to help. It takes about ten minutes, and
 		you can stop and come back.
@@ -52,7 +52,7 @@
 	</p>
 	<p><a class="button" href="/profile/edit">Start</a></p>
 	<p class="small muted">
-		Registering does not give the project permission to use anything you share with it. Stories,
+		Registering does not give permission to use anything you share. Stories,
 		interviews and documents each get their own contributor statement, where you choose how they may
 		be used. If you would rather not make an account, you can
 		<a href="/requests?kind=contribute">offer to contribute through the request form</a>.

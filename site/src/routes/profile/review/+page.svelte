@@ -47,11 +47,11 @@
 	<ul>
 		<li>Your credit is used only in the form shown above, and only where you chose.</li>
 		<li>
-			Each time you confirm, the project keeps a copy of this page, so it is clear what you agreed to and
+			Each time you confirm, we keep a copy of this page, so it is clear what you agreed to and
 			when. Credits always use the version you last confirmed.
 		</li>
 		<li>
-			Before each edition of the book goes to print, the project asks you to check your credit again.
+			Before each edition of the book goes to print, we ask you to check your credit again.
 		</li>
 		<li>You can change your answers or delete your profile at any time from your profile page.</li>
 	</ul>

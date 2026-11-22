@@ -89,7 +89,7 @@
 	{/if}
 {/snippet}
 
-<h1>{data.profile ? 'Edit your profile' : 'Help with the project'}</h1>
+<h1>{data.profile ? 'Edit your profile' : 'Help with this work'}</h1>
 <p class="lead">
 	Everything except your name is optional until you confirm. Only the lead author and editors see your
 	answers; only the credit you choose is ever published.
@@ -200,7 +200,7 @@
 		<legend><h2>Native nations</h2></legend>
 		<p class="hint" id="nations-hint">
 			This is optional and is never checked: we do not ask for enrollment numbers, cards or other proof.
-			Listing a nation does not mean you speak for it, and the project will never say you do. It
+			Listing a nation does not mean you speak for it, and we will never say you do. It
 			appears in a credit only if you tick it below and choose “My name and nation”.
 		</p>
 		<fieldset>
@@ -219,8 +219,8 @@
 			{/each}
 		</fieldset>
 		<p class="hint">
-			If you chose to list nations: start typing to pick from the project’s list, or write any name,
-			including nations the project has not listed, First Nations, and state-recognized nations.
+			If you chose to list nations: start typing to pick from our list, or write any name,
+			including nations not on it, First Nations, and state-recognized nations.
 		</p>
 		{#each slots as slot (slot)}
 			<fieldset class="nation">

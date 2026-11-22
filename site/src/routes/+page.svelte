@@ -18,11 +18,11 @@
 	<div class="home-introduction">
 		<h1>{siteName}</h1>
 		<p class="lead">
-			Model provisions and commentary on dispute resolution, offered as an optional framework that a Native nation may adapt through its own processes. The project does not speak for any nation.
+			Model provisions and commentary on dispute resolution, offered as an optional framework that a Native nation may adapt through its own processes. It does not speak for any nation.
 		</p>
 	</div>
-	<div class="art-reserved home-logo" role="img" aria-label="Space reserved for the project's logo">
-		<p>Space reserved for the project’s logo.</p>
+	<div class="art-reserved home-logo" role="img" aria-label="Space reserved for the logo">
+		<p>Space reserved for the logo.</p>
 	</div>
 </div>
 
@@ -66,7 +66,7 @@
 <section class="panel panel-filled reading" aria-labelledby="for-nations-heading">
 	<h2 id="for-nations-heading">For Native nations</h2>
 	<p>
-		A nation can ask the project to correct, restrict or remove material about it, or offer to
+		A nation can ask us to correct, restrict or remove material about it, or offer to
 		contribute. Requests are private and need no account. Material named in a request to restrict or
 		remove it is taken out of public view before the request is reviewed.
 	</p>

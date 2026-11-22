@@ -150,14 +150,14 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 	};
 
 	const contact = limit('contact', shortText, text(form, 'contact'));
-	if (contact === '') errors.contact = 'Give an email address or phone number so the project can reply.';
+	if (contact === '') errors.contact = 'Give an email address or phone number so we can reply.';
 
 	const details = limit('details', longText, text(form, 'details'));
 	if (details === '' && kind !== 'add-nation') {
 		errors.details =
 			kind === 'restrict' || kind === 'remove'
 				? 'Say where the material is and what should happen. Please do not repeat sensitive material.'
-				: 'Tell the project what you would like.';
+				: 'Tell us what you would like.';
 	}
 
 	const material = limit('material', longText, text(form, 'material'));
@@ -193,7 +193,7 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 			request.publicationPermission = permission;
 		} else {
 			errors.publicationPermission =
-				'Say whether the project may publish what you send, or use it for review only.';
+				'Say whether we may publish what you send, or use it for review only.';
 		}
 	}
 
