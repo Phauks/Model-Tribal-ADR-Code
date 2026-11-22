@@ -10,6 +10,7 @@
 		<ul class="footer-links">
 			<li><a href="/requests">Request a correction or removal</a></li>
 			<li><a href="{repositoryLink}/blob/main/docs/charter.md">Charter</a></li>
+			<li><a href="/acknowledgments">Acknowledgments</a></li>
 			<li><a href="/changelog">Changelog</a></li>
 			<li><a href="/downloads">Downloads</a></li>
 			<li><a href="/copies">Copies of documents</a></li>

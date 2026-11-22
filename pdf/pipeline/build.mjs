@@ -31,6 +31,7 @@ function mergeContent(first, second) {
     provisions: [...first.provisions, ...second.provisions],
     commentary: new Map([...first.commentary, ...second.commentary]),
     essays: [...first.essays, ...second.essays],
+    frontMatter: [...(first.frontMatter || []), ...(second.frontMatter || [])],
   };
   for (const [kind, key] of [["sources", "key"], ["glossary", "id"]]) {
     const keys = merged[kind].map((record) => record[key]);

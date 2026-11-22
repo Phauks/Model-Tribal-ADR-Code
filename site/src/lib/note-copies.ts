@@ -1,12 +1,16 @@
 /**
- * Copies of a note placed right under the paragraph that cites it. The
- * "Show the note under the paragraph" setting (src/lib/components/InlineNotes.svelte)
- * opens one when a reader selects a note number, and the print option "Each
- * note under its paragraph" (src/lib/components/PrintOptions.svelte) adds one
- * for every note number just before the page prints.
+ * Copies of a source's entry in the Sources section
+ * (src/lib/components/SourceList.svelte), shown away from the list:
  *
- * The copy is the note's entry in the Sources section
- * (src/lib/components/SourceList.svelte) without the list of facts it supports.
+ * - the popup or drawer a marker opens (src/lib/components/CitationPopup.svelte);
+ * - the copy right under the paragraph that the "Show the note under the
+ *   paragraph" setting opens (src/lib/components/InlineNotes.svelte);
+ * - the copies the print option "Each note under its paragraph"
+ *   (src/lib/components/PrintOptions.svelte) adds just before the page prints.
+ *
+ * A copy is the citation alone: without the list of facts the source
+ * supports, without the links back to the text, and without ids, so the page
+ * never has two elements with one id.
  */
 
 /** The block a note copy goes after. */
@@ -14,20 +18,44 @@ export function noteBlock(marker: Element): Element | null {
 	return marker.closest('p, li, dd, blockquote, td');
 }
 
+/** The Sources entry a marker points to, or null when the page has none. */
+export function noteEntry(marker: HTMLAnchorElement): Element | null {
+	return marker.hash ? document.getElementById(decodeURIComponent(marker.hash.slice(1))) : null;
+}
+
+/**
+ * The citation in a Sources entry, as HTML. With newTab, each link to
+ * another site opens in a new tab and says so to screen readers, so a
+ * reader keeps their place on the page.
+ */
+export function citationHtml(entry: Element, { newTab = false } = {}): string {
+	const note = entry.cloneNode(true) as Element;
+	for (const extra of note.querySelectorAll('.source-uses, .source-backlinks')) extra.remove();
+	for (const element of note.querySelectorAll('[id]')) element.removeAttribute('id');
+	if (newTab) {
+		for (const link of note.querySelectorAll<HTMLAnchorElement>('a[href]')) {
+			if (link.origin === location.origin) continue;
+			link.target = '_blank';
+			link.rel = 'noopener noreferrer';
+			const hint = document.createElement('span');
+			hint.className = 'visually-hidden';
+			hint.textContent = ' (opens in a new tab)';
+			link.append(hint);
+		}
+	}
+	return note.innerHTML.trim();
+}
+
 /** Makes a copy of the note a marker points to, or null when there is none. */
 export function noteCopy(marker: HTMLAnchorElement, className: string): HTMLElement | null {
 	const number = marker.textContent?.trim() ?? '';
-	const entry = marker.hash ? document.getElementById(decodeURIComponent(marker.hash.slice(1))) : null;
+	const entry = noteEntry(marker);
 	if (!entry) return null;
-	const note = entry.cloneNode(true) as Element;
-	note.querySelector('.source-uses')?.remove();
-	// Copies carry no ids, so the page never has two elements with one id.
-	for (const element of note.querySelectorAll('[id]')) element.removeAttribute('id');
 	const shown = document.createElement('div');
 	shown.className = className;
 	shown.id = `inline-note-${number}-${Math.random().toString(36).slice(2, 8)}`;
 	shown.setAttribute('role', 'note');
 	shown.setAttribute('aria-label', `Note ${number}`);
-	shown.innerHTML = `<p>${number}. ${note.innerHTML.trim()}</p>`;
+	shown.innerHTML = `<p>${number}. ${citationHtml(entry)}</p>`;
 	return shown;
 }

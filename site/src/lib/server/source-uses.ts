@@ -1,17 +1,23 @@
 /**
- * Collects the sources behind the facts on one nation page, so that every
- * fact stays traceable to its source without a citation mark beside it.
+ * Collects the sources cited on one page and numbers them in the order the
+ * page first cites them, for the page's Sources section
+ * (src/lib/components/SourceList.svelte).
  *
- * Trevor asked (2026-11-21) that the citation for each fact not sit next to
- * the fact. The page instead ends with a "Sources" section: one numbered
- * entry per source, each listing every fact on the page that the source
- * supports, with the place in the source (locator) and the date the value was
- * true (as of). Reading a fact's line under its source gives the same
- * information a numbered note did (docs/citation-style.md).
+ * A fact or sentence shown on the page gets a numbered marker beside it, as
+ * Wikipedia shows citations (Trevor, Nov. 22, 2026; site/DESIGN.md, section 6,
+ * "Citations"): cite() and citeFact() record the use and return the marker.
+ * The Sources section lists each source once, links its number back to every
+ * marker that cites it, and lists every fact the source supports with the
+ * place in the source (locator) and the date the value was true (as of)
+ * (docs/citation-style.md). add() and use() record a use that has no marker
+ * of its own, such as the outlines a map is drawn from.
  */
+import { markAnchor, type CitationMark } from '../citation-marks.ts';
 import type { CitedFact } from './content.ts';
 import { sources } from './content.ts';
 import { formatSource } from './markdown.ts';
+
+export type { CitationMark } from '../citation-marks.ts';
 
 /** One fact as the Sources section names it. */
 export interface SourceUse {
@@ -36,6 +42,8 @@ export interface SourceEntry {
 	key: string;
 	/** The citation, as HTML, in the project's style. */
 	html: string;
+	/** The ids of the markers that cite this source, in page order; the Sources list links back to each. */
+	backlinks: string[];
 	/** The facts, grouped so a heading and a locator shared by several facts appear once. */
 	groups: SourceUseGroup[];
 }
@@ -47,7 +55,10 @@ export function whereInSource(fact: Pick<CitedFact, 'locator' | 'as_of'>): strin
 }
 
 export class SourceUses {
-	readonly #entries = new Map<string, Omit<SourceEntry, 'groups'> & { uses: SourceUse[] }>();
+	readonly #entries = new Map<
+		string,
+		Omit<SourceEntry, 'groups'> & { uses: SourceUse[] }
+	>();
 	readonly #citation: (key: string) => string;
 
 	/** citation gives a source's citation as HTML; by default, the short form formatSource writes. */
@@ -63,6 +74,7 @@ export class SourceUses {
 				number: this.#entries.size + 1,
 				key,
 				html: this.#citation(key),
+				backlinks: [],
 				uses: []
 			};
 			this.#entries.set(key, entry);
@@ -77,10 +89,42 @@ export class SourceUses {
 		return entry.number;
 	}
 
-	/** Records the source of a cited fact, if it names one. */
+	/** Records the source of a cited fact, if it names one, with no marker. */
 	use(fact: CitedFact | undefined, section: string, text: string): void {
 		if (!fact?.source) return;
 		this.add(fact.source, { section, text, where: whereInSource(fact) });
+	}
+
+	/**
+	 * Records that the source supports one fact and returns the marker to show
+	 * beside it. When `marks` (the markers already beside the same fact) holds
+	 * one for this source, the use is recorded under that marker and no second
+	 * marker is made; otherwise the new marker is added to `marks`.
+	 */
+	cite(key: string, use: SourceUse, marks?: CitationMark[]): CitationMark {
+		const number = this.add(key, use);
+		const existing = marks?.find((mark) => mark.number === number);
+		if (existing) return existing;
+		const entry = this.#entries.get(key)!;
+		const mark: CitationMark = {
+			number,
+			anchor: markAnchor(number, entry.backlinks.length + 1),
+			where: use.where
+		};
+		entry.backlinks.push(mark.anchor);
+		marks?.push(mark);
+		return mark;
+	}
+
+	/** cite() for a cited fact: nothing when the fact names no source. */
+	citeFact(
+		fact: CitedFact | undefined,
+		section: string,
+		text: string,
+		marks?: CitationMark[]
+	): CitationMark | undefined {
+		if (!fact?.source) return undefined;
+		return this.cite(fact.source, { section, text, where: whereInSource(fact) }, marks);
 	}
 
 	get list(): SourceEntry[] {

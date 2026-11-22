@@ -33,6 +33,7 @@
 	import OfflineNotice from '#lib/components/OfflineNotice.svelte';
 	import UpdateNotice from '#lib/components/UpdateNotice.svelte';
 	import InlineNotes from '#lib/components/InlineNotes.svelte';
+	import CitationPopup from '#lib/components/CitationPopup.svelte';
 	import GlossaryCards from '#lib/components/GlossaryCards.svelte';
 	import type { LayoutProps } from './$types';
 
@@ -58,4 +59,5 @@
 </main>
 <SiteFooter versions={data.versions} />
 <InlineNotes />
+<CitationPopup />
 <GlossaryCards />
