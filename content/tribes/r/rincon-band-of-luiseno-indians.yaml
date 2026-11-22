@@ -243,6 +243,30 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Rincon Nation of Luiseno Indians'
+  appeals_to:
+    court: Rincon Band of Luiseño Indians Court of Appeals
+    source: rincon-appellate-court-rules-2019
+    confidence: medium
+    verification: read-in-full
+    as_of: '2019-04-22'
+    locator: § 3.801(j); § 3.802; § 3.803(c)
+    note: The ordinance defines the Rincon Trial Court as the Intertribal Court of Southern California or another lower court the Tribal Council designates. The 2026 Code of Civil Procedure also names a Court of Appeals within the Intertribal Court; which court now hears appeals of cases still in the Intertribal Court was not confirmed.
+- kind: tribal-court
+  name: Rincon Civil Trial Court
+  link: https://rincon-nsn.gov/government/office-of-the-attorney-general/laws-and-regulations/
+  source: rincon-civil-procedure-2026
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-02'
+  locator: Preamble
+  note: Established by the Tribal Council on Feb. 11, 2021. The link is the Band's laws page, which lists the court's rules.
+  appeals_to:
+    court: Rincon Band of Luiseño Indians Court of Appeals
+    source: rincon-civil-procedure-2026
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-04-02'
+    locator: § 3.315(j)(1)
 dispute_resolution:
   provisions:
   - kind: other

@@ -1,0 +1,29 @@
+profile: content/tribes/r/rincon-band-of-luiseno-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: https://rincon-nsn.gov/wp-content/uploads/2019/05/3_0800-Appellate-Ordinance.pdf
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: 'Rincon Tribal Ordinance § 3.800 (2019), §§ 3.801(j), 3.802 and 3.803(c): appeals from the Rincon Trial Court (the Intertribal Court of Southern California) go to the Rincon Court of Appeals.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: https://rincon-nsn.gov/government/office-of-the-attorney-general/laws-and-regulations/
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: The laws page lists the Rincon Civil Trial Court and the Rincon Court of Appeals.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: https://rincon-nsn.gov/wp-content/uploads/2026/04/RTC%C2%A73.310RCTCCodeofCivilProcedure-amnded4-2-26.pdf
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: 'Rincon Tribal Code § 3.310 (amended April 2, 2026), § 3.315(j)(1): appeals from the Rincon Civil Trial Court go to the Rincon Court of Appeals. The preamble also names a Court of Appeals within the Intertribal Court, so the route for cases still in the Intertribal Court is unsettled here.'

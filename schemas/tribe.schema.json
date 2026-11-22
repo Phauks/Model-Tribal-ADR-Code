@@ -344,10 +344,20 @@
         "properties": {
           "kind": {
             "$ref": "common.schema.json#/$defs/slug",
-            "description": "Open vocabulary (any lowercase hyphenated term). Suggested: tribal-court, court-of-appeals, peacemaking-program, traditional-forum, healing-to-wellness-court, court-of-indian-offenses (a court operated under 25 C.F.R. Part 11, often called a CFR court), elders-council, other."
+            "description": "Open vocabulary (any lowercase hyphenated term). Suggested: tribal-court, court-of-appeals, supreme-court, intertribal-court, intertribal-court-of-appeals (a court several nations share, such as the Southwest Intertribal Court of Appeals), peacemaking-program, traditional-forum, healing-to-wellness-court, court-of-indian-offenses (a court operated under 25 C.F.R. Part 11, often called a CFR court), elders-council, other."
           },
           "name": { "type": "string" },
-          "link": { "$ref": "common.schema.json#/$defs/link" }
+          "link": { "$ref": "common.schema.json#/$defs/link" },
+          "appeals_to": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "description": "Where appeals from this court go: the name of another court in this profile's justice_institutions, written exactly as it is there. It is its own cited fact, because the source that sets the path of appeal (a constitution, a court code, the court's own website) is often not the source that lists the court. Recorded only from a source that says so, never worked out from a court's name or kind. Left out for the highest court and when no source says.",
+            "required": ["court"],
+            "properties": {
+              "court": { "type": "string", "minLength": 1 }
+            },
+            "unevaluatedProperties": false
+          }
         },
         "unevaluatedProperties": false
       }

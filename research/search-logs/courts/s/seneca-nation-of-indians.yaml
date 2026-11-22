@@ -1,0 +1,21 @@
+profile: content/tribes/s/seneca-nation-of-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sni.org/about-our-government/judicial/
+  query: where appeals from each listed court go (path of appeal)
+  outcome: blocked
+  reason: The site answered 403 to the project's fetcher.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/captures/constitutions/seneca-nation-of-indians/eb27d4ee77b8e641.pdf
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: 'Constitution of 1848 as amended (effective March 24, 2026), Section IV: one Court of Appeals hears appeals from the Peacemakers and Surrogates Courts of both reservations; its decisions may go to the Council by writ of permission.'
