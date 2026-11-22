@@ -13,7 +13,8 @@
  * "virtual:essay-library").
  */
 import type MarkdownIt from 'markdown-it';
-import type Token from 'markdown-it/lib/token.mjs';
+import Token from 'markdown-it/lib/token.mjs';
+import type { LineChange } from './merge.ts';
 import { markAnchor, marksHtml, type CitationMark } from '../citation-marks.ts';
 import type { SourceEntry } from '../server/source-uses.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
@@ -285,8 +286,48 @@ function headingsOf(tokens: Token[]): EssayHeading[] {
 	return outline;
 }
 
-/** An essay file (front matter and Markdown) as HTML, with its outline and Sources list. */
-export function renderEssay(text: string, library: EssayLibrary): RenderedEssay {
+/**
+ * Wraps each top-level block whose lines changed since the published version
+ * in a mark the page styles as a draft change or a new block (shown only to
+ * people with access, src/lib/server/essay-page-state.ts).
+ */
+function markChangedBlocks(tokens: Token[], lines: LineChange[]): Token[] {
+	const marked: Token[] = [];
+	let index = 0;
+	while (index < tokens.length) {
+		const token = tokens[index];
+		let end = index;
+		if (token.nesting === 1) {
+			let depth = 0;
+			for (end = index; end < tokens.length; end += 1) {
+				depth += tokens[end].nesting;
+				if (depth === 0) break;
+			}
+		}
+		const block = tokens.slice(index, end + 1);
+		const [from, to] = token.map ?? [0, 0];
+		const kinds = lines.slice(from, to);
+		const kind = kinds.includes('changed') ? 'changed' : kinds.includes('added') ? 'added' : null;
+		if (kind && token.level === 0) {
+			const open = new Token('html_block', '', 0);
+			open.content = `<div class="essay-draft-mark essay-draft-${kind}" data-draft="${kind === 'added' ? 'New' : 'Draft'}">\n`;
+			const close = new Token('html_block', '', 0);
+			close.content = '</div>\n';
+			marked.push(open, ...block, close);
+		} else {
+			marked.push(...block);
+		}
+		index = end + 1;
+	}
+	return marked;
+}
+
+/**
+ * An essay file (front matter and Markdown) as HTML, with its outline and
+ * Sources list. `lines`, one per line of the body after the front matter,
+ * marks the blocks that changed (lineChanges in merge.ts).
+ */
+export function renderEssay(text: string, library: EssayLibrary, { lines }: { lines?: LineChange[] } = {}): RenderedEssay {
 	const { frontMatter, body } = splitFrontMatter(text.normalize('NFC'));
 	const sources = new EssaySources(library);
 	const state: RenderState = { sources, library, problems: [], slugs: new Set(['sources-heading']) };
@@ -301,9 +342,10 @@ export function renderEssay(text: string, library: EssayLibrary): RenderedEssay 
 	}
 	markAttributions(tokens);
 	markTopics(tokens);
+	const shown = lines ? markChangedBlocks(tokens, lines) : tokens;
 	// A link to a case or law box that is not on this page goes to the page that holds it.
 	const html = markdown.renderer
-		.render(tokens, markdown.options, environment)
+		.render(shown, markdown.options, environment)
 		.replace(/href="#((?:case|law)-[a-z0-9-]+)"/g, (link, anchor: string) => {
 			if (state.slugs.has(anchor)) return link;
 			const page = library.boxPage?.(anchor);

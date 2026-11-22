@@ -4,6 +4,11 @@
 	// can all show (src/lib/essays/document.ts), with a Markdown view for
 	// anything easier to type as text. Saving sends the whole file; the
 	// server keeps it as a new version and never overwrites an earlier one.
+	// On an essay page (EssayArticle.svelte) it saves by itself: a few
+	// seconds after typing stops, at least every half minute while typing
+	// goes on, and when the tab is hidden or the editor closes. Those
+	// versions carry the note "Auto-saved"; "Name this version" saves the
+	// text as it stands as a version with a note of its own.
 	import 'prosemirror-view/style/prosemirror.css';
 	import { onDestroy, onMount, tick, untrack } from 'svelte';
 	import { baseKeymap, lift, setBlockType, toggleMark, wrapIn } from 'prosemirror-commands';
@@ -23,8 +28,19 @@
 		identifier,
 		text,
 		version,
-		canEdit
-	}: { identifier: string; text: string; version: number; canEdit: boolean } = $props();
+		canEdit,
+		autoSave = false,
+		onsaved
+	}: {
+		identifier: string;
+		text: string;
+		version: number;
+		canEdit: boolean;
+		/** Save by itself as the person types (on an essay page). */
+		autoSave?: boolean;
+		/** Called with the version number after each save. */
+		onsaved?: (version: number) => void;
+	} = $props();
 
 	// The file as last saved, split so the editor shows only the body. The
 	// page remounts the editor for another essay, so the first values are
@@ -346,7 +362,7 @@
 		const tracker = new Plugin({
 			view: () => ({
 				update: (editorView, previous) => {
-					if (!editorView.state.doc.eq(previous.doc)) dirty = true;
+					if (!editorView.state.doc.eq(previous.doc)) markChanged();
 					describe(editorView.state);
 				}
 			})
@@ -433,19 +449,67 @@
 		mode = next;
 	}
 
-	async function save(saveOver = false): Promise<void> {
+	/* Saving by itself ------------------------------------------------------ */
+
+	const autoSaveIdleMilliseconds = 4_000;
+	const autoSaveLongestMilliseconds = 30_000;
+	/** Counts changes, so a save that finishes while typing goes on leaves the newer text marked unsaved. */
+	let edits = 0;
+	let firstUnsavedEdit: number | null = null;
+	let autoSaveTimer: ReturnType<typeof setTimeout> | undefined;
+
+	function markChanged(): void {
+		dirty = true;
+		edits += 1;
+		scheduleAutoSave();
+	}
+
+	let closed = false;
+
+	function scheduleAutoSave(): void {
+		if (!autoSave || !canEdit || conflict || closed) return;
+		firstUnsavedEdit ??= Date.now();
+		clearTimeout(autoSaveTimer);
+		const untilLongest = firstUnsavedEdit + autoSaveLongestMilliseconds - Date.now();
+		autoSaveTimer = setTimeout(() => void autoSaveNow(), Math.max(0, Math.min(autoSaveIdleMilliseconds, untilLongest)));
+	}
+
+	async function autoSaveNow(): Promise<void> {
+		clearTimeout(autoSaveTimer);
+		if (!autoSave || !canEdit || conflict || !(dirty || frontMatter !== savedFrontMatter)) return;
+		if (saving) {
+			scheduleAutoSave();
+			return;
+		}
+		await save(false, true);
+	}
+
+	function saveWhenHidden(): void {
+		if (document.visibilityState === 'hidden') void autoSaveNow();
+	}
+
+	async function save(saveOver = false, automatic = false): Promise<void> {
 		if (!canEdit || saving) return;
 		saving = true;
-		status = 'Saving…';
+		status = automatic ? 'Saving by itself…' : 'Saving…';
 		const file = currentFile();
+		const editsSent = edits;
 		const response = await fetch(`/workspace/essays/${identifier}/save`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ text: file, basedOn: saveOver && conflict ? conflict.latest : basedOn, note })
+			keepalive: automatic,
+			body: JSON.stringify({
+				text: file,
+				basedOn: saveOver && conflict ? conflict.latest : basedOn,
+				note: automatic ? 'Auto-saved' : note,
+				// On an essay page the button names the text as it stands, saved or not.
+				name: autoSave && !automatic
+			})
 		}).catch(() => null);
 		saving = false;
 		if (!response) {
 			status = 'Not saved: the site could not be reached. Your text is still here; try again.';
+			if (automatic) scheduleAutoSave();
 			return;
 		}
 		const answer = await response.json().catch(() => ({}));
@@ -463,9 +527,16 @@
 		savedFrontMatter = split.frontMatter;
 		basedOn = answer.number;
 		conflict = null;
-		dirty = false;
-		note = '';
-		status = answer.unchanged ? `Nothing changed since version ${answer.number}.` : `Saved as version ${answer.number}.`;
+		dirty = edits !== editsSent;
+		firstUnsavedEdit = null;
+		if (dirty) scheduleAutoSave();
+		if (!automatic && note) {
+			status = `Named version ${answer.number} “${note}”.`;
+			note = '';
+		} else {
+			status = answer.unchanged ? `Nothing changed since version ${answer.number}.` : `Saved as version ${answer.number}.`;
+		}
+		onsaved?.(answer.number);
 	}
 
 	function loadTheirs(): void {
@@ -490,7 +561,13 @@
 		dirty = false;
 	});
 
-	onDestroy(() => view?.destroy());
+	onDestroy(() => {
+		// Closing the editor on an essay page saves what is not saved yet.
+		if (autoSave) void autoSaveNow();
+		closed = true;
+		clearTimeout(autoSaveTimer);
+		view?.destroy();
+	});
 
 	const marks: { name: 'strong' | 'em' | 'underline' | 'code'; label: string; keys: string }[] = [
 		{ name: 'strong', label: 'Bold', keys: 'Ctrl+B' },
@@ -507,6 +584,7 @@
 </script>
 
 <svelte:window onbeforeunload={warnBeforeLeaving} />
+<svelte:document onvisibilitychange={saveWhenHidden} />
 
 <div class="essay-editor">
 	<div class="editor-bar" role="toolbar" aria-label="Editing">
@@ -578,7 +656,7 @@
 			class="markdown-text"
 			bind:value={markdown}
 			readonly={!canEdit}
-			oninput={() => (dirty = true)}
+			oninput={markChanged}
 			spellcheck="true"
 		></textarea>
 	{:else if mode === 'preview'}
@@ -607,7 +685,7 @@
 		<summary>Details (front matter)</summary>
 		<p class="small">The title, part and status, in YAML. The title shown on the page comes from here.</p>
 		<label class="visually-hidden" for="front-matter">Front matter</label>
-		<textarea id="front-matter" class="front-matter" bind:value={frontMatter} readonly={!canEdit} rows="6"></textarea>
+		<textarea id="front-matter" class="front-matter" bind:value={frontMatter} readonly={!canEdit} rows="6" oninput={markChanged}></textarea>
 	</details>
 
 	{#if conflict}
@@ -630,9 +708,15 @@
 
 	{#if canEdit}
 		<div class="save-bar">
-			<label for="save-note">Note for this version (optional)</label>
-			<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
-			<button type="button" class="button" onclick={() => save()} disabled={saving}>Save version</button>
+			{#if autoSave}
+				<label for="save-note">Name this version</label>
+				<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
+				<button type="button" class="button button-quiet" onclick={() => save()} disabled={saving || !note.trim()}>Name it</button>
+			{:else}
+				<label for="save-note">Note for this version (optional)</label>
+				<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
+				<button type="button" class="button" onclick={() => save()} disabled={saving}>Save version</button>
+			{/if}
 			<span class="small" role="status" aria-live="polite">{status || (dirty ? 'Unsaved changes' : `Version ${basedOn}`)}</span>
 		</div>
 	{:else}
