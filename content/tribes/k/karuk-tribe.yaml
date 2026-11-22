@@ -321,16 +321,22 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2024-09-26'
   - kind: peacemaking
-    title: Section 10.9 Peacemaker Mediation Forum
-    citation: 'Section 10.9 Peacemaker Mediation Forum; Section 11: Peacemaker Mediation Forum/Family
-      Unity; A. Peacemaker Mediation Forum / Family Unity; D. Dispute Resolution-Mediation/Peacemaking'
-    link: https://www.narf.org/nill/codes/karuk/index.html
-    source: national-indian-law-library-code-codes-karuk
+    title: 3.05.100 Peacemaker Mediation Forum.
+    citation: Karuk Tribal Code, Chapter 3.05 Tribal Court (current through Resolution 24-R-151), 3.05.100
+      (bracket cites Res. 10-R-111 § 10.9)
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
+    source: karuk-tribal-code-chapter-3-05
     confidence: medium
-    verification: title-only
-    as_of: 2016-12
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    verification: read-in-full
+    as_of: '2010-09-30'
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "Section 10.9 Peacemaker Mediation Forum"; the printed heading, number or version differs
+      (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Establishes a Peacemaker Mediation Forum alongside the Tribal Court as a nonadversarial process
+      for disputes between tribal members and others within the Tribe's jurisdiction, to be used before
+      a formal court hearing once a petition is filed, with the Court creating guidelines and parties
+      free to continue in court if the mediation fails.
+    locator: 3.05.100 (bracket cites Res. 10-R-111 § 10.9)
   - kind: peacemaking
     title: 'Section 11: Peacemaker Mediation Forum/Family Unity'
     citation: 'Section 11: Peacemaker Mediation Forum/Family Unity'
@@ -340,8 +346,11 @@ dispute_resolution:
     verification: title-only
     as_of: '2026-11-21'
     locator: Table of Contents
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+    note: 'Identified from section headings in the National Indian Law Library table of contents; the
+      provision itself was not read. The heading it falls under is taken from the page layout and may
+      be imprecise. Searched for the text on 2026-11-22 and not read. A copy was located at https://karuk.tribal.codes/KTC/10.10.270,
+      but only an automated summary of it could be seen, so the section is not recorded as read. Places
+      searched: research/search-logs/dispute-resolution/k/karuk-tribe.yaml.'
   - kind: peacemaking
     title: Dispute Resolution-Mediation/Peacemaking
     citation: Dispute Resolution-Mediation/Peacemaking
@@ -351,8 +360,11 @@ dispute_resolution:
     verification: title-only
     as_of: '2026-11-21'
     locator: Table of Contents, under 'SECTION 1. POLICY, PURPOSE AND SCOPE'
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+    note: 'Identified from section headings in the National Indian Law Library table of contents; the
+      provision itself was not read. The heading it falls under is taken from the page layout and may
+      be imprecise. Searched for the text on 2026-11-22 and not read. A copy was located at https://karuk.tribal.codes/KTC/10.05.040,
+      but only an automated summary of it could be seen, so the section is not recorded as read. Places
+      searched: research/search-logs/dispute-resolution/k/karuk-tribe.yaml.'
   database_listings:
   - title: Conference/Peacemaker Mediation to Preserve Marriage
     citation: KTC 10.05.070

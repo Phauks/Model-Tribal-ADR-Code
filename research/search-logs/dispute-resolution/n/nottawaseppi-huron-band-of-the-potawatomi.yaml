@@ -1,0 +1,174 @@
+profile: content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nottawaseppi/index.html
+  outcome: found
+  reason: The table of contents lists the heading and gives the nation's code link list; the NILL page
+    names the Labor Relations Code as the location.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://nhbpi.com/wp-content/uploads/2013/03/Title-V-03-Labor-Relations-Code.pdf
+  outcome: blocked
+  reason: The fetch returned a client error, and a browser user agent got a 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://nhbpi.com/sovereignty/tribal-code/
+  outcome: found
+  reason: The landing page lists Chapter 03 Title V-03 Labor Relations Code, but the page text had no
+    working links.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Nottawaseppi Huron Band Labor Relations Code "Resolution of Unfair Labor Practice Charges" arbitration
+    mediation impasse
+  outcome: not-found
+  reason: The results gave only the NILL page and an eCode360 index, which did not load.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ecode360.com/29877357
+  outcome: blocked
+  reason: The eCode360 Labor Relations page returned a client error.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ecode360.com/
+  outcome: blocked
+  reason: 'Retry not attempted: eCode360 refuses scripted access and the brief says not to retry it.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.narf.org/nill/codes/
+  outcome: not-found
+  reason: Second search (NCORJ, peacemaking.narf.org, other hosts) found no non-eCode360 copy of the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nottawaseppi/index.html
+  outcome: found
+  reason: Lists the heading under the Labor Relations Code, Article XIV.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Nottawaseppi Huron Band Labor Relations Code "Resolution of Unfair Labor Practice Charges" arbitration
+    mediation impasse
+  outcome: not-found
+  reason: No copy of the code text appeared in the results.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nottawaseppi/index.html
+  outcome: found
+  reason: The table of contents lists Chapter 03 Title VIII-03 Arbitration Ordinance with its sections,
+    and links the nation's PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://nhbpi.com/wp-content/uploads/2013/03/Title-VIII-03-Arbitration-Ordinance.pdf
+  outcome: dead-link
+  reason: The PDF returned a 404 with a browser user agent, and the WebFetch tool returned a client error.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://nhbpi.com/sovereignty/tribal-code/
+  outcome: found
+  reason: The landing page lists Chapter 03 Title VIII-03 Arbitration Ordinance, with no working link
+    text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Nottawaseppi Huron Potawatomi "Arbitration Ordinance" "Agreements to Arbitrate are Enforceable"
+    "Arbitration Award Not Appealable"
+  outcome: not-found
+  reason: The results did not include the ordinance text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://web.archive.org/web/2016id_/http://nhbpi.com/wp-content/uploads/2013/03/Title-VIII-03-Arbitration-Ordinance.pdf
+  outcome: blocked
+  reason: The archived copy could not be reached (no connection).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nottawaseppi/index.html
+  outcome: found
+  reason: Lists the amending resolution under Title VIII, Chapter 03.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://nhbpi.com/wp-content/uploads/2013/03/Title-VIII-03-Arbitration-Ordinance.pdf
+  outcome: dead-link
+  reason: The PDF returned a 404, so the amendment could not be checked against it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Nottawaseppi Huron Potawatomi "Arbitration Ordinance" "Agreements to Arbitrate are Enforceable"
+    "Arbitration Award Not Appealable"
+  outcome: not-found
+  reason: No amending resolution text appeared in the results.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nottawaseppi/index.html
+  outcome: found
+  reason: 'Lists Title VIII-03 Arbitration Ordinance as the chapter heading, the same as #2.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://nhbpi.com/wp-content/uploads/2013/03/Title-VIII-03-Arbitration-Ordinance.pdf
+  outcome: dead-link
+  reason: The PDF returned a 404 with a browser user agent.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nottawaseppi/index.html
+  query: Title VIII-03 Arbitration Ordinance
+  outcome: found
+  reason: 'NILL has one Chapter 03 entry ''Title VIII-03 Arbitration Ordinance'' (with sections 1-13);
+    this record is the chapter heading, the same chapter as #2.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nhbpi.com/wp-content/uploads/2013/03/Title-VIII-03-Arbitration-Ordinance.pdf
+  outcome: dead-link
+  reason: Returned 404 on retry (http and https).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nhbpi.com/
+  query: arbitration
+  outcome: not-found
+  reason: Home page has no link to the ordinance text.

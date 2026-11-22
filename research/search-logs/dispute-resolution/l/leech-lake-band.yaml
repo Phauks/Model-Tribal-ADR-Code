@@ -1,0 +1,37 @@
+profile: content/tribes/l/leech-lake-band.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: captured Leech Lake copies in the project
+  query: Peacemaker Tribunal
+  outcome: not-found
+  reason: No captured Leech Lake copy contains the rule text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/MN_chippewa_leech_lake/index.html
+  query: Rule 58 Peacemaker Tribunal
+  outcome: found
+  reason: The NILL page lists Rule 58 and links the band's Title 2 Rules of Procedure PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.llojibwe.org/court/tcCodes/tc_coTITLE02-RulesofProcedure.pdf
+  outcome: found
+  reason: The Title 2 PDF is available, but it has no text layer; Rule 58 was read from OCR.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (leech-24.txt)
+  query: Rule 58
+  outcome: found
+  reason: Downloaded the scanned PDF, OCR with pdftoppm at 200 dpi and tesseract (single thread); page
+    24 of the file holds Rule 58.

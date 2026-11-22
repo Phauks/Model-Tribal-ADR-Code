@@ -1,0 +1,232 @@
+profile: content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/confederated_umatilla/index.html
+  outcome: found
+  reason: The NILL table of contents lists 5.01 Mediation under the Cemeteries Code, Chapter 5 (Disputes),
+    which pointed to the code.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ctuir.org/media/r0teyn5m/cemeteries-code.pdf
+  query: Confederated Tribes of the Umatilla Indian Reservation Family Law Code "Dispute Resolution Included
+    in Plan"
+  outcome: found
+  reason: The Cemeteries Code PDF appeared in the results and contains Section 5.01 with the matching
+    heading.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://ctuir.org/cemeteries-code
+  outcome: found
+  reason: The HTML page is only a preamble with no Chapter 5 text, so the PDF was used instead.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ctuir.org/media/r0teyn5m/cemeteries-code.pdf
+  query: Section 5.01
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/umat.txt) and the section read directly.'
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/confederated_umatilla/index.html
+  outcome: found
+  reason: The table of contents lists 2.05 under Elders Services Code Ch. 2 as Dispute Resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctuir.org/media/qvribrn5/elders-services-code-thru-res-no-09-088-7-6-09-lh-cur-ref.pdf
+  outcome: found
+  reason: The PDF contains Section 2.05 with the heading DISPUTE RESOLUTION.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctuir.org/media/qvribrn5/elders-services-code-thru-res-no-09-088-7-6-09-lh-cur-ref.pdf
+  query: '2.05'
+  outcome: found
+  reason: Downloaded and read with pdftotext.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/confederated_umatilla/index.html
+  outcome: found
+  reason: The table of contents lists 3.07 Dispute Resolution, without a chapter.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctuir.org/media/qvribrn5/elders-services-code-thru-res-no-09-088-7-6-09-lh-cur-ref.pdf
+  outcome: found
+  reason: The PDF contains a Chapter 3 section with the same heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctuir.org/media/qvribrn5/elders-services-code-thru-res-no-09-088-7-6-09-lh-cur-ref.pdf
+  query: '3.07'
+  outcome: found
+  reason: Downloaded and read with pdftotext.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/confederated_umatilla/index.html
+  outcome: found
+  reason: Lists 4.03 Mediation under the Family Law Code, Ch. 4, with no link to text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://ctuir.org/family-law-code
+  outcome: not-found
+  reason: The page is a short overview with no section text, and it names no PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: ctuir.org media family-law-code pdf "Umatilla" "Mediation" 4.03
+  outcome: not-found
+  reason: No Family Law Code PDF appeared in the results.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ctuir.org/media/anxdfvtm/family-law-code-thru-res-24-017-3-4-2024.pdf
+  outcome: blocked
+  reason: Found the Family Law Code PDF address, but the download returns a 'Mediaprotect configuration
+    error' page instead of the PDF and the page fetch tool returned no text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/confederated_umatilla/index.html
+  outcome: found
+  reason: Lists 7.06 under the Family Law Code, Ch. 7, with no link to text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://ctuir.org/family-law-code
+  outcome: not-found
+  reason: The page is a short overview with no section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: '"STATUTES of the CONFEDERATED TRIBES of the UMATILLA INDIAN RESERVATION" family law code pdf
+    dispute resolution included in plan'
+  outcome: not-found
+  reason: No Family Law Code PDF appeared in the results.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: ctuir.org media family-law-code pdf "Umatilla" "Dispute Resolution Included in Plan"
+  outcome: not-found
+  reason: No Family Law Code PDF appeared in the results.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/confederated_umatilla/index.html
+  outcome: found
+  reason: Lists Chapter 6 Dispute Resolution under the Gaming Code.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ctuir.org/media/3lnfe2oe/gaming-code-thru-res-11-061-6-27-11-lh-ref-cur-nigc-app.pdf
+  query: Confederated Tribes Umatilla Gaming Code "Dispute Resolution" Chapter 6 pdf
+  outcome: found
+  reason: The Gaming Code PDF appeared in the results; its Chapter 6 is titled Dispute Resolution.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctuir.org/media/3lnfe2oe/gaming-code-thru-res-11-061-6-27-11-lh-ref-cur-nigc-app.pdf
+  query: Chapter 6
+  outcome: found
+  reason: Downloaded and read with pdftotext; Chapter 6 read in full.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/confederated_umatilla/index.html
+  query: Claimant Attorney Arbitration
+  outcome: not-found
+  reason: The table of contents shows 9.03 only under Family Law Code Ch. 9 Paternity, with no arbitration
+    heading in the part read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://ctuir.org/family-law-code
+  outcome: not-found
+  reason: Subject overview only, with no section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://ctuir.org/tort-claims-code
+  outcome: blocked
+  reason: The fetch returned a client error, so no text was retrieved.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctuir.org/media/kbhng30j/righttoworkcode.pdf
+  outcome: not-found
+  reason: The Right to Work Code runs from 1.01 to 1.09 with no 9.03 and no arbitration heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctuir.org/media/tb4ox0eq/criminal-code-thru-res-25-033-march-24-2025.pdf
+  outcome: not-found
+  reason: The Criminal Code has no Chapter 9 and no arbitration heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctuir.org/media/3pnapgdx/terocode-thruresno17-053-7-17-2017.pdf
+  outcome: not-found
+  reason: Section 9.03 is Scheduling Appeal Hearing, and there is no arbitration heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Umatilla "Claimant Attorney's Fees and Other Related Arbitration Costs"
+  outcome: not-found
+  reason: The results were unrelated.

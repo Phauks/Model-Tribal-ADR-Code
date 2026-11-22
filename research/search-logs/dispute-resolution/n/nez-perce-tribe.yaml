@@ -1,0 +1,125 @@
+profile: content/tribes/n/nez-perce-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/cc6c33c097da6aa59cab.txt
+  query: Mediation and Hearings
+  outcome: found
+  reason: Section text found in the Title 1 VAWA-update PDF, at the Small Claims section.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
+  query: 1-2-3
+  outcome: found
+  reason: Downloaded and read with pdftotext; section 1-2-3 read in full.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/cc6c33c097da6aa59cab.txt
+  query: ALTERNATIVE DISPUTE RESOLUTION
+  outcome: found
+  reason: Chapter 1-3 found in the Title 1 VAWA-update PDF, with the chapter heading and its sections.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
+  query: Chapter 1-3
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/np1.txt) and the section read directly.'
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://nezperce.org/wp-content/uploads/2024/07/TITLE-6-includes-Hemp-and-Gaming-Ordinance.pdf
+    (20ecc39a0fea18ffdbb2.txt)
+  query: 6-2-23; dispute resolution process
+  outcome: not-found
+  reason: No section numbered 6-2-23 in the captured Title 6. Only §6.20.017, a gaming dispute process,
+    matched.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/nez_perce/index.html
+  query: 6-2-23 Dispute Resolution Process
+  outcome: found
+  reason: Heading sits in the Chapter 6-2 Gaming Ordinance list between 6-2-22 License Suspension and
+    6-2-24 Appeal.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/20ecc39a0fea18ffdbb2.txt
+  query: Dispute Resolution Process
+  outcome: found
+  reason: Section 6.20.017 is the renumbered equivalent.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://nezperce.org/wp-content/uploads/2024/07/TITLE-9.pdf (b95ee1b43a54781083e5.txt)
+  query: 9-5-13; Conciliation
+  outcome: found
+  reason: Section text found in the Title 9 PDF.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nezperce.org/wp-content/uploads/2024/07/TITLE-9.pdf
+  query: 9-5-13
+  outcome: found
+  reason: Downloaded and read with pdftotext; section read in full.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://nezperce.org/wp-content/uploads/2024/07/TITLE-11.pdf (4d034fac8f312f10c576.txt)
+  query: 11-9-4; attorney fees arbitration costs
+  outcome: found
+  reason: Section text found in the Title 11 PDF.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nezperce.org/wp-content/uploads/2024/07/TITLE-11.pdf
+  query: 11-9-4
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/np11.txt) and the section read directly.'
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
+    (cc6c33c097da6aa59cab.txt)
+  query: ALTERNATIVE DISPUTE RESOLUTION
+  outcome: found
+  reason: Same chapter as nez-perce-tribe#1.

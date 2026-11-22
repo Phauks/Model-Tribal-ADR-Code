@@ -294,39 +294,53 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2020'
   - kind: arbitration
-    title: Title 2 Arbitration
-    citation: Title 2 Arbitration
-    link: https://narf.org/nill/codes/jamestown_sklallam/index.html
-    source: national-indian-law-library-code-codes-jamestown-sklallam
+    title: TITLE 2 - ARBITRATION CODE
+    citation: Jamestown S'Klallam Tribal Code, Title 2 Arbitration Code (captured copy), Chapters 2.01-2.03
+      (Sections 2.01.01-2.03.02)
+    link: https://jamestowntribe.org/wp-content/uploads/2018/05/Title_02_-Arbitration_LPG_Edits_1-12-12.pdf
+    source: jamestown-title-2-arbitration
     confidence: medium
-    verification: title-only
-    as_of: '2016'
-    locator: Table of Contents, under 'Chapter 1.03 - Codification and Amendments'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: April 2016); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2004-03-30'
+    locator: Chapters 2.01-2.03 (Sections 2.01.01-2.03.02)
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: The Title makes written agreements to arbitrate contract disputes valid, irrevocable and
+      enforceable (with Tribal Council's express consent where the Tribe or a tribal entity is a party),
+      requires the Tribal Court to stay its own proceedings and order arbitration when a party asks with
+      the arbitrator deciding whether a duty to arbitrate exists, has awards confirmed and enforced as
+      civil judgments, and bars further appeal from an enforcement order.
   - kind: arbitration
-    title: Chapter 2.02 - Agreement to Arbitrate
-    citation: Chapter 2.02 - Agreement to Arbitrate; Section 2.02.01 Agreement to Arbitrate is Enforceable;
-      Section 2.02.07 Arbitration Award Not Appealable
-    link: https://www.narf.org/nill/codes/jamestown_sklallam/index.html
-    source: national-indian-law-library-code-codes-jamestown-sklallam
+    title: Chapter 2.02 Agreement to Arbitrate
+    citation: Jamestown S'Klallam Tribal Code, Title 2 Arbitration Code, Chapter 2.02 Agreement to Arbitrate
+      (captured copy), 2.02.01 and 2.02.07 (chapter 2.02 read in full, 2.02.01-2.02.08)
+    link: https://jamestowntribe.org/wp-content/uploads/2018/05/Title_02_-Arbitration_LPG_Edits_1-12-12.pdf
+    source: jamestown-title-2-arbitration
     confidence: medium
-    verification: title-only
-    as_of: 2016-04
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: Chapter 13.10 - Informal Dispute Resolution
-    citation: Chapter 13.10 - Informal Dispute Resolution; Section 13.10.02 Initiating Informal Dispute
-      Resolution
-    link: https://www.narf.org/nill/codes/jamestown_sklallam/index.html
-    source: national-indian-law-library-code-codes-jamestown-sklallam
-    confidence: medium
-    verification: title-only
-    as_of: 2016-04
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    verification: read-in-full
+    as_of: '2004-03-30'
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: An agreement in a written contract to arbitrate present or future disputes is valid, irrevocable
+      and enforceable, subject to Tribal Council's express consent where the Tribe or a tribal entity
+      is a party; no appeal lies from the Tribal Court's order enforcing an agreement to arbitrate or
+      an award, and the Tribal Court's enforcement jurisdiction depends on a limited waiver of sovereign
+      immunity in the instrument.
+    locator: 2.02.01 and 2.02.07 (chapter 2.02 read in full, 2.02.01-2.02.08)
+  - kind: mediation
+    title: Chapter 13.10 Informal Dispute Resolution
+    citation: Jamestown S'Klallam Tribal Code, Title 13 Tribal Court (as amended June 29, 2021), Chapter
+      13.10, 13.10.01-13.10.05
+    link: https://jamestowntribe.org/wp-content/uploads/2023/02/Title_13_Tribal_Court-As-Amended-6-29-2021-1.pdf
+    source: jamestown-sklallam-jamestown-s-klallam-tribal-code-title-13-tribal
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-06-29'
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Parties to a Tribal Court suit, or the judge on its own motion, may ask for mediation by
+      a mediator or mediation panel to resolve the dispute informally; agreed terms are put in writing
+      and signed, the substance of the mediation may not be used as evidence later unless the parties
+      agree (except terms of a youth-care disposition), and if mediation fails the case may proceed by
+      a petition in Tribal Court.
+    locator: 13.10.01-13.10.05
   - kind: peacemaking
     title: Title 33 – Youth Code
     citation: Title 33 – Youth Code

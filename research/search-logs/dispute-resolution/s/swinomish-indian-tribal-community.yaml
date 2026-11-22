@@ -1,0 +1,82 @@
+profile: content/tribes/s/swinomish-indian-tribal-community.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/swinomishcode/index.html
+  outcome: found
+  reason: The NILL table of contents lists Arbitration of Disputes with the date 4/5/05 and links the
+    code only as NILL-hosted chapter PDFs.
+  records:
+  - content/tribes/s/swinomish-indian-tribal-community.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.swinomish-nsn.gov/media/1561
+  query: Swinomish Tribal Code "Arbitration of Disputes" chapter 7 pdf
+  outcome: found
+  reason: The nation's Title 3 document contains Chapter 7 with the matching heading.
+  records:
+  - content/tribes/s/swinomish-indian-tribal-community.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: working copy downloaded during the reading (swin37.txt)
+  query: Title 3 Chapter 7
+  outcome: found
+  reason: Downloaded https://www.narf.org/nill/codes/swinomishcode/3_7.pdf and read all sections with
+    pdftotext.
+  records:
+  - content/tribes/s/swinomish-indian-tribal-community.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.swinomish-nsn.gov/media/1561
+  query: Chapter 7
+  outcome: blocked
+  reason: Cloudflare challenge page (403) for curl.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/swinomishcode/index.html
+  outcome: found
+  reason: The table of contents lists the heading and links to the NILL-hosted chapter PDF.
+  records:
+  - content/tribes/s/swinomish-indian-tribal-community.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.narf.org/nill/codes/swinomishcode/8_6.pdf
+  query: Court Hearings, Parties and Mediation
+  outcome: found
+  reason: A NILL-hosted copy of the chapter, not the nation's own copy; it contains Chapter 6 and Subchapter
+    III Mediation, sections 8-06.250 to 8-06.310.
+  records:
+  - content/tribes/s/swinomish-indian-tribal-community.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: working copy downloaded during the reading (swin8.txt)
+  query: 8-06.250 to 8-06.310
+  outcome: found
+  reason: Downloaded the NILL-hosted PDF and read Subchapter III with pdftotext (clean text layer), not
+    a summarizing fetch.
+  records:
+  - content/tribes/s/swinomish-indian-tribal-community.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/swinomishcode/index.html
+  outcome: found
+  reason: The index lists both headings in one entry.

@@ -312,17 +312,20 @@ dispute_resolution:
     verification: read-in-full
     as_of: '1990-08-14'
   - kind: other
-    title: Sec. 625. Mediation and Alternative Justice Prohibited
-    citation: Sec. 625. Mediation and Alternative Justice Prohibited
-    link: https://narf.org/nill/codes/chitimachacode/index.html
-    source: national-indian-law-library-code-codes-chitimachacode
+    title: Sec. 621. Mediation and Alternative Justice Prohibited.
+    citation: Chitimacha Comprehensive Codes of Justice, Title III - Criminal Offense Code, 621
+    link: http://www.chitimacha.gov/sites/default/files/Title%20III%20-%20Criminal%20Offense%20Code_0.pdf
+    source: chitimacha-louisiana-chitimacha-comprehensive-codes-of-justice-title
     confidence: medium
-    verification: title-only
-    as_of: '2022'
-    locator: Table of Contents, under 'Title III - Criminal Offenses'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: June 2022); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2017-01-12'
+    locator: '621'
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "Sec. 625. Mediation and Alternative Justice Prohibited"; the printed heading, number
+      or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Bars the Tribal Court from ordering parties in a case involving domestic violence into mediation
+      or any other alternative justice process that would require the victim to negotiate directly with
+      the offender, even if the victim may decline.
 gaming:
   compacts:
   - state: LA

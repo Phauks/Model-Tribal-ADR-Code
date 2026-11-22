@@ -1,0 +1,35 @@
+profile: content/tribes/c/cow-creek-band-of-umpqua-tribe-of-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/cow_creek_umpqua/index.html
+  outcome: found
+  reason: Table of contents lists the heading; it links to no copy of the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.cowcreek.com/title-25-chapter-14
+  query: Title 70 arbitration
+  outcome: dead-link
+  reason: Linked page returned HTTP 503; not reachable after one try.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Cow Creek Umpqua tribal code Title 70 arbitration
+  outcome: not-found
+  reason: Search returned NILL index and federal code only, no Title 70 text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: http://www.cowcreek.com/title-25-chapter-14
+  outcome: not-found
+  reason: Second search returned only the NILL page and federal code; the nation's page was not reachable.

@@ -300,15 +300,17 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2005-04-23'
   - kind: mediation
-    title: 642.420 Mediation Encouraged
-    citation: 642.420 Mediation Encouraged
-    link: https://www.narf.org/nill/codes/coquillecode/index.html
-    source: national-indian-law-library-code-codes-coquillecode
-    confidence: medium
-    verification: title-only
-    as_of: 2014-11
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    title: 642.420 Mediation encouraged.
+    citation: Coquille Indian Tribal Code, Chapter 642 Termination of Parental Rights, 642.420
+    link: https://www.coquilletribe.org/wp-content/uploads/2017/04/642-Termination-of-Parental-Rights.pdf
+    source: coquille-coquille-indian-tribal-code-chapter-642
+    confidence: high
+    verification: read-in-full
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Encourages mediation or other informal methods for resolving the long-term placement of a
+      child in a termination proceeding, lets the court order mediation in appropriate cases, and provides
+      that mediation may not delay a termination petition by more than 30 days past the set time lines.
+    locator: '642.420'
   database_listings:
   - title: Informal Resolution in Juvenile Dependency Cases
     citation: CITC 641.400

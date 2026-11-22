@@ -1,0 +1,35 @@
+profile: content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/e5bd38a3b72f39152a53.txt
+  query: Chapter 95 Arbitration Ordinance
+  outcome: found
+  reason: Chapter 95 found in the captured chaptr95 PDF and read in full.
+  records:
+  - content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/3bfb20695d59846fd262.txt
+  query: Arbitration Ordinance
+  outcome: found
+  reason: The captured tribal code index lists the Arbitration Ordinance; no text there.
+  records:
+  - content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.saulttribe.com/government/tribal-code/download-files/download-file?path=chaptr95.pdf
+  query: Chapter 95
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/sault95.txt) and the section read directly.'
+  records:
+  - content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml#dispute_resolution.provisions

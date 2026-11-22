@@ -1,0 +1,86 @@
+profile: content/tribes/s/spokane-tribe-of-the-spokane-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/4f1a1ada38b869c55059.txt
+  query: Section 4-26 Arbitration; 4-26.02
+  outcome: found
+  reason: Section 4-26 and its subsections 4-26.01 to 4-26.03 are read at the printed headings.
+  records:
+  - content/tribes/s/spokane-tribe-of-the-spokane-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/4f1a1ada38b869c55059.txt
+  query: Section 4-26 Arbitration
+  outcome: found
+  reason: Re-read the whole of Section 4-26 (4-26.01 to 4-26.09) in the raw captured Chapter 4 text.
+  records:
+  - content/tribes/s/spokane-tribe-of-the-spokane-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/4f1a1ada38b869c55059.txt
+  query: 4-26.04; 4-26.08 Arbitration Award Not Appealable
+  outcome: found
+  reason: Sections 4-26.04 and 4-26.08 are read at the printed headings; the text_hit offset was approximate.
+  records:
+  - content/tribes/s/spokane-tribe-of-the-spokane-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'research/captures/tribal-law/documents/ (Spokane captures: resource book, Chapter 4, gaming,
+    TERO)'
+  query: Informal Dispute Resolution; 7-3.04
+  outcome: not-found
+  reason: None of the Spokane captures contains Chapter 7 or this section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/spokane/index.html
+  query: 7-3.04 Informal Dispute Resolution
+  outcome: found
+  reason: The table of contents places the heading under Chapter 7 Domestic Relations, Section 7-3; the
+    NILL page says the full text is not posted.
+  records:
+  - content/tribes/s/spokane-tribe-of-the-spokane-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Spokane Tribe Reservation Spokane Tribal Code Chapter 7 Domestic Relations "Informal Dispute
+    Resolution" 7-3.04
+  outcome: found
+  reason: Returned a 2021 Chapter 7 Domestic Relations PDF on the nation's site.
+  records:
+  - content/tribes/s/spokane-tribe-of-the-spokane-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://spokanetribe.com/wp-content/uploads/2021/12/2021-12-16-RSLOC-Chapter-7-Domestic-Relations.pdf
+  query: 7-3.04 Informal Dispute Resolution
+  outcome: found
+  reason: The fetch returned the section, with the text condensed in the fetch result.
+  records:
+  - content/tribes/s/spokane-tribe-of-the-spokane-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://spokanetribe.com/wp-content/uploads/2021/12/2021-12-16-RSLOC-Chapter-7-Domestic-Relations.pdf
+  query: 7-3.04
+  outcome: found
+  reason: Downloaded and read with pdftotext; section read in full.
+  records:
+  - content/tribes/s/spokane-tribe-of-the-spokane-reservation.yaml#dispute_resolution.provisions

@@ -1,0 +1,53 @@
+profile: content/tribes/c/chitimacha-tribe-of-louisiana.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/37877104fcb7c7a22de9.txt
+  query: Mediation and Alternative Justice Prohibited
+  outcome: found
+  reason: The heading appears in the captured Title III text under number 621, with the text following
+    it.
+  records:
+  - content/tribes/c/chitimacha-tribe-of-louisiana.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.chitimacha.gov/sites/default/files/Title%20III%20-%20Criminal%20Offense%20Code_0.pdf
+  query: Sec. 621
+  outcome: found
+  reason: Downloaded and read with pdftotext; section 621 and its neighbours read.
+  records:
+  - content/tribes/c/chitimacha-tribe-of-louisiana.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/chitimachacode/index.html
+  query: Mediation and Alternative Justice Prohibited
+  outcome: found
+  reason: Re-fetched; NILL lists it as Sec. 625 between 624 Pre-trial and Release Conditions and 626 Clerk
+    of Court Record Maintenance.
+  records:
+  - content/tribes/c/chitimacha-tribe-of-louisiana.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/091d1fb49d3f86332025.txt
+  query: Peacemaker Court
+  outcome: found
+  reason: The full Title I-A text is in the captured PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/091d1fb49d3f86332025.txt
+  query: Title I-A Peacemaker Court
+  outcome: found
+  reason: Re-read the full Title I-A text.

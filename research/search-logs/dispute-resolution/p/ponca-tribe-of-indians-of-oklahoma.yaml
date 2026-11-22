@@ -1,0 +1,32 @@
+profile: content/tribes/p/ponca-tribe-of-indians-of-oklahoma.yaml
+topic: dispute-resolution
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/ponca_oklahoma/index.html
+  outcome: blocked
+  reason: The page gives no link to the code, and says the tribe has not given permission to share the
+    full text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Ponca Tribe of Oklahoma code "Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation
+    Of Domestic Abuse Cases Prohibited"
+  outcome: not-found
+  reason: Results were the NILL page and unrelated Oklahoma statutes.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/
+  outcome: not-public
+  reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
+    not worked around.
+next_steps: The provisions this nation's profile lists by section title are still unread. A person could
+  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.

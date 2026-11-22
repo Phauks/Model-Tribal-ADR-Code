@@ -1,0 +1,55 @@
+profile: content/tribes/l/lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/lac_du_flambeau_chippewa/index.html
+  query: 43.417 Patron Dispute Resolution
+  outcome: found
+  reason: The NILL page lists the heading under Chapter 43 Gaming Control Ordinance and links to the nation's
+    code index.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.ldftribe.com/Courts/CHAP43%20Gaming%20Control%20Ordinance%20%28IL%20Rev%29%28Clean%29.pdf
+  query: '43.417'
+  outcome: dead-link
+  reason: The fetch returned a client error.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.ldftribe.com/Courts/CHAP43%20Gaming%20Control%20Ordinance%20%28IL%20Rev%29%28Clean%29.pdf
+  query: '43.417'
+  outcome: dead-link
+  reason: The fetch returned a client error on a retry.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.ldftribe.com/uploads/files/Court-Ordinances/1589825451_CHAP43-Chapter-X-Resolution-No-603-15-.pdf
+  query: 43.417 Patron Dispute Resolution
+  outcome: not-found
+  reason: This is the Chapter 43 Per Capita Distribution Ordinance, which has no patron dispute section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Lac du Flambeau Gaming Control Ordinance "43.417" "Patron Dispute Resolution"
+  outcome: not-found
+  reason: Results included NIGC-approved ordinance copies from 1993, 2002 and 2004 for the band, but not
+    the 43.417 text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nigc.gov/images/uploads/gamingordinances/lcdflmbbndlksuporchpwaind-amendappr050304.pdf
+  outcome: not-found
+  reason: The 2004 NIGC-approved Gaming Control Ordinance (Chapter 43) read through a page fetch has no
+    patron dispute section 43.417; the heading is from a later revision that was not found.

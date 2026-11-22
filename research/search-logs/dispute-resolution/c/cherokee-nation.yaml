@@ -1,0 +1,186 @@
+profile: content/tribes/c/cherokee-nation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/74f6144406346711a5f8.txt
+  query: arbitrat
+  outcome: not-found
+  reason: Title 10A amendment PDF contains no occurrence of the word arbitration.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://attorneygeneral.cherokee.gov/Tribal-Code (6b8716e2866b4dd00c34.txt)
+  outcome: not-found
+  reason: Captured Tribal Code page is a navigation page with no code text or code links.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/cherokee_nation/index.html
+  query: CHAPTER 8 UNIFORM ARBITRATION ACT
+  outcome: not-found
+  reason: Page lists the chapter and section headings only; no provision text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://attorneygeneral.cherokee.gov/Tribal-Code
+  outcome: not-found
+  reason: Page links only to the Council code page, which lists no code PDF for this chapter.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cherokeecourts.org/Court-Rules
+  outcome: not-public
+  reason: Court rule PDFs (District Court DC-AD-22-01 and Supreme Court SC-AD-19-02) are image scans with
+    no text layer, so they could not be searched.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Cherokee Nation Code "Uniform Arbitration Act" Chapter 8 "Effect of agreement to arbitrate" Nonwaivable
+    provisions
+  outcome: not-found
+  reason: Results were for other states' and tribes' arbitration statutes.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://attorneygeneral.cherokee.org/Tribal-Code
+  outcome: not-found
+  reason: The Cherokee Nation Supreme Court rules were read (OCR) and mention the Uniform Arbitration
+    Act, but the Act's chapter text (sections 1301-1315) is not in any file found.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/74f6144406346711a5f8.txt
+  query: settlement conference
+  outcome: not-found
+  reason: No Rule 93 text in the captured Title 10A PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/cherokee_nation/index.html
+  query: Rule 93. Settlement conference
+  outcome: not-found
+  reason: Heading only, no rule text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cherokeecourts.org/Court-Rules
+  outcome: not-public
+  reason: District and Supreme Court rule PDFs have no text layer.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cherokeecourts.org/Portals/cherokeecourts/Documents/Rules/SC-AD-19-02%20Supreme%20Court%20Rules.pdf
+  query: Settlement conference; Arbitrators
+  outcome: found
+  reason: Court-Rules page links the Supreme Court Rules PDF (scan, 41 pages); OCR'd at 130 dpi.
+  records:
+  - content/tribes/c/cherokee-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/74f6144406346711a5f8.txt
+  query: arbitrat
+  outcome: not-found
+  reason: Title 10A contains no arbitration text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/cherokee_nation/index.html
+  query: CHAPTER 2 DISPUTE RESOLUTION
+  outcome: not-found
+  reason: Heading only; no section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://attorneygeneral.cherokee.gov/Tribal-Code
+  outcome: not-found
+  reason: No Title 85 code text or downloadable code PDF linked from the captured or live page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cherokeecourts.org/Court-Rules
+  outcome: not-public
+  reason: Rule PDFs are image scans and are not the Title 85 code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://attorneygeneral.cherokee.org/Tribal-Code
+  outcome: not-found
+  reason: Title 85 Chapter 2 (section 47 Arbitration) not found; only Title 1, 4, 10A, 21, 22 amendment
+    PDFs turned up. The 2019 Supreme Court Rules only mention arbitrators of workers' compensation disputes.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/cherokee_nation/index.html
+  query: ARBITRATORS
+  outcome: not-found
+  reason: Heading and rule title only; no text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cherokeecourts.org/Court-Rules
+  outcome: not-public
+  reason: Court rule PDFs are image scans with no text layer.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Cherokee Nation Rules of Civil Procedure "Rule 150" "Workers' compensation disputes" arbitrators
+  outcome: not-found
+  reason: No search result contained the rule text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/74f6144406346711a5f8.txt
+  query: arbitrat
+  outcome: not-found
+  reason: No arbitration text in the captured Title 10A PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/cherokee_nation/index.html
+  query: CHAPTER 8 UNIFORM ARBITRATION ACT
+  outcome: not-found
+  reason: Heading only; no provision text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/cherokee_nation/index.html
+  query: UNIFORM ARBITRATION ACT
+  outcome: found
+  reason: Re-fetched; one Chapter 8 Uniform Arbitration Act entry under Title 12 Civil Procedures.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://attorneygeneral.cherokee.org/Tribal-Code
+  query: Title 12
+  outcome: not-public
+  reason: Page lists no downloadable Title 12 file in its static HTML.
