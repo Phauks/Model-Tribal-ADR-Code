@@ -49,7 +49,7 @@
 	<div class="account" bind:this={container} onfocusout={closeOnOutside} onkeydown={closeOnEscape}>
 		<button
 			bind:this={button}
-			class="account-button"
+			class="icon-button account-button"
 			type="button"
 			aria-expanded={open}
 			aria-controls="account-links"
@@ -120,16 +120,7 @@
 
 	/* Round, like a profile picture, so it reads as the account and not as another setting. */
 	.account-button {
-		display: inline-grid;
-		place-items: center;
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
-		padding: 0;
-		border: 1px solid var(--color-band-text);
 		border-radius: 50%;
-		background: transparent;
-		color: var(--color-band-text);
-		cursor: pointer;
 	}
 
 	.account-button[aria-expanded='true'] {

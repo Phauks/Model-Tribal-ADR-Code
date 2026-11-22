@@ -1,10 +1,11 @@
 /**
  * Groups a nation's contact facts into offices for the contact card on its
  * page: each office is named once, and each contact is a labeled row with the
- * link a reader can act on. The source of every contact stays in the page's
- * Sources section, so the record's label is read only for what it says about
- * the office, not for the list the contact came from.
+ * link a reader can act on and the marker of its source, which links to the
+ * page's Sources section; the record's label is read only for what it says
+ * about the office, not for the list the contact came from.
  */
+import type { CitationMark } from './citation-marks.ts';
 import { emailLink, mapSearchLink, phoneLink, webLink } from './contact-links.ts';
 
 export type ContactKind =
@@ -18,6 +19,8 @@ export type ContactKind =
 
 export interface ContactRow {
 	kind: ContactKind;
+	/** The markers of the contact's source (src/lib/citation-marks.ts). */
+	citations?: CitationMark[];
 	/** The field's name, such as "Phone" or "Mailing address". */
 	label: string;
 	/** The value, split into lines; an address shows its street and its town on separate lines. */
@@ -227,9 +230,16 @@ function labelFor(kind: string): string {
 	return words.charAt(0).toLocaleUpperCase('en-US') + words.slice(1);
 }
 
-/** Groups contact facts by office, in the order the offices first appear, with rows in a fixed order. */
-export function contactOffices(facts: ContactFact[]): ContactOffice[] {
-	const offices = new Map<string, { fact: ContactFact; row: ContactRow }[]>();
+/**
+ * Groups contact facts by office, in the order the offices first appear, with
+ * rows in a fixed order. cite, when given, returns the markers for a fact's
+ * source; it is called only for the rows shown, in the order they are shown.
+ */
+export function contactOffices<Fact extends ContactFact>(
+	facts: Fact[],
+	cite?: (fact: Fact) => CitationMark[] | undefined
+): ContactOffice[] {
+	const offices = new Map<string, { fact: Fact; row: ContactRow }[]>();
 	for (const fact of facts) {
 		if (typeof fact.value !== 'string' || fact.value.trim().length === 0) continue;
 		const { office, note } = officeAndNote(fact.label);
@@ -268,6 +278,10 @@ export function contactOffices(facts: ContactFact[]): ContactOffice[] {
 			(entry) =>
 				!(entry.row.kind === 'website' && leadsHere.includes(displayWebAddress(entry.fact.value)))
 		);
+		for (const entry of shown) {
+			const citations = cite?.(entry.fact);
+			if (citations && citations.length > 0) entry.row.citations = citations;
+		}
 		return { name, rows: shown.map((entry) => entry.row) };
 	});
 }

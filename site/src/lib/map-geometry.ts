@@ -138,6 +138,13 @@ const markerOffsets: Record<string, [number, number]> = {
 const labelsOnTheLeft = new Set(['GU', 'MP']);
 
 /**
+ * Island places that sit alone, or nearly alone, in their boxes. Their shapes
+ * are a few map units across, so the full map gives each a wider invisible
+ * area to point at, and the small map keeps their full detail.
+ */
+const islands = new Set(['GU', 'MP', 'AS', 'VI']);
+
+/**
  * Where a region's label sits, as a shift in map units from the center of the
  * region's largest piece, where the center alone would put the label on top
  * of a neighbor's (checked by eye).
@@ -179,6 +186,8 @@ export interface StateShape {
 	path: string;
 	/** Where a small place's marker sits, and the line from the place to it. */
 	marker?: { x: number; y: number; fromX: number; fromY: number; labelSide: 'left' | 'right' };
+	/** True for small islands, which get a wider area to point at. */
+	island?: boolean;
 	/** Where the state's label sits: the center of its largest piece (small map only). */
 	center?: { x: number; y: number };
 }
@@ -238,6 +247,12 @@ export interface MapGeometry {
 	 * light. Shared borders stay shared, so no gaps open between states.
 	 */
 	smallStates: StateShape[];
+	/**
+	 * The same places with more detail, for a nation page whose small map
+	 * draws a box larger than the full map does (src/lib/presence-map.ts).
+	 * Only the places in view go into that page.
+	 */
+	zoomedStates: { code: string; path: string }[];
 }
 
 /**
@@ -245,6 +260,9 @@ export interface MapGeometry {
  * checked by eye at the size the nation pages draw the map.
  */
 const smallMapDetail = 0.05;
+
+/** Share of the outline points kept for a zoomed small map (project choice, checked by eye). */
+const zoomedMapDetail = 0.15;
 
 const round = (pathData: string | null): string =>
 	(pathData ?? '').replace(/(\d+\.\d{1})\d+/g, '$1');
@@ -448,6 +466,7 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 				labelSide: labelsOnTheLeft.has(code) ? 'left' : 'right'
 			};
 		}
+		if (islands.has(code)) shape.island = true;
 		return shape;
 	};
 	const stateShapes = states.map((state) => shapeOf(state, (panel) => round(panel.path(state))));
@@ -457,7 +476,7 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 	// Simplifying the whole atlas wipes out the smallest islands, which left the
 	// boxes for Guam, the Northern Mariana Islands, American Samoa and the
 	// Virgin Islands empty, so those four keep their full detail.
-	const keptWhole = new Set(['GU', 'MP', 'AS', 'VI']);
+	const keptWhole = islands;
 	const fullDetail = new Map(states.map((state) => [codeOf(state), state]));
 	const smallStates = (
 		feature(simplified, simplified.objects.states) as FeatureCollection<Polygon | MultiPolygon>
@@ -468,6 +487,17 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 		const path = panelOf(shape.code).path;
 		const [x, y] = path.centroid(largestPiece(state, (piece) => path.area(piece))).map(Math.round);
 		return { ...shape, center: { x, y } };
+	});
+
+	// A zoomed small map draws each place by its own box's projection, to a
+	// tenth of a unit; the islands keep their full detail, as above.
+	const zoomSimplified = simplify(weighted, quantile(weighted, zoomedMapDetail)) as typeof atlas;
+	const zoomedStates = (
+		feature(zoomSimplified, zoomSimplified.objects.states) as FeatureCollection<Polygon | MultiPolygon>
+	).features.map((simplifiedState) => {
+		const code = codeOf(simplifiedState);
+		const state = keptWhole.has(code) ? (fullDetail.get(code) ?? simplifiedState) : simplifiedState;
+		return { code, path: round(panelOf(code).path(state)) };
 	});
 
 	// Lines between states and the merged land, each drawn by its own part of the map.
@@ -567,6 +597,7 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 			retrieved: landTopology.metadata.retrieved
 		},
 		frames,
-		smallStates
+		smallStates,
+		zoomedStates
 	};
 }

@@ -3,7 +3,7 @@ title: "Key cases in federal Indian law: a digest"
 part: i
 status: draft
 review_status: drafted-from-public-sources
-updated: 2026-11-21
+updated: 2026-11-22
 research_session: 2026-11-21-legal-history-and-key-cases
 companion: i-legal-history-timeline
 ---
@@ -17,11 +17,11 @@ This digest summarizes 65 court decisions that shape how [[native-nations|Native
 - **Citation line.** The official citation, the court, the author of the opinion and the vote, then the nations involved, named as each nation or the Bureau of Indian Affairs list writes its name today. Some nations use another name for themselves; that is noted where known, and each name is to be confirmed with the nation before publication.
 - **Question and Holding.** A short summary in the project's words. Holdings use the Court's own legal categories, such as "non-Indian" and "nonmember," because the rule depends on them.
 - **In the court's words.** Quotations checked word for word against the official U.S. Reports scans, the Supreme Court's own opinions or, for other courts, the court's own site or a public copy. A pinpoint page follows each quotation. Where only an unofficial copy was available, the entry says the page is not verified.
-- **Later treatment.** Later decisions or statutes that changed or applied the case, each with its source. A line marked "Lead to check" was not verified and is on the Westlaw list.
+- **Later treatment.** Later decisions or statutes that changed or applied the case, each with its source. A line marked "Lead to check" was not verified and has not yet been checked in a citator.
 - **Why it matters here.** The project's own analysis of what the case means for a model code. It is not a statement of the court and not legal advice.
 - **Topics.** Tags used by the index below and, later, by the website's filters.
 
-No case here has been checked in a citator yet. Each source record carries a `citator` field to be filled after a KeyCite check; the list of checks is in `research/pull-lists/2026-11-21-legal-history-westlaw.md`. Older opinions use language about Native people that is offensive today; quotations are chosen for their legal content and are reproduced as written (project choice).
+Eleven cases here have been checked in KeyCite so far, and their entries report the result under "Later treatment"; the rest have not been checked yet. Each case's source record says whether it has been checked and with what result. The decision dates of Cherokee Nation v. Georgia and Worcester v. Georgia, which the U.S. Reports do not print, come from the Supreme Court Library's table of decision dates [@supreme-court-library-dates-of-decisions-1791-1882, pp. 30, 32]. Older opinions use language about Native people that is offensive today; quotations are chosen for their legal content and are reproduced as written (project choice).
 
 ## Index by topic
 

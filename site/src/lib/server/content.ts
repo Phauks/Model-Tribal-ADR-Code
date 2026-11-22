@@ -12,6 +12,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
+import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 import { parseCsv } from '../csv.ts';
 import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
@@ -46,6 +47,24 @@ function yamlFilesUnder(relativeFolder: string): string[] {
 
 export function readChangelog(track: 'content' | 'site' | 'pdf'): string {
 	return readText(`${track}/CHANGELOG.md`);
+}
+
+/* Front matter ------------------------------------------------------------ */
+
+/** A front matter page in content/front-matter/, such as the acknowledgments, which the book prints too. */
+export interface FrontMatterPage {
+	id: string;
+	title: string;
+	sources: string[];
+	body: string;
+}
+
+export function readFrontMatterPage(id: string): FrontMatterPage {
+	const text = readText(`content/front-matter/${id}.md`);
+	const match = /^---\n([\s\S]*?)\n---\n/.exec(text);
+	if (!match) throw new Error(`content/front-matter/${id}.md has no front matter`);
+	const data = parse(match[1]) as { title?: string; sources?: string[] };
+	return { id, title: data.title ?? id, sources: data.sources ?? [], body: text.slice(match[0].length) };
 }
 
 /* Sources ----------------------------------------------------------------- */
@@ -335,6 +354,42 @@ export function servableImages(): ServableImage[] {
 			}))
 	);
 }
+
+/* Methods ----------------------------------------------------------------- */
+
+export interface MethodRecord {
+	id: string;
+	name: string;
+}
+
+let methodCache: Map<string, MethodRecord> | undefined;
+
+/** Dispute resolution method records in content/methods/, by id. */
+export function methods(): Map<string, MethodRecord> {
+	if (!methodCache) {
+		methodCache = new Map(
+			yamlFilesUnder('content/methods').map((file) => {
+				const record = readYaml<MethodRecord>(file);
+				return [record.id, record];
+			})
+		);
+	}
+	return methodCache;
+}
+
+/* Stories ----------------------------------------------------------------- */
+
+let storyCache: StoryRecord[] | undefined;
+
+/** Every story record in content/stories/ (schemas/story.schema.json), unfiltered. What the site shows is decided in src/lib/story-visibility.ts. */
+export function storyRecords(): StoryRecord[] {
+	if (!storyCache) {
+		storyCache = yamlFilesUnder('content/stories').map((file) => readYaml<StoryRecord>(file));
+	}
+	return storyCache;
+}
+
+export type { StoryRecord } from '../story-visibility.ts';
 
 /* Copies of public documents --------------------------------------------- */
 

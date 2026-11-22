@@ -1,9 +1,9 @@
 <script lang="ts">
+	import CitationMarks from '#lib/components/CitationMarks.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
-	import PageTools from '#lib/components/PageTools.svelte';
-	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
@@ -62,14 +62,30 @@
 					{#if data.image.foundOn}<a href={data.image.foundOn}>the nation’s website</a
 						>{:else}the nation’s website{/if} publishes it. It belongs to the nation, which does
 					not endorse this project.
-					<a class="no-print" href={removalRequest}>Ask for it to be removed</a>.
+					<a class="no-print" href={removalRequest}>Ask for it to be removed</a>.<CitationMarks
+						marks={data.image.citations}
+					/>
 				</figcaption>
 			</figure>
 		{/if}
 		{#if !page.withdrawn}
-			<p class="small muted">Name as the recognizing list gives it.</p>
+			{#if page.listedName !== page.officialName}
+				<p class="small muted">
+					Listed as “{page.listedName}” on the list that recognizes it.<CitationMarks
+						marks={data.nameCitations}
+					/>
+				</p>
+			{:else}
+				<p class="small muted">
+					Name as the recognizing list gives it.<CitationMarks marks={data.nameCitations} />
+				</p>
+			{/if}
 			{#each data.selfDesignations as designation (designation.name)}
-				<p class="lead" lang={designation.languageTag}>{designation.name}</p>
+				<p class="lead">
+					<span lang={designation.languageTag}>{designation.name}</span><CitationMarks
+						marks={designation.citations}
+					/>
+				</p>
 			{/each}
 			<!-- Pronunciation: copied from the cited source, never worked out from the spelling -->
 			{#each data.pronunciations as entry, index (index)}
@@ -78,14 +94,12 @@
 					<span lang={entry.languageTag}>{entry.name}</span>:
 					{#if entry.respelling}{entry.respelling}{/if}
 					{#if entry.phoneticTranscription}/{entry.phoneticTranscription}/{/if}
-					{#if entry.recording}<a href={entry.recording}>Listen to the recording</a>{/if}
+					{#if entry.recording}<a href={entry.recording}>Listen to the recording</a>{/if}<CitationMarks
+						marks={entry.citations}
+					/>
 				</p>
 			{/each}
 		{/if}
-		<ReportLink {record} />
-		<PageTools
-			downloads={[{ label: 'Download this record', format: 'JSON', link: `/nations/${page.id}/record.json` }]}
-		/>
 
 		<!-- 2. Review panel -->
 		<section class="panel panel-filled" aria-labelledby="review-heading" data-print-part="reviewStatus">
@@ -100,9 +114,8 @@
 		</section>
 
 		{#if !page.withdrawn}
-			<!-- 3. What is distinctive here -->
-			<section aria-labelledby="distinctive-heading">
-				<h2 id="distinctive-heading">What is distinctive here</h2>
+			<!-- 3. About this Nation (formerly "What is distinctive here") -->
+			<Collapsible heading="About this Nation" identifier="about-heading">
 				<h3>In the nation’s own words</h3>
 				<p class="muted">
 					This space is for a short description that the nation writes or approves. The project does not
@@ -113,55 +126,55 @@
 					<h3>Recorded features</h3>
 					<ul>
 						{#each data.features as feature, index (index)}
-							<li>{feature.text}</li>
+							<li>{feature.text}<CitationMarks marks={feature.citations} /></li>
 						{/each}
 					</ul>
 				{/if}
-			</section>
+			</Collapsible>
 		{/if}
 	</div>
 
 	{#if !page.withdrawn}
 		<!-- 4. At a glance, with the map of states -->
 		{#if data.glance.length > 0 || data.contacts.length > 0 || data.map}
-			<section class="profile-glance" aria-labelledby="glance-heading">
-				<h2 id="glance-heading">At a glance</h2>
-				{#if data.map}
-					<StatePresenceMap map={data.map} nationName={page.officialName} />
-				{/if}
-				<FactGroups groups={data.glance} />
-				{#if data.contacts.length > 0}
-					<h3 id="contacts-heading">{contactsHeading}</h3>
-					<ContactCard offices={data.contacts} headingLevel={4} />
-				{/if}
-			</section>
+			<div class="profile-glance">
+				<Collapsible heading="At a glance" identifier="glance-heading">
+					{#if data.map}
+						<StatePresenceMap map={data.map} nationName={page.officialName} />
+					{/if}
+					<FactGroups groups={data.glance} />
+					{#if data.contacts.length > 0}
+						<h3 id="contacts-heading">{contactsHeading}</h3>
+						<ContactCard offices={data.contacts} headingLevel={4} />
+					{/if}
+				</Collapsible>
+			</div>
 		{/if}
 
 		<div class="profile-details">
 			<!-- 5. Courts and dispute resolution -->
 			{#if data.courts.length > 0}
-				<h2>Courts and dispute resolution</h2>
-				<FactGroups groups={data.courts} />
+				<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
+					<FactGroups groups={data.courts} />
+				</Collapsible>
 			{/if}
 
 			<!-- 6. Published dispute resolution law: linked, not reproduced -->
 			{#if data.law.length > 0}
-				<h2>Published law</h2>
-				<p class="small muted">
-					Laws are linked, not reproduced, until the nation permits more.
-				</p>
-				<FactGroups groups={data.law} />
+				<Collapsible heading="Published law" identifier="law-heading">
+					<FactGroups groups={data.law} />
+				</Collapsible>
 			{/if}
 
 			<!-- 7. Document history: every recorded version, oldest first (decision record 0018) -->
 			{#if data.documents.length > 0}
 				<div data-print-part="documentHistory">
-					<h2>Document history</h2>
+				<Collapsible heading="Document history" identifier="documents-heading">
 					<p class="small muted">
-						Each document below lists every version the project has found, what each version did to
-						the ones before it, and how its key clauses changed.
+						Each document below lists every version the project has found, what each version did to the ones before it, and how its key clauses changed.
 					</p>
 					<DocumentHistoryList documents={data.documents} />
+				</Collapsible>
 				</div>
 			{/if}
 
@@ -226,7 +239,7 @@
 			margin-top: var(--space-5);
 		}
 
-		.profile-glance > h2 {
+		.profile-glance > :global(.collapsible) {
 			margin-top: 0;
 		}
 
