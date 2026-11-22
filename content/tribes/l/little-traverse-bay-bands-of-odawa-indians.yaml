@@ -310,6 +310,8 @@ dispute_resolution:
     as_of: 2015-08
     locator: Rule XXIX
     note: Language tag otw (Ottawa/Odawa) assigned because the rule glosses the term as Odawa peacemaking.
+      The Judicial Branch's peacemaking page, listed under published materials, describes Mnodaawin circles
+      for juvenile cases (folded 2026-11-22, review queue item 5).
   - kind: mediation
     name: Court-ordered mediation in child protection
     description: After finding probable cause at a preliminary hearing the court may order custodians
@@ -343,32 +345,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
-  - kind: circle-process
-    name: Mnodaawin Peacemaking Circles (juvenile)
-    own_term:
-      name: Mnodaawin
-      language_tag: otw
-    description: Tribal Court alternative to the usual judicial process, first offered for juvenile cases
-      such as truancy, curfew, incorrigibility and minor offenses. Trained facilitators lead circles of
-      the juvenile, parents, family, elders and community members (the victim may take part or be represented)
-      until they reach a written consensus agreement signed by all, followed by monitoring circles over
-      several months. The page says the Tribal Court will develop similar processes for civil disputes
-      and other types of cases.
-    case_types:
-    - juvenile
-    participation: voluntary
-    relationship_to_court: Used in place of going before the judge; available only where the juvenile
-      admits wrongdoing and the juvenile and a parent or guardian agree.
-    enforcement: Follow-up circles over several months monitor compliance with the signed agreement.
-    link: https://ltbbodawa-nsn.gov/judicial-branch/peacemaking/
-    source: ltbb-judicial-branch-peacemaking-page
-    confidence: low
-    verification: read-in-full
-    as_of: '2026-11-21'
-    note: Official page but undated (as_of is the access date), so confidence is low under the contract;
-      it reads as a program description from the program's start. Agreements may include school, community
-      service, cultural activities, counseling and restitution commitments. Contact person on the page
-      not recorded.
   provisions:
   - kind: peacemaking
     title: 'Rule XXIX: Mnodaawin'
@@ -573,6 +549,23 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-philosophy-rehabilitation-and-healing-over-incarceration/
+  published_materials:
+  - kind: other
+    title: Peacemaking (Judicial Branch page)
+    link: https://ltbbodawa-nsn.gov/judicial-branch/peacemaking/
+    source: ltbb-judicial-branch-peacemaking-page
+    confidence: low
+    verification: read-in-full
+    as_of: '2026-11-21'
+    note: 'Describes Mnodaawin peacemaking circles as a Tribal Court alternative first offered for juvenile
+      cases such as truancy, curfew, incorrigibility and minor offenses, available where the juvenile
+      admits wrongdoing and the juvenile and a parent or guardian agree. Trained facilitators lead circles
+      of the juvenile, parents, family, elders and community members (the victim may take part or be represented)
+      until a written consensus agreement is signed by all, followed by monitoring circles over several
+      months; agreements may include school, community service, cultural activities, counseling and restitution.
+      The page says the Tribal Court will develop similar processes for civil disputes and other types
+      of cases. Undated official page; as_of is the access date. Folded on 2026-11-22 from a separate
+      forum record (review queue item 5): ''Mnodaawin Peacemaking Circles (juvenile)''.'
 gaming:
   compacts:
   - state: MI
