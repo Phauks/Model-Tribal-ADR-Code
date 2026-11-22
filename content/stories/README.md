@@ -17,3 +17,4 @@ peace or restoring relationships, as a Native nation or its people tell it
   spoken) are recorded only when a source states them.
 - A nation may correct, restrict or remove any record here (charter,
   commitment 6).
+- The website shows every story here at `/stories` (decision record [0029](../../docs/decisions/0029-show-stories-while-nations-review-them.md)). A story still marked `nation-review-first` carries a notice that the nation has not reviewed it, and every story page links to a removal request. A story or telling marked `restricted`, or embargoed before its date, is never shown. A new record appears on the next build.

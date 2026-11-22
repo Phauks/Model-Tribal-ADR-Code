@@ -16,7 +16,7 @@
 		type SearchResult
 	} from '#lib/site-search.ts';
 
-	const kinds: SearchKind[] = ['nation', 'term', 'page'];
+	const kinds: SearchKind[] = ['nation', 'story', 'term', 'page'];
 	/** Results shown per group before "Show all". */
 	const firstShown = 25;
 
@@ -94,7 +94,7 @@
 	{#if failed}
 		<div class="notice notice-problem" role="note">
 			<p>
-				The search index could not be loaded. If you are offline, save the site for offline reading in Settings first. You can still browse the <a href="/nations">nations</a> and the <a href="/glossary">glossary</a>.
+				The search index could not be loaded. If you are offline, save the site for offline reading in Settings first. You can still browse the <a href="/nations">nations</a>, the <a href="/stories">stories</a> and the <a href="/glossary">glossary</a>.
 			</p>
 		</div>
 	{/if}
