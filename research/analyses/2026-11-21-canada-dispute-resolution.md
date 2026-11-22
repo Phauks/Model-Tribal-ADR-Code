@@ -65,7 +65,9 @@ country now gives that promise effect, or not, through its own law:
   to enter and remain in Canada."[^irpa-19] The Supreme Court of Canada
   distinguished *Mitchell v. M.N.R.*, 2001 SCC 33, as a case in which the
   claimant asserted an Aboriginal right to cross the border.[^desautel]
-  *Mitchell* itself was not read for this note (see section 9).
+  *Mitchell* itself (read Nov. 22, 2026) held that right not proven on the
+  evidence, so duty was payable, and its only mention of the Jay Treaty is a
+  quotation in the concurrence (source record `mitchell-v-mnr-2001`).
 
 **Nations on both sides.** These are examples the project could source from
 the nations' own pages, not a list:
@@ -406,8 +408,9 @@ For review; about 230 words. Citations as in the sections above.
 
 ## 9. Gaps and next steps
 
-- **Not read, needs a pull:** *Mitchell v. M.N.R.*, 2001 SCC 33; *R. v.
-  Gladue*, [1999] 1 S.C.R. 688; *R. v. Powley*, 2003 SCC 43; *Guerin v. The
+- **Not read, needs a pull:** *R. v. Gladue*, [1999] 1 S.C.R. 688 (a partial
+  print arrived Nov. 22, 2026 and stops before paras. 66 and 93; *Mitchell
+  v. M.N.R.*, 2001 SCC 33, was read the same day); *R. v. Powley*, 2003 SCC 43; *Guerin v. The
   Queen*, [1984] 2 S.C.R. 335; the Sept. 1, 2026 N.D.N.Y. decision in the
   "Jay Treaty students" case (name and docket). The Supreme Court of Canada
   site served bot checks during this session. These are listed in the
