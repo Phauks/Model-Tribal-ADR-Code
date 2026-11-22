@@ -45,19 +45,21 @@ history:
   last_checked: '2026-11-22'
 rights:
   status: no-permission-needed
-  basis: fact-only
-  basis_note: Findings are reported and cited; read at abstract level, so nothing is quoted.
+  basis: open-license
+  license: CC-BY-NC-ND-4.0
+  basis_note: Open access under CC BY-NC-ND 4.0; only short phrases are quoted, with attribution.
   redistribution: false
 access:
   open: true
   pull_from:
   - free-web
-  note: Preprint at arxiv.org/abs/2410.16107.
+  note: Full text on PubMed Central (PMC11874169) and Europe PMC.
 topics:
 - writing-style
 - generative-ai
 found_in:
 - 2026-11-22-ai-and-human-prose
-notes: Abstract read on arXiv; the figures used (participial clauses, nominalizations, agentless passive)
-  come from the university news report, source johndrow-2025-is-it-human-or-ai. Author list from the Wikipedia
-  citation; check against the article before an edition.
+notes: Read in full (Europe PMC full text, 2026-11-22). Instruction-tuned models used present participial
+  clauses at 2 to 5 times the human rate (GPT-4o 5.3 times) and nominalizations at 1.5 to 2 times; GPT-4o
+  used the agentless passive at roughly half the human rate; GPT-4o and 4o Mini used camaraderie, palpable,
+  tapestry and intricate at more than 100 times the human rate. Author list checked against Europe PMC.

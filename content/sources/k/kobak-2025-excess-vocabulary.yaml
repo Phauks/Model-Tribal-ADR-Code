@@ -39,8 +39,9 @@ history:
   last_checked: '2026-11-22'
 rights:
   status: no-permission-needed
-  basis: fact-only
-  basis_note: Findings are reported and cited; read at abstract level, so nothing is quoted.
+  basis: open-license
+  license: CC-BY-4.0
+  basis_note: Open access under CC BY 4.0; findings are reported and cited.
   redistribution: false
 access:
   open: true
@@ -52,5 +53,5 @@ topics:
 - generative-ai
 found_in:
 - 2026-11-22-ai-and-human-prose
-notes: Abstract read on arXiv (v5). Reports that at least 13.5% of 2024 PubMed abstracts were processed
-  with LLMs.
+notes: Read on Europe PMC (full text, 2026-11-22). At least 13.5% of 2024 PubMed abstracts were processed
+  with LLMs, reaching 40% for some subcorpora.

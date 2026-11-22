@@ -52,8 +52,8 @@ limits: >-
   added as a source because its figures are unsourced. The Economist study and
   Sam Kriss's New York Times Magazine essay (Dec. 3, 2025) are paywalled and
   were not read; the Economist's findings were taken from John Gruber's
-  quotations. The Reinhart, Kobak, Russell and Jiang and Hyland papers were
-  read at abstract level only. Provost's book was not read; the passage comes
+  quotations. The Reinhart and Kobak papers were read in full on Europe PMC;
+  the Russell and the Jiang and Hyland papers were read at abstract level only. Provost's book was not read; the passage comes
   from a quotations page. A Fast Company article and a Search Engine Journal
   column refused automated access. Two pages had no Wayback capture.
 ---
