@@ -1,7 +1,5 @@
 <script lang="ts">
 	import GlossaryEntry from '#lib/components/GlossaryEntry.svelte';
-	import PageTools from '#lib/components/PageTools.svelte';
-	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { basisLabels, statusLabels } from '#lib/glossary-labels.ts';
 	import type { PageProps } from './$types';
@@ -19,10 +17,7 @@
 </nav>
 
 <div class="reading">
-	<GlossaryEntry {entry} headingLevel={1}>
-		<ReportLink record="glossary/{entry.id}" />
-		<PageTools />
-	</GlossaryEntry>
+	<GlossaryEntry {entry} headingLevel={1} />
 
 	<h2>About this entry</h2>
 	<dl class="summary-list">
@@ -57,5 +52,5 @@
 		</ul>
 	{/if}
 
-	<SourceList sources={data.sources} introduction="Each source below is followed by the parts of this entry that cite it." />
+	<SourceList sources={data.sources} />
 </div>

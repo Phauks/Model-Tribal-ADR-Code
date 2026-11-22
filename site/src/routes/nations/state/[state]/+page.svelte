@@ -1,7 +1,6 @@
 <script lang="ts">
 	import NationBrowse from '#lib/components/NationBrowse.svelte';
 	import NationTable from '#lib/components/NationTable.svelte';
-	import PageTools from '#lib/components/PageTools.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -20,7 +19,6 @@
 	{data.state.count.toLocaleString('en-US')} {data.state.count === 1 ? 'page' : 'pages'}. The map shows presence in a state, not boundaries.
 </p>
 <NationBrowse letters={data.letters} />
-<PageTools downloads={[{ label: 'Download the full list', format: 'CSV', link: '/nations/nations.csv' }]} />
 
 {#each data.groups as group (group.entityType)}
 	<section aria-labelledby="group-{group.entityType}">
@@ -28,8 +26,3 @@
 		<NationTable {group} identifier="nations-{data.state.key}-{group.entityType}" />
 	</section>
 {/each}
-
-<p>
-	<strong>Is your nation missing?</strong>
-	<a href="/requests?kind=add-nation">Ask to be added</a>.
-</p>

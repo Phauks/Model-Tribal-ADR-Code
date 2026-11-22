@@ -1,8 +1,7 @@
 <script lang="ts">
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
-	import PageTools from '#lib/components/PageTools.svelte';
-	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
 	import type { PageProps } from './$types';
@@ -80,10 +79,6 @@
 				</p>
 			{/each}
 		{/if}
-		<ReportLink {record} />
-		<PageTools
-			downloads={[{ label: 'Download this record', format: 'JSON', link: `/nations/${page.id}/record.json` }]}
-		/>
 
 		<!-- 2. Review panel -->
 		<section class="panel panel-filled" aria-labelledby="review-heading" data-print-part="reviewStatus">
@@ -99,8 +94,7 @@
 
 		{#if !page.withdrawn}
 			<!-- 3. What is distinctive here -->
-			<section aria-labelledby="distinctive-heading">
-				<h2 id="distinctive-heading">What is distinctive here</h2>
+			<Collapsible heading="What is distinctive here" identifier="distinctive-heading">
 				<h3>In the nation’s own words</h3>
 				<p class="muted">
 					This space is for a short description that the nation writes or approves. The project does not
@@ -115,48 +109,45 @@
 						{/each}
 					</ul>
 				{/if}
-			</section>
+			</Collapsible>
 		{/if}
 	</div>
 
 	{#if !page.withdrawn}
 		<!-- 4. At a glance, with the map of states -->
 		{#if data.glance.length > 0 || data.map}
-			<section class="profile-glance" aria-labelledby="glance-heading">
-				<h2 id="glance-heading">At a glance</h2>
+			<Collapsible class="profile-glance" heading="At a glance" identifier="glance-heading">
 				{#if data.map}
 					<StatePresenceMap map={data.map} nationName={page.officialName} />
 				{/if}
 				<FactGroups groups={data.glance} />
-			</section>
+			</Collapsible>
 		{/if}
 
 		<div class="profile-details">
 			<!-- 5. Courts and dispute resolution -->
 			{#if data.courts.length > 0}
-				<h2>Courts and dispute resolution</h2>
-				<FactGroups groups={data.courts} />
+				<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
+					<FactGroups groups={data.courts} />
+				</Collapsible>
 			{/if}
 
 			<!-- 6. Published dispute resolution law: linked, not reproduced -->
 			{#if data.law.length > 0}
-				<h2>Published law</h2>
-				<p class="small muted">
-					Laws are linked, not reproduced, until the nation permits more.
-				</p>
-				<FactGroups groups={data.law} />
+				<Collapsible heading="Published law" identifier="law-heading">
+					<p class="small muted">Laws are linked, not reproduced, until the nation permits more.</p>
+					<FactGroups groups={data.law} />
+				</Collapsible>
 			{/if}
 
 			<!-- 7. Document history: every recorded version, oldest first (decision record 0018) -->
 			{#if data.documents.length > 0}
-				<div data-print-part="documentHistory">
-					<h2>Document history</h2>
+				<Collapsible heading="Document history" identifier="documents-heading" printPart="documentHistory">
 					<p class="small muted">
-						Each document below lists every version the project has found, what each version did to
-						the ones before it, and how its key clauses changed.
+						Each document below lists every version the project has found, what each version did to the ones before it, and how its key clauses changed.
 					</p>
 					<DocumentHistoryList documents={data.documents} />
-				</div>
+				</Collapsible>
 			{/if}
 
 			<!-- 9. Sources -->

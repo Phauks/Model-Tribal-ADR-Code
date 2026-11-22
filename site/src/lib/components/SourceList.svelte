@@ -4,17 +4,14 @@
 	// a citation beside it (src/lib/server/source-uses.ts). The glossary pages
 	// use it too, with each entry in place of a fact.
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
+	import Collapsible from './Collapsible.svelte';
 
-	let {
-		sources,
-		introduction = 'Each source below is followed by the facts on this page that come from it.'
-	}: { sources: SourceEntry[]; introduction?: string } = $props();
+	// Trevor asked on Nov. 22, 2026 that the section carry no sentence explaining it.
+	let { sources }: { sources: SourceEntry[] } = $props();
 </script>
 
 {#if sources.length > 0}
-	<section class="notes" aria-labelledby="sources-heading" data-print-part="sources">
-		<h2 id="sources-heading">Sources</h2>
-		<p>{introduction}</p>
+	<Collapsible class="notes" heading="Sources" identifier="sources-heading" printPart="sources">
 		<ol>
 			{#each sources as source (source.key)}
 				<li id="source-{source.number}">
@@ -31,5 +28,5 @@
 				</li>
 			{/each}
 		</ol>
-	</section>
+	</Collapsible>
 {/if}

@@ -36,3 +36,19 @@ describe('searchEntries', () => {
 		expect(searchEntries(entries, 'PEÁCEMAKING').map((result) => result.link)).toEqual(['/glossary/peacemaking']);
 	});
 });
+
+import { downloadFor } from '../src/lib/page-downloads.ts';
+
+describe('downloadFor', () => {
+	it('offers a nation page its record, and the map page nothing', () => {
+		expect(downloadFor('/nations/cherokee-nation')?.link).toBe('/nations/cherokee-nation/record.json');
+		expect(downloadFor('/nations/map')).toBeUndefined();
+	});
+
+	it('offers the index pages the list, and the glossary its terms', () => {
+		expect(downloadFor('/nations/letter/n')?.link).toBe('/nations/nations.csv');
+		expect(downloadFor('/nations/state/nv')?.link).toBe('/nations/nations.csv');
+		expect(downloadFor('/glossary/native-nations')?.link).toBe('/glossary/terms.json');
+		expect(downloadFor('/changelog')).toBeUndefined();
+	});
+});

@@ -118,10 +118,11 @@
 	class="settings-button needs-scripts"
 	type="button"
 	aria-haspopup="dialog"
+	aria-label="Settings"
+	title="Settings"
 	onclick={open}
 >
-	<Settings size={20} strokeWidth={1.75} />
-	<span>Settings</span>
+	<Settings size={24} />
 </button>
 
 <Modal
@@ -207,18 +208,17 @@
 </Modal>
 
 <style>
+	/* Icon only, the same size as the theme button beside it (Trevor, Nov. 22, 2026). */
 	.settings-button {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
+		display: inline-grid;
+		place-items: center;
+		min-width: var(--layout-target-minimum);
 		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
+		padding: 0;
 		border: 1px solid var(--color-band-text);
 		border-radius: var(--radius-control);
 		background: transparent;
 		color: var(--color-band-text);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
 		cursor: pointer;
 	}
 

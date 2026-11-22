@@ -13,24 +13,17 @@
 	/>
 </svelte:head>
 
-<div class="reading">
-	<h1>{siteName}</h1>
-	<p class="lead">
-		Model provisions and commentary on dispute resolution, offered as an optional framework that a
-		Native nation may adapt through its own processes. The project does not speak for any nation.
-	</p>
-
-	<div class="notice" role="note">
-		<p>
-			<strong>This is a working draft.</strong> Content version {data.versions.content}. Nothing here
-			has been reviewed or adopted by a Native nation yet, and the model provisions are not law in
-			force.
+<!-- The top of the page in two columns: the name and purpose on the left, the logo on the right (Trevor, Nov. 22, 2026). They stack on narrow screens. -->
+<div class="home-top">
+	<div class="home-introduction">
+		<h1>{siteName}</h1>
+		<p class="lead">
+			Model provisions and commentary on dispute resolution, offered as an optional framework that a Native nation may adapt through its own processes. The project does not speak for any nation.
 		</p>
 	</div>
-</div>
-
-<div class="art-reserved" role="img" aria-label="Space reserved for art">
-	<p>Space reserved for art by a Native artist, to be chosen through the art contest.</p>
+	<div class="art-reserved home-logo" role="img" aria-label="Space reserved for the project's logo">
+		<p>Space reserved for the project’s logo.</p>
+	</div>
 </div>
 
 <h2>Contents</h2>
@@ -89,7 +82,25 @@
 		margin-top: 0;
 	}
 
-	.art-reserved {
-		margin: var(--space-5) 0;
+	.home-top {
+		display: grid;
+		grid-template-columns: minmax(0, var(--layout-measure)) minmax(14rem, 1fr);
+		gap: var(--space-5) var(--space-7);
+		align-items: center;
+		margin-bottom: var(--space-6);
+	}
+
+	.home-logo {
+		margin: 0;
+		min-height: 12rem;
+		display: grid;
+		place-items: center;
+		text-align: center;
+	}
+
+	@media (max-width: 48rem) {
+		.home-top {
+			grid-template-columns: minmax(0, 1fr);
+		}
 	}
 </style>

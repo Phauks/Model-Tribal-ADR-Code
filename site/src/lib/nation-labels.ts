@@ -38,7 +38,7 @@ const recognitionTypeLabels: Record<string, string> = {
 	federal: 'Federally recognized',
 	state: 'State recognized',
 	petitioning: 'Petitioning for federal acknowledgment',
-	unrecognized: 'No current recognition',
+	unrecognized: 'No federal recognition',
 	'congressional-special-relationship': 'Special relationship recognized by Congress',
 	'territorial-law': 'Status under territorial law'
 };

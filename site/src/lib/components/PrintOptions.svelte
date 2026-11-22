@@ -1,6 +1,8 @@
 <script lang="ts">
 	// Print button and dialog (site/DESIGN.md, section 6, "Print"). The
-	// button sits on the page, in PageTools.svelte, not in the masthead. Like the
+	// button sits in the masthead's menu row, beside Download, Report a
+	// problem and Contribute (Trevor, Nov. 22, 2026), and acts on the page
+	// the reader is on. Like the
 	// delivery dialogs of legal research services, it lets a reader choose
 	// what prints (the parts this page has) and how it is laid out, then opens
 	// the browser's print window, where the reader can also save a PDF. The
@@ -109,11 +111,25 @@
 		const removeNotes = () => {
 			for (const copy of document.querySelectorAll('.print-note')) copy.remove();
 		};
+		// Folded sections (Collapsible.svelte) open for printing and fold again after.
+		let folded: HTMLDetailsElement[] = [];
+		const openFolded = () => {
+			folded = [...document.querySelectorAll<HTMLDetailsElement>('#main-content details:not([open])')];
+			for (const section of folded) section.open = true;
+		};
+		const refold = () => {
+			for (const section of folded) section.open = false;
+			folded = [];
+		};
 		window.addEventListener('beforeprint', addNotes);
+		window.addEventListener('beforeprint', openFolded);
 		window.addEventListener('afterprint', removeNotes);
+		window.addEventListener('afterprint', refold);
 		return () => {
 			window.removeEventListener('beforeprint', addNotes);
+			window.removeEventListener('beforeprint', openFolded);
 			window.removeEventListener('afterprint', removeNotes);
+			window.removeEventListener('afterprint', refold);
 		};
 	});
 </script>
@@ -151,7 +167,7 @@
 
 <button
 	bind:this={opener}
-	class="button button-quiet needs-scripts"
+	class="print-button needs-scripts"
 	type="button"
 	aria-haspopup="dialog"
 	onclick={open}
@@ -231,6 +247,22 @@
 </Modal>
 
 <style>
+	/* Outlined in the band's text color, like the other masthead buttons. */
+	.print-button {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-3);
+		border: 1px solid var(--color-band-text);
+		border-radius: var(--radius-control);
+		background: transparent;
+		color: var(--color-band-text);
+		font: inherit;
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+	}
+
 	.section-heading {
 		margin: 0 0 var(--space-2);
 	}
