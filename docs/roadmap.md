@@ -138,6 +138,23 @@ section 2):
 Adding a track beyond the schema's list (for example intergovernmental) is a
 schema change made at Gate 2.
 
+### Parked research
+
+Research that is done enough to stop, kept here so it is not lost while other
+threads run. Each row says which gate or chapter brings it back and what the
+next step is. Add a row whenever a spike or side thread ends without being
+used yet; remove it when the work is picked up (project choice, Nov. 22, 2026).
+
+| Topic | Where it is | Comes back at | Next step when it does |
+| --- | --- | --- | --- |
+| Indigenous dispute resolution in Canada (comparative sidebar) | [Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md) (PR #62; PR #70 adds its Gate 2 scope question and Phase 2 sidebar step) | Gate 2 scope question on nations divided by a border; Phase 2 sidebar drafting | Review the draft sidebar in section 8 of the note; clear Westlaw list section 12; follow-ups from section 9 |
+| Indigenous dispute resolution in Mexico (comparative sidebar) | [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md) (PR #59) | Same as Canada: Gate 2 border question; Phase 2 sidebar drafting | Check whether Mexico's general law on Indigenous rights has passed; clear Westlaw list section 11 |
+| Peacemaking programs (peacemaking track) | [Peacemaking note](../research/analyses/2026-11-21-peacemaking-programs.md) (PRs #49, #56) | Gate 2 scope question on peacemaking; peacemaking track planning | Outcome evidence is thin (one comparison study); weigh the domestic violence critique; start further sweeps from the gaps in section 7 |
+| Native nations' stories about making peace | [Stories catalog](../research/analyses/2026-11-21-peacemaking-stories.md) (PRs #60, #66, #68) | Essays and the methods and manners collection (Phase 3), after the second search | Finish the second search; then outreach to nations' cultural offices and reprint permissions |
+| Reader profiles and shared collections (website) | [Proposal](https://claude.ai/artifact/2MjsixaGafnQvepg4MTzqC) (permission tiers thread) | Step 1 any time; step 2 (sync) after the model code has stable section numbers | All decisions made: build on-device saves first, then linked accounts and shared anonymous links |
+| "Nemesis" adversarial review agent | Idea only (project memory) | After Gate 2, when drafting starts | Trevor defines its scope; then design an agent that hunts loopholes in the model code and systems |
+| Tribal rules of evidence and dispute resolution confidentiality | [Spike note](../research/analyses/2026-11-21-tribal-rules-of-evidence.md) (PRs #65, #67) | Gate 2, outline item 1 (confidentiality) and items 2 and 4 (return to court, agreements); then drafting of those sections | Compare the four confidentiality models across the 85 provisions with the Uniform Mediation Act; check Uniform Mediation Act enactments (Westlaw list, section 13) |
+
 ## Gate 2: scope and outline approved
 
 Passed when Trevor approves the scope memo and outline, after input from the
