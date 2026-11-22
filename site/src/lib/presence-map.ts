@@ -32,6 +32,8 @@ export interface PresenceBox {
 	height: number;
 	/** SVG transform from the full map's units to the small map's. */
 	transform: string;
+	/** The part of the full map the box shows, in the full map's units. */
+	view: { x: number; y: number; width: number; height: number };
 	states: { code: string; path: string; present: boolean }[];
 }
 
@@ -60,7 +62,19 @@ export interface PresenceMapLayout {
  * States' width, so a nation in one small state still sees its neighbors
  * (project choice, checked by eye).
  */
-const closestZoom = 0.4;
+const defaultClosestZoom = 0.4;
+
+/** What a view of the small map is zoomed to, when it is not the shaded states. */
+export interface LayoutOptions {
+	/**
+	 * Path data of the shapes the view is about, such as a region or the
+	 * nation's land areas, in the full map's units. The view shows the boxes
+	 * that hold them and zooms the main box to them.
+	 */
+	focus?: string[];
+	/** The smallest share of the main box's width the view may show. */
+	closestZoom?: number;
+}
 
 /** Room kept around the nation's states inside a zoomed box, as a share of their size. */
 const padding = 0.2;
@@ -117,7 +131,7 @@ const contains = (frame: Rectangle, point: { x: number; y: number }) =>
  * around them, widened to the box's own proportions and to at least
  * `closestZoom` of its width, and kept inside the box.
  */
-function zoomedView(frame: Rectangle, nationStates: Rectangle): Rectangle {
+function zoomedView(frame: Rectangle, nationStates: Rectangle, closestZoom: number): Rectangle {
 	const aspect = frame.width / frame.height;
 	const room = padding * Math.max(nationStates.width, nationStates.height);
 	let width = Math.max(nationStates.width + 2 * room, closestZoom * frame.width);
@@ -147,17 +161,29 @@ export function layoutPresenceMap(
 	frames: SourceFrame[],
 	states: StateShape[],
 	present: Set<string>,
-	zoomedPaths: Map<string, string> = new Map()
+	zoomedPaths: Map<string, string> = new Map(),
+	options: LayoutOptions = {}
 ): PresenceMapLayout {
+	const closestZoom = options.closestZoom ?? defaultClosestZoom;
 	const placed = states.map((shape) => {
 		const bounds = pathBounds(shape.path);
 		const center = shape.center ?? (bounds ? { x: bounds.x + bounds.width / 2, y: bounds.y + bounds.height / 2 } : { x: 0, y: 0 });
 		const frame = frames.find((candidate) => contains(candidate, center));
 		return { shape, bounds, frame };
 	});
-	const relevant = frames.filter((frame) =>
-		placed.some((entry) => entry.frame === frame && present.has(entry.shape.code))
-	);
+	// What the view is about: the shaded states, or the shapes given as its focus.
+	const focus = (options.focus ?? []).flatMap((path) => {
+		const bounds = pathBounds(path);
+		if (!bounds) return [];
+		const center = { x: bounds.x + bounds.width / 2, y: bounds.y + bounds.height / 2 };
+		return [{ bounds, frame: frames.find((candidate) => contains(candidate, center)) }];
+	});
+	const subjects: { bounds: Rectangle; frame: SourceFrame | undefined }[] = options.focus
+		? focus
+		: placed
+				.filter((entry) => present.has(entry.shape.code) && entry.bounds)
+				.map((entry) => ({ bounds: entry.bounds as Rectangle, frame: entry.frame }));
+	const relevant = frames.filter((frame) => subjects.some((entry) => entry.frame === frame));
 	const [mainFrame, ...insetFrames] = frames;
 	const showsMain = relevant.includes(mainFrame);
 	const insets = insetFrames.filter((frame) => relevant.includes(frame));
@@ -168,11 +194,9 @@ export function layoutPresenceMap(
 	let top = gap;
 	if (showsMain) {
 		const nationStates = union(
-			placed
-				.filter((entry) => entry.frame === mainFrame && present.has(entry.shape.code) && entry.bounds)
-				.map((entry) => entry.bounds as Rectangle)
+			subjects.filter((entry) => entry.frame === mainFrame).map((entry) => entry.bounds)
 		);
-		const view = zoomedView(mainFrame, nationStates);
+		const view = zoomedView(mainFrame, nationStates, closestZoom);
 		const scale = mainFrame.width / view.width;
 		zoomed = scale > 1.001;
 		views.push({ frame: mainFrame, view, scale, x: mainFrame.x, y: top });
@@ -209,6 +233,7 @@ export function layoutPresenceMap(
 			width: tidy(view.width * scale),
 			height: tidy(view.height * scale),
 			transform: `translate(${tidy(x - view.x * scale)} ${tidy(y - view.y * scale)}) scale(${tidy(scale * 1000) / 1000})`,
+			view: { x: tidy(view.x), y: tidy(view.y), width: tidy(view.width), height: tidy(view.height) },
 			states: inBox
 				// Drawn only if some of the shape is in view, and shaded states
 				// last, so their outlines sit on top of their neighbors'.
@@ -261,3 +286,75 @@ const rectanglesMeet = (first: Rectangle, second: Rectangle) =>
 	second.x <= first.x + first.width &&
 	first.y <= second.y + second.height &&
 	second.y <= first.y + first.height;
+
+/** A point of the full map, placed on a box of the small map. */
+export function pointInBox(box: PresenceBox, point: { x: number; y: number }): { x: number; y: number } {
+	const scale = box.width / box.view.width;
+	return { x: tidy(box.x + (point.x - box.view.x) * scale), y: tidy(box.y + (point.y - box.view.y) * scale) };
+}
+
+/** True when a shape's outline reaches into the part of the map a box shows. */
+export function shapeInBox(box: PresenceBox, path: string): boolean {
+	const bounds = pathBounds(path);
+	return bounds !== undefined && rectanglesMeet(bounds, box.view);
+}
+
+/** A box whose states name their outline by key, so several views can share one copy of each. */
+export interface SharedBox extends Omit<PresenceBox, 'states'> {
+	states: { code: string; shape: string; present: boolean }[];
+}
+
+/**
+ * Takes the state outlines out of several layouts of the same page and keeps
+ * one copy of each, so a page with three views of its map carries each
+ * outline once (the component draws them with <use>).
+ */
+export function shareStateShapes<Layout extends PresenceMapLayout>(
+	layouts: Layout[]
+): { shapes: { key: string; path: string }[]; layouts: (Omit<Layout, 'boxes'> & { boxes: SharedBox[] })[] } {
+	const keys = new Map<string, string>();
+	const shapes: { key: string; path: string }[] = [];
+	const keyOf = (code: string, path: string) => {
+		let key = keys.get(path);
+		if (!key) {
+			key = `${code}-${shapes.filter((shape) => shape.key.startsWith(`${code}-`)).length + 1}`;
+			keys.set(path, key);
+			shapes.push({ key, path });
+		}
+		return key;
+	};
+	return {
+		shapes,
+		layouts: layouts.map((layout) => ({
+			...layout,
+			boxes: layout.boxes.map((box) => ({
+				...box,
+				states: box.states.map((state) => ({ code: state.code, shape: keyOf(state.code, state.path), present: state.present }))
+			}))
+		}))
+	};
+}
+
+/** What one box of a view draws over the states. */
+export interface BoxLayers {
+	/** Outlines drawn over the states, in the full map's units. */
+	shapes: { path: string; kind: 'region' | 'nation-region' | 'land-area' }[];
+	/** Dots for land areas too small to see, already placed on the small map. */
+	dots: { x: number; y: number }[];
+	labels: { text: string; x: number; y: number }[];
+}
+
+/** The small map on a nation's page, with its views (NationMap.svelte). */
+export interface NationMapData {
+	/** One copy of each state outline, which the views draw by key. */
+	shapes: { key: string; path: string }[];
+	views: {
+		key: 'states' | 'region' | 'lands';
+		label: string;
+		layout: Omit<PresenceMapLayout, 'boxes'> & { boxes: SharedBox[] };
+		layers: Record<string, BoxLayers>;
+	}[];
+	stateNames: string[];
+	region?: { name: string; link: string };
+	landAreas: { name: string; kind: string }[];
+}

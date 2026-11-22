@@ -172,20 +172,11 @@ See [citation-style.md](citation-style.md) and [data-model.md](data-model.md).
 
 ### 9. Copyright and permissions
 
-The project quotes only what the law allows or what owners permit, and records
-the basis for every quotation. Fair use depends on four factors: the purpose and
-character of the use, the nature of the work, "the amount and substantiality of
-the portion used," and "the effect of the use upon the potential market."[^usc-107]
-Because tribal law belongs to each nation, the default for tribal legal texts is
-to cite and link rather than republish, until the nation permits more (project
-analysis, not legal advice).
+The project quotes only what the law allows or what owners permit, and records the basis for every quotation. Fair use depends on four factors: the purpose and character of the use, the nature of the work, "the amount and substantiality of the portion used," and "the effect of the use upon the potential market."[^usc-107] Because tribal law belongs to each nation, the project quotes tribal legal texts only as the permission statuses allow (project analysis, not legal advice). Since 2026-11-22 the website also serves its own copies of the nations' constitutions and laws it cites, each with its original address and a link to ask for its removal or redaction, which the project honors<!-- repository-only --> ([decision record 0031](decisions/0031-serve-copies-of-documents-from-the-private-bucket.md))<!-- /repository-only -->.
 
 ### 10. Positionality and transparency
 
-The lead author, Trevor Goldsmith, is a law student who is not Native American. A short
-positionality statement appears in the book's preface or foreword. The project
-does not present itself as an Indigenous voice; it presents published practice,
-credits Indigenous sources, and invites correction.
+The lead author, Trevor Goldsmith, is a law student who is not Native American. A short positionality statement appears in the book's preface or foreword. The project does not present itself as an Indigenous voice; it presents published practice, credits Indigenous sources, and invites correction.
 
 ### 11. Future expansion beyond the United States
 
