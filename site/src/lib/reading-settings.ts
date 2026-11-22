@@ -25,6 +25,7 @@ export const textSizes = ['100', '112.5', '125', '137.5', '150', '175', '200'] a
 export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic'] as const;
 export const textSpacings = ['standard', 'wide'] as const;
 export const textAlignments = ['left', 'justified'] as const;
+export const lineWidths = ['standard', 'narrow', 'wide'] as const;
 export const contrasts = ['standard', 'more'] as const;
 export const noteDisplays = ['popup', 'end', 'inline'] as const;
 export const sourceLinkChoices = ['both', 'original', 'archived'] as const;
@@ -35,6 +36,7 @@ export type TextSize = (typeof textSizes)[number];
 export type Font = (typeof fonts)[number];
 export type TextSpacing = (typeof textSpacings)[number];
 export type TextAlignment = (typeof textAlignments)[number];
+export type LineWidth = (typeof lineWidths)[number];
 export type Contrast = (typeof contrasts)[number];
 export type NoteDisplay = (typeof noteDisplays)[number];
 export type SourceLinks = (typeof sourceLinkChoices)[number];
@@ -47,6 +49,7 @@ export interface ReadingSettings {
 	font: Font;
 	textSpacing: TextSpacing;
 	textAlignment: TextAlignment;
+	lineWidth: LineWidth;
 	contrast: Contrast;
 	noteDisplay: NoteDisplay;
 	sourceLinks: SourceLinks;
@@ -58,6 +61,7 @@ export const settingNames = [
 	'font',
 	'textSpacing',
 	'textAlignment',
+	'lineWidth',
 	'contrast',
 	'noteDisplay',
 	'sourceLinks',
@@ -69,6 +73,7 @@ export const defaultSettings: ReadingSettings = {
 	font: 'atkinson-hyperlegible-next',
 	textSpacing: 'standard',
 	textAlignment: 'left',
+	lineWidth: 'standard',
 	contrast: 'standard',
 	noteDisplay: 'popup',
 	sourceLinks: 'both',
@@ -80,6 +85,7 @@ const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings
 	font: fonts,
 	textSpacing: textSpacings,
 	textAlignment: textAlignments,
+	lineWidth: lineWidths,
 	contrast: contrasts,
 	noteDisplay: noteDisplays,
 	sourceLinks: sourceLinkChoices,
@@ -129,6 +135,18 @@ export const textAlignmentChoices: Choice<TextAlignment>[] = [
 		label: 'Justified',
 		hint: 'Straight edges on both sides, with long words hyphenated at line ends'
 	}
+];
+
+/**
+ * How long reading lines may run. Standard keeps lines to about 75
+ * characters, inside the 80 that WCAG 2.2, 1.4.8 Visual Presentation asks
+ * for; Wide is the longer line the site used before Nov. 22, 2026. The
+ * widths themselves are in global.css.
+ */
+export const lineWidthChoices: Choice<LineWidth>[] = [
+	{ value: 'narrow', label: 'Narrow', hint: 'About 65 characters a line' },
+	{ value: 'standard', label: 'Standard', hint: 'About 75 characters a line' },
+	{ value: 'wide', label: 'Wide', hint: 'About 85 characters a line' }
 ];
 
 export const themeChoices: Choice<Theme>[] = [

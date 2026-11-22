@@ -27,6 +27,23 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2022-)
+  decision_type: majority opinion
+  vote: {majority: 5, minority: 4}
+  justices:
+  - {name: "John G. Roberts, Jr.", vote: majority}
+  - {name: "Clarence Thomas", vote: majority, opinion: concurrence}
+  - {name: "Samuel A. Alito, Jr.", vote: majority}
+  - {name: "Sonia Sotomayor", vote: minority}
+  - {name: "Elena Kagan", vote: minority}
+  - {name: "Neil Gorsuch", vote: minority, opinion: dissent}
+  - {name: "Brett M. Kavanaugh", vote: majority, opinion: majority}
+  - {name: "Amy Coney Barrett", vote: majority}
+  - {name: "Ketanji Brown Jackson", vote: minority}
+  source: https://www.supremecourt.gov/opinions/22pdf/599us1r44_54l8.pdf
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

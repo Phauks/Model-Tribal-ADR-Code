@@ -27,6 +27,23 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1986-1987)
+  decision_type: majority opinion
+  vote: {majority: 6, minority: 3}
+  justices:
+  - {name: "Thurgood Marshall", vote: majority}
+  - {name: "William J. Brennan, Jr.", vote: majority}
+  - {name: "Byron R. White", vote: majority, opinion: majority}
+  - {name: "Harry A. Blackmun", vote: majority}
+  - {name: "Lewis F. Powell, Jr.", vote: majority}
+  - {name: "William H. Rehnquist", vote: majority}
+  - {name: "John Paul Stevens", vote: minority, opinion: dissent}
+  - {name: "Sandra Day O'Connor", vote: minority}
+  - {name: "Antonin Scalia", vote: minority}
+  source: https://api.oyez.org/cases/1986/85-1708
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

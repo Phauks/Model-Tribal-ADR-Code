@@ -13,6 +13,7 @@
 	import Menu from '@lucide/svelte/icons/menu';
 	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
 	import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
+	import Star from '@lucide/svelte/icons/star';
 	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
 
 	const outline = $derived(page.data.outline as PageOutline | undefined);
@@ -145,6 +146,15 @@
 			</li>
 		{/each}
 	</ul>
+	<!-- The reader's own pages, kept on this device (site/DESIGN.md, section 6, "Star"). -->
+	<ul class="sections reader-links needs-scripts">
+		<li>
+			<a href="/starred" aria-current={path === '/starred' ? 'page' : undefined}>
+				<Star size={18} aria-hidden="true" />
+				Starred pages
+			</a>
+		</li>
+	</ul>
 {/snippet}
 
 <!-- Wide screens: a column beside the page that the reader can hide. -->
@@ -205,6 +215,21 @@
 	}
 
 	.sections > li.current > a {
+		color: var(--color-link);
+		font-weight: var(--font-weight-bold);
+	}
+
+	.reader-links {
+		margin-top: var(--space-3);
+		padding-top: var(--space-3);
+		border-top: 1px solid var(--color-line);
+	}
+
+	.reader-links a {
+		gap: var(--space-2);
+	}
+
+	.reader-links a[aria-current='page'] {
 		color: var(--color-link);
 		font-weight: var(--font-weight-bold);
 	}

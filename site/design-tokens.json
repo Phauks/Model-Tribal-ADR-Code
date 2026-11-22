@@ -106,6 +106,14 @@
       "map-class-4": {
         "$value": "#0F4C54",
         "$description": "Map: 100 or more nations."
+      },
+      "scrollbar-thumb": {
+        "$value": "#3F7F86",
+        "$description": "Scrollbar thumb, the part a reader drags. 4.0:1 on the scrollbar track and 4.4:1 on paper (non-text minimum 3:1)."
+      },
+      "scrollbar-track": {
+        "$value": "#F6EEE6",
+        "$description": "Scrollbar track, the strip the thumb moves along. Same as surface, like the side rails."
       }
     },
     "dark": {
@@ -212,6 +220,14 @@
       "map-class-4": {
         "$value": "#B5E8EC",
         "$description": "Map: 100 or more nations."
+      },
+      "scrollbar-thumb": {
+        "$value": "#5A979E",
+        "$description": "Scrollbar thumb, the part a reader drags. 4.6:1 on the scrollbar track and 5.2:1 on paper (non-text minimum 3:1)."
+      },
+      "scrollbar-track": {
+        "$value": "#16292D",
+        "$description": "Scrollbar track, the strip the thumb moves along. Same as surface, like the side rails."
       }
     }
   },
@@ -441,10 +457,10 @@
     "$type": "dimension",
     "measure": {
       "$value": {
-        "value": 58,
+        "value": 51,
         "unit": "ch"
       },
-      "$description": "Longest reading line. In Atkinson Hyperlegible Next a ch (the width of a zero) is about 1.5 times an average letter, so 58ch holds about 86 characters of English text (measured in Chromium at 18 px)."
+      "$description": "Longest reading line at the Standard line width. In Atkinson Hyperlegible Next a ch (the width of a zero) is about 1.5 times an average letter, so 51ch holds about 75 characters of English text, inside the 80 that WCAG 2.2, 1.4.8 asks for (measured in Chromium at 18 px). Readers can pick Narrow (44ch) or Wide (58ch) in Settings."
     },
     "side-column": {
       "$value": {

@@ -1,7 +1,8 @@
 <script lang="ts">
 	// Settings, Data section (site/DESIGN.md, section 6, "Settings"): reset
-	// the reading settings, export and import them as a file, and delete what
-	// the site keeps on this device, all of it or chosen parts. Importing and
+	// the reading settings, export and import them (with starred pages) as a
+	// file, and delete what the site keeps on this device, all of it or chosen
+	// parts. Importing and
 	// deleting ask once more before they run, because they replace or remove
 	// what is there.
 	import Download from '@lucide/svelte/icons/download';
@@ -12,10 +13,11 @@
 	import { collections } from '#lib/offline-collections.ts';
 	import { controllingWorker, offlineStatus, removeCollection } from '#lib/offline-saving.ts';
 	import { defaultPrintOptions, loadPrintOptions, savePrintOptions } from '#lib/print-options.ts';
-	import { buildReaderData, parseReaderData, readerDataFileName, type ReaderData } from '#lib/reader-data.ts';
+	import { buildReaderData, parseReaderData, readerDataFileName, readerDataSizeLimit, type ReaderData } from '#lib/reader-data.ts';
 	import { loadSettings, loadTheme, saveSettings, saveTheme } from '#lib/reading-settings.ts';
+	import { loadStarred, mergeStarred, saveStarred } from '#lib/starred-items.ts';
 
-	type Part = 'settings' | 'print' | 'pages';
+	type Part = 'settings' | 'print' | 'starred' | 'pages';
 
 	let {
 		headingLevel = 4,
@@ -35,11 +37,12 @@
 	const parts: { id: Part; label: string; hint: string }[] = [
 		{ id: 'settings', label: 'Settings', hint: 'Text, colors, citations and glossary choices' },
 		{ id: 'print', label: 'Print choices', hint: 'What you chose to include when printing' },
+		{ id: 'starred', label: 'Starred pages', hint: 'The pages you starred and your notes on them' },
 		{ id: 'pages', label: 'Saved pages', hint: 'Pages saved for reading without a connection' }
 	];
 
 	const heading = $derived(`h${headingLevel}`);
-	let chosen = $state<Part[]>(['settings', 'print', 'pages']);
+	let chosen = $state<Part[]>(['settings', 'print', 'starred', 'pages']);
 	let confirming = $state(false);
 	let working = $state(false);
 	let message = $state<string | undefined>();
@@ -66,7 +69,7 @@
 			const status = await offlineStatus().catch(() => undefined);
 			savedParts = status?.collections.filter((item) => item.kept).map((item) => item.id) ?? [];
 		}
-		const data = buildReaderData(loadSettings(), loadTheme(), loadPrintOptions(), savedParts);
+		const data = buildReaderData(loadSettings(), loadTheme(), loadPrintOptions(), savedParts, loadStarred());
 		const file = new Blob([`${JSON.stringify(data, null, '\t')}\n`], { type: 'application/json' });
 		const link = document.createElement('a');
 		link.href = URL.createObjectURL(file);
@@ -83,7 +86,7 @@
 		message = undefined;
 		importProblem = undefined;
 		if (!file) return;
-		const data = file.size > 100_000 ? undefined : parseReaderData(await file.text());
+		const data = file.size > readerDataSizeLimit ? undefined : parseReaderData(await file.text());
 		if (!data) {
 			importProblem = 'That file is not a data file exported from this site. Choose a file whose name starts with model-tribal-adr-code-data.';
 			return;
@@ -98,11 +101,17 @@
 		saveSettings(importing.settings);
 		saveTheme(importing.theme);
 		savePrintOptions(importing.printOptions);
+		const starredBefore = loadStarred();
+		const starred = mergeStarred(starredBefore, importing.starred);
+		const starredAdded = starred.length - starredBefore.length;
+		if (importing.starred.length > 0) saveStarred(starred);
+		const starredMessage =
+			starredAdded > 0 ? ` Added ${starredAdded === 1 ? 'one starred page' : `${starredAdded} starred pages`} to yours.` : '';
 		const parts = collections.filter((collection) => importing?.savedParts.includes(collection.id)).map((collection) => collection.label);
 		message =
 			parts.length > 0
-				? `Imported. The file lists ${listed(parts)} as saved for offline reading; save ${parts.length === 1 ? 'it' : 'them'} above to have ${parts.length === 1 ? 'it' : 'them'} on this device too.`
-				: 'Imported your settings, theme and print choices.';
+				? `Imported.${starredMessage} The file lists ${listed(parts)} as saved for offline reading; save ${parts.length === 1 ? 'it' : 'them'} above to have ${parts.length === 1 ? 'it' : 'them'} on this device too.`
+				: `Imported your settings, theme and print choices.${starredMessage}`;
 		importing = undefined;
 		onimported?.();
 	}
@@ -124,6 +133,7 @@
 		const notDone: string[] = [];
 		if (chosen.includes('settings')) onreset();
 		if (chosen.includes('print')) savePrintOptions({ ...defaultPrintOptions });
+		if (chosen.includes('starred')) saveStarred([]);
 		if (chosen.includes('pages')) {
 			if (controllingWorker()) {
 				for (const collection of collections) {
@@ -153,12 +163,13 @@
 	</p>
 
 	<svelte:element this={heading} class="data-heading">Export and import</svelte:element>
-	<p class="hint">Carry your settings, theme, print choices and the list of parts saved for offline to another browser or device. The saved pages themselves are not in the file.</p>
+	<p class="hint">Carry your settings, theme, print choices, starred pages with your notes, and the list of parts saved for offline to another browser or device. The saved pages themselves are not in the file.</p>
 	{#if importing}
 		<div class="confirm confirm-import" role="group" aria-labelledby="local-data-import-question">
 			<p id="local-data-import-question" tabindex="-1" bind:this={importQuestion}>
 				<strong>Replace your settings, theme and print choices on this device with the ones in this file?</strong>
 				{#if importing.exported}It was exported {dateFormat.format(new Date(importing.exported))}.{/if}
+				{#if importing.starred.length > 0}Its {importing.starred.length === 1 ? 'starred page is' : `${importing.starred.length} starred pages are`} added to yours, and your own notes are kept.{/if}
 			</p>
 			<p class="actions">
 				<button class="button" type="button" onclick={applyImport}>Yes, replace</button>

@@ -33,6 +33,7 @@
 		saveTheme,
 		sourceLinkOptions,
 		textAlignmentChoices,
+		lineWidthChoices,
 		textSizeChoices,
 		textSizes,
 		textSpacingChoices,
@@ -237,6 +238,9 @@
 				(value) => change('textSpacing', value)
 			)}
 			{@render alignmentGroup()}
+			{@render choiceGroup('Line width', 'line-width', lineWidthChoices, settings.lineWidth, (value) =>
+				change('lineWidth', value)
+			)}
 		{:else if id === 'colors'}
 			{@render choiceGroup('Theme', 'theme', themeChoices, theme, changeTheme)}
 			{@render choiceGroup('Contrast', 'contrast', contrastChoices, settings.contrast, (value) =>
@@ -262,7 +266,7 @@
 			)}
 		{:else if id === 'glossary'}
 			<p class="hint">
-				Terms the project defines are marked with a dotted underline and link to their glossary
+				Terms defined in the glossary are marked with a dotted underline and link to their glossary
 				entries.
 			</p>
 			{@render choiceGroup(

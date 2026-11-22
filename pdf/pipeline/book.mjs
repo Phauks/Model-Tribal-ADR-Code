@@ -11,7 +11,7 @@ import { escapeTypst, typstString } from "./typst-text.mjs";
 
 const USAGE_LABELS = { preferred: "Preferred", acceptable: "Acceptable", "context-only": "Context only", avoid: "Avoid" };
 
-const FRONT_MATTER_ORDER = ["acknowledgments"];
+const FRONT_MATTER_ORDER = ["acknowledgments", "credits"];
 const frontMatterRank = (page) => {
   const rank = FRONT_MATTER_ORDER.indexOf(page.data.id);
   return rank === -1 ? FRONT_MATTER_ORDER.length : rank;
@@ -98,14 +98,25 @@ export function assembleBook({ book, content: records }) {
     chapters.push({ number: null, title: "Glossary", glossary: pieces });
   }
 
+  // Back matter prints after the glossary, in file-name order.
+  for (const page of [...(records.backMatter || [])].sort((first, second) => first.file.localeCompare(second.file))) {
+    if (!page.data.title) throw new Error(`${relative(page.file)}: back matter pages need a title`);
+    chapters.push({ number: null, title: page.data.title, pieces: [parse(KINDS.essay, page.file, page.body, page.data)] });
+  }
+
   // Write every chapter: number its notes first, then write the markup.
   const output = [];
+  const sourceRecords = new Map(records.sources.map((source) => [source.key, source]));
+  const notes = book.notes === "footnotes" ? "footnotes" : "endnotes";
+  let chapterIndex = 0;
+  const boxedKeys = new Set();
   for (const chapter of chapters) {
     if (chapter.part) {
       output.push(`#part-opener(layout, ${content(chapter.part.number)}, ${content(chapter.part.title)})`);
       continue;
     }
-    const writer = new ChapterWriter({ citations, glossary, printedGlossaryIds });
+    chapterIndex += 1;
+    const writer = new ChapterWriter({ citations, glossary, printedGlossaryIds, notes, chapterIndex, sourceRecords, nationNames: records.nationNames, peopleIds: records.peopleIds, boxedKeys });
     const number = chapter.number ? content(chapter.number) : "none";
     output.push(`#chapter-opener(layout, ${number}, ${content(chapter.title)})`);
     if (chapter.glossary) {
@@ -122,10 +133,12 @@ export function assembleBook({ book, content: records }) {
           `#glossary-entry(${content(entry.term)}, ${label}, ${expansion}, ${usage}, ${seeAlsoMarkup})[${writer.write(document)}] <glossary-${entry.id}>`,
         );
       }
+      if (writer.notesSection()) output.push(writer.notesSection());
       continue;
     }
     for (const piece of chapter.pieces) if (typeof piece !== "string") writer.numberNotes(piece);
     for (const piece of chapter.pieces) output.push(typeof piece === "string" ? piece : writer.write(piece));
+    if (writer.notesSection()) output.push(writer.notesSection());
   }
 
   const body = [
