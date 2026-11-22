@@ -22,7 +22,7 @@ import type { FormAnswers } from '#lib/forms.ts';
 /** Uploads sit under this prefix in the sourceDocuments bucket, apart from archived sources. */
 const uploadPrefix = 'requests';
 
-/** Copies of forms filled in online sit under this prefix (migrations/0006_form_submissions.sql). */
+/** Copies of forms filled in online sit under this prefix (migrations/0007_form_submissions.sql). */
 const formCopyPrefix = 'forms';
 
 /** A form sent from the Forms pages with the request it opens (src/lib/forms.ts). */

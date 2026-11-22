@@ -91,7 +91,7 @@ The Uniform Law Commission drafts acts for states to enact. Four of its acts gov
 
 **Fit with sovereignty.** The definition of "person" includes a "government; governmental subdivision, agency, or instrumentality" [@uniform-law-commission-mediation-act, § 2(6)], but the act has no provision on Native nations. Only 14 jurisdictions have enacted it, so it is a model rather than a national norm [@uniform-law-commission-mediation-act-enactment-status].
 
-::: analysis
+::: analysis The Uniform Mediation Act in a Tribal court
 The act's privilege and its ban on mediator reports can be adapted to a nation's courts without importing any state institution. One open question is whether a nation's open records and open meetings laws (the act's bracketed cross-references) reach Tribal programs. Another is how the privilege would fare when a mediated matter is later litigated in a state or federal court that applies its own evidence rules.
 :::
 
@@ -103,7 +103,7 @@ The act's privilege and its ban on mediator reports can be adapted to a nation's
 
 **Consent.** Before a dispute arises, a party may not waive the right to judicial relief, the validity rule, provisional remedies, subpoena powers, jurisdiction or appeals, and may not "unreasonably restrict" notice or arbitrator disclosure [@uniform-law-commission-arbitration-act-2000, § 4(b)]. The right to a lawyer may not be waived in advance except in labor arbitration [@uniform-law-commission-arbitration-act-2000, § 4(b)(4)].
 
-::: analysis
+::: analysis The arbitration act's non-waivable protections
 Section 4 is a ready-made list of minimum fairness guarantees that a nation could compare with its own due process law, including the Indian Civil Rights Act standards its courts already apply.
 :::
 
@@ -115,7 +115,7 @@ Section 4 is a ready-made list of minimum fairness guarantees that a nation coul
 
 **Fit with sovereignty.** The Federal Arbitration Act sits behind any arbitration code. It makes written arbitration provisions in contracts "evidencing a transaction involving commerce" valid and enforceable [@usc-9-2], and the Supreme Court has held that its grounds for vacating and modifying awards are exclusive and cannot be expanded by contract [@hall-street-associates-v-mattel-2008]. On immunity, the Supreme Court held that a nation's form contract with an arbitration clause and a choice of law clause clearly waived its immunity from a suit to enforce the award [@c-and-l-enterprises-v-citizen-band-potawatomi-2001].
 
-::: analysis
+::: analysis The Federal Arbitration Act and Tribal courts
 Whether and how the Federal Arbitration Act applies in Tribal courts is not settled in the sources read so far and is a research question for the outline. The *C & L Enterprises* holding makes the wording of any model arbitration clause a sovereignty question, not only a procedural one.
 :::
 
@@ -135,7 +135,7 @@ Whether and how the Federal Arbitration Act applies in Tribal courts is not sett
 
 **Fit with sovereignty.** Its definition of "State" offers the bracketed option "[The term includes a federally recognized Indian tribe.]" [@uniform-law-commission-family-law-arbitration-act-2016, § 2(11)]. The same approach appears in the custody jurisdiction act, whose § 104 lets a state treat a nation as a state and recognize its custody orders [@uniform-law-commission-child-custody-jurisdiction-enforcement-act-104]; Nevada enacted that option [@nevada-revised-statutes-125a-215]. Only nine jurisdictions have enacted the family law arbitration act [@uniform-law-commission-family-law-arbitration-act-enactment-status].
 
-::: analysis
+::: analysis The Uniform Family Law Arbitration Act for a nation
 The act's screening and child-protection sections are its most transferable parts, and family matters involving children of a nation also raise Indian Child Welfare Act questions the uniform act does not address.
 :::
 
@@ -149,7 +149,7 @@ The act's screening and child-protection sections are its most transferable part
 
 **Fit with sovereignty.** It can be adopted as court rules. Twenty-eight jurisdictions have enacted it [@uniform-law-commission-collaborative-law-act-enactment-status].
 
-::: analysis
+::: analysis The Uniform Collaborative Law Act for a nation
 Because it can be adopted as court rules, the act fits a nation whose court has rulemaking power. Its disqualification rule assumes a supply of lawyers; where few lawyers practice in a nation's court, the rule may limit who can take part.
 :::
 
@@ -163,13 +163,13 @@ Two models show how codes for Native nations have been built.
 
 **Model Code of Judicial Conduct for Indian Court Judges (1981).** The National American Indian Court Judges Association's model applies to "anyone, whether or not a lawyer," who performs judicial functions in a Tribal judicial system. It says "It is expected that tribes will modify some provisions of the code to reflect tribal customs" [@ncjrs-1981-model-code-judicial-conduct-indian-court-judges].
 
-::: analysis
+::: analysis The model code of judicial conduct for Indian court judges
 The judges' model is a starting point for ethics rules for neutrals who are not lawyers.
 :::
 
 **Model Tribal Secured Transactions Act (2004, revised 2017).** The Uniform Law Commission "and a working group of tribal officials" drafted it "as a template for legislation by tribes," keeping its terms close to the Uniform Commercial Code. That closeness lets lawyers work across tribal and state systems. The Uniform Law Commission published an implementation guide with commentary [@bia-ieed-2019-why-tribes-should-adopt-secured-transactions-code].
 
-::: analysis
+::: analysis The Model Tribal Secured Transactions Act as a method
 This is the nearest precedent for the model code's own method: a template for adaptation, written with Tribal officials, explained by commentary, and compatible with neighboring systems.
 :::
 
@@ -179,7 +179,7 @@ A provisional review of the dataset of nations' published laws found four commer
 
 The Ho-Chunk Nation's ordinance, read in full, shows the shape in full. A written agreement to arbitrate a future or existing dispute is valid, irrevocable and enforceable [@ho-chunk-2-hcc-13-arbitration, § 3]. A party may apply to the Tribal forum within one year to confirm an award; the forum confirms the award as the arbitrator made it, without review or modification, and the judgment is enforced like a civil judgment [@ho-chunk-2-hcc-13-arbitration, § 8]. No appeal lies from an order enforcing an agreement or an award [@ho-chunk-2-hcc-13-arbitration, § 9]. Where the nation or its entity is a party, the forum's jurisdiction depends on an explicit waiver of immunity in the contract, and the ordinance itself waives nothing [@ho-chunk-2-hcc-13-arbitration, §§ 10, 12]. Tribal police carry out the forum's orders [@ho-chunk-2-hcc-13-arbitration, § 13].
 
-::: analysis
+::: analysis The Ho-Chunk Nation's arbitration ordinance
 Compared with the Revised Uniform Arbitration Act, the ordinance in the sections read removes judicial review of the merits and appeals altogether, and says nothing about arbitrator disclosure, non-waivable rights or confidentiality. Whether the ordinances share a common model is an open question, not a conclusion.
 :::
 
@@ -197,7 +197,7 @@ Two points from the peacemaking sources matter for an ADR code's design all the 
 
 **Its grounding is self-government and culture.** The Initiative reads UNDRIP as giving "plentiful, broad, and welcome support for the rights of Indigenous Peoples to continue or revitalize their own ways of dispute resolution," and Article 34 as "a clear affirmation of a right to develop Peacemaking programs" [@narf-ipi-2019-peacemaking-support-in-undrip, at 1, 4].
 
-::: analysis
+::: analysis Where peacemaking and an ADR code meet
 The comparative question for the outline is not how an ADR code would regulate peacemaking but where the two tracks meet. The questions are whether an ADR code says anything about referral between them, about a matter that returns from peacemaking to court, or about recognition of agreements. A further question is how it avoids defining or limiting a process that each nation governs itself.
 :::
 
@@ -207,7 +207,7 @@ The comparative question for the outline is not how an ADR code would regulate p
 
 The Indian Gaming Regulatory Act lists subjects a Tribal-State compact "may include," among them "remedies for breach of contract" [@usc-25-2710, (d)(3)(C)(v)]. If a state fails to negotiate in good faith, the act's court process ends with each side submitting "a proposed compact that represents their last best offer" to a court-appointed mediator, who "shall select from the two proposed compacts" [@usc-25-2710, (d)(7)(B)(iv)]. That last step is final-offer selection, not facilitative mediation. The Supreme Court held that the Eleventh Amendment bars Congress from authorizing such suits against a state that has not consented [@seminole-tribe-v-florida-1996].
 
-::: analysis
+::: analysis Compact disputes after *Seminole Tribe*
 In practice, after *Seminole Tribe*, compact disputes depend on the clauses the parties negotiate.
 :::
 
@@ -230,7 +230,7 @@ The dataset behind the model code holds 286 compact dispute summaries for 276 na
 
 Source for the steps: the compact dispute summaries for the example compact, checked against the rechecked summaries on Nov. 22, 2026 (the rows still match).
 
-::: analysis
+::: analysis Dispute steps in state compact templates
 Three features recur and are worth testing in the outline. First, almost every template begins with written notice and a meeting between governments, which is a negotiation step framed as a matter of government-to-government relations. Second, mediation is usually optional. Third, the binding stage is where the templates differ most, and where immunity waivers are written most narrowly, often to declaratory and injunctive relief.
 :::
 
@@ -238,7 +238,7 @@ Three features recur and are worth testing in the outline. First, almost every t
 
 Oklahoma's model compact, enacted as state law, provides for arbitration and then lets "either party to the Compact ... bring an action against the other in a federal district court for the de novo review of any arbitration award" [@oklahoma-model-tribal-gaming-compact-3a-281, Part 12(3)]. In Citizen Potawatomi Nation v. Oklahoma, the Tenth Circuit held that clause invalid under Hall Street Associates. Because de novo review was "a material aspect of the parties' agreement to engage in binding arbitration," it held the obligation to arbitrate unenforceable and directed that the Nation's award be vacated [@citizen-potawatomi-nation-v-oklahoma-2018, slip op. at 2-3, 30; @hall-street-associates-v-mattel-2008].
 
-::: analysis
+::: analysis Oklahoma's compact arbitration clause
 The lesson for any intergovernmental clause is that a negotiated review route the governing arbitration law does not allow can take the whole arbitration clause down with it. A drafter can ask, at the outline stage, which arbitration law governs an intergovernmental clause, and whether review is better placed before the award (for example an appellate arbitration panel) than in a court.
 :::
 
@@ -246,7 +246,7 @@ The lesson for any intergovernmental clause is that a negotiated review route th
 
 Outside gaming, the statutory model self-determination contract lets the Secretary and a Tribal contractor jointly submit disputes to third-party mediation, to "the adjudicatory body of the Contractor, including the tribal court of the Contractor," or to other processes [@usc-25-5329-c-model-agreement-disputes].
 
-::: analysis
+::: analysis The federal model self-determination agreement
 The model agreement is the clearest federal text that treats a nation's own forum as a place to resolve disputes with the federal government.
 :::
 
@@ -264,7 +264,7 @@ Other articles bear on the same questions. Article 34 recognizes the right to ma
 
 **Status in the United States.** When the United States announced its support in 2010, it described the Declaration as "not legally binding or a statement of current international law" but having "both moral and political force" [@us-department-of-state-2010-announcement-support-undrip].
 
-::: analysis Fit for the model code
+::: analysis Article 40 of the United Nations Declaration on the Rights of Indigenous Peoples (UNDRIP)
 Article 40 has two parts a code can map onto. One is a procedural standard (access, prompt decision, just and fair procedure, effective remedies). The other is a choice-of-law standard (due consideration of the people's own customs, rules and legal systems, alongside human rights). The second part is the harder one for a code that may be used in disputes with outsiders.
 :::
 
@@ -272,7 +272,7 @@ Article 40 has two parts a code can map onto. One is a procedural standard (acce
 
 The Organization of American States adopted its declaration in June 2016 [@oas-2016-american-declaration-rights-indigenous-peoples]. Article XXII(2) provides: "Indigenous law and legal systems shall be recognized and respected by national, regional and international legal systems." Article XXXIV calls for "just, equitable and effective mechanisms" for conflicts with Indigenous peoples, developed with their participation, "and procedures for their prompt resolution," with due consideration of their customs, norms and legal systems [@oas-2016-american-declaration-rights-indigenous-peoples, arts. XXII(2), XXXIV]. A footnote records the United States' view that the Declaration "is not itself legally binding" and that the United States "has, however, persistently objected" to the text [@oas-2016-american-declaration-rights-indigenous-peoples, n.1].
 
-::: analysis
+::: analysis Article XXII(2) of the American Declaration
 Article XXII(2) speaks directly to the recognition problem a model code faces: whether courts outside the nation will respect a process that runs under the nation's own law.
 :::
 
@@ -280,7 +280,7 @@ Article XXII(2) speaks directly to the recognition problem a model code faces: w
 
 **The Waitangi Tribunal.** Under the Treaty of Waitangi Act 1975, a Māori claimant prejudiced by Crown action "inconsistent with the principles of the Treaty" may submit a claim. If the claim is well founded, the Tribunal "may ... recommend to the Crown that action be taken to compensate for or remove the prejudice" [@nz-treaty-of-waitangi-act-1975, s 6(1), (3)]. For land transferred to State enterprises and for Crown forest land, interim recommendations for return take effect as final recommendations after 90 days unless the claim is settled [@nz-treaty-of-waitangi-act-1975, ss 8A, 8B(6), 8HB, 8HC].
 
-::: analysis
+::: analysis The Waitangi Tribunal
 The design pairs a broad inquiry power with a narrow binding power, and keeps settlement by negotiation as the expected outcome.
 :::
 
@@ -293,7 +293,7 @@ The design pairs a broad inquiry power with a narrow binding power, and keeps se
 - *Neutrals.* The parties must agree on the mediator; at first only Māori Land Court Judges could mediate, and a Judge who mediates cannot sit on the matter [@te-puni-kokiri-2020-faq-dispute-resolution]. Up to two mediators may be appointed, so that one can bring legal skills and another tikanga or te reo Māori [@maori-land-court-warren-2022-dispute-resolution].
 - *Appeals.* None within the mediation; if it fails, the matter returns to the ordinary court process [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, ss 98Q-98R].
 
-::: analysis
+::: analysis Mediation in the Māori Land Court
 The legality-and-custom check before an agreement becomes an order is the feature most worth comparing with the uniform acts, which leave mediated agreements to contract law.
 :::
 
@@ -303,7 +303,7 @@ The Canadian sources are statutes and agreements between First Nations and the C
 
 **Specific Claims Tribunal Act.** The Tribunal decides "issues of validity and compensation relating to specific claims of First Nations" [@canada-specific-claims-tribunal-act-2008, s 3]. Its members are drawn from a roster of superior court judges [@canada-specific-claims-tribunal-act-2008, s 6(2)]. A claim may be filed only after it went to the Minister and was refused, left undecided for three years, consented to, or left unsettled after three years of negotiation [@canada-specific-claims-tribunal-act-2008, s 16(1)]. Compensation is monetary and capped at $150 million [@canada-specific-claims-tribunal-act-2008, s 20(1)(a)-(b)]. Decisions are subject to judicial review but otherwise "final and conclusive between the parties" [@canada-specific-claims-tribunal-act-2008, s 34].
 
-::: analysis
+::: analysis The Specific Claims Tribunal
 The Specific Claims Tribunal shows a negotiation-first design backed by an independent binding forum, with a fixed trigger for moving from one to the other.
 :::
 
@@ -315,7 +315,7 @@ The Specific Claims Tribunal shows a negotiation-first design backed by an indep
 - the parties and the Lands Advisory Board build rosters of neutrals, who must be "unbiased and free from any conflict of interest" [@framework-agreement-first-nation-land-management-2022, cl. 44];
 - awards are "final and binding," and judicial review lies only within 30 days for excess of jurisdiction or a failure of natural justice [@framework-agreement-first-nation-land-management-2022, cl. 47.3-47.5].
 
-::: analysis
+::: analysis The First Nations land management framework
 The attend-one-meeting rule is a middle path between voluntary and mandatory mediation. The two-level design (each nation builds its own forum; the framework handles disputes between governments) is close to the choice a model code faces between internal and intergovernmental chapters.
 :::
 
@@ -327,7 +327,7 @@ The attend-one-meeting rule is a middle path between voluntary and mandatory med
 
 The Commission found that the fallback shapes the bargain. Arbitration puts "significant structural pressure" on native title parties, because "the alternative, arbitration, is perceived as likely to lead to a worse outcome". Citing the Tribunal's own figures, the Commission reports that six of 200 contested future acts were determined not to be done [@alrc-2026-report-144-future-acts-summary, paras. 61-62 & n.63]. It recommends repealing the bar on profit-based conditions and reforming the criteria for determinations [@alrc-2026-report-144-future-acts-summary, para. 63].
 
-::: analysis
+::: analysis Arbitration as the fallback under the Native Title Act
 This is the clearest documented caution in the comparison: a binding fallback is not neutral. Who designs it, what remedies it can give, and how often it rules for each side all reach back into the negotiation that comes first.
 :::
 
@@ -346,40 +346,40 @@ The frameworks use four consent models.
 3. **Voluntary throughout** (Māori Land Court mediation) [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, s 98J].
 4. **Required first steps before a binding stage** (Nisg̱a'a stages, the land management framework's initial mediation meeting, the Specific Claims Tribunal's negotiation gate, and the Native Title Act's six months) [@nisgaa-final-agreement-chapter-19-dispute-resolution, para. 13; @framework-agreement-first-nation-land-management-2022, cl. 43.2; @canada-specific-claims-tribunal-act-2008, s 16(1); @alrc-2026-report-144-future-acts-summary, para. 37].
 
-::: analysis Question for the outline
-which consent model fits each kind of dispute a nation might cover (between citizens, with outsiders, with other governments). A second question is how the code treats consent by a person who is not a citizen of the nation, given the jurisdiction cases collected elsewhere in the book.
+::: analysis Which consent model fits each dispute
+The question for the outline is which consent model fits each kind of dispute a nation might cover (between citizens, with outsiders, with other governments). A second question is how the code treats consent by a person who is not a citizen of the nation, given the jurisdiction cases collected elsewhere in the book.
 :::
 
 ### 6.2 Enforceability
 
 Three routes appear. One is confirmation of an award as a judgment (the arbitration acts and the Ho-Chunk ordinance). Another is entry of an agreement as a court order after a legality check (Māori Land Court). The third leaves agreements to contract law (the mediation act). Outside the nation, enforcement depends on comity and on how other courts treat Tribal judgments [@wilson-v-marchington-1997], and on optional uniform-act provisions that treat nations as states [@uniform-law-commission-family-law-arbitration-act-2016, § 2(11); @uniform-law-commission-child-custody-jurisdiction-enforcement-act-104].
 
-::: analysis Question for the outline
-whether an agreement or award should become a Tribal court judgment by default, and what record the court needs so that other courts can recognize it.
+::: analysis Turning agreements and awards into judgments
+The question for the outline is whether an agreement or award should become a Tribal court judgment by default, and what record the court needs so that other courts can recognize it.
 :::
 
 ### 6.3 Confidentiality
 
 The uniform acts split confidentiality into an evidentiary privilege, which the law grants, and general secrecy, which the parties must agree to [@uniform-law-commission-mediation-act, §§ 4, 8; @uniform-law-commission-collaborative-law-rules-act, § 16]. The Māori Land Court provision makes confidentiality a statutory duty of the mediator and participants [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, s 98O(5)]. The arbitration sources and the intergovernmental agreements say little about it.
 
-::: analysis Question for the outline
-how confidentiality interacts with a small community, with a nation's open records law, and with exceptions for safety and child protection like those in the mediation act [@uniform-law-commission-mediation-act, § 6(a)].
+::: analysis Confidentiality in a small community
+The question for the outline is how confidentiality interacts with a small community, with a nation's open records law, and with exceptions for safety and child protection like those in the mediation act [@uniform-law-commission-mediation-act, § 6(a)].
 :::
 
 ### 6.4 Appeals and Review
 
 The range runs from no review at all (Ho-Chunk ordinance) through narrow statutory vacatur (the arbitration acts; the Federal Arbitration Act [@usc-9-9-11]) and narrow judicial review (land management framework, Specific Claims Tribunal) [@ho-chunk-2-hcc-13-arbitration, § 9; @uniform-law-commission-arbitration-act-2000, §§ 23, 28; @framework-agreement-first-nation-land-management-2022, cl. 47.5; @canada-specific-claims-tribunal-act-2008, s 34]. At the far end is a negotiated de novo review that a court struck down with the whole clause (Oklahoma) [@citizen-potawatomi-nation-v-oklahoma-2018].
 
-::: analysis Question for the outline
-whether review belongs in the nation's courts, inside the process (for example an appellate panel), or nowhere, and how the choice holds up if a state or federal court applies the Federal Arbitration Act.
+::: analysis Where review belongs
+The question for the outline is whether review belongs in the nation's courts, inside the process (for example an appellate panel), or nowhere, and how the choice holds up if a state or federal court applies the Federal Arbitration Act.
 :::
 
 ### 6.5 Fit with Sovereignty
 
 Every uniform act is written for a state; nations appear only in optional brackets. The models that start from a nation's own authority are the nations' own codes, the Framework Agreement's requirement that each nation establish its own forum, and the international texts that ask for "due consideration" or recognition of Indigenous law [@framework-agreement-first-nation-land-management-2022, cl. 5.2(h); @un-general-assembly-2007-declaration-rights-indigenous-peoples, art. 40; @oas-2016-american-declaration-rights-indigenous-peoples, art. XXII(2)]. Immunity is the sovereignty question that runs through every binding process: an arbitration clause can itself be a waiver [@c-and-l-enterprises-v-citizen-band-potawatomi-2001], and compact templates limit waivers to narrow relief [@nevada-te-moak-tribe-gaming-compact-2014].
 
-::: analysis Question for the outline
-whether the model code is built as a state-style uniform act adapted for nations, or starts from each nation's own institutions and offers the uniform-act provisions as optional modules.
+::: analysis Uniform act or the nation's own institutions
+The question for the outline is whether the model code is built as a state-style uniform act adapted for nations, or starts from each nation's own institutions and offers the uniform-act provisions as optional modules.
 :::
 
 ## Limits and Items to Check

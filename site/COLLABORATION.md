@@ -405,7 +405,7 @@ page, where their level on each document is raised or lowered. Tell each person 
 | `reviews` | Sign-offs and comments, with the content version. |
 | `requests` | Requests from the form, their status, outcome and targets. |
 | `request_sources` | Proof for adding a nation, and other uploaded files. |
-| `form_submissions` | Forms sent from the Forms pages: which form and version, how it was signed, the answers and the filing number (`migrations/0006_form_submissions.sql`). |
+| `form_submissions` | Forms sent from the Forms pages: which form and version, how it was signed, the answers and the filing number (`migrations/0007_form_submissions.sql`). |
 | `events` | The activity log: who did what and when, numbered in order. Cannot be changed or deleted. |
 | `event_seals` | The seal of each activity log entry, chained to the one before. |
 

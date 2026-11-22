@@ -2,7 +2,7 @@
  * Forms sent from the Forms pages (src/routes/forms/[form]): a form filled in
  * and signed online, or a photo or scan of a signed paper copy. Each opens a
  * request (src/lib/server/request-store.ts) with a row in form_submissions
- * (migrations/0006_form_submissions.sql), and an editor gives it a filing
+ * (migrations/0007_form_submissions.sql), and an editor gives it a filing
  * number in the workspace (docs/contributions.md).
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
