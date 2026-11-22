@@ -33,6 +33,7 @@
 		saveTheme,
 		sourceLinkOptions,
 		textAlignmentChoices,
+		lineWidthChoices,
 		textSizeChoices,
 		textSizes,
 		textSpacingChoices,
@@ -237,6 +238,9 @@
 				(value) => change('textSpacing', value)
 			)}
 			{@render alignmentGroup()}
+			{@render choiceGroup('Line width', 'line-width', lineWidthChoices, settings.lineWidth, (value) =>
+				change('lineWidth', value)
+			)}
 		{:else if id === 'colors'}
 			{@render choiceGroup('Theme', 'theme', themeChoices, theme, changeTheme)}
 			{@render choiceGroup('Contrast', 'contrast', contrastChoices, settings.contrast, (value) =>
