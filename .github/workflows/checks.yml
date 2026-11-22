@@ -19,10 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: python3 scripts/check_text.py
+      # Fails only on paragraphs the pull request wraps; older wrapped files are counted, not refused (docs/style-guide.md, section 7).
+      - name: No hard-wrapped Markdown
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: python3 scripts/check_wrapping.py ${BASE:+--base "$BASE"}
 
   records:
     name: Records and links
