@@ -198,16 +198,7 @@ beside it "At a glance" with its map, like a reference work's fact box. On
 narrower screens the parts stack in the order above, so the map sits under
 the "At a glance" heading (project choice, Nov. 21, 2026).
 
-**Map of states.** "At a glance" opens with a small map that shades the
-states and territories where the record's cited `states` facts place the
-nation, with each shaded state's postal code printed on it, so color is not
-the only cue. It draws no nation's land
-([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)),
-and its caption says so. It does not outline the nation's Bureau of Indian
-Affairs region: the Navajo Region's outline follows the Navajo Nation's land,
-so on that nation's page it would draw the nation's land; the region is named
-under "At a glance" and links to the regions map instead (project choice). A
-page whose record lists no state has no map.
+**Map of states.** "At a glance" opens with a small map that shades the states and territories where the record's cited `states` facts place the nation, with each shaded state's postal code printed on it, so color is not the only cue. It shows only what is relevant to the nation (Trevor, Nov. 22, 2026): the boxes that hold its states and no others, with the contiguous United States zoomed to the region around them but never closer than 40 percent of the country's width, so neighbors stay in view. Alaska, Hawaiʻi or a territory shown without the main box is drawn up to three times larger. Zoomed boxes use more detailed outlines than the full-size small map, and only the states in view go into the page (src/lib/presence-map.ts). It draws no nation's land ([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)), and its caption says so. It does not outline the nation's Bureau of Indian Affairs region: the Navajo Region's outline follows the Navajo Nation's land, so on that nation's page it would draw the nation's land; the region is named under "At a glance" and links to the regions map instead (project choice). A page whose record lists no state has no map.
 
 **Reporting a problem.** One "Report a problem" link sits in the masthead, beside Contribute, on every page (Trevor, Nov. 22, 2026); pages carry no report links of their own. On a nation page it opens the request form with the record filled in, for example `/requests?record=tribes/<id>`, and on a glossary page with the glossary entry; elsewhere it opens the form empty. The form then asks what the reader would like to do, and "Add a nation that is missing" is one of the choices, with its note that one federal or state government source naming the nation is enough, so the pages no longer carry an "Is your nation missing?" line either (also Trevor's request). This replaces the Nov. 21 rule of one link at the top of each page, which itself replaced a link beside every fact.
 
