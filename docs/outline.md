@@ -1,6 +1,6 @@
 # Working outline: model code, book and website
 
-**Version 0.1, Nov. 22, 2026.** This is the project's framework: the parts,
+**Version 0.2, Nov. 22, 2026.** This is the project's framework: the parts,
 chapters and website sections, and what each one is for. It is a working
 draft that will change. Nothing here is provision text, which waits for
 Gate 1 and Gate 2 under the [roadmap](roadmap.md). A readable copy for
@@ -82,15 +82,19 @@ Illustrations, Source Note). Chapters are listed in
 
 ### Part III. Peacemaking
 
-Kept apart from the code because "peacemaking is not alternative dispute
-resolution," in the Native American Rights Fund's words
-([charter, commitment 3](charter.md#3-peacemaking-as-its-own-track)).
+Peacemaking rests on each nation's own traditions rather than on the theory
+behind mediation or arbitration, so the project treats it as its own track
+(project analysis; the methods model already classes it as a nation's own
+tradition, not alternative dispute resolution, in
+[decision record 0012](decisions/0012-open-list-of-dispute-resolution-methods.md)).
+This part is the companion to the code's peacemaking chapter, if one is
+adopted (scope question 1).
 
 | Chapter | Purpose | Status |
 | --- | --- | --- |
 | Peacemaking in nations' own words | How nations describe their own practice, quoted, not summarized | Research exists |
 | How peacemaking programs are built | Patterns across programs: who serves, referral, return to court | Research exists; Gate 1 |
-| Connecting courts and peacemaking | Commentary for the code's connecting chapter, if adopted | Scope question 1 |
+| Background to the peacemaking chapter | What a nation weighs before adopting the code's peacemaking chapter | Scope question 1 |
 | Protecting what is sacred | Confidentiality, and teachings that must not be compelled | Research exists |
 
 ### Part IV. Methods and Manners
@@ -98,6 +102,7 @@ resolution," in the Native American Rights Fund's words
 | Chapter | Purpose | Status |
 | --- | --- | --- |
 | Methods catalog | One entry per dispute resolution method (33 records now) | Exists; Gate 1 |
+| Case histories | How real disputes moved through a nation's process, from published Tribal court opinions and nations' own program reports | New; scope question 14 |
 | Stories about making peace | Nations' own accounts, printed only with the permissions each needs | Research exists; scope question 9 |
 | Practice notes | Training, program materials and evaluation, on nations' own terms | To write |
 
@@ -105,9 +110,10 @@ resolution," in the Native American Rights Fund's words
 
 | Item | Purpose | Status |
 | --- | --- | --- |
+| Definitions | The code's defined terms in one place, as an appendix a nation can enact with the code | Moved here from chapter 1; scope question 12 |
 | Model forms | Fill-in forms with placeholders, such as an agreement to take part | Scope question 10 |
 | Nations cited | A short directory of nations whose law the book cites; full profiles live on the website | Scope question 11; Gate 1 |
-| Glossary | Defined terms, with sources | Exists |
+| Glossary | Plain explanations of terms used across the book, with sources (not enactable, unlike Definitions) | Exists |
 | Table of authorities and bibliography | Every case, statute, Tribal law and reading cited | Exists in part |
 | Index | Subject index | At print time |
 | Requests and corrections | How a nation asks to correct, restrict or remove material | Exists ([requests.md](requests.md)) |
@@ -123,12 +129,12 @@ at Gate 2 and never reused after publication
 
 | Chapter | What it covers | Status |
 | --- | --- | --- |
-| 1. General provisions | Purpose, definitions, relation to the Tribal court, confidentiality and privilege, who may serve as a neutral | Core; confidentiality waits on Gate 1 and scope question 7 |
+| 1. General provisions | Purpose, relation to the Tribal court, confidentiality and privilege, who may serve as a neutral (defined terms move to the Definitions appendix) | Core; confidentiality waits on Gate 1 and scope question 7 |
 | 2. Referral and transfer | Consent, safety screening (including for domestic violence), what silence means, return to court when no agreement is reached | Core; Gate 1 |
 | 3. Mediation | The process from start to close | Core |
 | 4. Agreements and their effect | Entry as an order or judgment, review, change, whether a neutral can be a witness | Core; scope question 7 |
 | 5. Arbitration | Agreements to arbitrate, awards, and limited waivers of immunity | Core if scope question 3 is yes |
-| Connecting to peacemaking | Referral to, return from, and entry of agreements reached in a nation's own peacemaking forum, without defining peacemaking | Optional; scope question 1 |
+| Peacemaking | Creating or recognizing a nation's peacemaking forum, choosing peacemakers, referral, return to court, entry of agreements; the process itself is left to the nation's tradition | Scope question 1 (decision pending) |
 | Restorative processes | Only the hand-off points between a court case and a consensual process | Optional; scope question 2; Gate 1 |
 | Family matters | Parenting and family mediation with screening built in | Optional; scope question 6; Gate 1 |
 | Disputes between governments | Intergovernmental agreements and negotiation authority | Optional; scope question 4; needs a schema change |
@@ -138,6 +144,12 @@ named actor; placeholders for nation-specific words; and lettered alternatives
 that each work alone ([style guide, section 4](style-guide.md#4-model-provisions)).
 Employment disputes appear only in commentary under the recommendation for
 scope question 5.
+
+**Where commentary goes.** Each section's commentary (Comment, Illustrations,
+Source Note) sits right after that section, as in the Restatements and the
+[style guide, section 5](style-guide.md#5-commentary-illustrations-and-essays).
+On the website it sits under each section; the print dialog can leave it out
+for a provisions-only copy (scope question 13).
 
 ## The website
 
@@ -173,13 +185,13 @@ resolution."
 
 ## Open scope questions
 
-Eleven questions shape the framework. Each has a recommendation. Questions 2,
+Fourteen questions shape the framework. Each has a recommendation. Questions 2,
 6 and 11 need Gate 1 results before a final answer. These replace and extend
 the roadmap's [scope questions for Gate 2](roadmap.md#scope-questions-for-gate-2).
 
 | # | Question | Recommendation | Why |
 | --- | --- | --- | --- |
-| 1 | How does peacemaking appear? | Its own book part and website section; in the code, only a connecting chapter (referral, return, entry of agreements) | Charter keeps peacemaking separate; programs differ least in how cases come from and go back to court ([peacemaking note, section 6](../research/analyses/2026-11-21-peacemaking-programs.md#6-questions-for-the-peacemaking-track-project-analysis)) |
+| 1 | How does peacemaking appear? | Its own chapter in the code: create or recognize a forum, choose peacemakers, refer, return and enter agreements, leaving the process to each nation; Part III as background; charter commitment 3 reworded to match | Programs differ most in who serves and how sessions run, least in how cases come from and go back to court; 580 peacemaking provisions from 39 nations' codes already exist ([peacemaking note, sections 2.1 and 6](../research/analyses/2026-11-21-peacemaking-programs.md#21-what-the-code-texts-add)) |
 | 2 | Does the code cover diversion and restorative sentencing? | Only the hand-off points between a court case and a consensual process; no sentencing provisions | 161 records sit on this line: 121 diversion, 23 sentencing, 17 near it ([provision pre-review](../research/reviews/2026-11-21-provision-pre-review.md#the-scope-decision)) |
 | 3 | Include arbitration and immunity waivers? | Yes, as chapter 5, with waiver limits offered as alternatives | The arbitration ordinances read tie awards to express waivers ([analysis, section 4](../research/analyses/2026-11-21-dispute-resolution-practice.md#4-arbitration-ordinances-and-immunity)) |
 | 4 | Disputes between governments: chapter or essay? | An essay in Part I for the 1st Edition; a chapter later if the advisors want one | Compact clauses mostly follow state templates ([analysis, section 6](../research/analyses/2026-11-21-dispute-resolution-practice.md#6-gaming-compacts)), and a chapter needs a schema change |
@@ -190,6 +202,9 @@ the roadmap's [scope questions for Gate 2](roadmap.md#scope-questions-for-gate-2
 | 9 | Stories in the 1st Edition? | Only stories whose permissions are in hand; the rest wait for a later edition | Every shortlisted story needs a nation's or teller's permission ([stories catalog, section 4](../research/analyses/2026-11-21-peacemaking-stories.md#4-anthology-shortlist-and-whose-permission-each-needs)) |
 | 10 | Include model forms? | Yes, a small set tied to chapters 2 and 4 | Forms are already planned as CC0 files with placeholders ([repository-layout.md](repository-layout.md)) |
 | 11 | Nation profiles in print? | A short directory of nations cited; full profiles stay on the website | There are about 950 profiles, too many for a printed book (project count of `content/tribes/`) |
+| 12 | Where do the code's definitions go? | An appendix at the end of the code; back to chapter 1 only if the list ends up a few terms long | Lead author's note, Nov. 22, 2026; readers meet the substance first (project judgment) |
+| 13 | Where does commentary go? | Right after each section, in print and online, with a provisions-only print option | Restatement pattern in the [style guide, section 5](style-guide.md#5-commentary-illustrations-and-essays) |
+| 14 | Include case histories? | Yes, a Part IV chapter from published Tribal court opinions and nations' own program reports; a nation is named only after it reviews the text (Gate 3), and private parties are referred to by role | Shows how processes work in practice; illustrations in commentary stay fictitious unless a nation approves ([style guide, section 5](style-guide.md#5-commentary-illustrations-and-essays); [charter, commitment 4](charter.md#4-consultation-before-publication)) |
 
 ## What waits on Gate 1
 
@@ -234,4 +249,5 @@ editions, such as the code alone, can be built from the same files.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2 | Nov. 22, 2026 | Definitions moved to an appendix; case histories added to Part IV; commentary placement stated; peacemaking reason in the project's own words and a peacemaking chapter proposed; scope questions 12 to 14 added |
 | 0.1 | Nov. 22, 2026 | First working outline, for Gate 2 discussion |
