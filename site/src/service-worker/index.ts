@@ -41,8 +41,9 @@ import {
 
 const cacheName = `site-${version}`;
 const offlinePage = '/offline';
-// The search page and its index are kept too, so the masthead's search box works offline.
-const corePages = ['/', '/glossary', '/changelog', '/search', offlinePage];
+// The search page and its index are kept too, so the masthead's search box works offline,
+// and so is the Starred page, since stars and notes live on the device.
+const corePages = ['/', '/glossary', '/changelog', '/search', '/starred', '/starred/shared', offlinePage];
 // edition.json says which edition the server has now, so it always comes from the network.
 // Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself.
 const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/edition.json', '/copies'];

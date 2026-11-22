@@ -1,20 +1,23 @@
 <script lang="ts">
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). Two rows: the
-	// site's name, then the reader's controls (search, theme, Settings, then
-	// sign-in or the account menu at the far right); under them, the main menu
-	// and, at its right end, Print, Download (where the page has a file),
-	// Report a problem and Contribute (Trevor, Nov. 22, 2026). Print and
-	// Download act on the page the reader is on. The content version shows
+	// site's name, then the reader's controls (search, Starred, theme,
+	// Settings, then sign-in or the account menu at the far right); under
+	// them, the main menu and, at its right end, Star (on a page that can be
+	// starred), Print, Download (where the page has a file), Report a problem
+	// and Contribute (Trevor, Nov. 22, 2026). Star, Print and Download act on
+	// the page the reader is on. The content version shows
 	// only on paper; on screen it is in the footer.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import Download from '@lucide/svelte/icons/download';
+	import Star from '@lucide/svelte/icons/star';
 	import { downloadFor } from '#lib/page-downloads.ts';
 	import AccountLink from './AccountLink.svelte';
 	import PrintOptions from './PrintOptions.svelte';
 	import ReportProblem from './ReportProblem.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
 	import SiteSearch from './SiteSearch.svelte';
+	import StarButton from './StarButton.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
 
 	let { contentVersion }: { contentVersion: string } = $props();
@@ -72,6 +75,15 @@
 		</p>
 		<div class="masthead-tools no-print">
 			<SiteSearch />
+			<a
+				class="icon-button starred-link needs-scripts"
+				href="/starred"
+				aria-label="Starred pages"
+				title="Starred pages"
+				aria-current={isCurrent('/starred') ? 'page' : undefined}
+			>
+				<Star size={24} />
+			</a>
 			<ThemeSetting />
 			<SettingsPanel />
 			<AccountLink />
@@ -87,7 +99,7 @@
 						</a>
 					</li>
 				{/each}
-				<li class="page-actions"><PrintOptions /></li>
+				<li class="page-actions"><StarButton /><PrintOptions /></li>
 				{#if download}
 					<li>
 						<a class="download-link" href={download.link} download>
@@ -190,7 +202,18 @@
 	}
 
 	nav .page-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-5);
 		margin-left: auto;
+	}
+
+	.starred-link {
+		color: var(--color-band-text);
+	}
+
+	.starred-link[aria-current='page'] {
+		box-shadow: inset 0 -3px 0 var(--color-band-text);
 	}
 
 	nav .download-link {
