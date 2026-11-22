@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1990-07-20. Versions are only those found; others may exist.'
 versions:
 - id: 1943-text
-  label: CONSTITUTION AND BY-LAWS OF THE (1943)
+  label: 1943 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,7 +33,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
     verification: title-only
 - id: 1990-text
-  label: CONSTITUTION OF THE SAC AND FOX NATION OF MISSOURI IN KANSAS AND NEBRASKA (1990)
+  label: 1990 constitution
   event: edition
   status: unknown
   dates:
@@ -52,21 +52,17 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article V (POWERS OF THE TRIBAL COUNCIL)
-    summary: Allows the Council to establish a Tribal Court, approved by referendum of the General Council,
-      to decide internal civil disputes and lawful criminal matters, keeping executive and judicial powers
-      separate.
+    summary: Article headed "POWERS OF THE TRIBAL COUNCIL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article V (POWERS OF THE TRIBAL COUNCIL)
-    summary: Provides that the election ordinance handles election disputes, and lets a Tribal Court,
-      if established, decide internal civil disputes and lawful criminal matters.
+    summary: Article headed "POWERS OF THE TRIBAL COUNCIL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article V (POWERS OF THE TRIBAL COUNCIL)
-    summary: States that the Council's election ordinance provides for handling election disputes, alongside
-      an objective election committee and petition validity review.
+    summary: Article headed "POWERS OF THE TRIBAL COUNCIL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -75,40 +71,32 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article VII (GRIEVANCE COMMITTEE)
-    summary: Empowers the Grievance Committee, elected by the General Council from Council nominees, to
-      settle disputes not within a court's jurisdiction.
+    summary: Article headed "GRIEVANCE COMMITTEE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
   - topic: dispute-resolution
     locator: Article V (* Section l(i) of this Constitution concerning procedures and issues)
-    summary: Makes Grievance Committee decisions on disputes final for the Nation by majority vote, after
-      notice and a hearing, and provides for appeals to the committee within ten days.
+    summary: Article headed "* Section l(i) of this Constitution concerning procedures and issues"; an
+      AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
   - topic: removal-and-recall
     locator: Article IV (RECALL, VACANCIES AND REMOVAL)
     summary: Article headed "RECALL, VACANCIES AND REMOVAL"; found by its heading and not yet read.
     verification: title-only
   - topic: judicial-power
     locator: Article VI (POWERS OF THE TRIBAL COUNCIL)
-    summary: Lets the Tribal Council enact codes to govern the administration of justice through tribal
-      courts, subject to Secretarial approval.
+    summary: Article headed "POWERS OF THE TRIBAL COUNCIL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article VI (POWERS OF THE TRIBAL COUNCIL)
-    summary: Lets the Tribal Council establish a tribal court empowered to decide internal civil disputes,
-      subject to a General Council referendum.
+    summary: Article headed "POWERS OF THE TRIBAL COUNCIL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article VI (POWERS OF THE TRIBAL COUNCIL)
-    summary: Requires the Tribal Council to enact an election ordinance that provides for handling election
-      disputes.
+    summary: Article headed "POWERS OF THE TRIBAL COUNCIL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

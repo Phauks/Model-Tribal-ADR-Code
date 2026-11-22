@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1971-03-05. Versions are only those found; others may exist.'
 versions:
 - id: 1971-text
-  label: Constitution and Bylaws of the Winnemucca Indian Colony (1971)
+  label: 1971 constitution and bylaws (1970)
   event: original
   status: superseded
   dates:
@@ -39,7 +39,7 @@ versions:
     summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
     verification: title-only
 - id: 1971-text-2
-  label: CONSTITUTION AND BYLAWS OF THE WINNEMUCCA INDIAN COLONY NEVADA (1971)
+  label: 1971 constitution and bylaws (1971-03-05)
   event: edition
   status: in-effect
   dates:
@@ -61,14 +61,12 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article IV (NOMINATIONS AND ELECTIONS)
-    summary: Requires the election ordinance, set by an election board the council appoints, to include
-      provisions for resolving election disputes.
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article IV (NOMINATIONS AND ELECTIONS)
-    summary: Requires the election ordinance, set by an election board the council appoints, to include
-      provisions for resolving election disputes.
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

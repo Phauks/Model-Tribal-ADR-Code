@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2008-02-01. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
-  label: CONSTITUTION AND BY-LAWS (1939)
+  label: 1939 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -35,8 +35,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1964-amendment
-  label: 'AMENDMENT: Constitution and Bylaws of the Miami Tribe of Oklahoma as amended through Amendment
-    IV, 1964-08-31'
+  label: 1964 amendment
   event: amendment
   status: unknown
   dates:
@@ -60,7 +59,7 @@ versions:
     verification: inferred
     note: An amendment changes only what it names; compare by hand.
 - id: 2008-text
-  label: CONSTITUTION OF THE MIAMI TRIBE OKLAHOMA as amended through Amendment No. 1, 2008-02-01
+  label: 2008 constitution, as amended
   event: revision
   status: in-effect
   dates:
@@ -80,17 +79,12 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article VI (COMMITTEES)
-    summary: Has a five-member Grievance Committee determine disputes by vote, with appeal first to the
-      Business Committee and then to a special General Council meeting.
+    summary: Article headed "COMMITTEES"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
-    - council-hearing
   - topic: judicial-power
     locator: Article VIL (JUDICIAL BRANCH)
-    summary: Gives the Court of Indian Offenses judicial authority until the Business Committee establishes
-      a Tribal Court, and allows restoring that court's jurisdiction.
+    summary: Article headed "JUDICIAL BRANCH"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
@@ -103,13 +97,10 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article XI (RECALL AND REMOVAL OF OFFICERS)
-    summary: Allows removal of officers for cause and recall by petition; the Grievance Committee may
-      investigate and report findings, and a General Council hearing may follow.
+    summary: Article headed "RECALL AND REMOVAL OF OFFICERS"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - fact-finding
-    - council-hearing
   - topic: removal-and-recall
     locator: Article XI (RECALL AND REMOVAL OF OFFICERS)
     summary: Article headed "RECALL AND REMOVAL OF OFFICERS"; found by its heading and not yet read.

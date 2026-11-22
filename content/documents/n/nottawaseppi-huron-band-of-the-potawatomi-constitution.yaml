@@ -1,0 +1,30 @@
+id: nottawaseppi-huron-band-of-the-potawatomi-constitution
+kind: constitution
+title: Constitution of the Nottawaseppi Huron Band of the Potawatomi, Michigan
+nations:
+- nottawaseppi-huron-band-of-the-potawatomi
+jurisdictions:
+- level: tribal
+  tribe: nottawaseppi-huron-band-of-the-potawatomi
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2013-04-27.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2013-text
+  label: 2013 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '2013-04-27'
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/nottawaseppi-huron-band-of-the-potawatomi/31f455d18c73f491.pdf
+    sha256: 31f455d18c73f491245299bf36856f32391708653132d08c886bda8715672639
+    pages: 21
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

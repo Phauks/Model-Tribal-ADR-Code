@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1944-12-19. Versions are only those found; others may exist.'
 versions:
 - id: 1944-text
-  label: CONSTITUTION AND BY-LAWS OF (1944)
+  label: 1944 constitution and bylaws (1944-08-23)
   event: original
   status: superseded
   dates:
@@ -30,13 +30,11 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article V (JUDICIARY)
-    summary: Has the council designate a magistrate who hears accused violators of council ordinances
-      and sets fines, with labor allowed in lieu of unpaid fines.
+    summary: Article headed "JUDICIARY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
 - id: 1944-text-2
-  label: Constitution and By-laws of the Metlakatla Indian Community, Annette Islands Reserve, Alaska
-    (1944)
+  label: 1944 constitution and bylaws (1944-12-19)
   event: edition
   status: unknown
   dates:

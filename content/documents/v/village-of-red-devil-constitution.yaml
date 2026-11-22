@@ -1,0 +1,30 @@
+id: village-of-red-devil-constitution
+kind: constitution
+title: Constitution of the Village of Red Devil
+nations:
+- village-of-red-devil
+jurisdictions:
+- level: tribal
+  tribe: village-of-red-devil
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1989-02-02.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1989-text
+  label: 1989 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1989-02-02'
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/village-of-red-devil/517be95d3b551cb3.pdf
+    sha256: 517be95d3b551cb3aa0d237f1c6809c6e1200101c91059f48eaa042d9461f946
+    pages: 5
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

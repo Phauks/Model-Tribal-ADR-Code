@@ -11,7 +11,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1945-02-02. Versions are only those found; others may exist.'
 versions:
 - id: 1936-text
-  label: Constitution and Bylaws of the Fort McDermitt Paiute and Shoshone Tribe (1936)
+  label: 1936 constitution and bylaws (Library of Congress copy)
   event: original
   status: superseded
   dates:
@@ -30,7 +30,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1936-text-2
-  label: Constitution and By-laws of the Fort McDermitt Paiute and Shoshone Tribe, Nevada (1936)
+  label: 1936 constitution and bylaws (National Indian Law Library copy)
   event: edition
   status: superseded
   dates:
@@ -54,8 +54,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article V (TRIBAL COURT (JUDICIAL CODE))
-    summary: Directs the Council to establish a Tribal Court with jurisdiction over specified offenses
-      and over disputes between Indians, or with non-Indians, brought before it by stipulation.
+    summary: Article headed "TRIBAL COURT (JUDICIAL CODE)"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:
@@ -70,8 +69,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1945-text
-  label: with the said Constitution and By-laws of the Tribe, shall exercise all the corporate powers
-    hereinafter enumerated. (1945)
+  label: 1945 constitution and bylaws
   event: revision
   status: unknown
   dates:

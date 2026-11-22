@@ -1,0 +1,95 @@
+id: enterprise-rancheria-of-maidu-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Enterprise Rancheria of Maidu Indians of California
+nations:
+- enterprise-rancheria-of-maidu-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: enterprise-rancheria-of-maidu-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2003-10-29.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2003-text
+  label: 2003 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '2003-10-29'
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/enterprise-rancheria-of-maidu-indians-of-california/844de4f1e4c808a6.pdf
+    sha256: 844de4f1e4c808a6acb5b330fdeba44840a690dbad769d20b987a3efe45fc90e
+    pages: 27
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VIII (Powers and Duties of the Judiciary)
+    summary: Article headed "Powers and Duties of the Judiciary"; an AI reviewer confirmed it covers this
+      topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (Elections)
+    summary: Article headed "Elections"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article X (Removal, Recall and Vacancies)
+    summary: Article headed "Removal, Recall and Vacancies"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article X (Removal, Recall and Vacancies)
+    summary: Article headed "Removal, Recall and Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIV (Sovereign Immunity)
+    summary: Article headed "Sovereign Immunity"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article Vm (POWERS AND DUTIES)
+    summary: Article headed "POWERS AND DUTIES"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article Vm (POWERS AND DUTIES)
+    summary: Article headed "POWERS AND DUTIES"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article Vm (POWERS AND DUTIES)
+    summary: Article headed "POWERS AND DUTIES"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article X (REMOVAL. RECALL AND VACANCIES)
+    summary: Article headed "REMOVAL. RECALL AND VACANCIES"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article X (REMOVAL. RECALL AND VACANCIES)
+    summary: Article headed "REMOVAL. RECALL AND VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIV (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

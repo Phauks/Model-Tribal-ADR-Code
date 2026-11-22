@@ -10,8 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1954-02-24. Versions are only those found; others may exist.'
 versions:
 - id: 1947-text
-  label: AMENDED CONSTITUTIONS AND BYLAWS OF THE SAN CARLOS APACHE TRIBE OF ARIZONA as amended through
-    Amendment III, 1947-11-14
+  label: 1947 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -32,7 +31,7 @@ versions:
     summary: Article headed "ELECTIONS"; found by its heading and not yet read.
     verification: title-only
 - id: 1953-text
-  label: CONSTITUTION AND BYLAWS (1953)
+  label: 1953 constitution and bylaws
   event: edition
   status: superseded
   dates:
@@ -58,8 +57,7 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article V (LAW AND ORDER)
-    summary: Gives a tribal court jurisdiction over disputes between Indians on the reservation and, by
-      stipulation, certain disputes with non-Indians.
+    summary: Article headed "LAW AND ORDER"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:
@@ -79,8 +77,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in this text and none in the earlier one.
 - id: 1954-text
-  label: Amended Constitution and Bylaws of the San Carlos Apache Tribe of Arizona as amended through
-    Amended Constitution and Bylaws, effective 1954-02-24
+  label: 1954 constitution and bylaws, as amended
   event: edition
   status: unknown
   dates:

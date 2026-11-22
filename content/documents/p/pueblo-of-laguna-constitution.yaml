@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1958-05-29. Versions are only those found; others may exist.'
 versions:
 - id: 1949-text
-  label: CONSTITUTION AND BY-LAWS (1949)
+  label: 1949 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,7 +33,7 @@ versions:
     summary: Article headed "JUDICIAL SYSTEM"; found by its heading and not yet read.
     verification: title-only
 - id: 1958-text
-  label: Constitution and Bylaws of the Pueblo of Laguna (1958)
+  label: 1958 constitution and bylaws
   event: edition
   status: unknown
   dates:
@@ -55,17 +55,14 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article V (JUDICIAL SYSTEM)
-    summary: Vests the Pueblo's judicial power in a Pueblo Court whose judges are appointed by the Council.
+    summary: Article headed "JUDICIAL SYSTEM"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article V (JUDICIAL SYSTEM)
-    summary: Gives the Pueblo Court jurisdiction over disputes among Indians, and first sends village
-      disputes to a Staff Officer who gives advice to settle them.
+    summary: Article headed "JUDICIAL SYSTEM"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - conciliation
   - topic: removal-and-recall
     locator: Article IX (VACANCIES AND REMOVAL)
     summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.

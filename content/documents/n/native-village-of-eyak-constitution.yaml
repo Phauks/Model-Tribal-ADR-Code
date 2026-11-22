@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2023-02-11. Versions are only those found; others may exist.'
 versions:
 - id: 1980-text
-  label: CONSTITUTION OF THE EYAK VILLAGE (1980)
+  label: 1980 constitution
   event: original
   status: superseded
   dates:
@@ -38,7 +38,7 @@ versions:
     summary: Article headed "VACANCIES"; found by its heading and not yet read.
     verification: title-only
 - id: 2023-text
-  label: Constitution of the Native Village of Eyak (2023)
+  label: 2023 constitution
   event: edition
   status: in-effect
   dates:
@@ -63,14 +63,14 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article 9 (POWERS OF THE NATIVE VILLAGE OF EYAK TRIBAL COUNCIL)
-    summary: Empowers the council to establish tribal courts or other judicial bodies to promote law and
-      order and the administration of justice.
+    summary: Article headed "POWERS OF THE NATIVE VILLAGE OF EYAK TRIBAL COUNCIL"; an AI reviewer confirmed
+      it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity
     locator: Article 13 (SOVEREIGN IMMUNITY OF THE NATIVE VILLAGE OF EYAK)
-    summary: Lets the tribal council waive immunity by resolution with a supermajority vote, bars waivers
-      reaching tribal land, and requires waivers to be specific.
+    summary: Article headed "SOVEREIGN IMMUNITY OF THE NATIVE VILLAGE OF EYAK"; an AI reviewer confirmed
+      it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

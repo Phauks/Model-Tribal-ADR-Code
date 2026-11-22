@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 date
   to 2026-06-13. Versions are only those found; others may exist.'
 versions:
 - id: 1940-text
-  label: CONSTITUTION AND BY-LAWS FOR THE (1940)
+  label: 1940 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,7 +33,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1941-text
-  label: CONSTITUTION AND BY-LAWS (1941)
+  label: 1941 constitution and bylaws
   event: edition
   status: superseded
   dates:
@@ -61,7 +61,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.19, by script); not yet read side by side.
 - id: 2004-text
-  label: CONSTITUTION OF THE HABEMATOLEL POMO OF UPPER LAKE as amended through Rev. 2, 2003-06-19
+  label: 2004 constitution, as amended
   event: revision
   status: superseded
   dates:
@@ -132,8 +132,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
 - id: 2024-text
-  label: CONSTITUTION of the HABEMATOLEL Pomo of Upper Lake (Second Amended) as amended through Second
-    Amended Constitution, 2024-06-08 (page footer)
+  label: 2024 constitution, as amended
   event: edition
   status: superseded
   dates:
@@ -188,8 +187,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.40, by script); not yet read side by side.
 - id: 2026-text
-  label: CONSTITUTION of the HABEMATOLEL Pomo of Upper Lake (Third Amended) as amended through Third Amended
-    Constitution, 2026-06-13
+  label: 2026 constitution, as amended
   event: revision
   status: in-effect
   dates:
@@ -210,14 +208,13 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article VI (Nominations and Elections)
-    summary: Has the Election Committee preside over elections, with its appeal procedures to be set in
-      an Election Ordinance.
+    summary: Article headed "Nominations and Elections"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article VIII (Removal, Recall and Forfeiture)
-    summary: Has the Tribal Court hear charges against officials before removal, with appeals going to
-      a Tribal Court of Appeals.
+    summary: Article headed "Removal, Recall and Forfeiture"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -230,32 +227,27 @@ versions:
     verification: title-only
   - topic: sovereign-immunity
     locator: Article X (Powers)
-    summary: Lets the Executive Council waive the Tribe's sovereign immunity from suit only if the General
-      Membership specifically approves.
+    summary: Article headed "Powers"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article XI (Land)
-    summary: Makes the Tribal Court of Appeals the body that decides land appeals, with the Executive
-      Council appointing one from General Membership if none exists.
+    summary: Article headed "Land"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article XI (Land)
-    summary: Sends appeals of Executive Council land acts and other land disputes to the Tribal Court
-      of Appeals, whose decision is final.
+    summary: Article headed "Land"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article XII (Judiciary)
-    summary: Governs appointment, vacancies, qualifications, compensation and removal of Tribal Court
-      and Court of Appeals judges.
+    summary: Article headed "Judiciary"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article XII (Judiciary)
-    summary: Lets parties appeal civil and criminal judgments to the Tribal Court of Appeals, which reviews
-      matters of law and reverses findings only if arbitrary or contrary to law.
+    summary: Article headed "Judiciary"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

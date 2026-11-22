@@ -1,0 +1,35 @@
+id: big-lagoon-rancheria-constitution
+kind: constitution
+title: Constitution of the Big Lagoon Rancheria, California
+nations:
+- big-lagoon-rancheria
+jurisdictions:
+- level: tribal
+  tribe: big-lagoon-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1985-05-05.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1985-text
+  label: 1985 constitution, as amended
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1985-05-05'
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/big-lagoon-rancheria/c32b6708ad48666c.html
+    sha256: c32b6708ad48666c26f24ab5fd2a94ce661281a5a86dd7dc702b0ee5c88766dc
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: sovereign-immunity
+    locator: Article VI (GENERAL COUNCIL)
+    summary: Article headed "GENERAL COUNCIL"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

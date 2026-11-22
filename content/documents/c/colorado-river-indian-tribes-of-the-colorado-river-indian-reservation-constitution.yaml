@@ -11,7 +11,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1975-03-01. Versions are only those found; others may exist.'
 versions:
 - id: 1937-text
-  label: CONSTITUTION AND BY-LAWS OF (1937)
+  label: 1937 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -34,8 +34,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1975-text
-  label: Constitution and Bylaws of the Colorado River Indian Tribes of the Colorado River Indian Reservation,
-    Arizona and California (1975)
+  label: 1975 constitution and bylaws
   event: edition
   status: in-effect
   dates:
@@ -64,8 +63,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XII (Judiciary)
-    summary: Vests judicial power in a tribal trial court and an appeals court, and requires the council
-      to enact a judicial code.
+    summary: Article headed "Judiciary"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes

@@ -1,0 +1,48 @@
+id: otoe-missouria-tribe-of-indians-constitution
+kind: constitution
+title: Constitution of the Otoe-Missouria Tribe of Indians, Oklahoma
+nations:
+- otoe-missouria-tribe-of-indians
+jurisdictions:
+- level: tribal
+  tribe: otoe-missouria-tribe-of-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2009.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2009-text
+  label: 2009 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2009'
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/otoe-missouria-tribe-of-indians/18c5294ec8392519.html
+    sha256: 18c5294ec8392519db82e3ed585090f27fd825b62a18ced55949d963cccdd120
+  note: The text prints an approval date (1983-10-06) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1984-02-04, effective
+    1984-02-04, which belong to the earlier text it compiles. The date recorded as listed is that of the
+    latest amendment the text says it includes. Marked in effect because it is the newest dated text found,
+    on the nation's own site, on 2026-11-21; a later amendment may not be posted. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES, REMOVAL AND FORFEITURE)
+    summary: Article headed "VACANCIES, REMOVAL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (TRIBAL COURT)
+    summary: Article headed "TRIBAL COURT"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

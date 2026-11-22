@@ -1,0 +1,55 @@
+id: native-village-of-chitina-constitution
+kind: constitution
+title: Constitution of the Native Village of Chitina
+nations:
+- native-village-of-chitina
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-chitina
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2026-05-30.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2026-text
+  label: 2026 constitution
+  event: original
+  status: in-effect
+  dates:
+    effective: '2026-05-30'
+  source: constitution-native-village-of-chitina-2026-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-chitina/cfde06c0cda817c4.pdf
+    sha256: cfde06c0cda817c4f7ee6b2f45f21b2c5764a699039d64ea36cfae8387c53581
+    pages: 12
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (REMOVAL, RECALL, AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL, AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article Vit (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article Vit (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XII (TRIBAL COURT)
+    summary: Article headed "TRIBAL COURT"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

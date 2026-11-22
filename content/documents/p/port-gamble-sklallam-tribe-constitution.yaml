@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2024-05-15. Versions are only those found; others may exist.'
 versions:
 - id: 1947-text
-  label: CONSTITUTION AND BY-LAWS (1947)
+  label: 1947 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -28,8 +28,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 2024-text
-  label: Constitution of the Port Gamble S’Klallam Tribe as amended through Election amendment, May 15,
-    2024
+  label: 2024 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -49,8 +48,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article V (JUDICIAL POWER)
-    summary: Begins to vest the Tribe's judicial power in a Port Gamble S'Klallam body; the text is cut
-      off in that sentence.
+    summary: Article headed "JUDICIAL POWER"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

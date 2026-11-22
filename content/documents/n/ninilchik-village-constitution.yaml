@@ -1,0 +1,30 @@
+id: ninilchik-village-constitution
+kind: constitution
+title: Constitution of the Ninilchik Village
+nations:
+- ninilchik-village
+jurisdictions:
+- level: tribal
+  tribe: ninilchik-village
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2010.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2010-text
+  label: 2010 constitution, as amended
+  event: edition
+  status: unknown
+  dates:
+    listed: '2010'
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/_unmatched/daa5adadccfe45cd.pdf
+    sha256: daa5adadccfe45cd61edd21b9f5b9522aba5330e7292a082b703d083e98e258b
+    pages: 16
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

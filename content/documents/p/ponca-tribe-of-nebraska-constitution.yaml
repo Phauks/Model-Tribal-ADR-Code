@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1994-06. Versions are only those found; others may exist.'
 versions:
 - id: 1936-text
-  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  label: 1936 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,7 +33,7 @@ versions:
     summary: Article headed "REMOVAL"; found by its heading and not yet read.
     verification: title-only
 - id: 1994-text
-  label: Constitution of the Ponca Tribe of Nebraska (1994)
+  label: 1994 constitution
   event: edition
   status: in-effect
   dates:
@@ -59,8 +59,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article VI (JUDICIAL BRANCH OF GOVERNMENT)
-    summary: Vests the Tribe's judicial power in its judges, who are selected by the Tribal Council from
-      nominees of a Judicial Nominating Committee.
+    summary: Article headed "JUDICIAL BRANCH OF GOVERNMENT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes

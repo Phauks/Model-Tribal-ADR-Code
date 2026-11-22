@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1987-05-21. Versions are only those found; others may exist.'
 versions:
 - id: 1941-text
-  label: CONSTITUTION AND BYLAWS FOR THE (1941)
+  label: 1941 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,8 +33,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1942-text
-  label: CONSTITUTION AND BYLAWS OF THE LOWER BRULE SIOUX TRIBE as amended through Amendment (undated),
-    approved 1942-05-18
+  label: 1942 constitution and bylaws, as amended
   event: edition
   status: in-effect
   dates:
@@ -57,26 +56,23 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article IV (ELECTIONS)
-    summary: Requires the Tribal Court to render decisions on election-certification appeals within twenty
-      days.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article IV (ELECTIONS)
-    summary: Lets an appeal of election certification be filed in Tribal Court within five days, without
-      delaying installation of council members.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article IV (ELECTIONS)
-    summary: Lets an appeal of election certification be filed in Tribal Court within five days, which
-      must decide within twenty days.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
-    summary: Lets a decision not to call a recall election be appealed to the Tribal Court, or to the
-      appellate court for judicial officials.
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -85,8 +81,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article VII (JUDICIAL)
-    summary: Creates a judicial branch made up of an appellate court and a tribal court headed by one
-      chief judge, with judges elected for four-year terms.
+    summary: Article headed "JUDICIAL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:
@@ -111,8 +106,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.07, by script); not yet read side by side.
 - id: 1987-amendment
-  label: Approval of Constitutional Amendments (memorandum), with amendments to the Constitution of the
-    Lower Brule Sioux Tribe as amended through Amendment V (corrected approval), 1987-05-21
+  label: 1987 amendment
   event: amendment
   status: unknown
   dates:
@@ -144,8 +138,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article VII (JUDICIAL)
-    summary: Establishes a judicial branch of an appellate court and a tribal court with one chief judge,
-      whose judges are elected to four-year terms subject to recall for cause.
+    summary: Article headed "JUDICIAL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

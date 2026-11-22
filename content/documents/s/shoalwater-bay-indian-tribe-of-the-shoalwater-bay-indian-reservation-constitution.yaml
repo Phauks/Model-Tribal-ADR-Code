@@ -1,0 +1,44 @@
+id: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+nations:
+- shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2022-11-22.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2022-text
+  label: 2022 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2022-11-22'
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation/9b3bffd32f8daf28.pdf
+    sha256: 9b3bffd32f8daf28163fe0ee222e572c0d0e438c64d3fbbfba2b722179760b8a
+    pages: 24
+  note: The text prints an approval date (1971-03-10) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1971-05-22, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked in effect because it is the newest dated text found, on the nation's own
+    site, on 2026-11-21; a later amendment may not be posted. Type and dates read from the text by an
+    AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (ELECTIONS, REMOVALS, RECALL AND)
+    summary: Article headed "ELECTIONS, REMOVALS, RECALL AND"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XII (CERTIFICATION OF RESULTS OF ELECTIONS)
+    summary: Article headed "CERTIFICATION OF RESULTS OF ELECTIONS"; found by its heading and not yet
+      read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

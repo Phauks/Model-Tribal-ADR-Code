@@ -1,0 +1,31 @@
+id: native-village-of-tuntutuliak-constitution
+kind: constitution
+title: Constitution of the Native Village of Tuntutuliak
+nations:
+- native-village-of-tuntutuliak
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-tuntutuliak
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date.
+  Versions are only those found; others may exist.'
+versions:
+- id: undated-text
+  label: Undated constitution and bylaws
+  event: original
+  status: unknown
+  approval:
+    authority: secretary-of-the-interior
+    action: not-required
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-tuntutuliak/52784446b25ef227.pdf
+    sha256: 52784446b25ef227ef1c028825612e8c96343ef337cc4c83de24038920067e8d
+    pages: 4
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

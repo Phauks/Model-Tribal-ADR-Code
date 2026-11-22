@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2014. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
-  label: CONSTITUTION AND BY-LAWS (1939)
+  label: 1939 constitution and bylaws (1939-12-20)
   event: original
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1939-text-2
-  label: Constitution and By-laws of the Yomba Shoshone Tribe of the Yomba Reservation, Nevada (1939)
+  label: 1939 constitution and bylaws (1939-12-22)
   event: edition
   status: superseded
   dates:
@@ -68,8 +68,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 2014-text
-  label: Constitution of the Yomba Shoshone Tribe of the Yomba Reservation, Nevada as amended through
-    Amended August 4, 2014 (no amendment number given)
+  label: 2014 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -91,8 +90,7 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article IV (Nominations and Elections)
-    summary: Makes the Tribal Council the sole judge of its members' qualifications, and the Council or
-      election board certifies election results.
+    summary: Article headed "Nominations and Elections"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

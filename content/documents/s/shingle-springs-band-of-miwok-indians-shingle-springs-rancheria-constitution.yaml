@@ -1,0 +1,72 @@
+id: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+kind: constitution
+title: Constitution of the Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria , California
+nations:
+- shingle-springs-band-of-miwok-indians-shingle-springs-rancheria
+jurisdictions:
+- level: tribal
+  tribe: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1976-06-19.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1976-text
+  label: 1976 articles of association
+  event: original
+  status: unknown
+  dates:
+    adopted: '1976-06-19'
+    approved: '1976-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria/046c3b59b0654787.pdf
+    sha256: 046c3b59b06547876f8397a53a715f95b477c4c5d847e9906db14657cc29ddff
+    pages: 54
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTION)
+    summary: Article headed "ELECTION"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article IV (ELECTION)
+    summary: Article headed "ELECTION"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article IV (ELECTION)
+    summary: Article headed "ELECTION"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (~ VACANCIES AND REMOVAL)
+    summary: Article headed "~ VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article IV (Election)
+    summary: Article headed "Election"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal)
+    summary: Article headed "Vacancies and Removal"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

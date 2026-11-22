@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2017-05-23. Versions are only those found; others may exist.'
 versions:
 - id: 1935-text
-  label: CONSTITUTION AND BY-LAWS (1935)
+  label: 1935 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,8 +33,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 2017-text
-  label: CONSTITUTION AND BY-LAWS FOR THE SWINOMISH INDIAN TRIBAL COMMUNITY as amended through Amend.
-    XVI through XLIV, 2017-05-23 (Secretary approval 2017-07-07)
+  label: 2017 constitution and bylaws, as amended
   event: edition
   status: unknown
   dates:
@@ -54,12 +53,10 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article IV (ELECTION AND NOMINATION FOR THE SENATE)
-    summary: Lets the Senate hear appeals of the secretary's rulings on candidate petitions and eligibility,
-      with the Senate's ruling final.
+    summary: Article headed "ELECTION AND NOMINATION FOR THE SENATE"; an AI reviewer confirmed it covers
+      this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - council-hearing
   changes:
   - topic: dispute-resolution
     compared_with: 1935-text

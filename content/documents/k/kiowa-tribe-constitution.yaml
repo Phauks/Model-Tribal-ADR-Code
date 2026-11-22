@@ -10,8 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2017-04-17. Versions are only those found; others may exist.'
 versions:
 - id: 1982-text
-  label: Constitution and Bylaws of the Kiowa Indian Tribe of Oklahoma as amended through Amendment V,
-    1982-06-05
+  label: 1982 constitution, as amended
   event: edition
   status: superseded
   dates:
@@ -39,8 +38,7 @@ versions:
     summary: Article headed "GENERAL ELECTION BOARD"; found by its heading and not yet read.
     verification: title-only
 - id: 2017-text
-  label: CONSTITUTION OF THE KIOWA TRIBE (Amendment A, New Constitution) as amended through Amendment
-    No. 7 (Amendment A, New Constitution), 2017-04-17
+  label: 2017 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -60,26 +58,22 @@ versions:
   clauses:
   - topic: sovereign-immunity
     locator: Article V (KIOWA INDIAN COUNCDL)
-    summary: Lets the Council authorize the Chairman to enter treaties, compacts or contracts, which may
-      waive sovereign immunity, subject to later voter approval.
+    summary: Article headed "KIOWA INDIAN COUNCDL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article VII (JUDICIAL BRANCH)
-    summary: Establishes a Judicial Branch of a Supreme Court, a Trial Court and lower courts, with judges
-      nominated by the Chairman and confirmed by the Legislature.
+    summary: Article headed "JUDICIAL BRANCH"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article VII (JUDICIAL BRANCH)
-    summary: Gives the Trial Courts original jurisdiction over all cases and controversies, criminal and
-      civil, with the text shown cut off.
+    summary: Article headed "JUDICIAL BRANCH"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article IX (ELECTIONS)
-    summary: Gives a Judicial Commission power to discipline judges, recommend their removal and regulate
-      lawyers, with license decisions appealable to the Chief Justice.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
@@ -88,8 +82,7 @@ versions:
     verification: title-only
   - topic: sovereign-immunity
     locator: Article X (SOVEREIGN IMMUNITY)
-    summary: Declares the Tribe immune from suit, with waiver allowed only by specific written authorization
-      from the Legislature or Council, and suits within the Tribe limited to equity suits in Tribal courts.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

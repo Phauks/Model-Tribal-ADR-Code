@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1950-09-20. Versions are only those found; others may exist.'
 versions:
 - id: 1950-text
-  label: CONSTITUTION AND BYLAWS (1950)
+  label: 1950 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1950-text-2
-  label: Constitution of the Ponca Tribe of Indians of Oklahoma (1950)
+  label: 1950 constitution
   event: edition
   status: in-effect
   dates:
@@ -62,8 +62,8 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article VIII (JURISDICTION AND POWERS FOR THE PONCA)
-    summary: Gives the Business Committee judicial power and lets it set up a tribal judicial system that
-      can take over some or all of that power.
+    summary: Article headed "JURISDICTION AND POWERS FOR THE PONCA"; an AI reviewer confirmed it covers
+      this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

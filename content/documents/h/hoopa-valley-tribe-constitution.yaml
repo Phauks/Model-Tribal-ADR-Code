@@ -1,0 +1,55 @@
+id: hoopa-valley-tribe-constitution
+kind: constitution
+title: Constitution of the Hoopa Valley Tribe, California
+nations:
+- hoopa-valley-tribe
+jurisdictions:
+- level: tribal
+  tribe: hoopa-valley-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2008.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2008-text
+  label: 2008 constitution and bylaws, as amended
+  event: edition
+  status: unknown
+  dates:
+    listed: '2008'
+  source: constitution-hoopa-valley-tribe-2008-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hoopa-valley-tribe/c398a1f3c2421bc8.pdf
+    sha256: c398a1f3c2421bc8d638b88fa00a8f19d67625b7960f7d77b7795b4dc1fee0d7
+    pages: 24
+  note: The text also prints adopted 1950-05-13, approved 1952-09-04, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VI (~ - NOMINATIONS AND ELECTIONS)
+    summary: Article headed "~ - NOMINATIONS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VI (~ - NOMINATIONS AND ELECTIONS)
+    summary: Article headed "~ - NOMINATIONS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES, REMOVAL, RECALL AND REFERENDUM)
+    summary: Article headed "VACANCIES, REMOVAL, RECALL AND REFERENDUM"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VI (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

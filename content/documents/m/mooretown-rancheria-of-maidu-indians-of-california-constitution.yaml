@@ -1,0 +1,44 @@
+id: mooretown-rancheria-of-maidu-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Mooretown Rancheria of Maidu Indians of California
+nations:
+- mooretown-rancheria-of-maidu-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: mooretown-rancheria-of-maidu-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1999-01-02.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1999-text
+  label: 1999 constitution, as amended
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1999-01-02'
+  source: constitution-mooretown-rancheria-of-maidu-indians-of-california-1999-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/mooretown-rancheria-of-maidu-indians-of-california/58ff5020b5ad5339.pdf
+    sha256: 58ff5020b5ad533980d8f1a6c0d5f42f96ecf61bf2bea54c4a7aa25956d421e5
+    pages: 11
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article V (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

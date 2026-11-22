@@ -1,0 +1,51 @@
+id: birch-creek-tribe-constitution
+kind: constitution
+title: Constitution of the Birch Creek Tribe
+nations:
+- birch-creek-tribe
+jurisdictions:
+- level: tribal
+  tribe: birch-creek-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1999-09-15.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1999-text
+  label: 1999 constitution
+  event: original
+  status: in-effect
+  dates:
+    adopted: '1999-09-15'
+  source: constitution-birch-creek-tribe-1999-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/birch-creek-tribe/4c482f40a310a30e.pdf
+    sha256: 4c482f40a310a30e4665526f124d497cca1963509cd0d6f4ffdf70d8feaa7139
+    pages: 17
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article 7 (REMOVAL, RECALL, FORFEITURE. AND VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURE. AND VACANCIES"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article 8 (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article 13 (WAIVERS OF TRIBAL IMMUNITIES)
+    summary: Article headed "WAIVERS OF TRIBAL IMMUNITIES"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article 13 (WAIVERS OF TRIBAL IMMUNITIES)
+    summary: Article headed "WAIVERS OF TRIBAL IMMUNITIES"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,36 @@
+id: native-village-of-napaimute-constitution
+kind: constitution
+title: Constitution of the Native Village of Napaimute
+nations:
+- native-village-of-napaimute
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-napaimute
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2002-04-06.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2002-text
+  label: 2002 constitution, as amended
+  event: edition
+  status: unknown
+  dates:
+    adopted: '2002-04-06'
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-napaimute/a5294af13de1a3f1.pdf
+    sha256: a5294af13de1a3f1c435ed0da2398b594672b9cf8f2b18e4516dacb16c76d276
+    pages: 10
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VII (Powers (Continued))
+    summary: Article headed "Powers (Continued)"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2001-12-07. Versions are only those found; others may exist.'
 versions:
 - id: 1940-text
-  label: CONSTITUTION AND BY-LAWS (1940)
+  label: 1940 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -28,7 +28,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1941-text
-  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF KANATAK (1941)
+  label: 1941 constitution and bylaws
   event: edition
   status: superseded
   dates:
@@ -47,7 +47,7 @@ versions:
     found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
     yet checked by the lead author.
 - id: 2001-text
-  label: CONSTITUTION OF THE NATIVE TRIBE OF KANATAK, ALASKA (2001)
+  label: 2001 constitution
   event: revision
   status: in-effect
   dates:
@@ -67,14 +67,12 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article VI (ELECTIONS AND MEETINGS)
-    summary: Assigns settling of disputes about how elections are conducted to the election ordinance,
-      which also covers petitions and certification.
+    summary: Article headed "ELECTIONS AND MEETINGS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article VI (ELECTIONS AND MEETINGS)
-    summary: Requires the election ordinance to provide for settling disputes about how elections are
-      conducted, along with petitions and certification.
+    summary: Article headed "ELECTIONS AND MEETINGS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -83,8 +81,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XII (COUNCIL MEETINGS)
-    summary: Vests judicial power in the Tribal Council, which may delegate it or create tribal courts
-      by ordinance, with set requirements for those courts.
+    summary: Article headed "COUNCIL MEETINGS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

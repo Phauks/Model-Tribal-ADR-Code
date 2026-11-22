@@ -1,0 +1,35 @@
+id: lummi-tribe-of-the-lummi-reservation-constitution
+kind: constitution
+title: Constitution of the Lummi Tribe of the Lummi Reservation
+nations:
+- lummi-tribe-of-the-lummi-reservation
+jurisdictions:
+- level: tribal
+  tribe: lummi-tribe-of-the-lummi-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1948-01-02.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1948-text
+  label: 1948 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1948-01-02'
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/lummi-tribe-of-the-lummi-reservation/6a2a7849d264d5f1.html
+    sha256: 6a2a7849d264d5f1920b36c37349d08f974784a6763e6ac7526093dd3b47629d
+  note: The text prints an approval date (1947-11-13) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Dates read by rule from the certificates on the
+    library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

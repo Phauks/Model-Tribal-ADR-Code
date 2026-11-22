@@ -1,0 +1,30 @@
+id: akiachak-native-community-constitution
+kind: constitution
+title: Constitution of the Akiachak Native Community
+nations:
+- akiachak-native-community
+jurisdictions:
+- level: tribal
+  tribe: akiachak-native-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1948-12-03.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1948-text
+  label: 1948 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1948-12-03'
+  source: university-of-oklahoma-indian-reorganization-act-akiacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/akiachak-native-community/e83994b46bd7fe99.html
+    sha256: e83994b46bd7fe992e50d25dffd076e90e6a3a82a8d035abfdaec93467b21772
+  note: 'The text prints an approval date (1948-08-06) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Dates read from another copy of the same text: adopted
+    1948-12-03. Dates read by rule from the certificates on the library page.'
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

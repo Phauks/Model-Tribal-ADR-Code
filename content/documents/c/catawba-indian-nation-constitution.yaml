@@ -1,0 +1,37 @@
+id: catawba-indian-nation-constitution
+kind: constitution
+title: Constitution of the Catawba Indian Nation
+nations:
+- catawba-indian-nation
+jurisdictions:
+- level: tribal
+  tribe: catawba-indian-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1944-04-13.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1944-text
+  label: 1944 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    approved: '1944-04-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/catawba-indian-nation/51279dd377ba561b.html
+    sha256: 51279dd377ba561b4c4062cb55ba607a01c6a7a0cb09851c5a58652a62977307
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

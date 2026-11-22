@@ -10,8 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1994-09-24. Versions are only those found; others may exist.'
 versions:
 - id: 1992-proposed
-  label: Resolution Approving the Use of the Interim Draft Constitution of the Scotts Valley Band of Pomo
-    Indians of the Sugar Bowl Rancheria (1992)
+  label: 1992 proposed constitution
   event: revision
   status: proposed
   dates:
@@ -35,7 +34,7 @@ versions:
     summary: Article headed "VACANCIES"; found by its heading and not yet read.
     verification: title-only
 - id: 1994-text
-  label: CONSTITUTION (1994)
+  label: 1994 constitution
   event: original
   status: unknown
   dates:
@@ -60,8 +59,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XI (JUDICIARY)
-    summary: Creates a Tribal Court with original jurisdiction to review and reverse Tribal and General
-      Council actions that violate the constitution and to enforce election and other ordinances.
+    summary: Article headed "JUDICIARY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
 found_in:

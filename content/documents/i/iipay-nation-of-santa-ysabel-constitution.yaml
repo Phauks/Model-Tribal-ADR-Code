@@ -1,0 +1,77 @@
+id: iipay-nation-of-santa-ysabel-constitution
+kind: constitution
+title: Constitution of the Iipay Nation of Santa Ysabel, California
+nations:
+- iipay-nation-of-santa-ysabel
+jurisdictions:
+- level: tribal
+  tribe: iipay-nation-of-santa-ysabel
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2018-11-04.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2018-text
+  label: 2018 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2018-11-04'
+  source: constitution-iipay-nation-of-santa-ysabel-2018-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/iipay-nation-of-santa-ysabel/7cc4d0a40466cafe.pdf
+    sha256: 7cc4d0a40466cafe0860d27c3600e6fe158469a52ee6c3bc492e4e100a18a1f4
+    pages: 24
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article Vil (Judicial Branch)
+    summary: Article headed "Judicial Branch"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article Vil (Judicial Branch)
+    summary: Article headed "Judicial Branch"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: peacemaking
+    locator: Article Vil (Judicial Branch)
+    summary: Article headed "Judicial Branch"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article IX (~ Elections)
+    summary: Article headed "~ Elections"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article IX (~ Elections)
+    summary: Article headed "~ Elections"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (~ Elections)
+    summary: Article headed "~ Elections"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article X (Removal, Recall, and Vacancies)
+    summary: Article headed "Removal, Recall, and Vacancies"; an AI reviewer confirmed it covers this
+      topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article X (Removal, Recall, and Vacancies)
+    summary: Article headed "Removal, Recall, and Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XI (Sovereign Immunity)
+    summary: Article headed "Sovereign Immunity"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

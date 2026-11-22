@@ -1,0 +1,81 @@
+id: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+kind: constitution
+title: Constitution of the Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+nations:
+- lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan
+jurisdictions:
+- level: tribal
+  tribe: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1992-05-14.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1992-text
+  label: 1992 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1992-05-14'
+    approved: '1992-06-24'
+    effective: '1992-06-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan/54374f7c32622661.pdf
+    sha256: 54374f7c32622661977c706f8e90d34f9431176d91536b7cac1c2b0c1c94d292
+    pages: 26
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (TRIBAL JUDICIARY 8)
+    summary: Article headed "TRIBAL JUDICIARY 8"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (RECALL, REMOVAL AND VACANCY 12)
+    summary: Article headed "RECALL, REMOVAL AND VACANCY 12"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIII (SOVEREIGN IMMUNITY .18)
+    summary: Article headed "SOVEREIGN IMMUNITY .18"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article V (TRIBAL JUDICIARY)
+    summary: Article headed "TRIBAL JUDICIARY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (RECALL, REMOVAL AND VACANCY)
+    summary: Article headed "RECALL, REMOVAL AND VACANCY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XII (CONFLICT OF INTEREST)
+    summary: Article headed "CONFLICT OF INTEREST"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XIII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article XIII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

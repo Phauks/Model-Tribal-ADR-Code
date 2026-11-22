@@ -1,0 +1,31 @@
+id: platinum-traditional-village-constitution
+kind: constitution
+title: Constitution of the Platinum Traditional Village
+nations:
+- platinum-traditional-village
+jurisdictions:
+- level: tribal
+  tribe: platinum-traditional-village
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1994-11-11.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1994-text
+  label: 1994 constitution and bylaws, as amended
+  event: edition
+  status: unknown
+  dates:
+    listed: '1994-11-11'
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/platinum-traditional-village/785ed4fc63c69e14.pdf
+    sha256: 785ed4fc63c69e14a8ae040bba224fd7eaec4c1339cc3b59ce0491843290d800
+    pages: 6
+  note: The text also prints adopted 1982-02-02, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

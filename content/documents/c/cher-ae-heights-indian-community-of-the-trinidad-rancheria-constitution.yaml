@@ -1,0 +1,35 @@
+id: cher-ae-heights-indian-community-of-the-trinidad-rancheria-constitution
+kind: constitution
+title: Constitution of the Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
+nations:
+- cher-ae-heights-indian-community-of-the-trinidad-rancheria
+jurisdictions:
+- level: tribal
+  tribe: cher-ae-heights-indian-community-of-the-trinidad-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1961-04-08.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1961-text
+  label: 1961 articles of association
+  event: original
+  status: unknown
+  dates:
+    adopted: '1961-04-08'
+    approved: '1961-06-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-cher-ae-heights-indian-community-of-the-trinidad-rancheria-1961-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cher-ae-heights-indian-community-of-the-trinidad-rancheria/410edf741dc39d5a.pdf
+    sha256: 410edf741dc39d5a17a45e4ba97e500f92923481bb1200022ee0f7c9eecb2876
+    pages: 7
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

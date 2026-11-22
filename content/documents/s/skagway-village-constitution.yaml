@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2021. Versions are only those found; others may exist.'
 versions:
 - id: 2018-text
-  label: CONSTITUTION & BYLAWS (Skagway Village) as amended through Amendments adopted 2018 (year only)
+  label: 2018 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
       yet read.
     verification: title-only
 - id: 2021-text
-  label: CONSTITUTION & BYLAWS as amended through amendments adopted in 2021
+  label: 2021 constitution and bylaws, as amended
   event: edition
   status: in-effect
   dates:
@@ -59,19 +59,17 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article 4 (Governing Body)
-    summary: Has the Council decide by majority vote any objection to the President's ruling on a council
-      member's conflict of interest.
+    summary: Article headed "Governing Body"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article 5 (Elections)
-    summary: Requires the Election Ordinance to provide for settling election disputes.
+    summary: Article headed "Elections"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article 5 (Elections)
-    summary: Requires the Election Ordinance to provide for settling election disputes, and has an appointed
-      Election Committee supervise and certify elections.
+    summary: Article headed "Elections"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -81,8 +79,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article 9 (Powers)
-    summary: Lets the Council regulate child custody and adoption and establish tribal courts or other
-      judicial bodies.
+    summary: Article headed "Powers"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

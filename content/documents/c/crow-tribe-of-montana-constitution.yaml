@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2001-07-14. Versions are only those found; others may exist.'
 versions:
 - id: 1949-text
-  label: Constitution and Bylaws of the Crow Tribal Council of Montana (1949)
+  label: 1949 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -29,7 +29,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1949-text-2
-  label: CONSTITUTION AND BYLAWS OF THE CROW TRIBAL COUNCIL (1949)
+  label: 1949 constitution and bylaws
   event: edition
   status: superseded
   dates:
@@ -48,7 +48,7 @@ versions:
     Marked superseded because a later dated text was found (project inference). Type and dates read from
     the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 2001-text
-  label: Constitution and By-Laws of the Crow Tribe of Indians (2001)
+  label: 2001 constitution and bylaws
   event: revision
   status: in-effect
   dates:
@@ -78,8 +78,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XV (APPROVAL)
-    summary: Establishes a Judicial Branch as one of three separated branches of government, alongside
-      the Executive and Legislative Branches.
+    summary: Article headed "APPROVAL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

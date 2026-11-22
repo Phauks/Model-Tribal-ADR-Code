@@ -1,0 +1,55 @@
+id: saint-regis-mohawk-tribe-constitution
+kind: constitution
+title: Constitution of the Saint Regis Mohawk Tribe
+nations:
+- saint-regis-mohawk-tribe
+jurisdictions:
+- level: tribal
+  tribe: saint-regis-mohawk-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1995-06-03.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1995-text
+  label: 1995 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1995-06-03'
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/saint-regis-mohawk-tribe/1f267c290a48387e.html
+    sha256: 1f267c290a48387e76538d5edbbfe8e261e6792158397e775a9480250dec3696
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (Section I of the Constitution. Essentially, all qualified members are eligible)
+    summary: Article headed "Section I of the Constitution. Essentially, all qualified members are eligible";
+      an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article V (ELECTIONS AND VOTING)
+    summary: Article headed "ELECTIONS AND VOTING"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article X (JUDICIAL)
+    summary: Article headed "JUDICIAL"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: peacemaking
+    locator: Article X (JUDICIAL)
+    summary: Article headed "JUDICIAL"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article XV (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

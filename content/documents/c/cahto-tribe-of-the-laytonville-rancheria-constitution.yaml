@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2006-01-28. Versions are only those found; others may exist.'
 versions:
 - id: 1971-text
-  label: ARTICLES OF ASSOCIATION OF THE LAYTONVILLE RANCHERIA as amended through Amendment I, 1971-02-18
+  label: 1971 articles of association, as amended
   event: edition
   status: superseded
   dates:
@@ -32,7 +32,7 @@ versions:
     summary: Article headed "VACANCIES AND RECALL"; found by its heading and not yet read.
     verification: title-only
 - id: 2006-text
-  label: ARTICLES OF ASSOCIATION OF THE CAHTO TRIBE OF THE LAYTONVILLE RANCHERIA (2006)
+  label: 2006 articles of association
   event: edition
   status: unknown
   dates:
@@ -64,7 +64,7 @@ versions:
     verification: title-only
   - topic: sovereign-immunity
     locator: Article IX (GENERAL POWERS)
-    summary: Reserves to the General Council the power to waive the Tribe's immunity from lawsuits.
+    summary: Article headed "GENERAL POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

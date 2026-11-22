@@ -1,0 +1,69 @@
+id: ione-band-of-miwok-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Ione Band of Miwok Indians of California
+nations:
+- ione-band-of-miwok-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: ione-band-of-miwok-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2002-08-10.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2002-text
+  label: 2002 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '2002-08-10'
+    approved: '2002-09-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ione-band-of-miwok-indians-of-california/814a0d8e8bac2b78.pdf
+    sha256: 814a0d8e8bac2b783ac1868a3fcf45bc2b12f7cd475d0abc0c3b85c7bf428c0e
+    pages: 15
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VIII (TRIBAL JUDICIAL SYSTEM)
+    summary: Article headed "TRIBAL JUDICIAL SYSTEM"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VIII (TRIBAL JUDICIAL SYSTEM)
+    summary: Article headed "TRIBAL JUDICIAL SYSTEM"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article X (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XI (VACANCIES, REMOVAL AND RECALL)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIV (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article XV (CONFLICT OF INTEREST)
+    summary: Article headed "CONFLICT OF INTEREST"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XVIII (ADOPTION OF CONSTITUTION & INITIAL ELECTION)
+    summary: Article headed "ADOPTION OF CONSTITUTION & INITIAL ELECTION"; found by its heading and not
+      yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

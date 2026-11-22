@@ -1,0 +1,30 @@
+id: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+kind: constitution
+title: Constitution of the Pauma Band of Luiseno Mission Indians of the Pauma & Yuima Reservation, California
+nations:
+- pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation
+jurisdictions:
+- level: tribal
+  tribe: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1966-03-17.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1966-text
+  label: 1966 articles of association
+  event: original
+  status: unknown
+  dates:
+    adopted: '1966-03-17'
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation/b05fdb110c085ac3.pdf
+    sha256: b05fdb110c085ac3a89a626e468cde50edc47be31ec13ee930fed784f4dabf9f
+    pages: 10
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

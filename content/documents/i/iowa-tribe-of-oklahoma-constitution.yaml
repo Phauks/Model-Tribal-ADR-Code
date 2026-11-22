@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2008-08-21. Versions are only those found; others may exist.'
 versions:
 - id: 1937-text
-  label: CONSTITUTION AND BY-LAWS OF THE (1937)
+  label: 1937 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -37,8 +37,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 2008-text
-  label: CONSTITUTION AND BYLAWS OF THE IOWA TRIBE OF OKLAHOMA as amended through As Amended to August
-    21, 2008
+  label: 2008 constitution and bylaws, as amended
   event: edition
   status: in-effect
   dates:
@@ -63,21 +62,17 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
-    summary: Sets removal procedures in which the Grievance Committee investigates charges, hears them
-      with notice to the accused, and decides whether officials are cleared or removed.
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - fact-finding
-    - administrative-adjudication
   - topic: removal-and-recall
     locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
     summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
     verification: title-only
   - topic: election-disputes
     locator: Article XII (QUALIFICATIONS OF CANDIDATES)
-    summary: Makes the Election Board responsible for ensuring only candidates who meet the listed qualifications
-      are declared candidates.
+    summary: Article headed "QUALIFICATIONS OF CANDIDATES"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:
@@ -97,8 +92,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 2008-amendment
-  label: Proposed Amendment A, now designated Amendment III as amended through Amendment III, effective
-    2008-08-21
+  label: 2008 amendment
   event: amendment
   status: unknown
   dates:

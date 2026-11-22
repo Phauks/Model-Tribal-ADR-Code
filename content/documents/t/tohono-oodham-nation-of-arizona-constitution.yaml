@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1986-01-18. Versions are only those found; others may exist.'
 versions:
 - id: 1936-text
-  label: CONSTITUTION AND BY-LAWS OF (1936)
+  label: 1936 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,7 +33,7 @@ versions:
     summary: Article headed "APPOINTMENT OF JUDGES AND POLICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1986-text
-  label: CONSTITUTION OF THE TOHONO O'ODHAM NATION (1986)
+  label: 1986 constitution
   event: edition
   status: in-effect
   dates:
@@ -54,8 +54,8 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article X (and they shall hold their offices until their successors have been)
-    summary: Has the Tohono O'odham Council decide election matters, including candidate eligibility,
-      as final, and sets rules for settling election disputes.
+    summary: Article headed "and they shall hold their offices until their successors have been"; an AI
+      reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

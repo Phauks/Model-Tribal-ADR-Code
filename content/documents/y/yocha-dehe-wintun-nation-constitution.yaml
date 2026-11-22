@@ -1,0 +1,40 @@
+id: yocha-dehe-wintun-nation-constitution
+kind: constitution
+title: Constitution of the Yocha Dehe Wintun Nation, California
+nations:
+- yocha-dehe-wintun-nation
+jurisdictions:
+- level: tribal
+  tribe: yocha-dehe-wintun-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1976-03-18.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1976-text
+  label: 1976 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    approved: '1976-03-18'
+    effective: '1976-03-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/yocha-dehe-wintun-nation/d98dec82d0addb89.pdf
+    sha256: d98dec82d0addb89fbc342374c323c9c09b9c28c116a04590b5a51ae7b63e923
+    pages: 10
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

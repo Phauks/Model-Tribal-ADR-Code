@@ -1,0 +1,42 @@
+id: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+kind: constitution
+title: Constitution of the Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+nations:
+- confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians
+jurisdictions:
+- level: tribal
+  tribe: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2026.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2026-text
+  label: 2026 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2026'
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians/a45d3cdbd060ae46.pdf
+    sha256: a45d3cdbd060ae46101a8351d8e6b46423ee7a38fa43051e91f1ddee38826f38
+    pages: 16
+  note: The text also prints adopted 1987-05-23, approved 1987-06-23, effective 1987-06-23, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked in effect because it is the newest dated text found, on the nation's own
+    site, on 2026-11-21; a later amendment may not be posted. Type and dates read from the text by an
+    AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article X (REMOVAL AND RECALL)
+    summary: Article headed "REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XVI (CERTIFICATION OF RESULTS OF ELECTION)
+    summary: Article headed "CERTIFICATION OF RESULTS OF ELECTION"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2024-03-26. Versions are only those found; others may exist.'
 versions:
 - id: 1940-text
-  label: CONSTITUTION AND BY-LAWS (1940)
+  label: 1940 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -28,8 +28,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 2024-text
-  label: CONSTITUTION OF THE SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY as amended through Supplement No.
-    5, 2024-03-26
+  label: 2024 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -50,8 +49,7 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article VI (NOMINATIONS AND)
-    summary: Sets voter qualifications and lets the polling-site Election Board Judge decide whether an
-      impaired member may vote.
+    summary: Article headed "NOMINATIONS AND"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

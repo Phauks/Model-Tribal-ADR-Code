@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1999-10-19. Versions are only those found; others may exist.'
 versions:
 - id: 1936-text
-  label: CONSTITUTION AND BY-LAWS (1936)
+  label: 1936 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -28,7 +28,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1999-text
-  label: Constitution of the Fort McDowell Yavapai Nation (1999)
+  label: 1999 constitution
   event: edition
   status: unknown
   dates:
@@ -60,20 +60,17 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article VII (JUDICIARY)
-    summary: Vests the Nation's judicial power in a Judiciary with a Trial Court and a Supreme Court,
-      whose judges the Tribal Council appoints.
+    summary: Article headed "JUDICIARY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article VII (JUDICIARY)
-    summary: Gives the Judiciary jurisdiction over cases and controversies, and allows lower alternative
-      dispute resolution forums the Tribal Council deems necessary.
+    summary: Article headed "JUDICIARY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article VII (Section 10)
-    summary: Lets the Tribal Council set judge qualifications and remove judges, and allows appeals of
-      Trial Court verdicts to the Supreme Court.
+    summary: Article headed "Section 10"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -86,8 +83,7 @@ versions:
     verification: title-only
   - topic: sovereign-immunity
     locator: Article XV (SOVEREIGN IMMUNITY)
-    summary: Recognizes the Nation's sovereign immunity, allows enrolled members to sue in the Judiciary
-      for equitable enforcement, and permits waiver only by Council written authorization.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

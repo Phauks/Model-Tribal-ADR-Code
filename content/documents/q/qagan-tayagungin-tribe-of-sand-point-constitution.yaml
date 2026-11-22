@@ -1,0 +1,50 @@
+id: qagan-tayagungin-tribe-of-sand-point-constitution
+kind: constitution
+title: Constitution of the Qagan Tayagungin Tribe of Sand Point
+nations:
+- qagan-tayagungin-tribe-of-sand-point
+jurisdictions:
+- level: tribal
+  tribe: qagan-tayagungin-tribe-of-sand-point
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2004-03-13.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2004-text
+  label: 2004 constitution
+  event: original
+  status: in-effect
+  dates:
+    adopted: '2004-03-13'
+  source: constitution-qagan-tayagungin-tribe-of-sand-point-2004-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/qagan-tayagungin-tribe-of-sand-point/bb70031fca30c9b4.html
+    sha256: bb70031fca30c9b46b96f25fec151d91c350da01c8e966fe21c144630415fece
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ANNUAL ELECTION OF TRIBAL OFFICIALS)
+    summary: Article headed "ANNUAL ELECTION OF TRIBAL OFFICIALS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL, RECALL, FORFEITURES AND VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURES AND VACANCIES"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article X (POWERS)
+    summary: Article headed "POWERS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XIII (TRIBAL COURTS)
+    summary: Article headed "TRIBAL COURTS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

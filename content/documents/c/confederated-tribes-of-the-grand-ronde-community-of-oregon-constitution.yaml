@@ -1,0 +1,37 @@
+id: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+kind: constitution
+title: Constitution of the Confederated Tribes of the Grand Ronde Community of Oregon
+nations:
+- confederated-tribes-of-the-grand-ronde-community-of-oregon
+jurisdictions:
+- level: tribal
+  tribe: confederated-tribes-of-the-grand-ronde-community-of-oregon
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1936-03-13.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: 1936 constitution
+  event: original
+  status: unknown
+  dates:
+    approved: '1936-03-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-grand-ronde-community-of-oregon/dbee01097a6a00f8.html
+    sha256: dbee01097a6a00f80e8d98919db8ddd9ae54ce9428684791b248047489226c42
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

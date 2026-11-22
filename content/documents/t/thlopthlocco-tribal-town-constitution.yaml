@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1938-12-27. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
-  label: Constitution and By-laws of the Thlopthlocco Tribal Town, Oklahoma (1938)
+  label: 1938 constitution and bylaws (Library of Congress copy)
   event: original
   status: superseded
   dates:
@@ -27,7 +27,7 @@ versions:
     found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
     yet checked by the lead author.
 - id: 1938-text-2
-  label: CONSTITUTION AND BY-LAWS (1938)
+  label: 1938 constitution and bylaws (University of Oklahoma copy)
   event: edition
   status: unknown
   dates:
@@ -48,13 +48,10 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article VI (REMOVAL OF BUSINESS COMMITTEE MEMBERS)
-    summary: Has a three-member Grievance Committee investigate misconduct complaints against Business
-      Committee members, and lets the town remove them by majority vote after a hearing.
+    summary: Article headed "REMOVAL OF BUSINESS COMMITTEE MEMBERS"; an AI reviewer confirmed it covers
+      this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - fact-finding
-    - council-hearing
   - topic: removal-and-recall
     locator: Article VI (REMOVAL OF BUSINESS COMMITTEE MEMBERS)
     summary: Article headed "REMOVAL OF BUSINESS COMMITTEE MEMBERS"; found by its heading and not yet

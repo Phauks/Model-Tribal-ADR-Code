@@ -1,0 +1,40 @@
+id: redding-rancheria-constitution
+kind: constitution
+title: Constitution of the Redding Rancheria, California
+nations:
+- redding-rancheria
+jurisdictions:
+- level: tribal
+  tribe: redding-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1989-12-30.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1989-text
+  label: 1989 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1989-12-30'
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/redding-rancheria/aee84edef06e3bda.html
+    sha256: aee84edef06e3bda6825b5d6deb51ff7bf5a48597f60d378e1c0b142615459dc
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES AND REMOVAL OF TRIBAL COUNCIL PERSONS)
+    summary: Article headed "VACANCIES AND REMOVAL OF TRIBAL COUNCIL PERSONS"; found by its heading and
+      not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

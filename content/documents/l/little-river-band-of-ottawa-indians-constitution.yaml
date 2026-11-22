@@ -1,0 +1,56 @@
+id: little-river-band-of-ottawa-indians-constitution
+kind: constitution
+title: Constitution of the Little River Band of Ottawa Indians, Michigan
+nations:
+- little-river-band-of-ottawa-indians
+jurisdictions:
+- level: tribal
+  tribe: little-river-band-of-ottawa-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1998-05-27.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1998-text
+  label: 1998 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1998-05-27'
+    approved: '1998-07-10'
+    effective: '1998-07-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/little-river-band-of-ottawa-indians/4629f5247cc281db.pdf
+    sha256: 4629f5247cc281db448327d24c21a67b077d17cc00c401c5ed4a77e6aadd62ac
+    pages: 20
+  note: 'Dates read from another copy of the same text: effective 1998-07-10. Type and dates read from
+    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.'
+  clauses:
+  - topic: judicial-power
+    locator: Article VI (TRIBAL COURT)
+    summary: Article headed "TRIBAL COURT"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VI (TRIBAL COURT)
+    summary: Article headed "TRIBAL COURT"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ELECTION)
+    summary: Article headed "ELECTION"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (RESIGNATION, RECALL, OR REMOVAL OF ELECTED OFFICIALS)
+    summary: Article headed "RESIGNATION, RECALL, OR REMOVAL OF ELECTED OFFICIALS"; found by its heading
+      and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

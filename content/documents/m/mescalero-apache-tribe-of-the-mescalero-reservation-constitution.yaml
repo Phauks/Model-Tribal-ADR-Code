@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1988-10-18. Versions are only those found; others may exist.'
 versions:
 - id: 1936-text
-  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  label: 1936 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -29,8 +29,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1981-text
-  label: REVISED CONSTITUTION OF THE APACHE TRIBE of the MESCALERO RESERVATION as amended through Amendment
-    V, 1981-02-03
+  label: 1981 constitution, as amended
   event: edition
   status: superseded
   dates:
@@ -86,8 +85,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1988-text
-  label: REVISED CONSTITUTION OF THE APACHE TRIBE OF THE MESCALERO RESERVATION as amended through As amended
-    through 1988-10-18
+  label: 1988 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -108,8 +106,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article IV (MEMBERSHIP)
-    summary: Gives the council original jurisdiction over enrollment eligibility, while paternity-based
-      membership disputes go to the trial court or the council as appeals court.
+    summary: Article headed "MEMBERSHIP"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
@@ -122,14 +119,13 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XXV (PART III- THE JUDICIARY)
-    summary: Vests judicial powers in Tribal Courts, including a trial and an appellate court, with jurisdiction
-      over civil and criminal matters subject to federal law and council limits.
+    summary: Article headed "PART III- THE JUDICIARY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article XXVI (COMPOSITION OF THE TRIBAL COURTS)
-    summary: Sets the trial court's chief judge and two associate judges, appointed by the tribal president
-      with council concurrence, and makes the council the appeals court.
+    summary: Article headed "COMPOSITION OF THE TRIBAL COURTS"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

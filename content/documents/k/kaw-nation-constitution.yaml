@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2011-08-20. Versions are only those found; others may exist.'
 versions:
 - id: 1990-text
-  label: Constitution of the Kaw Nation of Oklahoma (1990)
+  label: 1990 constitution
   event: original
   status: superseded
   dates:
@@ -34,8 +34,7 @@ versions:
     summary: Article headed "COURTS"; found by its heading and not yet read.
     verification: title-only
 - id: 2006-amendment
-  label: Proposed Amendment A, now designated Amendment I (Kaw Nation Constitution, Article VIII) as amended
-    through Amendment I, effective October 13, 2006
+  label: 2006 amendment
   event: amendment
   status: unknown
   dates:
@@ -68,7 +67,7 @@ versions:
     verification: inferred
     note: An amendment changes only what it names; compare by hand.
 - id: 2016-text
-  label: CONSTITUTION OF THE KAW NATION as amended through Amended, 2016-04-29 (cover)
+  label: 2016 constitution, as amended
   event: revision
   status: in-effect
   dates:
@@ -88,8 +87,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article VIII (JUDICIARY)
-    summary: Vests the Kaw Nation's judicial power in a three-justice Supreme Court and inferior courts
-      set by tribal law.
+    summary: Article headed "JUDICIARY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes

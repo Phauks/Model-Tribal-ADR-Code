@@ -1,0 +1,30 @@
+id: village-of-kotlik-constitution
+kind: constitution
+title: Constitution of the Village of Kotlik
+nations:
+- village-of-kotlik
+jurisdictions:
+- level: tribal
+  tribe: village-of-kotlik
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2006-10-18.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2006-text
+  label: 2006 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '2006-10-18'
+  source: constitution-village-of-kotlik-2006-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/village-of-kotlik/c4724dff9df4fcd9.pdf
+    sha256: c4724dff9df4fcd957d81a24c91eae6f3cebbd08cdaefaa7afe2951a6b2530c3
+    pages: 7
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.
