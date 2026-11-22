@@ -282,6 +282,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.tulaliptribes-nsn.gov/LawAndJustice/TribalCourt
   source: national-indian-law-library-tulalip
   confidence: medium
   verification: bulk-import
@@ -289,16 +290,21 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (http://www.tulaliptribes-nsn.gov/Home/Government/Departments/TribalCourt.aspx)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
+    website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-382.'
 - kind: tribal-court
   name: Tulalip Tribes Tribal Court
+  link: https://www.tulaliptribes-nsn.gov/LawAndJustice/TribalCourt
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Tulalip Tribes'
   note: 'Link check 2026-11-21: the link the source gives (http://www.tulaliptribes-nsn.gov/Home/Government/Departments/TribalCourt.aspx)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
+    website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-383.'
 dispute_resolution:
   forums:
   - kind: mediation

@@ -254,22 +254,27 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.tribalcourt.org/
   source: national-indian-law-library-hopland-pomo
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
-    link the source gives (http://www.hoplandtribe.com/tribal-court) returned HTTP 404, so it is not recorded.'
+    link the source gives (http://www.hoplandtribe.com/tribal-court) returned HTTP 404, so it is not recorded.
+    Link added 2026-11-22: the site of the Northern California Intertribal Court System, to which the
+    nation''s website links its Tribal Court (fetched with status 200 on 2026-11-22).'
 - kind: tribal-court
   name: Hopland Tribal Court
+  link: https://www.tribalcourt.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Hopland Band of Pomo Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.hoplandtribe.com/tribal-court) returned
-    HTTP 404, so it is not recorded.'
+    HTTP 404, so it is not recorded. Link added 2026-11-22: the site of the Northern California Intertribal
+    Court System, to which the nation''s website links its Tribal Court (fetched with status 200 on 2026-11-22).'
 dispute_resolution:
   forums:
   - kind: peacemaking

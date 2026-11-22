@@ -238,20 +238,28 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://ctgr.us/home/tribal-court/
   source: national-indian-law-library-confederated-goshute
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
-    link the source gives (http://www.naicja.org/node/1217) returned HTTP 404, so it is not recorded.'
+    link the source gives (http://www.naicja.org/node/1217) returned HTTP 404, so it is not recorded.
+    Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on 2026-11-21
+    by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-063.'
 - kind: tribal-court
   name: Confederated Tribes of the Goshute Reservation Tribal Court
+  link: https://ctgr.us/home/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Utah section, entry 'Confederated Tribes of the Goshute Reservation'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-064.'
 jurisdiction:
 - topic: public-law-280
   value: retroceded

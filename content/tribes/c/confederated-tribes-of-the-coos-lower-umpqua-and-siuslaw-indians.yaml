@@ -250,12 +250,14 @@ governing_documents:
 justice_institutions:
 - kind: peacemaking-program
   name: Peacegiving Court
+  link: https://ctclusi.org/tribal-court-peacegiving/
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
   verification: title-only
   as_of: '2025-09-29'
-  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
-    whether it currently operates was not checked.
+  note: 'Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked. Link added 2026-11-22: the Tribal Court & Peacegiving
+    Court page on the nation''s website (fetched with status 200 on 2026-11-22).'
 - kind: healing-to-wellness-court
   name: Wellness Court
   source: narf-ipi-youth-family-peacemaking-laws
@@ -275,13 +277,16 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Confederated Tribes of Coos, Lower Umqua, Siuslaw Indians Tribal Court
+  link: https://ctclusi.org/tribal-court-peacegiving/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://ctclusi.org/court) returned HTTP 404,
-    so it is not recorded.'
+    so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
+    with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-062.'
 dispute_resolution:
   forums:
   - kind: peacemaking

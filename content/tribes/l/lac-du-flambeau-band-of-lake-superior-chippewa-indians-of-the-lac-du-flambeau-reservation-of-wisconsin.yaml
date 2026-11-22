@@ -279,6 +279,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://ldftribe.com/tribal-operations/tribal-courts/
   source: national-indian-law-library-lac-du-flambeau-chippewa
   confidence: medium
   verification: bulk-import
@@ -286,16 +287,19 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (https://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Tribal Courts page on the nation''s
+    website (fetched with status 200 on 2026-11-22).'
 - kind: tribal-court
   name: Lac du Flambeau Tribal Courts
+  link: https://ldftribe.com/tribal-operations/tribal-courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Tribal Courts page on the nation''s
+    website (fetched with status 200 on 2026-11-22).'
 dispute_resolution:
   provisions:
   - kind: other

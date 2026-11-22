@@ -272,11 +272,15 @@ justice_institutions:
   locator: Contact Info, Tribal Court
 - kind: tribal-court
   name: Rosebud Sioux Tribal Court
+  link: https://www.rstcourt.org/law-order-code/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: South Dakota section, entry 'Rosebud Sioux Tribe of the Sicangu Oyate'
+  note: 'Link added 2026-11-22: the court''s page on the court''s own website, fetched with status 200
+    on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see
+    research/reviews/2026-11-22-service-links.json, service-335.'
 dispute_resolution:
   database_listings:
   - title: Attendance Review Conference for Truancy

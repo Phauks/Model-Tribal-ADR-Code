@@ -169,8 +169,8 @@
 
 	{#if loaded && items.length === 0}
 		<p>
-			Nothing is starred yet. Press <strong>Star</strong>, beside Print at the top of a nation’s page, a glossary entry or a
-			story, to keep it here.
+			Nothing is starred yet. On a nation’s page, a glossary entry or a story, press the star at the top, beside Print, to keep
+			the page here.
 		</p>
 	{:else if loaded}
 		<h2 class="visually-hidden" tabindex="-1" bind:this={listHeading}>Your starred pages</h2>

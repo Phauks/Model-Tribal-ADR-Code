@@ -1,0 +1,68 @@
+profile: content/tribes/c/coeur-dalene-tribe.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: '“Coeur d’Alene Tribal Court”: Read the Nov. 21 court review''s result for this court (verdict
+    confirmed, page https://www.cdatribe-nsn.gov/justice/); it gives no page of the court''s own fetched
+    with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: content/tribes/c/coeur-dalene-tribe.yaml
+  outcome: found
+  reason: '“Coeur d’Alene Tribal Court”: The profile lists the same court with a link the court review
+    confirmed: https://www.cdatribe-nsn.gov/justice/.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.cdatribe-nsn.gov/justice/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Coeur d’Alene Tribal Court”: Status 200; the page shows the service, and it is now the service''s
+    link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.cdatribe-nsn.gov/newsroom/the-coeur-dalene-tribe-prevails-in-water-rights-appeal-before-idaho-supreme-court/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Coeur d’Alene Tribal Court”: Status 200; not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.cdatribe-nsn.gov/justice
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Coeur d’Alene Tribal Court”: Status 200; the page shows the service, and it is now the service''s
+    link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cdatribe-nsn.gov/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Coeur d’Alene Tribal Court”: Home page status 200; 3 linked pages mentioning a court, judiciary,
+    justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Coeur d’Alene Tribal Court”: Claude weighed the evidence against the lead author''s order
+    (own page, then directory entry): own-page, https://www.cdatribe-nsn.gov/justice/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-053

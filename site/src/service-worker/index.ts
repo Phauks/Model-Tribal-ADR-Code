@@ -19,6 +19,10 @@
  *   new worker installs in the background and waits until the reader presses
  *   "Update now", which sends "skip-waiting", or until every tab of the site
  *   is closed. It then takes over and deletes the old caches.
+ * - Updates download only what changed. A new worker carries every saved
+ *   file whose fingerprint has not changed into its own cache
+ *   (src/lib/offline-fingerprints.ts), and lists the saved pages that did
+ *   change, which are downloaded again on the next page load.
  * - When a page is neither saved nor reachable, the /offline page is shown.
  *
  * Restricted records are never published, so they are never cached. The
@@ -38,17 +42,42 @@ import {
 	type WorkerReply,
 	type WorkerRequest
 } from '#lib/offline-collections.ts';
+import {
+	cacheNameOf,
+	cachePrefix,
+	fingerprintOf,
+	fingerprintsAddress,
+	savedFingerprintsKey,
+	withBuild,
+	withoutBuild,
+	type Fingerprints
+} from '#lib/offline-fingerprints.ts';
 
-const cacheName = `site-${version}`;
+const cacheName = cacheNameOf(version);
 const offlinePage = '/offline';
 // The search page and its index are kept too, so the masthead's search box works offline,
 // and so is the Starred page, since stars and notes live on the device.
 const corePages = ['/', '/glossary', '/changelog', '/search', '/starred', '/starred/shared', offlinePage];
-// edition.json says which edition the server has now, so it always comes from the network.
+// edition.json, the fingerprints and SvelteKit's version.json say what the server has now, so
+// they always come from the network; a saved version.json would hide a new build from open tabs.
 // Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself.
-const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/edition.json', '/copies'];
+const neverCached = [
+	'/workspace',
+	'/sign-in',
+	'/sign-out',
+	'/requests',
+	'/edition.json',
+	fingerprintsAddress,
+	'/_app/version.json',
+	'/copies'
+];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
 const keptCollectionsKey = '/__kept-collections';
+/** This build's fingerprints, stored in its cache so the page can compare builds. */
+const fingerprintsKey = savedFingerprintsKey;
+/** Not a real address: saved pages that changed in this build, to download again. */
+const changedKey = '/__changed';
+const internalKeys = new Set([keptCollectionsKey, fingerprintsKey, changedKey]);
 
 /**
  * A nation's seal or logo is never saved for offline use, so that an image a
@@ -91,6 +120,7 @@ const precached = [
 	)
 ];
 const precachedSet = new Set(precached);
+const shellSet = new Set(shell);
 
 /** Every page and page data file of this build, by collection, that may be saved. */
 const collectionFiles = new Map<CollectionIdentifier, string[]>(
@@ -110,12 +140,124 @@ self.addEventListener('install', (event) => {
 	event.waitUntil(
 		(async () => {
 			const cache = await caches.open(cacheName);
-			await cache.addAll(precached);
 			await removeWithdrawnPages();
+			await carryForward(cache, await thisBuildFingerprints(cache));
+			const missing: string[] = [];
+			for (const path of precached) {
+				if (!(await cache.match(path))) missing.push(path);
+			}
+			await cache.addAll(missing);
 			// No skipWaiting here: the new version waits for the reader (see above).
 		})()
 	);
 });
+
+/**
+ * This build's fingerprints: from this build's cache, or else from the
+ * server, if the server still has this build. Undefined when they cannot be
+ * had; then nothing is carried forward and saved files are downloaded again.
+ */
+async function thisBuildFingerprints(cache: Cache): Promise<Fingerprints | undefined> {
+	try {
+		const saved = await cache.match(fingerprintsKey);
+		if (saved) return (await saved.json()) as Fingerprints;
+		const response = await fetch(fingerprintsAddress, { cache: 'no-store' });
+		if (!response.ok) return undefined;
+		const fingerprints = (await response.clone().json()) as Fingerprints;
+		if (fingerprints.version !== version) return undefined;
+		await cache.put(fingerprintsKey, response);
+		return fingerprints;
+	} catch {
+		return undefined;
+	}
+}
+
+/**
+ * Copies every saved file from older builds' caches whose content is the
+ * same in this build, so an update downloads only what changed. Script,
+ * style and font files carry a hash of their content in their names, so one
+ * with a name in this build is the same file. A page or data file is the same
+ * when its fingerprint, taken with the build blanked out, matches this
+ * build's; a page then gets this build's version written back in, which makes
+ * it the very file the server holds. Saved pages that changed are listed, so
+ * the next page load saves them again from this build (offline-resume).
+ * Pages read after this runs are carried forward when the update is applied.
+ */
+async function carryForward(cache: Cache, fingerprints: Fingerprints | undefined): Promise<void> {
+	const changed = new Set(await changedPages(cache));
+	try {
+		for (const name of await caches.keys()) {
+			if (name === cacheName || !name.startsWith(cachePrefix)) continue;
+			const oldVersion = name.slice(cachePrefix.length);
+			const oldCache = await caches.open(name);
+			for (const request of await oldCache.keys()) {
+				const path = new URL(request.url).pathname;
+				if (internalKeys.has(path) || (await cache.match(path, { ignoreSearch: true }))) continue;
+				const response = await oldCache.match(request);
+				if (!response) continue;
+				if (shellSet.has(path)) {
+					await cache.put(path, response);
+					continue;
+				}
+				const expected = fingerprints?.files[path];
+				if (!fingerprints || !expected) continue;
+				if ((response.headers.get('content-type') ?? '').includes('text/html')) {
+					const blanked = withoutBuild(await response.text(), oldVersion);
+					if ((await fingerprintOf(blanked)) === expected) {
+						const page = withBuild(blanked, fingerprints.version, fingerprints.startName);
+						await cache.put(path, new Response(page, { headers: { 'content-type': 'text/html; charset=utf-8' } }));
+						changed.delete(path);
+					} else {
+						changed.add(path);
+					}
+				} else if ((await fingerprintOf(await response.clone().arrayBuffer())) === expected) {
+					await cache.put(path, response);
+					changed.delete(path);
+				} else {
+					changed.add(path);
+				}
+			}
+		}
+	} catch {
+		// Storage or a read failed: whatever was not carried forward is downloaded again.
+	}
+	await setChangedPages(cache, [...changed]);
+}
+
+async function changedPages(cache: Cache): Promise<string[]> {
+	const saved = await cache.match(changedKey);
+	if (!saved) return [];
+	try {
+		return (await saved.json()) as string[];
+	} catch {
+		return [];
+	}
+}
+
+async function setChangedPages(cache: Cache, paths: string[]): Promise<void> {
+	if (paths.length === 0) {
+		await cache.delete(changedKey);
+		return;
+	}
+	await cache.put(changedKey, new Response(JSON.stringify(paths), { headers: { 'content-type': 'application/json' } }));
+}
+
+/** Saves again, from this build, the saved pages that changed in it. */
+async function saveChangedPages(): Promise<void> {
+	const cache = await caches.open(cacheName);
+	const left: string[] = [];
+	for (const path of await changedPages(cache)) {
+		if (!builtPaths.has(path) || (await cache.match(path))) continue;
+		try {
+			const response = await fetch(path);
+			if (await isFromThisBuild(response)) await cache.put(path, response);
+			else left.push(path);
+		} catch {
+			left.push(path);
+		}
+	}
+	await setChangedPages(cache, left);
+}
 
 /**
  * A page that is not in this build has been withdrawn or moved. It is removed
@@ -132,7 +274,7 @@ async function removeWithdrawnPages(): Promise<void> {
 		for (const request of await oldCache.keys()) {
 			const path = new URL(request.url).pathname;
 			const isPage = !path.startsWith('/_app/') && !/\.[a-z0-9]+$/.test(path.replace(/\/__data\.json$/, ''));
-			if (isPage && path !== keptCollectionsKey && !builtPaths.has(path)) await oldCache.delete(request);
+			if (isPage && !internalKeys.has(path) && !builtPaths.has(path)) await oldCache.delete(request);
 		}
 	}
 }
@@ -141,6 +283,8 @@ self.addEventListener('activate', (event) => {
 	event.waitUntil(
 		(async () => {
 			const cache = await caches.open(cacheName);
+			// Pages the reader opened while this version waited.
+			await carryForward(cache, await thisBuildFingerprints(cache));
 			const currentFiles = new Set(immutable.map((file) => absolute(file.path)));
 			for (const name of await caches.keys()) {
 				if (name === cacheName) continue;
@@ -325,6 +469,7 @@ function runSave(id: CollectionIdentifier, port: MessagePort | undefined): Promi
 async function removeCollection(id: CollectionIdentifier): Promise<void> {
 	const cache = await caches.open(cacheName);
 	await setKept(cache, id, false);
+	await setChangedPages(cache, (await changedPages(cache)).filter((path) => collectionOf(path) !== id));
 	for (const request of await cache.keys()) {
 		const path = new URL(request.url).pathname;
 		if (builtPaths.has(path) && collectionOf(path) === id && !precachedSet.has(path)) {
@@ -355,6 +500,7 @@ async function answer(request: WorkerRequest, port: MessagePort | undefined): Pr
 				await removeCollection(request.collection);
 				break;
 			case 'offline-resume': {
+				await saveChangedPages();
 				const kept = await keptCollections(await caches.open(cacheName));
 				for (const id of kept) await runSave(id, port);
 				break;
