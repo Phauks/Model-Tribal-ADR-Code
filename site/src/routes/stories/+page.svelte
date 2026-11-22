@@ -74,7 +74,7 @@
 	{/if}
 
 	<p class="small muted">
-		Stories are recorded under the project’s decision records <a href="https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/decisions/0019-story-records.md">0019</a> and <a href="https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/decisions/0027-show-stories-while-nations-review-them.md">0027</a>. More are being gathered. A nation or teller can <a href="/requests?kind=contribute&record=stories">offer a story</a>, or ask for one to be corrected or removed.
+		More stories are being gathered. A nation or teller can <a href="/requests?kind=contribute&record=stories">offer a story</a>, or ask for one to be corrected or removed.
 	</p>
 </div>
 

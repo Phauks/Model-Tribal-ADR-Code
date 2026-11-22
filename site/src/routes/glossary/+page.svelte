@@ -59,7 +59,7 @@
 		</section>
 	{/each}
 
-	<SourceList sources={data.sources} introduction="Each source below is followed by the entries on this page that cite it." />
+	<SourceList sources={data.sources} />
 </div>
 
 <style>

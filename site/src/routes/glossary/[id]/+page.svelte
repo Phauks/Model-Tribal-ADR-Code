@@ -57,5 +57,5 @@
 		</ul>
 	{/if}
 
-	<SourceList sources={data.sources} introduction="Each source below is followed by the parts of this entry that cite it." />
+	<SourceList sources={data.sources} />
 </div>

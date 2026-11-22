@@ -1,7 +1,7 @@
 /**
  * The stories as the website shows them: the list at /stories and one page
  * per story at /stories/<id>, built from content/stories/ when the site is
- * built (decision records 0019 and 0027). A record added to that folder
+ * built (decision records 0019 and 0028). A record added to that folder
  * appears on the next build with no change here.
  *
  * The project never retells or summarizes a story. A page shows the story's

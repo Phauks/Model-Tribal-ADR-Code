@@ -154,7 +154,7 @@
 		</dl>
 	{/if}
 
-	<SourceList sources={story.sources} introduction="Each source below is followed by the parts of this page that come from it." />
+	<SourceList sources={story.sources} />
 </div>
 
 <style>
