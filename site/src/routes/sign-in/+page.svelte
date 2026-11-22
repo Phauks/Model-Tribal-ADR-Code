@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PasswordInput from '#lib/components/PasswordInput.svelte';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -89,10 +90,9 @@
 				<div class="field">
 					<label for="password">Password</label>
 					<p class="hint" id="password-hint">Only if you chose one on your profile.</p>
-					<input
+					<PasswordInput
 						id="password"
 						name="password"
-						type="password"
 						autocomplete="current-password"
 						aria-describedby="password-hint"
 					/>
