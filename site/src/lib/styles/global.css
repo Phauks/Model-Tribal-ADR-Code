@@ -846,6 +846,26 @@ sup.citation {
 :root:root[data-contrast='more'] {
 	--color-ink-muted: var(--color-ink);
 	--color-line: var(--color-control-border);
+	--color-scrollbar-thumb: var(--color-ink);
+}
+
+/*
+ * Scrollbars: a teal thumb on a track the color of the side rails
+ * (DESIGN.md, section 6, "Scrollbars"). scrollbar-color is inherited, so
+ * this one rule reaches every box that scrolls: the page, the sidebar, the
+ * search panel, the map and data tables, modals and dropdowns. The width is
+ * left to the browser, because a thin scrollbar is harder to grab. Forced
+ * colors mode resets scrollbar-color to the system's own colors; the rule
+ * below says so for browsers that do not do it themselves.
+ */
+:root {
+	scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
+}
+
+@media (forced-colors: active) {
+	:root {
+		scrollbar-color: auto;
+	}
 }
 
 /* Controls that need scripts are hidden when scripts do not run. */
