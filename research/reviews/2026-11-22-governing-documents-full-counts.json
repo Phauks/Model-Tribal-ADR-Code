@@ -1,0 +1,63 @@
+{
+ "links": 1577,
+ "script": {
+  "full-text": 758,
+  "contents-only": 250,
+  "needs-review": 166,
+  "links-to-document": 155,
+  "not-fetched": 137,
+  "contents-page": 77,
+  "error-or-empty": 34
+ },
+ "final": {
+  "the-document": 794,
+  "page-naming-only": 285,
+  "page-linking-to-it": 241,
+  "error-or-empty": 144,
+  "contents-page-with-text": 60,
+  "different-document": 25,
+  "cannot-tell": 16,
+  "generic-page": 8,
+  "wrong-nation": 4
+ },
+ "tier": {
+  "text at the link": 685,
+  "text one step away": 410,
+  "names the document only": 285,
+  "link problem": 197
+ },
+ "tier_by_verification": {
+  "link problem / title-only": 197,
+  "names the document only / title-only": 285,
+  "text at the link / bulk-import": 1,
+  "text at the link / inferred": 6,
+  "text at the link / read-in-full": 1,
+  "text at the link / title-only": 677,
+  "text one step away / read-in-full": 1,
+  "text one step away / title-only": 409
+ },
+ "contents_pages_with_linked_text": 49,
+ "shared_links": {
+  "https://narf.org/nill/triballaw/climate/index.html": 34
+ },
+ "calibration": {
+  "contents-only -> cannot-tell": 5,
+  "contents-only -> contents-page-with-text": 2,
+  "contents-only -> page-linking-to-it": 3,
+  "contents-only -> page-naming-only": 5,
+  "contents-page -> contents-page-with-text": 17,
+  "contents-page -> page-linking-to-it": 1,
+  "contents-page -> page-naming-only": 2,
+  "full-text -> contents-page-with-text": 1,
+  "full-text -> page-linking-to-it": 4,
+  "full-text -> the-document": 20,
+  "links-to-document -> contents-page-with-text": 7,
+  "links-to-document -> page-linking-to-it": 8
+ },
+ "verification_levels": {
+  "title-only": 1568,
+  "inferred": 6,
+  "read-in-full": 2,
+  "bulk-import": 1
+ }
+}

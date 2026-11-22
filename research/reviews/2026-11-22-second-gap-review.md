@@ -183,9 +183,9 @@ copy or the archived one is downloaded by hand.
 
 ## Governing documents (row 10)
 
-The script downloaded each of the 1,577 governing document links and
-confirmed a link automatically when the page names both the nation and the
-kind of document.
+Follow-up, Nov. 22: every one of the 1,577 links has since been checked, not just a sample; see the [governing document link review](2026-11-22-governing-documents-full.md).
+
+The script downloaded each of the 1,577 governing document links and confirmed a link automatically when the page names both the nation and the kind of document.
 
 | Step | Links |
 | --- | ---: |
