@@ -137,6 +137,28 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
+official_images:
+- kind: logo
+  image_link: https://northforkrancheria-nsn.gov/wp-content/uploads/2020/07/logo.png
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: ebd7d4032f08afec8dbe948c8ab1713b400e1679b3801d097ca0e72f57c9ff95
+  private_copy: nation-images/northfork-rancheria-of-mono-indians-of-california/logo-ebd7d4032f08.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2026 - North Fork Rancheria
+      link: https://northforkrancheria-nsn.gov/
+      source: northforkrancheria-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: northforkrancheria-nsn-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 languages:
 - name: Nim (Mono)
   language_tag: mnr

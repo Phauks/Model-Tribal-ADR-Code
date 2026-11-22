@@ -139,6 +139,28 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – Ute Indian Tribe". Found by scripts/tribes/find_contacts.py.
+official_images:
+- kind: seal
+  image_link: https://utetribe.com/wp-content/uploads/2025/02/cropped-GreatTribalSeal-153x156.jpg
+  retrieved: '2026-11-22'
+  media_type: image/jpeg
+  sha256: 9a71780140f44f6d6ddfbd6bd757fa44f47bf8313d0ac6dbef6e148ad018ab1a
+  private_copy: nation-images/ute-indian-tribe-of-the-uintah-and-ouray-reservation/seal-9a71780140f4.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Ute Indian Tribe
+      link: https://utetribe.com/
+      source: ute-indian-tribe-of-the-uintah-and-ouray-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ute-indian-tribe-of-the-uintah-and-ouray-home
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Uintah & Ouray Agency

@@ -15,6 +15,10 @@
  *   its exact words. An excerpt held privately (Tribal law, a court opinion,
  *   or a publisher that asks to be asked first) is shown as its pinpoint
  *   only, with the telling's link.
+ * - The whole story is shown (decision record 0034) only when its telling is
+ *   shown and the record says why no permission is needed or that permission
+ *   was given: a public-domain telling, a nation's own law the site serves
+ *   (decision record 0031), or a telling permitted to be published in full.
  */
 
 export type AccessLevelName = 'public' | 'nation-review-first' | 'embargoed' | 'restricted';
@@ -57,6 +61,24 @@ export interface StoryExcerpt {
 	sha256: string;
 }
 
+/** A passage left out of a story's full text, marked where it was. */
+export interface StoryOmission {
+	omitted: string;
+	locator: string;
+}
+
+export interface StoryFullText {
+	telling: string;
+	locator: string;
+	basis: 'public-domain' | 'nation-law' | 'permission';
+	basis_note: string;
+	transcribed_from: string;
+	paragraphs: (string | StoryOmission)[];
+	notes?: string[];
+	words: number;
+	sha256: string;
+}
+
 export interface StoryProtocol {
 	kind: string;
 	statement: string;
@@ -74,6 +96,7 @@ export interface StoryRecord {
 	kind: string;
 	length?: string;
 	excerpts?: StoryExcerpt[];
+	full_text?: StoryFullText;
 	methods?: string[];
 	topics?: string[];
 	tellings: StoryTelling[];
@@ -148,6 +171,21 @@ export function shownExcerpts(
 				level === 'publish-in-full' || (level === 'quote' && excerpt.words <= maximumExcerptWords);
 			return { ...excerpt, quoted: Boolean(excerpt.text) && !excerpt.held_privately && mayQuote };
 		});
+}
+
+/**
+ * The story's full text, when it may be shown: its telling is shown, and a
+ * full text resting on permission has a telling permitted to be published in
+ * full. The other grounds (public domain, a nation's law) are checked against
+ * the source records when the records are validated (scripts/validate_records.py).
+ */
+export function shownFullText(record: StoryRecord, today: string): StoryFullText | undefined {
+	const fullText = record.full_text;
+	if (!fullText) return undefined;
+	const telling = shownTellings(record, today).find((candidate) => candidate.id === fullText.telling);
+	if (!telling) return undefined;
+	if (fullText.basis === 'permission' && telling.permitted_uses.level !== 'publish-in-full') return undefined;
+	return fullText;
 }
 
 /** Every source key the shown stories cite, so the build can format their citations. Used by vite.config.ts. */

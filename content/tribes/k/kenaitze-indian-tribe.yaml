@@ -164,6 +164,28 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact Us | Kenaitze Indian Tribe". Found by scripts/tribes/find_contacts.py.
+official_images:
+- kind: seal
+  image_link: https://kenaitze.b-cdn.net/wp-content/uploads/Seal-for-Web-Story-600x600.jpg
+  retrieved: '2026-11-22'
+  media_type: image/jpeg
+  sha256: 610071f72b9bb596713778b9c3020e6c7b5107d18cdd19951527bcba131ee9ff
+  private_copy: nation-images/kenaitze-indian-tribe/seal-610071f72b9b.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Kenaitze Indian Tribe • All rights reserved
+      link: https://www.kenaitze.org/
+      source: kenaitze-indian-tribe-website
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kenaitze-seal-makeover
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 languages:
 - name: Dena'ina
   language_tag: tfn

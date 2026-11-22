@@ -108,6 +108,29 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
+official_images:
+- kind: logo
+  alternative_text: Potter Valley Tribe Header Logo Refresh
+  image_link: https://pottervalleytribe.com/wp-content/uploads/2026/08/Potter-Valley-Tribe-Header-Logo-Refresh.png
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 2e3766188cc9c91b98dfb30d6f4c61e0806b395f336fdd87657c3e2c5d2e03f8
+  private_copy: nation-images/potter-valley-tribe/logo-2e3766188cc9.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Potter Valley Tribe
+      link: https://pottervalleytribe.com/
+      source: pottervalleytribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pottervalleytribe-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

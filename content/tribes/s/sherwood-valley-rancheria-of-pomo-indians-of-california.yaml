@@ -121,6 +121,22 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact Us". Its title is "SVBPI Contact Us - Sherwood Valley Band of Pomo Indians". Found by scripts/tribes/find_contacts.py.
+official_images:
+- kind: logo
+  alternative_text: Picture
+  image_link: https://www.sherwoodvalleybandofpomo.com/uploads/5/6/4/0/56404189/svr-logo_27_orig.jpg
+  retrieved: '2026-11-22'
+  media_type: image/jpeg
+  sha256: d7b2ec7b9ecabef6f6f918ee05433cb547dc8660e0000ce5c60649ea7a1b3eb6
+  private_copy: nation-images/sherwood-valley-rancheria-of-pomo-indians-of-california/logo-d7b2ec7b9eca.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals: []
+  source: sherwoodvalleybandofpomo-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

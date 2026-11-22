@@ -1,0 +1,51 @@
+profile: content/tribes/n/native-village-of-point-hope.yaml
+topic: official-images
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.north-slope.org/our-communities/point-hope/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: not-found
+  reason: scripts/tribes/find_official_images.py read the home page and any seal, logo and terms pages
+    and found no image that is clearly the nation's own seal or logo (only consortium, borough, corporation,
+    vendor or photo images, or none).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.north-slope.org/our-communities/point-hope/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: not-found
+  reason: 'Rendered in a headless Chromium browser (Playwright); no usable image: the header and logo
+    images were maps, photos, icons or another organization''s mark, or did not download.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikipedia
+  address: https://en.wikipedia.org/wiki/Native_Village_of_Point_Hope
+  query: infobox image, seal, logo and flag fields
+  outcome: not-found
+  reason: The article's infobox has no seal or logo (at most a photo, map or flag).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikimedia-commons
+  address: https://commons.wikimedia.org/wiki/Category:Official_seals_of_Native_American_tribes
+  query: files in the categories of official seals, tribal insignia, logos, coats of arms and flags of
+    Native American tribes (three levels down), matched to the nation's name
+  outcome: not-found
+  reason: No seal or logo file matched the nation's name; no flag file either.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: https://www.north-slope.org/our-communities/point-hope/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: error
+  reason: An AI lookup helper stopped before finishing because its shared page-fetch limit ran out.
+next_steps: A person could check the nation's social media pages, newsletters or annual reports, or ask
+  the nation's office for a copy and permission.

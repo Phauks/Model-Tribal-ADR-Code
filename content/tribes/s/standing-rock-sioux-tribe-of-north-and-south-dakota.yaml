@@ -145,6 +145,21 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact - Standing Rock Sioux Tribe". Found by scripts/tribes/find_contacts.py.
+official_images:
+- kind: logo
+  image_link: https://www.standingrock.org/wp-content/uploads/2021/09/standingrocksiouxtribe-Crest-Logo-WHT.png
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 2fe093d461a1bc32cd874b397da5a8f6dd876d44368cb29b44b845a4aea16495
+  private_copy: nation-images/standing-rock-sioux-tribe-of-north-and-south-dakota/logo-2fe093d461a1.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals: []
+  source: standingrock-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 languages:
 - name: Dakota
   language_tag: dak

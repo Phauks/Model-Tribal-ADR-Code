@@ -64,6 +64,24 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact Us - Indian Tribe | Indian Tribe". Found by scripts/tribes/find_contacts.py.
+official_images:
+- kind: logo
+  alternative_text: Beaver Creek Tribe logo
+  image_link: https://upload.wikimedia.org/wikipedia/en/8/86/Beaver_Creek_Indians_-_Official_Logo.png
+  credit: A copy on English Wikipedia, which uses it as a non-free logo and gives the Native South Carolina
+    website as its source.
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 48e36b990c288b49f446f0beb7d2b7fb9ca74a66cc373f046c375953c6e38539
+  private_copy: nation-images/beaver-creek-indians/logo-48e36b990c28.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals: []
+  source: wikipedia-beaver-creek-indians-official-logo
+  confidence: medium
+  as_of: '2026-11-22'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -58,15 +58,12 @@ describe('contact card', () => {
 		expect(fax.link).toBeUndefined();
 	});
 
-	it('says when the mailing address repeats the physical address', () => {
+	it('writes out a mailing address that repeats the physical address', () => {
 		const { offices } = contactCards([
 			{ kind: 'physical-address', value: '50 Tu Su Lane, Bishop, CA 93514', label },
 			{ kind: 'mailing-address', value: '50 Tu Su Lane, Bishop, CA 93514', label }
 		]);
-		expect(offices[0].rows[1]).toMatchObject({
-			lines: ['Same as physical address'],
-			link: undefined
-		});
+		expect(offices[0].rows[1].lines).toEqual(['50 Tu Su Lane', 'Bishop, CA 93514']);
 	});
 
 	it('folds a directory address that leads to the official site into a note', () => {

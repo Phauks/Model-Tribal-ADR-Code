@@ -160,12 +160,43 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact - Wichita and Affiliated Tribes". Found by scripts/tribes/find_contacts.py.
+official_images:
+- kind: logo
+  alternative_text: Wichita and Affiliated Tribes
+  image_link: https://wichitatribe.com/wp-content/uploads/2023/07/Wichita-Logo-Web-v2b.png
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 66a1ffce3e7ee9fe1fdebe9acf71b0f21e7716257726f59f78552e5fb70efbdb
+  private_copy: nation-images/wichita-and-affiliated-tribes/logo-66a1ffce3e7e.png
+  reuse:
+    status: restricted
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Wichita and Affiliated Tribes.
+      link: https://wichitatribe.com/
+      source: wichita-and-affiliated-tribes-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89003191
+      serial_number: '89003191'
+      note: The nation filed a similar design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+  source: wichita-and-affiliated-tribes-home
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 tribal_insignia_database_entries:
 - serial_number: '89003191'
   wordmark: SEAL OF THE WICHITA AND AFFILIATED TRIBES
   filed: '2024-07-19'
   record_link: https://tsdr.uspto.gov/#caseNumber=89003191&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: similar-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'
