@@ -123,8 +123,8 @@ too. Three ways were compared (project analysis):
 | Copies outside Cloudflare | The git copy, and every clone of it | None, unless exports are scheduled | Git |
 | Checks before publishing | Run by the website at publish time (below) | Same | The existing pull request checks |
 
-**Recommendation (project analysis):** the bucket is the home for essays, and
-git keeps an automatic copy. This gives the lead author's one-step publishing
+**Chosen by the lead author (Nov. 22, 2026):** the bucket is the home for
+essays, and git keeps an automatic copy. This gives the lead author's one-step publishing
 from the bucket while the print build, an outside backup and a public history
 keep working with no new secrets.
 
@@ -387,15 +387,17 @@ proposal.
 
 ## Open questions for the lead author
 
-1. Approve the approach (ProseMirror + Yjs on Durable Objects; essays live in
-   the bucket, with an automatic copy in git)?
+1. Approve the rest of the approach (ProseMirror + Yjs on Durable Objects,
+   comments, history, the build order)?
 2. Keep underline, and if so, how should the style guide limit it?
 3. How published essays count toward the content version track
    ([decision record 0003](decisions/0003-three-version-tracks.md)). The
    proposal: each essay has its own version numbers, and the book's copyright
    page lists the version of each essay it prints.
 
-Settled: the account is on the Workers Paid plan (lead author, Nov. 22, 2026).
+Settled by the lead author on Nov. 22, 2026: the account is on the Workers
+Paid plan, and published essays live in the bucket with an automatic copy in
+git.
 
 ## Evidence
 
