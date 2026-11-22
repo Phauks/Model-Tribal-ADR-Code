@@ -59,7 +59,9 @@ Write a file even when you found nothing (empty `courts`, with the searches). Do
 
 The WebFetch tool has a small shared hourly budget that is already used up. Do NOT use WebFetch. Read pages with the Bash tool instead:
 
-    python3 -I scripts/review/individual_courts_fetch.py URL
-    python3 -I scripts/review/individual_courts_fetch.py URL --find court judicial judge appeal
+```
+python3 -I scripts/review/individual_courts_fetch.py URL
+python3 -I scripts/review/individual_courts_fetch.py URL --find court judicial judge appeal
+```
 
 It prints the HTTP status, final URL, page title, the visible text (or only the lines containing the --find words) and the page's links with absolute URLs, so you can follow a "Tribal Court" or "Judicial" link. Quotes you record must be copied from this printed text exactly (the merge step re-checks them against the saved page). If it prints FETCH FAILED or a 403/503/challenge page, record the search as `blocked` or `error` and move on. If it prints FRAMES, fetch the frame URLs. Use WebSearch only to discover the right page address.
