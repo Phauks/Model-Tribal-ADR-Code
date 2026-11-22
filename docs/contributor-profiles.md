@@ -60,7 +60,7 @@ choice too.
 | --- | --- | --- | --- |
 | About you | Given name or names | Yes | To address the person and print a credit |
 | About you | Family name | No | Only to sort the list of credits. "Not everyone’s name fits the first-name, last-name format,"[^govuk-names] and the W3C advises "don't require that people supply a family name."[^w3c-names] A person with one name writes it in the first box |
-| About you | Adult where they live | Yes | Registration on the website is for adults; young people help with a parent or guardian through the request form and the young contributor consent form, and the website takes nothing from a child under 13 ([docs/contributions.md](contributions.md#contributors-under-the-age-of-majority)) |
+| About you | Adult where they live | Yes | Registration on the website is for adults; young people help with a parent or guardian through the request form and the consent for minors form, and the website takes nothing from a child under 13 ([docs/contributions.md](contributions.md#contributors-under-the-age-of-majority)) |
 | Contact | Email address | Comes from sign-in | Proved by the sign-in code, so it cannot be mistyped or claimed by someone else |
 | Contact | Phone number | Only if the person asks to be called or texted | "Only collect phone numbers from people if you genuinely need them,"[^govuk-phone] in any format, with country or area code[^govuk-phone] |
 | Contact | Best way to reach you | No (email by default) | GOV.UK: "Not everyone has or can use a phone, so make sure you give users a choice about how they can be contacted."[^govuk-phone] |
@@ -83,7 +83,7 @@ authority to control, [decision record 0001](decisions/0001-adopt-care-principle
 
 | Choice | Next |
 | --- | --- |
-| Write an essay or commentary | A short biography for the list of contributors, and a co-author agreement before the writing is used ([contributions.md](contributions.md#forms-not-drafted-here)). Drafts are edited in the workspace once the lead author gives access |
+| Write an essay or commentary | A short biography for the list of contributors, and a co-author agreement before the writing is used ([contributions.md](contributions.md#forms-not-yet-drafted)). Drafts are edited in the workspace once the lead author gives access |
 | Review drafts | Workspace access, given by the lead author |
 | Share knowledge or experience | A filing with its own contributor statement for anything shared ([contributions.md](contributions.md)). Registering never counts as permission to use material |
 | Find and check sources | Access to sources and research notes |
@@ -147,13 +147,7 @@ A declined registration is deleted, with its answers and every confirmed version
 
 ## Leaving
 
-The person can delete their profile from the profile page at any time. That
-deletes their answers and every confirmed version at once; the history keeps
-only that a profile was deleted. A credit already printed cannot be recalled,
-and the next edition leaves it out (the same rule as
-[contributions.md](contributions.md#change-restriction-and-withdrawal)).
-Workspace access is separate and is ended by the lead author on the People
-page.
+The person can delete their profile from the profile page at any time. That deletes their answers and every confirmed version at once; the history keeps only that a profile was deleted. A credit already printed cannot be recalled, and the next edition leaves it out (the same rule as [contributions.md](contributions.md#changes-and-withdrawal)). Workspace access is separate and is ended by the lead author on the People page.
 
 ## How it is built
 
