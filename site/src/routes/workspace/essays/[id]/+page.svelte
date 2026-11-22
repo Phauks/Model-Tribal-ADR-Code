@@ -5,6 +5,20 @@
 	let { data, form }: PageProps = $props();
 
 	const originLabels = { editor: 'Saved', git: 'Brought in from git', restore: 'Restored' } as const;
+
+	// Versions the editor saved by itself on an essay page come in runs; a
+	// run by one person shows its newest version, with the rest folded under it.
+	type Row = (typeof data.versions)[number];
+	const isAutoSave = (row: Row) => row.note === 'Auto-saved' && row.published.length === 0;
+	const groups = $derived.by(() => {
+		const result: { row: Row; folded: Row[] }[] = [];
+		for (const row of data.versions) {
+			const last = result.at(-1);
+			if (last && isAutoSave(row) && isAutoSave(last.row) && last.row.by === row.by) last.folded.push(row);
+			else result.push({ row, folded: [] });
+		}
+		return result;
+	});
 	let compareFrom = $state<number | undefined>(undefined);
 	let compareTo = $state<number | undefined>(undefined);
 	$effect.pre(() => {
@@ -55,13 +69,23 @@
 
 <h2>Saved versions</h2>
 <ol class="versions" reversed>
-	{#each data.versions as row (row.number)}
-		<li>
+	{#each groups as { row, folded } (row.number)}
+		<li value={row.number}>
 			<p>
 				<strong>Version {row.number}</strong>{#if row.published.length > 0} <span class="tag">published</span>{/if}
-				<span class="small muted">{originLabels[row.origin]} by {row.by}, {row.at}</span>
+				<span class="small muted">{isAutoSave(row) ? `Saved by itself for ${row.by}` : `${originLabels[row.origin]} by ${row.by}`}, {row.at}</span>
 			</p>
-			{#if row.note}<p class="small">“{row.note}”</p>{/if}
+			{#if row.note && !isAutoSave(row)}<p class="small">“{row.note}”</p>{/if}
+			{#if folded.length > 0}
+				<details class="small">
+					<summary>{folded.length} earlier {folded.length === 1 ? 'save' : 'saves'} made by itself</summary>
+					<ul>
+						{#each folded as earlier (earlier.number)}
+							<li><a href="/workspace/essays/{data.identifier}/versions/{earlier.number}">Version {earlier.number}</a>, {earlier.at}</li>
+						{/each}
+					</ul>
+				</details>
+			{/if}
 			<div class="actions">
 				<a class="small" href="/workspace/essays/{data.identifier}/versions/{row.number}">Read</a>
 				{#if data.canPublish}
