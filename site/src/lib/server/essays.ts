@@ -257,6 +257,8 @@ export interface SaveInput {
 	/** Who saved it; null when the site saved text that came from git. */
 	personIdentifier: string | null;
 	note?: string | null;
+	/** Save a new version even when the text is the same as the newest one's: naming it ("Name this version"). */
+	evenIfUnchanged?: boolean;
 	origin: VersionRow['origin'];
 	/** For a new essay. */
 	part?: EssayPart;
@@ -281,7 +283,7 @@ export async function saveVersion(
 	if ((latest?.number ?? null) !== input.basedOn) throw new SaveConflict(latest?.number ?? 0);
 
 	const sha256 = await sha256Hex(text);
-	if (latest && latest.sha256 === sha256) return { version: latest, unchanged: true };
+	if (latest && latest.sha256 === sha256 && !input.evenIfUnchanged) return { version: latest, unchanged: true };
 
 	const number = (latest?.number ?? 0) + 1;
 	const objectKey = `essays/${input.identifier}/versions/${number}-${sha256.slice(0, 12)}.md`;
@@ -351,14 +353,6 @@ export async function saveVersion(
 		},
 		unchanged: false
 	};
-}
-
-/**
- * Gives a saved version a note ("Name this version" in the editor). Only the
- * note changes; the text of a version never does.
- */
-export async function nameVersion(database: D1Database, identifier: string, number: number, note: string): Promise<void> {
-	await database.prepare('UPDATE essay_versions SET note = ? WHERE essay_identifier = ? AND number = ?').bind(note, identifier, number).run();
 }
 
 /** Publishes a saved version: it becomes the essay's page. */

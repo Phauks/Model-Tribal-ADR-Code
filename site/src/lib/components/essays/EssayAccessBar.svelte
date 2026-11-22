@@ -42,11 +42,13 @@
 		{/if}
 	</p>
 	<div class="controls">
-		<label class="small" for="essay-view">Show</label>
-		<select id="essay-view" bind:value={view} disabled={mode === 'editing' || !state.draft}>
-			<option value="published">Published only</option>
-			<option value="drafts">With drafts</option>
-		</select>
+		{#if state.draft}
+			<label class="small" for="essay-view">Show</label>
+			<select id="essay-view" bind:value={view} disabled={mode === 'editing'}>
+				<option value="published">Published only</option>
+				<option value="drafts">With drafts</option>
+			</select>
+		{/if}
 		{#if state.canEdit}
 			<label class="small" for="essay-mode">Mode</label>
 			<select id="essay-mode" bind:value={mode}>

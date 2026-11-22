@@ -7,8 +7,8 @@
 	// On an essay page (EssayArticle.svelte) it saves by itself: a few
 	// seconds after typing stops, at least every half minute while typing
 	// goes on, and when the tab is hidden or the editor closes. Those
-	// versions carry the note "Auto-saved"; "Name this version" gives the
-	// newest one a note of its own.
+	// versions carry the note "Auto-saved"; "Name this version" saves the
+	// text as it stands as a version with a note of its own.
 	import 'prosemirror-view/style/prosemirror.css';
 	import { onDestroy, onMount, tick, untrack } from 'svelte';
 	import { baseKeymap, lift, setBlockType, toggleMark, wrapIn } from 'prosemirror-commands';
@@ -501,7 +501,9 @@
 			body: JSON.stringify({
 				text: file,
 				basedOn: saveOver && conflict ? conflict.latest : basedOn,
-				note: automatic ? 'Auto-saved' : note
+				note: automatic ? 'Auto-saved' : note,
+				// On an essay page the button names the text as it stands, saved or not.
+				name: autoSave && !automatic
 			})
 		}).catch(() => null);
 		saving = false;
