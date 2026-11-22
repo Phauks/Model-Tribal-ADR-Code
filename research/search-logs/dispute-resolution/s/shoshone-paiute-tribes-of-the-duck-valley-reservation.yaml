@@ -1,0 +1,44 @@
+profile: content/tribes/s/shoshone-paiute-tribes-of-the-duck-valley-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/shoshonepaiute/
+  query: 10.1 Informal Dispute Resolution
+  outcome: found
+  reason: The page lists the chapter and section headings but has no link to the code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://shopaitribes.org/
+  query: law and order code
+  outcome: not-found
+  reason: The site lists four ordinances in its news section and no law and order code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://shopaitribes.org/court-home/
+  query: dispute resolution
+  outcome: not-found
+  reason: The Tribal Courts page links to SORNA and contact information only.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://narf.org/nill/codes/shoshonepaiute/
+  query: Shoshone-Paiute Duck Valley Law and Order Code Chapter Ten Informal Dispute Resolution
+  outcome: not-found
+  reason: Results did not include the code text for Chapter Ten.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://narf.org/nill/codes/shoshonepaiute/
+  outcome: not-found
+  reason: Retry found no Law and Order Code text online.

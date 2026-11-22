@@ -60,11 +60,17 @@ def evidence_tier(item):
     """How closely the underlying text was read, from the fact's own note.
 
     Entries in `database_listings` are bulk database records by definition
-    (decision record 0015); older notes named the tier in words.
+    (decision record 0015). The `verification` level decides when it is set;
+    older notes named the tier in words.
     """
     note = item.get("note") or ""
-    if item.get("verification") == "bulk-import" or "Bulk record from the NCORJ" in note:
+    verification = item.get("verification")
+    if verification == "bulk-import" or "Bulk record from the NCORJ" in note:
         return "bulk_database_record"
+    if verification == "read-in-full":
+        return "text_read"
+    if verification == "title-only":
+        return "section_title_only"
     lowered = note.lower()
     if "section title" in lowered or "section headings" in lowered or "section or chapter title" in lowered:
         return "section_title_only"

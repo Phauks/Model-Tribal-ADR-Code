@@ -1,0 +1,25 @@
+profile: content/tribes/s/spirit-lake-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/a193dd7bbd61a37b0297.txt
+  query: Peacemakers Qualifications Appointment Authorities
+  outcome: found
+  reason: Section 21-1-110 is in the captured Title 21 text.
+  records:
+  - content/tribes/s/spirit-lake-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
+  query: 21-1-110; 21-1-115
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/sl21.txt) and the section read directly.'
+  records:
+  - content/tribes/s/spirit-lake-tribe.yaml#dispute_resolution.provisions

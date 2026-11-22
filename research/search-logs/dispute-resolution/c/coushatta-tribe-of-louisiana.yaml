@@ -1,0 +1,35 @@
+profile: content/tribes/c/coushatta-tribe-of-louisiana.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Coushatta Tribe of Louisiana Arbitration Code resolution 2000-46 pdf
+  outcome: found
+  reason: The search returned the NILL page for Resolution 2000-46, which holds the text of the Arbitration
+    Code.
+  records:
+  - content/tribes/c/coushatta-tribe-of-louisiana.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.narf.org/nill/codes/coushatta/
+  outcome: not-found
+  reason: The NILL judicial codes index was not checked for a nation-hosted copy; no nation-hosted copy
+    was found in search.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: working copy downloaded during the reading (cous.html)
+  query: Resolution 2000-46
+  outcome: found
+  reason: Downloaded the NILL page with curl and read the whole resolution and the 11 sections of the
+    code from the HTML text.
+  records:
+  - content/tribes/c/coushatta-tribe-of-louisiana.yaml#dispute_resolution.provisions

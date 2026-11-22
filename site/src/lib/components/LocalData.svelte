@@ -1,27 +1,35 @@
 <script lang="ts">
 	// Settings, Data section (site/DESIGN.md, section 6, "Settings"): reset
-	// the reading settings, and delete what the site keeps on this device,
-	// all of it or chosen parts. Deleting asks once more before it runs,
-	// because it cannot be undone.
+	// the reading settings, export and import them as a file, and delete what
+	// the site keeps on this device, all of it or chosen parts. Importing and
+	// deleting ask once more before they run, because they replace or remove
+	// what is there.
+	import Download from '@lucide/svelte/icons/download';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import Upload from '@lucide/svelte/icons/upload';
 	import { tick } from 'svelte';
 	import { collections } from '#lib/offline-collections.ts';
-	import { controllingWorker, removeCollection } from '#lib/offline-saving.ts';
-	import { defaultPrintOptions, savePrintOptions } from '#lib/print-options.ts';
+	import { controllingWorker, offlineStatus, removeCollection } from '#lib/offline-saving.ts';
+	import { defaultPrintOptions, loadPrintOptions, savePrintOptions } from '#lib/print-options.ts';
+	import { buildReaderData, parseReaderData, readerDataFileName, type ReaderData } from '#lib/reader-data.ts';
+	import { loadSettings, loadTheme, saveSettings, saveTheme } from '#lib/reading-settings.ts';
 
 	type Part = 'settings' | 'print' | 'pages';
 
 	let {
 		headingLevel = 4,
 		onreset,
-		ondeleted
+		ondeleted,
+		onimported
 	}: {
 		headingLevel?: 3 | 4;
 		/** Puts the reading settings and theme back to their defaults. */
 		onreset: () => void;
 		/** Runs after a delete, so the parts of the dialog showing saved data can read it again. */
 		ondeleted?: () => void;
+		/** Runs after an import, so the dialog shows the imported settings. */
+		onimported?: () => void;
 	} = $props();
 
 	const parts: { id: Part; label: string; hint: string }[] = [
@@ -44,6 +52,59 @@
 	function listed(words: string[]): string {
 		if (words.length <= 1) return words.join('');
 		return `${words.slice(0, -1).join(', ')} and ${words.at(-1)}`;
+	}
+
+	let importing = $state<ReaderData | undefined>();
+	let importProblem = $state<string | undefined>();
+	let importInput: HTMLInputElement | undefined = $state();
+	let importQuestion: HTMLParagraphElement | undefined = $state();
+	const dateFormat = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' });
+
+	async function exportData(): Promise<void> {
+		let savedParts: ReaderData['savedParts'] = [];
+		if (controllingWorker()) {
+			const status = await offlineStatus().catch(() => undefined);
+			savedParts = status?.collections.filter((item) => item.kept).map((item) => item.id) ?? [];
+		}
+		const data = buildReaderData(loadSettings(), loadTheme(), loadPrintOptions(), savedParts);
+		const file = new Blob([`${JSON.stringify(data, null, '\t')}\n`], { type: 'application/json' });
+		const link = document.createElement('a');
+		link.href = URL.createObjectURL(file);
+		link.download = readerDataFileName();
+		link.click();
+		URL.revokeObjectURL(link.href);
+		message = `Exported to ${link.download}.`;
+	}
+
+	async function chooseFile(event: Event): Promise<void> {
+		const input = event.currentTarget as HTMLInputElement;
+		const file = input.files?.[0];
+		input.value = '';
+		message = undefined;
+		importProblem = undefined;
+		if (!file) return;
+		const data = file.size > 100_000 ? undefined : parseReaderData(await file.text());
+		if (!data) {
+			importProblem = 'That file is not a data file exported from this site. Choose a file whose name starts with model-tribal-adr-code-data.';
+			return;
+		}
+		importing = data;
+		await tick();
+		importQuestion?.focus();
+	}
+
+	function applyImport(): void {
+		if (!importing) return;
+		saveSettings(importing.settings);
+		saveTheme(importing.theme);
+		savePrintOptions(importing.printOptions);
+		const parts = collections.filter((collection) => importing?.savedParts.includes(collection.id)).map((collection) => collection.label);
+		message =
+			parts.length > 0
+				? `Imported. The file lists ${listed(parts)} as saved for offline reading; save ${parts.length === 1 ? 'it' : 'them'} above to have ${parts.length === 1 ? 'it' : 'them'} on this device too.`
+				: 'Imported your settings, theme and print choices.';
+		importing = undefined;
+		onimported?.();
 	}
 
 	function reset(): void {
@@ -90,6 +151,34 @@
 			Reset settings to defaults
 		</button>
 	</p>
+
+	<svelte:element this={heading} class="data-heading">Export and import</svelte:element>
+	<p class="hint">Carry your settings, theme, print choices and the list of parts saved for offline to another browser or device. The saved pages themselves are not in the file.</p>
+	{#if importing}
+		<div class="confirm confirm-import" role="group" aria-labelledby="local-data-import-question">
+			<p id="local-data-import-question" tabindex="-1" bind:this={importQuestion}>
+				<strong>Replace your settings, theme and print choices on this device with the ones in this file?</strong>
+				{#if importing.exported}It was exported {dateFormat.format(new Date(importing.exported))}.{/if}
+			</p>
+			<p class="actions">
+				<button class="button" type="button" onclick={applyImport}>Yes, replace</button>
+				<button class="button button-quiet" type="button" onclick={() => (importing = undefined)}>Cancel</button>
+			</p>
+		</div>
+	{:else}
+		<p class="transfer-actions">
+			<button class="button button-quiet" type="button" onclick={exportData}>
+				<Download size={20} strokeWidth={1.75} />
+				Export to a file
+			</button>
+			<button class="button button-quiet" type="button" onclick={() => importInput?.click()}>
+				<Upload size={20} strokeWidth={1.75} />
+				Import from a file
+			</button>
+			<input bind:this={importInput} class="visually-hidden" type="file" accept="application/json,.json" tabindex="-1" aria-hidden="true" onchange={chooseFile} />
+		</p>
+	{/if}
+	{#if importProblem}<p class="field-error" role="alert">{importProblem}</p>{/if}
 
 	<svelte:element this={heading} class="data-heading">Delete data on this device</svelte:element>
 	<p class="hint">The site keeps these only on this device. Nothing is sent to the site.</p>
@@ -201,6 +290,16 @@
 		flex-wrap: wrap;
 		gap: var(--space-3);
 		margin: 0;
+	}
+
+	.confirm-import {
+		border-color: var(--color-control-border);
+	}
+
+	.transfer-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
 	}
 
 	.button-danger {

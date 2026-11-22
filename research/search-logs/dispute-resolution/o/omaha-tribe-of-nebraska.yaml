@@ -1,0 +1,153 @@
+profile: content/tribes/o/omaha-tribe-of-nebraska.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/ff9e72c485209655e280.html
+  outcome: not-found
+  reason: Tribal codes page capture lists Title 11 but has no section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+  outcome: found
+  reason: Index lists the heading.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.omahatribe.com/tribal-codes/
+  outcome: found
+  reason: Index links the Title 11 PDF.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.omahatribe.com/wp-content/uploads/2024/05/Title-11.-Domestic-Violence.pdf
+  outcome: found
+  reason: PDF downloaded and OCR'd; section 11-5-12 read.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (omaha11-*.txt)
+  query: 11-5-12
+  outcome: found
+  reason: Downloaded the PDF (no text layer), OCR with pdftoppm at 200 dpi and tesseract; read 11-5-12
+    on page 12 of the file.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/ff9e72c485209655e280.html
+  outcome: not-found
+  reason: Omaha tribal codes page capture lists 'Title 49 Arbitration Ordinance' as a heading but has
+    no text of it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+  outcome: found
+  reason: NILL index lists the Title 49 heading and links to the tribe's code page.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.omahatribe.com/tribal-codes/
+  outcome: found
+  reason: The tribe's code page links a Title 49 PDF.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.omahatribe.com/wp-content/uploads/2024/05/Title-49-Arbitration-Ordinance.pdf
+  outcome: found
+  reason: Title 49 PDF downloaded; scanned, read by OCR.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (omaha49-*.txt)
+  query: Title 49
+  outcome: found
+  reason: Downloaded the PDF (no text layer), OCR with tesseract; read all sections 49-1-1 to 49-1-13.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/ (Omaha captures)
+  outcome: not-found
+  reason: Omaha captures (Titles 5, 12, 23, 24) do not contain the heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+  outcome: not-found
+  reason: NILL index lists the heading but gives no text or title number.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.omahatribe.com/tribal-codes/
+  query: material breach
+  outcome: not-found
+  reason: Code index lists titles without this heading; PDFs of about 40 titles checked by text layer
+    for 'material breach' with no match.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/omaha_of_nebraska/index.html
+  query: Binding Dispute Resolution for Non-Material Breach
+  outcome: found
+  reason: The heading is listed under Appendix D, 2006 Gaming Compact with State of Iowa, not a numbered
+    title.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://dial.iowa.gov/media/7193/download
+  query: Omaha Tribe Iowa compact Binding Dispute Resolution for Non-Material Breach
+  outcome: found
+  reason: Iowa DIAL copy of the Omaha-Iowa compact; Section 20 has the heading.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+  outcome: found
+  reason: 'Heading is the chapter of Title 49 read under record #1.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+  outcome: found
+  reason: 'Heading is the chapter read under record #1.'

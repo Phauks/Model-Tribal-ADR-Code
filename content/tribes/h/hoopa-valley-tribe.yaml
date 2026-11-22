@@ -255,17 +255,19 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: RULE 42 INFORMAL DISPUTE RESOLUTION
-    citation: RULE 42 INFORMAL DISPUTE RESOLUTION
-    link: https://narf.org/nill/codes/hoopacode/index.html
-    source: national-indian-law-library-code-codes-hoopacode
+    title: RULE 42 INFORMAL DISPUTE RESOLUTION (OCR reads 'RESOLUTIO~')
+    citation: Rules of the Hoopa Valley Tribal Court (Title 3, Rules of the Court), Rule 42
+    link: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title03-Rules_of_the_court_08-15-2008.pdf
+    source: hoopa-valley-rules-of-the-hoopa-valley-tribal-court-title-3
     confidence: medium
-    verification: title-only
-    as_of: '2017'
-    locator: 'Table of Contents, under ''CHAPTER 8: SETTLEMENT'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2008-08-15'
+    locator: Rule 42
+    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
+    summary: The Tribal Court may, on its own motion or a party's motion, order the parties to mediation,
+      negotiation or another agreed informal process when that will aid resolution and delay would not
+      seriously prejudice a party, and the court assigns the costs of that process between the parties;
+      parties may also resolve disputes informally by any other lawful means.
   - kind: other
     title: 13.1.3 Fair Operating Standards and Dispute Resolution Procedures
     citation: 13.1.3 Fair Operating Standards and Dispute Resolution Procedures
@@ -274,40 +276,56 @@ dispute_resolution:
     confidence: medium
     verification: title-only
     as_of: 2017-02
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: 14A.3.30 Informal Dispute Resolution
-    citation: 14A.3.30 Informal Dispute Resolution
-    link: https://www.narf.org/nill/codes/hoopacode/index.html
-    source: national-indian-law-library-code-codes-hoopacode
+    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title. Searched for the
+      text on 2026-11-22 and not read. Places searched: research/search-logs/dispute-resolution/h/hoopa-valley-tribe.yaml.'
+  - kind: mediation
+    title: 14A.3.30 Informal Dispute Resolution.
+    citation: Hoopa Valley Tribe Code Title 14A, Domestic Relations Code, 14A.3.30
+    link: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14A-Domestic-Relations-Code-June-19-2008pdf.pdf
+    source: hoopa-valley-hoopa-valley-tribe-code-title-14a-domestic
     confidence: medium
-    verification: title-only
-    as_of: 2017-02
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: 14A.5.40 Possible Outcomes In Nonparental Custody Actions; Circumstances in Which Nonparental
-      Custody Will be Granted; Court Ordered Drug Testing; Mediation
-    citation: 14A.5.40 Possible Outcomes In Nonparental Custody Actions; Circumstances in Which Nonparental
-      Custody Will be Granted; Court Ordered Drug Testing; Mediation
-    link: https://www.narf.org/nill/codes/hoopacode/index.html
-    source: national-indian-law-library-code-codes-hoopacode
+    verification: read-in-full
+    as_of: '2006-10-19'
+    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
+    summary: In any proceeding on dissolution, separation or invalidity of marriage, the parties may arrange
+      an informal resolution with the Tribal Court's permission at or before the hearing, using counseling,
+      mediation or another process acceptable under community standards, held in private and confidentially
+      (with no testimony about it in court), with the Court applying tribal customs and traditions if
+      the parties stipulate and any agreement written, signed and filed with the Court.
+    locator: 14A.3.30
+  - kind: mediation
+    title: 14A.5.40 Possible Outcomes in Nonparental Custody Actions; Circumstances in which NonParental
+      Custody will be Granted; Court Ordered Drug Testing; Mediation
+    citation: Hoopa Valley Tribe Code Title 14A, Domestic Relations Code, 14A.5.40
+    link: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14A-Domestic-Relations-Code-June-19-2008pdf.pdf
+    source: hoopa-valley-hoopa-valley-tribe-code-title-14a-domestic
     confidence: medium
-    verification: title-only
-    as_of: 2017-02
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    verification: read-in-full
+    as_of: '2006-10-19'
+    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
+      is left for the lead author's review. Read from a scanned copy by OCR.
+    summary: A section on how nonparental custody actions can end and when custody is granted, with a
+      short subsection (D) allowing the parties to agree to, or the Court to order, mediation to help
+      resolve the case.
+    locator: 14A.5.40
   - kind: arbitration
-    title: D. Selection of Arbitrator
-    citation: D. Selection of Arbitrator; J. Arbitrator
-    link: https://www.narf.org/nill/codes/hoopacode/index.html
-    source: national-indian-law-library-code-codes-hoopacode
+    title: D. Selection of Arbitrator; J. Arbitrator
+    citation: Hoopa Valley Tribal Code Title 46, Workers' Compensation Ordinance, Section 5(D) and 5(J)
+      (Disputed Claims Adjudication)
+    link: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title46-WorkersComp072000.pdf
+    source: hoopa-valley-hoopa-valley-tribal-code-title-46-workers
     confidence: medium
-    verification: title-only
-    as_of: 2017-02
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    verification: read-in-full
+    as_of: '2000-07-20'
+    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
+    summary: In disputed workers' compensation claims, the Tribal Court keeps a list of at least seven
+      qualified lawyers and, once a completion date is set, sends the parties the list so each may strike
+      three names within ten days and the Court picks the arbitrator from the rest, who is a lawyer experienced
+      in workers' compensation, controls the hearing, may administer oaths and rule on evidence, is paid
+      by the hourly rates the section sets, and cannot be disqualified or recused by the parties except
+      as the ordinance provides.
+    locator: Section 5(D) and 5(J) (Disputed Claims Adjudication)
   - kind: other
     title: Section 13. Binding Dispute Resolution Mechanism
     citation: Section 13. Binding Dispute Resolution Mechanism
@@ -319,7 +337,8 @@ dispute_resolution:
     locator: Table of Contents, under 'Part 7. Judicial Procedure'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+      is taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not
+      read. Places searched: research/search-logs/dispute-resolution/h/hoopa-valley-tribe.yaml.'
   database_listings:
   - title: Community Council/Conference
     citation: Hoopa Valley Tribe Code. Title 14 Child/Family Assistance Code. Title 14D Protective Order

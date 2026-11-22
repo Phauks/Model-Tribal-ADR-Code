@@ -1,0 +1,200 @@
+profile: content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for Title 1
+  query: Title 1 Arbitration
+  outcome: not-found
+  reason: No captured copy of the Northern Arapaho Title 1 was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/arapaho_wind_river/index.html
+  outcome: found
+  reason: The NILL page lists the Title 1 headings but links no copy of the text.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.wrtribalcourt.com/forms/rules-of-court/tribal-codes/
+  query: Arbitration Act
+  outcome: found
+  reason: The Wind River Tribal Court codes page links an 'Arbitration Act' PDF, which was downloaded
+    and OCR'd.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://northernarapaho.com/tribal-code/
+  outcome: dead-link
+  reason: The Northern Arapaho tribal code page returned 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.wrtribalcourt.com/wp-content/uploads/2024/01/Arbitration-Act.pdf
+  query: Wind River Arbitration Act
+  outcome: found
+  reason: Downloaded; image-only PDF; all ten pages OCR'd with tesseract and read.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/arapaho_wind_river/index.html
+  query: Title 1 Arbitration
+  outcome: found
+  reason: Re-fetched; Title 1 lists 101 to 119 and links to northernarapaho.com/tribal-code.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://northernarapaho.com/tribal-code/
+  query: Title 1
+  outcome: dead-link
+  reason: Returned 404; /wp/ also 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'captured copy: research/captures/tribal-law/documents/0fc8478360643b1250a0.txt'
+  outcome: found
+  reason: Full Title 7 text is in the captured PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/0fc8478360643b1250a0.txt
+  query: whole file read
+  outcome: found
+  reason: Re-read the full captured Title 7 text (pdftotext-style, clean layout, all 13 pages) for the
+    second reading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'captured copy: research/captures/tribal-law/documents/0fc8478360643b1250a0.txt'
+  query: 103 Establishment of Peacemaker Court
+  outcome: found
+  reason: Section 103 appears in the captured PDF.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/0fc8478360643b1250a0.txt
+  query: whole file read
+  outcome: found
+  reason: Re-read the full captured Title 7 text (pdftotext-style, clean layout, all 13 pages) for the
+    second reading.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'captured copy: research/captures/tribal-law/documents/0fc8478360643b1250a0.txt'
+  query: CHAPTER 2 PEACEMAKERS
+  outcome: found
+  reason: Chapter 2 appears in the captured PDF.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'captured copy: research/captures/tribal-law/documents/0fc8478360643b1250a0.txt'
+  query: 301 Request for Peacemaking
+  outcome: found
+  reason: Section 301 appears in the captured PDF.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'captured copy: research/captures/tribal-law/documents/0fc8478360643b1250a0.txt'
+  query: Conduct of Peacemakers
+  outcome: found
+  reason: Chapter 5 appears in the captured PDF.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'captured copy: research/captures/tribal-law/documents/0fc8478360643b1250a0.txt'
+  query: Transfer of Cases from Tribal Court to Peacemaker Court
+  outcome: found
+  reason: Chapter 6 appears in the captured PDF.
+  records:
+  - content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for this nation
+  query: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989)'
+  outcome: not-found
+  reason: No captured copy of this nation's code was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/shoshonearapaho/index.html
+  outcome: found
+  reason: The NILL table of contents lists the heading but links no copy of the provision.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none
+  query: Title XVI Peacemaker Court
+  outcome: not-found
+  reason: No captured copy of a 1989 draft was in the batch; the adopted Title 7 Peacemaker Code was read
+    instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Northern Arapaho "Peacemaker Court" "Title XVI" draft 1989 code
+  outcome: not-found
+  reason: Results were the adopted Title 7 Peacemaker Code and NCORJ commentary, not the 1989 draft.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/
+  outcome: not-public
+  reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
+    not worked around.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/arapaho_wind_river/index.html
+  outcome: found
+  reason: 'The NILL page lists the same Title 1 heading as #1.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/arapaho_wind_river/index.html
+  query: Title 1. Arbitration
+  outcome: found
+  reason: Re-fetched; one Title 1 entry only.

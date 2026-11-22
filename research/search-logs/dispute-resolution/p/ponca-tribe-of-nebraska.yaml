@@ -1,0 +1,71 @@
+profile: content/tribes/p/ponca-tribe-of-nebraska.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://poncatribe-ne.gov/wp-content/uploads/2026/11/law_code_full_261026.pdf (c618143f5b0d6f604485.txt)
+  query: Section 4-3-4; Waiting Period; mediation
+  outcome: found
+  reason: Section 4-3-4 is Initiation of Proceedings. The mediation provision is in Section 4-4-6(9).
+    No waiting-period section found.
+  records:
+  - content/tribes/p/ponca-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://poncatribe-ne.gov/wp-content/uploads/2020/05/law_codetitle_v4_050120.pdf (6dc3f490c1bb344aa397.txt)
+  query: Section 4-3-4; Waiting Period
+  outcome: found
+  reason: Earlier Title IV (2020) has Section 4-3-4 as Initiation of Proceedings; no waiting-period section.
+  records:
+  - content/tribes/p/ponca-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://poncatribe-ne.gov/law-and-order-code/
+  query: 4-3-4; mediation
+  outcome: not-found
+  reason: Page has no matching text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://poncatribe-ne.gov/wp-content/uploads/2026/11/law_code_full_261026.pdf
+  query: 4-3-4; 4-4-6
+  outcome: found
+  reason: Downloaded and read with pdftotext; Title IV table of contents and sections 4-3-4 and 4-4-6
+    read.
+  records:
+  - content/tribes/p/ponca-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.poncatribe-ne.org/Resource/General/LawOrderCode052015a.pdf
+  query: 2015 code
+  outcome: dead-link
+  reason: The NILL-linked 2015 code returned 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: http://web.archive.org/web/2015/http://www.poncatribe-ne.org/Resource/General/LawOrderCode052015a.pdf
+  query: 2015 code
+  outcome: blocked
+  reason: Archive copy returned 403 through the proxy.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/ponca_necode/index.html
+  query: Waiting Period
+  outcome: found
+  reason: Re-fetched; heading listed as Section 4-3-4 in Chapter 3 Divorce and Separate Maintenance.
+  records:
+  - content/tribes/p/ponca-tribe-of-nebraska.yaml#dispute_resolution.provisions

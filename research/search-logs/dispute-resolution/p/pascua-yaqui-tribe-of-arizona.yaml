@@ -1,0 +1,110 @@
+profile: content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/pascua-yaqui/index.html
+  query: Section 670 Dispute Resolution
+  outcome: found
+  reason: Heading listed under Subchapter G Procurement; the NILL page gave no link.
+  records:
+  - content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.pascuayaqui-nsn.gov/_static_pages/tribalcodes/docs/2_PYTC/5-1_Fiscal_Management_FINAL.pdf
+  query: Pascua Yaqui Tribal Code 670 Dispute Resolution
+  outcome: found
+  reason: Search returned the Fiscal Management chapter 5-1 PDF on the tribe's site; section 670 read
+    in full.
+  records:
+  - content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/4efc9f67bbfc3869f488.txt
+  query: Dispute Resolution
+  outcome: not-found
+  reason: The captured Title 7 Chapter 6 arbitration file does not include section 670.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (pasc.txt)
+  query: Section 670
+  outcome: found
+  reason: Downloaded the PDF and read Section 670 with pdftotext.
+  records:
+  - content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/4efc9f67bbfc3869f488.txt
+  query: Conciliation
+  outcome: not-found
+  reason: Captured copy is the arbitration chapter only.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/pascua-yaqui/index.html
+  query: Subchapter C Conciliation
+  outcome: found
+  reason: Heading listed on the NILL page; no link given.
+  records:
+  - content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.pascuayaqui-nsn.gov/wp-content/legacy-tribalcodes/docs/5_PYTC/2_Domestic_Relations_FINAL.pdf
+  query: Pascua Yaqui Domestic Relations Subchapter C conciliation
+  outcome: found
+  reason: Search returned the Domestic Relations PDF on the tribe's site; Subchapter C read in full.
+  records:
+  - content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.pascuayaqui-nsn.gov/wp-content/legacy-tribalcodes/docs/5_PYTC/2_Domestic_Relations_FINAL.pdf
+  query: Subchapter C
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/py-dr.txt) and the section read directly.'
+  records:
+  - content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/4efc9f67bbfc3869f488.txt
+  query: CHAPTER 6 ARBITRATION
+  outcome: found
+  reason: Chapter 6 found in the captured file and read in full (text hits at the title and offset 2248).
+  records:
+  - content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.pascuayaqui-nsn.gov/wp-content/legacy-tribalcodes/docs/7_PYTC/6_Arbitration.pdf
+  query: Chapter 6
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/py-arb.txt) and the section read directly.'
+  records:
+  - content/tribes/p/pascua-yaqui-tribe-of-arizona.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/4efc9f67bbfc3869f488.txt
+  query: CHAPTER 6 ARBITRATION
+  outcome: found
+  reason: 'Same chapter as #3, read there.'

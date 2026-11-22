@@ -1,0 +1,41 @@
+profile: content/tribes/w/white-earth-band.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/337aad5073c28fcb7e3e.txt
+  query: SECTION XLI Patron Dispute Resolution
+  outcome: found
+  reason: Section XLI is in the captured gaming ordinance text.
+  records:
+  - content/tribes/w/white-earth-band.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/37d1c28555-1748011214/gaming-ordinance-and-resolution-2019.pdf
+  query: Section XLI
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/we-gam.txt) and the section read directly.'
+  records:
+  - content/tribes/w/white-earth-band.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/6f60c3ddb37afbea1771.txt
+  query: CHAPTER 12A. PEACEMAKING CIRCLE
+  outcome: found
+  reason: Chapter 12A appears in the captured juvenile code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-juvenile.justice.code_.pdf
+  query: Chapter 12A
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/we-juv.txt) and the section read directly.'

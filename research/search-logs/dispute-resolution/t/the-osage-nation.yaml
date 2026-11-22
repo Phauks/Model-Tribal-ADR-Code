@@ -1,0 +1,128 @@
+profile: content/tribes/t/the-osage-nation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/osage/index.html
+  query: Dispute Resolution; Arbitration
+  outcome: found
+  reason: The NILL page links to three code volume PDFs and no heading matching the records appears on
+    it.
+  records:
+  - content/tribes/t/the-osage-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/64971c5c50c304741c5b.txt
+  query: arbitrat; dispute; 4-801; subchapter
+  outcome: not-found
+  reason: The captured legislation index page has no matching text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.dropbox.com/s/ap5315ls1rycsex/ONC%20Second%20Edition%20V1.pdf?dl=1 (NILL-linked
+    Volume I)
+  query: Subchapter 8 Dispute Resolution; 4-801
+  outcome: not-found
+  reason: The fetched text covers Title 1 and part of Title 2 only, and does not reach Title 4.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.dropbox.com/s/175za50tstrzlm4/ONC%20Second%20Edition%20V2.pdf?dl=1 (NILL-linked
+    Volume II)
+  query: Subchapter 8 Dispute Resolution; 4-801
+  outcome: not-found
+  reason: The fetched text starts at Title 8 and runs to Title 12, so Title 4 is not in it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.dropbox.com/s/cwzl16skecdndpo/ONC%20Second%20Edition%20V3.pdf?dl=1 (NILL-linked
+    Volume III)
+  query: Subchapter 8 Dispute Resolution; 4-801
+  outcome: not-found
+  reason: The fetched text covers Titles 20 and 23 only, and does not reach Title 4.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Osage Nation Code Title 4 "Subchapter 8" "Dispute Resolution" "4-801" arbitration
+  outcome: found
+  reason: Returned an osage.nation.codes page for a section on arbitration of employee decisions, with
+    a different number (19-4-801) in its address.
+  records:
+  - content/tribes/t/the-osage-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://osage.nation.codes/ONC/19-4-801
+  query: 4-801 Arbitration
+  outcome: found
+  reason: The page is an arbitration section for employee decisions under Section 4-204, with amendments
+    ONCA 12-76 and 15-52. The page shows no heading, subchapter or title, and its address number differs
+    from 4-801, so it is not confirmed as the record's section.
+  records:
+  - content/tribes/t/the-osage-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.dropbox.com/s/175za50tstrzlm4/ONC%20Second%20Edition%20V2.pdf?dl=1
+  query: Subchapter 8 Dispute Resolution; 4-801 Arbitration
+  outcome: found
+  reason: Downloaded the whole PDF and ran pdftotext; Title 19 Chapter 4 Subchapter 8 section 4-801 is
+    on about page 459.
+  records:
+  - content/tribes/t/the-osage-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://osage.nation.codes/ONC/19-4-801
+  outcome: blocked
+  reason: Cloudflare challenge page returned; not bypassed.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/osage/index.html
+  query: Dispute Resolution; Arbitration
+  outcome: found
+  reason: The NILL page links to three code volume PDFs and no heading matching the records appears on
+    it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Osage Nation Code Title 4 "Subchapter 8" "Dispute Resolution" "4-801" arbitration
+  outcome: found
+  reason: Returned an osage.nation.codes page for a section on arbitration of employee decisions, with
+    a different number (19-4-801) in its address.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://osage.nation.codes/ONC/19-4-801
+  query: 4-801 Arbitration
+  outcome: found
+  reason: The page is an arbitration section for employee decisions under Section 4-204, with amendments
+    ONCA 12-76 and 15-52. The page shows no heading, subchapter or title, and its address number differs
+    from 4-801, so it is not confirmed as the record's section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.dropbox.com/s/175za50tstrzlm4/ONC%20Second%20Edition%20V2.pdf?dl=1
+  query: Dispute Resolution; Arbitration
+  outcome: found
+  reason: 'Same text as record #0, Title 19 Chapter 4 Subchapter 8.'

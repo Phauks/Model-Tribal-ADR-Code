@@ -25,14 +25,16 @@ sources_added:
 - thompson-1916-to-the-american-indian
 - parker-1923-seneca-myths-and-folk-tales
 - karuk-tribe-sipnuuk-coyotes-journey-lesson
+- zitkala-sa-1901-old-indian-legends
 sources_updated: []
-limits: "About forty fetches for each of three regions, then three books. Nations put few ancestor stories on the open web, and several say stories are told only in winter; this session ran in November and records only what is published openly. Zitkala-Ša's Old Indian Legends (1901) was downloaded but not yet read for dispute stories. Older books are in the public domain, but the project still treats every story as nation review first (decision record 0019)."
+limits: "About forty fetches for each of three regions, then four books. Nations put few ancestor stories on the open web, and several say stories are told only in winter; this session ran in November and records only what is published openly. At the lead author's request, Zitkala-Ša's Old Indian Legends (1901) was then read in full. Older books are in the public domain, but the project still treats every story as nation review first (decision record 0019)."
 ---
 
 ## What this session added
 
 - Five story records. Two are Lummi Nation stories written by Jewell Praying Wolf James for the Lummi Culture Protection Committee: "Salmon Woman and Her Children" and its sequel "Bear and the Steelhead." The others are a Yurok account of settling quarrels by arbitration, from Lucy Thompson's 1916 book, and one sentence of the Ute Mountain Ute Tribe's "The Sky People." The fifth is the Seneca tale "The Race of the Turtle and the Beaver" as Arthur C. Parker wrote it down.
 - Parker reports that Iroquois tales are kept for winter. Asked how the website should treat such stories, the lead author chose on Nov. 22, 2026 to show them year-round, with the rule shown beside them, so the Seneca tale is quoted.
+- Two Dakota stories from Zitkala-Ša's *Old Indian Legends* (1901), read at the lead author's request: "Iktomi and the Muskrat" and "The Badger and the Bear." The other twelve legends turn on tricks, monsters, stolen children or war, with no dispute settled. "Iktomi's Blanket" turns on taking back a gift made as an offering, so it was left out.
 - A source record for the Karuk Tribe's statement of its winter telling rule.
 - Section 10 of [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
 
