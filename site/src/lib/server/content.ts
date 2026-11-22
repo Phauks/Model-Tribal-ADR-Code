@@ -411,8 +411,10 @@ export type { StoryRecord } from '../story-visibility.ts';
  */
 const neverServedTopics = new Set(['westlaw', 'articles']);
 
+let indexedCopyCache: PublicCopy[] | undefined;
 let publicCopyCache: PublicCopy[] | undefined;
 
+let publishedNations: Set<string> | undefined;
 let withheldDigests: Set<string> | undefined;
 
 /**
@@ -422,9 +424,11 @@ let withheldDigests: Set<string> | undefined;
  * filed under constitutions/<nation id>/, so the key names its nation too.
  */
 function isWithheld(copy: PublicCopy): boolean {
-	const published = new Set(nations().map((record) => record.id));
 	const named = [...copy.nations];
 	if (copy.topic === 'constitutions') named.push(copy.key.split('/')[1] ?? '');
+	if (named.length === 0) return false;
+	publishedNations ??= new Set(nations().map((record) => record.id));
+	const published = publishedNations;
 	if (named.some((id) => id && !published.has(id))) return true;
 	withheldDigests ??= new Set(
 		yamlFilesUnder('content/documents')
@@ -437,16 +441,15 @@ function isWithheld(copy: PublicCopy): boolean {
 }
 
 /**
- * The files in the bucket the website may serve itself: rows of the capture
- * index whose redistribution column says "yes", that are PDF files and that
- * are originals rather than text extracts (src/lib/public-copies.ts). Empty
- * when the index is missing.
+ * Rows of the capture index whose redistribution column says "yes", that are
+ * PDFs or saved web pages and originals rather than text extracts, before
+ * withheld material is taken out. Empty when the index is missing.
  */
-export function publicCopies(): PublicCopy[] {
-	if (!publicCopyCache) {
+function indexedCopies(): PublicCopy[] {
+	if (!indexedCopyCache) {
 		const indexPath = 'research/capture-index.csv';
 		const rows = existsSync(path.join(repositoryRoot, indexPath)) ? parseCsv(readText(indexPath)) : [];
-		publicCopyCache = rows
+		indexedCopyCache = rows
 			.filter(
 				(row) =>
 					row.redistribution === 'yes' &&
@@ -470,9 +473,18 @@ export function publicCopies(): PublicCopy[] {
 				nations: row.nations.split(';').filter(Boolean),
 				rights: row.rights
 			}))
-			.filter((copy) => copy.links.length > 0 && !isWithheld(copy))
+			.filter((copy) => copy.links.length > 0)
 			.sort((first, second) => first.title.localeCompare(second.title));
 	}
+	return indexedCopyCache;
+}
+
+/**
+ * The files in the bucket the website may serve itself (src/lib/public-copies.ts):
+ * the indexed copies, without those of material the site does not publish.
+ */
+export function publicCopies(): PublicCopy[] {
+	publicCopyCache ??= indexedCopies().filter((copy) => !isWithheld(copy));
 	return publicCopyCache;
 }
 
@@ -483,8 +495,9 @@ let publicCopyHashes: Map<string, PublicCopy> | undefined;
 /** The copy the website serves of the file with this SHA-256, if it keeps one. */
 export function publicCopyWithDigest(sha256: string | undefined): PublicCopy | undefined {
 	if (!sha256) return undefined;
-	publicCopyHashes ??= new Map(publicCopies().map((copy) => [copy.sha256, copy]));
-	return publicCopyHashes.get(sha256.toLowerCase());
+	publicCopyHashes ??= new Map(indexedCopies().map((copy) => [copy.sha256, copy]));
+	const copy = publicCopyHashes.get(sha256.toLowerCase());
+	return copy && !isWithheld(copy) ? copy : undefined;
 }
 
 /** The copy the website serves of the document at this address, if it keeps one. */
@@ -492,6 +505,9 @@ export function publicCopyFor(link: string | undefined): PublicCopy | undefined 
 	if (!link) return undefined;
 	const matching = linkForMatching(link);
 	if (!matching) return undefined;
-	publicCopyLinks ??= copiesByLink(publicCopies());
-	return publicCopyLinks.get(matching);
+	// Matched before withheld copies are taken out, so a page that cites no
+	// copy never has to read every nation record to find that out.
+	publicCopyLinks ??= copiesByLink(indexedCopies());
+	const copy = publicCopyLinks.get(matching);
+	return copy && !isWithheld(copy) ? copy : undefined;
 }
