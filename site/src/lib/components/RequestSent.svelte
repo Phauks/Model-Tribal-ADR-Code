@@ -31,7 +31,11 @@
 		<li>We check each source in the government’s own publication, then search our list for the nation under other names. Usually a decision follows within 30 days of the acknowledgment.</li>
 	{/if}
 	<li>A request about a nation is confirmed with that nation’s own office before it is final.</li>
-	<li>Your request and any files you sent are kept private. They are never published.</li>
+	{#if sent.kind === 'restrict' || sent.kind === 'remove'}
+		<li>We never publish the material you asked us to make private or delete. Your contact details are never published.</li>
+	{:else}
+		<li>Files and sources you sent may be cited or published as sources. Your contact details are never published.</li>
+	{/if}
 </ul>
 
 <style>
