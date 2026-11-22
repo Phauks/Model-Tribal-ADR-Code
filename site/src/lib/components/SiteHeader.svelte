@@ -12,6 +12,7 @@
 	// and "About" join the menu when their pages are built (site/DESIGN.md, section 4).
 	const menu = [
 		{ label: 'Nations', link: '/nations' },
+		{ label: 'Stories', link: '/stories' },
 		{ label: 'Glossary', link: '/glossary' },
 		{ label: 'Downloads', link: '/downloads' },
 		{ label: 'Changelog', link: '/changelog' }

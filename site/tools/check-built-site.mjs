@@ -16,6 +16,7 @@ const required = [
 	'glossary.html',
 	'changelog.html',
 	'nations.html',
+	'stories.html',
 	'offline.html',
 	'downloads.html',
 	'manifest.webmanifest',

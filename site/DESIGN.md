@@ -102,7 +102,7 @@ fed the "Model text, not law in force" notice in section 6.
 
 ### Main menu
 
-The code, Peacemaking, Nations, Glossary, Sources, Downloads, About, and a
+The code, Peacemaking, Nations, Stories, Glossary, Sources, Downloads, About, and a
 Contribute button. Search, a "Sign in" link (it reads "Workspace" once a
 co-author has signed in), the theme setting and the offline state sit beside
 them. Nobody needs to sign in to read the site or to make a request. The
@@ -153,6 +153,8 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
 | Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice; "Is your nation missing? Ask to be added", also shown when a search finds no nation |
 | Glossary entry | Entry rail, text, margin | Term, usage status, "Report a problem" under the term, definition, how the project uses it, use instead, related terms, about this entry, other entries that use it, and a Sources section at the end |
+| Stories | One column | "Report a problem" under the title; a notice while stories await their nations' review; stories grouped by nation, each with its kind and first quoted excerpt with credit ([0027](../docs/decisions/0027-show-stories-while-nations-review-them.md)) |
+| Story | One column | Title and any title in the nation's language; "Report a problem"; a not-yet-reviewed notice with a removal link; nations, kind, length, methods, topics; "In the teller's words" (exact excerpts of 50 words or fewer, with credit and pinpoint); passages cited, not quoted; where it is told, each telling with whose voice it is and a link to read it in full; cultural protocols and how the site follows them; Sources at the end. Never a summary or retelling |
 | Glossary | One column | "Report a problem" under the title; an A to Z index; every entry in full (term, usage, definition, how the project uses it, use instead, related terms), each with its own anchor such as `/glossary#native-nations`; one Sources section at the end |
 | Source record | Text and margin | Citation, original link, archived copies, change history, quotation basis, what cites it |
 | Changelog | One column with tabs | Content, Website, Print and Requests log; each version's entries; comparison of a section between versions |

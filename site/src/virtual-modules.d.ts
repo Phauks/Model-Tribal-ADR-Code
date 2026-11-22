@@ -24,7 +24,7 @@ declare module 'virtual:nation-images' {
 }
 
 declare module 'virtual:source-citations' {
-	/** The full citation, as HTML in the project's Indigo Book style, of each source the glossary cites, by key. */
+	/** The full citation, as HTML in the project's Indigo Book style, of each source the glossary and the story pages cite, by key. */
 	export const sourceCitations: Record<string, string>;
 }
 

@@ -12,6 +12,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
+import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
@@ -327,3 +328,39 @@ export function servableImages(): ServableImage[] {
 			}))
 	);
 }
+
+/* Methods ----------------------------------------------------------------- */
+
+export interface MethodRecord {
+	id: string;
+	name: string;
+}
+
+let methodCache: Map<string, MethodRecord> | undefined;
+
+/** Dispute resolution method records in content/methods/, by id. */
+export function methods(): Map<string, MethodRecord> {
+	if (!methodCache) {
+		methodCache = new Map(
+			yamlFilesUnder('content/methods').map((file) => {
+				const record = readYaml<MethodRecord>(file);
+				return [record.id, record];
+			})
+		);
+	}
+	return methodCache;
+}
+
+/* Stories ----------------------------------------------------------------- */
+
+let storyCache: StoryRecord[] | undefined;
+
+/** Every story record in content/stories/ (schemas/story.schema.json), unfiltered. What the site shows is decided in src/lib/story-visibility.ts. */
+export function storyRecords(): StoryRecord[] {
+	if (!storyCache) {
+		storyCache = yamlFilesUnder('content/stories').map((file) => readYaml<StoryRecord>(file));
+	}
+	return storyCache;
+}
+
+export type { StoryRecord } from '../story-visibility.ts';
