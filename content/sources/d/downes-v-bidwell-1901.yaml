@@ -30,6 +30,24 @@ citator:
   detail: >-
     Yellow flag: disagreement recognized by Fitisemanu v. United States (10th Cir. 2021). Read from the header of Trevor's Westlaw print, filed privately (bucket key westlaw/downes-v-bidwell-1901.pdf).
   checked: 2026-11-22
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1898-1902)
+  decision_type: judgment of the Court
+  vote: {majority: 5, minority: 4}
+  justices:
+  - {name: "Melville W. Fuller", vote: minority, opinion: dissent}
+  - {name: "John M. Harlan", vote: minority, opinion: dissent}
+  - {name: "Horace Gray", vote: majority, opinion: concurrence}
+  - {name: "David J. Brewer", vote: minority}
+  - {name: "Henry B. Brown", vote: majority, opinion: judgment}
+  - {name: "George Shiras, Jr.", vote: majority}
+  - {name: "Edward D. White", vote: majority, opinion: special concurrence}
+  - {name: "Rufus Peckham", vote: minority}
+  - {name: "Joseph McKenna", vote: majority}
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep182/usrep182244/usrep182244.pdf
+  note: "No opinion commanded a majority. Brown announced the judgment; White, joined by Shiras and McKenna, concurred in the judgment; Gray concurred. Fuller, joined by Harlan, Brewer and Peckham, dissented, and Harlan also dissented separately."
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

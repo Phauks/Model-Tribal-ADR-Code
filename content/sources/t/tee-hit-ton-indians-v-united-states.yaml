@@ -24,6 +24,23 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1954-1955)
+  decision_type: majority opinion
+  vote: {majority: 5, minority: 3}
+  justices:
+  - {name: "Earl Warren", vote: minority}
+  - {name: "Hugo L. Black", vote: majority}
+  - {name: "Stanley Reed", vote: majority, opinion: majority}
+  - {name: "Felix Frankfurter", vote: minority}
+  - {name: "William O. Douglas", vote: minority, opinion: dissent}
+  - {name: "Harold Burton", vote: majority}
+  - {name: "Tom C. Clark", vote: majority}
+  - {name: "Sherman Minton", vote: majority}
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep348/usrep348272/usrep348272.pdf
+  note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

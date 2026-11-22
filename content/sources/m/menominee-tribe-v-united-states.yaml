@@ -24,6 +24,23 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1967-1969)
+  decision_type: majority opinion
+  vote: {majority: 6, minority: 2}
+  justices:
+  - {name: "Earl Warren", vote: majority}
+  - {name: "Hugo L. Black", vote: minority}
+  - {name: "William O. Douglas", vote: majority, opinion: majority}
+  - {name: "John M. Harlan II", vote: majority}
+  - {name: "William J. Brennan, Jr.", vote: majority}
+  - {name: "Potter Stewart", vote: minority, opinion: dissent}
+  - {name: "Byron R. White", vote: majority}
+  - {name: "Abe Fortas", vote: majority}
+  - {name: "Thurgood Marshall", vote: none}
+  source: https://api.oyez.org/cases/1967/187
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

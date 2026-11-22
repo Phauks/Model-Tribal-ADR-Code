@@ -24,6 +24,23 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2018-2020)
+  decision_type: majority opinion
+  vote: {majority: 5, minority: 4}
+  justices:
+  - {name: "Neil Gorsuch", vote: majority, opinion: majority}
+  - {name: "Ruth Bader Ginsburg", vote: majority}
+  - {name: "Stephen G. Breyer", vote: majority}
+  - {name: "Sonia Sotomayor", vote: majority}
+  - {name: "Elena Kagan", vote: majority}
+  - {name: "John G. Roberts, Jr.", vote: minority, opinion: dissent}
+  - {name: "Clarence Thomas", vote: minority, opinion: dissent}
+  - {name: "Samuel A. Alito, Jr.", vote: minority}
+  - {name: "Brett M. Kavanaugh", vote: minority}
+  source: https://api.oyez.org/cases/2019/18-9526
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work
