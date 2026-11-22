@@ -54,8 +54,9 @@ limits: >-
   keyword matches, not whole codes, and nobody has checked its
   classifications. Scanned PDFs without a text layer, ecode360 and Municode
   were not read. The Navajo evidence and declaratory ruling rules were seen
-  only as tables of contents. Morote (2026), Newton (1998) and Richland (2008)
-  were not read. Whether any nation has adopted the Uniform Mediation Act was
+  only as tables of contents. Newton (1998) and Richland (2008) were not
+  read. Morote (2026) was read in full later the same evening from a copy
+  Trevor uploaded. Whether any nation has adopted the Uniform Mediation Act was
   not checked.
 ---
 
@@ -135,10 +136,25 @@ the project's capture); 25 C.F.R. § 11.504; 25 U.S.C. §§ 1302(a)(6),
 1302(c)(4) and 1304(d); Fed. R. Evid. 1101(a). Everything else was read
 through the fetch tool and is marked so in the analysis.
 
+## Follow-up: Morote (2026)
+
+Trevor uploaded the article on Nov. 21, 2026 (evening, Pacific time). It was
+read in full from its text layer (pages 79 to 106) and added to the analysis
+as section 1.6. The private copy is
+`research/captures/articles/morote-2026-tribal-rules-of-evidence.pdf` in the
+project's working files. Leads from its footnotes, not followed: Indian
+Tradition and Custom in Adjudication Under Rules of Evidence (Tribal Court
+Clearinghouse; the article gives the author as "John Zion," probably James W.
+Zion, not verified);
+Max Virupaksha Katner, Native American Oral Evidence: Finding a New Hearsay
+Exception (Georgetown Tribal Law Journal, 2020; the article cites it two ways);
+Hope M. Babcock, "[This] I Know From My Grandfather," 37 Am. Indian L. Rev.
+19 (2013). The article cites Fletcher's 2006 working paper under a different
+title from the one on the paper itself; the analysis uses the title on the
+paper.
+
 ## Leads not followed
 
-- Nicole Morote, The Tribal Rules of Evidence, 14 Am. Indian L.J. (2026):
-  the repository's PDF is behind a browser challenge.
 - Nell Jessup Newton, Tribal Court Praxis: One Year in the Life of Twenty
   Indian Tribal Courts, 22 Am. Indian L. Rev. (1998) (first page not
   verified), for how courts
