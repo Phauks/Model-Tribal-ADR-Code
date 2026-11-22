@@ -1,9 +1,15 @@
 id: oneida-indian-nation-tree-of-peace
-title: Tree of Peace
+title: Liberty Trees and the Tree of Peace
 nations:
 - oneida-indian-nation
-kind: traditional-story
-length: short
+kind: teaching
+length: paragraph
+excerpts:
+- telling: oneida-stories-page
+  locator: first sentence of the piece
+  text: In Haudenosaunee tradition, the members of the Confederacy are sheltered by the Tree of Peace, whose roots can be traced back from the four directions by people of good mind.
+  words: 30
+  sha256: 3ab7e56c95f96503ea4456adf510815cd986135c87509585601b90dfffbcae63
 methods:
 - peacemaking
 topics:
@@ -11,11 +17,12 @@ topics:
 tellings:
 - id: oneida-stories-page
   source: oneida-indian-nation-stories-and-heritage-page
+  locator: piece "Liberty Trees and the Tree of Peace" linked from the Stories & Heritage page
   published_by: Oneida Indian Nation
   authority: nation-government
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print
@@ -38,4 +45,6 @@ sensitivity:
 review_status: drafted-from-public-sources
 found_in:
 - 2026-11-21-peacemaking-stories
-notes: No summary written; the page has too little on the Tree of Peace to summarize. The stories thread can decide whether to keep this record.
+notes: Kept as a one-sentence teaching in the Nation's own words (stories thread, 2026-11-22). The rest of the piece
+  is about colonial Liberty Trees. In the private print a cookie banner's text falls inside the sentence; the excerpt
+  was checked with the banner text removed.
