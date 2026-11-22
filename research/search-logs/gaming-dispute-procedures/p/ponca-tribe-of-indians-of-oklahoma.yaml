@@ -1,0 +1,52 @@
+profile: content/tribes/p/ponca-tribe-of-indians-of-oklahoma.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/poncatribeofok-poncaokord050395.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 1995-05-03
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#ponca-tribe-of-indians-of-oklahoma-ordinance-1995-05-03#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/poncatribeofok-121508PoncaofOKOrdAmenAppr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2008-12-15 has no text layer on most pages (34 of 34 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/poncatribeofok-Amdappr10252010.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other)
+    in this amendment listed 2010-10-25; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20170621OrdAmenAppr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2017-06-21
+    and recorded 2 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#ponca-tribe-of-indians-of-oklahoma-amendment-2017-06-21#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#ponca-tribe-of-indians-of-oklahoma-amendment-2017-06-21#i2
+next_steps: Read the scanned amendment listed 2008-12-15 (https://www.nigc.gov/wp-content/uploads/2025/03/poncatribeofok-121508PoncaofOKOrdAmenAppr.pdf)
+  with OCR or by hand.

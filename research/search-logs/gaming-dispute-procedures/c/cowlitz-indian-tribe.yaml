@@ -1,0 +1,82 @@
+profile: content/tribes/c/cowlitz-indian-tribe.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/cowlitzindntrbeofwashton-ordappr112305.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, licensing-hearing) in this ordinance listed 2005-11-23; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/cowlitzindntrbeofwashton-Ord-Amend-Appr-1.08.2008.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2008-01-08 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/cowlitzindntrbeofwashton-Cowlitz20111212Letter.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2011-12-12 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/Cowlitz20150915GOA.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2015-09-15 has no text layer on most pages (36 of 36 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/2016.12.16_Cowlitz_Indian_Tribe_Ord_Approval.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, licensing-hearing) in this amendment listed 2016-12-16; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/2018.04.30_Ord_Amend_Appr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2018-04-30
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#cowlitz-indian-tribe-amendment-2018-04-30#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20210624CowlitzOrdAmendAppr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2021-06-24 has no text layer on most pages (27 of 28 pages have no text
+    layer (only the approval letter has text); no OCR available).
+next_steps: Read the scanned amendment listed 2015-09-15 (https://www.nigc.gov/wp-content/uploads/2025/03/Cowlitz20150915GOA.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2021-06-24 (https://www.nigc.gov/wp-content/uploads/2025/03/20210624CowlitzOrdAmendAppr.pdf)
+  with OCR or by hand.

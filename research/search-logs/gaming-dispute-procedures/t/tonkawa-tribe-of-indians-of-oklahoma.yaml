@@ -1,0 +1,73 @@
+profile: content/tribes/t/tonkawa-tribe-of-indians-of-oklahoma.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/tonkawatribe-OrdAppr022797.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other) in this ordinance listed 1997-02-27; reviewers read a newer document with the same
+    kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/tonkawatribe-tonkawaamend032206.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2006-03-22 has no text layer on most pages (10 of 10 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/tonkawatribe-Amdappr06122009.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2009-06-12 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/tonkawatribe-2010.01.20-Amend-Appr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2010-01-20 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/tonkawatribe-20120731OrdAppr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, court-review, licensing-hearing) in this amendment listed 2012-07-31; reviewers read
+    a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/tonkawatribe-2014.08.06-Letter-re-Amended-ordinance-approval-Tonkawa.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2014-08-06
+    and recorded 3 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#tonkawa-tribe-of-indians-of-oklahoma-amendment-2014-08-06#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#tonkawa-tribe-of-indians-of-oklahoma-amendment-2014-08-06#i2
+  - research/reviews/2026-11-22-ordinance-disputes.json#tonkawa-tribe-of-indians-of-oklahoma-amendment-2014-08-06#i3
+next_steps: Read the scanned amendment listed 2006-03-22 (https://www.nigc.gov/wp-content/uploads/2025/03/tonkawatribe-tonkawaamend032206.pdf)
+  with OCR or by hand.

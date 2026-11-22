@@ -1,0 +1,29 @@
+profile: content/tribes/s/sac-and-fox-tribe-of-the-mississippi-in-iowa.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxtribems-ordappr020995.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 1995-02-09
+    and recorded 1 procedure(s): other.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#sac-fox-tribe-of-mississippi-in-iowa-amendment-1995-02-09#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxtribems-ordappr120808.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This ordinance listed 2008-12-08 has no text layer on most pages (50 of 50 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned ordinance listed 2008-12-08 (https://www.nigc.gov/wp-content/uploads/2025/03/sacfoxtribems-ordappr120808.pdf)
+  with OCR or by hand.

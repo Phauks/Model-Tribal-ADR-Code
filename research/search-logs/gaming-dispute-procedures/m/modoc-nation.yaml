@@ -1,0 +1,29 @@
+profile: content/tribes/m/modoc-nation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/modactribeofok-modacord110893.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other)
+    in this ordinance listed 1993-11-08; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/modactribeofok-modacamend121594.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 1994-12-15
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#modoc-tribe-of-oklahoma-amendment-1994-12-15#i1
+next_steps: Some pages of the ordinance listed 1993-11-08 (https://www.nigc.gov/wp-content/uploads/2025/03/modactribeofok-modacord110893.pdf)
+  have no text layer; read them with OCR.

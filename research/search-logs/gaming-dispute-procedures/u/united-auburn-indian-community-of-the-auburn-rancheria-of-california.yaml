@@ -1,0 +1,29 @@
+profile: content/tribes/u/united-auburn-indian-community-of-the-auburn-rancheria-of-california.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/untdaburnindncomrnchra-ordappr022400.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 2000-02-24
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#united-auburn-indian-community-of-auburn-rancheria-ordinance-2000-02-24#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/untdaburnindncomrnchra-unitedauburnord011108.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2008-01-11 has no text layer on most pages (13 of 13 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 2008-01-11 (https://www.nigc.gov/wp-content/uploads/2025/03/untdaburnindncomrnchra-unitedauburnord011108.pdf)
+  with OCR or by hand.

@@ -1,0 +1,52 @@
+profile: content/tribes/m/mechoopda-indian-tribe-of-chico-rancheria.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/mechoopdaindiantribe-mechoopdaord120301.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, court-review, licensing-hearing) in this ordinance listed 2001-12-03; reviewers read
+    a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/mechoopdaindiantribe-mechoopdaamend011002.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2002-01-10
+    and recorded 1 procedure(s): other.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#mechoopda-indian-tribe-of-chico-rancheria-amendment-2002-01-10#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/mechoopdaindiantribe-amend020807.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2007-02-08 has no text layer on most pages (6 of 6 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/07222021MechoopdaOrdamendapprv.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2021-07-22
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#mechoopda-indian-tribe-of-chico-rancheria-amendment-2021-07-22#i1
+next_steps: Read the scanned amendment listed 2007-02-08 (https://www.nigc.gov/wp-content/uploads/2025/03/mechoopdaindiantribe-amend020807.pdf)
+  with OCR or by hand.
