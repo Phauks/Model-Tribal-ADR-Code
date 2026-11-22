@@ -37,8 +37,8 @@
 	{:else}
 		<li>Not on the public site yet.</li>
 	{/if}
-	<li><a href="{repositoryLink}/blob/main/{data.subject.file}">Read the record’s file, with its sources</a></li>
-	<li><a href="{repositoryLink}/commits/main/{data.subject.file}">See every change to it</a></li>
+	<li><a href="{repositoryLink}/blob/main/{data.subject.file}">Read the record’s file, with its sources, on GitHub</a></li>
+	<li><a href="{repositoryLink}/commits/main/{data.subject.file}">See every change to it on GitHub</a></li>
 </ul>
 
 {#if form && 'problem' in form}

@@ -6,6 +6,11 @@
 // - The core pages, the web app manifest, the icon and the service worker
 //   exist, so the site stays installable and readable offline (section 10).
 // - The manifest is valid JSON with the fields browsers need to install it.
+// - No link goes to GitHub unless it says so: the link's words, or the words
+//   just before it, name GitHub (site/DESIGN.md, section 6, "Links stay on
+//   the site"). The project's own documents are pages on the site instead.
+// - No page names the project's internal documents, such as "decision record
+//   0007" or "requests.md" (same section; Trevor, Nov. 22, 2026).
 // - The offline fingerprints belong to this build and list every page, so an
 //   update downloads only what changed (section 10, "Updates").
 
@@ -76,6 +81,19 @@ for (const file of pages) {
 	if (!html.includes('id="main-content"')) problem(`${name}: no main-content landmark`);
 	if (!html.includes('href="#main-content"')) problem(`${name}: no skip link`);
 	if (html.normalize('NFC') !== html) problem(`${name}: not in Unicode Normalization Form C`);
+	const words = html
+		.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, ' ')
+		.replace(/<[^>]+>/g, ' ');
+	for (const mention of words.matchAll(/decision records?\s+\d+|\b[\w./-]+\.md\b/gi)) {
+		problem(`${name}: names an internal project document: "${mention[0]}"`);
+	}
+	for (const link of html.matchAll(/<a\b[^>]*href="https?:\/\/(?:www\.)?github\.com[^"]*"[^>]*>([\s\S]*?)<\/a>/g)) {
+		const words = link[1].replace(/<[^>]+>/g, ' ');
+		const before = html.slice(Math.max(0, link.index - 160), link.index).replace(/<[^>]+>/g, ' ');
+		if (!/github/i.test(words) && !/github/i.test(before)) {
+			problem(`${name}: a link to GitHub does not say it goes to GitHub: ${link[0].slice(0, 160)}`);
+		}
+	}
 }
 
 const manifestPath = path.join(output, 'manifest.webmanifest');

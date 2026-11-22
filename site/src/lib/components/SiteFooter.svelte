@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { repositoryLink } from '#lib';
+	import GithubMark from './GithubMark.svelte';
 	import type { TrackVersions } from '#lib/server/versions.ts';
 
 	let { versions }: { versions: TrackVersions } = $props();
@@ -10,13 +11,13 @@
 	<div class="page-width">
 		<ul class="footer-links">
 			<li><a href="/requests">Request a correction or removal</a></li>
-			<li><a href="{repositoryLink}/blob/main/docs/charter.md">Charter</a></li>
+			<li><a href="/charter">Charter</a></li>
 			<li><a href="/acknowledgments">Acknowledgments</a></li>
 			<li><a href="/changelog">Changelog</a></li>
 			<li><a href="/downloads">Downloads</a></li>
 			<li><a href="/copies">Copies of documents</a></li>
-			<li><a href="{repositoryLink}/blob/main/LICENSE.md">Licenses by material</a></li>
-			<li><a href="{repositoryLink}">Source files</a></li>
+			<li><a href="/licenses">Licenses by material</a></li>
+			<li><a href="{repositoryLink}"><GithubMark /><span>GitHub</span></a></li>
 			<li><a href="/join">Help with the project</a></li>
 			<li><a href="/workspace" data-sveltekit-reload>Co-author sign-in</a></li>
 		</ul>
@@ -44,6 +45,7 @@
 
 	.footer-links a {
 		display: inline-flex;
+		gap: var(--space-2);
 		align-items: center;
 		min-height: var(--layout-target-minimum);
 	}

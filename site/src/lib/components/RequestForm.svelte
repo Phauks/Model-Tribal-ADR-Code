@@ -5,7 +5,6 @@
 	// dialog (ReportProblem.svelte), so both ask the same questions. Given
 	// onresult, the form sends itself in place, without leaving the page.
 	import { applyAction, enhance } from '$app/forms';
-	import { repositoryLink } from '#lib';
 	import {
 		authorityStatementLabels,
 		authorityStatements,
@@ -335,7 +334,7 @@
 						<input type="radio" id="{prefix}publicationPermission-publish" name="publicationPermission" value="publish" checked={value('publicationPermission') === 'publish'} />
 						<label for="{prefix}publicationPermission-publish">
 							Yes, under the project’s licenses
-							<span class="hint"><a href="{repositoryLink}/blob/main/LICENSE.md">Licenses by material</a></span>
+							<span class="hint"><a href="/licenses">Licenses by material</a></span>
 						</label>
 					</div>
 					<div class="choice">

@@ -61,13 +61,7 @@ Rights Fund's Indigenous Peacemaking Initiative, which collects nations'
 peacemaking laws, describes peacemaking as "traditional ways of resolving
 conflict in Indigenous communities."[^narf-ipi]
 
-The project therefore keeps peacemaking as its own track. Its model
-peacemaking provisions and commentary are kept apart from the alternative
-dispute resolution provisions, under their own heading. They set up or
-recognize a nation's peacemaking forum and connect it to the nation's court
-and other forums. They do not define how peacemaking is done, which each
-nation decides by its own tradition
-([decision record 0026](decisions/0026-model-peacemaking-code.md)).
+The project therefore keeps peacemaking as its own track. Its model peacemaking provisions and commentary are kept apart from the alternative dispute resolution provisions, under their own heading. They set up or recognize a nation's peacemaking forum and connect it to the nation's court and other forums. They do not define how peacemaking is done, which each nation decides by its own tradition<!-- repository-only --> ([decision record 0026](decisions/0026-model-peacemaking-code.md))<!-- /repository-only -->.
 
 ### 4. Consultation before publication
 
@@ -129,7 +123,7 @@ name, words or contribution.
 | Restrict | Hides the material from the website, exports, offline copies and any API while the request is reviewed, or permanently marks it restricted (commitment 5). |
 | Remove | Withdraws the record, sets its review status to "withdrawn at request", and leaves a notice that says only that material was withdrawn at the nation's request. |
 | Contribute | Adds the nation's sources, review comments, preferred terms or authored text, credited as the contributor chooses (commitment 7). |
-| Add | Adds a nation the project has missed when a federal or state government source names it, after checking that source; explains the reasons in writing if it declines, and accepts new proof at any time or a request for reconsideration ([requests.md](requests.md#adding-a-nation-that-is-missing)). |
+| Add | Adds a nation the project has missed when a federal or state government source names it, after checking that source; explains the reasons in writing if it declines, and accepts new proof at any time or a request for reconsideration<!-- repository-only --> ([requests.md](requests.md#adding-a-nation-that-is-missing))<!-- /repository-only -->. |
 
 **How the project responds.**
 
@@ -146,11 +140,12 @@ name, words or contribution.
   from the repository's history and asks archive services to remove copies,
   where they allow it. Printed copies already sold cannot be recalled; the
   next printing omits the material.
-- A nation's preferred names and terms are added to the project dictionary
-  ([terminology.md](terminology.md)) and apply from then on.
+- A nation's preferred names and terms are added to the project dictionary<!-- repository-only --> ([terminology.md](terminology.md))<!-- /repository-only --> and apply from then on.
 
+<!-- repository-only -->
 The website's request page and the steps behind it are specified in
 [requests.md](requests.md).
+<!-- /repository-only -->
 
 ### 7. Credit, authorship and art
 
@@ -159,8 +154,7 @@ The website's request page and the steps behind it are specified in
 - Cover and interior art is to be made by Native artists, chosen through a
   contest, credited, and paid where the project can do so; terms are set in a
   written agreement with each artist.
-- Contributors keep credit for their work under the licenses in
-  [LICENSE.md](../LICENSE.md).
+- Contributors keep credit for their work under the project's [licenses by material](../LICENSE.md).
 
 ### 8. Evidence and citation
 
@@ -172,7 +166,9 @@ The website's request page and the steps behind it are specified in
 - How sources were found is recorded in dated research session files, including
   when an AI research assistant was used.
 
+<!-- repository-only -->
 See [citation-style.md](citation-style.md) and [data-model.md](data-model.md).
+<!-- /repository-only -->
 
 ### 9. Copyright and permissions
 
