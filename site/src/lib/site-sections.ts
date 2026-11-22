@@ -32,8 +32,8 @@ export type SiteSection = { label: string; link: string; built: boolean };
 export const siteSections: SiteSection[] = [
 	{ label: 'Model code', link: '/code', built: false },
 	{ label: 'Peacemaking', link: '/peacemaking', built: false },
-	{ label: 'Foundations', link: '/foundations', built: false },
-	{ label: 'Essays', link: '/essays', built: false },
+	{ label: 'Foundations', link: '/foundations', built: true },
+	{ label: 'Essays', link: '/essays', built: true },
 	// Only the stories are published so far; the methods catalog joins them later.
 	{ label: 'Methods and stories', link: '/stories', built: true },
 	{ label: 'Nations', link: '/nations', built: true },

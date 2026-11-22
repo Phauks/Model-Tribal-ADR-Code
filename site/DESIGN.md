@@ -143,7 +143,7 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 
 | Template | Layout | Key parts |
 | --- | --- | --- |
-| Home | One column, then a four-part contents band | Purpose in one sentence; search; reserved art space; contents by part, with the two tracks side by side; "For Native nations" panel; recent changes |
+| Home | One column, then a four-part contents band | Purpose in one sentence; search; reserved art space; contents by part, with the two tracks side by side, giving no counts of what each part holds, since counts change with every update (Trevor, Nov. 22, 2026); "For Native nations" panel; recent changes |
 | Section | Contents rail, text, margin | "Model text, not law in force" notice with the version and last change; hanging section number; status chips; text with alternatives and placeholders; Comment, Illustrations, Source note; previous and next; margin: On this page, notes, "Cite this section," "Adapt this section" |
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
@@ -172,33 +172,24 @@ distinctive about each nation.
 nation's staff always know where to look, as the Tribal Law Gateway does with
 its fixed sections on each nation's page:
 
-1. The nation's name, and the nation's own name for itself, exactly as the nation writes it, once the nation confirms it. The name shown, in the title and in every list, is the name on the recognizing list without the states the list adds after a comma: "Navajo Nation, Arizona, New Mexico, & Utah" shows as "Navajo Nation" (Trevor, Nov. 22, 2026; `displayName` in `src/lib/nation-labels.ts`). A state that belongs to the name stays, as in "Paiute Indian Tribe of Utah". When the two differ, a line under the title gives the listed name, which the search also finds and the CSV download keeps. Beside it, the nation's seal or logo when its reuse status allows showing it, credited to the nation's website, with a link to ask for its removal ([official-images.md](../docs/official-images.md)).
-2. Review panel: the review status (drafted from public sources, sent to the
-   nation, reviewed by the nation, approved by the nation), what that means,
-   and "Is this about your nation? Make a request."
+1. The nation's name, and the nation's own name for itself, exactly as the nation writes it, once the nation confirms it. The name shown, in the title and in every list, is the name on the recognizing list without the states the list adds after a comma: "Navajo Nation, Arizona, New Mexico, & Utah" shows as "Navajo Nation" (Trevor, Nov. 22, 2026; `displayName` in `src/lib/nation-labels.ts`). A state that belongs to the name stays, as in "Paiute Indian Tribe of Utah". When the two differ, a line under the title gives the listed name, which the search also finds and the CSV download keeps; when they are the same, no line is shown and the name's source is only in the Sources list (Trevor, Nov. 22, 2026, removed "Name as the recognizing list gives it"). Beside it, the nation's seal or logo when its reuse status allows showing it ([official-images.md](../docs/official-images.md)). The image has no caption (Trevor, Nov. 22, 2026): its Sources entry credits the nation's website and says the image belongs to the nation, which does not endorse this project, and the nation asks for its removal through Report a problem.
+2. Review status: one small line, not a panel (Trevor, Nov. 22, 2026): a badge with the status (drafted from public sources, sent to the nation, reviewed by the nation, approved by the nation), what that means, the date the sources were last checked, and the link "Is this about your nation? Make a request."
 3. About this Nation (below; called "What is distinctive here" until Trevor renamed it on Nov. 22, 2026).
 4. At a glance: a small map of the states with a presence, then recognition, states with a presence, federal region, then the government contacts card.
 5. Courts and dispute resolution: one heading for each kind of service (Courts, Peacemaking, Mediation and so on), so a kind is never repeated after a name; under Courts, how appeals move from the court that hears a case first to the highest court, where sources record it ([data model](../docs/data-model.md#courts-and-the-path-of-appeal)).
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
-7. Document history: each of the nation's documents that has recorded versions, such as a gaming compact or a constitution, with every version oldest first, its dates, what it did to earlier versions (amended, replaced), whether it is in effect, and how its key clauses changed ([decision record 0018](../docs/decisions/0018-document-version-history.md)). A line under each title names the versions in effect. Each version's name links to a public copy of its text, the source's own address or else its archived copy (Trevor, Nov. 22, 2026); the project's private captures are never linked. Each version ends with the markers of its sources, which are also listed under the document's title in Sources.
+7. Document history: each of the nation's documents that has recorded versions, such as a gaming compact or a constitution, with every version oldest first, its dates, what it did to earlier versions (amended, replaced), and whether it is in effect ([decision record 0018](../docs/decisions/0018-document-version-history.md)). A line under each title names the versions in effect. Each version's name links to a public copy of its text, the source's own address or else its archived copy (Trevor, Nov. 22, 2026); the project's private captures are never linked. Each version ends with the markers of its sources, which are also listed under the document's title in Sources. The section opens straight onto the documents, with no introductory sentence (Trevor, Nov. 22, 2026). It shows no clause summaries or clause comparisons and no generated summary of the document, because a small model wrote them from excerpts (Trevor, Nov. 22, 2026); the records keep them for review.
 8. Notices and Labels from Local Contexts.
 9. Sources, each with links back to the markers that cite it, followed by the facts on the page that come from it, and the date the page was last checked.
 
-Each section from "About this Nation" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review panel stays open.
+Each section from "About this Nation" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review status line is not a section and does not fold.
 
-**About this Nation** has two parts:
+**About this Nation** holds the recorded features, and the section is left out when there are none. A short description the nation writes or approves will open it once a nation sends one; until then the page shows no placeholder for it (Trevor, Nov. 22, 2026, removed the "In the nation's own words" box). The site never writes that description for the nation.
 
-- **In the nation's own words.** A short description the nation writes or
-  approves. Until then the space says so and offers a link to contribute;
-  the project never writes it for the nation.
 - **Recorded features.** Short sentences generated from the record's cited facts, each followed by the markers of its sources, for example: a peacemaking program beside the Tribal court (`justice_institutions`, `dispute_resolution.forums`); a published peacemaking or mediation law (`dispute_resolution_law`); a court of appeals; presence in more than one state (`states`); a heritage language as the nation writes it (`languages`); jurisdiction facts such as Public Law 280 (`jurisdiction`). A feature appears only when a source documents it, never inferred from silence, and features describe the one nation without comparing it with others ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
 
-**Layout.** On screens at least 64 rem wide (1,024 px at the default text
-size) the page has two columns: the text, held to the reading measure, and
-beside it "At a glance" with its map, like a reference work's fact box. On
-narrower screens the parts stack in the order above, so the map sits under
-the "At a glance" heading (project choice, Nov. 21, 2026).
+**Layout.** When the page's own column is at least 62 rem wide, the page has two columns: the text, held to the reading measure, and beside it "At a glance" with its map, like a reference work's fact box, set off by a vertical rule. "At a glance" is an `aside` placed after the main text and before Sources in the page's order, so selecting text in the main column never takes in the fact box (Trevor, Nov. 22, 2026, found a selection pulling in the map, recognition and states). On narrower screens the parts stack in that order: "At a glance" follows Document history and comes before Sources.
 
 **Map of states.** "At a glance" opens with a small map that shades the states and territories where the record's cited `states` facts place the nation, with each shaded state's postal code printed on it, so color is not the only cue. It shows only what is relevant to the nation (Trevor, Nov. 22, 2026): the boxes that hold its states and no others, with the contiguous United States zoomed to the region around them but never closer than 40 percent of the country's width, so neighbors stay in view. Alaska, Hawaiʻi or a territory shown without the main box is drawn up to three times larger. Zoomed boxes use more detailed outlines than the full-size small map, and only the states in view go into the page (src/lib/presence-map.ts). It draws no nation's land ([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)), and its caption says so. It does not outline the nation's Bureau of Indian Affairs region: the Navajo Region's outline follows the Navajo Nation's land, so on that nation's page it would draw the nation's land; the region is named under "At a glance" and links to the regions map instead (project choice). A page whose record lists no state has no map.
 
@@ -208,10 +199,7 @@ the "At a glance" heading (project choice, Nov. 21, 2026).
 
 **Contacts.** A phone number is a `tel:` link that opens the device's dialer; an email address is a `mailto:` link. Fax numbers stay as text. A value that cannot be read reliably, such as a phone number that is not ten digits, stays as text (Trevor, 2026-11-21). The contacts appear as a contact card, described under [Components](#6-components).
 
-**Missing information.** Empty fields are left out rather than shown as
-"unknown," so a page never suggests a nation lacks something it may simply
-not have published. A single line at the end offers: "Know of a published
-source we have missed? Add it."
+**Missing information.** Empty fields are left out rather than shown as "unknown," so a page never suggests a nation lacks something it may simply not have published. The page has no "Add it" line for missed sources (Trevor, Nov. 22, 2026); readers offer them through Contribute or Report a problem in the masthead.
 
 **Restricted and withdrawn records.** A record marked restricted gets no page
 at all. A withdrawn record's page says only that the material was withdrawn

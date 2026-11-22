@@ -11,7 +11,7 @@ import { escapeTypst, typstString } from "./typst-text.mjs";
 
 const USAGE_LABELS = { preferred: "Preferred", acceptable: "Acceptable", "context-only": "Context only", avoid: "Avoid" };
 
-const FRONT_MATTER_ORDER = ["acknowledgments"];
+const FRONT_MATTER_ORDER = ["acknowledgments", "credits"];
 const frontMatterRank = (page) => {
   const rank = FRONT_MATTER_ORDER.indexOf(page.data.id);
   return rank === -1 ? FRONT_MATTER_ORDER.length : rank;

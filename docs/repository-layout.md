@@ -48,7 +48,7 @@ All content is kept as plain files in git, and the website and the print edition
 │   ├── requests.md          Correction, restriction, removal and contribution flow
 │   ├── contributions.md     Filings for material that comes from people, not publications
 │   ├── contributor-forms/   Consent, release and permission forms for those filings
-│   ├── editing.md           Editing drafts on the website (proposal)
+│   ├── editing.md           Editing essays on the website
 │   ├── roadmap.md           Order of work and review gates toward drafting
 │   ├── domain-to-do.md      Work that waits on the project's domain
 │   ├── outline.md           Working outline of the code, book and website

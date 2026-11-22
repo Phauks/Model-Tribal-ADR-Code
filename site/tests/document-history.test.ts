@@ -52,17 +52,14 @@ const record: DocumentHistoryRecord = {
 };
 
 describe('documentHistoryView', () => {
-	it('describes each version, what it did to earlier ones and how its clauses changed', () => {
+	it('describes each version and what it did to earlier ones, without clause summaries', () => {
 		const view = documentHistoryView(record, recorder());
 		expect(view.inEffect).toBe('2003 compact, as amended by 2009 amendment');
 		expect(view.versions.map((version) => version.inEffect)).toEqual([false, true, true]);
 		expect(view.versions[0].dates).toBe('Signed 1993-02-05; effective 1993-03-31');
 		expect(view.versions[1].relation).toBe('Replaced the 1993 compact');
 		expect(view.versions[2].relation).toBe('Amended the 2003 compact');
-		expect(view.versions[1].changes).toEqual([
-			{ topic: 'Dispute resolution', change: 'changed', summary: 'Adds mediation.' }
-		]);
-		expect(view.versions[2].changes[0].change).toBe('not compared yet');
+		expect(JSON.stringify(view)).not.toContain('Adds mediation.');
 	});
 
 	it('lists every version and approval notice under the document in the Sources section', () => {

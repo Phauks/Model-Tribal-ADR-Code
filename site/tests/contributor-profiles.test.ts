@@ -5,6 +5,7 @@ import {
 	confirmProfile,
 	confirmedCredits,
 	decideProfile,
+	deleteExpiredDeclinedProfiles,
 	deleteProfile,
 	giveWorkspaceAccess,
 	listProfiles,
@@ -111,5 +112,20 @@ describe('contributor profiles', () => {
 		await deleteProfile(database, profile);
 		expect(await profileBySubject(database, account.subject)).toBeUndefined();
 		expect(await profileVersions(database, profile.identifier)).toEqual([]);
+	});
+
+	it('deletes declined registrations 12 months after the decision, and nothing else', async () => {
+		const profile = await confirmed();
+		await decideProfile(database, profile, 'declined', 'Not a fit right now.', lead);
+		expect(await deleteExpiredDeclinedProfiles(database, new Date(Date.now() + 300 * 86_400_000))).toBe(0);
+		expect(await profileBySubject(database, account.subject)).toBeDefined();
+		expect(await deleteExpiredDeclinedProfiles(database, new Date(Date.now() + 370 * 86_400_000))).toBe(1);
+		expect(await profileBySubject(database, account.subject)).toBeUndefined();
+	});
+
+	it('keeps welcomed contributors however old the decision', async () => {
+		const profile = await confirmed();
+		await decideProfile(database, profile, 'welcomed', null, lead);
+		expect(await deleteExpiredDeclinedProfiles(database, new Date(Date.now() + 900 * 86_400_000))).toBe(0);
 	});
 });
