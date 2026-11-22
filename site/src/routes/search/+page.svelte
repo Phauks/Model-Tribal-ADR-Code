@@ -9,6 +9,7 @@
 	import { replaceState } from '$app/navigation';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import {
+		loadSearchIndex,
 		searchEntries,
 		searchKindLabels,
 		type SearchEntry,
@@ -33,9 +34,7 @@
 
 	onMount(async () => {
 		try {
-			const response = await fetch('/search/index.json');
-			if (!response.ok) throw new Error(`${response.status}`);
-			entries = (await response.json()) as SearchEntry[];
+			entries = await loadSearchIndex();
 		} catch {
 			failed = true;
 		}
