@@ -503,18 +503,23 @@ gaming:
       document number through the Federal Register API (source federal-register-api-gaming-notices).'
   - state: WA
     status: deemed-approved
-    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
-      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
-      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
-    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
-    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
-    confidence: medium
-    verification: inferred
-    as_of: '2021-09-01'
-    locator: Section XIV (Dispute Resolution), subsection B
-    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
-      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
-      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+    dispute_resolution_summary: After written notice the parties meet and confer within 10 days, and if
+      the dispute is not resolved within 20 days of the first meeting either party may take it to arbitration
+      under American Arbitration Association (Seattle) procedures, with the arbitration decision final
+      and unappealable.
+    dispute_resolution_locator: SECTION XI. REMEDIES FOR BREACH OF COMPACT PROVISIONS, C. Dispute Resolution
+      (printed SECTION xr.)
+    source: compact-wa-swinomish-indian-tribal-community-1993-02-19
+    confidence: high
+    verification: read-in-full
+    as_of: '1993-02-19'
+    locator: SECTION XI. REMEDIES FOR BREACH OF COMPACT PROVISIONS, C. Dispute Resolution (printed SECTION
+      xr.)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 213, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-wa-stillaguamish-tribe-of-indians-of-washin-2021 without
+      reading, and it described the newer Washington clause (meeting within 20 business days, mediation
+      and arbitration only by agreement, court after mediation), but this compact has a 10-day meeting
+      and lets either party take the dispute to final arbitration. Status copied from this nation's most
       recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-08-22).
   ordinances:
   - approved: '1993-11-10'

@@ -20,7 +20,7 @@ async function signIn(subject: string, email: string): Promise<SignedInPerson> {
 
 beforeEach(async () => {
 	database = testDatabase();
-	lead = await signIn('auth0|lead', 'lead@example.org');
+	lead = await signIn('account-lead', 'lead@example.org');
 	await invitePerson(
 		database,
 		{ email: 'writer@example.org', displayName: 'Essay Writer', role: 'contributor', nationIdentifier: null },

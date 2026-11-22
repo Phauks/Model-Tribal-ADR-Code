@@ -37,8 +37,12 @@ where a dispute resolution process meets a court, and almost nowhere else
 **Do not pursue** a general survey of Tribal court evidence codes or a model
 evidence code. That is court procedure, not dispute resolution; model texts
 already exist; and the first scholarly survey of Tribal evidence codes was
-published this year.[^morote] Reading that article (pull list item) is the
-cheapest next step before any further work on evidence.
+published this year.[^morote] That survey (section 1.6) does not discuss
+mediation, peacemaking or settlement confidentiality at all, so the dispute
+resolution questions above are still open, and they are the part of evidence
+law this project is placed to add. The survey itself suggests an intertribal
+model evidence code; that would be a separate project, and this note does not
+recommend taking it on here (project analysis).
 
 ## 1. Rules of evidence in Tribal courts
 
@@ -140,6 +144,42 @@ Colville goes further. Its evidence rules make evidence inadmissible if it
 would require a participant to share protected traditional teachings,
 including those shared in peacemaking, and say this rests on the protected
 nature of the material, not on an ordinary privilege.[^colville-sacred]
+
+### 1.6 The first survey: Morote (2026)
+
+Morote sorts Tribal evidence codes into three approaches to the Federal Rules:
+full acceptance, modified adoption and full rejection.[^morote] The article
+names examples but does not say how many codes it read or how it chose
+them.[^morote-method] Its points that matter here:
+
+- **Full acceptance** is attractive because the federal rules are tested and
+  federal courts read an identical code faithfully, but a nation that copies
+  them may be left with an outdated version and should say how federal case
+  law applies (Swinomish makes it persuasive).[^morote-full]
+- **Modified adoption** is the largest and most varied group. Saint Regis
+  Mohawk cuts the hearsay exceptions from 23 to six; Seminole writes Tribal
+  governments into self-authentication and expands privileges; Tulalip
+  extends the medical-expenses rule to protect gestures of sympathy; Northern
+  Cheyenne admits custom and tradition through elder experts; Pit River adds
+  a hearsay exception for Tribal oral history.[^morote-modified]
+- **Full rejection** is illustrated by Coos, whose code is not bound by
+  common law, state or federal rules and admits hearsay when the court finds
+  it credible.[^morote-reject] (Warm Springs uses the same words; see
+  section 1.2.)
+- **Federal courts and Tribal documents.** The article notes *United States
+  v. Alvirez*, holding that Tribal documents are not self-authenticating
+  under the Federal Rules, and a proposal before the federal Advisory
+  Committee to change that.[^alvirez] Project analysis: this bears on proving
+  a Tribal agreement, award or judgment in a state or federal court, a topic
+  for the enforcement commentary.
+- **Recommendations.** It urges information sharing among Tribal courts,
+  possibly an intertribal model evidence code on the pattern of the Model
+  Penal Code, and guides for litigants where a code departs from the federal
+  rules.[^morote-recs]
+
+The article does not cover mediation or peacemaking confidentiality,
+compromise offers (beyond the Tulalip example), arbitration, or how evidence
+works outside the courtroom (project analysis, from a full reading).
 
 ## 2. Evidence in Tribal dispute resolution and peacemaking
 
@@ -247,8 +287,9 @@ Project analysis:
   evidence title is a draft for public comment. The Umatilla rules hosted by
   the Department of Justice carry a placeholder where the adopting authority
   should be.
-- Morote's article, the only survey found, could not be opened from the cloud
-  session (the repository serves a browser challenge).
+- Morote's article, the only survey found, was read in full from a copy
+  Trevor supplied (the repository serves a browser challenge to the cloud
+  session); the private copy is in the project's working files.
 - Nothing here says how often these rules are used or how courts read them,
   apart from *Belone* and *Arakawa*.
 
@@ -256,7 +297,13 @@ Project analysis:
 [^provisions]: Project provision data, [research/tribal-law/provisions.csv](../tribal-law/provisions.csv), rows with `confidentiality` = `stated`, not marked duplicate and not dropped on second pass (85 rows, 38 nations). Counts in the table in section 2.1 are keyword matches on the `summary` column (script in the session log); a provision can match more than one row, and a summary that leaves a feature out is not counted. Examples cited: Ponca Tribe of Nebraska Code § 6-12-16; Mashantucket Pequot Tribal Laws, 1 M.P.T.L. ch. 4, §§ 6, 10, 11 (2017); Organized Village of Kake Keex' Kwaan Peacemaking Code § 1.03.140; Spirit Lake Law and Order Code tit. 21, § 21-1-112(4) (2014); Ely Shoshone Tribe Code ch. 48, § 48.109 (2008).
 [^uma]: Unif. Mediation Act §§ 4–7 (Unif. L. Comm'n 2001, amended 2003) (privilege, waiver, exceptions and mediator reports), described in the Act's prefatory note as reproduced in L.D. 1295, 121st Leg., 1st Reg. Sess. (Me. 2003), <https://lldc.mainelegislature.org/Open/LDs/121/121-LD-1295.pdf>. Read through a fetch tool, first part only.
 [^colville-sacred]: Colville Tribal Code § 1-9-8 (Rules of Evidence), <https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5d37421309a6fb0001ca1e62/1563902483482/1-9+Rules+of+Evidence.pdf> (captured copy, read in full). See also id. § 1-9-9 (settlement and plea discussions) and § 1-9-14 (expert witnesses).
-[^morote]: Nicole Morote, *The Tribal Rules of Evidence*, 14 Am. Indian L.J. (2026), <https://digitalcommons.law.seattleu.edu/ailj/vol14/iss1/3> (abstract only; says the article is the first study of Tribal evidence codes and identifies three frameworks for Tribal approaches to the Federal Rules). First page not verified.
+[^morote]: Nicole Morote, *The Tribal Rules of Evidence*, 14 Am. Indian L.J. 79, 81, 90 (2026), <https://digitalcommons.law.seattleu.edu/ailj/vol14/iss1/3>.
+[^morote-method]: Id. at 90–101 (examples only; no count or selection method stated).
+[^morote-full]: Id. at 91–93 (citing Swinomish Tribal Code § 3-01.061).
+[^morote-modified]: Id. at 93–98 (citing Saint Regis Mohawk Tribal Rules of Evidence Act § XLI (2008); Klamath Tribal Code tit. 2, §§ 14.04–.05 (2000); Seminole Tribal Court Rules of Evidence §§ 413(d), 501, 902(1); Tulalip Tribal Code § 2.05.130(10)(b) (2024); Northern Cheyenne Rules of Evidence Code tit. VI; Pit River Tribe Rules of Evidence R. 820 (2003); Oneida Indian Nation (N.Y.) Rules of Evidence §§ 501–14 (2004)).
+[^morote-reject]: Id. at 99–101 (citing Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Code §§ 2-9-3(f), 2-9-4, 2-9-7 (2012)).
+[^alvirez]: United States v. Alvirez, 831 F.3d 1115, 1123 n.5 (9th Cir. 2016), discussed in Morote, supra, at 95.
+[^morote-recs]: Morote, supra, at 102–05.
 [^fre1101]: Fed. R. Evid. 101(a), 1101(a), <https://www.law.cornell.edu/rules/fre/rule_1101>.
 [^icra-a]: 25 U.S.C. § 1302(a)(6), <https://www.law.cornell.edu/uscode/text/25/1302>.
 [^icra-c]: 25 U.S.C. § 1302(c)(4).

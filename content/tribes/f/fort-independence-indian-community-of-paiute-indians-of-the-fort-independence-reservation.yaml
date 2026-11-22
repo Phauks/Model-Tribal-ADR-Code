@@ -171,21 +171,25 @@ gaming:
   - state: CA
     status: deemed-approved
     dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
-      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
-      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
-      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
-      or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
-      Community compact, which follows the form California has used in its recent compacts; many California
-      nations still operate under 1999-era compacts with a different dispute section. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2014-01-17).
+      and meet and confer within 30 days; if unresolved, either party may seek arbitration before a single
+      arbitrator under the Commercial Arbitration Rules of the American Arbitration Association (though
+      neither must agree to arbitrate), and disagreements not otherwise resolved may be taken to the United
+      States District Court where the Tribe's Gaming Facility is located or to any state court of competent
+      jurisdiction in or over the County, under a limited waiver of sovereign immunity that bars monetary
+      damages except payment of money the Compact requires.
+    dispute_resolution_locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1. Voluntary Resolution;
+      Court Resolution, subdivision (d)
+    source: compact-ca-fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation-2014-01-17
+    confidence: high
+    verification: read-in-full
+    as_of: '2014-01-17'
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1. Voluntary Resolution; Court Resolution,
+      subdivision (d)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 59, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-ca-cher-ae-heights-indian-community-of-the-2026 without
+      reading, and it left out the optional arbitration step that comes before court and limited the state-court
+      route to cases the federal court cannot hear. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2014-01-17).
   ordinances:
   - approved: '2008-01-11'
     link: https://www.nigc.gov?wpdmdl=9824&ind=9837

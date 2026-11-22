@@ -1,7 +1,7 @@
 /**
  * Contributor profiles in the database (docs/contributor-profiles.md).
  *
- * Anyone whose email address Auth0 has verified may register and keep a
+ * Anyone signed in may register and keep a
  * profile. A profile gives no access to the workspace: the lead author
  * decides that separately, by linking the profile to a row in `people`.
  */
@@ -22,7 +22,11 @@ import { eventStatement } from './events.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 
-/** Who is signed in with Auth0, whether or not they have workspace access. */
+/**
+ * Who is signed in, whether or not they have workspace access. `subject` is
+ * the account identifier (src/lib/server/accounts.ts); every account has
+ * proved it receives mail at `email`.
+ */
 export interface SignedInAccount {
 	subject: string;
 	email: string;
@@ -478,8 +482,8 @@ export async function setCreditSection(
 }
 
 /**
- * Gives a registered contributor access to the workspace. Auth0 verified
- * their email address when they registered, so the person is added as
+ * Gives a registered contributor access to the workspace. Their email address
+ * was confirmed when they first signed in, so the person is added as
  * already signed in, linked to the same account, and access starts at once.
  */
 export async function giveWorkspaceAccess(

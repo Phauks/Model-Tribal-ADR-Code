@@ -21,8 +21,8 @@
 	<h2>How registering works</h2>
 	<ol>
 		<li>
-			<strong>Sign in</strong> with Google or an email address and password. We use the sign-in only
-			to know it is you; your email address must be verified.
+			<strong>Sign in</strong> with your email address. We email you a code; your account is made the
+			first time, and you can choose a password later. We use the sign-in only to know it is you.
 		</li>
 		<li>
 			<strong>Tell us about yourself</strong>: your name, how to reach you, any Native nation you want

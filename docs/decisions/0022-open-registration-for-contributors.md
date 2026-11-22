@@ -13,7 +13,8 @@ are credited in the book, with a confirmation page before anything is used
 
 ## Decision
 
-- Anyone whose email address Auth0 has verified may sign in and keep a
+- Anyone who signs in, which proves they receive mail at their address
+  ([decision record 0024](0024-own-sign-in.md)), may keep a
   **contributor profile** ([docs/contributor-profiles.md](../contributor-profiles.md)).
 - A profile gives **no access to the workspace**. The lead author still
   decides who gets a role, either from the People page as before or by giving
@@ -43,4 +44,4 @@ are credited in the book, with a confirmation page before anything is used
 
 - docs/contributor-profiles.md, which cites the design patterns used.
 - Decision records [0001](0001-adopt-care-principles.md) (CARE) and
-  [0013](0013-sign-in-with-auth0.md) (sign-in).
+  [0013](0013-sign-in-with-auth0.md) and [0024](0024-own-sign-in.md) (sign-in).

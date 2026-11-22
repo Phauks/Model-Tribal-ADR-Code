@@ -595,19 +595,21 @@ gaming:
   - state: OR
     status: approved
     dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
-      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
-      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
-      dispute resolution methods remain available by mutual agreement.
-    dispute_resolution_locator: Section 17 (Dispute Resolution)
-    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
-    confidence: medium
-    verification: inferred
-    as_of: '2023-02-08'
-    locator: Section 17 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
-      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2024-12-13).
+      meet within 30 calendar days; either party may sue in the United States District Court for the District
+      of Oregon (or a state court if the federal court declines jurisdiction) with no 90-day waiting period
+      stated, with a limited tribal immunity waiver for state-court suits, and other dispute resolution
+      methods remain available by mutual agreement.
+    dispute_resolution_locator: SECTION 17. DISPUTE RESOLUTION., A.2.a (Court Actions)
+    source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2011-10-20
+    confidence: high
+    verification: read-in-full
+    as_of: '2011-10-20'
+    locator: SECTION 17. DISPUTE RESOLUTION., A.2.a (Court Actions)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 40, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-or-confederated-tribes-of-the-grand-ronde-c-2023 without
+      reading, and it required 90 days to pass before suit, a wait the clause does not have. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2024-12-13).
   ordinances:
   - approved: '1995-04-26'
     link: https://www.nigc.gov?wpdmdl=9653&ind=9677

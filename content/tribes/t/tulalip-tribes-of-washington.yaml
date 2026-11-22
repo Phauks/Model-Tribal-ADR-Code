@@ -616,19 +616,24 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: WA
     status: approved
-    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
-      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
-      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
-    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
-    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
-    confidence: medium
-    verification: inferred
-    as_of: '2021-09-01'
-    locator: Section XIV (Dispute Resolution), subsection B
-    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
-      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
-      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-02-06).
+    dispute_resolution_summary: After written notice the parties meet and confer within 10 business days;
+      if the dispute is unresolved 20 business days after the first meeting they may by agreement use
+      formal mediation, arbitration or both, and a party not satisfied after those steps, or once 20 days
+      have passed since notice, may sue in a United States district court, under limited waivers of sovereign
+      immunity and with limits on money awards.
+    dispute_resolution_locator: Eighth Amendment, Section 12 (as amended), subsection (b) Mediation, (ii)
+    source: compact-wa-tulalip-tribes-of-washington-2009-10-08
+    confidence: high
+    verification: read-in-full
+    as_of: '2009-10-08'
+    locator: Eighth Amendment, Section 12 (as amended), subsection (b) Mediation, (ii)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 231, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-wa-stillaguamish-tribe-of-indians-of-washin-2021 without
+      reading, and it put the meeting within 20 business days of notice, where this compact requires it
+      within 10 business days, and left out the federal court route. The amendment's scan prints struck-out
+      old text beside the new; the new Section 12(b) and (d) were read. Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2024-02-06).
   ordinances:
   - approved: '1995-03-13'
     link: https://www.nigc.gov?wpdmdl=11394&ind=11443

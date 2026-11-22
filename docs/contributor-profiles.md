@@ -18,9 +18,10 @@ on a review page before anything is used.
    is asked and why, who sees it, and that registering does not give
    permission to use anything a person shares. It links to the request form
    for anyone who would rather not make an account.
-2. **Sign in.** The person signs in with Auth0 (Google, or email and
-   password). Registration needs an email address Auth0 has verified, the
-   same rule that protects invitations ([site/COLLABORATION.md](../site/COLLABORATION.md)).
+2. **Sign in.** The person signs in with a code sent to their email address,
+   or a password they chose later. Signing in proves they receive mail at
+   that address, the same rule that protects invitations
+   ([site/COLLABORATION.md](../site/COLLABORATION.md), "How sign-in works").
    Someone who signs in and is not on the People list is no longer turned
    away: they go to their profile. The workspace stays closed to them.
 3. **Fill in the profile** (`/profile/edit`), in six parts: about you, how to
@@ -60,7 +61,7 @@ choice too.
 | About you | Given name or names | Yes | To address the person and print a credit |
 | About you | Family name | No | Only to sort the list of credits. "Not everyone’s name fits the first-name, last-name format,"[^govuk-names] and the W3C advises "don't require that people supply a family name."[^w3c-names] A person with one name writes it in the first box |
 | About you | Adult where they live | Yes | Registration on the website is for adults; young people help with a parent or guardian through the request form and the young contributor consent form, and the website takes nothing from a child under 13 ([docs/contributions.md](contributions.md#contributors-under-the-age-of-majority)) |
-| Contact | Email address | Comes from sign-in | Verified by Auth0, so it cannot be mistyped or claimed by someone else |
+| Contact | Email address | Comes from sign-in | Proved by the sign-in code, so it cannot be mistyped or claimed by someone else |
 | Contact | Phone number | Only if the person asks to be called or texted | "Only collect phone numbers from people if you genuinely need them,"[^govuk-phone] in any format, with country or area code[^govuk-phone] |
 | Contact | Best way to reach you | No (email by default) | GOV.UK: "Not everyone has or can use a phone, so make sure you give users a choice about how they can be contacted."[^govuk-phone] |
 | Native nations | Connected to a Native nation? Yes and list / No / Rather not say | No | So the project knows whose knowledge and perspective it is drawing on, and so a person can choose to be credited with their nation (charter, [commitment 7](charter.md#7-credit-authorship-and-art)) |
@@ -145,7 +146,7 @@ page.
 ## How it is built
 
 - **Tables** (`site/migrations/0003_contributor_profiles.sql`):
-  `contributor_profiles` (one per Auth0 account; `person_identifier` links to
+  `contributor_profiles` (one per account, `sign_in_subject` holding the account identifier; `person_identifier` links to
   `people` once the lead author gives workspace access),
   `contributor_nations`, `contributor_interests`, and
   `contributor_profile_versions` (one row per confirmation, with a JSON copy

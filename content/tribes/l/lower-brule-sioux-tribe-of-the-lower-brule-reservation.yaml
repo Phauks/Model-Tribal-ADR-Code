@@ -343,19 +343,21 @@ gaming:
   - state: SD
     status: approved
     dispute_resolution_summary: Either party may bring a dispute over interpretation of the compact in
-      federal district court, while a separate three-person binding Arbitration Board that includes the
-      chairs of the state and tribal gaming commissions decides contested license-suitability and slot
-      machine compliance findings.
-    dispute_resolution_locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration
-      procedure
-    source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
-    confidence: medium
-    verification: inferred
-    as_of: '2019-04-01'
-    locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
-    note: state model compact; nation-specific text not checked. The same federal-court clause appears
-      in the 2019 Sisseton-Wahpeton Oyate compact (Section 13.1) and the 2016 Yankton Sioux Tribe compact
-      (Section 14.1); other South Dakota compacts were not checked. Status copied from this nation's most
+      federal district court, while a separate three-person binding Arbitration Board with one member
+      selected by the Tribal Gaming Commission, one by the State Gaming Commission and one jointly decides
+      contested license-suitability and slot machine compliance findings.
+    dispute_resolution_locator: '11. General Provisions: 11.1 (also the arbitration paragraph under 7.
+      Licensing of Gaming Operators and Employees, and paragraph 8.7)'
+    source: compact-sd-lower-brule-sioux-tribe-of-the-lower-brule-reservation-2001-01-17
+    confidence: high
+    verification: read-in-full
+    as_of: '2001-01-17'
+    locator: '11. General Provisions: 11.1 (also the arbitration paragraph under 7. Licensing of Gaming
+      Operators and Employees, and paragraph 8.7)'
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 102, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019 without
+      reading, and it said the arbitration board includes the commission chairs, where this compact has
+      each commission choose one member and both choose the third. Status copied from this nation's most
       recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2002-05-31).
   ordinances:
   - approved: '1995-08-25'

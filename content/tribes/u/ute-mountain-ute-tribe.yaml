@@ -365,18 +365,22 @@ gaming:
   - state: CO
     status: approved
     dispute_resolution_summary: A complaining party gives written notice and the parties have 20 days
-      to resolve the matter informally, after which the complaining party may invoke arbitration under
-      American Arbitration Association commercial rules before one agreed arbitrator or a three-member
-      panel experienced in Indian gaming law, which may declare rights and enjoin violating conduct.
-    dispute_resolution_locator: Section 12 (Remedies for Breach of Compact Provisions)
-    source: compact-co-southern-ute-indian-tribe-of-the-souther-1995
-    confidence: medium
-    verification: inferred
-    as_of: '1995-08-21'
-    locator: Section 12 (Remedies for Breach of Compact Provisions)
-    note: state model compact; nation-specific text not checked. Read from the 1995 Southern Ute Indian
-      Tribe compact; the Ute Mountain Ute compact was not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (1996-03-19).
+      to resolve the matter informally, after which the complaining party may invoke binding arbitration
+      under American Arbitration Association commercial rules before one agreed arbitrator or a three-member
+      panel, which declares the parties' rights and grants relief permitted by law, and the matter may
+      not then be litigated in court.
+    dispute_resolution_locator: SECTION 9. REMEDY FOR BREACH OF COMPACT PROVISIONS-ARBITRATION, subsection
+      B
+    source: compact-co-ute-mountain-ute-tribe-1996-03-19
+    confidence: high
+    verification: read-in-full
+    as_of: '1996-03-19'
+    locator: SECTION 9. REMEDY FOR BREACH OF COMPACT PROVISIONS-ARBITRATION, subsection B
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 240, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-co-southern-ute-indian-tribe-of-the-souther-1995 without
+      reading, and it said the arbitrators may enjoin conduct and left out that arbitration binds both
+      parties and bars a court case. Status copied from this nation's most recent approved or deemed-approved
+      entry for this state in the Office of Indian Gaming list (1996-03-19).
   ordinances:
   - approved: '1995-03-03'
     link: https://www.nigc.gov?wpdmdl=11480&ind=11527

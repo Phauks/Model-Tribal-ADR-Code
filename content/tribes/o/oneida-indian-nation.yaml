@@ -396,19 +396,23 @@ gaming:
       The Tribe column and the compact title disagree; the nation named in the title was used.'
   - state: NY
     status: approved
-    dispute_resolution_summary: After written notice the parties meet within 14 days to negotiate, and
-      if no solution is reached within 30 days either party may submit the dispute to binding arbitration
-      under American Arbitration Association rules before three arbitrators, without monetary damages.
-    dispute_resolution_locator: Section 14 (Party Dispute Resolution)
-    source: compact-ny-seneca-nation-of-indians-2002
-    confidence: medium
-    verification: inferred
-    as_of: '2002-12-09'
-    locator: Section 14 (Party Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2002 Seneca Nation of Indians
-      compact; the Saint Regis Mohawk Tribe and Oneida Indian Nation compacts were not checked. Status
-      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
-      of Indian Gaming list (1993-06-04).
+    dispute_resolution_summary: After written notice the State and the Nation meet within five days, and
+      if the dispute is not resolved within 30 days after the notice it is determined by binding arbitration
+      under American Arbitration Association rules before one arbitrator from an agreed list (or three
+      if the parties disagree on the arbitrator), who may impose any relief available in law or equity,
+      with enforcement of the award in the Northern District of New York.
+    dispute_resolution_locator: SECTION 14 . DISPUTE RESOLUTION
+    source: compact-ny-oneida-indian-nation-1993-06-04
+    confidence: high
+    verification: read-in-full
+    as_of: '1993-06-04'
+    locator: SECTION 14 . DISPUTE RESOLUTION
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 131, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-ny-seneca-nation-of-indians-2002 without reading, and it
+      gave a 14-day meeting, three arbitrators and no money damages, where the clause gives five days,
+      one arbitrator from an agreed list and relief in law or equity. Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (1993-06-04).
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

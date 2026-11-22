@@ -453,21 +453,24 @@ gaming:
       federal-register-api-gaming-notices).'
   - state: SD
     status: approved
-    dispute_resolution_summary: Either party may bring a dispute over interpretation of the compact in
-      federal district court, while a separate three-person binding Arbitration Board that includes the
-      chairs of the state and tribal gaming commissions decides contested license-suitability and slot
-      machine compliance findings.
-    dispute_resolution_locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration
-      procedure
-    source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
-    confidence: medium
-    verification: inferred
-    as_of: '2019-04-01'
-    locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
-    note: state model compact; nation-specific text not checked. The same federal-court clause appears
-      in the 2019 Sisseton-Wahpeton Oyate compact (Section 13.1) and the 2016 Yankton Sioux Tribe compact
-      (Section 14.1); other South Dakota compacts were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2026-10-21).
+    dispute_resolution_summary: Either party may commence an action in federal district court to resolve
+      a dispute over the interpretation of the Compact, while a three-person binding arbitration Board,
+      including the chairman of the South Dakota Commission on Gaming and the chairman of the Tribal Gaming
+      Commission, decides contested findings that a gaming device is non-complying, with an appeal to
+      federal district court if permitted by law.
+    dispute_resolution_locator: 9. REGULATORY STANDARDS FOR GAMING ON THE FLANDREAU SANTEE SIOUX RESERVATION,
+      9.7 REMEDIES FOR NON-COMPLYING GAMING DEVICES, paragraph 2; and 14.1
+    source: compact-sd-flandreau-santee-sioux-tribe-of-south-dakota-2016-09-21
+    confidence: high
+    verification: read-in-full
+    as_of: '2016-09-21'
+    locator: 9. REGULATORY STANDARDS FOR GAMING ON THE FLANDREAU SANTEE SIOUX RESERVATION, 9.7 REMEDIES
+      FOR NON-COMPLYING GAMING DEVICES, paragraph 2; and 14.1
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 56, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019 without
+      reading, and it had the arbitration board also decide license-suitability findings, where this compact
+      gives the board only gaming device disputes. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2026-10-21).
   ordinances:
   - approved: '1994-08-17'
     link: https://www.nigc.gov?wpdmdl=9793&ind=9809
