@@ -55,6 +55,8 @@ Trevor's review:
   [`scripts/analysis/dispute_resolution_practice.py`](../scripts/analysis/dispute_resolution_practice.py)
   current so the analysis can be re-run after each review pass.
 
+- **Editing essays on the website.** Essays live in the private bucket and are edited, versioned and published in the workspace ([editing.md](editing.md), decision record 0021). Next: live co-editing on Durable Objects, comments on drafts, the print and ebook builds reading the published copy, figures, and the bucket lock on `essays/` ([editing.md, "Built so far and still to build"](editing.md#built-so-far-and-still-to-build)).
+
 Not in Phase 0: choosing chapters, writing provision text, writing commentary
 or illustrations.
 

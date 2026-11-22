@@ -23,7 +23,7 @@ import { createHash, randomBytes, randomUUID } from 'node:crypto';
 const arguments_ = process.argv.slice(2);
 const local = arguments_.includes('--local');
 const siteIndex = arguments_.indexOf('--site');
-const email = arguments_.find((value, index) => !value.startsWith('--') && index !== siteIndex + 1);
+const email = arguments_.find((value, index) => !value.startsWith('--') && (siteIndex < 0 || index !== siteIndex + 1));
 const site =
 	siteIndex >= 0 ? arguments_[siteIndex + 1] : local ? 'http://localhost:8787' : 'https://model-tribal-adr-code.trevordgoldsmith.workers.dev';
 

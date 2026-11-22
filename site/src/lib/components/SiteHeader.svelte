@@ -22,6 +22,7 @@
 	// and "About" join the menu when their pages are built (site/DESIGN.md,
 	// section 4). Downloads and the changelog are linked from the footer.
 	const menu = [
+		{ label: 'Foundations', link: '/foundations' },
 		{ label: 'Nations', link: '/nations' },
 		{ label: 'Stories', link: '/stories' },
 		{ label: 'Glossary', link: '/glossary' }

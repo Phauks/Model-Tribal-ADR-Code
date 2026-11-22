@@ -8,6 +8,8 @@
 	const menu = $derived(
 		[
 			{ label: 'Overview', link: '/workspace', shown: true },
+			// Everyone sees the essays they can open, by role or by grant.
+			{ label: 'Essays', link: '/workspace/essays', shown: true },
 			{ label: 'Requests', link: '/workspace/requests', shown: data.permissions.includes('read-requests') },
 			// Everyone sees the documents they can open, by role or by grant.
 			{ label: 'Reviews', link: '/workspace/reviews', shown: true },
