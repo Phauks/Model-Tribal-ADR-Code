@@ -14,17 +14,9 @@ an image is or is not shown.
 
 ## Where the images come from
 
-- Only the nation's own website, as listed in the profile's contacts. The
-  finder script, [scripts/tribes/find_official_images.py](../scripts/tribes/find_official_images.py),
-  reads the home page, pages whose links mention a seal, flag, emblem, logo or
-  insignia, and the site's terms of use, copyright or legal pages. It saves
-  candidate images and every sentence about reuse to a private folder and never
-  writes to a profile.
-- A person (or the AI assistant, whose choices are reviewed in the pull request)
-  picks at most one image per nation by eye. Images from shared hosts are
-  rejected because the mark belongs to someone else: intertribal consortia,
-  Alaska Native corporations, state agencies, casinos, website vendors and
-  social media icons.
+- The nation's own website comes first, as listed in the profile's contacts. The finder script, [scripts/tribes/find_official_images.py](../scripts/tribes/find_official_images.py), reads the home page, pages whose links mention a seal, flag, emblem, logo or insignia, and the site's terms of use, copyright or legal pages. It saves candidate images and every sentence about reuse to a private folder and never writes to a profile. Sites that refuse the plain reader are opened in a headless browser.
+- When the nation's website has no usable image, or the nation has no website, another reliable copy may be used (Trevor Goldsmith, 2026-11-22): a file on Wikimedia Commons or English Wikipedia, or the nation's page on an intertribal organization's website, but only when the image is clearly labelled as that nation's seal or logo. The record then says who made or published the copy and under what license (`credit`), and the website shows that in the image's Sources entry instead of "As the nation's website publishes it."
+- A person (or the AI assistant, whose choices are reviewed in the pull request) picks at most one image per nation by eye. Marks that belong to someone else are rejected: intertribal consortia's own logos, Alaska Native corporations, boroughs, state agencies, casinos, website vendors and social media icons.
 - The project **never** draws, generates, edits or substitutes an image, and
   never uses stock or pan-Indian imagery (a standing project rule). When no image
   is found, the profile has none.
@@ -35,6 +27,8 @@ an image is or is not shown.
 The first collection (research session `2026-11-21-official-images`) chose
 images for 360 of the 545 nations with a listed website. A later run on the
 Minnesota Chippewa Tribe's six component bands added five more.
+
+The second collection (research session `2026-11-22-official-images-second-pass`) looked again for the 589 nations that still had no image, reading their websites by script and in a browser, Wikipedia infoboxes, Wikimedia Commons categories and the web. It chose images for 24 nations (15 from the nation's own website, 4 from an intertribal organization's page and 5 from Wikimedia Commons or Wikipedia); 17 may be shown and 7 are restricted because the nation filed the same or a similar design in the USPTO database. Each nation's searches are logged under [research/search-logs/official-images/](../research/search-logs/official-images/). Flags were found on Wikimedia Commons for some nations that have no seal or logo; they were left out until Trevor decides whether a flag drawn by a volunteer should stand in for a nation's own image.
 
 ## How "can't reuse" is detected
 
@@ -123,6 +117,7 @@ the same paths ([decision record 0017](decisions/0017-serve-nation-images-from-t
   fetches it from the nation's own website and keeps it only if its SHA-256
   matches the reviewed copy. If the nation has changed or removed the image,
   nothing is shown until it is reviewed again, and the page hides the figure.
+- Images from the second collection are put in the bucket when they are reviewed ([scripts/tribes/capture_official_images.py](../scripts/tribes/capture_official_images.py)), so they show even when the nation's website refuses the Worker or the copy came from somewhere else.
 - Responses are cached for an hour at most and never saved for offline use.
 - To withdraw an image, set its status, rebuild the site, and delete the
   object `nation-images/<nation id>/...` from the bucket (and the private
@@ -237,6 +232,8 @@ Trevor Goldsmith chose the first option on 2026-11-21.
    `research/raw/<date>/tribal-insignia-database.json`.
 3. `python3 scripts/tribes/write_official_images.py` writes the profiles and
    source records; `python3 scripts/validate_records.py` checks the result.
+
+For nations that still have no image, the second collection's steps are: run the finder with a third argument naming a file of profile ids (`python3 scripts/tribes/find_official_images.py candidates.json <private folder> only.txt`), look on Wikimedia Commons and Wikipedia, review the choices into `research/raw/2026-11-22/official-images-second-pass.json`, then run `python3 scripts/tribes/add_official_images.py` (writes the profiles and source records; it never replaces an image) and `python3 scripts/tribes/capture_official_images.py --captures <captures folder> --files <reviewed downloads>` (files the private copies and uploads them to the bucket).
 
 [^copyright-subject]: 17 U.S.C. § 102(a)(5).
 [^government-works]: 17 U.S.C. § 105 ("Copyright protection under this title is not available for any work of the United States Government . . . .").

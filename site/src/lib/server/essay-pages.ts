@@ -13,6 +13,7 @@ import { essayBoxFacts, essayCaseNames, essayCitations, essayTerms, essaysInGit 
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
 import { essayDateTime } from '../essays/dates.ts';
+import type { LineChange } from '../essays/merge.ts';
 import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
 import { casesByTopicMarkdown, taggedCases } from '../essays/case-topics.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
@@ -79,13 +80,13 @@ export function generatedKind(text: string): string | undefined {
  * by the index built from the Topics parts of every other essay's case boxes,
  * each linked to the page that holds its box (case-topics.ts).
  */
-export async function renderWithGenerated(text: string, which: EssayTexts): Promise<RenderedEssay> {
-	if (generatedKind(text) !== 'cases-by-topic') return renderEssay(text, essayLibrary);
+export async function renderWithGenerated(text: string, which: EssayTexts, options: { lines?: LineChange[] } = {}): Promise<RenderedEssay> {
+	if (generatedKind(text) !== 'cases-by-topic') return renderEssay(text, essayLibrary, options);
 	const texts = Object.fromEntries(Object.entries(await currentTexts(which)).filter(([, other]) => !generatedKind(other)));
 	const tagged = Object.values(texts).flatMap((other) => taggedCases(other));
 	const index = casesByTopicMarkdown(tagged, (key) => essayCaseNames[key]);
 	const pages = boxPages(texts);
-	return renderEssay(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] });
+	return renderEssay(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] }, options);
 }
 
 /**

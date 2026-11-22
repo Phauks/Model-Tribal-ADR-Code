@@ -139,12 +139,36 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
+official_images:
+- kind: seal
+  alternative_text: Navajo Nation
+  image_link: https://www.navajo-nsn.gov/Portals/0/Images/navajoSeal_SiteLogo_only.png?ver=U6UWfqRQ7_F3NrixRURucg%3d%3d
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: d6ade43ef4d709b84e4950c38b6025120fd72c3d852ba9971cde89fec35a232b
+  private_copy: nation-images/navajo-nation/seal-d6ade43ef4d7.png
+  reuse:
+    status: restricted
+    checked: '2026-11-22'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89003209
+      serial_number: '89003209'
+      note: The nation filed the same design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+  source: navajo-nsn-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 tribal_insignia_database_entries:
 - serial_number: '89003209'
   wordmark: GREAT SEAL OF THE NAVAJO NATION
   filed: '2025-02-11'
   record_link: https://tsdr.uspto.gov/#caseNumber=89003209&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: same-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'
@@ -168,8 +192,8 @@ governing_documents:
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At the Navajo Nation
-    Office of Legislative Services website.". Title changed from "Tribal code" on 2026-11-22 to the
-    linked page''s own title, "Navajo Nation Code" (fetched with status 200 on 2026-11-22).'
+    Office of Legislative Services website.". Title changed from "Tribal code" on 2026-11-22 to the linked
+    page''s own title, "Navajo Nation Code" (fetched with status 200 on 2026-11-22).'
 - kind: other
   title: Navajo Nation Office of Legislative Services Public Reports
   link: http://dibb.nnols.org/PublicReporting.aspx
@@ -179,10 +203,10 @@ governing_documents:
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "See also Navajo Nation
-    Office of Legislative Services Public Reports for information about legislation / resolutions.".
-    Title and kind changed on 2026-11-22 from "Tribal code" (law-code) to the linked page''s heading,
-    because the page reports legislation and resolutions rather than publishing the code (fetched with
-    status 200 on 2026-11-22).'
+    Office of Legislative Services Public Reports for information about legislation / resolutions.". Title
+    and kind changed on 2026-11-22 from "Tribal code" (law-code) to the linked page''s heading, because
+    the page reports legislation and resolutions rather than publishing the code (fetched with status
+    200 on 2026-11-22).'
 - kind: law-code
   title: Navajo Nation Code
   link: https://www.nnols.org/navajo-nation-code/
@@ -193,9 +217,9 @@ governing_documents:
   locator: Arizona section, entry 'Navajo Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
     2026-11-21: the link the source gives (http://www.navajonationcouncil.org/Code%20Page.html) returned
-    HTTP 404, so it is not recorded. Link added 2026-11-22: the Navajo Nation Office of Legislative
-    Services page titled "Navajo Nation Code" (fetched with status 200 on 2026-11-22), the same page
-    the National Indian Law Library links for the code.'
+    HTTP 404, so it is not recorded. Link added 2026-11-22: the Navajo Nation Office of Legislative Services
+    page titled "Navajo Nation Code" (fetched with status 200 on 2026-11-22), the same page the National
+    Indian Law Library links for the code.'
 justice_institutions:
 - kind: peacemaking-program
   name: Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)
@@ -258,7 +282,8 @@ justice_institutions:
     verification: read-in-full
     as_of: '2021-02-23'
     locator: Opening description of the court system
-    note: The guide says the trial courts (district courts and family courts) are appealed to the Supreme Court, the appellate court. The family courts are not yet listed in this profile.
+    note: The guide says the trial courts (district courts and family courts) are appealed to the Supreme
+      Court, the appellate court. The family courts are not yet listed in this profile.
 dispute_resolution:
   forums:
   - kind: peacemaking
