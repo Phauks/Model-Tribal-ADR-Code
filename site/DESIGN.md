@@ -236,7 +236,7 @@ size, because the book's trim size is not yet decided (project choice).
 **Icons.** All icons but one (the GitHub mark, the last rule below) come from Lucide,[^lucide-license] chosen on Nov. 21, 2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)). The site imports single icons from `@lucide/svelte`, so only the icons used are bundled.[^lucide-svelte] The book and the ebook use the same drawings from `lucide-static`, at the same version number, which `site/package.json` pins exactly. Rules:
 
 - An icon sits beside words. The only icon-only controls are the search icon, the theme button, the Settings cog, the profile button (Trevor asked for the search icon, the cog and the profile icon on Nov. 22, 2026), the Star button, the X that closes the search panel and the Modal's close button (an X, asked for by Trevor the same day). They share the `icon-button` class: no box around them, since the icon shows it is a control (Trevor, Nov. 22, 2026), with a 44px target, a faint fill on hover and the usual focus ring. Each carries an `aria-label` that names it and a matching `title` tooltip, because Lucide hides icons from screen readers by default.[^lucide-a11y] The text alignment choice in Settings also shows only symbols, as Trevor asked on Nov. 22, 2026; each symbol is a radio button with a hidden name that screen readers read, and the picked choice's name and hint show in words just below it.
-- Beside 18 px body text, icons are 20 px with `strokeWidth` 1.75, which
+- Beside body text, icons are 20 px with `strokeWidth` 1.75, which
   matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project
   measurement). Standalone controls use 24 px and the default 2 px stroke.
 - Never use icons that read as Native imagery, even where Lucide offers them:
@@ -450,7 +450,7 @@ languages.[^atkinson] Its letterforms are built to be told apart, which suits
 an accessibility-first reference (project analysis). The site
 uses 400, 600 and 700 only.
 
-- **Scale:** 1.25 from an 18 px body: 16, 18, 22.4, 28, 35 and 44 px.
+- **Scale:** 1.25 from a 16 px body (12 points, the browser default): 14, 16, 20, 25, 31.2 and 39.2 px. Trevor asked on Nov. 22, 2026 for a smaller standard size than the earlier 18 px, which read large on a laptop; readers can still change it with the text size setting.
 - **Line height:** 1.6 for reading, 1.25 for headings.
 - **Measure:** at most 58ch, inside the 45 to 90 character range Practical
   Typography recommends.[^butterick] A `ch` is the width of the digit zero,

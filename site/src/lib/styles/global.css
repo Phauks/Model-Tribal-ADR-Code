@@ -637,7 +637,7 @@ sup.citation {
 
 /*
  * Line width (Settings, Text). The token's 51ch is Standard, about 75
- * characters of English in Atkinson Hyperlegible Next at 18 px.
+ * characters of English in Atkinson Hyperlegible Next at any size.
  */
 :root:root[data-line-width='narrow'] {
 	--layout-measure: 44ch;
