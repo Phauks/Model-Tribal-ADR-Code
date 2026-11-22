@@ -195,4 +195,6 @@ sources" (analysis, review queue item 12).
 
 Essays, the methods and manners collection, the website, the print interior
 and the ebook are built from the same records. Their own plans live with
-those tracks.
+those tracks. Work that waits on the project's domain (moving the website,
+sign-in and notice email, the address printed in the book) is listed in
+[Waiting on the domain](domain-to-do.md).
