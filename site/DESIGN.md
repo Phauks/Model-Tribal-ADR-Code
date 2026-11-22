@@ -143,7 +143,7 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 
 | Template | Layout | Key parts |
 | --- | --- | --- |
-| Home | One column, then a four-part contents band | Purpose in one sentence; search; reserved art space; contents by part, with the two tracks side by side; "For Native nations" panel; recent changes |
+| Home | One column, then a four-part contents band | Purpose in one sentence; search; reserved art space; contents by part, with the two tracks side by side, giving no counts of what each part holds, since counts change with every update (Trevor, Nov. 22, 2026); "For Native nations" panel; recent changes |
 | Section | Contents rail, text, margin | "Model text, not law in force" notice with the version and last change; hanging section number; status chips; text with alternatives and placeholders; Comment, Illustrations, Source note; previous and next; margin: On this page, notes, "Cite this section," "Adapt this section" |
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
