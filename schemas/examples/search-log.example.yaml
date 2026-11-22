@@ -1,0 +1,41 @@
+# Example search log for the fictitious nation in tribe.example.yaml, to show
+# structure only. Real records live in research/search-logs/<topic>/<letter>/<profile id>.yaml
+# (decision record 0025).
+profile: content/tribes/e/example-nation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+  - date: '2026-11-22'
+    searched_by: Claude (AI assistant)
+    method: script
+    place_kind: project-capture
+    address: research/tribal-law/provisions.json
+    query: nation id example-nation
+    outcome: not-found
+    reason: The tribal law text collection holds no provisions or passages for this nation.
+  - date: '2026-11-22'
+    searched_by: Claude (AI assistant)
+    method: script
+    place_kind: national-indian-law-library
+    address: https://narf.org/nill/tribes/example.html
+    outcome: dead-link
+    reason: The library has no tribal law page for this nation; the address returns not found.
+  - date: '2026-11-22'
+    searched_by: Claude (AI assistant)
+    method: script
+    place_kind: nation-website
+    address: https://www.example.org/
+    query: code, ordinance, law, court, judicial, peacemaking, mediation, dispute
+    outcome: found
+    reason: The court page describes a peacemaking program run by the Tribal court.
+    records:
+      - research/reviews/2026-11-22-dispute-resolution-coverage.json#example-nation-1
+  - date: '2026-11-22'
+    searched_by: Claude (AI assistant)
+    method: script
+    place_kind: nation-code-site
+    address: https://library.municode.com/tribes_and_tribal_nations/example
+    outcome: blocked
+    reason: The code host returned 403 to the project's link checker, which does not try to get past bot protection.
+next_steps: A person could open the code on Municode in a browser and read the chapters on the court and on peacemaking.

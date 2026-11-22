@@ -3,8 +3,9 @@
 Counts every cited fact in content/tribes/ by profile section and
 verification level, plus dispute resolution coverage by Bureau of Indian
 Affairs region, source archives and citator checks, method and glossary
-status, outreach citations, and citation problems in content headed for an
-edition. With --base, each count is shown beside the same count at that git
+status, outreach citations, citation problems in content headed for an
+edition, and search logs (decision record 0025): nations by search status for
+each topic, and failed searches by kind of place and outcome. With --base, each count is shown beside the same count at that git
 ref, so a pull request that adds unchecked data shows it.
 
 Facts recorded before the `verification` field existed are sorted by the
@@ -48,11 +49,13 @@ def measure(tree, today):
     regions = collections.defaultdict(collections.Counter)
     recognition = collections.Counter()
     compacts = collections.Counter()
+    searched = {record.get("profile"): record.get("status")
+                for _, record in tree.yaml_records("research/search-logs/dispute-resolution/*/*.yaml")}
     m["profiles"] = len(tree.profiles)
     m["profiles with any dispute resolution record"] = 0
     m["profiles marked tribal_review_required"] = 0
     m["profiles not yet sent to the nation"] = 0
-    for profile in tree.profiles.values():
+    for file, profile in tree.profiles.items():
         facts = profile_facts(profile)
         has_practice = any(path.startswith("dispute_resolution") for path, _ in facts)
         m["profiles with any dispute resolution record"] += has_practice
@@ -67,6 +70,10 @@ def measure(tree, today):
         if region:
             regions[region]["profiles"] += 1
             regions[region]["with a record"] += has_practice
+            status = searched.get(file)
+            if status and status != "not-searched":
+                regions[region]["searched"] += 1
+                regions[region]["search " + status] += 1
         for path, fact in facts:
             row = sections[section_of(path)]
             row["facts"] += 1
@@ -179,17 +186,49 @@ def measure(tree, today):
     m["citations in edition content"] = pairs
     m["  citing a source that is unarchived, lacks a citator result or is marked unverified"] = problems
 
+    # Search logs (decision record 0025).
+    searches = search_counts(tree, m)
+
     return {
         "summary": m,
         "sections": {name: dict(row) for name, row in sorted(sections.items())},
         "regions": {name: dict(row) for name, row in sorted(regions.items())},
+        "searches": searches,
     }
+
+
+SEARCH_STATUSES = ("found", "none-found", "partly-searched", "not-searched")
+
+
+def search_counts(tree, m):
+    """Add search log counts to the summary `m`; return failed searches by
+    topic, kind of place and outcome."""
+    logs = tree.yaml_records("research/search-logs/*/*/*.yaml")
+    topics = collections.defaultdict(collections.Counter)
+    failures = collections.defaultdict(collections.Counter)
+    for _, record in logs:
+        topic = str(record.get("topic"))
+        topics[topic][str(record.get("status"))] += 1
+        for search in record.get("searches") or []:
+            if search.get("outcome") not in ("found", "not-found"):
+                failures[topic][f"{search.get('place_kind')} | {search.get('outcome')}"] += 1
+    m["search logs"] = len(logs)
+    for topic, statuses in sorted(topics.items()):
+        m[f"nations with a {topic} search log"] = sum(statuses.values())
+        for status in SEARCH_STATUSES:
+            m[f"  {status}"] = statuses[status]
+        m[f"  failed {topic} searches"] = sum(failures[topic].values())
+    return {topic: dict(sorted(rows.items())) for topic, rows in sorted(failures.items())}
 
 
 def base_tree(ref, directory):
     """Extract the records at a git ref into a directory and read them."""
+    folders = ["content", "research/outreach", "research/search-logs"]
+    present = subprocess.run(
+        ["git", "ls-tree", "--name-only", ref, "--", *folders], check=True, capture_output=True, text=True,
+    ).stdout.split()
     archive = subprocess.run(
-        ["git", "archive", "--format=tar", ref, "content", "research/outreach"],
+        ["git", "archive", "--format=tar", ref, *[f for f in folders if f in present]],
         check=True, capture_output=True,
     ).stdout
     with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
@@ -229,9 +268,19 @@ def markdown(now, base, base_label):
         lines.append(f"| `{name}` | " + " | ".join(cell(row.get(c, 0)) for c in columns) + " |")
 
     lines += ["", "## Dispute resolution records by Bureau of Indian Affairs region", "",
-              "| Region | Federally recognized profiles | With any record |", "| --- | ---: | ---: |"]
+              "Searched counts profiles with a dispute resolution search log (decision record 0025), "
+              "by the log's status.", "",
+              "| Region | Federally recognized profiles | With any record | Searched | Found | None found | Partly searched |",
+              "| --- | ---: | ---: | ---: | ---: | ---: | ---: |"]
     for name, row in now["regions"].items():
-        lines.append(f"| {name} | {row.get('profiles', 0)} | {row.get('with a record', 0)} |")
+        lines.append(f"| {name} | {row.get('profiles', 0)} | {row.get('with a record', 0)} | {row.get('searched', 0)} "
+                     f"| {row.get('search found', 0)} | {row.get('search none-found', 0)} | {row.get('search partly-searched', 0)} |")
+    for topic, rows in now.get("searches", {}).items():
+        lines += ["", f"## Failed {topic} searches by kind of place and outcome", "",
+                  "| Kind of place | Outcome | Searches |", "| --- | --- | ---: |"]
+        for name, count in rows.items():
+            place, outcome = name.split(" | ")
+            lines.append(f"| {place} | {outcome} | {count:,} |")
     return "\n".join(lines) + "\n"
 
 
