@@ -179,6 +179,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.penobscotnation.org/government/tribal_court/index.php
   source: national-indian-law-library-penobscot
   confidence: medium
   verification: bulk-import
@@ -186,16 +187,21 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (https://www.penobscotnation.org/departments/tribal-court/) returned HTTP 404,
-    so it is not recorded.'
+    so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
+    with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-289.'
 - kind: tribal-court
   name: Penobscot Indian Nation Tribal Court
+  link: https://www.penobscotnation.org/government/tribal_court/index.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Maine section, entry 'Penobscot Indian Nation'
   note: 'Link check 2026-11-21: the link the source gives (http://www.penobscotnation.org/departments/tribal-court)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
+    website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-290.'
 dispute_resolution: {}
 jurisdiction:
 - topic: indian-child-welfare-act

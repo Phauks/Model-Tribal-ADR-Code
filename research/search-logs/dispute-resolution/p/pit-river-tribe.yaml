@@ -1,0 +1,27 @@
+profile: content/tribes/p/pit-river-tribe.yaml
+topic: dispute-resolution
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pitrivertribe.gov/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Youth Reclamation Program – The Peacemaker Program”: Home page status 200; 0 linked pages
+    mentioning a court, judiciary, justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: '“Youth Reclamation Program – The Peacemaker Program”: Claude weighed the evidence against the
+    lead author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-291
+next_steps: No page or official directory entry was found on 2026-11-22 for “Youth Reclamation Program
+  – The Peacemaker Program” (research/reviews/2026-11-22-service-links.json).

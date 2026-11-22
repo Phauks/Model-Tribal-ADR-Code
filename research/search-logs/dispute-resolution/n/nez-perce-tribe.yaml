@@ -123,3 +123,32 @@ searches:
   query: ALTERNATIVE DISPUTE RESOLUTION
   outcome: found
   reason: Same chapter as nez-perce-tribe#1.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://nezperce.org/government/law-and-justice/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Status 200; not used as the link: it does not name the service or is not
+    its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nezperce.org/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Home page status 200; 1 linked pages mentioning a court, judiciary, justice
+    or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: '“Peacemaker Court”: Claude weighed the evidence against the lead author''s order (own page,
+    then directory entry): none-found; the link stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-254
+next_steps: No page or official directory entry was found on 2026-11-22 for “Peacemaker Court” (research/reviews/2026-11-22-service-links.json).

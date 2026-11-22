@@ -114,3 +114,59 @@ searches:
     brief; verdict confirmed, from https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-085
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Read the Nov. 21 court review''s result
+    for this court (verdict not-found); it gives no page of the court''s own fetched with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Tribal Court”: Read the Nov. 22 court review''s result (court-084, verdict confirmed, state-court-directory
+    https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf);
+    it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://jicarillaoga.com/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Home page status 200; read from the Nov.
+    22 court review''s saved copy, not fetched again; 0 linked pages mentioning a court, judiciary, justice
+    or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): directory, https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-110
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Jicarilla Apache Nation Tribal Court”: Read the Nov. 22 court review''s result (court-085,
+    verdict confirmed, state-court-directory https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf);
+    it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Jicarilla Apache Nation Tribal Court”: Claude weighed the evidence against the lead author''s
+    order (own page, then directory entry): directory, https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-111

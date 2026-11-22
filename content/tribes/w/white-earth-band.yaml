@@ -178,6 +178,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.whiteearth.com/divisions/judicial-services
   source: national-indian-law-library-minn-chippewa-white-earth
   confidence: medium
   verification: bulk-import
@@ -186,9 +187,12 @@ justice_institutions:
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
     Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21:
     the link the source gives (http://www.whiteearth.com/programs/judicial/home) returned HTTP 404, so
-    it is not recorded.'
+    it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with
+    status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
+    see research/reviews/2026-11-22-service-links.json, service-420.'
 - kind: tribal-court
   name: White Earth Nation Tribal Court
+  link: https://www.whiteearth.com/divisions/judicial-services
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
@@ -196,7 +200,9 @@ justice_institutions:
   locator: Minnesota section, entry 'White Earth Nation'
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band Link check 2026-11-21:
     the link the source gives (http://www.whiteearth.com/programs@program_id=3.html) returned HTTP 404,
-    so it is not recorded.'
+    so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
+    with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
+    see research/reviews/2026-11-22-service-links.json, service-421.'
 dispute_resolution:
   forums:
   - kind: restorative-justice

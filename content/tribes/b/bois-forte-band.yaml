@@ -118,6 +118,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://boisforte.com/departments/judicial/
   source: national-indian-law-library-minn-chiippewa-bois-forte
   confidence: medium
   verification: bulk-import
@@ -125,9 +126,12 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (http://boisforte.com/divisions/judicial.htm) returned HTTP 404, so it is not
-    recorded.'
+    recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200
+    on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see
+    research/reviews/2026-11-22-service-links.json, service-028.'
 - kind: tribal-court
   name: Bois Forte Band of Chippewa Tribal Court
+  link: https://boisforte.com/departments/judicial/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
@@ -135,7 +139,9 @@ justice_institutions:
   locator: Minnesota section, entry 'Bois Forte Band of Chippewa'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band Link check 2026-11-21:
     the link the source gives (http://www.boisforte.com/divisions/judicial.htm) returned HTTP 404, so
-    it is not recorded.'
+    it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with
+    status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
+    see research/reviews/2026-11-22-service-links.json, service-029.'
 gaming:
   operates_gaming:
     value: true

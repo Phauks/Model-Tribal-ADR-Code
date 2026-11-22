@@ -1,0 +1,70 @@
+profile: content/tribes/h/hopland-band-of-pomo-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Read the Nov. 21 court review''s result
+    for this court (verdict confirmed-other-name, page https://www.tribalcourt.org/); its page is not
+    used as the link (see this review''s evidence).'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.tribalcourt.org/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: 'Every service without a link listed for this nation: Status 200; the page shows the service,
+    and it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.tribalcourt.org/?sub=Tribal%20Court
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Status 200; not used as the link: it does
+    not name the service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.hoplandtribe.com/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Home page status 200; 2 linked pages mentioning
+    a court, judiciary, justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.hbpi.gov/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Home page status 200; 2 linked pages mentioning
+    a court, judiciary, justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): own-page, https://www.tribalcourt.org/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-100
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Hopland Tribal Court”: Claude weighed the evidence against the lead author''s order (own page,
+    then directory entry): own-page, https://www.tribalcourt.org/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-101

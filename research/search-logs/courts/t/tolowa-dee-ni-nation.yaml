@@ -133,3 +133,31 @@ searches:
     brief; verdict confirmed-other-name, from https://www.tolowa.gov/208/Kii-daa-naa-dvn-Tribal-Judicial-System.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-282
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: '“Tolowa Dee-ni’ Nation Tribal Court”: Read the Nov. 21 court review''s result for this court
+    (verdict not-found, page https://www.tolowa.gov/); it gives no page of the court''s own fetched with
+    status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Tolowa Dee-ni’ Nation Tribal Court”: Read the Nov. 22 court review''s result (court-282, verdict
+    confirmed-other-name, nation-website https://www.tolowa.gov/208/Kii-daa-naa-dvn-Tribal-Judicial-System);
+    it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tolowa Dee-ni’ Nation Tribal Court”: Claude weighed the evidence against the lead author''s
+    order (own page, then directory entry): own-page, https://www.tolowa.gov/208/Kii-daa-naa-dvn-Tribal-Judicial-System.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-375

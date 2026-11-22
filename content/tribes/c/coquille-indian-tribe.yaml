@@ -240,6 +240,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.coquilletribe.org/our-people/tribal-court/
   source: national-indian-law-library-coquille
   confidence: medium
   verification: bulk-import
@@ -247,7 +248,9 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (http://www.coquilletribe.org/?page_id=4007) returned HTTP 404, so it is not
-    recorded.'
+    recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200
+    on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-067.'
 - kind: tribal-court
   name: Coquille Indian Tribal Court
   link: https://www.coquilletribe.org/our-people/tribal-court/

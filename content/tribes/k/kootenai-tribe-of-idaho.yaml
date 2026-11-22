@@ -244,11 +244,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Kootenai Tribe of Idaho Tribal Court
+  link: https://www.kootenai.org/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Idaho section, entry 'Kootenai Tribe of Idaho'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-123.'
 gaming:
   compacts:
   - state: ID
