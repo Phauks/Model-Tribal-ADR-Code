@@ -241,12 +241,15 @@ governing_documents:
 justice_institutions:
 - kind: traditional-forum
   name: 'Wodakota: Traditional Court'
+  link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
   verification: title-only
   as_of: '2025-09-29'
-  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
-    whether it currently operates was not checked.
+  note: 'Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked. Link added 2026-11-22: the Spirit Lake Tribal Court
+    page on the nation''s website, which lists a Traditional Court among the court''s divisions (fetched
+    with status 200 on 2026-11-22).'
 - kind: tribal-court
   name: Tribal Court
   link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/

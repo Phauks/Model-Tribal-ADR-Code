@@ -237,22 +237,29 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   source: national-indian-law-library-native-fort-yukon
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
-    link the source gives (http://www.fortyukon.org/court.html) returned HTTP 404, so it is not recorded.'
+    link the source gives (http://www.fortyukon.org/court.html) returned HTTP 404, so it is not recorded.
+    Link is the entry in the Alaska Court System court directory: 2022 Alaska Tribal Court Directory (prepared
+    by Alaska Legal Services Corporation); no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
+    service-184).'
 - kind: tribal-court
   name: Fort Yukon Tribal Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Native Village of Fort Yukon (Gwichyaa Zhee Gwich’in)'
   note: 'Link check 2026-11-21: the link the source gives (http://www.fortyukon.org/wordpress/tribal-court/)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link is the entry in the Alaska Court System court directory:
+    2022 Alaska Tribal Court Directory (prepared by Alaska Legal Services Corporation); no page of the
+    court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-185).'
 dispute_resolution:
   database_listings:
   - title: Counseling, Treatment, and Community Service Sentencing

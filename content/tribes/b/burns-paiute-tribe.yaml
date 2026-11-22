@@ -251,6 +251,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://burnspaiute-nsn.gov/burns-tribal-agency-and-court/
   source: national-indian-law-library-burns-paiute
   confidence: medium
   verification: bulk-import
@@ -258,16 +259,21 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (https://burnspaiute-nsn.gov/departments/tribal-police-courts/) returned HTTP
-    404, so it is not recorded.'
+    404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
+    with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-030.'
 - kind: tribal-court
   name: Burns Paiute Tribal Court
+  link: https://burnspaiute-nsn.gov/burns-tribal-agency-and-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oregon section, entry 'Burns Paiute Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.burnspaiute-nsn.gov/index.php/departments/police-department-home)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
+    website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-031.'
 dispute_resolution:
   database_listings:
   - title: Informal Conference & Adjustment in Juvenile Proceedings

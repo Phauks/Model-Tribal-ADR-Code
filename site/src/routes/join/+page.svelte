@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { repositoryLink } from '#lib';
 </script>
 
 <svelte:head>
@@ -61,7 +60,6 @@
 	<p class="small muted">
 		Registration is for adults. Rather not make an account? <a href="/requests?kind=contribute"
 			>Offer to contribute through the request form</a
-		>. How profiles work:
-		<a href="{repositoryLink}/blob/main/docs/contributor-profiles.md">Contributor registration and profiles</a>.
+		>.
 	</p>
 </div>

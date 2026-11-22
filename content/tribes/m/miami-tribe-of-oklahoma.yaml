@@ -297,13 +297,16 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Miami Tribe of Oklahoma Tribal Court
+  link: https://www.miamination.com/miami-tribe-of-oklahoma-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Miami Tribe of Oklahoma'
   note: 'Link check 2026-11-21: the link the source gives (https://miamination.com/node/19) returned HTTP
-    404, so it is not recorded.'
+    404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
+    with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-155.'
 dispute_resolution:
   database_listings:
   - title: Court Discretionary Dismissal in Juvenile Court

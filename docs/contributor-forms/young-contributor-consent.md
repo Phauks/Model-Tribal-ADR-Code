@@ -1,40 +1,31 @@
-# Parent or guardian consent and young person's assent
+# Consent for minors
 
-Forms `guardian-consent` and `young-person-assent`, version 0.1.0 (draft).
-Filing `{{filing.identifier}}`.
+Forms `guardian-consent` (Part A) and `young-person-assent` (Part B), version 0.2.0. Filing `{{filing.identifier}}`.
 
-The project accepts contributions from people under the age of majority only
-with both a parent's or legal guardian's consent and the young person's own
-agreement. The age of majority depends on state law and, for a nation's
-citizens, may depend on the nation's own law, so we ask rather than assume.
-The website does not accept submissions from anyone under 13.
+A contributor who isn't yet an adult needs two agreements: a parent's or guardian's, and their own. The age of adulthood depends on state law and may depend on the nation's law, so we ask. The website takes nothing from anyone under 13.
 
-This form goes with the [contributor statement](contributor-statement.md)
-(which the parent or guardian completes with the young person) and, for an
-interview, the [interview consent and release](interview-consent-and-release.md).
+The parent or guardian fills in the [contributor statement](contributor-statement.md) with the young person. For an interview, they also sign [Interview consent](interview-consent-and-release.md).
 
-## Part A. Parent or legal guardian
+## Part A. Parent or guardian
 
 | | |
 | --- | --- |
 | Young person's name | |
 | Young person's age | |
 | Your name | |
-| Your relationship | ☐ Parent ☐ Legal guardian ☐ Other legal custodian: ______ |
-| How we can reach you | |
+| You are their | ☐ Parent ☐ Legal guardian ☐ Other legal custodian: ______ |
+| How to reach you | |
 
-☐ I have read the contributor statement (and interview form, if any) and the
-choices marked on it.
-☐ I agree to my child taking part as marked.
-☐ I would like to be present at any interview ☐ Yes ☐ No.
+- ☐ I read the contributor statement and the choices on it.
+- ☐ I read the interview form, if there is one.
+- ☐ I agree to my child taking part as marked.
+- ☐ I want to be present at any interview.
 
-Rules the project follows for young contributors:
+Our rules for young contributors:
 
-- They are credited only by a description or a name they choose, never by
-  their own name, until they are adults and decide otherwise.
-- They can stop at any time, and either of you can withdraw the contribution.
-- When they become adults, the project will, if it can reach them, ask whether
-  they want to keep, change or withdraw their contribution.
+- We never use their own name. We credit them by a description or a name they choose, unless they decide otherwise as adults.
+- They can stop at any time. Either of you can withdraw what they gave.
+- When they turn adult, we ask whether to keep, change or withdraw it, if we can reach them.
 
 | | |
 | --- | --- |
@@ -43,18 +34,14 @@ Rules the project follows for young contributors:
 
 ## Part B. Young person
 
-To be read with the young person in words that suit their age.
+Read this with the young person, in words that suit their age.
 
-We are writing about how Native nations help people settle disagreements. You
-can help by telling us what you know or what happened. You don't have to. You
-can stop whenever you want, skip any question, or tell us later that you
-changed your mind, and nobody will be upset with you. We won't use your real
-name.
+We're writing about how Native nations help people settle disagreements. You can help by telling us what you know or what happened. You don't have to. You can stop anytime or skip any question. You can change your mind later, and nobody will be upset. We won't use your real name.
 
-☐ I want to take part.
+- ☐ I want to take part.
 
 | | |
 | --- | --- |
 | Your name, or agreed aloud | |
 | Date | |
-| Read with the young person by (project role) | |
+| Read with you by (role) | |

@@ -33,6 +33,7 @@ again (2026-11-21).
   - a dispute resolution forum whose `kind` has no method record;
   - a source record with a web address and no archived copy more than 30
     days after `retrieved`.
+  - a service (an entry in a profile's `justice_institutions` or `dispute_resolution.forums`) with no `link` (check `service-link`, added Nov. 22, 2026 after the lead author's rule "If we list a service, it should have a link"). The link is the service's own official page or, where it has none, the official directory entry that lists it ([docs/data-model.md](../data-model.md#courts-and-other-services)). Services already on `main` without a link are warnings, each with a search log saying where the project looked.
 - Content headed for an edition (essays, provisions, commentary, glossary)
   may cite only sources that are archived, that have a citator result if they
   are a case, statute, regulation or court rule, and that are not marked
@@ -65,3 +66,4 @@ again (2026-11-21).
   `research/analyses/2026-11-21-dispute-resolution-practice.md`, section 9.
 - Citation fields: docs/data-model.md, "Every fact is cited"; archive rule:
   docs/citation-style.md.
+- Service links: the lead author's rule in the project chat, Nov. 22, 2026; the first pass over the services without a link is `research/reviews/2026-11-22-service-links.md`.

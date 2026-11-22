@@ -143,7 +143,7 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 
 | Template | Layout | Key parts |
 | --- | --- | --- |
-| Home | One column, then a four-part contents band | Purpose in one sentence; search; reserved art space; contents by part, with the two tracks side by side; "For Native nations" panel; recent changes |
+| Home | One column, then a four-part contents band | Purpose in one sentence; search; reserved art space; contents by part, with the two tracks side by side, giving no counts of what each part holds, since counts change with every update (Trevor, Nov. 22, 2026); "For Native nations" panel; recent changes |
 | Section | Contents rail, text, margin | "Model text, not law in force" notice with the version and last change; hanging section number; status chips; text with alternatives and placeholders; Comment, Illustrations, Source note; previous and next; margin: On this page, notes, "Cite this section," "Adapt this section" |
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
@@ -172,30 +172,25 @@ distinctive about each nation.
 nation's staff always know where to look, as the Tribal Law Gateway does with
 its fixed sections on each nation's page:
 
-1. The nation's name, and the nation's own name for itself, exactly as the nation writes it, once the nation confirms it. The name shown, in the title and in every list, is the name on the recognizing list without the states the list adds after a comma: "Navajo Nation, Arizona, New Mexico, & Utah" shows as "Navajo Nation" (Trevor, Nov. 22, 2026; `displayName` in `src/lib/nation-labels.ts`). A state that belongs to the name stays, as in "Paiute Indian Tribe of Utah". When the two differ, a line under the title gives the listed name, which the search also finds and the CSV download keeps. Beside it, the nation's seal or logo when its reuse status allows showing it, credited to the nation's website, with a link to ask for its removal ([official-images.md](../docs/official-images.md)).
-2. Review panel: the review status (drafted from public sources, sent to the
-   nation, reviewed by the nation, approved by the nation), what that means,
-   and "Is this about your nation? Make a request."
+1. The nation's name, and the nation's own name for itself, exactly as the nation writes it, once the nation confirms it. The name shown, in the title and in every list, is the name on the recognizing list without the states the list adds after a comma: "Navajo Nation, Arizona, New Mexico, & Utah" shows as "Navajo Nation" (Trevor, Nov. 22, 2026; `displayName` in `src/lib/nation-labels.ts`). A state that belongs to the name stays, as in "Paiute Indian Tribe of Utah". When the two differ, a line under the title gives the listed name, which the search also finds and the CSV download keeps; when they are the same, no line is shown and the name's source is only in the Sources list (Trevor, Nov. 22, 2026, removed "Name as the recognizing list gives it"). Beside it, the nation's seal or logo when its reuse status allows showing it ([official-images.md](../docs/official-images.md)). The image has no caption (Trevor, Nov. 22, 2026): its Sources entry credits the nation's website and says the image belongs to the nation, which does not endorse this project, and the nation asks for its removal through Report a problem.
+2. Review status: one small line, not a panel (Trevor, Nov. 22, 2026): a badge with the status (drafted from public sources, sent to the nation, reviewed by the nation, approved by the nation), what that means, the date the sources were last checked, and the link "Is this about your nation? Make a request."
 3. About this Nation (below; called "What is distinctive here" until Trevor renamed it on Nov. 22, 2026).
-4. At a glance: the key facts first, as a label and value table the way an encyclopedia's fact box puts them (Trevor approved this idea from a review of Wikiwand on Nov. 22, 2026): recognition, states with a presence, federal region, heritage languages, then "Courts and forums" and "Published law", whose labels link down to their sections and whose names (grouped as in the courts section) carry markers of the same sources. Then the government contacts card, then the small map of the states with a presence.
+4. At a glance: the key facts first, as a label and value table the way an encyclopedia's fact box puts them (Trevor approved this idea from a review of Wikiwand on Nov. 22, 2026): recognition, states with a presence, federal region, heritage languages, then "Courts and forums" and "Published law", whose labels link to their sections and whose names (grouped as in the courts section) carry markers of the same sources. Then the government contacts card, then the small map of the states with a presence.
 5. Courts and dispute resolution: one heading for each kind of service (Courts, Peacemaking, Mediation and so on), so a kind is never repeated after a name; under Courts, how appeals move from the court that hears a case first to the highest court, where sources record it ([data model](../docs/data-model.md#courts-and-the-path-of-appeal)).
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
-7. Document history: each of the nation's documents that has recorded versions, such as a gaming compact or a constitution, with every version oldest first, its dates, what it did to earlier versions (amended, replaced), whether it is in effect, and how its key clauses changed ([decision record 0018](../docs/decisions/0018-document-version-history.md)). A line under each title names the versions in effect. Each version's name links to a public copy of its text, the source's own address or else its archived copy (Trevor, Nov. 22, 2026); the project's private captures are never linked. Each version ends with the markers of its sources, which are also listed under the document's title in Sources. Above each list, a line places each version by the earliest date its sources give (filled dot: in effect; hollow: no longer in effect). It is drawn from recorded dates and kinds only, and hidden from screen readers because the list says the same (`DocumentTimeline.svelte`, Trevor, Nov. 22, 2026).
+7. Document history: each of the nation's documents that has recorded versions, such as a gaming compact or a constitution, with every version oldest first, its dates, what it did to earlier versions (amended, replaced), and whether it is in effect ([decision record 0018](../docs/decisions/0018-document-version-history.md)). A line under each title names the versions in effect. Each version's name links to a public copy of its text, the source's own address or else its archived copy (Trevor, Nov. 22, 2026); the project's private captures are never linked. Each version ends with the markers of its sources, which are also listed under the document's title in Sources. The section opens straight onto the documents, with no introductory sentence (Trevor, Nov. 22, 2026). It shows no clause summaries or clause comparisons and no generated summary of the document, because a small model wrote them from excerpts (Trevor, Nov. 22, 2026); the records keep them for review. Above each list, a line places each version by the earliest date its sources give (filled dot: in effect; hollow: no longer in effect). It is drawn from recorded dates and kinds only, and hidden from screen readers because the list says the same (`DocumentTimeline.svelte`, Trevor, Nov. 22, 2026).
 8. Notices and Labels from Local Contexts.
 9. Other nations in the same states: for each state, the other nations sources record there, alphabetically, or a link to the state's list when there are more than 30. A plain list, never a ranking or comparison; not printed (Trevor, Nov. 22, 2026).
 10. Sources, each with links back to the markers that cite it, followed by the facts on the page that come from it, and the date the page was last checked.
 
-Each section from "About this Nation" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review panel stays open.
+Each section from "About this Nation" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review status line is not a section and does not fold.
 
-**About this Nation** has two parts:
+**About this Nation** holds the recorded features, and the section is left out when there are none. A short description the nation writes or approves will open it once a nation sends one; until then the page shows no placeholder for it (Trevor, Nov. 22, 2026, removed the "In the nation's own words" box). The site never writes that description for the nation.
 
-- **In the nation's own words.** A short description the nation writes or
-  approves. Until then the space says so and offers a link to contribute;
-  the project never writes it for the nation.
 - **Recorded features.** Short sentences generated from the record's cited facts, each followed by the markers of its sources, for example: a peacemaking program beside the Tribal court (`justice_institutions`, `dispute_resolution.forums`); a published peacemaking or mediation law (`dispute_resolution_law`); a court of appeals; presence in more than one state (`states`); a heritage language as the nation writes it (`languages`); jurisdiction facts such as Public Law 280 (`jurisdiction`). A feature appears only when a source documents it, never inferred from silence, and features describe the one nation without comparing it with others ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
 
-**Layout.** On screens at least 64 rem wide (1,024 px at the default text size) the page has two columns: the text, held to the reading measure, and beside it "At a glance" with its map, like a reference work's fact box. On narrower screens the parts stack in the order above, so the key facts come right under the "At a glance" heading and the map after them (Nov. 22, 2026; it came first until then).
+**Layout.** When the page's own column is at least 62 rem wide, the page has two columns: the text, held to the reading measure, and beside it "At a glance" with its map, like a reference work's fact box, set off by a vertical rule. "At a glance" is an `aside` placed after the main text and before Sources in the page's order, so selecting text in the main column never takes in the fact box (Trevor, Nov. 22, 2026, found a selection pulling in the map, recognition and states). On narrower screens the parts stack in that order: "At a glance" follows Document history and Other nations in the same states, and comes before Sources. Inside it the key facts come first, then the contacts, then the map (Nov. 22, 2026; the map came first until then).
 
 **Map of states.** "At a glance" ends with a small map that shades the states and territories where the record's cited `states` facts place the nation, with each shaded state's postal code printed on it, so color is not the only cue. It shows only what is relevant to the nation (Trevor, Nov. 22, 2026): the boxes that hold its states and no others, with the contiguous United States zoomed to the region around them but never closer than 40 percent of the country's width, so neighbors stay in view. Alaska, Hawaiʻi or a territory shown without the main box is drawn up to three times larger. Zoomed boxes use more detailed outlines than the full-size small map, and only the states in view go into the page (src/lib/presence-map.ts). It draws no nation's land ([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)), and its caption says so. It does not outline the nation's Bureau of Indian Affairs region: the Navajo Region's outline follows the Navajo Nation's land, so on that nation's page it would draw the nation's land; the region is named under "At a glance" and links to the regions map instead (project choice). A page whose record lists no state has no map.
 
@@ -205,10 +200,7 @@ Each section from "About this Nation" on, including Sources, is collapsible (Tre
 
 **Contacts.** A phone number is a `tel:` link that opens the device's dialer; an email address is a `mailto:` link. Fax numbers stay as text. A value that cannot be read reliably, such as a phone number that is not ten digits, stays as text (Trevor, 2026-11-21). The contacts appear as a contact card, described under [Components](#6-components).
 
-**Missing information.** Empty fields are left out rather than shown as
-"unknown," so a page never suggests a nation lacks something it may simply
-not have published. A single line at the end offers: "Know of a published
-source we have missed? Add it."
+**Missing information.** Empty fields are left out rather than shown as "unknown," so a page never suggests a nation lacks something it may simply not have published. The page has no "Add it" line for missed sources (Trevor, Nov. 22, 2026); readers offer them through Contribute or Report a problem in the masthead.
 
 **Restricted and withdrawn records.** A record marked restricted gets no page
 at all. A withdrawn record's page says only that the material was withdrawn
@@ -228,12 +220,7 @@ size, because the book's trim size is not yet decided (project choice).
 
 **Download.** On a page that has a file to offer, a "Download" link with Lucide's `download` icon sits beside Print in the masthead (`src/lib/page-downloads.ts`). Each file is built with the site: a nation's record as JSON on its page, the full nations index as CSV on the index pages, and the glossary's terms as JSON on the glossary pages. The book and the data exports stay on the Downloads page.
 
-**Icons.** All icons come from Lucide,[^lucide-license] chosen on Nov. 21,
-2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)).
-The site imports single icons from `@lucide/svelte`, so only the icons used are
-bundled.[^lucide-svelte] The book and the ebook use the same drawings from
-`lucide-static`, at the same version number, which `site/package.json` pins
-exactly. Rules:
+**Icons.** All icons but one (the GitHub mark, the last rule below) come from Lucide,[^lucide-license] chosen on Nov. 21, 2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)). The site imports single icons from `@lucide/svelte`, so only the icons used are bundled.[^lucide-svelte] The book and the ebook use the same drawings from `lucide-static`, at the same version number, which `site/package.json` pins exactly. Rules:
 
 - An icon sits beside words. The only icon-only controls are the search icon, the theme button, the Settings cog, the profile button (Trevor asked for the search icon, the cog and the profile icon on Nov. 22, 2026), the X that closes the search panel and the Modal's close button (an X, asked for by Trevor the same day). They share the `icon-button` class: no box around them, since the icon shows it is a control (Trevor, Nov. 22, 2026), with a 44px target, a faint fill on hover and the usual focus ring. Each carries an `aria-label` that names it and a matching `title` tooltip, because Lucide hides icons from screen readers by default.[^lucide-a11y] The text alignment choice in Settings also shows only symbols, as Trevor asked on Nov. 22, 2026; each symbol is a radio button with a hidden name that screen readers read, and the picked choice's name and hint show in words just below it.
 - Beside 18 px body text, icons are 20 px with `strokeWidth` 1.75, which
@@ -243,6 +230,15 @@ exactly. Rules:
   `feather`, `tent`, `tent-tree` and `bow-arrow`.
 - In print, Typst draws `currentColor` as black, which suits the black-and-white
   interior.
+- The one exception is the GitHub mark (`GithubMark.svelte`), GitHub's own logo from Primer Octicons (MIT License, `LICENSES/Octicons.txt`), because Lucide no longer ships brand icons. It appears only beside the word "GitHub" on a link that goes there (see Links stay on the site, below).
+
+**Links stay on the site.** Three standing rules from Trevor, Nov. 22, 2026:
+
+- *No link sends a reader to GitHub unless its words say so,* such as the footer's "GitHub" link with the GitHub mark, or "Every change to it on GitHub." What the project wrote for readers is a page on the site: the charter is `/charter`, and the licenses by material are `/licenses`, with each full license text under it. They are rendered at build time from the same files, `docs/charter.md`, `LICENSE.md` and `LICENSES/` (`src/lib/server/project-documents.ts`), so the files stay the one source. Inside them, a link to the other shown document goes to its page; a link to any other repository file becomes plain words; a link to github.com is followed by "(GitHub)"; and each page ends with links to its file and its history on GitHub, which say so. In code, link to the site page (`/charter`, `/licenses`), never to `repositoryLink` plus a file path, unless the link's words name GitHub. The co-authors' workspace may link to a record's file and history on GitHub, saying so.
+- *No page names the project's internal documents:* no "(decision record 0007)," no file names such as `requests.md`, and no pointers to the roadmap, the outline, the data model or other specifications in `docs/`. Those explain the project to its maintainers; the site explains things to readers in its own words. Where the charter or `LICENSE.md` cross-references an internal document, the reference sits between `<!-- repository-only -->` and `<!-- /repository-only -->`: GitHub hides the markers and shows the text, and the site leaves it out.
+- *On nation pages, links to other websites open in a new tab* (sources, laws, constitutions, a nation's own website), with `rel="noopener noreferrer"` and a hidden "Opens in a new tab" note that screen readers announce through `aria-describedby` (`src/lib/new-tab-links.ts`, WCAG technique G201). Links within the site open in the same tab.
+
+`tools/check-built-site.mjs` enforces the first two: it fails when a link to github.com names GitHub neither in its words nor just before them, and when a page's text says "decision record" with a number or names a `.md` file.
 
 **Password fields.** Every password field is `src/lib/components/PasswordInput.svelte`: the field with a "Show" button beside it, carrying Lucide's `eye` icon (`eye-off` and "Hide" while the password shows), as Trevor asked on Nov. 22, 2026. It follows the GOV.UK password input: the button names its action for screen readers ("Show password", "Hide password"), a polite announcement says "Your password is visible" or "hidden", and the field goes back to hidden when the form is sent so the browser does not store the password as ordinary text.[^govuk-password] Without scripts the button does not appear.
 
@@ -337,7 +333,7 @@ request" and "Request sent" (project choice).
 go there. When art arrives, the box becomes a figure with a credit line naming
 the artist and nation, as the artist chooses.
 
-**Footer.** Request a correction or removal; requests log; charter; changelog; licenses by material; the three version numbers. Trevor asked on Nov. 22, 2026 that it carry no notes beyond the version line: the "model text, not law in force" note and the colophon about colors, fonts and icons were removed. The font and icon licenses stay listed under Licenses by material (LICENSE.md).
+**Footer.** Request a correction or removal; requests log; charter; changelog; downloads; licenses by material; GitHub (with the GitHub mark, in place of "Source files", as Trevor asked on Nov. 22, 2026); the three version numbers. Trevor asked on Nov. 22, 2026 that it carry no notes beyond the version line: the "model text, not law in force" note and the colophon about colors, fonts and icons were removed. The font and icon licenses stay listed under Licenses by material (LICENSE.md).
 
 ## 7. Design tokens
 
@@ -527,23 +523,14 @@ accessibility statement is published at `/about/accessibility`.
 
 - **Install:** a web app manifest and a service worker make the site
   installable.
-- **Caching:** the app shell and Atkinson Hyperlegible Next are cached
-  first; Noto fallbacks and the fonts picked in Settings are cached the first
-  time they are used, and picking a font downloads all its weights at once so
-  it also works on pages read later offline. A new build keeps saved font
-  files whose names (which carry a hash of the content) have not changed.
-  Sections, profiles, the glossary and sources use stale-while-revalidate, following web.dev's
-  and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry
-  the build version, so each build replaces the old copy once the reader
-  updates (see Updates below).
+- **Caching:** the app shell and Atkinson Hyperlegible Next are cached first; Noto fallbacks and the fonts picked in Settings are cached the first time they are used, and picking a font downloads all its weights at once so it also works on pages read later offline. A new build keeps saved font files whose names (which carry a hash of the content) have not changed. Sections, profiles, the glossary and sources use stale-while-revalidate, following web.dev's and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry the build version, so each build replaces the old copy once the reader updates (see Updates below). Saved files that did not change are carried into the new copy rather than downloaded again.
 - **What is saved:** every page a reader opens is saved as they read it. In Settings, under Data (also on `/offline`), the site lists each collection, how many of its pages are saved, the space they take, and about how much saving the rest would take (asked for by Trevor on Nov. 22, 2026), with a button to save the rest and one to remove them. The collections are Nation profiles, Glossary and Other pages; the model code joins them when its pages are built. A collection the reader saves is "kept": it is saved again from each new version. The section shows the space the whole site uses, from the Storage API's estimate, and offers "Keep saved pages when space runs low," which asks the browser for persistent storage, since otherwise the browser may clear the site's data under storage pressure.[^mdn-storage] Saving runs six files at a time inside the service worker, with a progress bar. The sizes come from `/offline-sizes.json`, which `tools/write-offline-sizes.mjs` writes after each build by adding up the built pages and data files of each collection; offline, or without the file, the sizes are left out.
 - **Never cached:** any record with `sensitivity.restricted: true`, which is
   never published, exported, cached offline or served by any API
   ([data model, sensitivity flags](../docs/data-model.md#sensitivity-flags)).
   When a record is withdrawn, the next service worker update deletes it from
   every saved copy.
-- **Offline notice:** "You are offline. Showing content as of [version,
-  date]."
+- **Offline notice:** "You are offline. Showing content as of [version, date]."
 
 ### Updates
 
@@ -554,51 +541,25 @@ names its cache after it. The three track versions come from release-please
 (`content/version.txt`, `site/version.txt`, `pdf/version.txt`), so a build can
 change the website without changing the content.
 
-1. **Detect.** The browser checks the service worker script on every
-   navigation, and a new build always changes it, because the script
-   contains the build version.[^webdev-lifecycle] SvelteKit also checks the
-   build version when the tab regains focus, on data responses and on a
-   timer; when it sees a new build, the page asks the browser to check the
-   worker at once.[^sveltekit-updated] "Check for updates" in Settings does
-   both on demand.
-2. **Install in the background.** The new worker saves the new build's
-   scripts, styles and core pages into its own cache and then waits. It does
-   not take over on its own: taking over mid-visit would mix two versions in
-   one page.[^webdev-lifecycle] While it waits, the old worker keeps saving
-   pages it reads only if they come from its own build (each built page names
-   its build), so saved copies never point at scripts they lack.
+1. **Detect.** The browser checks the service worker script on every navigation, and a new build always changes it, because the script contains the build version.[^webdev-lifecycle] SvelteKit also checks the build version when the tab regains focus, on data responses and on a timer; when it sees a new build, the page asks the browser to check the worker at once.[^sveltekit-updated] The worker never saves SvelteKit's version file (`/_app/version.json`), so that check always reaches the server; a saved copy would hide a new build from an open tab until the next check. "Check for updates" in Settings does both on demand.
+2. **Install in the background.** The new worker saves the new build's scripts, styles and core pages into its own cache and then waits. It downloads only what changed, as Trevor asked on Nov. 22, 2026. Every page carries its build version, so every page differs from the last build's copy even when nothing on it changed: in a test, two builds of the same files differed in all 1,108 pages, and only there. So each build publishes `/offline-fingerprints.json`, a fingerprint of every file a reader may save, taken with the build version blanked out (`tools/write-offline-sizes.mjs`, `src/lib/offline-fingerprints.ts`). The new worker takes the same fingerprint of each saved file in the old cache. When the two match, it writes the new version into the old copy and saves that instead of downloading it; the result is exactly the file the server holds. Script, style and font files carry a hash of their content in their names, so one with the same name is copied as it is. Saved pages that changed are listed and downloaded on the next page load. This covers every saved page, not only kept collections, so a page the reader opened still opens offline after an update. In a test of a one-line change to one nation's page, a reader keeping Nation profiles made 8 requests (about 1 MB) instead of 3,155 (121 MB). It does not take over on its own: taking over mid-visit would mix two versions in one page.[^webdev-lifecycle] While it waits, the old worker keeps saving pages it reads only if they come from its own build (each built page names its build), so saved copies never point at scripts they lack.
 3. **Withdrawals first.** As soon as the new worker installs, every saved
    page that is not in the new build is deleted from the saved copies, without
    waiting for the reader. A nation's request to withdraw material therefore
    reaches every device on its next visit online
    ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
-4. **Ask.** A small card fixed at the bottom left of the window (not a block in the page, as Trevor asked on Nov. 22, 2026) says what the update brings, read from `/edition.json` on the network: "It brings content version 0.3.0; you are reading 0.2.0," or that only the website changed. Below that it lists the pull requests merged since the build the reader is running ("#91 Rework Settings controls…"), up to eight and then "and N more," as Trevor asked on Nov. 22, 2026: each build reads its recent merges from git (`vite.config.ts`, `src/lib/recent-changes.ts`) and serves them in `/edition.json`. A build from a shallow clone may list fewer. It offers "Update now," "What changed" (the changelog) and "Later." It is a notice, not an alert, so it does not take focus.
-5. **Apply.** "Update now" tells the waiting worker to take over
-   (`skipWaiting`), and the page reloads once it has.[^mdn-skip-waiting] "Later"
-   hides the notice for the visit; the browser applies the update by itself
-   once every tab of the site has closed.[^webdev-lifecycle] The new worker
-   deletes the old cache, keeping font files that have not changed and the
-   list of kept collections.
-6. **Save again.** On the next page load, the page asks the new worker to save
-   the kept collections from the new build, and a status line shows the
-   progress. If the connection drops, it continues on a later visit.
+4. **Ask.** A small card fixed at the bottom left of the window (not a block in the page, as Trevor asked on Nov. 22, 2026) says what the update brings, read from `/edition.json` on the network: "It brings content version 0.3.0; you are reading 0.2.0," or that only the website changed. Below that it lists the pull requests merged since the build the reader is running ("#91 Rework Settings controls…"), up to eight and then "and N more," as Trevor asked on Nov. 22, 2026: each build reads its recent merges from git (`vite.config.ts`, `src/lib/recent-changes.ts`) and serves them in `/edition.json`. A build from a shallow clone may list fewer. When both builds' fingerprints can be read, it also says whether the update changes, keeps or removes the page being read. That comparison leaves out the names of the page's script files, so a change to the scripts alone does not count. It offers "Update now," "What changed" (the changelog) and "Later." It is a notice, not an alert, so it does not take focus.
+5. **Apply.** "Update now" tells the waiting worker to take over (`skipWaiting`), and the page reloads once it has.[^mdn-skip-waiting] "Later" hides the notice for the visit; the browser applies the update by itself once every tab of the site has closed.[^webdev-lifecycle] The new worker first carries forward, as in step 2, any page the reader opened while it waited, then deletes the old cache, keeping font files that have not changed and the list of kept collections.
+6. **Save again.** On the next page load, the page asks the new worker to save the saved pages that changed and whatever the kept collections still lack from the new build, and a status line shows the progress. If the connection drops, it continues on a later visit.
 7. **What the reader sees offline.** The offline notice names the content
    version of the copy being read, and Settings shows the content and website
    versions and the build date, so a stale copy is always labeled.
 
-**Downloaded books.** A PDF or EPUB on the reader's device cannot be updated
-by the site. Each edition will print its edition number and the address
-`/downloads?edition=<number>`; that page compares the number with the current
-print version and says whether a newer edition is out, with a link to what
-changed. The print templates do not print the address yet.
+**Downloaded books.** A PDF or EPUB on the reader's device cannot be updated by the site. Each edition will print its edition number and the address `/downloads?edition=<number>`; that page compares the number with the current print version and says whether a newer edition is out, with a link to what changed. The print templates do not print the address yet.
 
 ## 11. Performance and hosting
 
-- **Stack:** SvelteKit and TypeScript with `@sveltejs/adapter-cloudflare`,
-  deployed to Cloudflare Workers with static assets, as Cloudflare's SvelteKit
-  guide describes.[^cloudflare-sveltekit] Content pages are prerendered at
-  build time; only the request form, and later sign-in and review, run on the
-  server.
+- **Stack:** SvelteKit and TypeScript with `@sveltejs/adapter-cloudflare`, deployed to Cloudflare Workers with static assets, as Cloudflare's SvelteKit guide describes.[^cloudflare-sveltekit] Content pages are prerendered at build time; only the request form, and later sign-in and review, run on the server.
 - **Budgets (project choice):** under 100 KB of JavaScript compressed on a
   section page; no map library in the browser (the map is a static SVG, per
   the map spike); fonts subset to the characters used.
@@ -608,12 +569,14 @@ changed. The print templates do not print the address yet.
   - **Land areas** draws the Census Bureau's 2020 American Indian and Alaska Native areas in three shades: federal reservations and trust lands, state reservations, and the Census Bureau's statistical areas ([decision record 0029](../docs/decisions/0028-map-adds-census-land-areas.md)). Areas too small to see get a dot. Each area links to a table row naming the nations whose entries cite that Census area. The view is heavy, so the page fetches its drawing and table from `/nations/map/land-areas.json` the first time a reader opens it.
   - **Layout.** The contiguous United States (the 48 contiguous states and DC) fills a framed, labeled box at the top. Alaska, Hawaiʻi, Guam and the Northern Mariana Islands, American Samoa, and Puerto Rico and the U.S. Virgin Islands sit in a row of smaller framed, labeled boxes below. Each box has its own equal-area projection, fitted to the box, and its own scale bar. Together they show that every box is at a different scale and none is in its true place (Trevor, 2026-11-22). Every shape is drawn only by its own box's projection. The earlier composite projection from d3-composite-projections placed the islands in the open water beside the contiguous states with no frames, which read as their real positions.
   - **Code.** `src/lib/map-geometry.ts` projects the shapes once, in `vite.config.ts`, so the browser gets SVG paths and no map library. `src/lib/nations-map-drawing.ts` turns them into each view's SVG markup. The page shows that markup with `{@html}` from a universal load. The outlines are sent once, in the page, and not again in the data the page hydrates from. A reader who arrives from another page without reloading gets the same markup from `/nations/map/drawings.json`. To add a view, add its drawing to `drawNationsMaps` and its entry and key to the page's list of views. The grayscale print version for the book is not built yet.
+  - **Layout.** Trevor chose on 2026-11-22, from mockups in the project files (`design/map-layout/`), a smaller map pinned on the left with the view's table scrolling beside it, relying on zooming for detail. On wide screens the map is sized to fit the window's height and stays in place while the table scrolls. On narrower screens it is pinned to the top of the window and the table scrolls under it, when the window is tall enough. Print shows the map and then the table, as before. Map titles (the page heading and the view names) are in title case (Trevor, same day).
+  - **Tables.** Each table has one row per state, region or area, with its name and its count. The name opens the list of its nations, with the arrow before the name, and a row with no nations has nothing to open (Trevor, 2026-11-22). Selecting a place on the map goes to its row and opens it.
+  - **Zooming and moving.** Trevor asked on 2026-11-22 for the map to zoom and move. Every view, and the small map on each nation's page, can be zoomed up to eight times (the "Land areas" view sixteen). Buttons above the map zoom in, zoom out and show the whole map again (Lucide icons). The keys + and - and 0 do the same whenever focus is in the map. Ctrl or ⌘ with the scroll wheel zooms around the pointer, as do a trackpad pinch and a two-finger pinch on a touch screen. Once zoomed in, the mouse, one finger or the arrow keys move the map, and tabbing to a place off screen brings it into view. A plain scroll still scrolls the page and shows a short hint, so the map never traps a reader scrolling past it. Zooming changes only the drawing's `viewBox` (`src/lib/map-zoom.ts`, `src/lib/components/ZoomableMap.svelte`), so it adds no map tiles or library, fetches nothing, tracks no one, and works offline. Text, dots and line widths are multiplied by `--map-unzoom` so they keep their size on screen while the shapes grow. Printing always prints the whole map, and without scripts the map is drawn as before with no buttons.
   - **Nation pages.** Each nation's page also draws a small map of its states from the same shapes and boxes (see [Nation pages](#nation-pages)). Its outlines keep 5 percent of their points, rounded to whole map units, so the map stays light on each of the 980 pages.
 
 ## 12. Words in the interface
 
-The interface follows the style guide's voice: plain verbs, sentence case,
-"they" for people, no praise or alarm. In addition (project choice):
+The interface follows the style guide's voice: plain verbs, sentence case, "they" for people, no praise or alarm. In addition (project choice):
 
 - Name things by what readers know: "Make a request," not "Submit a ticket."
 - Errors say what went wrong and how to fix it, in the interface's voice.

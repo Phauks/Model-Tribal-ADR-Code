@@ -1,0 +1,79 @@
+profile: content/tribes/m/mashpee-wampanoag-tribe.yaml
+topic: dispute-resolution
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://mashpeewampanoagtribe-nsn.gov/tribal-court-homepage
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Status 200; not used as the link: it does not name the service or is not
+    its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://mashpeewampanoagtribe-nsn.gov/news/2024/4/1/us-supreme-court-upholds-tribal-lands
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Status 200; not used as the link: it does not name the service or is not
+    its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://mashpeewampanoagtribe-nsn.gov/news/2023/8/29/tribal-court-request-for-bid-tribal-court-probation-department
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Status 200; not used as the link: it does not name the service or is not
+    its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://mashpeewampanoagtribe-nsn.gov/news/2023/6/16/message-from-the-chairman-court-upholds-icwa
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Status 200; not used as the link: it does not name the service or is not
+    its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://mashpeewampanoagtribe-nsn.gov/news/2022/11/16/justice-delayed-for-tribe-cromwell-to-appeal-court-decision
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Status 200; not used as the link: it does not name the service or is not
+    its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://mashpeewampanoagtribe-nsn.gov/news/2022/11/10/cedric-cromwell-sentencing-in-federal-bribery-case-on-tuesday-november-15-court-to-consider-victim-impact-letters
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Status 200; not used as the link: it does not name the service or is not
+    its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mashpeewampanoagtribe-nsn.gov/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaker Court”: Home page status 200; 5 linked pages mentioning a court, judiciary, justice
+    or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: '“Peacemaker Court”: Claude weighed the evidence against the lead author''s order (own page,
+    then directory entry): none-found; the link stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-146
+next_steps: No page or official directory entry was found on 2026-11-22 for “Peacemaker Court” (research/reviews/2026-11-22-service-links.json).

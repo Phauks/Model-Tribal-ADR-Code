@@ -6,7 +6,6 @@ import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-c
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
-	sources as sourceRecords,
 	type CitedFact,
 	type NationRecord
 } from '#lib/server/content.ts';
@@ -233,7 +232,7 @@ function recordedFeatures(record: NationRecord, sources: SourceUses): FactItem[]
  * The rows At a glance adds from the sections below it, so the key facts
  * come first, the way an encyclopedia's fact box does: the names of the
  * nation's courts and forums, and of the documents where it publishes its
- * laws. Each label links down to the section that shows them in full. Each
+ * laws. Each label links to the section that shows them in full. Each
  * name is cited under the same section and words as there, so the Sources
  * list names the fact once and simply links back to both markers. The same
  * name can come from two records (for example two "Tribal code" entries); it
@@ -381,7 +380,7 @@ export const load: PageServerLoad = ({ params }) => {
 			sources: [],
 			outline: {
 				title: page.officialName,
-				items: [{ label: 'Review status', link: '#review-heading' }]
+				items: [{ label: 'Review status', link: '#review-status' }]
 			} satisfies PageOutline as PageOutline
 		};
 	}
@@ -393,22 +392,31 @@ export const load: PageServerLoad = ({ params }) => {
 	const shownImage = (record.official_images ?? []).find(
 		(image) => image.private_copy && imageMayBeShown(image)
 	);
-	let image: { src: string; kind: string; foundOn?: string; citations: CitationMark[] } | undefined;
+	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
+	// that the nation does not endorse the site, go in its Sources entry,
+	// and a removal request goes through Report a problem.
+	let image: { src: string; kind: string } | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
-		const citations: CitationMark[] = [];
-		sources.citeFact(shownImage, kind, 'As the nation’s website publishes it', citations);
-		const foundOn = shownImage.source ? sourceRecords().get(shownImage.source) : undefined;
-		image = { src: imagePath(record.id), kind, foundOn: webLink(foundOn?.original_link), citations };
+		sources.use(
+			shownImage,
+			kind,
+			'As the nation’s website publishes it. It belongs to the nation, which does not endorse this site.'
+		);
+		image = { src: imagePath(record.id), kind };
 	}
 
 	const nameCitations: CitationMark[] = [];
+	// The name gets a marker only where the page shows the listed name on a
+	// line of its own; otherwise its source is in the Sources list alone
+	// (Trevor, Nov. 22, 2026, asked to remove "Name as the recognizing list gives it").
 	if (record.names.official_source) {
-		sources.cite(
-			record.names.official_source,
-			{ section: 'Name as the recognizing list gives it', text: record.names.official },
-			nameCitations
-		);
+		const nameUse = { section: 'Name as the recognizing list gives it', text: record.names.official };
+		if (displayName(record.names.official) !== record.names.official) {
+			sources.cite(record.names.official_source, nameUse, nameCitations);
+		} else {
+			sources.add(record.names.official_source, nameUse);
+		}
 	}
 	const selfDesignations = (record.names.self_designation ?? []).map((fact) => {
 		const citations: CitationMark[] = [];
@@ -465,11 +473,9 @@ export const load: PageServerLoad = ({ params }) => {
 	};
 
 	// The page's outline, for the sidebar: one entry per heading the page shows.
-	const items: OutlineItem[] = [
-		{ label: 'Review status', link: '#review-heading' },
-		{ label: 'About this Nation', link: '#about-heading' }
-	];
-	if (result.glance.length > 0 || result.map) items.push({ label: 'At a glance', link: '#glance-heading' });
+	// In the page's order: "At a glance" follows the main text (Trevor, Nov. 22, 2026).
+	const items: OutlineItem[] = [];
+	if (result.features.length > 0) items.push({ label: 'About this Nation', link: '#about-heading' });
 	if (result.courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
 	if (result.law.length > 0) items.push({ label: 'Published law', link: '#law-heading' });
 	if (result.documents.length > 0) {
@@ -484,6 +490,10 @@ export const load: PageServerLoad = ({ params }) => {
 	}
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
+	}
+	const hasContacts = result.contacts.websites.length > 0 || result.contacts.offices.length > 0;
+	if (result.glance.length > 0 || hasContacts || result.map) {
+		items.push({ label: 'At a glance', link: '#glance-heading' });
 	}
 	items.push({ label: 'Sources', link: '#sources-heading' });
 

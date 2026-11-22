@@ -185,21 +185,28 @@ federal_administration:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://orutsararmiut.org/departments/tribal-courts/
   source: national-indian-law-library-orutsararmuit
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link added 2026-11-22: the
+    court''s page on the nation''s website, fetched with status 200 on 2026-11-21 by the court review
+    (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-282.'
 - kind: tribal-court
   name: Orutsaramiut Tribal Court
+  link: https://orutsararmiut.org/departments/tribal-courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Orutsaramuit Native Village (aka Bethel)'
   note: 'Link check 2026-11-21: the link the source gives (http://nativecouncil.org/tribal-court/) returned
-    HTTP 404, so it is not recorded.'
+    HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website,
+    fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-283.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

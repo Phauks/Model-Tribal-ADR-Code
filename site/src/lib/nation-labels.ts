@@ -10,11 +10,11 @@ export const reviewStatusLabels: Record<string, { label: string; meaning: string
 	'drafted-from-public-sources': {
 		label: 'Drafted from public sources',
 		meaning:
-			'The project drafted this page from published sources. The nation has not reviewed it yet.'
+			'This page was drafted from published sources. The nation has not reviewed it yet.'
 	},
 	'sent-to-nation': {
 		label: 'Sent to the nation',
-		meaning: 'The project has sent this page to the nation for review. The nation has not replied yet.'
+		meaning: 'This page has been sent to the nation for review. The nation has not replied yet.'
 	},
 	'reviewed-by-nation': {
 		label: 'Reviewed by the nation',

@@ -1,6 +1,7 @@
 <script lang="ts">
 	// A nation's documents that have recorded versions (decision record 0018),
-	// oldest version first, with how each version changed its key clauses.
+	// oldest version first, with what each version did to the ones before it.
+	// No clause summaries or comparisons are shown (Trevor, Nov. 22, 2026).
 	// Each version's name links to a public copy of its text where the source
 	// has one, and its label ends with the markers of its sources.
 	import type { DocumentHistoryView } from '#lib/server/document-history.ts';
@@ -16,9 +17,6 @@
 		<p class="small muted">
 			{document.kind}{#if document.inEffect}. In effect: {document.inEffect}{/if}.
 		</p>
-		{#if document.summary}
-			<p>{document.summary}</p>
-		{/if}
 		<DocumentTimeline versions={document.versions} />
 		<ol class="version-list">
 			{#each document.versions as version (version.id)}
@@ -30,15 +28,6 @@
 					</p>
 					{#if version.dates}<p class="small">{version.dates}.</p>{/if}
 					{#if version.relation}<p class="small">{version.relation}.</p>{/if}
-					{#if version.changes.length > 0}
-						<ul class="small">
-							{#each version.changes as change, index (index)}
-								<li>
-									{change.topic}: {change.change}{#if change.summary}. {change.summary}{/if}
-								</li>
-							{/each}
-						</ul>
-					{/if}
 				</li>
 			{/each}
 		</ol>

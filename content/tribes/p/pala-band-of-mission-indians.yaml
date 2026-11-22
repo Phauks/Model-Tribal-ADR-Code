@@ -190,11 +190,15 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Pala Band of Luiseno Mission Indians Tribal Court
+  link: https://www.palatribe.com/public-safety/pala-tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Pala Band of Luiseno Mission Indians'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-287.'
 gaming:
   compacts:
   - state: CA
