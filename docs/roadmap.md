@@ -137,6 +137,17 @@ section 2):
 Adding a track beyond the schema's list (for example intergovernmental) is a
 schema change made at Gate 2.
 
+### Parked research
+
+Research that is done enough to stop, kept here so it is not lost while other
+threads run. Each row says which gate or chapter brings it back and what the
+next step is. Add a row whenever a spike or side thread ends without being
+used yet; remove it when the work is picked up (project choice, Nov. 22, 2026).
+
+| Topic | Where it is | Comes back at | Next step when it does |
+| --- | --- | --- | --- |
+| Tribal rules of evidence and dispute resolution confidentiality | [Spike note](../research/analyses/2026-11-21-tribal-rules-of-evidence.md) (PRs #65, #67) | Gate 2, outline item 1 (confidentiality) and items 2 and 4 (return to court, agreements); then drafting of those sections | Compare the four confidentiality models across the 85 provisions with the Uniform Mediation Act; check Uniform Mediation Act enactments (Westlaw list, section 13) |
+
 ## Gate 2: scope and outline approved
 
 Passed when Trevor approves the scope memo and outline, after input from the
