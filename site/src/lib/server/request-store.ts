@@ -17,19 +17,45 @@ import { eventStatement } from './events.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 import type { NewRequest } from './request-form.ts';
+import type { FormAnswers } from '#lib/forms.ts';
 
 /** Uploads sit under this prefix in the sourceDocuments bucket, apart from archived sources. */
 const uploadPrefix = 'requests';
 
-/** Saves a new request and its uploads. Returns the reference given to the requester. */
+/** Copies of forms filled in online sit under this prefix (migrations/0007_form_submissions.sql). */
+const formCopyPrefix = 'forms';
+
+/** A form sent from the Forms pages with the request it opens (src/lib/forms.ts). */
+export interface NewFormSubmission {
+	/** The form's page name, such as "contributor-statement". */
+	form: string;
+	title: string;
+	identifiers: string[];
+	version: string;
+	checksum: string;
+	method: 'online' | 'paper-upload';
+	/** The name typed in a signature line, for a form signed online. */
+	signedName: string | null;
+	answers: FormAnswers | null;
+	/** The filled form as Markdown, for a form filled in online. */
+	filledCopy: string | null;
+}
+
+/**
+ * Saves a new request and its uploads, and the form it came with, if any.
+ * Returns the reference given to the requester.
+ */
 export async function saveRequest(
 	database: D1Database,
 	bucket: R2Bucket,
-	request: NewRequest
+	request: NewRequest,
+	form?: NewFormSubmission
 ): Promise<string> {
 	const identifier = newIdentifier();
 	const reference = newRequestReference();
 	const receivedAt = now();
+	const submissionIdentifier = newIdentifier();
+	const copyKey = form?.filledCopy ? `${formCopyPrefix}/${identifier}/${submissionIdentifier}.md` : null;
 
 	const sources = request.sources.map((source) => ({
 		...source,
@@ -45,6 +71,13 @@ export async function saveRequest(
 				customMetadata: { requestReference: reference, fileName: source.file.name }
 			});
 			uploaded.push(key);
+		}
+		if (form?.filledCopy && copyKey) {
+			await bucket.put(copyKey, new TextEncoder().encode(form.filledCopy), {
+				httpMetadata: { contentType: 'text/markdown; charset=utf-8' },
+				customMetadata: { requestReference: reference, form: form.form, formVersion: form.version }
+			});
+			uploaded.push(copyKey);
 		}
 
 		await database.batch([
@@ -99,9 +132,38 @@ export async function saveRequest(
 						source.file?.bytes.byteLength ?? null
 					)
 			),
+			...(form
+				? [
+						database
+							.prepare(
+								`INSERT INTO form_submissions (identifier, request_identifier, form, form_identifiers,
+								   form_version, form_checksum, method, signed_name, signed_at, answers, filled_copy_key,
+								   received_at)
+								 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+							)
+							.bind(
+								submissionIdentifier,
+								identifier,
+								form.form,
+								form.identifiers.join(' '),
+								form.version,
+								form.checksum,
+								form.method,
+								form.signedName,
+								form.method === 'online' ? receivedAt : null,
+								form.answers ? JSON.stringify(form.answers) : null,
+								copyKey,
+								receivedAt
+							)
+					]
+				: []),
 			eventStatement(database, {
 				personIdentifier: null,
-				action: 'Request received through the website',
+				action: form
+					? `Form received through the website: ${form.title}, version ${form.version}, ${
+							form.method === 'online' ? 'signed online' : 'signed paper copy uploaded'
+						}`
+					: 'Request received through the website',
 				targetKind: 'request',
 				targetIdentifier: identifier
 			})
@@ -301,7 +363,8 @@ export async function addNote(
 /**
  * Deletes the requester's personal details from requests resolved more than
  * 12 months ago, unless they chose to be credited (docs/requests.md, "How it
- * is built"). Runs whenever an editor opens the request list, so it needs
+ * is built"). A request that came with a signed form is kept whole: the form
+ * is the record of what the person allowed (docs/contributions.md). Runs whenever an editor opens the request list, so it needs
  * no scheduled job. Returns how many requests were cleared.
  */
 export async function deleteExpiredPersonalDetails(database: D1Database): Promise<number> {
@@ -311,7 +374,8 @@ export async function deleteExpiredPersonalDetails(database: D1Database): Promis
 			`UPDATE requests SET requester_name = NULL, requester_role = NULL, contact = NULL,
 			   personal_details_deleted_at = ?
 			 WHERE status = 'resolved' AND resolved_at < ? AND personal_details_deleted_at IS NULL
-			   AND NOT (kind = 'contribute' AND credit_preference IS NOT NULL)`
+			   AND NOT (kind = 'contribute' AND credit_preference IS NOT NULL)
+			   AND NOT EXISTS (SELECT 1 FROM form_submissions WHERE form_submissions.request_identifier = requests.identifier)`
 		)
 		.bind(now(), cutoff)
 		.run();
