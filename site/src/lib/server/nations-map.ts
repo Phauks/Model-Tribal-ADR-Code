@@ -1,7 +1,7 @@
 import geometry from 'virtual:map-geometry';
 import { nations } from '#lib/server/content.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
-import { regionAnchor, stateName } from '#lib/nation-labels.ts';
+import { displayName, regionAnchor, stateName } from '#lib/nation-labels.ts';
 import {
 	landAreaAnchor,
 	landAreaGroups,
@@ -50,7 +50,7 @@ export function nationsMapPage() {
 	for (const record of records) {
 		for (const state of new Set((record.states ?? []).map((fact) => fact.state))) {
 			const list = nationsByState.get(state) ?? [];
-			list.push({ id: record.id, name: record.names.official });
+			list.push({ id: record.id, name: displayName(record.names.official) });
 			nationsByState.set(state, list);
 		}
 	}
@@ -74,7 +74,7 @@ export function nationsMapPage() {
 		const region = administration?.bureau_of_indian_affairs_region;
 		if (!region) continue;
 		const list = nationsByRegion.get(region) ?? [];
-		list.push({ id: record.id, name: record.names.official });
+		list.push({ id: record.id, name: displayName(record.names.official) });
 		nationsByRegion.set(region, list);
 		const regionStates = statesByRegion.get(region) ?? new Set<string>();
 		for (const fact of record.states ?? []) regionStates.add(fact.state);
@@ -134,7 +134,7 @@ function nationsByLandArea(records: ReturnType<typeof nations>): Map<string, Lis
 		for (const area of record.census_areas ?? []) {
 			if (area.vintage && area.vintage !== '2020') continue;
 			const list = byArea.get(area.geographic_identifier) ?? [];
-			if (!list.some((nation) => nation.id === record.id)) list.push({ id: record.id, name: record.names.official });
+			if (!list.some((nation) => nation.id === record.id)) list.push({ id: record.id, name: displayName(record.names.official) });
 			byArea.set(area.geographic_identifier, list);
 		}
 	}

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { replaceState } from '$app/navigation';
-	import PageTools from '#lib/components/PageTools.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
@@ -201,7 +200,6 @@
 
 <div class="reading">
 	<h1>Map of Native nations</h1>
-	<PageTools />
 	<div class="notice" role="note">
 		<h2 class="notice-heading">What this map shows</h2>
 		<p>The map has more than one view. Choose one with the buttons above the map.</p>
