@@ -1,0 +1,31 @@
+profile: content/tribes/c/cahto-tribe-of-the-laytonville-rancheria.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: http://Cahto Indian Tribe of the Laytonville Rancheria
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: error
+  reason: The gaming catalog has no capture of this ordinance listed 1996-11-26.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/cahtotribeoflytnvilernchra-amendappr032700.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2000-03-27
+    and recorded 4 procedure(s): employee-grievance, other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#cahto-indian-tribe-of-the-laytonville-rancheria-amendment-2000-03-27#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#cahto-indian-tribe-of-the-laytonville-rancheria-amendment-2000-03-27#i2
+  - research/reviews/2026-11-22-ordinance-disputes.json#cahto-indian-tribe-of-the-laytonville-rancheria-amendment-2000-03-27#i3
+  - research/reviews/2026-11-22-ordinance-disputes.json#cahto-indian-tribe-of-the-laytonville-rancheria-amendment-2000-03-27#i4
+next_steps: Download and read the ordinance listed 1996-11-26 (http://Cahto Indian Tribe of the Laytonville
+  Rancheria).

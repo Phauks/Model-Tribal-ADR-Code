@@ -1,0 +1,29 @@
+profile: content/tribes/k/karuk-tribe.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/karuktribeofca-ordappr061103.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 2003-06-11
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#karuk-tribe-of-california-ordinance-2003-06-11#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/karuktribeofca-Karuk20120409.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2012-04-09 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

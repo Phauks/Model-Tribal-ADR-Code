@@ -1,0 +1,29 @@
+key: census-cartographic-boundary-aiannh-2020
+kind: dataset
+citation:
+  type: dataset
+  title: 2020 Cartographic Boundary File, American Indian/Alaska Native/Native Hawaiian Areas for United States, 1:500,000 (cb_2020_us_aiannh_500k)
+  author:
+    - literal: U.S. Census Bureau
+  medium: Zipped shapefile
+  URL: https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_aiannh_500k.zip
+  issued:
+    date-parts: [[2021]]
+  accessed:
+    date-parts: [[2026, 11, 22]]
+original_link: https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_aiannh_500k.zip
+retrieved: 2026-11-22
+archives: []
+history:
+  status: live
+  last_checked: 2026-11-22
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: >-
+    A work of the U.S. Census Bureau, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105). The website credits the Census Bureau as the source in the map's caption and Sources section.
+  redistribution: true
+found_in:
+  - 2026-11-22-census-land-areas-map
+notes: >-
+  The website's map draws the "Land areas" view from this file, simplified to about 3 percent of its points (site/geography/census-land-areas-2020.json, written by site/tools/fetch-census-land-areas.mjs). Hawaiian home lands are left out. The 2020 vintage matches the Census area codes that nation records cite in `census_areas`. The file has 704 areas; 629 are drawn.

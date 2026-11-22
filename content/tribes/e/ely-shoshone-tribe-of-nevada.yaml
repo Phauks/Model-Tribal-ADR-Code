@@ -187,63 +187,7 @@ justice_institutions:
   as_of: '2022'
   locator: Nevada section, entry 'Ely Shoshone Tribe'
   note: 'Link check 2026-11-21: the site did not respond.'
-dispute_resolution:
-  database_listings:
-  - title: Probation Orders Requiring Programs or Treatment
-    citation: ESTC-176A.400
-    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/probation-orders-requiring-programs-or-treatment/
-  - title: Rehabilitation and Treatment for Category C&D Offenses
-    citation: ESTC-453.336
-    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Program; Rehabilitation; Substance
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitation-and-treatment-for-category-cd-offenses/
-  - title: Restitution for Victim Substance Abuse Program
-    citation: ESTC-453.332
-    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Program; Substance
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-for-victim-substance-abuse-program/
-  - title: Sex Offender Program of Professional Counseling
-    citation: ESTC-176A.410
-    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Counseling; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sex-offender-program-of-professional-counseling/
-  - title: Suspention of Proceedings for First Time Offenders
-    citation: ESTC-453.3363
-    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Program; Rehabilitation; Substance
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/suspention-of-proceedings-for-first-time-offenders/
+dispute_resolution: {}
 gaming:
   ordinances:
   - approved: '2004-10-22'

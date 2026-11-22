@@ -1,0 +1,30 @@
+profile: content/tribes/m/manchester-band-of-pomo-indians-of-the-manchester-rancheria.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/manchesterband-manchesterord050503.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 2003-05-05
+    and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#manchester-band-of-pomo-indians-ordinance-2003-05-05#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#manchester-band-of-pomo-indians-ordinance-2003-05-05#i2
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/manchesterband-Amend-Appr-09.29.2009.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2009-09-29 has no text layer on most pages (1 of 2 pages have no text
+    layer and the readable pages have no candidate section; no OCR available).
+next_steps: Read the scanned amendment listed 2009-09-29 (https://www.nigc.gov/wp-content/uploads/2025/03/manchesterband-Amend-Appr-09.29.2009.pdf)
+  with OCR or by hand.

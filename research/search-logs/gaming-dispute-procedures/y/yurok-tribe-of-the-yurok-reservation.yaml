@@ -1,0 +1,19 @@
+profile: content/tribes/y/yurok-tribe-of-the-yurok-reservation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/yuroktribe-ordappr070700.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 2000-07-07
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#yurok-tribe-ordinance-2000-07-07#i1
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

@@ -1,0 +1,65 @@
+profile: content/tribes/p/pueblo-of-tesuque.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/pueblotesuque-tesuqueord110894.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, licensing-hearing) in this ordinance listed 1994-11-08; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/pueblotesuque-tesuqueamend012098.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, court-review) in this amendment listed 1998-01-20; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/pueblotesuque-tesuqueamend071602.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2002-07-16
+    and recorded 4 procedure(s): employee-grievance, other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#pueblo-of-tesuque-amendment-2002-07-16#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#pueblo-of-tesuque-amendment-2002-07-16#i2
+  - research/reviews/2026-11-22-ordinance-disputes.json#pueblo-of-tesuque-amendment-2002-07-16#i3
+  - research/reviews/2026-11-22-ordinance-disputes.json#pueblo-of-tesuque-amendment-2002-07-16#i4
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/pueblotesuque-puebloftesque122807.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2007-12-28 has no text layer on most pages (41 of 41 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20190329OrdAmdforPuebloofTesuque.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2019-03-29 has no text layer on most pages (52 of 52 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 2007-12-28 (https://www.nigc.gov/wp-content/uploads/2025/03/pueblotesuque-puebloftesque122807.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2019-03-29 (https://www.nigc.gov/wp-content/uploads/2025/03/20190329OrdAmdforPuebloofTesuque.pdf)
+  with OCR or by hand.

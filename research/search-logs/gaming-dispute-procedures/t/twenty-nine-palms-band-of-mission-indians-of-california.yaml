@@ -1,0 +1,61 @@
+profile: content/tribes/t/twenty-nine-palms-band-of-mission-indians-of-california.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/twtynineplmsbndmisinindn-ordappr010494.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This ordinance listed 1994-01-04 has no text layer on most pages (13 of 13 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/twtynineplmsbndmisinindn-amendappr052803.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2003-05-28
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#twenty-nine-palms-band-of-mission-indians-amendment-2003-05-28#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/twtynineplmsbndmisinindn-twentyninepalms011108.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2008-01-11 has no text layer on most pages (6 of 6 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/twtynineplmsbndmisinindn-TwentyNinePalms20120905Letter.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (dispute-other) in this amendment
+    listed 2012-09-05; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/?wpdmdl=14606&ind=1791226720425
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2026-09-23 has no text layer on most pages (25 of 26 pages have no text
+    layer (only the approval letter has text); no OCR available).
+next_steps: Read the scanned ordinance listed 1994-01-04 (https://www.nigc.gov/wp-content/uploads/2025/03/twtynineplmsbndmisinindn-ordappr010494.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2008-01-11 (https://www.nigc.gov/wp-content/uploads/2025/03/twtynineplmsbndmisinindn-twentyninepalms011108.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2026-09-23 (https://www.nigc.gov/?wpdmdl=14606&ind=1791226720425)
+  with OCR or by hand.

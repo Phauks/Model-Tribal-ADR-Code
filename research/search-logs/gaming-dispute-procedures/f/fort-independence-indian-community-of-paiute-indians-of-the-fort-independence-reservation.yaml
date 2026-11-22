@@ -1,0 +1,30 @@
+profile: content/tribes/f/fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/fortindepenamend011108.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This ordinance listed 2008-01-11 has no text layer on most pages (33 of 33 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/2016.11.22_Fort_Independence_Appr_Ord.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2016-11-22
+    and recorded 2 procedure(s): employee-grievance, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#fort-independence-indian-reservation-amendment-2016-11-22#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#fort-independence-indian-reservation-amendment-2016-11-22#i2
+next_steps: Read the scanned ordinance listed 2008-01-11 (https://www.nigc.gov/wp-content/uploads/2025/03/fortindepenamend011108.pdf)
+  with OCR or by hand.

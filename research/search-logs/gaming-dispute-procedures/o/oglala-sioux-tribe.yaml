@@ -1,0 +1,70 @@
+profile: content/tribes/o/oglala-sioux-tribe.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/oglalasioux-ordappr020794.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (court-review, licensing-hearing)
+    in this ordinance listed 1994-02-07; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/oglalasioux-amendappr102898.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 1998-10-28 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/oglalasioux-20111031OglalaSioux.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2011-10-31 has no text layer on most pages (3 of 3 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20141215LtrtoTribereApprovedordinanceOglala_Sioux_-_corrected.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2014-12-15 has no text layer on most pages (25 of 25 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20150828_Ltr_to_Tribe_fr_NIGC_re_Oglala_ordinance_approval.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2015-08-28 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/Amendment_Approval_08.04.2016.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2016-08-04
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#oglala-sioux-tribe-amendment-2016-08-04#i1
+next_steps: Read the scanned amendment listed 2011-10-31 (https://www.nigc.gov/wp-content/uploads/2025/03/oglalasioux-20111031OglalaSioux.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2014-12-15 (https://www.nigc.gov/wp-content/uploads/2025/03/20141215LtrtoTribereApprovedordinanceOglala_Sioux_-_corrected.pdf)
+  with OCR or by hand.

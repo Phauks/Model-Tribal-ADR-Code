@@ -1,0 +1,88 @@
+profile: content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/huronpotawatomiinc-ordappr080700.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other,
+    court-review, licensing-hearing) in this ordinance listed 2000-08-07; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/nottawashuronord080700.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other,
+    court-review, licensing-hearing) in this ordinance listed 2000-08-07; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/AmdAppr08262009.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other,
+    court-review, licensing-hearing) in this amendment listed 2009-08-26; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/nottawaseppihuronband-Ordappr02102011.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2011-02-10
+    and recorded 4 procedure(s): employee-grievance, other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#nottawaseppi-huron-band-of-potawatomi-amendment-2011-02-10#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#nottawaseppi-huron-band-of-potawatomi-amendment-2011-02-10#i2
+  - research/reviews/2026-11-22-ordinance-disputes.json#nottawaseppi-huron-band-of-potawatomi-amendment-2011-02-10#i3
+  - research/reviews/2026-11-22-ordinance-disputes.json#nottawaseppi-huron-band-of-potawatomi-amendment-2011-02-10#i4
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/nottawaseppihuronband-09132012ltrtoChairpersonreNottawaseppiHuronBandOrdinAmend.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2012-09-13 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20210916NottawaseppiHuronBandOrdAmendAppr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2021-09-16
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#nottawaseppi-huron-band-of-potawatomi-amendment-2021-09-16#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/10/2025.10.29-Nottawaseppi-Huron-Band-of-Potawatomi-Gam-Ord-Amend.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2025-10-29 has no text layer on most pages (67 of 68 pages have no text
+    layer (only the approval letter has text); no OCR available).
+next_steps: Some pages of the amendment listed 2021-09-16 (https://www.nigc.gov/wp-content/uploads/2025/03/20210916NottawaseppiHuronBandOrdAmendAppr.pdf)
+  have no text layer; read them with OCR. Read the scanned amendment listed 2025-10-29 (https://www.nigc.gov/wp-content/uploads/2025/10/2025.10.29-Nottawaseppi-Huron-Band-of-Potawatomi-Gam-Ord-Amend.pdf)
+  with OCR or by hand.

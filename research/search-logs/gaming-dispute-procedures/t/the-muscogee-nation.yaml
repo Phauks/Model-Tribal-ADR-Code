@@ -1,0 +1,168 @@
+profile: content/tribes/t/the-muscogee-nation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-Ord120285.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 1985-12-02 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeord110394.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other,
+    licensing-hearing) in this ordinance listed 1994-11-03; reviewers read a newer document with the same
+    kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeecreek100998.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 1998-10-09 has no text layer on most pages (12 of 12 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend022202.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2002-02-22
+    and recorded 2 procedure(s): employee-grievance, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#muscogee-creek-nation-amendment-2002-02-22#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#muscogee-creek-nation-amendment-2002-02-22#i2
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend121103.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2003-12-11 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend050304.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2004-05-03 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend102504.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2004-10-25 has no text layer on most pages (7 of 7 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend070605.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2005-07-06 has no text layer on most pages (2 of 3 pages have no text
+    layer (only the approval letter has text); no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend061506.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2006-06-15 has no text layer on most pages (6 of 6 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-060823AmendApprovalLtr.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2006-08-23 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-20100719Ordamendapp.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2010-07-19 has no text layer on most pages (3 of 3 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-Amendappr10152010.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2010-11-15 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-20121015LtrTrbNIGCreOrdamdmtappMuscogee.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2012-10-15 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-20121126Ltr-toTrbfrNIGCOrdamtapprlMuscogeeCreek.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2012-11-26
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#muscogee-creek-nation-amendment-2012-11-26#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/2018511OrdAmendApproval.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2018-05-11 has no text layer on most pages (35 of 35 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 1998-10-09 (https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeecreek100998.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2004-10-25 (https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend102504.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2005-07-06 (https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend070605.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2006-06-15 (https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-muscogeeamend061506.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2010-07-19 (https://www.nigc.gov/wp-content/uploads/2025/03/muscogeecreeknation-20100719Ordamendapp.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2018-05-11 (https://www.nigc.gov/wp-content/uploads/2025/03/2018511OrdAmendApproval.pdf)
+  with OCR or by hand.

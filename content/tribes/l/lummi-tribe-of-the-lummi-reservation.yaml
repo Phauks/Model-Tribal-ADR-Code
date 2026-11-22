@@ -245,56 +245,7 @@ justice_institutions:
     no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
     found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Ch’qi’n’txw an Offender’s Record of Conviction (Expungement)
-    citation: Lummi Nation Code of Laws, Title 5, Chapter 5.12 (5.12.010 and following)
-    summary: Lets a person who has completed all terms of a Lummi Tribal Court sentence petition to have
-      the conviction ch’qi’n’txw, a term the code gives the same legal effect as expungement, grounded
-      in the community value of forgiveness, with listed offenses excluded.
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Lummi-Title5CodeofOffenses.pdf
-    source: lummi-title-5-code-of-offenses
-    confidence: high
-    as_of: '2022'
-    locator: 5.12.010, 5.12.020
-    note: 'A restorative, post-sentencing provision rather than a dispute forum; the code refers to living
-      consistently with Lummi Sche’lang’en. Language tag str (Straits Salish) assigned on the basis that
-      Lummi is a Northern Straits Salish language; the source does not name the language. Own term: ch’qi’n’txw.'
-  - kind: traditional-dispute-resolution
-    title: 'Title 5: Code of Offenses, Chapter 5.12 – Ch’qi’n’txw an Offender’s Record of Conviction (Expungement)'
-    citation: 'Title 5: Code of Offenses, Chapter 5.12 – Ch’qi’n’txw an Offender’s Record of Conviction
-      (Expungement)'
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Lummi-Title5CodeofOffenses.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Lummi Nation of Washington
-    note: 'Native American Rights Fund description (provision itself not read): Full procedures and standards
-      for applying traditional notion related to clearing record of offender upon satisfactory completion
-      of penalty under cultural standards. Innovative sentencing-related provisions.'
   database_listings:
-  - title: Declaration of Restorative Justice
-    citation: Justice
-    link: https://ncorj.org/tribal-law/declaration-of-restorative-justice/
-    practice_area: Tribal Justice
-    phase: N/A
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/declaration-of-restorative-justice/
-  - title: Disposition Options for Child is Found to Be in Need of Protection
-    citation: Found to Be in Need of Protection.
-    link: https://ncorj.org/tribal-law/disposition-options-for-child-is-found-to-be-in-need-of-protection/
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-child-is-found-to-be-in-need-of-protection/
   - title: Family Conference in Child Welfare
     citation: Lummi Nation Code of Laws. Title 8 Children's Code. Chapter 8.01 General Provisions. 8.01.050
       Grandparent Consultation & Section 8.01.060 Notice to Extended Family; Family Conference.
@@ -307,41 +258,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-conference-in-child-welfare/
-  - title: Family Preservation Plan
-    citation: Lummi Nation Code of Laws. Title 8 Children's Code. Chapter 8.01 General Provisions. Section
-      8.01.030 Family Preservation Plan.
-    link: https://www.lummi-nsn.gov/userfiles/393_Title_8__Children_s_Code__Resolution__2013-131.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-preservation-plan/
-  - title: Grandparents Committee/Elder’s Panel
-    citation: Lummi Nation Code of Laws. Title 8 Children's Code. Chapter 8.01 General Provisions. Section
-      8.01.120 Grandparents Committee.
-    link: https://www.lummi-nsn.gov/userfiles/393_Title_8__Children_s_Code__Resolution__2013-131.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication; Pre-adjudication
-    form_of_practice: Community or Elder Panel
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/grandparents-committee-elders-panel/
-  - title: Informal Hearing in Child Welfare
-    citation: Children.
-    link: https://ncorj.org/tribal-law/informal-hearing-in-child-welfare/
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-hearing-in-child-welfare/
   - title: Prioritization of Family Conference and Grandparents Committee in Child Welfare
     citation: a Parent and Child.
     link: https://ncorj.org/tribal-law/prioritization-of-family-conference-and-grandparents-committee-in-child-welfare/
@@ -365,30 +281,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/prioritization-of-restorative-and-traditional-sentencing/
-  - title: Restorative Purpose in Children’s Code
-    citation: Lummi Nation Code of Laws. Title 8 Children's Code. Chapter 8.01 General Provisions. 8.01.010
-      Declaration of Purpose.
-    link: https://www.lummi-nsn.gov/userfiles/393_Title_8__Children_s_Code__Resolution__2013-131.pdf
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: N/A
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-purpose-in-childrens-code/
-  - title: Treatment for Domestic Violence
-    citation: Lummi Nation Code of Laws. Title 5A Domestic Violence Code. Chapter 5A.04 Court Proceedings
-      for Crimes of Domestic Violence. 5A.04.045 Judgments of Conviction.
-    link: https://www.lummi-nsn.gov/userfiles/831_Title5A.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-domestic-violence-2/
 gaming:
   compacts:
   - state: WA
