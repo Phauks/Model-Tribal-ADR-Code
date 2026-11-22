@@ -28,11 +28,6 @@
 		word is best avoided. Each entry cites its sources, listed together at the end of the page, or says
 		it is the project’s own choice.
 	</p>
-	<p class="small muted">
-		To point to a term from another page, link to <code>/glossary#</code> followed by the term’s address,
-		for example <a href="#native-nations"><code>/glossary#native-nations</code></a>, or to the term’s own
-		page, such as <a href="/glossary/native-nations"><code>/glossary/native-nations</code></a>.
-	</p>
 </div>
 
 <nav aria-label="Glossary letters" class="letters no-print">
