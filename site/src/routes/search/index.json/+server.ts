@@ -26,6 +26,7 @@ export const GET: RequestHandler = () => {
 	const nationEntries: SearchEntry[] = nationIndexRows().map((row) => {
 		const record = records.get(row.id);
 		const also = [
+			...(row.listedName !== row.name ? [row.listedName] : []),
 			...(record?.names.self_designation ?? []).map((name) => name.name),
 			...(record?.names.former ?? []).map((name) => name.name)
 		];

@@ -72,3 +72,4 @@ Findings recorded in records:
   building and amphitheater (`navajo-nation-itb-26-09-4310sb-peacemaking-building-2026`).
 - The Oneida Indian Nation's "Liberty Trees and the Tree of Peace" page tells
   no peacemaking story (`oneida-indian-nation-tree-of-peace`).
+- **Native Hawaiian Law: A Treatise (MacKenzie ed. 2015)**: EPUB filed privately under `books/` (not on the pull list); all rights reserved, never served (`mackenzie-2015-native-hawaiian-law-treatise`).
