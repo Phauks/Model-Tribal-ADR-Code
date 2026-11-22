@@ -44,5 +44,6 @@ and says so.
 | [0030](0030-keep-research-captures-in-the-private-bucket.md) | Keep research captures in the private bucket, with an index in git | Accepted |
 | [0031](0031-serve-copies-of-documents-from-the-private-bucket.md) | Serve the project's copies of cited documents, including nations' constitutions and laws | Accepted |
 | [0032](0032-starred-pages-and-shared-collections-on-the-reader-s-device.md) | Starred pages, private notes and shared collections, kept on the reader's device | Accepted |
+| [0033](0033-nation-page-map-has-the-big-maps-views.md) | Give the map on each nation's page the big map's views | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.
