@@ -120,6 +120,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://elk-valley.com/contact-elk-valley/
+  label: Contact page on the nation's website
+  source: elk-valley-contact-elk-valley
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Elk Valley Rancheria". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://elk-valley.com/wp-content/uploads/2021/04/elk-valley-stacked-full-1.png

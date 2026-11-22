@@ -128,6 +128,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Port Gamble S'Klallam Tribe
+- kind: contact-page
+  value: https://pgst.nsn.us/contact/
+  label: Contact page on the nation's website
+  source: pgst-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Port Gamble SKlallam Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://pgst.nsn.us/wp-content/uploads/2022/07/logo-header-480x95.png

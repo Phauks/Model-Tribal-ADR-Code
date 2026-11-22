@@ -120,6 +120,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation, California
+- kind: contact-page
+  value: https://www.mesagrandeband-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: mesagrandeband-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Mesa Grande". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: mgbomi@mesagrandeband-nsn.gov
+  label: General office email shown on the nation's website
+  source: mesagrandeband-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.mesagrandeband-nsn.gov/wp-content/uploads/MesaGrande-FinalLogo-2048x2048.png

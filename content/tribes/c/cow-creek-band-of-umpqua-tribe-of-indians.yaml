@@ -147,6 +147,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.cowcreek-nsn.gov/contact-us/
+  label: Contact page on the nation's website
+  source: cowcreek-nsn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". The page answered with a bot check, so only the link was read. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.cowcreek-nsn.gov/wordpress/wp-content/uploads/2017/05/cc-logo-preloader.png

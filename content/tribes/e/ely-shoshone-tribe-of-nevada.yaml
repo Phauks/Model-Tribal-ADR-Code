@@ -119,6 +119,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
+- kind: contact-page
+  value: https://www.elyshoshonetribe.com/contact-us
+  label: Contact page on the nation's website
+  source: elyshoshonetribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Ely Shoshone Tribe Nevada Offical Website". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/v1/5e5ed940e85ead40980fbd14/1626195476220-9Q6FG4BEOFR2QF92NW7H/ElyShoshoneTribeNevadalogoweb.png?format=2500w

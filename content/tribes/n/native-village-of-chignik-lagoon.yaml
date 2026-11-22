@@ -152,6 +152,14 @@ contacts:
   locator: 'record "Native Village of Chignik Lagoon" (community: Chignik Lagoon, object 34)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://chigniklagoon.net/contact-information.html
+  label: Contact page on the nation's website
+  source: chigniklagoon-contact-information-html
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Information". Its title is "Contact Information - Native Village of Chignik Lagoon". Found by scripts/tribes/find_contacts.py.
 languages:
 - name: Sugt'stun (Alutiiq)
   language_tag: ems

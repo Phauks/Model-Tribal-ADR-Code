@@ -134,6 +134,14 @@ contacts:
   locator: 'record "Native Village of Ouzinkie" (community: Ouzinkie, object 155)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: http://www.ouzinkie.org/contacts.php
+  label: Contact page on the nation's website
+  source: ouzinkie-contacts-php
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contacts". Its title is "Ouzinkie, Alaska - Contacts". Found by scripts/tribes/find_contacts.py.
 languages:
 - name: Sugt'stun (Alutiiq)
   language_tag: ems

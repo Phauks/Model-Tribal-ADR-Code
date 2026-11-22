@@ -119,6 +119,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pinoleville Pomo Nation, California
+- kind: contact-page
+  value: https://pinoleville-nsn.gov/home/contact-us/
+  label: Contact page on the nation's website
+  source: pinoleville-nsn-home-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – Pinoleville Pomo Nation". Found by scripts/tribes/find_contacts.py.
 languages:
 - name: Northern Pomo
   language_tag: pej

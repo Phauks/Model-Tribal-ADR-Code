@@ -137,6 +137,14 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+- kind: email-general
+  value: achoctaw@yahoo.com
+  label: General office email shown on the nation's website
+  source: choctawapachetribeebarb-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/60341961c0b0f55d727d963c/1614045696490-UJSEAX34O18GIF19FR5J/Asset+110.png?content-type=image%2Fpng

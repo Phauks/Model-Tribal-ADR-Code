@@ -113,6 +113,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Saint Paul Island" (community: St. Paul Island, object 195)'
+- kind: website
+  value: https://www.aleut.com
+  label: Official website
+  source: aleut-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://www.aleut.com/contact
+  label: Contact page on the nation's website
+  source: aleut-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: physical-address
+  value: 2050 Venia Minor Rd, St. Paul, AK 99660-0086
+  label: Tribal government office
+  source: aleut-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 tribal_insignia_database_entries:
 - serial_number: '89002169'
   wordmark: ALEUT COMMUNITY OF ST. PAUL TRIBAL GOVERNMENT

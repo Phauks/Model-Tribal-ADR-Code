@@ -134,6 +134,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+- kind: contact-page
+  value: https://lvd-nsn.gov/Content/Contact.cfm
+  label: Contact page on the nation's website
+  source: lvd-nsn-content-contact-cfm
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "| Lac Vieux Desert Band of Lake Superior Chippewa Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: LVD NSN

@@ -1,0 +1,29 @@
+profile: content/tribes/m/muwekma-ohlone-tribe.yaml
+topic: contacts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Muwekma Ohlone Tribe official website contact
+  outcome: found
+  reason: 'Not run: this turn''s web search budget was used up.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Muwekma Ohlone Tribe California official website contact
+  outcome: found
+  reason: Found muwekma.org as the tribe's own site with a general contact page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://muwekma.org/index.html
+  query: official website, contact page, general email
+  outcome: found
+  reason: Claude found the site by web search; a script opened it and found each value on the page named.

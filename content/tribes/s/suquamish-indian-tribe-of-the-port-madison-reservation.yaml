@@ -111,6 +111,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
+- kind: contact-page
+  value: https://suquamish.nsn.us/home/contact-us/
+  label: Contact page on the nation's website
+  source: suquamish-home-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT US". Its title is "CONTACT US | The Suquamish Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: The Suquamish Tribe

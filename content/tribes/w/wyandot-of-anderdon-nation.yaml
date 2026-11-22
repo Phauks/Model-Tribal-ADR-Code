@@ -61,6 +61,23 @@ states:
   confidence: low
   verification: bulk-import
   as_of: '2016-12-14'
+contacts:
+- kind: website
+  value: https://www.wyandotofanderdon.com/wp/
+  label: Official website
+  source: wyandotofanderdon-wp
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: mailing-address
+  value: P.O. Box 68, Trenton, MI 48183
+  label: Tribal government office
+  source: wyandotofanderdon-wp
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -111,6 +111,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+- kind: contact-page
+  value: https://www.yombatribe.com/contact-8
+  label: Contact page on the nation's website
+  source: yombatribe-contact-8
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Yombatribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: admin@yombatribe.com
+  label: General office email shown on the nation's website
+  source: yombatribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/dfee40_b90761c69ee044ad806269ee294fb32d%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/dfee40_b90761c69ee044ad806269ee294fb32d%7Emv2.png

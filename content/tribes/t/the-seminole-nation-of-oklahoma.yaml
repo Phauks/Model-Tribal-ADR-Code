@@ -144,6 +144,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Seminole Nation of Oklahoma
+- kind: contact-page
+  value: https://www.sno-nsn.gov/getpage.php?name=Contact_Us&sub=About+Us
+  label: Contact page on the nation's website
+  source: sno-nsn-getpage-php
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "36645 US-270 | Wewoka, Oklahoma 74884". Its title is "Contact Us". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: The Great Seminole Nation of Oklahoma Logo

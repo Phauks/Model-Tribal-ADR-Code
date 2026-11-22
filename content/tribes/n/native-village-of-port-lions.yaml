@@ -142,6 +142,14 @@ contacts:
   locator: 'record "Native Village of Port Lions" (community: Port Lions, object 169)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://portlionstribe.net/contact-us/
+  label: Contact page on the nation's website
+  source: portlionstribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Us – Native Village of Port Lions". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: default-logo

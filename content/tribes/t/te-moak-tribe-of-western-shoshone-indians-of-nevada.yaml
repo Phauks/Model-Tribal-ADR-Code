@@ -204,6 +204,14 @@ contacts:
   as_of: '2026-11-20'
   locator: 'Te-Moak Tribe of Western Shoshone Indians of Nevada (Four constituent bands: Battle Mountain
     Band; Elko Band; South Fork Band; and Wells Band)'
+- kind: contact-page
+  value: https://www.temoaktribe.com/contact.shtml
+  label: Contact page on the nation's website
+  source: temoaktribe-contact-shtml
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Information". Its title is "Te-Moak Tribe of Western Shoshone". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.temoaktribe.com/graphx/planninglogo.jpg

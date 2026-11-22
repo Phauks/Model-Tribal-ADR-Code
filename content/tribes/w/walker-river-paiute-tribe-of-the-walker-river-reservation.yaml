@@ -127,6 +127,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+- kind: contact-page
+  value: https://www.wrpt.org/contact-us/
+  label: Contact page on the nation's website
+  source: wrpt-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – Walker River Paiute Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Walker River Paiute Tribe

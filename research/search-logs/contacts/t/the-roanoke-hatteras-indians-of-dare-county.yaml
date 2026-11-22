@@ -1,0 +1,21 @@
+profile: content/tribes/t/the-roanoke-hatteras-indians-of-dare-county.yaml
+topic: contacts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Roanoke-Hatteras Indians of Dare County North Carolina official website contact
+  outcome: found
+  reason: Returned ncalgonquians.com, which the fetch identified as the Roanoke-Hatteras Tribe of NC site.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://ncalgonquians.com
+  query: official website, contact page, general email
+  outcome: found
+  reason: Claude found the site by web search; a script opened it and found each value on the page named.

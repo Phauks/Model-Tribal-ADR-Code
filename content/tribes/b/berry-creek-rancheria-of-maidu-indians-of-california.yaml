@@ -113,6 +113,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Berry Creek Rancheria of Maidu Indians of California
+- kind: contact-page
+  value: https://www.berrycreekmaiduindians.org/contact
+  label: Contact page on the nation's website
+  source: berrycreekmaiduindians-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Berry Creek Rancheria". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: tribalcouncil@bcr-nsn.gov
+  label: General office email shown on the nation's website
+  source: berrycreekmaiduindians-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: BCR-logo.png

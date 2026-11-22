@@ -124,6 +124,14 @@ contacts:
   locator: 'record "Qagan Tayagungin Tribe of Sand Point Village" (community: Sand Point, object 178)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.qttribe.org/index.asp?SEC={5BDD6B9B-F757-43EF-8C77-C6DA98AD2308}&Type=QUICKFORM
+  label: Contact page on the nation's website
+  source: qttribe-index-asp
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Qagan Tayagungin Tribe, AK". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.qttribe.org/repository/designs/templates/GO_qagan-tayagungin-tribe-ak_2025_resp/images/apple-touch-icon.png

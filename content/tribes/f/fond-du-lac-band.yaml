@@ -78,6 +78,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   locator: home page
+- kind: contact-page
+  value: https://www.fdlband.org/explore/contact_us.php
+  label: Contact page on the nation's website
+  source: fdlband-explore-contact-us-php
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Fond du Lac Band - Contact Us - Directory". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: navigation logo

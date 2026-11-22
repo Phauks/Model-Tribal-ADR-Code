@@ -122,6 +122,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kickapoo Tribe of Oklahoma
+- kind: contact-page
+  value: https://www.kickapootribeofoklahoma.com/contact
+  label: Contact page on the nation's website
+  source: kickapootribeofoklahoma-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact — Kickapoo Tribe of Oklahoma". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://static1.squarespace.com/static/60537f312b9e3a557fca2b4f/t/60538285af0c4d2c1e6ab61b/1616085637122/kickapoo-tribe-ok-seal-300x300.png

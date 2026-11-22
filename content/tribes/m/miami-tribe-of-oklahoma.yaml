@@ -158,6 +158,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Miami Tribe of Oklahoma
+- kind: contact-page
+  value: https://www.miamination.com/contact/
+  label: Contact page on the nation's website
+  source: miamination-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Miamination.com". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.miamination.com/wp-content/uploads/2022/10/cropped-MTO-Official-Tribal-Seal-FINAL-no-back-scaled-1-180x180.png

@@ -16,6 +16,7 @@ export type ContactKind =
 	| 'phone'
 	| 'fax'
 	| 'email'
+	| 'contact-page'
 	| 'other';
 
 export interface ContactRow {
@@ -68,6 +69,7 @@ const rowOrder: ContactKind[] = [
 	'phone',
 	'fax',
 	'email',
+	'contact-page',
 	'other'
 ];
 
@@ -78,6 +80,7 @@ const kindLabels: Record<ContactKind, string> = {
 	phone: 'Phone',
 	fax: 'Fax',
 	email: 'Email',
+	'contact-page': 'Contact page',
 	other: 'Contact'
 };
 
@@ -241,6 +244,19 @@ function row(fact: ContactFact, note: string | undefined): ContactRow {
 				link: phoneLink(fact.value),
 				note
 			};
+		case 'contact-page': {
+			// The nation's own "Contact us" page, for nations that publish a form or a staff list rather than one address.
+			const link = webLink(fact.value);
+			return {
+				kind,
+				label,
+				lines: [link ? displayWebAddress(fact.value) : fact.value],
+				link,
+				external: link !== undefined,
+				linkHint: link ? 'opens in a new tab' : undefined,
+				note
+			};
+		}
 		case 'email':
 			return {
 				kind,

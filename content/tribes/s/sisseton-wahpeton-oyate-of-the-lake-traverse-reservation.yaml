@@ -138,6 +138,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
+- kind: contact-page
+  value: https://swo-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: swo-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | SWO". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.swo-nsn.gov/media/gidjegez/swo-shield-triangle-combo-logo.png?format=webp

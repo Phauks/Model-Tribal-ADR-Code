@@ -29,6 +29,31 @@ states:
   confidence: high
   verification: inferred
   as_of: '2025'
+contacts:
+- kind: website
+  value: https://www.piscatawaytribe.org/
+  label: Official website
+  source: piscatawaytribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://www.piscatawaytribe.org/contact.html
+  label: Contact page on the nation's website
+  source: piscatawaytribe-contact-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: mailing-address
+  value: PO Box 287, Pomfret, MD 20675
+  label: Tribal government office
+  source: piscatawaytribe-contact-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

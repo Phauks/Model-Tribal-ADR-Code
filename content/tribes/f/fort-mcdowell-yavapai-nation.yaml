@@ -141,6 +141,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
+- kind: contact-page
+  value: https://fmyn.org/contact-us/
+  label: Contact page on the nation's website
+  source: fmyn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Fort McDowell Yavapai Nation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://fmyn.org/wp-content/uploads/2023/07/FortSeal-logo.png

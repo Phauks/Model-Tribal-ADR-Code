@@ -102,6 +102,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Upper Mattaponi Tribe
+- kind: contact-page
+  value: https://www.umitribe.org/contact
+  label: Contact page on the nation's website
+  source: umitribe-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT US". Its title is "CONTACT US | UMITribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@umitribe.org
+  label: General office email shown on the nation's website
+  source: umitribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: UMI Seal Full Color_Large.png

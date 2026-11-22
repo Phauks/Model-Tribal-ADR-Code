@@ -25,6 +25,39 @@ states:
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+contacts:
+- kind: website
+  value: https://ncalgonquians.com
+  label: Official website
+  source: ncalgonquians-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://ncalgonquians.com/contact-us/
+  label: Contact page on the nation's website
+  source: ncalgonquians-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: email-general
+  value: info@ncalgonquians.com
+  label: General office email shown on the nation's website
+  source: ncalgonquians-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address as shown on the page.
+- kind: phone
+  value: (252) 423-4714
+  label: Tribal government office
+  source: ncalgonquians-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

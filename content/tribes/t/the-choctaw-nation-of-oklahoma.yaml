@@ -141,6 +141,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Choctaw Nation of Oklahoma
+- kind: contact-page
+  value: https://www.choctawnation.com/contact/
+  label: Contact page on the nation's website
+  source: choctawnation-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Choctaw Nation of Oklahoma". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://upload.wikimedia.org/wikipedia/commons/5/5c/Choctaw_seal.svg

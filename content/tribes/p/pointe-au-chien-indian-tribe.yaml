@@ -123,6 +123,22 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+- kind: contact-page
+  value: https://www.pactribe.com/blank
+  label: Contact page on the nation's website
+  source: pactribe-blank
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT US & HOW TO HELP". Its title is "CONTACT US & HOW TO HELP | Pointe au Chien Ind". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: pacitp2@gmail.com
+  label: General office email shown on the nation's website
+  source: pactribe-blank
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/91b344_c401037407ec472a9f10536f427610fd~mv2_d_3111_2935_s_4_2.jpg/v1/fill/w_2500,h_2358,al_c/91b344_c401037407ec472a9f10536f427610fd~mv2_d_3111_2935_s_4_2.jpg

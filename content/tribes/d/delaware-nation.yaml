@@ -151,6 +151,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Nation, Oklahoma
+- kind: contact-page
+  value: https://www.delawarenation-nsn.gov/contact-us/
+  label: Contact page on the nation's website
+  source: delawarenation-nsn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Us | Delaware Nation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.delawarenation-nsn.gov/wp-content/uploads/2022/08/cropped-Delaware-Nation-Seal-Vector-Logo-Black-Text-180x180.gif

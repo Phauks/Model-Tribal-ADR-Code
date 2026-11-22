@@ -70,6 +70,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   locator: home page
+- kind: contact-page
+  value: https://millelacsband.com/directory
+  label: Contact page on the nation's website
+  source: millelacsband-directory
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contacts". Its title is "Contacts | Mille Lacs Band of Ojibwe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://millelacsband.com/assets/svg/mlbo-flag.svg

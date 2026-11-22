@@ -141,6 +141,14 @@ contacts:
   as_of: 2024-09
   note: 'BIA directory lists no website; Maine Department of Education, "Wabanaki Studies: About Wabanaki
     Nations", updated September 2024 (state agency) links this site; page title "Sipayik Tribal Government"'
+- kind: contact-page
+  value: https://wabanaki.com/contact/
+  label: Contact page on the nation's website
+  source: wabanaki-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Sipayik Tribal Government". Found by scripts/tribes/find_contacts.py.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

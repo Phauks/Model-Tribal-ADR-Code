@@ -112,6 +112,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Los Coyotes Band of Cahuilla and Cupeno Indians, California
+- kind: contact-page
+  value: https://www.loscoyotestribe.org/contact
+  label: Contact page on the nation's website
+  source: loscoyotestribe-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Los Coyotes Tourism". Found by scripts/tribes/find_contacts.py.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

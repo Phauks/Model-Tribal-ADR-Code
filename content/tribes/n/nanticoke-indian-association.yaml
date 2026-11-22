@@ -44,6 +44,39 @@ states:
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+contacts:
+- kind: website
+  value: https://www.nanticokeindians.org/
+  label: Official website
+  source: nanticokeindians-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://www.nanticokeindians.org/contact/
+  label: Contact page on the nation's website
+  source: nanticokeindians-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: phone
+  value: (302) 945-3400
+  label: Tribal government office
+  source: nanticokeindians-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
+- kind: physical-address
+  value: 27073 John J. Williams Highway, Millsboro, DE 19966
+  label: Tribal government office
+  source: nanticokeindians-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

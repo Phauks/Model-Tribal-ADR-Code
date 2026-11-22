@@ -110,6 +110,14 @@ contacts:
   locator: 'record "Native Village of Afognak" (community: Afognak, object 1)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.afognak.org/about-nva/contact/
+  label: Contact page on the nation's website
+  source: afognak-about-nva-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: 'The nation''s own website links this page as "Contact". Its title is "Native Village of Afognak :: Contact". Found by scripts/tribes/find_contacts.py.'
 tribal_insignia_database_entries:
 - serial_number: '89001536'
   filed: '2011-04-21'

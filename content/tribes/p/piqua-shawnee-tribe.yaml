@@ -46,6 +46,14 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+- kind: contact-page
+  value: https://piquashawnee.gov/contact
+  label: Contact page on the nation's website
+  source: piquashawnee-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Connect With Us — Piqua Shawnee Tribe of Alabama". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: Piqua Shawnee Tribe seal

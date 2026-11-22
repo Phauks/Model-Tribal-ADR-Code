@@ -128,6 +128,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
+- kind: contact-page
+  value: https://nwbshoshone.com/contact/
+  label: Contact page on the nation's website
+  source: nwbshoshone-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Northwestern Band of the Shoshone Nation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: NWBSN logo

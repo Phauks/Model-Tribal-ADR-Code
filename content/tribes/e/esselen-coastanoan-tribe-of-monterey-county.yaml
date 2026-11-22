@@ -32,6 +32,47 @@ states:
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+contacts:
+- kind: website
+  value: https://esselentribe.org/
+  label: Official website
+  source: esselentribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://www.esselentribe.org/contact
+  label: Contact page on the nation's website
+  source: esselentribe-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: email-general
+  value: tribaladmin@esselentribe.org
+  label: General office email shown on the nation's website
+  source: esselentribe-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address as shown on the page.
+- kind: phone
+  value: 831.301.3078
+  label: Tribal government office
+  source: esselentribe-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
+- kind: mailing-address
+  value: Post Office Box 95, Carmel Valley, CA 93924
+  label: Tribal government office
+  source: esselentribe-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

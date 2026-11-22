@@ -130,6 +130,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Village of Dot Lake" (community: Dot Lake Village, object 50)'
+- kind: email-general
+  value: council@dotlakevillage.org
+  label: General office email shown on the nation's website
+  source: dotlakevillage-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://www.dotlakevillage.org/wp-content/uploads/2023/08/Dot-Lake-Seal-for-header.png

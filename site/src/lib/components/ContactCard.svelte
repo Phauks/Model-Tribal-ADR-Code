@@ -3,6 +3,7 @@
 	// card of their own, then one card for each office, named once, where each
 	// contact is a labeled row with a Lucide icon beside its label. Sources are
 	// listed in the page's Sources section.
+	import Contact from '@lucide/svelte/icons/contact';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import Globe from '@lucide/svelte/icons/globe';
 	import Landmark from '@lucide/svelte/icons/landmark';
@@ -23,6 +24,7 @@
 		phone: Phone,
 		fax: Printer,
 		email: Mail,
+		'contact-page': Contact,
 		other: Globe
 	};
 	const iconSize = 20;
