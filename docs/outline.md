@@ -1,38 +1,19 @@
 # Working outline: model code, book and website
 
-**Version 0.4, Nov. 22, 2026.** This is the project's framework: the parts,
-divisions and website sections, and what each one is for. It is a working
-draft that will change. Nothing here is provision text, which waits for
-Gate 1 and Gate 2 under the [roadmap](roadmap.md). A readable copy for
-review and comments is kept as a Claude Doc
-([working outline](https://claude.ai/artifact/CMngzviK5V9QX2htVpgpT7)); this
-file is the record.
+**Version 0.4, Nov. 22, 2026.** This is the project's framework: the parts, divisions and website sections, and what each one is for. It is a working draft that will change. Nothing here is provision text, which waits for Gate 1 and Gate 2 under the [roadmap](roadmap.md). A readable copy for review and comments is kept as a Claude Doc ([working outline](https://claude.ai/artifact/CMngzviK5V9QX2htVpgpT7)); this file is the record.
 
-The project is built for the website first; the book's order, title and print
-form are settled later, at export time (lead author, Nov. 22, 2026).
+The project is built for the website first; the book's order, title and print form are settled later, at export time (lead author, Nov. 22, 2026).
 
 ## How this outline works
 
-- **It is versioned.** Each change is a pull request and adds a row to the
-  [version history](#version-history), so earlier shapes stay visible in git.
-- **Gate 2 approves a version, not a final shape.** When the lead author and
-  the faculty advisors approve it, that version is saved as a decision record,
-  as the [roadmap](roadmap.md#gate-2-scope-and-outline-approved) requires.
-  Later editions can change it the same way.
-- **It stays top level.** Each item gets a name, a one-line purpose and a
-  status. Section lists inside divisions come later, during drafting.
-- **Markers.** "Exists" means a draft or records are already in the
-  repository. "Decided" means the lead author has settled it. "Gate 1" means
-  its contents depend on the lead author's data review. "Scope question *n*"
-  means it waits for an answer in [Open scope questions](#open-scope-questions).
+- **It is versioned.** Each change is a pull request and adds a row to the [version history](#version-history), so earlier shapes stay visible in git.
+- **Gate 2 approves a version, not a final shape.** When the lead author and the faculty advisors approve it, that version is saved as a decision record, as the [roadmap](roadmap.md#gate-2-scope-and-outline-approved) requires. Later editions can change it the same way.
+- **It stays top level.** Each item gets a name, a one-line purpose and a status. Section lists inside divisions come later, during drafting.
+- **Markers.** "Exists" means a draft or records are already in the repository. "Decided" means the lead author has settled it. "Gate 1" means its contents depend on the lead author's data review. "Scope question *n*" means it waits for an answer in [Open scope questions](#open-scope-questions).
 
 ## How the pieces fit
 
-Everything is written once as plain-file records in `content/` and built into
-each output, with a separate version and changelog for content, website and
-print ([decision record 0003](decisions/0003-three-version-tracks.md);
-[decision record 0004](decisions/0004-content-as-plain-files.md)). So one
-outline sets the shape that the book and the website both follow.
+Everything is written once as plain-file records in `content/` and built into each output, with a separate version and changelog for content, website and print ([decision record 0003](decisions/0003-three-version-tracks.md); [decision record 0004](decisions/0004-content-as-plain-files.md)). So one outline sets the shape that the book and the website both follow.
 
 ```text
 content/ records (content track)
@@ -47,13 +28,7 @@ content/ records (content track)
 
 ## The parts
 
-The lead author's shape (Nov. 22, 2026): foundations, then the model code,
-then a separate part of commentary on the code, then essays. This outline
-adds a fifth part for methods and manners, which the repository already
-plans. Online, each part is a section of the website; when the book is made,
-the same parts become its parts, and their print order is settled then
-(scope question 16). The print build's three working parts in
-[`pdf/book.yaml`](../pdf/book.yaml) change at that point.
+The lead author's shape (Nov. 22, 2026): foundations, then the model code, then a separate part of commentary on the code, then essays. This outline adds a fifth part for methods and manners, which the repository already plans. Online, each part is a section of the website; when the book is made, the same parts become its parts, and their print order is settled then (scope question 16). The print build's three working parts in [`pdf/book.yaml`](../pdf/book.yaml) change at that point.
 
 | Part | What it is for | Reads like |
 | --- | --- | --- |
@@ -63,10 +38,7 @@ the same parts become its parts, and their print order is settled then
 | IV. Essays | Why the code makes the choices it does, one choice per essay, in the manner of the Federalist Papers | Argument |
 | V. Methods and Manners | How disputes are actually resolved: methods, case histories and stories | Practice |
 
-Keeping the code and its commentary in separate parts also keeps their
-licenses apart: provisions are dedicated to the public domain (CC0), while
-commentary and essays carry CC BY
-([decision record 0002](decisions/0002-license-by-material.md)).
+Keeping the code and its commentary in separate parts also keeps their licenses apart: provisions are dedicated to the public domain (CC0), while commentary and essays carry CC BY ([decision record 0002](decisions/0002-license-by-material.md)).
 
 ### Front matter (the About pages online)
 
@@ -94,20 +66,11 @@ One code in divisions; see [The model code](#the-model-code-part-ii).
 
 ### Part III. Commentary
 
-Commentary follows the code's own numbering, division by division, so a
-reader can go from any section to its note and back. Each note has a Comment,
-Illustrations and a Source Note, as the
-[style guide, section 5](style-guide.md#5-commentary-illustrations-and-essays)
-already requires. On the website each note appears both under its section and
-in the Commentary part; the print layout is settled with the book (scope
-question 13).
+Commentary follows the code's own numbering, division by division, so a reader can go from any section to its note and back. Each note has a Comment, Illustrations and a Source Note, as the [style guide, section 5](style-guide.md#5-commentary-illustrations-and-essays) already requires. On the website each note appears both under its section and in the Commentary part; the print layout is settled with the book (scope question 13).
 
 ### Part IV. Essays
 
-Each essay explains and defends one design choice, so a nation can weigh the
-reasoning and choose differently. They are written as the code is drafted,
-since each depends on what the drafting settles. Candidate topics, from the
-scope decisions so far:
+Each essay explains and defends one design choice, so a nation can weigh the reasoning and choose differently. They are written as the code is drafted, since each depends on what the drafting settles. Candidate topics, from the scope decisions so far:
 
 | Essay | The choice it explains | Status |
 | --- | --- | --- |
@@ -143,16 +106,7 @@ scope decisions so far:
 
 ## The model code (Part II)
 
-There is one model code with a division for each way of resolving disputes
-(lead author's decision, Nov. 22, 2026). Rules every division needs sit once
-in the general division, and a nation can enact any division together with
-the general division alone. The research supports sharing those rules: the
-peacemaking codes collected address the same court connections as other
-dispute resolution provisions, such as how a case enters (32 nations) and
-return to court (27)
-([peacemaking note, section 2.1](../research/analyses/2026-11-21-peacemaking-programs.md#21-what-the-code-texts-add);
-project analysis). Division numbers are fixed at Gate 2 and never reused
-after publication ([repository-layout.md](repository-layout.md#identifiers)).
+There is one model code with a division for each way of resolving disputes (lead author's decision, Nov. 22, 2026). Rules every division needs sit once in the general division, and a nation can enact any division together with the general division alone. The research supports sharing those rules: the peacemaking codes collected address the same court connections as other dispute resolution provisions, such as how a case enters (32 nations) and return to court (27) ([peacemaking note, section 2.1](../research/analyses/2026-11-21-peacemaking-programs.md#21-what-the-code-texts-add); project analysis). Division numbers are fixed at Gate 2 and never reused after publication ([repository-layout.md](repository-layout.md#identifiers)).
 
 | Division | What it covers | Status |
 | --- | --- | --- |
@@ -164,19 +118,11 @@ after publication ([repository-layout.md](repository-layout.md#identifiers)).
 | Restorative processes | Only the hand-off points between a court case and a consensual process | Decided (scope question 2); contents wait on Gate 1 |
 | Family matters | Family mediation with screening built in; how far it reaches is open | Scope question 6 (kept open); Gate 1 |
 
-Every division uses the drafting rules already set: must, must not and may; a
-named actor; placeholders for nation-specific words; and lettered alternatives
-that each work alone ([style guide, section 4](style-guide.md#4-model-provisions)).
-Employment disputes appear only in commentary under the recommendation for
-scope question 5.
+Every division uses the drafting rules already set: must, must not and may; a named actor; placeholders for nation-specific words; and lettered alternatives that each work alone ([style guide, section 4](style-guide.md#4-model-provisions)). Employment disputes appear only in commentary under the recommendation for scope question 5.
 
 ## The website
 
-The website is the primary edition. It carries every part, plus what print
-cannot hold: every nation profile, the source library, version history and
-accounts. The
-menu adapts the one in the website design notes (project files,
-`design/website-exploration/`).
+The website is the primary edition. It carries every part, plus what print cannot hold: every nation profile, the source library, version history and accounts. The menu adapts the one in the website design notes (project files, `design/website-exploration/`).
 
 ### Main menu
 
@@ -194,19 +140,14 @@ menu adapts the one in the website design notes (project files,
 
 ### Always available
 
-- **Report a problem**, once at the top of every page, and the private request
-  route for nations ([requests.md](requests.md)).
-- **Search**, **theme** (one sun and moon button), **read offline** and
-  **downloads** (PDF, EPUB, data).
-- **Profile** for readers: saves, notes and shared collections, built in two
-  steps ([roadmap, parked research](roadmap.md#parked-research)).
-- **Join and workspace** for contributors: access levels per document,
-  reviews, requests and the activity log (built).
+- **Report a problem**, once at the top of every page, and the private request route for nations ([requests.md](requests.md)).
+- **Search**, **theme** (one sun and moon button), **read offline** and **downloads** (PDF, EPUB, data).
+- **Profile** for readers: saves, notes and shared collections, built in two steps ([roadmap, parked research](roadmap.md#parked-research)).
+- **Join and workspace** for contributors: access levels per document, reviews, requests and the activity log (built).
 
 ## Open scope questions
 
-The lead author answered most questions on Nov. 22, 2026. Still open: 4 (deferred to Gate 2), 6 (kept open until Gate 1), and 11, 15 and 16 (waiting for the book). These replace and extend the roadmap's
-[scope questions for Gate 2](roadmap.md#scope-questions-for-gate-2).
+The lead author answered most questions on Nov. 22, 2026. Still open: 4 (deferred to Gate 2), 6 (kept open until Gate 1), and 11, 15 and 16 (waiting for the book). These replace and extend the roadmap's [scope questions for Gate 2](roadmap.md#scope-questions-for-gate-2).
 
 | # | Question | Recommendation | Why |
 | --- | --- | --- | --- |
@@ -229,20 +170,13 @@ The lead author answered most questions on Nov. 22, 2026. Still open: 4 (deferre
 
 ## What waits on Gate 1
 
-The data review changes contents, not the framework. These parts need its
-results before they can be filled:
+The data review changes contents, not the framework. These parts need its results before they can be filled:
 
-- **Part I, "Dispute resolution in Native nations today" and "Peacemaking in
-  nations' own words"**: rest on the re-run analysis of reviewed data.
-- **General provisions**: which confidentiality, referral and agreement models
-  a drafter can rely on depends on confirming the text-read records
-  ([roadmap, Gate 1 item 3](roadmap.md#gate-1-review-of-the-pull-request-2-data)).
-- **Restorative processes and family divisions**: whether they exist at all
-  depends on triaging the bulk records (Gate 1 item 2).
-- **Methods catalog**: waits on accepting or setting aside the proposed method
-  records (Gate 1 item 6).
-- **Directory of nations cited**: waits on resolving duplicates (Gate 1
-  item 4).
+- **Part I, "Dispute resolution in Native nations today" and "Peacemaking in nations' own words"**: rest on the re-run analysis of reviewed data.
+- **General provisions**: which confidentiality, referral and agreement models a drafter can rely on depends on confirming the text-read records ([roadmap, Gate 1 item 3](roadmap.md#gate-1-review-of-the-pull-request-2-data)).
+- **Restorative processes and family divisions**: whether they exist at all depends on triaging the bulk records (Gate 1 item 2).
+- **Methods catalog**: waits on accepting or setting aside the proposed method records (Gate 1 item 6).
+- **Directory of nations cited**: waits on resolving duplicates (Gate 1 item 4).
 
 ## Where parked research lands
 
@@ -259,13 +193,7 @@ results before they can be filled:
 
 ## Editions
 
-The 1st Edition covers Native nations in the United States, as the
-[charter's purpose](charter.md#purpose) states. Later editions can add
-divisions, essays, stories cleared for print, or wider comparative coverage;
-[charter commitment 11](charter.md#11-future-expansion-beyond-the-united-states)
-sets the data principles for any expansion beyond the United States. Partial
-editions, such as the code alone or one division with the general provisions,
-can be built from the same files.
+The 1st Edition covers Native nations in the United States, as the [charter's purpose](charter.md#purpose) states. Later editions can add divisions, essays, stories cleared for print, or wider comparative coverage; [charter commitment 11](charter.md#11-future-expansion-beyond-the-united-states) sets the data principles for any expansion beyond the United States. Partial editions, such as the code alone or one division with the general provisions, can be built from the same files.
 
 ## Version history
 
