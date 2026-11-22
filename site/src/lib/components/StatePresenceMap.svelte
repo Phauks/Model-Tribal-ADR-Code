@@ -1,55 +1,55 @@
 <script lang="ts">
 	// A small map on each nation's page that shades the states and territories
 	// where the project's sources record the nation's presence. It draws no
-	// nation's land (decision record 0007; site/DESIGN.md, "Nation pages").
-	// The shapes are projected when the site is built, so the browser gets only
-	// SVG paths (src/lib/map-geometry.ts). The same states are listed in words
-	// under "At a glance", so the map is never the only way to the facts.
-	import type { MapFrame, StateShape } from '#lib/map-geometry.ts';
+	// nation's land (site/DESIGN.md, "Nation pages"). It shows only the boxes
+	// that hold the nation's states, the contiguous United States zoomed to
+	// them (src/lib/presence-map.ts). The shapes are projected when the site is
+	// built, so the browser gets only SVG paths (src/lib/map-geometry.ts). The
+	// same states are listed in words under "At a glance", so the map is never
+	// the only way to the facts.
+	import type { PresenceMapLayout } from '#lib/presence-map.ts';
 
-	interface PresenceMap {
-		width: number;
-		height: number;
-		/** The framed boxes: the contiguous United States, then Alaska, Hawaiʻi and the territories, each at its own scale. */
-		frames: Pick<MapFrame, 'key' | 'x' | 'y' | 'width' | 'height'>[];
-		stateNames: string[];
-		states: (StateShape & { name: string; present: boolean })[];
-	}
-
-	let { map, nationName }: { map: PresenceMap; nationName: string } = $props();
+	let { map, nationName }: { map: PresenceMapLayout & { stateNames: string[] }; nationName: string } = $props();
 
 	const title = $derived(
 		`Map. States and territories where sources record a presence of ${nationName}: ${map.stateNames.join(', ')}.`
 	);
+	const separateBoxes = $derived(map.boxes.length > 1);
 </script>
 
 <figure class="presence-map" data-print-part="maps">
-	<svg viewBox="0 0 {map.width} {map.height}" role="img" aria-labelledby="presence-map-title">
+	<svg
+		viewBox="0 0 {map.width} {map.height}"
+		style:max-width="{map.shareOfFullWidth * 100}%"
+		role="img"
+		aria-labelledby="presence-map-title"
+	>
 		<title id="presence-map-title">{title}</title>
-		<g aria-hidden="true">
-			{#each map.frames as frame (frame.key)}
-				<rect class="inset-frame" x={frame.x} y={frame.y} width={frame.width} height={frame.height} rx="3" />
+		<defs>
+			{#each map.boxes as box (box.key)}
+				<clipPath id="presence-box-{box.key}">
+					<rect x={box.x} y={box.y} width={box.width} height={box.height} rx="3" />
+				</clipPath>
 			{/each}
-		</g>
-		{#each map.states as state (state.code)}
-			<path class={state.present ? 'state present' : 'state'} d={state.path} />
+		</defs>
+		{#each map.boxes as box (box.key)}
+			<g clip-path="url(#presence-box-{box.key})">
+				<g transform={box.transform}>
+					{#each box.states as state (state.code)}
+						<path class={state.present ? 'state present' : 'state'} d={state.path} />
+					{/each}
+				</g>
+			</g>
+			<rect class="inset-frame" x={box.x} y={box.y} width={box.width} height={box.height} rx="3" aria-hidden="true" />
 		{/each}
 		<g aria-hidden="true">
-			{#each map.states as state (state.code)}
-				{#if state.present}
-					{#if state.marker}
-						{@const marker = state.marker}
-						<line class="marker-line" x1={marker.fromX} y1={marker.fromY} x2={marker.x} y2={marker.y} />
-						<circle class="state present" cx={marker.x} cy={marker.y} r="10" />
-						{#if marker.labelSide === 'left'}
-							<text class="label on-left" x={marker.x - 14} y={marker.y + 8}>{state.code}</text>
-						{:else}
-							<text class="label" x={marker.x + 14} y={marker.y + 8}>{state.code}</text>
-						{/if}
-					{:else if state.center}
-						<text class="label centered" x={state.center.x} y={state.center.y + 8}>{state.code}</text>
-					{/if}
+			{#each map.labels as label (label.code)}
+				{#if label.marker}
+					{@const marker = label.marker}
+					<line class="marker-line" x1={marker.fromX} y1={marker.fromY} x2={marker.x} y2={marker.y} />
+					<circle class="state present" cx={marker.x} cy={marker.y} r="10" />
 				{/if}
+				<text class="label" text-anchor={label.align} x={label.x} y={label.y}>{label.code}</text>
 			{/each}
 		</g>
 	</svg>
@@ -59,7 +59,9 @@
 			States and territories where sources record a presence
 		</p>
 		<p class="small muted">
-			The map shows states, not the nation’s land. Alaska, Hawaiʻi and the territories are in the boxes at the bottom, each at its own scale. <a href="/nations/map">Map of all nations by state</a>.
+			The map shows states, not the nation’s land{#if map.zoomed}, and is zoomed to the part of the country around them{/if}.{#if separateBoxes}
+				Each box has its own scale and is not in its true place.{/if}
+			<a href="/nations/map">Map of all nations by state</a>.
 		</p>
 	</figcaption>
 </figure>
@@ -81,11 +83,13 @@
 		stroke-width: 2;
 	}
 
+	/* Strokes keep their width when a box is zoomed. */
 	.state {
 		fill: var(--color-map-class-0);
 		stroke: var(--color-control-border);
-		stroke-width: 1;
+		stroke-width: 0.75;
 		stroke-linejoin: round;
+		vector-effect: non-scaling-stroke;
 	}
 
 	.state.present,
@@ -111,14 +115,6 @@
 		stroke: var(--color-paper);
 		stroke-width: 5px;
 		stroke-linejoin: round;
-	}
-
-	.label.centered {
-		text-anchor: middle;
-	}
-
-	.label.on-left {
-		text-anchor: end;
 	}
 
 	figcaption {
