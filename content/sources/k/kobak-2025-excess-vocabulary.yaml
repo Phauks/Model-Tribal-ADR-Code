@@ -1,0 +1,56 @@
+key: kobak-2025-excess-vocabulary
+kind: journal-article
+citation:
+  type: article-journal
+  title: Delving into LLM-assisted writing in biomedical publications through excess vocabulary
+  author:
+  - family: Kobak
+    given: Dmitry
+  - family: González-Márquez
+    given: Rita
+  - family: Horvát
+    given: Emőke-Ágnes
+  - family: Lause
+    given: Jan
+  container-title: Science Advances
+  volume: '11'
+  issue: '27'
+  page: eadt3813
+  issued:
+    date-parts:
+    - - 2025
+      - 7
+      - 2
+  DOI: 10.1126/sciadv.adt3813
+  URL: https://doi.org/10.1126/sciadv.adt3813
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 22
+original_link: https://doi.org/10.1126/sciadv.adt3813
+retrieved: '2026-11-22'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250809073513/https://www.science.org/doi/10.1126/sciadv.adt3813
+  captured: '2025-08-09'
+history:
+  status: live
+  last_checked: '2026-11-22'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Findings are reported and cited; read at abstract level, so nothing is quoted.
+  redistribution: false
+access:
+  open: true
+  pull_from:
+  - free-web
+  note: Open access; also PMC12219543 and arXiv 2406.07016.
+topics:
+- writing-style
+- generative-ai
+found_in:
+- 2026-11-22-ai-and-human-prose
+notes: Abstract read on arXiv (v5). Reports that at least 13.5% of 2024 PubMed abstracts were processed
+  with LLMs.
