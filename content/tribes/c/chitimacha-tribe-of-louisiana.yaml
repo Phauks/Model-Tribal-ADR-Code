@@ -270,7 +270,8 @@ dispute_resolution:
     name: Chitimacha Peacemaker Court
     description: Part of the Chitimacha Tribal Court System, intended to give formal support, structure
       and enforcement to traditional methods of resolving disputes through mediation, restorative justice
-      and traditional ways.
+      and traditional ways. Peacemakers may decide a disputed matter only if all parties agree in writing
+      or before the Tribal Court.
     legal_basis: Chitimacha Comprehensive Codes of Justice, Title I-A, Secs. 101-603
     case_types:
     - family
@@ -289,30 +290,15 @@ dispute_resolution:
     confidence: medium
     verification: read-in-full
     as_of: '1990-08-14'
-    locator: Title I-A, Secs. 101-103, 302, 403-406, 601-603
+    locator: Title I-A, Secs. 101-103, 302, 403-406, 601-603; Sec. 203
     note: Listed matters include marital and family strife, extended family disputes, minor neighbor disputes,
       alcohol use, and minor community business transactions of $3,000 or less (Sec. 103). Attorneys barred
       except as witnesses or parties. Parties pay a reasonable sum set by the court for peacemaker compensation
       (Sec. 306). The court may have amended the title since 1990; the NARF copy shows the 1989-1990 dates.
-  - kind: arbitration
-    name: Agreed arbitration by a peacemaker
-    description: Peacemakers may decide a disputed matter only if all parties agree in writing or before
-      the Tribal Court.
-    legal_basis: Chitimacha Comprehensive Codes of Justice, Title I-A, Sec. 203 (Limitations; Peacemakers
-      Not Judges; Agreed Arbitration)
-    case_types:
-    - civil
-    - family
-    - other
-    participation: voluntary
-    relationship_to_court: The decision is entered by the Tribal Court.
-    enforcement: Has the effect of a court judgment when entered by the Tribal Court.
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
-    source: chitimacha-title-1a-peacemaker-court
-    confidence: medium
-    verification: read-in-full
-    as_of: '1990-08-14'
-    locator: Sec. 203
+      Folded on 2026-11-22 from a separate forum record for the same text (review queue item 5). Agreed
+      decisions rest on Chitimacha Comprehensive Codes of Justice, Title I-A, Sec. 203 (Limitations; Peacemakers
+      Not Judges; Agreed Arbitration). The decision is entered by the Tribal Court, and it has the effect
+      of a court judgment when entered.
   provisions:
   - kind: peacemaking
     title: Title I-A – Peacemaker Court

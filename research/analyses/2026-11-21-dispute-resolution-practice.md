@@ -39,13 +39,16 @@ of this analysis still quotes the first run.[^rerun]
 | Database listings (bulk entries, not provisions) | none | 938, in 167 profiles |
 | Profiles whose only record is a database listing | 80 | 80 |
 | Provision titles repeated within one profile | 71 | 19 |
-| Forums | 77, in 54 nations | 77, in 54 nations |
+| Forums | 77, in 54 nations | 72, in 56 profiles |
 | Source records without an archived copy | 1,966 of 1,970 | 2,206 of 2,351 |
 
 The Yakutat Tlingit Tribe lost its only record, a training event, which
 cited a page that does not name the Tribe (pull request #29). The Minnesota
 Chippewa Tribe's records now sit on the White Earth, Leech Lake and Mille
-Lacs band profiles. The 66 fewer section-title provisions are repeats removed
+Lacs band profiles. Five forums recorded twice (review queue item 5) were
+folded into the main forum record on Nov. 22, 2026, and the bands are now
+counted as separate profiles, so forums fall to 72 while the profiles with a
+forum rise to 56. The 66 fewer section-title provisions are repeats removed
 in pull request #15. The archive workflow was started on Nov. 21, 2026 for
 the sources still without a copy (review queue item 9).
 

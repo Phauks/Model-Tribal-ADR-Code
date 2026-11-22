@@ -219,7 +219,8 @@ dispute_resolution:
       translation: in between he, she, or it walks (title for the peacemaker)
     description: Part of the Tribal Court system giving formal support, structure and enforcement to traditional
       Siletz methods of resolving disputes through mediation and traditional ways; peacemakers are titled
-      Gwe-shvt-naga.
+      Gwe-shvt-naga. Peacemakers may decide a disputed matter only if all parties agree in writing or
+      before the Tribal Court.
     legal_basis: Siletz Tribal Code § 3.300 and following (Siletz Community Law Court)
     case_types:
     - family
@@ -237,32 +238,16 @@ dispute_resolution:
     confidence: high
     verification: read-in-full
     as_of: '2025-06-20'
-    locator: § 3.300, 3.301, 3.302, 3.319, 3.320, 3.325-3.326
+    locator: § 3.300, 3.301, 3.302, 3.319, 3.320, 3.325-3.326; § 3.305
     note: Language of the term is not named in the source, so language_tag is 'und'. Listed matters include
       marital disputes and family strife, extended family disputes, minor neighbor disputes, alcohol use,
       and minor community business transactions of $2,500 or less. Peacemakers must be enrolled Siletz
       members certified by Tribal Council. Attorneys barred. Updated from the 2005 version on NARF (peacemaking.narf.org/wp-content/uploads/2025/07/Siletz-Comm-Law-Court-09-16-2005.pdf);
       the 2005 text said the court was not yet authorized for divorce, separation or annulment, and that
-      sentence does not appear in the 2025 text read.
-  - kind: arbitration
-    name: Agreed arbitration by Gwe-shvt-naga/Peacemaker
-    description: Peacemakers may decide a disputed matter only if all parties agree in writing or before
-      the Tribal Court.
-    legal_basis: Siletz Tribal Code § 3.305 (Limitations; Gwe-shvt-naga/Peacemakers Not Judges; Agreed
-      Arbitration)
-    case_types:
-    - civil
-    - family
-    - other
-    participation: voluntary
-    relationship_to_court: Decision is entered by the Siletz Community Law Court Judge.
-    enforcement: Has the effect of a court judgment when entered.
-    link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
-    source: siletz-code-3-300-community-law-court-2025
-    confidence: high
-    verification: read-in-full
-    as_of: '2025-06-20'
-    locator: § 3.305
+      sentence does not appear in the 2025 text read. Folded on 2026-11-22 from a separate forum record
+      for the same text (review queue item 5). Agreed decisions rest on Siletz Tribal Code § 3.305 (Limitations;
+      Gwe-shvt-naga/Peacemakers Not Judges; Agreed Arbitration). Decision is entered by the Siletz Community
+      Law Court Judge, and it has the effect of a court judgment when entered.
   provisions:
   - kind: peacemaking
     title: Siletz Community Law Court
