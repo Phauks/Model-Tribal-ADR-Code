@@ -240,6 +240,7 @@ test("pinpoint labels follow Pandoc's citation syntax", () => {
   assert.deepEqual(parsePinpoint("§ 4"), { label: "section", locator: "4" });
   assert.deepEqual(parsePinpoint("sec. 3"), { label: "section", locator: "3" });
   assert.deepEqual(parsePinpoint("¶ 12"), { label: "paragraph", locator: "12" });
+  assert.deepEqual(parsePinpoint("art. IV"), { label: "article-locator", locator: "IV" });
   assert.deepEqual(parsePinpoint("(2)"), { label: "page", locator: "(2)" });
   assert.deepEqual(parsePinpoint(undefined), {});
 });
