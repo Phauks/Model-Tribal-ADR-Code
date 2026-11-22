@@ -1,12 +1,14 @@
 <script lang="ts">
 	// Settings button and dialog (site/DESIGN.md, section 6, "Settings"). The
 	// dialog is the shared two-panel Modal: sections on the left (Text,
-	// Colors, Citations, Glossary, Saved for offline) and the chosen section on
-	// the right. Reading settings apply at once and are kept on this device
-	// only, through src/lib/reading-settings.ts, so they work offline. Without
-	// scripts the button is hidden (the needs-scripts class in global.css).
+	// Colors, Citations, Glossary, Data) and the chosen section on the right.
+	// It has no buttons along the bottom; Close at the top closes it, and
+	// Reset sits in Data. Reading settings apply at once and are kept on this
+	// device only, through src/lib/reading-settings.ts, so they work offline.
+	// Without scripts the button is hidden (the needs-scripts class in
+	// global.css).
 	import BookA from '@lucide/svelte/icons/book-a';
-	import HardDriveDownload from '@lucide/svelte/icons/hard-drive-download';
+	import Database from '@lucide/svelte/icons/database';
 	import Palette from '@lucide/svelte/icons/palette';
 	import Quote from '@lucide/svelte/icons/quote';
 	import Settings from '@lucide/svelte/icons/settings';
@@ -14,6 +16,7 @@
 	import TextAlignStart from '@lucide/svelte/icons/text-align-start';
 	import Type from '@lucide/svelte/icons/type';
 	import Dropdown from './Dropdown.svelte';
+	import LocalData from './LocalData.svelte';
 	import Modal from './Modal.svelte';
 	import OfflineSaving from './OfflineSaving.svelte';
 	import {
@@ -40,14 +43,14 @@
 		type Theme
 	} from '#lib/reading-settings.ts';
 
-	type SectionIdentifier = 'text' | 'colors' | 'citations' | 'glossary' | 'offline';
+	type SectionIdentifier = 'text' | 'colors' | 'citations' | 'glossary' | 'data';
 
 	const sections = [
 		{ id: 'text', label: 'Text', icon: Type },
 		{ id: 'colors', label: 'Colors', icon: Palette },
 		{ id: 'citations', label: 'Citations', icon: Quote },
 		{ id: 'glossary', label: 'Glossary', icon: BookA },
-		{ id: 'offline', label: 'Saved for offline', icon: HardDriveDownload }
+		{ id: 'data', label: 'Data', icon: Database }
 	] satisfies { id: SectionIdentifier; label: string; icon: unknown }[];
 
 	let modal: Modal<SectionIdentifier> | undefined = $state();
@@ -55,6 +58,8 @@
 	let selected = $state<SectionIdentifier>('text');
 	let settings = $state<ReadingSettings>({ ...defaultSettings });
 	let theme = $state<Theme>('device');
+	/** Changes after a delete in Data, so the saved pages list reads the device again. */
+	let dataRead = $state(0);
 
 	function open() {
 		settings = loadSettings();
@@ -242,19 +247,12 @@
 				(value) => change('glossaryCards', value)
 			)}
 			<p><a href="/glossary" onclick={close}>Open the glossary</a></p>
-		{:else if id === 'offline'}
-			<OfflineSaving headingLevel={4} />
+		{:else if id === 'data'}
+			{#key dataRead}
+				<OfflineSaving headingLevel={4} />
+			{/key}
+			<LocalData headingLevel={4} onreset={reset} ondeleted={() => (dataRead += 1)} />
 		{/if}
-		{#if id !== 'offline'}
-			<p class="hint saved-note">
-				Changes apply at once. They are saved on this device only, so they also work offline, and
-				nothing is sent to the site.
-			</p>
-		{/if}
-	{/snippet}
-	{#snippet actions()}
-		<button class="button" type="button" onclick={close}>Done</button>
-		<button class="button button-quiet" type="button" onclick={reset}>Reset settings to defaults</button>
 	{/snippet}
 </Modal>
 
@@ -356,7 +354,4 @@
 		margin: var(--space-1) 0 0;
 	}
 
-	.saved-note {
-		margin-top: var(--space-5);
-	}
 </style>
