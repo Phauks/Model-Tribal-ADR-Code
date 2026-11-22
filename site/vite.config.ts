@@ -11,6 +11,7 @@ import {
 	glossary,
 	glossaryForReview,
 	nationsForReview,
+	publicCopies,
 	servableImages,
 	sources
 } from './src/lib/server/content.ts';
@@ -133,6 +134,35 @@ function nationImages(): Plugin {
 	};
 }
 
+const publicCopiesModule = 'virtual:public-copies';
+const resolvedPublicCopiesModule = `\0${publicCopiesModule}`;
+
+/**
+ * Lists the copies of public documents the Worker may serve at /copies/, as a
+ * small module bundled into the Worker: only capture index rows marked for
+ * redistribution (src/lib/public-copies.ts). A file left off this list is
+ * never served, whatever the private bucket holds.
+ */
+function publicCopiesList(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:public-copies',
+		resolveId(identifier) {
+			return identifier === publicCopiesModule ? resolvedPublicCopiesModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedPublicCopiesModule) return undefined;
+			const copies = publicCopies().map(({ key, mediaType, sha256, bytes, links }) => ({
+				key,
+				mediaType,
+				sha256,
+				bytes,
+				links
+			}));
+			return `export const publicCopies = ${JSON.stringify(copies)};`;
+		}
+	};
+}
+
 const sourceCitationsModule = 'virtual:source-citations';
 const resolvedSourceCitationsModule = `\0${sourceCitationsModule}`;
 
@@ -193,6 +223,7 @@ export default defineConfig({
 		mapGeometry(),
 		reviewSubjects(),
 		nationImages(),
+		publicCopiesList(),
 		sourceCitations(),
 		buildInformation(),
 		sveltekit({
