@@ -621,17 +621,7 @@ accessibility statement is published at `/about/accessibility`.
   and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry
   the build version, so each build replaces the old copy once the reader
   updates (see Updates below).
-- **What is saved:** every page a reader opens is saved as they read it. In
-  Settings, under Data (also on `/offline`), the site lists each collection,
-  how many of its pages are saved, and the space they take, with a button to
-  save the rest and one to remove them. The collections are Nation profiles,
-  Glossary and Other pages; the model code joins them when its pages are
-  built. A collection the reader saves is "kept": it is saved again from each
-  new version. The section shows the space the whole site uses, from the
-  Storage API's estimate, and offers "Keep saved pages when space runs low,"
-  which asks the browser for persistent storage, since otherwise the browser
-  may clear the site's data under storage pressure.[^mdn-storage] Saving runs
-  six files at a time inside the service worker, with a progress bar.
+- **What is saved:** every page a reader opens is saved as they read it. In Settings, under Data (also on `/offline`), the site lists each collection, how many of its pages are saved, and the space they take, with a button to save the rest and one to remove them. The collections are Nation profiles, Glossary and Other pages; the model code joins them when its pages are built. A collection the reader saves is "kept": it is saved again from each new version. The section shows the space the whole site uses, from the Storage API's estimate, and offers "Keep saved pages when space runs low," which asks the browser for persistent storage, since otherwise the browser may clear the site's data under storage pressure.[^mdn-storage] Saving runs six files at a time inside the service worker, with a progress bar.
 - **Never cached:** any record with `sensitivity.restricted: true`, which is
   never published, exported, cached offline or served by any API
   ([data model, sensitivity flags](../docs/data-model.md#sensitivity-flags)).
@@ -667,11 +657,7 @@ change the website without changing the content.
    waiting for the reader. A nation's request to withdraw material therefore
    reaches every device on its next visit online
    ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
-4. **Ask.** A small card fixed at the bottom left of the window (not a block in the page, as Trevor asked on Nov. 22, 2026) says what the update brings, read
-   from `/edition.json` on the network: "It brings content version 0.3.0; you
-   are reading 0.2.0," or that only the website changed. It offers "Update
-   now," "What changed" (the changelog) and "Later." It is a notice, not an
-   alert, so it does not take focus.
+4. **Ask.** A small card fixed at the bottom left of the window (not a block in the page, as Trevor asked on Nov. 22, 2026) says what the update brings, read from `/edition.json` on the network: "It brings content version 0.3.0; you are reading 0.2.0," or that only the website changed. It offers "Update now," "What changed" (the changelog) and "Later." It is a notice, not an alert, so it does not take focus.
 5. **Apply.** "Update now" tells the waiting worker to take over
    (`skipWaiting`), and the page reloads once it has.[^mdn-skip-waiting] "Later"
    hides the notice for the visit; the browser applies the update by itself
