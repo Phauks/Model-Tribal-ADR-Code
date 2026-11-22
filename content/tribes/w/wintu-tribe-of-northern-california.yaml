@@ -25,6 +25,39 @@ states:
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+contacts:
+- kind: website
+  value: https://wintutribe.com/
+  label: Official website
+  source: wintutribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://wintutribe.com/contact/
+  label: Contact page on the nation's website
+  source: wintutribe-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: phone
+  value: 530-605-1726
+  label: Tribal government office
+  source: wintutribe-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
+- kind: physical-address
+  value: 4755 Shasta Dam Blvd, Shasta Lake CA 96019
+  label: Tribal government office
+  source: wintutribe-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

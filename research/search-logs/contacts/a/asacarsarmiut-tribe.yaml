@@ -27,3 +27,19 @@ searches:
   query: BIA Alaska tribal service providers page (fetched)
   outcome: not-found
   reason: Lists ASA'CARSARMIUT TRIBAL COUNCIL phone 907-591-2814 (already on file); no website.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Asa'carsarmiut Tribe Mountain Village Alaska tribe official website contact
+  outcome: not-found
+  reason: Results were NARF, BIA, and aggregator pages; no tribal site identified.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: fetched https://asacarsarmiut.org/ (domain from known email)
+  outcome: not-found
+  reason: Page is a 'Welcome - Coming Soon' Bluehost placeholder that never names the tribe; not accepted.

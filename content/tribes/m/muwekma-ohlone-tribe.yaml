@@ -41,6 +41,47 @@ states:
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+contacts:
+- kind: website
+  value: https://muwekma.org/index.html
+  label: Official website
+  source: muwekma-index-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://muwekma.org/general-contact.html
+  label: Contact page on the nation's website
+  source: muwekma-general-contact-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: email-general
+  value: muwekma@muwekma.org
+  label: General office email shown on the nation's website
+  source: muwekma-general-contact-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address as shown on the page.
+- kind: phone
+  value: (408) 852-1677
+  label: Tribal government office
+  source: muwekma-general-contact-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
+- kind: mailing-address
+  value: '2570 N. First Street, 2nd Floor, #1035, San Jose, CA 95131'
+  label: Tribal government office
+  source: muwekma-general-contact-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

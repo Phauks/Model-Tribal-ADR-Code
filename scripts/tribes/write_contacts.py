@@ -275,6 +275,14 @@ def splice(text: str, entries: list[dict]) -> str:
     return "".join(lines[:before]) + "contacts:\n" + block + "".join(lines[before:])
 
 
+def site_key(address: str) -> str:
+    """The host, or for a site on a shared host (Google Sites, Wix) the host and the site's own path."""
+    host = bare_host(address)
+    if host in ("sites.google.com",) or host.endswith(".wixsite.com"):
+        return host + "/" + "/".join(urllib.parse.urlparse(address).path.strip("/").split("/")[:2])
+    return host
+
+
 def own_sites(profile: dict, host_counts: collections.Counter) -> set[str]:
     hosts = set()
     for contact in profile.get("contacts") or []:
@@ -283,7 +291,7 @@ def own_sites(profile: dict, host_counts: collections.Counter) -> set[str]:
         if SHARED_LABEL.search(contact.get("label") or "") or SHARED_LABEL.search(contact.get("note") or ""):
             continue
         host = bare_host(contact["value"])
-        if host_counts[host] == 1 and registrable(host) not in OTHERS_SITES and not re.search(r"facebook|instagram|twitter|x\.com|youtube|linkedin", host):
+        if host_counts[site_key(contact["value"])] == 1 and registrable(host) not in OTHERS_SITES and not re.search(r"facebook|instagram|twitter|x\.com|youtube|linkedin", host):
             hosts.add(host)
     return hosts
 
@@ -303,7 +311,7 @@ def main() -> None:
         paths[profile["id"]] = path
     host_counts = collections.Counter()
     for profile in profiles.values():
-        for host in {bare_host(c["value"]) for c in profile.get("contacts") or []
+        for host in {site_key(c["value"]) for c in profile.get("contacts") or []
                      if c.get("kind") == "website" and c.get("link_status") != "lapsed"}:
             host_counts[host] += 1
 
@@ -367,6 +375,8 @@ def main() -> None:
             add(nation, fact("email-general", email["value"], "General office email shown on the nation's website", key, "read-in-full",
                              f"General office address, shown as {how} on the page. Found by scripts/tribes/find_contacts.py."))
             found[nation] = True
+        # Found when the site shows a contact page or general email, whether or not the profile already had it.
+        found[nation] = bool(page or email)
         outcome = "found" if found[nation] else "not-found"
         what = []
         if page:
