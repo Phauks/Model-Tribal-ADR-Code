@@ -1,0 +1,50 @@
+id: sauk-suiattle-indian-tribe-constitution
+kind: constitution
+title: Sauk-Suiattle Indian Tribe, 1984 amendments to the Constitution and Bylaws
+nations:
+- sauk-suiattle-indian-tribe
+jurisdictions:
+- level: tribal
+  tribe: sauk-suiattle-indian-tribe
+summary: Texts of the nation's constitution found on 2026-11-22. Versions are only those found; others
+  may exist.
+versions:
+- id: 1984-amendment
+  label: 1984 amendments
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1984-07-21'
+  source: constitution-sauk-suiattle-indian-tribe-1984-amendment
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/sauk-suiattle-indian-tribe/6c4c6a90c306c71f.pdf
+    sha256: 6c4c6a90c306c71f4b546d0c787bdbc7e965fca2d02260010ca1a101e4866fb5
+    pages: 3
+  note: 'Three scanned pages: a Bureau of Indian Affairs Puget Sound Agency letter of Feb. 15, 2002 to
+    the Tribal Chairperson enclosing the voters'' pamphlet, a ballot and the tally of the July 21, 1984
+    amendment election to the 1975 constitution. The letter says the election did not meet every requirement
+    for a valid election (project reading of the scan). Version, status and dates read from the copy by
+    the project (Claude), not yet checked by the lead author.'
+- id: 1975-text
+  label: 1975 constitution and bylaws, with the 1984 amendments (2002 council ratification)
+  event: other
+  status: unknown
+  dates:
+    adopted: '2002-02-21'
+  source: constitution-sauk-suiattle-indian-tribe-1975-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/sauk-suiattle-indian-tribe/61aed803cdd6a9d4.pdf
+    sha256: 61aed803cdd6a9d472e64d09bd96b67881dd0fafbc5a1e0b4d5efe503092af4d
+    pages: 16
+  note: Scanned. Opens with Tribal Council Resolution 02-21a-02 (Feb. 21, 2002), which ratifies the July
+    1984 amendments to the constitution and bylaws approved by the Secretary of the Interior on Sept.
+    17, 1975, followed by the constitution and bylaws (project reading of the first page). Version, status
+    and dates read from the copy by the project (Claude), not yet checked by the lead author.
+found_in:
+- 2026-11-22-hand-pulled-documents
+notes: Made by hand from the copies the lead author sent on 2026-11-22 (hand-pulled batch 2). Statuses
+  and events are project inferences from the texts found.

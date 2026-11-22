@@ -60,6 +60,22 @@ versions:
     change: not-compared
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1995-text-2
+  label: 1995 constitution and bylaws, as amended (National Indian Law Library copy)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1995-11-14'
+  source: constitution-stockbridge-munsee-community-1995-text-2
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/stockbridge-munsee-community/99f945ad0d33c980.pdf
+    sha256: 99f945ad0d33c9808a0c01c94b8484d55a3995404bcc93c3283f37bc62cfe68a
+    pages: 7
+  note: Headed "Approved November 18, 1937", but its words match the 1995-text copy of the constitution
+    as amended (project comparison of the two text layers). Version, status and dates read from the copy
+    by the project (Claude), not yet checked by the lead author.
 - id: 1995-amendment
   label: 1995 amendment
   event: amendment
@@ -91,5 +107,6 @@ versions:
     note: An amendment changes only what it names; compare by hand.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.
