@@ -350,56 +350,6 @@ function missingLaw(record: NationRecord, documents: { kind: string }[]): FactGr
 	];
 }
 
-/**
- * The rows At a glance adds from the sections below it, so the key facts
- * come first, the way an encyclopedia's fact box does: the names of the
- * nation's courts and forums, and of the documents where it publishes its
- * laws. The labels are plain text, not links to those sections (Trevor,
- * Nov. 22, 2026). Each name is cited under the same section and words as there, so the Sources
- * list names the fact once and simply links back to both markers. The same
- * name can come from two records (for example two "Tribal code" entries); it
- * is shown once, with the markers of both.
- */
-function glanceSummary(record: NationRecord, sources: SourceUses): FactGroup[] {
-	// One row item per name, in the order first seen; each name's facts are
-	// cited into one list of markers, so a source is marked once per name.
-	const rows = (entries: { fact: CitedFact; section: string; text: string }[]) => {
-		const byName = new Map<string, FactItem & { citations: CitationMark[] }>();
-		for (const { fact, section, text } of entries) {
-			const key = text.toLocaleLowerCase('en-US');
-			const item = byName.get(key) ?? { text, citations: [] };
-			byName.set(key, item);
-			sources.citeFact(fact, section, text, item.citations);
-		}
-		return [...byName.values()];
-	};
-	// The same grouping and names as "Courts and dispute resolution"
-	// (nationServices), cited under the same headings and words, so the
-	// Sources list names each fact once. Appeal facts are left out here: this
-	// row lists names only, and the courts section cites them. The judicial
-	// branch is the court system as a whole, not a court or a forum, so it
-	// is left out of this row too.
-	const serviceFacts: { fact: CitedFact; section: string; text: string }[] = [];
-	nationServices(
-		[...(record.justice_institutions ?? []), ...(record.dispute_resolution?.forums ?? [])],
-		(fact, section, text) => {
-			if (!('court' in fact) && section !== 'Judicial branch') serviceFacts.push({ fact, section, text });
-		}
-	);
-	const courts = rows(serviceFacts);
-	const documents = rows(
-		(record.governing_documents ?? []).map((fact) => ({
-			fact,
-			section: documentsLabel,
-			text: fact.title ?? humanize(fact.kind)
-		}))
-	);
-	return [
-		...group('courts_summary', 'Courts and forums', courts),
-		...group('governing_documents_summary', 'Published law', documents)
-	];
-}
-
 /** Another nation that sources record in one of the same states. */
 interface Neighbor {
 	id: string;
@@ -646,7 +596,7 @@ export const load: PageServerLoad = ({ params }) => {
 	// Sources are numbered in the order the page first cites them, which is
 	// the order the page shows them: At a glance comes right after the title.
 	const names = [page.listedName, page.officialName];
-	const glance = [...atAGlance(record, sources), ...glanceSummary(record, sources)];
+	const glance = atAGlance(record, sources);
 	const contacts = contactCard(record, sources);
 	const map = nationMap(record, sources);
 	const courts = courtsAndDisputeResolution(record, sources);

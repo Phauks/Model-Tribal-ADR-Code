@@ -195,7 +195,7 @@ The page no longer has "About this Nation" or its recorded features, the short s
 - States with a presence: the states in one line, and under it, in smaller type, what sources record in each ("Government office: Arizona. Land: Arizona, New Mexico, Utah.").
 - Bureau of Indian Affairs region, spelled out: the region, linked to the regions view of the big map, and under it the agency that serves the nation (Trevor asked for the region on Nov. 22, 2026).
 - Languages, and "Member of" for organizations of nations the nation belongs to, such as the Coalition of Large Tribes (`memberships` in the record), where sources record them. Each organization's name links to the home page of its own website, taken from the source that records the membership when the organization itself published it (Trevor, Nov. 22, 2026).
-- "Courts and forums" and "Published law": the names from the sections below, so the key facts come first the way an encyclopedia's fact box puts them (Trevor approved this idea from a review of Wikiwand on Nov. 22, 2026). The labels are plain text, not links to those sections, since the reader is already on the page (Trevor, Nov. 22, 2026), and each name carries the markers of the same sources, cited under the same words, so the Sources list names the fact once.
+- No courts or laws: the page's own sections show them, so the panel does not repeat them (Trevor, Nov. 22, 2026, after a short time when it listed "Courts and forums" and "Published law").
 
 The map comes last in the panel. In a narrow panel each label sits above its values.
 
