@@ -13,7 +13,10 @@ citation:
     date-parts: [[2026, 11, 22]]
 original_link: https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_aiannh_500k.zip
 retrieved: 2026-11-22
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260821225503/https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_aiannh_500k.zip
+  captured: '2026-08-21'
 history:
   status: live
   last_checked: 2026-11-22
