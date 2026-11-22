@@ -296,45 +296,45 @@
       "$type": "dimension",
       "small": {
         "$value": {
-          "value": 1,
+          "value": 0.875,
           "unit": "rem"
         },
-        "$description": "16 px. Notes, captions, hints."
+        "$description": "14 px. Notes, captions, hints."
       },
       "body": {
         "$value": {
-          "value": 1.125,
+          "value": 1,
           "unit": "rem"
         },
-        "$description": "18 px. Reading text."
+        "$description": "16 px. Reading text."
       },
       "lead": {
         "$value": {
-          "value": 1.4,
+          "value": 1.25,
           "unit": "rem"
         }
       },
       "heading-3": {
         "$value": {
-          "value": 1.4,
+          "value": 1.25,
           "unit": "rem"
         }
       },
       "heading-2": {
         "$value": {
-          "value": 1.75,
+          "value": 1.5625,
           "unit": "rem"
         }
       },
       "heading-1": {
         "$value": {
-          "value": 2.2,
+          "value": 1.95,
           "unit": "rem"
         }
       },
       "display": {
         "$value": {
-          "value": 2.75,
+          "value": 2.45,
           "unit": "rem"
         },
         "$description": "Section numbers and page titles."
