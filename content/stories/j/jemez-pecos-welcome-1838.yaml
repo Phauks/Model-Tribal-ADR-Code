@@ -1,0 +1,85 @@
+id: jemez-pecos-welcome-1838
+title: Pecos Pueblo History
+nations:
+- pueblo-of-jemez
+kind: historical-account
+length: short
+excerpts:
+- telling: jemez-thpo-pecos
+  locator: paragraph beginning "On August 2nd of 1838", second half
+  text: They were greeted in the plaza by the Jemez Cacique (Chief), the War Chief, the Governor and the Jemez People.
+    After a long consultation with the Jemez leaders the P`ǽ kish were welcomed and accepted by their kin.
+  words: 38
+  sha256: 6cabbe7b5fd2205b3d8ae2904e7276d6f2c6ae97e26b9793a87880b97a05857f
+- telling: jemez-thpo-pecos
+  locator: paragraph beginning "Today the descendants of the Pecos Pueblo"
+  text: Today the descendants of the Pecos Pueblo reside with the Hemish and are one with the people, pueblo and
+    culture.
+  words: 20
+  sha256: f186f2bcfbbf99372c35176451fc35989597bc3001968ed1f15f552495a08ccc
+- telling: jemez-history-page
+  locator: paragraph beginning "In the year 1838"
+  text: Readily welcomed by the Jemez people, the Pecos culture was rapidly integrated into Jemez Society, and in
+    1936, both cultural groups were legally merged into one by an Act of Congress.
+  words: 31
+  sha256: 3d8c0bc1eee2444d58a105ad5c9984d197d4437cfe1ff623be214f733f97aef2
+topics:
+- restoring-relationships
+- welcome-and-integration
+- role-of-leaders
+tellings:
+- id: jemez-thpo-pecos
+  source: pueblo-of-jemez-about-pecos-pueblo
+  locator: paragraph beginning "On August 2nd of 1838"
+  teller:
+    form: name-and-nation
+    name: Christopher Toya
+    nation: pueblo-of-jemez
+    role: Tribal Historic Preservation Office
+  published_by: Pueblo of Jemez
+  authority: nation-cultural-office
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+- id: jemez-history-page
+  source: jemez-history-and-culture
+  locator: paragraph beginning "In the year 1838"
+  published_by: Pueblo of Jemez
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: The page credits its text to William Whatley (1993), edited by the Pueblo of Jemez Administration.
+access:
+  level: nation-review-first
+anthology:
+  candidate: true
+  reason: The Pueblo's own cultural office tells how two peoples became one after consultation among leaders; only
+    the 1838 section, never the later sections on ceremony (project analysis).
+  telling: jemez-thpo-pecos
+  permission_from:
+  - holder: Pueblo of Jemez Tribal Historic Preservation Office
+    for: both
+    nation: pueblo-of-jemez
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories-second-sweep
+notes: Later sections of the cultural office's page mention ceremonial rites and feast-day songs. The project quotes
+  and describes only the 1838 welcome, and a reprint should be limited the same way unless the Pueblo says otherwise.

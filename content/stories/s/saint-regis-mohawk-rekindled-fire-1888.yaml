@@ -1,0 +1,42 @@
+id: saint-regis-mohawk-rekindled-fire-1888
+title: '[Account of the Mohawk Nation rekindling its fire in the Confederacy, 1888]'
+nations:
+- saint-regis-mohawk-tribe
+kind: historical-account
+length: paragraph
+excerpts:
+- telling: srmt-history-page
+  locator: paragraph beginning "In 1888, at a Grand Council"
+  text: In 1888, at a Grand Council of the Six Nations Iroquois Confederacy (Haudenosaunee Confederacy), the Mohawk
+    Nation formally rekindled their fire and responsibilities to the Confederacy as the successor of the descendents
+    of Mohawks who had left the Mohawk Valley a hundred years earlier.
+  words: 44
+  sha256: eb9668be747dace2fe031f96f535ffef469762c4ec20b132532e914072ccdf52
+topics:
+- restoring-relationships
+- confederacy
+tellings:
+- id: srmt-history-page
+  source: saint-regis-mohawk-tribe-culture-and-history-page
+  published_by: Saint Regis Mohawk Tribe
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+access:
+  level: nation-review-first
+anthology:
+  candidate: false
+  reason: One paragraph in a general history page (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories-second-sweep
