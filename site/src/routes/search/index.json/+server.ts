@@ -23,6 +23,7 @@ const pages: SearchEntry[] = [
 	{ kind: 'page', title: 'Help with this work', also: ['Join', 'Volunteer'], link: '/join' },
 	{ kind: 'page', title: 'Project charter', also: ['Charter', 'CARE principles', 'Commitments'], detail: 'How knowledge is gathered, credited, published and protected here', link: '/charter' },
 	{ kind: 'page', title: 'Licenses by material', also: ['License', 'Licenses', 'Copyright', 'CC0', 'CC BY'], detail: 'Which license covers each part of the site, the code and the book', link: '/licenses' },
+	{ kind: 'page', title: 'Starred', also: ['Saved', 'Favorites', 'Bookmarks', 'Notes', 'Star', 'Shared collection'], detail: 'Pages you starred, with your own notes, kept on this device', link: '/starred' },
 	{ kind: 'page', title: 'Read offline', also: ['Offline', 'Install'], detail: 'Save pages to read without a connection', link: '/offline' }
 ];
 

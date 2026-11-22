@@ -24,6 +24,24 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Waite Court
+  natural_court: Waite Court (1882-1887)
+  decision_type: majority opinion
+  vote: {majority: 9, minority: 0}
+  justices:
+  - {name: "Morrison R. Waite", vote: majority}
+  - {name: "Samuel F. Miller", vote: majority}
+  - {name: "Stephen J. Field", vote: majority}
+  - {name: "Joseph P. Bradley", vote: majority}
+  - {name: "John M. Harlan", vote: majority}
+  - {name: "William B. Woods", vote: majority}
+  - {name: "Stanley Matthews", vote: majority, opinion: majority}
+  - {name: "Horace Gray", vote: majority}
+  - {name: "Samuel Blatchford", vote: majority}
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep109/usrep109556/usrep109556.pdf
+  note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

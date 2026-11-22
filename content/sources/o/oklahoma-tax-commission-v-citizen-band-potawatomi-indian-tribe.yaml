@@ -24,6 +24,23 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1990-1991)
+  decision_type: majority opinion
+  vote: {majority: 9, minority: 0}
+  justices:
+  - {name: "Thurgood Marshall", vote: majority}
+  - {name: "Byron R. White", vote: majority}
+  - {name: "Harry A. Blackmun", vote: majority}
+  - {name: "William H. Rehnquist", vote: majority, opinion: majority}
+  - {name: "John Paul Stevens", vote: majority, opinion: concurrence}
+  - {name: "Sandra Day O'Connor", vote: majority}
+  - {name: "Antonin Scalia", vote: majority}
+  - {name: "Anthony M. Kennedy", vote: majority}
+  - {name: "David H. Souter", vote: majority}
+  source: https://api.oyez.org/cases/1990/89-1322
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

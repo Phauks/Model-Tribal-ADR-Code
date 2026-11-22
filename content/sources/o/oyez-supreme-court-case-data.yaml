@@ -1,0 +1,31 @@
+key: oyez-supreme-court-case-data
+kind: dataset
+citation:
+  type: dataset
+  title: Oyez
+  publisher: Legal Information Institute, Cornell Law School; Justia; Chicago-Kent College of Law
+  medium: Web database and public API
+  URL: https://www.oyez.org/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 22
+original_link: https://www.oyez.org/
+retrieved: '2026-11-22'
+archives: []   # Wayback capture pending: the shared archive workflow fills this in
+history:
+  status: live
+  last_checked: '2026-11-22'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source (which justices sat, how each voted, who wrote); it is cited and linked, not quoted or reproduced.
+  redistribution: false
+topics:
+- legal-history
+- supreme-court
+found_in:
+- 2026-11-22-foundations-sources
+notes: >-
+  A multimedia archive of the Supreme Court of the United States. Each case record gives the natural court that heard it (named for the Chief Justice and the years its membership was unchanged, such as "Warren Court (1958-1962)"), the decision type, the vote and each justice's vote and opinion. Read through the public API at https://api.oyez.org/ on Nov. 22, 2026 by scripts/law/supreme_court_benches.py, which writes each case record's supreme_court block with a link to the Oyez case. Oyez does not yet give decisions for cases argued from about 2022 onward, and some nineteenth-century cases lack vote data; those blocks were filled from the official reports and are marked in the record's notes.

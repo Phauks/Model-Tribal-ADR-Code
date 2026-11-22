@@ -24,6 +24,24 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1903-1906)
+  decision_type: majority opinion
+  vote: {majority: 8, minority: 1}
+  justices:
+  - {name: "Melville W. Fuller", vote: majority}
+  - {name: "John M. Harlan", vote: majority}
+  - {name: "David J. Brewer", vote: majority}
+  - {name: "Henry B. Brown", vote: majority}
+  - {name: "Edward D. White", vote: minority}
+  - {name: "Rufus Peckham", vote: majority}
+  - {name: "Joseph McKenna", vote: majority, opinion: majority}
+  - {name: "Oliver W. Holmes, Jr.", vote: majority}
+  - {name: "William R. Day", vote: majority}
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep198/usrep198371/usrep198371.pdf
+  note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -692,6 +692,11 @@ sup.citation {
 	break-inside: avoid-page;
 }
 
+/* A law: the same box as a case, with the action color on its edge so the two are told apart at a glance (each is also labeled). */
+.essay-law {
+	border-left-color: var(--color-action);
+}
+
 .essay-case-citation {
 	margin: 0 0 var(--space-3);
 	font-weight: var(--font-weight-semibold);
@@ -720,6 +725,17 @@ sup.citation {
 .essay-quote > p,
 .essay-text blockquote > p {
 	margin: 0 0 var(--space-2);
+}
+
+/* Quoted words are set in italics (Trevor, Nov. 22, 2026); a case name or other italics inside a quotation turn upright, as in print. */
+.essay-quote > p:not(.essay-attribution),
+.essay-text blockquote > p {
+	font-style: italic;
+}
+
+.essay-quote > p:not(.essay-attribution) em,
+.essay-text blockquote > p em {
+	font-style: normal;
 }
 
 .essay-attribution {

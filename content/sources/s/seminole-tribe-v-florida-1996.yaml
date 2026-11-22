@@ -23,6 +23,23 @@ archives:
 history:
   status: live
   last_checked: 2026-11-21
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: majority opinion
+  vote: {majority: 5, minority: 4}
+  justices:
+  - {name: "William H. Rehnquist", vote: majority, opinion: majority}
+  - {name: "John Paul Stevens", vote: minority, opinion: dissent}
+  - {name: "Sandra Day O'Connor", vote: majority}
+  - {name: "Antonin Scalia", vote: majority}
+  - {name: "Anthony M. Kennedy", vote: majority}
+  - {name: "David H. Souter", vote: minority, opinion: dissent}
+  - {name: "Clarence Thomas", vote: majority}
+  - {name: "Ruth Bader Ginsburg", vote: minority}
+  - {name: "Stephen G. Breyer", vote: minority}
+  source: https://api.oyez.org/cases/1995/94-12
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work
