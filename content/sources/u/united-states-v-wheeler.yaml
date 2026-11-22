@@ -24,6 +24,23 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1975-1981)
+  decision_type: majority opinion
+  vote: {majority: 8, minority: 0}
+  justices:
+  - {name: "Potter Stewart", vote: majority, opinion: majority}
+  - {name: "Thurgood Marshall", vote: majority}
+  - {name: "William J. Brennan, Jr.", vote: none}
+  - {name: "Byron R. White", vote: majority}
+  - {name: "Warren E. Burger", vote: majority}
+  - {name: "Harry A. Blackmun", vote: majority}
+  - {name: "Lewis F. Powell, Jr.", vote: majority}
+  - {name: "William H. Rehnquist", vote: majority}
+  - {name: "John Paul Stevens", vote: majority}
+  source: https://api.oyez.org/cases/1977/76-1629
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

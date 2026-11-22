@@ -4,21 +4,35 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { CitationEngine } from "../pipeline/citations.mjs";
 import { createMarkdown, parseMarkdown, prepareSource } from "../pipeline/markdown.mjs";
-import { ChapterWriter, KINDS, subsectionLevel } from "../pipeline/typst-writer.mjs";
+import { ChapterWriter, KINDS, caseFacts, subsectionLevel } from "../pipeline/typst-writer.mjs";
 import { escapeTypst } from "../pipeline/typst-text.mjs";
 
 const variables = { "nation.name": { model: "[Name of Nation]" } };
 const glossary = new Map([["adr", { id: "adr", term: "ADR", kind: "acronym", expansion: "alternative dispute resolution" }]]);
 const items = {
   act: { id: "act", type: "legislation", title: "Uniform Mediation Act", "title-short": "Unif. Mediation Act" },
+  worcester: {
+    id: "worcester", type: "legal_case", title: "Worcester v. Georgia", "container-title": "U.S.", volume: "31", page: "515",
+    issued: { "date-parts": [[1832]] },
+  },
 };
 
-function write(kind, text, data = {}) {
+function writer({ notes } = {}) {
+  return new ChapterWriter({ citations: new CitationEngine(items), glossary, printedGlossaryIds: new Set(["adr"]), notes, chapterIndex: 1 });
+}
+
+function write(kind, text, data = {}, chapter = writer()) {
   const markdown = createMarkdown({ sourceKeys: new Set(Object.keys(items)), glossaryIds: new Set(glossary.keys()) });
   const document = { kind, file: "test.md", data, ...parseMarkdown(markdown, text, variables) };
-  const writer = new ChapterWriter({ citations: new CitationEngine(items), glossary, printedGlossaryIds: new Set(["adr"]) });
-  writer.numberNotes(document);
-  return writer.write(document);
+  chapter.numberNotes(document);
+  return chapter.write(document);
+}
+
+// An essay's text, without the #essay-body[...] wrapper around it.
+function essay(text, chapter) {
+  const typst = write(KINDS.essay, text, {}, chapter);
+  assert.ok(typst.startsWith("#essay-body[") && typst.endsWith("]"), typst);
+  return typst.slice("#essay-body[".length, -1);
 }
 
 test("text is escaped so Typst prints it exactly", () => {
@@ -52,12 +66,12 @@ test("alternatives become labeled blocks", () => {
 });
 
 test("a citation in the text becomes a footnote after the punctuation", () => {
-  const typst = write(KINDS.essay, "A rule [@act, § 4].");
+  const typst = essay("A rule [@act, § 4].");
   assert.equal(typst, "A rule\\.#footnote[Unif\\. Mediation Act § 4\\.]");
 });
 
 test("a citation inside a footnote prints in place without a double stop", () => {
-  const typst = write(KINDS.essay, "A rule.[^1]\n\n[^1]: See [@act, § 4].");
+  const typst = essay("A rule.[^1]\n\n[^1]: See [@act, § 4].");
   assert.equal(typst, "A rule\\.#footnote[See Unif\\. Mediation Act § 4\\.]");
 });
 
@@ -66,11 +80,11 @@ test("unknown citation keys and glossary links stop the build", () => {
   assert.throws(() => write(KINDS.essay, "Text [[missing]]."), /no entry/);
 });
 
-test("the first link to an acronym in a chapter prints its expansion", () => {
-  const typst = write(KINDS.essay, "[[adr]] and [[adr]] and [[adr|this]]");
+test("the first link to an acronym in a chapter prints its expansion, with the words capitalized", () => {
+  const typst = essay("[[adr]] and [[adr]] and [[adr|this]]");
   assert.equal(
     typst,
-    "#link(<glossary-adr>)[alternative dispute resolution \\(ADR)] and #link(<glossary-adr>)[ADR] and #link(<glossary-adr>)[this]",
+    "#link(<glossary-adr>)[Alternative Dispute Resolution \\(ADR)] and #link(<glossary-adr>)[ADR] and #link(<glossary-adr>)[this]",
   );
 });
 
@@ -79,4 +93,78 @@ test("commentary headings and illustrations use the Restatement pattern", () => 
   assert.match(typst, /#commentary-heading\[Comment\]/);
   assert.match(typst, /#illustrations\(1, \[One\\\.\], \[Two\\\.\]\)/);
   assert.match(typst, /#source-note\[Note\\\.\]/);
+});
+
+// Typst escapes removed, so expected values read like the printed text.
+const plain = (typst) => typst.replace(/\\(.)/g, "$1");
+
+test("a case block takes its heading from the source record, with Quotes and Treatment parts", () => {
+  const typst = plain(essay(
+    ":::: case worcester\nWhat the Court held.\n\n::: quotes\n> The Cherokee nation, then, is a distinct community.\n\n— [@worcester, at 561]\n:::\n\n::: treatment\nLater cases.\n:::\n::::",
+  ));
+  assert.ok(typst.startsWith("#case-block([#emph[Worcester v. Georgia], 31 U.S. 515 (1832)], ())[What the Court held."), typst);
+  assert.ok(typst.includes('#case-part("Quotes")[#quote-block[The Cherokee nation, then, is a distinct community.]'), typst);
+  // The source line prints its citation in place, not as a note.
+  assert.ok(typst.includes("#attribution[— #emph[Worcester v. Georgia], 31 U.S. 515, 561 (1832)]"), typst);
+  assert.ok(!typst.includes("#footnote"), typst);
+  assert.ok(typst.includes('#case-part("Treatment")[Later cases.]'), typst);
+});
+
+test("the author's analysis is boxed, with an optional title", () => {
+  assert.equal(plain(essay("::: analysis\nA reading.\n:::")), "#analysis-block(none)[A reading.]");
+  assert.ok(plain(essay("::: analysis Why it matters\nA reading.\n:::")).startsWith("#analysis-block([Why it matters])["));
+});
+
+test("with endnotes, a citation prints a numbered mark and the chapter's notes print at its end", () => {
+  const chapter = writer({ notes: "endnotes" });
+  const typst = essay("A rule [@act, § 4]. Another [@act, § 5].", chapter);
+  assert.equal(typst, "A rule\\.#endnote-mark(1, <endnote-1-1>) Another\\.#endnote-mark(2, <endnote-1-2>)");
+  assert.match(chapter.notesSection(), /^#endnotes-section\[#endnote-entry\(1\)\[Unif\\\. Mediation Act § 4\\\.\] <endnote-1-1>/);
+});
+
+test("a Supreme Court case block lists the nations, the Court, the vote and each justice's part", () => {
+  const facts = caseFacts(
+    {
+      tribes: ["cabazon-band"],
+      supreme_court: {
+        court: "Rehnquist Court",
+        vote: { majority: 6, minority: 3 },
+        justices: [
+          { name: "Thurgood Marshall", vote: "majority" },
+          { name: "Byron R. White", vote: "majority", opinion: "majority" },
+          { name: "John Paul Stevens", vote: "minority", opinion: "dissent" },
+          { name: "Sandra Day O'Connor", vote: "minority" },
+          { name: "Antonin Scalia", vote: "minority" },
+        ],
+      },
+    },
+    new Map([["cabazon-band", "Cabazon Band of Mission Indians"]]),
+  );
+  const text = plain(facts);
+  assert.ok(text.includes('("Nation", [Cabazon Band of Mission Indians])'), text);
+  assert.ok(text.includes('("Court", [Rehnquist Court])'), text);
+  assert.ok(text.includes('("Vote", [6–3])'), text);
+  assert.ok(text.includes('("Majority", [White (opinion of the Court), Marshall])'), text);
+  assert.ok(text.includes('("Dissent", [Stevens (dissenting), O\'Connor, Scalia])'), text);
+});
+
+test("a case block labels peoples that are not Tribes as peoples, and shows votes the report leaves open", () => {
+  const facts = plain(
+    caseFacts(
+      {
+        tribes: ["native-hawaiians"],
+        supreme_court: {
+          court: "Roberts Court",
+          decision_type: "equally divided Court",
+          vote: { majority: 4, minority: 4 },
+          justices: [{ name: "Anthony M. Kennedy", vote: "not recorded" }],
+        },
+      },
+      new Map([["native-hawaiians", "Native Hawaiians"]]),
+      new Set(["native-hawaiians"]),
+    ),
+  );
+  assert.ok(facts.includes('("People", [Native Hawaiians])'), facts);
+  assert.ok(facts.includes('("Decision", [Affirmed by an equally divided Court])'), facts);
+  assert.ok(facts.includes('("Vote not recorded", [Kennedy])'), facts);
 });

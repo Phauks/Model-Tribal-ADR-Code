@@ -18,6 +18,21 @@ function listFiles(directory, suffix) {
     .sort();
 }
 
+// A nation's name as pages show it: "Navajo Nation, Arizona, New Mexico, &
+// Utah" shows as "Navajo Nation" (the website's rule, site/src/lib/nation-labels.ts).
+const STATE_NAMES =
+  "Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming";
+const TRAILING_STATES = new RegExp(`,\\s*(?:${STATE_NAMES})(?:(?:,\\s*|,?\\s+(?:&|and)\\s+)(?:${STATE_NAMES}))*\\s*$`, "u");
+const ENDS_WITH_OF_STATE = new RegExp(`\\bof\\s+(?:the\\s+State\\s+of\\s+)?(?:${STATE_NAMES})$`, "u");
+export function displayName(listedName) {
+  const name = String(listedName).trim().replace(/,$/, "").trim();
+  const match = TRAILING_STATES.exec(name);
+  if (!match) return name;
+  const before = name.slice(0, match.index).trim();
+  if (before === "" || ENDS_WITH_OF_STATE.test(before)) return name;
+  return before;
+}
+
 export function readMarkdownRecord(file) {
   const text = fs.readFileSync(file, "utf8");
   const match = FRONT_MATTER.exec(text);
@@ -38,6 +53,20 @@ export function loadContent(contentDirectory) {
     listFiles(path.join(contentDirectory, folder), ".yaml").map((file) => ({ file, ...YAML.parse(fs.readFileSync(file, "utf8")) }));
 
   const sources = yamlRecords("sources").filter(publishable);
+  // Nations' names, for the nations a case block names (from a source's
+  // `tribes`): the recognizing list's name without the states it adds.
+  // Peoples that are not Tribes (Native Hawaiians, the peoples of the
+  // territories) are labeled as peoples, not nations.
+  const nationNames = new Map();
+  const peopleIds = new Set();
+  for (const file of listFiles(path.join(contentDirectory, "tribes"), ".yaml")) {
+    const text = fs.readFileSync(file, "utf8");
+    const id = (/^id:\s*(.+)$/m.exec(text)?.[1] ?? path.basename(file, ".yaml")).trim();
+    const official = /^names:\n(?:\s+.*\n)*?\s+official:\s*(.+)$/m.exec(text);
+    const entityType = /^entity_type:\s*(.+)$/m.exec(text)?.[1].trim();
+    nationNames.set(id, official ? displayName(YAML.parse(official[1])) : null);
+    if (entityType && entityType !== "native-nation") peopleIds.add(id);
+  }
   const glossary = yamlRecords("glossary").filter((entry) => entry.status !== "retired" && !entry.redirect_to);
   const variables = {};
   for (const group of yamlRecords("variables")) {
@@ -60,7 +89,7 @@ export function loadContent(contentDirectory) {
     .filter((file) => path.basename(file) !== "README.md")
     .map(readMarkdownRecord)
     .filter((record) => publishable(record.data));
-  return { sources, glossary, variables, provisions, commentary, essays, frontMatter };
+  return { sources, nationNames, peopleIds, glossary, variables, provisions, commentary, essays, frontMatter };
 }
 
 // Part II chapters: provisions grouped by chapter, in section order.

@@ -29,9 +29,7 @@ project's own choice, it says so.
   nation's own law-making process. Avoid "should" when addressing a nation;
   prefer "a nation may" or "Alternative A suits a nation that" (project
   choice).
-- **Source and analysis kept apart.** Say what a source says, then label the
-  project's own view, for example "(project analysis)" or "in the project's
-  view" ([citation-style.md](citation-style.md#rules-the-project-adds)).
+- **Source and analysis kept apart.** Say what a source says, then label the project's own view, for example "(project analysis)" or "in the project's view" ([citation-style.md](citation-style.md#rules-the-project-adds)). In essays and other text readers see in the book or on the website, put that view in an Analysis box instead (section 5), and never call the authors "the project" (Trevor, Nov. 22, 2026).
 
 ## 2. Plain language
 
@@ -108,6 +106,25 @@ chosen for clarity and consistency in text a nation may enact.
 - **Essays** may use a more discursive voice, but the same terminology,
   citation and labeling rules apply.
 
+### 5.1 How essays look in the book and on the website
+
+Trevor set these rules on Nov. 22, 2026, after reading the first print draft of Part I. They apply to every essay, front matter page and glossary text that readers see.
+
+| Topic | Rule |
+| --- | --- |
+| Structure | Break long text into sections (`##`) and subsections (`###`), not continuous blocks of text. A timeline entry is a paragraph that opens with its year in bold, such as `**1887. General Allotment Act.**`. |
+| Bullets | Use a list only when the content really is a list. Otherwise write paragraphs. |
+| Court cases | A case discussed as an entry goes in a case box. `:::: case KEY` opens it (the heading is the record's full citation), the body gives the question and holding, `::: quotes` holds the court's words and `::: treatment` holds later treatment; `::::` closes it. The box shows the nations or peoples from the record's `tribes`, and for the Supreme Court of the United States the Court as it sat, the vote and each justice's part from the record's `supreme_court` block (Oyez, or the official report). |
+| Treatment | State negative treatment that matters (overruled, abrogated, superseded by statute, declined to extend, distinguished). Never name the citator, the database or its flag colors (KeyCite, Westlaw). Unverified leads stay in research notes. |
+| Quotations | A long quotation goes in a quote box (`::: quote`, or a plain `>` quotation inside `::: quotes`), without quotation marks, followed by an attribution paragraph that starts with an em dash: `— [@key, p. 17]`. |
+| Analysis | The authors' own reading goes in `::: analysis` (or `::: analysis Title`), which prints as a box labeled "Analysis". |
+| Self-reference | Never "the project", "this essay" or "an essay" in reader-facing text, and no references to the charter. |
+| Case names | Italic, including short forms (*Montana*'s exception). A party's name used as a person or company stays roman. Citations follow the Indigo Book, with the court abbreviated and a docket number for an unreported decision, for example *Flying Horse v. United States*, No. 2017-1620 (Fed. Cir. June 13, 2017). |
+| Acronyms | When an acronym is introduced, the words it stands for are capitalized: Alternative Dispute Resolution (ADR). |
+| Territories | Never "the territories" as a group. Name each one discussed: American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the U.S. Virgin Islands. |
+| Notes | The book prints citations as endnotes at the end of each chapter (`notes: endnotes` in `pdf/book.yaml`). |
+| Layout | Paragraphs have first-line indents, and lists, quotations and boxes are indented. A table row never splits across pages unless it is longer than a page. |
+
 ## 6. Mechanics
 
 | Topic | Rule | Basis |
@@ -122,7 +139,7 @@ chosen for clarity and consistency in text a nation may enact.
 | People | "They" for a person whose pronouns are unknown or for an unspecified person | Project choice |
 | Capitalization | As set in each glossary entry (for example Native, Indigenous, Tribal; lowercase sovereignty) | [terminology.md](terminology.md) |
 | Links | Descriptive link text, never "click here" | Project choice |
-| Acronyms | Allowed for named things (NARF, ISBN); link the first use in each piece to its glossary entry so the build writes it out | [terminology.md](terminology.md) |
+| Acronyms | Allowed for named things (NARF, ISBN); link the first use in each piece to its glossary entry so the build writes it out, with the words it stands for capitalized: "Alternative Dispute Resolution (ADR)" | [terminology.md](terminology.md); Trevor, Nov. 22, 2026 |
 
 ## 7. Files, encoding and code
 
@@ -222,7 +239,7 @@ Before opening a pull request with written content, check that:
 
 - [ ] each defined term's first use is linked with `[[id]]`, and no "avoid"
       term appears outside a quotation;
-- [ ] each factual claim cites a source, and project analysis is labeled;
+- [ ] each factual claim cites a source, and project analysis is labeled (in reader-facing essays, in an Analysis box, with cases in case boxes as section 5.1 sets out);
 - [ ] nations are named as they name themselves, in the present tense for
       living practice;
 - [ ] provisions use must, must not and may, name the actor, and use template

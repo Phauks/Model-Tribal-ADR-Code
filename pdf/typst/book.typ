@@ -278,7 +278,11 @@
   body
 }
 
-#let law-table(columns, header, ..rows) = {
+#let law-table(columns, header, long-rows: false, ..rows) = {
+  // A row never starts on one page and ends on the next (lead author, Nov. 22,
+  // 2026); the header repeats on each page the table runs onto. A table with a
+  // row too long for one page lets its rows break, or it would run off the page.
+  set table.cell(breakable: long-rows)
   set text(size: 0.85em)
   set par(justify: false, leading: 0.5em)
   block(above: 1em, below: 1em, table(
@@ -292,6 +296,100 @@
     table.header(..header),
     ..rows.pos(),
   ))
+}
+
+// ---------- Essays
+
+// Essay text: paragraphs after the first in a run open with an indent, and
+// lists sit in from the margin (lead author, Nov. 22, 2026: "Use proper
+// tabbing").
+#let essay-body(body) = {
+  set par(first-line-indent: (amount: 1.5em, all: false), spacing: 0.7em)
+  set list(indent: 1.2em, body-indent: 0.5em)
+  set enum(indent: 1.2em, body-indent: 0.5em)
+  body
+}
+
+// A court case set apart from the text: its full citation as the heading,
+// what the court held, then its "Quotes" and "Treatment" parts.
+#let case-block(citation, facts, body) = block(
+  width: 100%,
+  breakable: true,
+  stroke: 0.6pt + black,
+  inset: (x: 0.9em, top: 0.8em, bottom: 0.9em),
+  above: 1.3em,
+  below: 1.3em,
+  {
+    set par(first-line-indent: 0em, justify: false)
+    block(below: 0.6em, sticky: true, text(weight: "semibold", citation))
+    // The nations the case concerns and, for a Supreme Court case, who
+    // decided it: the Court, the vote and each justice's part.
+    if facts.len() > 0 {
+      block(below: 0.8em, sticky: true, {
+        set text(size: 0.85em)
+        grid(
+          columns: (auto, 1fr),
+          column-gutter: 0.8em,
+          row-gutter: 0.4em,
+          ..facts.map(((label, value)) => (text(weight: "semibold", label), value)).flatten(),
+        )
+      })
+    }
+    body
+  },
+)
+
+#let case-part(label, body) = {
+  block(above: 1em, below: 0.55em, sticky: true, text(size: 0.85em, weight: "semibold", tracking: 0.06em, upper(label)))
+  body
+}
+
+// A quotation, indented on both sides with a rule at its left. A paragraph
+// that begins with an em dash names the source, set right.
+#let quote-block(body) = block(
+  width: 100%,
+  inset: (left: 1.5em, right: 1.5em),
+  above: 0.9em,
+  below: 0.9em,
+  block(width: 100%, stroke: (left: 1.2pt + black), inset: (left: 0.8em, y: 0.2em), {
+    set par(first-line-indent: 0em)
+    set text(size: 0.95em)
+    body
+  }),
+)
+
+#let attribution(body) = align(right, text(size: 0.9em, body))
+
+// The author's own analysis, boxed apart from the sourced text.
+#let analysis-block(title, body) = block(
+  width: 100%,
+  breakable: true,
+  stroke: (paint: black, thickness: 0.6pt, dash: "dashed"),
+  inset: (x: 0.9em, top: 0.8em, bottom: 0.9em),
+  above: 1.3em,
+  below: 1.3em,
+  {
+    set par(first-line-indent: 0em, justify: false)
+    block(below: 0.7em, sticky: true, text(weight: "semibold", if title == none [Analysis] else [Analysis: #title]))
+    body
+  },
+)
+
+// Endnotes (book.yaml, notes: endnotes): a numbered mark in the text that
+// links to the note, and the chapter's notes gathered at its end.
+#let endnote-mark(number, target) = super(link(target, str(number)))
+
+#let endnote-entry(number, body) = block(above: 0.45em, below: 0.45em, grid(
+  columns: (2em, 1fr),
+  align(right, [#number.#h(0.4em)]),
+  body,
+))
+
+#let endnotes-section(body) = {
+  block(above: 2em, below: 0.9em, sticky: true, text(weight: "semibold", tracking: 0.04em, [Notes]))
+  set text(size: 0.85em)
+  set par(justify: false, first-line-indent: 0em, leading: 0.5em)
+  body
 }
 
 // ---------- Glossary

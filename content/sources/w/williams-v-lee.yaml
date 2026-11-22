@@ -24,6 +24,23 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1958-1962)
+  decision_type: majority opinion
+  vote: {majority: 9, minority: 0}
+  justices:
+  - {name: "John M. Harlan II", vote: majority}
+  - {name: "Hugo L. Black", vote: majority, opinion: majority}
+  - {name: "William O. Douglas", vote: majority}
+  - {name: "Potter Stewart", vote: majority}
+  - {name: "William J. Brennan, Jr.", vote: majority}
+  - {name: "Earl Warren", vote: majority}
+  - {name: "Tom C. Clark", vote: majority}
+  - {name: "Felix Frankfurter", vote: majority}
+  - {name: "Charles E. Whittaker", vote: majority}
+  source: https://api.oyez.org/cases/1958/39
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

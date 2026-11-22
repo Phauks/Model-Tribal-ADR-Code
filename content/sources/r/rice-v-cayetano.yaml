@@ -24,6 +24,23 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: majority opinion
+  vote: {majority: 7, minority: 2}
+  justices:
+  - {name: "William H. Rehnquist", vote: majority}
+  - {name: "John Paul Stevens", vote: minority, opinion: dissent}
+  - {name: "Sandra Day O'Connor", vote: majority}
+  - {name: "Antonin Scalia", vote: majority}
+  - {name: "Anthony M. Kennedy", vote: majority, opinion: majority}
+  - {name: "David H. Souter", vote: majority}
+  - {name: "Clarence Thomas", vote: majority}
+  - {name: "Ruth Bader Ginsburg", vote: minority, opinion: dissent}
+  - {name: "Stephen G. Breyer", vote: majority, opinion: special concurrence}
+  source: https://api.oyez.org/cases/1999/98-818
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

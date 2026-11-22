@@ -76,5 +76,5 @@ A sixth chapter may be worth adding. The new Hawaiʻi and territories section of
 
 1. Now: the lead author's pulls for the drafted chapters (KeyCite, library copies, page images), all on the pull list.
 2. After Gate 1: re-run the analysis, then draft chapter 4, then chapter 5 (chapter 5 cross-refers to chapter 4's counts).
-3. At Gate 2: decide whether Hawaiʻi and the territories become a chapter, and whether the bad-men cases join the digest.
+3. At Gate 2: decide whether Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands become a chapter, and whether the bad-men cases get case boxes in the timeline (the key cases digest was merged into the timeline on Nov. 22, 2026).
 4. Before publication: Gate 3 review by the nations quoted in chapter 5.
