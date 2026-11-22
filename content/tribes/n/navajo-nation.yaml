@@ -160,7 +160,7 @@ federal_administration:
   locator: Navajo Nation, Arizona, New Mexico, & Utah
 governing_documents:
 - kind: law-code
-  title: Tribal code
+  title: Navajo Nation Code
   link: https://www.nnols.org/navajo-nation-code/
   source: national-indian-law-library-navajo-nation
   confidence: medium
@@ -168,9 +168,10 @@ governing_documents:
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At the Navajo Nation
-    Office of Legislative Services website.".'
-- kind: law-code
-  title: Tribal code
+    Office of Legislative Services website.". Title changed from "Tribal code" on 2026-11-22 to the
+    linked page''s own title, "Navajo Nation Code" (fetched with status 200 on 2026-11-22).'
+- kind: other
+  title: Navajo Nation Office of Legislative Services Public Reports
   link: http://dibb.nnols.org/PublicReporting.aspx
   source: national-indian-law-library-navajo-nation
   confidence: medium
@@ -178,9 +179,13 @@ governing_documents:
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "See also Navajo Nation
-    Office of Legislative Services Public Reports for information about legislation / resolutions.".'
+    Office of Legislative Services Public Reports for information about legislation / resolutions.".
+    Title and kind changed on 2026-11-22 from "Tribal code" (law-code) to the linked page''s heading,
+    because the page reports legislation and resolutions rather than publishing the code (fetched with
+    status 200 on 2026-11-22).'
 - kind: law-code
   title: Navajo Nation Code
+  link: https://www.nnols.org/navajo-nation-code/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: title-only
@@ -188,7 +193,9 @@ governing_documents:
   locator: Arizona section, entry 'Navajo Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
     2026-11-21: the link the source gives (http://www.navajonationcouncil.org/Code%20Page.html) returned
-    HTTP 404, so it is not recorded.'
+    HTTP 404, so it is not recorded. Link added 2026-11-22: the Navajo Nation Office of Legislative
+    Services page titled "Navajo Nation Code" (fetched with status 200 on 2026-11-22), the same page
+    the National Indian Law Library links for the code.'
 justice_institutions:
 - kind: peacemaking-program
   name: Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)
@@ -211,7 +218,7 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
-- kind: tribal-court
+- kind: judicial-branch
   name: Navajo Nation Judicial Branch
   link: https://courts.navajo-nsn.gov/
   source: tribal-law-policy-institute-justice-systems

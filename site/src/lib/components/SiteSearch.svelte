@@ -8,11 +8,14 @@
 	(src/lib/site-search.ts), grouped by kind, each group foldable. Arrow keys
 	move between the box and the results, Escape or the X closes the panel and
 	returns focus to the icon, and Enter in the box opens the search page with
-	every match. Without scripts the icon is a link to /search.
+	every match. A nation with a seal its page may show has the seal beside
+	its name. The / key opens the panel from anywhere on the page
+	(SiteHeader.svelte). Without scripts the icon is a link to /search.
 -->
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
+	import { SvelteSet } from 'svelte/reactivity';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import Search from '@lucide/svelte/icons/search';
 	import X from '@lucide/svelte/icons/x';
@@ -38,6 +41,8 @@
 	let input: HTMLInputElement | undefined = $state();
 	let opener: HTMLButtonElement | undefined = $state();
 	let panel: HTMLDivElement | undefined = $state();
+	/** Seals that failed to load, so a broken image is never shown. */
+	const failedImages = new SvelteSet<string>();
 
 	onMount(() => {
 		scripted = true;
@@ -129,7 +134,8 @@
 			class="icon-button"
 			type="button"
 			aria-label="Search"
-			title="Search"
+			aria-keyshortcuts="/"
+			title="Search (press /)"
 			aria-expanded={expanded}
 			aria-controls="{identifier}-panel"
 			onclick={() => (expanded ? close() : open())}
@@ -183,6 +189,16 @@
 								<ul>
 									{#each group.results.slice(0, perGroup) as result (result.link)}
 										<li>
+											{#if result.image && !failedImages.has(result.image)}<img
+													class="seal"
+													src={result.image}
+													alt=""
+													width="24"
+													height="24"
+													loading="lazy"
+													decoding="async"
+													onerror={() => failedImages.add(result.image ?? '')}
+												/>{/if}
 											<a href={result.link}>{result.title}</a>
 											{#if result.matchedName}<span class="detail">also called {result.matchedName}</span>{/if}
 											{#if result.detail}<span class="detail">{result.detail}</span>{/if}
@@ -315,6 +331,20 @@
 		list-style: none;
 		margin: 0;
 		padding: 0 0 var(--space-2);
+	}
+
+	li {
+		position: relative;
+	}
+
+	/* A nation's seal, in the gutter beside its name, where its page may show one. */
+	.seal {
+		position: absolute;
+		left: var(--space-4);
+		top: calc(var(--space-1) + 2px);
+		width: 20px;
+		height: 20px;
+		object-fit: contain;
 	}
 
 	li a {

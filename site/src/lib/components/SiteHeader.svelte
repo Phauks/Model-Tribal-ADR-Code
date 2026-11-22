@@ -57,7 +57,26 @@
 	});
 
 	const download = $derived(downloadFor(page.url.pathname));
+
+	let search: SiteSearch | undefined = $state();
+
+	/**
+	 * The / key opens the search, as on Wikipedia, Wikiwand and GitHub (Trevor
+	 * approved this from the Wikiwand review, Nov. 22, 2026). It is ignored
+	 * while the reader types in a field or an editor, holds a modifier key, or
+	 * has a dialog open.
+	 */
+	function openSearchFromKey(event: KeyboardEvent) {
+		if (event.key !== '/' || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
+		const target = event.target instanceof HTMLElement ? event.target : undefined;
+		if (target?.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
+		if (document.querySelector('dialog[open]')) return;
+		event.preventDefault();
+		search?.open();
+	}
 </script>
+
+<svelte:window onkeydown={openSearchFromKey} />
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="masthead">
@@ -67,7 +86,7 @@
 			<span class="edition print-only">Draft, content {contentVersion}</span>
 		</p>
 		<div class="masthead-phone no-print">
-			<SiteSearch />
+			<SiteSearch bind:this={search} />
 			<button
 				class="more-button"
 				type="button"

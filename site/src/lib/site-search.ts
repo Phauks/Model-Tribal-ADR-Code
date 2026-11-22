@@ -18,6 +18,8 @@ export interface SearchEntry {
 	also?: string[];
 	/** One line shown under the title, such as the states or a summary. */
 	detail?: string;
+	/** A small picture for the result: a nation's seal or logo, where its page may show one. */
+	image?: string;
 	link: string;
 }
 
