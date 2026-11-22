@@ -3,6 +3,7 @@
 	import { replaceState } from '$app/navigation';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
+	import ZoomableMap from '#lib/components/ZoomableMap.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
 	import type { LandAreaRow } from '#lib/server/nations-map.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -200,22 +201,6 @@
 
 <div class="reading">
 	<h1>Map of Native nations</h1>
-	<div class="notice" role="note">
-		<h2 class="notice-heading">What this map shows</h2>
-		<p>The map has more than one view. Choose one with the buttons above the map.</p>
-		<ul>
-			<li>
-				<strong>Nations by state</strong> shades each state and territory by how many nations the project’s sources record as having a presence there. A nation with land or offices in several states is counted in each.
-			</li>
-			<li>
-				<strong>Bureau of Indian Affairs regions</strong> shows the Bureau’s twelve regions as the Bureau draws them. They are the areas its regional offices serve, not the lands of any nation. The Navajo Region’s outline follows the Navajo Nation’s land, as the Bureau draws it.
-			</li>
-			<li>
-				<strong>Land areas</strong> shows reservations, trust lands and statistical areas as the Census Bureau drew them for the 2020 census. The statistical areas are drawn by the Census Bureau, with tribal input, for counting people; they are not legal boundaries.
-			</li>
-		</ul>
-		<p>Alaska, Hawaiʻi and the five territories are drawn in boxes below the other states. Each box has its own scale, shown by its scale bar, and no box is in its true place. Each view has a table below the map with the same information.</p>
-	</div>
 </div>
 
 <div class="map-view-tabs" role="tablist" aria-label="Map views">
@@ -249,19 +234,21 @@
 		<h2 id={view.heading} class="view-heading">{view.label}</h2>
 		<figure class="map-figure" data-print-part="maps">
 			<div class="map-drawing" data-nations-map={view.key === 'states' ? '' : undefined}>
-				{#if view.key === 'lands'}
-					{#if lands}
-						{@html lands.drawing}
-					{:else if landsFailed}
-						<p class="map-status">The land areas could not be loaded. Check your connection and choose the view again.</p>
+				<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
+					{#if view.key === 'lands'}
+						{#if lands}
+							{@html lands.drawing}
+						{:else if landsFailed}
+							<p class="map-status">The land areas could not be loaded. Check your connection and choose the view again.</p>
+						{:else}
+							<p class="map-status">Loading the land areas…</p>
+							<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
+						{/if}
 					{:else}
-						<p class="map-status">Loading the land areas…</p>
-						<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
+						<!-- svelte-ignore hydration_html_changed -->
+						{@html data.drawings[view.key]}
 					{/if}
-				{:else}
-					<!-- svelte-ignore hydration_html_changed -->
-					{@html data.drawings[view.key]}
-				{/if}
+				</ZoomableMap>
 			</div>
 			{#if view.key === 'states'}
 				<figcaption>
@@ -287,7 +274,7 @@
 				</figcaption>
 			{:else if view.key === 'regions'}
 				<figcaption class="small muted">
-					Select a region to go to its row in the table. Hawaiʻi and the territories are in no region. Lines are simplified for a national map. {@render insetNote()}
+					Select a region to go to its row in the table. Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in no region. Lines are simplified for a national map. {@render insetNote()}
 				</figcaption>
 			{/if}
 		</figure>
@@ -326,7 +313,7 @@
 {/each}
 
 {#snippet insetNote()}
-	Alaska, Hawaiʻi and the territories are in the boxes below, each drawn at its own scale and not in its true place.
+	Alaska, Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in the boxes below, each drawn at its own scale and not in its true place.
 {/snippet}
 
 <div class="reading">
@@ -399,26 +386,35 @@
 		text-align: center;
 	}
 
-	.notice-heading {
-		font-size: var(--font-size-body);
-		margin-top: 0;
-	}
-
 	.map-figure {
 		margin: var(--space-5) 0;
+	}
+
+	.map-drawing {
+		max-width: 975px;
 	}
 
 	.map-drawing :global(.map) {
 		display: block;
 		width: 100%;
 		height: auto;
-		max-width: 975px;
+	}
+
+	/* Line widths, text and dots are multiplied by --map-unzoom, which zooming
+	   sets to 1 divided by the zoom (src/lib/components/ZoomableMap.svelte), so
+	   they keep their size on screen while the shapes grow. */
+	.map-drawing :global(.marker-line + circle) {
+		r: calc(9px * var(--map-unzoom, 1));
+	}
+
+	.map-drawing :global(.land-area.dot) {
+		r: calc(3px * var(--map-unzoom, 1));
 	}
 
 	.map-drawing :global(.state),
 	.swatch {
 		stroke: var(--color-control-border);
-		stroke-width: 0.5;
+		stroke-width: calc(0.5px * var(--map-unzoom, 1));
 	}
 
 	.map-drawing :global(.count-0) {
@@ -455,7 +451,7 @@
 	.map-drawing :global(.land) {
 		fill: var(--color-map-class-0);
 		stroke: var(--color-control-border);
-		stroke-width: 0.5;
+		stroke-width: calc(0.5px * var(--map-unzoom, 1));
 	}
 
 	.map-drawing :global(.land-federal),
@@ -475,11 +471,11 @@
 	}
 	.map-drawing :global(.land-area) {
 		stroke: var(--color-ink-muted);
-		stroke-width: 0.4;
+		stroke-width: calc(0.4px * var(--map-unzoom, 1));
 	}
 	.map-drawing :global(.land-area.dot) {
 		stroke: var(--color-paper);
-		stroke-width: 0.8;
+		stroke-width: calc(0.8px * var(--map-unzoom, 1));
 	}
 	.map-drawing :global(a:hover .land-area),
 	.map-drawing :global(a:focus .land-area) {
@@ -503,27 +499,27 @@
 	.map-drawing :global(a:hover .island),
 	.map-drawing :global(a:focus .island) {
 		stroke: var(--color-focus);
-		stroke-width: 3;
+		stroke-width: calc(3px * var(--map-unzoom, 1));
 	}
 	.map-drawing :global(a:hover .marker-line),
 	.map-drawing :global(a:focus .marker-line),
 	.map-drawing :global(.unlinked:hover .marker-line) {
 		stroke: var(--color-ink);
-		stroke-width: 1.2;
+		stroke-width: calc(1.2px * var(--map-unzoom, 1));
 	}
 
 	/* Places with no table row to go to are not links, but still outline on
 	   hover so a reader sees which place the tooltip names. */
 	.map-drawing :global(.unlinked:hover .state) {
 		stroke: var(--color-ink);
-		stroke-width: 1.5;
+		stroke-width: calc(1.5px * var(--map-unzoom, 1));
 	}
 
 	/* An invisible wide band around each small island that takes the pointer. */
 	.map-drawing :global(.hit-area) {
 		fill: none;
 		stroke: transparent;
-		stroke-width: 12;
+		stroke-width: calc(12px * var(--map-unzoom, 1));
 		stroke-linejoin: round;
 		pointer-events: stroke;
 	}
@@ -531,7 +527,7 @@
 	.map-drawing :global(.state-borders) {
 		fill: none;
 		stroke: var(--color-control-border);
-		stroke-width: 0.6;
+		stroke-width: calc(0.6px * var(--map-unzoom, 1));
 		stroke-linejoin: round;
 	}
 
@@ -542,13 +538,13 @@
 	.map-drawing :global(.region-borders) {
 		fill: none;
 		stroke: var(--color-ink);
-		stroke-width: 1.6;
+		stroke-width: calc(1.6px * var(--map-unzoom, 1));
 		stroke-linejoin: round;
 	}
 
 	.map-drawing :global(.marker-line) {
 		stroke: var(--color-ink-muted);
-		stroke-width: 0.8;
+		stroke-width: calc(0.8px * var(--map-unzoom, 1));
 	}
 
 	.map-drawing :global(.map-label) {
@@ -556,12 +552,12 @@
 		font-family: var(--font-family-reading);
 		paint-order: stroke;
 		stroke: var(--color-paper);
-		stroke-width: 3px;
+		stroke-width: calc(3px * var(--map-unzoom, 1));
 		stroke-linejoin: round;
 	}
 
 	.map-drawing :global(.marker-label) {
-		font-size: 16px;
+		font-size: calc(16px * var(--map-unzoom, 1));
 	}
 
 	.map-drawing :global(.label-on-left) {
@@ -571,26 +567,26 @@
 	.map-drawing :global(.inset-frame) {
 		fill: none;
 		stroke: var(--color-control-border);
-		stroke-width: 1;
+		stroke-width: calc(1px * var(--map-unzoom, 1));
 	}
 
 	.map-drawing :global(.inset-label) {
-		font-size: 14px;
+		font-size: calc(14px * var(--map-unzoom, 1));
 		font-weight: var(--font-weight-semibold);
 	}
 
 	.map-drawing :global(.scale-bar) {
 		fill: none;
 		stroke: var(--color-ink);
-		stroke-width: 1.5;
+		stroke-width: calc(1.5px * var(--map-unzoom, 1));
 	}
 
 	.map-drawing :global(.scale-label) {
-		font-size: 13px;
+		font-size: calc(13px * var(--map-unzoom, 1));
 	}
 
 	.map-drawing :global(.region-label) {
-		font-size: 17px;
+		font-size: calc(17px * var(--map-unzoom, 1));
 		font-weight: var(--font-weight-semibold);
 		text-anchor: middle;
 	}
