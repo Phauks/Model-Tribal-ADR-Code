@@ -27,6 +27,11 @@
 #   (workflow_dispatch is the one event that token may start) so the required
 #   "All checks" result appears on the pull request.
 #
+# GitHub may delay or skip scheduled runs, so a catch-up run that wrote new
+# captures also starts the next run itself (workflow_dispatch, which the
+# workflow token may start); the chain stops on its own once a run finds
+# nothing new to capture, and the schedule remains as a backstop.
+#
 # A refused or failed capture is simply left for a later run.
 name: archive sources
 
@@ -122,6 +127,7 @@ jobs:
           python3 scripts/check_text.py
           python3 scripts/validate_records.py
       - name: Commit to the captures branch and open or update its pull request
+        id: commit
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -131,6 +137,7 @@ jobs:
           git commit -m "chore(content): add Wayback captures for $count source records" \
             -m "Written by the archive workflow's catch-up job (scripts/apply_archive_report.py) from its archive report."
           git push origin archive/captures
+          echo "committed=true" >> "$GITHUB_OUTPUT"
           gh workflow run checks.yml --ref archive/captures \
             || echo "Could not start checks.yml on archive/captures; start it by hand so the pull request gets its required checks."
           total=$(git diff --name-only origin/main...HEAD -- content/sources | wc -l)
@@ -142,6 +149,11 @@ jobs:
             gh pr create --base main --head archive/captures --title "$title" --body "$body" \
               || echo "Could not open the pull request (the repository may not let workflows open pull requests); open one from branch archive/captures."
           fi
+      - name: Start the next run while there are new captures
+        if: steps.commit.outputs.committed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run archive-sources.yml --ref main || echo "Could not start the next run; the schedule will."
       - uses: actions/upload-artifact@v4
         if: always()
         with:
