@@ -12,6 +12,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
+import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 import { parseCsv } from '../csv.ts';
 import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
@@ -183,7 +184,13 @@ export interface NationRecord {
 		bureau_of_indian_affairs_agency?: string;
 	};
 	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string })[];
-	justice_institutions?: (CitedFact & { kind: string; name: string; link?: string })[];
+	justice_institutions?: (CitedFact & {
+		kind: string;
+		name: string;
+		link?: string;
+		/** Where the court's appeals go: another court in this record, with its own citation. */
+		appeals_to?: CitedFact & { court: string };
+	})[];
 	dispute_resolution_law?: string[];
 	dispute_resolution?: { forums?: (CitedFact & { kind: string; name?: string; link?: string })[] };
 	review: { status: string; last_verified?: string; note?: string };
@@ -353,6 +360,42 @@ export function servableImages(): ServableImage[] {
 			}))
 	);
 }
+
+/* Methods ----------------------------------------------------------------- */
+
+export interface MethodRecord {
+	id: string;
+	name: string;
+}
+
+let methodCache: Map<string, MethodRecord> | undefined;
+
+/** Dispute resolution method records in content/methods/, by id. */
+export function methods(): Map<string, MethodRecord> {
+	if (!methodCache) {
+		methodCache = new Map(
+			yamlFilesUnder('content/methods').map((file) => {
+				const record = readYaml<MethodRecord>(file);
+				return [record.id, record];
+			})
+		);
+	}
+	return methodCache;
+}
+
+/* Stories ----------------------------------------------------------------- */
+
+let storyCache: StoryRecord[] | undefined;
+
+/** Every story record in content/stories/ (schemas/story.schema.json), unfiltered. What the site shows is decided in src/lib/story-visibility.ts. */
+export function storyRecords(): StoryRecord[] {
+	if (!storyCache) {
+		storyCache = yamlFilesUnder('content/stories').map((file) => readYaml<StoryRecord>(file));
+	}
+	return storyCache;
+}
+
+export type { StoryRecord } from '../story-visibility.ts';
 
 /* Copies of public documents --------------------------------------------- */
 

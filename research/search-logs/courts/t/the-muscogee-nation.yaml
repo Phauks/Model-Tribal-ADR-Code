@@ -1,0 +1,21 @@
+profile: content/tribes/t/the-muscogee-nation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/captures/constitutions/the-muscogee-nation/3bedee0283be7819.html
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: Constitution art. VII, § 6 gives a right of appeal from the District Court to the Supreme Court, but only for litigation between tribal officers.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://creeksupremecourt.com/s/title26.pdf
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: 'Code Title 26, § 2-105: all decisions of the District Court are subject to appeal to the Supreme Court.'

@@ -8,7 +8,7 @@
  */
 import { foldForSearch } from './tables/table-definition.ts';
 
-export type SearchKind = 'nation' | 'term' | 'page';
+export type SearchKind = 'nation' | 'story' | 'term' | 'page';
 
 export interface SearchEntry {
 	kind: SearchKind;
@@ -23,6 +23,7 @@ export interface SearchEntry {
 
 export const searchKindLabels: Record<SearchKind, string> = {
 	nation: 'Nations and communities',
+	story: 'Stories',
 	term: 'Glossary',
 	page: 'Pages'
 };
@@ -77,4 +78,24 @@ export function searchEntries(entries: SearchEntry[], query: string): SearchResu
 		if (score > 0) results.push({ ...entry, matchedName, score });
 	}
 	return results.sort((first, second) => second.score - first.score);
+}
+
+let indexRequest: Promise<SearchEntry[]> | undefined;
+
+/**
+ * The search index, fetched once per visit and shared by the masthead's
+ * search panel and the search page. A failed fetch is forgotten so the next
+ * try fetches again.
+ */
+export function loadSearchIndex(): Promise<SearchEntry[]> {
+	indexRequest ??= fetch('/search/index.json')
+		.then((response) => {
+			if (!response.ok) throw new Error(`${response.status}`);
+			return response.json() as Promise<SearchEntry[]>;
+		})
+		.catch((problem: unknown) => {
+			indexRequest = undefined;
+			throw problem;
+		});
+	return indexRequest;
 }
