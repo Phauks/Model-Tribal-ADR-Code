@@ -89,7 +89,7 @@
 	{/if}
 {/snippet}
 
-<h1>{data.profile ? 'Edit your profile' : 'Help with this work'}</h1>
+<h1>{data.profile ? 'Edit your profile' : 'Help write the code'}</h1>
 <p class="lead">
 	Everything except your name is optional until you confirm. Only the lead author and editors see your
 	answers; only the credit you choose is ever published.
@@ -219,8 +219,8 @@
 			{/each}
 		</fieldset>
 		<p class="hint">
-			If you chose to list nations: start typing to pick from our list, or write any name,
-			including nations not on it, First Nations, and state-recognized nations.
+			To list nations, start typing to pick from our list, or write any name, including First Nations,
+			state-recognized nations and nations not on our list.
 		</p>
 		{#each slots as slot (slot)}
 			<fieldset class="nation">

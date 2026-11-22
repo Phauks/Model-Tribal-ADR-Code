@@ -19,10 +19,18 @@ https://web.archive.org/save/ (anonymous Save Page Now is rate limited, so the
 script waits between requests).
 
 Run from the repository root:
-  python3 scripts/find_archived_copies.py [--save] [--limit N] [--report FILE] [key ...]
+  python3 scripts/find_archived_copies.py [--save] [--limit N] [--minutes M] [--report FILE] [key ...]
 
 --limit N stops after N records, so a large backlog is worked through over
-several runs instead of one very long one.
+several runs instead of one very long one. --reuse-days D first asks the
+availability service for an existing capture and uses it, without a new save,
+when it was taken within D days of the record's 'retrieved' date; a lookup
+takes about a second, a save about a minute, so this clears most records
+quickly. Without --save, a capture further than D days away is reported as
+too far from the retrieval date instead of being offered. --minutes M stops starting new
+records after M minutes, so a run finishes inside a job's time limit even when
+the service is slow. The report is rewritten after every record, so a run that
+is stopped part way keeps what it captured.
 Uses only the Python standard library, plus PyYAML from requirements.txt.
 """
 
@@ -32,6 +40,7 @@ import pathlib
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -58,6 +67,17 @@ def as_capture(link: str, stamp: str) -> dict:
 
 
 def closest_capture(link: str, near_date: str):
+    """Ask the availability service, waiting once and trying again if it says too many requests."""
+    try:
+        return closest_capture_once(link, near_date)
+    except urllib.error.HTTPError as error:
+        if error.code != 429:
+            raise
+        time.sleep(SECONDS_BEFORE_RETRY)
+        return closest_capture_once(link, near_date)
+
+
+def closest_capture_once(link: str, near_date: str):
     query = urllib.parse.urlencode({"url": link, "timestamp": near_date.replace("-", "")})
     request = urllib.request.Request(f"{AVAILABILITY_SERVICE}?{query}", headers=HEADERS)
     with urllib.request.urlopen(request, timeout=60) as response:
@@ -106,14 +126,34 @@ def save_with_retry(link: str):
         return save_capture(link)
 
 
+def days_apart(first: str, second: str) -> int:
+    try:
+        return abs((datetime.date.fromisoformat(first) - datetime.date.fromisoformat(second)).days)
+    except ValueError:
+        return 10**6
+
+
+def write_report(report_path: str, results: list) -> None:
+    """Write the report through a temporary file, so a run stopped mid-write leaves the last whole report."""
+    temporary = pathlib.Path(report_path + ".partial")
+    temporary.write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(report_path)
+
+
 def main(arguments: list[str]) -> int:
     save = "--save" in arguments
-    report_path, limit = None, None
+    report_path, limit, minutes = None, None, None
     if "--report" in arguments:
         report_path = arguments[arguments.index("--report") + 1]
     if "--limit" in arguments:
         limit = int(arguments[arguments.index("--limit") + 1])
-    option_values = {report_path, str(limit)}
+    if "--minutes" in arguments:
+        minutes = float(arguments[arguments.index("--minutes") + 1])
+    reuse_days = None
+    if "--reuse-days" in arguments:
+        reuse_days = int(arguments[arguments.index("--reuse-days") + 1])
+    option_values = {arguments[index + 1] for index, argument in enumerate(arguments[:-1]) if argument in ("--report", "--limit", "--minutes", "--reuse-days")}
+    started = time.monotonic()
     keys = [argument for argument in arguments if not argument.startswith("--") and argument not in option_values]
 
     paths = sorted(pathlib.Path("content/sources").glob("*/*.yaml"))
@@ -128,9 +168,23 @@ def main(arguments: list[str]) -> int:
         if limit is not None and len(results) >= limit:
             print(f"Stopped at --limit {limit}; run again for the rest.")
             break
+        if minutes is not None and time.monotonic() - started >= minutes * 60:
+            print(f"Stopped after --minutes {minutes:g}; run again for the rest.")
+            break
         link = record["original_link"]
+        retrieved = str(record.get("retrieved") or today)[:10]
         capture, problem = None, None
-        if save:
+        if reuse_days is not None:
+            try:
+                existing = closest_capture(link, retrieved)
+            except OSError as error:
+                existing, problem = None, f"lookup failed ({error})"
+            time.sleep(1)
+            if existing and days_apart(existing["captured"], retrieved) <= reuse_days:
+                capture = existing
+            elif existing and not save:
+                problem = f"closest capture ({existing['captured']}) is more than {reuse_days} days from the retrieval date"
+        if save and capture is None:
             try:
                 capture = save_with_retry(link)
             except RedirectedCapture as error:
@@ -138,9 +192,12 @@ def main(arguments: list[str]) -> int:
             except OSError as error:
                 problem = f"save failed ({error})"
             time.sleep(SECONDS_BETWEEN_SAVES)
-        if capture is None:
+        if capture is None and (save or reuse_days is None):
             try:
-                capture = closest_capture(link, today if save else str(record.get("retrieved", today)))
+                capture = closest_capture(link, today if save else retrieved)
+                if capture and reuse_days is not None and days_apart(capture["captured"], retrieved) > reuse_days:
+                    problem = (problem + "; " if problem else "") + f"closest capture ({capture['captured']}) is more than {reuse_days} days from the retrieval date"
+                    capture = None
             except OSError as error:
                 problem = (problem + "; " if problem else "") + f"lookup failed ({error})"
             time.sleep(1)
@@ -149,8 +206,10 @@ def main(arguments: list[str]) -> int:
             print(f"# {path.stem}\narchives:\n  - service: wayback\n    link: {capture['link']}\n    captured: {capture['captured']}", flush=True)
         else:
             print(f"# {path.stem}: no capture ({problem or 'none found'})", flush=True)
+        if report_path:
+            write_report(report_path, results)
     if report_path:
-        pathlib.Path(report_path).write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
+        write_report(report_path, results)
     found = sum(1 for result in results if result["capture"])
     print(f"\n{found} of {len(results)} records have a capture.")
     return 0

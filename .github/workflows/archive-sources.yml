@@ -2,23 +2,30 @@
 # have no archived copy yet (an empty 'archives' list). Not a required check; a
 # slow or failed capture does not block a pull request. Uses no secrets.
 #
-# Two jobs:
+# Both jobs first reuse a copy the Archive already holds when it was taken
+# within 365 days of the record's 'retrieved' date (a lookup takes about a
+# second), and ask Save Page Now for a new capture only when there is none
+# (about a minute each, 20 seconds apart, because anonymous Save Page Now is
+# rate limited). The capture step stops starting new records after a set number
+# of minutes so each job ends inside its time limit, and its report is
+# rewritten after each record, so a stopped run keeps what it found.
 #
 # - On a pull request it captures only the source records the pull request
 #   adds or changes, and reports the capture links (job log and the
 #   archive-report artifact). Each pull request has its own concurrency group,
-#   so one pull request's run no longer replaces another's; a newer push to the
+#   so one pull request's run does not replace another's; a newer push to the
 #   same pull request replaces that pull request's older run.
-# - Every night, or when run by hand, a catch-up job on main works through
-#   older records without a copy ('limit' records per run, about 20 seconds
-#   apart, because anonymous Save Page Now is rate limited), writes the
-#   captures into the records with scripts/apply_archive_report.py, checks the
-#   records, and pushes a branch with a pull request for review. Pull requests
-#   opened by the workflow's own token do not start other workflows, so the job
-#   runs the record checks itself before pushing.
+# - Every two hours, or when run by hand, a catch-up job works through older
+#   records without a copy, writes the captures into the records with
+#   scripts/apply_archive_report.py, checks the records, and commits them to
+#   one rolling branch, archive/captures, with one pull request for review.
+#   While that pull request is open each run adds to it (records already
+#   captured on the branch are skipped); once it is merged and the branch
+#   deleted, the next run starts a new one from main. Pull requests opened by
+#   the workflow's own token do not start other workflows, so the job runs the
+#   record checks itself before pushing.
 #
-# Parallel runs used to get their connections refused; a refused capture is
-# simply left for the next night.
+# A refused or failed capture is simply left for a later run.
 name: archive sources
 
 on:
@@ -26,13 +33,13 @@ on:
     paths:
       - "content/sources/**"
   schedule:
-    # 10:17 UTC, 2:17 AM Pacific standard time.
-    - cron: "17 10 * * *"
+    # Every two hours at 17 minutes past (2:17 AM Pacific standard time is one of them).
+    - cron: "17 */2 * * *"
   workflow_dispatch:
     inputs:
       limit:
         description: "Most records to capture in this run"
-        default: "150"
+        default: "2000"
       keys:
         description: "Source record keys to capture, separated by spaces (leave empty for all without a capture)"
         default: ""
@@ -62,7 +69,7 @@ jobs:
         run: |
           keys=$(git diff --name-only --diff-filter=AM "$BASE"...HEAD -- 'content/sources/*/*.yaml' | xargs -r -n1 basename | sed 's/\.yaml$//')
           if [ -z "$keys" ]; then echo "No changed source records."; exit 0; fi
-          python3 scripts/find_archived_copies.py --save --limit 150 --report archive-report.json $keys
+          python3 scripts/find_archived_copies.py --save --reuse-days 365 --limit 150 --minutes 75 --report archive-report.json $keys
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -86,39 +93,50 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+      - name: Continue the open captures branch, if there is one
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch origin archive/captures 2>/dev/null; then
+            git switch -c archive/captures FETCH_HEAD
+            git merge --no-edit origin/main
+          else
+            git switch -c archive/captures
+          fi
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install -r scripts/requirements.txt
       - name: Capture older sources
         env:
-          LIMIT: ${{ inputs.limit || '150' }}
+          LIMIT: ${{ inputs.limit || '2000' }}
           KEYS: ${{ inputs.keys }}
-        run: python3 scripts/find_archived_copies.py --save --limit "$LIMIT" --report archive-report.json $KEYS
+        run: python3 scripts/find_archived_copies.py --save --reuse-days 365 --limit "$LIMIT" --minutes 90 --report archive-report.json $KEYS
       - name: Write the captures into the records
         run: python3 scripts/apply_archive_report.py archive-report.json
       - name: Check the records
         run: |
           python3 scripts/check_text.py
           python3 scripts/validate_records.py
-      - name: Push a branch and open a pull request
+      - name: Commit to the captures branch and open or update its pull request
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet -- content/sources; then echo "No new captures."; exit 0; fi
           count=$(git diff --name-only -- content/sources | wc -l)
-          branch="archive/captures-$(date -u +%Y-%m-%d-%H%M)"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$branch"
           git add content/sources
           git commit -m "chore(content): add Wayback captures for $count source records" \
             -m "Written by the archive workflow's catch-up job (scripts/apply_archive_report.py) from its archive report."
-          git push origin "$branch"
-          gh pr create --base main --head "$branch" \
-            --title "chore(content): add Wayback captures for $count source records" \
-            --body "The archive workflow's nightly catch-up job captured these source records' original links in the Wayback Machine and wrote each capture into the record's \`archives\` list. Only \`archives\` lines change. The job ran \`check_text.py\` and \`validate_records.py\` before pushing; pull requests opened by the workflow's token do not start other workflows." \
-            || echo "Could not open the pull request (the repository may not let workflows open pull requests); open one from branch $branch."
+          git push origin archive/captures
+          total=$(git diff --name-only origin/main...HEAD -- content/sources | wc -l)
+          title="chore(content): add Wayback captures for source records"
+          body="The archive workflow's catch-up job captured these source records' original links in the Wayback Machine, or reused a copy taken within 365 days of the record's retrieval date, and wrote each capture into the record's \`archives\` list. Only \`archives\` lines change. Runs every two hours add to this pull request until it is merged ($total records so far). The job ran \`check_text.py\` and \`validate_records.py\` before each push; pull requests opened by the workflow's token do not start other workflows."
+          if [ -n "$(gh pr list --head archive/captures --state open --json number --jq '.[].number')" ]; then
+            gh pr edit archive/captures --body "$body" || true
+          else
+            gh pr create --base main --head archive/captures --title "$title" --body "$body" \
+              || echo "Could not open the pull request (the repository may not let workflows open pull requests); open one from branch archive/captures."
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:

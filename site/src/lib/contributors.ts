@@ -34,12 +34,12 @@ export const interestNextSteps: Record<Interest, string> = {
 		'Writers are asked for a short biography for the list of contributors, and sign a co-author agreement before their writing is used.',
 	review: 'Reviewers see drafts in the workspace once the lead author gives them access.',
 	'share-knowledge':
-		'Anything you share for the book is filed with its own contributor statement, where you choose how it may be used. Registering does not give permission to use it.',
-	research: 'Researchers are given access to the sources and research notes.',
+		'Anything you share for the book is filed with its own contributor statement, where you choose how it may be used. Signing up is not permission to use it.',
+	research: 'Researchers get access to sources and research notes.',
 	translate: 'We will ask which languages and which pages before any work starts.',
 	art: 'Art is chosen through a contest for Native artists, with a written agreement for each artist.',
 	outreach: 'Contact with a nation goes through the nation’s own offices first.',
-	website: 'Changes to the website are made through its public repository.'
+	website: 'Website changes go through the public code on GitHub.'
 };
 
 export const availabilities = ['occasionally', 'monthly', 'weekly'] as const;
