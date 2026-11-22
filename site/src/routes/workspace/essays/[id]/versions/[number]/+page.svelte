@@ -22,6 +22,14 @@
 	{#if data.problems.length > 0}
 		<p><strong>Cannot be published yet:</strong> {data.problems.join(' ')}</p>
 	{/if}
+	{#if data.warnings?.length}
+		<p><strong>Check before publishing:</strong></p>
+		<ul>
+			{#each data.warnings as warning, index (index)}
+				<li>{warning}</li>
+			{/each}
+		</ul>
+	{/if}
 	<p><label><input type="checkbox" bind:checked={showMarkdown} /> Show the Markdown</label></p>
 </div>
 

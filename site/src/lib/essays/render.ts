@@ -3,8 +3,8 @@
  * Wikipedia-style numbered markers with one Sources list at the end
  * (src/lib/citation-marks.ts, the same HTML the rest of the site writes, so
  * the citation popups work here too), glossary links become links to the
- * glossary, and the essay blocks become boxes: a case with its full citation
- * and its Quotes and Treatment parts, a quotation with its attribution, and
+ * glossary, and the essay blocks become boxes: a case or a law with its full
+ * citation and its labeled parts, a quotation with its attribution, and
  * analysis set apart from what the sources say (src/lib/essays/syntax.ts).
  *
  * Runs in the Worker, which renders essay pages from the private bucket, so
@@ -16,7 +16,7 @@ import type MarkdownIt from 'markdown-it';
 import type Token from 'markdown-it/lib/token.mjs';
 import { markAnchor, marksHtml, type CitationMark } from '../citation-marks.ts';
 import type { SourceEntry } from '../server/source-uses.ts';
-import { essayBlocks, essayMarkdown, frontMatterField, splitFrontMatter, type CitationReference } from './syntax.ts';
+import { boxParts, essayBlocks, essayMarkdown, frontMatterField, missingEllipses, splitFrontMatter, type CitationReference } from './syntax.ts';
 
 export interface EssayLibrary {
 	/** The full citation of a source, as HTML in the project's Indigo Book style. */
@@ -39,6 +39,8 @@ export interface RenderedEssay {
 	sources: SourceEntry[];
 	/** Citations and glossary links that point to nothing, which publishing refuses. */
 	problems: string[];
+	/** Things a writer should check, such as a quotation that may leave out words without an ellipsis. Publishing still goes ahead. */
+	warnings: string[];
 }
 
 function escapeHtml(text: string): string {
@@ -161,17 +163,26 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 	rules.table_open = () => '<div class="table-scroll essay-table" tabindex="0"><table>\n';
 	rules.table_close = () => '</table></div>\n';
 
-	rules.container_case_open = (tokens, index) => {
-		const key = essayBlocks.case.exec(tokens[index].info.trim())?.[1] ?? '';
-		const mark = state.sources.cite({ key });
-		const citation = state.library.citation(key) ?? escapeHtml(key);
-		return `<section class="essay-case">\n${label('Case')}<p class="essay-case-citation">${citation}${marksHtml([mark])}</p>\n`;
-	};
-	rules.container_case_close = () => '</section>\n';
-	rules.container_quotes_open = () => `<div class="essay-case-part essay-case-quotes">\n${label('Quotes')}`;
-	rules.container_quotes_close = () => '</div>\n';
-	rules.container_treatment_open = () => `<div class="essay-case-part essay-case-treatment">\n${label('Treatment')}`;
-	rules.container_treatment_close = () => '</div>\n';
+	// A case or law box, headed by its source's full citation. Its anchor
+	// ("#case-<key>", "#law-<key>") is what links from other pages, such as
+	// cases by topic, point to.
+	for (const box of ['case', 'law'] as const) {
+		rules[`container_${box}_open`] = (tokens, index) => {
+			const key = essayBlocks[box].exec(tokens[index].info.trim())?.[1] ?? '';
+			const mark = state.sources.cite({ key });
+			const citation = state.library.citation(key) ?? escapeHtml(key);
+			const anchor = `${box}-${key}`;
+			const id = state.slugs.has(anchor) ? '' : ` id="${escapeHtml(anchor)}"`;
+			state.slugs.add(anchor);
+			const classes = box === 'law' ? 'essay-case essay-law' : 'essay-case';
+			return `<section class="${classes}"${id}>\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${citation}${marksHtml([mark])}</p>\n`;
+		};
+		rules[`container_${box}_close`] = () => '</section>\n';
+	}
+	for (const [kind, text] of Object.entries(boxParts)) {
+		rules[`container_${kind}_open`] = () => `<div class="essay-case-part essay-case-${kind}">\n${label(text)}`;
+		rules[`container_${kind}_close`] = () => '</div>\n';
+	}
 	rules.container_quote_open = () => '<figure class="essay-quote">\n';
 	rules.container_quote_close = () => '</figure>\n';
 	rules.container_analysis_open = (tokens, index) => {
@@ -180,6 +191,40 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 	};
 	rules.container_analysis_close = () => '</aside>\n';
 	return markdown;
+}
+
+/**
+ * Quotations that may leave out words without saying so (missingEllipses in
+ * syntax.ts): each ">" passage and each quotation box, without its
+ * attribution.
+ */
+function quotationWarnings(tokens: Token[]): string[] {
+	const warnings: string[] = [];
+	const check = (paragraphs: string[]) => {
+		if (paragraphs.length === 0) return;
+		const first = paragraphs[0];
+		const last = paragraphs.at(-1)!;
+		const shown = (text: string) => `“${text.length > 50 ? `${text.slice(0, 50)}…` : text}”`;
+		if (missingEllipses(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; begin it with "... ".`);
+		if (missingEllipses(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " ...".`);
+	};
+	for (let index = 0; index < tokens.length; index += 1) {
+		const opening = tokens[index].type;
+		if (opening !== 'blockquote_open' && opening !== 'container_quote_open') continue;
+		const closing = opening === 'blockquote_open' ? 'blockquote_close' : 'container_quote_close';
+		const level = tokens[index].level;
+		const paragraphs: string[] = [];
+		let end = index + 1;
+		for (; end < tokens.length && !(tokens[end].type === closing && tokens[end].level === level); end += 1) {
+			const token = tokens[end];
+			if (token.type === 'paragraph_open' && token.level === level + 1 && !token.attrGet('class')?.includes('essay-attribution')) {
+				paragraphs.push(tokens[end + 1]?.content ?? '');
+			}
+		}
+		check(paragraphs);
+		index = end;
+	}
+	return warnings;
 }
 
 /** The essay's h2 and h3 headings as a two-level outline. */
@@ -219,6 +264,7 @@ export function renderEssay(text: string, library: EssayLibrary): RenderedEssay 
 		html,
 		headings: headingsOf(tokens),
 		sources: sources.list,
-		problems: [...new Set([...state.problems, ...sources.problems])]
+		problems: [...new Set([...state.problems, ...sources.problems])],
+		warnings: quotationWarnings(tokens)
 	};
 }

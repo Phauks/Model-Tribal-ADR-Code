@@ -13,7 +13,7 @@
 import { Fragment, Schema, type Node as EditorNode } from 'prosemirror-model';
 import { MarkdownParser, MarkdownSerializer, defaultMarkdownSerializer, type MarkdownSerializerState } from 'prosemirror-markdown';
 import type Token from 'markdown-it/lib/token.mjs';
-import { essayBlocks, essayMarkdown } from './syntax.ts';
+import { boxParts, essayBlocks, essayMarkdown, type BoxPart } from './syntax.ts';
 
 export const essaySchema = new Schema({
 	nodes: {
@@ -88,8 +88,8 @@ export const essaySchema = new Schema({
 			toDOM: () => ['td', 0]
 		},
 		// A court case. Its heading is the full citation of the source record
-		// named by `source`; inside, a short summary and the Quotes and
-		// Treatment parts.
+		// named by `source`; inside, a short summary and the Question,
+		// Holding, Quotes and Treatment parts.
 		case_block: {
 			content: '(block | case_part)+',
 			group: 'block',
@@ -103,6 +103,23 @@ export const essaySchema = new Schema({
 				['div', 0]
 			]
 		},
+		// An act, statute, regulation or tribal law, headed by the full
+		// citation of its source record; inside, What it does, Quotes and
+		// Treatment parts.
+		law_block: {
+			content: '(block | case_part)+',
+			group: 'block',
+			defining: true,
+			isolating: true,
+			attrs: { source: { default: '' } },
+			toDOM: (node) => [
+				'section',
+				{ class: 'essay-case essay-law', 'data-source': node.attrs.source },
+				['div', { class: 'essay-block-label', contenteditable: 'false' }, `Law: ${node.attrs.source}`],
+				['div', 0]
+			]
+		},
+		// A labeled part of a case or law box (boxParts in syntax.ts).
 		case_part: {
 			content: 'block+',
 			defining: true,
@@ -110,7 +127,7 @@ export const essaySchema = new Schema({
 			toDOM: (node) => [
 				'div',
 				{ class: `essay-case-part essay-case-${node.attrs.kind}` },
-				['div', { class: 'essay-block-label', contenteditable: 'false' }, node.attrs.kind === 'quotes' ? 'Quotes' : 'Treatment'],
+				['div', { class: 'essay-block-label', contenteditable: 'false' }, boxParts[node.attrs.kind as BoxPart] ?? 'Quotes'],
 				['div', 0]
 			]
 		},
@@ -225,8 +242,13 @@ const parser = new MarkdownParser(essaySchema, reader, {
 		block: 'case_block',
 		getAttrs: (token) => ({ source: essayBlocks.case.exec(token.info.trim())?.[1] ?? '' })
 	},
-	container_quotes: { block: 'case_part', getAttrs: () => ({ kind: 'quotes' }) },
-	container_treatment: { block: 'case_part', getAttrs: () => ({ kind: 'treatment' }) },
+	container_law: {
+		block: 'law_block',
+		getAttrs: (token) => ({ source: essayBlocks.law.exec(token.info.trim())?.[1] ?? '' })
+	},
+	...Object.fromEntries(
+		Object.keys(boxParts).map((kind) => [`container_${kind}`, { block: 'case_part', getAttrs: () => ({ kind }) }])
+	),
 	container_quote: { block: 'quote_block' },
 	container_analysis: {
 		block: 'analysis_block',
@@ -245,7 +267,7 @@ const parser = new MarkdownParser(essaySchema, reader, {
 	term_link: { node: 'term_link', noCloseToken: true, getAttrs: (token) => token.meta }
 });
 
-const containerNodes = new Set(['case_block', 'case_part', 'quote_block', 'analysis_block']);
+const containerNodes = new Set(['case_block', 'law_block', 'case_part', 'quote_block', 'analysis_block']);
 
 /**
  * How many colons a block's fences need: three, plus one for each level of
@@ -303,8 +325,11 @@ const serializer = new MarkdownSerializer(
 		case_block(state, node) {
 			writeContainer(state, node, `case ${node.attrs.source}`);
 		},
+		law_block(state, node) {
+			writeContainer(state, node, `law ${node.attrs.source}`);
+		},
 		case_part(state, node) {
-			writeContainer(state, node, node.attrs.kind === 'treatment' ? 'treatment' : 'quotes');
+			writeContainer(state, node, node.attrs.kind in boxParts ? node.attrs.kind : 'quotes');
 		},
 		quote_block(state, node) {
 			writeContainer(state, node, 'quote');
