@@ -31,6 +31,24 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  alternative_text: Natchez Tribe logo
+  image_link: https://upload.wikimedia.org/wikipedia/en/d/db/Natchez_Tribe_of_SC_Logo.png
+  credit: A copy on English Wikipedia, which uses it as a non-free logo and gives the South Carolina Commission
+    for Minority Affairs' list of recognized Native American entities as its source.
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: a225317a1d7da26cfb58a75f954898ab241f1fa1e5ee292a9db97ea537eb9f29
+  private_copy: nation-images/natchez-tribe-of-south-carolina/logo-a225317a1d7d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals: []
+  source: wikipedia-natchez-tribe-of-sc-logo
+  confidence: medium
+  as_of: '2026-11-22'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

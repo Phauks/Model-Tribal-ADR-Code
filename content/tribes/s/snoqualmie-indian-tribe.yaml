@@ -123,6 +123,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Snoqualmie Indian Tribe
+official_images:
+- kind: logo
+  image_link: https://snoqualmietribe.us/wp-content/uploads/2020/09/ST_Logo_150.png
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 50246dea8f6aa44c74c795563c8c704e7e5bace444cbc074be8725c65e781762
+  private_copy: nation-images/snoqualmie-indian-tribe/logo-50246dea8f6a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © by the Snoqualmie Indian Tribe, All Rights Reserved
+      link: https://snoqualmietribe.us/
+      source: snoqualmietribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: snoqualmietribe-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Puget Sound Agency

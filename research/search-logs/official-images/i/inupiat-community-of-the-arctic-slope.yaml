@@ -1,0 +1,61 @@
+profile: content/tribes/i/inupiat-community-of-the-arctic-slope.yaml
+topic: official-images
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://icas-nsn.gov/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: found
+  reason: scripts/tribes/find_official_images.py found the image now recorded in official_images.
+  records: &id001
+  - content/tribes/i/inupiat-community-of-the-arctic-slope.yaml
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://icas-nsn.gov/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: found
+  reason: Rendering the page in a headless Chromium browser (Playwright) found the image now recorded
+    in official_images.
+  records: *id001
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.inupiatgov.com
+  query: the nation's own seal, emblem, logo or flag
+  outcome: found
+  reason: scripts/tribes/find_official_images.py found the image now recorded in official_images.
+  records: *id001
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://icas-nsn.gov/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: found
+  reason: Rendering the page in a headless Chromium browser (Playwright) found the image now recorded
+    in official_images.
+  records: *id001
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikipedia
+  address: https://en.wikipedia.org/wiki/Inupiat_Community_of_the_Arctic_Slope
+  query: infobox image, seal, logo and flag fields
+  outcome: not-found
+  reason: The article's infobox has no seal or logo (at most a photo, map or flag).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikimedia-commons
+  address: https://commons.wikimedia.org/wiki/Category:Official_seals_of_Native_American_tribes
+  query: files in the categories of official seals, tribal insignia, logos, coats of arms and flags of
+    Native American tribes (three levels down), matched to the nation's name
+  outcome: not-found
+  reason: No seal or logo file matched the nation's name; no flag file either.

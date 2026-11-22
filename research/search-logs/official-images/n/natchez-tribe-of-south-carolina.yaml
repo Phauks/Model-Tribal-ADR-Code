@@ -1,0 +1,42 @@
+profile: content/tribes/n/natchez-tribe-of-south-carolina.yaml
+topic: official-images
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: No website listed in the profile
+  query: the nation's own seal, emblem, logo or flag
+  outcome: no-site
+  reason: The profile lists no official website, so there was no nation website to read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikimedia-commons
+  address: https://commons.wikimedia.org/wiki/Category:Official_seals_of_Native_American_tribes
+  query: files in the categories of official seals, tribal insignia, logos, coats of arms and flags of
+    Native American tribes (three levels down), matched to the nation's name
+  outcome: not-found
+  reason: No seal or logo file matched the nation's name; no flag file either.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: https://en.wikipedia.org/wiki/Natchez_Indian_Tribe_of_South_Carolina
+  query: the nation's own seal, emblem, logo or flag
+  outcome: not-found
+  reason: 'An AI lookup helper using web search and page fetches found nothing usable: The Wikipedia article
+    infobox has a caption reading ''Official logo of the Natchez Indian Tribe of South Carolina'', so
+    a logo likely exists, but the fetched text.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: wikipedia
+  address: https://en.wikipedia.org/wiki/File:Natchez_Tribe_of_SC_Logo.png
+  query: the nation's own seal, emblem, logo or flag
+  outcome: found
+  reason: The page shows the image now recorded in official_images.
+  records:
+  - content/tribes/n/natchez-tribe-of-south-carolina.yaml
