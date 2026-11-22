@@ -1,0 +1,44 @@
+profile: content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/ceb8a74267aa92fa32d2.txt
+  query: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
+  outcome: found
+  reason: Division found in captured Chapter 23 text (text hits) and read.
+  records:
+  - content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/b3cf9b03e8b7d44a4122.txt
+  query: Dispute Resolution; Appeal and Settlement
+  outcome: found
+  reason: Same heading appears in the complete code's table of contents and body; the Chapter 23 text
+    was used.
+  records:
+  - content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://srpmic-nsn.gov/wp-content/uploads/2026/05/COO_Chapter-23-Labor-and-Employment_April-2026.pdf
+  query: Division 2
+  outcome: found
+  reason: Downloaded and read with pdftotext (reading-order extraction); sections 23-83 to 23-99 read.
+  records:
+  - content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/ceb8a74267aa92fa32d2.txt
+  query: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
+  outcome: found
+  reason: 'Same division as #0, read there.'

@@ -1,0 +1,28 @@
+profile: content/tribes/w/wampanoag-tribe-of-gay-head.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/wampanoaggayhead/index.html
+  outcome: found
+  reason: Table of contents lists the heading; it links to no copy of the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Aquinnah Wampanoag peacemaker ordinance Chief's Council peacemakers
+  outcome: not-found
+  reason: Search returned no Aquinnah peacemaker text (results were Mashpee and other tribes).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://peacemaking.narf.org/?p=204
+  outcome: not-found
+  reason: The peacemaking.narf.org list has no Gay Head entry (closest is Mashpee Wampanoag); NILL links
+    no text.

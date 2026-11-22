@@ -1,0 +1,65 @@
+profile: content/tribes/s/squaxin-island-tribe-of-the-squaxin-island-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/squaxinisland/index.html
+  outcome: found
+  reason: Each Title 4 heading links to the tribe's code page at squaxinisland.org/government/tribal-code/,
+    which has no section text.
+  records:
+  - content/tribes/s/squaxin-island-tribe-of-the-squaxin-island-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://squaxinisland.org/government/tribal-code/
+  outcome: not-found
+  reason: The page is an index with no URL, PDF or section text for Title 4, 4.52 or 4.04.140.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances?nodeId=TIT4COSY_CH4.52ARCO
+  outcome: blocked
+  reason: The municode Chapter 4.52 page returned a client error.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Squaxin Island Tribal Code Title 4 "Court System" "Arbitration Code" pdf
+  outcome: not-found
+  reason: Results had municode pages for other Title 4 chapters (4.16, 4.20) but no 4.52 or 4.04.140 text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: municode Squaxin Island Tribe "4.52" Arbitration Code "Agreements to arbitrate are enforceable"
+    "award not appealable"
+  outcome: not-found
+  reason: No copy of Chapter 4.52 appeared.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ncorj.org/tribal-law/informal-dispute-resolution/
+  query: Squaxin Island 4.04.140 informal dispute resolution
+  outcome: found
+  reason: NCORJ page quotes section 4.04.140.
+  records:
+  - content/tribes/s/squaxin-island-tribe-of-the-squaxin-island-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Squaxin Island Tribal Code 4.52 Arbitration Code
+  query: Agreements to arbitrate are enforceable
+  outcome: not-found
+  reason: Results were municode pages for other chapters and other tribes' arbitration codes; no 4.52
+    text.

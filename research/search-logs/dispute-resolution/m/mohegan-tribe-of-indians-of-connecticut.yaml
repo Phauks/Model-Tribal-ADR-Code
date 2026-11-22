@@ -1,0 +1,78 @@
+profile: content/tribes/m/mohegan-tribe-of-indians-of-connecticut.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for this nation
+  query: 2-185. - Dispute Resolution.
+  outcome: not-found
+  reason: No captured copy of this nation's code was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/mohegan/index.html
+  outcome: found
+  reason: The NILL table of contents lists the heading but links no copy of the provision.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://library.municode.com/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws
+  query: Mohegan code of laws
+  outcome: blocked
+  reason: The municode code page returned a client error, so no code text was retrieved.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.mohegan.nsn.us/explore/government/tribal-court-system/gaming-disputes-court
+  query: gaming disputes court
+  outcome: not-found
+  reason: The Gaming Disputes Court page describes the court's jurisdiction but does not state the text
+    of sections 2-185 or 4-410.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Mohegan 2-185 / 4-410 dispute resolution
+  outcome: not-found
+  reason: Searches returned the NILL index, the Gaming Disputes Court page and constitution excerpts,
+    but no text of these sections.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://library.municode.com/
+  outcome: blocked
+  reason: 'Retry not attempted: Municode refuses scripted access and the brief says not to retry it.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for this nation
+  query: 4-410. - Dispute Resolution, Prohibited Practices; Claim; Complaint.
+  outcome: not-found
+  reason: No captured copy of this nation's code was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for this nation
+  query: PART IV - MOHEGAN COUNCIL OF ELDERS CODE
+  outcome: not-found
+  reason: No captured copy of this nation's code was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Mohegan Council of Elders Code Part IV text
+  outcome: not-found
+  reason: Results were constitution excerpts about the Council of Elders' powers (Article X), not the
+    Part IV code text.

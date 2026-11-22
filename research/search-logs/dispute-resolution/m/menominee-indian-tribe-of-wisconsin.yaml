@@ -1,0 +1,121 @@
+profile: content/tribes/m/menominee-indian-tribe-of-wisconsin.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/2f3be647dc137b8bb20b.txt
+  outcome: not-found
+  reason: Cyber Library capture only lists court rules and external links; no code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/menominee/index.html
+  outcome: found
+  reason: Index lists Chapter 15 and Chapter 50 headings and links the eCode360 Part I page.
+  records:
+  - content/tribes/m/menominee-indian-tribe-of-wisconsin.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ecode360.com/14801476 and https://ecode360.com/ME2727
+  outcome: blocked
+  reason: eCode360 returned HTTP 403 (bot challenge) on two user-agent attempts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://law.menominee-nsn.gov/us/nsn/menominee/legislature/code
+  outcome: not-public
+  reason: Code page loads but contains no retrievable chapter text here; only ordinance entries are in
+    the index.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://github.com/menominee-nsn/law-html
+  outcome: blocked
+  reason: GitHub repository for the law-html copy returned HTTP 403.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Menominee Chapter 15 Arbitration 15-3 enforcement agreements
+  query: Menominee Indian Tribe of Wisconsin Code Chapter 15 Arbitration 15-3
+  outcome: not-found
+  reason: Results pointed only to eCode360 pages.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://law.menominee-nsn.gov/us/nsn/menominee/legislature/code/I/15/index.full.html
+  query: Chapter 15 Arbitration
+  outcome: found
+  reason: The Menominee law library (law.menominee-nsn.gov) serves the code as plain HTML; the index.full.html
+    page gives the whole chapter.
+  records:
+  - content/tribes/m/menominee-indian-tribe-of-wisconsin.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ecode360.com/14801476
+  outcome: blocked
+  reason: eCode360 returned HTTP 403.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://law.menominee-nsn.gov/us/nsn/menominee/legislature/code
+  outcome: not-public
+  reason: No chapter text retrievable.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/menominee/index.html
+  outcome: found
+  reason: Heading listed; no text.
+  records:
+  - content/tribes/m/menominee-indian-tribe-of-wisconsin.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://law.menominee-nsn.gov/us/nsn/menominee/legislature/code/I/50/index.full.html
+  query: Chapter 50 Dispute Resolution
+  outcome: found
+  reason: The Menominee law library (law.menominee-nsn.gov) serves the code as plain HTML; the index.full.html
+    page gives the whole chapter.
+  records:
+  - content/tribes/m/menominee-indian-tribe-of-wisconsin.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/menominee/index.html
+  outcome: found
+  reason: 'Same heading as record #0.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: working copy downloaded during the reading (nill_men.html)
+  query: Chapter 15 Arbitration
+  outcome: found
+  reason: NILL page lists one Chapter 15 ARBITRATION with sections 15-1 to 15-12.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ecode360.com/31891421
+  query: Menominee Chapter 15
+  outcome: blocked
+  reason: curl got a Cloudflare challenge (403); a summarizing fetch showed the chapter concerns arbitration
+    involving the Tribe and its gaming authority, cross-references 15-4, 15-5, 15-6 and 15-9 and an exclusion
+    for contracts before April 3, 2008, amended 2014 to 2021. Not used as the raw text.

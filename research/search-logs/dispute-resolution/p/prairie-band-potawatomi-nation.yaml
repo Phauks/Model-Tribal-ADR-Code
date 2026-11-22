@@ -1,0 +1,129 @@
+profile: content/tribes/p/prairie-band-potawatomi-nation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.codepublishing.com/KS/Potawatomi (de2aa206ff43999034ce.txt)
+  outcome: not-found
+  reason: Captured page is a redirect notice to eCode360 with no code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/prairie_band_potawatomi/index.html
+  query: 3-3 MEDIATION
+  outcome: not-found
+  reason: Table of contents only.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.codepublishing.com/KS/Potawatomi/html/Potawatomi03/Potawatomi0303.html
+  outcome: blocked
+  reason: Redirect notice to eCode360 with no code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ecode360.com/PR4758
+  query: 3-3 Mediation
+  outcome: blocked
+  reason: HTTP 403 to curl and to the page fetch tool.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Prairie Band Potawatomi Nation code "3-3 Mediation" "Authorization" "Requests for Assistance"
+    peacemakers
+  outcome: not-found
+  reason: Results only linked to the redirect pages and the NILL table of contents.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ecode360.com/
+  outcome: blocked
+  reason: 'Retry not attempted: eCode360 refuses scripted access and the brief says not to retry it.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.narf.org/nill/codes/
+  outcome: not-found
+  reason: Second search (NCORJ, peacemaking.narf.org, other hosts) found no non-eCode360 copy of the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ncorj.org/?p=17823
+  outcome: not-found
+  reason: NCORJ reproduces Chapter 2-5 (Peacemakers Circle) but no copy of Chapter 3-3 Mediation was found.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.codepublishing.com/KS/Potawatomi/ (de2aa206ff43999034ce.txt)
+  outcome: not-found
+  reason: Redirect notice only.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf (b7f92d971c7c30a4032c.txt)
+  query: Peacemakers Circle
+  outcome: found
+  reason: Constitution Article VI found; it is not the code section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/prairie_band_potawatomi/index.html
+  query: 2-5-1 Peacemakers Circle
+  outcome: not-found
+  reason: Table of contents only.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ecode360.com/PR4758
+  query: 2-5-1 Peacemakers Circle
+  outcome: blocked
+  reason: HTTP 403 to curl and to the page fetch tool.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Prairie Band Potawatomi Nation code "3-3 Mediation" "Authorization" "Requests for Assistance"
+    peacemakers
+  outcome: not-found
+  reason: No code text in the results.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ncorj.org/?p=17823
+  query: Prairie Band Potawatomi Peacemakers Circle 2-5-1
+  outcome: found
+  reason: NCORJ page reproduces sections 2-1-1 and 2-5-1 of the Law and Order Code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf (b7f92d971c7c30a4032c.txt)
+  query: ARTICLE VI DISPUTE RESOLUTION SYSTEM
+  outcome: found
+  reason: Article VI found in the captured constitution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/b7f92d971c7c30a4032c.txt
+  query: ARTICLE VI DISPUTE RESOLUTION SYSTEM
+  outcome: found
+  reason: Re-read Article VI in the raw captured text.

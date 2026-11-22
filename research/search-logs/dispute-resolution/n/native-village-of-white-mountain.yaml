@@ -1,0 +1,55 @@
+profile: content/tribes/n/native-village-of-white-mountain.yaml
+topic: dispute-resolution
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/native_white_mountain/index.html
+  outcome: blocked
+  reason: The page gives no link to the code text and says the tribe has not allowed full-text posting.
+    It directs users to contact the library.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Native Village of White Mountain "Court of Elders" ordinance 87-03
+  outcome: not-found
+  reason: Results were a governmental constitution listing and unrelated tribal codes, with no copy of
+    the ordinance.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: '"White Mountain" Alaska tribal "Children''s Code" "Court of Elders" text'
+  outcome: not-found
+  reason: No copy of the Children's Code or the Court of Elders article appeared.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/
+  outcome: not-public
+  reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
+    not worked around.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/native_white_mountain/index.html
+  outcome: blocked
+  reason: No link to the ordinance text, and the tribe has not allowed full-text posting.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Native Village of White Mountain "Court of Elders" ordinance 87-03
+  outcome: not-found
+  reason: No copy of Ordinance 87-03 appeared in the results.
+next_steps: The provisions this nation's profile lists by section title are still unread. A person could
+  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.

@@ -1,0 +1,47 @@
+profile: content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'research/captures/tribal-law/documents (MHA captures: ca4ac1388642a2d5dc48, a68637d2cd583f07b960,
+    dfb64921559d1203f0b2, 1d4c947db8377b85f96c, 06cccca90d7ec254c12e, 79c81c5dd6d7f01f647a)'
+  query: arbitrat; dispute resolution
+  outcome: not-found
+  reason: The captured MHA copies contain no section on controversies to be arbitrated, and the only arbitration
+    reference is a waiver in the Limited Liability Code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/threeaffiliated/index.html
+  outcome: found
+  reason: The NILL page gives the heading list with a 2004 receipt date and says the code is no longer
+    current, with no text links.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.mhanation.com/tribal-code/
+  outcome: not-found
+  reason: The nation's tribal code page lists the current code only, and the captured Title PDFs contain
+    no arbitration sections.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Controversies to be arbitrated arbitration pool Three Affiliated Tribes Fort Berthold code
+  outcome: not-found
+  reason: The search returned the NILL code page and current MHA Title 1, with no text of the 2004 arbitration
+    sections.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://narf.org/nill/codes/threeaffiliated/index.html
+  outcome: not-found
+  reason: Retry found no copy of the 2004-era arbitration sections.

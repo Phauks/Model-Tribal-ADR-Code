@@ -1,0 +1,56 @@
+profile: content/tribes/d/dry-creek-rancheria-band-of-pomo-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://drycreekrancheria.com/wp-content/uploads/2023/05/Rules-of-Court-Certified-copy.pdf
+    (c381568a7082a0fcef2c.txt)
+  query: d. Tribal Dispute Resolution
+  outcome: found
+  reason: Subsection found in the Tribal Court Rules text, at the offsets given in the record.
+  records:
+  - content/tribes/d/dry-creek-rancheria-band-of-pomo-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (dry.txt)
+  query: Tribal Dispute Resolution
+  outcome: found
+  reason: Downloaded the PDF and read Rule G-1 with pdftotext.
+  records:
+  - content/tribes/d/dry-creek-rancheria-band-of-pomo-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://drycreekrancheria.com/wp-content/uploads/2023/05/4-DCR-Criminal-Code-Certification-Copy-1.pdf
+    (afd6986e600b2c479611.txt)
+  query: Court-Ordered and Court-Referred Mediation
+  outcome: found
+  reason: Section 24 found in the Criminal Code text.
+  records:
+  - content/tribes/d/dry-creek-rancheria-band-of-pomo-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/afd6986e600b2c479611.txt
+  query: SECTION 24 Court-Ordered and Court-Referred Mediation
+  outcome: found
+  reason: Re-read section 24 and 6(L) in the raw captured text.
+  records:
+  - content/tribes/d/dry-creek-rancheria-band-of-pomo-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://drycreekrancheria.com/wp-content/uploads/2023/05/Rules-of-Court-Certified-copy.pdf
+    (c381568a7082a0fcef2c.txt)
+  query: Tribal Dispute Resolution
+  outcome: found
+  reason: 'Same subsection as #0 (the two text hits are at adjacent offsets).'

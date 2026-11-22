@@ -1,0 +1,66 @@
+profile: content/tribes/s/sauk-suiattle-indian-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/sauk/index.html
+  outcome: found
+  reason: Table of contents lists the heading; it links to no copy of the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.sauk-suiattle.com/Documents/L&Ocode2006.pdf
+  query: Law and Order Code
+  outcome: dead-link
+  reason: HTTP 404; the file is no longer served.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.sauk-suiattle.com/documents_and_forms.htm
+  query: code documents
+  outcome: dead-link
+  reason: HTTP 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.sauk-suiattle.com/legal
+  query: code documents
+  outcome: not-found
+  reason: Legal page has no code links.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Sauk-Suiattle Law and Order Code 7.3 dispute resolution
+  outcome: not-found
+  reason: Search returned NILL index and unrelated tribal codes.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/sauk/index.html
+  outcome: found
+  reason: Heading sits under Resolution 11/29a/99 Gaming Ordinance, Section 7 Operation of Gaming Establishments.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.sauk-suiattle.com/Documents/SSIT%20Gaming%20OrdinanceRes_11_29n_99.pdf
+  outcome: dead-link
+  reason: HTTP 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.nigc.gov/images/uploads/gamingordinances/sauksuiattleindiantribe-sauksuiattleord042700.pdf
+  outcome: not-found
+  reason: The 2000 NIGC-approved ordinance differs from the 1999 text and has no Section 7.3 on dispute
+    resolution.
