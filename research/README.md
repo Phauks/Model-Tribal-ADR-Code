@@ -41,6 +41,13 @@ Reviews of the project's own data, done to help the lead author's review, are
 kept in [`reviews/`](reviews/README.md). They record findings and suggested
 actions; they never change a record by themselves.
 
+## Search logs
+
+[`search-logs/`](search-logs/README.md) holds one record per nation and topic
+saying where the project looked for that nation's information and what each
+search found or why it failed, so gaps can be told apart from places no one
+has looked ([decision record 0025](../docs/decisions/0025-search-logs.md)).
+
 ## Tribal law texts
 
 [`tribal-law/`](tribal-law/README.md) lists the dispute resolution provisions

@@ -29,6 +29,10 @@ Checks:
     story's access is at least as restrictive as its most restrictive telling;
     and each excerpt quotes a telling that allows quotation, within the word
     limit, with a fingerprint that matches its words (decision record 0019)
+  - each search log (research/search-logs/, decision record 0025) sits at
+    <topic>/<letter>/<profile id>.yaml, names an existing Tribe profile, and
+    its last_searched date is the latest search date, and its status is
+    'found' exactly when one of its searches found something
   - (warning only) every tribe profile forum 'kind' names a method record
 
 Run from the repository root:  python3 scripts/validate_records.py
@@ -67,6 +71,7 @@ EXAMPLES = {
     "document-history.example.yaml": "document-history.schema.json",
     "story.example.yaml": "story.schema.json",
     "contribution-filing.example.yaml": "contribution-filing.schema.json",
+    "search-log.example.yaml": "search-log.schema.json",
 }
 RECORD_FOLDERS = [
     ("content/sources/*/*.yaml", "source.schema.json"),
@@ -80,6 +85,7 @@ RECORD_FOLDERS = [
     ("content/commentary/*.md", "commentary.schema.json"),
     ("research/sessions/*/*.md", "research-session.schema.json"),
     ("research/outreach/*.yaml", "outreach-organization.schema.json"),
+    ("research/search-logs/*/*/*.yaml", "search-log.schema.json"),
 ]
 
 
@@ -300,6 +306,28 @@ def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, me
                 errors.append(f"{name}: sha256 does not match its text")
 
 
+def check_search_logs(logs: list, errors: list[str]) -> None:
+    """Place, profile link and dates of each search log (research/search-logs/, decision record 0025)."""
+    for path, record in logs:
+        profile = record.get("profile") or ""
+        topic = record.get("topic")
+        if path.parent.parent.name != topic:
+            errors.append(f"{path}: topic '{topic}' does not match the folder '{path.parent.parent.name}/'")
+        if path.parent.name != letter_folder(path.stem):
+            errors.append(f"{path}: belongs in the folder '{letter_folder(path.stem)}/'")
+        if pathlib.PurePosixPath(profile).stem != path.stem:
+            errors.append(f"{path}: the file name does not match the profile '{profile}'")
+        if not (ROOT / profile).is_file():
+            errors.append(f"{path}: profile names a missing Tribe profile '{profile}'")
+        found = any(search.get("outcome") == "found" for search in record.get("searches", []))
+        if (record.get("status") == "found") != found:
+            errors.append(f"{path}: status is '{record.get('status')}' but "
+                          + ("a search found something" if found else "no search found anything"))
+        dates = [search.get("date") for search in record.get("searches", []) if search.get("date")]
+        if dates and record.get("last_searched") != max(dates):
+            errors.append(f"{path}: last_searched is {record.get('last_searched')} but the latest search is {max(dates)}")
+
+
 def check_outreach(outreach: list, errors: list[str]) -> None:
     """Links inside and between outreach records (research/outreach/)."""
     outreach_ids = {path.stem for path, _ in outreach}
@@ -433,6 +461,7 @@ def main() -> int:
         check_official_images(path, record, errors)
 
     check_outreach(records.get("outreach-organization.schema.json", []), errors)
+    check_search_logs(records.get("search-log.schema.json", []), errors)
 
     tribe_ids = {record.get("id") for _, record in records.get("tribe.schema.json", [])}
     for path, record in records.get("tribe.schema.json", []):

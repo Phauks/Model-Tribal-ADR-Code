@@ -1,0 +1,56 @@
+profile: content/tribes/a/agdaagux-tribe-of-king-cove.yaml
+topic: dispute-resolution
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/tribal-law/documents.json
+  query: nation agdaagux-tribe-of-king-cove
+  outcome: not-found
+  reason: The tribal law text collection holds no document for this nation, because its profile cites
+    no law code, court rules or dispute resolution link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: constitutions catalog (private article readings)
+  outcome: not-found
+  reason: The constitutions catalog holds no constitution text for this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/trialcourts/rjp.htm
+  query: restorative justice plans
+  outcome: not-found
+  reason: The Alaska Court System's list of restorative justice referral plans has no plan for this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/index.html
+  outcome: not-found
+  reason: No profile fact cites a National Indian Law Library page for this nation, so the library's tribal
+    law index read on 2026-11-21 had no page for it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://agdaagux.com/
+  query: code, ordinance, law, court, judicial, justice, peacemaking, mediation, dispute (links, sitemap,
+    site search)
+  outcome: blocked
+  reason: 'The address could not be read: the site answered with a bot challenge page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.json
+  query: reading (Claude (AI assistant)) of the gathered passages and leads
+  outcome: not-found
+  reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
+    held no lead.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://agdaagux.com/.'

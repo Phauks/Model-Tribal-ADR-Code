@@ -37,6 +37,9 @@ research session ──found──▶ source ◀──cites── provision / co
   tradition. Sources and provisions name the methods they concern in a
   `methods` list. The list of methods is open
   (see below).
+- A **search log** records, for one nation and one topic, every place the
+  project looked and what it found or why the search failed. It names the
+  tribe profile by path (see below).
 
 ## Record types
 
@@ -52,6 +55,7 @@ research session ──found──▶ source ◀──cites── provision / co
 | Method | [method.schema.json](../schemas/method.schema.json) | `content/methods/<id>.yaml` | One dispute resolution method: names (including in the community's language), classification, tradition, how it works, sources |
 | Variables | [variable.schema.json](../schemas/variable.schema.json) | `content/variables/<group>.yaml` | Placeholders such as `{{nation.name}}` and their model text |
 | Research session | [research-session.schema.json](../schemas/research-session.schema.json) | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | How research was done and what it produced |
+| Search log | [search-log.schema.json](../schemas/search-log.schema.json) | `research/search-logs/<topic>/<letter>/<profile id>.yaml` | How the project searched for one kind of information about one nation: each place looked, the outcome (found, not found, blocked, dead link and others) and why ([decision record 0025](decisions/0025-search-logs.md)) |
 | Outreach organization | [outreach-organization.schema.json](../schemas/outreach-organization.schema.json) | `research/outreach/<id>.yaml` | An organization, office or nation the project may ask for help, why it matters, and its public contact path; not published on the website |
 | Outreach plan (private) | [outreach-plan.schema.json](../schemas/outreach-plan.schema.json) | Outside git ([decision record 0012](decisions/0012-outreach-list-split-public-and-private.md)) | Named people, suggested asks, priority and contact log, keyed to outreach records |
 | Contribution filing (private) | [contribution-filing.schema.json](../schemas/contribution-filing.schema.json) | Outside git ([decision record 0020](decisions/0020-file-every-contribution-from-a-person.md)) | Signed forms, items, permissions and log for material that came from a person rather than from a published source ([contributions.md](contributions.md)) |
@@ -249,6 +253,32 @@ record lint (`superseded-citation`), so a summary taken from an old edition
 cannot pass for the current text. A source's own `history` field is
 different: it tracks changes to the web page or file at the source's
 address, not versions of the law.
+
+## Search logs
+
+A profile field left empty does not say whether anyone looked. Each search for
+a kind of information about a nation (its dispute resolution practice, courts,
+contacts, codes) is logged in one record per nation and topic,
+`research/search-logs/<topic>/<letter>/<profile id>.yaml`
+([decision record 0025](decisions/0025-search-logs.md);
+[research/search-logs/](../research/search-logs/README.md)).
+
+| Field | Holds |
+| --- | --- |
+| `profile` | Repository path of the tribe profile, for example `content/tribes/a/example-nation.yaml` |
+| `topic` | Open slug; equals the folder name. First in use: `dispute-resolution` |
+| `status` | `found` (a search found something), `none-found` (every planned place searched, nothing found), `partly-searched` (places remain; see `next_steps`) or `not-searched` |
+| `last_searched` | Date of the latest search; required unless `not-searched` |
+| `searches` | One entry per place and query: `date`, `searched_by` (a person's chosen name or "Claude (AI assistant)"), `method` (`script`, `browser`, `ai-review`, `by-hand`), `place_kind` (open slug), `address`, optional `query`, `outcome`, one-sentence `reason`, optional `records` it led to |
+| `next_steps` | Where to look next and what that needs |
+
+Outcomes are `found`, `not-found`, `no-site`, `blocked` (the site refused the
+project's honestly named link checker or showed a bot challenge; the project
+does not try to get past it), `dead-link`, `paywalled`, `scanned-unreadable`,
+`not-public` and `error`. Searches that succeed are logged too. A log is a
+research record, not a fact about the nation: "none found" means only that the
+places listed showed nothing on that date. What a search finds goes to a review
+before it reaches a profile.
 
 ## Source fields for bibliographies
 

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/search-log.schema.json",
+  "title": "Search log",
+  "description": "research/search-logs/<topic>/<letter>/<profile id>.yaml: how the project searched for one kind of information about one Native nation, every place it looked, and what each search found or why it failed, so an empty field says whether anyone looked (decision record 0025). One record per nation per topic; searches that find something are logged too.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile", "topic", "status", "searches"],
+  "properties": {
+    "profile": {
+      "type": "string",
+      "pattern": "^content/tribes/([a-z]|_other)/[a-z0-9]+(-[a-z0-9]+)*\\.yaml$",
+      "description": "Repository path of the Tribe profile searched for, for example content/tribes/a/example-nation.yaml. Its file name matches this record's file name."
+    },
+    "topic": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "What was searched for, from an open vocabulary (any lowercase hyphenated term); equals the folder name under research/search-logs/. In use: dispute-resolution. Suggested for later work: courts, contacts, law-codes, constitutions."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["found", "none-found", "partly-searched", "not-searched"],
+      "description": "Where the search stands for this nation and topic. found: at least one search found something on the topic (a lead or a record). none-found: every planned place was searched and nothing was found. partly-searched: some places were searched and nothing was found yet, but places remain (listed in next_steps), for example because a site blocked scripts. not-searched: no one has searched yet; searches may be empty."
+    },
+    "last_searched": {
+      "$ref": "common.schema.json#/$defs/calendarDate",
+      "description": "Date of the latest search listed. Required unless the status is not-searched."
+    },
+    "searches": {
+      "type": "array",
+      "description": "Every place looked, one entry per place and query, in the order searched. Entries are added, never removed; a later search of the same place gets its own entry.",
+      "items": { "$ref": "#/$defs/search" }
+    },
+    "next_steps": {
+      "type": "string",
+      "description": "Where to look next and what would be needed (for example a person to open a site that blocks scripts, a library request, or a call to the nation's office)."
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "not": { "const": "not-searched" } } } },
+      "then": { "required": ["last_searched"], "properties": { "searches": { "minItems": 1 } } }
+    }
+  ],
+  "$defs": {
+    "search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "searched_by", "method", "place_kind", "address", "outcome", "reason"],
+      "properties": {
+        "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+        "searched_by": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Who searched: a person's name as they choose to be credited, or \"Claude (AI assistant)\"."
+        },
+        "method": {
+          "type": "string",
+          "enum": ["script", "browser", "ai-review", "by-hand"],
+          "description": "script: a program fetched or read the place (name the script in reason or query). browser: a person or assistant opened it in a web browser. ai-review: an AI model read text already gathered. by-hand: a person read it or asked someone (library, office, call)."
+        },
+        "place_kind": {
+          "$ref": "common.schema.json#/$defs/slug",
+          "description": "Kind of place, from an open vocabulary (any lowercase hyphenated term). Suggested: nation-website, nation-code-site, national-indian-law-library, narf-tribal-law-gateway, tribal-law-policy-institute, tribal-court-site, state-court-directory, intertribal-organization, federal-register, database-listing, project-capture, other."
+        },
+        "address": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The web address searched or, for a place with no address, a short description (for example a repository path of a project capture, or \"Tribal court clerk by telephone\")."
+        },
+        "query": {
+          "type": "string",
+          "description": "Search words, site-search terms or the terms a script looked for, when there were any."
+        },
+        "outcome": {
+          "type": "string",
+          "enum": ["found", "not-found", "no-site", "blocked", "dead-link", "paywalled", "scanned-unreadable", "not-public", "error"],
+          "description": "found: something on the topic. not-found: the place was read and has nothing on the topic. no-site: the nation or place has no such site (for example no website listed). blocked: the site refused the request (for example a 403 or a bot challenge); the project does not try to get past it. dead-link: the address does not resolve or returns not found. paywalled: behind a subscription or login. scanned-unreadable: only images of text with no text layer. not-public: the place says the material is not public. error: another failure (timeout, server error); worth trying again."
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "One sentence: what was found, or why the search failed."
+        },
+        "records": {
+          "type": "array",
+          "uniqueItems": true,
+          "description": "Records this search added or led to: profile paths, source keys, or review file rows (for example research/reviews/2026-11-22-dispute-resolution-coverage.json#candidate-id).",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
