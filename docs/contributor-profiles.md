@@ -133,6 +133,18 @@ standard in 2022,[^credit] because the book credits people by section rather
 than by task. If the project later lists who did what for each essay, CRediT's
 roles are the ones to use (project analysis).
 
+### Credits in the book
+
+The lead author downloads the book's Credits page from the workspace Contributors page (`/workspace/contributors/credits.md`, lead author only). The file holds only credits that people chose to have in the book, grouped as Advisors, Contributors, Reviewers and Thanks, each sorted by family name. Every name and biography is escaped so it prints as written and cannot become a citation, link or heading. Before each edition, the lead author asks everyone credited to check their credit, then saves the file as `content/front-matter/credits.md`. The print pipeline prints it after the Acknowledgments (`FRONT_MATTER_ORDER` in `pdf/pipeline/book.mjs`). The code is in `site/src/lib/credits-export.ts`.
+
+### Credits on the website
+
+The public `/contributors` page lists credits that people chose to have on the website, read live from the last confirmed versions, so the book and the website can differ by each person's choice. It is not built ahead of time and is cached for five minutes. The Acknowledgments page links to it.
+
+## Keeping and deleting
+
+A declined registration is deleted, with its answers and every confirmed version, 12 months after the decision (`deleteExpiredDeclinedProfiles` in `site/src/lib/server/contributor-profiles.ts`). The check runs each time the workspace Contributors page opens, like the request purge, so no scheduled job is needed. The history keeps only that a profile was deleted and why.
+
 ## Leaving
 
 The person can delete their profile from the profile page at any time. That
@@ -153,7 +165,7 @@ page.
   of the answers and the previewed credit line). History goes to the shared
   `events` table with target `profile`, which migration 0002 (permission
   tiers) allows.
-- **Pages:** `/join` (public, built ahead of time), `/profile`,
+- **Pages:** `/join` (public, built ahead of time), `/contributors` (public, live), `/profile`,
   `/profile/edit`, `/profile/review`, `/workspace/contributors` and
   `/workspace/contributors/<identifier>`. All work without JavaScript. The
   profile pages are never cached or framed, like the workspace.
@@ -164,18 +176,11 @@ page.
   profile.
 - **Tests:** `tests/contributors.test.ts` (credit lines, required answers, the
   form) and `tests/contributor-profiles.test.ts` (drafts stay private,
-  versions, credits only from confirmed versions, workspace access, deletion).
+  versions, credits only from confirmed versions, workspace access, deletion, the 12-month cleanup) and `tests/credits-export.test.ts` (the book's Credits page).
 
 ## Not built yet
 
-- Email to the lead author when a registration arrives, and to contributors
-  before each edition goes to print. Until then, the Contributors page shows
-  how many registrations are waiting.
-- Deleting personal details of declined registrations after a set time.
-  Proposal: 12 months after the decision, as for requests.
-- Exporting the credits to the print pipeline. The workspace list is the
-  source; the export is a later step of the print track.
-- A public list of contributors on the website.
+- Email to the lead author when a registration arrives, and to contributors before each edition goes to print. This waits on a domain for sending email. Until then, the Contributors page shows how many registrations are waiting.
 
 ## References
 
