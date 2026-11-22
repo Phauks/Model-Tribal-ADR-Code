@@ -1,6 +1,6 @@
 // Runs axe-core on every built page, in the light and the dark theme
 // (site/DESIGN.md, section 9). Run from site/ after `npm run build`:
-//   node tools/check-accessibility.mjs [--pages /,/nations/map]
+//   node tools/check-accessibility.mjs [--pages /,/nations/map] [--workers 2]
 //
 // The prerendered pages are served from the build output by a small local
 // server and opened in Chromium through Playwright. Each page is checked
@@ -8,11 +8,25 @@
 // automates. Automated checks find only part of the problems; the manual
 // checks in DESIGN.md section 9 still apply.
 //
-// Set CHROMIUM_PATH to use a Chromium that is already installed.
+// Each page is loaded once and checked in both themes: the site's dark theme
+// follows the device setting through CSS media queries, so switching the
+// emulated color scheme restyles the page in place, as it does in a browser.
+//
+// The check must never hang the CI job. Every page has an overall time limit;
+// a page that runs over it is closed, a fresh tab tries it once more, and a
+// second failure is reported as a problem. Requests to other hosts are blocked
+// so the page's load event depends only on the build. If no page finishes for
+// several minutes the check stops with the pages it was working on.
+//
+// Set CHROMIUM_PATH to use a Chromium that is already installed. Set
+// ACCESSIBILITY_WORKERS (or pass --workers) to change how many pages are
+// checked at once; the default leaves one processor for the browser and server.
 
 import { createServer } from 'node:http';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
+import { availableParallelism } from 'node:os';
 import path from 'node:path';
 import { chromium } from 'playwright';
 
@@ -21,7 +35,38 @@ const axeSource = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const output = path.resolve('.svelte-kit/cloudflare/client');
 const tags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 const themes = ['light', 'dark'];
-const workers = 4;
+
+/** Time limits, in milliseconds. */
+const limits = {
+	// Loading one page. Pages load in well under a second when nothing is wrong.
+	navigation: 30_000,
+	// After loading, the page counts as settled once nothing in it has changed
+	// for this long, or after the longer time at the most.
+	settle: 250,
+	settleAtMost: 3_000,
+	// Everything for one page: loading it and running axe-core in both themes.
+	page: 90_000,
+	// Closing a tab or the browser, which can stall when the browser is stuck.
+	close: 10_000,
+	// No page finished in this long: something is stuck, so stop.
+	stalled: 5 * 60_000
+};
+const attemptsPerPage = 2;
+// A tab's memory grows with every page it shows (about 30 MB a page here), and
+// a tab that runs out of memory crashes. Each tab is replaced after this many
+// pages so its memory is given back.
+const pagesPerTab = 20;
+
+function argument(name) {
+	const index = process.argv.indexOf(name);
+	return index > -1 ? process.argv[index + 1] : undefined;
+}
+
+const requestedWorkers = Number(argument('--workers') ?? process.env.ACCESSIBILITY_WORKERS);
+const workers =
+	Number.isInteger(requestedWorkers) && requestedWorkers > 0
+		? requestedWorkers
+		: Math.min(3, Math.max(1, availableParallelism() - 1));
 
 if (!existsSync(output)) {
 	console.error(`${output} does not exist. Run npm run build first.`);
@@ -34,6 +79,9 @@ const types = {
 	'.css': 'text/css',
 	'.json': 'application/json',
 	'.svg': 'image/svg+xml',
+	'.png': 'image/png',
+	'.jpg': 'image/jpeg',
+	'.webp': 'image/webp',
 	'.woff2': 'font/woff2',
 	'.woff': 'font/woff',
 	'.webmanifest': 'application/manifest+json',
@@ -69,79 +117,204 @@ function pagePaths(folder = output) {
 	return found.sort();
 }
 
-const only = process.argv.indexOf('--pages');
-const pages = only > -1 ? process.argv[only + 1].split(',') : pagePaths();
-
-const server = createServer((request, response) => {
-	const file = fileFor(new URL(request.url, 'http://localhost').pathname);
-	if (!file) {
-		response.writeHead(404).end();
-		return;
-	}
-	response.writeHead(200, {
-		'content-type': types[path.extname(file)] ?? 'application/octet-stream'
+/** Rejects with `message` if `promise` has not settled within `milliseconds`. */
+function withLimit(promise, milliseconds, message) {
+	let timer;
+	const limit = new Promise((_, reject) => {
+		timer = setTimeout(() => reject(new Error(message)), milliseconds);
 	});
-	response.end(readFileSync(file));
+	return Promise.race([promise, limit]).finally(() => clearTimeout(timer));
+}
+
+const pagesArgument = argument('--pages');
+const pages = pagesArgument ? pagesArgument.split(',') : pagePaths();
+
+const server = createServer(async (request, response) => {
+	try {
+		const file = fileFor(new URL(request.url, 'http://localhost').pathname);
+		if (!file) {
+			response.writeHead(404).end();
+			return;
+		}
+		const body = await readFile(file);
+		response.writeHead(200, {
+			'content-type': types[path.extname(file)] ?? 'application/octet-stream'
+		});
+		response.end(body);
+	} catch {
+		if (!response.headersSent) response.writeHead(500);
+		response.end();
+	}
 });
+// Keep idle connections open longer than the browser does, so the browser never
+// sends a request on a connection the server has just closed.
+server.keepAliveTimeout = 120_000;
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
 const base = `http://127.0.0.1:${server.address().port}`;
 
 const browser = await chromium.launch(
 	process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}
 );
-const problems = [];
-const started = Date.now();
+// Service workers are blocked so every page is read from the build, not a cache.
+const context = await browser.newContext({ serviceWorkers: 'block', reducedMotion: 'reduce' });
+context.setDefaultNavigationTimeout(limits.navigation);
+context.setDefaultTimeout(limits.navigation);
+// Only the local server may answer: a request to another host could hold up
+// the load event, and the check should not depend on other sites.
+await context.route(
+	(url) => url.origin !== base,
+	(route) => route.abort('blockedbyclient')
+);
 
-for (const theme of themes) {
-	// Service workers are blocked so every page is read from the build, not a cache.
-	const context = await browser.newContext({ colorScheme: theme, serviceWorkers: 'block' });
-	const queue = [...pages];
-	await Promise.all(
-		Array.from({ length: workers }, async () => {
-			const page = await context.newPage();
-			while (queue.length > 0) {
-				const pathname = queue.shift();
-				try {
-					const response = await page.goto(base + pathname, { waitUntil: 'load' });
-					if (!response?.ok()) {
-						problems.push(`${pathname}: not a prerendered page in the build`);
-						continue;
-					}
-					await page.addScriptTag({ content: axeSource });
-					const violations = await page.evaluate(
-						async (runOnly) =>
-							(await window.axe.run(document, { runOnly: { type: 'tag', values: runOnly } }))
-								.violations,
-						tags
-					);
-					for (const violation of violations) {
-						const where = violation.nodes
-							.slice(0, 3)
-							.map((node) => node.target.join(' '))
-							.join('; ');
-						problems.push(
-							`${pathname} (${theme}): ${violation.id}, ${violation.help} [${violation.nodes.length}] ${where}`
-						);
-					}
-				} catch (error) {
-					problems.push(`${pathname} (${theme}): could not be checked: ${error.message}`);
-				}
-			}
-			await page.close();
-		})
+const problems = [];
+const timings = [];
+const inProgress = new Map();
+const started = Date.now();
+let finished = 0;
+let lastFinished = Date.now();
+
+/** Loads one page and runs axe-core on it in each theme. */
+async function checkPage(page, pathname) {
+	await page.emulateMedia({ colorScheme: themes[0] });
+	const response = await page.goto(base + pathname, { waitUntil: 'load' });
+	if (!response?.ok()) return [`${pathname}: not a prerendered page in the build`];
+	// Some controls (Report a problem, the map's zoom buttons) are added by the
+	// page's script just after the load event. Wait until the page stops
+	// changing so axe-core sees them, and sees the same page in both themes.
+	await page.evaluate(
+		({ quiet, longest }) =>
+			new Promise((resolve) => {
+				let timer;
+				const observer = new MutationObserver(() => {
+					clearTimeout(timer);
+					timer = setTimeout(done, quiet);
+				});
+				const done = () => {
+					observer.disconnect();
+					clearTimeout(cap);
+					resolve();
+				};
+				const cap = setTimeout(done, longest);
+				observer.observe(document, { subtree: true, childList: true, attributes: true });
+				timer = setTimeout(done, quiet);
+			}),
+		{ quiet: limits.settle, longest: limits.settleAtMost }
 	);
-	await context.close();
+	await page.addScriptTag({ content: axeSource });
+	const found = [];
+	for (const theme of themes) {
+		await page.emulateMedia({ colorScheme: theme });
+		const violations = await page.evaluate(
+			async (runOnly) =>
+				(
+					await window.axe.run(document, {
+						runOnly: { type: 'tag', values: runOnly },
+						// Only failures are reported, so axe-core need not
+						// describe every element that passed.
+						resultTypes: ['violations']
+					})
+				).violations,
+			tags
+		);
+		for (const violation of violations) {
+			const where = violation.nodes
+				.slice(0, 3)
+				.map((node) => node.target.join(' '))
+				.join('; ');
+			found.push(
+				`${pathname} (${theme}): ${violation.id}, ${violation.help} [${violation.nodes.length}] ${where}`
+			);
+		}
+	}
+	return found;
 }
 
-await browser.close();
+async function closeQuietly(page) {
+	await withLimit(page.close(), limits.close, 'close timed out').catch(() => {});
+}
+
+const queue = [...pages];
+
+async function worker(number) {
+	let page = await context.newPage();
+	let pagesInTab = 0;
+	while (queue.length > 0) {
+		if (pagesInTab >= pagesPerTab) {
+			await closeQuietly(page);
+			page = await context.newPage();
+			pagesInTab = 0;
+		}
+		pagesInTab += 1;
+		const pathname = queue.shift();
+		const pageStarted = Date.now();
+		inProgress.set(number, { pathname, since: pageStarted });
+		let lastError;
+		for (let attempt = 1; attempt <= attemptsPerPage; attempt += 1) {
+			try {
+				const found = await withLimit(
+					checkPage(page, pathname),
+					limits.page,
+					`took longer than ${limits.page / 1000} s`
+				);
+				problems.push(...found);
+				lastError = undefined;
+				break;
+			} catch (error) {
+				lastError = error;
+				console.error(`${pathname}: attempt ${attempt} failed: ${error.message.split('\n')[0]}`);
+				// The tab may have crashed or still be busy with the page, so
+				// start a fresh one.
+				await closeQuietly(page);
+				page = await context.newPage();
+				pagesInTab = 1;
+			}
+		}
+		if (lastError) {
+			problems.push(`${pathname}: could not be checked: ${lastError.message.split('\n')[0]}`);
+		}
+		timings.push({ pathname, milliseconds: Date.now() - pageStarted });
+		inProgress.delete(number);
+		finished += 1;
+		lastFinished = Date.now();
+		if (finished % 100 === 0) {
+			const seconds = Math.round((Date.now() - started) / 1000);
+			console.log(`${finished} of ${pages.length} pages checked, ${seconds} s.`);
+		}
+	}
+	await closeQuietly(page);
+}
+
+const watchdog = setInterval(() => {
+	if (Date.now() - lastFinished < limits.stalled) return;
+	const stuck = [...inProgress.values()]
+		.map(({ pathname, since }) => `${pathname} (${Math.round((Date.now() - since) / 1000)} s)`)
+		.join(', ');
+	console.error(
+		`No page finished in ${limits.stalled / 60_000} minutes; stopping. Still working on: ${stuck || 'nothing'}.`
+	);
+	process.exit(1);
+}, 10_000);
+
+await Promise.all(Array.from({ length: workers }, (_, index) => worker(index)));
+
+clearInterval(watchdog);
+await withLimit(browser.close(), limits.close, 'browser close timed out').catch(() => {});
+server.closeAllConnections();
 server.close();
 
 const seconds = Math.round((Date.now() - started) / 1000);
+const slowest = timings
+	.sort((a, b) => b.milliseconds - a.milliseconds)
+	.slice(0, 5)
+	.map(({ pathname, milliseconds }) => `${pathname} ${(milliseconds / 1000).toFixed(1)} s`)
+	.join(', ');
 if (problems.length > 0) {
 	console.error(problems.join('\n'));
 	console.error(`\n${problems.length} accessibility problem(s) found by axe-core.`);
 	process.exit(1);
 }
 console.log(
-	`Accessibility checked with axe-core: ${pages.length} pages in ${themes.length} themes, ${seconds} s.`
+	`Accessibility checked with axe-core: ${pages.length} pages in ${themes.length} themes, ${workers} at a time, ${seconds} s.`
 );
+console.log(`Slowest pages: ${slowest}.`);
+process.exit(0);
