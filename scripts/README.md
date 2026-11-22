@@ -93,6 +93,7 @@ author. None of them tries to get past a site that refuses scripts.
 | Script | Does | Needs |
 | --- | --- | --- |
 | `review/source_links.py` | `check` requests every source record's address (HEAD, then GET for HTML pages; FederalRegister.gov documents through its API) and caches the result; `apply --agree` sets `history.status` to `removed` or `moved` (with the new address in `history.changes`) and `history.last_checked` where the review's `2026-11-22-source-links.csv` agrees, editing only the `history` block | `pip install -r scripts/requirements.txt requests` |
+| `review/child_welfare_agents.py` | `compare` matches the Indian Child Welfare Act designated agent facts with a transcription of the notice's table, which is printed only as page images (`research/reviews/2026-11-22-child-welfare-agents-table.csv`); `apply` sets each fact's locator to its page, notes the re-reading, corrects names misread from the images, and sets `read-in-full` where the review's OCR also matched the name word for word | `scripts/requirements.txt` |
 
 ## Gaming compacts and ordinances
 

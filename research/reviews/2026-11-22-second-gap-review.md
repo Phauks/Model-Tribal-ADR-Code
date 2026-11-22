@@ -284,6 +284,25 @@ number, and all 316 exist at their recorded addresses. They have not moved.
 Six more are Uniform Law Commission download addresses that hand the file to
 a signed link on a file host; the addresses still work.
 
+### Indian Child Welfare Act designated agents (row 8)
+
+Session: [2026-11-22-child-welfare-agents-reread](../sessions/2026/2026-11-22-child-welfare-agents-reread.md).
+The second check transcribed the Tribe column of every page image by eye
+([`2026-11-22-child-welfare-agents-table.csv`](2026-11-22-child-welfare-agents-table.csv),
+582 rows with the printed page) and found all 575 facts, as this review did
+with OCR.
+
+| Change | Facts |
+| --- | ---: |
+| `locator` set to the page the nation's row is on, and a dated note that the row was re-read | 575 |
+| `verification: read-in-full`, where this review's OCR also matched the name word for word | 70 |
+| Note corrected: Chenega, which the table prints "Native Village of Chenega (aka Chenega)", not "(aka Chanega)" (checked at 300 dpi) | 1 |
+
+The other 505 facts keep their level (inferred, or bulk-import for the five
+combined rows), because their names were matched word for word only in the
+transcription, not in machine-read text. The six Minnesota Chippewa band
+profiles were left without a fact for the lead author, as above.
+
 ## Still for the lead author or Westlaw
 
 Rows 5 (KeyCite the legal history cases), 9 (Public Law 280), 13 (Alaska
