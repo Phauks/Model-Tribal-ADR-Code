@@ -16,6 +16,10 @@ The same verdicts are in
 which has an empty `lead_author_decision` column for the review. Interpretation
 is labeled as project analysis.
 
+## Lead author's decision
+
+On Nov. 22, 2026 the lead author accepted these recommendations and kept diversion to a consensual process and restorative justice in scope. The `lead_author_decision` column of the JSON and CSV files gives each record's outcome ([decision record 0027](../../docs/decisions/0027-diversion-and-restorative-justice-in-the-research-base.md)).
+
 ## Why this review
 
 The provisional analysis of dispute resolution practice (pull request #10)

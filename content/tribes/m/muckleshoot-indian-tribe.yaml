@@ -260,47 +260,13 @@ dispute_resolution:
     link: https://narf.org/nill/codes/muckleshoot/index.html
     source: national-indian-law-library-code-codes-muckleshoot
     confidence: medium
+    verification: title-only
     as_of: '2012'
     locator: Table of Contents, under 'Chapter 12.06 Voluntary Safety Plans and Agreements'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
       July 2012); the provision itself was not read. The heading it falls under is taken from the page
       layout and may be imprecise.'
   database_listings:
-  - title: Alternative Sentencing for Criminal Penalties in Fish, Shellfish, and Marine Mammals Code
-    citation: Muckleshoot Tribal Code. Title 6 Fish, Shellfish, and Marine Mammals. Chapter 6.15 Violations
-      and Penalties. Section 6.15.200 Criminal Penalties.
-    link: https://muckleshoot.tribal.codes/Code/6.15.190
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-criminal-penalties-in-fish-shellfish-and-marine-mammals-code/
-  - title: Alternative Sentencing for Juveniles
-    citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. Chapter 7.12 Disposition.
-    link: https://muckleshoot.tribal.codes/Code/7.12.010
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-juveniles/
-  - title: Deferred Sentencing
-    citation: Muckleshoot Tribal Code. Title 5 Law and Order Code. Chapter 5.29 Judgment an Sentencing.
-      Section 5.29.040 Deferred Judgment and Sentence.
-    link: https://muckleshoot.tribal.codes/Code/5.29.040
-    practice_area: Tribal Justice
-    phase: Post-adjudication; Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-sentencing/
   - title: Dismissal for Alternative Processes in Juvenile Justice
     citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. 7.09.040 Discretionary Dismissal.
     link: https://muckleshoot.tribal.codes/Code/7.09.040
@@ -349,17 +315,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-meeting-and-safety-plan-in-child-welfare/
-  - title: Family Protection Plan for Child Welfare
-    citation: Family Protection Orders.
-    link: https://ncorj.org/tribal-law/family-protection-plan-for-child-welfare/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-protection-plan-for-child-welfare/
   - title: Informal Conference for Juveniles
     citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. 7.06.020 Informal Conference
       & 7.06.030 Attendance and Rights at an Informal Conference.
@@ -395,17 +350,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mediation-alternative-dispute-resolution-in-lieu-of-hearing/
-  - title: Prosecutorial Discretion to Recommend Deferment or Alternative Sentence
-    citation: Prosecutorial Discretion.
-    link: https://ncorj.org/tribal-law/prosecutorial-discretion-to-recommend-deferment-or-alternative-sentence/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/prosecutorial-discretion-to-recommend-deferment-or-alternative-sentence/
   - title: Restorative Criminal Penalties
     citation: Muckleshoot Tribal Code. Title 5 Law and Order Code. Chapter 5.29 Judgment an Sentencing.
       Section 5.29.037 Penalties and Consequences.
@@ -418,17 +362,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restorative-criminal-penalties/
-  - title: Substance Abuse Treatment
-    citation: Muckleshoot Tribal Code. Title 5 Law and Order Code. Chapter 5.14 Penalties. Section 5.14.020
-      Substance Abuse Evaluation Required.
-    link: https://muckleshoot.tribal.codes/Code/5.14.020
-    practice_area: Tribal Justice
-    phase: Post-adjudication; Pre-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/substance-abuse-treatment/
   - title: Traditional Sentencing
     citation: Muckleshoot Tribal Code. Title 5 Law and Order Code. Chapter 5.29 Judgment an Sentencing.
       Section 5.29.030 Traditional Punishments.
@@ -441,19 +374,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/traditional-sentencing/
-  - title: Treatment for Domestic Violence Crimes in Lieu of Confinement or Fine
-    citation: Muckleshoot Tribal Code. Title 22 Domestic Violence — Criminal and Civil. Chapter 22.03
-      Court Requirements. Section 22.03.020 Special Court rules for domestic violence or family violence
-      crimes.
-    link: https://muckleshoot.tribal.codes/Code/22.03.020
-    practice_area: Tribal Justice
-    phase: Post-adjudication; Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-domestic-violence-crimes-in-lieu-of-confinement-or-fine/
 gaming:
   compacts:
   - state: WA

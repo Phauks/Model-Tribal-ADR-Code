@@ -229,19 +229,7 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Louisiana section, entry 'Tunica-Biloxi Tribe of Louisiana'
-dispute_resolution:
-  database_listings:
-  - title: Disposition of Cases – Treatment, Counseling, and Rehabilitation Options
-    citation: Tunica-Biloxi Tribal Code § 14.24.190
-    link: https://library.municode.com/tribes_and_tribal_nations/tunica-biloxi_tribe_of_louisiana/codes/code_of_ordinances
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication/Sentencing
-    form_of_practice: Alternative to incarceration; Counseling; Program; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-of-cases-treatment-counseling-and-rehabilitation-options/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: LA

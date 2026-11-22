@@ -310,7 +310,7 @@ dispute_resolution:
     note: Participation recorded as 'required' because the code says the forum shall be used before a
       formal hearing once a petition is filed.
   provisions:
-  - kind: mediation
+  - kind: peacemaking
     title: Peacemaker Mediation Forum
     citation: Karuk Tribal Code, Section 3.05.100
     summary: Establishes the Peacemaker Mediation Forum as a step before formal court hearings and directs
@@ -318,6 +318,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
     source: karuk-tribal-code-chapter-3-05
     confidence: high
+    verification: read-in-full
     as_of: '2024-09-26'
   - kind: peacemaking
     title: Section 10.9 Peacemaker Mediation Forum
@@ -326,35 +327,17 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/karuk/index.html
     source: national-indian-law-library-code-codes-karuk
     confidence: medium
+    verification: title-only
     as_of: 2016-12
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: peacemaking
-    title: Title 3 – Tribal Court, Sec. 3.05.100 – Peacemaker Mediation Forum
-    citation: Title 3 – Tribal Court, Sec. 3.05.100 – Peacemaker Mediation Forum
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Karuk Tribe of California
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      procedures, and purpose.'
-  - kind: peacemaking
-    title: Section 10.9 Peacemaker Mediation Forum
-    citation: Section 10.9 Peacemaker Mediation Forum
-    link: https://narf.org/nill/codes/karuk/index.html
-    source: national-indian-law-library-code-codes-karuk
-    confidence: medium
-    as_of: '2026-11-21'
-    locator: Table of Contents
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
   - kind: peacemaking
     title: 'Section 11: Peacemaker Mediation Forum/Family Unity'
     citation: 'Section 11: Peacemaker Mediation Forum/Family Unity'
     link: https://narf.org/nill/codes/karuk/index.html
     source: national-indian-law-library-code-codes-karuk
     confidence: medium
+    verification: title-only
     as_of: '2026-11-21'
     locator: Table of Contents
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
@@ -365,6 +348,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/karuk/index.html
     source: national-indian-law-library-code-codes-karuk
     confidence: medium
+    verification: title-only
     as_of: '2026-11-21'
     locator: Table of Contents, under 'SECTION 1. POLICY, PURPOSE AND SCOPE'
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
@@ -381,17 +365,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/conference-peacemaker-mediation-to-preserve-marriage/
-  - title: Culturally Appropriate Forum for Conflict Resolution
-    citation: KTC 3.10.010
-    link: https://karuk.tribal.codes
-    practice_area: Tribal Court General
-    phase: All phases
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/culturally-appropriate-forum-for-conflict-resolution/
   - title: Dispute Resolution Process in Parenting Plans
     citation: KTC 10.05.270(E)(1)
     link: https://karuk.tribal.codes
@@ -435,16 +408,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mediation-for-grandparent-visitation-disputes/
-  - title: Nonadversarial Proceedings Involving Children
-    citation: KTC 3.10.170(A)
-    link: https://karuk.tribal.codes
-    practice_area: Tribal Child Welfare/Family
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/nonadversarial-proceedings-involving-children/
   - title: Peacemaker Mediation Forum in Child Welfare Cases
     citation: KTC 10.10.270
     link: https://karuk.tribal.codes
@@ -456,17 +419,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/peacemaker-mediation-forum-in-child-welfare-cases/
-  - title: Peacemaker Mediation Forum
-    citation: KTC 3.05.100
-    link: https://karuk.tribal.codes
-    practice_area: Tribal Civil Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaker-mediation-forum/
   - title: Separation Agreement with Peacemaker/Mediation Services
     citation: KTC 10.05.160
     link: https://karuk.tribal.codes
@@ -478,16 +430,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/separation-agreement-with-peacemaker-mediation-services/
-  - title: Tribal Custom and Elder Consultation
-    citation: KTC 3.10.140(B)
-    link: https://karuk.tribal.codes
-    practice_area: Tribal Court General
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/tribal-custom-and-elder-consultation/
 gaming:
   compacts:
   - state: CA
