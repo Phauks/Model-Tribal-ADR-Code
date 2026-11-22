@@ -10,7 +10,6 @@ import { sourceCitations } from 'virtual:source-citations';
 import { readFrontMatterPage, sources } from './content.ts';
 import type { CitationMark } from '../citation-marks.ts';
 import { formatSource, plainText, renderMarkdown, type CitationCollector } from './markdown.ts';
-import type { CitationMark } from '../citation-marks.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 
 const citationPattern = /\[@[a-z0-9-]+[^\]]*\]/g;
