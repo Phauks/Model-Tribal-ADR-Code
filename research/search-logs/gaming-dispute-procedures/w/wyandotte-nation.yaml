@@ -1,0 +1,40 @@
+profile: content/tribes/w/wyandotte-nation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/wyandottetribeofok-Ord-Appr-6.29.94.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 1994-06-29
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#wyandotte-nation-oklahoma-ordinance-1994-06-29#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/wyandottetribeofok-Wyandotteappr-ltr-9-28-07.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2007-09-28 has no text layer on most pages (2 of 2 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/wyandottetribeofok-Ord-Amend-06.19.09.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2009-06-19 has no text layer on most pages (30 of 30 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 2007-09-28 (https://www.nigc.gov/wp-content/uploads/2025/03/wyandottetribeofok-Wyandotteappr-ltr-9-28-07.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2009-06-19 (https://www.nigc.gov/wp-content/uploads/2025/03/wyandottetribeofok-Ord-Amend-06.19.09.pdf)
+  with OCR or by hand.

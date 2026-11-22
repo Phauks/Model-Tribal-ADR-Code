@@ -31,8 +31,8 @@ const byName = (first: ListedNation, second: ListedNation) =>
 	first.name.localeCompare(second.name, 'en', { sensitivity: 'base' });
 
 /**
- * Everything /nations/map shows except the map outlines: the counts the maps
- * are shaded by, the tables and the sources. The outlines are drawn from
+ * Everything /nations/map shows except the map outlines: the counts the map's
+ * views are shaded by, the tables and the sources. The outlines are drawn from
  * these counts by src/lib/nations-map-drawing.ts. Used by the page and by
  * /nations/map/drawings.json.
  */

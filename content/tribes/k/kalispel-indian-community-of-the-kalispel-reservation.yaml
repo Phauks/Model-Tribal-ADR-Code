@@ -316,24 +316,16 @@ dispute_resolution:
     note: Kind 'other' because the chapter shows the panel acting in an adjudicative and enforcement role
       rather than as a consensual forum; the chapter reviewed does not define the panel's composition.
   provisions:
-  - kind: traditional-dispute-resolution
-    title: Execution of Judgments (Traditional Peacemakers Panel)
-    citation: Kalispel Law and Order Code, Chapter 3, Sec. 3-21
-    summary: Authorizes the Traditional Peacemakers Panel to examine judgment debtors and order seizure
-      and sale of property, with a hardship exemption and redemption period.
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
-    source: kalispel-law-and-order-code-chapter-3-civil-actions
-    confidence: medium
-    as_of: '2025-04-09'
   - kind: arbitration
-    title: CHAPTER 22 � ARBITRATION CODE
-    citation: 'CHAPTER 22 � ARBITRATION CODE; SECTION 22-2: AGREMENTS TO ARBITRATE AND ENFORCEABLE; 22-2.01
+    title: CHAPTER 22 – ARBITRATION CODE
+    citation: 'CHAPTER 22 – ARBITRATION CODE; SECTION 22-2: AGREMENTS TO ARBITRATE AND ENFORCEABLE; 22-2.01
       Agreements to Arbitrate are Enforceable; SECTION 22-4: STAY OF PROCEEDINGS AND ORDER TO PROCEED
       WITH ARBITRATION; 22-4.01 Stay of Proceedings and Order to Proceed with Arbitration; SECTION 22-8:
       ARBITRATION AWARD NOT APPEALABLE; 22-8.01 Arbitration Award Not Appealable'
     link: https://www.narf.org/nill/codes/kalispelcode/index.html
     source: national-indian-law-library-code-codes-kalispelcode
     confidence: medium
+    verification: title-only
     as_of: 2015-08
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -343,27 +335,19 @@ dispute_resolution:
     link: https://narf.org/nill/codes/kalispelcode/index.html
     source: national-indian-law-library-code-codes-kalispelcode
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: 'Table of Contents, under ''SECTION 23-9: ADJUDICATION OF DISPUTES'''
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
-  - kind: other
-    title: 'Chapter 3 – Civil Actions, Sec. 3-21: Execution of Judgments'
-    citation: 'Chapter 3 – Civil Actions, Sec. 3-21: Execution of Judgments'
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Kalispel Tribe of Indians, Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides authority and
-      procedure.'
   - kind: arbitration
-    title: 'CHAPTER 22 � ARBITRATION CODE SECTION 22-1: SCOPE OF CODE'
-    citation: 'CHAPTER 22 � ARBITRATION CODE SECTION 22-1: SCOPE OF CODE'
+    title: 'CHAPTER 22 – ARBITRATION CODE SECTION 22-1: SCOPE OF CODE'
+    citation: 'CHAPTER 22 – ARBITRATION CODE SECTION 22-1: SCOPE OF CODE'
     link: https://narf.org/nill/codes/kalispelcode/index.html
     source: national-indian-law-library-code-codes-kalispelcode
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -375,6 +359,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/kalispelcode/index.html
     source: national-indian-law-library-code-codes-kalispelcode
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -386,6 +371,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/kalispelcode/index.html
     source: national-indian-law-library-code-codes-kalispelcode
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -397,6 +383,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/kalispelcode/index.html
     source: national-indian-law-library-code-codes-kalispelcode
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -415,53 +402,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/elder-and-vulnerable-adult-protection-family-group-conference-and-safety-plan/
-  - title: Family Protection Plan in Youth In Need Of Care Cases
-    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 7 Kalispel Youth Code.
-      Section 7-23: Disposition Order.'
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-protection-plan-in-youth-in-need-of-care-cases/
-  - title: Treatment for Elder and Vulnerable Adult Protection Order
-    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 27 Elder and Vulnerable
-      Adult Code. Section 27-12: Elder and Vulnerable Adult Protection Order. 27-12.07 Order of Protection.'
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-elder-and-vulnerable-adult-protection-order/
-  - title: Treatment for Protection Orders for Domestic Relations
-    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 8 Domestic Relations.
-      Section 8-6: Orders of Protection. 8-6.08 Order of Protection - Temporary & Permanent.'
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-protection-orders-for-domestic-relations/
-  - title: Treatment for Public Intoxication
-    citation: The Law and Order Code of the Kalispel Tribe of Indians. Chapter 9 Criminal Offenses.
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-public-intoxication/
 gaming:
   compacts:
   - state: WA

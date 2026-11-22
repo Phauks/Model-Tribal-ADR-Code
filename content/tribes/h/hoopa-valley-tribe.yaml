@@ -260,6 +260,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/hoopacode/index.html
     source: national-indian-law-library-code-codes-hoopacode
     confidence: medium
+    verification: title-only
     as_of: '2017'
     locator: 'Table of Contents, under ''CHAPTER 8: SETTLEMENT'''
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -271,6 +272,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/hoopacode/index.html
     source: national-indian-law-library-code-codes-hoopacode
     confidence: medium
+    verification: title-only
     as_of: 2017-02
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -280,10 +282,11 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/hoopacode/index.html
     source: national-indian-law-library-code-codes-hoopacode
     confidence: medium
+    verification: title-only
     as_of: 2017-02
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: mediation
+  - kind: other
     title: 14A.5.40 Possible Outcomes In Nonparental Custody Actions; Circumstances in Which Nonparental
       Custody Will be Granted; Court Ordered Drug Testing; Mediation
     citation: 14A.5.40 Possible Outcomes In Nonparental Custody Actions; Circumstances in Which Nonparental
@@ -291,6 +294,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/hoopacode/index.html
     source: national-indian-law-library-code-codes-hoopacode
     confidence: medium
+    verification: title-only
     as_of: 2017-02
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -300,6 +304,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/hoopacode/index.html
     source: national-indian-law-library-code-codes-hoopacode
     confidence: medium
+    verification: title-only
     as_of: 2017-02
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -309,47 +314,9 @@ dispute_resolution:
     link: https://narf.org/nill/codes/hoopacode/index.html
     source: national-indian-law-library-code-codes-hoopacode
     confidence: medium
+    verification: title-only
     as_of: '2017'
     locator: Table of Contents, under 'Part 7. Judicial Procedure'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: other
-    title: 13.1.3 Fair Operating Standards and Dispute Resolution Procedures for Reservation Timber Sales
-      Preserved Pending Approval of Administrative Rules
-    citation: 13.1.3 Fair Operating Standards and Dispute Resolution Procedures for Reservation Timber
-      Sales Preserved Pending Approval of Administrative Rules
-    link: https://narf.org/nill/codes/hoopacode/index.html
-    source: national-indian-law-library-code-codes-hoopacode
-    confidence: medium
-    as_of: '2017'
-    locator: Table of Contents, under '13.0 Short Title 13.1 Effect on Prior Enactments'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: mediation
-    title: 14A.3.30 Informal Dispute Resolution
-    citation: 14A.3.30 Informal Dispute Resolution; 14A.5.40 Possible Outcomes In Nonparental Custody
-      Actions; Circumstances in Which Nonparental Custody Will be Granted; Court Ordered Drug Testing;
-      Mediation
-    link: https://narf.org/nill/codes/hoopacode/index.html
-    source: national-indian-law-library-code-codes-hoopacode
-    confidence: medium
-    as_of: '2017'
-    locator: Table of Contents, under '13.10 Tribal Court 13.11 Legal Representation 13.12 Principles
-      of Construction; Severability; Sovereign Immunity Preserved 13.13 Effect of Amendments on Prior
-      TERO Legislation and Pending Cases Certification'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: arbitration
-    title: Selection of Arbitrator
-    citation: Selection of Arbitrator; Arbitrator
-    link: https://narf.org/nill/codes/hoopacode/index.html
-    source: national-indian-law-library-code-codes-hoopacode
-    confidence: medium
-    as_of: '2017'
-    locator: Table of Contents, under 'Chapter 6. Civil Infractions'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
@@ -366,40 +333,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/community-council-conference/
-  - title: Family Healing to Wellness Court Code
-    citation: '[The people''s get well place] Court Code.'
-    link: https://ncorj.org/tribal-law/family-healing-to-wellness-court-code/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-healing-to-wellness-court-code/
-  - title: Restorative Remedies for Protection Orders in Domestic Violence
-    citation: Section 14D.5.09 Remedies Available in an Order for Protection After Noticed Hearing.
-    link: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-domestic-violence/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-domestic-violence/
-  - title: Restorative Remedies for Protection Orders in Elder and Dependant Adult Abuse
-    citation: Hoopa Valley Tribe Code. Title 14 Child/Family Assistance Code. Title 14D Protective Order
-      Code. Chapter 6 Tribal Elder and Dependant Adult Protective Orders.
-    link: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14D_Protective_Order_Code.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-elder-and-dependant-adult-abuse/
 gaming:
   compacts:
   - state: CA

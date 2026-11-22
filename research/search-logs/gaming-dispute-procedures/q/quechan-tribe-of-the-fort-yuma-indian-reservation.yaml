@@ -1,0 +1,50 @@
+profile: content/tribes/q/quechan-tribe-of-the-fort-yuma-indian-reservation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/quechanindiantribe-quechanord041295.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other)
+    in this ordinance listed 1995-04-12; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/quechanindiantribe-quechanamend012703.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other)
+    in this amendment listed 2003-01-27; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/quechanindiantribe-quechanordamend012208.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2008-01-22 has no text layer on most pages (117 of 117 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/10/2025.10.02-Quechan-Indian-Tribe-Ft.-Yuma-Gam-Ord-Amend.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2025-10-02
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#quechan-tribe-of-the-fort-yuma-indian-reservation-amendment-2025-10-02#i1
+next_steps: Some pages of the ordinance listed 1995-04-12 (https://www.nigc.gov/wp-content/uploads/2025/03/quechanindiantribe-quechanord041295.pdf)
+  have no text layer; read them with OCR. Read the scanned amendment listed 2008-01-22 (https://www.nigc.gov/wp-content/uploads/2025/03/quechanindiantribe-quechanordamend012208.pdf)
+  with OCR or by hand.

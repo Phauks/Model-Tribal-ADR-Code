@@ -1,0 +1,31 @@
+profile: content/tribes/w/washoe-tribe-of-nevada-and-california.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/washoetribeofnvandca-ordappr012998.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, licensing-hearing) in this ordinance listed 1998-01-29; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/Washoe_Tribe_of_Nevada_and_California_Ord_approval_01.09.2015.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2015-01-09
+    and recorded 2 procedure(s): licensing-hearing, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#washoe-tribe-of-nevada-and-california-amendment-2015-01-09#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#washoe-tribe-of-nevada-and-california-amendment-2015-01-09#i2
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

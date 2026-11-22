@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-22",
+ "documents_in_catalog": 1167,
+ "document_outcomes": {
+  "candidate": 610,
+  "no-candidate": 211,
+  "scanned-unreadable": 330,
+  "partly-scanned": 8,
+  "approval-letter-only": 7,
+  "not-captured": 1
+ },
+ "documents_reviewed": 310,
+ "documents_without_items": 12,
+ "items": 512,
+ "items_by_kind": {
+  "patron-dispute": 362,
+  "licensing-hearing": 11,
+  "other": 88,
+  "employee-grievance": 51
+ },
+ "items_by_confidence": {
+  "high": 284,
+  "low": 115,
+  "medium": 113
+ },
+ "items_by_current_kind": {
+  "patron-dispute": 361,
+  "licensing-hearing": 11,
+  "other": 89,
+  "employee-grievance": 48,
+  "not-a-dispute-procedure": 3
+ },
+ "quote_check": {
+  "exact": 512
+ },
+ "snippets_25_words_or_more": 0,
+ "ocr_text_items": 16,
+ "second_look": {
+  "not-queued": 389,
+  "keep": 118,
+  "change-kind": 2,
+  "not-a-dispute-procedure": 3
+ },
+ "second_look_kind_changes": {
+  "employee-grievance -> other": 1,
+  "patron-dispute -> other": 1
+ },
+ "nations": 319,
+ "nations_with_profile": 315,
+ "nations_with_kept_items": 265,
+ "nations_by_kept_kind": {
+  "patron-dispute": 257,
+  "employee-grievance": 37,
+  "licensing-hearing": 9,
+  "other": 74
+ },
+ "items_naming_method": {
+  "arbitration": 39,
+  "mediation": 11,
+  "peacemaking": 0,
+  "tribal court": 96
+ },
+ "search_logs": {
+  "found": 270,
+  "none-found": 13,
+  "partly-searched": 32
+ },
+ "second_look_queue_left": 0
+}
