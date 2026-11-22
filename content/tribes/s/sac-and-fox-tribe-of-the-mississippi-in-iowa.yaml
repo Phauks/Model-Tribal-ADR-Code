@@ -233,14 +233,15 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Constitution
-  link: https://meskwakicourt.org/tribal-code-%26-court-rules
+  link: https://img1.wsimg.com/blobby/go/a1a4fd11-f884-4d95-8763-e75c1d7e1fa8/downloads/1a0a91d9-4894-48d7-845b-49315e780511/CONSTITUTION%20AND%20BYLAWS.pdf?ver=1795120702350
   source: national-indian-law-library-sac-fox-mississippi-iowa
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribal Court''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://meskwakicourt.org/tribal-code-%26-court-rules,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Sac & Fox Tribe of the Mississippi in Iowa Constitution
   link: http://www.meskwaki.org/Constitution.html
@@ -265,9 +266,11 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/ias&fcons.html
   source: university-of-oklahoma-indian-reorganization-act-ias-fcons
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1937'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1937; the second gap review also confirmed this link.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -491,10 +494,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30695 (Tribe column of the designated agent table)
   note: 'Listed as: Sac and Fox Tribe of the Mississippi in Iowa Confidence lowered from high by the lead
     session: the notice prints its table as page images, so nation names were read from images and matched
-    to the roster.'
+    to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
+    the table); verification level unchanged because the name was not matched word for word in machine-read
+    text.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

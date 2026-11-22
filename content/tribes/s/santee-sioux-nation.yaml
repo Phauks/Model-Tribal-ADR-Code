@@ -166,14 +166,15 @@ governing_documents:
     (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Constitution
-  link: https://santeesiouxnation.com/downloads
+  link: https://img1.wsimg.com/blobby/go/0c6d25e2-926c-4437-85d8-54a6f6d761e2/downloads/Santee%20Trible%20Constitution.pdf?ver=1
   source: national-indian-law-library-santee-sioux-nation
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://santeesiouxnation.com/downloads, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution (Santee Sioux Tribe of the Sioux Nation of the State of Nebraska)
   year: '1936'
@@ -192,9 +193,11 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/sanchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-sanchrtr
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1936'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1936; the second gap review also confirmed this link.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -302,9 +305,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30691 (Tribe column of the designated agent table)
   note: 'Listed as: Santee Sioux Nation, Nebraska Confidence lowered from high by the lead session: the
-    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+    notice prints its table as page images, so nation names were read from images and matched to the roster.
+    Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
+    level unchanged because the name was not matched word for word in machine-read text.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

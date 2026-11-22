@@ -240,24 +240,26 @@ governing_documents:
     (Open Law Library).".'
 - kind: constitution
   title: Constitution
-  link: https://www.kiowatribe.org/legislative
+  link: https://www.kiowatribe.org/sites/default/files/inline-files/Kiowa%20Tribe%20Constitution%20April%2017%202017.pdf
   source: national-indian-law-library-kiowa
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.kiowatribe.org/legislative, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution
-  link: https://law.kiowatribe.org/
+  link: https://law.kiowatribe.org/us/nsn/kiowa/council/constitution/constitution.pdf
   source: national-indian-law-library-kiowa
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website (Open Law Library).".'
+    website (Open Law Library).". Link changed on 2026-11-22 from https://law.kiowatribe.org/, a page
+    that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Kiowa Indian Tribe Constitution
   link: https://nebula.wsimg.com/01e4bef267704e46f0aa16463f02e170?AccessKeyId=B5606416FE67A0E216FA&amp;disposition=0&amp;alloworigin=1
@@ -485,11 +487,13 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
-  verification: inferred
+  verification: read-in-full
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30714 (Tribe column of the designated agent table)
   note: 'Listed as: Kiowa Tribe Confidence lowered from high by the lead session: the notice prints its
-    table as page images, so nation names were read from images and matched to the roster.'
+    table as page images, so nation names were read from images and matched to the roster. Row re-read
+    on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
+    (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

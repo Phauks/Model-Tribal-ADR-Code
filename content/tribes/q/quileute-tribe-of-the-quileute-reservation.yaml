@@ -198,20 +198,23 @@ governing_documents:
   link: https://quileutenation.org/wp-content/uploads/2025/02/Constitution-with-amendments-approved-2.3.25.pdf
   source: national-indian-law-library-quileute-tribe
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Document opened on 2026-11-22 (the copy the constitution catalog work saved); its opening
+    text names the kind, nation and title; the second gap review also confirmed this link.'
 - kind: constitution
   title: Quileute Tribe Constitution and By-Laws
-  link: http://quileutenation.org/wp-content/uploads/2017/02/cblqtqr.pdf
+  link: https://quileutetribe.com/wp-content/uploads/2026/10/Constitution-Amended-9.17.26.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Quileute Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Link changed
+    on 2026-11-22 from http://quileutenation.org/wp-content/uploads/2017/02/cblqtqr.pdf, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).
 - kind: law-code
   title: Quileute Law and Order Codes
   link: https://quileutenation.org/court/law-and-order-codes/
@@ -227,9 +230,11 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/quilchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-quilchrtr
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1937'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1937; the second gap review also confirmed this link.
 - kind: constitution
   title: Constitution (Quileute Tribe of the Quileute Reservation Washington)
   year: '1936'
@@ -493,10 +498,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30700 (Tribe column of the designated agent table)
   note: 'Listed as: Quileute Tribe of the Quileute Reservation Confidence lowered from high by the lead
     session: the notice prints its table as page images, so nation names were read from images and matched
-    to the roster.'
+    to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
+    the table); verification level unchanged because the name was not matched word for word in machine-read
+    text.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

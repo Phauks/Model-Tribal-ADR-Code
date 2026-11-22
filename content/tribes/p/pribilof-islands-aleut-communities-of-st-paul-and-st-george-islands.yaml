@@ -164,11 +164,13 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/aleutcons.html
   source: national-indian-law-library-pribilof-islands
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
-    of Oklahoma website . Constitution. (St. Paul, 1950)".'
+    of Oklahoma website . Constitution. (St. Paul, 1950)". Document opened on 2026-11-22 (the copy the
+    constitution catalog work saved); its opening text names the kind, nation, title and year 1950; the
+    second gap review also confirmed this link.'
 - kind: constitution
   title: Constitution. (St. Paul
   year: '1950'
@@ -186,11 +188,13 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/aleutchrtr.html
   source: national-indian-law-library-pribilof-islands
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
-    of Oklahoma website . Corporate charter. (St. Paul, 1950)".'
+    of Oklahoma website . Corporate charter. (St. Paul, 1950)". Document opened on 2026-11-22 (the copy
+    the constitution catalog work saved); its opening text names the kind, nation, title and year 1950;
+    the second gap review also confirmed this link.'
 - kind: corporate-charter
   title: Corporate charter. (St. Paul
   year: '1950'
@@ -208,9 +212,11 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/aleutchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-aleutchrtr
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1950'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1950; the second gap review also confirmed this link.
 - kind: constitution
   title: Constitution and Bylaws of the Aleut Community Alaska
   year: '1950'
@@ -252,8 +258,10 @@ jurisdiction:
   confidence: medium
   verification: bulk-import
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
-  note: 'Listed as: Aleut Community of St. George Island; Aleut Community of St. Paul Island'
+  locator: 91 FR 30667 (Tribe column of the designated agent table)
+  note: 'Listed as: Aleut Community of St. George Island; Aleut Community of St. Paul Island. Row re-read
+    on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
+    level unchanged because the name was not matched word for word in machine-read text.'
 related_entities:
 - name: Aleut Corporation
   relation: alaska-native-claims-settlement-act-regional-corporation

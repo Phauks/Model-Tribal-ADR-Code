@@ -242,9 +242,49 @@ current fact but no current constitution listed. These are the profiles to
 search for a current constitution, recording the search in the per-nation
 search log if nothing is found.
 
+## Applied
+
+After this review was merged, a second, independent check of rows 21, 8 and 10 was run, and only the clear, mechanical changes that both checks agree on were made to records, each with a dated note. Everything that needs judgment stays in this review's files above for the lead author; no new review file was added. Scripts: `scripts/review/source_links.py`, `scripts/review/child_welfare_agents.py` and `scripts/review/governing_documents.py` (see `scripts/README.md`).
+
+### Source links (row 21)
+
+Session: [2026-11-22-source-link-check](../sessions/2026/2026-11-22-source-link-check.md). The second check requested 2,902 of the 4,617 addresses before it was stopped.
+
+| Change | Sources |
+| --- | ---: |
+| `history.status: removed` (gone in both checks) | 9 |
+| `history.status: moved`, new address in `history.changes` (same new address in both checks) | 2 |
+
+The nine removed are the two National Indian Gaming Commission gaming tribe reports, the 2008 petitioner list, Tulalip Resolution 2024-473, two Guam court documents, a Navajo Judicial Branch quarterly report, the 2016 Michigan Indian directory and a vLex journal page. The two moved are Mont. Code Ann. § 2-1-301 (archive.legmt.gov to mca.legmt.gov) and an Oneida Indian Nation page (.com to .org). `archives` was not touched.
+
+Not applied, because the checks disagree: five sources this review lists as gone answered 200 to the second check (three Cherokee Nation pages and two Crown-Indigenous Relations pages), and two others it lists as gone redirect to a longer address on the same site (Crown-Indigenous Relations). The lead author can decide these from the spreadsheet as before.
+
+Correction to the table above: 760 of the 769 sources listed as "loads, but moved to another site" are FederalRegister.gov notices whose redirect goes to unblock.federalregister.gov, the site's CAPTCHA page for scripts. The second check looked up 316 of them through the FederalRegister.gov API by document number, and all 316 exist at their recorded addresses. They have not moved. Six more are Uniform Law Commission download addresses that hand the file to a signed link on a file host; the addresses still work.
+
+### Indian Child Welfare Act designated agents (row 8)
+
+Session: [2026-11-22-child-welfare-agents-reread](../sessions/2026/2026-11-22-child-welfare-agents-reread.md). The second check transcribed the Tribe column of every page image by eye ([`2026-11-22-child-welfare-agents-table.csv`](2026-11-22-child-welfare-agents-table.csv), 582 rows with the printed page) and found all 575 facts, as this review did with OCR.
+
+| Change | Facts |
+| --- | ---: |
+| `locator` set to the page the nation's row is on, and a dated note that the row was re-read | 575 |
+| `verification: read-in-full`, where this review's OCR also matched the name word for word | 70 |
+| Note corrected: Chenega, which the table prints "Native Village of Chenega (aka Chenega)", not "(aka Chanega)" (checked at 300 dpi) | 1 |
+
+The other 505 facts keep their level (inferred, or bulk-import for the five combined rows), because their names were matched word for word only in the transcription, not in machine-read text. The six Minnesota Chippewa band profiles were left without a fact for the lead author, as above.
+
+### Governing documents (row 10)
+
+Session: [2026-11-22-governing-documents-opened](../sessions/2026/2026-11-22-governing-documents-opened.md). Of the 1,760 governing document facts still recorded by title only, the second check set aside 151 that the constitutions pull request (#55, merged since) edits, 520 law codes and court rules that the tribal law texts work fetched, and 192 with no link. For the other 897 it read the text of each document from the copies the constitution catalog and tribal law texts work saved, without fetching anything new.
+
+| Change | Facts |
+| --- | ---: |
+| `verification: read-in-full`: the document's heading gives its own title for its kind, it names the nation and the fact's title words and year, it is a full text, and this review also confirmed the link | 301 |
+
+The 301 are 147 constitutions and 154 corporate charters: 271 University of Oklahoma transcriptions of the 1930s and 1940s texts and 30 copies on other sites, almost all the nations' own or their courts'. The check was tightened after reading the opening of every copy outside the University of Oklahoma pages that passed a looser version: a page that only mentions a constitution, such as a convention page, a code's definitions or a National Indian Law Library table of contents, does not count. The rest stay title-only and are covered by the spreadsheet above. No dead link was replaced, because no replacement was clear in both checks.
+
+One lead for the lead author: four facts recorded as a constitution link to a University of Oklahoma corporate charter page (Angoon Community Association, Klawock Cooperative Association, Native Village of Barrow Inupiat Traditional Government, Native Village of Kotzebue); their kind or link needs correcting.
+
 ## Still for the lead author or Westlaw
 
-Rows 5 (KeyCite the legal history cases), 9 (Public Law 280), 13 (Alaska
-place-name languages), 14 (Alaska related entities), the duplicate groups in
-row 15, 18 (citator checks) and 22 (sensitivity flags) need the lead author
-or Westlaw and were not part of this review.
+Rows 5 (KeyCite the legal history cases), 9 (Public Law 280), 13 (Alaska place-name languages), 14 (Alaska related entities), the duplicate groups in row 15, 18 (citator checks) and 22 (sensitivity flags) need the lead author or Westlaw and were not part of this review.

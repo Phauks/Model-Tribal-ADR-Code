@@ -1,0 +1,182 @@
+profile: content/tribes/c/chemehuevi-indian-tribe-of-the-chemehuevi-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://chemehuevi.org/tribal-court
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: error
+  reason: '“Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status None; its reviewer found cannot-tell.'
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://chemehuevi.org/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: error
+  reason: 'Every court listed for this nation: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status None; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://chemehuevi.org/tribal-court
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Tribal Court”: The listed link answered with status 200; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://chemehuevi.org/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Home page status 200; 3 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://chemehuevi.org/sitemap.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Sitemap read; 0 addresses mention a court or judiciary.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://chemehuevi.org/tribal-court
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: 'Every court listed for this nation: Court-related page on the nation''s site, status 200; the
+    reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: state-court-directory
+  address: https://www.courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Chemehuevi”)'
+  outcome: found
+  reason: 'Every court listed for this nation: Judicial Branch of California, California Tribal Courts
+    Directory: lists this nation; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Bureau of Indian Affairs, Court of Indian Offenses: list
+    of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan.
+    7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Intertribal Court of Southern California, Member Tribes:
+    does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Northwest Intertribal Court System, Tribal Courts: does
+    not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: American Indian Law Center, Southwest Intertribal Court
+    of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Chemehuevi”)'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Tribal Court Clearinghouse (Tribal Law and Policy Institute),
+    Tribal Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/chemehuevi.html
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Court”: The National Indian Law Library nation page is the directory the listing came
+    from or a directory like it; it cannot confirm that the court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Tribal Court”: Claude read the gathered evidence against the review brief; verdict confirmed,
+    from https://chemehuevi.org/tribal-court.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-029
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.chemehuevi.net/tribal-court/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: blocked
+  reason: '“Chemehuevi Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 403; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.chemehuevi.net/tribal-court/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: '“Chemehuevi Tribal Court”: The listed link answered with status 403; it does not show this
+    court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.chemehuevi.net/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: '“Chemehuevi Tribal Court”: Home page status 403; 0 links mention a court; the site refused
+    or failed the request.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Chemehuevi Tribal Court”: Claude read the gathered evidence against the review brief; verdict
+    confirmed, from https://chemehuevi.org/tribal-court.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-030

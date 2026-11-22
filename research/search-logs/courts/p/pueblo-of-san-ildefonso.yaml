@@ -1,0 +1,127 @@
+profile: content/tribes/p/pueblo-of-san-ildefonso.yaml
+topic: courts
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sanipueblo.org/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: 'Every court listed for this nation: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found not-found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sanipueblo.org/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Home page status 200; 0 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sanipueblo.org/wp-sitemap.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Sitemap read; 0 addresses mention a court or judiciary.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Supreme Court of New Mexico, Tribal-State Judicial Consortium
+    roster (Jan. 2, 2026): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Bureau of Indian Affairs, Court of Indian Offenses: list
+    of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan.
+    7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Northwest Intertribal Court System, Tribal Courts: does
+    not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: American Indian Law Center, Southwest Intertribal Court
+    of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Ildefonso”)'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Tribal Court Clearinghouse (Tribal Law and Policy Institute),
+    Tribal Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/pueblo_san_ildefonso.html
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Court”: The National Indian Law Library nation page is the directory the listing came
+    from or a directory like it; it cannot confirm that the court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://law.sanipueblo.org
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    mentions a court in its title; no passage establishing a court was found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Tribal Court”: Claude read the gathered evidence against the review brief; verdict not-found-after-search.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-241
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Pueblo of San Ildefonso Tribal Court”: Claude read the gathered evidence against the review
+    brief; verdict not-found-after-search.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-242
+next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-241,
+  not-found-after-search); Pueblo of San Ildefonso Tribal Court (court-242, not-found-after-search).'

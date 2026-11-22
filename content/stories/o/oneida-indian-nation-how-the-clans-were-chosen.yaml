@@ -1,0 +1,60 @@
+id: oneida-indian-nation-how-the-clans-were-chosen
+title: How the Clans were Chosen
+nations:
+- oneida-indian-nation
+kind: traditional-story
+length: short
+excerpts:
+- telling: oneida-clans-page
+  locator: paragraph beginning "The custom to postpone"
+  text: For a long while, the village could not find a way that allowed the village to mourn the death of a village
+    member, as is custom, and continue with the village’s day to day matters. The leaders of the village were at
+    an impasse.
+  words: 44
+  sha256: fa5eb9d44da6f13a26e9d104bbc7161ea1ccf6a189722cdac818da9b4fb61c51
+- telling: oneida-clans-page
+  locator: paragraph beginning "Now, with the clans established"
+  text: Now, with the clans established, when one clan had a death in the family, one of the remaining clans would
+    console the grieving clan, leaving the other clan to attend to the village’s ceremonies and important day-to-day
+    business.
+  words: 38
+  sha256: f5c2184d0352e7ffe24ff58ce5534fe2455ff0508d8fc394dae2f34031d5a2d3
+topics:
+- mourning-and-consolation
+- role-of-leaders
+- clans
+- solving-a-community-problem
+tellings:
+- id: oneida-clans-page
+  source: oneida-indian-nation-how-the-clans-were-chosen
+  published_by: Oneida Indian Nation
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+access:
+  level: nation-review-first
+anthology:
+  candidate: true
+  reason: A short, complete legend on the Nation's own site about how a village found a way through an impasse among
+    its leaders, and how clans console one another (project analysis).
+  telling: oneida-clans-page
+  permission_from:
+  - holder: Oneida Indian Nation
+    for: both
+    nation: oneida-indian-nation
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-traditional-stories
+notes: The page ties the legend to the Haudenosaunee mourning process. The project quotes only the parts about the
+  village's problem and the clans consoling one another, and describes nothing of mourning practice itself.

@@ -77,7 +77,7 @@
       },
       "danger": {
         "$value": "#9C1C10",
-        "$description": "Errors only. 7.8:1 on paper."
+        "$description": "Errors, and the button that confirms a delete. 7.8:1 on paper; white text on it is 8.1:1."
       },
       "notice-background": {
         "$value": "#E6F3F4",
@@ -183,7 +183,7 @@
       },
       "danger": {
         "$value": "#FF8A80",
-        "$description": "Errors only. 7.5:1 on paper."
+        "$description": "Errors, and the button that confirms a delete. 7.5:1 on paper; dark action text on it is 7.7:1."
       },
       "notice-background": {
         "$value": "#173B40",
@@ -229,6 +229,18 @@
           "sans-serif"
         ],
         "$description": "The default for everything. Noto fonts load only for the characters Atkinson Hyperlegible Next lacks, through unicode-range. A reader can pick one of the other families in Settings; the site then points --font-family-reading at it."
+      },
+      "atkinson-hyperlegible-next": {
+        "$value": [
+          "Atkinson Hyperlegible Next",
+          "Noto Sans",
+          "Noto Sans Cherokee",
+          "Noto Sans Osage",
+          "Noto Sans Canadian Aboriginal",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "The same list as reading. It never changes, so the font dropdown in Settings can show the default font in its own typeface after a reader has picked another font."
       },
       "serif": {
         "$value": [

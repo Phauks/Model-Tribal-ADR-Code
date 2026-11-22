@@ -457,20 +457,22 @@ sup {
 /*
  * Reading settings (DESIGN.md, section 6, "Settings"). The inline script in
  * app.html sets these attributes on the root element from the reader's stored
- * choices before the page paints. Every size on the site is in rem, so the
- * text size scales the whole page. The doubled :root outranks the token
- * rules of both themes, whatever order the style sheets load in.
+ * choices before the page paints. The text size changes --text-scale, which
+ * multiplies every font size token, so text grows while boxes, spaces and
+ * controls keep their sizes (Trevor, Nov. 22, 2026). The doubled :root
+ * outranks the token rules of both themes, whatever order the style sheets
+ * load in.
  */
-:root[data-text-size='large'] {
-	font-size: 112.5%;
+:root:root[data-text-size='large'] {
+	--text-scale: 1.125;
 }
 
-:root[data-text-size='larger'] {
-	font-size: 125%;
+:root:root[data-text-size='larger'] {
+	--text-scale: 1.25;
 }
 
-:root[data-text-size='largest'] {
-	font-size: 150%;
+:root:root[data-text-size='largest'] {
+	--text-scale: 1.5;
 }
 
 :root:root[data-font='serif'] {

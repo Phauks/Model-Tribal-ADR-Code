@@ -1,0 +1,124 @@
+profile: content/tribes/s/sycuan-band-of-the-kumeyaay-nation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sycuantribe.com/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found not-found.'
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://g.co/kgs/w3iV649
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found not-found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sycuantribe.com/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: Home page status 200; 1 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sycuantribe.com/sitemap.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: error
+  reason: '“Sycuan Tribal Court”: No sitemap could be read at the usual addresses.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: Judicial Branch of California, California Tribal Courts Directory: does
+    not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: Bureau of Indian Affairs, Court of Indian Offenses: list of CFR Courts
+    and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan. 7, 2020):
+    does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Sycuan”)'
+  outcome: found
+  reason: '“Sycuan Tribal Court”: Intertribal Court of Southern California, Member Tribes: lists this
+    nation; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: Northwest Intertribal Court System, Tribal Courts: does not name this
+    nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: American Indian Law Center, Southwest Intertribal Court of Appeals (appellate
+    only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Sycuan”)'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: Tribal Court Clearinghouse (Tribal Law and Policy Institute), Tribal
+    Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://ncorj.org/tribal-law/treatment-as-penalty-alternative-2/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Sycuan Tribal Court”: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    mentions a court in its title; no passage establishing a court was found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Sycuan Tribal Court”: Claude read the gathered evidence against the review brief; verdict
+    served-by-intertribal-court, from https://www.intertribalcourt.org/member-tribes.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-278

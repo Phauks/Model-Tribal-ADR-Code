@@ -378,9 +378,11 @@ governing_documents:
     document: seminole-tribe-of-florida-constitution
     version: undated-text
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1957'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1957; the second gap review also confirmed this link.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -536,9 +538,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30687 (Tribe column of the designated agent table)
   note: 'Listed as: Seminole Tribe of Florida Confidence lowered from high by the lead session: the notice
-    prints its table as page images, so nation names were read from images and matched to the roster.'
+    prints its table as page images, so nation names were read from images and matched to the roster.
+    Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
+    level unchanged because the name was not matched word for word in machine-read text.'
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
