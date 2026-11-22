@@ -317,6 +317,8 @@ the design does not chop pages into rows of identical cards (project choice).
 
 **Tables.** For data a reader compares across rows. Wide tables scroll inside their own box, so the page never scrolls sideways. Data tables use the `DataTable` component, the project's own, not a data grid library (`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is built with every row in order, as a plain table that reads the same without scripts. Once scripts run, sortable column headers become buttons, following the WAI-ARIA Authoring Practices sortable table example (the sorted header carries `aria-sort`), and a table can get a search box with a live count, though public lists now leave finding to the site search. Sorting and search follow one set of rules in `src/lib/tables/table-definition.ts`: case and accents are ignored, numbers inside text sort as numbers, and empty cells stay last. A long list is split into short pages rather than drawn as one long table or a virtual-scrolling one: the table spike measured that a virtual-scrolling grid left most rows out of the page, so find-in-page, printing and reading without scripts could not reach them (`spikes/tables/REPORT.md`, "SVAR Svelte DataGrid: rejected").
 
+**Scrollbars.** Trevor asked on Nov. 22, 2026, for scrollbars that match the design. Every scrollbar has a teal thumb on a track the color of the side rails (tokens `scrollbar-thumb` and `scrollbar-track`), set once on the root with the standard `scrollbar-color` property, which every box that scrolls inherits.[^mdn-scrollbar-color] The thumb has at least 3:1 contrast with its track and with the page in both themes, the non-text minimum that MDN points to for this property;[^wcag-1411] with "More contrast" on, it becomes ink. Forced colors mode resets the property so the system's own scrollbars return. The width is left to the browser, because `scrollbar-width: thin` makes the thumb harder to grab. `scrollbar-color` works in Chrome and Edge 121, Firefox 64 and Safari 26.2 on macOS and iOS, and has been Baseline since December 2025.[^web-features-scrollbar-color] There is no `::-webkit-scrollbar` fallback for older Safari: giving those pseudo-elements a size turns the Mac's overlay scrollbars into ones that always show,[^chrome-scrollbar-styling] and older Safari already draws light or dark scrollbars from each theme's `color-scheme`.
+
 **Recognition.** Wherever a nation's recognition status is shown, its legal basis follows it in parentheses, and each citation in it links to the official text (Trevor asked on Nov. 22, 2026): Code of Federal Regulations parts and sections to the eCFR, United States Code sections to the Legal Information Institute, and the Statutes at Large (from 1951), Public Laws (from 1995) and the Federal Register to GovInfo's link service (`src/lib/legal-citations.ts`). Those are the address forms the project's source records already use. A legal basis with no such citation, such as a state executive order, links to the source the fact came from. Lists show a short form, such as "(25 C.F.R. Part 83)"; the nation's page shows the whole legal basis. This is a link on the authority itself, not a citation marker; the fact's own source keeps its marker and its entry in the Sources section.
 
 **Forms.** Labels above fields; hints under labels; "(optional)" in the label;
@@ -368,6 +370,8 @@ luminance formula (project calculation).
 | danger | `#9C1C10` | 7.8:1 | `#FF8A80` | |
 | placeholder-background | `#FFF0B3` | ink 14.4:1 | `#4A3B00` | ink 9.3:1 |
 | focus | `#FFD34D` with a 3 px ink ring | | `#FFD34D` | |
+| scrollbar-thumb | `#3F7F86` | 4.0:1 on its track | `#5A979E` | 4.6:1 on its track |
+| scrollbar-track | `#F6EEE6` (surface) | | `#16292D` (surface) | |
 
 Ratios are against each theme's paper unless stated.
 
@@ -626,6 +630,9 @@ The interface follows the style guide's voice: plain verbs, sentence case, "they
 [^dtcg]: Design Tokens Community Group, *Design Tokens Format Module* (draft), [designtokens.org/tr/drafts/format](https://www.designtokens.org/tr/drafts/format/).
 [^atkinson]: Braille Institute, *Atkinson Hyperlegible Font*, [brailleinstitute.org/freefont](https://www.brailleinstitute.org/freefont/) (accessed Nov. 21, 2026).
 [^butterick]: Matthew Butterick, *Practical Typography: Line length*, [practicaltypography.com/line-length.html](https://practicaltypography.com/line-length.html) (accessed Nov. 21, 2026).
+[^mdn-scrollbar-color]: MDN Web Docs, *scrollbar-color*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color).
+[^web-features-scrollbar-color]: W3C WebDX Community Group, *Web features explorer: scrollbar-color*, [web-platform-dx.github.io](https://web-platform-dx.github.io/web-features-explorer/features/scrollbar-color/); Apple, *Safari 26.2 Release Notes*, [developer.apple.com](https://developer.apple.com/documentation/safari-release-notes/safari-26_2-release-notes).
+[^chrome-scrollbar-styling]: Chrome for Developers, *Scrollbar styling*, [developer.chrome.com](https://developer.chrome.com/docs/css-ui/scrollbar-styling).
 [^mdn-color-scheme]: MDN Web Docs, *prefers-color-scheme*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
 [^mdn-reduced-motion]: MDN Web Docs, *prefers-reduced-motion*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion).
 [^webdev-caching]: web.dev, *Learn PWA: Caching*, [web.dev/learn/pwa/caching](https://web.dev/learn/pwa/caching).

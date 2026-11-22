@@ -106,6 +106,14 @@
       "map-class-4": {
         "$value": "#0F4C54",
         "$description": "Map: 100 or more nations."
+      },
+      "scrollbar-thumb": {
+        "$value": "#3F7F86",
+        "$description": "Scrollbar thumb, the part a reader drags. 4.0:1 on the scrollbar track and 4.4:1 on paper (non-text minimum 3:1)."
+      },
+      "scrollbar-track": {
+        "$value": "#F6EEE6",
+        "$description": "Scrollbar track, the strip the thumb moves along. Same as surface, like the side rails."
       }
     },
     "dark": {
@@ -212,6 +220,14 @@
       "map-class-4": {
         "$value": "#B5E8EC",
         "$description": "Map: 100 or more nations."
+      },
+      "scrollbar-thumb": {
+        "$value": "#5A979E",
+        "$description": "Scrollbar thumb, the part a reader drags. 4.6:1 on the scrollbar track and 5.2:1 on paper (non-text minimum 3:1)."
+      },
+      "scrollbar-track": {
+        "$value": "#16292D",
+        "$description": "Scrollbar track, the strip the thumb moves along. Same as surface, like the side rails."
       }
     }
   },
