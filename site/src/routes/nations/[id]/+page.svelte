@@ -263,9 +263,17 @@
 
 	.profile-introduction,
 	.profile-details,
-	.profile-sources,
-	.profile-glance {
+	.profile-sources {
 		max-width: var(--layout-measure);
+	}
+
+	/*
+	 * The fact box is a box, not running text, so a text size below 100
+	 * percent does not narrow it: it keeps the width it has at the standard
+	 * size (Trevor, Nov. 22, 2026: only text changes size).
+	 */
+	.profile-glance {
+		max-width: max(var(--layout-measure), calc(var(--layout-measure) / var(--text-scale)));
 	}
 
 	/*

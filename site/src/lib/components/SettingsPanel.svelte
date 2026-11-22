@@ -93,7 +93,9 @@
 		unknown
 	>;
 
-	const textSizeIndex = $derived(Math.max(0, textSizes.indexOf(settings.textSize)));
+	const textSizeIndex = $derived(
+		textSizes.includes(settings.textSize) ? textSizes.indexOf(settings.textSize) : textSizes.indexOf(defaultSettings.textSize)
+	);
 	const textSizeChoice = $derived(textSizeChoices[textSizeIndex]);
 
 	function changeTheme(value: Theme) {
@@ -156,12 +158,10 @@
 				step="1"
 				value={textSizeIndex}
 				aria-valuetext="{textSizeChoice.value} percent"
-				aria-describedby="setting-text-size-hint"
 				oninput={(event) => change('textSize', textSizes[Number(event.currentTarget.value)])}
 			/>
 			<span class="slider-end slider-end-large" aria-hidden="true">A</span>
 		</div>
-		<p class="hint" id="setting-text-size-hint">{textSizeChoice.hint}</p>
 	</div>
 {/snippet}
 
@@ -383,10 +383,6 @@
 
 	.slider-end-large {
 		font-size: 1.5rem;
-	}
-
-	.text-size .hint {
-		margin: var(--space-1) 0 0;
 	}
 
 	/* Symbol choices sit side by side in one bordered strip. The picked one is filled and has a bar under its symbol, not color alone. */
