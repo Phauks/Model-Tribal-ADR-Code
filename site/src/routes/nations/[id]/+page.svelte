@@ -84,17 +84,15 @@
 			{/each}
 		{/if}
 
-		<!-- 2. Review panel -->
-		<section class="panel panel-filled" aria-labelledby="review-heading" data-print-part="reviewStatus">
-			<h2 id="review-heading">Review status: {page.review.label}</h2>
-			<p>{page.review.meaning}</p>
-			{#if page.review.lastVerified}
-				<p class="small muted">Sources last checked {page.review.lastVerified}.</p>
-			{/if}
-			<p class="no-print">
-				<a class="button" href="/requests?record={record}">Is this about your nation? Make a request</a>
-			</p>
-		</section>
+		<!-- 2. Review status: a small badge and one line, not a panel (Trevor, Nov. 22, 2026) -->
+		<p class="review-status small" data-print-part="reviewStatus">
+			<span class="visually-hidden">Review status:</span>
+			<span class="status-badge">{page.review.label}</span>
+			<span class="muted">
+				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources last checked {page.review.lastVerified}.{/if}
+			</span>
+			<a class="no-print" href="/requests?record={record}">Is this about your nation? Make a request</a>
+		</p>
 
 		{#if !page.withdrawn && data.features.length > 0}
 			<!-- 3. About this Nation: the recorded features. The placeholder for the
@@ -158,6 +156,20 @@
 </article>
 
 <style>
+	.review-status {
+		margin: var(--space-3) 0 var(--space-5);
+	}
+
+	.status-badge {
+		display: inline-block;
+		margin-right: var(--space-2);
+		padding: 0 var(--space-2);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+		background: var(--color-surface);
+		font-weight: var(--font-weight-semibold);
+	}
+
 	.nation-image {
 		margin: var(--space-3) 0;
 	}

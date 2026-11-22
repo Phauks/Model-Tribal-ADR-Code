@@ -173,9 +173,7 @@ nation's staff always know where to look, as the Tribal Law Gateway does with
 its fixed sections on each nation's page:
 
 1. The nation's name, and the nation's own name for itself, exactly as the nation writes it, once the nation confirms it. The name shown, in the title and in every list, is the name on the recognizing list without the states the list adds after a comma: "Navajo Nation, Arizona, New Mexico, & Utah" shows as "Navajo Nation" (Trevor, Nov. 22, 2026; `displayName` in `src/lib/nation-labels.ts`). A state that belongs to the name stays, as in "Paiute Indian Tribe of Utah". When the two differ, a line under the title gives the listed name, which the search also finds and the CSV download keeps; when they are the same, no line is shown and the name's source is only in the Sources list (Trevor, Nov. 22, 2026, removed "Name as the recognizing list gives it"). Beside it, the nation's seal or logo when its reuse status allows showing it ([official-images.md](../docs/official-images.md)). The image has no caption (Trevor, Nov. 22, 2026): its Sources entry credits the nation's website and says the image belongs to the nation, which does not endorse this project, and the nation asks for its removal through Report a problem.
-2. Review panel: the review status (drafted from public sources, sent to the
-   nation, reviewed by the nation, approved by the nation), what that means,
-   and "Is this about your nation? Make a request."
+2. Review status: one small line, not a panel (Trevor, Nov. 22, 2026): a badge with the status (drafted from public sources, sent to the nation, reviewed by the nation, approved by the nation), what that means, the date the sources were last checked, and the link "Is this about your nation? Make a request."
 3. About this Nation (below; called "What is distinctive here" until Trevor renamed it on Nov. 22, 2026).
 4. At a glance: a small map of the states with a presence, then recognition, states with a presence, federal region, then the government contacts card.
 5. Courts and dispute resolution: one heading for each kind of service (Courts, Peacemaking, Mediation and so on), so a kind is never repeated after a name; under Courts, how appeals move from the court that hears a case first to the highest court, where sources record it ([data model](../docs/data-model.md#courts-and-the-path-of-appeal)).
@@ -185,7 +183,7 @@ its fixed sections on each nation's page:
 8. Notices and Labels from Local Contexts.
 9. Sources, each with links back to the markers that cite it, followed by the facts on the page that come from it, and the date the page was last checked.
 
-Each section from "About this Nation" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review panel stays open.
+Each section from "About this Nation" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review status line is not a section and does not fold.
 
 **About this Nation** holds the recorded features, and the section is left out when there are none. A short description the nation writes or approves will open it once a nation sends one; until then the page shows no placeholder for it (Trevor, Nov. 22, 2026, removed the "In the nation's own words" box). The site never writes that description for the nation.
 
