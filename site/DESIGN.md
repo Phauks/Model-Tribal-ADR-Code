@@ -780,28 +780,12 @@ changed. The print templates do not print the address yet.
 - **Budgets (project choice):** under 100 KB of JavaScript compressed on a
   section page; no map library in the browser (the map is a static SVG, per
   the map spike); fonts subset to the characters used.
-- **Map:** drawn at build time with d3-geo, with a table holding the same
-  data (map tool spike, project files `spikes/map/REPORT.md`). The page
-  `/nations/map` has two maps. The first shades states by how many nations
-  have a recorded presence there, and draws no nation's land
-  ([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)).
-  The second draws the twelve Bureau of Indian Affairs regions from the
-  Bureau's own boundary file (`geography/`), with a note that they are the
-  Bureau's administrative areas, not nations' lands; Trevor chose on
-  2026-11-21 to draw the official outlines even though the Navajo Region's
-  follows the Navajo Nation's land. `src/lib/map-geometry.ts` projects the
-  shapes once, in `vite.config.ts`, so the browser gets SVG paths and no map
-  library. `src/lib/nations-map-drawing.ts` turns them into the page's SVG
-  markup, which `/nations/map` shows with `{@html}` from a universal load, so
-  the outlines are sent once, in the page, and not again in the data the page
-  hydrates from; the regions map draws the land as one shape under the
-  regions. A reader who arrives from another page without reloading gets the
-  same markup from `/nations/map/drawings.json`. The grayscale print version
-  for the book is not built yet. Each
-nation's page also draws a small map of its states (see
-[Nation pages](#nation-pages)) from the same shapes, simplified to 5 percent
-of their points and whole map units so that it adds about 14 KB, before
-compression, to each of the 980 pages.
+- **Map:** drawn at build time with d3-geo, with a table holding the same data (map tool spike, project files `spikes/map/REPORT.md`). The site has one map, at `/nations/map`, with buttons above it that switch between views; Trevor asked on 2026-11-22 for one map with views rather than separate maps, so that more views can be added over time. The buttons are a tab list, the chosen view's address carries `?view=`, and a link to a row in a hidden view's table (such as a region linked from a nation's page) opens that view. Without scripts every view is shown, one after another, and print shows them all.
+  - **Nations by state** shades states by how many nations have a recorded presence there, and draws no nation's land ([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)).
+  - **Bureau of Indian Affairs regions** draws the twelve regions from the Bureau's own boundary file (`geography/`), with a note that they are the Bureau's administrative areas, not nations' lands. Trevor chose on 2026-11-21 to draw the official outlines even though the Navajo Region's follows the Navajo Nation's land.
+  - **Layout.** The 48 contiguous states and DC fill the top. Alaska, Hawaiʻi, Guam and the Northern Mariana Islands, American Samoa, and Puerto Rico and the U.S. Virgin Islands sit in a row of framed, labeled boxes below. Each box has its own equal-area projection, fitted to the box, and its own scale bar. The main map has a scale bar too. Together they show that every box is at a different scale and none is in its true place (Trevor, 2026-11-22). Every shape is drawn only by its own box's projection. The earlier composite projection from d3-composite-projections placed the islands in the open water beside the contiguous states with no frames, which read as their real positions.
+  - **Code.** `src/lib/map-geometry.ts` projects the shapes once, in `vite.config.ts`, so the browser gets SVG paths and no map library. `src/lib/nations-map-drawing.ts` turns them into each view's SVG markup. The page shows that markup with `{@html}` from a universal load. The outlines are sent once, in the page, and not again in the data the page hydrates from. A reader who arrives from another page without reloading gets the same markup from `/nations/map/drawings.json`. To add a view, add its drawing to `drawNationsMaps` and its entry and key to the page's list of views. The grayscale print version for the book is not built yet.
+  - **Nation pages.** Each nation's page also draws a small map of its states from the same shapes and boxes (see [Nation pages](#nation-pages)). Its outlines keep 5 percent of their points, rounded to whole map units, so the map stays light on each of the 980 pages.
 
 ## 12. Words in the interface
 

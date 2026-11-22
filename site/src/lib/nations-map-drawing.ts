@@ -1,12 +1,18 @@
 /**
- * Draws the two maps of /nations/map as SVG markup (site/DESIGN.md, section
- * 11). The page renders this markup with {@html}, so its outlines reach the
- * browser once, in the page itself, and not a second time in the data the
- * page hydrates from (src/routes/nations/map/+page.ts explains how).
+ * Draws the views of the one map on /nations/map as SVG markup (site/DESIGN.md,
+ * section 11). The page renders this markup with {@html}, so its outlines
+ * reach the browser once, in the page itself, and not a second time in the
+ * data the page hydrates from (src/routes/nations/map/+page.ts explains how).
+ *
+ * Each view is one drawing over the same layout: the 48 contiguous states and
+ * DC on top, and framed boxes for Alaska, Hawaiʻi and the territories below,
+ * each with its own label and scale bar (src/lib/map-geometry.ts). To add a
+ * view, add its drawing to `drawNationsMaps` and its entry to the page's list
+ * of views.
  *
  * The maps' styles are in the page, under .map-figure.
  */
-import type { MapGeometry } from './map-geometry.ts';
+import type { MapGeometry, ScaleBar } from './map-geometry.ts';
 
 /** A state or territory, with how many nations have a recorded presence there. */
 export interface StateCount {
@@ -30,11 +36,13 @@ export interface NationsMapCounts {
 	regions: RegionCount[];
 }
 
-/** The finished markup of each map. */
+/** The finished markup of each view of the map, by the view's key. */
 export interface NationsMapDrawings {
 	states: string;
 	regions: string;
 }
+
+export type NationsMapView = keyof NationsMapDrawings;
 
 const escape = (text: string): string =>
 	text
@@ -67,6 +75,48 @@ const titled = (tag: 'path' | 'circle', attributes: string, title: string) =>
 const link = (anchor: string, label: string, content: string) =>
 	`<a href="#${escape(anchor)}" aria-label="${escape(label)}">${content}</a>`;
 
+/** A scale bar: a line with end ticks, and the distance it stands for. */
+const drawScaleBar = (bar: ScaleBar) =>
+	`<path class="scale-bar" d="M${bar.x},${bar.y - 5}V${bar.y}H${bar.x + bar.length}V${bar.y - 5}"/>` +
+	`<text class="map-label scale-label" x="${bar.x + bar.length + 6}" y="${bar.y + 1}">${escape(bar.label)}</text>`;
+
+/**
+ * The frames under the main map, drawn behind the shapes: one box for each
+ * place drawn apart from the contiguous states.
+ */
+const drawFrames = (geometry: MapGeometry) =>
+	`<g class="inset-frames" aria-hidden="true">` +
+	geometry.insets
+		.map(
+			(inset) =>
+				`<rect class="inset-frame" x="${inset.x}" y="${inset.y}" width="${inset.width}" height="${inset.height}" rx="3"/>`
+		)
+		.join('') +
+	`</g>`;
+
+/**
+ * The frames' labels and every scale bar, drawn over the shapes. The labels
+ * are hidden from screen readers because each shape names its own place.
+ */
+const drawFrameLabels = (geometry: MapGeometry) =>
+	`<g class="inset-labels" aria-hidden="true">` +
+	geometry.insets
+		.map((inset) => {
+			const lines = inset.label
+				.map(
+					(line, index) =>
+						`<tspan x="${inset.x + 10}" dy="${index === 0 ? 0 : '1.15em'}">${escape(line)}</tspan>`
+				)
+				.join('');
+			return (
+				`<text class="map-label inset-label" x="${inset.x + 10}" y="${inset.y + 20}">${lines}</text>` +
+				drawScaleBar(inset.scaleBar)
+			);
+		})
+		.join('') +
+	drawScaleBar(geometry.mainScaleBar) +
+	`</g>`;
+
 function drawStates(geometry: MapGeometry, counts: Map<string, StateCount>): string {
 	const shapes: string[] = [];
 	const markers: string[] = [];
@@ -83,15 +133,18 @@ function drawStates(geometry: MapGeometry, counts: Map<string, StateCount>): str
 			`<line class="marker-line" x1="${marker.fromX}" y1="${marker.fromY}" x2="${marker.x}" y2="${marker.y}"/>`
 		);
 		const dot = titled('circle', `class="${fill}" cx="${marker.x}" cy="${marker.y}" r="9"`, description);
-		const code = `<text class="map-label marker-label" x="${marker.x + 12}" y="${marker.y + 5}">${escape(shape.code)}</text>`;
+		const onLeft = marker.labelSide === 'left';
+		const code = `<text class="map-label marker-label${onLeft ? ' label-on-left' : ''}" x="${marker.x + (onLeft ? -12 : 12)}" y="${marker.y + 5}">${escape(shape.code)}</text>`;
 		markers.push(state.count > 0 ? link(`state-${shape.code}`, description, dot + code) : dot + code);
 	}
 	return (
 		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="by-state-title">` +
 		`<title id="by-state-title">Number of nations with a recorded presence in each state and territory</title>` +
+		drawFrames(geometry) +
 		`<g class="states">${shapes.join('')}</g>` +
 		`<path class="state-borders" d="${geometry.stateBorders}"/>` +
 		`<g class="markers">${markers.join('')}</g>` +
+		drawFrameLabels(geometry) +
 		`</svg>`
 	);
 }
@@ -106,6 +159,7 @@ function drawRegions(geometry: MapGeometry, counts: Map<string, RegionCount>): s
 		regions.push(
 			link(region.anchor, description, titled('path', `class="region" d="${shape.path}"`, description))
 		);
+		if (!shape.showLabel) continue;
 		const lines = labelLines(shape.name)
 			.map(
 				(line, index) =>
@@ -119,11 +173,13 @@ function drawRegions(geometry: MapGeometry, counts: Map<string, RegionCount>): s
 	return (
 		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="regions-title">` +
 		`<title id="regions-title">The twelve regions of the Bureau of Indian Affairs</title>` +
+		drawFrames(geometry) +
 		`<path class="land" d="${geometry.land}"/>` +
 		`<g class="regions">${regions.join('')}</g>` +
 		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +
 		`<path class="region-borders" d="${geometry.regionBorders}"/>` +
 		`<g class="region-labels" aria-hidden="true">${labels.join('')}</g>` +
+		drawFrameLabels(geometry) +
 		`</svg>`
 	);
 }
