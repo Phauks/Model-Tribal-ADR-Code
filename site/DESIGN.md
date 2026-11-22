@@ -294,6 +294,8 @@ exactly. Rules:
 - In print, Typst draws `currentColor` as black, which suits the black-and-white
   interior.
 
+**Password fields.** Every password field is `src/lib/components/PasswordInput.svelte`: the field with a "Show" button beside it, carrying Lucide's `eye` icon (`eye-off` and "Hide" while the password shows), as Trevor asked on Nov. 22, 2026. It follows the GOV.UK password input: the button names its action for screen readers ("Show password", "Hide password"), a polite announcement says "Your password is visible" or "hidden", and the field goes back to hidden when the form is sent so the browser does not store the password as ordinary text.[^govuk-password] Without scripts the button does not appear.
+
 **Modal.** One shared modal dialog, `src/lib/components/Modal.svelte`, for
 every dialog on the site. It is the browser's own `<dialog>` opened as a
 modal: focus moves into it, stays in it, Escape closes it, and the page
@@ -841,6 +843,8 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^org-palettes]: Native Governance Center stylesheet, [nativegov.org](https://nativegov.org/wp-content/themes/ngc/dist/css/spm.min.css); National Congress of American Indians, [ncai.org](https://www.ncai.org/) (both read Nov. 21, 2026). Colors were taken from live CSS, not from published brand guides.
 [^gibson]: Colossal, article on Jeffrey Gibson's U.S. Pavilion at the 2024 Venice Biennale (Apr. 2024), [thisiscolossal.com](https://www.thisiscolossal.com/2024/04/jeffrey-gibson-us-pavilion/) (accessed Nov. 21, 2026).
 [^uswds-banner]: U.S. Web Design System, *Banner*, [designsystem.digital.gov/components/banner](https://designsystem.digital.gov/components/banner/) (accessed Nov. 21, 2026).
+[^govuk-password]: Government Digital Service, *Password input*, GOV.UK Design System, [design-system.service.gov.uk/components/password-input](https://design-system.service.gov.uk/components/password-input/) (accessed Nov. 22, 2026).
+
 [^govuk-one-thing]: Government Digital Service, *Structuring forms: start with one thing per page*, [gov.uk/service-manual/design/form-structure](https://www.gov.uk/service-manual/design/form-structure#start-with-one-thing-per-page) (accessed Nov. 21, 2026).
 [^govuk-a11y]: GOV.UK Design System, *Accessibility statement*, [design-system.service.gov.uk/accessibility-statement](https://design-system.service.gov.uk/accessibility-statement/) (accessed Nov. 21, 2026).
 [^wcag-143]: W3C, *Understanding Success Criterion 1.4.3: Contrast (Minimum)*, [w3.org/WAI/WCAG22/Understanding/contrast-minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).

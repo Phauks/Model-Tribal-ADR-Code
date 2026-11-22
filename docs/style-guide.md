@@ -137,6 +137,7 @@ These rules apply to every file in the repository, not only to published text.
   reliable.[^uax15] The `Text encoding` check
   ([scripts/check_text.py](../scripts/check_text.py)) enforces this on every
   pull request, and [.editorconfig](../.editorconfig) sets it in most editors.
+- **Never hard-wrap text.** A paragraph, list item, footnote, quotation, code comment or piece of page text is one line, however long; editors, GitHub and browsers wrap it to fit the reader's screen (Trevor's rule, Nov. 22, 2026). Breaking lines by hand at 80 or 100 characters splits sentences in the source, and every later edit reflows the whole paragraph in the diff. A deliberate line break, such as in an address, ends the line with two spaces or a backslash. The `Text encoding` job runs [scripts/check_wrapping.py](../scripts/check_wrapping.py), which refuses Markdown paragraphs that a pull request wraps; files wrapped before the rule will be unwrapped in one pass.
 - **The ʻokina** is written with the letter U+02BB (ʻ), not an apostrophe or
   quotation mark (project choice).
 - **Names in code are spelled out.** Variables, functions, files, schema
@@ -211,6 +212,10 @@ behind them is in the
   citation in AI-assisted text against the source itself before review. Garner
   calls "confident, well-formed fabrication" AI's "signature failure," and
   polished prose can hide it.[^garner]
+
+The `Prose flags` check ([scripts/check_prose.py](../scripts/check_prose.py))
+flags several of these habits on the lines a pull request adds. It only warns:
+each flag is a prompt to reread the sentence, not a ruling.
 
 ## 9. Review checklist
 

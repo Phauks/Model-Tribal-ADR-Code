@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PasswordInput from '#lib/components/PasswordInput.svelte';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -38,16 +39,16 @@
 	{#if hasPassword}
 		<div class="field">
 			<label for="current">Current password</label>
-			<input id="current" name="current" type="password" autocomplete="current-password" required />
+			<PasswordInput id="current" name="current" autocomplete="current-password" required />
 		</div>
 	{/if}
 	<div class="field">
 		<label for="password">New password</label>
-		<input id="password" name="password" type="password" autocomplete="new-password" minlength="12" required />
+		<PasswordInput id="password" name="password" autocomplete="new-password" minlength={12} required />
 	</div>
 	<div class="field">
 		<label for="repeated">New password again</label>
-		<input id="repeated" name="repeated" type="password" autocomplete="new-password" minlength="12" required />
+		<PasswordInput id="repeated" name="repeated" autocomplete="new-password" minlength={12} required />
 	</div>
 	<button class="button" type="submit">Save the password</button>
 	<p class="small">Saving signs out every other browser signed in to your account.</p>
@@ -59,7 +60,7 @@
 		<p>You will sign in with a code sent to your email address instead.</p>
 		<div class="field">
 			<label for="remove-current">Current password</label>
-			<input id="remove-current" name="current" type="password" autocomplete="current-password" required />
+			<PasswordInput id="remove-current" name="current" autocomplete="current-password" required />
 		</div>
 		<button class="button button-quiet" type="submit">Remove the password</button>
 	</form>

@@ -190,3 +190,10 @@ regional borough's page, or an unrelated word ("immediate", "remediation").
 - The fetched pages, passages, batches and verdicts are kept in a private
   work folder outside the repository, because they hold copies of Tribal
   legal texts.
+
+## Lead author decisions
+
+Nov. 22, 2026: gaming patron and employee grievance procedures, and clauses
+that only let a council or other body create a dispute resolution forum, are
+collected now and classified later. The 11 candidates of those two kinds are
+marked `keep` in the decision column; the rest still wait.
