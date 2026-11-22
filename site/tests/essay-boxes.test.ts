@@ -83,6 +83,17 @@ describe('case and law boxes', () => {
 		expect(prose).not.toContain('essay-attribution');
 	});
 
+	it('shows the fact lines under a box heading', () => {
+		const withFacts: EssayLibrary = {
+			...library,
+			facts: (box, key) => (box === 'case' && key === 'worcester-v-georgia' ? [['Decided', 'March 3, 1832'], ['Majority', '<strong>Marshall</strong> (opinion of the Court)']] : [])
+		};
+		const html = renderEssay(body, withFacts).html;
+		expect(html).toContain('<dl class="essay-case-facts">');
+		expect(html).toContain('<div><dt>Decided</dt><dd>March 3, 1832</dd></div>');
+		expect(html.match(/essay-case-facts/g)).toHaveLength(1);
+	});
+
 	it('counts a law box as a use of its source', () => {
 		expect([...referencesIn(body).sourceKeys].sort()).toEqual(['usc-25-1301', 'worcester-v-georgia']);
 	});
