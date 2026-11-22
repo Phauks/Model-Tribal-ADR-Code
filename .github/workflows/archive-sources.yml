@@ -162,7 +162,9 @@ jobs:
           git commit -m "chore(content): add Wayback captures for $count source records" \
             -m "Written by the archive workflow's catch-up job (scripts/apply_archive_report.py) from its archive report."
           git fetch origin main
-          git fetch origin "$CAPTURES_BASE"
+          # The captures pull request may have been merged (and its branch
+          # deleted) while this run was capturing; then start again from main.
+          git fetch origin "$CAPTURES_BASE" || git fetch origin main
           git rebase FETCH_HEAD
           git push origin HEAD:refs/heads/archive/captures
           echo "committed=true" >> "$GITHUB_OUTPUT"
