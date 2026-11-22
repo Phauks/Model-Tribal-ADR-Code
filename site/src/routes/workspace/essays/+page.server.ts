@@ -13,31 +13,33 @@ import {
 	saveVersion,
 	type EssayPart
 } from '#lib/server/essays.ts';
-import { canStartEssays, gitCopies, gitText, levelOn } from '#lib/server/essay-workspace.ts';
+import { canStartEssays, gitText, levelOn } from '#lib/server/essay-workspace.ts';
+import { syncEssaysFromGitOnce } from '#lib/server/essay-git-sync.ts';
 import { formText, requirePerson, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
 	const person = requirePerson(event);
-	const { database } = storage(event);
+	const { database, bucket } = storage(event);
+	// Text merged in git is saved here by itself (src/lib/server/essay-git-sync.ts);
+	// only paragraphs changed both here and in git wait for a person.
+	const outcomes = await syncEssaysFromGitOnce(database, bucket, true);
 	const summaries = await listEssays(database);
 	const levels = new Map(
 		await Promise.all(summaries.map(async (summary) => [summary.identifier, await levelOn(database, person, summary.identifier)] as const))
 	);
-	const { results } = await database
-		.prepare(
-			`SELECT essay_identifier, sha256 FROM essay_versions v
-			 WHERE number = (SELECT MAX(number) FROM essay_versions WHERE essay_identifier = v.essay_identifier)`
-		)
-		.all<{ essay_identifier: string; sha256: string }>();
-	const latestHashes = new Map(results.map((row) => [row.essay_identifier, row.sha256]));
 	const canStart = await canStartEssays(database, person);
-	const copies = await gitCopies(summaries, latestHashes);
-	const gitChanges = [];
-	for (const copy of copies) {
-		const level = levels.get(copy.identifier) ?? (await levelOn(database, person, copy.identifier));
-		if (atLeast(level, 'full') && !copy.sameAsLatest) gitChanges.push(copy);
+	const gitConflicts = [];
+	for (const outcome of outcomes) {
+		if (outcome.state !== 'conflict') continue;
+		const level = levels.get(outcome.identifier) ?? (await levelOn(database, person, outcome.identifier));
+		if (atLeast(level, 'full')) gitConflicts.push({ identifier: outcome.identifier, conflicts: outcome.conflicts, latestVersion: outcome.latestVersion });
 	}
+	const fromGit = outcomes.flatMap((outcome) =>
+		(outcome.state === 'saved' || outcome.state === 'merged') && atLeast(levels.get(outcome.identifier) ?? 'no-access', 'comment')
+			? [{ identifier: outcome.identifier, version: outcome.version, merged: outcome.state === 'merged' }]
+			: []
+	);
 	return {
 		essays: summaries
 			.filter((summary) => atLeast(levels.get(summary.identifier) ?? 'no-access', 'comment'))
@@ -52,7 +54,8 @@ export const load: PageServerLoad = async (event) => {
 					? { versionNumber: summary.published.versionNumber, at: essayDateTime(summary.published.publishedAt), link: essayPath(summary.identifier, summary.part) }
 					: null
 			})),
-		gitChanges,
+		gitConflicts,
+		fromGit,
 		canStart,
 		parts: essayParts.map((part) => ({ value: part, label: essayPartLabels[part] }))
 	};
@@ -75,9 +78,13 @@ export const actions: Actions = {
 				basedOn: latest?.number ?? null,
 				personIdentifier: person.identifier,
 				origin: 'git',
-				note: 'The text in git when the site was built'
+				note: 'From git, chosen over the edits made here'
 			});
-			return { done: saved.unchanged ? `${identifier} is already the same as git.` : `Brought in ${identifier} as version ${saved.version.number}.` };
+			return {
+				done: saved.unchanged
+					? `${identifier} is already the same as git.`
+					: `Saved the git text of ${identifier} as version ${saved.version.number}. Version ${latest?.number} stays in its history.`
+			};
 		} catch (problem) {
 			if (problem instanceof SaveConflict) return fail(409, { problem: problem.message });
 			throw problem;
