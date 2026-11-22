@@ -165,18 +165,13 @@ page.
   of the answers and the previewed credit line). History goes to the shared
   `events` table with target `profile`, which migration 0002 (permission
   tiers) allows.
-- **Pages:** `/join` (public, built ahead of time), `/contributors` (public, live), `/profile`,
-  `/profile/edit`, `/profile/review`, `/workspace/contributors` and
-  `/workspace/contributors/<identifier>`. All work without JavaScript. The
-  profile pages are never cached or framed, like the workspace.
+- **Pages:** `/join` (public, built ahead of time), `/contributors` (public, live), `/profile`, `/profile/edit`, `/profile/review`, `/workspace/contributors` and `/workspace/contributors/<identifier>`. All work without JavaScript. The profile pages are never cached or framed, like the workspace.
 - **Sign-in:** `src/routes/sign-in/callback/+server.ts` sends a verified
   account that is not on the People list to `/profile` instead of refusing
   it. `src/hooks.server.ts` sets `locals.account` on profile and workspace
   pages; `requirePerson` sends an account without workspace access to its
   profile.
-- **Tests:** `tests/contributors.test.ts` (credit lines, required answers, the
-  form) and `tests/contributor-profiles.test.ts` (drafts stay private,
-  versions, credits only from confirmed versions, workspace access, deletion, the 12-month cleanup) and `tests/credits-export.test.ts` (the book's Credits page).
+- **Tests:** `tests/contributors.test.ts` (credit lines, required answers, the form), `tests/contributor-profiles.test.ts` (drafts stay private, versions, credits only from confirmed versions, workspace access, deletion, the 12-month cleanup) and `tests/credits-export.test.ts` (the book's Credits page).
 
 ## Not built yet
 
