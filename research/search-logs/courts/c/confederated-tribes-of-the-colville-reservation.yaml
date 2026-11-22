@@ -1,0 +1,37 @@
+profile: content/tribes/c/confederated-tribes-of-the-colville-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://colvilletribes.com/colville-tribal-court
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: The court page says the Tribal Court consists of a trial court and the Colville Tribal Court of Appeals.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.colvilletribes.com/court-of-appeals
+  query: where appeals from each listed court go (path of appeal)
+  outcome: not-found
+  reason: The page publishes the Court of Appeals rules and decisions but does not say which court it hears appeals from.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.cct-cbc.com/s/1-1-Administrationoftribalcourt.pdf
+  query: where appeals from each listed court go (path of appeal)
+  outcome: scanned-unreadable
+  reason: Chapter 1-1 (September 2010 version) has no text layer; pages 1 to 4 and 13 to 14 were read as images. Section 1-1-41 establishes the Court of Appeals as the appellate court; the appellate proceedings sections were not on the pages read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://thorpe.law.ou.edu/archives/colville/CHPT1-1.html
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: An archived 1983 printing of Chapter 1-1, § 1-1-280, has the Appellate Court hear appeals from final judgments of the Trial Court. Not cited because it predates the 2010 revision.

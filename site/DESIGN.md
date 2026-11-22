@@ -181,7 +181,7 @@ its fixed sections on each nation's page:
 3. What is distinctive here (below).
 4. At a glance: a small map of the states with a presence, then recognition,
    states with a presence, government contacts, federal region.
-5. Courts and dispute resolution: each forum with its kind, source and date.
+5. Courts and dispute resolution: one heading for each kind of service (Courts, Peacemaking, Mediation and so on), so a kind is never repeated after a name; under Courts, how appeals move from the court that hears a case first to the highest court, where sources record it ([data model](../docs/data-model.md#courts-and-the-path-of-appeal)).
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
 7. Document history: each of the nation's documents that has recorded

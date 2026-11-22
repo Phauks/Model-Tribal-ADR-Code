@@ -1,6 +1,7 @@
 <script lang="ts">
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
+	import NationServices from '#lib/components/NationServices.svelte';
 	import PageTools from '#lib/components/PageTools.svelte';
 	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -135,7 +136,7 @@
 			<!-- 5. Courts and dispute resolution -->
 			{#if data.courts.length > 0}
 				<h2>Courts and dispute resolution</h2>
-				<FactGroups groups={data.courts} />
+				<NationServices categories={data.courts} />
 			{/if}
 
 			<!-- 6. Published dispute resolution law: linked, not reproduced -->

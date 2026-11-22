@@ -9,6 +9,7 @@ import {
 	type NationRecord
 } from '#lib/server/content.ts';
 import { documentHistoriesFor } from '#lib/server/document-history.ts';
+import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
@@ -158,33 +159,15 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	];
 }
 
-function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): FactGroup[] {
-	const courtsLabel = 'Courts and justice institutions';
-	const forumsLabel = 'Dispute resolution forums';
-	return [
-		...group(
-			'justice_institutions',
-			courtsLabel,
-			(record.justice_institutions ?? []).map((fact) =>
-				cited(sources, courtsLabel, fact, {
-					text: fact.name,
-					link: webLink(fact.link),
-					detail: humanize(fact.kind)
-				})
-			)
-		),
-		...group(
-			'dispute_resolution',
-			forumsLabel,
-			(record.dispute_resolution?.forums ?? []).map((fact) =>
-				cited(sources, forumsLabel, fact, {
-					text: fact.name ?? humanize(fact.kind),
-					link: webLink(fact.link),
-					detail: fact.name ? humanize(fact.kind) : undefined
-				})
-			)
-		)
-	];
+/**
+ * Courts and dispute resolution services, one heading per kind of service,
+ * with the appeal paths between courts (src/lib/nation-services.ts).
+ */
+function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): ServiceCategory[] {
+	return nationServices(
+		[...(record.justice_institutions ?? []), ...(record.dispute_resolution?.forums ?? [])],
+		(fact, section, text) => sources.use(fact, section, text)
+	);
 }
 
 function publishedLaw(record: NationRecord, sources: SourceUses): FactGroup[] {
