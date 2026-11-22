@@ -55,8 +55,9 @@ import {
 
 const cacheName = cacheNameOf(version);
 const offlinePage = '/offline';
-// The search page and its index are kept too, so the masthead's search box works offline.
-const corePages = ['/', '/glossary', '/changelog', '/search', offlinePage];
+// The search page and its index are kept too, so the masthead's search box works offline,
+// and so is the Starred page, since stars and notes live on the device.
+const corePages = ['/', '/glossary', '/changelog', '/search', '/starred', '/starred/shared', offlinePage];
 // edition.json, the fingerprints and SvelteKit's version.json say what the server has now, so
 // they always come from the network; a saved version.json would hide a new build from open tabs.
 // Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself.

@@ -7,7 +7,7 @@ describe('reader data export and import', () => {
 	const when = new Date('2026-11-22T08:00:00Z');
 
 	it('reads back what it writes', () => {
-		const data = buildReaderData({ ...defaultSettings, font: 'serif', textSize: '150' }, 'dark', { ...defaultPrintOptions, maps: 'off' }, ['glossary'], when);
+		const data = buildReaderData({ ...defaultSettings, font: 'serif', textSize: '150' }, 'dark', { ...defaultPrintOptions, maps: 'off' }, ['glossary'], [{ address: '/glossary/peacemaking', title: 'peacemaking', starredAt: when.toISOString(), note: 'Compare with the Navajo courts.' }], when);
 		expect(parseReaderData(JSON.stringify(data))).toEqual(data);
 	});
 
@@ -27,6 +27,23 @@ describe('reader data export and import', () => {
 		expect(data?.printOptions).toEqual(defaultPrintOptions);
 		expect(data?.savedParts).toEqual(['nations']);
 		expect(data?.exported).toBe('');
+		expect(data?.starred).toEqual([]);
+	});
+
+	it('keeps only starred pages it can read', () => {
+		const data = parseReaderData(
+			JSON.stringify({
+				kind: 'model-tribal-adr-code-reader-data',
+				version: 1,
+				starred: [
+					{ address: '/nations/navajo-nation', title: 'Navajo Nation', starredAt: '2026-11-22T08:00:00Z', note: 'Peacemaker Court' },
+					{ address: 'https://example.com/', title: 'Elsewhere' },
+					{ address: '/workspace', title: 'Workspace' },
+					{ address: '/nations/navajo-nation', title: 'Again' }
+				]
+			})
+		);
+		expect(data?.starred).toEqual([{ address: '/nations/navajo-nation', title: 'Navajo Nation', starredAt: '2026-11-22T08:00:00Z', note: 'Peacemaker Court' }]);
 	});
 
 	it('names the file with the day it was made', () => {

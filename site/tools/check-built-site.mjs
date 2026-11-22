@@ -26,6 +26,8 @@ const required = [
 	'nations.html',
 	'stories.html',
 	'offline.html',
+	'starred.html',
+	'starred/shared.html',
 	'downloads.html',
 	'manifest.webmanifest',
 	'icon.svg',
