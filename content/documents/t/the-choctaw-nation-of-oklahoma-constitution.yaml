@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 7 date
   to 1983-07-09. Versions are only those found; others may exist.'
 versions:
 - id: 1838-text
-  label: CONSTITUTION OF THE CHOCTAW NATION (1838)
+  label: 1838 constitution
   event: original
   status: superseded
   dates:
@@ -34,7 +34,7 @@ versions:
     summary: Article headed "Impeachment"; found by its heading and not yet read.
     verification: title-only
 - id: 1842-text
-  label: CONSTITUTION OF THE CHOCTAW NATION (1842)
+  label: 1842 constitution
   event: revision
   status: superseded
   dates:
@@ -67,7 +67,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in the earlier text and none in this one.
 - id: 1850-text
-  label: CONSTITUTION OF THE CHOCTAW NATION (1850)
+  label: 1850 constitution
   event: revision
   status: superseded
   dates:
@@ -95,7 +95,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.06, by script); not yet read side by side.
 - id: 1857-text
-  label: CONSTITUTION OF THE CHOCTAW NATION (1857)
+  label: 1857 constitution
   event: revision
   status: superseded
   dates:
@@ -132,7 +132,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in this text and none in the earlier one.
 - id: 1860-text
-  label: CONSTITUTION OF THE CHOCTAW NATION (1860)
+  label: 1860 constitution
   event: revision
   status: superseded
   dates:
@@ -169,7 +169,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
 - id: 1979-proposed
-  label: CONSTITUTION OF THE CHOCTAW NATION OF OKLAHOMA (1979)
+  label: 1979 proposed constitution
   event: revision
   status: proposed
   dates:
@@ -201,7 +201,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICALS"; found by its heading and not yet read.
     verification: title-only
 - id: 1983-text
-  label: CONSTITUTION OF THE CHOCTAW NATION OF OKLAHOMA (1983)
+  label: 1983 constitution
   event: revision
   status: in-effect
   dates:
@@ -222,19 +222,20 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article IX (PRIVILEGES, DUTIES AND POWERS OF LEGISLATIVE)
-    summary: Has the Tribal Council sit as a court in impeachment cases.
+    summary: Article headed "PRIVILEGES, DUTIES AND POWERS OF LEGISLATIVE"; an AI reviewer confirmed it
+      covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article XIII (PRIVILEGES, DUTIES AND POWERS OF JUDICIAL)
-    summary: Makes the Tribal Court the body with jurisdiction over constitutional and regulatory disputes,
-      with its decision final.
+    summary: Article headed "PRIVILEGES, DUTIES AND POWERS OF JUDICIAL"; an AI reviewer confirmed it covers
+      this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article XIII (PRIVILEGES, DUTIES AND POWERS OF JUDICIAL)
-    summary: Gives the Tribal Court exclusive jurisdiction to decide disputes arising under the constitution
-      or Tribal Council rules, by vote of two members.
+    summary: Article headed "PRIVILEGES, DUTIES AND POWERS OF JUDICIAL"; an AI reviewer confirmed it covers
+      this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

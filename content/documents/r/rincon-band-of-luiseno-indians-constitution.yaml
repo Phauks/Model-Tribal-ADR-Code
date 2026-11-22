@@ -1,0 +1,30 @@
+id: rincon-band-of-luiseno-indians-constitution
+kind: constitution
+title: Constitution of the Rincon Band of Luiseno Indians
+nations:
+- rincon-band-of-luiseno-indians
+jurisdictions:
+- level: tribal
+  tribe: rincon-band-of-luiseno-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1968-10-12.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1968-text
+  label: 1968 articles of association, as amended
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1968-10-12'
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/rincon-band-of-luiseno-indians/ffded76757839689.pdf
+    sha256: ffded76757839689468ee137537650731b56c3824979f09560927add05aa67e4
+    pages: 9
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

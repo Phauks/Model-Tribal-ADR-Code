@@ -1,0 +1,58 @@
+id: pokagon-band-of-potawatomi-indians-constitution
+kind: constitution
+title: Constitution of the Pokagon Band of Potawatomi Indians, Michigan and Indiana
+nations:
+- pokagon-band-of-potawatomi-indians
+jurisdictions:
+- level: tribal
+  tribe: pokagon-band-of-potawatomi-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2010.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2010-text
+  label: 2010 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2010'
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pokagon-band-of-potawatomi-indians/099813bc664eaf93.pdf
+    sha256: 099813bc664eaf936d4cdf0e2dd91db5c8f2eac7d2ee8d33f526d92d7d3de958
+    pages: 48
+  note: The text also prints adopted 2005-11-01, approved 2005-12-16, effective 2005-12-16, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked in effect because it is the newest dated text found, on the nation's own
+    site, on 2026-11-21; a later amendment may not be posted. Type and dates read from the text by an
+    AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article XV (RECALL, REMOVAL, AND VACANCIES)
+    summary: Article headed "RECALL, REMOVAL, AND VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XVII (CONFLICT OF INTEREST AND CODE OF ETHICS)
+    summary: Article headed "CONFLICT OF INTEREST AND CODE OF ETHICS"; found by its heading and not yet
+      read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XVIII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XV (governing the removal of members and the filling of vacancies as apply to the)
+    summary: Article headed "governing the removal of members and the filling of vacancies as apply to
+      the"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article X (Section 7 of this Constitution shall not classify that Council member as an)
+    summary: Article headed "Section 7 of this Constitution shall not classify that Council member as
+      an"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

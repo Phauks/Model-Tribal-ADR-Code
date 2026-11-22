@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 date
   to 2023. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
-  label: CONSTITUTION AND BY-LAWS (1938)
+  label: 1938 constitution and bylaws (1938-06-15)
   event: original
   status: superseded
   dates:
@@ -29,7 +29,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1938-text-2
-  label: CONSTITUTION AND BY-LAWS OF THE ALABAMA AND COUSHATTA TRIBES OF TEXAS (1938)
+  label: 1938 constitution and bylaws (1938-07-22)
   event: edition
   status: superseded
   dates:
@@ -51,8 +51,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1990-text
-  label: CONSTITUTION AND BY LAWS OF THE ALABAMA-COUSHATTA TRIBES OF TEXAS as amended through Amendment
-    No. 1, 1990-06-20
+  label: 1990 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -81,8 +80,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in this text and none in the earlier one.
 - id: 2016-text
-  label: Constitution and By Laws as amended through Amendment XXIII (incorporated; publication dated
-    January 2016, date of the amendment not stated)
+  label: 2016 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -133,8 +131,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
 - id: 2023-text
-  label: Constitution and By-Laws as amended through Amendment XXIII (incorporated; publication dated
-    July 2023, date of the amendment not stated)
+  label: 2023 constitution and bylaws, as amended
   event: edition
   status: in-effect
   dates:
@@ -161,34 +158,29 @@ versions:
   - topic: judicial-power
     locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
       – T)
-    summary: Establishes a Tribal Court and a Court of Appeals, whose judges the Tribal Council appoints,
-      with the appeals court reviewing Tribal Court decisions.
+    summary: Article headed "JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE
+      IV – TRIBAL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
       – T)
-    summary: Creates a Peacemaker Court of limited jurisdiction whose Peacemakers mediate disputes using
-      tribal customs and traditions.
+    summary: Article headed "JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE
+      IV – TRIBAL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - mediation
-    - peacemaking
   - topic: peacemaking
     locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
       – T)
-    summary: Creates a Peacemaker Court whose Peacemakers resolve disputes toward mutual agreement through
-      tribal customs and traditions.
+    summary: Article headed "JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE
+      IV – TRIBAL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - peacemaking
   - topic: sovereign-immunity
     locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
       – T)
-    summary: Only the Tribal Council, by written resolution, may waive the Tribe's sovereign immunity;
-      courts cannot abrogate it.
+    summary: Article headed "JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE
+      IV – TRIBAL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

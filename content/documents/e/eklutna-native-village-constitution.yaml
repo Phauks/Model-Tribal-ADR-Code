@@ -1,0 +1,37 @@
+id: eklutna-native-village-constitution
+kind: constitution
+title: Constitution of the Eklutna Native Village
+nations:
+- eklutna-native-village
+jurisdictions:
+- level: tribal
+  tribe: eklutna-native-village
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date.
+  Versions are only those found; others may exist.'
+versions:
+- id: undated-text
+  label: Undated constitution
+  event: original
+  status: unknown
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/eklutna-native-village/dcb90d3421e22cae.pdf
+    sha256: dcb90d3421e22cae76d5c7ad03f28b56829c1a6bbfa69f0bedb7b4cbbe55bdee
+    pages: 10
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL. RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL. RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

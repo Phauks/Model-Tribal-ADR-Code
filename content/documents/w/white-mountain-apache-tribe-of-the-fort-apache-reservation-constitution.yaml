@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1993-09-30. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
-  label: CONSTITUTION AND BY- LAWS (1938)
+  label: 1938 constitution
   event: original
   status: superseded
   dates:
@@ -34,8 +34,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1974-text
-  label: Amended Constitution and Bylaws of the White Mountain Apache Tribe of the Fort Apache Indian
-    Reservation, Arizona (1974)
+  label: 1974 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -77,8 +76,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1993-text
-  label: CONSTITUTION OF THE WHITE MOUNTAIN APACHE TRIBE - FORT APACHE RESERVATION as amended through
-    last amended, 1993 (no amendment label or day given)
+  label: 1993 constitution, as amended
   event: revision
   status: in-effect
   dates:
@@ -104,8 +102,7 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article VI (ELECTIONS)
-    summary: Has the Council adopt ordinances that set procedures for challenging voting rights and settling
-      election disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

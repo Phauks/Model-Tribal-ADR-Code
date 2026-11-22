@@ -1,0 +1,47 @@
+id: nulato-village-constitution
+kind: constitution
+title: Constitution of the Nulato Village
+nations:
+- nulato-village
+jurisdictions:
+- level: tribal
+  tribe: nulato-village
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1998-01-13.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1998-text
+  label: 1998 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1998-01-13'
+  source: constitution-nulato-village-1998-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/nulato-village/d69cebbce480ccf4.html
+    sha256: d69cebbce480ccf43c800f07745d127ca8ad8ae99c59dab78eaa89522ee6acea
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article 7 (REMOVAL, RECALL, FORFEITURE, VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURE, VACANCIES"; found by its heading and not yet
+      read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article 8 (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article 13 (SOVEREIGN IMMUNITY OF NULATO)
+    summary: Article headed "SOVEREIGN IMMUNITY OF NULATO"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

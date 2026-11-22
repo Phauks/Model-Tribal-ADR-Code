@@ -1,0 +1,50 @@
+id: karuk-tribe-constitution
+kind: constitution
+title: Constitution of the Karuk Tribe
+nations:
+- karuk-tribe
+jurisdictions:
+- level: tribal
+  tribe: karuk-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2008-07-19.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2008-text
+  label: 2008 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2008-07-19'
+  source: constitution-karuk-tribe-2008-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/karuk-tribe/325a40fcbc1886dd.html
+    sha256: 325a40fcbc1886dd6e258a6b12fae381719ec4e6cd33fb069b8221beffe3ed66
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: sovereign-immunity
+    locator: Article IV (Rights of Members)
+    summary: Article headed "Rights of Members"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article VI (Delegation of Authority to the Tribal Council)
+    summary: Article headed "Delegation of Authority to the Tribal Council"; an AI reviewer confirmed
+      it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VII (Elections and Nominations)
+    summary: Article headed "Elections and Nominations"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (Vacancies and Removal from Office)
+    summary: Article headed "Vacancies and Removal from Office"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

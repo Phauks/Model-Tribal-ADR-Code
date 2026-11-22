@@ -11,7 +11,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 date
   to 2005-07-26. Versions are only those found; others may exist.'
 versions:
 - id: 1943-text
-  label: CONSTITUTION AND BYLAWS OF THE (1943)
+  label: 1943 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -34,8 +34,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1953-text
-  label: Constitution and Bylaws of the Lac du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin
-    (including Amendments) as amended through Amendment IV, 1953-01-21
+  label: 1953 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -65,8 +64,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.78, by script); not yet read side by side.
 - id: 1974-amendment
-  label: Amendment Constitution and Bylaws of the Lac du Flambeau Band of Lake Superior Chippewa Indians
-    of Wisconsin as amended through Amendment XI, 1974-08-19
+  label: 1974 amendment
   event: amendment
   status: unknown
   dates:
@@ -94,8 +92,7 @@ versions:
     verification: inferred
     note: An amendment changes only what it names; compare by hand.
 - id: 1985-amendment
-  label: Amendment to the Constitution and Bylaws of the Lac du Flambeau Band of Lake Superior Chippewa
-    Indians as amended through Amendment XVI, 1985-11-05
+  label: 1985 amendment
   event: amendment
   status: unknown
   dates:
@@ -122,8 +119,7 @@ versions:
     verification: inferred
     note: An amendment changes only what it names; compare by hand.
 - id: 2005-text
-  label: CONSTITUTION AND BYLAWS OF THE LAC DU FLAMBEAU BAND OF LAKE SUPERIOR CHIPPEWA INDIANS OF WISCONSIN
-    (2005)
+  label: 2005 constitution and bylaws
   event: revision
   status: unknown
   dates:
@@ -152,49 +148,41 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article IX (TRIBAL GENERAL FUND BUDGET)
-    summary: Establishes a Tribal Trial Court and an Appeals Court as the judiciary, with the judicial
-      power vested in it.
+    summary: Article headed "TRIBAL GENERAL FUND BUDGET"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article IX (TRIBAL GENERAL FUND BUDGET)
-    summary: Lets the Tribal Council appoint other forums of special jurisdiction for traditional dispute
-      resolution.
+    summary: Article headed "TRIBAL GENERAL FUND BUDGET"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - customary-dispute-resolution
   - topic: peacemaking
     locator: Article IX (TRIBAL GENERAL FUND BUDGET)
-    summary: Lets the Tribal Council appoint forums for traditional dispute resolution as it deems necessary.
+    summary: Article headed "TRIBAL GENERAL FUND BUDGET"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - customary-dispute-resolution
   - topic: judicial-power
     locator: Article X (JUDICIARY SHALL BE ADDED TO PROVIDE FOR A TWO TIERED)
-    summary: Creates a two-tier judiciary with a Tribal Trial Court and an Appeals Court that reviews
-      final orders, sentences and judgments.
+    summary: Article headed "JUDICIARY SHALL BE ADDED TO PROVIDE FOR A TWO TIERED"; an AI reviewer confirmed
+      it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article X (JUDICIARY SHALL BE ADDED TO PROVIDE FOR A TWO TIERED)
-    summary: Gives the Trial Court original jurisdiction over cases and controversies, and lets the council
-      appoint forums for traditional dispute resolution.
+    summary: Article headed "JUDICIARY SHALL BE ADDED TO PROVIDE FOR A TWO TIERED"; an AI reviewer confirmed
+      it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - customary-dispute-resolution
   - topic: peacemaking
     locator: Article X (JUDICIARY SHALL BE ADDED TO PROVIDE FOR A TWO TIERED)
-    summary: Lets the Tribal Council appoint forums of special jurisdiction for traditional dispute resolution.
+    summary: Article headed "JUDICIARY SHALL BE ADDED TO PROVIDE FOR A TWO TIERED"; an AI reviewer confirmed
+      it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - customary-dispute-resolution
   - topic: sovereign-immunity
     locator: Article X (JUDICIARY SHALL BE ADDED TO PROVIDE FOR A TWO TIERED)
-    summary: States that Trial Court jurisdiction does not waive the Tribe's sovereign immunity.
+    summary: Article headed "JUDICIARY SHALL BE ADDED TO PROVIDE FOR A TWO TIERED"; an AI reviewer confirmed
+      it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

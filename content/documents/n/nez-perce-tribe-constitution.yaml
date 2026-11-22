@@ -1,0 +1,37 @@
+id: nez-perce-tribe-constitution
+kind: constitution
+title: Constitution of the Nez Perce Tribe
+nations:
+- nez-perce-tribe
+jurisdictions:
+- level: tribal
+  tribe: nez-perce-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2005-05-07.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2005-text
+  label: 2005 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2005-05-07'
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/nez-perce-tribe/259882e6f49a9698.pdf
+    sha256: 259882e6f49a9698e9d5fbb32892ea1a5376879c8a4e952984a0b82b7aa735fd
+    pages: 31
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL FROM OFFICE AND)
+    summary: Article headed "REMOVAL FROM OFFICE AND"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

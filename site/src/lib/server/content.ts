@@ -174,7 +174,8 @@ export interface DocumentVersion extends CitedFact {
 	label?: string;
 	event: string;
 	status: string;
-	dates: Partial<
+	/** Left out for a text that gives no date. */
+	dates?: Partial<
 		Record<
 			'signed' | 'adopted' | 'submitted' | 'approved' | 'published' | 'effective' | 'listed' | 'ended',
 			string

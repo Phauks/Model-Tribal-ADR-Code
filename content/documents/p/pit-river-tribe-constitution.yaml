@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1987-08-15. Versions are only those found; others may exist.'
 versions:
 - id: 1987-text
-  label: Constitution of the Pit River Tribe (Ajumawi-Atsugewi Nation) (1987)
+  label: 1987 constitution (Bureau of Indian Affairs file)
   event: original
   status: superseded
   dates:
@@ -34,7 +34,7 @@ versions:
     summary: Article headed "CERTIFICATE OF RESULTS OF ELECTION"; found by its heading and not yet read.
     verification: title-only
 - id: 1987-text-2
-  label: Constitution of the Pit River Tribe (1987)
+  label: 1987 constitution (website copy)
   event: edition
   status: in-effect
   dates:
@@ -56,8 +56,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article VII (POWERS)
-    summary: Empowers the Tribal Council to establish a tribal judicial system and Tribal Court rules,
-      and to form or join tribal courts.
+    summary: Article headed "POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

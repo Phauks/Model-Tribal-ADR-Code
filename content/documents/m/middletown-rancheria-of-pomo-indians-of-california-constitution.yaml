@@ -1,0 +1,48 @@
+id: middletown-rancheria-of-pomo-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Middletown Rancheria of Pomo Indians of California
+nations:
+- middletown-rancheria-of-pomo-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: middletown-rancheria-of-pomo-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2005-01-08.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2005-text
+  label: 2005 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '2005-01-08'
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/middletown-rancheria-of-pomo-indians-of-california/fafcf15f8590f7a0.pdf
+    sha256: fafcf15f8590f7a09a7398a27c797cd819f720d91ee45056ded01ff003413b2c
+    pages: 10
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VI (TRIBAL COURT/DISPUTE RESOLUTION FORUM)
+    summary: Article headed "TRIBAL COURT/DISPUTE RESOLUTION FORUM"; an AI reviewer confirmed it covers
+      this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VI (TRIBAL COURT/DISPUTE RESOLUTION FORUM)
+    summary: Article headed "TRIBAL COURT/DISPUTE RESOLUTION FORUM"; an AI reviewer confirmed it covers
+      this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article IX (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

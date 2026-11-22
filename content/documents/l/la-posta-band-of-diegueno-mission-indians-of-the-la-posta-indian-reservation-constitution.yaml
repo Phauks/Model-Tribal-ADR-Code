@@ -1,0 +1,37 @@
+id: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+kind: constitution
+title: Constitution of the La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation,
+  California
+nations:
+- la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1973-01-26.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1973-text
+  label: 1973 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1973-01-26'
+    approved: '1973-05-03'
+    effective: '1973-05-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation/dccd453ee8178188.pdf
+    sha256: dccd453ee8178188f130d51c96cac3c99d7f74c8764c2f2979669b7fc1e4b837
+    pages: 6
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

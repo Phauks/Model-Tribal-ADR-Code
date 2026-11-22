@@ -1,0 +1,43 @@
+id: yavapai-prescott-indian-tribe-constitution
+kind: constitution
+title: Constitution of the Yavapai-Prescott Indian Tribe
+nations:
+- yavapai-prescott-indian-tribe
+jurisdictions:
+- level: tribal
+  tribe: yavapai-prescott-indian-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1975-04-23.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1975-text
+  label: 1975 articles of association, as amended
+  event: edition
+  status: unknown
+  dates:
+    approved: '1975-04-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/yavapai-prescott-indian-tribe/54d34d82b0b62f13.pdf
+    sha256: 54d34d82b0b62f1316694a184126ac34f914e9cb353e312a4b8646481b41e2d2
+    pages: 33
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL AND RESIGNATION PROM OFFICE)
+    summary: Article headed "REMOVAL AND RESIGNATION PROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,40 @@
+id: lovelock-paiute-tribe-of-the-lovelock-indian-colony-constitution
+kind: constitution
+title: Constitution of the Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+nations:
+- lovelock-paiute-tribe-of-the-lovelock-indian-colony
+jurisdictions:
+- level: tribal
+  tribe: lovelock-paiute-tribe-of-the-lovelock-indian-colony
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1968-03.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1968-text
+  label: 1968 constitution and bylaws
+  event: original
+  status: in-effect
+  dates:
+    approved: 1968-03
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-lovelock-paiute-tribe-of-the-lovelock-indian-colony-1968-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lovelock-paiute-tribe-of-the-lovelock-indian-colony/932790b19d0f815c.pdf
+    sha256: 932790b19d0f815c6b344293b657ac889dd95b736c974fca7d2217508acf8bed
+    pages: 11
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (~ VACANCIES anp REMOVAL FROM OFFICE)
+    summary: Article headed "~ VACANCIES anp REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -54,6 +54,7 @@ and makes each edition reproducible
 │   ├── contributor-forms/   Consent, release and permission forms for those filings
 │   ├── roadmap.md           Order of work and review gates toward drafting
 │   ├── domain-to-do.md      Work that waits on the project's domain
+│   ├── outline.md           Working outline of the code, book and website
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records
 ├── LICENSES/                Full license texts

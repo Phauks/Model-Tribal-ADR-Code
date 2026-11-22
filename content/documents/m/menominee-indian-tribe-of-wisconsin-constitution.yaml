@@ -10,8 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1991-01. Versions are only those found; others may exist.'
 versions:
 - id: 1990-amendment
-  label: 'AMENDMENT: Constitution & Bylaws of the Menominee Indian Tribe of Wisconsin as amended through
-    Amendment IV, 1990-06-01'
+  label: 1990 amendment
   event: amendment
   status: unknown
   dates:
@@ -36,7 +35,7 @@ versions:
       its heading and not yet read.
     verification: title-only
 - id: 1991-text
-  label: CONSTITUTION AND BYLAWS OF THE MENOMINEE INDIAN TRIBE OF WISCONSIN (1991)
+  label: 1991 constitution and bylaws
   event: original
   status: unknown
   dates:
@@ -53,56 +52,49 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article V (THE TRIBAL JUDICIARY 7)
-    summary: Outlines the tribal judiciary's structure, judges' appointment and term, pay, qualifications,
-      removal and court rules.
+    summary: Article headed "THE TRIBAL JUDICIARY 7"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity
     locator: Article XVIII (SOVEREIGN IMMUNITY 35)
-    summary: Sets a general immunity from suit, with headings covering suits in tribal courts and in United
-      States courts.
+    summary: Article headed "SOVEREIGN IMMUNITY 35"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article III (POWERS OF TOE TRIRAT. GOVERNMENT)
-    summary: Vests all judicial power of the Tribe in the Tribal Judiciary, with its Supreme Court as
-      final interpreter of the Constitution.
+    summary: Article headed "POWERS OF TOE TRIRAT. GOVERNMENT"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article III (POWERS OF TOE TRIRAT. GOVERNMENT)
-    summary: Gives the Tribal Judiciary power to resolve controversies between persons arising under tribal,
-      federal, or state law.
+    summary: Article headed "POWERS OF TOE TRIRAT. GOVERNMENT"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article V (~ TO TRTRAL JUDICIARY)
-    summary: Establishes a three-judge Supreme Court with appellate jurisdiction, lets the Tribal Legislature
-      set up trial courts, and sets judges' terms.
+    summary: Article headed "~ TO TRTRAL JUDICIARY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article V (~ TO TRTRAL JUDICIARY)
-    summary: Creates a Supreme Court and trial courts with general original jurisdiction over civil and
-      criminal cases and controversies.
+    summary: Article headed "~ TO TRTRAL JUDICIARY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article XVIII (SOVEREIGN IMMUNITY)
-    summary: Lets persons subject to tribal jurisdiction sue the tribe in tribal courts to enforce rights,
-      and requires exhausting tribal remedies before federal suits.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity
     locator: Article XVIII (SOVEREIGN IMMUNITY)
-    summary: Keeps the tribe immune from suit except as authorized, and permits suits in tribal courts
-      under the Indian Civil Rights Act.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article V (DEFINITIONS)
-    summary: Defines 'shall' and 'may' and provides that a mandatory duty may be compelled by order of
-      the tribal court after administrative remedies.
+    summary: Article headed "DEFINITIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
 found_in:

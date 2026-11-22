@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 2021. Versions are only those found; others may exist.'
 versions:
 - id: 1937-text
-  label: CONSTITUTION AND BY-LAWS OF THE CHEYENNE-ARAPAHO TRIBES OF OKLAHOMA (1937)
+  label: 1937 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -27,7 +27,7 @@ versions:
     found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
     yet checked by the lead author.
 - id: 1941-text
-  label: CONSTITUTION AND BY-LAWS OF THE (1941)
+  label: 1941 constitution and bylaws
   event: edition
   status: superseded
   dates:
@@ -47,8 +47,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1982-text
-  label: CONSTITUTION AND BY-LAWS OF THE CHEYENNE-ARAPAHO TRIBES OF OKLAHOMA as amended through Amendment
-    I, 1982-01-09
+  label: 1982 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -96,8 +95,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in this text and none in the earlier one.
 - id: 2021-text
-  label: Amended Constitution of the Tsistsista - Hinonoei (Cheyenne and Arapaho Tribes) as amended through
-    Amendment to Article IV (Membership), approved at Special Election October 5, 2021
+  label: 2021 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -123,8 +121,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article IX (ELECTIONS)
-    summary: Creates a Judicial Commission that adopts a judicial ethics code, hears complaints about
-      judges and attorneys, and recommends discipline or removal.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
@@ -133,14 +130,12 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article X (SOVEREIGN IMMUNITY)
-    summary: Keeps the incumbent Chief Judge and three most recent Justices in office with full judicial
-      authority until replaced or reappointed.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity
     locator: Article X (SOVEREIGN IMMUNITY)
-    summary: Retains the Tribes' sovereign immunity from suit; only the Legislature and Tribal Council
-      may authorize a waiver, by specific law.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

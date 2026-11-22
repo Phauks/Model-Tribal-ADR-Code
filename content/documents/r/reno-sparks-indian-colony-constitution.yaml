@@ -1,0 +1,32 @@
+id: reno-sparks-indian-colony-constitution
+kind: constitution
+title: Constitution of the Reno-Sparks Indian Colony, Nevada
+nations:
+- reno-sparks-indian-colony
+jurisdictions:
+- level: tribal
+  tribe: reno-sparks-indian-colony
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1935-11-14.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1935-text
+  label: 1935 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    approved: '1935-11-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/reno-sparks-indian-colony/a6b723d5dd751074.html
+    sha256: a6b723d5dd751074da648d2751e2226df8e1d300653ee38b84debd755bc28c57
+  note: Dates read by rule from the certificates on the library page.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

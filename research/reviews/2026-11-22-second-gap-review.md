@@ -91,7 +91,18 @@ source and found 38. Reviewers checked the other 29 against the full source.
 What needs a decision:
 
 - **Wrong.** `content/methods/collaborative-law.yaml` quotes text that the
-  reviewer could not find in the Uniform Collaborative Law Rules and Act.
+  reviewer could not find in the Uniform Collaborative Law Rules and Act. A
+  follow-up search on Nov. 22 found the sentence in none of seven law review
+  articles and bar ethics opinions on collaborative law that use its key
+  phrases, so it has no known source. The Act's prefatory note defines the
+  process on its first page (page 6 of the PDF): "Collaborative law is a
+  voluntary, contractually based alternative dispute resolution process for
+  parties who seek to negotiate a resolution of their matter rather than
+  having a ruling imposed upon them by a court or arbitrator." It adds that
+  "[t]he parties agree in advance that their lawyers are disqualified from
+  further representing parties by appearing before a tribunal if the
+  collaborative law process ends without complete agreement." These are the
+  likely replacement.
   `content/methods/restorative-justice.yaml` quotes KTOO (2016) as "built on
   tribal mentorship and tradition", where the story says "a strong emphasis
   on".
@@ -99,13 +110,22 @@ What needs a decision:
   River peacemaker title prints "peace-making". `content/glossary/native-american.yaml`:
   the National Museum of the American Indian text includes "using valid
   reasoning and", which the quotation drops without an ellipsis.
-- **Not a quotation (3).** Paraphrases in quotation marks:
-  `government-to-government-issue-resolution.yaml` (NRS 233A.260), and the
-  glossary entries `indian-country.yaml` and `nation.yaml`. These should lose
-  the quotation marks or quote the source exactly.
-- **Cannot check.** `content/methods/screening-panel.yaml` cites Sander
-  (1976), which has no free online copy. This one belongs on the project's
-  Westlaw pull list or goes to the library.
+- **Not a quotation (3).** Correction, Nov. 22: these are not paraphrases in
+  quotation marks. The script paired a closing quotation mark with the next
+  opening one and took the record's own unquoted words between two short
+  quotations as a quotation. The quoted words themselves match their sources:
+  `government-to-government-issue-resolution.yaml` quotes NRS 233A.260 ("must
+  follow the policy", "to attempt to resolve the issue in collaboration with
+  the Indian tribe"); `indian-country.yaml` quotes the terms "Indian country"
+  and "Indian Country" (the Native Governance Center style guide says
+  "Capitalize the term Indian Country"); `nation.yaml` quotes "Red Lake
+  Nation Tribe" from Native Governance Center, How to Talk About Native
+  Nations, p. 3. No change is needed.
+- **Cannot check, since checked.** `content/methods/screening-panel.yaml`
+  cites Sander (1976), which has no free online copy. On Nov. 22 its three
+  quotations ("screening-adjudication model", "costing out" or "screening
+  out", and the three-person Board sentence) were found word for word in the
+  project's Westlaw copy of 70 F.R.D. 79, at *128-29.
 
 Caveats: the two Samoan sources were read through a web fetch tool, and the
 Organized Village of Kake source through OCR of a scanned PDF.

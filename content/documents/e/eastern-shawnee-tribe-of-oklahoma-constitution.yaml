@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1999-06-17. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
-  label: CONSTITUTION AND BY-LAWS (1939)
+  label: 1939 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -35,7 +35,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1994-text
-  label: Constitution of the Eastern Shawnee Tribe of Oklahoma (1994)
+  label: 1994 constitution
   event: revision
   status: superseded
   dates:
@@ -86,8 +86,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
 - id: 1999-text
-  label: Constitution of the Eastern Shawnee Tribe of Oklahoma as amended through Amendment Number 1,
-    1999-06-17
+  label: 1999 constitution, as amended
   event: revision
   status: unknown
   dates:
@@ -106,20 +105,17 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article X (JUDICIAL BRANCH)
-    summary: Vests the Tribe's judicial authority in a Court of Indian Offenses, to be replaced by a Tribal
-      Court with three judges once the Business Committee so determines.
+    summary: Article headed "JUDICIAL BRANCH"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article X (JUDICIAL BRANCH)
-    summary: Gives the Court of Indian Offenses jurisdiction over tribal disputes, including their settlement,
-      until a Tribal Court is established.
+    summary: Article headed "JUDICIAL BRANCH"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article XI (ELECTIONS)
-    summary: Requires the election ordinance to include a procedure for resolving election disputes, administered
-      by an impartial election board.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

@@ -137,6 +137,7 @@ These rules apply to every file in the repository, not only to published text.
   reliable.[^uax15] The `Text encoding` check
   ([scripts/check_text.py](../scripts/check_text.py)) enforces this on every
   pull request, and [.editorconfig](../.editorconfig) sets it in most editors.
+- **Never hard-wrap text.** A paragraph, list item, footnote, quotation, code comment or piece of page text is one line, however long; editors, GitHub and browsers wrap it to fit the reader's screen (Trevor's rule, Nov. 22, 2026). Breaking lines by hand at 80 or 100 characters splits sentences in the source, and every later edit reflows the whole paragraph in the diff. A deliberate line break, such as in an address, ends the line with two spaces or a backslash. The `Text encoding` job runs [scripts/check_wrapping.py](../scripts/check_wrapping.py), which refuses Markdown paragraphs that a pull request wraps; files wrapped before the rule will be unwrapped in one pass.
 - **The ʻokina** is written with the letter U+02BB (ʻ), not an apostrophe or
   quotation mark (project choice).
 - **Names in code are spelled out.** Variables, functions, files, schema
@@ -153,7 +154,70 @@ These rules apply to every file in the repository, not only to published text.
   (`found_in`). TypeScript and JavaScript: camelCase for values and functions,
   PascalCase for types and components (project choice).
 
-## 8. Review checklist
+## 8. Sound and rhythm
+
+Much of the project is drafted with help from AI tools. Readers have learned
+the habits of machine-written prose, and text that shows them reads as
+unchecked, whoever wrote it (project analysis). The rules below aim at clear,
+specific writing, not at beating detection tools, which have "non-trivial error
+rates."[^aisigns] Most of them describe weak prose in any case. The research
+behind them is in the
+[research session](../research/sessions/2026/2026-11-22-ai-and-human-prose.md).
+
+- **Say the specific thing.** Language models tend to "omit specific, unusual,
+  nuanced facts" and put in "more generic, positive descriptions."[^aisigns]
+  Name the nation, the section, the year and the source. If a sentence brings
+  no fact or picture to mind, it needs another pass.[^robbins]
+- **Use "is" and "has."** Write "The court is the forum of first resort," not
+  "The court serves as the forum of first resort." Machine text swaps "is" and
+  "are" for "serves as," "stands as" or "boasts," and human writing uses plain
+  verbs ("wrote," "used," "tried") more often than stiff ones ("authored,"
+  "utilized," "attempted").[^aisigns]
+- **Justify watch-list words.** Language models overuse words such as delve,
+  pivotal, crucial, underscore, showcase, foster, tapestry, testament, vibrant,
+  landscape and intricate.[^aisigns][^cmu] They are not banned. Use one only
+  when it is the most exact word. The list shifts as models change, so this
+  guide does not try to be complete.
+- **Claim significance only with a source.** Avoid trailing phrases such as
+  "highlighting its importance" or "reflecting broader trends" and labels such
+  as "a pivotal moment."[^aisigns] If a source says something mattered, cite
+  the source.
+- **Vary sentence length.** A run of sentences of one length drones; varying
+  the length creates "music."[^provost] Read important passages aloud. After a
+  long sentence, a short one lands a point.
+- **Put the point last.** English stresses the end of a sentence, and long,
+  heavy elements read best there.[^haisley] End on the new fact, the duty or
+  the exception, not on a qualifier.
+- **Save emphasis for what needs it.** When every sentence is pitched as
+  important, none stands out (project analysis). Let most sentences state facts
+  plainly.
+- **Avoid stock shapes.** Use "not X but Y" only to correct a view a reader
+  actually holds; used by reflex, the frame "can sound comprehensive without
+  committing to anything."[^robbins] List as many items as there are, not three
+  by habit, and do not close a section with a formula about "challenges" and
+  "future prospects."[^aisigns]
+- **Use all the punctuation.** Current models write longer sentences with
+  fewer commas and semicolons than human writers, and "hardly any
+  parentheses."[^economist] Use the full range, within the dash rule in
+  section 6.
+- **Commit where the sources allow.** Essays written by ChatGPT use fewer
+  hedges, boosters and attitude markers than students' essays, which gives them
+  "a more impersonal and expository tone."[^jiang-hyland] In commentary, say
+  which alternative suits which situation and label it as project analysis.
+  Hedge once, where doubt is real, and say what is uncertain: "the 1998 code is
+  the latest version found," not "may potentially apply."
+- **Name who holds a view.** Write who said it, not "experts argue" or
+  "observers note."[^aisigns]
+- **Check AI drafts against the sources.** Verify every fact, quotation and
+  citation in AI-assisted text against the source itself before review. Garner
+  calls "confident, well-formed fabrication" AI's "signature failure," and
+  polished prose can hide it.[^garner]
+
+The `Prose flags` check ([scripts/check_prose.py](../scripts/check_prose.py))
+flags several of these habits on the lines a pull request adds. It only warns:
+each flag is a prompt to reread the sentence, not a ruling.
+
+## 9. Review checklist
 
 Before opening a pull request with written content, check that:
 
@@ -166,6 +230,11 @@ Before opening a pull request with written content, check that:
       variables for nation-specific words;
 - [ ] nothing restricted or community-held is included without written
       approval;
+- [ ] sentence lengths vary, and sentences end on their point;
+- [ ] no watch-list word, unsourced claim of significance, vague attribution or
+      reflexive "not X but Y" remains without a reason;
+- [ ] every fact, quotation and citation in AI-assisted text was checked
+      against the source itself;
 - [ ] identifiers in code and data are spelled out, and the automated checks
       pass.
 
@@ -178,3 +247,11 @@ Before opening a pull request with written content, check that:
 [^nmai]: Smithsonian National Museum of the American Indian, *The Impact of Words and Tips for Using Appropriate Terminology: Am I Using the Right Word?* (Native Knowledge 360°), read from the [Arizona State Museum copy](https://statemuseum.arizona.edu/sites/default/files/Impact-of-Words-Tips-for-Using-Appropriate-Terminology.pdf) (accessed Nov. 20, 2026). Source record: `nmai-impact-of-words`.
 [^uax15]: Unicode Consortium, *Unicode Standard Annex #15: Unicode Normalization Forms*, [unicode.org/reports/tr15](https://unicode.org/reports/tr15/) (defines Normalization Form C).
 [^ngc-guide]: Native Governance Center, *How to Talk about Native Nations: A Guide* 3 (2021), [nativegov.org](https://nativegov.org/wp-content/uploads/2021/10/How-to-Talk-about-Native-Nations-A-Guide.pdf) (accessed Nov. 20, 2026). Source record: `ngc-how-to-talk-about-native-nations`.
+[^aisigns]: WikiProject AI Cleanup, *Wikipedia:Signs of AI writing*, Wikipedia, [en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (accessed Nov. 22, 2026). A volunteer field guide that calls itself "descriptive, not prescriptive." Source record: `wikipedia-signs-of-ai-writing`.
+[^cmu]: Alex Reinhart et al., *Do LLMs Write Like Humans? Variation in Grammatical and Rhetorical Styles*, 122 Proc. Nat'l Acad. Sci. e2422455122 (2025), [doi.org/10.1073/pnas.2422455122](https://doi.org/10.1073/pnas.2422455122) (finding that GPT-4o used words such as tapestry and intricate at more than 100 times the human rate); see also Stefanie Johndrow, *Is It Human, or Is It AI?*, Carnegie Mellon Univ. Dietrich Coll. News (Feb. 21, 2025), [cmu.edu](https://www.cmu.edu/dietrich/news/news-stories/2025/large-language-models-writing-text). Source records: `reinhart-2025-do-llms-write-like-humans`, `johndrow-2025-is-it-human-or-ai`.
+[^robbins]: Hollis Robbins, *How to Tell if Something Is AI-Written*, Anecdotal Value (Aug. 13, 2025), [hollisrobbinsanecdotal.substack.com](https://hollisrobbinsanecdotal.substack.com/p/how-to-tell-if-something-is-ai-written) (accessed Nov. 22, 2026). Source record: `robbins-2025-how-to-tell-ai-written`.
+[^provost]: Gary Provost, *100 Ways to Improve Your Writing* (1985), as quoted at [vanderburg.org/etc/quotes/provost-five](https://vanderburg.org/etc/quotes/provost-five) (accessed Nov. 22, 2026). Source record: `provost-1985-100-ways-to-improve-your-writing`.
+[^haisley]: Phillip Haisley, *A Concise Guide to English Grammar* § 19.2, [phil-a-sophist.github.io](https://phil-a-sophist.github.io/concise-guide-english-grammar/ch-19-organization-and-concision-sec-192.html) (accessed Nov. 22, 2026). Source record: `haisley-concise-guide-english-grammar`.
+[^economist]: *How to Spot AI Writing*, Economist (July 30, 2026), *quoted in* John Gruber, *The Economist: 'How to Spot AI Writing'*, Daring Fireball (Aug. 11, 2026), [daringfireball.net](https://daringfireball.net/linked/2026/08/11/economist-ai-writing) (accessed Nov. 22, 2026). Source records: `economist-2026-how-to-spot-ai-writing`, `gruber-2026-economist-how-to-spot-ai-writing`.
+[^jiang-hyland]: Feng (Kevin) Jiang & Ken Hyland, *Rhetorical Distinctions: Comparing Metadiscourse in Essays by ChatGPT and Students*, 79 English for Specific Purposes 17 (2025) (abstract). Source record: `jiang-hyland-2025-rhetorical-distinctions`.
+[^garner]: Bryan A. Garner, *Does Bryan Garner Think AI Will End Bad Legal Writing?*, ABA J. (Sept. 2, 2026), [abajournal.com](https://www.abajournal.com/columns/article/does-bryan-garner-think-ai-will-end-bad-legal-writing) (accessed Nov. 22, 2026). Source record: `garner-2026-ai-bad-legal-writing`.

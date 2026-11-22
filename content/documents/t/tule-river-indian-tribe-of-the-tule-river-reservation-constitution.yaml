@@ -10,8 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 1974-03-04. Versions are only those found; others may exist.'
 versions:
 - id: 1940-text
-  label: CONSTITUTION AND BYLAWS OF THE TULE RIVER INDIAN TRIBE OF CALIFORNIA as amended through Amendment
-    II, adopted 1940-05-24
+  label: 1940 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -28,8 +27,7 @@ versions:
     a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
     (Claude Haiku), not yet checked by the lead author.
 - id: 1974-text
-  label: CONSTITUTION AND BYLAWS OF THE TULE RIVER INDIAN TRIBE OF CALIFORNIA as amended through Amendment
-    V, adopted 1974-01
+  label: 1974 constitution and bylaws, as amended (text 1)
   event: edition
   status: superseded
   dates:
@@ -48,8 +46,7 @@ versions:
     a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
     (Claude Haiku), not yet checked by the lead author.
 - id: 1974-text-2
-  label: CONSTITUTION AND BYLAWS OF THE TULE RIVER INDIAN TRIBE, CALIFORNIA as amended through Amendment
-    V, approved 1974-03-04
+  label: 1974 constitution and bylaws, as amended (text 2)
   event: edition
   status: superseded
   dates:
@@ -74,14 +71,13 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article VI (Powers and Duties of the Tribal Council)
-    summary: Empowers the Tribal Council to establish courts that adjudicate claims or disputes among
-      tribal members, and to help members present claims elsewhere.
+    summary: Article headed "Powers and Duties of the Tribal Council"; an AI reviewer confirmed it covers
+      this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article V (Tribal Court (Judicial Code))
-    summary: Requires the council to establish a tribal court with jurisdiction over offenses and over
-      disputes among Indians on the reservation, including cases brought by stipulation.
+    summary: Article headed "Tribal Court (Judicial Code)"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:
@@ -101,8 +97,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in this text and none in the earlier one.
 - id: 1974-text-3
-  label: Constitution and Bylaws of the Tule River Indian Tribe of California as amended through Amendment
-    V, approved 1974-03-04
+  label: 1974 constitution and bylaws, as amended (text 3)
   event: edition
   status: unknown
   dates:

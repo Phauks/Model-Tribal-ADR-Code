@@ -1,0 +1,46 @@
+id: jackson-band-of-miwuk-indians-constitution
+kind: constitution
+title: Constitution of the Jackson Band of Miwuk Indians
+nations:
+- jackson-band-of-miwuk-indians
+jurisdictions:
+- level: tribal
+  tribe: jackson-band-of-miwuk-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1996.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1997-text
+  label: 1997 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1996'
+    approved: 1997-01
+    effective: 1997-01
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/jackson-band-of-miwuk-indians/9eea1250fe6a1a32.pdf
+    sha256: 9eea1250fe6a1a324c70fb2ebd251a9f3ce39bc772f31ce655bea006995fd17d
+    pages: 16
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES, REMOVAL, AND RECALL)
+    summary: Article headed "VACANCIES, REMOVAL, AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

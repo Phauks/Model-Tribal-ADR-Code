@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2004-08-20. Versions are only those found; others may exist.'
 versions:
 - id: 1937-text
-  label: CONSTITUTION AND BY-LAWS (1937)
+  label: 1937 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1991-text
-  label: CONSTITUTION OF THE SAC AND FOX NATION as amended through Amendment III, 1991-12-28
+  label: 1991 constitution, as amended
   event: edition
   status: superseded
   dates:
@@ -80,8 +80,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in the earlier text and none in this one.
 - id: 2004-text
-  label: CONSTITUTION OF THE SAC AND FOX NATION as amended through Proposed Amendment A, designated Amendment
-    No. VI (OCR unclear), 2004-08-20
+  label: 2004 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -102,18 +101,14 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article Iv (GRIEVANCE COMMITTEE _)
-    summary: Vests the judicial power of the Nation in a Supreme Court of five Justices and inferior courts
-      set up by tribal law.
+    summary: Article headed "GRIEVANCE COMMITTEE _"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article Iv (GRIEVANCE COMMITTEE _)
-    summary: Creates a Grievance Committee that hears complaints of misconduct by Business Committee members
-      and calls Governing Council meetings to act on them.
+    summary: Article headed "GRIEVANCE COMMITTEE _"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - council-hearing
   changes:
   - topic: judicial-power
     compared_with: 1991-text

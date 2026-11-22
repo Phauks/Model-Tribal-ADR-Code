@@ -36,8 +36,9 @@ and some nations keep theirs to citizens; the project records what it found
 and does not guess.
 
 Totals: 1,279 documents (11,374 pages) for 396 nations, of which 1,130 are
-distinct texts; 219 version histories (nations with two or more dated
-versions) holding 630 versions; 571 new source records; 2,012 article rows.
+distinct texts; 391 version histories (one for every nation with a text
+found, 225 of them with two or more versions) holding 808 versions; 617 new
+source records; 2,212 article rows.
 
 ## Files
 
@@ -45,7 +46,7 @@ versions) holding 630 versions; 571 new source records; 2,012 article rows.
 | --- | --- | --- |
 | [`coverage`](coverage.csv) (`.csv`, `.json`) | Federally recognized nation: status, versions found, newest version and its status, topics found in it, where it was looked for | [`scripts/constitutions/build_catalog.py`](../../scripts/constitutions/build_catalog.py) |
 | [`documents`](documents.csv) | Captured document classed as a constitution, constitution and bylaws, bylaws, amendment, articles of association, proposed constitution or corporate charter: printed title, dates, Secretarial approval clause, version, source record, capture | `build_catalog.py` |
-| [`articles`](articles.csv) | Article of a captured text that a word match tied to a tracked topic, with the AI reviewer's confirmation and one-sentence summary where one was asked for | `build_catalog.py`, [`summarize_articles.py`](../../scripts/constitutions/summarize_articles.py) |
+| [`articles`](articles.csv) | Article of a captured text that a word match tied to a tracked topic, with the AI reviewer's confirmation where one was asked for | `build_catalog.py`, [`summarize_articles.py`](../../scripts/constitutions/summarize_articles.py) |
 | [`briefs/`](briefs/) | The instructions the AI reviewers followed | |
 
 The version histories are `content/documents/<letter>/<nation>-constitution.yaml`
@@ -53,9 +54,22 @@ The version histories are `content/documents/<letter>/<nation>-constitution.yaml
 Each version's text has a source record
 `content/sources/c/constitution-<nation>-<version>.yaml` (kind
 `tribal-constitution`), unless a record for the same link already existed.
-A nation with one dated version gets a source record but no history record
-(decision record 0018: a single version needs none); its row in
-`coverage` still gives the version and its topics.
+Every nation with a constitution text found has a history record, even with
+one version, so its page on the website lists its constitution with a link to
+the public copy (lead author, Nov. 22, 2026; an exception to decision record
+0018, which needs no record for a single version). A nation whose texts carry
+no legible date gets undated versions, in no order, with no `dates`.
+
+Versions are named plainly by year and kind, for example "1969 constitution
+and bylaws, as amended" or "Undated constitution"; two versions that would
+share a name are told apart by date, then by where the copy came from, then
+by number. The printed title, in title case with scan breaks joined, stays in
+the source record's citation; a title the scan garbled is replaced by a
+supplied one in brackets.
+
+No AI summaries of constitutions are kept in these files or shown on the
+website (lead author, Nov. 22, 2026: "No reason for it"). The reviewers'
+summaries stay with the private work files.
 
 ## Where the texts came from
 
@@ -114,10 +128,9 @@ list.
   the adoption date (often the approval to hold the election) is left out.
   When a Bureau scan has no legible date, its file name's date is used and
   flagged.
-- **Clauses:** an article is listed as a clause when an AI reviewer read it
-  and confirmed the topic (`read-in-full`, with a summary and any dispute
-  resolution methods named), or when its heading names the topic
-  (`title-only`, "not yet read"). Articles matched only by words in the body
+- **Clauses:** an article is listed as a clause, by its number and heading,
+  when an AI reviewer read it and confirmed the topic (`read-in-full`), or
+  when its heading names the topic (`title-only`, "not yet read"). Articles matched only by words in the body
   stay in `articles` as leads. Reviewers saw at most 3,500 characters of each
   article, so a provision later in a long article can be missed.
 - **Changes:** for each version that supersedes another, each topic is
@@ -157,7 +170,8 @@ removed (reviewer readings, not checked). The election rules are in 25 C.F.R.
 part 81 (Secretarial Elections), and Oklahoma and Alaska nations organized
 under their own acts (the Oklahoma Indian Welfare Act and the 1936 Alaska
 amendment to the Indian Reorganization Act). Those three have no source
-record yet; they are on the pull list.
+record yet; they are on the project's pull list
+(`research/documents-to-get.md` in the project files).
 
 ## Limits
 

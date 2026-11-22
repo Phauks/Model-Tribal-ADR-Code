@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1988-08-09. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
-  label: CONSTITUTION AND BY-LAWS (1938)
+  label: 1938 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -35,7 +35,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1977-text
-  label: Constitution of the Absentee Shawnee Tribe of Indians of Oklahoma (1977)
+  label: 1977 constitution, as amended
   event: revision
   status: superseded
   dates:
@@ -60,8 +60,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1988-text
-  label: CONSTITUTION AND BYLAWS OF THE ABSENTEE SHAWNEE TRIBE OF INDIANS OF OKLAHOMA as amended through
-    Amendment A (Article II Jurisdiction), 1988-08-09
+  label: 1988 constitution and bylaws, as amended
   event: revision
   status: unknown
   dates:
@@ -83,8 +82,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article IV (Tribal Government)
-    summary: Vests the judicial power in one Supreme Court and inferior courts, and lets tribal courts
-      strike down unconstitutional legislative enactments.
+    summary: Article headed "Tribal Government"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -98,18 +96,17 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article IV (TRIBAL GOVERNMENT)
-    summary: Sets up a Tribal Court plus an Appeals Court, whose members are elected by tribal referendum.
+    summary: Article headed "TRIBAL GOVERNMENT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article V (POWERS)
-    summary: Has the Judicial Branch hold hearings and render decisions on internal disputed issues, through
-      a Tribal Court and an Appeals Court.
+    summary: Article headed "POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article VI (ELECTIONS)
-    summary: Requires the Election Ordinance to include provisions for settling election disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -127,8 +124,7 @@ versions:
     verification: title-only
   - topic: sovereign-immunity
     locator: Article X (BILL OF RIGHTS)
-    summary: Says that accepting the Indian Civil Rights Act does not give up the tribe's immunity from
-      suit.
+    summary: Article headed "BILL OF RIGHTS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -141,13 +137,9 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article V (Committees)
-    summary: Has a Grievance Committee investigate complaints about Business Committee officers' conduct,
-      and lets the Council remove an officer after a hearing.
+    summary: Article headed "Committees"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - fact-finding
-    - council-hearing
   changes:
   - topic: judicial-power
     compared_with: 1977-text

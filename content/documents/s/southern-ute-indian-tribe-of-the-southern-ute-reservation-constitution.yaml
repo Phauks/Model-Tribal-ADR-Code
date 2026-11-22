@@ -10,8 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 1991-08-16. Versions are only those found; others may exist.'
 versions:
 - id: 1936-text
-  label: CONSTITUTION AND BY-LAWS OF THE SOUTHERN UTE TRIBE OF THE SOUTHERN UTE RESERVATION, COLORADO
-    (1936)
+  label: 1936 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -30,7 +29,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1945-text
-  label: CONSTITUTION AND BY-LAWS OF THE (1945)
+  label: 1945 constitution and bylaws
   event: edition
   status: superseded
   dates:
@@ -50,8 +49,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1975-text
-  label: CONSTITUTION of the SOUTHERN UTE INDIAN TRIBE of the SOUTHERN UTE INDIAN RESERVATION, COLORADO
-    (1975)
+  label: 1975 constitution
   event: edition
   status: superseded
   dates:
@@ -88,8 +86,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in this text and none in the earlier one.
 - id: 1991-text
-  label: CONSTITUTION OF THE SOUTHERN UTE INDIAN TRIBE as amended through Amendment of Article II, Section
-    1(c), 1991-08-16
+  label: 1991 constitution, as amended
   event: revision
   status: in-effect
   dates:
@@ -114,7 +111,7 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article IV (NOMINATIONS AND ELECTIONS)
-    summary: Has an election board appointed by the council maintain the voter register and rule on eligibility.
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

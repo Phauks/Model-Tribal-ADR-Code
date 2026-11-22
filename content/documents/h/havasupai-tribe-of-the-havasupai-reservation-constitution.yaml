@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2005-11. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
-  label: CONSTITUTION AND BY-LAWS (1938)
+  label: 1938 constitution and bylaws
   event: original
   status: unknown
   dates:
@@ -32,8 +32,7 @@ versions:
     summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
     verification: title-only
 - id: 2005-amendment
-  label: Amendment to the Constitution and Bylaws of the Havasupai Tribe as amended through Amendment
-    XXII, NOV 2 2005
+  label: 2005 amendment
   event: amendment
   status: unknown
   dates:
@@ -56,14 +55,12 @@ versions:
   clauses:
   - topic: sovereign-immunity
     locator: Article XI (SOVEREIGN IMMUNITY)
-    summary: Gives the Tribe and its officers inherent sovereign immunity from suit, waivable by Council
-      law or in limited equitable suits.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity
     locator: Article XI (SOVEREIGN IMMUNITY)
-    summary: Gives the Tribe and its officers inherent sovereign immunity from suit, waivable by Council
-      law or in limited equitable suits.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

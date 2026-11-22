@@ -1,0 +1,40 @@
+id: upper-skagit-indian-tribe-constitution
+kind: constitution
+title: Constitution of the Upper Skagit Indian Tribe
+nations:
+- upper-skagit-indian-tribe
+jurisdictions:
+- level: tribal
+  tribe: upper-skagit-indian-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1977-03-26.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1977-text
+  label: 1977 constitution and bylaws, as amended
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1977-03-26'
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/upper-skagit-indian-tribe/c70d0352f462b176.pdf
+    sha256: c70d0352f462b17638b8564aee1106d66c8255c8a6b3691bbbe1697d93fc5de8
+    pages: 26
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

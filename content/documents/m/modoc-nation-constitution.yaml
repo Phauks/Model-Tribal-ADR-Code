@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2007-03-20. Versions are only those found; others may exist.'
 versions:
 - id: 1990-text
-  label: CONSTITUTION OF THE MODOC TRIBE OF OKLAHOMA (1990)
+  label: 1990 constitution
   event: original
   status: superseded
   dates:
@@ -48,7 +48,7 @@ versions:
     summary: Article headed "CERTIFICATE OF RESULTS OF ELECTION"; found by its heading and not yet read.
     verification: title-only
 - id: 2007-text
-  label: CONSTITUTION OF THE MODOC NATION as amended through Amendment number 8 (Article XVII), 2007-03-20
+  label: 2007 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -69,20 +69,17 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article VII (JUDICIAL DEPARTMENT)
-    summary: Vests judicial authority in a one-member court elected by the tribal council, with rules
-      on the judge's residence, term and eligibility.
+    summary: Article headed "JUDICIAL DEPARTMENT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article VIII (PRIVILEGES, DUTIES AND POWERS)
-    summary: Gives the Judicial Department jurisdiction to decide disputes under the constitution and
-      council laws, and states that its decisions are final.
+    summary: Article headed "PRIVILEGES, DUTIES AND POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article IX (ELECTIONS)
-    summary: Requires the election ordinance to provide procedures for handling protests and resolving
-      election disputes, among other election rules.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -110,8 +107,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.43, by script); not yet read side by side.
 - id: 2007-amendment
-  label: Modoc Tribe of Oklahoma Secretarial Election as amended through Proposed Amendments (A)-(D),
-    2007-03-20
+  label: 2007 amendment
   event: amendment
   status: unknown
   dates:
@@ -131,14 +127,12 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article VII (JUDICIAL DEPARTMENT)
-    summary: Creates a one-member tribal court whose judge is elected, sets the judge's residence and
-      qualifications, and sets a four-year term.
+    summary: Article headed "JUDICIAL DEPARTMENT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article VIII (PRIVILEGES, DUTIES AND POWERS)
-    summary: Gives the Judicial Department jurisdiction over disputes under the constitution and tribal
-      legislation, requires due process, and makes its decisions final.
+    summary: Article headed "PRIVILEGES, DUTIES AND POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1979-10-06. Versions are only those found; others may exist.'
 versions:
 - id: 1979-text
-  label: CONSTITUTION OF THE MUSCOGEE (CREEK) NATION (1979)
+  label: 1979 constitution (1979-08-17)
   event: original
   status: superseded
   dates:
@@ -35,7 +35,7 @@ versions:
       heading and not yet read.
     verification: title-only
 - id: 1979-text-2
-  label: MUSCOGEE (CREEK) NATION CONSTITUTION (ANNOTATED) (1979)
+  label: 1979 constitution (1979-10-06)
   event: edition
   status: in-effect
   dates:
@@ -59,8 +59,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article VII ([Judicial Branch])
-    summary: Vests judicial power in one Supreme Court and in inferior courts the National Council establishes,
-      with Supreme Court decisions final.
+    summary: Article headed "[Judicial Branch]"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -69,8 +68,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XII ([Initiative and Referendum])
-    summary: Makes denial of certification of an initiative or referendum application subject to judicial
-      review.
+    summary: Article headed "[Initiative and Referendum]"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

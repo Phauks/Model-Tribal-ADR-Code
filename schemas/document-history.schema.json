@@ -77,7 +77,7 @@
       "type": "object",
       "$ref": "common.schema.json#/$defs/cited",
       "description": "One version. Its citation fields describe the version itself: `source` is the source record of this version's text (with its Indigo Book citation and archived copies), and `verification` says how closely that text was checked. The source record names this version back in its document_version field.",
-      "required": ["id", "event", "status", "dates"],
+      "required": ["id", "event", "status"],
       "properties": {
         "id": {
           "$ref": "common.schema.json#/$defs/slug",
@@ -101,7 +101,7 @@
           "type": "object",
           "additionalProperties": false,
           "minProperties": 1,
-          "description": "Each date the sources give, as a year, year and month, or full date. Record only dates a source states; leave out the rest.",
+          "description": "Each date the sources give, as a year, year and month, or full date. Record only dates a source states; leave out the rest, and leave out the whole field for a text that gives no date.",
           "properties": {
             "signed": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Executed by the parties or officers." },
             "adopted": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Adopted or ratified by the enacting body or the voters, such as a council resolution or a secretarial election." },

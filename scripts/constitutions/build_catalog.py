@@ -63,6 +63,17 @@ CLAUSE_TOPICS = [
 # Indian Reorganization Act (June 18, 1934), its Alaska amendment (May 1,
 # 1936) and the Oklahoma Indian Welfare Act (June 26, 1936).
 ACT_DATES = {"1934-06-18", "1936-05-01", "1936-06-26"}
+# The words a version's name uses for each kind of text, e.g. "1969
+# constitution and bylaws, as amended".
+TYPE_NOUNS = {
+    "constitution": "constitution",
+    "constitution-and-bylaws": "constitution and bylaws",
+    "articles-of-association": "articles of association",
+    "amendment": "amendment",
+    "proposed-constitution": "proposed constitution",
+}
+SMALL_WORDS = {"a", "an", "and", "as", "at", "for", "in", "of", "on", "or", "the", "to", "under", "with"}
+DANGLING = re.compile(r"\b(of|the|of the|for|and|to)$", re.I)
 AI_REVIEWER = "AI reviewer (Claude Haiku), not yet checked by the lead author"
 LIBRARY = "national-indian-law-library"
 UNIVERSITY = "university-of-oklahoma-law-library"
@@ -70,6 +81,16 @@ FEDERAL_FILES = "bureau-of-indian-affairs-files"
 CONGRESS_LIBRARY = "library-of-congress"
 ARCHIVAL = (UNIVERSITY, FEDERAL_FILES, CONGRESS_LIBRARY)
 SCANNED = {"optical-character-recognition", "internet-archive-optical-character-recognition"}
+# Where a copy came from, to tell apart two texts of the same year and dates.
+COPY_NAMES = {
+    UNIVERSITY: "University of Oklahoma copy",
+    LIBRARY: "National Indian Law Library copy",
+    CONGRESS_LIBRARY: "Library of Congress copy",
+    FEDERAL_FILES: "Bureau of Indian Affairs file",
+    "tribal-law-and-policy-institute": "Tribal Law and Policy Institute copy",
+    "code-publisher": "code publisher's copy",
+    "nation-or-other-site": "website copy",
+}
 
 
 class Dumper(yaml.SafeDumper):
@@ -101,6 +122,49 @@ def normal_link(link):
     host = (parts.hostname or "").lower().removeprefix("www.")
     path = re.sub(r"/(index\.html?)?$", "", parts.path)
     return f"{host}{path}{'?' + parts.query if parts.query else ''}".lower()
+
+
+def clean_title(title, nation_name):
+    """A printed title fit for a citation: title case for an all-capitals
+    title, scan breaks such as "BY- LAWS" joined, and the nation's name added
+    in brackets when the printed line stops short of it."""
+    title = " ".join((title or "").split())
+    visible = title.replace(" ", "")
+    garbled = visible and (
+        sum(character.isalpha() for character in visible) / len(visible) < 0.75 or re.search(r"[\[\]~{}|]", title)
+    )
+    if not title or garbled:
+        # No title, or one the scan's text garbled: a supplied title, in
+        # brackets as the citation rules ask.
+        return f"[Constitution of the {nation_name}]"
+    title = re.sub(r"(\w)- (\w)", r"\1-\2", title)
+    letters = [character for character in title if character.isalpha()]
+    if letters and sum(character.isupper() for character in letters) / len(letters) > 0.6:
+        words = []
+        for index, word in enumerate(title.lower().split(" ")):
+            parts = word.split("-")
+            if index > 0 and word in SMALL_WORDS:
+                words.append(word)
+            else:
+                words.append("-".join(part[:1].upper() + part[1:] for part in parts))
+        title = " ".join(words)
+    title = title.strip(" ,;:-")
+    if DANGLING.search(title):
+        title = f"{title} [{nation_name}]"
+    return title
+
+
+def version_label(row):
+    """A plain name for a version, e.g. "1969 constitution and bylaws, as
+    amended" or "Undated constitution". The printed title stays in the
+    source record's citation."""
+    noun = TYPE_NOUNS.get(row["document_type"], "constitution")
+    year = row["sort_date"][:4]
+    label = f"{year} {noun}" if year else f"Undated {noun}"
+    compiled = row["version"]["latest_amendment"] or row["version"]["amendments_named"]
+    if compiled and row["document_type"] in FULL_TEXT_TYPES:
+        label += ", as amended"
+    return label
 
 
 def partial_date(value):
@@ -428,6 +492,14 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
                 row["key"],
             )
         )
+        undated = False
+        if not versions_rows:
+            # A nation whose texts carry no legible date still has them
+            # listed, undated and in no order.
+            versions_rows = sorted(
+                (row for row in chosen if row["document_type"] in HISTORY_TYPES), key=lambda row: row["key"]
+            )
+            undated = True
         if not versions_rows:
             continue
         history_id = f"{nation}-constitution"
@@ -437,7 +509,7 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
         full_rows = [row for row in versions_rows if row["document_type"] in FULL_TEXT_TYPES]
         newest_full = full_rows[-1] if full_rows else None
         for row in versions_rows:
-            year = row["sort_date"][:4]
+            year = row["sort_date"][:4] or "undated"
             kind_word = {
                 "amendment": "amendment",
                 "proposed-constitution": "proposed",
@@ -451,7 +523,9 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
             ids.add(version_id)
             row["version_id"] = version_id
             row["history"] = history_id
-            if row["document_type"] == "amendment":
+            if undated:
+                event = "other" if len(versions_rows) > 1 else "original"
+            elif row["document_type"] == "amendment":
                 event = "amendment"
             elif row["document_type"] == "proposed-constitution":
                 event = "revision"
@@ -492,7 +566,10 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
                     )
             else:
                 dates = dict(printed)
-            if not dates and not printed and row["version"].get("file_name_date") == row["sort_date"]:
+            if undated:
+                dates = {}
+                note_parts.append("No adoption, approval, effective or amendment date could be read from the text.")
+            elif not dates and not printed and row["version"].get("file_name_date") == row["sort_date"]:
                 dates = {"listed": row["sort_date"]}
                 note_parts.append(
                     "The scan's text gives no legible date; the date recorded as listed is the one in the Bureau of "
@@ -503,15 +580,12 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
                 note_parts.append(
                     "The date recorded as listed is that of the latest amendment the text says it includes."
                 )
-            label_bits = [row["printed_title"] or "Constitution"]
-            if row["version"]["latest_amendment"]:
-                label_bits.append(f"as amended through {row['version']['latest_amendment']}")
-            elif row["sort_date"]:
-                label_bits.append(f"({row['sort_date'][:4]})")
-            label = " ".join(" ".join(label_bits).split())[:200]
+            label = version_label(row)
             if row["document_type"] == "proposed-constitution":
                 status = "proposed"
             elif row["document_type"] == "amendment":
+                status = "unknown"
+            elif undated:
                 status = "unknown"
             elif row is newest_full:
                 status = (
@@ -526,8 +600,9 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
                 "label": label,
                 "event": event,
                 "status": status,
-                "dates": dates,
             }
+            if dates:
+                version["dates"] = dates
             if dates.get("approved"):
                 version["approval"] = {
                     "authority": "secretary-of-the-interior",
@@ -536,7 +611,9 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
                 }
             elif row["secretarial_approval"] in ("not-required", "removed"):
                 version["approval"] = {"authority": "secretary-of-the-interior", "action": "not-required"}
-            if event == "amendment" and previous_full:
+            if undated:
+                pass
+            elif event == "amendment" and previous_full:
                 version["amends"] = [previous_full["version_id"]]
             elif event in ("revision", "edition") and previous_full and status != "proposed":
                 version["supersedes"] = [previous_full["version_id"]]
@@ -596,8 +673,6 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
                         "found_by": "heading" if article["topics"][topic_name]["heading"] else "words-in-text",
                         "word_matches": article["topics"][topic_name]["matches"],
                         "confirmed": summary.get("confirmed") if summary else None,
-                        "summary": summary.get("summary") if summary else None,
-                        "methods": summary.get("methods") if summary else [],
                         "verification": "read-in-full" if summary else "inferred",
                     }
                     article_rows.append(article_row)
@@ -613,16 +688,17 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
                         # Words in the body alone, not yet read: a lead kept
                         # in articles.json, too weak to list as a clause.
                         continue
+                    # No AI summaries of constitutions are kept (lead author,
+                    # Nov. 22, 2026): a clause names the article and topic only.
                     if summary and summary.get("summary"):
+                        named = f"Article headed \"{heading[:100]}\"" if heading else f"{article['label']}"
                         clause = {
                             "topic": topic,
                             "locator": locator,
-                            "summary": summary["summary"],
+                            "summary": f"{named}; an AI reviewer confirmed it covers this topic.",
                             "verification": "read-in-full",
                             "reviewer": AI_REVIEWER,
                         }
-                        if summary.get("methods"):
-                            clause["methods"] = summary["methods"]
                     else:
                         clause = {
                             "topic": topic,
@@ -675,7 +751,45 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
                 changes.append(change)
             if changes:
                 version["changes"] = changes
+        # Tell apart versions that would share a name: by their dates, then
+        # by where the copy came from, then by number.
+        def disambiguate(versions, describe):
+            seen = {}
+            for version in versions:
+                seen.setdefault(version["label"], []).append(version)
+            for same in seen.values():
+                if len(same) < 2:
+                    continue
+                words = [describe(version) for version in same]
+                if all(words) and len(set(words)) == len(words):
+                    for version, word in zip(same, words):
+                        version["label"] += f" ({word})"
+
+        def when(version):
+            dated = version.get("dates") or {}
+            return dated.get("adopted") or dated.get("approved") or next(iter(dated.values()), None)
+
+        disambiguate(versions, when)
+        disambiguate(versions, lambda version: COPY_NAMES.get(by_id[version["id"]]["publisher"]))
+        seen = {}
+        for version in versions:
+            seen.setdefault(version["label"], []).append(version)
+        for same in seen.values():
+            if len(same) > 1:
+                for index, version in enumerate(same, start=1):
+                    version["label"] += f" (text {index})"
         first_name = seeds[nation]["name"]
+
+        def first_date(version):
+            dated = version.get("dates") or {}
+            return dated.get("adopted") or dated.get("approved") or next(iter(dated.values()))
+
+        if undated:
+            found = f"{len(versions)} text{'s' if len(versions) != 1 else ''} with no legible date"
+        elif len(versions) == 1:
+            found = f"one dated version, of {first_date(versions[0])}"
+        else:
+            found = f"{len(versions)} dated versions, from {first_date(versions[0])} to {first_date(versions[-1])}"
         histories[history_id] = {
             "id": history_id,
             "kind": "constitution",
@@ -683,9 +797,7 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
             "nations": [nation],
             "jurisdictions": [{"level": "tribal", "tribe": nation}],
             "summary": (
-                f"Texts of the nation's constitution found online on {TODAY}: {len(versions)} dated "
-                f"version{'s' if len(versions) != 1 else ''}, from {versions[0]['dates'].get('adopted') or versions[0]['dates'].get('approved') or next(iter(versions[0]['dates'].values()))} "
-                f"to {versions[-1]['dates'].get('adopted') or versions[-1]['dates'].get('approved') or next(iter(versions[-1]['dates'].values()))}. "
+                f"Texts of the nation's constitution found online on {TODAY}: {found}. "
                 "Versions are only those found; others may exist."
             ),
             "versions": versions,
@@ -696,9 +808,11 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
             ),
         }
 
-    # 4. Write the history records and source records. A nation with one
-    # version found gets no history record (decision record 0018).
-    written = {history_id for history_id, history in histories.items() if len(history["versions"]) >= 2}
+    # 4. Write the history records and source records. Every nation with a
+    # constitution text found gets a history record, even with one version or
+    # none dated, so its page lists the constitution (lead author, Nov. 22,
+    # 2026; an exception to decision record 0018's single-version rule).
+    written = set(histories)
     for history_id in sorted(written):
         write_yaml(f"content/documents/{letter(history_id)}/{history_id}.yaml", histories[history_id])
     by_link = {}
@@ -709,7 +823,7 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
         parts = [int(part) for part in date.split("-")] if date else []
         citation = {
             "type": "legislation",
-            "title": row["printed_title"] or "Constitution",
+            "title": clean_title(row["printed_title"], seeds[row["nation"]]["name"]),
             "author": [{"literal": seeds[row["nation"]]["name"]}],
         }
         if row["publisher"] == LIBRARY:
@@ -830,7 +944,9 @@ def main(read_path, reviews_path, summaries_path, seeds_path, capture_dir):
         constitution_rows = [row for row in group if row["document_type"] in HISTORY_TYPES]
         newest = history["versions"][-1] if history else None
         in_effect = [version for version in (history or {}).get("versions", []) if version["status"] == "in-effect"]
-        if in_effect:
+        if history and not any(version.get("dates") for version in history["versions"]):
+            status = "undated-text-only"
+        elif in_effect:
             status = "current-text-found"
         elif history and any(row["publisher"] not in ARCHIVAL for row in constitution_rows):
             status = "text-found-currency-unknown"

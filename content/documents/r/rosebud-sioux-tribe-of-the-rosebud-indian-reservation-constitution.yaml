@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 2007-09-20. Versions are only those found; others may exist.'
 versions:
 - id: 1935-text
-  label: CONSTITUTION AND BYLAWS OF THE ROSEBUD SIOUX TRIBE OF SOUTH DAKOTA (1935)
+  label: 1935 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -34,8 +34,7 @@ versions:
     summary: Article headed "Tribal Court"; found by its heading and not yet read.
     verification: title-only
 - id: 1966-text
-  label: CONSTITUTION AND BYLAWS OF THE ROSEBUD SIOUX TRIBE SOUTH DAKOTA (INCLUDING AMENDMENTS) as amended
-    through Amendment XI, 1966-05-02
+  label: 1966 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -60,7 +59,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 2007-text
-  label: Article III - Governing Body as amended through Amendment N, effective 2007-09-20
+  label: 2007 constitution, as amended (text 1)
   event: edition
   status: superseded
   dates:
@@ -77,8 +76,7 @@ versions:
     superseded because a later dated text was found (project inference). Type and dates read from the
     text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 2007-text-2
-  label: Article IV - Powers of the Rosebud Sioux Tribal Council as amended through Amendment T, effective
-    2007-09-20
+  label: 2007 constitution, as amended (text 2)
   event: edition
   status: in-effect
   dates:

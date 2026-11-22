@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1986-08-28. Versions are only those found; others may exist.'
 versions:
 - id: 1953-text
-  label: CONSTITUTION (1953)
+  label: 1953 constitution
   event: original
   status: superseded
   dates:
@@ -25,7 +25,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1986-text
-  label: ARTICLE XVIII - APPROVAL (1986)
+  label: 1986 constitution (text 1)
   event: edition
   status: superseded
   dates:
@@ -46,7 +46,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1986-text-2
-  label: CONSTITUTION OF THE STILLAGUAMISH TRIBE OF INDIANS OF WASHINGTON (1986)
+  label: 1986 constitution (text 2)
   event: edition
   status: unknown
   dates:
@@ -66,14 +66,12 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article V (TRIBAL ELECTIONS)
-    summary: Requires the election ordinance to provide for settling election disputes, with appeals allowed
-      to the tribe's judicial authority.
+    summary: Article headed "TRIBAL ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article V (TRIBAL ELECTIONS)
-    summary: Requires the election ordinance to provide for settling election disputes, with appeals allowed
-      to the tribe's judicial authority.
+    summary: Article headed "TRIBAL ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -82,14 +80,12 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XI (JUDICIAL AUTHORITY)
-    summary: Vests judicial authority in an inter-tribal court system, or later in a separate Tribal Court
-      with elected judges if the tribe chooses to create one.
+    summary: Article headed "JUDICIAL AUTHORITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article XI (JUDICIAL AUTHORITY)
-    summary: Gives an existing inter-tribal court system judicial authority, including settlement of tribal
-      disputes, until a separate Tribal Court is established.
+    summary: Article headed "JUDICIAL AUTHORITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

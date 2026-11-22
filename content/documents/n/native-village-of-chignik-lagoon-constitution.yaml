@@ -1,0 +1,37 @@
+id: native-village-of-chignik-lagoon-constitution
+kind: constitution
+title: Constitution of the Native Village of Chignik Lagoon
+nations:
+- native-village-of-chignik-lagoon
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-chignik-lagoon
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2026-04-29.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2026-text
+  label: 2026 constitution
+  event: original
+  status: in-effect
+  dates:
+    adopted: '2026-04-29'
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-chignik-lagoon/d30fe0d619716844.pdf
+    sha256: d30fe0d619716844e441a19fc9297418b0d708979f533353764183b14e62d3f5
+    pages: 20
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article X (ETHICS, CONFLICT OF INTEREST, AND FINANCIAL)
+    summary: Article headed "ETHICS, CONFLICT OF INTEREST, AND FINANCIAL"; found by its heading and not
+      yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

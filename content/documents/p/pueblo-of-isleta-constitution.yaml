@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 2014-09-20. Versions are only those found; others may exist.'
 versions:
 - id: 1947-text
-  label: Constitution for the Pueblo of Isleta, New Mexico (1947)
+  label: 1947 constitution (text 1)
   event: original
   status: superseded
   dates:
@@ -42,7 +42,7 @@ versions:
     summary: Article headed "THE JUDICIAL BRANCH"; found by its heading and not yet read.
     verification: title-only
 - id: 1947-text-2
-  label: A Constitution for Isleta Pueblo, New Mexico (1947)
+  label: 1947 constitution (text 2)
   event: edition
   status: superseded
   dates:
@@ -73,7 +73,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1970-text
-  label: Constitution for the Pueblo of Isleta, New Mexico (1970)
+  label: 1970 constitution
   event: revision
   status: superseded
   dates:
@@ -111,8 +111,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 2014-text
-  label: Constitution for the Pueblo of Isleta, New Mexico as amended through Constitution amendment,
-    September 20, 2014 (approved October 8, 2014)
+  label: 2014 constitution, as amended
   event: revision
   status: in-effect
   dates:
@@ -137,14 +136,12 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article XI (REPEAL OF PREVIOUS)
-    summary: Gives a tribal court jurisdiction over criminal and civil cases and power to determine the
-      constitutionality of council enactments.
+    summary: Article headed "REPEAL OF PREVIOUS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article XI (REPEAL OF PREVIOUS)
-    summary: Gives the tribal court jurisdiction over criminal and civil cases, with the council acting
-      as appellate court for appeals as of right.
+    summary: Article headed "REPEAL OF PREVIOUS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

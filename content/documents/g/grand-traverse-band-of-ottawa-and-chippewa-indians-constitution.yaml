@@ -1,0 +1,85 @@
+id: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+kind: constitution
+title: Constitution of the Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+nations:
+- grand-traverse-band-of-ottawa-and-chippewa-indians
+jurisdictions:
+- level: tribal
+  tribe: grand-traverse-band-of-ottawa-and-chippewa-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1988-02-25.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1988-text
+  label: 1988 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1988-02-25'
+    approved: '1988-03-29'
+    effective: '1988-03-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/grand-traverse-band-of-ottawa-and-chippewa-indians/06a8e28217b93534.pdf
+    sha256: 06a8e28217b935340443e29e3a5d7818fa98d5d833f1449d96441693c6143948
+    pages: 21
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (TRIBAL JUDICIARY)
+    summary: Article headed "TRIBAL JUDICIARY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (RECALL, REMOVAL, AND VACANCIES)
+    summary: Article headed "RECALL, REMOVAL, AND VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XII (CONFLICT OF INTEREST)
+    summary: Article headed "CONFLICT OF INTEREST"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article V (Tribal Judiciary)
+    summary: Article headed "Tribal Judiciary"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VII (Elections)
+    summary: Article headed "Elections"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VIII (Recall, Removal, and Vacancies)
+    summary: Article headed "Recall, Removal, and Vacancies"; an AI reviewer confirmed it covers this
+      topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VIII (Recall, Removal, and Vacancies)
+    summary: Article headed "Recall, Removal, and Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XII (Conflict of Interest)
+    summary: Article headed "Conflict of Interest"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIII (Sovereign Immunity)
+    summary: Article headed "Sovereign Immunity"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article XVII (Certificate of Results of Election)
+    summary: Article headed "Certificate of Results of Election"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

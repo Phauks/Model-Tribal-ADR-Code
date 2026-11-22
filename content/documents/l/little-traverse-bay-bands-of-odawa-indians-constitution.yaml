@@ -1,0 +1,97 @@
+id: little-traverse-bay-bands-of-odawa-indians-constitution
+kind: constitution
+title: Constitution of the Little Traverse Bay Bands of Odawa Indians, Michigan
+nations:
+- little-traverse-bay-bands-of-odawa-indians
+jurisdictions:
+- level: tribal
+  tribe: little-traverse-bay-bands-of-odawa-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2005-02-01.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2005-text
+  label: 2005 constitution
+  event: original
+  status: in-effect
+  dates:
+    adopted: '2005-02-01'
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/little-traverse-bay-bands-of-odawa-indians/e51f419f1dbaecaf.pdf
+    sha256: e51f419f1dbaecaff44f85df2f857973c9178487c3356c7facd55cb0d7438c9e
+    pages: 39
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article IX (JUDICIAL)
+    summary: Article headed "JUDICIAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XI (ELECTION BOARD)
+    summary: Article headed "ELECTION BOARD"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XIII (RECALL, REMOVAL AND VACANCIES)
+    summary: Article headed "RECALL, REMOVAL AND VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XV (CONFLICT OF INTEREST)
+    summary: Article headed "CONFLICT OF INTEREST"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XVIII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article IX (JUDICIAL)
+    summary: Article headed "JUDICIAL"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article IX (JUDICIAL)
+    summary: Article headed "JUDICIAL"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article X (TRIBAL PROSECUTOR)
+    summary: Article headed "TRIBAL PROSECUTOR"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article XI (ELECTION BOARD)
+    summary: Article headed "ELECTION BOARD"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XIII (RECALL, REMOVAL AND VACANCIES)
+    summary: Article headed "RECALL, REMOVAL AND VACANCIES"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article XIII (RECALL, REMOVAL AND VACANCIES)
+    summary: Article headed "RECALL, REMOVAL AND VACANCIES"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XIII (RECALL, REMOVAL AND VACANCIES)
+    summary: Article headed "RECALL, REMOVAL AND VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XV (CONFLICT OF INTEREST)
+    summary: Article headed "CONFLICT OF INTEREST"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XVIII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

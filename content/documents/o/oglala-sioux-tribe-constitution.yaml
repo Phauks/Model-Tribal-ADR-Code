@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 2008. Versions are only those found; others may exist.'
 versions:
 - id: 1935-text
-  label: CONSTITUTION AND BY- LAWS OF THE (1935)
+  label: 1935 constitution
   event: original
   status: superseded
   dates:
@@ -37,8 +37,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1969-text
-  label: CONSTITUTION AND BY-LAWS OF THE OGLALA SIOUX TRIBE OF THE PINE RIDGE RESERVATION - SOUTH DAKOTA
-    as amended through Amendments I-IV, 1969-12-04
+  label: 1969 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -71,8 +70,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1985-text
-  label: CONSTITUTION AND BYLAWS OF THE OGLALA SIOUX TRIBE OF THE PINE RIDGE RESERVATION OF SOUTH DAKOTA
-    as amended through Amendment D, 1985-11-25
+  label: 1985 constitution and bylaws, as amended
   event: revision
   status: superseded
   dates:
@@ -89,7 +87,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 2008-text
-  label: CONSTITUTION OF THE OGLALA SIOUX TRIBE as amended through 2008 Amendments, 2008-12-18
+  label: 2008 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -111,8 +109,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article V (JUDICIAL POWERS)
-    summary: Vests judicial power in one Supreme Court and inferior tribal courts, which are independent
-      of the Tribal Council and Executive Committee.
+    summary: Article headed "JUDICIAL POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -121,8 +118,8 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article V (JUDICIAL POWERS ARTICLE V- JUDICIAL POWERS)
-    summary: Sets out a proposed judiciary article vesting judicial power in a Supreme Court and inferior
-      courts independent of the Tribal Council and Executive Committee.
+    summary: Article headed "JUDICIAL POWERS ARTICLE V- JUDICIAL POWERS"; an AI reviewer confirmed it
+      covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

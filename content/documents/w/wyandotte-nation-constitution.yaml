@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 1999-09-29. Versions are only those found; others may exist.'
 versions:
 - id: 1937-text
-  label: CONSTITUTION AND BY-LAWS (1937)
+  label: 1937 constitution and bylaws (1937-07-17)
   event: original
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
     summary: Article headed "GRIEVANCES"; found by its heading and not yet read.
     verification: title-only
 - id: 1937-text-2
-  label: Constitution and By-Laws of the Wyandotte Tribe of Oklahoma (1937)
+  label: 1937 constitution and bylaws (1937-07-24)
   event: edition
   status: superseded
   dates:
@@ -76,7 +76,7 @@ versions:
     verification: inferred
     note: The article texts match (word-run overlap 1.00, by script).
 - id: 1985-text
-  label: Constitution of the Wyandotte Tribe of Oklahoma (1985)
+  label: 1985 constitution
   event: revision
   status: superseded
   dates:
@@ -122,7 +122,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
 - id: 1999-text
-  label: Constitution of the Wyandotte Tribe of Oklahoma (1999)
+  label: 1999 constitution
   event: revision
   status: in-effect
   dates:
@@ -143,34 +143,30 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article 6 (Organization of the Government)
-    summary: States that the Nation Council's final decisions on membership cannot be appealed.
+    summary: Article headed "Organization of the Government"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article 7 (Powers and Responsibilities of the)
-    summary: Vests the Nation's judicial power in a Supreme Court of five Justices and any inferior courts
-      established by Nation law.
+    summary: Article headed "Powers and Responsibilities of the"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article 7 (Powers and Responsibilities of the)
-    summary: A Grievance Committee investigates complaints of officer misconduct, and the Nation Council
-      may remove an officer after a hearing.
+    summary: Article headed "Powers and Responsibilities of the"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - fact-finding
-    - council-hearing
   - topic: dispute-resolution
     locator: Article 9 (Elections)
-    summary: Requires the Board's election law to set procedures for handling protests and resolving election
-      disputes.
+    summary: Article headed "Elections"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article 9 (Elections)
-    summary: Requires the Board's election law to set procedures for handling protests and resolving election
-      disputes, with an Election Board conducting elections.
+    summary: Article headed "Elections"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

@@ -1,0 +1,36 @@
+id: coyote-valley-band-of-pomo-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Coyote Valley Band of Pomo Indians of California
+nations:
+- coyote-valley-band-of-pomo-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: coyote-valley-band-of-pomo-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2012-10-30.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2012-text
+  label: 2012 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2012-10-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: not-required
+  source: constitution-coyote-valley-band-of-pomo-indians-of-california-2012-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hopland-band-of-pomo-indians/54402fcf793f4049.pdf
+    sha256: 54402fcf793f4049108473e1e30c6325dd76d61d09238cc3551263a07a654842
+    pages: 49
+  note: The text also prints adopted 1980-10-04, effective 1980-10-04, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

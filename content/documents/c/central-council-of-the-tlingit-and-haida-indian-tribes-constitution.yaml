@@ -1,0 +1,55 @@
+id: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
+kind: constitution
+title: Constitution of the Central Council of the Tlingit & Haida Indian Tribes
+nations:
+- central-council-of-the-tlingit-and-haida-indian-tribes
+jurisdictions:
+- level: tribal
+  tribe: central-council-of-the-tlingit-and-haida-indian-tribes
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2013-04-20.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2013-text
+  label: 2013 constitution, as amended
+  event: edition
+  status: unknown
+  dates:
+    adopted: '2013-04-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: not-required
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/central-council-of-the-tlingit-and-haida-indian-tribes/9fd5119d5fffee5d.pdf
+    sha256: 9fd5119d5fffee5d567f37be0571010dc3f0ab4ce35561c7e4415be05f40737a
+    pages: 12
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article III (Member Citizenship)
+    summary: Article headed "Member Citizenship"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article IV (Delegates to the Tribal Assembly)
+    summary: Article headed "Delegates to the Tribal Assembly"; an AI reviewer confirmed it covers this
+      topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article V (Delegate Elections)
+    summary: Article headed "Delegate Elections"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XI (Tribal Courts)
+    summary: Article headed "Tribal Courts"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

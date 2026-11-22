@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1987-04-22. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
-  label: CONSTITUTION AND BY- LAWS (1938)
+  label: 1938 constitution
   event: original
   status: superseded
   dates:
@@ -33,7 +33,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1987-text
-  label: CONSTITUTION OF THE CITIZEN BAND POTAWATOMI INDIAN TRIBE OF OKLAHOMA (1987)
+  label: 1987 constitution, as amended
   event: edition
   status: unknown
   dates:
@@ -53,20 +53,17 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article 8 (RECALL)
-    summary: Has a Grievance Committee hear misconduct complaints against officials and act as a fact-finding
-      body before cases go to tribal courts for recall.
+    summary: Article headed "RECALL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - fact-finding
   - topic: removal-and-recall
     locator: Article 8 (RECALL)
     summary: Article headed "RECALL"; found by its heading and not yet read.
     verification: title-only
   - topic: dispute-resolution
     locator: Article 12 ((f) shall be necessary to recall the officer from his)
-    summary: Lets any person bring misconduct complaints against Business Committee members or judicial
-      officers to the Court, which decides whether a recall election is needed.
+    summary: Article headed "(f) shall be necessary to recall the officer from his"; an AI reviewer confirmed
+      it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -76,8 +73,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article 9 (REMOVAL AND FORFEITURE)
-    summary: Lets a removed official appeal the removal directly to the Supreme Court, which must expedite
-      the appeal and keeps the official suspended until a final decision.
+    summary: Article headed "REMOVAL AND FORFEITURE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -86,14 +82,12 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article 11 (COURTS)
-    summary: Vests judicial power in a seven-justice Supreme Court and any lower courts the tribe establishes,
-      gives courts appellate and general jurisdiction, and lets tribal courts void unconstitutional enactments.
+    summary: Article headed "COURTS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article 12 (ELECTIONS)
-    summary: Delays installation of newly elected officers until any challenge period expires or any election
-      dispute is finally resolved as provided by law.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

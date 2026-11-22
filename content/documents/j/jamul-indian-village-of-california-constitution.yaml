@@ -1,0 +1,45 @@
+id: jamul-indian-village-of-california-constitution
+kind: constitution
+title: Constitution of the Jamul Indian Village of California
+nations:
+- jamul-indian-village-of-california
+jurisdictions:
+- level: tribal
+  tribe: jamul-indian-village-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1981-05-09.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1981-text
+  label: 1981 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1981-05-09'
+    approved: '1981-07-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/jamul-indian-village-of-california/0231a9afebae52cf.pdf
+    sha256: 0231a9afebae52cfd852dbbc3ca4f68928c32fca39140142f8f5fb36da40d1a3
+    pages: 12
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

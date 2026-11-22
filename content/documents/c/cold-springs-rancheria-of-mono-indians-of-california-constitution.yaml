@@ -1,0 +1,39 @@
+id: cold-springs-rancheria-of-mono-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Cold Springs Rancheria of Mono Indians of California
+nations:
+- cold-springs-rancheria-of-mono-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: cold-springs-rancheria-of-mono-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2001.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2001-text
+  label: 2001 constitution and bylaws, as amended
+  event: edition
+  status: unknown
+  dates:
+    listed: '2001'
+  source: national-indian-law-library-constitution-constitutions-cold-springs
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cold-springs-rancheria-of-mono-indians-of-california/007474d63b67df1c.html
+    sha256: 007474d63b67df1cf814f82e247bb5c02b02d428cb40f7e432304a2d11cfdf52
+  note: The text also prints adopted 1979-11-29, approved 1980-01-02, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

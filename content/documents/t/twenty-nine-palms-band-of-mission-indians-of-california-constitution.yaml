@@ -1,0 +1,35 @@
+id: twenty-nine-palms-band-of-mission-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Twenty-Nine Palms Band of Mission Indians of California
+nations:
+- twenty-nine-palms-band-of-mission-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: twenty-nine-palms-band-of-mission-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1972-03-01.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1972-text
+  label: 1972 articles of association
+  event: original
+  status: unknown
+  dates:
+    adopted: '1972-03-01'
+    approved: '1972-05-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-twenty-nine-palms-band-of-mission-indians-of-california-1972-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/twenty-nine-palms-band-of-mission-indians-of-california/9b19543dc0650d4c.pdf
+    sha256: 9b19543dc0650d4c7cf362cb4ec56368ec613257e9677581f7d1dfa2ca4f58d3
+    pages: 6
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

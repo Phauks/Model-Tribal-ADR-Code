@@ -1,0 +1,34 @@
+id: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation,
+  California
+nations:
+- agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1955-06-28.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1957-text
+  label: 1957 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1955-06-28'
+    approved: '1957-04-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation/782738f57cb0f5e7.html
+    sha256: 782738f57cb0f5e7a96dab6bda42b7017f17d508b7b4946fbfcf6538723141ca
+  note: Dates read by rule from the certificates on the library page.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

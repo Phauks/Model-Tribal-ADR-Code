@@ -1,0 +1,38 @@
+id: muckleshoot-indian-tribe-constitution
+kind: constitution
+title: Constitution of the Muckleshoot Indian Tribe
+nations:
+- muckleshoot-indian-tribe
+jurisdictions:
+- level: tribal
+  tribe: muckleshoot-indian-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1936-03-11.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: 1936 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1936-03-11'
+    approved: '1936-03-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/muckleshoot-indian-tribe/1152675e82ad0b15.html
+    sha256: 1152675e82ad0b1539108a08802a158e550a37a6fd0070ae227ec7bf1b633577
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

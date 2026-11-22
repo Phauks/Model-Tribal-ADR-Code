@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 2019-02-28. Versions are only those found; others may exist.'
 versions:
 - id: 1971-text
-  label: Constitution of the Kenaitze Indian Tribe (1971)
+  label: 1971 constitution
   event: original
   status: superseded
   dates:
@@ -29,7 +29,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 1997-text
-  label: Constitution of the Kenaitze Indian Tribe (1997)
+  label: 1997 constitution (1997-06-16)
   event: edition
   status: superseded
   dates:
@@ -72,7 +72,7 @@ versions:
     verification: inferred
     note: A word match found an article on this topic in this text and none in the earlier one.
 - id: 1997-text-2
-  label: CONSTITUTION OF THE KENAITZE INDIAN TRIBE (1997)
+  label: 1997 constitution (1997-07-16)
   event: edition
   status: superseded
   dates:
@@ -111,7 +111,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.79, by script); not yet read side by side.
 - id: 2019-text
-  label: CONSTITUTION OF THE KENAITZE INDIAN TRIBE as amended through Amended February 28, 2019
+  label: 2019 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -132,12 +132,12 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article VI (MEETINGS AND ELECTIONS)
-    summary: Requires the tribal election ordinance to set out how election disputes are settled.
+    summary: Article headed "MEETINGS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article VI (MEETINGS AND ELECTIONS)
-    summary: Requires the tribal election ordinance to include provisions for settling election disputes.
+    summary: Article headed "MEETINGS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -147,8 +147,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article X (POWERS)
-    summary: Lists among the Council's powers the exercise of judicial powers, with the text shown cut
-      off mid-clause.
+    summary: Article headed "POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2006-01-05. Versions are only those found; others may exist.'
 versions:
 - id: 1964-text
-  label: Revised Constitution and Bylaws of the Minnesota Chippewa Tribe, Minnesota (1964)
+  label: 1964 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -30,7 +30,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 2006-text
-  label: Constitution of the Minnesota Chippewa Tribe as amended through Amendment IV, 2006-01-05
+  label: 2006 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -51,8 +51,7 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article IV (Tribal Elections)
-    summary: Makes each Reservation Business Committee the sole judge of the qualifications of its voters
-      under a uniform election ordinance.
+    summary: Article headed "Tribal Elections"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

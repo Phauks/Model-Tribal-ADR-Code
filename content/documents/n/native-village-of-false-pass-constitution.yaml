@@ -1,0 +1,41 @@
+id: native-village-of-false-pass-constitution
+kind: constitution
+title: Constitution of the Native Village of False Pass
+nations:
+- native-village-of-false-pass
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-false-pass
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1990-05-07.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1990-text
+  label: 1990 constitution
+  event: original
+  status: unknown
+  dates:
+    listed: '1990-05-07'
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-false-pass/1925585fc287f8d4.pdf
+    sha256: 1925585fc287f8d4e2d8ca4a650d03bed1d1b1b3117c8efa295a3ba920aea025
+    pages: 12
+  note: The scan's text gives no legible date; the date recorded as listed is the one in the Bureau of
+    Indian Affairs' file name. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (TRIBAL COURTS)
+    summary: Article headed "TRIBAL COURTS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

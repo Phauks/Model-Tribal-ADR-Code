@@ -1,0 +1,57 @@
+id: nunakauyarmiut-tribe-constitution
+kind: constitution
+title: Constitution of the Nunakauyarmiut Tribe
+nations:
+- nunakauyarmiut-tribe
+jurisdictions:
+- level: tribal
+  tribe: nunakauyarmiut-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1996-11-03.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1996-text
+  label: 1996 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1996-11-03'
+  source: constitution-nunakauyarmiut-tribe-1996-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/nunakauyarmiut-tribe/3b5f6d0e53aeb5b9.pdf
+    sha256: 3b5f6d0e53aeb5b963e2a1de87cc07e56c3ec94f29c3d58e8d3942f42c318faf
+    pages: 12
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: sovereign-immunity
+    locator: Article XV (Sovereign Immunity of the Nunakauyarmiut Tribe)
+    summary: Article headed "Sovereign Immunity of the Nunakauyarmiut Tribe"; found by its heading and
+      not yet read.
+    verification: title-only
+  - topic: peacemaking
+    locator: Article VI (POWERS OF THE NUNAKAUYAK TRADITIONAL COUNCIL)
+    summary: Article headed "POWERS OF THE NUNAKAUYAK TRADITIONAL COUNCIL"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL, RECALL, FORFEITURE, VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURE, VACANCIES"; found by its heading and not yet
+      read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XV (SOVEREIGN IMMUNITY OF THE NUNAKAUYARMIUT TRIBE)
+    summary: Article headed "SOVEREIGN IMMUNITY OF THE NUNAKAUYARMIUT TRIBE"; an AI reviewer confirmed
+      it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

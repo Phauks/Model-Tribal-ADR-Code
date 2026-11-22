@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 2011-01-30. Versions are only those found; others may exist.'
 versions:
 - id: 1940-text
-  label: CONSTITUTION AND BY-LAWS FOR THE BIG VALLEY BAND OF POMO (1940)
+  label: 1940 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -28,8 +28,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 1967-text
-  label: Constitution and By-laws for the Kashia Band of Pomo Indians of the Stewarts Point Rancheria,
-    California as amended through Amendment IV, election September 10, 1967
+  label: 1967 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -48,9 +47,7 @@ versions:
     a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
     (Claude Haiku), not yet checked by the lead author.
 - id: 1979-amendment
-  label: 'Amendments VIII to XI to the Constitution and By-laws of the Kashia Band of Pomo Indians (with
-    a 2000 Community Council resolution) as amended through Amendment XI, Date Approved: September 7,
-    1979'
+  label: 1979 amendment
   event: amendment
   status: unknown
   dates:
@@ -83,7 +80,7 @@ versions:
     verification: inferred
     note: An amendment changes only what it names; compare by hand.
 - id: 2011-text
-  label: CONSTITUTION OF THE KASHIA BAND OF POMO INDIANS OF THE STEWARTS POINT RANCHERIA, CALIFORNIA (2011)
+  label: 2011 constitution
   event: edition
   status: in-effect
   dates:
@@ -109,14 +106,12 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article 5 (GOVERNMENTAL POWERS)
-    summary: Authorizes the General Council to establish a court system, grievance board, or committee
-      for resolving disputes and enforcing tribal law.
+    summary: Article headed "GOVERNMENTAL POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity
     locator: Article 8 (SOVEREIGN IMMUNITY)
-    summary: States that nothing in the constitution waives the Tribe's sovereign immunity; the text shown
-      is cut off before any further detail.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

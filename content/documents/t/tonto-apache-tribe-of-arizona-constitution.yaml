@@ -1,0 +1,35 @@
+id: tonto-apache-tribe-of-arizona-constitution
+kind: constitution
+title: Constitution of the Tonto Apache Tribe of Arizona
+nations:
+- tonto-apache-tribe-of-arizona
+jurisdictions:
+- level: tribal
+  tribe: tonto-apache-tribe-of-arizona
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1979.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1979-text
+  label: 1979 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1979'
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tonto-apache-tribe-of-arizona/9c75efaddf486bc8.pdf
+    sha256: 9c75efaddf486bc813db2390e104445b7793bece934857ba79ab4f26b9e577a5
+    pages: 13
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

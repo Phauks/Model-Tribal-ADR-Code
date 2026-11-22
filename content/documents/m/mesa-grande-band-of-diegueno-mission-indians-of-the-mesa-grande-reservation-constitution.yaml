@@ -11,8 +11,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2023-12-10. Versions are only those found; others may exist.'
 versions:
 - id: 1972-text
-  label: ARTICLES OF ASSOCIATION OF THE MESA GRANDE BAND OF MISSION INDIANS, CALIFORNIA as amended through
-    Amendment No. 1, 1972-06-11
+  label: 1972 articles of association, as amended
   event: edition
   status: superseded
   dates:
@@ -42,7 +41,7 @@ versions:
       and not yet read.
     verification: title-only
 - id: 2023-text
-  label: Articles of Association as amended through Amendment XVII, 2023-12-10
+  label: 2023 articles of association, as amended
   event: edition
   status: in-effect
   dates:
@@ -68,12 +67,9 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article V (GRIEVANCE BOARD)
-    summary: Establishes a three-member Grievance Board that reviews complaints of council misconduct
-      and may move them to a grievance hearing.
+    summary: Article headed "GRIEVANCE BOARD"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - council-hearing
   - topic: removal-and-recall
     locator: Article VI (VACANCIES AND RECALL)
     summary: Article headed "VACANCIES AND RECALL"; found by its heading and not yet read.

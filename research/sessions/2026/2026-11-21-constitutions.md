@@ -632,7 +632,8 @@ limits: >-
 
 Output: the catalog in [`research/constitutions/`](../../constitutions/README.md)
 (coverage by nation, documents and articles), 219 version histories in
-`content/documents/`, 571 source records, and a `document_version` on 330
+`content/documents/` (391 after the Nov. 22 change below), 571 source records
+(617 after it), and a `document_version` on 330
 profile facts that cite a text a later version replaced, naming the version
 they describe. The scripts are in `scripts/constitutions/`.
 
@@ -671,3 +672,16 @@ Findings:
   Native Village of Buckland's constitution and charter.
 
 Ruled out: the Federal Register (few constitution notices).
+
+Nov. 22, 2026, after review on the website: the lead author asked that every
+nation with a constitution found show it on its page, including nations with
+a single version, that version names be cleaned up, and that no AI summaries
+of constitutions be kept ("No reason for it"). The build now writes a history
+record for every nation with a text (391; undated texts get versions without
+dates), names versions by year and kind, puts printed titles in title case in
+the source records, and keeps only each clause's article and heading. The
+three Blackfeet files the lead author pulled by hand that day are copies of
+texts already in the catalog: the 1935 constitution and the 1936 charter match
+the University of Oklahoma pages captured on Nov. 21, and the "last amended
+1978" print is a near copy (three-word-run overlap 0.88 to 0.94) of the 1978
+and 1998 texts already recorded, so no version was added.

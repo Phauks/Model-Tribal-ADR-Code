@@ -24,8 +24,10 @@ is cited; everything else is project planning.
 | **Gate 3** | **Consultation** with any nation cited or named in commentary | | Review status recorded per nation |
 | 3. Edition | Essays, methods and manners, website, print and ebook | After Gate 3 for affected text | 1st Edition |
 
-Peacemaking runs as its own track through every phase, not as a chapter of
-the alternative dispute resolution code ([charter, commitment 3](charter.md#3-peacemaking-as-its-own-track)).
+Peacemaking runs as its own track through every phase. In the model code it
+is its own division, never a kind of mediation or arbitration
+([charter, commitment 3](charter.md#3-peacemaking-as-its-own-track);
+[decision record 0026](decisions/0026-model-peacemaking-code.md)).
 
 ## Phase 0: preparation (now)
 
@@ -104,7 +106,9 @@ research session ([research/README.md](../research/README.md)).
 
 ### Scope questions for Gate 2
 
-Each question comes from what the data shows (project analysis):
+Each question comes from what the data shows (project analysis). The
+[working outline](outline.md#open-scope-questions) restates them with a
+recommendation for each and adds four more:
 
 | Question | Why it arises |
 | --- | --- |
@@ -112,11 +116,16 @@ Each question comes from what the data shows (project analysis):
 | Does it include commercial arbitration and the link to sovereign immunity waivers? | Four arbitration ordinances read share one structure tying awards to express waivers (analysis, section 4) |
 | Are disputes between governments, such as compact disputes, a chapter or an essay? | Compact clauses mostly follow state templates (analysis, section 6) |
 | Are employment disputes in scope? | One employment tribunal and one employment mediation clause were found (analysis, sections 3 and 4) |
-| What does the code say about peacemaking, if anything? | Peacemaking is its own track; one option is provisions that only connect a court to a nation's own peacemaking forum (referral, return, entry of agreements) without defining peacemaking itself |
+| What does the code say about peacemaking, if anything? | *Decided Nov. 22, 2026: model peacemaking provisions of their own, which set up or recognize a nation's forum and connect it to the court without defining the process ([decision record 0026](decisions/0026-model-peacemaking-code.md)).* |
 | Which family and child welfare matters are in scope? | Family and child welfare matters appear in both forums and bulk records (analysis, sections 3 and 5) |
 | Does the code or its commentary address nations divided by an international border? | Akwesasne, the Blackfoot Confederacy, Tohono O'odham and others live on both sides of the Canadian or Mexican border, and each country sets their status by its own law ([Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md#7-what-the-comparison-suggests-project-analysis); [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md)) |
 
 ### Candidate outline, to confirm at Gate 2
+
+The full working outline of the code, the book and the website, with
+recommendations on each scope question, is now kept in
+[outline.md](outline.md) (version 0.1, Nov. 22, 2026). The list below is the
+starting point it grew from, kept for history.
 
 A starting point for discussion, not a decision. It follows the provision
 schema's tracks (general, peacemaking, mediation, arbitration, restorative,
@@ -149,11 +158,12 @@ used yet; remove it when the work is picked up (project choice, Nov. 22, 2026).
 | --- | --- | --- | --- |
 | Indigenous dispute resolution in Canada (comparative sidebar) | [Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md) (PR #62; PR #70 adds its Gate 2 scope question and Phase 2 sidebar step) | Gate 2 scope question on nations divided by a border; Phase 2 sidebar drafting | Review the draft sidebar in section 8 of the note; clear Westlaw list section 12; follow-ups from section 9 |
 | Indigenous dispute resolution in Mexico (comparative sidebar) | [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md) (PR #59) | Same as Canada: Gate 2 border question; Phase 2 sidebar drafting | Check whether Mexico's general law on Indigenous rights has passed; clear Westlaw list section 11 |
-| Peacemaking programs (peacemaking track) | [Peacemaking note](../research/analyses/2026-11-21-peacemaking-programs.md) (PRs #49, #56) | Gate 2 scope question on peacemaking; peacemaking track planning | Outcome evidence is thin (one comparison study); weigh the domestic violence critique; start further sweeps from the gaps in section 7 |
+| Peacemaking programs (peacemaking track) | [Peacemaking note](../research/analyses/2026-11-21-peacemaking-programs.md) (PRs #49, #56) | Drafting of the model peacemaking code ([outline, Part III](outline.md#part-iii-the-model-peacemaking-code)) | Outcome evidence is thin (one comparison study); weigh the domestic violence critique; start further sweeps from the gaps in section 7 |
 | Native nations' stories about making peace | [Stories catalog](../research/analyses/2026-11-21-peacemaking-stories.md) (PRs #60, #66, #68) | Essays and the methods and manners collection (Phase 3), after the second search | Finish the second search; then outreach to nations' cultural offices and reprint permissions |
 | Reader profiles and shared collections (website) | [Proposal](https://claude.ai/artifact/2MjsixaGafnQvepg4MTzqC) (permission tiers thread) | Step 1 any time; step 2 (sync) after the model code has stable section numbers | All decisions made: build on-device saves first, then linked accounts and shared anonymous links |
 | "Nemesis" adversarial review agent | Idea only (project memory) | After Gate 2, when drafting starts | Trevor defines its scope; then design an agent that hunts loopholes in the model code and systems |
 | Tribal rules of evidence and dispute resolution confidentiality | [Spike note](../research/analyses/2026-11-21-tribal-rules-of-evidence.md) (PRs #65, #67) | Gate 2, outline item 1 (confidentiality) and items 2 and 4 (return to court, agreements); then drafting of those sections | Compare the four confidentiality models across the 85 provisions with the Uniform Mediation Act; check Uniform Mediation Act enactments (Westlaw list, section 13) |
+| Native nations' constitutions and their versions | [Constitutions catalog](../research/constitutions/README.md) (PR #55); captures kept privately in the project files | Gate 1 data review; drafting of the sections on courts, removal and sovereign immunity | Check the AI readings and inferred changes; fix the Lumbee profile's citations to Buckland's constitution; pull the Wayback copies and ask about the 189 nations without a text (pull list, parts 1c, 1d, 2e and 6); copy the captures to R2 |
 
 ## Gate 2: scope and outline approved
 

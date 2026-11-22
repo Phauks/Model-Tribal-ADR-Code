@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1977-12-10. Versions are only those found; others may exist.'
 versions:
 - id: 1937-text
-  label: CONSTITUTION AND BY-LAWS OF (1937)
+  label: 1937 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1977-text
-  label: Constitution and Bylaws of the Kickapoo Tribe of Oklahoma (1977)
+  label: 1977 constitution
   event: edition
   status: unknown
   dates:
@@ -57,31 +57,26 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article IV (shall be vested in the Business Committee. Except as)
-    summary: Creates a Grievance Committee whose sole responsibility is to resolve members' grievances
-      about the conduct of tribal officers.
+    summary: Article headed "shall be vested in the Business Committee. Except as"; an AI reviewer confirmed
+      it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article VII (ELECTIONS)
-    summary: Requires the Election Ordinance to include provisions for handling protests and settling
-      election disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article VII (ELECTIONS)
-    summary: Requires the Election Ordinance to include provisions for handling protests and settling
-      election disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
-    summary: Requires complaints against officials to go first to the Grievance Committee for informal
-      resolution, then to a hearing before the body and a final Grievance Committee decision.
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - conciliation
-    - administrative-adjudication
   - topic: removal-and-recall
     locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
     summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
@@ -92,8 +87,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XVI (JUDICIAL POWERS)
-    summary: Lets the Council exercise judicial powers through a Tribal court system, to be created by
-      an ordinance drafted by the Business Committee and enacted by the Council.
+    summary: Article headed "JUDICIAL POWERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:
