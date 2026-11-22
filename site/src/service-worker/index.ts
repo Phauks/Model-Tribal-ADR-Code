@@ -44,7 +44,8 @@ const offlinePage = '/offline';
 // The search page and its index are kept too, so the masthead's search box works offline.
 const corePages = ['/', '/glossary', '/changelog', '/search', offlinePage];
 // edition.json says which edition the server has now, so it always comes from the network.
-const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/edition.json'];
+// Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself.
+const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/edition.json', '/copies'];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
 const keptCollectionsKey = '/__kept-collections';
 

@@ -283,6 +283,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
     source: oneida-indian-nation-ordinance-o-97-02
     confidence: medium
+    verification: read-in-full
     as_of: '1997-05-01'
   - kind: peacemaking
     title: Oneida Indian Nation Peacemaking Rules
@@ -290,17 +291,19 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-rulesofpeacemaking-document.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-09-29'
     locator: Oneida Indian Nation of New York
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
       referral procedures, civil process authority, standards of conduct, and authority to use Nation
       religious and traditional ways.'
-  - kind: traditional-dispute-resolution
+  - kind: other
     title: Ordinance O-97-02
     citation: Ordinance O-97-02
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-09-29'
     locator: Oneida Indian Nation of New York
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
@@ -315,28 +318,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2025-09-29'
   database_listings:
-  - title: Disposition Alternatives for Juveniles
-    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 401'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juveniles/
-  - title: Diversion Program for Alcohol and Drug Related Offenses
-    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 803'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-program-for-alcohol-and-drug-related-offenses/
   - title: Diversion to Peacemaker Process (Juveniles)
     citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 301'
     link: https://www.oneidaindiannation.com/ordinances-regulations/
@@ -348,28 +329,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-to-peacemaker-process-juveniles/
-  - title: Drug Education or Training Program Disposition Option
-    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 704'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/drug-education-or-training-program-disposition-option/
-  - title: Factors to Consider when Granting Diversion
-    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 804'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/factors-to-consider-when-granting-diversion/
   - title: Sentencing Goal is to Restore the Victim and the Nation
     citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 702'
     link: https://www.oneidaindiannation.com/ordinances-regulations/

@@ -290,6 +290,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
     source: skokomish-stc-9-11-sentencing
     confidence: medium
+    verification: read-in-full
     as_of: '2017-07-05'
   - kind: other
     title: FAMILY GROUP CONFERENCE
@@ -298,37 +299,17 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/skokomish/index.html
     source: national-indian-law-library-code-codes-skokomish
     confidence: medium
+    verification: title-only
     as_of: 2018-10
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: 'Title 9 – Skokomish Criminal Code, S.T.C. 9.11: Sentencing, Sentencing Guidelines'
-    citation: 'Title 9 – Skokomish Criminal Code, S.T.C. 9.11: Sentencing, Sentencing Guidelines'
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Skokomish Indian Tribe of Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      referral procedures, and procedures.'
-  - kind: other
-    title: FAMILY GROUP CONFERENCE
-    citation: FAMILY GROUP CONFERENCE; 3.03.095 Family Group Conference
-    link: https://narf.org/nill/codes/skokomish/index.html
-    source: national-indian-law-library-code-codes-skokomish
-    confidence: medium
-    as_of: '2018'
-    locator: 'Table of Contents, under ''S.T.C. 3.02 SKOKOMISH YOUTH CODE (REPEALED) – Repealed by Res.
-      # 16-24 2/2/2016 S.T.C. 3.03. SKOKOMISH CHILD PROTECTION AND FAMILY PRESERVATION ORDINANCE'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   - kind: other
     title: PATRON DISPUTE RESOLUTION
     citation: PATRON DISPUTE RESOLUTION; 4.02.118 Patron Dispute Resolution
     link: https://narf.org/nill/codes/skokomish/index.html
     source: national-indian-law-library-code-codes-skokomish
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: 'Table of Contents, under ''TTITLE FOUR — COMMERCE S.T.C. 4.01 – SKOKOMISH INDIAN TRIBAL
       ENTERPRISES ORDINANCE AND CORPORATE CHARTER (REPEALED) – Repealed by Res. # 15-118 9/30/2016 S.T.C.
@@ -342,62 +323,12 @@ dispute_resolution:
     link: https://narf.org/nill/constitutions/skokomish/index.html
     source: national-indian-law-library-constitution-constitutions-skokomish
     confidence: medium
+    verification: title-only
     as_of: '1980'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Amended:
       March 17, 1980); the provision itself was not read. The heading it falls under is taken from the
       page layout and may be imprecise.'
-  database_listings:
-  - title: Family Group Conference
-    citation: S.T.C. 3.03.095
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    form_of_practice: Alternative; Family conferencing
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-group-conference/
-  - title: Juvenile Alternative Sentencing
-    citation: S.T.C. 9.12.050
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Juvenile/Youth Justice
-    form_of_practice: Alternative; Rehabilitation; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-alternative-sentencing/
-  - title: Purpose Statement – Restorative Justice Framework
-    citation: S.T.C. 3.03.002
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-statement-restorative-justice-framework/
-  - title: Restitution-Based Sentencing Policy
-    citation: S.T.C. 9.11.010
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Justice
-    form_of_practice: Alternative; Restitution; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-based-sentencing-policy/
-  - title: Traditional Peacemaking Forum
-    citation: S.T.C. 9.11.030
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Justice
-    form_of_practice: Alternative; Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/traditional-peacemaking-forum/
 gaming:
   compacts:
   - state: WA

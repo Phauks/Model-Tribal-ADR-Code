@@ -56,6 +56,7 @@ Run by hand, never in continuous integration:
 | Script | Does | Needs |
 | --- | --- | --- |
 | `review/provision_pre_review.py` | `gather` fetches the source cited by every provision record in `content/tribes/` into a local cache and writes evidence batches for reviewers; `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md). It never changes a profile | `pip install -r scripts/requirements.txt`, plus `curl` and `pdftotext` for `gather` |
+| `review/apply_provision_decisions.py` | Applies the lead author's decisions on the provision pre-review to the profiles (decision record 0027) and fills the pre-review's `lead_author_decision` column; `--check` only reports | `pip install -r scripts/requirements.txt` |
 
 ## Data gap review
 

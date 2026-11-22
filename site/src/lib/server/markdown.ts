@@ -9,7 +9,8 @@
  * CitationCollector numbers them and records what each source supports.
  */
 import { marked } from 'marked';
-import { glossary, type SourceRecord } from './content.ts';
+import { copyPath } from '../public-copies.ts';
+import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
 
 export function escapeHtml(text: string): string {
 	return text
@@ -62,7 +63,20 @@ export function formatSource(
 			text += `. <span class="source-links">${original}</span>`;
 		}
 	}
-	return text;
+	return text + savedCopyLink(source);
+}
+
+/**
+ * A link to the copy this site keeps of the source's document, when it keeps
+ * one (src/lib/public-copies.ts), with the date the copy was made. The
+ * original address stays in the citation as the source cited.
+ */
+export function savedCopyLink(source: SourceRecord | undefined): string {
+	if (!source) return '';
+	const copy = publicCopyFor(source.original_link) ?? publicCopyFor(source.citation.URL);
+	if (!copy) return '';
+	const saved = copy.captured ? `, saved ${escapeHtml(formatCaptureDate(copy.captured))}` : '';
+	return ` <span class="source-saved">(<a href="${escapeHtml(copyPath(copy))}">copy on this site${saved}, PDF</a>)</span>`;
 }
 
 function webAddress(link: string | undefined): URL | undefined {

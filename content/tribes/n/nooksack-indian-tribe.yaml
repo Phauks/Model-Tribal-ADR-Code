@@ -231,28 +231,6 @@ justice_institutions:
     data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   database_listings:
-  - title: Attempted Prevention of Domestic Violence
-    citation: NookSack Indian Tribal Code Section 20A.06.020
-    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/attempted-prevention-of-domestic-violence/
-  - title: How the Court Treats Domestic Violence Cases
-    citation: NookSack Indian Tribal Code Section 20A.04.070
-    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
-    practice_area: Tribal Child Welfare/Family; Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/how-the-court-treats-domestic-violence-cases/
   - title: Informal Mediation Process for Elder/Vulnerable Adult Cases
     citation: NookSack Indian Tribal Code Section 18.06.40
     link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
@@ -275,72 +253,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-resolution-for-child-neglect-cases/
-  - title: Ordered Treatment for Protection of Youth and Family
-    citation: NookSack Indian Tribal Code Section 15.13.070
-    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/ordered-treatment-for-protection-of-youth-and-family/
-  - title: Pre-Sentencing Treatment for Domestic Violence Crimes
-    citation: NookSack Indian Tribal Code Section 20A.02.040
-    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/pre-sentencing-treatment-for-domestic-violence-crimes/
-  - title: Purpose and Goals of the Youth Court
-    citation: NookSack Indian Tribal Code Section 15.01.010; and Section 15.04.050
-    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-goals-of-the-youth-court-2/
-  - title: Reasonable and Appropriate Alternatives Reports for Children
-    citation: NookSack Indian Tribal Code Section 15.15.010; and, Section 15.15.050
-    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/reasonable-and-appropriate-alternatives-reports-for-children/
-  - title: Senencing Guidelines for Criminal Cases
-    citation: NookSack Indian Tribal Code Section 20.13.010
-    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/senencing-guidelines-for-criminal-cases/
-  - title: Treatment/Counseling Required for Vistitation
-    citation: NookSack Indian Tribal Code Section 20A.05.070
-    link: https://nooksacktribe.org/departments/nooksack-tribal-court/laws-ordinances/laws-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-counseling-required-for-vistitation/
 gaming:
   compacts:
   - state: WA

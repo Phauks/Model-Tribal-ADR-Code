@@ -6,6 +6,6 @@ import type { RequestHandler } from './$types';
 
 export const prerender = true;
 
-// The two maps of /nations/map, for a reader who reaches the page from
+// The views of the map on /nations/map, for a reader who reaches the page from
 // another page of the site without reloading (src/routes/nations/map/+page.ts).
 export const GET: RequestHandler = () => json(drawNationsMaps(geometry, nationsMapPage().counts));

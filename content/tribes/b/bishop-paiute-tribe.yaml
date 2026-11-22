@@ -243,10 +243,11 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/bishop_paiute/index.html
     source: national-indian-law-library-code-codes-bishop-paiute
     confidence: medium
+    verification: title-only
     as_of: 2018-09
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: arbitration
+  - kind: other
     title: Section9. Dispute Resolution
     citation: Section9. Dispute Resolution; Rule 38 - Mediation and Arbitration; 38.1 Alternative Dispute
       Resolution Program; 38.2 Mediation and Arbitration Assistance; 38.3 Mediation by Court Order; 38.6
@@ -254,26 +255,17 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/bishop_paiute/index.html
     source: national-indian-law-library-code-codes-bishop-paiute
     confidence: medium
+    verification: title-only
     as_of: 2018-09
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: Dispute Resolution
-    citation: Dispute Resolution
-    link: https://narf.org/nill/codes/bishop_paiute/index.html
-    source: national-indian-law-library-code-codes-bishop-paiute
-    confidence: medium
-    as_of: '2018'
-    locator: Table of Contents, under 'Gaming Revenue Allocation:'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   - kind: other
     title: 'Section 13: Binding dispute resolution mechanism'
     citation: 'Section 13: Binding dispute resolution mechanism'
     link: https://narf.org/nill/codes/bishop_paiute/index.html
     source: national-indian-law-library-code-codes-bishop-paiute
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'Labor Relations:'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -287,24 +279,12 @@ dispute_resolution:
     link: https://narf.org/nill/codes/bishop_paiute/index.html
     source: national-indian-law-library-code-codes-bishop-paiute
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'Tribal Court Rules / Bishop Paiute Tribe Rules of the Court:'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
-  database_listings:
-  - title: Juvenile Healing to Wellness Court
-    citation: Bishop Paiute Tribal Code. Title 3 Tribal Court and Judicial Department. Chapter 3.2 Juvenile
-      Healing to Wellness Court.
-    link: https://bishoppaiute.net/wp-content/uploads/2022/01/2021-01-20-TJHWC-CODE-alena-draft-003-sr-edits.docx.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-healing-to-wellness-court/
 gaming:
   compacts:
   - state: CA
