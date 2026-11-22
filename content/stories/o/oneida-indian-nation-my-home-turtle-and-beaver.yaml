@@ -1,0 +1,45 @@
+id: oneida-indian-nation-my-home-turtle-and-beaver
+title: 'My Home: An Oneida Indian Legend'
+nations:
+- oneida-indian-nation
+kind: traditional-story
+length: short
+excerpts:
+- telling: oneida-my-home-page
+  locator: the page's description
+  text: Using American Indian lessons, she finds ways to convince beaver that getting along and caring about the
+    land he lives in is a better way.
+  words: 25
+  sha256: 61d9da571d3da44f4b17673717d20e7bc983ba2ce86345d8f639385b83bcac59
+topics:
+- quarrel-between-animals
+- persuasion
+- care-for-the-land
+tellings:
+- id: oneida-my-home-page
+  source: oneida-indian-nation-my-home-legend
+  published_by: Oneida Indian Nation
+  authority: nation-government
+  verification: title-only
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: The excerpt is the Nation's own description of the story, not the story's text, which was not read.
+access:
+  level: nation-review-first
+anthology:
+  candidate: false
+  reason: Read the work itself first; the page only describes it (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-traditional-stories
+notes: The Nation describes a turtle who persuades a beaver that getting along is better, which fits the collection
+  closely; the story itself still needs to be read.
