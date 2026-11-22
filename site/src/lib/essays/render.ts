@@ -16,7 +16,7 @@ import type MarkdownIt from 'markdown-it';
 import type Token from 'markdown-it/lib/token.mjs';
 import { markAnchor, marksHtml, type CitationMark } from '../citation-marks.ts';
 import type { SourceEntry } from '../server/source-uses.ts';
-import { boxParts, essayBlocks, essayMarkdown, frontMatterField, missingEllipses, splitFrontMatter, type CitationReference } from './syntax.ts';
+import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, type CitationReference } from './syntax.ts';
 
 export interface EssayLibrary {
 	/** The full citation of a source, as HTML in the project's Indigo Book style. */
@@ -112,16 +112,16 @@ interface RenderState {
 const label = (text: string) => `<p class="essay-block-label">${text}</p>\n`;
 
 /**
- * Marks the attribution of each quotation: in a quote block, a last
- * paragraph that starts with a dash; after a ">" quotation, a paragraph that
- * starts with a dash.
+ * Marks the attribution of each quotation (isAttribution in syntax.ts): in a
+ * quote block, its last paragraph; after a ">" quotation, the paragraph that
+ * follows it.
  */
 function markAttributions(tokens: Token[]): void {
-	const isAttribution = (index: number) =>
-		tokens[index]?.type === 'paragraph_open' && /^(—|--)\s/.test(tokens[index + 1]?.content ?? '');
+	const attributionAt = (index: number) =>
+		tokens[index]?.type === 'paragraph_open' && isAttribution(tokens[index + 1]?.content ?? '');
 	for (let index = 0; index < tokens.length; index += 1) {
 		const token = tokens[index];
-		if (token.type === 'blockquote_close' && isAttribution(index + 1)) {
+		if (token.type === 'blockquote_close' && attributionAt(index + 1)) {
 			tokens[index + 1].attrJoin('class', 'essay-attribution');
 		}
 		if (token.type === 'container_quote_close') {
@@ -129,7 +129,7 @@ function markAttributions(tokens: Token[]): void {
 			if (tokens[index - 1]?.type !== 'paragraph_close') continue;
 			let open = index - 1;
 			while (open > 0 && !(tokens[open].type === 'paragraph_open' && tokens[open].level === token.level + 1)) open -= 1;
-			if (open > 0 && isAttribution(open)) tokens[open].attrJoin('class', 'essay-attribution');
+			if (open > 0 && attributionAt(open)) tokens[open].attrJoin('class', 'essay-attribution');
 		}
 	}
 }
