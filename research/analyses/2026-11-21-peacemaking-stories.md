@@ -51,7 +51,7 @@ collection followed five rules (project analysis):
 
 The lead author asked how stories should be attributed and in what file
 format. Decision record [0019](../../docs/decisions/0019-story-records.md)
-(status: proposed) answers with one YAML file per story in
+(accepted Nov. 21, 2026) answers with one YAML file per story in
 `content/stories/`, checked against `schemas/story.schema.json`. In short:
 
 - A **story** has a title, the nations, its kind and length, its methods and
