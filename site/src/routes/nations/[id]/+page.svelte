@@ -16,11 +16,6 @@
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
-	const removalRequest = $derived(
-		`/requests?${new URLSearchParams({ kind: 'remove', record, field: 'official_images' })
-			.toString()
-			.replaceAll('%2F', '/')}`
-	);
 </script>
 
 <svelte:head>
@@ -58,15 +53,6 @@
 					decoding="async"
 					onerror={() => (imageFailed = true)}
 				/>
-				<figcaption class="small muted">
-					{data.image.kind} of {page.officialName}, as
-					{#if data.image.foundOn}<a href={data.image.foundOn}>the nation’s website</a
-						>{:else}the nation’s website{/if} publishes it. It belongs to the nation, which does
-					not endorse this project.
-					<a class="no-print" href={removalRequest}>Ask for it to be removed</a>.<CitationMarks
-						marks={data.image.citations}
-					/>
-				</figcaption>
 			</figure>
 		{/if}
 		{#if !page.withdrawn}
@@ -75,10 +61,6 @@
 					Listed as “{page.listedName}” on the list that recognizes it.<CitationMarks
 						marks={data.nameCitations}
 					/>
-				</p>
-			{:else}
-				<p class="small muted">
-					Name as the recognizing list gives it.<CitationMarks marks={data.nameCitations} />
 				</p>
 			{/if}
 			{#each data.selfDesignations as designation (designation.name)}
@@ -191,21 +173,16 @@
 
 <style>
 	.nation-image {
-		display: flex;
-		align-items: center;
-		gap: var(--space-4);
 		margin: var(--space-3) 0;
 	}
 
+	/* Seals are square and logos are often wide, so the box sets only the limits. */
 	.nation-image img {
-		flex: none;
-		width: 6rem;
-		height: 6rem;
-		object-fit: contain;
-	}
-
-	.nation-image figcaption {
-		margin: 0;
+		display: block;
+		width: auto;
+		height: auto;
+		max-width: min(18rem, 100%);
+		max-height: 6rem;
 	}
 
 	.profile-introduction,
