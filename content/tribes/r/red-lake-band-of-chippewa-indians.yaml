@@ -184,12 +184,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Red Lake Band of Chippewa Indians Tribal Court
-  link: http://www.rlnn.org/MinorSponsors/RLCourtsMain.html
+  link: https://www.redlakenation.org/courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'Red Lake Band of Chippewa Indians'
+  note: The listed link (http://www.rlnn.org/MinorSponsors/RLCourtsMain.html) no longer reached the court
+    on 2026-11-22; the link is the court's page found in the second pass of the court review (research/reviews/2026-11-22-court-listings-second-pass.json,
+    court-254).
 gaming:
   compacts:
   - state: MN

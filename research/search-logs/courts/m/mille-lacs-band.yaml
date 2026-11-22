@@ -1,0 +1,188 @@
+profile: content/tribes/m/mille-lacs-band.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mnchippewatribe.org/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found not-found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://millelacsband.com/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Home page status 200; 2 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://millelacsband.com/sitemap.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Sitemap read; 26 addresses mention a court or judiciary.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://millelacsband.com/government/judicial/district-court
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Court-related page on the nation''s site, status
+    200; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://millelacsband.com/government/judicial/district-court/judiciary-fee-schedule
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Court-related page on the nation''s site, status
+    200; it does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://millelacsband.com/government/judicial/district-court/mille-lacs-band-case-law-reporter
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Court-related page on the nation''s site, status
+    200; it does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://millelacsband.com/government/judicial/district-court/district-court-calendar
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Court-related page on the nation''s site, status
+    200; it does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://millelacsband.com/government/judicial/court-of-appeals
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Court-related page on the nation''s site, status
+    200; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.mncourts.gov/mncourtsgov/media/scao_library/CJI/TCSCF-Members-Tribal-Court-Judges-(website-December-2022).pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Minnesota Judicial Branch, Tribal Court/State Court
+    Forum members: status 403; not read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Bureau of Indian Affairs, Court of Indian Offenses:
+    list of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: List of Courts of Indian Offenses, 85 Fed. Reg. 645
+    (Jan. 7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Northwest Intertribal Court System, Tribal Courts:
+    does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: American Indian Law Center, Southwest Intertribal
+    Court of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Mille Lacs”)'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Tribal Court Clearinghouse (Tribal Law and Policy
+    Institute), Tribal Courts list: names this nation; it is a supporting source that cannot confirm a
+    court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes/title-24-judicial-proceedings
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes/title-5-judicial-branch
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://millelacsband.com/media/pages/government/tribal-register/constitution-and-band-statutes/1cee54cb0c-1759872300/vol-1-2024-laws-of-the-non-removable-mlbo.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://millelacsband.com/media/pages/government/tribal-register/constitution-and-band-statutes/56c7792d89-1622573945/laws-of-the-non-removable-mille-lacs-band-of-chippewa-indians_11.09.2020.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Claude read the gathered evidence against the review
+    brief; verdict confirmed-other-name, from https://millelacsband.com/government/judicial/district-court.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-123

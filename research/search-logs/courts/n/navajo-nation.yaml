@@ -1,0 +1,370 @@
+profile: content/tribes/n/navajo-nation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.courts.navajo-nsn.gov/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: error
+  reason: '“Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status None; its reviewer found cannot-tell.'
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.navajo-nsn.gov/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: error
+  reason: 'Every court listed for this nation: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status None; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.courts.navajo-nsn.gov/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Tribal Court”: The listed link answered with status 200 and redirected to https://courts.navajo-nsn.gov/;
+    the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.navajo-nsn.gov/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Home page status 200; 7 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.navajo-nsn.gov/sitemap.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: error
+  reason: 'Every court listed for this nation: No sitemap could be read at the usual addresses.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Court” and “Navajo Nation Judicial District Courts”: Court-related page on the nation''s
+    site, status 200; it does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/indexaoc.htm
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/indexdistct.htm
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Court” and “Navajo Nation Judicial Branch” and “Navajo Nation Supreme Court”: Court-related
+    page on the nation''s site, status 200; it does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Court” and “Navajo Nation Judicial District Courts”: Court-related page on the nation''s
+    site, status 200; it does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/indexpeacemaking.htm
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.courts.navajo-nsn.gov/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Tribal Court”: Home page status 200; 0 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://courts.navajo-nsn.gov/sitemap.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: error
+  reason: '“Tribal Court”: No sitemap could be read at the usual addresses.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.azcourts.gov/stfcf
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Arizona Judicial Branch, State, Tribal and Federal Court
+    Forum: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://www.azahcccs.gov/AmericanIndians/Downloads/Procedures/tribal-court-contact-list.pdf
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Navajo”)'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Arizona Health Care Cost Containment System, tribal court
+    contact list (a state agency, not the court system): names this nation; it is a supporting source
+    that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Bureau of Indian Affairs, Court of Indian Offenses: list
+    of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan.
+    7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Northwest Intertribal Court System, Tribal Courts: does
+    not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: 'Every court listed for this nation: American Indian Law Center, Southwest Intertribal Court
+    of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Navajo”)'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Tribal Court Clearinghouse (Tribal Law and Policy Institute),
+    Tribal Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/navajo_nation.html
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Tribal Court”: The National Indian Law Library nation page is the directory the listing came
+    from or a directory like it; it cannot confirm that the court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nnols.org/wp-content/uploads/2022/05/5A-12.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    establishes a court in law, which does not show it operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Navajo-Title-7-Courts-and-Procedure.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    mentions a court in its title; no passage establishing a court was found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nnols.org/navajo-nation-code/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: 'Every court listed for this nation: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    mentions a court in its title; no passage establishing a court was found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Tribal Court”: Claude read the gathered evidence against the review brief; verdict confirmed,
+    from http://www.courts.navajo-nsn.gov/.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-206
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.navajocourts.org/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Navajo Nation Judicial Branch”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.navajocourts.org/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Navajo Nation Judicial Branch”: The listed link answered with status 200 and redirected to
+    https://fridakahlofans.com/; it does not show this court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Navajo Nation Judicial Branch” and “Navajo Nation Supreme Court”: Court-related page on the
+    nation''s site, status 200; it does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Navajo Nation Judicial Branch” and “Navajo Nation Supreme Court”: Court-related page on the
+    nation''s site, status 200; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.navajocourts.org/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Navajo Nation Judicial Branch” and “Navajo Nation Supreme Court” and “Navajo Nation Judicial
+    District Courts”: Home page status 200; 0 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://fridakahlofans.com/sitemap.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Navajo Nation Judicial Branch” and “Navajo Nation Supreme Court” and “Navajo Nation Judicial
+    District Courts”: Sitemap read; 0 addresses mention a court or judiciary.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Navajo Nation Judicial Branch”: Claude read the gathered evidence against the review brief;
+    verdict link-dead-court-found, from https://courts.navajo-nsn.gov/.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-207
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.navajocourts.org/indexsuct.htm
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Navajo Nation Supreme Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.navajocourts.org/indexsuct.htm
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Navajo Nation Supreme Court”: The listed link answered with status 200 and redirected to https://fridakahlofans.com/;
+    it does not show this court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Navajo Nation Supreme Court”: Claude read the gathered evidence against the review brief;
+    verdict link-dead-court-found, from https://courts.navajo-nsn.gov/.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-208
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.navajocourts.org/indexdistct.htm
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Navajo Nation Judicial District Courts”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.navajocourts.org/indexdistct.htm
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Navajo Nation Judicial District Courts”: The listed link answered with status 200 and redirected
+    to https://fridakahlofans.com/; it does not show this court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/indexdistct.htm
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: found
+  reason: '“Navajo Nation Judicial District Courts”: Court-related page on the nation''s site, status
+    200; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Navajo Nation Judicial District Courts”: Claude read the gathered evidence against the review
+    brief; verdict link-dead-court-found, from https://courts.navajo-nsn.gov/indexdistct.htm.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-209
