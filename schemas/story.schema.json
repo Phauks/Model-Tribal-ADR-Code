@@ -101,7 +101,7 @@
     },
     "access": {
       "$ref": "common.schema.json#/$defs/accessLevel",
-      "description": "Access for the story as a whole: the most restrictive level among its tellings and protocols."
+      "description": "Access for the story as a whole: the most restrictive level among its tellings and protocols. On the website, a nation-review-first story is shown with a notice that the nation has not reviewed it, and a telling from a contributor filing only once it is public (decision record 0029)."
     },
     "anthology": {
       "type": "object",

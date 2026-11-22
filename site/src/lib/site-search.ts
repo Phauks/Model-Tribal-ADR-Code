@@ -8,7 +8,7 @@
  */
 import { foldForSearch } from './tables/table-definition.ts';
 
-export type SearchKind = 'nation' | 'term' | 'page';
+export type SearchKind = 'nation' | 'story' | 'term' | 'page';
 
 export interface SearchEntry {
 	kind: SearchKind;
@@ -23,6 +23,7 @@ export interface SearchEntry {
 
 export const searchKindLabels: Record<SearchKind, string> = {
 	nation: 'Nations and communities',
+	story: 'Stories',
 	term: 'Glossary',
 	page: 'Pages'
 };
