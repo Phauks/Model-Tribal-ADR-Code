@@ -179,8 +179,7 @@ its fixed sections on each nation's page:
    nation, reviewed by the nation, approved by the nation), what that means,
    and "Is this about your nation? Make a request."
 3. What is distinctive here (below).
-4. At a glance: a small map of the states with a presence, then recognition,
-   states with a presence, government contacts, federal region.
+4. At a glance: a small map of the states with a presence, then recognition, states with a presence, federal region, then the government contacts card.
 5. Courts and dispute resolution: each forum with its kind, source and date.
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
@@ -242,11 +241,7 @@ with the place in the source and the date the value was true. Every fact
 stays traceable to its source; the reader finds it by source rather than by
 a mark beside the fact.
 
-**Contacts.** An address links to a Google Maps search for it; a phone number
-is a `tel:` link that opens the device's dialer; an email address is a
-`mailto:` link. Fax numbers stay as text. A value that cannot be read
-reliably, such as a phone number that is not ten digits, stays as text
-(Trevor, 2026-11-21).
+**Contacts.** A phone number is a `tel:` link that opens the device's dialer; an email address is a `mailto:` link. Fax numbers stay as text. A value that cannot be read reliably, such as a phone number that is not ten digits, stays as text (Trevor, 2026-11-21). The contacts appear as a contact card, described under [Components](#6-components).
 
 **Missing information.** Empty fields are left out rather than shown as
 "unknown," so a page never suggests a nation lacks something it may simply
@@ -367,6 +362,8 @@ the design does not chop pages into rows of identical cards (project choice).
 
 **Summary list.** A `<dl>` of label and value pairs for nation facts and for
 "Check your request," following the GOV.UK summary list.
+
+**Contact card.** A nation's government contacts are grouped by office in `src/lib/components/ContactCard.svelte`, approved by Trevor on Nov. 22, 2026, from a mockup (project files, `design/contact-card/`). Each office is one card, named once in its header, so "Tribal government office" is no longer repeated on every line. Inside, each contact is a row with a Lucide icon and a label (Website, Physical address, Mailing address, Phone, Fax, Email) beside its value; in a narrow card the value moves under its label. An address shows its street and its town on two lines, and a street address gets its own "Open in Google Maps" link under it; a post office box gets none, since a map cannot find it. A mailing address that repeats the physical address reads "Same as physical address." A website shows without `https://www.`, and an old directory address that now leads to the nation's site is shown as a note on that site rather than as a second website. Links that leave the site (the website and the map) open in a new tab, with an external-link icon and a hidden "(opens in a new tab)" for screen readers. The rules that read the office from each contact's label are in `src/lib/contact-card.ts`: a label such as "Arctic Village council office: …" or "Office of Hawaiian Affairs (state agency)" makes its own card; labels that only name the list a contact came from are dropped, because the Sources section already lists it.
 
 **Tables.** For data a reader compares across rows. Wide tables scroll inside their own box, so the page never scrolls sideways. Data tables use the `DataTable` component, the project's own, not a data grid library (`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is built with every row in order, as a plain table that reads the same without scripts. Once scripts run, sortable column headers become buttons, following the WAI-ARIA Authoring Practices sortable table example (the sorted header carries `aria-sort`), and a table can get a search box with a live count, though public lists now leave finding to the site search. Sorting and search follow one set of rules in `src/lib/tables/table-definition.ts`: case and accents are ignored, numbers inside text sort as numbers, and empty cells stay last. A long list is split into short pages rather than drawn as one long table or a virtual-scrolling one: the table spike measured that a virtual-scrolling grid left most rows out of the page, so find-in-page, printing and reading without scripts could not reach them (`spikes/tables/REPORT.md`, "SVAR Svelte DataGrid: rejected").
 
