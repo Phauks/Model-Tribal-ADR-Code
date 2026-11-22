@@ -544,10 +544,13 @@ export const load: PageServerLoad = ({ params }) => {
 	let image: { src: string; kind: string } | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
+		// A copy from somewhere other than the nation's own website, such as
+		// Wikimedia Commons, names who made it and its license instead.
+		const origin = shownImage.credit ?? 'As the nation’s website publishes it.';
 		sources.use(
 			shownImage,
 			kind,
-			'As the nation’s website publishes it. It belongs to the nation, which does not endorse this site.'
+			`${origin} It belongs to the nation, which does not endorse this site.`
 		);
 		image = { src: imagePath(record.id), kind };
 	}

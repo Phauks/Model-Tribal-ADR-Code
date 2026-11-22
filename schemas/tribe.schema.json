@@ -225,7 +225,7 @@
     },
     "official_images": {
       "type": "array",
-      "description": "The nation's seal, emblem, flag or logo as the nation itself publishes it, found on its own website. The record holds where the image was found and a fingerprint of the copy kept privately; the image file is never stored in this repository. Whether the project may show the image is recorded in reuse (docs/official-images.md). Never filled with a drawn, generated or stock image.",
+      "description": "The nation's seal, emblem, flag or logo. The nation's own website comes first; when it has none, another reliable copy may be used, such as a Wikimedia Commons file or the nation's page on an intertribal organization's website, with who made it and its license in credit. The record holds where the image was found and a fingerprint of the copy kept privately; the image file is never stored in this repository. Whether the project may show the image is recorded in reuse (docs/official-images.md). Never filled with an image the project drew or generated, or with a stock image.",
       "items": {
         "type": "object",
         "$ref": "#/$defs/citedFact",
@@ -237,7 +237,8 @@
             "description": "seal: the nation's official seal. emblem: an official crest or emblem the nation's law names as distinct from its seal. flag: the nation's flag. logo: the mark the nation uses on its website, which may include the seal."
           },
           "alternative_text": { "type": "string", "description": "The image's alternative text, exactly as the page gives it." },
-          "image_link": { "$ref": "common.schema.json#/$defs/link", "description": "Where the nation's website serves the image." },
+          "image_link": { "$ref": "common.schema.json#/$defs/link", "description": "Where the image is served: the nation's website, or the other copy that credit names." },
+          "credit": { "type": "string", "description": "Who made or published this copy, and its license, when it is not the nation's own file on the nation's own website; for example a Wikimedia Commons file drawn by a volunteer. Shown in the image's Sources entry." },
           "retrieved": { "$ref": "common.schema.json#/$defs/calendarDate" },
           "media_type": { "type": "string", "description": "As the server reported it, for example image/png." },
           "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "SHA-256 of the file as downloaded, so a later copy can be checked against it." },

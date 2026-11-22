@@ -1,0 +1,24 @@
+profile: content/tribes/n/nashville-eldorado-miwok-tribe.yaml
+topic: official-images
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: No website listed in the profile
+  query: the nation's own seal, emblem, logo or flag
+  outcome: no-site
+  reason: The profile lists no official website, so there was no nation website to read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikimedia-commons
+  address: https://commons.wikimedia.org/wiki/Category:Official_seals_of_Native_American_tribes
+  query: files in the categories of official seals, tribal insignia, logos, coats of arms and flags of
+    Native American tribes (three levels down), matched to the nation's name
+  outcome: not-found
+  reason: No seal or logo file matched the nation's name; no flag file either.
+next_steps: A person could check the nation's social media pages, newsletters or annual reports, or ask
+  the nation's office for a copy and permission.

@@ -94,6 +94,29 @@ contacts:
   locator: 'record "Inupiat Community of the Arctic Slope" (community: Utqiagvik, object 220)'
   note: 'Checked 2026-11-21: the address now shows gambling advertising, not the Community''s website.
     The Community''s website is https://icas-nsn.gov/ (listed above).'
+official_images:
+- kind: logo
+  alternative_text: Iñupiat Community of the Arctic Slope
+  image_link: https://icas-nsn.gov/wp-content/uploads/2026/09/ICAS_LOGO_final_horizontal5.png
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 6a76e772a61370414dada5c8f084b3ed27390a1c5585da1f03b06fca7bc350aa
+  private_copy: nation-images/inupiat-community-of-the-arctic-slope/logo-6a76e772a613.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 - Iñupiat Community of the Arctic Slope
+      link: https://icas-nsn.gov/
+      source: icas-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: icas-nsn-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Fairbanks Agency

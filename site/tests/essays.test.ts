@@ -74,6 +74,17 @@ describe('essays in the bucket', () => {
 		).rejects.toBeInstanceOf(SaveConflict);
 		const same = await saveVersion(database, bucket, { identifier: 'i-timeline', text: essay('Timeline', 'Two.'), basedOn: 2, personIdentifier: 'lead', origin: 'editor' });
 		expect(same).toMatchObject({ unchanged: true, version: { number: 2 } });
+		// Naming the text as it stands saves it again, since a saved version never changes.
+		const named = await saveVersion(database, bucket, {
+			identifier: 'i-timeline',
+			text: essay('Timeline', 'Two.'),
+			basedOn: 2,
+			personIdentifier: 'lead',
+			origin: 'editor',
+			note: 'Sent to advisors',
+			evenIfUnchanged: true
+		});
+		expect(named).toMatchObject({ unchanged: false, version: { number: 3, note: 'Sent to advisors', sha256: same.version.sha256 } });
 	});
 
 	it('publishes a version, and can hold a publication back', async () => {
