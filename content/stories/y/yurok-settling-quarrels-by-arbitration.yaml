@@ -1,0 +1,68 @@
+id: yurok-settling-quarrels-by-arbitration
+title: Settling quarrels before the Deerskin Dance
+nations:
+- yurok-tribe-of-the-yurok-reservation
+kind: teaching
+length: paragraph
+excerpts:
+- telling: thompson-1916
+  locator: page 43, within the sentence beginning "These men doctors help"
+  text: this is the time when all troubles between individuals, clans and villages are settled, so the whole tribe
+    is in peace.
+  words: 21
+  sha256: ad14b80b14aa344fce79a5d260e13c4435cda5c013427f5c39e9e44aaf493d68
+- telling: thompson-1916
+  locator: page 44, sentence beginning "Now they would begin"
+  text: Now they would begin to settle all of their quarrels among themselves by paying, this was done by arbitration
+    in most of the cases, as they would select the ones that were friends to both sides of the ones in dispute.
+  words: 41
+  sha256: 2f46b2ace2b3a88486c8cb30ed6c26c5fd89d6d1996b58b327f70fed558cd66e
+topics:
+- arbitration
+- compensation
+- choosing-the-arbitrators
+- settlement-before-a-gathering
+- yurok-law
+tellings:
+- id: thompson-1916
+  source: thompson-1916-to-the-american-indian
+  locator: pages 43-44
+  teller:
+    form: name-and-nation
+    name: Lucy Thompson (Che-na-wah Weitch-ah-wah)
+    nation: yurok-tribe-of-the-yurok-reservation
+    role: author
+  published_by: Lucy Thompson (self-published)
+  authority: member-author
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: The text is quoted from the 1916 printing. Where the scanned text misreads a character, the two scans were
+    compared and the printed word kept.
+access:
+  level: nation-review-first
+anthology:
+  candidate: true
+  reason: A Yurok woman's own 1916 account of how quarrels were settled by paying, through arbitrators who were
+    friends to both sides; the closest match yet to the model code's arbitration division (project analysis).
+  telling: thompson-1916
+  permission_from:
+  - holder: Yurok Tribe
+    for: cultural-authority
+    nation: yurok-tribe-of-the-yurok-reservation
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-22-peacemaking-ancestor-stories
+notes: 'Not a story in the narrower sense: an account of Yurok law by a Yurok author, kept here because it tells
+  how the ancestors settled disputes. The passage ties the settlements to the White Deerskin Dance; the project
+  quotes nothing about the dance itself or the men doctors'' lodge.'

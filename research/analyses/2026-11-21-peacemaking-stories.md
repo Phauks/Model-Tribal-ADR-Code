@@ -24,6 +24,7 @@ not repeat it.
 7. Gaps and next steps
 8. Second search: more nations
 9. Traditional stories
+10. Ancestor stories
 
 ## 1. Ground rules for collecting stories
 
@@ -260,6 +261,41 @@ The lead author asked on Nov. 21, 2026 whether the search had looked for traditi
 
 **Left out on purpose.** The Chickasaw Nation's "The Migration Story" turns on a disagreement that talk could not settle, but the Nation describes its oral histories as sacred stories,[^chickasaw] so it waits for the Nation's guidance. Creation stories on the Seminole and Oneida sites, and a Ponca collection the Tribe calls sacred, were left out for the same reason.
 
+## 10. Ancestor stories
+
+On Nov. 22, 2026 the lead author said what he had most hoped for: traditional stories about the ancestors dealing with disputes. A fourth search looked for them where nations publish such stories: their newspapers and history columns, cultural departments, school lessons and Native-run heritage bodies. For the first time it also read older books by Native authors that are now in the public domain. Method and limits are in the session log, [2026-11-22-peacemaking-ancestor-stories](../sessions/2026/2026-11-22-peacemaking-ancestor-stories.md).
+
+| Record | Nation | Kind | Teller's voice | Anthology |
+| --- | --- | --- | --- | --- |
+| `lummi-salmon-woman-and-her-children`[^lummi-salmon] | Lummi Nation | traditional story, short | nation cultural office (written by Jewell Praying Wolf James) | yes |
+| `lummi-bear-and-the-steelhead`[^lummi-salmon] | Lummi Nation | traditional story, short | nation cultural office (same writer) | yes |
+| `yurok-settling-quarrels-by-arbitration`[^thompson] | Yurok Tribe | teaching, two passages | member author (Lucy Thompson, 1916) | yes |
+| `ute-mountain-ute-the-sky-people`[^ute-legends] | Ute Mountain Ute Tribe | traditional story, one sentence | nation government | no (ask first) |
+| `seneca-race-of-the-turtle-and-the-beaver`[^parker] | Seneca Nation of Indians; Tonawanda Band of Seneca | traditional story, short | author of Seneca descent (Arthur C. Parker, 1923); words held privately | not yet |
+
+**What the ancestor stories show (project analysis).**
+
+- **Shared fault and agreed terms.** In the Lummi story of Salmon Woman, the people lose her gift through disrespect, and the story says: "It did not matter whose fault it was, everyone was responsible."[^lummi-salmon] She comes back only on conditions: "His people would have to accept these conditions." And at the end: "The people agreed to the terms and they all became happy once again."[^lummi-salmon] It is the clearest traditional story in the catalog of a broken relationship restored by terms both sides accept.
+- **A leader holds his own kin to account.** In the sequel, Bear breaks the village's promise, and "Bear could not deny he was fishing." Raven "had to punish his brother," and then persuades Salmon Woman that "it would be wrong to make all suffer for the poor decision of one."[^lummi-salmon] The story separates the wrongdoer's sanction from the community's shared duty to prevent the next wrong.
+- **Arbitrators who are friends to both sides.** Lucy Thompson, a Yurok author, wrote in 1916 that before the White Deerskin Dance "all troubles between individuals, clans and villages are settled, so the whole tribe is in peace." Quarrels were settled "by paying, this was done by arbitration in most of the cases, as they would select the ones that were friends to both sides of the ones in dispute."[^thompson] It is the closest match yet to the model code's arbitration division, and it comes from a Yurok writer, not an outside observer.
+- **Peace among the animals.** The Ute Mountain Ute Tribe's legends page says that when "the animals soon began to fight and kill each other," a ruler was made "to see that they lived in peace."[^ute-legends]
+- **A claim settled by a contest.** In the Seneca tale Arthur C. Parker wrote down, Turtle and Beaver both claim the same water and look for a way to settle it.[^parker] Its words are held privately for now (next paragraph). The Oneida Indian Nation's "My Home" is also a Turtle and Beaver story.[^oneida-my-home]
+
+**Winter stories.** Two more sources state a winter rule. A Karuk Tribe school lesson says: "The Karuk, like most indigenous peoples, traditionally only tell stories when it is cold enough for snow to be in the high mountains. Please respect this tribal code."[^karuk-winter] Parker writes that "the modern Iroquois, following the old time custom, reserves his tales of adventures, myth and fable for winter."[^parker] The project already records only the rule for the O'odham winter stories (section 9). Because the Seneca tale falls under a stated winter custom, its exact words are held privately until the lead author decides how the website treats winter stories (project analysis).
+
+**Leads, not records.**
+
+- **Chickasaw Nation, "How Day and Night Were Divided"** (a THRIVE: Traditions video on Chickasaw.tv): the Nation's description says an animal council approves Squirrel's plan and Bear is angered. It is video only, and like "The Migration Story" it waits for the Nation's guidance on its stories.[^chickasaw]
+- **Choctaw Nation, "The Possum and the Wolf"** (Iti Fabvssa column, May 1, 2018): the Nation's translation of a story written down by Henry Halbert in the late 1800s. Deceit answered by death, with no settlement, so a weak fit.
+- **Ho-Chunk Nation, Hocak Worak, Jan. 27, 2012, "Old Stories" page:** reprints older newspaper texts, including a legend of a quarrel between water spirits and thunderbirds whose recorder is not named, and Ulysses S. White's "The story of Devils Lake," not yet read.
+- **Sisseton Wahpeton Oyate:** Janet Claymore-Ross tells "Iktomi and the Ducks" on Prairie Public's Dakota Datebook (a broadcaster, not the Oyate). Part Two was not read.
+- **Squaxin Island Tribe,** "Qawila's the Warrior" (Squaxin Island Museum): allied nations meet in council to decide on a response to raids. It ends in war, not peace.
+- **Tanana Chiefs Conference,** "The Story of Tobaan Etseh," from Elder Eliza Jones (Koyukon): animals help Grandma Porcupine cross a river. Cooperation, not a dispute; only the web summary was read.
+- **Osage Nation Language Department,** *Coyote and the Bear* (children's book): the newspaper report gives no text.
+- **Mi'kmaq,** "Kluskap and the Three Sisters," a teaching sheet from Nova Scotia: a lead for the Canada sidebar, not the main catalog.
+
+**Left out on purpose.** The Cherokee Nation Language Program's "Legend of the Giant Turtles" calls the turtles sacred. Lucy Thompson's story of the people's wandering turns on the Talth's secret lodge. Parker's chapters on medicine societies and the False Faces were not used. A Cherokee Phoenix reprint of a James Mooney text was left out because it is an outside recorder's version.
+
 [^charter-4]: [Charter, commitment 4](../../docs/charter.md#4-consultation-before-publication).
 [^charter-5]: [Charter, commitment 5](../../docs/charter.md#5-cultural-knowledge-and-restricted-material).
 [^protocols]: First Archivist Circle, *Protocols for Native American Archival Materials* (2007), [www2.nau.edu](https://www2.nau.edu/libnap-p/protocols.html) (accessed Nov. 21, 2026). Source record: `first-archivist-circle-2007-protocols`.
@@ -315,3 +351,8 @@ The lead author asked on Nov. 21, 2026 whether the search had looked for traditi
 [^cpn-winter]: *Winter Storytelling*, Hownikan (Citizen Potawatomi Nation), Nov.-Dec. 2025, [potawatomi.org](https://www.potawatomi.org/wp-content/uploads/Hownikan-November-December-2025-Digital.pdf). Source record: `citizen-potawatomi-nation-hownikan-2025-winter-storytelling`.
 [^srpmic-winter]: *O'odham Lore Shared at Winter Storytelling Event*, O'odham Action News (Salt River Pima-Maricopa Indian Community), [oan.srpmic-nsn.gov](https://oan.srpmic-nsn.gov/oodham-lore-shared-at-winter-storytelling-event/) (last visited Nov. 22, 2026). Source record: `srpmic-oan-oodham-lore-winter-storytelling`.
 [^gric-winter]: *Ho'ok A'aga: Winter Storytelling 2026*, Gila River Indian News, [gricnews.org](https://www.gricnews.org/index.php/2026-articles/hook-aaga-winter--storytelling) (last visited Nov. 22, 2026). Source record: `gila-river-indian-news-2026-hook-aaga-winter-storytelling`.
+[^lummi-salmon]: Jewell Praying Wolf James, *Salmon Woman and Her Children* and *Bear and the Steelhead*, Lummi Culture Protection Committee (Feb. 4, 1992), [lummi-nsn.gov](https://www.lummi-nsn.gov/userfiles/190_Story%20of%20Conservation%20of%20the%20Salmon(1).pdf) (accessed Nov. 22, 2026). Source record: `lummi-nation-1992-salmon-woman-and-bear-and-the-steelhead`.
+[^thompson]: Lucy Thompson (Che-na-wah Weitch-ah-wah), *To the American Indian* 43–44 (Cummins Print Shop 1916), [archive.org](https://archive.org/details/toamericanindian01thom). Source record: `thompson-1916-to-the-american-indian`.
+[^ute-legends]: *Legends and Children's Stories of the Ute Tribe*, Ute Mountain Ute Tribe (1999), [utemountainute.com](https://utemountainute.com/legends.htm) (last visited Nov. 22, 2026). Source record: `ute-mountain-ute-tribe-legends-and-childrens-stories-page`.
+[^parker]: Arthur C. Parker, *Seneca Myths and Folk Tales* 309–11 (Buffalo Historical Society Publications vol. 27, 1923), [archive.org](https://archive.org/details/senecamythsfolkt00park); the winter custom is in the introduction. Source record: `parker-1923-seneca-myths-and-folk-tales`.
+[^karuk-winter]: *Nanu'ávaha Third Grade Lesson 4: Karuk Oral Tradition: Coyote's Journey*, Karuk Tribe, Sípnuuk, [sipnuuk.karuk.us](https://sipnuuk.karuk.us/digital-heritage/nanu%C3%A1vaha-third-grade-lesson-4-karuk-oral-tradition-coyotes-journey) (last visited Nov. 22, 2026). Source record: `karuk-tribe-sipnuuk-coyotes-journey-lesson`.
