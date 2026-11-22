@@ -95,7 +95,7 @@ cell means no source read stated one, not that none exists.
 | `onondaga-nation-founding-of-the-great-peace`[^onondaga-history] | Onondaga Nation | historical account, long | nation government | | yes |
 | `onondaga-nation-two-row-wampum`[^two-row][^onondaga-timeline] | Onondaga Nation | historical account, short | nation government | | yes |
 | `haudenosaunee-wampum-records-agreements`[^onondaga-wampum][^hcf-wampum] | Onondaga Nation; Haudenosaunee Confederacy | teaching, short | nation government | sacred use of wampum | no |
-| `oneida-indian-nation-tree-of-peace`[^oneida] | Oneida Indian Nation | traditional story, not yet read | nation government | | not yet assessed |
+| `oneida-indian-nation-tree-of-peace`[^oneida] | Oneida Indian Nation | teaching, one sentence | nation government | | no |
 | `ltbb-reviving-odawa-peacemaking`[^ltbb] | Little Traverse Bay Bands of Odawa Indians | community voices, long | nation court | | yes |
 | `kake-guwakaan-deer-people`[^kake] | Organized Village of Kake | teaching in the Tribe's code, a paragraph | nation government | the code calls Guwakaan a sacred clan | no |
 | `tlingit-law-and-peace-ceremonies`[^shi-books][^shi-exhibit][^juneau] | Tlingit (regional Tribe's profile used) | historical account, book | Native institution; Tlingit author | ask about clan ownership | yes |
@@ -220,8 +220,7 @@ story the nation chooses to share. Others to follow:
   contributor intake forms, rather than from the web (project analysis). The
   second search, which found program pages far more often than stories,
   supports this.
-- **Pulls.** Nine items are in section 10 of the project's single Westlaw
-  list.
+- **Pulls.** The library copies, Westlaw searches and pages blocked to automated requests are on the lead author's list of documents to get by hand (`research/documents-to-get.md` in the project's working files).
 
 ## 8. Second search: more nations
 

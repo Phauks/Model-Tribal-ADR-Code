@@ -1,5 +1,6 @@
 <script lang="ts">
 	import GlossaryEntry from '#lib/components/GlossaryEntry.svelte';
+	import PageTools from '#lib/components/PageTools.svelte';
 	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { basisLabels, statusLabels } from '#lib/glossary-labels.ts';
@@ -20,6 +21,7 @@
 <div class="reading">
 	<GlossaryEntry {entry} headingLevel={1}>
 		<ReportLink record="glossary/{entry.id}" />
+		<PageTools />
 	</GlossaryEntry>
 
 	<h2>About this entry</h2>

@@ -69,6 +69,7 @@ and fill in the `verification` level from [decision record 0014](../docs/decisio
 | `review/compact_clauses.py` | `gather` downloads each nation's own gaming compacts for every compact dispute clause copied from another nation's compact, extracts the text and writes evidence files with the dispute resolution sections; it never changes a profile | `pip install -r scripts/requirements.txt`, plus `curl` and `pdftotext` |
 | `review/court_listings.py` | `gather` fetches the listed link, the nation's website and its court pages for every court listed from a directory, and keeps the passages that mention a court; it never changes a profile | `pip install -r scripts/requirements.txt requests beautifulsoup4` |
 | `review/gap_review.py` | `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md); `levels` sets `verification` on every profile fact that has none (except provisions) from the fact's note or its group's level in `research/reviews/2026-11-21-verification-levels.json`, adding only that key; `apply` makes the review's clear fixes (copied compact clauses both reviewers found the same, cited to the nation's own compact; dead court links replaced with the court page the review fetched); `rewrite-compacts` rewrites copied compact clauses from the nation's own compact (both Nov. 21 reviewers found them different, or the Nov. 22 re-check in `research/reviews/2026-11-22-compact-clauses-recheck.json` came out clear) and cites that compact | `pip install -r scripts/requirements.txt` |
+| `review/court_listings_second_pass.py` | Second pass on the directory-listed courts the first review could not confirm: `gather` searches the first two websites on record for each nation more deeply (robots.txt obeyed, sitemaps, up to five court pages), reads state court system, Bureau of Indian Affairs and intertribal court directories and the collected law codes, and logs every address fetched; `merge` checks that each cited address was fetched with status 200 and writes the reviewable files in [`research/reviews/`](../research/reviews/README.md) and one [search log](../research/search-logs/README.md) per nation for the topic `courts`; `apply` replaces a dead listed link with the court page the review fetched, keeping the listed link in the note | `pip install -r scripts/requirements.txt beautifulsoup4`, plus `curl` and `pdftotext` |
 
 ## Dispute resolution coverage search
 
@@ -81,11 +82,19 @@ writes the [search logs](../research/search-logs/README.md) of decision record
 | --- | --- | --- |
 | `review/coverage_search.py` | `gather` reads what the project already holds for every federally recognized nation with no dispute resolution record (tribal law texts, constitution readings, justice institutions, raw facts, peacemaking sources, the Alaska Court System's restorative justice plans), then fetches its National Indian Law Library page, its website (home page, sitemap, site search and linked law and court pages), court pages and code links with an honestly named link checker that obeys robots.txt and logs a refusal as `blocked`, keeping passages around dispute resolution words in a private work folder; `batches` writes review batches and a fixed 10 percent sample of nations with nothing found; `second` re-fetches the evidence page of every first-pass candidate for the second reader; `merge` drops candidates the second reader set aside and writes `research/reviews/2026-11-22-dispute-resolution-coverage.{json,csv}` (empty decision column), a counts file and one search log per profile | `pip install -r scripts/requirements.txt requests beautifulsoup4`, plus `pdftotext` |
 
+## Applying the second gap review, Nov. 22, 2026
+
+Run by hand, never in continuous integration. They re-check rows 21, 8 and 10 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) independently of the [second gap review](../research/reviews/2026-11-22-second-gap-review.md) and write to records only the clear results both checks agree on (its "Applied" section). Everything else stays in that review's files for the lead author. None of them tries to get past a site that refuses scripts.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/source_links.py` | `check` requests every source record's address (HEAD, then GET for HTML pages; FederalRegister.gov documents through its API) and caches the result; `apply --agree` sets `history.status` to `removed` or `moved` (with the new address in `history.changes`) and `history.last_checked` where the review's `2026-11-22-source-links.csv` agrees, editing only the `history` block | `pip install -r scripts/requirements.txt requests` |
+| `review/child_welfare_agents.py` | `compare` matches the Indian Child Welfare Act designated agent facts with a transcription of the notice's table, which is printed only as page images (`research/reviews/2026-11-22-child-welfare-agents-table.csv`); `apply` sets each fact's locator to its page, notes the re-reading, corrects names misread from the images, and sets `read-in-full` where the review's OCR also matched the name word for word | `scripts/requirements.txt` |
+| `review/governing_documents.py` | `gather` opens each governing document still recorded by title only that no other work covers, from saved captures (with `--no-fetch`, nothing else), and checks the kind, nation, title and year in its opening text; `apply --agree` sets `read-in-full` where every check passes and the review's `2026-11-22-governing-documents.csv` also confirmed the link | `scripts/requirements.txt`, `requests`, `pdftotext` |
+
 ## Gaming compacts and ordinances
 
-Run by hand, never in continuous integration. They build the catalog in
-[`research/gaming/`](../research/gaming/README.md) and never change a profile.
-The documents they download stay private, outside the repository.
+Run by hand, never in continuous integration. They build the catalog in [`research/gaming/`](../research/gaming/README.md) and never change a profile. The documents they download stay private, outside the repository.
 
 | Script | Does | Needs |
 | --- | --- | --- |

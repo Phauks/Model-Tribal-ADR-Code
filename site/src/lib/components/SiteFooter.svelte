@@ -11,6 +11,7 @@
 			<li><a href="/requests">Request a correction or removal</a></li>
 			<li><a href="{repositoryLink}/blob/main/docs/charter.md">Charter</a></li>
 			<li><a href="/changelog">Changelog</a></li>
+			<li><a href="/downloads">Downloads</a></li>
 			<li><a href="{repositoryLink}/blob/main/LICENSE.md">Licenses by material</a></li>
 			<li><a href="{repositoryLink}">Source files</a></li>
 			<li><a href="/join">Help with the project</a></li>
