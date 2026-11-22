@@ -30,7 +30,7 @@
 	<h2>Save more now</h2>
 	<OfflineSaving headingLevel={3} />
 	<p class="muted">
-		The same choices are under Settings, in "Saved for offline." The PDF and the ebook will be on
+		The same choices are under Settings, in "Data." The PDF and the ebook will be on
 		the <a href="/downloads">Downloads</a> page.
 	</p>
 </div>
