@@ -35,7 +35,7 @@
 		<li>Naming a Native nation is optional. We never ask for proof, and naming one does not mean you speak for it.</li>
 		<li>
 			Signing up is not permission to use what you share. Stories, interviews and documents each get
-			their own consent form.
+			their own consent form, on the <a href="/forms">Forms</a> page.
 		</li>
 		<li>You can change your answers or delete your profile at any time.</li>
 	</ul>
