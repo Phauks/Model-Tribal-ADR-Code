@@ -31,6 +31,7 @@ Nov. 22, 2026. An audit of the sources behind the three drafted chapters of Part
 | 8 | The comparison essay said 256 of 286 compact clauses were copied from state models; the Nov. 22 recheck read 279 from each nation's own document | Section 4.2 updated with the current counts; the example rows were checked against the rechecked summaries and still match |
 | 9 | The comparison essay named `docs/roadmap.md`, the analysis files and "the review queue" | Replaced with plain statements |
 | 10 | No standard treatise or history was cited | 32 records added and the annotated list *Federal Indian law and Tribal justice: standard works* written; the timeline points to it |
+| 11 | After the audit, Trevor's Westlaw print of Fitisemanu showed that the words "racially-based land alienation rules" are not in that opinion; the timeline's sentence cited them to Tuaua and Fitisemanu together | Each court is now quoted separately: Tuaua at 310, Fitisemanu at 866 (the passage also checked in the slip opinion). KeyCite results for nine new case records added |
 
 ## Strength of sources by chapter
 
