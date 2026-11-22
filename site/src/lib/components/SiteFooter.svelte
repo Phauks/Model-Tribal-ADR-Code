@@ -5,6 +5,7 @@
 	let { versions }: { versions: TrackVersions } = $props();
 </script>
 
+<!-- Trevor asked on Nov. 22, 2026 for the footer to drop its two notes (model text, and colors, fonts and icons); the font and icon licenses are listed under Licenses by material. -->
 <footer class="site-footer no-print">
 	<div class="page-width">
 		<ul class="footer-links">
@@ -21,14 +22,6 @@
 		</ul>
 		<p class="small muted">
 			Working draft. Content {versions.content} · Website {versions.site} · Print edition {versions.print}
-		</p>
-		<p class="small muted">
-			Model text for Native nations to adapt through their own processes. Nothing here has been reviewed or adopted by a Native nation yet; it is not law in force and does not speak for any nation.
-		</p>
-		<p class="small muted">
-			The site’s colors are a design choice and carry no tribal symbolism. Set in Atkinson
-			Hyperlegible Next and Noto Sans; Noto Serif and OpenDyslexic can be chosen in Settings. All
-			fonts are under the SIL Open Font License. Icons from Lucide, under the ISC License.
 		</p>
 	</div>
 </footer>

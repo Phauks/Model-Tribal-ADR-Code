@@ -97,7 +97,25 @@ versions:
     summary: Article headed "DEFINITIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+- id: 1991-text-2
+  label: 1991 constitution and bylaws (certified copy)
+  event: revision
+  status: unknown
+  dates:
+    adopted: 1991-01
+  source: constitution-menominee-indian-tribe-of-wisconsin-1991-text-2
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/menominee-indian-tribe-of-wisconsin/4994f97f06e33fd7.pdf
+    sha256: 4994f97f06e33fd73e2787ac481448c52f5a9901870fc99827ebfcbca1850884
+    pages: 57
+  note: Scanned; each page is certified true and correct by the Menominee Tribal Legislature on Aug. 8,
+    1991. The notes give the revision approved by the people from Jan. 26 to Jan. 30, 1991, the text the
+    1991-text version records. Version, status and dates read from the copy by the project (Claude), not
+    yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

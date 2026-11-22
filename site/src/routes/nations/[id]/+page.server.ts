@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
-import { contactOffices, contactsHeading, type ContactOffice } from '#lib/contact-card.ts';
+import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
@@ -11,6 +11,7 @@ import {
 } from '#lib/server/content.ts';
 import { layoutPresenceMap } from '#lib/presence-map.ts';
 import { documentHistoriesFor } from '#lib/server/document-history.ts';
+import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
@@ -58,11 +59,11 @@ function cited(sources: SourceUses, section: string, fact: CitedFact, item: Fact
  * named once. Each contact shown ends with the marker of its source, and every
  * contact's source is listed under "Government contacts".
  */
-function contactCard(record: NationRecord, sources: SourceUses): ContactOffice[] {
+function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	const facts = record.contacts ?? [];
 	const describe = (fact: (typeof facts)[number]) => `${humanize(fact.kind)}: ${fact.value}`;
 	for (const fact of facts) sources.use(fact, contactsHeading, describe(fact));
-	return contactOffices(facts, (fact) => {
+	return contactCards(facts, (fact) => {
 		const citations: CitationMark[] = [];
 		sources.citeFact(fact, contactsHeading, describe(fact), citations);
 		return citations;
@@ -134,33 +135,15 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	];
 }
 
-function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): FactGroup[] {
-	const courtsLabel = 'Courts and justice institutions';
-	const forumsLabel = 'Dispute resolution forums';
-	return [
-		...group(
-			'justice_institutions',
-			courtsLabel,
-			(record.justice_institutions ?? []).map((fact) =>
-				cited(sources, courtsLabel, fact, {
-					text: fact.name,
-					link: webLink(fact.link),
-					detail: humanize(fact.kind)
-				})
-			)
-		),
-		...group(
-			'dispute_resolution',
-			forumsLabel,
-			(record.dispute_resolution?.forums ?? []).map((fact) =>
-				cited(sources, forumsLabel, fact, {
-					text: fact.name ?? humanize(fact.kind),
-					link: webLink(fact.link),
-					detail: fact.name ? humanize(fact.kind) : undefined
-				})
-			)
-		)
-	];
+/**
+ * Courts and dispute resolution services, one heading per kind of service,
+ * with the appeal paths between courts (src/lib/nation-services.ts).
+ */
+function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): ServiceCategory[] {
+	return nationServices(
+		[...(record.justice_institutions ?? []), ...(record.dispute_resolution?.forums ?? [])],
+		(fact, section, text, marks) => sources.citeFact(fact, section, text, marks)
+	);
 }
 
 function publishedLaw(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -286,7 +269,7 @@ export const load: PageServerLoad = ({ params }) => {
 			pronunciations: [],
 			features: [],
 			glance: [],
-			contacts: [],
+			contacts: { websites: [], offices: [] },
 			courts: [],
 			law: [],
 			documents: [],

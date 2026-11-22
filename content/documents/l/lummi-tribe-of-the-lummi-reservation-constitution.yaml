@@ -12,7 +12,7 @@ versions:
 - id: 1948-text
   label: 1948 constitution and bylaws
   event: original
-  status: unknown
+  status: superseded
   dates:
     adopted: '1948-01-02'
   source: university-of-oklahoma-indian-reorganization-act-lummicons
@@ -21,15 +21,42 @@ versions:
   capture:
     path: research/captures/constitutions/lummi-tribe-of-the-lummi-reservation/6a2a7849d264d5f1.html
     sha256: 6a2a7849d264d5f1920b36c37349d08f974784a6763e6ac7526093dd3b47629d
-  note: The text prints an approval date (1947-11-13) before the adoption date; it may be the approval
+  note: 'The text prints an approval date (1947-11-13) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. Dates read by rule from the certificates on the
-    library page.
+    library page. Marked superseded on 2026-11-22: the 2006 constitution and bylaws, as amended (2006-text)
+    is newer.'
   clauses:
   - topic: removal-and-recall
     locator: Article IV (VACANCIES AND REMOVAL FROM OFFICE)
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
+- id: 2006-text
+  label: 2006 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: 2006-02
+  supersedes:
+  - 1948-text
+  source: constitution-lummi-tribe-of-the-lummi-reservation-2006-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/lummi-tribe-of-the-lummi-reservation/a1c166da3c1adf91.pdf
+    sha256: a1c166da3c1adf91d8efafdbfc4f8620caf8530a3cf9c329e3145fcdd7e0b252
+    pages: 10
+  note: Scanned certified copy. The last page certifies Resolution 2006-019 (Feb. 7, 2006), which amended
+    Article I; the date recorded as listed is that certification (February 2006). Marked in effect because
+    it is the newest dated text found; a later amendment may not be posted. Version, status and dates
+    read from the copy by the project (Claude), not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1948-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

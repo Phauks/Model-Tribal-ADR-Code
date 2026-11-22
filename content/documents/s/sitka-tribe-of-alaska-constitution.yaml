@@ -12,7 +12,7 @@ versions:
 - id: 1938-text
   label: 1938 constitution and bylaws
   event: original
-  status: unknown
+  status: superseded
   dates:
     adopted: '1938-10-11'
   source: university-of-oklahoma-indian-reorganization-act-sitkacons
@@ -23,8 +23,29 @@ versions:
     sha256: 2cfed40904a1df142b565eea847a79d118fa755457d24422167b34774b71856e
   note: 'The text prints an approval date (1938-07-13) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. Dates read from another copy of the same text: adopted
-    1938-10-11. Dates read by rule from the certificates on the library page.'
+    1938-10-11. Dates read by rule from the certificates on the library page. Marked superseded on 2026-11-22:
+    the 1991 constitution, as amended (1991-text) is newer.'
+- id: 1991-text
+  label: 1991 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1991-11-26'
+  supersedes:
+  - 1938-text
+  source: constitution-sitka-tribe-of-alaska-1991-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/sitka-tribe-of-alaska/ae6eb694aa9d3e1f.pdf
+    sha256: ae6eb694aa9d3e1f6099175579f130c857dc10ff1aeccdb09b5ce19a0f728a34
+    pages: 12
+  note: Footed "Enacted October 11, 1938, Last Revision November 26, 1991"; the file name carries Jan.
+    4, 2021. Marked in effect because it is the newest dated text found, posted on the Tribe's own site.
+    Version, status and dates read from the copy by the project (Claude), not yet checked by the lead
+    author.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

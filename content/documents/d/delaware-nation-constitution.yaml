@@ -9,12 +9,30 @@ jurisdictions:
 summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 2008
   to 2019-03-16. Versions are only those found; others may exist.'
 versions:
+- id: 2000-text
+  label: 1973 constitution and bylaws, as updated in 2000
+  event: edition
+  status: superseded
+  dates:
+    listed: '2000-07-11'
+  source: constitution-delaware-nation-2000-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/delaware-nation/0554502f018d588f.pdf
+    sha256: 0554502f018d588ff7a05c06a214ab5f88d9c95cd932300785e88046502cc01c
+    pages: 10
+  note: 'Scanned. The approval page says the constitution was ratified Apr. 21, 1973 and is footed "Updated:
+    July 11, 2000". Older than the 2008 and 2019 texts, so marked superseded. Version, status and dates
+    read from the copy by the project (Claude), not yet checked by the lead author.'
 - id: 2008-text
   label: 2008 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
     listed: '2008'
+  supersedes:
+  - 2000-text
   source: constitution-delaware-nation-2008-text
   confidence: medium
   verification: read-in-full
@@ -35,6 +53,12 @@ versions:
     locator: Article X (Recall / Removal from Office)
     summary: Article headed "Recall / Removal from Office"; found by its heading and not yet read.
     verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 2000-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
 - id: 2019-text
   label: 2019 constitution, as amended
   event: revision
@@ -66,5 +90,6 @@ versions:
     note: A word match found an article on this topic in the earlier text and none in this one.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

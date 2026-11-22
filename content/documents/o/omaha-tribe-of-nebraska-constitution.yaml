@@ -32,6 +32,22 @@ versions:
     locator: Article VI (REMOVAL)
     summary: Article headed "REMOVAL"; found by its heading and not yet read.
     verification: title-only
+- id: 2015-text
+  label: 2015 constitution and bylaws, as amended
+  event: edition
+  status: superseded
+  dates:
+    listed: '2015-08-07'
+  source: constitution-omaha-tribe-of-nebraska-2015-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/omaha-tribe-of-nebraska/899210fb642968c5.pdf
+    sha256: 899210fb642968c53d8d349da38fd9efe7a9d382fd8860d8a4febb1023aa4e73
+    pages: 13
+  note: Scanned; the cover reads "as amended August 7, 2015". Older than the 2025 text, so marked superseded.
+    Version, status and dates read from the copy by the project (Claude), not yet checked by the lead
+    author.
 - id: 2025-text
   label: 2025 constitution and bylaws, as amended
   event: edition
@@ -40,6 +56,7 @@ versions:
     effective: '2025-11-13'
   supersedes:
   - 1936-text
+  - 2015-text
   source: constitution-omaha-tribe-of-nebraska-2025-text
   confidence: medium
   verification: read-in-full
@@ -63,5 +80,6 @@ versions:
     note: The script could not split one of the two texts into articles; compare by hand.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

@@ -391,6 +391,7 @@ def main() -> int:
 
     sources = {path.stem for path, _ in records.get("source.schema.json", [])}
     glossary = {path.stem for path, _ in records.get("glossary.schema.json", [])}
+    provisions = {path.stem for path, _ in records.get("provision.schema.json", [])}
     sessions = {path.stem for path, _ in records.get("research-session.schema.json", [])}
     methods = {path.stem: record for path, record in records.get("method.schema.json", [])}
 
@@ -448,6 +449,8 @@ def main() -> int:
                     errors.append(f"{path}: {field} names a missing glossary entry '{entry}'")
         if record.get("redirect_to") and record["redirect_to"] not in glossary:
             errors.append(f"{path}: redirect_to names a missing glossary entry")
+        if record.get("code_definition") and record["code_definition"] not in provisions:
+            errors.append(f"{path}: code_definition names a missing provision '{record['code_definition']}'")
         for key in record.get("sources", []):
             if key not in sources:
                 errors.append(f"{path}: sources names a missing source record '{key}'")
@@ -467,6 +470,21 @@ def main() -> int:
     for path, record in records.get("tribe.schema.json", []):
         if record.get("part_of") and record["part_of"] not in tribe_ids:
             errors.append(f"{path}: part_of names a missing profile '{record['part_of']}'")
+        # A court's appeals_to names another court in the same profile, so the
+        # nation page can show the path of appeal (site/src/lib/nation-services.ts).
+        institutions = record.get("justice_institutions") or []
+        names = [institution.get("name", "") for institution in institutions]
+        for institution in institutions:
+            appeal = institution.get("appeals_to")
+            if not appeal:
+                continue
+            if appeal.get("court") == institution.get("name"):
+                errors.append(f"{path}: {institution.get('name')} appeals_to names itself")
+            elif appeal.get("court") not in names:
+                errors.append(
+                    f"{path}: {institution.get('name')} appeals_to names '{appeal.get('court')}', "
+                    "which is not a court in justice_institutions"
+                )
 
     check_documents(
         records.get("document-history.schema.json", []), sources, tribe_ids, sessions, methods,
