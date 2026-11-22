@@ -115,9 +115,14 @@ const corePageFiles = corePages.flatMap((page) => [
 const precached = [
 	...shell,
 	...staticFiles,
-	...['/manifest.webmanifest', '/icon.svg', '/glossary/terms.json', '/search/index.json', ...corePageFiles].filter((path) =>
-		builtPaths.has(path)
-	)
+	...[
+		'/manifest.webmanifest',
+		'/icon.svg',
+		'/glossary/terms.json',
+		'/nations/previews.json',
+		'/search/index.json',
+		...corePageFiles
+	].filter((path) => builtPaths.has(path))
 ];
 const precachedSet = new Set(precached);
 const shellSet = new Set(shell);
