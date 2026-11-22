@@ -460,13 +460,44 @@ button.button {
 	color: var(--color-ink-muted);
 }
 
-/* Citations and notes. */
+/*
+ * Citations and notes (DESIGN.md, section 6, "Citations"). A marker is the
+ * source's number in square brackets, as Wikipedia shows it; the brackets
+ * are drawn by the style sheet, and each marker's aria-label ("Source 3")
+ * is what a screen reader reads.
+ */
 sup {
 	line-height: 0;
 }
 
+sup.citation {
+	white-space: nowrap;
+}
+
 .note-marker {
-	padding: 0 0.1em;
+	padding: 0 0.05em;
+	text-decoration: none;
+}
+
+.note-marker::before {
+	content: '[';
+}
+
+.note-marker::after {
+	content: ']';
+}
+
+.note-marker:hover,
+.note-marker:focus-visible {
+	text-decoration: underline;
+}
+
+/* The marker or source a link has just gone to is highlighted, so the eye finds it. */
+.note-marker:target,
+.source-list > li:target {
+	background: var(--color-notice-background);
+	outline: 2px solid var(--color-focus-ring);
+	outline-offset: 1px;
 }
 
 .notes {
@@ -478,6 +509,37 @@ sup {
 
 .notes ol {
 	padding-left: var(--space-5);
+}
+
+/*
+ * The Sources list numbers its entries itself, so each number can link back
+ * to the place in the text that cites the source; a source cited in several
+ * places adds a letter for each, a, b, c.
+ */
+.notes ol.source-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.source-list > li {
+	position: relative;
+	padding-left: 2.5em;
+}
+
+.source-list .source-number {
+	position: absolute;
+	left: 0;
+	width: 2em;
+	text-align: right;
+}
+
+.source-letter {
+	font-style: italic;
+	font-weight: var(--font-weight-semibold);
+}
+
+.source-backlinks:has(.source-letter) {
+	margin-right: 0.25em;
 }
 
 /* Long web addresses in citations break anywhere rather than widen the page. */
@@ -634,6 +696,26 @@ sup {
 
 	.print-only {
 		display: block;
+	}
+
+	/*
+	 * Each section added at the end of a page, such as Document history and
+	 * Sources, starts on a new page (Trevor, Nov. 22, 2026). A section the
+	 * reader left out is not drawn, so it leaves no blank page.
+	 */
+	[data-print-part='documentHistory'],
+	[data-print-part='sources'] {
+		break-before: page;
+	}
+
+	/* Links back to the text mean nothing on paper; the source's number stays. */
+	.source-letter {
+		display: none;
+	}
+
+	.notes .source-number {
+		color: inherit;
+		text-decoration: none;
 	}
 
 	a[href^='http']::after {
