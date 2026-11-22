@@ -342,23 +342,11 @@ source's rights status allows it.
 | `denied` | Link only; never reproduce |
 | `tribal-review-required` | Community material that needs the nation's approval regardless of copyright |
 
-The legal bases come from U.S. copyright law: no copyright in works of the
-U.S. government ([17 U.S.C. § 105](https://www.law.cornell.edu/uscode/text/17/105)),
-fair use ([17 U.S.C. § 107](https://www.law.cornell.edu/uscode/text/17/107)),
-and the government edicts doctrine applied to official state legal texts in
-[Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)](https://www.supremecourt.gov/opinions/19pdf/18-1150_7m58.pdf).
-Whether the edicts doctrine reaches tribal law is unsettled, and respect for
-tribal sovereignty points toward asking, so the default for tribal legal texts
-is `link-only` until a nation says otherwise (project analysis, not legal
-advice).
+The legal bases come from U.S. copyright law: no copyright in works of the U.S. government ([17 U.S.C. § 105](https://www.law.cornell.edu/uscode/text/17/105)), fair use ([17 U.S.C. § 107](https://www.law.cornell.edu/uscode/text/17/107)), and the government edicts doctrine applied to official state legal texts in [Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)](https://www.supremecourt.gov/opinions/19pdf/18-1150_7m58.pdf). Whether the edicts doctrine reaches tribal law is unsettled, and respect for tribal sovereignty points toward asking, so the default for tribal legal texts is `link-only` until a nation says otherwise (project analysis, not legal advice). That default governs quotation. Serving the project's saved copy of a whole document is decided by the capture index instead (decision record [0031](decisions/0031-serve-copies-of-documents-from-the-private-bucket.md)).
 
 ## Review statuses
 
-Records about a nation carry a consultation status, from
-`drafted-from-public-sources` through `sent-to-nation`, `reviewed-by-nation` and
-`approved-by-nation`, or `withdrawn-at-request` when a nation asks for a record
-to be removed. A withdrawal request always wins (see the
-[charter](charter.md)).
+Records about a nation carry a consultation status, from `drafted-from-public-sources` through `sent-to-nation`, `reviewed-by-nation` and `approved-by-nation`, or `withdrawn-at-request` when a nation asks for a record to be removed. A withdrawal request always wins (see the [charter](charter.md)).
 
 ## Sensitivity flags
 
