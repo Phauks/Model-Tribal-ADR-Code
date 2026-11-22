@@ -18,7 +18,9 @@
  * - Updates wait for the reader (site/DESIGN.md, section 10, "Updates"): a
  *   new worker installs in the background and waits until the reader presses
  *   "Update now", which sends "skip-waiting", or until every tab of the site
- *   is closed. It then takes over and deletes the old caches.
+ *   is closed. It then takes over at once, and only afterwards carries
+ *   forward the pages read while it waited and deletes the old caches, so
+ *   the reload after "Update now" is not held up.
  * - Updates download only what changed. A new worker carries every saved
  *   file whose fingerprint has not changed into its own cache
  *   (src/lib/offline-fingerprints.ts), and lists the saved pages that did
@@ -190,6 +192,8 @@ async function thisBuildFingerprints(cache: Cache): Promise<Fingerprints | undef
  */
 async function carryForward(cache: Cache, fingerprints: Fingerprints | undefined): Promise<void> {
 	const changed = new Set(await changedPages(cache));
+	// One read of this cache's addresses, rather than a lookup for each of the thousands of saved files.
+	const have = new Set((await cache.keys()).map((request) => new URL(request.url).pathname));
 	try {
 		for (const name of await caches.keys()) {
 			if (name === cacheName || !name.startsWith(cachePrefix)) continue;
@@ -197,11 +201,12 @@ async function carryForward(cache: Cache, fingerprints: Fingerprints | undefined
 			const oldCache = await caches.open(name);
 			for (const request of await oldCache.keys()) {
 				const path = new URL(request.url).pathname;
-				if (internalKeys.has(path) || (await cache.match(path, { ignoreSearch: true }))) continue;
+				if (internalKeys.has(path) || have.has(path)) continue;
 				const response = await oldCache.match(request);
 				if (!response) continue;
 				if (shellSet.has(path)) {
 					await cache.put(path, response);
+					have.add(path);
 					continue;
 				}
 				const expected = fingerprints?.files[path];
@@ -211,12 +216,14 @@ async function carryForward(cache: Cache, fingerprints: Fingerprints | undefined
 					if ((await fingerprintOf(blanked)) === expected) {
 						const page = withBuild(blanked, fingerprints.version, fingerprints.startName);
 						await cache.put(path, new Response(page, { headers: { 'content-type': 'text/html; charset=utf-8' } }));
+						have.add(path);
 						changed.delete(path);
 					} else {
 						changed.add(path);
 					}
 				} else if ((await fingerprintOf(await response.clone().arrayBuffer())) === expected) {
 					await cache.put(path, response);
+					have.add(path);
 					changed.delete(path);
 				} else {
 					changed.add(path);
@@ -284,37 +291,63 @@ async function removeWithdrawnPages(): Promise<void> {
 	}
 }
 
+/**
+ * Taking over is kept quick, because the browser holds back every request
+ * from the site's pages until it is done, including the reload that follows
+ * "Update now". With Nation profiles saved, the tidying below took about 20
+ * seconds, and the reader watched the old page all that time. So the worker
+ * only takes control here, and tidies once it has taken over.
+ */
 self.addEventListener('activate', (event) => {
-	event.waitUntil(
-		(async () => {
-			const cache = await caches.open(cacheName);
-			// Pages the reader opened while this version waited.
-			await carryForward(cache, await thisBuildFingerprints(cache));
-			const currentFiles = new Set(immutable.map((file) => absolute(file.path)));
-			for (const name of await caches.keys()) {
-				if (name === cacheName) continue;
-				// Font file names carry a hash of their content, so a saved copy
-				// with a name in this build is still the same file.
-				const oldCache = await caches.open(name);
-				// Keep the reader's list of kept collections; their pages are saved
-				// again from this build when a page asks (offline-resume).
-				const kept = await oldCache.match(keptCollectionsKey);
-				if (kept && !(await cache.match(keptCollectionsKey))) {
-					await cache.put(keptCollectionsKey, kept);
-				}
-				for (const request of await oldCache.keys()) {
-					const path = new URL(request.url).pathname;
-					if (isFallbackFont(path) && currentFiles.has(path) && !(await cache.match(path))) {
-						const response = await oldCache.match(request);
-						if (response) await cache.put(path, response);
-					}
-				}
-				await caches.delete(name);
-			}
-			await self.clients.claim();
-		})()
-	);
+	event.waitUntil(self.clients.claim());
+	void finishUpdate();
 });
+
+let finishing: Promise<void> | undefined;
+
+/**
+ * Finishes an update once this worker has taken over: carries forward, as at
+ * install, the pages the reader opened while this version waited, keeps the
+ * reader's list of kept collections and the font files that have not
+ * changed, and deletes the old caches. Runs once per start of the worker.
+ * Requests from the page wait for it, so they see the carried files; a page
+ * load does not. An old worker never runs it while a newer one is installing
+ * or waiting, since it would delete the newer build's cache.
+ */
+function finishUpdate(): Promise<void> {
+	if (self.registration.installing || self.registration.waiting) return Promise.resolve();
+	finishing ??= tidyOldCaches().catch(() => {
+		// Storage failed: the old caches are tidied the next time the worker starts.
+	});
+	return finishing;
+}
+
+async function tidyOldCaches(): Promise<void> {
+	const cache = await caches.open(cacheName);
+	const oldNames = (await caches.keys()).filter((name) => name !== cacheName);
+	if (oldNames.length === 0) return;
+	await carryForward(cache, await thisBuildFingerprints(cache));
+	const currentFiles = new Set(immutable.map((file) => absolute(file.path)));
+	for (const name of oldNames) {
+		const oldCache = await caches.open(name);
+		// Keep the reader's list of kept collections; their pages are saved
+		// again from this build when a page asks (offline-resume).
+		const kept = await oldCache.match(keptCollectionsKey);
+		if (kept && !(await cache.match(keptCollectionsKey))) {
+			await cache.put(keptCollectionsKey, kept);
+		}
+		// Font file names carry a hash of their content, so a saved copy
+		// with a name in this build is still the same file.
+		for (const request of await oldCache.keys()) {
+			const path = new URL(request.url).pathname;
+			if (isFallbackFont(path) && currentFiles.has(path) && !(await cache.match(path))) {
+				const response = await oldCache.match(request);
+				if (response) await cache.put(path, response);
+			}
+		}
+		await caches.delete(name);
+	}
+}
 
 async function respond(request: Request): Promise<Response> {
 	const url = new URL(request.url);
@@ -341,6 +374,11 @@ async function respond(request: Request): Promise<Response> {
 	if (saved) return saved;
 	const response = await refreshed;
 	if (response) return response;
+
+	// Offline just after an update: the page may be among those still being carried forward.
+	await finishUpdate();
+	const carried = await cache.match(request, { ignoreSearch: true });
+	if (carried) return carried;
 
 	if (request.mode === 'navigate') {
 		const fallback = await cache.match(offlinePage);
@@ -490,10 +528,13 @@ function failure(error: unknown): WorkerReply {
 
 async function answer(request: WorkerRequest, port: MessagePort | undefined): Promise<void> {
 	try {
+		if (request.type === 'skip-waiting') {
+			await self.skipWaiting();
+			return;
+		}
+		// The first request after an update waits until the old caches are tidied.
+		await finishUpdate();
 		switch (request.type) {
-			case 'skip-waiting':
-				await self.skipWaiting();
-				return;
 			case 'offline-status':
 				break;
 			case 'offline-save': {
