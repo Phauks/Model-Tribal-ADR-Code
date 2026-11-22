@@ -5,9 +5,11 @@
  * appears on the next build with no change here.
  *
  * The project never retells or summarizes a story. A page shows the story's
- * title, its nations and kind, the excerpts the record quotes in the teller's
- * exact words with credit and pinpoint, each telling with a link to read it
- * where it was published, and any protocol a source states. Citations are
+ * title, its nations and kind, the whole story in the teller's exact words
+ * where it may be reproduced (decision record 0034: a public-domain telling,
+ * a nation's own law, or permission), otherwise the excerpts the record
+ * quotes with credit and pinpoint, each telling with a link to read it where
+ * it was published, and any protocol a source states. Citations are
  * listed in one Sources section at the end of the page, as on nation pages.
  */
 import { sourceCitations } from 'virtual:source-citations';
@@ -23,6 +25,7 @@ import {
 	awaitsNationReview,
 	isoDate,
 	shownExcerpts,
+	shownFullText,
 	shownTellings,
 	storyIsShown,
 	type Credit,
@@ -56,6 +59,24 @@ export interface ExcerptView {
 	link?: WebLink;
 	/** Citation markers shown beside it, on the story's own page. */
 	citations?: CitationMark[];
+}
+
+/** One paragraph of a story's full text, or a marker where a passage is left out. */
+export type FullTextParagraph = { text: string } | { omitted: string; locator: string };
+
+export interface FullTextView {
+	paragraphs: FullTextParagraph[];
+	/** Who told or published the telling it comes from. */
+	credit: string;
+	/** Where in the telling the text runs. */
+	locator: string;
+	/** Why the whole text may be shown here, in a sentence. */
+	basisNote: string;
+	/** The copy it was taken from and how it was checked. */
+	transcribedFrom: string;
+	notes: string[];
+	words: number;
+	citations: CitationMark[];
 }
 
 export interface TellingView {
@@ -93,6 +114,9 @@ export interface StoryView extends StorySummary {
 	length?: string;
 	methods: string[];
 	topics: string[];
+	/** The whole story in the teller's words, where it may be reproduced (decision record 0034). */
+	fullText?: FullTextView;
+	/** Excerpts from tellings other than the one shown in full. */
 	excerpts: ExcerptView[];
 	tellings: TellingView[];
 	protocols: ProtocolView[];
@@ -221,28 +245,53 @@ export function storyView(record: StoryRecord): StoryView {
 		return { text: title.text, language: title.language, citations };
 	});
 
-	const excerpts = shownExcerpts(record, date).map((excerpt) => {
-		const telling = byId.get(excerpt.telling);
+	const shownFull = shownFullText(record, date);
+	let fullText: FullTextView | undefined;
+	if (shownFull) {
+		const telling = byId.get(shownFull.telling);
 		const citations: CitationMark[] = [];
 		if (telling?.source) {
-			uses.cite(
-				telling.source,
-				{
-					section: excerpt.quoted ? 'In the teller’s words' : 'Passages cited, not quoted',
-					text: excerpt.quoted ? 'the passage quoted' : 'the passage cited',
-					where: excerpt.locator
-				},
-				citations
-			);
+			uses.cite(telling.source, { section: 'The story', text: 'the full text', where: shownFull.locator }, citations);
 		}
-		return {
-			text: excerpt.quoted ? excerpt.text : undefined,
-			locator: excerpt.locator,
+		fullText = {
+			paragraphs: shownFull.paragraphs.map((paragraph) =>
+				typeof paragraph === 'string' ? { text: paragraph } : { omitted: paragraph.omitted, locator: paragraph.locator }
+			),
 			credit: tellingCredit(telling),
-			link: webLink(telling?.source),
+			locator: shownFull.locator,
+			basisNote: shownFull.basis_note,
+			transcribedFrom: shownFull.transcribed_from,
+			notes: shownFull.notes ?? [],
+			words: shownFull.words,
 			citations
 		};
-	});
+	}
+
+	// The full text already holds every excerpt from its own telling.
+	const excerpts = shownExcerpts(record, date)
+		.filter((excerpt) => !shownFull || excerpt.telling !== shownFull.telling)
+		.map((excerpt) => {
+			const telling = byId.get(excerpt.telling);
+			const citations: CitationMark[] = [];
+			if (telling?.source) {
+				uses.cite(
+					telling.source,
+					{
+						section: excerpt.quoted ? 'In the teller’s words' : 'Passages cited, not quoted',
+						text: excerpt.quoted ? 'the passage quoted' : 'the passage cited',
+						where: excerpt.locator
+					},
+					citations
+				);
+			}
+			return {
+				text: excerpt.quoted ? excerpt.text : undefined,
+				locator: excerpt.locator,
+				credit: tellingCredit(telling),
+				link: webLink(telling?.source),
+				citations
+			};
+		});
 
 	const tellingViews = tellings.map((telling) => {
 		const citations: CitationMark[] = [];
@@ -284,6 +333,7 @@ export function storyView(record: StoryRecord): StoryView {
 		length: record.length ? labelFor(lengthLabels, record.length) : undefined,
 		methods: (record.methods ?? []).map((id) => methods().get(id)?.name ?? spaced(id)),
 		topics: (record.topics ?? []).map(spaced),
+		fullText,
 		excerpts,
 		tellings: tellingViews,
 		protocols,
