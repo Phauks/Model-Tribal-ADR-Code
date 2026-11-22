@@ -60,7 +60,7 @@ reader is ready but a build does not render it yet):
 | Feature | In Markdown | Website | Print (Typst) | Ebook (EPUB) |
 | --- | --- | --- | --- | --- |
 | Bold, italic | `**bold**`, `*italic*` | yes | yes | yes |
-| Underline | `++underlined++` (markdown-it-ins) | to be added, styled so it is not mistaken for a link | to be added (Typst's `underline`) | to be added |
+| Underline | `++underlined++` (markdown-it-ins) | to be added: plain underline in the text color | to be added (Typst's `underline`) | to be added |
 | Links | `[text](https://...)` | yes | yes | yes |
 | Headings, lists, quotations | standard Markdown | yes | yes | yes |
 | Tables | pipe tables | yes, with the site's table component | yes | yes |
@@ -75,14 +75,15 @@ table above. Pasting keeps the words and the features in the table and drops
 the rest (project choice: the book's look is set once, in the print and site
 styles).
 
-**Underline needs a decision.** The site underlines every link and uses a
-dotted underline for glossary terms ([site/DESIGN.md](../site/DESIGN.md),
-"Dotted glossary links" and "Color is never the only cue"), and the Indigo
-Book uses italics, not underlining, for case names and titles (docs/citation-style.md).
-Underlined body text can therefore look like a broken link to a reader. The
-proposal keeps underline, as asked, and shows it on the website with a
-thicker, offset line in the text color; the style guide would say when to use
-it (for example, for emphasis inside quoted law that is itself underlined).
+**Underline** is a plain underline in the text color, in every edition;
+links keep the site's link color and underline (lead author's decision, Nov.
+22, 2026). The site already underlines links and uses a dotted underline for
+glossary terms ([site/DESIGN.md](../site/DESIGN.md), "Dotted glossary
+links"), so underlined text and a link differ mainly by color, while the
+design's rule is that "Color is never the only cue." The style guide should
+therefore ask writers to use underline sparingly, and the Indigo Book's
+italics remain the form for case names and titles (docs/citation-style.md).
+In the black-and-white print book the question does not arise.
 
 ### Images and other media
 
@@ -389,15 +390,19 @@ proposal.
 
 1. Approve the rest of the approach (ProseMirror + Yjs on Durable Objects,
    comments, history, the build order)?
-2. Keep underline, and if so, how should the style guide limit it?
-3. How published essays count toward the content version track
-   ([decision record 0003](decisions/0003-three-version-tracks.md)). The
-   proposal: each essay has its own version numbers, and the book's copyright
-   page lists the version of each essay it prints.
+Settled by the lead author on Nov. 22, 2026:
 
-Settled by the lead author on Nov. 22, 2026: the account is on the Workers
-Paid plan, and published essays live in the bucket with an automatic copy in
-git.
+- The account is on the Workers Paid plan.
+- Published essays live in the bucket with an automatic copy in git.
+- Underline is a plain underline; links keep their color.
+- **Essays are dated, not added to the content version number.** The content
+  version track ([decision record 0003](decisions/0003-three-version-tracks.md))
+  counts releases of the files in git, and essays published from the bucket
+  are not commits there. Each published essay version instead carries its
+  number and the moment it was published (for example "Version 3, published
+  Nov. 22, 2026, 10:30 p.m. PT"), shown on its page and in its history. The
+  book's copyright page lists each essay it prints with that date, next to
+  the content version of the records it was built from.
 
 ## Evidence
 
