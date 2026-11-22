@@ -22,6 +22,16 @@ html {
 	text-size-adjust: 100%;
 }
 
+/*
+ * Below 64rem the sidebar's Menu bar stays at the top of the screen, so
+ * linked headings and focused controls stop below it (WCAG 2.4.11).
+ */
+@media (max-width: 63.99rem) {
+	html {
+		scroll-padding-top: calc(var(--layout-target-minimum) + var(--space-4));
+	}
+}
+
 body {
 	margin: 0;
 	font-size: var(--font-size-body);

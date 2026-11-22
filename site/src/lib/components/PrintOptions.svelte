@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Print button and dialog (site/DESIGN.md, section 6, "Print"). The
-	// button sits in the masthead's menu row, beside Download, Report a
+	// button is an icon in the masthead, beside Download, Report a
 	// problem and Contribute (Trevor, Nov. 22, 2026), and acts on the page
 	// the reader is on. Like the
 	// delivery dialogs of legal research services, it lets a reader choose
@@ -167,13 +167,14 @@
 
 <button
 	bind:this={opener}
-	class="print-button needs-scripts"
+	class="icon-button needs-scripts"
 	type="button"
 	aria-haspopup="dialog"
+	aria-label="Print this page"
+	title="Print this page"
 	onclick={open}
 >
-	<Printer size={20} strokeWidth={1.75} />
-	<span>Print</span>
+	<Printer size={24} />
 </button>
 
 <Modal bind:this={modal} bind:selected title="Print this page" {sections} onclose={returnFocus}>
@@ -247,22 +248,6 @@
 </Modal>
 
 <style>
-	/* Outlined in the band's text color, like the other masthead buttons. */
-	.print-button {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-band-text);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
-		cursor: pointer;
-	}
-
 	.section-heading {
 		margin: 0 0 var(--space-2);
 	}
