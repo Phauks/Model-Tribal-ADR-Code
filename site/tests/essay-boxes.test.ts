@@ -13,6 +13,10 @@ const library: EssayLibrary = {
 };
 
 const body = `:::: case worcester-v-georgia
+::: background
+Georgia arrested missionaries living in the Cherokee Nation.
+:::
+
 ::: question
 Whether Georgia's laws had force in the Cherokee Nation.
 :::
@@ -24,7 +28,7 @@ They did not.
 ::: quotes
 > The Cherokee nation, then, is a distinct community.
 
-— [@worcester-v-georgia, at 561]
+[@worcester-v-georgia, at 561] (Marshall, C.J.)
 :::
 
 ::: treatment
@@ -40,7 +44,7 @@ Applies most of the Bill of Rights to tribal governments.
 ::: quotes
 > No Indian tribe in exercising powers of self-government shall ...
 
-— [@usc-25-1301, § 1302]
+[@usc-25-1301, § 1302]
 :::
 ::::
 `;
@@ -53,7 +57,7 @@ describe('case and law boxes', () => {
 			if (node.type.name === 'case_part') kinds.push(node.attrs.kind);
 			if (node.type.name === 'law_block') kinds.push(`law:${node.attrs.source}`);
 		});
-		expect(kinds).toEqual(['question', 'holding', 'quotes', 'treatment', 'law:usc-25-1301', 'summary', 'quotes']);
+		expect(kinds).toEqual(['background', 'question', 'holding', 'quotes', 'treatment', 'law:usc-25-1301', 'summary', 'quotes']);
 		expect(serializeEssay(parseEssay(serializeEssay(document)))).toBe(serializeEssay(document));
 		expect(serializeEssay(document)).toContain(':::: law usc-25-1301\n::: summary\n');
 	});
@@ -63,10 +67,20 @@ describe('case and law boxes', () => {
 		expect(rendered.problems).toEqual([]);
 		expect(rendered.html).toContain('<section class="essay-case" id="case-worcester-v-georgia">');
 		expect(rendered.html).toContain('<section class="essay-case essay-law" id="law-usc-25-1301">');
-		for (const text of ['Case', 'Question', 'Holding', 'Quotes', 'Treatment', 'Law', 'What it does']) {
+		for (const text of ['Case', 'Background', 'Question', 'Holding', 'Quotes', 'Treatment', 'Law', 'What it does']) {
 			expect(rendered.html).toContain(`<p class="essay-block-label">${text}</p>`);
 		}
 		expect(rendered.html).toContain('Indian Civil Rights Act of 1968');
+	});
+
+	it('marks a citation-only paragraph, or the older dash form, as the attribution', () => {
+		const html = renderEssay(body, library).html;
+		expect(html).toContain('<p class="essay-attribution">');
+		expect(html.match(/essay-attribution/g)).toHaveLength(2);
+		const older = renderEssay('> It is so.\n\n— [@worcester-v-georgia]\n', library).html;
+		expect(older).toContain('essay-attribution');
+		const prose = renderEssay('> It is so.\n\nThe Court then said more [@worcester-v-georgia].\n', library).html;
+		expect(prose).not.toContain('essay-attribution');
 	});
 
 	it('counts a law box as a use of its source', () => {
@@ -85,7 +99,7 @@ describe('ellipses in quotations', () => {
 	});
 
 	it('warns about quotations cut without one, but does not refuse them', () => {
-		const rendered = renderEssay('> the court held that tribes\n\n— [@worcester-v-georgia]\n', library);
+		const rendered = renderEssay('> the court held that tribes\n\n[@worcester-v-georgia]\n', library);
 		expect(rendered.problems).toEqual([]);
 		expect(rendered.warnings).toHaveLength(2);
 		expect(renderEssay(body, library).warnings).toEqual([]);

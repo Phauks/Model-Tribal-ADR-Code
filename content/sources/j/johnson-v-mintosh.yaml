@@ -24,6 +24,22 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Marshall Court
+  natural_court: Marshall Court (1812-1823)
+  decision_type: majority opinion
+  vote: {majority: 7, minority: 0}
+  justices:
+  - {name: "John Marshall", vote: majority, opinion: majority}
+  - {name: "Bushrod Washington", vote: majority}
+  - {name: "William Johnson", vote: majority}
+  - {name: "Henry Brockholst Livingston", vote: majority}
+  - {name: "Thomas Todd", vote: majority}
+  - {name: "Gabriel Duvall", vote: majority}
+  - {name: "Joseph Story", vote: majority}
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep021/usrep021543/usrep021543.pdf
+  note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

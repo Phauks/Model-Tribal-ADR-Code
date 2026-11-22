@@ -31,6 +31,11 @@ metadata:
     - Commentary, essays and glossary are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
     - Works of Native nations quoted or cited in this book remain under each nation's authority and terms.
 
+# Where citations and notes print: "endnotes" gathers each chapter's notes at
+# the end of the chapter, which saves space on pages heavy with citations;
+# "footnotes" prints them at the foot of each page (lead author, Nov. 22, 2026).
+notes: endnotes
+
 # Working titles for the book's parts and the chapters of Part II
 # (provisions are grouped by the `chapter` number in their front matter).
 parts:

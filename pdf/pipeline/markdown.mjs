@@ -50,7 +50,22 @@ export function createMarkdown({ sourceKeys, glossaryIds }) {
   // turns the subsection label "(c)" into "©" (decision record 0005).
   const markdown = new MarkdownIt({ html: false, typographer: true, linkify: false })
     .use(footnote)
-    .use(container, "alternative", { validate: (info) => /^alternative\s+[A-Z]$/.test(info.trim()) });
+    .use(container, "alternative", { validate: (info) => /^alternative\s+[A-Z]$/.test(info.trim()) })
+    // Essay blocks, shared with the website's essay pages: a case (":::: case
+    // KEY", holding text, then "::: quotes" and "::: treatment" parts, closed
+    // by "::::"), a quotation ("::: quote") and the author's own analysis
+    // ("::: analysis" with an optional title). A paragraph that begins with an
+    // em dash inside a quotation names its source.
+    .use(container, "case", { validate: (info) => /^case\s+[a-z0-9-]+$/.test(info.trim()) })
+    .use(container, "law", { validate: (info) => /^law\s+[a-z0-9-]+$/.test(info.trim()) })
+    .use(container, "background", { validate: (info) => info.trim() === "background" })
+    .use(container, "question", { validate: (info) => info.trim() === "question" })
+    .use(container, "holding", { validate: (info) => info.trim() === "holding" })
+    .use(container, "summary", { validate: (info) => info.trim() === "summary" })
+    .use(container, "quotes", { validate: (info) => info.trim() === "quotes" })
+    .use(container, "treatment", { validate: (info) => info.trim() === "treatment" })
+    .use(container, "quote", { validate: (info) => info.trim() === "quote" })
+    .use(container, "analysis", { validate: (info) => /^analysis(?:\s+.+)?$/.test(info.trim()) });
   markdown.disable("replacements");
   markdown.inline.ruler.before("link", "term_link", termLinkRule(glossaryIds));
   markdown.inline.ruler.before("link", "citation", citationRule(sourceKeys));

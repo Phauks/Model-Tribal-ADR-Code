@@ -24,6 +24,22 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Marshall Court
+  natural_court: Marshall Court (1830-1834)
+  decision_type: majority opinion
+  vote: {majority: null, minority: null}
+  justices:
+  - {name: "John Marshall", vote: majority, opinion: majority}
+  - {name: "William Johnson", vote: majority, opinion: concurrence}
+  - {name: "Gabriel Duvall", vote: not recorded}
+  - {name: "Joseph Story", vote: minority}
+  - {name: "Smith Thompson", vote: minority, opinion: dissent}
+  - {name: "John McLean", vote: not recorded}
+  - {name: "Henry Baldwin", vote: majority, opinion: concurrence}
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep030/usrep030001/usrep030001.pdf
+  note: "The report names Marshall (opinion of the Court), Johnson and Baldwin (concurring) and Thompson, joined by Story (dissenting). It says nothing of McLean or Duvall, so the total vote is not given."
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

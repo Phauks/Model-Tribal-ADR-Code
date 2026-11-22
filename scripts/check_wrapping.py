@@ -71,8 +71,8 @@ def wrapped_lines(text: str) -> list[int]:
         depth, text_here = unquoted(line)
         if depth != above_depth or not above_text.strip() or not text_here.strip():
             continue
-        if re.match(r"^\s*(#{1,6}\s|\||```|~~~|<|(-{3,}|\*{3,}|_{3,})\s*$)", above_text):
-            continue
+        if re.match(r"^\s*(#{1,6}\s|\||```|~~~|<|:{3,}|(-{3,}|\*{3,}|_{3,})\s*$)", above_text):
+            continue  # the line above is a heading, table, fence (including a ::: block fence) or break
         if above_text.endswith("  ") or above_text.endswith("\\"):
             continue  # a deliberate line break, such as in an address
         if NEW_BLOCK.match(text_here):

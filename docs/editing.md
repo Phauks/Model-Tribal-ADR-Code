@@ -25,9 +25,9 @@ Writers have asked for underline, italics, bold, images, tables and "other rich 
 | Headings, lists, quotations | standard Markdown | yes | yes | yes |
 | Tables | pipe tables | yes; on paper no row is split across pages | yes; rows never split across pages | yes |
 | Citations, glossary links | the project's syntax (docs/citation-style.md, docs/terminology.md) | yes, as numbered markers with the Sources list | yes | yes |
-| Case box | `:::: case <source key>` with `::: question`, `::: holding`, `::: quotes` and `::: treatment` inside, in that order, closed by `::::` | yes | yes (Foundations work) | to be added |
+| Case box | `:::: case <source key>` with `::: background`, `::: question`, `::: holding`, `::: quotes` and `::: treatment` inside, in that order, closed by `::::` | yes | yes (Foundations work) | to be added |
 | Law box | `:::: law <source key>` with `::: summary` (shown as "What it does"), `::: quotes` and `::: treatment` inside, closed by `::::` | yes | yes (Foundations work) | to be added |
-| Quotation box | `::: quote`, with a last paragraph starting "— " as the attribution | yes | being added | to be added |
+| Quotation box | `::: quote`, with a last paragraph that is only the citation, such as `[@key, p. 17]` or `[@key, p. 17] (Gorsuch, J., dissenting)`, as the attribution | yes | being added | to be added |
 | Analysis box | `::: analysis [title]` | yes | being added | to be added |
 | Figures | `::: figure <media id>` with the caption inside | to be added | to be added | to be added |
 
@@ -39,6 +39,10 @@ The lead author asked on Nov. 22, 2026 for court cases to get "a specialized blo
 
 ```markdown
 :::: case worcester-v-georgia
+::: background
+The law and events behind the case.
+:::
+
 ::: question
 Whether Georgia's laws had any force in the Cherokee Nation.
 :::
@@ -50,7 +54,7 @@ They did not: the Cherokee Nation is a distinct community in which the laws of G
 ::: quotes
 > The Cherokee nation, then, is a distinct community.
 
-— [@worcester-v-georgia, at 561]
+[@worcester-v-georgia, at 561]
 :::
 
 ::: treatment
@@ -66,7 +70,7 @@ What the law does.
 ::: quotes
 > No Indian tribe in exercising powers of self-government shall ...
 
-— [@usc-25-1301, § 1302]
+[@usc-25-1301, § 1302]
 :::
 
 ::: treatment
@@ -77,7 +81,7 @@ Amendments and how courts have read it.
 ::: quote
 Peacemaking is not alternative dispute resolution.
 
-— [@narf-ipi-home]
+[@narf-ipi-home]
 :::
 
 ::: analysis Why the holding matters here
