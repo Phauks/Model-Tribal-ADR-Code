@@ -108,4 +108,9 @@ describe('rendering an essay', () => {
 		});
 		expect(sameplace.html).toContain('href="#case-worcester-v-georgia"');
 	});
+
+	it('names what an Analysis box analyzes, with case names in italics', () => {
+		const html = renderEssay("::: analysis *Johnson v. M'Intosh* (1823)\nThe discovery doctrine.\n:::\n", library).html;
+		expect(html).toContain('Analysis: <em>Johnson v. M’Intosh</em> (1823)');
+	});
 });

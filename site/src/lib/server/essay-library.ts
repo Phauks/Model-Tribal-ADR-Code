@@ -110,6 +110,20 @@ export function essaysInGit(): Record<string, string> {
 	return Object.fromEntries(files.sort(([first], [second]) => first.localeCompare(second)));
 }
 
+/**
+ * Each court case's name and decision date, by source key, for the index
+ * of cases by topic (src/lib/essays/case-topics.ts).
+ */
+export function caseNames(records: SourceRecord[] = [...sources().values()]): Record<string, { title: string; date: number[] }> {
+	const names: Record<string, { title: string; date: number[] }> = {};
+	for (const record of records) {
+		const citation = record.citation as { type?: string; title?: string; issued?: { 'date-parts'?: number[][] } };
+		if (citation.type !== 'legal_case' || !citation.title) continue;
+		names[record.key] = { title: citation.title, date: citation.issued?.['date-parts']?.[0] ?? [] };
+	}
+	return names;
+}
+
 /** Source types a law box can name: statutes, codes, regulations, treaties and bills. */
 const lawTypes = new Set(['legislation', 'treaty', 'bill', 'regulation']);
 
