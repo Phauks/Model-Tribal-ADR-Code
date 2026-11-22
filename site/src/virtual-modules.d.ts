@@ -39,6 +39,8 @@ declare module 'virtual:source-citations' {
 declare module 'virtual:build' {
 	/** The git commit the site was built from, or empty when built on a computer. */
 	export const buildCommit: string;
+	/** Pull requests merged most recently, newest first (src/lib/recent-changes.ts). */
+	export const recentChanges: import('#lib/recent-changes.ts').Change[];
 }
 
 declare module 'cloudflare:workers' {

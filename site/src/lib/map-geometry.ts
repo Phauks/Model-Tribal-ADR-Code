@@ -13,6 +13,10 @@
  *   boundary file (geography/bureau-of-indian-affairs-regions.json; see
  *   geography/README.md). These are federal administrative areas, not the
  *   lands of any nation.
+ * - The Census Bureau's 2020 American Indian and Alaska Native areas
+ *   (geography/census-land-areas-2020.json): reservations, trust lands and
+ *   the Census Bureau's statistical areas, for the "Land areas" view, which
+ *   Trevor asked for on 2026-11-22.
  *
  * The layout puts the contiguous United States (the 48 contiguous states and
  * DC) in a framed, labeled box on top. Alaska, Hawaiʻi and the territories sit
@@ -28,10 +32,10 @@
  */
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { geoAlbers, geoConicEqualArea, geoDistance, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
+import { geoAlbers, geoArea, geoCentroid, geoConicEqualArea, geoDistance, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
 import { feature, merge, mesh } from 'topojson-client';
 import { presimplify, quantile, simplify, sphericalTriangleArea } from 'topojson-simplify';
-import type { Feature, FeatureCollection, Geometry, MultiPolygon, Polygon } from 'geojson';
+import type { Feature, FeatureCollection, Geometry, MultiPolygon, Polygon, Position } from 'geojson';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 
 export const mapWidth = 975;
@@ -134,6 +138,13 @@ const markerOffsets: Record<string, [number, number]> = {
 const labelsOnTheLeft = new Set(['GU', 'MP']);
 
 /**
+ * Island places that sit alone, or nearly alone, in their boxes. Their shapes
+ * are a few map units across, so the full map gives each a wider invisible
+ * area to point at, and the small map keeps their full detail.
+ */
+const islands = new Set(['GU', 'MP', 'AS', 'VI']);
+
+/**
  * Where a region's label sits, as a shift in map units from the center of the
  * region's largest piece, where the center alone would put the label on top
  * of a neighbor's (checked by eye).
@@ -175,6 +186,8 @@ export interface StateShape {
 	path: string;
 	/** Where a small place's marker sits, and the line from the place to it. */
 	marker?: { x: number; y: number; fromX: number; fromY: number; labelSide: 'left' | 'right' };
+	/** True for small islands, which get a wider area to point at. */
+	island?: boolean;
 	/** Where the state's label sits: the center of its largest piece (small map only). */
 	center?: { x: number; y: number };
 }
@@ -185,6 +198,26 @@ export interface RegionShape {
 	label: { x: number; y: number };
 	/** False where the box's own label already names the region, as Alaska's does. */
 	showLabel: boolean;
+}
+
+/** The kinds of Census area the "Land areas" view draws, as the fetch tool names them. */
+export type LandAreaKind =
+	| 'federal-reservation-or-trust-land'
+	| 'state-reservation'
+	| 'oklahoma-tribal-statistical-area'
+	| 'alaska-native-village-statistical-area'
+	| 'tribal-designated-statistical-area'
+	| 'state-designated-tribal-statistical-area';
+
+/** A Census American Indian or Alaska Native area, projected. */
+export interface LandAreaShape {
+	/** The Census Bureau's code for the area (GEOID), as the nation records cite it. */
+	identifier: string;
+	name: string;
+	kind: LandAreaKind;
+	path: string;
+	/** Where a dot marks an area too small to see at the map's scale. */
+	dot?: { x: number; y: number };
 }
 
 export interface MapGeometry {
@@ -200,6 +233,9 @@ export interface MapGeometry {
 	regionBorders: string;
 	/** Where the region boundaries came from and when (geography/bureau-of-indian-affairs-regions.json). */
 	regionSource: { source: string; retrieved: string };
+	landAreas: LandAreaShape[];
+	/** Where the land areas came from and when (geography/census-land-areas-2020.json). */
+	landAreaSource: { source: string; retrieved: string };
 	/**
 	 * The framed boxes, each with a label and a scale bar: the contiguous
 	 * United States first, then Alaska, Hawaiʻi and the territories.
@@ -269,6 +305,24 @@ function largestPiece(
 	return pieces.reduce((largest, piece) => (area(piece) > area(largest) ? piece : largest));
 }
 
+/**
+ * Simplifying a very small ring can leave it wound the wrong way, which
+ * d3-geo reads as "the whole globe except this speck" (measured: three
+ * pieces of the Navajo Nation and Pascua Pueblo Yaqui areas). Such rings are
+ * turned back.
+ */
+function windSmallRings(area: Feature<Polygon | MultiPolygon>): Feature<Polygon | MultiPolygon> {
+	const fix = (polygon: Position[][]) =>
+		geoArea({ type: 'Polygon', coordinates: polygon }) > 2 * Math.PI
+			? polygon.map((ring) => [...ring].reverse())
+			: polygon;
+	const geometry: Polygon | MultiPolygon =
+		area.geometry.type === 'Polygon'
+			? { type: 'Polygon', coordinates: fix(area.geometry.coordinates) }
+			: { type: 'MultiPolygon', coordinates: area.geometry.coordinates.map(fix) };
+	return { ...area, geometry };
+}
+
 /** Where each part of the map is drawn, and with which projection. */
 interface Panel {
 	key: string;
@@ -278,13 +332,29 @@ interface Panel {
 	wholeUnits: GeoPath;
 }
 
-export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry> {
+/**
+ * Census areas a nation has asked the project to leave off the map, by
+ * Census code (charter commitment 6: the nation's request wins). None yet.
+ */
+const withdrawnLandAreas = new Set<string>([]);
+
+/**
+ * An area whose outline covers less than this many square map units gets a
+ * dot, so that small reservations and trust lands can be seen and selected
+ * (project choice, checked by eye).
+ */
+const smallestVisibleArea = 6;
+
+export async function buildMapGeometry(regionsFile: string, landAreasFile: string): Promise<MapGeometry> {
 	const require = createRequire(import.meta.url);
 	const atlas = JSON.parse(
 		readFileSync(require.resolve('us-atlas/states-10m.json'), 'utf8')
 	) as Topology<{ states: GeometryCollection }>;
 	const regionsTopology = JSON.parse(readFileSync(regionsFile, 'utf8')) as Topology<{
 		regions: GeometryCollection<{ name: string }>;
+	}> & { metadata: { source: string; retrieved: string } };
+	const landTopology = JSON.parse(readFileSync(landAreasFile, 'utf8')) as Topology<{
+		areas: GeometryCollection<{ geographic_identifier: string; name: string; kind: LandAreaKind }>;
 	}> & { metadata: { source: string; retrieved: string } };
 
 	const codeOf = (shape: { id?: string | number }) => postalCodeByCensusCode[String(shape.id)];
@@ -387,6 +457,7 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 				labelSide: labelsOnTheLeft.has(code) ? 'left' : 'right'
 			};
 		}
+		if (islands.has(code)) shape.island = true;
 		return shape;
 	};
 	const stateShapes = states.map((state) => shapeOf(state, (panel) => round(panel.path(state))));
@@ -396,7 +467,7 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 	// Simplifying the whole atlas wipes out the smallest islands, which left the
 	// boxes for Guam, the Northern Mariana Islands, American Samoa and the
 	// Virgin Islands empty, so those four keep their full detail.
-	const keptWhole = new Set(['GU', 'MP', 'AS', 'VI']);
+	const keptWhole = islands;
 	const fullDetail = new Map(states.map((state) => [codeOf(state), state]));
 	const smallStates = (
 		feature(simplified, simplified.objects.states) as FeatureCollection<Polygon | MultiPolygon>
@@ -460,6 +531,34 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 		)
 		.join('');
 
+	// Land areas: those in Alaska go in Alaska's box, the rest on the main map.
+	// None lies in Hawaiʻi or a territory once Hawaiian home lands are left out.
+	const alaska = states.find((state) => codeOf(state) === 'AK');
+	const landAreas: LandAreaShape[] = (
+		feature(landTopology, landTopology.objects.areas) as FeatureCollection<
+			Polygon | MultiPolygon,
+			{ geographic_identifier: string; name: string; kind: LandAreaKind }
+		>
+	).features
+		.filter((drawn) => !withdrawnLandAreas.has(drawn.properties.geographic_identifier))
+		.map((drawn) => {
+			const area = windSmallRings(drawn) as typeof drawn;
+			const [longitude, latitude] = geoCentroid(area);
+			const inAlaska = latitude > 51 && (longitude < -129 || longitude > 170);
+			const panel = inAlaska && alaska ? panelOf('AK') : panels[0];
+			const shape: LandAreaShape = {
+				identifier: area.properties.geographic_identifier,
+				name: area.properties.name,
+				kind: area.properties.kind,
+				path: round(panel.path(area))
+			};
+			if (panel.path.area(area) < smallestVisibleArea) {
+				const [x, y] = panel.path.centroid(area);
+				shape.dot = { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
+			}
+			return shape;
+		});
+
 	return {
 		width: mapWidth,
 		height,
@@ -471,6 +570,11 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 		regionSource: {
 			source: regionsTopology.metadata.source,
 			retrieved: regionsTopology.metadata.retrieved
+		},
+		landAreas,
+		landAreaSource: {
+			source: landTopology.metadata.source,
+			retrieved: landTopology.metadata.retrieved
 		},
 		frames,
 		smallStates

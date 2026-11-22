@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import adapter from '@sveltejs/adapter-cloudflare';
@@ -5,6 +6,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, type Plugin } from 'vite';
 import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
+import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
 import {
 	essaysForReview,
@@ -45,6 +47,7 @@ function designTokens(): Plugin {
 const regionsPath = fileURLToPath(
 	new URL('./geography/bureau-of-indian-affairs-regions.json', import.meta.url)
 );
+const landAreasPath = fileURLToPath(new URL('./geography/census-land-areas-2020.json', import.meta.url));
 const mapGeometryModule = 'virtual:map-geometry';
 const resolvedMapGeometryModule = `\0${mapGeometryModule}`;
 
@@ -62,7 +65,8 @@ function mapGeometry(): Plugin {
 		async load(identifier) {
 			if (identifier !== resolvedMapGeometryModule) return undefined;
 			this.addWatchFile(regionsPath);
-			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath))};`;
+			this.addWatchFile(landAreasPath);
+			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath, landAreasPath))};`;
 		}
 	};
 }
@@ -207,7 +211,23 @@ const resolvedBuildModule = `\0${buildModule}`;
  * The commit the site was built from. Workers Builds sets
  * WORKERS_CI_COMMIT_SHA; a build on a computer has none. A review in the
  * workspace records it, so a sign-off names the exact text it approved.
+ *
+ * Also the pull requests merged most recently, read from git, which
+ * /edition.json serves so the update card can list what an update brings
+ * (src/lib/recent-changes.ts). A shallow clone gives fewer; no git gives none.
  */
+function recentChanges(): Change[] {
+	try {
+		const log = execFileSync('git', ['log', '--first-parent', '-n', '60', '--format=%cI%x09%s', 'HEAD'], {
+			encoding: 'utf8',
+			stdio: ['ignore', 'pipe', 'ignore']
+		});
+		return parseGitLog(log);
+	} catch {
+		return [];
+	}
+}
+
 function buildInformation(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:build',
@@ -217,7 +237,10 @@ function buildInformation(): Plugin {
 		load(identifier) {
 			if (identifier !== resolvedBuildModule) return undefined;
 			const commit = process.env.WORKERS_CI_COMMIT_SHA ?? process.env.GITHUB_SHA ?? '';
-			return `export const buildCommit = ${JSON.stringify(commit.slice(0, 40))};`;
+			return [
+				`export const buildCommit = ${JSON.stringify(commit.slice(0, 40))};`,
+				`export const recentChanges = ${JSON.stringify(recentChanges())};`
+			].join('\n');
 		}
 	};
 }

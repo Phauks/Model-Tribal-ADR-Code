@@ -1,13 +1,13 @@
 /**
  * Which story records, tellings and excerpts the website may show (decision
- * records 0019 and 0028). Kept free of build-time imports so the rules can be
+ * records 0019 and 0029). Kept free of build-time imports so the rules can be
  * tested on their own.
  *
  * - A story or telling marked `restricted` is never shown.
  * - One `embargoed` is shown only from its `until` date.
  * - One marked `nation-review-first` is shown with a notice that the nation
  *   has not reviewed it yet, as the lead author asked on Nov. 22, 2026
- *   (decision record 0028), but only when it cites a published source. A
+ *   (decision record 0029), but only when it cites a published source. A
  *   telling that came from a person (a contributor filing) stays held until
  *   it is `public`, because the contributor agreed only to what the filing
  *   says.

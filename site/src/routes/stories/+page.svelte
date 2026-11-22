@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ReportLink from '#lib/components/ReportLink.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -15,7 +14,6 @@
 
 <div class="reading">
 	<h1>Stories</h1>
-	<ReportLink record="stories" />
 	<p class="lead">
 		Stories, accounts and teachings about resolving disputes, making peace and restoring relationships, as Native nations and their people tell them. The project does not retell or summarize them. Each page quotes short passages in the teller’s own words and links to where the nation or teller published the story, so you can read it there in full.
 	</p>

@@ -29,11 +29,7 @@ updates before the 1st Edition.[^indigo]
    `[@navajo-peacemaking-plan, sec. 3]`. This is the citation syntax used by
    Pandoc's Markdown (project choice; Pandoc's documentation was not reviewed
    for this decision).
-3. **The build formats them.** A CSL processor turns each key into a footnote in
-   the PDF and a hover card plus footnote on the website, handling short forms
-   and *id.* automatically. The processor is
-   [citeproc-js](https://github.com/Juris-M/citeproc-js), which "when run in
-   CSL-M mode … can handle multilingual and legal content."[^citeproc]
+3. **The build formats them.** A CSL processor turns each key into a footnote in the PDF. On the website it becomes a numbered marker in square brackets whose citation opens beside it, and the full citation goes in the page's Sources list ([site/DESIGN.md, "Citations"](../site/DESIGN.md#6-components)). The processor handles short forms and *id.* automatically. The processor is [citeproc-js](https://github.com/Juris-M/citeproc-js), which "when run in CSL-M mode … can handle multilingual and legal content."[^citeproc]
 4. **Changing style is one file.** Switching to another style means replacing
    the style file and rebuilding; no text changes.
 
@@ -116,7 +112,7 @@ section as `[@key, § 4]`.
   both.
 - Confirm how the *Indigo Book* treats tribal codes, tribal court decisions and
   web-published tribal materials.
-- Decide the website's footnote display (hover card, side note or end of page).
+- Done 2026-11-22: the website's footnote display. Markers in square brackets follow the claim, as Wikipedia shows them. The citation opens in a small window beside the marker on wide screens and in a drawer from the bottom on phones. The Sources list at the end links back to each marker (Trevor; [site/DESIGN.md, "Citations"](../site/DESIGN.md#6-components)).
 
 ## References
 

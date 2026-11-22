@@ -1,0 +1,75 @@
+profile: content/tribes/s/sac-and-fox-tribe-of-the-mississippi-in-iowa.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/sac_fox_miss_ia/index.html
+  outcome: found
+  reason: Table of contents lists the heading; it links to no copy of the text.
+  records:
+  - content/tribes/s/sac-and-fox-tribe-of-the-mississippi-in-iowa.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.meskwakicourt.org/tribal-code-%26-court-rules
+  query: Title 2 Administration
+  outcome: found
+  reason: Nation's code page links Title 2 PDF; downloaded and read.
+  records:
+  - content/tribes/s/sac-and-fox-tribe-of-the-mississippi-in-iowa.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.meskwaki.org/government/tribal-constitution-codes-bylaws/
+  query: Title 2
+  outcome: blocked
+  reason: Nation's older code page returned HTTP 403 (blocked); the court site copy was used instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://img1.wsimg.com/blobby/go/a1a4fd11-f884-4d95-8763-e75c1d7e1fa8/downloads/Title%202.%20Administration.pdf
+    (downloaded to item2/recheck-out-4/mesk2.txt)
+  query: 2-4510 Informal Settlement Conference
+  outcome: found
+  reason: Downloaded the raw PDF and read Sec. 2-4510 and the Article IV enactment note.
+  records:
+  - content/tribes/s/sac-and-fox-tribe-of-the-mississippi-in-iowa.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/sac_fox_miss_ia/index.html
+  outcome: found
+  reason: Table of contents lists the heading; it links to no copy of the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.meskwakicourt.org/tribal-code-%26-court-rules
+  query: Title 5 Dispute Resolution
+  outcome: found
+  reason: Nation's code page links Title 5 PDF; downloaded and read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.meskwaki.org/government/tribal-constitution-codes-bylaws/
+  query: Title 5
+  outcome: blocked
+  reason: Nation's older code page returned HTTP 403 (blocked).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (sac5.txt)
+  query: Title 5
+  outcome: found
+  reason: Downloaded the PDF and read the table of contents and Articles I to VI headings; searched the
+    whole text for mediation, arbitration and peacemaking with no hits.

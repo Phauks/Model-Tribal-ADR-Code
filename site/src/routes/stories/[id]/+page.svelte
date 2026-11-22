@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ExternalLink from '@lucide/svelte/icons/external-link';
-	import ReportLink from '#lib/components/ReportLink.svelte';
+	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { PageProps } from './$types';
 
@@ -28,9 +28,8 @@
 <div class="reading">
 	<h1>{story.title}</h1>
 	{#each story.titlesInLanguage as title (title.text)}
-		<p class="lead" lang={title.language}>{title.text}</p>
+		<p class="lead"><span lang={title.language}>{title.text}</span><CitationMarks marks={title.citations} /></p>
 	{/each}
-	<ReportLink record="stories/{story.id}" />
 
 	{#if story.awaitsReview}
 		<div class="notice" role="note">
@@ -86,7 +85,7 @@
 		{#each quoted as excerpt, index (index)}
 			<blockquote>
 				<p>{excerpt.text}</p>
-				<footer class="small">{excerpt.credit} ({excerpt.locator})</footer>
+				<footer class="small">{excerpt.credit} ({excerpt.locator})<CitationMarks marks={excerpt.citations} /></footer>
 			</blockquote>
 		{/each}
 	{/if}
@@ -97,7 +96,7 @@
 		<ul>
 			{#each cited as excerpt, index (index)}
 				<li>
-					{excerpt.credit}, {excerpt.locator}{#if excerpt.link}{'. '}<a href={excerpt.link.href}>Read it at {excerpt.link.host}<ExternalLink aria-hidden="true" size="0.85em" class="inline-icon" /></a>{/if}
+					{excerpt.credit}, {excerpt.locator}<CitationMarks marks={excerpt.citations} />{#if excerpt.link}{'. '}<a href={excerpt.link.href}>Read it at {excerpt.link.host}<ExternalLink aria-hidden="true" size="0.85em" class="inline-icon" /></a>{/if}
 				</li>
 			{/each}
 		</ul>
@@ -111,7 +110,7 @@
 		{#each story.tellings as telling (telling.id)}
 			<li>
 				<p>
-					<strong>{telling.publishedBy ?? telling.teller ?? telling.credit}</strong>{#if telling.date}{', '}{telling.date}{/if}
+					<strong>{telling.publishedBy ?? telling.teller ?? telling.credit}</strong>{#if telling.date}{', '}{telling.date}{/if}<CitationMarks marks={telling.citations} />
 				</p>
 				<dl class="summary-list">
 					{#if telling.teller && telling.publishedBy}
@@ -146,7 +145,7 @@
 				<div>
 					<dt>{protocol.kind}</dt>
 					<dd>
-						{protocol.statement}
+						{protocol.statement}<CitationMarks marks={protocol.citations} />
 						{#if protocol.howFollowed}<br /><span class="muted">On this site:</span> {protocol.howFollowed}{/if}
 					</dd>
 				</div>

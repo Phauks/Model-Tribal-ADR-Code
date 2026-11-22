@@ -201,29 +201,32 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 dispute_resolution:
   provisions:
-  - kind: other
-    title: d. Tribal Dispute Resolution
-    citation: d. Tribal Dispute Resolution
-    link: https://www.narf.org/nill/codes/dry_creek/index.html
-    source: national-indian-law-library-code-codes-dry-creek
+  - kind: traditional-dispute-resolution
+    title: d. Tribal Dispute Resolution.
+    citation: DRY CREEK RANCHERIA TRIBAL COURT RULES (Effective June 21, 2013), Rule G-1(d)
+    link: https://drycreekrancheria.com/wp-content/uploads/2023/05/Rules-of-Court-Certified-copy.pdf
+    source: dry-creek-dry-creek-rancheria-tribal-court-rules-effective
     confidence: medium
-    verification: title-only
-    as_of: 2016-06
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    verification: read-in-full
+    as_of: '2013-06-21'
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Lets the Tribal Court, in its discretion, use a mode of proceeding faithful to tribal ways
+      that resolves a matter without argument and aggression, including informal dispute resolution.
+    locator: Rule G-1(d)
   - kind: mediation
-    title: Court-Ordered and Court-Referred Mediation, Marriage Counseling, or Reconciliation of Cases
-      Involving Domestic of Family Violence Prohibited
-    citation: Court-Ordered and Court-Referred Mediation, Marriage Counseling, or Reconciliation of Cases
-      Involving Domestic of Family Violence Prohibited
-    link: https://narf.org/nill/codes/dry_creek/index.html
-    source: national-indian-law-library-code-codes-dry-creek
+    title: SECTION 24. Court-Ordered and Court-Referred Mediation, Marriage Counseling, or Reconciliation
+      of Cases Involving Domestic of Family Violence Prohibited
+    citation: Criminal Code Certified Copy (6/13), Chapter 3 (Domestic Relations), Section 24; same rule
+      at Section 6(L)
+    link: https://drycreekrancheria.com/wp-content/uploads/2023/05/4-DCR-Criminal-Code-Certification-Copy-1.pdf
+    source: dry-creek-criminal-code-certified-copy-6-13
     confidence: medium
-    verification: title-only
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'CHAPTER 3. DOMESTIC RELATIONS'
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+    verification: read-in-full
+    as_of: 2013-06
+    locator: Chapter 3 (Domestic Relations), Section 24; same rule at Section 6(L)
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Prohibits the Court from ordering or referring parties in a petition for an order for protection
+      to mediation, marriage counseling or reconciliation to resolve the issues in that petition.
   database_listings:
   - title: Indian Child Welfare Committee Informal Conference
     citation: Dry Creek Rancheria Band of Pomo Indians Judicial Code Title 3. Section 11. Indian Child

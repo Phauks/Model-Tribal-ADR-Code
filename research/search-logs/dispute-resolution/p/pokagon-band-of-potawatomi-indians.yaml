@@ -1,0 +1,61 @@
+profile: content/tribes/p/pokagon-band-of-potawatomi-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for this nation
+  query: Arbitration Ordinance -- 1.
+  outcome: not-found
+  reason: No captured copy of this nation's code was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/pokagon_potawatomi/index.html
+  outcome: found
+  reason: The NILL table of contents lists the heading but links no copy of the provision.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/234935d1a72097b917b2.txt
+  query: Arbitration Ordinance
+  outcome: not-found
+  reason: The captured Codes and Ordinances page lists no arbitration ordinance and its links are not
+    captured.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.pokagonband-nsn.gov/government/codes-and-ordinances/
+  query: codes and ordinances
+  outcome: not-found
+  reason: The page loads its document list by script; no arbitration ordinance link was in the HTML.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Pokagon Band of Potawatomi Arbitration Ordinance tribal code pdf
+  outcome: not-found
+  reason: Results linked the NILL and Pokagon code index pages but no arbitration ordinance file.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: '"Pokagon" "Arbitration Ordinance" agreements to arbitrate are enforceable'
+  outcome: not-found
+  reason: No Pokagon document matched; other nations' arbitration codes were returned.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.pokagonband-nsn.gov/government/codes-and-ordinances/
+  outcome: not-found
+  reason: Second search for the Arbitration Ordinance wording found only NILL and other tribes' copies
+    of the model ordinance.

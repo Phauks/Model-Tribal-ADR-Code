@@ -49,25 +49,12 @@
 	const label = $derived(current === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
 </script>
 
-<button class="theme-button needs-scripts" type="button" aria-label={label} title={label} onclick={switchTheme}>
+<button class="icon-button needs-scripts" type="button" aria-label={label} title={label} onclick={switchTheme}>
 	<span class="sun"><Sun size={24} /></span>
 	<span class="moon"><Moon size={24} /></span>
 </button>
 
 <style>
-	.theme-button {
-		display: inline-grid;
-		place-items: center;
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
-		padding: 0;
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-band-text);
-		cursor: pointer;
-	}
-
 	.sun {
 		display: inline-flex;
 	}

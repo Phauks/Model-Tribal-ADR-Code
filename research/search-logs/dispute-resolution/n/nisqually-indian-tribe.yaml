@@ -1,0 +1,194 @@
+profile: content/tribes/n/nisqually-indian-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nisqually/index.html
+  query: arbitration
+  outcome: found
+  reason: The page links to the Title 8 PDF and lists the heading under Title 8 Chapter II, but gives
+    no body text.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.nisqually-nsn.gov/index.php/download_file/view/814/169/ (NILL-linked Title 8)
+  query: 8.50.290
+  outcome: dead-link
+  reason: The link returns 'Invalid File'.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.nisqually-nsn.gov/Nisqually-Tribal-Council/tribal-code
+  query: Title 8 link
+  outcome: found
+  reason: The tribal code page links to a current Title 8 PDF.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.nisqually-nsn.gov/download_file/view/9a7ecab1-bb21-4a3e-aa2e-1e8393154967/430 (Title
+    8 PDF)
+  query: 8.50.290 Arbitration Agreements
+  outcome: not-found
+  reason: The table of contents lists 8.50.290 on page 42, but the text returned covers only up to Section
+    8.50.170. Two fetches with offsets did not reach it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.nisqually-nsn.gov/download_file/view/9a7ecab1-bb21-4a3e-aa2e-1e8393154967/430
+  query: 8.50.290 Arbitration Agreements
+  outcome: found
+  reason: Fetched the PDF raw and extracted full text; the section is printed on page 42.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/840dc785ccf0163f647c.txt
+  query: MEDIATION OF DISPUTES; Request for Mediation; Mediator
+  outcome: found
+  reason: Section 50.40 and its subsections 50.40.01-50.40.05 are read at the printed headings.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.nisqually-nsn.gov/download_file/view/10271016-38cd-4802-8810-97bf9ecc830e/430 (Title
+    24 PDF)
+  query: 24.19 Mediation of Disputes
+  outcome: found
+  reason: Section 24.19 is 'Post Trial Procedures' in the printed text, with no mediation heading in the
+    table of contents.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nisqually/index.html
+  query: '24.19'
+  outcome: found
+  reason: The NILL page lists the Title 24 Judiciary PDF; the table of contents heading was the record's
+    source.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nisqually/index.html
+  query: '24.19'
+  outcome: found
+  reason: NILL (updated May 2016) lists Title 24 with a civil chapter whose 24.18 is Post Trial Procedure
+    and 24.19 is Mediation of Disputes (24.19.01 Request for Mediation, 24.19.02 Mediator, 24.19.03 Time
+    of Hearing, 24.19.04 Hearing, 24.19.05 Results of Hearing).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.nisqually-nsn.gov/download_file/view/10271016-38cd-4802-8810-97bf9ecc830e/430
+  query: mediat
+  outcome: found
+  reason: 'Current Title 24 PDF downloaded and extracted raw: it has no mediation text, and its 24.19
+    is Post Trial Procedures. Its certification says it was enacted in March 2024 to replace and supersede
+    the previous Title 24.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.nisqually-nsn.gov/index.php/download_file/view/126/169/
+  outcome: dead-link
+  reason: NILL's old Title 24 link returns a web page, not the code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: web.archive.org copy of the old Title 24 link
+  outcome: blocked
+  reason: The archive fetch was blocked by the network policy.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/840dc785ccf0163f647c.txt
+  query: 50.27.03; 50.33; Mediator; Mediation of disputes
+  outcome: found
+  reason: The printed sections are 50.27.03 Petition for Emancipation, 50.34.03 Mediator, and 50.40 Mediation
+    of Disputes.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nisqually/index.html
+  query: 50.27.03; 50.33
+  outcome: found
+  reason: NILL's Title 50 numbering (50.27 Juvenile Court Personnel, 50.33 Mediation of Disputes) is an
+    older version of the youth code.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/840dc785ccf0163f647c.txt
+  query: Mediator; Mediation of Disputes
+  outcome: found
+  reason: Current Title 50 prints the same headings at 50.34.03 and 50.40.01-50.40.05.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/840dc785ccf0163f647c.txt
+  query: PEACEMAKER CONFERENCE; 50.16
+  outcome: found
+  reason: Section 50.20 and its subsections are read at the printed headings, and 50.16 is 'Dispositional
+    Hearing'.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nisqually/index.html
+  query: 50.16 PEACEMAKER CONFERENCE
+  outcome: found
+  reason: NILL (May 2016) lists it as 50.16 with 50.16.01-50.16.06; in that version 50.20 is Adoption.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/840dc785ccf0163f647c.txt
+  query: PEACEMAKER CONFERENCE
+  outcome: found
+  reason: Current Title 50 section 50.20 and 50.20.01-50.20.06 read in full.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/840dc785ccf0163f647c.txt
+  query: 50.27.03; 50.33 Mediation of Disputes
+  outcome: found
+  reason: 'Same text as record #3; no separate section found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/nisqually/index.html
+  query: 50.27.03 Mediator; 50.33
+  outcome: found
+  reason: 'Identical heading list to record #3 in NILL''s older Title 50 numbering.'

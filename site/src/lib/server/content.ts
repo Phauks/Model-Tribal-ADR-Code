@@ -146,6 +146,12 @@ export interface NationRecord {
 	};
 	recognition?: (CitedFact & { type: string; legal_basis?: string })[];
 	states?: (CitedFact & { state: string; presence?: string })[];
+	census_areas?: (CitedFact & {
+		geographic_identifier: string;
+		name: string;
+		area_type?: string;
+		vintage?: string;
+	})[];
 	contacts?: (CitedFact & {
 		kind: string;
 		value: string;

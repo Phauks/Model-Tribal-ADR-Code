@@ -12,7 +12,7 @@
  *
  * The maps' styles are in the page, under .map-figure.
  */
-import type { MapGeometry, ScaleBar } from './map-geometry.ts';
+import type { LandAreaKind, MapGeometry, ScaleBar } from './map-geometry.ts';
 
 /** A state or territory, with how many nations have a recorded presence there. */
 export interface StateCount {
@@ -31,18 +31,71 @@ export interface RegionCount {
 	count: number;
 }
 
+/** A Census land area, with how many nations' records link to it. */
+export interface LandAreaCount {
+	identifier: string;
+	name: string;
+	kind: LandAreaKind;
+	/** The id of the area's row in the table. */
+	anchor: string;
+	count: number;
+}
+
 export interface NationsMapCounts {
 	states: StateCount[];
 	regions: RegionCount[];
 }
 
-/** The finished markup of each view of the map, by the view's key. */
+/**
+ * The finished markup of the views drawn into the page, by the view's key.
+ * The "Land areas" view is heavier, so it is drawn by `drawLandAreasMap` and
+ * fetched only when a reader opens it (src/routes/nations/map/land-areas.json).
+ */
 export interface NationsMapDrawings {
 	states: string;
 	regions: string;
 }
 
-export type NationsMapView = keyof NationsMapDrawings;
+/** Every view's key, including views fetched when opened. */
+export type NationsMapView = keyof NationsMapDrawings | 'lands';
+
+/** The Census Bureau's names for each kind of area, as the table and tooltips give them. */
+export const landAreaKindLabels: Record<LandAreaKind, string> = {
+	'federal-reservation-or-trust-land': 'Reservation or trust land (federal)',
+	'state-reservation': 'State reservation',
+	'oklahoma-tribal-statistical-area': 'Oklahoma tribal statistical area',
+	'alaska-native-village-statistical-area': 'Alaska Native village statistical area',
+	'tribal-designated-statistical-area': 'Tribal designated statistical area',
+	'state-designated-tribal-statistical-area': 'State designated tribal statistical area'
+};
+
+/**
+ * The three shades of the "Land areas" view: legal areas the federal
+ * government holds or recognizes, state reservations, and the Census Bureau's
+ * statistical areas, which are drawn for counting and are not legal
+ * boundaries.
+ */
+export const landAreaGroups = [
+	{ key: 'federal', label: 'Reservations and trust lands (federal)', kinds: ['federal-reservation-or-trust-land'] },
+	{ key: 'state', label: 'State reservations', kinds: ['state-reservation'] },
+	{
+		key: 'statistical',
+		label: 'Census statistical areas',
+		kinds: [
+			'oklahoma-tribal-statistical-area',
+			'alaska-native-village-statistical-area',
+			'tribal-designated-statistical-area',
+			'state-designated-tribal-statistical-area'
+		]
+	}
+] as const satisfies readonly { key: string; label: string; kinds: readonly LandAreaKind[] }[];
+
+const groupOf = (kind: LandAreaKind) =>
+	landAreaGroups.find((group) => (group.kinds as readonly LandAreaKind[]).includes(kind))?.key ?? 'statistical';
+
+/** The id of a land area's row in the table. */
+export const landAreaAnchor = (identifier: string) => `land-area-${identifier.toLowerCase()}`;
+
 
 const escape = (text: string): string =>
 	text
@@ -64,6 +117,10 @@ function describeState(state: StateCount, marked: boolean): string {
 }
 
 const describeRegion = (region: RegionCount) => `${region.name} Region: ${nations(region.count)}`;
+
+const describeLandArea = (area: LandAreaCount) =>
+	`${area.name}: ${landAreaKindLabels[area.kind]}` +
+	(area.count === 0 ? '' : `, linked to ${nations(area.count)}`);
 
 /** Lines of a region's label; two-word names that sit in narrow regions wrap. */
 const labelLines = (name: string) => (name === 'Eastern Oklahoma' ? ['Eastern', 'Oklahoma'] : [name]);
@@ -113,6 +170,14 @@ const drawFrameLabels = (geometry: MapGeometry) =>
 		.join('') +
 	`</g>`;
 
+/**
+ * A place that nothing links to, such as a territory with no nations recorded,
+ * still shows its tooltip and an outline on hover, so a reader can see what
+ * the pointer is on. Only places with a table row are links.
+ */
+const linkOrPlace = (anchor: string, label: string, content: string, linked: boolean) =>
+	linked ? link(anchor, label, content) : `<g class="unlinked">${content}</g>`;
+
 function drawStates(geometry: MapGeometry, counts: Map<string, StateCount>): string {
 	const shapes: string[] = [];
 	const markers: string[] = [];
@@ -120,18 +185,21 @@ function drawStates(geometry: MapGeometry, counts: Map<string, StateCount>): str
 		const state = counts.get(shape.code) ?? { code: shape.code, name: shape.code, count: 0, countClass: 0 };
 		const description = describeState(state, Boolean(shape.marker));
 		const fill = `state count-${state.count > 0 ? state.countClass : 0}`;
-		const outline = titled('path', `class="${fill}" d="${shape.path}"`, description);
-		shapes.push(!shape.marker && state.count > 0 ? link(`state-${shape.code}`, description, outline) : outline);
-
+		const outline = titled('path', `class="${fill}${shape.island ? ' island' : ''}" d="${shape.path}"`, description);
 		const marker = shape.marker;
-		if (!marker) continue;
-		markers.push(
-			`<line class="marker-line" x1="${marker.fromX}" y1="${marker.fromY}" x2="${marker.x}" y2="${marker.y}"/>`
-		);
+		if (!marker) {
+			shapes.push(linkOrPlace(`state-${shape.code}`, description, outline, state.count > 0));
+			continue;
+		}
+		// A small place's outline, marker line, dot and code are one link, so
+		// pointing at any of them lights up all of them. Islands also get a wide
+		// invisible stroke around their outline to point at, with the same tooltip.
+		const hitArea = shape.island ? titled('path', `class="hit-area" aria-hidden="true" d="${shape.path}"`, description) : '';
+		const line = `<line class="marker-line" x1="${marker.fromX}" y1="${marker.fromY}" x2="${marker.x}" y2="${marker.y}"/>`;
 		const dot = titled('circle', `class="${fill}" cx="${marker.x}" cy="${marker.y}" r="9"`, description);
 		const onLeft = marker.labelSide === 'left';
 		const code = `<text class="map-label marker-label${onLeft ? ' label-on-left' : ''}" x="${marker.x + (onLeft ? -12 : 12)}" y="${marker.y + 5}">${escape(shape.code)}</text>`;
-		markers.push(state.count > 0 ? link(`state-${shape.code}`, description, dot + code) : dot + code);
+		markers.push(linkOrPlace(`state-${shape.code}`, description, hitArea + outline + line + dot + code, state.count > 0));
 	}
 	return (
 		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="by-state-title">` +
@@ -175,6 +243,32 @@ function drawRegions(geometry: MapGeometry, counts: Map<string, RegionCount>): s
 		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +
 		`<path class="region-borders" d="${geometry.regionBorders}"/>` +
 		`<g class="region-labels" aria-hidden="true">${labels.join('')}</g>` +
+		drawFrameLabels(geometry) +
+		`</svg>`
+	);
+}
+
+export function drawLandAreasMap(geometry: MapGeometry, areas: LandAreaCount[]): string {
+	const counts = new Map(areas.map((area) => [area.identifier, area]));
+	// Statistical areas first, so the legal areas inside them are drawn on top.
+	const layers: Record<string, string[]> = { statistical: [], state: [], federal: [] };
+	for (const shape of geometry.landAreas) {
+		const area = counts.get(shape.identifier);
+		if (!area) continue;
+		const group = groupOf(shape.kind);
+		const description = describeLandArea(area);
+		const drawn = shape.dot
+			? titled('circle', `class="land-area land-${group} dot" cx="${shape.dot.x}" cy="${shape.dot.y}" r="3"`, description)
+			: titled('path', `class="land-area land-${group}" d="${shape.path}"`, description);
+		layers[group].push(link(area.anchor, description, drawn));
+	}
+	return (
+		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="lands-title">` +
+		`<title id="lands-title">American Indian and Alaska Native areas, as the Census Bureau draws them</title>` +
+		drawFrames(geometry) +
+		`<path class="land" d="${geometry.land}"/>` +
+		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +
+		`<g class="land-areas">${layers.statistical.join('')}${layers.state.join('')}${layers.federal.join('')}</g>` +
 		drawFrameLabels(geometry) +
 		`</svg>`
 	);

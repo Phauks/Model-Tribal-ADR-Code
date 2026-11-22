@@ -270,76 +270,95 @@ dispute_resolution:
     as_of: '2017-06-22'
   - kind: arbitration
     title: TITLE 10. ARBITRATION
-    citation: TITLE 10. ARBITRATION
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    verification: title-only
-    as_of: '2015'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    citation: TITLE 10. ARBITRATION (MASHANTUCKET PEQUOT TRIBAL LAWS), 10 M.P.T.L. ch. 1 §§ 1-9
+    link: https://law.mptn-nsn.gov/globalassets/laws/title-10-arbitration.pdf
+    source: mashantucket-pequot-title-10-arbitration-mashantucket-pequot-tribal
+    confidence: high
+    verification: read-in-full
+    locator: 10 M.P.T.L. ch. 1 §§ 1-9
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: 'Governs written agreements to arbitrate under tribal jurisdiction: makes them enforceable,
+      requires the tribal court to stay litigation and order arbitration (the arbitrator decides arbitrability),
+      sets award timing, lets the court confirm an award within one year without reviewing the merits
+      and enforce it as a judgment, allows no further appeal from such orders, and gives the Court of
+      Appeals exclusive court jurisdiction when the Tribe is a party with an express immunity waiver.'
   - kind: arbitration
-    title: 2. Agreements to Arbitrate are Enforceable
-    citation: 2. Agreements to Arbitrate are Enforceable; 4. Stay of Proceedings and Order to Proceed
-      with Arbitration; 8. Arbitration Award Not Appealable; 7. Dispute Resolution for Prohibited Practices
-      Questions; 7. Dispute Resolution for Prohibited Practices Questions
-    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    verification: title-only
-    as_of: 2015-08
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    title: § 2. Agreements to Arbitrate are Enforceable
+    citation: TITLE 10. ARBITRATION (MASHANTUCKET PEQUOT TRIBAL LAWS), 10 M.P.T.L. ch. 1 § 2
+    link: https://law.mptn-nsn.gov/globalassets/laws/title-10-arbitration.pdf
+    source: mashantucket-pequot-title-10-arbitration-mashantucket-pequot-tribal
+    confidence: high
+    verification: read-in-full
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Makes written agreements to arbitrate existing or future controversies valid, irrevocable
+      and enforceable.
+    locator: 10 M.P.T.L. ch. 1 § 2
   - kind: mediation
-    title: 5. Establishment of Mediation Panel
-    citation: 5. Establishment of Mediation Panel; 3. Establishment of Mediation Panel
-    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
+    title: § 3. Establishment of Mediation Panel
+    citation: TITLE 31. MASHANTUCKET EMPLOYMENT RIGHTS LAW (2015-2025 Supplement), 31 M.P.T.L. ch. 2 §
+      3
+    link: https://law.mptn-nsn.gov/globalassets/laws/01.08.2026-current-supplment-of-mptl.pdf
+    source: mashantucket-pequot-title-31-mashantucket-employment-rights-law-2015
     confidence: medium
-    verification: title-only
-    as_of: 2015-08
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    verification: read-in-full
+    as_of: '2018-10-25'
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "5. Establishment of Mediation Panel"; the printed heading, number or version differs
+      (see research/reviews/2026-11-22-title-only-provisions.json). Read from a scanned copy by OCR.
+    summary: Establishes a three-member mediation panel, drawn case by case from the Peacemakers, to help
+      employers and employees resolve disputes under tribal labor and employment laws, where all parties
+      must agree to mediate and any resulting agreement becomes a written order signed by the parties
+      and the panel, and where failure to agree sends the matter back into MERO processes.
+    locator: 31 M.P.T.L. ch. 2 § 3
   - kind: arbitration
-    title: 11. Arbitration
-    citation: 11. Arbitration
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    verification: title-only
-    as_of: '2015'
-    locator: Table of Contents, under 'TITLE 8. EMPLOYMENT'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: mediation
-    title: 9. Claim Procedures; Investigations; Mediation
-    citation: 9. Claim Procedures; Investigations; Mediation; 9. Claim Procedures; Investigations; Hearings,
-      Mediation
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    verification: title-only
-    as_of: '2015'
-    locator: Table of Contents, under 'TITLE 33. MASHANTUCKET PEQUOT TRIBAL AND NATIVE AMERICAN PREFERENCE
-      LAW'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    title: § 11. Arbitration
+    citation: TITLE 8. EMPLOYMENT, CHAPTER 1. EMPLOYEE REVIEW CODE (8 M.P.T.L. ch. 1), 8 M.P.T.L. ch.
+      1 § 11
+    link: https://law.mptn-nsn.gov/globalassets/laws/title-8-employment.pdf
+    source: mashantucket-pequot-title-8-employment-chapter-1-employee-review-code
+    confidence: high
+    verification: read-in-full
+    locator: 8 M.P.T.L. ch. 1 § 11
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Lets a party to a collective bargaining agreement ask the tribal court to compel arbitration
+      under that agreement, to confirm an award within one year, and (within 30 days, on clear and convincing
+      proof of listed defects such as fraud, bias, conflict with tribal law or excess of powers) to vacate
+      or modify it, and lets the court decide tribal-law questions that bind the arbitrator, guided by
+      federal arbitration decisions.
   - kind: other
-    title: Dispute Resolution for Prohibited Practices Questions
-    citation: Dispute Resolution for Prohibited Practices Questions
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
+    title: § 9. Claim Procedures; Investigations; Hearings; Mediation.
+    citation: TITLE 33. MASHANTUCKET PEQUOT TRIBAL AND NATIVE AMERICAN PREFERENCE LAW, 33 M.P.T.L. ch.
+      1 § 9
+    link: https://law.mptn-nsn.gov/globalassets/laws/title-33-mashantucket-pequot-tribal-and-native-american-preference-law.pdf
+    source: mashantucket-pequot-title-33-mashantucket-pequot-tribal-and-native
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-06-14'
+    locator: 33 M.P.T.L. ch. 1 § 9
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "9. Claim Procedures; Investigations; Mediation"; the printed heading, number or version
+      differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Sets the claims procedure under the preference law, under which a claim against the Tribe
+      as employer goes first to the Office of Native American Preference for investigation and decision,
+      then may go to a hearing before the Mashantucket Employment Rights Office, a claim against a non-tribal
+      employer goes directly to that office after the employer's own complaint process, and mediation
+      may be required by the office or, if all parties agree, referred to its mediation panel, pausing
+      the hearing time limits.
+  - kind: other
+    title: § 7.    Dispute Resolution for Prohibited Practices Questions.
+    citation: TITLE 32. MASHANTUCKET PEQUOT LABOR RELATIONS LAW, 32 M.P.T.L. ch. 1 § 7
+    link: https://law.mptn-nsn.gov/globalassets/laws/title-32-mashantucket-pequot-labor-relations-law.pdf
+    source: mashantucket-pequot-title-32-mashantucket-pequot-labor-relations-law
     confidence: medium
-    verification: title-only
-    as_of: '2015'
-    locator: Table of Contents, under 'TITLE 32. MASHANTUCKET PEQUOT LABOR RELATIONS LAW'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2019-01-10'
+    locator: 32 M.P.T.L. ch. 1 § 7
+    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
+      is left for the lead author's review.
+    summary: Lets a claim that a prohibited labor practice occurred be filed with MERO, where a Special
+      Master or the MERO Board decides it and may order the practice stopped, reinstatement with or without
+      back pay, and make-whole relief (no damages for emotional distress), no violation can rest on conduct
+      more than 180 days before filing, and a final decision can be appealed to Tribal Court.
   database_listings:
   - title: Alternatives to Sentencing and Prosecution Policies
     citation: 2 M.P.T.L. ch. 6 § 1

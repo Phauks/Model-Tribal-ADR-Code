@@ -47,7 +47,7 @@ function story(overrides: Partial<StoryRecord> = {}): StoryRecord {
 	};
 }
 
-describe('access levels on the website (decision record 0028)', () => {
+describe('access levels on the website (decision record 0029)', () => {
 	it('shows public and nation-review-first material', () => {
 		expect(accessAllowsDisplay({ level: 'public' }, today)).toBe(true);
 		expect(accessAllowsDisplay({ level: 'nation-review-first' }, today)).toBe(true);

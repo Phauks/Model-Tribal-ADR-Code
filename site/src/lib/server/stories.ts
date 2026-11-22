@@ -1,7 +1,7 @@
 /**
  * The stories as the website shows them: the list at /stories and one page
  * per story at /stories/<id>, built from content/stories/ when the site is
- * built (decision records 0019 and 0028). A record added to that folder
+ * built (decision records 0019 and 0029). A record added to that folder
  * appears on the next build with no change here.
  *
  * The project never retells or summarizes a story. A page shows the story's
@@ -31,7 +31,7 @@ import {
 } from '../story-visibility.ts';
 import { methods, nations, sources, storyRecords } from './content.ts';
 import { formatCaptureDate, formatSource } from './markdown.ts';
-import { SourceUses, whereInSource, type SourceEntry } from './source-uses.ts';
+import { SourceUses, whereInSource, type CitationMark, type SourceEntry } from './source-uses.ts';
 
 export interface NationReference {
 	id: string;
@@ -54,6 +54,8 @@ export interface ExcerptView {
 	credit: string;
 	/** Where to read the telling. */
 	link?: WebLink;
+	/** Citation markers shown beside it, on the story's own page. */
+	citations?: CitationMark[];
 }
 
 export interface TellingView {
@@ -65,12 +67,14 @@ export interface TellingView {
 	date?: string;
 	locator?: string;
 	link?: WebLink;
+	citations: CitationMark[];
 }
 
 export interface ProtocolView {
 	kind: string;
 	statement: string;
 	howFollowed?: string;
+	citations: CitationMark[];
 }
 
 export interface StorySummary {
@@ -85,7 +89,7 @@ export interface StorySummary {
 }
 
 export interface StoryView extends StorySummary {
-	titlesInLanguage: { text: string; language: string }[];
+	titlesInLanguage: { text: string; language: string; citations: CitationMark[] }[];
 	length?: string;
 	methods: string[];
 	topics: string[];
@@ -212,33 +216,42 @@ export function storyView(record: StoryRecord): StoryView {
 	const uses = new SourceUses(citationOf);
 
 	const titlesInLanguage = (record.titles_in_language ?? []).map((title) => {
-		if (title.source) uses.add(title.source, { section: 'Name in the language', text: title.text });
-		return { text: title.text, language: title.language };
+		const citations: CitationMark[] = [];
+		if (title.source) uses.cite(title.source, { section: 'Name in the language', text: title.text }, citations);
+		return { text: title.text, language: title.language, citations };
 	});
 
 	const excerpts = shownExcerpts(record, date).map((excerpt) => {
 		const telling = byId.get(excerpt.telling);
+		const citations: CitationMark[] = [];
 		if (telling?.source) {
-			uses.add(telling.source, {
-				section: excerpt.quoted ? 'In the teller’s words' : 'Passages cited, not quoted',
-				text: excerpt.locator
-			});
+			uses.cite(
+				telling.source,
+				{
+					section: excerpt.quoted ? 'In the teller’s words' : 'Passages cited, not quoted',
+					text: excerpt.quoted ? 'the passage quoted' : 'the passage cited',
+					where: excerpt.locator
+				},
+				citations
+			);
 		}
 		return {
 			text: excerpt.quoted ? excerpt.text : undefined,
 			locator: excerpt.locator,
 			credit: tellingCredit(telling),
-			link: webLink(telling?.source)
+			link: webLink(telling?.source),
+			citations
 		};
 	});
 
 	const tellingViews = tellings.map((telling) => {
+		const citations: CitationMark[] = [];
 		if (telling.source) {
-			uses.add(telling.source, {
-				section: 'Tellings',
-				text: tellingCredit(telling),
-				where: whereInSource(telling)
-			});
+			uses.cite(
+				telling.source,
+				{ section: 'Tellings', text: tellingCredit(telling), where: whereInSource(telling) },
+				citations
+			);
 		}
 		return {
 			id: telling.id,
@@ -248,14 +261,21 @@ export function storyView(record: StoryRecord): StoryView {
 			authority: labelFor(authorityLabels, telling.authority),
 			date: partialDate(telling.as_of),
 			locator: telling.locator,
-			link: webLink(telling.source)
+			link: webLink(telling.source),
+			citations
 		};
 	});
 
 	const protocols = (record.protocols ?? []).map((protocol) => {
 		const kind = labelFor(protocolKindLabels, protocol.kind);
-		uses.add(protocol.source, { section: 'Cultural protocols', text: kind, where: protocol.locator });
-		return { kind, statement: protocol.statement, howFollowed: protocol.how_the_project_follows_it };
+		const citations: CitationMark[] = [];
+		uses.cite(protocol.source, { section: 'Cultural protocols', text: kind, where: protocol.locator }, citations);
+		return {
+			kind,
+			statement: protocol.statement,
+			howFollowed: protocol.how_the_project_follows_it,
+			citations
+		};
 	});
 
 	return {

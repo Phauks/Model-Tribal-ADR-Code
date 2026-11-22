@@ -1,0 +1,35 @@
+profile: content/tribes/m/muckleshoot-indian-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/7a829c31c29ffbc789a1.txt and 86f7ec584f87433f8742.txt
+  outcome: not-found
+  reason: Captures cover Sections 12A.03.100 and 5.20.050, not 12.06.090.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/muckleshoot/index.html
+  outcome: found
+  reason: Index lists the heading and related Chapter 12.06 headings but no section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Muckleshoot tribal code 12.06.090 Additional Family Group Conferences
+  query: Muckleshoot tribal code 12.06.090 Additional Family Group Conferences
+  outcome: not-found
+  reason: Results were NCORJ entries from other tribes and the NILL index.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ncorj.org/
+  outcome: not-found
+  reason: Searched NCORJ for Muckleshoot family conference provisions; results covered other tribes and
+    no section 12.06.090.

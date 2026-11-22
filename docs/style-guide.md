@@ -104,6 +104,7 @@ chosen for clarity and consistency in text a nation may enact.
   Label them "Illustration 1," and so on.
 - **Source Notes** cite every Tribal law, case, statute and secondary source
   the comment relies on, by `[@key]`.
+- **Citations on the website** sit beside what they support, as Wikipedia's do (Trevor, Nov. 22, 2026). Put `[@key]` right after the claim it supports, for example `the project treats peacemaking as its own track [@narf-ipi-tribal-peacemaking-laws].` The website shows a small numbered marker there, right against the last word, and the page's Sources list links back to each one. On nation pages and other data pages every fact gets a marker from its own source, so nothing needs to be written by hand. This replaces the rule of Nov. 21, 2026, that kept citations out of the text and listed them only at the end of the page.
 - **Essays** may use a more discursive voice, but the same terminology,
   citation and labeling rules apply.
 

@@ -1,0 +1,47 @@
+profile: content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/6b4dc3832416d2acf21f.txt
+  query: Mediation
+  outcome: not-found
+  reason: The captured tribal-law page has 180 characters and no code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://smsccourt.org/tribal-law/
+  query: mediation; code links
+  outcome: blocked
+  reason: The page is a password-protected post, with no code links visible.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/shakopee/index.html
+  query: Mediation
+  outcome: found
+  reason: The table of contents shows the 'Mediation.' item in Domestic Relations Code Chapter 5. The
+    NILL nation page says the full text is not online.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Shakopee Mdewakanton Sioux Community Domestic Relations Code Chapter 5 rules of procedure divorce
+    "Mediation" section
+  outcome: not-found
+  reason: Results did not include Shakopee code text; the NILL code entry has only the table of contents.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/
+  outcome: not-public
+  reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
+    not worked around.

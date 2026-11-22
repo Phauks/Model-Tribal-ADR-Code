@@ -1,4 +1,4 @@
-# 0028. Show story records on the website while their nations review them
+# 0029. Show story records on the website while their nations review them
 
 - **Status:** Accepted (lead author, Nov. 22, 2026)
 - **Date:** 2026-11-22
