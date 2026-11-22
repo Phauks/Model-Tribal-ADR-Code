@@ -8,6 +8,7 @@
  */
 import { sourceCitations } from 'virtual:source-citations';
 import { readFrontMatterPage, sources } from './content.ts';
+import type { CitationMark } from '../citation-marks.ts';
 import { formatSource, plainText, renderMarkdown, type CitationCollector } from './markdown.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 
@@ -51,13 +52,9 @@ class FrontMatterCitations implements CitationCollector {
 		this.#queue = citedSentences(body);
 	}
 
-	add(key: string, locator?: string): number {
+	cite(key: string, locator?: string): CitationMark {
 		const use = this.#queue.shift() ?? { section: '', text: 'this page' };
-		return this.uses.add(key, { ...use, where: locator });
-	}
-
-	markerTarget(number: number): string {
-		return `#source-${number}`;
+		return this.uses.cite(key, { ...use, where: locator });
 	}
 }
 

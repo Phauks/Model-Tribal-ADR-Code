@@ -40,7 +40,7 @@ function registerTypstFormat() {
 
 // Pinpoint labels the text may use, after Pandoc's citation syntax:
 // "p. 16", "pp. 3-5", "at 52", "§ 4", "sec. 3", "¶ 12", "para. 2", "ch. 1",
-// "n. 4". A pinpoint with no label, such as "(2)", is a page in CSL terms;
+// "n. 4", "art. IV". A pinpoint with no label, such as "(2)", is a page in CSL terms;
 // for a section of a code it is printed joined to the section number.
 const LABELS = [
   [/^(?:pp?\.|pages?|at)\s+/i, "page"],
@@ -48,6 +48,9 @@ const LABELS = [
   [/^(?:¶¶?|paras?\.|paragraphs?)\s*/i, "paragraph"],
   [/^(?:ch(?:ap)?\.|chapters?)\s+/i, "chapter"],
   [/^(?:nn?\.|notes?)\s+/i, "note"],
+  // CSL 1.0.2 names an article of a treaty or constitution "article-locator";
+  // the older name, "article", prints the item-type term "preprint".
+  [/^(?:arts?\.|articles?)\s+/i, "article-locator"],
 ];
 
 export function parsePinpoint(text) {
