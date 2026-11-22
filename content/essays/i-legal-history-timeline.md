@@ -89,6 +89,10 @@ That exception leaves room for a nation's own justice system, including restorat
 :::
 
 :::: case johnson-v-mintosh
+::: background
+In 1773 and 1775, private buyers purchased two large tracts north of the Ohio River directly from chiefs of the Illinois and Piankeshaw nations [@johnson-v-mintosh, pp. 550, 555]. Their successors later brought an action in ejectment in Illinois against William M'Intosh, who claimed part of the same land under a grant from the United States, and the trial court ruled for M'Intosh [@johnson-v-mintosh, p. 543].
+:::
+
 ::: question
 Can a title to land bought directly from Native nations by private purchasers before the Revolution be recognized in United States courts over a later federal patent?
 :::
@@ -175,6 +179,10 @@ Authorized the President to exchange lands west of the Mississippi for nations' 
 ::::
 
 :::: case cherokee-nation-v-georgia
+::: background
+Congress passed the Indian Removal Act in 1830 [@indian-removal-act-1830]. The Cherokee Nation then filed a bill directly in the Supreme Court to stop Georgia from enforcing laws that, the Nation alleged, would destroy it as a political society. The same laws, it said, would seize lands the United States had guaranteed by treaty [@cherokee-nation-v-georgia, p. 15]. The Court could hear the case only if the Nation was a "foreign state" under Article III [@cherokee-nation-v-georgia, pp. 15-16].
+:::
+
 ::: question
 Is the Cherokee Nation a "foreign State" that may bring an original action in the Supreme Court against Georgia?
 :::
@@ -209,6 +217,10 @@ Source of the "domestic dependent nations" and trust ("ward") framing that still
 :::
 
 :::: case worcester-v-georgia
+::: background
+Georgia made it a crime for white persons to live within the Cherokee Nation without a state license and an oath to support Georgia's laws. Samuel Worcester, a Vermont citizen and missionary living at New Echota with the Cherokee Nation's permission and under federal authority, was convicted under that law and sentenced to four years of hard labor [@worcester-v-georgia, pp. 536-538].
+:::
+
 ::: question
 May Georgia apply its criminal laws to a non-Indian missionary living in the Cherokee Nation under federal license?
 :::
@@ -259,6 +271,10 @@ The first federal courts on reservations were built to suppress traditional prac
 :::
 
 :::: case ex-parte-crow-dog
+::: background
+Crow Dog, a member of the Brulé band of the Sioux Nation, killed Spotted Tail, a member of the same band, in Indian country. The territorial court of Dakota convicted him of murder and sentenced him to death. Federal law then excluded "crimes committed by one Indian against the person or property of another Indian" from the general federal criminal laws. Crow Dog sought release on the ground that no federal law reached his act [@ex-parte-crow-dog, pp. 557-558].
+:::
+
 ::: question
 Did a federal territorial court have jurisdiction to try and sentence a Lakota man for killing another Lakota man within the Great Sioux Reservation?
 :::
@@ -295,6 +311,10 @@ Section 9 of the 1885 appropriations act subjected "all Indians" who committed s
 ::::
 
 :::: case united-states-v-kagama
+::: background
+Congress answered *Crow Dog* in section 9 of the Indian Appropriation Act of March 3, 1885, the Major Crimes Act, which made seven crimes, murder among them, federal offenses when committed by Indians [@major-crimes-act-1885]. Kagama and Mahawaha were indicted under it for killing another Indian on the Hoopa Valley Reservation in California, and the two judges of the circuit court divided on whether the law was constitutional [@united-states-v-kagama, pp. 375-376].
+:::
+
 ::: question
 Does Congress have power to make crimes by one Indian against another within a reservation federal offenses (the Major Crimes Act)?
 :::
@@ -335,6 +355,10 @@ Allotment left checkerboard land ownership and fractionated heirship, the source
 :::
 
 :::: case talton-v-mayes
+::: background
+Talton, a Cherokee citizen, was indicted in the courts of the Cherokee Nation for murdering another Cherokee citizen in Cherokee territory. The grand jury had five members, chosen under a Cherokee law. Held by the Nation's sheriff, Talton sought federal habeas corpus, arguing that the Fifth Amendment required a proper grand jury [@talton-v-mayes, pp. 378-379].
+:::
+
 ::: question
 Does the Fifth Amendment's grand jury requirement apply to a murder prosecution under Cherokee Nation law in Cherokee courts?
 :::
@@ -365,6 +389,10 @@ Extended allotment to Indian Territory and provided that "all tribal courts in I
 ::::
 
 :::: case lone-wolf-v-hitchcock
+::: background
+The Medicine Lodge Treaty of 1867 set aside a reservation for the Kiowa, Comanche and Apache and provided that no cession of its common land would be valid unless signed by three-fourths of the adult men [@lone-wolf-v-hitchcock, pp. 563-564]. In 1892 federal commissioners obtained an agreement, signed by 456 men, to allot the reservation and cede the rest. Congress ratified it with amendments in an act of June 6, 1900 [@lone-wolf-v-hitchcock, pp. 553-554, 558-559]. Lone Wolf, a Kiowa leader, and other members sued the Secretary of the Interior to stop the opening of the land, relying on the treaty's consent clause [@lone-wolf-v-hitchcock, p. 564].
+:::
+
 ::: question
 May Congress allot and open reservation land in breach of the 1867 Medicine Lodge Treaty's requirement that three-fourths of adult men consent to any cession?
 :::
@@ -397,6 +425,10 @@ The high-water mark of "plenary power"; commentary on treaty-based dispute provi
 ### Treaty Rights, Citizenship and Status
 
 :::: case elk-v-wilkins
+::: background
+John Elk was born a member of a Native nation, later left it, and lived in Omaha, Nebraska. In April 1880 he asked Charles Wilkins, a city registrar, to register him as a voter, and Wilkins refused. Elk sued in federal court, arguing that he was a citizen under the Fourteenth Amendment and could not be denied the vote on account of race under the Fifteenth [@elk-v-wilkins, pp. 94-96, 98].
+:::
+
 ::: question
 Was a Native man born in Tribal relations who later moved away and lived among non-Indians a U.S. citizen under the Fourteenth Amendment entitled to vote?
 :::
@@ -423,6 +455,10 @@ Background for the dual political status of citizens of Native nations, which af
 :::
 
 :::: case united-states-v-winans
+::: background
+In the 1855 treaty with the United States, the Yakama confederated bands ceded most of their land and kept "the right of taking fish at all usual and accustomed places, in common with citizens of the Territory" [@united-states-v-winans, p. 378]. Later, owners of land along the Columbia River in Washington, operating fish wheels under state licenses, kept Yakama fishers from their customary places, and the United States sued to restore access [@united-states-v-winans, pp. 377, 379].
+:::
+
 ::: question
 Does the Yakama Nation's 1855 treaty right to take fish at "usual and accustomed places" survive private ownership of riverbank land?
 :::
@@ -448,6 +484,10 @@ Source of the reserved-rights doctrine: rights not expressly ceded are retained 
 :::
 
 :::: case winters-v-united-states
+::: background
+Under an agreement of May 1888, the Gros Ventre and other bands ceded a large tract in northern Montana and kept the smaller Fort Belknap Reservation along the Milk River [@winters-v-united-states, pp. 575-576]. The land was arid and nearly worthless without irrigation, and the agreement made no reservation of the water. Settlers and irrigation companies upstream then built dams and diverted the river, and the United States sued to keep the water flowing to the reservation [@winters-v-united-states, pp. 565-566].
+:::
+
 ::: question
 Did the agreement creating the Fort Belknap Reservation impliedly reserve water from the Milk River for the reservation, as against later upstream settlers?
 :::
@@ -476,6 +516,10 @@ Basis of reserved water rights; water disputes are a likely subject for intergov
 :::
 
 :::: case united-states-v-sandoval
+::: background
+When Congress authorized New Mexico's admission as a state, the Enabling Act required the state to forbid bringing liquor into Indian country, which it defined to include "all lands now owned or occupied by the Pueblo Indians of New Mexico". Sandoval was indicted under a federal liquor law for taking liquor into Santa Clara Pueblo. The trial court dismissed the indictment, holding that Congress could not intrude in this way on the police power of a new state over lands the Pueblos owned [@united-states-v-sandoval, pp. 36-37].
+:::
+
 ::: question
 May Congress prohibit bringing liquor into Pueblo lands in New Mexico, even though the Pueblos held fee title?
 :::
@@ -575,11 +619,15 @@ In these states Tribal and state courts generally have concurrent jurisdiction, 
 
 :::: law menominee-termination-act-1954
 ::: summary
-Provided for "orderly termination of Federal supervision over the property and members of the Menominee Indian Tribe of Wisconsin" [@menominee-termination-act-1954, sec. 1].
+Provided for "orderly termination of Federal supervision over the property and members of the Menominee Indian Tribe of Wisconsin" [@menominee-termination-act-1954, sec. 1]. The Tribe was to draw up a plan for the future control of its property. By April 30, 1961, the Secretary of the Interior was to transfer everything held in trust for it to a Tribal corporation or a trustee. Federal supervision would then end, and state laws would apply to the Tribe and its members as they apply to other citizens [@menominee-tribe-v-united-states, pp. 408-409].
 :::
 ::::
 
 :::: case tee-hit-ton-indians-v-united-states
+::: background
+The Tee-Hit-Ton, a Tlingit clan of 60 to 70 people, claimed more than 350,000 acres of land and 150 square miles of water in southeast Alaska [@tee-hit-ton-indians-v-united-states, p. 273]. The area lay within the Tongass National Forest. A 1947 joint resolution authorized the Secretary of Agriculture to sell its timber "notwithstanding any claim of possessory rights" [@tee-hit-ton-indians-v-united-states, p. 276]. When timber was taken, the clan sued in the Court of Claims for compensation under the Fifth Amendment [@tee-hit-ton-indians-v-united-states, p. 273].
+:::
+
 ::: question
 Is the taking of timber from aboriginal Tlingit land that Congress never recognized a compensable taking under the Fifth Amendment?
 :::
@@ -616,6 +664,10 @@ Relocation helped create large urban Native populations living outside any natio
 ### Tribal Courts and the Constitution
 
 :::: case williams-v-lee
+::: background
+Lee, a non-Indian, ran the Ganado Trading Post on the Navajo Reservation in Arizona under a federal license. He sued the Williamses, a Navajo couple living on the reservation, in Arizona state court to collect for goods sold to them on credit. The Arizona courts rejected their argument that only the Navajo courts could hear the case [@williams-v-lee, pp. 217-218].
+:::
+
 ::: question
 May an Arizona state court hear a non-Indian trader's suit to collect a debt from Navajo citizens for goods sold on the Navajo Reservation?
 :::
@@ -646,6 +698,10 @@ The leading case protecting Tribal forums from state-court encroachment over on-
 **1959. Navajo Nation Courts.** The same year, the Navajo Nation Council "did away with the Courts of Indian Offenses and in its place created the Navajo Nation Courts on April 1, 1959" [@navajo-nation-judicial-branch-history-of-the-courts].
 
 :::: case native-american-church-v-navajo-tribal-council
+::: background
+The Navajo Tribal Council adopted an ordinance making it an offense to bring peyote into the Navajo country or to sell, use or possess it there. The Native American Church of North America, whose members use peyote in their ceremonies, and several members sued the Council and its chairman in federal court, claiming the ordinance violated the First, Fourth and Fifth Amendments. The district court dismissed the claim [@native-american-church-v-navajo-tribal-council, p. 132].
+:::
+
 ::: question
 Do federal courts have jurisdiction to hear a First Amendment challenge to a Navajo Tribal Council ordinance prohibiting peyote on the reservation?
 :::
@@ -696,6 +752,10 @@ That is a federal instruction that state courts apply Tribal custom.
 :::
 
 :::: case menominee-tribe-v-united-states
+::: background
+The Treaty of Wolf River of 1854 confirmed to the Menominee a reservation in Wisconsin "to be held as Indian lands are held", which included the right to hunt and fish [@menominee-tribe-v-united-states, pp. 405-406]. After House Concurrent Resolution 108 of 1953 called for ending federal supervision of named Tribes, Congress passed the Menominee Termination Act of 1954 [@menominee-tribe-v-united-states, p. 407]. The Act ended federal supervision over the Menominee and their property, provided that state law would then apply to them as to other citizens, and said nothing about hunting or fishing. Under the Tribe's plan the reservation became a Wisconsin county and the Tribe's property passed to a state corporation, Menominee Enterprises, Inc., and termination took full effect in 1961 [@menominee-tribe-v-united-states, pp. 408-409]. When Wisconsin prosecuted three Menominee for violating its game laws, its supreme court held the treaty rights ended, and the Tribe sued the United States in the Court of Claims for compensation for their loss [@menominee-tribe-v-united-states, pp. 406-407].
+:::
+
 ::: question
 Did the Menominee Termination Act of 1954 silently abrogate the Menominee's treaty hunting and fishing rights?
 :::
@@ -734,6 +794,10 @@ Because land went to corporations, most Alaska Native Tribal courts work without
 :::
 
 :::: case mcclanahan-v-arizona-state-tax-commission
+::: background
+McClanahan, an enrolled Navajo citizen, lived on the Arizona part of the Navajo Reservation and earned all of her 1967 income there. Arizona withheld $16.20 in state income tax from her wages. She sued for a refund on behalf of herself and others in her position, and the Arizona courts dismissed the case [@mcclanahan-v-arizona-state-tax-commission, pp. 165-166].
+:::
+
 ::: question
 May Arizona impose its personal income tax on a Navajo citizen whose income came wholly from reservation sources?
 :::
@@ -761,6 +825,10 @@ States the modern "backdrop" approach to sovereignty and preemption, which comme
 ::::
 
 :::: case morton-v-mancari
+::: background
+Section 12 of the Indian Reorganization Act of 1934 gives qualified Indians a preference for appointment to positions in the Bureau of Indian Affairs. In 1972 the Bureau extended the preference to promotions. Non-Indian employees sued, arguing that the Equal Employment Opportunity Act of 1972 had repealed the preference by implication and that it was discrimination forbidden by the Fifth Amendment [@morton-v-mancari, pp. 537-538].
+:::
+
 ::: question
 Does the Bureau of Indian Affairs' statutory employment preference for Indians violate the Equal Employment Opportunity Act of 1972 or due process?
 :::
@@ -799,6 +867,10 @@ Lets nations contract to run federal programs, recognizing "the strong expressio
 ### Tribal Courts and Tribal Authority
 
 :::: case fisher-v-district-court
+::: background
+In 1969 the Tribal Court of the Northern Cheyenne Tribe found that a mother had neglected her son and gave temporary custody to Josephine Runsabove. In 1974 the Runsaboves started an adoption proceeding in a Montana state court. After the Northern Cheyenne appellate court advised that Tribal law gave the state court no jurisdiction, the state court dismissed, but the Montana Supreme Court held that the state court could hear the case [@fisher-v-district-court, pp. 383-385].
+:::
+
 ::: question
 Does a Montana state court have jurisdiction over an adoption proceeding in which all parties are Northern Cheyenne citizens residing on the reservation?
 :::
@@ -827,6 +899,10 @@ Shows that a nation's own ordinance allocating jurisdiction to its forum can dis
 :::
 
 :::: case bryan-v-itasca-county
+::: background
+Russell Bryan, an enrolled member of the Minnesota Chippewa Tribe, lived in a mobile home on trust land on the Leech Lake Reservation. Itasca County assessed a personal property tax of $147.95 on the home, and Bryan sued, arguing that the county had no power to tax a reservation Indian's property there. The Minnesota courts upheld the tax, reading Public Law 280's grant of civil jurisdiction to include the power to tax [@bryan-v-itasca-county, pp. 375-377].
+:::
+
 ::: question
 Does Public Law 280 authorize a State to impose a personal property tax on a Native person's mobile home on trust land within a reservation?
 :::
@@ -855,6 +931,10 @@ Essential for nations in Public Law 280 States (including Alaska and California)
 :::
 
 :::: case oliphant-v-suquamish-indian-tribe
+::: background
+By the 1855 Treaty of Point Elliott, the Suquamish ceded land and kept the Port Madison Reservation in Washington. The Suquamish Tribe charged two non-Indian residents of the reservation in its court. Mark Oliphant was arrested during the annual Chief Seattle Days and charged with assaulting a Tribal officer and resisting arrest. Daniel Belgarde was arrested after a high-speed chase on reservation highways that ended when he hit a Tribal police vehicle. Both sought federal habeas corpus [@oliphant-v-suquamish-indian-tribe, pp. 192-194].
+:::
+
 ::: question
 Do Tribal courts have inherent criminal jurisdiction over non-Indians?
 :::
@@ -883,6 +963,10 @@ Defines the main limit on Tribal criminal forums; restorative or diversion progr
 :::
 
 :::: case united-states-v-wheeler
+::: background
+In 1974 a Navajo police officer arrested Wheeler, a Navajo citizen, at the Bureau of Indian Affairs high school in Many Farms, Arizona. He pleaded guilty in the Navajo Tribal Court to disorderly conduct and contributing to the delinquency of a minor. A year later a federal grand jury indicted him for statutory rape arising from the same incident, and he moved to dismiss on double jeopardy grounds [@united-states-v-wheeler, pp. 314-315].
+:::
+
 ::: question
 Does the Double Jeopardy Clause bar a federal prosecution of a Navajo citizen after his conviction in Navajo Tribal court for an offense arising from the same incident?
 :::
@@ -911,6 +995,10 @@ Confirms that Tribal justice systems exercise inherent, not delegated, authority
 :::
 
 :::: case santa-clara-pueblo-v-martinez
+::: background
+A Santa Clara Pueblo ordinance of 1939 denied membership to the children of women members who married outside the Pueblo, while admitting the children of men members who did. Julia Martinez, a member who in 1941 married a Navajo man, and her daughter Audrey sued the Pueblo and its governor in federal court [@santa-clara-pueblo-v-martinez, pp. 51-52]. They relied on Title I of the Indian Civil Rights Act of 1968. It forbids a Tribe to deny any person "the equal protection of its laws" but does not say who may sue to enforce it [@santa-clara-pueblo-v-martinez, p. 51; @indian-civil-rights-act-1968].
+:::
+
 ::: question
 Does the Indian Civil Rights Act authorize a federal civil action against a Pueblo and its officer to challenge a membership ordinance as sex discrimination?
 :::
@@ -966,6 +1054,10 @@ The act reversed the official hostility of the 1883 rules.
 ### Civil Jurisdiction, Exhaustion and Gaming
 
 :::: case white-mountain-apache-tribe-v-bracker
+::: background
+The White Mountain Apache Tribe lives on the Fort Apache Reservation in Arizona, and its timber operations, run under federal regulation, produced over 90 percent of the Tribe's profits. Pinetop Logging, a non-Indian company, worked only on the reservation under contract with the Tribe's timber enterprise. Arizona assessed its motor carrier license and use fuel taxes against Pinetop, which paid under protest and sued [@white-mountain-apache-tribe-v-bracker, pp. 137-140].
+:::
+
 ::: question
 May Arizona impose motor carrier and fuel taxes on a non-Indian logging company working exclusively for a Tribal enterprise on the reservation?
 :::
@@ -994,6 +1086,10 @@ Supplies the balancing test for state authority over non-Indians on reservations
 :::
 
 :::: case montana-v-united-states
+::: background
+The Fort Laramie treaties of 1851 and 1868 set aside the Crow Reservation in Montana, through which the Big Horn River flows. Allotment acts later let allottees sell their land, and much of it passed to non-Indians. The Crow Tribal Council passed Resolution No. 74-05, barring hunting and fishing on the reservation by anyone who was not a member, while Montana went on regulating hunting and fishing by non-Indians. In 1975 the United States sued, in its own right and as fiduciary for the Crow, to settle title to the riverbed and the Tribe's power to regulate [@montana-v-united-states, pp. 547-549].
+:::
+
 ::: question
 May the Crow Tribe regulate hunting and fishing by nonmembers on land within the reservation owned in fee by non-Indians?
 :::
@@ -1026,6 +1122,10 @@ The governing test for Tribal civil jurisdiction over nonmembers. Its consensual
 :::
 
 :::: case merrion-v-jicarilla-apache-tribe
+::: background
+The Jicarilla Apache Reservation in northwestern New Mexico, set aside by executive order in 1887, is held entirely in trust for the Tribe, which is governed under a constitution adopted under the Indian Reorganization Act. Non-Indian companies held long-term leases to produce oil and gas there. The Tribe enacted a severance tax on oil and gas taken from Tribal lands, and 21 lessees sued to stop it [@merrion-v-jicarilla-apache-tribe, pp. 133-135].
+:::
+
 ::: question
 May the Jicarilla Apache Nation impose a severance tax on oil and gas extracted by non-Indian lessees from Tribal lands?
 :::
@@ -1054,6 +1154,10 @@ Teaches that commercial agreements do not silently waive sovereign powers; a dra
 :::
 
 :::: case national-farmers-union-insurance-companies-v-crow-tribe
+::: background
+In 1982 Leroy Sage, a Crow child, was struck by a motorcycle in the parking lot of a public school on state land within the Crow Reservation. He sued the Lodge Grass School District in the Crow Tribal Court and won a default judgment. The school district and its insurer, National Farmers Union, then asked a federal court to block enforcement, arguing that the Tribal court had no jurisdiction over them [@national-farmers-union-insurance-companies-v-crow-tribe, p. 847].
+:::
+
 ::: question
 May a non-Indian party go directly to federal court to challenge a Tribal court's civil jurisdiction, and must it first exhaust Tribal court remedies?
 :::
@@ -1082,6 +1186,10 @@ Creates the Tribal-exhaustion doctrine: Tribal forums get the first opportunity 
 :::
 
 :::: case iowa-mutual-insurance-company-v-laplante
+::: background
+Edward LaPlante, a Blackfeet member, was hurt driving a cattle truck for a ranch owned by Blackfeet members on the Blackfeet Reservation. He and his wife sued the ranch, and its insurer Iowa Mutual for bad-faith refusal to settle, in the Blackfeet Tribal Court. While that case was pending, Iowa Mutual sued in federal court, on the basis of diversity of citizenship, for a declaration that its policies did not cover the injury [@iowa-mutual-insurance-company-v-laplante, pp. 11-13].
+:::
+
 ::: question
 Does the Tribal-exhaustion requirement apply when federal jurisdiction rests on diversity of citizenship?
 :::
@@ -1116,6 +1224,10 @@ Supports finality of Tribal-forum decisions: once a Tribal forum with jurisdicti
 :::
 
 :::: case california-v-cabazon-band-of-mission-indians
+::: background
+The Cabazon and Morongo Bands of Mission Indians, in Riverside County, California, ran bingo games under Tribal ordinances approved by the Secretary of the Interior, and the Cabazon Band also ran a card club. The games, played mostly by non-Indians, were the Bands' main source of revenue and of jobs for their members. California sought to apply its law allowing bingo only for charities and capping prizes, and the county its ordinances on bingo and card games, and the Bands sued to stop enforcement [@california-v-cabazon-band-of-mission-indians, pp. 204-206].
+:::
+
 ::: question
 May California and Riverside County enforce their bingo and card-game laws on the Cabazon and Morongo reservations?
 :::
@@ -1168,6 +1280,10 @@ This is the clearest federal statutory endorsement found of a nation's own court
 :::
 
 :::: case seminole-tribe-v-florida-1996
+::: background
+The Indian Gaming Regulatory Act of 1988 allows casino-style (class III) gaming only under a Tribal-State compact. It requires States to negotiate compacts in good faith and lets a Tribe sue a State in federal court to enforce that duty [@seminole-tribe-v-florida-1996, p. 47; @indian-gaming-regulatory-act-1988]. In 1991 the Seminole Tribe of Florida sued Florida and its governor, Lawton Chiles, alleging that the State had refused to negotiate, and the State moved to dismiss on the ground of its sovereign immunity [@seminole-tribe-v-florida-1996, pp. 51-52].
+:::
+
 ::: question
 May Congress, under the Indian Commerce Clause, authorize a Tribe to sue a State in federal court to compel good-faith negotiation of a gaming compact under the Indian Gaming Regulatory Act?
 :::
@@ -1196,6 +1312,10 @@ Removes the federal-court remedy against a State that will not negotiate a gamin
 :::
 
 :::: case yellen-v-confederated-tribes-of-chehalis-reservation
+::: background
+In March 2020 the Coronavirus Aid, Relief, and Economic Security (CARES) Act set aside $8 billion of relief for "Tribal governments", defined through the Indian Self-Determination and Education Assistance Act. That Act's definition of "Indian tribe" names Alaska Native regional and village corporations, which the Alaska Native Claims Settlement Act created to hold land and money. In April 2020 the Treasury Department decided the corporations were eligible and set aside more than $500 million for them, and federally recognized Tribes sued [@yellen-v-confederated-tribes-of-chehalis-reservation, pp. 341-342, 346].
+:::
+
 ::: question
 Are Alaska Native Corporations "Indian tribes" under ISDA, and so eligible for CARES Act Title V funds?
 :::
@@ -1217,6 +1337,10 @@ Clarifies the distinct legal status of Alaska Native corporations versus federal
 :::
 
 :::: case ysleta-del-sur-pueblo-v-texas
+::: background
+The Ysleta del Sur Pueblo, near El Paso, traces its roots to the 1680 Pueblo Revolt. Congress recognized it in 1968 and handed the federal trust responsibility to Texas, which renounced it in 1983. In the 1987 Restoration Act Congress restored the federal relationship and prohibited on the reservation gaming "prohibited by the laws of the State of Texas". When the Pueblo offered bingo, Texas sued, arguing that the Act made all of its gaming rules apply [@ysleta-del-sur-pueblo-v-texas, pp. 689-692].
+:::
+
 ::: question
 Does the 1987 Restoration Act subject all of the Pueblo's gaming to Texas gaming regulations, or only bar games that Texas prohibits outright?
 :::
@@ -1238,6 +1362,10 @@ Shows how statute-specific gaming regimes for particular nations work, which mat
 :::
 
 :::: case arizona-v-navajo-nation
+::: background
+The 1868 treaty ended years of war between the Navajos and the United States and set aside a reservation in the Navajos' homeland, with its land, minerals, timber and the water it needed [@arizona-v-navajo-nation, p. 558]. The region is arid and water is growing scarcer. The Navajo Nation sued the Interior Department and the Bureau of Indian Affairs, claiming that the treaty required the United States to assess the Nation's water needs and develop a plan to meet them [@arizona-v-navajo-nation, pp. 561-562].
+:::
+
 ::: question
 Does the 1868 Treaty with the Navajos require the United States to take affirmative steps to assess and secure water for the Navajo Nation?
 :::
@@ -1259,6 +1387,10 @@ Limits judicial enforcement of trust duties unless specific duties are written i
 :::
 
 :::: case becerra-v-san-carlos-apache-tribe
+::: background
+Under the Indian Self-Determination and Education Assistance Act of 1975, a Tribe may contract to run health programs that the Indian Health Service would otherwise run, receiving the funds the Service would have spent plus "contract support costs" for administration. A Tribe may also collect payments from Medicare, Medicaid and private insurers [@becerra-v-san-carlos-apache-tribe, pp. 226-227]. The San Carlos Apache Tribe, which took over health programs under a contract in 2011, and the Northern Arapaho Tribe sued for the support costs of spending that third-party income [@becerra-v-san-carlos-apache-tribe, p. 229].
+:::
+
 ::: question
 Must the Indian Health Service pay contract support costs that a Tribe incurs when it collects and spends third-party "program income" under an Indian Self-Determination and Education Assistance Act self-determination contract?
 :::
@@ -1286,6 +1418,10 @@ From 1991 to 2023 the Supreme Court repeatedly held that a nation is immune from
 :::
 
 :::: case oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe
+::: background
+The Citizen Band Potawatomi Indian Tribe of Oklahoma ran a convenience store on land held in trust for it and sold cigarettes there without collecting the state cigarette tax. In 1987 the Oklahoma Tax Commission demanded $2.7 million in taxes for sales from 1982 to 1986. The Tribe sued in federal court to stop the assessment, and the Commission counterclaimed to collect the tax [@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe, pp. 507-508].
+:::
+
 ::: question
 Did the Nation waive its sovereign immunity from the State's counterclaim to collect cigarette taxes by suing to enjoin the tax assessment?
 :::
@@ -1318,6 +1454,10 @@ Sets the "clear waiver" standard that any ADR clause must meet, and expressly po
 :::
 
 :::: case sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates
+::: background
+The Sokaogon Chippewa Community's gaming corporation hired Tushie-Montgomery Associates to design a casino, under a contract with an arbitration clause. After the firm had been paid $150,000, new Tribal leaders repudiated the contract as void for lack of Bureau of Indian Affairs approval. The Tribe refused to arbitrate and sued instead; the arbitration went ahead without it and produced an award of more than $500,000 [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates, pp. 657-658].
+:::
+
 ::: question
 Did a Tribal gaming enterprise waive its sovereign immunity by agreeing to an arbitration clause in an architect's contract?
 :::
@@ -1344,6 +1484,10 @@ An early, influential holding (by Judge Posner) that an ordinary arbitration cla
 :::
 
 :::: case kiowa-tribe-v-manufacturing-technologies
+::: background
+In 1990 a Kiowa Tribe entity agreed to buy stock from Manufacturing Technologies, and the chairman of the Tribe's business committee signed a $285,000 promissory note in the Tribe's name. The note said it was signed on Tribal trust land at Carnegie, Oklahoma, though the company said it was signed and delivered in Oklahoma City. The Tribe defaulted, and the company sued on the note in state court [@kiowa-tribe-v-manufacturing-technologies, pp. 753-754].
+:::
+
 ::: question
 Does Tribal sovereign immunity bar a state-court suit on a promissory note signed for off-reservation commercial activity?
 :::
@@ -1376,6 +1520,10 @@ Because immunity covers commercial contracts, the only path to binding ADR with 
 :::
 
 :::: case val-u-construction-company-v-rosebud-sioux-tribe
+::: background
+In 1989 the Rosebud Sioux Tribe contracted with Val-U Construction to build housing on the Rosebud Reservation, under a contract with an arbitration clause. The Tribe ended the contract in 1990, refused on sovereign immunity grounds to take part in the arbitration Val-U demanded, and sued in federal court instead. The American Arbitration Association heard the case without the Tribe and awarded Val-U $793,943.58, and the Eighth Circuit later held that the arbitration clause waived the Tribe's immunity for claims under the contract [@val-u-construction-company-v-rosebud-sioux-tribe, pp. 575-576].
+:::
+
 ::: question
 Is an arbitration award entered against a Tribe that refused to participate in the arbitration valid and preclusive, given the Tribe's sovereign-immunity objection?
 :::
@@ -1400,6 +1548,10 @@ A nation that has agreed to arbitrate may be bound by an award even if it refuse
 :::
 
 :::: case ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority
+::: background
+The Narragansett Indian Tribe set up the Narragansett Indian Wetuomuck Housing Authority in 1985 under a Tribal ordinance, and the Authority operates under federal housing regulations. It hired Ninigret Development, a Rhode Island company, to build a low-income housing project. When the Authority blamed faulty workmanship for problems with the water and sewer lines and Ninigret disputed it, the disagreement ended up in federal court [@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority, pp. 25-26].
+:::
+
 ::: question
 Did a Tribal housing authority waive immunity through a contract clause sending disputes to the Tribal Council and then to a Tribal Court-appointed arbitration board, and must the contractor exhaust Tribal remedies?
 :::
@@ -1425,6 +1577,10 @@ A real tiered clause (Tribal Council, then a Tribal Court-appointed arbitration 
 :::
 
 :::: case c-and-l-enterprises-v-citizen-band-potawatomi-2001
+::: background
+In 1993 the Citizen Potawatomi Nation contracted with C & L Enterprises to roof a building it owned in Shawnee, Oklahoma, on land that was neither reservation nor trust land. The Nation proposed the contract, a standard American Institute of Architects form with an arbitration clause [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, pp. 414-415]. Before work began, the Nation changed the roofing material and hired another company. C & L obtained an arbitration award, the Nation declining to take part, and sued in Oklahoma state court to enforce it [@c-and-l-enterprises-v-citizen-band-potawatomi-2001, p. 416].
+:::
+
 ::: question
 Did the Nation waive its sovereign immunity from suit to enforce an arbitration award by agreeing to a standard-form construction contract with an arbitration clause and an Oklahoma choice-of-law clause?
 :::
@@ -1457,6 +1613,10 @@ The key Supreme Court case for Tribal ADR drafting: an arbitration clause plus e
 :::
 
 :::: case smith-v-hopland-band-of-pomo-indians
+::: background
+In 1999 Bodrell Smith, an architect, signed two contracts with the Hopland Band of Pomo Indians for planning and design work on a casino and hotel. The contracts used the American Institute of Architects form, with an arbitration clause and a promise that awards could be enforced "in any court having jurisdiction thereof". After a dispute over payment, Smith sued in Mendocino County Superior Court for more than $800,000. The Band relied on a Tribal ordinance allowing its immunity to be waived only by an express ordinance or resolution of its council [@smith-v-hopland-band-of-pomo-indians, p. 3].
+:::
+
 ::: question
 Did the Tribe waive sovereign immunity from a state-court suit by signing an architect's contract with an arbitration clause and choice of law?
 :::
@@ -1482,6 +1642,10 @@ A state appellate application of reasoning like that in *C & L Enterprises*; sho
 :::
 
 :::: case michigan-v-bay-mills-indian-community
+::: background
+The Indian Gaming Regulatory Act allows class III gaming only on Indian lands and under a compact with the State [@michigan-v-bay-mills-indian-community, p. 785]. In 2010 the Bay Mills Indian Community opened a casino in Vanderbilt, Michigan, about 125 miles from its reservation, on land bought with interest from a federal payment for the Tribe's 19th-century land losses. The Community said the land was Indian land; Michigan disagreed and sued to close the casino [@michigan-v-bay-mills-indian-community, pp. 786-787].
+:::
+
 ::: question
 Does Tribal sovereign immunity bar a State's suit to enjoin a Tribe's operation of a casino outside Indian lands?
 :::
@@ -1511,6 +1675,10 @@ Reaffirms broad Tribal immunity and expressly points to negotiated waivers in co
 :::
 
 :::: case lewis-v-clarke
+::: background
+Mohegan law requires the Mohegan Tribal Gaming Authority to indemnify its employees for claims of negligence on the job [@lewis-v-clarke, p. 159]. William Clarke, a limousine driver for the Gaming Authority, was driving on Interstate 95 in Norwalk, Connecticut, when his limousine collided with a car carrying Brian and Michelle Lewis. The Lewises sued Clarke personally in state court, and Clarke argued that the Tribe's immunity covered him [@lewis-v-clarke, pp. 159-160].
+:::
+
 ::: question
 Does Tribal sovereign immunity bar a negligence suit against a Tribal gaming authority employee sued in his individual capacity for driving on the job?
 :::
@@ -1536,6 +1704,10 @@ Tribal immunity does not shield employees sued personally; a Tribal claims or AD
 :::
 
 :::: case lac-du-flambeau-band-v-coughlin
+::: background
+The Lac du Flambeau Band of Lake Superior Chippewa Indians owns several businesses, including Lendgreen, which in 2019 lent Brian Coughlin $1,100 at high interest. Coughlin filed for Chapter 13 bankruptcy before repaying, which barred further collection, but Lendgreen allegedly kept trying to collect. Coughlin asked the bankruptcy court to enforce the stay against the Band and its businesses and award damages, and the Band asserted sovereign immunity [@lac-du-flambeau-band-v-coughlin, pp. 385-386].
+:::
+
 ::: question
 Does the Bankruptcy Code abrogate Tribal sovereign immunity?
 :::
@@ -1563,6 +1735,10 @@ A congressional abrogation that applies to Tribal enterprises in bankruptcy; a m
 ### Civil Jurisdiction over Nonmembers
 
 :::: case strate-v-a-1-contractors
+::: background
+In November 1990 Gisela Fredericks's car collided with a gravel truck driven by Lyle Stockert for A-1 Contractors on a 6.59-mile stretch of North Dakota highway crossing the Fort Berthold Indian Reservation. The road ran on a right-of-way the United States had granted to the state. Stockert and A-1 Contractors were not members of the Three Affiliated Tribes (Mandan, Hidatsa and Arikara), and Fredericks sued them in the Tribes' court [@strate-v-a-1-contractors, pp. 442-443].
+:::
+
 ::: question
 Does a Tribal court have jurisdiction over a tort suit between nonmembers arising from a highway accident on a state right-of-way within the reservation?
 :::
@@ -1591,6 +1767,10 @@ Limits Tribal adjudication of disputes between nonmembers absent consent; a Trib
 :::
 
 :::: case alaska-v-native-village-of-venetie-tribal-government
+::: background
+In 1943 the Secretary of the Interior created a reservation for the Neets'aii Gwich'in around Venetie and Arctic Village in Alaska. The Alaska Native Claims Settlement Act of 1971 revoked it, and the land passed in fee simple to Native corporations and then to the Native Village of Venetie Tribal Government [@alaska-v-native-village-of-venetie-tribal-government, pp. 523-524]. In 1986 the Tribe demanded about $161,000 in taxes from a contractor building a state-funded school in Venetie and, when the contractor and the State refused, sued in Tribal court to collect [@alaska-v-native-village-of-venetie-tribal-government, p. 525].
+:::
+
 ::: question
 Are lands conveyed to Alaska Native village corporations under the Alaska Native Claims Settlement Act "Indian country" as a "dependent Indian community" under 18 U.S.C. § 1151(b)?
 :::
@@ -1619,6 +1799,10 @@ Central for Alaska Native nations. Territorial (Indian country) jurisdiction is 
 :::
 
 :::: case atkinson-trading-company-v-shirley
+::: background
+In 1916 Hubert Richardson built the Cameron Trading Post near Cameron, Arizona, on land that is now non-Indian fee land within the Navajo Reservation; Atkinson Trading Company now owns it and runs a hotel there. In 1992 the Navajo Nation enacted an 8 percent hotel occupancy tax on hotel rooms within the reservation, paid by guests and collected by owners. Atkinson challenged the tax as applied to its nonmember guests [@atkinson-trading-company-v-shirley, pp. 647-648].
+:::
+
 ::: question
 May the Navajo Nation impose a hotel occupancy tax on nonmember guests of a hotel on non-Indian fee land within the reservation?
 :::
@@ -1644,6 +1828,10 @@ Shows that services alone do not create consent; ADR provisions binding nonmembe
 :::
 
 :::: case nevada-v-hicks
+::: background
+Hicks, a member of the Fallon Paiute-Shoshone Tribes, lived on the Tribes' reservation in western Nevada. Nevada game wardens suspected him of killing a California bighorn sheep off the reservation, a state crime. With warrants from both the state court and the Tribal court, they searched his home twice, a year apart. Hicks then sued the wardens in Tribal court, claiming among other things that they had violated his civil rights [@nevada-v-hicks, pp. 355-357].
+:::
+
 ::: question
 Does a Tribal court have jurisdiction over a member's civil-rights and tort claims against state game wardens for executing a search warrant on his trust land on the reservation?
 :::
@@ -1672,6 +1860,10 @@ Limits Tribal-forum jurisdiction over state officials and federal claims; interg
 :::
 
 :::: case plains-commerce-bank-v-long-family-land-and-cattle-company
+::: background
+Ronnie and Lila Long, members of the Cheyenne River Sioux Tribe, ran the Long Family Land and Cattle Company on the reservation. For years they borrowed from Plains Commerce Bank, a non-Indian bank located off the reservation. After loan troubles, the estate of a family member deeded fee land on the reservation to the Bank in place of foreclosure, and the Longs leased it back with an option to buy [@plains-commerce-bank-v-long-family-land-and-cattle-company, pp. 321-322]. In 1999 the Bank sold the land to non-Indians, and the Longs sued in the Cheyenne River Sioux Tribal Court. That court took jurisdiction and awarded them damages and the right to buy part of the land [@plains-commerce-bank-v-long-family-land-and-cattle-company, pp. 320, 322].
+:::
+
 ::: question
 Does a Tribal court have jurisdiction over a discrimination claim by Tribal-member-owned company against a non-Indian bank concerning the bank's sale of fee land it owned on the reservation?
 :::
@@ -1700,6 +1892,10 @@ Even where a nonmember has consensual dealings with members, Tribal jurisdiction
 :::
 
 :::: case dollar-general-corporation-v-mississippi-band-of-choctaw-indians
+::: background
+Dollar General ran a store on the Mississippi Band of Choctaw Indians' reservation, on trust land leased from the Tribe and under a Tribal business license. Through the Tribe's Youth Opportunity Program, the store's manager agreed to take on John Doe, a 13-year-old Tribal member, in an unpaid position, and Doe alleged that the manager sexually molested him there. Doe sued the company and the manager in Choctaw Tribal Court, and the Fifth Circuit upheld that court's jurisdiction [@dolgencorp-v-mississippi-band-of-choctaw-indians, p. 169].
+:::
+
 ::: question
 Does a Tribal court have jurisdiction over tort claims by a member against a nonmember business that entered a consensual relationship with the Tribe (a youth employment program) under *Montana*'s first exception?
 :::
@@ -1745,6 +1941,10 @@ The federal full faith and credit statute for child support defines "State" to i
 ::::
 
 :::: case wilson-v-marchington-1997
+::: background
+On July 17, 1989, Thomas Marchington, a nonmember driving for an Idaho carnival company, tried to pass Mary Jane Wilson, a Blackfeet member, on U.S. Highway 2 within the Blackfeet Reservation and hit her car as she turned. A jury in the Blackfeet Tribal Court awarded her $246,100. She then sued in federal district court to have the judgment recognized and enforced [@wilson-v-marchington-1997, p. 807].
+:::
+
 ::: question
 Must a federal court give full faith and credit to a Blackfeet Tribal Court tort judgment, and if not, when should it recognize the judgment under comity?
 :::
@@ -1781,6 +1981,10 @@ The leading federal framework for recognizing Tribal judgments. The equitable gr
 :::
 
 :::: case john-v-baker
+::: background
+Anita John, a member of Mentasta Village, and John Baker, a member of Northway Village, are Alaska Natives and the parents of two sons. Baker filed for sole custody in the Northway Tribal Court, John consented to its jurisdiction, and the court ordered shared custody. Baker then filed the same case in state superior court, which refused to dismiss it and gave him primary physical custody [@john-v-baker, p. 743].
+:::
+
 ::: question
 Does an Alaska Native village without Indian country retain inherent authority to adjudicate a custody dispute between its members, and must Alaska courts respect the resulting Tribal decision?
 :::
@@ -1809,6 +2013,10 @@ The leading authority that Alaska Native Tribal forums operate on membership-bas
 :::
 
 :::: case teague-v-bad-river-band-2000
+::: background
+Jerry Teague, a nonmember, was general manager of the Bad River Band's casino. After his employment ended he sued in state circuit court to compel arbitration under his employment contract. More than a year later the Band sued in its Tribal court, which declared the contract invalid under Tribal law and ruled first, and the Band asked the circuit court to give that judgment full faith and credit under Wis. Stat. § 806.245 [@teague-v-bad-river-band-2000, ¶¶ 1-2].
+:::
+
 ::: question
 May a Wisconsin court deny full faith and credit to a Tribal court judgment under the state "prior action pending" rule because the same dispute was filed first in state court?
 :::
@@ -1837,6 +2045,10 @@ A model of court-to-court communication (judicial conferencing) to resolve concu
 :::
 
 :::: case bird-v-glacier-electric-cooperative
+::: background
+Ron Bird and Herb Gilham, Blackfeet members, and Scott Sherburne owned Glacier Construction, which worked mostly for Glacier Electric Cooperative, a cooperative based off the reservation and controlled by nonmembers. In 1992 the Co-op canceled all of its agreements with the company [@bird-v-glacier-electric-cooperative, p. 1139]. A Blackfeet Tribal Court jury awarded the owners $1,382,181.60 in compensatory and $775,000 in punitive damages, and they sought to enforce the judgment in federal court [@bird-v-glacier-electric-cooperative, p. 1140].
+:::
+
 ::: question
 May a federal court recognize a Blackfeet Tribal Court jury verdict against a non-member-owned cooperative when the plaintiff's closing argument appealed to racial and ethnic prejudice?
 :::
@@ -1858,6 +2070,10 @@ Shows the due-process ground for refusing recognition in practice; a model code'
 :::
 
 :::: case att-corporation-v-coeur-dalene-tribe
+::: background
+Under a gaming compact with Idaho, the Coeur d'Alene Tribe set up a National Indian Lottery run from its reservation, which players elsewhere could join by telephone. Several state attorneys general warned AT&T that providing toll-free service for the lottery would break federal and state law [@att-corporation-v-coeur-dalene-tribe, pp. 901-902]. The Tribe sued AT&T in Tribal court to require the service, and the federal district court and the Tribal court reached conflicting decisions [@att-corporation-v-coeur-dalene-tribe, pp. 900, 903].
+:::
+
 ::: question
 Must a federal court enforce a Coeur d'Alene Tribal Court judgment ordering AT&T to provide toll-free service for the Tribe's national lottery?
 :::
@@ -1886,6 +2102,10 @@ Combines a strong statement of comity with a reminder that subject-matter limits
 :::
 
 :::: case teague-v-bad-river-band-2003
+::: background
+After *Teague* (2000), both cases ran to judgment. Teague had stopped taking part in the Tribal case, and in July 1997 the Bad River Tribal Court entered a default judgment declaring his 1993 and 1995 employment contracts void. The state circuit court awarded Teague damages for breach of the same contracts. When it refused to reopen that judgment, the court of appeals certified the full faith and credit question to the Wisconsin Supreme Court [@teague-v-bad-river-band-2003, ¶¶ 1, 3-4].
+:::
+
 ::: question
 After the parallel state and Tribal cases both reached judgment, must Wisconsin give full faith and credit to the earlier Tribal-court judgment voiding the employment contracts?
 :::
@@ -1919,6 +2139,10 @@ Outside those three areas, recognition depends on comity and on state rules.
 ### Children and Families
 
 :::: case mississippi-band-of-choctaw-indians-v-holyfield
+::: background
+Congress passed the Indian Child Welfare Act of 1978 after hearings showed that 25 to 35 percent of Indian children had been separated from their families, mostly into non-Indian homes. The Act gives Tribal courts exclusive jurisdiction over custody proceedings for an Indian child domiciled on the reservation [@mississippi-band-of-choctaw-indians-v-holyfield, pp. 32-36]. In 1985 twins were born 200 miles from the Choctaw Reservation to parents who were enrolled members living there. The parents consented to adoption, and a Mississippi court granted an adoption to Orrey and Vivian Holyfield [@mississippi-band-of-choctaw-indians-v-holyfield, pp. 37-38].
+:::
+
 ::: question
 Under the Indian Child Welfare Act, were twin children born off the reservation to parents domiciled on it "domiciled" on the reservation, so that the Tribal court had exclusive jurisdiction over their adoption?
 :::
@@ -1943,6 +2167,10 @@ Shows that a nation's jurisdiction over family matters protects collective as we
 :::
 
 :::: case haaland-v-brackeen
+::: background
+The Indian Child Welfare Act sets federal standards for removing Indian children from their families and preferences for placing them with extended family, other members of their Tribe or other Indian families. The Brackeens fostered A.L.M., a child eligible for Navajo and Cherokee citizenship, and sought to adopt him, while the Navajo Nation proposed a Navajo family in New Mexico. The Brackeens, other foster and adoptive parents, a birth mother and Texas sued the United States, arguing that the Act exceeded Congress's power, commandeered the States and discriminated by race [@haaland-v-brackeen, pp. 264-271].
+:::
+
 ::: question
 Is the Indian Child Welfare Act within Congress's power and consistent with the anticommandeering principle and equal protection?
 :::
@@ -2004,6 +2232,10 @@ The 2013 act recognized the inherent power of "participating tribes" to exercise
 ### Criminal Jurisdiction
 
 :::: case duro-v-reina
+::: background
+Albert Duro, an enrolled member of the Torres-Martinez Band of Cahuilla Mission Indians, lived for a time on the Salt River Reservation near Scottsdale, Arizona, home of the Salt River Pima-Maricopa Indian Community, and worked for a Tribal company. In 1984 he allegedly shot and killed a 14-year-old member of the Gila River Indian Community there. After a federal murder charge was dismissed, the Community charged him in its court with illegally firing a weapon, and he challenged its jurisdiction over a nonmember [@duro-v-reina, pp. 679-681].
+:::
+
 ::: question
 May a Native nation exercise criminal jurisdiction over an Indian who is not one of its members?
 :::
@@ -2030,6 +2262,10 @@ Historical example of Congress restoring Tribal jurisdiction after an adverse de
 **1990 and 1991. The "Duro fix."** After *Duro*, Congress amended the Indian Civil Rights Act to recognize "the inherent power of Indian tribes, hereby recognized and affirmed, to exercise criminal jurisdiction over all Indians" [@usc-25-1301].
 
 :::: case united-states-v-lara
+::: background
+After *Duro*, Congress amended the Indian Civil Rights Act in 1990 to "recognize and affirm" each Tribe's inherent power to prosecute all Indians [@united-states-v-lara, p. 196]. Billy Jo Lara, a Turtle Mountain Chippewa member, lived on the Spirit Lake Reservation with his wife, a Spirit Lake member. The Spirit Lake Tribe excluded him for misconduct; he ignored the order and struck an officer who arrested him, and the Tribe prosecuted him for "violence to a policeman", for which he served 90 days. The United States then charged him with assaulting a federal officer [@united-states-v-lara, pp. 196-197].
+:::
+
 ::: question
 After a Tribal prosecution of a nonmember Indian under the 1990 amendment to the Indian Civil Rights Act, does the Double Jeopardy Clause bar a federal prosecution for the same conduct?
 :::
@@ -2051,6 +2287,10 @@ Confirms Congress can restore (recognize) inherent jurisdiction; supports code c
 :::
 
 :::: case united-states-v-bryant
+::: background
+In 2005 Congress responded to high rates of domestic violence against Native women. It made domestic assault in Indian country a federal crime for anyone with at least two prior domestic violence convictions in federal, state or Tribal court [@united-states-v-bryant, pp. 142-143]. Michael Bryant Jr., a Northern Cheyenne member, had more than 100 Tribal-court convictions, several of them for domestic assault. He had no appointed lawyer in those cases, as the Indian Civil Rights Act permits for sentences of up to a year [@united-states-v-bryant, pp. 143, 151].
+:::
+
 ::: question
 May uncounseled Tribal-court misdemeanor convictions that complied with the Indian Civil Rights Act serve as predicates for the federal habitual domestic-assault offense, 18 U.S.C. § 117(a)?
 :::
@@ -2072,6 +2312,10 @@ Federal law gives effect to Tribal-court judgments that comply with the Indian C
 :::
 
 :::: case mcgirt-v-oklahoma
+::: background
+In treaties of 1832 and 1833, the United States promised the Creek Nation, forced from Georgia and Alabama, a permanent home in what became Oklahoma and that no state would pass laws to govern it [@mcgirt-v-oklahoma, p. 897]. Jimcy McGirt, an enrolled member of the Seminole Nation of Oklahoma, was convicted in Oklahoma state court of serious sexual offenses committed within the Creek Reservation's historic boundaries. He argued that the Major Crimes Act left his prosecution to the federal government [@mcgirt-v-oklahoma, p. 898].
+:::
+
 ::: question
 Does land reserved for the Muscogee (Creek) Nation since the 19th century remain "Indian country" for purposes of the Major Crimes Act?
 :::
@@ -2104,6 +2348,10 @@ Reservation status determines the territorial scope of a nation's forums; after 
 :::
 
 :::: case united-states-v-cooley
+::: background
+Late one night in February 2016, Officer James Saylor of the Crow Police Department stopped to check on a truck parked on U.S. Highway 212, a public right-of-way within the Crow Reservation in Montana. The driver, Joshua James Cooley, appeared to be non-Native. Saylor detained him, saw methamphetamine in the truck and held him for other officers, and a federal grand jury indicted Cooley on drug and gun charges. He moved to suppress the evidence, arguing that a Tribal officer had no authority over a non-Indian on the highway [@united-states-v-cooley, pp. 348-349].
+:::
+
 ::: question
 May a Tribal police officer temporarily detain and search a non-Indian on a public right-of-way within a reservation for apparent violations of state or federal law?
 :::
@@ -2125,6 +2373,10 @@ First modern Supreme Court application of *Montana*'s second exception in favor 
 :::
 
 :::: case denezpi-v-united-states
+::: background
+Offenses on the Ute Mountain Ute Reservation are tried in a Court of Indian Offenses. That court runs under federal regulations and applies both those regulations and Tribal law [@denezpi-v-united-states, pp. 594-596]. Merle Denezpi, a Navajo citizen, was accused of sexually assaulting another Navajo woman in Towaoc, Colorado, on the reservation. He pleaded guilty in that court to assault and battery and was sentenced to the 140 days he had served. Six months later a federal grand jury indicted him for aggravated sexual abuse under the Major Crimes Act [@denezpi-v-united-states, p. 596].
+:::
+
 ::: question
 Does the Double Jeopardy Clause bar a federal prosecution after a conviction in a Court of Indian Offenses for a Tribal-law offense arising from the same act?
 :::
@@ -2146,6 +2398,10 @@ Concerns Courts of Indian Offenses, which still serve some nations [@cfr-25-part
 :::
 
 :::: case oklahoma-v-castro-huerta
+::: background
+After *McGirt*, much of eastern Oklahoma, including most of Tulsa, was recognized as Indian country. Castro-Huerta, a non-Indian, lived in Tulsa with his family, including his 5-year-old Cherokee stepdaughter, who has cerebral palsy and is legally blind. Oklahoma convicted him of child neglect after she was found severely malnourished, and he argued that only the federal government could prosecute a non-Indian for a crime against an Indian in Indian country [@oklahoma-v-castro-huerta, pp. 633-634].
+:::
+
 ::: question
 Does the federal government have exclusive jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country?
 :::
@@ -2249,6 +2505,10 @@ The Hawaiian Homes Commission Act set aside lands for homesteading by native Haw
 **1978. State constitutional amendments.** The 1978 convention created the Office of Hawaiian Affairs and added a protection of "all rights, customarily and traditionally exercised for subsistence, cultural and religious purposes and possessed by ahupua'a tenants who are descendants of native Hawaiians who inhabited the Hawaiian Islands prior to 1778" [@hawaii-constitution, art. XII, secs. 5, 7].
 
 :::: case rice-v-cayetano
+::: background
+Hawaiʻi's constitution created the Office of Hawaiian Affairs to run programs for "native Hawaiians" and "Hawaiians", both defined by descent from the people living in the islands in 1778. Only Hawaiians could vote for its nine trustees [@rice-v-cayetano, pp. 498-499]. Harold Rice, a citizen of Hawaiʻi whose ancestors lived there before annexation but who is not descended from the 1778 population, applied in 1996 to vote in a trustee election. The State denied his application, and he sued the governor [@rice-v-cayetano, p. 510].
+:::
+
 ::: question
 May Hawaiʻi limit voting for trustees of the Office of Hawaiian Affairs to "Hawaiians" defined by ancestry?
 :::
@@ -2276,6 +2536,10 @@ For Native Hawaiian institutions, this limits ancestry-based eligibility in stat
 ### Puerto Rico and the Insular Cases
 
 :::: case downes-v-bidwell-1901
+::: background
+In 1900 Congress passed the Foraker Act, which set up a temporary civil government for Puerto Rico and provided revenues for it, including duties on goods shipped from the island. S. B. Downes & Co. paid $659.35 in duties under protest on oranges brought from San Juan to New York in November 1900 and sued the collector of the port of New York to recover them [@downes-v-bidwell-1901, p. 247].
+:::
+
 ::: question
 Was Puerto Rico, after its cession by Spain, part of "the United States" for the Constitution's rule that duties be uniform throughout the United States?
 :::
@@ -2316,6 +2580,10 @@ The Covenant lets the Commonwealth restrict long-term land ownership to persons 
 ::::
 
 :::: case wabol-v-villacrusis-1990
+::: background
+Article XII of the Constitution of the Northern Mariana Islands, adopted under the Covenant with the United States, makes void any sale of land, or lease of more than 40 years, to a person not of Northern Marianas descent. The Wabol family sued in the Commonwealth Trial Court to void a lease to Victorino Villacrusis and Philippine Goods, Inc., which argued that Article XII denied equal protection under the United States Constitution [@wabol-v-villacrusis-1990, p. 1451].
+:::
+
 ::: holding
 The Ninth Circuit upheld the Covenant's restriction on long-term land ownership against a challenge under the Constitution, treating the protection of local culture and land as a commitment the United States made in the Trusteeship Agreement.
 :::
@@ -2338,6 +2606,10 @@ The Organic Act of 1950 made Guam an unincorporated territory [@usc-48-1421a]. G
 ::::
 
 :::: case davis-v-guam-2019
+::: background
+Guam's 2000 Plebiscite Law provides for a vote on Guam's future political relationship with the United States, open only to "Native Inhabitants of Guam" [@davis-v-guam-2019, p. 824]. The law defines them as people who became U.S. citizens through the Organic Act of Guam and their descendants. Arnold Davis, a non-Chamorro resident, was refused registration for the plebiscite and sued in 2011 under the Fourteenth and Fifteenth Amendments, the Voting Rights Act and the Organic Act [@davis-v-guam-2019, p. 828].
+:::
+
 ::: holding
 The Ninth Circuit held that limiting a political status plebiscite to "Native Inhabitants of Guam" violated the Fifteenth Amendment [@davis-v-guam-2019, p. 843].
 :::
