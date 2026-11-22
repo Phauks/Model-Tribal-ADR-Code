@@ -186,3 +186,22 @@ searches:
     brief; verdict confirmed-other-name, from https://millelacsband.com/government/judicial/district-court.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-123
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Read the Nov. 22 court review''s result (court-123,
+    verdict confirmed-other-name, nation-website https://millelacsband.com/government/judicial/district-court);
+    it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Mille Lacs Band of Ojibwe Tribal Court”: Claude weighed the evidence against the lead author''s
+    order (own page, then directory entry): own-page, https://millelacsband.com/government/judicial/district-court.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-158

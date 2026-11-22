@@ -226,13 +226,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Blue Lake Rancheria Tribal Court
+  link: https://www.bluelakerancheria-nsn.gov/departments/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Blue Lake Rancheria Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.bluelakerancheria-nsn.gov/govLawTribalCourt.html)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Tribal Court page on the nation''s
+    website (fetched with status 200 on 2026-11-22).'
 dispute_resolution:
   provisions:
   - kind: other

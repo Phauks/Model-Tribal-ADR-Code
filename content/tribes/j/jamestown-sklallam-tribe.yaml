@@ -247,11 +247,14 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Jamestown S’Klallam Tribal Court
+  link: https://jamestowntribe.org/program-staff/public-safety-justice/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Jamestown S’Klallam Tribe'
+  note: 'Link added 2026-11-22: the Public Safety & Justice page on the nation''s website, which has a
+    Tribal Court section (fetched with status 200 on 2026-11-22).'
 dispute_resolution:
   forums:
   - kind: family-group-conference

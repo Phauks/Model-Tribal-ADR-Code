@@ -176,11 +176,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Curyung Tribal Court
+  link: http://www.curyungtribe.com/tribalcourt.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Curyung Tribe'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-074.'
 dispute_resolution:
   database_listings:
   - title: Judge or Sentencing Circle Discretion in Senctencing Options

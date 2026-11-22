@@ -214,11 +214,15 @@ justice_institutions:
     Indian Affairs list.
 - kind: tribal-court
   name: Wichita Tribal Court
+  link: https://bia.gov/CFRCourts
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Wichita and Affiliated Tribes'
+  note: 'Link is the entry in the Bureau of Indian Affairs, Court of Indian Offenses: list of CFR Courts
+    and the Tribes they serve; no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
+    service-422).'
 gaming:
   compacts:
   - state: OK

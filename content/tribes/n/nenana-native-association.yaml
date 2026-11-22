@@ -170,19 +170,27 @@ federal_administration:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.nenananativeassociation.org/nenanatribalcourt.html
   source: national-indian-law-library-nenana
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link added 2026-11-22: the
+    court''s page on the nation''s website, fetched with status 200 on 2026-11-21 by the court review
+    (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-248.'
 - kind: tribal-court
   name: Nenana Tribal Court
+  link: https://www.nenananativeassociation.org/nenanatribalcourt.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Nenana Native Association'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-249.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

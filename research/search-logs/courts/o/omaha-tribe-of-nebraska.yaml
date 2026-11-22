@@ -173,3 +173,31 @@ searches:
     from https://www.omahatribe.com/omaha-tribal-courts-march-23-2026-order/.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-229
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: '“Tribal Court”: Read the Nov. 21 court review''s result for this court (verdict not-found);
+    it gives no page of the court''s own fetched with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Tribal Court”: Read the Nov. 22 court review''s result (court-228, verdict confirmed, nation-website
+    https://www.omahatribe.com/omaha-tribal-courts-march-23-2026-order/); it gives no page or directory
+    entry to link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): none-found; the link stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-274
+next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court” (research/reviews/2026-11-22-service-links.json).

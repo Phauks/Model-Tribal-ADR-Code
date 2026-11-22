@@ -1,0 +1,40 @@
+profile: content/tribes/s/st-croix-chippewa-indians-of-wisconsin.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: '“Tribal Court”: Read the Nov. 21 court review''s result for this court (verdict confirmed,
+    page https://stcroixojibwe-nsn.gov/); its page is not used as the link (see this review''s evidence).'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://stcroixojibwe-nsn.gov/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Tribal Court”: Status 200; the page shows the service, and it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://stcroixojibwe-nsn.gov/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Tribal Court”: Home page status 200; 0 linked pages mentioning a court, judiciary, justice
+    or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): own-page, https://stcroixojibwe-nsn.gov/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-357

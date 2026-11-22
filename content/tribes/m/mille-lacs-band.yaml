@@ -143,13 +143,17 @@ justice_institutions:
     Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name.'
 - kind: tribal-court
   name: Mille Lacs Band of Ojibwe Tribal Court
+  link: https://millelacsband.com/government/judicial/district-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'Mille Lacs Band of Ojibwe Tribe'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band Link check 2026-11-21:
-    the link the source gives (http://circle.red/mlbo/tribal-court/) returned HTTP 404, so it is not recorded.'
+    the link the source gives (http://circle.red/mlbo/tribal-court/) returned HTTP 404, so it is not recorded.
+    Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on 2026-11-22
+    by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see research/reviews/2026-11-22-service-links.json,
+    service-158.'
 dispute_resolution:
   forums:
   - kind: elders-council

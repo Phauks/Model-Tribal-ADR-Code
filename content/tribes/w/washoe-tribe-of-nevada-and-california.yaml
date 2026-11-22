@@ -389,11 +389,14 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Washoe Tribal Court
+  link: https://www.courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Washoe Tribe of Nevada and California'
+  note: Link is the entry in the Judicial Branch of California, California Tribal Courts Directory; no
+    page of the court's own was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-419).
 dispute_resolution: {}
 gaming:
   compacts:

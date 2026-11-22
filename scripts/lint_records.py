@@ -9,6 +9,11 @@ Checks:
                     they list each other in `shares_link_with`
   forum-kind        every dispute resolution forum `kind` names a method record
                     in content/methods/ (or is 'other')
+  service-link      every service a profile lists (a `justice_institutions`
+                    entry or a `dispute_resolution.forums` entry) has a
+                    `link`: the service's own official page, or, where it has
+                    none, the official directory entry that lists it (the lead
+                    author's rule of Nov. 22, 2026; docs/data-model.md)
   archive           every source with a web address has an archived copy once
                     the grace period after `retrieved` has passed
   version-dates     each version of a document history has its dates in
@@ -67,6 +72,8 @@ GRACE_DAYS = 30
 NEVER_IN_EFFECT = {"proposed", "disapproved", "withdrawn", "unknown"}
 STRICT_STATUSES = {"stable", "adopted", "final"}
 SHOWN_PER_CHECK = 15
+# Profile sections whose entries are services a reader may want to reach.
+SERVICE_SECTIONS = ("justice_institutions", "dispute_resolution.forums")
 
 
 class Report:
@@ -117,6 +124,10 @@ def check_profiles(tree, report, new_facts, method_ids):
             new = is_new(new_facts, file, path, fact)
             if "verification" not in fact:
                 report.add("verification", f"{file}: {path} (source {fact['source']}) has no verification level", new)
+            if path in SERVICE_SECTIONS and not fact.get("link"):
+                name = fact.get("name") or fact.get("kind")
+                report.add("service-link", f"{file}: {path} '{name}' (source {fact['source']}) has no link; give the "
+                           "service's own page, or the official directory entry that lists it", new)
             if path == "dispute_resolution.forums":
                 kind = fact.get("kind")
                 if kind and kind != "other" and kind not in method_ids:

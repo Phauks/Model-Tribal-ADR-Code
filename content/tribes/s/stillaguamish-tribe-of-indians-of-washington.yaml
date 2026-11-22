@@ -175,21 +175,28 @@ federal_administration:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.stillaguamish.com/departmentprogramservice/courts-and-justice/
   source: national-indian-law-library-stillaguamish
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link added 2026-11-22: the
+    court''s page on the nation''s website, fetched with status 200 on 2026-11-21 by the court review
+    (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-360.'
 - kind: tribal-court
   name: Stillaguamish Tribal Court
+  link: https://www.stillaguamish.com/departmentprogramservice/courts-and-justice/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Stillaguamish Tribe of Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.stillaguamish.com/courtsjustice.asp)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
+    website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-361.'
 dispute_resolution: {}
 gaming:
   compacts:
