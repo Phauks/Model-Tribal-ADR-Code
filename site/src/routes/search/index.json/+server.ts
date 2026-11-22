@@ -13,7 +13,7 @@ export const prerender = true;
 /** The site's own pages a reader may look for by name. */
 const pages: SearchEntry[] = [
 	{ kind: 'page', title: 'Native nations', also: ['Nations', 'Tribes', 'Directory'], detail: 'Every nation and community, by first letter and by state', link: '/nations' },
-	{ kind: 'page', title: 'Map of Native nations', also: ['Map', 'Bureau of Indian Affairs regions'], detail: 'Nations by state, with the Bureau of Indian Affairs regions', link: '/nations/map' },
+	{ kind: 'page', title: 'Map of Native Nations', also: ['Map', 'Bureau of Indian Affairs Regions', 'Land Areas'], detail: 'Nations by State, Bureau of Indian Affairs Regions and Land Areas', link: '/nations/map' },
 	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Accounts', 'Teachings'], detail: 'Stories about making peace, in the words of the nations and people who tell them', link: '/stories' },
 	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'The words the project defines', link: '/glossary' },
 	{ kind: 'page', title: 'Downloads', also: ['Book', 'PDF', 'EPUB', 'Data'], detail: 'The book and the data behind this site', link: '/downloads' },

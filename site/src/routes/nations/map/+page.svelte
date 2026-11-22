@@ -12,14 +12,15 @@
 	let { data }: PageProps = $props();
 
 	/**
-	 * The views of the one map, in the order of their buttons. A new view needs
+	 * The views of the one map, in the order of their buttons. Map titles are
+	 * in title case (Trevor, 2026-11-22). A new view needs
 	 * an entry here, a drawing in src/lib/nations-map-drawing.ts and a snippet
 	 * below for what goes under the map.
 	 */
 	const views: { key: NationsMapView; label: string; heading: string }[] = [
-		{ key: 'states', label: 'Nations by state', heading: 'by-state-heading' },
-		{ key: 'regions', label: 'Bureau of Indian Affairs regions', heading: 'bureau-of-indian-affairs-regions' },
-		{ key: 'lands', label: 'Land areas', heading: 'land-areas' }
+		{ key: 'states', label: 'Nations by State', heading: 'by-state-heading' },
+		{ key: 'regions', label: 'Bureau of Indian Affairs Regions', heading: 'bureau-of-indian-affairs-regions' },
+		{ key: 'lands', label: 'Land Areas', heading: 'land-areas' }
 	];
 	let current = $state<NationsMapView>('states');
 
@@ -89,6 +90,8 @@
 		if (view === 'lands') await loadLands();
 		await tick();
 		target ??= anchor ? document.getElementById(anchor) : null;
+		// A row reached from the map opens to show its nations.
+		target?.querySelector('details.row-names')?.setAttribute('open', '');
 		target?.scrollIntoView();
 	}
 
@@ -109,9 +112,8 @@
 	);
 
 	const stateColumns: TableColumn[] = [
-		{ key: 'state', header: 'State or territory', isRowHeader: true, sortable: true },
-		{ key: 'count', header: 'Nations', type: 'number', sortable: true },
-		{ key: 'names', header: 'Names', custom: true }
+		{ key: 'state', header: 'State or territory', isRowHeader: true, sortable: true, custom: true },
+		{ key: 'count', header: 'Nations', type: 'number', sortable: true }
 	];
 	const stateRows: TableRow[] = $derived(
 		data.stateRows.map((row) => ({
@@ -119,17 +121,14 @@
 			anchor: `state-${row.code}`,
 			cells: {
 				state: { text: row.name },
-				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
-				names: { text: row.nations.map((nation) => nation.name).join(', ') }
+				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length }
 			}
 		}))
 	);
 
 	const regionColumns: TableColumn[] = [
-		{ key: 'region', header: 'Region', isRowHeader: true, sortable: true },
-		{ key: 'count', header: 'Nations', type: 'number', sortable: true },
-		{ key: 'states', header: 'States where those nations have a presence' },
-		{ key: 'names', header: 'Names', custom: true }
+		{ key: 'region', header: 'Region', isRowHeader: true, sortable: true, custom: true },
+		{ key: 'count', header: 'Nations', type: 'number', sortable: true }
 	];
 	const regionRows: TableRow[] = $derived(
 		data.regionRows.map((row) => ({
@@ -138,17 +137,16 @@
 			cells: {
 				region: { text: row.name },
 				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
-				states: { text: row.states.join(', ') },
-				names: { text: row.nations.map((nation) => nation.name).join(', ') }
+				// Not a column: shown when the region's row is opened.
+				states: { text: row.states.join(', ') }
 			}
 		}))
 	);
 
 	const landAreaColumns: TableColumn[] = [
-		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true },
+		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true, custom: true },
 		{ key: 'kind', header: 'Kind', sortable: true },
-		{ key: 'count', header: 'Nations linked', type: 'number', sortable: true },
-		{ key: 'names', header: 'Names', custom: true }
+		{ key: 'count', header: 'Nations linked', type: 'number', sortable: true }
 	];
 	const landAreaRows: TableRow[] = $derived(
 		(lands?.rows ?? []).map((row) => ({
@@ -157,26 +155,34 @@
 			cells: {
 				area: { text: row.name },
 				kind: { text: row.kindLabel },
-				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
-				names: { text: row.nations.map((nation) => nation.name).join(', ') }
+				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length }
 			}
 		}))
 	);
 </script>
 
-{#snippet cell(row: TableRow)}
+<!--
+	A row's name opens the list of its nations, with the arrow before the
+	name (Trevor, 2026-11-22). The count is already in its own column, so the
+	name is all the row needs. A row with no nations has nothing to open.
+-->
+{#snippet cell(row: TableRow, column: TableColumn)}
 	{@const nations = nationsByRow.get(row.key) ?? []}
+	{@const name = row.cells[column.key]?.text ?? ''}
 	{#if nations.length === 0}
-		<span class="muted">None recorded</span>
+		<span class="row-name-only">{name}</span>
 	{:else}
-	<details>
-		<summary>Show {nations.length === 1 ? 'the nation' : `all ${nations.length}`}</summary>
-		<ul>
-			{#each nations as nation (nation.id)}
-				<li><a href="/nations/{nation.id}">{nation.name}</a></li>
-			{/each}
-		</ul>
-	</details>
+		<details class="row-names">
+			<summary>{name}</summary>
+			{#if row.cells.states?.text}
+				<p class="small">States where these nations have a presence: {row.cells.states.text}</p>
+			{/if}
+			<ul>
+				{#each nations as nation (nation.id)}
+					<li><a href="/nations/{nation.id}">{nation.name}</a></li>
+				{/each}
+			</ul>
+		</details>
 	{/if}
 {/snippet}
 
@@ -200,7 +206,7 @@
 </nav>
 
 <div class="reading">
-	<h1>Map of Native nations</h1>
+	<h1>Map of Native Nations</h1>
 </div>
 
 <div class="map-view-tabs" role="tablist" aria-label="Map views">
@@ -257,9 +263,6 @@
 							<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
 					</ul>
-					<p class="small muted">
-						Select a state to go to its row in the table. Each nation’s states, with their sources, are on the nation’s own page. {@render insetNote()}
-					</p>
 				</figcaption>
 			{:else if view.key === 'lands'}
 				<figcaption>
@@ -268,47 +271,54 @@
 							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
 						{/each}
 					</ul>
-					<p class="small muted">
-						Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot. Outlines are from the Census Bureau’s 2020 cartographic boundary file, simplified for a national map. {@render insetNote()}
-					</p>
-				</figcaption>
-			{:else if view.key === 'regions'}
-				<figcaption class="small muted">
-					Select a region to go to its row in the table. Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in no region. Lines are simplified for a national map. {@render insetNote()}
 				</figcaption>
 			{/if}
 		</figure>
-		{#if view.key === 'states'}
-			<DataTable
-				identifier="nations-by-state"
-				label="Table: nations by state"
-				caption="Nations with a recorded presence, by state and territory"
-				columns={stateColumns}
-				rows={stateRows}
-				defaultSort={{ key: 'state', direction: 'ascending' }}
-				{cell}
-			/>
-		{:else if view.key === 'lands' && lands}
-			<DataTable
-				identifier="land-areas"
-				label="Table: land areas"
-				caption="American Indian and Alaska Native areas in the 2020 census, and the nations whose entries name them"
-				columns={landAreaColumns}
-				rows={landAreaRows}
-				defaultSort={{ key: 'area', direction: 'ascending' }}
-				{cell}
-			/>
-		{:else if view.key === 'regions'}
-			<DataTable
-				identifier="regions"
-				label="Table: regions"
-				caption="Nations each region serves, as the Bureau’s Tribal Leaders Directory lists them"
-				columns={regionColumns}
-				rows={regionRows}
-				defaultSort={{ key: 'region', direction: 'ascending' }}
-				{cell}
-			/>
-		{/if}
+		<!-- Beside the map on wide screens, under it on narrow ones. -->
+		<div class="map-side">
+			{#if view.key === 'states'}
+				<p class="small muted map-note">
+					Select a state to go to its row in the table. Each nation’s states, with their sources, are on the nation’s own page. {@render insetNote()}
+				</p>
+				<DataTable
+					identifier="nations-by-state"
+					label="Table: nations by state"
+					caption="Nations with a recorded presence, by state and territory"
+					columns={stateColumns}
+					rows={stateRows}
+					defaultSort={{ key: 'state', direction: 'ascending' }}
+					{cell}
+				/>
+			{:else if view.key === 'lands'}
+				<p class="small muted map-note">
+					Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot. Outlines are from the Census Bureau’s 2020 cartographic boundary file, simplified for a national map. {@render insetNote()}
+				</p>
+				{#if lands}
+					<DataTable
+						identifier="land-areas"
+						label="Table: land areas"
+						caption="American Indian and Alaska Native areas in the 2020 census, and the nations whose entries name them"
+						columns={landAreaColumns}
+						rows={landAreaRows}
+						defaultSort={{ key: 'area', direction: 'ascending' }}
+						{cell}
+					/>
+				{/if}
+			{:else if view.key === 'regions'}
+				<p class="small muted map-note">
+					Select a region to go to its row in the table. Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in no region. Lines are simplified for a national map. {@render insetNote()}
+				</p>
+				<DataTable
+					identifier="regions"
+					label="Table: regions"
+					caption="Nations each region serves, as the Bureau’s Tribal Leaders Directory lists them"
+					columns={regionColumns}
+					rows={regionRows}
+					defaultSort={{ key: 'region', direction: 'ascending' }}
+					{cell}
+				/>
+			{/if}
+		</div>
 	</div>
 {/each}
 
@@ -392,6 +402,81 @@
 
 	.map-drawing {
 		max-width: 975px;
+	}
+
+	.map-note {
+		margin: 0 0 var(--space-3);
+	}
+
+	/* Each row's name opens its nations; names without nations line up with the rest. */
+	.row-names summary {
+		cursor: pointer;
+	}
+
+	.row-name-only {
+		display: inline-block;
+		padding-left: 1.1em;
+	}
+
+	.row-names p,
+	.row-names ul {
+		margin: var(--space-2) 0 var(--space-1);
+		font-weight: normal;
+	}
+
+	.row-names ul {
+		padding-left: 1.1em;
+	}
+
+	/*
+	 * Trevor chose on 2026-11-22 (mockup A, project files design/map-layout/)
+	 * a smaller map pinned on the left with the table scrolling beside it, and
+	 * zooming for detail. The map is sized to fit the window's height, using
+	 * the drawing's shape (its viewBox is 975 by 883). On narrower screens the
+	 * map is pinned to the top of the window and the table scrolls under it,
+	 * when the window is tall enough to leave room for the table.
+	 */
+	@media screen and (min-width: 1100px) {
+		.map-view:not([hidden]) {
+			display: grid;
+			grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+			gap: var(--space-6);
+			align-items: start;
+			margin-top: var(--space-5);
+		}
+
+		.map-figure {
+			position: sticky;
+			top: var(--space-3);
+			margin: 0;
+		}
+
+		.map-drawing {
+			max-width: min(975px, calc((100vh - 13rem) * 975 / 883));
+		}
+	}
+
+	@media screen and (max-width: 1099.98px) and (min-height: 600px) {
+		.map-figure {
+			position: sticky;
+			top: 0;
+			z-index: 2;
+			margin-bottom: var(--space-3);
+			padding-bottom: var(--space-1);
+			border-bottom: 1px solid var(--color-line);
+			background: var(--color-paper);
+		}
+
+		.map-drawing {
+			max-width: min(975px, calc(42vh * 975 / 883));
+			margin-inline: auto;
+		}
+
+		.map-figure .legend {
+			justify-content: center;
+			margin: var(--space-1) 0;
+			font-size: var(--font-size-small);
+		}
 	}
 
 	.map-drawing :global(.map) {
