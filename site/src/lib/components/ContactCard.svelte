@@ -1,19 +1,19 @@
 <script lang="ts">
-	// A nation's contacts, grouped by office (site/DESIGN.md, "Contact card").
-	// The office is named once; each contact is a labeled row with a Lucide icon
-	// beside its label. Sources are listed in the page's Sources section.
+	// A nation's contacts (site/DESIGN.md, "Contact card"): the websites in a
+	// card of their own, then one card for each office, named once, where each
+	// contact is a labeled row with a Lucide icon beside its label. Sources are
+	// listed in the page's Sources section.
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import Globe from '@lucide/svelte/icons/globe';
 	import Landmark from '@lucide/svelte/icons/landmark';
 	import Mail from '@lucide/svelte/icons/mail';
 	import Mailbox from '@lucide/svelte/icons/mailbox';
-	import MapIcon from '@lucide/svelte/icons/map';
 	import MapPin from '@lucide/svelte/icons/map-pin';
 	import Phone from '@lucide/svelte/icons/phone';
 	import Printer from '@lucide/svelte/icons/printer';
-	import type { ContactKind, ContactOffice } from '#lib/contact-card.ts';
+	import type { ContactCards, ContactKind, ContactRow } from '#lib/contact-card.ts';
 
-	let { offices, headingLevel = 3 }: { offices: ContactOffice[]; headingLevel?: 3 | 4 } = $props();
+	let { cards, headingLevel = 3 }: { cards: ContactCards; headingLevel?: 3 | 4 } = $props();
 
 	const icons: Record<ContactKind, typeof Globe> = {
 		website: Globe,
@@ -26,10 +26,40 @@
 	};
 	const iconSize = 20;
 	const iconStroke = 1.75;
+	const websitesTitle = $derived(cards.websites.length > 1 ? 'Websites' : 'Website');
 </script>
 
+{#snippet value(row: ContactRow)}
+	{#if row.link}<a
+			href={row.link}
+			target={row.external ? '_blank' : undefined}
+			rel={row.external ? 'noopener noreferrer' : undefined}
+			>{#each row.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}{#if row.external}<ExternalLink
+					class="contact-external"
+					size={16}
+					strokeWidth={iconStroke}
+				/>{/if}{#if row.linkHint}<span class="visually-hidden">{` (${row.linkHint})`}</span>{/if}</a
+		>{:else}<span
+			>{#each row.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}</span
+		>{/if}
+	{#if row.note}<span class="contact-note">{row.note}</span>{/if}
+{/snippet}
+
 <div class="contact-offices">
-	{#each offices as office (office.name)}
+	{#if cards.websites.length > 0}
+		<section class="contact-card" aria-label={websitesTitle}>
+			<svelte:element this={`h${headingLevel}`} class="contact-office">
+				<Globe size={iconSize} strokeWidth={iconStroke} />
+				{websitesTitle}
+			</svelte:element>
+			<ul class="contact-websites">
+				{#each cards.websites as row, index (index)}
+					<li>{@render value(row)}</li>
+				{/each}
+			</ul>
+		</section>
+	{/if}
+	{#each cards.offices as office (office.name)}
 		<section class="contact-card" aria-label={office.name}>
 			<svelte:element this={`h${headingLevel}`} class="contact-office">
 				<Landmark size={iconSize} strokeWidth={iconStroke} />
@@ -43,27 +73,7 @@
 							<Icon size={iconSize} strokeWidth={iconStroke} />
 							{row.label}
 						</dt>
-						<dd>
-							{#if row.link}<a
-									href={row.link}
-									target={row.external ? '_blank' : undefined}
-									rel={row.external ? 'noopener noreferrer' : undefined}
-									>{#each row.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}{#if row.external}<ExternalLink
-											class="contact-external"
-											size={16}
-											strokeWidth={iconStroke}
-										/><span class="visually-hidden"> (opens in a new tab)</span>{/if}</a
-								>{:else}<span
-									>{#each row.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}</span
-								>{/if}
-							{#if row.mapLink}
-								<a class="contact-map" href={row.mapLink} target="_blank" rel="noopener noreferrer">
-									<MapIcon size={18} strokeWidth={iconStroke} />
-									<span>Open in Google Maps<span class="visually-hidden"> (opens in a new tab)</span></span>
-								</a>
-							{/if}
-							{#if row.note}<span class="contact-note">{row.note}</span>{/if}
-						</dd>
+						<dd>{@render value(row)}</dd>
 					</div>
 				{/each}
 			</dl>
@@ -136,21 +146,28 @@
 		overflow-wrap: break-word;
 	}
 
-	dd :global(.contact-external) {
+	.contact-card :global(.contact-external) {
 		display: inline;
 		margin-left: 0.25em;
 		vertical-align: -0.1em;
 	}
 
-	.contact-map {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		font-size: var(--font-size-small);
+
+
+	.contact-websites {
+		display: grid;
+		gap: var(--space-3);
+		margin: 0;
+		padding: var(--space-3) var(--space-4);
+		list-style: none;
 	}
 
-	.contact-map :global(svg) {
-		flex: none;
+	.contact-websites li {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-1);
+		overflow-wrap: break-word;
 	}
 
 	.contact-note {
@@ -174,8 +191,5 @@
 			break-inside: avoid;
 		}
 
-		.contact-map {
-			display: none;
-		}
 	}
 </style>

@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
-import { contactOffices, contactsHeading, type ContactOffice } from '#lib/contact-card.ts';
+import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
@@ -53,12 +53,12 @@ function cited(sources: SourceUses, section: string, fact: CitedFact, item: Fact
  * The contact card: the record's contacts grouped by office, each office
  * named once. Each contact's source is listed under "Government contacts".
  */
-function contactCard(record: NationRecord, sources: SourceUses): ContactOffice[] {
+function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	const facts = record.contacts ?? [];
 	for (const fact of facts) {
 		sources.use(fact, contactsHeading, `${humanize(fact.kind)}: ${fact.value}`);
 	}
-	return contactOffices(facts);
+	return contactCards(facts);
 }
 
 function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -277,7 +277,7 @@ export const load: PageServerLoad = ({ params }) => {
 			pronunciations: [],
 			features: [],
 			glance: [],
-			contacts: [],
+			contacts: { websites: [], offices: [] },
 			courts: [],
 			law: [],
 			documents: [],

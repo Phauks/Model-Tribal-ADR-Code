@@ -1,7 +1,7 @@
 /**
- * Groups a nation's contact facts into offices for the contact card on its
- * page: each office is named once, and each contact is a labeled row with the
- * link a reader can act on. The source of every contact stays in the page's
+ * Groups a nation's contact facts for the contact cards on its page: the
+ * websites in a card of their own, then one card for each office, named once,
+ * where each contact is a labeled row with the link a reader can act on. The source of every contact stays in the page's
  * Sources section, so the record's label is read only for what it says about
  * the office, not for the list the contact came from.
  */
@@ -22,12 +22,12 @@ export interface ContactRow {
 	label: string;
 	/** The value, split into lines; an address shows its street and its town on separate lines. */
 	lines: string[];
-	/** Where the value itself links: a web page, a tel: number or a mailto: address. */
+	/** Where the value itself links: a web page, a Google Maps search, a tel: number or a mailto: address. */
 	link?: string;
 	/** True when the link leaves the site, so it opens in a new tab. */
 	external?: boolean;
-	/** A Google Maps search for a street address, shown as its own link. */
-	mapLink?: string;
+	/** Words read after the link by screen readers, such as "opens in Google Maps in a new tab". */
+	linkHint?: string;
 	/** A short note under the value, such as "Alternate number". */
 	note?: string;
 }
@@ -35,6 +35,12 @@ export interface ContactRow {
 export interface ContactOffice {
 	name: string;
 	rows: ContactRow[];
+}
+
+/** What the page shows: the websites apart from the offices, since a website is not part of an office's address. */
+export interface ContactCards {
+	websites: ContactRow[];
+	offices: ContactOffice[];
 }
 
 export interface ContactFact {
@@ -49,7 +55,7 @@ export interface ContactFact {
 export const contactsHeading = 'Government contacts';
 
 /** The office a contact belongs to when its label names no other. */
-export const defaultOfficeName = 'Tribal government office';
+export const defaultOfficeName = 'Tribal Government Office';
 
 const rowOrder: ContactKind[] = [
 	'website',
@@ -97,7 +103,7 @@ export function officeAndNote(label: string | undefined): {
 
 	// "Arctic Village council office: Tribal office main phone"
 	const prefixed = /^([^:]+\boffice):\s*(.*)$/i.exec(text);
-	if (prefixed) return { office: prefixed[1].trim(), note: noteFrom(prefixed[2]) };
+	if (prefixed) return { office: titleCase(prefixed[1].trim()), note: noteFrom(prefixed[2]) };
 
 	// "Office of Native Hawaiian Relations (federal), Honolulu street address"
 	const agency = agencyPattern.exec(text);
@@ -122,6 +128,33 @@ export function officeAndNote(label: string | undefined): {
 		};
 	}
 	return { office: defaultOfficeName, note: noteFrom(text) };
+}
+
+const minorWords = new Set([
+	'a',
+	'an',
+	'and',
+	'at',
+	'by',
+	'for',
+	'in',
+	'of',
+	'on',
+	'or',
+	'the',
+	'to'
+]);
+
+/** "Arctic Village council office" reads as "Arctic Village Council Office", like the default office's name. */
+export function titleCase(name: string): string {
+	return name
+		.split(' ')
+		.map((word, index) =>
+			index > 0 && minorWords.has(word.toLocaleLowerCase('en-US'))
+				? word.toLocaleLowerCase('en-US')
+				: word.charAt(0).toLocaleUpperCase('en-US') + word.slice(1)
+		)
+		.join(' ');
 }
 
 /** Keeps only the part of a generic label that tells the reader something the row does not. */
@@ -183,18 +216,24 @@ function row(fact: ContactFact, note: string | undefined): ContactRow {
 				lines: [link ? displayWebAddress(fact.value) : fact.value],
 				link,
 				external: link !== undefined,
+				linkHint: link ? 'opens in a new tab' : undefined,
 				note
 			};
 		}
 		case 'physical-address':
-		case 'mailing-address':
+		case 'mailing-address': {
+			// The address itself opens a Google Maps search; a post office box gets no link.
+			const link = postOfficeBoxPattern.test(fact.value) ? undefined : mapSearchLink(fact.value);
 			return {
 				kind,
 				label,
 				lines: addressLines(fact.value),
-				mapLink: postOfficeBoxPattern.test(fact.value) ? undefined : mapSearchLink(fact.value),
+				link,
+				external: link !== undefined,
+				linkHint: link ? 'opens in Google Maps in a new tab' : undefined,
 				note
 			};
+		}
 		case 'phone':
 			return {
 				kind,
@@ -227,18 +266,27 @@ function labelFor(kind: string): string {
 	return words.charAt(0).toLocaleUpperCase('en-US') + words.slice(1);
 }
 
-/** Groups contact facts by office, in the order the offices first appear, with rows in a fixed order. */
-export function contactOffices(facts: ContactFact[]): ContactOffice[] {
+/**
+ * Groups contact facts by office, in the order the offices first appear, with
+ * rows in a fixed order, and moves every website into a group of its own.
+ */
+export function contactCards(facts: ContactFact[]): ContactCards {
 	const offices = new Map<string, { fact: ContactFact; row: ContactRow }[]>();
 	for (const fact of facts) {
 		if (typeof fact.value !== 'string' || fact.value.trim().length === 0) continue;
-		const { office, note } = officeAndNote(fact.label);
+		const { office, note: labelNote } = officeAndNote(fact.label);
+		// A note that only repeats part of the value, such as "Honolulu" under a Honolulu address, is left out.
+		const note =
+			labelNote &&
+			fact.value.toLocaleLowerCase('en-US').includes(labelNote.toLocaleLowerCase('en-US'))
+				? undefined
+				: labelNote;
 		const entries = offices.get(office) ?? [];
 		entries.push({ fact, row: row(fact, note) });
 		offices.set(office, entries);
 	}
 
-	return [...offices].map(([name, entries]) => {
+	const grouped = [...offices].map(([name, entries]) => {
 		const rows = entries
 			.map((entry, index) => ({ ...entry, index }))
 			.sort(
@@ -253,7 +301,9 @@ export function contactOffices(facts: ContactFact[]): ContactOffice[] {
 				sameAddress(entry.fact.value, physical.fact.value)
 			) {
 				entry.row.lines = ['Same as physical address'];
-				entry.row.mapLink = undefined;
+				entry.row.link = undefined;
+				entry.row.external = undefined;
+				entry.row.linkHint = undefined;
 			}
 		}
 		// A website the directory lists that now leads to the nation's own site is shown once, as a note on that site.
@@ -270,4 +320,19 @@ export function contactOffices(facts: ContactFact[]): ContactOffice[] {
 		);
 		return { name, rows: shown.map((entry) => entry.row) };
 	});
+
+	// A website belongs to no office's address; one listed for another office names that office.
+	const websites = grouped.flatMap((office) =>
+		office.rows
+			.filter((entry) => entry.kind === 'website')
+			.map((entry) =>
+				office.name === defaultOfficeName
+					? entry
+					: { ...entry, note: [office.name, entry.note].filter(Boolean).join('. ') }
+			)
+	);
+	const officeCards = grouped
+		.map((office) => ({ ...office, rows: office.rows.filter((entry) => entry.kind !== 'website') }))
+		.filter((office) => office.rows.length > 0);
+	return { websites, offices: officeCards };
 }

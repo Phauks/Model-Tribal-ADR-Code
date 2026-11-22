@@ -121,16 +121,16 @@
 
 	{#if !page.withdrawn}
 		<!-- 4. At a glance, with the map of states -->
-		{#if data.glance.length > 0 || data.contacts.length > 0 || data.map}
+		{#if data.glance.length > 0 || data.contacts.websites.length > 0 || data.contacts.offices.length > 0 || data.map}
 			<div class="profile-glance">
 				<Collapsible heading="At a glance" identifier="glance-heading">
 					{#if data.map}
 						<StatePresenceMap map={data.map} nationName={page.officialName} />
 					{/if}
 					<FactGroups groups={data.glance} />
-					{#if data.contacts.length > 0}
+					{#if data.contacts.websites.length > 0 || data.contacts.offices.length > 0}
 						<h3 id="contacts-heading">{contactsHeading}</h3>
-						<ContactCard offices={data.contacts} headingLevel={4} />
+						<ContactCard cards={data.contacts} headingLevel={4} />
 					{/if}
 				</Collapsible>
 			</div>
