@@ -97,3 +97,25 @@ profile. The documents they download, and the quotations, stay private.
 | --- | --- | --- |
 | `law/collect_law_texts.py` | `targets` lists every law code, court rules and dispute resolution link the profiles cite; `fetch` downloads each one and the chapters its index page links to, pacing each site; `scan` cuts the passages around dispute resolution terms into batches for reviewers; `merge` checks their quotations against the text and writes the provision files | `scripts/requirements.txt`, `curl`, `pdftotext`, `pandoc` |
 | `law/second_pass.py` | `prepare` writes review batches of the hard cases and a fixed random sample; `apply` writes the second reader's verdicts beside the provisions | Python 3 standard library |
+
+## Constitutions
+
+Run by hand, in this order, never in continuous integration. They build the
+catalog in [`research/constitutions/`](../research/constitutions/README.md)
+and the constitution version histories in `content/documents/`. The documents
+they download stay private, outside the repository; the work files (JSON
+between steps) go in a scratch folder.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `constitutions/collect_seeds.py` | Lists each federal profile's governing-document links and official websites | `scripts/requirements.txt` |
+| `constitutions/fetch_documents.py` | Fetches those links and crawls each nation's site for constitution links (one request a second per host), saving each document and its text | `pip install requests beautifulsoup4 lxml`, `pdftotext` |
+| `constitutions/find_more_versions.py` | `listed` adds the Tribal Law and Policy Institute list and looks up dead links in the Wayback Machine; `versions` lists earlier captures of known links | `requests` |
+| `constitutions/fetch_library_of_congress.py` | Downloads the PDF of each Library of Congress item the profiles cite, through the item's JSON view | `pip install requests`, `pdfinfo`, `pdftotext` |
+| `constitutions/fetch_archive_collection.py` | Downloads the Bureau of Indian Affairs constitution files on the Internet Archive and matches each file name to a nation | `requests` |
+| `constitutions/combine_found.py` | Joins the fetched lists into one | Python 3 standard library |
+| `constitutions/read_documents.py` | Reads each document (optical character recognition for scans), splits it into articles and tags articles by topic | `pdftotext`, `pdftoppm`, `tesseract` |
+| `constitutions/review_batches.py` | `split` writes batches for AI reviewers to classify (skipping those already answered); `merge` joins the answers | Python 3 standard library |
+| `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers | `scripts/requirements.txt` and `requests` |
+| `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, history records and source records | `scripts/requirements.txt` and `requests` |
+| `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |

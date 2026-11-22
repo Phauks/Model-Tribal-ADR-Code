@@ -1,0 +1,141 @@
+id: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+kind: constitution
+title: Constitution of the Prairie Island Indian Community in the State of Minnesota
+nations:
+- prairie-island-indian-community-in-the-state-of-minnesota
+jurisdictions:
+- level: tribal
+  tribe: prairie-island-indian-community-in-the-state-of-minnesota
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1936-04-23
+  to 2017. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-04-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-picons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/prairie-island-indian-community-in-the-state-of-minnesota/05fcaf8198974932.html
+    sha256: 05fcaf819897493261514aeb07b3523c6000cbb9deec136c26287e542318d28b
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XI (COURT OF DOMESTIC RELATIONS)
+    summary: Article headed "COURT OF DOMESTIC RELATIONS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1936-text-2
+  label: CONSTITUTION AND BYLAWS OF THE PRAIRIE ISLAND INDIAN COMMUNITY IN MINNESOTA (1936)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1936-06-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/prairie-island-indian-community-in-the-state-of-minnesota/c9a7ad400b2cc0fb.pdf
+    sha256: c9a7ad400b2cc0fbf0d61c5a005d293e66ba178b8d92cf259fc5d58f3e0239e7
+    pages: 13
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XI (Court of Domestic Relations)
+    summary: Article headed "Court of Domestic Relations"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.49, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+- id: 1936-text-3
+  label: Constitution and By-Laws of the Prairie Island Indian Community in Minnesota (1936) (1936)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1936-06-20'
+  supersedes:
+  - 1936-text-2
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-1936-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/prairie-island-indian-community-in-the-state-of-minnesota/cb42afc9d286aff3.pdf
+    sha256: cb42afc9d286aff31308000bf9e400465a778f8d8b850ab72c81bcd490f0e625
+    pages: 21
+  note: The text also prints approved 1936-06-20, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1936-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1936-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 2017-text
+  label: Constitution and By-Laws of the Prairie Island Indian Community in the State of Minnesota as
+    amended through Amended February 22, 2017
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2017'
+  supersedes:
+  - 1936-text-3
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/prairie-island-indian-community-in-the-state-of-minnesota/5c765603b0919b8e.pdf
+    sha256: 5c765603b0919b8edf374cfaddb28da4e2effca6afa832fa4eb9345f7769e2f9
+    pages: 20
+  note: The text also prints approved 1936-06-20, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text-3
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

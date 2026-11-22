@@ -1,0 +1,165 @@
+id: tulalip-tribes-of-washington-constitution
+kind: constitution
+title: Constitution of the Tulalip Tribes of Washington
+nations:
+- tulalip-tribes-of-washington
+jurisdictions:
+- level: tribal
+  tribe: tulalip-tribes-of-washington
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 dated versions, from 1948-03-01
+  to 1991-03-12. Versions are only those found; others may exist.'
+versions:
+- id: 1948-text
+  label: CONSTITUTION AND BY-LAWS (1948)
+  event: original
+  status: superseded
+  dates:
+    approved: '1948-03-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-tulacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/tulalip-tribes-of-washington/0b52ff87a09f54bc.html
+    sha256: 0b52ff87a09f54bcb59035ec22e10986c23064c069dc83e7b51ad56b77b72df4
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1968-text
+  label: CONSTITUTION AND BY-LAWS FOR THE TULALIP TRIBES OF WASHINGTON as amended through unlabeled amendment,
+    approved 1968-06-19
+  event: edition
+  status: unknown
+  dates:
+    listed: '1968-06-19'
+  supersedes:
+  - 1948-text
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tulalip-tribes-of-washington/96d7469f6c8eba96.pdf
+    sha256: 96d7469f6c8eba96054aac87216fa0e1e1ab573637163befbb78c1c42c2f37ef
+    pages: 13
+  note: The text also prints approved 1936-01, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1948-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.36, by script); not yet read side by side.
+- id: 1974-amendment
+  label: AMENDMENT TO THE CONSTITUTION AND BYLAWS FOR THE TULALIP TRIBES, WASHINGTON as amended through
+    Amendment IX, approved 1974-04-24
+  event: amendment
+  status: unknown
+  dates:
+    approved: '1974-04-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1968-text
+  source: constitution-tulalip-tribes-of-washington-1974-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tulalip-tribes-of-washington/d92f84e070aabe3a.pdf
+    sha256: d92f84e070aabe3a437a947dc72a5c09ee4aecfc92d651e1e67f8923ddc294c8
+    pages: 20
+  note: The text also prints adopted 1959-03-14, which belong to the earlier text it compiles. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1968-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 1991-amendment
+  label: Approval of Amendments to Tulalip Tribes Constitution and Bylaws as amended through Amendment
+    XVI, 1991-03-12
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1991-03-12'
+    approved: '1991-03-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1968-text
+  source: constitution-tulalip-tribes-of-washington-1991-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tulalip-tribes-of-washington/7f392100a3162fe6.pdf
+    sha256: 7f392100a3162fe6ffa2cc7b8193b70e565be84e78fd3cf5f743514614fad372
+    pages: 11
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (Election and Nomination for the Board of Directors)
+    summary: Article headed "Election and Nomination for the Board of Directors"; found by its heading
+      and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1968-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1968-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 1991-amendment-2
+  label: Approval of Amendments to Tulalip Tribes Constitution and Bylaws as amended through Amendment
+    XVI, 1991-03-12
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1991-03-12'
+    approved: '1991-03-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1968-text
+  source: constitution-tulalip-tribes-of-washington-1991-amendment-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tulalip-tribes-of-washington/9bef263ebabe747f.pdf
+    sha256: 9bef263ebabe747fd62e20cb4ee8a54a993f4a9461b74dc7e48e28180624b4dd
+    pages: 11
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1968-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

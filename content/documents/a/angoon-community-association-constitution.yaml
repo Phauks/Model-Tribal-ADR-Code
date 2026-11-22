@@ -1,0 +1,93 @@
+id: angoon-community-association-constitution
+kind: constitution
+title: Constitution of the Angoon Community Association
+nations:
+- angoon-community-association
+jurisdictions:
+- level: tribal
+  tribe: angoon-community-association
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-11-15
+  to 1964-08-06. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: Constitution and By-laws of the Angoon Community Association, Alaska (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-11-15'
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/angoon-community-association/45a7f5d1500c2fd3.pdf
+    sha256: 45a7f5d1500c2fd383f6223dbd246d08c3cf737452e9e9be4d6f16daf213a083
+    pages: 8
+  note: The text prints an approval date (1939-05-10) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-11-15'
+  supersedes:
+  - 1939-text
+  source: university-of-oklahoma-indian-reorganization-act-consangoon
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/angoon-community-association/6872aedfaeaacb18.pdf
+    sha256: 6872aedfaeaacb1838c07a186f37e43eebf49bfa753895cf626141a716d001b7
+    pages: 7
+  note: 'The text prints an approval date (1939-05-10) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-11-15, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1939-11-15. Dates read by rule from the certificates
+    on the library page.'
+- id: 1963-amendment
+  label: AMENDMENTS TO THE CONSTITUTION AND BYLAWS OF THE ANGOON COMMUNITY ASSOCIATION (1963)
+  event: amendment
+  status: unknown
+  dates:
+    approved: '1963'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1939-text-2
+  source: constitution-angoon-community-association-1963-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/angoon-community-association/f0ec901ec963139b.pdf
+    sha256: f0ec901ec963139baa4b8676fc410407acd7c04ec22f812862068757ae8381e2
+    pages: 9
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+- id: 1964-text
+  label: CONSTITUTION AND BY-LAWS OF THE ANGOON COMMUNITY ASSOCIATION as amended through Amendment on
+    definition of adult, 1964-08-06
+  event: edition
+  status: unknown
+  dates:
+    listed: '1964-08-06'
+  supersedes:
+  - 1939-text-2
+  source: constitution-angoon-community-association-1964-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/angoon-community-association/ab763da1e4a37af4.pdf
+    sha256: ab763da1e4a37af450329fa9b9d2503e9234498e6a8ade6ef011241cdecc1098
+    pages: 16
+  note: The text also prints adopted 1939-11-15, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

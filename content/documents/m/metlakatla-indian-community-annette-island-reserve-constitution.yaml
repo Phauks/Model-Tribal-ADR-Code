@@ -1,0 +1,65 @@
+id: metlakatla-indian-community-annette-island-reserve-constitution
+kind: constitution
+title: Constitution of the Metlakatla Indian Community, Annette Island Reserve
+nations:
+- metlakatla-indian-community-annette-island-reserve
+jurisdictions:
+- level: tribal
+  tribe: metlakatla-indian-community-annette-island-reserve
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1944-08-23
+  to 1944-12-19. Versions are only those found; others may exist.'
+versions:
+- id: 1944-text
+  label: CONSTITUTION AND BY-LAWS OF (1944)
+  event: original
+  status: superseded
+  dates:
+    approved: '1944-08-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-metlacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/metlakatla-indian-community-annette-island-reserve/1fe5c5fec72c9966.html
+    sha256: 1fe5c5fec72c9966435e1eb647fdc376b627be511fd48e055644217a6bd83811
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (JUDICIARY)
+    summary: Has the council designate a magistrate who hears accused violators of council ordinances
+      and sets fines, with labor allowed in lieu of unpaid fines.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+- id: 1944-text-2
+  label: Constitution and By-laws of the Metlakatla Indian Community, Annette Islands Reserve, Alaska
+    (1944)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1944-12-19'
+  supersedes:
+  - 1944-text
+  source: constitution-metlakatla-indian-community-annette-island-reserve-1944-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/metlakatla-indian-community-annette-island-reserve/c0c0b38649d07f3c.pdf
+    sha256: c0c0b38649d07f3c58808ad4fcf6480f41819b282530542ee76b29716a645054
+    pages: 13
+  note: The text prints an approval date (1944-08-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: judicial-power
+    compared_with: 1944-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

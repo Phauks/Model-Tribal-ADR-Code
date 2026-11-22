@@ -1,0 +1,52 @@
+id: ute-mountain-ute-tribe-constitution
+kind: constitution
+title: Constitution of the Ute Mountain Ute Tribe
+nations:
+- ute-mountain-ute-tribe
+jurisdictions:
+- level: tribal
+  tribe: ute-mountain-ute-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1949-12-01
+  to 1950-01-03. Versions are only those found; others may exist.'
+versions:
+- id: 1949-text
+  label: CONSTITUTION AND BY-LAWS (1949)
+  event: original
+  status: superseded
+  dates:
+    approved: '1949-12-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-utemtcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/ute-mountain-ute-tribe/f954155c19a74336.html
+    sha256: f954155c19a74336bb5e42b3d883839d5c0c13a2dffa7319bd8cdadf0d2aaa5a
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1950-text
+  label: Constitution and By-Laws of the Ute Mountain Tribe of the Ute Mountain Reservation in Colorado,
+    New Mexico, Utah as amended through Amendment I, 1950-01-03
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1950-01-03'
+  supersedes:
+  - 1949-text
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ute-mountain-ute-tribe/1a2ba520be8188cb.pdf
+    sha256: 1a2ba520be8188cb348c3b1bf9c9a02ad2dcc32993c9bd5a2975809495548d11
+    pages: 9
+  note: The text prints an approval date (1949-12-01) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

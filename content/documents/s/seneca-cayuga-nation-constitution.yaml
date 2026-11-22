@@ -1,0 +1,169 @@
+id: seneca-cayuga-nation-constitution
+kind: constitution
+title: Constitution of the Seneca-Cayuga Nation
+nations:
+- seneca-cayuga-nation
+jurisdictions:
+- level: tribal
+  tribe: seneca-cayuga-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 dated versions, from 1937-04-26
+  to 2023-04-14. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS (1937)
+  event: original
+  status: superseded
+  dates:
+    approved: '1937-04-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-sencaycons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/seneca-cayuga-nation/609b3724287bd09f.html
+    sha256: 609b3724287bd09ffe2192afe85e446ecf48bb3a36daabd76dbb8bf2814d4975
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1937-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE SENECA-CAYUGA TRIBE OF OKLAHOMA (1937)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1937-05-15'
+  supersedes:
+  - 1937-text
+  source: constitution-seneca-cayuga-nation-1937-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/seneca-cayuga-nation/8c783c05f09cef93.pdf
+    sha256: 8c783c05f09cef93c7adaa6b36e955a4b6e45824481ed61388c45a8e0308acdc
+    pages: 7
+  note: The text prints an approval date (1937-04-26) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (Vacancies)
+    summary: Article headed "Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (Removal or Officers)
+    summary: Article headed "Removal or Officers"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1937-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.86, by script); not yet read side by side.
+- id: 1973-amendment
+  label: AMENDMENT - CONSTITUTION AND BYLAWS of the SENECA-CAYUGA TRIBE of OKLAHOMA (1973)
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1973-01-28'
+  amends:
+  - 1937-text-2
+  source: constitution-seneca-cayuga-nation-1973-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/seneca-cayuga-nation/7c186ea74cda314d.pdf
+    sha256: 7c186ea74cda314dc8b4e533c845a5cfbbc5bdb24e8167e6e05de7fe50b95422
+    pages: 12
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1937-text-2
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 1990-text
+  label: CONSTITUTION AND BY-LAWS OF THE SENECA-CAYUGA TRIBE OF OKLAHOMA as amended through Amendment
+    (second of four), 1990-10-15
+  event: edition
+  status: superseded
+  dates:
+    listed: '1990-10-15'
+  supersedes:
+  - 1937-text-2
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/seneca-cayuga-nation/d2b12b34752ab51d.pdf
+    sha256: d2b12b34752ab51d9208e22920f458acc5a151cb40739c52c78fa13dd670a462
+    pages: 7
+  note: The text also prints approved 1937-04-26, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (~ REMOVAL OF OFFICERS)
+    summary: Article headed "~ REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1937-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.61, by script); not yet read side by side.
+- id: 2023-text
+  label: CONSTITUTION AND BY-LAWS OF THE SENECA-CAYUGA NATION as amended through Fifth of Five Amendments,
+    2023-04-14
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2023-04-14'
+  supersedes:
+  - 1990-text
+  source: constitution-seneca-cayuga-nation-2023-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/seneca-cayuga-nation/2612d28b84e1fc80.pdf
+    sha256: 2612d28b84e1fc80ae9e0c46cc5eb5c82898a77ae71f74f78a5976d4d8d1ebc6
+    pages: 9
+  note: The text prints an approval date (1937-04-26) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked in effect because it is the newest dated
+    text found, on the nation's own site, on 2026-11-21; a later amendment may not be posted. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.48, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

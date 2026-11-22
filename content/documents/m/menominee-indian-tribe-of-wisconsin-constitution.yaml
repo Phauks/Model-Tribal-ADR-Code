@@ -1,0 +1,111 @@
+id: menominee-indian-tribe-of-wisconsin-constitution
+kind: constitution
+title: Constitution of the Menominee Indian Tribe of Wisconsin
+nations:
+- menominee-indian-tribe-of-wisconsin
+jurisdictions:
+- level: tribal
+  tribe: menominee-indian-tribe-of-wisconsin
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1990-06-01
+  to 1991-01. Versions are only those found; others may exist.'
+versions:
+- id: 1990-amendment
+  label: 'AMENDMENT: Constitution & Bylaws of the Menominee Indian Tribe of Wisconsin as amended through
+    Amendment IV, 1990-06-01'
+  event: amendment
+  status: unknown
+  dates:
+    approved: '1990-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-menominee-indian-tribe-of-wisconsin-1990-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/menominee-indian-tribe-of-wisconsin/5249b369306fa464.pdf
+    sha256: 5249b369306fa4643a18a1b1e5ef9ec3e4e0aa8333f8df515f29454cfd9fec4b
+    pages: 11
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (Removal of Elected Officials from Office, Automatic vacancies)
+    summary: Article headed "Removal of Elected Officials from Office, Automatic vacancies"; found by
+      its heading and not yet read.
+    verification: title-only
+- id: 1991-text
+  label: CONSTITUTION AND BYLAWS OF THE MENOMINEE INDIAN TRIBE OF WISCONSIN (1991)
+  event: original
+  status: unknown
+  dates:
+    adopted: 1991-01
+  source: constitution-menominee-indian-tribe-of-wisconsin-1991-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/menominee-indian-tribe-of-wisconsin/45fd2cfc3a8e7d38.pdf
+    sha256: 45fd2cfc3a8e7d38304af4aacea8384b338557f0e17ba758346a11e7b72f1eca
+    pages: 60
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (THE TRIBAL JUDICIARY 7)
+    summary: Outlines the tribal judiciary's structure, judges' appointment and term, pay, qualifications,
+      removal and court rules.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article XVIII (SOVEREIGN IMMUNITY 35)
+    summary: Sets a general immunity from suit, with headings covering suits in tribal courts and in United
+      States courts.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article III (POWERS OF TOE TRIRAT. GOVERNMENT)
+    summary: Vests all judicial power of the Tribe in the Tribal Judiciary, with its Supreme Court as
+      final interpreter of the Constitution.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article III (POWERS OF TOE TRIRAT. GOVERNMENT)
+    summary: Gives the Tribal Judiciary power to resolve controversies between persons arising under tribal,
+      federal, or state law.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article V (~ TO TRTRAL JUDICIARY)
+    summary: Establishes a three-judge Supreme Court with appellate jurisdiction, lets the Tribal Legislature
+      set up trial courts, and sets judges' terms.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article V (~ TO TRTRAL JUDICIARY)
+    summary: Creates a Supreme Court and trial courts with general original jurisdiction over civil and
+      criminal cases and controversies.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article XVIII (SOVEREIGN IMMUNITY)
+    summary: Lets persons subject to tribal jurisdiction sue the tribe in tribal courts to enforce rights,
+      and requires exhausting tribal remedies before federal suits.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article XVIII (SOVEREIGN IMMUNITY)
+    summary: Keeps the tribe immune from suit except as authorized, and permits suits in tribal courts
+      under the Indian Civil Rights Act.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article V (DEFINITIONS)
+    summary: Defines 'shall' and 'may' and provides that a mandatory duty may be compelled by order of
+      the tribal court after administrative remedies.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,91 @@
+id: red-lake-band-of-chippewa-indians-constitution
+kind: constitution
+title: Constitution of the Red Lake Band of Chippewa Indians, Minnesota
+nations:
+- red-lake-band-of-chippewa-indians
+jurisdictions:
+- level: tribal
+  tribe: red-lake-band-of-chippewa-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1979-02-07
+  to 1996-05-15. Versions are only those found; others may exist.'
+versions:
+- id: 1979-text
+  label: REVISED CONSTITUTION AND BYLAWS OF THE RED LAKE BAND OF CHIPPEWA INDIANS MINNESOTA as amended
+    through Resolution No. 78-73, 1979-02-07
+  event: edition
+  status: superseded
+  dates:
+    approved: '1979-02-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/red-lake-band-of-chippewa-indians/adaef93d7c71bd4f.pdf
+    sha256: adaef93d7c71bd4ff427439e94d58dad097cae994fc029fd44f7b1dd65fbf00e
+    pages: 28
+  note: The text also prints adopted 1959-01-06, which belong to the earlier text it compiles. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (REFERENDUM AND RECALL)
+    summary: Article headed "REFERENDUM AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1996-text
+  label: REVISED CONSTITUTION AND BYLAWS OF THE RED LAKE BAND OF CHIPPEWA INDIANS as amended through Article
+    V, Section 1, Amended Tribal Election, 1996-05-15
+  event: revision
+  status: in-effect
+  dates:
+    listed: '1996-05-15'
+  supersedes:
+  - 1979-text
+  source: constitution-red-lake-band-of-chippewa-indians-1996-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/red-lake-band-of-chippewa-indians/442f2bfca81a4774.pdf
+    sha256: 442f2bfca81a4774228c481059604d276860eb73b62b312d5fd7b64f6ea9568a
+    pages: 19
+  note: The text also prints adopted 1958-10-15, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (REFERENDUM AND RECALL)
+    summary: Article headed "REFERENDUM AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article 5 (Section 1, Amended Tribal Election, May 15, 1996)
+    summary: Article headed "Section 1, Amended Tribal Election, May 15, 1996"; found by its heading and
+      not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1979-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.08, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1979-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.47, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

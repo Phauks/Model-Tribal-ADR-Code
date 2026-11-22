@@ -1,0 +1,164 @@
+id: caddo-nation-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Caddo Nation of Oklahoma
+nations:
+- caddo-nation-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: caddo-nation-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1938-01-17
+  to 2002-06-29. Versions are only those found; others may exist.'
+versions:
+- id: 1956-text
+  label: CONSTITUTION AND BY-LAWS OF (1956)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1938-01-17'
+    approved: '1956-09-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-cadcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/caddo-nation-of-oklahoma/cd77174cd6619f11.html
+    sha256: cd77174cd6619f11440408e11a42a4fd3ca6014300d682c4e5268189c4f32f55
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1976-text
+  label: CONSTITUTION AND BYLAWS OF THE CADDO INDIAN TRIBE OF OKLAHOMA (1976)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1976-06-26'
+  supersedes:
+  - 1956-text
+  source: constitution-caddo-nation-of-oklahoma-1976-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/caddo-nation-of-oklahoma/7d9a0f0018833bae.pdf
+    sha256: 7d9a0f0018833bae3ceec095b878eeddac240261485115bb6a9ffc4218bed928
+    pages: 18
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (FILLING OF VACANCIES)
+    summary: Article headed "FILLING OF VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XII (RECALL AND REMOVAL)
+    summary: Article headed "RECALL AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1956-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1956-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
+- id: 2002-text
+  label: Constitution and Bylaws of the Caddo Indian Tribe of Oklahoma as amended through Amendment A
+    (Article I), adopted June 29, 2002
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2002'
+  supersedes:
+  - 1976-text
+  source: constitution-caddo-nation-of-oklahoma-2002-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/caddo-nation-of-oklahoma/45f8a88c34c9cb61.pdf
+    sha256: 45f8a88c34c9cb6120538753319caae44cb3d2748b159f1b1aca395f4468ed4d
+    pages: 16
+  note: The text prints an approval date (1976-04-13) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1976-06-26, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked in effect because it is the newest dated text found, on the nation's own
+    site, on 2026-11-21; a later amendment may not be posted. Type and dates read from the text by an
+    AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VII (~ ELECTIONS)
+    summary: Article headed "~ ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (FILLING VACANCIES)
+    summary: Article headed "FILLING VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1976-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.25, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1976-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.47, by script); not yet read side by side.
+- id: 2002-amendment
+  label: Constitutional Amendments as amended through Amendment F (designated Amendment No. VII), adopted
+    June 29, 2002
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '2002-06-29'
+  amends:
+  - 2002-text
+  source: constitution-caddo-nation-of-oklahoma-2002-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/caddo-nation-of-oklahoma/5374ddb760fd3d67.pdf
+    sha256: 5374ddb760fd3d67d1f05106e9aee087308a5f9ceecc0c29f886a10ebbb55705
+    pages: 3
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (FILLING OF VACANCIES)
+    summary: Article headed "FILLING OF VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (FILLING OF VACANCIES)
+    summary: Article headed "FILLING OF VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 2002-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 2002-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

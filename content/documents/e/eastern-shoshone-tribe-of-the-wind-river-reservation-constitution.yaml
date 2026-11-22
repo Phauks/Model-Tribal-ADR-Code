@@ -1,0 +1,48 @@
+id: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+kind: constitution
+title: Constitution of the Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
+nations:
+- eastern-shoshone-tribe-of-the-wind-river-reservation
+jurisdictions:
+- level: tribal
+  tribe: eastern-shoshone-tribe-of-the-wind-river-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-09-27
+  to 1938-09-27. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS FOR GOVERNING THE INDIANS OF THE WIND RIVER RESERVATION, WYO. (1938)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1938-09-27'
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/eastern-shoshone-tribe-of-the-wind-river-reservation/1d15f4eb391e41ff.pdf
+    sha256: 1d15f4eb391e41ff9dabf2fadabc0a620f6d903627650f473c315085ec687de0
+    pages: 5
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1938-text-2
+  label: CONSTITUTION AND BY-LAWS FOR GOVERNING THE INDIANS OF THE WIND RIVER RESERVATION, WYO. (1938)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1938-09-27'
+  supersedes:
+  - 1938-text
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/eastern-shoshone-tribe-of-the-wind-river-reservation/80aca9f3e0b4b742.pdf
+    sha256: 80aca9f3e0b4b742c88b56dfb111a8c4c1da694b04a54d09948c9d40963d9f24
+    pages: 5
+  note: The text also prints adopted 1938-09-27, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

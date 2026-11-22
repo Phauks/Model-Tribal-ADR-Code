@@ -1,0 +1,154 @@
+id: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+kind: constitution
+title: Constitution of the Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+nations:
+- mescalero-apache-tribe-of-the-mescalero-reservation
+jurisdictions:
+- level: tribal
+  tribe: mescalero-apache-tribe-of-the-mescalero-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-02-04
+  to 1988-10-18. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-02-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-consapache
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/mescalero-apache-tribe-of-the-mescalero-reservation/7fa0204f393de96e.pdf
+    sha256: 7fa0204f393de96e5db7cea23702ee17da3b029363aa8e19fdf683cfdc848d73
+    pages: 7
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1981-text
+  label: REVISED CONSTITUTION OF THE APACHE TRIBE of the MESCALERO RESERVATION as amended through Amendment
+    V, 1981-02-03
+  event: edition
+  status: superseded
+  dates:
+    listed: '1981-02-03'
+  supersedes:
+  - 1936-text
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1981-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/mescalero-apache-tribe-of-the-mescalero-reservation/fbaa80dfa78ef7de.pdf
+    sha256: fbaa80dfa78ef7deef30969dee8e2dacc8435847d3a9b173af088959570d2d74
+    pages: 38
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IX (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XXV (PART III - THE JUDICIARY)
+    summary: Article headed "PART III - THE JUDICIARY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XXVI (COMPOSITION OF THE TRIBAL COURTS)
+    summary: Article headed "COMPOSITION OF THE TRIBAL COURTS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XXVI (Composition of the Tribal Courts; Section 4)
+    summary: Article headed "Composition of the Tribal Courts; Section 4"; found by its heading and not
+      yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1988-text
+  label: REVISED CONSTITUTION OF THE APACHE TRIBE OF THE MESCALERO RESERVATION as amended through As amended
+    through 1988-10-18
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1988-10-18'
+  supersedes:
+  - 1981-text
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/mescalero-apache-tribe-of-the-mescalero-reservation/64e01b0268fae179.html
+    sha256: 64e01b0268fae179660cfc618427de9d08748c0fbcd528b083426117395dc3c8
+  note: The text also prints adopted 1964-12-18, approved 1965-01-12, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article IV (MEMBERSHIP)
+    summary: Gives the council original jurisdiction over enrollment eligibility, while paternity-based
+      membership disputes go to the trial court or the council as appeals court.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XXV (PART III- THE JUDICIARY)
+    summary: Vests judicial powers in Tribal Courts, including a trial and an appellate court, with jurisdiction
+      over civil and criminal matters subject to federal law and council limits.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XXVI (COMPOSITION OF THE TRIBAL COURTS)
+    summary: Sets the trial court's chief judge and two associate judges, appointed by the tribal president
+      with council concurrence, and makes the council the appeals court.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1981-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.28, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1981-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.52, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1981-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.90, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

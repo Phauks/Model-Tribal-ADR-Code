@@ -1,0 +1,86 @@
+id: robinson-rancheria-constitution
+kind: constitution
+title: Constitution of the Robinson Rancheria
+nations:
+- robinson-rancheria
+jurisdictions:
+- level: tribal
+  tribe: robinson-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1995-06-22
+  to 1995-06-22. Versions are only those found; others may exist.'
+versions:
+- id: 1995-text
+  label: CONSTITUTION OF THE ROBINSON RANCHERIA LAKE COUNTY CALIFORNIA as amended through Amendment No.
+    I, approved 1995-06-22
+  event: edition
+  status: superseded
+  dates:
+    listed: '1995-06-22'
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/robinson-rancheria/0a9748ecbb056410.pdf
+    sha256: 0a9748ecbb0564104963ca480998be21259cd0ddb0e4cf32bfd1df015d6e03f9
+    pages: 14
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1995-text-2
+  label: CONSTITUTION OF THE ROBINSON RANCHERIA LAKE COUNTY CALIFORNIA as amended through Amendment No.
+    I, 1995-06-22
+  event: edition
+  status: unknown
+  dates:
+    listed: '1995-06-22'
+  supersedes:
+  - 1995-text
+  source: constitution-robinson-rancheria-1995-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/robinson-rancheria/6201245c83859da7.pdf
+    sha256: 6201245c83859da7e635f60c9f2b2303d09c9052df4fd843ecc20fb56dd79acd
+    pages: 12
+  note: The text also prints approved 1980-10-21, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Requires the tribal council's election ordinance to include a procedure for resolving election
+      disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1995-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.28, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1995-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.50, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

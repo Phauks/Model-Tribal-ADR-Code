@@ -1,0 +1,70 @@
+id: scotts-valley-band-of-pomo-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Scotts Valley Band of Pomo Indians of California
+nations:
+- scotts-valley-band-of-pomo-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: scotts-valley-band-of-pomo-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1992-08-29
+  to 1994-09-24. Versions are only those found; others may exist.'
+versions:
+- id: 1992-proposed
+  label: Resolution Approving the Use of the Interim Draft Constitution of the Scotts Valley Band of Pomo
+    Indians of the Sugar Bowl Rancheria (1992)
+  event: revision
+  status: proposed
+  dates:
+    adopted: '1992-08-29'
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1992-proposed
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/scotts-valley-band-of-pomo-indians-of-california/ba2e1dba6f08eb9c.pdf
+    sha256: ba2e1dba6f08eb9c8ea22e4bea67092200439a34184ae1f75c1bce30aaae8e55
+    pages: 15
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+- id: 1994-text
+  label: CONSTITUTION (1994)
+  event: original
+  status: unknown
+  dates:
+    adopted: '1994-09-24'
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/scotts-valley-band-of-pomo-indians-of-california/9c114ef7ef60b0d1.pdf
+    sha256: 9c114ef7ef60b0d17072e6da41fb48210dcdad797bfdfc21e7127ce621d8d499
+    pages: 20
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES, REMOVAL AND RECALL)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XI (JUDICIARY)
+    summary: Creates a Tribal Court with original jurisdiction to review and reverse Tribal and General
+      Council actions that violate the constitution and to enforce election and other ordinances.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

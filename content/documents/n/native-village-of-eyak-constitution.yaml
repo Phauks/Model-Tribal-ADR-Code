@@ -1,0 +1,100 @@
+id: native-village-of-eyak-constitution
+kind: constitution
+title: Constitution of the Native Village of Eyak
+nations:
+- native-village-of-eyak
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-eyak
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1980-06-18
+  to 2023-02-11. Versions are only those found; others may exist.'
+versions:
+- id: 1980-text
+  label: CONSTITUTION OF THE EYAK VILLAGE (1980)
+  event: original
+  status: superseded
+  dates:
+    approved: '1980-06-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-native-village-of-eyak-1980-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-eyak/55eeeddb5628f6b3.pdf
+    sha256: 55eeeddb5628f6b3a683d13619ecec9afb73524a09650e2e7ad6c0a3ee65cae2
+    pages: 8
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTION)
+    summary: Article headed "ELECTION"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+- id: 2023-text
+  label: Constitution of the Native Village of Eyak (2023)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2023-02-11'
+  supersedes:
+  - 1980-text
+  source: constitution-native-village-of-eyak-2023-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-eyak/59fc5497a8789201.pdf
+    sha256: 59fc5497a8789201a110e15259939294db9c00e6db64bc761bfb4f016b01cf99
+    pages: 22
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article 7 (REMOVAL, RECALL, FORFEITURE, AND VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURE, AND VACANCIES"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article 9 (POWERS OF THE NATIVE VILLAGE OF EYAK TRIBAL COUNCIL)
+    summary: Empowers the council to establish tribal courts or other judicial bodies to promote law and
+      order and the administration of justice.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article 13 (SOVEREIGN IMMUNITY OF THE NATIVE VILLAGE OF EYAK)
+    summary: Lets the tribal council waive immunity by resolution with a supermajority vote, bars waivers
+      reaching tribal land, and requires waivers to be specific.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1980-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1980-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1980-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
+  - topic: sovereign-immunity
+    compared_with: 1980-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,123 @@
+id: kickapoo-tribe-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Kickapoo Tribe of Oklahoma
+nations:
+- kickapoo-tribe-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: kickapoo-tribe-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1937-08-18
+  to 1977-12-10. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS OF (1937)
+  event: original
+  status: superseded
+  dates:
+    approved: '1937-08-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-okkickcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/kickapoo-tribe-of-oklahoma/93e29909fabef24c.html
+    sha256: 93e29909fabef24cc2b577cd911c9d550470e27b6ac191ac6121e995f21e82c8
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1977-text
+  label: Constitution and Bylaws of the Kickapoo Tribe of Oklahoma (1977)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1977-12-10'
+  supersedes:
+  - 1937-text
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kickapoo-tribe-of-oklahoma/7fb1d55891a6eb24.pdf
+    sha256: 7fb1d55891a6eb24d72fb4dd43d330f2a8393a31da8715c5b273b03227135672
+    pages: 18
+  note: The text prints an approval date (1977-06-06) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article IV (shall be vested in the Business Committee. Except as)
+    summary: Creates a Grievance Committee whose sole responsibility is to resolve members' grievances
+      about the conduct of tribal officers.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VII (ELECTIONS)
+    summary: Requires the Election Ordinance to include provisions for handling protests and settling
+      election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VII (ELECTIONS)
+    summary: Requires the Election Ordinance to include provisions for handling protests and settling
+      election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
+    summary: Requires complaints against officials to go first to the Grievance Committee for informal
+      resolution, then to a hearing before the body and a final Grievance Committee decision.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - conciliation
+    - administrative-adjudication
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (FILLING VACANCIES)
+    summary: Article headed "FILLING VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XVI (JUDICIAL POWERS)
+    summary: Lets the Council exercise judicial powers through a Tribal court system, to be created by
+      an ordinance drafted by the Business Committee and enacted by the Council.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1937-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1937-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1937-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1937-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

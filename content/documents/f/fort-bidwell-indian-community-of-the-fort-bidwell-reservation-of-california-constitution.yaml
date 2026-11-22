@@ -1,0 +1,107 @@
+id: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+kind: constitution
+title: Constitution of the Fort Bidwell Indian Community of the Fort Bidwell Reservation of California
+nations:
+- fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california
+jurisdictions:
+- level: tribal
+  tribe: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-01-28
+  to 1971-07. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: Constitution and By-laws of the Fort Bidwell Indian Community of the Fort Bidwell Reservation,
+    California (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california/889b42039301620c.pdf
+    sha256: 889b42039301620c1f7b57d26f8b7c6df2b5826ea64cf18d4220b3faa7cbb9b2
+    pages: 7
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1941-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1941)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1941-12-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: university-of-oklahoma-indian-reorganization-act-ftbidcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california/f1f26377b2ea580a.html
+    sha256: f1f26377b2ea580ab504de96e8bf9e4081cbd12a1d151f1d9b8d32cf87e008b9
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1971-text
+  label: CONSTITUTION AND BY-LAWS OF THE FORT BIDWELL INDIAN COMMUNITY OF THE FORT BIDWELL RESERVATION
+    OF CALIFORNIA as amended through Amendment XII, 1971-07
+  event: edition
+  status: unknown
+  dates:
+    listed: 1971-07
+  supersedes:
+  - 1941-text
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california/cea61e426d15b021.pdf
+    sha256: cea61e426d15b0214bdc81f59221e28d88e24f1de7462c901bdd25c4f45d869d
+    pages: 27
+  note: The text also prints approved 1936-01-28, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES AND REMOVAL FROM OFFICES , Sections 1, 2)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICES , Sections 1, 2"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VIII (NOMINATIONS AND ELECTIONS, Section 3 of the)
+    summary: Article headed "NOMINATIONS AND ELECTIONS, Section 3 of the"; found by its heading and not
+      yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1941-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.07, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

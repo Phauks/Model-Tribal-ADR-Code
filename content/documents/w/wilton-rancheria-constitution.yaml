@@ -1,0 +1,138 @@
+id: wilton-rancheria-constitution
+kind: constitution
+title: Constitution of the Wilton Rancheria, California
+nations:
+- wilton-rancheria
+jurisdictions:
+- level: tribal
+  tribe: wilton-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1940-04-13
+  to 2011-11-12. Versions are only those found; others may exist.'
+versions:
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS FOR THE (1940)
+  event: original
+  status: superseded
+  dates:
+    approved: '1940-04-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-mewukcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/wilton-rancheria/6ffdfe3f5a3b3aad.html
+    sha256: 6ffdfe3f5a3b3aad6a613cc4d540f5b24f092d12baa3f015c736c8e56ec2f5c3
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 2011-text
+  label: Constitution of Wilton Rancheria (2011)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '2011-11-12'
+    effective: '2011-11-12'
+  supersedes:
+  - 1940-text
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/wilton-rancheria/3fb5ac0b26372375.pdf
+    sha256: 3fb5ac0b2637237544088364406451d8eb97261f6080930534ddacdf1e9369ea
+    pages: 10
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article IV (ORGANIZATION OF THE GOVERNMENT)
+    summary: Lists a Tribal Court among the separate branches of government, none of which may exercise
+      another branch's powers.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article V (CHAIRPERSON)
+    summary: Requires Tribal Council approval before the Chairperson may enter any agreement that waives
+      the Tribe's sovereign immunity, directly or indirectly.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article VI (TRIBAL COUNCIL)
+    summary: Gives the Tribal Council power to approve agreements of any kind that waive the Tribe's sovereign
+      immunity.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article VIII (TRIBAL COURT)
+    summary: Vests the tribe's judicial power in a Tribal Court that may construe the constitution and
+      the tribe's laws, customs and traditions.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VIII (TRIBAL COURT)
+    summary: Gives the Tribal Court original jurisdiction over civil and criminal cases, and a Traditional
+      Court of elders helps resolve cases involving members.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - elders-council
+  - topic: peacemaking
+    locator: Article VIII (TRIBAL COURT)
+    summary: Creates a Traditional Court of appointed elders that assists the Tribal Court in resolving
+      cases involving members and advises on custom.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - elders-council
+  - topic: sovereign-immunity
+    locator: Article VIII (TRIBAL COURT)
+    summary: States that Tribal Court jurisdiction over cases does not waive the Tribe's sovereign immunity.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article X (REMOVAL AND VACANCIES)
+    summary: Article headed "REMOVAL AND VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIII (SOVEREIGN IMMUNITY)
+    summary: Makes the tribe immune from suit unless the Tribal Council expressly waives immunity, and
+      makes officials acting within their duties immune too.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1940-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1940-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: peacemaking
+    compared_with: 1940-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1940-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
+  - topic: sovereign-immunity
+    compared_with: 1940-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

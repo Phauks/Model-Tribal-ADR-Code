@@ -1,0 +1,73 @@
+id: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+kind: constitution
+title: Constitution of the Quartz Valley Indian Community of the Quartz Valley Reservation of California
+nations:
+- quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california
+jurisdictions:
+- level: tribal
+  tribe: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-03-29
+  to 1939-06-15. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-03-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-quartzcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california/b992922392e14799.html
+    sha256: b992922392e14799a121acf5efb6849f60ba48dc49c41f395e04f91554d5993a
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE QUARTZ VALLEY INDIAN COMMUNITY, CALIFORNIA (1939)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1939-05-09'
+    approved: '1939-06-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1939-text
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california/0bb466c9b29fdeba.pdf
+    sha256: 0bb466c9b29fdebafa3444d2e8d4374dcc197467cdcd23f8d899d6941fdc4213
+    pages: 6
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1939-text-3
+  label: Constitution and By-laws of the Quartz Valley Indian Community, California (1939)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-06-15'
+  supersedes:
+  - 1939-text-2
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california/0e1ff59d66fa7bed.pdf
+    sha256: 0e1ff59d66fa7bedb4964ea69c305588600f3262f59a3406f339477e2d5ffb4e
+    pages: 7
+  note: The text also prints approved 1939-06-15, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

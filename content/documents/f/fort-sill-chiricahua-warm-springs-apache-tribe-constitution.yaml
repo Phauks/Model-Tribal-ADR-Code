@@ -1,0 +1,82 @@
+id: fort-sill-chiricahua-warm-springs-apache-tribe-constitution
+kind: constitution
+title: Constitution of the Fort Sill--Chiricahua--Warm Springs--Apache Tribe
+nations:
+- fort-sill-chiricahua-warm-springs-apache-tribe
+jurisdictions:
+- level: tribal
+  tribe: fort-sill-chiricahua-warm-springs-apache-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1977-04-09
+  to 2003-06-04. Versions are only those found; others may exist.'
+versions:
+- id: 1977-text
+  label: CONSTITUTION AND BYLAWS OF THE FORT SILL APACHE TRIBE OF OKLAHOMA as amended through Amendments
+    I-III, 1977-04-09
+  event: edition
+  status: superseded
+  dates:
+    listed: '1977-04-09'
+  source: constitution-fort-sill-chiricahua-warm-springs-apache-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fort-sill-chiricahua-warm-springs-apache-tribe/8b44edba2e42f7d5.pdf
+    sha256: 8b44edba2e42f7d5f991a6071bf2fc07409e58279b872113a98dbe08c4947ae0
+    pages: 42
+  note: The text also prints effective 1976-10-30, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 2003-text
+  label: 'Fort Sill Apache Tribe of Oklahoma - Tribal Constitution as amended through Amendment, 2003-06-04
+    (cover note: amended June 4, 2003)'
+  event: edition
+  status: unknown
+  dates:
+    listed: '2003-06-04'
+  supersedes:
+  - 1977-text
+  source: national-indian-law-library-constitution-constitutions-fort-sill
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fort-sill-chiricahua-warm-springs-apache-tribe/c576eedef3156348.html
+    sha256: c576eedef315634820b67005f3c0b2c4c5ea5142a3a95009929ef57003fadd8a
+  note: The text prints an approval date (1976-08-18) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1976-10-30, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1977-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1977-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.50, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

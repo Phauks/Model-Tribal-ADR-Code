@@ -1,0 +1,52 @@
+id: native-village-of-karluk-constitution
+kind: constitution
+title: Constitution of the Native Village of Karluk
+nations:
+- native-village-of-karluk
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-karluk
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-08-23
+  to 1939-08-23. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: Constitution and By-laws of the Native Village of Karluk, Alaska (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-08-23'
+  source: constitution-native-village-of-karluk-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-karluk/3d5be4766a3f68b9.pdf
+    sha256: 3d5be4766a3f68b92bd2ab45cf52e3c2cc80e77e8d05128e6d47f33aed9fe7ff
+    pages: 6
+  note: The text prints an approval date (1939-07-07) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF KARLUK (1939)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-08-23'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-karluk-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-karluk/b1176f3e15296438.pdf
+    sha256: b1176f3e152964380c76b65073955548a23e4a3505881678df0005fc50f42a21
+    pages: 5
+  note: The text prints an approval date (1939-07-07) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-08-23, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

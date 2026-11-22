@@ -1,0 +1,74 @@
+id: chilkat-indian-village-constitution
+kind: constitution
+title: Constitution of the Chilkat Indian Village
+nations:
+- chilkat-indian-village
+jurisdictions:
+- level: tribal
+  tribe: chilkat-indian-village
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1941-03-04
+  to 2006-11-07. Versions are only those found; others may exist.'
+versions:
+- id: 1941-text
+  label: Constitution and By-Laws of the Chilkat Indian Village (1941)
+  event: original
+  status: superseded
+  dates:
+    approved: '1941-03-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-chilcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/chilkat-indian-village/cb73fbfe569bf5df.html
+    sha256: cb73fbfe569bf5dfe4903440bee40662fc7907533fe8ed3e4c5255b5a867b215
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1959-text
+  label: CONSTITUTION AND BY-LAWS OF THE CHILKAT INDIAN VILLAGE as amended through Article II, Section
+    2(c) amendment, 1959-12-15
+  event: edition
+  status: superseded
+  dates:
+    approved: '1959-07-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1941-text
+  source: constitution-chilkat-indian-village-1959-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/chilkat-indian-village/ced2c2becb920631.pdf
+    sha256: ced2c2becb92063178113e222f890da0cd2a0c4d8d2443f20671858c6b473164
+    pages: 11
+  note: The text also prints adopted 1941-03-27, which belong to the earlier text it compiles. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 2006-text
+  label: Constitution for the Government of the Chilkat Indian Village (2006)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2006-11-07'
+  supersedes:
+  - 1959-text
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/chilkat-indian-village/4b649ca4721eeefe.pdf
+    sha256: 4b649ca4721eeefe02e3963d155cd66e982db4193904040e12645f0dfd5962df
+    pages: 10
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

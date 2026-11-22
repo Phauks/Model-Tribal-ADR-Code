@@ -1,0 +1,174 @@
+id: cheyenne-and-arapaho-tribes-constitution
+kind: constitution
+title: Constitution of the Cheyenne and Arapaho Tribes, Oklahoma
+nations:
+- cheyenne-and-arapaho-tribes
+jurisdictions:
+- level: tribal
+  tribe: cheyenne-and-arapaho-tribes
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1937-09-18
+  to 2021. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS OF THE CHEYENNE-ARAPAHO TRIBES OF OKLAHOMA (1937)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1937-09-18'
+  source: constitution-cheyenne-and-arapaho-tribes-1937-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cheyenne-and-arapaho-tribes/e34b899f350a10f9.pdf
+    sha256: e34b899f350a10f9fe52eff430fe4f7163bc097dbda9d0cceb6e42756b6cecc1
+    pages: 7
+  note: The text prints an approval date (1937-08-25) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1941-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1941)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1941-12-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1937-text
+  source: university-of-oklahoma-indian-reorganization-act-charcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/cheyenne-and-arapaho-tribes/5f5d1fa18ab238d8.html
+    sha256: 5f5d1fa18ab238d891210626ab1669c96255f0e99830b6946f7964dbdeaf55f7
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1982-text
+  label: CONSTITUTION AND BY-LAWS OF THE CHEYENNE-ARAPAHO TRIBES OF OKLAHOMA as amended through Amendment
+    I, 1982-01-09
+  event: edition
+  status: superseded
+  dates:
+    listed: '1982-01-09'
+  supersedes:
+  - 1941-text
+  source: constitution-cheyenne-and-arapaho-tribes-1982-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cheyenne-and-arapaho-tribes/813e42acf1f6e0db.pdf
+    sha256: 813e42acf1f6e0db31100b5a8ab48ae0a857e46533b14ee5ba836b5caaeef3b8
+    pages: 29
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTION BOARD)
+    summary: Article headed "ELECTION BOARD"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL, RECALL AND FILLING VACANCIES)
+    summary: Article headed "REMOVAL, RECALL AND FILLING VACANCIES"; found by its heading and not yet
+      read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XIV (become vacant , such vacancies shall be)
+    summary: Article headed "become vacant , such vacancies shall be"; found by its heading and not yet
+      read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 2021-text
+  label: Amended Constitution of the Tsistsista - Hinonoei (Cheyenne and Arapaho Tribes) as amended through
+    Amendment to Article IV (Membership), approved at Special Election October 5, 2021
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2021'
+  supersedes:
+  - 1982-text
+  source: constitution-cheyenne-and-arapaho-tribes-2021-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cheyenne-and-arapaho-tribes/34748b55b07139a4.pdf
+    sha256: 34748b55b07139a462d767f8840d02d7f8398ce28f5836a2fa662f8c48c4fbaa
+    pages: 55
+  note: The text also prints adopted 2006-04-04, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article XII (REMOVAL, RECALL, AND VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, AND VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article IX (ELECTIONS)
+    summary: Creates a Judicial Commission that adopts a judicial ethics code, hears complaints about
+      judges and attorneys, and recommends discipline or removal.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article X (SOVEREIGN IMMUNITY)
+    summary: Keeps the incumbent Chief Judge and three most recent Justices in office with full judicial
+      authority until replaced or reappointed.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article X (SOVEREIGN IMMUNITY)
+    summary: Retains the Tribes' sovereign immunity from suit; only the Legislature and Tribal Council
+      may authorize a waiver, by specific law.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XII (REMOVAL, RECALL, AND)
+    summary: Article headed "REMOVAL, RECALL, AND"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1982-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1982-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1982-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+  - topic: sovereign-immunity
+    compared_with: 1982-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

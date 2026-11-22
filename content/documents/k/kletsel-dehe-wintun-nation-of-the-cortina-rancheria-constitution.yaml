@@ -1,0 +1,69 @@
+id: kletsel-dehe-wintun-nation-of-the-cortina-rancheria-constitution
+kind: constitution
+title: Constitution of the Kletsel Dehe Wintun Nation of the Cortina Rancheria
+nations:
+- kletsel-dehe-wintun-nation-of-the-cortina-rancheria
+jurisdictions:
+- level: tribal
+  tribe: kletsel-dehe-wintun-nation-of-the-cortina-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1973
+  to 1996-01-11. Versions are only those found; others may exist.'
+versions:
+- id: 1973-text
+  label: Constitution and Bylaws of Cortina Indian Rancheria, Colusa County, California (1973)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1973'
+    approved: '1973-08-10'
+    effective: '1973-08-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-kletsel-dehe-wintun-nation-of-the-cortina-rancheria-1973-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kletsel-dehe-wintun-nation-of-the-cortina-rancheria/628ab8dc8c041cda.pdf
+    sha256: 628ab8dc8c041cda707497659fd508852107009ae21f69185a14b788253ad18a
+    pages: 9
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1996-text
+  label: Constitution and Bylaws of the Cortina Indian Rancheria (1996)
+  event: revision
+  status: unknown
+  dates:
+    adopted: '1996-01-11'
+  supersedes:
+  - 1973-text
+  source: constitution-kletsel-dehe-wintun-nation-of-the-cortina-rancheria-1996-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kletsel-dehe-wintun-nation-of-the-cortina-rancheria/27fb7cdf434a8220.pdf
+    sha256: 27fb7cdf434a8220fba9158019b5b1f1b2fd0777771af5df13a33e46517e29a4
+    pages: 9
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1973-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.36, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

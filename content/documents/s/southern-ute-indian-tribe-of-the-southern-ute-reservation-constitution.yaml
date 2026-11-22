@@ -1,0 +1,134 @@
+id: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+kind: constitution
+title: Constitution of the Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado
+nations:
+- southern-ute-indian-tribe-of-the-southern-ute-reservation
+jurisdictions:
+- level: tribal
+  tribe: southern-ute-indian-tribe-of-the-southern-ute-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1936-11-04
+  to 1991-08-16. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS OF THE SOUTHERN UTE TRIBE OF THE SOUTHERN UTE RESERVATION, COLORADO
+    (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-11-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/southern-ute-indian-tribe-of-the-southern-ute-reservation/d523907fe8158952.pdf
+    sha256: d523907fe8158952ac82d49ddf8c96229f5c660d308a81d763d00735a9386404
+    pages: 18
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1945-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1945)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1945-10-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: university-of-oklahoma-indian-reorganization-act-sutecons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/southern-ute-indian-tribe-of-the-southern-ute-reservation/9428a55704b64e22.html
+    sha256: 9428a55704b64e22151bfdb80a880ad0bdf8d52530b62356743372cb763d3e31
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1975-text
+  label: CONSTITUTION of the SOUTHERN UTE INDIAN TRIBE of the SOUTHERN UTE INDIAN RESERVATION, COLORADO
+    (1975)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1975-09-26'
+  supersedes:
+  - 1945-text
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/southern-ute-indian-tribe-of-the-southern-ute-reservation/61336ecb7775e31f.pdf
+    sha256: 61336ecb7775e31fbb408406fc6fbd7117268ebc2b59e9bcbd657e513eaec543
+    pages: 19
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS ANT ELECTIONS)
+    summary: Article headed "NOMINATIONS ANT ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES, REMOVAL AND RECALL)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1945-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1945-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 1991-text
+  label: CONSTITUTION OF THE SOUTHERN UTE INDIAN TRIBE as amended through Amendment of Article II, Section
+    1(c), 1991-08-16
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '1991-08-16'
+    approved: '1991-08-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1975-text
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/southern-ute-indian-tribe-of-the-southern-ute-reservation/dda4c655bdce137a.pdf
+    sha256: dda4c655bdce137af5820b0ecd56ce93304277ef62afd4165ac897b520983f4c
+    pages: 13
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Has an election board appointed by the council maintain the voter register and rule on eligibility.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: election-disputes
+    compared_with: 1975-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1975-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

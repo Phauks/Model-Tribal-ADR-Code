@@ -1,0 +1,169 @@
+id: pueblo-of-isleta-constitution
+kind: constitution
+title: Constitution of the Pueblo of Isleta, New Mexico
+nations:
+- pueblo-of-isleta
+jurisdictions:
+- level: tribal
+  tribe: pueblo-of-isleta
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1947-03-27
+  to 2014-09-20. Versions are only those found; others may exist.'
+versions:
+- id: 1947-text
+  label: Constitution for the Pueblo of Isleta, New Mexico (1947)
+  event: original
+  status: superseded
+  dates:
+    approved: '1947-03-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-pueblo-of-isleta-1947-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pueblo-of-isleta/b9792ecf5139872c.pdf
+    sha256: b9792ecf5139872ca587795f7d1f745c8bc3c0743953a8bec1ffd67a7d4f91b6
+    pages: 51
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL AND RECALL)
+    summary: Article headed "REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (FILLING VACANCIES AND)
+    summary: Article headed "FILLING VACANCIES AND"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article IX (THE JUDICIAL BRANCH)
+    summary: Article headed "THE JUDICIAL BRANCH"; found by its heading and not yet read.
+    verification: title-only
+- id: 1947-text-2
+  label: A Constitution for Isleta Pueblo, New Mexico (1947)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1947-03-27'
+  supersedes:
+  - 1947-text
+  source: constitution-pueblo-of-isleta-1947-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pueblo-of-isleta/cc3c15e7d7c71208.pdf
+    sha256: cc3c15e7d7c71208dafddd7e9eccf821e0ed875d29866bc7426c9217718f56c1
+    pages: 8
+  note: 'The text also prints adopted 1947-03-23, approved 1947-03-27, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked superseded because a later dated text was found (project inference). Dates read from another
+    copy of the same text: adopted 1947-03-23. Type and dates read from the text by an AI reviewer (Claude
+    Haiku), not yet checked by the lead author.'
+  changes:
+  - topic: judicial-power
+    compared_with: 1947-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1947-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1970-text
+  label: Constitution for the Pueblo of Isleta, New Mexico (1970)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1970-02-23'
+    approved: '1970-04-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1947-text-2
+  source: constitution-pueblo-of-isleta-1970-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pueblo-of-isleta/ef69f845eef49a2b.pdf
+    sha256: ef69f845eef49a2b5457c1a96b7d60fa231a715105b41c69b06887c1cc5cf220
+    pages: 19
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VIL (REMOVAL AND RECALL ‘)
+    summary: Article headed "REMOVAL AND RECALL ‘"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (FILLING VACANCIES AND SPECIAL ELECTIONS)
+    summary: Article headed "FILLING VACANCIES AND SPECIAL ELECTIONS"; found by its heading and not yet
+      read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1947-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 2014-text
+  label: Constitution for the Pueblo of Isleta, New Mexico as amended through Constitution amendment,
+    September 20, 2014 (approved October 8, 2014)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2014-09-20'
+    approved: '2014-10-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1970-text
+  source: constitution-pueblo-of-isleta-2014-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pueblo-of-isleta/df2b02847ce4237a.pdf
+    sha256: df2b02847ce4237ad737e3093f7291608d068cbfb4310a2b58f96aa590d4fba9
+    pages: 24
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XI (REPEAL OF PREVIOUS)
+    summary: Gives a tribal court jurisdiction over criminal and civil cases and power to determine the
+      constitutionality of council enactments.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article XI (REPEAL OF PREVIOUS)
+    summary: Gives the tribal court jurisdiction over criminal and civil cases, with the council acting
+      as appellate court for appeals as of right.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1970-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1970-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1970-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

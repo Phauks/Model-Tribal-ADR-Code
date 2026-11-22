@@ -1,0 +1,109 @@
+id: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+kind: constitution
+title: Constitution of the Suquamish Indian Tribe of the Port Madison Reservation
+nations:
+- suquamish-indian-tribe-of-the-port-madison-reservation
+jurisdictions:
+- level: tribal
+  tribe: suquamish-indian-tribe-of-the-port-madison-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1965-07-02
+  to 1978-11-05. Versions are only those found; others may exist.'
+versions:
+- id: 1965-text
+  label: CONSTITUTION AND BYLAWS of the SUQUAMISH TRIBE, PORT MADISON RESERVATION, WASHINGTON (1965)
+  event: original
+  status: superseded
+  dates:
+    approved: '1965-07-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/_unmatched/89ce6b5923b139d9.pdf
+    sha256: 89ce6b5923b139d970e94861e68397e4fb596e696c5e4d897c282e10c1962b8c
+    pages: 8
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1965-text-2
+  label: CONSTITUTION AND BYLAWS OF THE SUQUAMISH TRIBE, PORT MADISON RESERVATION, WASHINGTON, AS AMENDED
+    (1965)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1965-07-02'
+  supersedes:
+  - 1965-text
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/suquamish-indian-tribe-of-the-port-madison-reservation/02f3bcd8809298df.pdf
+    sha256: 02f3bcd8809298df6851ccdbd6fa87e6ee40aee5112ab5b80dbb1915269f34d5
+    pages: 9
+  note: The text also prints approved 1965-07-02, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  changes:
+  - topic: election-disputes
+    compared_with: 1965-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1965-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1978-amendment
+  label: AMENDMENT - CONSTITUTION AND BYLAWS of the SUQUAMISH TRIBE, Amendment II as amended through Amendment
+    III, election 1978-11-05
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1978-11-05'
+    approved: '1978-11-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1965-text-2
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1978-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/suquamish-indian-tribe-of-the-port-madison-reservation/9e9a4a316ab51885.pdf
+    sha256: 9e9a4a316ab51885eff6691cb0b80719fbacc95dc34a71aa4376a052887cf090
+    pages: 11
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1965-text-2
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

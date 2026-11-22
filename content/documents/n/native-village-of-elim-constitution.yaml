@@ -1,0 +1,51 @@
+id: native-village-of-elim-constitution
+kind: constitution
+title: Constitution of the Native Village of Elim
+nations:
+- native-village-of-elim
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-elim
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-11-24
+  to 1939-11-24. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-11-24'
+  source: university-of-oklahoma-indian-reorganization-act-elimcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-elim/2dcda7e581e13efb.html
+    sha256: 2dcda7e581e13efbebd582886c3290dfea97429ed7149faabef73d85dddbe5b8
+  note: 'The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1939-11-24. Dates
+    read by rule from the certificates on the library page.'
+- id: 1939-text-2
+  label: Constitution and By-laws of the Native Village of Elim (1939)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-11-24'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-elim-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-elim/32c5d068c273d1b8.pdf
+    sha256: 32c5d068c273d1b823045adc20911f75f3e9faacba578ab07156e47f3bd607e9
+    pages: 5
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-11-24, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

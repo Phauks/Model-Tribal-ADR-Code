@@ -1,0 +1,64 @@
+id: fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation-constitution
+kind: constitution
+title: Constitution of the Fort Independence Indian Community of Paiute Indians of the Fort Independence
+  Reservation, California
+nations:
+- fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation
+jurisdictions:
+- level: tribal
+  tribe: fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1972-11-01
+  to 1999. Versions are only those found; others may exist.'
+versions:
+- id: 1972-text
+  label: Articles of Association of the Fort Independence Indian Community as amended through Change in
+    Articles of Association (voting quorum), 1972-11-01
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1972-11-01'
+  source: constitution-fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation-1972-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/_unmatched/fa5c388826cb12e8.pdf
+    sha256: fa5c388826cb12e88fd8954003b4e54f5114060c72b92a8b265d47f2688df19d
+    pages: 11
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (VACANCIES AND RECALL)
+    summary: Article headed "VACANCIES AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1999-text
+  label: Articles of Association of the Fort Independence Indian Community, California (1999)
+  event: revision
+  status: unknown
+  dates:
+    adopted: '1999'
+  supersedes:
+  - 1972-text
+  source: national-indian-law-library-constitution-constitutions-fort-independence
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation/fa7693be43d02e4c.html
+    sha256: fa7693be43d02e4c8c7bc538286839bf50006f0bcf1c665a072ac14f04773101
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (Vacancies and Recall)
+    summary: Article headed "Vacancies and Recall"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1972-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.79, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,91 @@
+id: king-island-native-community-constitution
+kind: constitution
+title: Constitution of the King Island Native Community
+nations:
+- king-island-native-community
+jurisdictions:
+- level: tribal
+  tribe: king-island-native-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1938-09-17
+  to 1939-01-31. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-09-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-kingiscon
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/king-island-native-community/df00140a478dea12.html
+    sha256: df00140a478dea12725ec8b9b1deb5d69191217e2c4ea95d7d7eb0759be5fb86
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1939-text
+  label: Constitution and By-laws of the King Island Native Community, Alaska (1939)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1939-01-31'
+  supersedes:
+  - 1938-text
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/king-island-native-community/22a80c43a62560dc.pdf
+    sha256: 22a80c43a62560dcc584052f3946dc28725a7826f9d3a6d0704f8444de19c670
+    pages: 9
+  note: The text prints an approval date (1938-09-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: Constitution and By-Laws of the King Island Native Community (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-01-31'
+  supersedes:
+  - 1939-text
+  source: constitution-king-island-native-community-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/king-island-native-community/c08ab5f1a52e590c.pdf
+    sha256: c08ab5f1a52e590c10430de4d87d87d470f7e9489d3c437d5a861573a995ced3
+    pages: 8
+  note: The text also prints adopted 1939-01-31, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+- id: 1939-text-3
+  label: Constitution and By-Laws of the King Island Native Community (1939)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-01-31'
+  supersedes:
+  - 1939-text-2
+  source: constitution-king-island-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/king-island-native-community/f0897f6e4cb91298.pdf
+    sha256: f0897f6e4cb912980f4dc5e255337882b9409da1c301298a6499a32161e1abd8
+    pages: 9
+  note: The text prints an approval date (1938-09-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-01-31, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,168 @@
+id: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+kind: constitution
+title: Constitution of the Flandreau Santee Sioux Tribe of South Dakota
+nations:
+- flandreau-santee-sioux-tribe-of-south-dakota
+jurisdictions:
+- level: tribal
+  tribe: flandreau-santee-sioux-tribe-of-south-dakota
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1936-04-24
+  to 2022-07-08. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS FOR THE FLANDREAU SANTEE SIOUX TRIBE OF SOUTH DAKOTA (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-04-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/flandreau-santee-sioux-tribe-of-south-dakota/b4a04edae09c276d.pdf
+    sha256: b4a04edae09c276da5e9ee8d8de943a594e9496987657887d9015df971a9c9f6
+    pages: 76
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article III (Governing Body, and Article V, Elections)
+    summary: Article headed "Governing Body, and Article V, Elections"; found by its heading and not yet
+      read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND RENOVAL FRON OFFICE)
+    summary: Article headed "VACANCIES AND RENOVAL FRON OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1940-text
+  label: CONSTITUTION AND BYLAWS FOR THE (1940)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1940-12-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: university-of-oklahoma-indian-reorganization-act-sdsancons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/flandreau-santee-sioux-tribe-of-south-dakota/8185bccd332e68d4.html
+    sha256: 8185bccd332e68d4a01f0fa80af2567ee574549168055a7a2e2c0d2f65b03ee2
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  changes:
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+- id: 1997-text
+  label: 1997 AMENDED CONSTITUTION AND BY-LAWS FOR THE FLANDREAU SANTEE SIOUX TRIBE OF SOUTH DAKOTA as
+    amended through Amended and approved by the Secretary of Interior, 1997-05-13
+  event: edition
+  status: superseded
+  dates:
+    approved: '1997-05-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1940-text
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-1997-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lower-brule-sioux-tribe-of-the-lower-brule-reservation/b7ad216ae4c65529.pdf
+    sha256: b7ad216ae4c65529d195670b15f8606254c5a3a9839a6b5b0e808dadb3246ef8
+    pages: 14
+  note: The text also prints adopted 1936-04-04, which belong to the earlier text it compiles. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article IX (JUDICIARY)
+    summary: Article headed "JUDICIARY"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1940-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1940-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1940-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 2022-text
+  label: 2022 Amended Constitution and By-Laws for the Flandreau Santee Sioux Tribe of South Dakota as
+    amended through Amended and approved by the Secretary of Interior, 2022-07-08
+  event: edition
+  status: in-effect
+  dates:
+    approved: '2022-07-08'
+    effective: '2022-07-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1997-text
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/flandreau-santee-sioux-tribe-of-south-dakota/2ac06726da477aef.pdf
+    sha256: 2ac06726da477aef09b22471474af143647894e26830956b3a1d118066bd026c
+    pages: 12
+  note: The text also prints adopted 1936-04-04, which belong to the earlier text it compiles. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  changes:
+  - topic: judicial-power
+    compared_with: 1997-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: election-disputes
+    compared_with: 1997-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1997-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

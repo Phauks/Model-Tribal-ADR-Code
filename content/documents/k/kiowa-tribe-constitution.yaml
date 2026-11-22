@@ -1,0 +1,129 @@
+id: kiowa-tribe-constitution
+kind: constitution
+title: Constitution of the Kiowa Tribe
+nations:
+- kiowa-tribe
+jurisdictions:
+- level: tribal
+  tribe: kiowa-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1982-06-05
+  to 2017-04-17. Versions are only those found; others may exist.'
+versions:
+- id: 1982-text
+  label: Constitution and Bylaws of the Kiowa Indian Tribe of Oklahoma as amended through Amendment V,
+    1982-06-05
+  event: edition
+  status: superseded
+  dates:
+    effective: '1982-06-05'
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kiowa-tribe/a45d7ab107e43ce6.pdf
+    sha256: a45d7ab107e43ce60ebdcc318c89ad4370b898f545a71b8c5b4e40a53f1f45e3
+    pages: 31
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (RECALL AND FILLING VACANCIES ' _)
+    summary: Article headed "RECALL AND FILLING VACANCIES ' _"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VI (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XIII (GENERAL ELECTION BOARD)
+    summary: Article headed "GENERAL ELECTION BOARD"; found by its heading and not yet read.
+    verification: title-only
+- id: 2017-text
+  label: CONSTITUTION OF THE KIOWA TRIBE (Amendment A, New Constitution) as amended through Amendment
+    No. 7 (Amendment A, New Constitution), 2017-04-17
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2017-04-17'
+  supersedes:
+  - 1982-text
+  source: constitution-kiowa-tribe-2017-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kiowa-tribe/230c8f185505dfcc.pdf
+    sha256: 230c8f185505dfcce54579397cfa191d116c52110ae0df0cfa082d64a39f7a50
+    pages: 21
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: sovereign-immunity
+    locator: Article V (KIOWA INDIAN COUNCDL)
+    summary: Lets the Council authorize the Chairman to enter treaties, compacts or contracts, which may
+      waive sovereign immunity, subject to later voter approval.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article VII (JUDICIAL BRANCH)
+    summary: Establishes a Judicial Branch of a Supreme Court, a Trial Court and lower courts, with judges
+      nominated by the Chairman and confirmed by the Legislature.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VII (JUDICIAL BRANCH)
+    summary: Gives the Trial Courts original jurisdiction over all cases and controversies, criminal and
+      civil, with the text shown cut off.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article IX (ELECTIONS)
+    summary: Gives a Judicial Commission power to discipline judges, recommend their removal and regulate
+      lawyers, with license decisions appealable to the Chief Justice.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article X (SOVEREIGN IMMUNITY)
+    summary: Declares the Tribe immune from suit, with waiver allowed only by specific written authorization
+      from the Legislature or Council, and suits within the Tribe limited to equity suits in Tribal courts.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article 30 (FORFEITURE, REMOVAL, RECALL, AND VACANCIES)
+    summary: Article headed "FORFEITURE, REMOVAL, RECALL, AND VACANCIES"; found by its heading and not
+      yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1982-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1982-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1982-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1982-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+  - topic: sovereign-immunity
+    compared_with: 1982-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,88 @@
+id: paskenta-band-of-nomlaki-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Paskenta Band of Nomlaki Indians of California
+nations:
+- paskenta-band-of-nomlaki-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: paskenta-band-of-nomlaki-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1993-12-18
+  to 1998-04-18. Versions are only those found; others may exist.'
+versions:
+- id: 1993-text
+  label: CONSTITUTION of the PASKENTA BAND OF NOMLAKI INDIANS (1993)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1993-12-18'
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1993-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/paskenta-band-of-nomlaki-indians-of-california/4339e547f65cedf0.pdf
+    sha256: 4339e547f65cedf0bb89eabc45e16f5470ce6b36885c59c1f431a91314975b51
+    pages: 17
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES, REMOVAL AND RECALL)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1998-text
+  label: CONSTITUTION of the PASKENTA BAND OF NOMLAKI INDIANS (1998)
+  event: revision
+  status: unknown
+  dates:
+    adopted: '1998-04-18'
+    approved: '1998-05-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1993-text
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/paskenta-band-of-nomlaki-indians-of-california/86a6865b7b444186.pdf
+    sha256: 86a6865b7b444186f2c7bd408ede8f5772b39c6542fc4864dcb55acdb373d7d6
+    pages: 19
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article IV (ELECTIONS)
+    summary: Requires the General Council to enact an election ordinance that prescribes procedures for
+      settling election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES, REMOVAL AND RECALL)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1993-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1993-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.95, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

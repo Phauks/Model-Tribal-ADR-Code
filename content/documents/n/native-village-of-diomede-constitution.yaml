@@ -1,0 +1,72 @@
+id: native-village-of-diomede-constitution
+kind: constitution
+title: Constitution of the Native Village of Diomede
+nations:
+- native-village-of-diomede
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-diomede
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-15
+  to 1940-01-31. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-diocons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-diomede/80cbb0abfd4419ce.html
+    sha256: 80cbb0abfd4419cea82eb6265e64d2ad5d2a856814a6cdb4f1296f2011b5ab2a
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1940-text
+  label: Constitution and By-laws of the Native Village of Diomede (1940)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1940-01-31'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-diomede-1940-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-diomede/0b7b72c499ce45bd.pdf
+    sha256: 0b7b72c499ce45bd473f629cda5d0408d19aee53338e30576ef0e5cabe807781
+    pages: 5
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1940-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF DIOMEDE (1940)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1940-01-31'
+  supersedes:
+  - 1940-text
+  source: constitution-native-village-of-diomede-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-diomede/c96adc2b303de6e7.pdf
+    sha256: c96adc2b303de6e70bb247aa81d75cf1378df72eab55204fba074e35d9de52a4
+    pages: 6
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1940-01-31, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

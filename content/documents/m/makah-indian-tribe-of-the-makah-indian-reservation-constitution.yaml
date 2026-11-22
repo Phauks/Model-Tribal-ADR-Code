@@ -1,0 +1,71 @@
+id: makah-indian-tribe-of-the-makah-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Makah Indian Tribe of the Makah Indian Reservation
+nations:
+- makah-indian-tribe-of-the-makah-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: makah-indian-tribe-of-the-makah-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-05-16
+  to 1936-05-16. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: Constitution and Bylaws of the Makah Indian Tribe of the Makah Indian Reservation (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/makah-indian-tribe-of-the-makah-indian-reservation/6fe8ad71198e71c1.pdf
+    sha256: 6fe8ad71198e71c183d86c41255509a24543184e5e041c6f1761efb1d0754ecc
+    pages: 13
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1936-text-2
+  label: Constitution and Bylaws of the Makah Indian Tribe of the Makah Indian Reservation (1936)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1936-05-16'
+  supersedes:
+  - 1936-text
+  source: constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/makah-indian-tribe-of-the-makah-indian-reservation/c089bac5b981cab0.html
+    sha256: c089bac5b981cab0d9397a651c50acf2d7f65d7ff2364cab653b1a3282b685a2
+  note: The text also prints adopted 1936, approved 1936-05-16, which belong to the earlier text it compiles.
+    The date recorded as listed is that of the latest amendment the text says it includes. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (Elections for the)
+    summary: Article headed "Elections for the"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal)
+    summary: Article headed "Vacancies and Removal"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

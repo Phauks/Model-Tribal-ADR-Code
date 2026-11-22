@@ -1,0 +1,113 @@
+id: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-constitution
+kind: constitution
+title: Constitution of the Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
+nations:
+- sisseton-wahpeton-oyate-of-the-lake-traverse-reservation
+jurisdictions:
+- level: tribal
+  tribe: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1946-09-24
+  to 2006-11-15. Versions are only those found; others may exist.'
+versions:
+- id: 1946-text
+  label: CONSTITUTION AND BYLAWS (1946)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1946-09-24'
+  source: university-of-oklahoma-indian-reorganization-act-siscons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/sisseton-wahpeton-oyate-of-the-lake-traverse-reservation/bb5ee87b77d02fbd.html
+    sha256: bb5ee87b77d02fbda7fe688a26fdfd17fa8e6d2f0249db2d879322e1fce725be
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1946-text-2
+  label: REVISED CONSTITUTION AND BYLAWS OF THE SISSETON-WAHPETON SIOUX TRIBE, SOUTH DAKOTA (1946)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1946-10-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1946-text
+  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1946-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lower-brule-sioux-tribe-of-the-lower-brule-reservation/76990f07b782d4f1.pdf
+    sha256: 76990f07b782d4f1d7287fc7691a4c30404d6f598c3cc92508f65b1af6cbb1a8
+    pages: 13
+  note: The text also prints adopted 1946-09-24, which belong to the earlier text it compiles. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES, REMOVAL AND RECALL FROM)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL FROM"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1946-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1946-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 2006-text
+  label: Revised Constitution and Bylaws of the Sisseton-Wahpeton Sioux Tribe, South Dakota as amended
+    through Amendment No. X, effective 2006-11-15
+  event: revision
+  status: unknown
+  dates:
+    adopted: '2006-11-15'
+  supersedes:
+  - 1946-text-2
+  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2006-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/sisseton-wahpeton-oyate-of-the-lake-traverse-reservation/0650f02cb86eba56.html
+    sha256: 0650f02cb86eba56c659f42508c366a0a60ec1a93ccc415aa011d8ffb7ac6d6d
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES, REMOVAL)
+    summary: Article headed "VACANCIES, REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1946-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1946-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

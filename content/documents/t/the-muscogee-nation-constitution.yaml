@@ -1,0 +1,95 @@
+id: the-muscogee-nation-constitution
+kind: constitution
+title: Constitution of The Muscogee Nation
+nations:
+- the-muscogee-nation
+jurisdictions:
+- level: tribal
+  tribe: the-muscogee-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1979-08-17
+  to 1979-10-06. Versions are only those found; others may exist.'
+versions:
+- id: 1979-text
+  label: CONSTITUTION OF THE MUSCOGEE (CREEK) NATION (1979)
+  event: original
+  status: superseded
+  dates:
+    approved: '1979-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-the-muscogee-nation-1979-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/birch-creek-tribe/6685e25f3c578125.pdf
+    sha256: 6685e25f3c578125c627d9a80db3cf57e7c5f87b087f2bdf99e9df319e99ba49
+    pages: 14
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VII (Section 1. The judicial power of The Muscogee (Creek) Nation)
+    summary: Article headed "Section 1. The judicial power of The Muscogee (Creek) Nation"; found by its
+      heading and not yet read.
+    verification: title-only
+- id: 1979-text-2
+  label: MUSCOGEE (CREEK) NATION CONSTITUTION (ANNOTATED) (1979)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1979-10-06'
+  supersedes:
+  - 1979-text
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-muscogee-nation/3bedee0283be7819.html
+    sha256: 3bedee0283be78191636ed7159ae7bd263a84bfd1d24338a8f7d720094f127d4
+  note: The text prints an approval date (1979-08-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked in effect because it is the newest dated
+    text found, on the nation's own site, on 2026-11-21; a later amendment may not be posted. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV ([Elections])
+    summary: Article headed "[Elections]"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article VII ([Judicial Branch])
+    summary: Vests judicial power in one Supreme Court and in inferior courts the National Council establishes,
+      with Supreme Court decisions final.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VIII ([Removal of Officers])
+    summary: Article headed "[Removal of Officers]"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII ([Initiative and Referendum])
+    summary: Makes denial of certification of an initiative or referendum application subject to judicial
+      review.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1979-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.12, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1979-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1979-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

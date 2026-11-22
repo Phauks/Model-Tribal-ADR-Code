@@ -1,0 +1,157 @@
+id: eastern-shawnee-tribe-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Eastern Shawnee Tribe of Oklahoma
+nations:
+- eastern-shawnee-tribe-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: eastern-shawnee-tribe-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-12-22
+  to 1999-06-17. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-12-22'
+  source: university-of-oklahoma-indian-reorganization-act-okeshawcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/eastern-shawnee-tribe-of-oklahoma/63ffafb94a186266.html
+    sha256: 63ffafb94a186266b4158661fb188478f0de47e9c10f8952292cd0a686989c57
+  note: 'The text prints an approval date (1939-11-07) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1939-12-22. Dates
+    read by rule from the certificates on the library page.'
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1994-text
+  label: Constitution of the Eastern Shawnee Tribe of Oklahoma (1994)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1994-03-02'
+    approved: '1994-04-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1939-text
+  source: constitution-eastern-shawnee-tribe-of-oklahoma-1994-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/_unmatched/6079de2837050788.pdf
+    sha256: 6079de28370507889b81fba996c6e84f84062e05bba941252d65d9ecd96fed20
+    pages: 11
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article X (JUDICIAL BRANCH)
+    summary: Article headed "JUDICIAL BRANCH"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XI (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1939-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1939-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1939-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
+- id: 1999-text
+  label: Constitution of the Eastern Shawnee Tribe of Oklahoma as amended through Amendment Number 1,
+    1999-06-17
+  event: revision
+  status: unknown
+  dates:
+    adopted: '1999-06-17'
+  supersedes:
+  - 1994-text
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/eastern-shawnee-tribe-of-oklahoma/dd691df15e030d63.html
+    sha256: dd691df15e030d633ec4de72adabb922b8615bf159e95b432555ef7b53f14f5d
+  note: The text prints an approval date (1999-03-02) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article X (JUDICIAL BRANCH)
+    summary: Vests the Tribe's judicial authority in a Court of Indian Offenses, to be replaced by a Tribal
+      Court with three judges once the Business Committee so determines.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article X (JUDICIAL BRANCH)
+    summary: Gives the Court of Indian Offenses jurisdiction over tribal disputes, including their settlement,
+      until a Tribal Court is established.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article XI (ELECTIONS)
+    summary: Requires the election ordinance to include a procedure for resolving election disputes, administered
+      by an impartial election board.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XIII (REMOVAL AND RECALL)
+    summary: Article headed "REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.87, by script); not yet read side by side.
+  - topic: dispute-resolution
+    compared_with: 1994-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.87, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.40, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,71 @@
+id: jamestown-sklallam-tribe-constitution
+kind: constitution
+title: Constitution of the Jamestown S'Klallam Tribe
+nations:
+- jamestown-sklallam-tribe
+jurisdictions:
+- level: tribal
+  tribe: jamestown-sklallam-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 2000-03-07
+  to 2022-11-08. Versions are only those found; others may exist.'
+versions:
+- id: 2000-amendment
+  label: Amendments C and D to the Constitution of the Jamestown S'Klallam Tribe of Indians as amended
+    through Amendments C and D, APR 28 2000
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '2000-03-07'
+    approved: '2000-04-28'
+    effective: '2000-04-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-jamestown-sklallam-tribe-2000-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/jamestown-sklallam-tribe/783d24210cf4493c.pdf
+    sha256: 783d24210cf4493cbcdd44316d920bae7dff1851991d5a2c2cbd1dffaa57a518
+    pages: 3
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article X (AMENDMENTS shall be amended to remove Secretarial approval from)
+    summary: Article headed "AMENDMENTS shall be amended to remove Secretarial approval from"; found by
+      its heading and not yet read.
+    verification: title-only
+- id: 2022-text
+  label: Constitution of the Jamestown S'Klallam Tribe as amended through Amended and restated, 2022-11-08
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2022-11-08'
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/jamestown-sklallam-tribe/6dcb017c6c09442a.pdf
+    sha256: 6dcb017c6c09442a3733e98e3a84ec633d27ed20782f5b3e30993e6f58810c94
+    pages: 16
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (No individual shall be subjected to recall more than once during their term of
+      o)
+    summary: Article headed "No individual shall be subjected to recall more than once during their term
+      of office"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL FROM OFFICE AND FILLING VACANCIES)
+    summary: Article headed "REMOVAL FROM OFFICE AND FILLING VACANCIES"; found by its heading and not
+      yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

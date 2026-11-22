@@ -1,0 +1,197 @@
+id: pawnee-nation-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Pawnee Nation of Oklahoma
+nations:
+- pawnee-nation-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: pawnee-nation-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 6 dated versions, from 1937-11-26
+  to 2021-05-01. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1937)
+  event: original
+  status: superseded
+  dates:
+    approved: '1937-11-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-pawcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/pawnee-nation-of-oklahoma/9ab643df0b5617cd.html
+    sha256: 9ab643df0b5617cd82ead0250c27524cda2f857ecd79c186bd1cf2d04db794cd
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL OF PAWNEE BUSINESS COUNCIL MEMBERS)
+    summary: Article headed "REMOVAL OF PAWNEE BUSINESS COUNCIL MEMBERS"; found by its heading and not
+      yet read.
+    verification: title-only
+- id: 1938-text
+  label: Constitution and By-Laws of the Pawnee Indians of Oklahoma (1938)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1938-01-06'
+  supersedes:
+  - 1937-text
+  source: constitution-pawnee-nation-of-oklahoma-1938-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pawnee-nation-of-oklahoma/a19d39d96a205d8d.pdf
+    sha256: a19d39d96a205d8d11260a19339c77500e4c8e34a2efb4cb6c5f00b4fb48a240
+    pages: 7
+  note: The text prints an approval date (1937-11-26) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL OF PAWNEE BUSINESS COUNCIL MEMBERS)
+    summary: Article headed "REMOVAL OF PAWNEE BUSINESS COUNCIL MEMBERS"; found by its heading and not
+      yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1937-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1998-text
+  label: CONSTITUTION OF THE PAWNEE NATION OF OKLAHOMA (1998)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1998-07-04'
+    effective: '1998-07-04'
+  supersedes:
+  - 1938-text
+  source: constitution-pawnee-nation-of-oklahoma-1998-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pawnee-nation-of-oklahoma/1fcc3d3a473860d4.pdf
+    sha256: 1fcc3d3a473860d480e1ba738cc7b70a8c25be93ecf6b2d1b09267143ac868ae
+    pages: 30
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (FORFEITURE, RECALL, REMOVAL)
+    summary: Article headed "FORFEITURE, RECALL, REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 2003-text
+  label: Constitution of the Pawnee Nation of Oklahoma as amended through Last amended 2003
+  event: edition
+  status: superseded
+  dates:
+    listed: '2003'
+  supersedes:
+  - 1998-text
+  source: constitution-pawnee-nation-of-oklahoma-2003-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pawnee-nation-of-oklahoma/3471b7b21fa1af33.html
+    sha256: 3471b7b21fa1af337dd8adef3023e0c6cbe2d6584a1b9ff6d1ea30b9ec686416
+  note: The text also prints approved 1998-04-27, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (FORFEITURE, RECALL)
+    summary: Article headed "FORFEITURE, RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1998-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.89, by script); not yet read side by side.
+- id: 2008-text
+  label: Constitution of the Pawnee Nation of Oklahoma as amended through Further revised by referendum
+    vote on June 14, 2008
+  event: edition
+  status: superseded
+  dates:
+    listed: '2008'
+  supersedes:
+  - 2003-text
+  source: constitution-pawnee-nation-of-oklahoma-2008-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pawnee-nation-of-oklahoma/bf8e18770ec892ad.pdf
+    sha256: bf8e18770ec892adcb016b185ffd924dc88818f884da4e9a1c50dcf3eec68791
+    pages: 12
+  note: The text prints an approval date (1998-04-27) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1998-07-14, effective
+    1998-07-14, which belong to the earlier text it compiles. The date recorded as listed is that of the
+    latest amendment the text says it includes. Marked superseded because a later dated text was found
+    (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 2003-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 2021-text
+  label: Constitution of the Pawnee Nation of Oklahoma as amended through Further revised by referendum
+    vote on May 1, 2021
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2021-05-01'
+    effective: '2021-05-01'
+  supersedes:
+  - 2008-text
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pawnee-nation-of-oklahoma/75ea2a4fc644d35b.pdf
+    sha256: 75ea2a4fc644d35b708e6b37fe8c47325c3fd1131432bdd44c79f1e632b717a6
+    pages: 13
+  note: The text prints an approval date (1998-04-27) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked in effect because it is the newest dated
+    text found, on the nation's own site, on 2026-11-21; a later amendment may not be posted. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (FORFEITURE, RECALL, SUSPENSION, REMOVAL)
+    summary: Article headed "FORFEITURE, RECALL, SUSPENSION, REMOVAL"; found by its heading and not yet
+      read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 2008-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

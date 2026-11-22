@@ -1,0 +1,94 @@
+id: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona
+  and California
+nations:
+- colorado-river-indian-tribes-of-the-colorado-river-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1937-07-09
+  to 1975-03-01. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS OF (1937)
+  event: original
+  status: superseded
+  dates:
+    approved: '1937-07-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/colorado-river-indian-tribes-of-the-colorado-river-indian-reservation/9b7baba92816f00d.html
+    sha256: 9b7baba92816f00d078918e7b3dff152a6e38efe72d315e77a1923b85bf570ea
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1975-text
+  label: Constitution and Bylaws of the Colorado River Indian Tribes of the Colorado River Indian Reservation,
+    Arizona and California (1975)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1975-03-01'
+    approved: '1975-05-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1937-text
+  source: constitution-colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/colorado-river-indian-tribes-of-the-colorado-river-indian-reservation/0beadc25bd6b9e57.pdf
+    sha256: 0beadc25bd6b9e57b8e4af5580ef4ad02dd32c121eb71df6d85fc6c9da03511c
+    pages: 16
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (Vacancies, Removal and Recall)
+    summary: Article headed "Vacancies, Removal and Recall"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (Judiciary)
+    summary: Vests judicial power in a tribal trial court and an appeals court, and requires the council
+      to enact a judicial code.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IV (Conduct of Elections)
+    summary: Article headed "Conduct of Elections"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1937-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1937-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1937-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.25, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

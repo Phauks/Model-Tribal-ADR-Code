@@ -1,0 +1,89 @@
+id: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+kind: constitution
+title: Constitution of the Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+nations:
+- lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin
+jurisdictions:
+- level: tribal
+  tribe: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1980-08-25
+  to 1992-02-01. Versions are only those found; others may exist.'
+versions:
+- id: 1980-amendment
+  label: Amendment Constitution of the Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+    as amended through Amendment XVIII, date not legible
+  event: amendment
+  status: unknown
+  dates:
+    approved: '1980-08-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-1980-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin/00f5f31a307fe7b5.pdf
+    sha256: 00f5f31a307fe7b5ef8c0834c2b382e518e28b34ff4d4320c4440927532a2712
+    pages: 10
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+- id: 1992-amendment
+  label: 'Memorandum, Subject: Lac Courte Oreilles Constitutional Amendments (attaching Amendments XXIII
+    and XXIV) as amended through Amendment XXIV, 1992-02-10'
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1992-02-01'
+    approved: '1992-02-10'
+    effective: '1992-02-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-1992-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin/976c3791c681c0e0.pdf
+    sha256: 976c3791c681c0e01bbe6428c273cb2be73e0d76de91b9e482114580faefd3c8
+    pages: 5
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1992-amendment-2
+  label: Amendment Constitution of the Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+    as amended through Amendment XXIV, 1992-02-10
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1992-02-01'
+    approved: '1992-02-10'
+    effective: '1992-02-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-1992-amendment-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin/ff9a5a6351831d7e.pdf
+    sha256: ff9a5a6351831d7ef0511a4354c70d80aa681dae7549ada23359f65c73d62d7d
+    pages: 26
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,82 @@
+id: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+kind: constitution
+title: Constitution of the Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+nations:
+- ute-indian-tribe-of-the-uintah-and-ouray-reservation
+jurisdictions:
+- level: tribal
+  tribe: ute-indian-tribe-of-the-uintah-and-ouray-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-11-20
+  to 1937-01-19. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-11-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-utecons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/ute-indian-tribe-of-the-uintah-and-ouray-reservation/fcf7098402c35d0d.html
+    sha256: fcf7098402c35d0d7f12bc97baf2e5a1c7c20162316239fd7bdb735d27758717
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1937-text
+  label: Constitution and By-Laws of the Ute Indian Tribe of the Uintah and Ouray Reservation (1937)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1937-01-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ute-indian-tribe-of-the-uintah-and-ouray-reservation/92ee9e1fa64a4556.html
+    sha256: 92ee9e1fa64a4556200902843cb2c16f77bcff69297a92035e529f904d3a7ef5
+  note: The text also prints adopted 1936-12-19, which belong to the earlier text it compiles. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (Nominations and Elections)
+    summary: Article headed "Nominations and Elections"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal From)
+    summary: Article headed "Vacancies and Removal From"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: unchanged
+    verification: inferred
+    note: The article texts match (word-run overlap 0.97, by script).
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: unchanged
+    verification: inferred
+    note: The article texts match (word-run overlap 0.99, by script).
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

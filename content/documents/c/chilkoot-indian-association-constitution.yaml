@@ -1,0 +1,92 @@
+id: chilkoot-indian-association-constitution
+kind: constitution
+title: Constitution of the Chilkoot Indian Association
+nations:
+- chilkoot-indian-association
+jurisdictions:
+- level: tribal
+  tribe: chilkoot-indian-association
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1938-07-13
+  to 1941-12-05. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: Constitution and By-Laws of the Chilkoot Indian Association (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-07-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-chilkcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/chilkoot-indian-association/1d562f6df9a124cb.html
+    sha256: 1d562f6df9a124cbd9962ad38b501ae4d4dcd04cec24b18247530906909bb3f6
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1941-text
+  label: CONSTITUTION AND BY-LAWS OF THE CHILKOOT INDIAN ASSOCIATION (1941)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1941-12-05'
+  supersedes:
+  - 1938-text
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/chilkoot-indian-association/2987bce5875b7d43.pdf
+    sha256: 2987bce5875b7d4356750eb5f1a9dab5651292497cd1be1daccde835de091d61
+    pages: 9
+  note: The text prints an approval date (1941-05-27) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1941-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE CHILKOOT INDIAN ASSOCIATION (1941)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1941-12-05'
+  supersedes:
+  - 1941-text
+  source: constitution-chilkoot-indian-association-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/chilkoot-indian-association/2fa09798491b729a.pdf
+    sha256: 2fa09798491b729ad281863c47558b2c2748b87fdcb09dad58374ad91864c8ac
+    pages: 8
+  note: The text prints an approval date (1941-05-27) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1941-12-05, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1941-text-3
+  label: Constitution and By-laws of the Chilkoot Indian Association (1941)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1941-12-05'
+  supersedes:
+  - 1941-text-2
+  source: constitution-chilkoot-indian-association-1941-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/chilkoot-indian-association/51c03b8f73c5f143.pdf
+    sha256: 51c03b8f73c5f1437242253c734a8ea01eb8722dc5f046fdcc87eab09c8de5d2
+    pages: 8
+  note: The text prints an approval date (1941-05-27) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1941-12-05, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

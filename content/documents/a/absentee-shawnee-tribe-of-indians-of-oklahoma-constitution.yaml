@@ -1,0 +1,180 @@
+id: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Absentee-Shawnee Tribe of Indians of Oklahoma
+nations:
+- absentee-shawnee-tribe-of-indians-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: absentee-shawnee-tribe-of-indians-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1938-12-05
+  to 1988-08-09. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1938-12-05'
+  source: university-of-oklahoma-indian-reorganization-act-abshawcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/absentee-shawnee-tribe-of-indians-of-oklahoma/afe1f59e53258fbe.html
+    sha256: afe1f59e53258fbed1461af6aa656a1f73bb3f7e2e9540350beac2ae5fd82953
+  note: 'The text prints an approval date (1938-10-18) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1938-12-05. Dates
+    read by rule from the certificates on the library page.'
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1977-text
+  label: Constitution of the Absentee Shawnee Tribe of Indians of Oklahoma (1977)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1977-06-04'
+  supersedes:
+  - 1938-text
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/absentee-shawnee-tribe-of-indians-of-oklahoma/a8e9b7177904d00d.pdf
+    sha256: a8e9b7177904d00d62449a3342589c2190dfac3463f2eb20e0e2db406c13d081
+    pages: 14
+  note: The text prints an approval date (1977-02-04) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1988-text
+  label: CONSTITUTION AND BYLAWS OF THE ABSENTEE SHAWNEE TRIBE OF INDIANS OF OKLAHOMA as amended through
+    Amendment A (Article II Jurisdiction), 1988-08-09
+  event: revision
+  status: unknown
+  dates:
+    listed: '1988-08-09'
+  supersedes:
+  - 1977-text
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/absentee-shawnee-tribe-of-indians-of-oklahoma/e7d89491aa805ec9.pdf
+    sha256: e7d89491aa805ec929a406b4c806a46f9f47b8164e77b3d842b6e006d591e985
+    pages: 55
+  note: The text prints an approval date (1938-10-18) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1938-12-05, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article IV (Tribal Government)
+    summary: Vests the judicial power in one Supreme Court and inferior courts, and lets tribal courts
+      strike down unconstitutional legislative enactments.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VII (Removal, Recall and Forfeiture)
+    summary: Article headed "Removal, Recall and Forfeiture"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article X (of the present tribal constitution. The election shall be)
+    summary: Article headed "of the present tribal constitution. The election shall be"; found by its
+      heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article IV (TRIBAL GOVERNMENT)
+    summary: Sets up a Tribal Court plus an Appeals Court, whose members are elected by tribal referendum.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article V (POWERS)
+    summary: Has the Judicial Branch hold hearings and render decisions on internal disputed issues, through
+      a Tribal Court and an Appeals Court.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VI (ELECTIONS)
+    summary: Requires the Election Ordinance to include provisions for settling election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IX ((d) Recall. An election initiated by the registered voters)
+    summary: Article headed "(d) Recall. An election initiated by the registered voters"; found by its
+      heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article X (BILL OF RIGHTS)
+    summary: Says that accepting the Indian Civil Rights Act does not give up the tribe's immunity from
+      suit.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article V (Committees)
+    summary: Has a Grievance Committee investigate complaints about Business Committee officers' conduct,
+      and lets the Council remove an officer after a hearing.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - fact-finding
+    - council-hearing
+  changes:
+  - topic: judicial-power
+    compared_with: 1977-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: dispute-resolution
+    compared_with: 1977-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: election-disputes
+    compared_with: 1977-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1977-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: sovereign-immunity
+    compared_with: 1977-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

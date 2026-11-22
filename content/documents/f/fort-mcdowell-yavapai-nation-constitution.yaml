@@ -1,0 +1,122 @@
+id: fort-mcdowell-yavapai-nation-constitution
+kind: constitution
+title: Constitution of the Fort McDowell Yavapai Nation, Arizona
+nations:
+- fort-mcdowell-yavapai-nation
+jurisdictions:
+- level: tribal
+  tribe: fort-mcdowell-yavapai-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-08-18
+  to 1999-10-19. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-08-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/fort-mcdowell-yavapai-nation/3f17e9666489f588.html
+    sha256: 3f17e9666489f588d7c72068c5971a1199e1be635c9f983969ff866393ff2065
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1999-text
+  label: Constitution of the Fort McDowell Yavapai Nation (1999)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1999-10-19'
+    approved: '1999-11-12'
+    effective: '1999-11-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fort-mcdowell-yavapai-nation/c1571b3f44d4e299.html
+    sha256: c1571b3f44d4e299f99b182c58adf9920f56f170a85139ee388f353ef98c17d5
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: sovereign-immunity
+    locator: Article XV (Sovereign Immunity)
+    summary: Article headed "Sovereign Immunity"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VI (ELECTIONS AND VOTING)
+    summary: Article headed "ELECTIONS AND VOTING"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article VII (JUDICIARY)
+    summary: Vests the Nation's judicial power in a Judiciary with a Trial Court and a Supreme Court,
+      whose judges the Tribal Council appoints.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VII (JUDICIARY)
+    summary: Gives the Judiciary jurisdiction over cases and controversies, and allows lower alternative
+      dispute resolution forums the Tribal Council deems necessary.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article VII (Section 10)
+    summary: Lets the Tribal Council set judge qualifications and remove judges, and allows appeals of
+      Trial Court verdicts to the Supreme Court.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL AND RECALL FROM OFFICE)
+    summary: Article headed "REMOVAL AND RECALL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XV (SOVEREIGN IMMUNITY)
+    summary: Recognizes the Nation's sovereign immunity, allows enrolled members to sue in the Judiciary
+      for equitable enforcement, and permits waiver only by Council written authorization.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: sovereign-immunity
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,136 @@
+id: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+kind: constitution
+title: Constitution of the Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
+nations:
+- kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria
+jurisdictions:
+- level: tribal
+  tribe: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1940-04-13
+  to 2011-01-30. Versions are only those found; others may exist.'
+versions:
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS FOR THE BIG VALLEY BAND OF POMO (1940)
+  event: original
+  status: superseded
+  dates:
+    approved: '1940-04-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria/232e306aac41bdc0.html
+    sha256: 232e306aac41bdc0b9ab84c64a53a1827f7d9b41c69a79df5b57b9bf05d2e808
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1967-text
+  label: Constitution and By-laws for the Kashia Band of Pomo Indians of the Stewarts Point Rancheria,
+    California as amended through Amendment IV, election September 10, 1967
+  event: edition
+  status: superseded
+  dates:
+    listed: '1967'
+  supersedes:
+  - 1940-text
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria/112459461e6d37c7.pdf
+    sha256: 112459461e6d37c7a475d725e31924f94622a284128aacdfae458d167fbe1a6c
+    pages: 15
+  note: The text also prints approved 1936-03-11, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+- id: 1979-amendment
+  label: 'Amendments VIII to XI to the Constitution and By-laws of the Kashia Band of Pomo Indians (with
+    a 2000 Community Council resolution) as amended through Amendment XI, Date Approved: September 7,
+    1979'
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1979-08-26'
+    approved: '1979-09-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1967-text
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1979-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria/706a5a8fb1ca1c9b.pdf
+    sha256: 706a5a8fb1ca1c9ba1748ce9d2f55a19d2a358a68559de741947eeb1bfee4114
+    pages: 17
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1967-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 2011-text
+  label: CONSTITUTION OF THE KASHIA BAND OF POMO INDIANS OF THE STEWARTS POINT RANCHERIA, CALIFORNIA (2011)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2011-01-30'
+    approved: '2011-02-15'
+    effective: '2011-02-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1967-text
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria/70c7ff06ba9ad1d8.pdf
+    sha256: 70c7ff06ba9ad1d8ad525d2534ab44848ad9ed09b1a91b717ebe7cbbc148877b
+    pages: 10
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article 5 (GOVERNMENTAL POWERS)
+    summary: Authorizes the General Council to establish a court system, grievance board, or committee
+      for resolving disputes and enforcing tribal law.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article 8 (SOVEREIGN IMMUNITY)
+    summary: States that nothing in the constitution waives the Tribe's sovereign immunity; the text shown
+      is cut off before any further detail.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1967-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: sovereign-immunity
+    compared_with: 1967-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

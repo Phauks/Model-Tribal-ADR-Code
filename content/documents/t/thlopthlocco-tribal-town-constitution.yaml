@@ -1,0 +1,77 @@
+id: thlopthlocco-tribal-town-constitution
+kind: constitution
+title: Constitution of the Thlopthlocco Tribal Town
+nations:
+- thlopthlocco-tribal-town
+jurisdictions:
+- level: tribal
+  tribe: thlopthlocco-tribal-town
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-12-27
+  to 1938-12-27. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: Constitution and By-laws of the Thlopthlocco Tribal Town, Oklahoma (1938)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1938-12-27'
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/thlopthlocco-tribal-town/0a41299ccbbf6b05.pdf
+    sha256: 0a41299ccbbf6b05a9437884c341138ea7511ead5bbccceec249b27391fdf32f
+    pages: 7
+  note: The text prints an approval date (1938-11-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1938-text-2
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1938-12-27'
+  supersedes:
+  - 1938-text
+  source: university-of-oklahoma-indian-reorganization-act-thlopcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/thlopthlocco-tribal-town/8939c31a25231241.html
+    sha256: 8939c31a252312413d5ed911e511d348040369d0a1fb8da9654991a72311107c
+  note: 'The text prints an approval date (1938-11-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1938-12-27, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Dates read from another copy of the same text: adopted 1938-12-27. Dates read by
+    rule from the certificates on the library page.'
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VI (REMOVAL OF BUSINESS COMMITTEE MEMBERS)
+    summary: Has a three-member Grievance Committee investigate misconduct complaints against Business
+      Committee members, and lets the town remove them by majority vote after a hearing.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - fact-finding
+    - council-hearing
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL OF BUSINESS COMMITTEE MEMBERS)
+    summary: Article headed "REMOVAL OF BUSINESS COMMITTEE MEMBERS"; found by its heading and not yet
+      read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

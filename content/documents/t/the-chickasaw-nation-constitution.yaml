@@ -1,0 +1,202 @@
+id: the-chickasaw-nation-constitution
+kind: constitution
+title: Constitution of The Chickasaw Nation
+nations:
+- the-chickasaw-nation
+jurisdictions:
+- level: tribal
+  tribe: the-chickasaw-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1984
+  to 2002. Versions are only those found; others may exist.'
+versions:
+- id: 1984-text
+  label: CONSTITUTION OF THE CHICKASAW NATION OF OKLAHOMA as amended through Amendment No. 2, 1984-08-21
+  event: edition
+  status: superseded
+  dates:
+    approved: '1984'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-the-chickasaw-nation-1984-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-chickasaw-nation/b5e00e517e93ae8e.pdf
+    sha256: b5e00e517e93ae8e6362e3dabde130889c6e3d70c06a92148a1017f83b140fc2
+    pages: 11
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XII (JUDICIAL DEPARTMENT)
+    summary: Article headed "JUDICIAL DEPARTMENT"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XIII (PRIVILEGES, DUTIES AND POWERS OF THE JUDICIAL DEPARTMENT)
+    summary: Article headed "PRIVILEGES, DUTIES AND POWERS OF THE JUDICIAL DEPARTMENT"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XV (FILLING VACANCIES)
+    summary: Article headed "FILLING VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XVI (IMPEACHMENT AND RECALL OF OFFICIALS)
+    summary: Article headed "IMPEACHMENT AND RECALL OF OFFICIALS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (JUDICIAL DEPARTMENT, Section 2, is amended to read)
+    summary: Article headed "JUDICIAL DEPARTMENT, Section 2, is amended to read"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XV (FILLING VACANCIES, Section 1, is amended to read)
+    summary: Article headed "FILLING VACANCIES, Section 1, is amended to read"; found by its heading and
+      not yet read.
+    verification: title-only
+- id: 2002-text
+  label: Constitution of the Chickasaw Nation as amended through Amended 2002 (per Cites line)
+  event: edition
+  status: superseded
+  dates:
+    listed: '2002'
+  supersedes:
+  - 1984-text
+  source: constitution-the-chickasaw-nation-2002-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-chickasaw-nation/2e8c9709229ead61.html
+    sha256: 2e8c9709229ead61d67854af66331bb6b959b35c9a2dbe28f46c3639c7786e18
+  note: The text also prints effective 1983-08-27, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XII (JUDICIAL DEPARTMENT)
+    summary: Article headed "JUDICIAL DEPARTMENT"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XIII (PRIVILEGES, DUTIES AND POWERS OF THE JUDICIAL DEPARTMENT)
+    summary: Article headed "PRIVILEGES, DUTIES AND POWERS OF THE JUDICIAL DEPARTMENT"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XV (FILLING VACANCIES)
+    summary: Article headed "FILLING VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XVI (IMPEACHMENT AND RECALL OF OFFICIALS)
+    summary: Article headed "IMPEACHMENT AND RECALL OF OFFICIALS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (Judicial Department, Section 2)
+    summary: Article headed "Judicial Department, Section 2"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XV (Filling Vacancies, Section 1)
+    summary: Article headed "Filling Vacancies, Section 1"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (Judicial Department)
+    summary: Article headed "Judicial Department"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1984-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.54, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1984-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.66, by script); not yet read side by side.
+- id: 2002-text-2
+  label: CONSTITUTION OF THE CHICKASAW NATION as amended through as amended as of June 21, 2002
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2002'
+  supersedes:
+  - 2002-text
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-chickasaw-nation/c431ae138fd1141b.pdf
+    sha256: c431ae138fd1141b9af55f70c13e0a711531e1a9c351bf638cffde0297833b8a
+    pages: 14
+  note: The text also prints adopted 1983-08-27, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XI (ARTICLE XII)
+    summary: Makes the judicial authority a three-judge court chosen in a general vote of qualified voters.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XIII (the election, then the Judicial Department)
+    summary: Gives the Judicial Department jurisdiction over constitutional and legislative disputes and
+      makes its decisions final.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article XIII (the election, then the Judicial Department)
+    summary: Gives the Judicial Department jurisdiction to decide disputes arising under the constitution
+      or tribal legislation, by vote of two members.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XVI (as a court in all cases of impeachment and its)
+    summary: Has the Tribal Legislature sit as a court to hear impeachment cases, with its decision final.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XVI (as a court in all cases of impeachment and its)
+    summary: Article headed "as a court in all cases of impeachment and its"; found by its heading and
+      not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XXI (CERTIFICATE OF RATIFICATION AMENDMENTS TO THE)
+    summary: Amends Article XII's qualifications for Judicial Department members, including voter registration
+      and residence in the Nation.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XV (Filling Vacancies, Section on the first working day after October 1)
+    summary: Amendment V places the Nation's judicial powers in a Supreme Court plus inferior courts the
+      legislature establishes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XV (Filling Vacancies, Section on the first working day after October 1)
+    summary: Article headed "Filling Vacancies, Section on the first working day after October 1"; found
+      by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 2002-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.34, by script); not yet read side by side.
+  - topic: dispute-resolution
+    compared_with: 2002-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 2002-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.21, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.
