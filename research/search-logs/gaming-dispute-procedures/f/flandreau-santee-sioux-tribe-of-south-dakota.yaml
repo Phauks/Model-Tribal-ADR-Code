@@ -1,0 +1,73 @@
+profile: content/tribes/f/flandreau-santee-sioux-tribe-of-south-dakota.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/flandreausanteesiouxtribe-ordappr081794.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, court-review) in this ordinance listed 1994-08-17; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/flandreausanteesiouxtribe-amendappr072496.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (court-review, licensing-hearing)
+    in this amendment listed 1996-07-24; reviewers read a newer document with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/flandreausanteesiouxtribe-Ordapp06151999.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 1999-06-15 has no text layer on most pages (1 of 1 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/flandreausanteesiouxtribe-amendappr081999.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (employee-grievance, court-review,
+    licensing-hearing) in this amendment listed 1999-08-19; reviewers read a newer document with the same
+    kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/flandreausanteesiouxtribe-amendappr062104.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, employee-grievance,
+    dispute-other, licensing-hearing) in this amendment listed 2004-06-21; reviewers read a newer document
+    with the same kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/2017.01.13_Flandreau_Santee_Sioux_Ord_Amend.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2017-01-13
+    and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#flandreau-santee-sioux-tribe-amendment-2017-01-13#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#flandreau-santee-sioux-tribe-amendment-2017-01-13#i2
+next_steps: Read the scanned amendment listed 1999-06-15 (https://www.nigc.gov/wp-content/uploads/2025/03/flandreausanteesiouxtribe-Ordapp06151999.pdf)
+  with OCR or by hand.

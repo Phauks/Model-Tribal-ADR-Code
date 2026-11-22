@@ -184,14 +184,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.cct-cbc.com/current-code/
+  link: https://www.cct-cbc.com/s/CONSTITUTION-AND-BY-LAWS.pdf
   source: national-indian-law-library-confederated-colville
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.cct-cbc.com/current-code/, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution and By-laws of the Confederated Tribes of the Colville Reservation
   year: '1990'
@@ -269,20 +270,9 @@ dispute_resolution:
       cases, notice, confidentiality and enforcement of disposition.
     source: narf-ipi-youth-family-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-08-25'
     note: Summary from NARF's description; code text not read (link returned 404).
-  - kind: peacemaking
-    title: 'Title 5 Domestic Relations: 5-2 Juveniles: 5-2-192-195 Peacemaking Circle'
-    citation: 'Title 5 Domestic Relations: 5-2 Juveniles: 5-2-192-195 Peacemaking Circle'
-    source: narf-ipi-youth-family-peacemaking-laws
-    confidence: medium
-    as_of: '2025-08-25'
-    locator: Confederated Tribes of the Colville Reservation, Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides for mandatory
-      peacemaking referrals for both juvenile offender and child-in-need-of-care cases, notice requirements,
-      confidentiality, and enforcement of disposition. Link check 2026-11-21: the link the source gives
-      (https://peacemaking.narf.org/wp-content/uploads/2025/07/Colville-Juvenile-Peacemaking-Circle-Code.pdf)
-      returned HTTP 404, so it is not recorded.'
   database_listings:
   - title: Defintion of Peacemaking
     citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-30
@@ -309,20 +299,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-hearing-in-child-welfare/
-  - title: Peacemaking Circles in Juvenile Justice
-    citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-191
-      Investigation by Probation Officer, 5-2-192 Peacemaking Circle, 5-2-193 Peacemaking Circle—Evidence,
-      5-2-194 Peacemaking Circle— Disposition, 5-2-195 Peacemaking Circle—Post Disposition, 5-2-197 Setting
-      of Hearing.
-    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaking-circles-in-juvenile-justice/
 gaming:
   compacts:
   - state: WA

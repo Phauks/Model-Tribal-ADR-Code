@@ -1,0 +1,29 @@
+profile: content/tribes/i/ione-band-of-miwok-indians-of-california.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20180306GamingOrdAmend.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 2018-03-06
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#ione-band-of-miwok-indians-ordinance-2018-03-06#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20230322Ione2ndA_RAmendGamingOrd.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2023-03-22 has no text layer on most pages (27 of 29 pages have no text
+    layer and the readable pages have no candidate section; no OCR available).
+next_steps: Read the scanned amendment listed 2023-03-22 (https://www.nigc.gov/wp-content/uploads/2025/03/20230322Ione2ndA_RAmendGamingOrd.pdf)
+  with OCR or by hand.

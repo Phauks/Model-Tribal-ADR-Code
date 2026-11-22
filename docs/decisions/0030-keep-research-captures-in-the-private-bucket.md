@@ -1,4 +1,4 @@
-# 0027. Keep research captures in the private bucket, with an index in git
+# 0030. Keep research captures in the private bucket, with an index in git
 
 - **Status:** Accepted
 - **Date:** 2026-11-22

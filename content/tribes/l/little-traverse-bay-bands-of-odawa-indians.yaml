@@ -354,6 +354,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
     source: little-traverse-civil-rules-2015
     confidence: medium
+    verification: read-in-full
     as_of: 2015-08
   - kind: other
     title: 7.412 PATRON DISPUTE RESOLUTION
@@ -361,21 +362,12 @@ dispute_resolution:
     link: https://narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
+    verification: title-only
     as_of: '2024'
     locator: Table of Contents, under 'Chapter 4. Gaming Regulatory Statute'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: March 2024); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
-  - kind: traditional-dispute-resolution
-    title: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
-    citation: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Little Traverse Bay Bands of Odawa Indians, Michigan
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and procedures for transferring a case to Mnodaawin.'
   - kind: arbitration
     title: LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO AUTHORIZE
       ARBITRATION WITH DROPBOX
@@ -384,6 +376,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
+    verification: title-only
     as_of: '2024'
     locator: Table of Contents, under '18.400(6.23)(a)'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -494,17 +487,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
-  - title: Delayed/Deferred Sentencing – Opportunity for Rehabilitation
-    citation: WOTCL 9.106(B)(5) - Delayed/Deferred Sentencing
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Deferred sentencing; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/delayed-deferred-sentencing-opportunity-for-rehabilitation/
   - title: Family Preservation Court (Therapeutic/Problem-Solving Court)
     citation: WOTCL 5.119 - Family Preservation Court
     link: https://ltbbodawa-nsn.gov/tribal-code/
@@ -538,17 +520,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
-  - title: Sentencing Philosophy – Rehabilitation and Healing Over Incarceration
-    citation: WOTCL 9.106(A) - Sentencing Considerations
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication/Sentencing
-    form_of_practice: Alternatives to incarceration; Healing; Rehabilitation; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-philosophy-rehabilitation-and-healing-over-incarceration/
   published_materials:
   - kind: other
     title: Peacemaking (Judicial Branch page)

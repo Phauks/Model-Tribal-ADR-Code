@@ -210,14 +210,15 @@ governing_documents:
     . Choose Ordinances.".'
 - kind: constitution
   title: Constitution
-  link: https://www.coquilletribe.org/?page_id=1326
+  link: https://www.coquilletribe.org/wp-content/uploads/2017/04/Constitution.pdf
   source: national-indian-law-library-coquille
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website . Choose Consitution and the Coquille Indian Tribe.".'
+    website . Choose Consitution and the Coquille Indian Tribe.". Link changed on 2026-11-22 from https://www.coquilletribe.org/?page_id=1326,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Coquille Indian Tribe Constitution
   link: http://52.27.76.203/wp-content/uploads/2017/04/Constitution.pdf
@@ -296,6 +297,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Coquille-655-Peacegiving.pdf
     source: coquille-ordinance-655-peacegiving
     confidence: medium
+    verification: read-in-full
     as_of: '2005-04-23'
   - kind: mediation
     title: 642.420 Mediation Encouraged
@@ -303,55 +305,11 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/coquillecode/index.html
     source: national-indian-law-library-code-codes-coquillecode
     confidence: medium
+    verification: title-only
     as_of: 2014-11
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: peacemaking
-    title: Ordinance Chapter 655 – Peacegiving
-    citation: Ordinance Chapter 655 – Peacegiving
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Coquille-655-Peacegiving.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Coquille Indian Tribe of Oregon
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      qualifications, referral standards, and authority to use traditional tribal practices.'
-  - kind: peacemaking
-    title: 642.420 Mediation Encouraged
-    citation: 642.420 Mediation Encouraged; 651.130 Referral to Peacegiving; Withdrawal from Peacegiving;
-      651.140 Peacegiving Commencement; 651.160 Conclusion of Peacegiving; Chapter 655 - Peacegiving Procedures;
-      ...
-    link: https://narf.org/nill/codes/coquillecode/index.html
-    source: national-indian-law-library-code-codes-coquillecode
-    confidence: medium
-    as_of: '2014'
-    locator: Table of Contents, under 'Appeals To The Tribal Court'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: November 2014); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   database_listings:
-  - title: Court Authority Over Remedial Services for Parents and Children
-    citation: CITC 641.550
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    phase: N/A
-    form_of_practice: Counseling; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-authority-over-remedial-services-for-parents-and-children/
-  - title: 'Dependency Code Purpose: Family Preservation and Rehabilitation'
-    citation: CITC 641.010(2)
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    phase: N/A
-    form_of_practice: Rehabilitation; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dependency-code-purpose-family-preservation-and-rehabilitation/
   - title: Informal Resolution in Juvenile Dependency Cases
     citation: CITC 641.400
     link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
@@ -363,39 +321,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-resolution-in-juvenile-dependency-cases/
-  - title: Mediation Encouraged in Termination of Parental Rights
-    citation: CITC 642.420
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    phase: N/A
-    form_of_practice: Alternative; Conflict resolution; Mediation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mediation-encouraged-in-termination-of-parental-rights/
-  - title: Peacegiving Process
-    citation: CITC 655 Peacegiving
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    practice_area: Tribal Justice
-    phase: N/A
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacegiving-process/
-  - title: Remedial Efforts and Rehabilitation Programs
-    citation: CITC 641.510
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    phase: N/A
-    form_of_practice: Rehabilitation; Remedial services
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/remedial-efforts-and-rehabilitation-programs/
 gaming:
   compacts:
   - state: OR

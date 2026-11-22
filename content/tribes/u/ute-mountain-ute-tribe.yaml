@@ -287,55 +287,7 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
-dispute_resolution:
-  database_listings:
-  - title: Forebearance on Eviction or Termination
-    citation: Ute Indian Tribe Law and Order Code. Title 19 Homeownership Program. 19-11-8 Forebearance
-      regarding eviction or termination.
-    link: https://ute.tribal.codes
-    practice_area: Tribal Justice
-    phase: N/A
-    form_of_practice: Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/forebearance-on-eviction-or-termination/
-  - title: Rehabilitative Treatment as Probation Instead of Sentence
-    citation: Ute Indian Tribe Law and Order Code. Title 13 Ute Indian Criminal Code.
-    link: https://ute.tribal.codes
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitative-treatment-as-probation-instead-of-sentence/
-  - title: Ute Healing and Wellness Court
-    citation: Ute Indian Tribe Law and Order Code. Title 13 Ute Indian Criminal Code. 13-4-152 Ute Healing
-      and Wellness Court.
-    link: https://ute.tribal.codes
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Healing to Wellness
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/ute-healing-and-wellness-court/
-  - title: Victim Impact Statements in Domestic Violence Cases
-    citation: Ute Indian Tribe Law and Order Code. Title 18 Domestic Violence Code. 18-6-4 Victim impact
-      statement.
-    link: https://ute.tribal.codes
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/victim-impact-statements-in-domestic-violence-cases/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: CO

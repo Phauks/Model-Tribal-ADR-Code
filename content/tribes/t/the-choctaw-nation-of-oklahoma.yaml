@@ -173,14 +173,15 @@ governing_documents:
     returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: https://www.choctawnation.com/history-culture/history/historical-documents
+  link: https://www.choctawnation.com/wp-content/uploads/2022/03/constitution.pdf
   source: national-indian-law-library-choctaw-oklahoma
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.choctawnation.com/history-culture/history/historical-documents,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: law-code
   title: The Choctaw Nation of Oklahoma
   year: '2018'
@@ -293,6 +294,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/choctaw/index.html
     source: national-indian-law-library-code-codes-choctaw
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'PART 5. CONDUCT OF HEARINGS'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -304,6 +306,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/choctaw/index.html
     source: national-indian-law-library-code-codes-choctaw
     confidence: medium
+    verification: title-only
     as_of: 2018-10
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -315,6 +318,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/choctaw/index.html
     source: national-indian-law-library-code-codes-choctaw
     confidence: medium
+    verification: title-only
     as_of: '2018'
     locator: Table of Contents, under 'Divorce and Alimony'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -326,123 +330,12 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Choctaw-Nation-Peacemaking-Act.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-09-29'
     locator: Choctaw Nation of Oklahoma
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization
       and purpose, qualifications for peacemakers, permits the use of tradition and customs, as well as
       tribal customary law, procedures, and inadmissibility of statements in peacemaking.'
-  - kind: other
-    title: Oversight, Dispute Resolution, Enforcement
-    citation: Oversight, Dispute Resolution, Enforcement
-    link: https://narf.org/nill/codes/choctaw/index.html
-    source: national-indian-law-library-code-codes-choctaw
-    confidence: medium
-    as_of: '2018'
-    locator: Table of Contents, under 'Article 11. Interstate Compact for the Placement of Children'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: arbitration
-    title: Former Judge or Arbitrator
-    citation: Former Judge or Arbitrator
-    link: https://narf.org/nill/codes/choctaw/index.html
-    source: national-indian-law-library-code-codes-choctaw
-    confidence: medium
-    as_of: '2018'
-    locator: 'Table of Contents, under ''APPENDIX “A” Rules of Professional Conduct for Attorneys Scope
-      of the Rules PREAMBLE: Responsibilities of the Lawyer DEFINITIONS'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: 'Choctaw Nation Peacemaking Act:'
-    citation: 'Choctaw Nation Peacemaking Act:'
-    link: https://narf.org/nill/codes/choctaw/index.html
-    source: national-indian-law-library-code-codes-choctaw
-    confidence: medium
-    as_of: '2018'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  database_listings:
-  - title: Alternative Dispute Resolution & Family Group Conferencing
-    citation: 'Title 45: Children and Juvenile Code'
-    link: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Alternative; Conflict resolution
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
-  - title: Alternative Problem-Solving Court Program for Child Support
-    citation: CRIMES AND PUNISHMENT
-    link: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Alternative; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
-  - title: Choctaw Nation Healing to Wellness Court Program
-    citation: Choctaw Nation Criminal Procedure Code
-    link: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
-    practice_area: Tribal Justice
-    phase: Post-adjudication; Pre-adjudication
-    form_of_practice: Healing to Wellness Court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
-  - title: Choctaw Nation Peacemaking Act
-    citation: Choctaw Nation Peacemaking Act
-    link: https://www.choctawnation.com/wp-content/uploads/2022/04/peacemaking-act.pdf
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/choctaw-nation-peacemaking-act/
-  - title: Community -Based Programs in Juvenlie Justice
-    citation: Choctaw Nation Juvenile Code
-    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: N/A
-    form_of_practice: Alternative; Diversion; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-based-programs-in-juvenlie-justice/
-  - title: Deferral of Delinquency Proceedings
-    citation: Choctaw Nation Juvenile Code
-    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Alternative; Diversion; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferral-of-delinquency-proceedings/
-  - title: Diversion for Children-In-Need-Of-Supervision
-    citation: Choctaw Nation Juvenile Code
-    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-for-children-in-need-of-supervision/
 gaming:
   compacts:
   - state: OK

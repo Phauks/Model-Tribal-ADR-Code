@@ -1,0 +1,55 @@
+profile: content/tribes/a/alturas-indian-rancheria.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/01/alturasindnranch-ordappr081999.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 1999-08-19
+    and recorded 3 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#alturas-indian-rancheria-ordinance-1999-08-19#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#alturas-indian-rancheria-ordinance-1999-08-19#i2
+  - research/reviews/2026-11-22-ordinance-disputes.json#alturas-indian-rancheria-ordinance-1999-08-19#i3
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/01/alturasindnranch-amendappr051903.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: scripts/review/ordinance_disputes.py found candidate sections (patron-dispute, dispute-other,
+    licensing-hearing) in this amendment listed 2003-05-19; reviewers read a newer document with the same
+    kinds instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/01/alturasindnranch-060408AlturasOrdinanceApproved.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this amendment listed 2008-06-04
+    and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#alturas-indian-rancheria-amendment-2008-06-04#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#alturas-indian-rancheria-amendment-2008-06-04#i2
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/01/alturasindnranch-Alturas20130610LetterAA.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2013-06-10 has no text layer on most pages (18 of 18 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 2013-06-10 (https://www.nigc.gov/wp-content/uploads/2025/01/alturasindnranch-Alturas20130610LetterAA.pdf)
+  with OCR or by hand.

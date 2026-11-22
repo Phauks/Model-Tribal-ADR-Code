@@ -1,0 +1,41 @@
+profile: content/tribes/s/sisseton-wahpeton-oyate-of-the-lake-traverse-reservation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-sisord020395.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 1995-02-03
+    and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#sisseton-wahpeton-oyate-ordinance-1995-02-03#i1
+  - research/reviews/2026-11-22-ordinance-disputes.json#sisseton-wahpeton-oyate-ordinance-1995-02-03#i2
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-sisamend102604.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2004-10-26 has no text layer on most pages (20 of 20 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-swoordamendappr120908.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2008-12-09 has no text layer on most pages (21 of 21 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 2004-10-26 (https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-sisamend102604.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2008-12-09 (https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-swoordamendappr120908.pdf)
+  with OCR or by hand.

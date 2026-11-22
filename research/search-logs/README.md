@@ -12,7 +12,7 @@ searched, searched and nothing found, or blocked at certain places.
   letter).
 - Fields: [`schemas/search-log.schema.json`](../../schemas/search-log.schema.json);
   example: [`schemas/examples/search-log.example.yaml`](../../schemas/examples/search-log.example.yaml).
-- Topics in use: `dispute-resolution`, `courts`. A new topic is a new folder; the schema does not change.
+- Topics in use: `dispute-resolution`, `courts`, `gaming-dispute-procedures` (dispute procedures in Tribal gaming ordinances, [review of Nov. 22, 2026](../reviews/2026-11-22-ordinance-disputes.md)). A new topic is a new folder; the schema does not change.
 
 ## Adding a search
 
@@ -61,3 +61,4 @@ searches by kind of place and outcome.
 | --- | --- | --- | --- |
 | `courts` | The 226 nations with a directory-listed court the Nov. 21, 2026 court review could not confirm (328 courts); `found` means at least one of the nation's listed courts was confirmed or found served by another court | [`scripts/review/court_listings_second_pass.py`](../../scripts/review/court_listings_second_pass.py) | [Court listings second pass, Nov. 22, 2026](../reviews/2026-11-22-court-listings-second-pass.md) |
 | `dispute-resolution` | The 395 federally recognized nations with no dispute resolution record on Nov. 22, 2026; the other 373 profiles without one are marked `not-searched` | [`scripts/review/coverage_search.py`](../../scripts/review/coverage_search.py) | [Dispute resolution coverage, Nov. 22, 2026](../reviews/2026-11-22-dispute-resolution-coverage.md) |
+| `gaming-dispute-procedures` | The 315 nations with a profile that have a gaming ordinance on the National Indian Gaming Commission's list; each document on the list is one search | [`scripts/review/ordinance_disputes.py`](../../scripts/review/ordinance_disputes.py) | [Dispute procedures in gaming ordinances, Nov. 22, 2026](../reviews/2026-11-22-ordinance-disputes.md) |

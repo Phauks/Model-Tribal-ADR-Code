@@ -240,24 +240,26 @@ governing_documents:
     (Open Law Library).".'
 - kind: constitution
   title: Constitution
-  link: https://www.kiowatribe.org/legislative
+  link: https://www.kiowatribe.org/sites/default/files/inline-files/Kiowa%20Tribe%20Constitution%20April%2017%202017.pdf
   source: national-indian-law-library-kiowa
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.kiowatribe.org/legislative, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution
-  link: https://law.kiowatribe.org/
+  link: https://law.kiowatribe.org/us/nsn/kiowa/council/constitution/constitution.pdf
   source: national-indian-law-library-kiowa
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website (Open Law Library).".'
+    website (Open Law Library).". Link changed on 2026-11-22 from https://law.kiowatribe.org/, a page
+    that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Kiowa Indian Tribe Constitution
   link: https://nebula.wsimg.com/01e4bef267704e46f0aa16463f02e170?AccessKeyId=B5606416FE67A0E216FA&amp;disposition=0&amp;alloworigin=1
@@ -314,51 +316,9 @@ dispute_resolution:
     link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: read-in-full
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
-  database_listings:
-  - title: Kiowa Tribe Peacemaking Act
-    citation: KIOWA TRIBE PEACEMAKING ACT
-    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
-  - title: Treatment in Lieu of Imprisonment or Fines
-    citation: KIOWA CODE. TITLE Ill CRIMINAL CODE.
-    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-imprisonment-or-fines/
-  - title: Treatment in Lieu of Jail Sentence for Intoxication
-    citation: OFFENSES
-    link: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-intoxication/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-intoxication/
-  - title: Treatment in Lieu of Jail Sentence for Possession
-    citation: OFFENSES
-    link: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-possession/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-possession/
 gaming:
   compacts:
   - state: OK

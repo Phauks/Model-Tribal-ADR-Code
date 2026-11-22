@@ -176,14 +176,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: http://www.mptnlaw.com/TribalLaws.htm
+  link: https://law.mptn-nsn.gov/globalassets/laws/mpt-constitution--bylaws-9-19-12.pdf
   source: national-indian-law-library-mashantucket-pequot
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from http://www.mptnlaw.com/TribalLaws.htm, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Mashantucket (Western) Pequot Tribal Nation Constitution and Bylaws
   link: http://www.mptnlaw.com/laws/MPT%20CONSTITUTION%20%20BYLAWS%209%2019%2012.pdf
@@ -257,7 +258,7 @@ dispute_resolution:
     note: Proceedings are confidential and participants sign non-disclosure agreements (§ 6). Filing a
       mediation request stays limitation periods for administrative or court actions (§ 10).
   provisions:
-  - kind: mediation
+  - kind: peacemaking
     title: Chapter 4 – Peacemakers
     citation: 1 M.P.T.L. ch. 4
     summary: Defines the Peacemakers' mediation jurisdiction, membership, confidentiality, referral and
@@ -265,33 +266,15 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashantucket-Title-1-Judiciary.pdf
     source: mashantucket-title-1-judiciary
     confidence: medium
+    verification: read-in-full
     as_of: '2017-06-22'
-  - kind: peacemaking
-    title: CHAPTER 4. PEACEMAKERS COUNCIL
-    citation: CHAPTER 4. PEACEMAKERS COUNCIL; 8. Procedure to File a Mediation; 9. Assignment of Peacemakers;
-      10. Peacemaking Mediation Process; 11. Success of Peacemaking Mediation Process; 12. Failure of
-      the Peacemakers Mediation Process; 16. Powers of Peacemakers; 17. Protection of Peacemakers
-    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    as_of: 2015-08
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: 7. Conciliation Period
-    citation: 7. Conciliation Period
-    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    as_of: 2015-08
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: arbitration
     title: TITLE 10. ARBITRATION
     citation: TITLE 10. ARBITRATION
     link: https://narf.org/nill/codes/mashantucket_pequot/index.html
     source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -305,6 +288,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
     source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
+    verification: title-only
     as_of: 2015-08
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -314,6 +298,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
     source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
+    verification: title-only
     as_of: 2015-08
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -323,6 +308,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/mashantucket_pequot/index.html
     source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents, under 'TITLE 8. EMPLOYMENT'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -335,42 +321,10 @@ dispute_resolution:
     link: https://narf.org/nill/codes/mashantucket_pequot/index.html
     source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents, under 'TITLE 33. MASHANTUCKET PEQUOT TRIBAL AND NATIVE AMERICAN PREFERENCE
       LAW'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: Title 1 – Judiciary, Chapter 4 – Peacemakers Council
-    citation: Title 1 – Judiciary, Chapter 4 – Peacemakers Council
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashantucket-Title-1-Judiciary.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Mashantucket Pequot Indian Tribe
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      referral standards, qualifications, and procedures.'
-  - kind: peacemaking
-    title: PEACEMAKERS COUNCIL
-    citation: PEACEMAKERS COUNCIL; Procedure to File a Mediation; Assignment of Peacemakers; Peacemaking
-      Mediation Process; Success of Peacemaking Mediation Process; ...
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    as_of: '2015'
-    locator: Table of Contents, under 'TITLE 1. JUDICIARY'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: mediation
-    title: Establishment of Mediation Panel
-    citation: Establishment of Mediation Panel
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    as_of: '2015'
-    locator: Table of Contents, under 'TITLE 31. MASHANTUCKET EMPLOYMENT RIGHTS LAW'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
@@ -380,6 +334,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/mashantucket_pequot/index.html
     source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents, under 'TITLE 32. MASHANTUCKET PEQUOT LABOR RELATIONS LAW'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -408,50 +363,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/confidentiality-of-the-pti-program/
-  - title: Continuing Jurisdiction over Supervision Factors
-    citation: 5 M.P.T.L. ch. 3 § 7
-    link: https://law.mptn-nsn.gov/tribal-laws/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/continuing-jurisdiction-over-supervision-factors/
-  - title: Court Considers Rehabilitation Services for Children
-    citation: 5 M.P.T.L. ch. 3 § 5
-    link: https://law.mptn-nsn.gov/tribal-laws/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-considers-rehabilitation-services-for-children/
-  - title: Court Determined Services and Treatment for a Child
-    citation: 5 M.P.T.L. ch. 3 § 6
-    link: https://law.mptn-nsn.gov/tribal-laws/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-determined-services-and-treatment-for-a-child/
-  - title: Least Restricive Setting for Child Placement
-    citation: 5 M.P.T.L. ch. 3 § 8
-    link: https://law.mptn-nsn.gov/tribal-laws/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/least-restricive-setting-for-child-placement/
   - title: Neetskehheau-Pomushaonk Program (Healing Journey Program)
     citation: 2 M.P.T.L. ch. 1 § 5 and 2 M.P.T.L. ch. 6 § 3
     link: https://law.mptn-nsn.gov/tribal-laws/

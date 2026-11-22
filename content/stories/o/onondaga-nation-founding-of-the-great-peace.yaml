@@ -11,6 +11,19 @@ excerpts:
     The Creator decided to send a messenger to the people so that the five nations could live in peace.
   words: 36
   sha256: 475ab4691c3dd3379d2dea1366fb5421f57163bca51c63c9ffa494e6149c57e8
+- telling: haudenosaunee-confederacy-page
+  locator: paragraph beginning "Asking the Clan Mothers"
+  text: He directed the Chiefs of the council to sit beneath the shade of the tree and watch the council fire of
+    the confederacy of the five nations. He told them that all issues concerning the confederacy would be discussed
+    and deliberated under this tree.
+  words: 44
+  sha256: 0cb6f6c868d67a7375b204ca95095a37d492b564ec79a86c8681d50458d5639e
+- telling: haudenosaunee-confederacy-page
+  locator: paragraph beginning "Above the tree an eagle"
+  text: Beneath the tree the Peacemaker asked that all men throw in their weapons to bury any greed, hatred and
+    jealousy.
+  words: 20
+  sha256: 3882f4c3b286a883aa8f2da1fc8d30f63e7090606f21ff61c1882bf3a7b4d327
 methods:
 - peacemaking
 - customary-dispute-resolution
@@ -31,9 +44,25 @@ tellings:
     - print
     - ebook
     - offline-pack
-  access: &id001
+  access:
     level: nation-review-first
-access: *id001
+- id: haudenosaunee-confederacy-page
+  source: haudenosaunee-confederacy-creation-page
+  published_by: Haudenosaunee Confederacy
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: The Confederacy's own site, which speaks for all six nations.
+access:
+  level: nation-review-first
 anthology:
   candidate: true
   reason: A complete account on the Nation's own site, central to any collection on peacemaking (project analysis).
@@ -52,5 +81,7 @@ sensitivity:
 review_status: drafted-from-public-sources
 found_in:
 - 2026-11-21-peacemaking-stories
-notes: The other Haudenosaunee nations tell this history too; only the Onondaga Nation's telling was read. Look
-  for the other nations' own tellings before treating this one as the Confederacy's.
+- 2026-11-21-peacemaking-traditional-stories
+notes: The Haudenosaunee Confederacy's own site tells the founding too and is cited as a second telling. The other
+  Haudenosaunee nations tell this history as well; look for their own tellings before treating these as the only
+  ones.

@@ -101,11 +101,7 @@ shown on the sign-in page instead of being emailed.
   yet given, are left out. Until nation records are merged into
   `content/tribes/`, the nations section shows the fictitious example from
   `schemas/examples/tribe.example.yaml`, marked as an example.
-- **Map.** `/nations/map` shows nations by state and the Bureau of Indian
-  Affairs regions. `src/lib/map-geometry.ts` projects the shapes with d3-geo
-  when the site is built, through a small Vite plugin in `vite.config.ts`
-  (module `virtual:map-geometry`), so the browser gets plain SVG. The region
-  outlines are in `geography/`; see [geography/README.md](geography/README.md).
+- **Map.** `/nations/map` has one map with buttons that switch between views: nations by state, and the Bureau of Indian Affairs regions. Alaska, Hawaiʻi and the territories are drawn in framed boxes below the other states, each with its own scale bar. `src/lib/map-geometry.ts` projects the shapes with d3-geo when the site is built. A small Vite plugin in `vite.config.ts` serves them as the module `virtual:map-geometry`, so the browser gets plain SVG. The region outlines are in `geography/`; see [geography/README.md](geography/README.md).
 - **Nation pages.** Facts carry no citation marks; their sources are listed
   together at the end of the page (`src/lib/server/source-uses.ts`).
   Addresses link to Google Maps, phone numbers to the dialer and email

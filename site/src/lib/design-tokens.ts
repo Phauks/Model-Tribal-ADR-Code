@@ -4,7 +4,10 @@
  * comes from that one file (site/DESIGN.md, section 7).
  *
  * Naming: a token at color.light.paper becomes --color-paper; a token at
- * font.size.body becomes --font-size-body. Light colors apply by default,
+ * font.size.body becomes --font-size-body. Font sizes are multiplied by
+ * --text-scale, which the reader's text size setting changes, so that
+ * setting makes text larger without making boxes, spaces or controls larger
+ * (site/DESIGN.md, section 6, "Settings"). Light colors apply by default,
  * dark colors apply when the device asks for dark and the reader has not
  * picked light, or when the reader picks dark (site/DESIGN.md, section 8).
  *
@@ -50,7 +53,9 @@ function collect(group: TokenGroup, path: string[]): [string, string][] {
 	for (const [name, child] of childEntries(group)) {
 		const childPath = [...path, name];
 		if (isToken(child)) {
-			declarations.push([`--${childPath.join('-')}`, formatValue(child.$value)]);
+			const value = formatValue(child.$value);
+			const isFontSize = childPath[0] === 'font' && childPath[1] === 'size';
+			declarations.push([`--${childPath.join('-')}`, isFontSize ? `calc(${value} * var(--text-scale))` : value]);
 		} else {
 			declarations.push(...collect(child, childPath));
 		}
@@ -107,7 +112,7 @@ function colorDeclarations(tokens: TokenGroup, theme: ThemeName): [string, strin
 export function designTokensToCss(tokens: TokenGroup): string {
 	checkThemesMatch(tokens);
 
-	const otherGroups: [string, string][] = [];
+	const otherGroups: [string, string][] = [['--text-scale', '1']];
 	for (const [name, group] of childEntries(tokens)) {
 		if (name !== 'color') {
 			otherGroups.push(...collect(group, [name]));

@@ -305,6 +305,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/KTTT-Ch-4-Peacemaking.pdf
     source: kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
   - kind: mediation
     title: Section 8.11. Child Protective Board Mediation Panel Hearings
@@ -312,6 +313,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/kickapoo_texas/index.html
     source: national-indian-law-library-code-codes-kickapoo-texas
     confidence: medium
+    verification: title-only
     as_of: '2019'
     locator: Table of Contents, under 'CHAPTER 8. YOUTH IN NEED OF CARE ACTION'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -325,6 +327,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/kickapoo_texas/index.html
     source: national-indian-law-library-code-codes-kickapoo-texas
     confidence: medium
+    verification: title-only
     as_of: 2019-03
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -334,52 +337,21 @@ dispute_resolution:
     link: https://narf.org/nill/codes/kickapoo_texas/index.html
     source: national-indian-law-library-code-codes-kickapoo-texas
     confidence: medium
+    verification: title-only
     as_of: '2019'
     locator: Table of Contents, under 'GAMING ORDINANCE:'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: March 2019); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
   - kind: peacemaking
-    title: 'Chapter 1, Sec. 1.7: Peacemaker Program and Chapter 4 – The Peacemaker System'
-    citation: 'Chapter 1, Sec. 1.7: Peacemaker Program and Chapter 4 – The Peacemaker System'
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/KTTT-Ch-4-Peacemaking.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Kickapoo Traditional Tribe of Texas
-    note: 'Native American Rights Fund description (provision itself not read): Establishment and jurisdiction
-      (including attorney ban), qualifications and appointment, procedures and transfers, protective orders,
-      complaint procedure.'
-  - kind: peacemaking
     title: Peacemaker Program
     citation: Peacemaker Program
     link: https://narf.org/nill/codes/kickapoo_texas/index.html
     source: national-indian-law-library-code-codes-kickapoo-texas
     confidence: medium
+    verification: title-only
     as_of: '2019'
     locator: 'Table of Contents, under ''CHAPTER 1. ESTABLISHING THE COURT: JUDGES; COURT PERSONNEL'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: March 2019); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: CHAPTER 4. THE PEACEMAKER SYSTEM
-    citation: CHAPTER 4. THE PEACEMAKER SYSTEM
-    link: https://narf.org/nill/codes/kickapoo_texas/index.html
-    source: national-indian-law-library-code-codes-kickapoo-texas
-    confidence: medium
-    as_of: '2019'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: March 2019); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: arbitration
-    title: 'CHAPTER 26. ARBITRATION PRDINACNE:'
-    citation: 'CHAPTER 26. ARBITRATION PRDINACNE:'
-    link: https://narf.org/nill/codes/kickapoo_texas/index.html
-    source: national-indian-law-library-code-codes-kickapoo-texas
-    confidence: medium
-    as_of: '2019'
-    locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: March 2019); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
@@ -395,28 +367,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/agreed-disposition-as-court-order-youth-cases/
-  - title: Alternative Sentencing (Curfew/Loitering Violations)
-    citation: KTTT Tribal Code § 14.6(F)
-    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative to incarceration
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-sentencing-curfew-loitering-violations/
-  - title: Child Protective Board Mediation Panel Hearings
-    citation: KTTT Tribal Code § 8.11
-    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Alternative to formal hearing; Pre-adjudication
-    form_of_practice: Informal hearing; Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/child-protective-board-mediation-panel-hearings/
   - title: Child Protective Board Mediation (Youth in Need of Care)
     citation: KTTT Tribal Code § 8.5(B)(4)
     link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
@@ -461,17 +411,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/criminal-probation-condition-peacemaker-counseling/
-  - title: Dispositional Alternative – Substance Abuse Treatment Program
-    citation: KTTT Tribal Code § 8.9(I)(7)
-    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication (disposition)
-    form_of_practice: Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-alternative-substance-abuse-treatment-program/
   - title: Establishment of Peacemaker System
     citation: KTTT Tribal Code §§ 4.1-4.2
     link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
@@ -527,17 +466,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/truancy-peacemaker-referral-requirement/
-  - title: Youth Court Authority – Diversion and Rehabilitation Programs
-    citation: KTTT Tribal Code § 7.6(F)(1)
-    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: All phases
-    form_of_practice: Diversion; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/youth-court-authority-diversion-and-rehabilitation-programs/
 gaming:
   ordinances:
   - approved: '1994-04-29'

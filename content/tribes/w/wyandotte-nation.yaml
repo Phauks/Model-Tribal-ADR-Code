@@ -235,14 +235,15 @@ governing_documents:
     . Election Ordinance, Enrollment Ordinace and Ethics Act.".'
 - kind: constitution
   title: Constitution and Corporate Charter
-  link: https://wyandotte-nation.org/government/our-government/
+  link: https://wyandotte-nation.org/wp-content/uploads/2021/12/Constitution.pdf
   source: national-indian-law-library-wyandotte
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website . Constitution and Corporate Charter.".'
+    website . Constitution and Corporate Charter.". Link changed on 2026-11-22 from https://wyandotte-nation.org/government/our-government/,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Wyandotte Tribe of Oklahoma Constitution
   source: tribal-law-policy-institute-justice-systems
@@ -295,17 +296,6 @@ justice_institutions:
   locator: Oklahoma section, entry 'Wyandotte Nation'
 dispute_resolution:
   database_listings:
-  - title: Child Abuse and Child Neglect Diversion Program
-    citation: Wyandotte Nation Title 9, Section 511
-    link: https://wyandotte-nation.org/government/courts/
-    practice_area: Tribal Child Welfare/Family; Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-program-3/
   - title: Deferring Prosecution Requirements for Elder Abuse Cases
     citation: Wyandotte Nation Title 27, Section 403
     link: https://wyandotte-nation.org/government/courts/
@@ -317,50 +307,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferring-prosecution-requirements-for-elder-abuse-cases/
-  - title: Rehabilitative Measures for Controlled Dangerous Substances
-    citation: Wyandotte Nation Title 10, Section 501
-    link: https://wyandotte-nation.org/government/courts/
-    practice_area: Tribal Justice; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitative-measures-for-controlled-dangerous-substances/
-  - title: Sentencing Juvenile Offenders for Controlled Dangrous Substances
-    citation: Wyandotte Nation Title 10, Section 505
-    link: https://wyandotte-nation.org/government/courts/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-juvenile-offenders-for-controlled-dangrous-substances/
-  - title: Treatment Plans for Juvenile Cases
-    citation: Wyandotte Nation Title 9, Section 403
-    link: https://wyandotte-nation.org/government/courts/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-plans-for-juvenile-cases/
-  - title: Violation of a Protective Order by a Juvenile
-    citation: Wyandotte Nation Title 7, Section 208
-    link: https://wyandotte-nation.org/government/courts/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/violation-of-a-protective-order-by-a-juvenile/
 gaming:
   compacts:
   - state: KS

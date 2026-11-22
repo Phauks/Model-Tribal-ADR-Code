@@ -187,14 +187,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://hannahville.net/tribal-laws/
+  link: https://hannahville.net/wp-content/uploads/2023/02/Constitution-Bylaws-2020-amendments.pdf
   source: national-indian-law-library-hannahville
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://hannahville.net/tribal-laws/, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: law-code
   title: Hannahville Indian Community Tribal Laws and Regulations
   link: http://www.hannahville.net/services/judicial-services/
@@ -245,40 +246,6 @@ justice_institutions:
   locator: Michigan section, entry 'Hannahville Indian Community'
 dispute_resolution:
   database_listings:
-  - title: Alternative Disposition in Proposed Case Plan for Child Welfare
-    citation: Hannahville Legal Code, Title II – Children/Juvenile, Chapter 2 – Child Protection Code,
-      2.1903 Proposed Case Plan
-    link: https://hannahville.net/wp-content/uploads/2023/02/Title-2-Chapter-2-Childrens-Code-2016.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Alternative; Informal hearing; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-disposition-in-proposed-case-plan-for-child-welfare/
-  - title: Alternative Sentencing for First Aggravated Domestic Assault/BatteryOffence
-    citation: Hannahville Legal Code, Title 1 Criminal Law and Procedure Code, 1.2004 Domestic violence
-    link: https://hannahville.net/wp-content/uploads/2023/06/Title-1-Criminal-Law-and-Procedure-Code-2023.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-first-aggravated-domestic-assault-batteryoffence/
-  - title: Alternative Sentencing for First Domestic Violence Offence
-    citation: Hannahville Legal Code, Title 1 Criminal Law and Procedure Code, 1.2004 Domestic violence
-    link: https://hannahville.net/wp-content/uploads/2023/06/Title-1-Criminal-Law-and-Procedure-Code-2023.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-first-domestic-violence-offence/
   - title: 'Child Welfare Committee Duties re: Alternatives to Court'
     citation: Hannahville Legal Code, Title II – Children/Juvenile, Chapter 2 – Child Protection Code,
       2.603 Duties
@@ -303,61 +270,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/child-welfare-committee-informal-adjustment-conference/
-  - title: Community Based Alternatives in Child Protection Purposes
-    citation: Hannahville Legal Code, Title II – Children/Juvenile, Chapter 2 – Child Protection Code,
-      2.102 Purpose
-    link: https://hannahville.net/wp-content/uploads/2023/02/Title-2-Chapter-2-Childrens-Code-2016.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: N/A
-    form_of_practice: Alternative; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-based-alternatives-in-child-protection-purposes/
-  - title: Counseling for First Offense of Youth Tobacco Use
-    citation: YOUTH TOBACCO CODE 2.1.106 Penalties
-    link: https://ncorj.org/tribal-law/counseling-for-first-offense-of-youth-tobacco-use/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/counseling-for-first-offense-of-youth-tobacco-use/
-  - title: 'Dispositional Alternatives for Juveniles Re: Domestic Violence PPOs Refusal to Comply Penalty'
-    citation: Hannahville Legal Code Title 1 Criminal Law and Procedure Code
-    link: https://hannahville.net/wp-content/uploads/2023/06/Title-1-Criminal-Law-and-Procedure-Code-2023.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-juveniles-re-domestic-violence-ppos-refusal-to-comply-penalty/
-  - title: 'Dispositional Alternatives for Juveniles Re: Personal Protection Orders'
-    citation: Hannahville Legal Code Title 1 Criminal Law and Procedure Code
-    link: https://hannahville.net/wp-content/uploads/2023/06/Title-1-Criminal-Law-and-Procedure-Code-2023.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-juveniles-re-personal-protection-orders/
-  - title: 'Dispositional Alternatives for Juveniles Re: Stalking PPOs Refusal to Comply Penalty'
-    citation: Hannahville Legal Code Title 1 Criminal Law and Procedure Code
-    link: https://hannahville.net/wp-content/uploads/2023/06/Title-1-Criminal-Law-and-Procedure-Code-2023.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-juveniles-re-stalking-ppos-refusal-to-comply-penalty/
   - title: Diversion for Truancy
     citation: SCHOOL ATTENDANCE ORDINANCE, 3.1.112 Diversion
     link: https://ncorj.org/tribal-law/diversion-for-truancy/
@@ -369,41 +281,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-for-truancy/
-  - title: Informal Resolutions for Deliquency
-    citation: Hannahville Legal Code, Title II – Children/Juvenile, Chapter 2 – Child Protection Code,
-      Chapter 2.30 Juvenile Court Delinquency and Status Offenses, 2.3002 Informal Resolution
-    link: https://hannahville.net/wp-content/uploads/2023/02/Title-2-Chapter-2-Childrens-Code-2016.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Alternative; Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-resolutions-for-deliquency/
-  - title: Treament for Pregnant Women Substance Use
-    citation: Hannahville Legal Code, Title II – Children/Juvenile, Chapter 2 – Child Protection Code,
-      Chapter 2.7 Protective Services Workers, 2.701 Power and Duties
-    link: https://hannahville.net/wp-content/uploads/2023/02/Title-2-Chapter-2-Childrens-Code-2016.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treament-for-pregnant-women-substance-use/
-  - title: Treatment or Program for Custody Release
-    citation: 'Hannahville Legal Code, Title 1 Criminal Law and Procedure Code, 1.904 Bail: when set,
-      conditions, maximum amount'
-    link: https://hannahville.net/wp-content/uploads/2023/06/Title-1-Criminal-Law-and-Procedure-Code-2023.pdf
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Alternative; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-or-program-for-custody-release/
 gaming:
   compacts:
   - state: MI

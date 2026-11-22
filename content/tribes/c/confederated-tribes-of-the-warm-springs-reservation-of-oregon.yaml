@@ -199,14 +199,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://warmsprings-nsn.gov/treaty-documents/
+  link: https://warmsprings-nsn.gov/wp-content/uploads/2016/03/const.pdf
   source: national-indian-law-library-confederated-warm-springs
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribes''
-    website .".'
+    website .". Link changed on 2026-11-22 from https://warmsprings-nsn.gov/treaty-documents/, a page
+    that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Confederated Tribes of the Warm Springs Reservation of Oregon - Constitution
   link: https://narf.org/nill/constitutions/confederated_warm_springs/index.html
@@ -291,39 +292,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-resolution-of-supervision-cases/
-  - title: Juvenile Court Rehabilitation Goal and Least Restrictive Alternative
-    citation: WSTC 360.105
-    link: https://warmsprings-nsn.gov/?s=tribal+code
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: N/A
-    form_of_practice: Alternative; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-court-rehabilitation-goal-and-least-restrictive-alternative/
-  - title: Victim Conference with Prosecutor and Victim Advocate
-    citation: WSTC 376.210
-    link: https://warmsprings-nsn.gov/?s=tribal+code
-    practice_area: Tribal Justice
-    phase: N/A
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/victim-conference-with-prosecutor-and-victim-advocate/
-  - title: Victim Participation Rights in Criminal Proceedings
-    citation: WSTC 376.200-376.225
-    link: https://warmsprings-nsn.gov/?s=tribal+code
-    practice_area: Tribal Justice
-    phase: N/A
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/victim-participation-rights-in-criminal-proceedings/
 gaming:
   compacts:
   - state: OR

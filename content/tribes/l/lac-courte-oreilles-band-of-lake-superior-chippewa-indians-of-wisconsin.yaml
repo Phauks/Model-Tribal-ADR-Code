@@ -202,14 +202,15 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Constitution
-  link: https://www.narf.org/nill/triballaw/us/nsn/lco/council/constitution/
+  link: https://law.lco-nsn.gov/us/nsn/lco/council/constitution/index.full.html
   source: national-indian-law-library-lac-courte-oreilles-chippewa
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
-    .".'
+    .". Link changed on 2026-11-22 from https://www.narf.org/nill/triballaw/us/nsn/lco/council/constitution/,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Lac Courte Oreilles Lake Superior Chippewa Indians Constitution
   source: tribal-law-policy-institute-justice-systems
@@ -271,17 +272,6 @@ dispute_resolution:
     locator: TCT.1.3.030(b)-(e)
     note: 'Context: Sovereign immunity code; waiver may be granted in employment agreements.'
   database_listings:
-  - title: AODA Dispositional Hearing – Treatment and Culturally Appropriate Services
-    citation: DMR.1.10.090
-    link: https://law.lco-nsn.gov
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/aoda-dispositional-hearing-treatment-and-culturally-appropriate-services/
   - title: Informal Disposition and Peacemaking
     citation: DMR.1.3.120
     link: https://law.lco-nsn.gov
@@ -293,17 +283,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-disposition-and-peacemaking/
-  - title: Truancy Disposition – Counseling and Community Service
-    citation: GNC.5.3.020
-    link: https://law.lco-nsn.gov
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/truancy-disposition-counseling-and-community-service/
 gaming:
   compacts:
   - state: WI

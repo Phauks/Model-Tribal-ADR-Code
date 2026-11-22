@@ -348,6 +348,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
     source: mississippi-choctaw-title-24-peacemaker-code
     confidence: high
+    verification: read-in-full
     as_of: 2024-02
     note: Confidence high because the same file is published on the nation's own website (upload date
       used as as_of).
@@ -357,28 +358,19 @@ dispute_resolution:
     link: https://narf.org/nill/codes/mississippichoctaw/index.html
     source: national-indian-law-library-code-codes-mississippichoctaw
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents, under 'CHAPTER 3. CLASS III (CASINO-TYPE) GAMING'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
   - kind: peacemaking
-    title: Title XXIV – Choctaw Peacemaker Code, Chapter 1
-    citation: Title XXIV – Choctaw Peacemaker Code, Chapter 1
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Mississippi Band of Choctaw Indians, Mississippi
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      authority to use tribal traditions and customary law, qualifications, civil process authority, procedures,
-      and authority of Tribal Court to limit.'
-  - kind: peacemaking
     title: § 3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
     citation: § 3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
     link: https://narf.org/nill/codes/mississippichoctaw/index.html
     source: national-indian-law-library-code-codes-mississippichoctaw
     confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents, under 'CHAPTER 10. CRIMES INVOLVING DOMESTIC VIOLENCE'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
@@ -390,67 +382,13 @@ dispute_resolution:
     link: https://narf.org/nill/codes/mississippichoctaw/index.html
     source: national-indian-law-library-code-codes-mississippichoctaw
     confidence: medium
-    as_of: '2015'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: § 11-4-14 Informal Hearing or Transfer to Peacemaker Court
-    citation: § 11-4-14 Informal Hearing or Transfer to Peacemaker Court
-    link: https://narf.org/nill/codes/mississippichoctaw/index.html
-    source: national-indian-law-library-code-codes-mississippichoctaw
-    confidence: medium
-    as_of: '2015'
-    locator: Table of Contents, under 'CHAPTER 4. MINOR IN NEED OF CARE PROCEEDINGS'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: Title XXIV - Choctaw Peacemaker Code
-    citation: Title XXIV - Choctaw Peacemaker Code
-    link: https://narf.org/nill/codes/mississippichoctaw/index.html
-    source: national-indian-law-library-code-codes-mississippichoctaw
-    confidence: medium
-    as_of: '2015'
-    locator: Table of Contents, under 'CHAPTER 1. DOMESTIC ABUSE'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: CHAPTER 1. CHOCTAW PEACEMAKER CODE
-    citation: CHAPTER 1. CHOCTAW PEACEMAKER CODE
-    link: https://narf.org/nill/codes/mississippichoctaw/index.html
-    source: national-indian-law-library-code-codes-mississippichoctaw
-    confidence: medium
+    verification: title-only
     as_of: '2015'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
   database_listings:
-  - title: Alternative Response Procedure for Minor in Need of Care Proceedings
-    citation: Choctaw Rules Title XI, §11-4-2 AND §11-4-3
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-response-procedure-for-minor-in-need-of-care-proceedings/
-  - title: Conditions for Release and Probation for Crimes Involving Domestic Violence
-    citation: Choctaw Rules Title III, §3-10-3 AND §3-10-12 AND §3-10-18
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/conditions-for-release-and-probation-for-crimes-involving-domestic-violence/
   - title: Deferring Criminal Prosecution in a Vlnerable Adult Abuse Case
     citation: Choctaw Rules Title XXXI, §31-1-16
     link: https://www.choctaw.org/choctaw-tribal-code/
@@ -473,17 +411,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispostional-options-for-youth-court/
-  - title: Electronic Hearing and Disposition Alternatives for Minor in Need or Care Proceedings
-    citation: Choctaw Rules Title XI, §11-4-13
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/electronic-hearing-and-disposition-alternatives-for-minor-in-need-or-care-proceedings/
   - title: Informal Conferences for Juvenile Cases
     citation: Choctaw Rules Title XI, §11-3-2 AND §11-3-3
     link: https://www.choctaw.org/choctaw-tribal-code/
@@ -495,72 +422,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conferences-for-juvenile-cases/
-  - title: Program for Batterers for Juvenile Offenders
-    citation: Choctaw Rules Title III, §3-10-21
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/program-for-batterers-for-juvenile-offenders/
-  - title: Purpose and Authority of Youth Court
-    citation: Choctaw Rules Title XI, §11-1-1 AND §11-1-6
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-authority-of-youth-court/
-  - title: Purpose of Codes for Crimes Involving Domestic Violence
-    citation: Choctaw Rules Title III, §3-10-1 AND §3-10-20
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-codes-for-crimes-involving-domestic-violence/
-  - title: Referral of Domestic Violence Cases to Peacemaker Court
-    citation: Choctaw Rules Title III, §3-10-15
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative court; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/referral-of-domestic-violence-cases-to-peacemaker-court/
-  - title: Requiring Defendant to Pay Abused Person Monetary Compesation for Treatment
-    citation: Choctaw Rules Title XXIII, §23-1-7
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative practice, Restorative process
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/requiring-defendant-to-pay-abused-person-monetary-compesation-for-treatment/
-  - title: Substance Abuse and Rehabilitation Treatment for Repeat Inoxication/Impairment Offenses
-    citation: Choctaw Rules Title III, §3‐6-21
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/substance-abuse-and-rehabilitation-treatment-for-repeat-inoxication-impairment-offenses/
   - title: Transfer to Peace Maker Court for Alternative Disposition
     citation: Choctaw Rules Title II, §2‐1-11
     link: https://www.choctaw.org/choctaw-tribal-code/
@@ -583,17 +444,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/transfering-a-juvenine-to-peacemaker-court/
-  - title: Treatment Program for Parole
-    citation: Choctaw Rules Title II, §2‐1-22
-    link: https://www.choctaw.org/choctaw-tribal-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-program-for-parole/
 gaming:
   compacts:
   - state: MS
