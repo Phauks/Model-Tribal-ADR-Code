@@ -32,7 +32,7 @@ limits: "About forty fetches for each of three regions, then three books. Nation
 ## What this session added
 
 - Five story records. Two are Lummi Nation stories written by Jewell Praying Wolf James for the Lummi Culture Protection Committee: "Salmon Woman and Her Children" and its sequel "Bear and the Steelhead." The others are a Yurok account of settling quarrels by arbitration, from Lucy Thompson's 1916 book, and one sentence of the Ute Mountain Ute Tribe's "The Sky People." The fifth is the Seneca tale "The Race of the Turtle and the Beaver" as Arthur C. Parker wrote it down.
-- The Seneca tale's exact words are held privately, because Parker reports that Iroquois tales are kept for winter. The lead author is asked how the website should treat winter stories.
+- Parker reports that Iroquois tales are kept for winter. Asked how the website should treat such stories, the lead author chose on Nov. 22, 2026 to show them year-round, with the rule shown beside them, so the Seneca tale is quoted.
 - A source record for the Karuk Tribe's statement of its winter telling rule.
 - Section 10 of [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
 
