@@ -2,7 +2,13 @@ import geometry from 'virtual:map-geometry';
 import { nations } from '#lib/server/content.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { displayName, regionAnchor, stateName } from '#lib/nation-labels.ts';
-import type { NationsMapCounts } from '#lib/nations-map-drawing.ts';
+import {
+	landAreaAnchor,
+	landAreaGroups,
+	landAreaKindLabels,
+	type LandAreaCount,
+	type NationsMapCounts
+} from '#lib/nations-map-drawing.ts';
 
 /** A nation as a map table lists it. */
 interface ListedNation {
@@ -107,6 +113,8 @@ export function nationsMapPage() {
 		}))
 		.sort((first, second) => first.name.localeCompare(second.name, 'en'));
 
+	addLandAreaSources(records, sources);
+
 	const counts: NationsMapCounts = { states, regions };
 
 	return {
@@ -114,6 +122,67 @@ export function nationsMapPage() {
 		countClasses: countClasses.map(({ key, label }) => ({ key, label })),
 		stateRows,
 		regionRows,
+		landAreaGroups: landAreaGroups.map(({ key, label }) => ({ key, label })),
 		sources: sources.list
 	};
 }
+
+/** Nations linked to each Census area, from each record's cited `census_areas` facts (2020 codes, the vintage the map draws). */
+function nationsByLandArea(records: ReturnType<typeof nations>): Map<string, ListedNation[]> {
+	const byArea = new Map<string, ListedNation[]>();
+	for (const record of records) {
+		for (const area of record.census_areas ?? []) {
+			if (area.vintage && area.vintage !== '2020') continue;
+			const list = byArea.get(area.geographic_identifier) ?? [];
+			if (!list.some((nation) => nation.id === record.id)) list.push({ id: record.id, name: displayName(record.names.official) });
+			byArea.set(area.geographic_identifier, list);
+		}
+	}
+	return byArea;
+}
+
+/** The sources of the "Land areas" view, listed with the page's other sources. */
+function addLandAreaSources(records: ReturnType<typeof nations>, sources: SourceUses): void {
+	for (const record of records) {
+		for (const area of record.census_areas ?? []) {
+			if (!area.source || (area.vintage && area.vintage !== '2020')) continue;
+			sources.add(area.source, {
+				section: 'Which nations each land area is linked to',
+				text: 'the Census areas named in each nation’s entry'
+			});
+		}
+	}
+	sources.add(geometry.landAreaSource.source, {
+		section: 'Land area outlines',
+		text: 'reservations, trust lands and statistical areas, simplified for a national map',
+		where: `retrieved ${geometry.landAreaSource.retrieved}`
+	});
+}
+
+/**
+ * The "Land areas" view's table rows and the counts its drawing is shaded
+ * by, served from /nations/map/land-areas.json when a reader opens the view.
+ */
+export function landAreasView() {
+	const byArea = nationsByLandArea(nations());
+	const areas = geometry.landAreas.map((shape) => ({
+		identifier: shape.identifier,
+		name: shape.name,
+		kind: shape.kind,
+		anchor: landAreaAnchor(shape.identifier),
+		nations: (byArea.get(shape.identifier) ?? []).sort(byName)
+	}));
+	const counts: LandAreaCount[] = areas.map(({ identifier, name, kind, anchor, nations: linked }) => ({
+		identifier,
+		name,
+		kind,
+		anchor,
+		count: linked.length
+	}));
+	const rows = areas
+		.map((area) => ({ ...area, kindLabel: landAreaKindLabels[area.kind] }))
+		.sort((first, second) => first.name.localeCompare(second.name, 'en'));
+	return { counts, rows };
+}
+
+export type LandAreaRow = ReturnType<typeof landAreasView>['rows'][number];

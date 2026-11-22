@@ -6,8 +6,10 @@
  * version's source is listed in the Sources section, not beside it.
  */
 import { humanize } from '../nation-labels.ts';
+import { copyPath } from '../public-copies.ts';
 import {
 	documentHistories,
+	publicCopyFor,
 	sources as sourceRecords,
 	type DocumentHistoryRecord,
 	type DocumentVersion
@@ -117,13 +119,16 @@ function inEffectPhrase(versions: DocumentVersion[]): string | undefined {
 
 /**
  * The public copy of a version's text, so the history links to the document
- * itself (Trevor, Nov. 22, 2026): the source's own address, or its first
- * archived copy when it has no address. The project's own captures are
- * private and are never linked (texts stay link-only).
+ * itself (Trevor, Nov. 22, 2026): the copy this site serves when it keeps
+ * one (src/lib/public-copies.ts), else the source's own address, else its
+ * first archived copy. Private captures are never linked (texts stay
+ * link-only).
  */
 function textLink(sourceKey: string | undefined): string | undefined {
 	if (!sourceKey) return undefined;
 	const record = sourceRecords().get(sourceKey);
+	const saved = publicCopyFor(record?.original_link);
+	if (saved) return copyPath(saved);
 	if (record?.original_link) return record.original_link;
 	const archived = record?.archives?.find((copy) => copy.link ?? copy.url);
 	return archived?.link ?? archived?.url;

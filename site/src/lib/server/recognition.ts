@@ -6,7 +6,8 @@
  */
 import { citationParts, shortCitation, type CitationPart } from '../legal-citations.ts';
 import { recognitionLabel } from '../nation-labels.ts';
-import { sources, type NationRecord } from './content.ts';
+import { copyPath } from '../public-copies.ts';
+import { publicCopyFor, sources, type NationRecord } from './content.ts';
 
 export interface RecognitionView {
 	/** The status in words, such as "Federally recognized". */
@@ -23,15 +24,26 @@ function sourceLink(fact: RecognitionFact): string | undefined {
 	return fact.source ? sources().get(fact.source)?.original_link : undefined;
 }
 
+/**
+ * Points a linked citation at the copy this site keeps of the document, when
+ * it keeps one (src/lib/public-copies.ts), so "108 Stat. 4791" opens quickly
+ * from this site. The capture index records the government address.
+ */
+function toSavedCopy(part: CitationPart): CitationPart {
+	const copy = publicCopyFor(part.link);
+	return copy ? { ...part, link: copyPath(copy) } : part;
+}
+
 export function recognitionView(fact: RecognitionFact): RecognitionView {
 	const state = typeof fact.state === 'string' ? fact.state : undefined;
 	const label = recognitionLabel(fact.type, state);
 	if (!fact.legal_basis) return { label, legalBasis: [] };
 	const fallback = sourceLink(fact);
+	const short = shortCitation(fact.legal_basis, fallback);
 	return {
 		label,
-		legalBasis: citationParts(fact.legal_basis, fallback),
-		short: shortCitation(fact.legal_basis, fallback)
+		legalBasis: citationParts(fact.legal_basis, fallback).map(toSavedCopy),
+		short: short ? toSavedCopy(short) : undefined
 	};
 }
 
