@@ -14,10 +14,7 @@ Bureau's 2017 cartographic boundary files; source record
 [`census-cartographic-boundary-states-2017`](../../content/sources/c/census-cartographic-boundary-states-2017.yaml)),
 so they are not copied here.
 
-The regions are the Bureau's administrative areas, not the lands of any
-nation. The Navajo Region's outline follows the Navajo Nation's land, as the
-Bureau draws it; Trevor chose on 2026-11-21 to draw the official outlines
-anyway, with a note on the map saying so.
+The regions are the Bureau's administrative areas, not the lands of any nation. The Navajo Region's outline follows the Navajo Nation's land, as the Bureau draws it; Trevor chose on 2026-11-21 to draw the official outlines anyway, with a note on the map saying so.
 
 The "Land areas" view draws the Census Bureau's areas, which Trevor asked for on 2026-11-22 ([decision record 0028](../../docs/decisions/0028-map-adds-census-land-areas.md), amending [0007](../../docs/decisions/0007-map-shows-state-presence.md)). The other views draw no nation's land.
 
