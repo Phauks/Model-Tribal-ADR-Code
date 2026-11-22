@@ -1,9 +1,9 @@
 <script lang="ts">
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
-	// site's name, then Print, Download (where the page has a file), Report a
-	// problem and Contribute, then the reader's controls (search, theme,
-	// Settings, and sign-in or the account menu at the far right) (Trevor,
-	// Nov. 22, 2026). Print and Download act on the page the reader is on. The
+	// site's name, Report a problem and Contribute, then the reader's controls:
+	// search, Print and Download as icons (Download only where the page has a
+	// file), theme, Settings, and sign-in or the account menu at the far right
+	// (Trevor, Nov. 22, 2026). Print and Download act on the page the reader is on. The
 	// site's sections are in the sidebar (SiteSidebar.svelte), so the masthead
 	// has no menu row. The content version shows only on paper; on screen it
 	// is in the footer.
@@ -52,20 +52,23 @@
 			<span class="edition print-only">Draft, content {contentVersion}</span>
 		</p>
 		<ul class="masthead-actions no-print">
-			<li><PrintOptions /></li>
-			{#if download}
-				<li>
-					<a class="download-link" href={download.link} download>
-						<Download size={20} strokeWidth={1.75} />
-						<span>{download.label} <span class="format">({download.format})</span></span>
-					</a>
-				</li>
-			{/if}
 			<li><a class="report-link" href={reportLink}>Report a problem</a></li>
 			<li><a class="button" href="/requests?kind=contribute">Contribute</a></li>
 		</ul>
 		<div class="masthead-tools no-print">
 			<SiteSearch />
+			<PrintOptions />
+			{#if download}
+				<a
+					class="icon-button download-link"
+					href={download.link}
+					download
+					aria-label="{download.label} ({download.format})"
+					title="{download.label} ({download.format})"
+				>
+					<Download size={24} />
+				</a>
+			{/if}
 			<ThemeSetting />
 			<SettingsPanel />
 			<AccountLink />
@@ -156,16 +159,10 @@
 		padding: 0;
 	}
 
-	.masthead-actions .download-link {
-		gap: var(--space-2);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-	}
-
-	.format {
-		font-weight: var(--font-weight-regular);
-		font-size: var(--font-size-small);
+	/* Download is a link styled as an icon button, in the band's text color. */
+	.download-link,
+	.download-link:visited {
+		color: var(--color-band-text);
 	}
 
 	.masthead-actions a:not(.button) {
