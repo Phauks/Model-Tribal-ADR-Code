@@ -309,20 +309,27 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Arctic Village Tribal Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Village of Arctic Village'
-  note: Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
-    Affairs list
+  note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
+    Affairs list Link is the entry in the Alaska Court System court directory: 2022 Alaska Tribal Court
+    Directory (prepared by Alaska Legal Services Corporation); no page of the court''s own was found (2026-11-22;
+    research/reviews/2026-11-22-service-links.json, service-244).'
 - kind: tribal-court
   name: Venetie Tribal Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Venetie Village Council'
+  note: 'Link is the entry in the Alaska Court System court directory: 2022 Alaska Tribal Court Directory
+    (prepared by Alaska Legal Services Corporation); no page of the court''s own was found (2026-11-22;
+    research/reviews/2026-11-22-service-links.json, service-245).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -236,19 +236,26 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf
   source: national-indian-law-library-jicarilla-apache
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. Link is the entry in the Supreme
+    Court of New Mexico, Tribal-State Judicial Consortium roster (Jan. 2, 2026); no page of the court's
+    own was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-110).
 - kind: tribal-court
   name: Jicarilla Apache Nation Tribal Court
+  link: https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Jicarilla Apache Nation'
+  note: Link is the entry in the Supreme Court of New Mexico, Tribal-State Judicial Consortium roster
+    (Jan. 2, 2026); no page of the court's own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
+    service-111).
 gaming:
   compacts:
   - state: NM

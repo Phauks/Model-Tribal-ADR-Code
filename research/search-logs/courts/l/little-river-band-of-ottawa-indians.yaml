@@ -1,0 +1,34 @@
+profile: content/tribes/l/little-river-band-of-ottawa-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: found
+  reason: 'Every service without a link listed for this nation: Read the Nov. 21 court review''s result
+    for this court (verdict confirmed-other-name, page https://www.lrboi-nsn.gov/government/tribal-judicial);
+    its page is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): own-page, https://www.lrboi-nsn.gov/government/tribal-judicial.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-133
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Little River Band of Ottawa Indians Tribal Court”: Claude weighed the evidence against the
+    lead author''s order (own page, then directory entry): own-page, https://www.lrboi-nsn.gov/government/tribal-judicial.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-134

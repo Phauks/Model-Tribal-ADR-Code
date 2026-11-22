@@ -181,6 +181,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.lvpaiute.gov/tribal-court
   source: national-indian-law-library-las-vegas-paiute
   confidence: medium
   verification: bulk-import
@@ -188,7 +189,9 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (http://www.lvpaiutetribe.com/tribal-court) returned HTTP 404, so it is not
-    recorded.'
+    recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200
+    on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see
+    research/reviews/2026-11-22-service-links.json, service-128.'
 dispute_resolution:
   database_listings:
   - title: Option for Informal Conference for Juveniles
