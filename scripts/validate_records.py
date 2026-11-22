@@ -391,6 +391,7 @@ def main() -> int:
 
     sources = {path.stem for path, _ in records.get("source.schema.json", [])}
     glossary = {path.stem for path, _ in records.get("glossary.schema.json", [])}
+    provisions = {path.stem for path, _ in records.get("provision.schema.json", [])}
     sessions = {path.stem for path, _ in records.get("research-session.schema.json", [])}
     methods = {path.stem: record for path, record in records.get("method.schema.json", [])}
 
@@ -448,6 +449,8 @@ def main() -> int:
                     errors.append(f"{path}: {field} names a missing glossary entry '{entry}'")
         if record.get("redirect_to") and record["redirect_to"] not in glossary:
             errors.append(f"{path}: redirect_to names a missing glossary entry")
+        if record.get("code_definition") and record["code_definition"] not in provisions:
+            errors.append(f"{path}: code_definition names a missing provision '{record['code_definition']}'")
         for key in record.get("sources", []):
             if key not in sources:
                 errors.append(f"{path}: sources names a missing source record '{key}'")

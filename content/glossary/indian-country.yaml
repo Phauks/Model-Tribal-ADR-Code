@@ -1,6 +1,7 @@
 id: indian-country
 term: Indian country
 kind: legal-term
+part_of_speech: noun
 usage: context-only
 definition: >-
   In federal criminal law, Indian country includes "all land within the
@@ -10,12 +11,12 @@ definition: >-
   not been extinguished" [@usc-18-1151, (a)-(c)]. It "is a defined legal term
   for that area over which the federal government and tribes exercise primary
   jurisdiction" [@ncai-tribal-nations-and-the-united-states, p. 24].
+other_senses:
+  - label: often capitalized
+    definition: >-
+      Native communities as a whole, the broader sense in which the Native Governance Center writes "Indian Country" [@ngc-terminology-style-guide].
 usage_note: >-
-  For the legal term, write lowercase "Indian country" as the statute does and
-  cite the section. For the broader sense of Native communities as a whole,
-  the Native Governance Center capitalizes "Indian Country"
-  [@ngc-terminology-style-guide]; the project uses that form only in that
-  broader sense (project choice).
+  For the legal term (sense 1), write lowercase "Indian country" as the statute does and cite the section. Write "Indian Country" only in sense 2 (project choice).
 aliases: [Indian Country]
 use_instead: [native-nations]
 see_also: [reservation]
