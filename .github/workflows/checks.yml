@@ -146,10 +146,27 @@ jobs:
             pdf/output/every-size/summary.md
           if-no-files-found: ignore
 
+  prose:
+    name: Prose flags
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      # Warnings only (style guide section 8): flags habits to reread on the
+      # lines a pull request adds. It never fails.
+      - name: Flag prose habits
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: python3 scripts/check_prose.py ${BASE:+--base "$BASE"}
+
   all-checks:
     name: All checks
     if: always()
-    needs: [text, records, lint, site, print]
+    needs: [text, records, lint, prose, site, print]
     runs-on: ubuntu-latest
     steps:
       - name: Fail if any check failed or was cancelled
