@@ -15,6 +15,7 @@ const required = [
 	'index.html',
 	'glossary.html',
 	'changelog.html',
+	'acknowledgments.html',
 	'nations.html',
 	'offline.html',
 	'downloads.html',

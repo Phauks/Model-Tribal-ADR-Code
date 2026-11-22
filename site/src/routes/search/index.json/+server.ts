@@ -15,6 +15,7 @@ const pages: SearchEntry[] = [
 	{ kind: 'page', title: 'Map of Native nations', also: ['Map', 'Bureau of Indian Affairs regions'], detail: 'Nations by state, with the Bureau of Indian Affairs regions', link: '/nations/map' },
 	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'The words the project defines', link: '/glossary' },
 	{ kind: 'page', title: 'Downloads', also: ['Book', 'PDF', 'EPUB', 'Data'], detail: 'The book and the data behind this site', link: '/downloads' },
+	{ kind: 'page', title: 'Acknowledgments', also: ['Credits', 'Land acknowledgment', 'Southern Paiute', 'Nuwuvi'], detail: 'Credits, and the land where this work was written', link: '/acknowledgments' },
 	{ kind: 'page', title: 'Changelog', also: ['Versions', 'What changed'], detail: 'What changed in each version', link: '/changelog' },
 	{ kind: 'page', title: 'Make a request', also: ['Correct', 'Remove', 'Report a problem', 'Add a nation', 'Contribute'], detail: 'Correct, restrict, remove, add or contribute', link: '/requests' },
 	{ kind: 'page', title: 'Help with the project', also: ['Join', 'Volunteer'], link: '/join' },
