@@ -14,6 +14,7 @@ import path from 'node:path';
 import CSL from 'citeproc';
 import { escapeHtml, savedCopyLink } from './markdown.ts';
 import { repositoryRoot, type SourceRecord } from './content.ts';
+import { caseItem } from './case-citations.ts';
 
 const styleFolder = path.join(repositoryRoot, 'pdf', 'styles');
 
@@ -58,7 +59,7 @@ export function fullCitations(records: SourceRecord[]): Record<string, string> {
 	const locale = readFileSync(path.join(styleFolder, 'locales-en-US.xml'), 'utf8');
 	const items = new Map(
 		records.map((record) => {
-			const citation = record.citation as Record<string, unknown>;
+			const citation = caseItem(record.citation as Record<string, unknown>);
 			const section = citation.section;
 			return [
 				record.key,

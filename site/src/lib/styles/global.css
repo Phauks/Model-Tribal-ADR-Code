@@ -702,6 +702,28 @@ sup.citation {
 	font-weight: var(--font-weight-semibold);
 }
 
+/* Decided, Nation, and for the Supreme Court the Court, vote and opinions: a label column and a value column, as in print. */
+.essay-case-facts {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: var(--space-1) var(--space-3);
+	margin: 0 0 var(--space-3);
+	font-size: var(--font-size-small);
+}
+
+.essay-case-facts > div {
+	display: contents;
+}
+
+.essay-case-facts dt {
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-ink-muted);
+}
+
+.essay-case-facts dd {
+	margin: 0;
+}
+
 .essay-case-part {
 	margin-top: var(--space-4);
 	padding-top: var(--space-3);

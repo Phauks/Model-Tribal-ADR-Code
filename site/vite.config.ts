@@ -8,7 +8,7 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
-import { essaysInGit, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
+import { essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
 import {
 	essaysForReview,
 	glossary,
@@ -226,6 +226,7 @@ function essayLibrary(): Plugin {
 			return [
 				`export const essayCitations = ${JSON.stringify(everyFullCitation())};`,
 				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
+				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`
 			].join('\n');
 		}

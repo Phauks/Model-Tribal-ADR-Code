@@ -11,8 +11,10 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import CSL from 'citeproc';
 import { escapeHtml, savedCopyLink } from './markdown.ts';
-import { glossary, repositoryRoot, sources, type SourceRecord } from './content.ts';
+import { glossary, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { sectionWithSymbol } from './citations.ts';
+import { caseItem } from './case-citations.ts';
+import { caseFacts, lawFacts, type CaseRecord, type FactLine } from './case-facts.ts';
 
 /** Turns the plain web addresses citeproc-js prints into links (as citations.ts does). */
 function linkAddresses(html: string): string {
@@ -37,7 +39,7 @@ export function everyFullCitation(records: SourceRecord[] = [...sources().values
 	const locale = readFileSync(path.join(styleFolder, 'locales-en-US.xml'), 'utf8');
 	const items = new Map(
 		records.map((record) => {
-			const citation = record.citation as Record<string, unknown>;
+			const citation = caseItem(record.citation as Record<string, unknown>);
 			const section = citation.section;
 			return [
 				record.key,
@@ -101,4 +103,31 @@ export function essaysInGit(): Record<string, string> {
 			.sort()
 			.map((name) => [name.replace(/\.md$/, ''), readFileSync(path.join(folder, name), 'utf8').normalize('NFC')])
 	);
+}
+
+/** Source types a law box can name: statutes, codes, regulations, treaties and bills. */
+const lawTypes = new Set(['legislation', 'treaty', 'bill', 'regulation']);
+
+/**
+ * The lines under each case or law box's heading (case-facts.ts), for every
+ * source record that has any: cases by key, and laws by key.
+ */
+export function everyBoxFact(records: SourceRecord[] = [...sources().values()]): {
+	cases: Record<string, FactLine[]>;
+	laws: Record<string, FactLine[]>;
+} {
+	const nations = nationNamesAndKinds();
+	const cases: Record<string, FactLine[]> = {};
+	const laws: Record<string, FactLine[]> = {};
+	for (const record of records) {
+		const type = (record.citation as { type?: string }).type ?? '';
+		if (type === 'legal_case') {
+			const facts = caseFacts(record as CaseRecord, nations);
+			if (facts.length) cases[record.key] = facts;
+		} else if (lawTypes.has(type)) {
+			const facts = lawFacts(record as CaseRecord, nations);
+			if (facts.length) laws[record.key] = facts;
+		}
+	}
+	return { cases, laws };
 }
