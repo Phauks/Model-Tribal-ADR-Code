@@ -155,6 +155,28 @@ apply` made them in a separate pull request on Nov. 21, 2026:
   listed link. The other 5 `link-dead-court-found` rows (Seneca Nation, four;
   Muscogee Nation, one) name a page the review did not fetch, so they wait.
 
+On Nov. 22, 2026, with the lead author's approval, `scripts/review/gap_review.py
+rewrite-compacts` finished the copied compact clauses (gap audit row 1):
+
+- 73 clauses that both reviewers, with high confidence, found different now
+  carry the reviewers' proposed summary (two reworded: Rincon Band and Forest
+  County Potawatomi Community), cite the nation's own compact or Secretarial
+  Procedures with its pinpoint, and give `read-in-full`. Each note says what
+  the copied summary got wrong.
+- The other 86 undecided clauses got a third reading
+  ([`2026-11-22-compact-clauses-recheck`](2026-11-22-compact-clauses-recheck.json)).
+  56 were rewritten and 25 found the same and cited to the nation's own
+  compact; 5 wait for the lead author (Minnesota Chippewa Tribe, Nez Perce
+  Tribe, Nottawaseppi Huron Band of the Potawatomi, Red Lake Band of Chippewa
+  Indians, Shakopee Mdewakanton Sioux Community).
+- Every governing document already had a source record, so none was added;
+  the 96 records added on Nov. 21 are the same records the gaming thread's
+  document histories use, so none was a duplicate.
+
+Of the 256 copied clauses, 129 are now rewritten, 121 cite the nation's own
+compact with the summary unchanged, 1 (Yavapai-Prescott Indian Tribe) was
+rewritten earlier by the gaming thread, and 5 still cite the copied compact.
+
 Everything else waits for the lead author's decisions.
 
 ## Limits

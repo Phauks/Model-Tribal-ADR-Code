@@ -488,20 +488,22 @@ gaming:
       day (not linked in the list).'
   - state: WI
     status: approved
-    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
-      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
-      mediation or arbitration only by mutual agreement.
-    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
-    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
-    confidence: medium
-    verification: inferred
-    as_of: '1992-08-10'
-    locator: Section XXIII (Dispute Resolution) of the 1992 compact
-    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
-      compact; later amendments renumbered this section XXIV and revised it for at least some nations
-      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
-      from this nation's most recent approved or deemed-approved entry for this state in the Office of
-      Indian Gaming list (2022-04-12).
+    dispute_resolution_summary: Disputes under the Compact, including claims that a provision is invalid,
+      that a party has failed to comply, or about interpretation, are resolved by binding arbitration
+      under the Rules for Non-Administered Arbitration of the International Institute for Conflict Prevention
+      and Resolution (using a last-best-offer format unless a party opts out) unless the parties agree
+      to negotiation, mediation or court, and listed disputes go to a court of competent jurisdiction.
+    dispute_resolution_locator: Section XXII. DISPUTE RESOLUTION., A. Arbitration
+    source: compact-wi-forest-county-potawatomi-community-2006-01-31
+    confidence: high
+    verification: read-in-full
+    as_of: '2006-01-31'
+    locator: Section XXII. DISPUTE RESOLUTION., A. Arbitration
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 57, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-wi-menominee-indian-tribe-of-wisconsin-1992 without reading,
+      and it described the 1992 compact's clause, which a later amendment replaced. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-04-12).
   ordinances:
   - approved: '1993-11-08'
     link: https://www.nigc.gov?wpdmdl=9818&ind=9831

@@ -296,19 +296,22 @@ gaming:
       procedures rather than an approved compact.'
   - state: NY
     status: deemed-approved
-    dispute_resolution_summary: After written notice the parties meet within 14 days to negotiate, and
-      if no solution is reached within 30 days either party may submit the dispute to binding arbitration
-      under American Arbitration Association rules before three arbitrators, without monetary damages.
-    dispute_resolution_locator: Section 14 (Party Dispute Resolution)
-    source: compact-ny-seneca-nation-of-indians-2002
-    confidence: medium
-    verification: inferred
-    as_of: '2002-12-09'
-    locator: Section 14 (Party Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2002 Seneca Nation of Indians
-      compact; the Saint Regis Mohawk Tribe and Oneida Indian Nation compacts were not checked. Status
-      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
-      of Indian Gaming list (2005-03-07).
+    dispute_resolution_summary: After written notice the parties meet within 5 days, and if the dispute
+      is not resolved within 30 days it is decided by arbitration under American Arbitration Association
+      rules before an arbitrator chosen from an agreed list (or three arbitrators if the parties disagree),
+      who may grant any relief in law or equity, with the award enforceable in the United States District
+      Court for the Northern District of New York under a limited waiver of sovereign immunity.
+    dispute_resolution_locator: SECTION 14. Arbitration., (b) Procedures for dispute resolution.
+    source: compact-ny-saint-regis-mohawk-tribe-1993-12-04
+    confidence: high
+    verification: read-in-full
+    as_of: '1993-12-04'
+    locator: SECTION 14. Arbitration., (b) Procedures for dispute resolution.
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 182, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-ny-seneca-nation-of-indians-2002 without reading, and it
+      gave a 14-day meeting and barred money damages, where this compact has a 5-day meeting and lets
+      the arbitrators grant any legal or equitable relief. Status copied from this nation's most recent
+      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-03-07).
   ordinances:
   - approved: '1994-01-21'
     link: https://www.nigc.gov?wpdmdl=11224&ind=11246

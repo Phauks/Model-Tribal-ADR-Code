@@ -390,21 +390,23 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: NC
     status: approved
-    dispute_resolution_summary: After written notice the parties meet within 30 days, and if the dispute
-      is unresolved within 90 days either party may pursue any remedy otherwise available under federal
-      or state law, with mediation or arbitration only by mutual agreement; a separate procedure lets
-      the State notify the Tribe to cease an activity it considers non-compliant, with a written response
-      due within 20 days.
-    dispute_resolution_locator: Section 13 (Dispute Resolution)
-    source: compact-nc-catawba-indian-nation-2021
-    confidence: medium
-    verification: inferred
-    as_of: '2021-03-25'
-    locator: Section 13 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2021 Catawba Indian Nation
-      compact with North Carolina; the Eastern Band of Cherokee Indians compact was not checked. Status
-      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
-      of Indian Gaming list (2021-03-02).
+    dispute_resolution_summary: The State may notify the Tribe in writing to cease a gaming activity it
+      considers in violation, and the Tribe must respond in writing within twenty days; after written
+      notice of other noncompliance the parties meet within thirty days, and if the dispute is unresolved
+      within ninety days either party may pursue any remedy otherwise available, with mediation or arbitration
+      only by mutual agreement, and either party may commence an action in federal district court to resolve
+      a dispute over the interpretation of the Compact.
+    dispute_resolution_locator: Section 13. DISPUTE RESOLUTION., (C)
+    source: compact-nc-eastern-band-of-cherokee-indians-2021-03-02
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-03-02'
+    locator: Section 13. DISPUTE RESOLUTION., (C)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 50, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-nc-catawba-indian-nation-2021 without reading, and it left
+      out the clause letting either party sue in federal district court over the compact's interpretation.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2021-03-02).
   ordinances:
   - approved: '1994-05-31'
     link: https://www.nigc.gov?wpdmdl=9731&ind=9748

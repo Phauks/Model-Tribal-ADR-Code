@@ -431,18 +431,21 @@ gaming:
   - state: IA
     status: approved
     dispute_resolution_summary: For a non-material breach the parties meet and confer within 15 days of
-      written notice, the complaining party may then make a written demand, a refused demand goes to mediation
-      under American Arbitration Association commercial mediation rules, and issues left in the mediator's
-      summary report go to binding arbitration under American Arbitration Association rules.
-    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
-    source: compact-ia-ponca-tribe-of-nebraska-2021
-    confidence: medium
-    verification: inferred
-    as_of: '2021-03-05'
-    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
-    note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
-      compact with Iowa; other Iowa compacts were not checked. Status copied from this nation's most recent
-      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2004-12-20).
+      written notice, the complaining party may then make a written demand to be answered within 10 days,
+      and if the demand is rejected or ignored either party may request binding arbitration before one
+      agreed arbitrator (or a third arbitrator chosen by two party-selected arbitrators), with the non-prevailing
+      party paying the costs.
+    dispute_resolution_locator: 20.BINDING DISPUTE RESOLUTION FOR NON-M.I\TERIAL BREACH
+    source: compact-ia-sac-and-fox-tribe-of-the-mississippi-in-iowa-2004-12-20
+    confidence: high
+    verification: read-in-full
+    as_of: '2004-12-20'
+    locator: 20.BINDING DISPUTE RESOLUTION FOR NON-M.I\TERIAL BREACH
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 180, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-ia-ponca-tribe-of-nebraska-2021 without reading, and it
+      added mediation and American Arbitration Association rules that the clause does not have. Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2004-12-20).
   ordinances:
   - approved: '2008-12-08'
     link: https://www.nigc.gov?wpdmdl=10948&ind=10969

@@ -453,20 +453,21 @@ gaming:
       federal-register-api-gaming-notices).'
   - state: NV
     status: approved
-    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
-      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
-      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
-      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
-    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
-      of Sovereign Immunity)
-    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
-    confidence: medium
-    verification: inferred
-    as_of: '2018-01-18'
-    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
-    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
-      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
-      deemed-approved entry for this state in the Office of Indian Gaming list (2025-04-17).
+    dispute_resolution_summary: A party alleging substantial and continuing default gives written notice
+      and demands a cure within 60 days, the parties then meet within 30 days, and if still unresolved
+      within 30 days after meeting either party may pursue any lawful remedy, including an action under
+      25 U.S.C. 2710(d)(7)(A), with mediation or arbitration only by mutual written agreement.
+    dispute_resolution_locator: ARTICLE XI. DEFAULT AND TERMINATION, 1. Default.
+    source: compact-nv-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-2010-02-23
+    confidence: high
+    verification: read-in-full
+    as_of: '2010-02-23'
+    locator: ARTICLE XI. DEFAULT AND TERMINATION, 1. Default.
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 164, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-nv-washoe-tribe-of-nevada-and-california-2018 without reading,
+      and it gave 90 days to cure and a Washoe County federal venue with limited relief, where this compact
+      gives 60 days to cure and allows any lawful remedy. Status copied from this nation's most recent
+      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2025-04-17).
   ordinances:
   - approved: '2000-07-19'
     link: https://www.nigc.gov?wpdmdl=10848&ind=10863

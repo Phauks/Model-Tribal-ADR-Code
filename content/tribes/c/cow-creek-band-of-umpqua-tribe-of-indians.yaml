@@ -385,20 +385,24 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: OR
     status: approved
-    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
-      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
-      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
-      dispute resolution methods remain available by mutual agreement.
-    dispute_resolution_locator: Section 17 (Dispute Resolution)
-    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
-    confidence: medium
-    verification: inferred
-    as_of: '2023-02-08'
-    locator: Section 17 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
-      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2018-09-27).
+    dispute_resolution_summary: After written notice the parties meet and confer within 20 calendar days,
+      and if unresolved either party may start mediation or non-binding arbitration (convertible to binding
+      by agreement) before suing in the United States District Court for the District of Oregon (or another
+      court if federal jurisdiction is declined) under limited waivers of sovereign immunity, with a separate
+      expedited process the State may invoke for immediate and serious threats.
+    dispute_resolution_locator: ARTICLE XII - DISPUTE RESOLUTION; B. Standard Dispute Resolution Process,
+      item 2
+    source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-2007-03-19
+    confidence: high
+    verification: read-in-full
+    as_of: '2007-03-19'
+    locator: ARTICLE XII - DISPUTE RESOLUTION; B. Standard Dispute Resolution Process, item 2
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 43, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-or-confederated-tribes-of-the-grand-ronde-c-2023 without
+      reading, and it gave a 30-day meeting and a 90-day wait, where the clause sets a 20-day meeting,
+      allows mediation or non-binding arbitration before court and has a separate expedited process. Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2018-09-27).
   ordinances:
   - approved: '1994-10-27'
     link: https://www.nigc.gov?wpdmdl=9673&ind=9685

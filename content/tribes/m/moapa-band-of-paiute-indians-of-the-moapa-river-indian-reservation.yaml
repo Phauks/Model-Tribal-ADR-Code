@@ -242,20 +242,21 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: NV
     status: approved
-    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
-      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
-      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
-      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
-    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
-      of Sovereign Immunity)
-    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
-    confidence: medium
-    verification: inferred
-    as_of: '2018-01-18'
-    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
-    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
-      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
-      deemed-approved entry for this state in the Office of Indian Gaming list (2000-01-07).
+    dispute_resolution_summary: A party alleging a substantial and continuing default gives written notice
+      with 90 days to cure, the parties then meet within 30 days, and if unresolved 30 days after meeting
+      either party may pursue any lawful remedy including an action under 25 U.S.C. 2710(d)(7)(A), with
+      mediation or arbitration available by mutual written agreement.
+    dispute_resolution_locator: XI. DEFAULT AND TERMINATION, paragraph 1. Default
+    source: compact-nv-moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-2000-01-07
+    confidence: high
+    verification: read-in-full
+    as_of: '2000-01-07'
+    locator: XI. DEFAULT AND TERMINATION, paragraph 1. Default
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 115, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-nv-washoe-tribe-of-nevada-and-california-2018 without reading,
+      and it gave a Washoe County federal venue, limited relief and a limited immunity waiver that this
+      compact does not have. Status copied from this nation's most recent approved or deemed-approved
+      entry for this state in the Office of Indian Gaming list (2000-01-07).
   ordinances:
   - approved: '1994-04-26'
     link: https://www.nigc.gov?wpdmdl=10319&ind=10344

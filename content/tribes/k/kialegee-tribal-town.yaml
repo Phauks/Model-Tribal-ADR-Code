@@ -176,21 +176,21 @@ gaming:
       through the Federal Register API (source federal-register-api-gaming-notices).'
   - state: OK
     status: deemed-approved
-    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
-      days, and either party may then refer the dispute to arbitration under American Arbitration Association
-      rules before a single arbitrator, with de novo review of the award available in federal district
-      court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2020-09-08).
+    dispute_resolution_summary: The parties must first mediate with a mutually agreed mediator unless
+      irreparable harm requires injunctive relief, and if mediation fails or injunctive relief is sought
+      the dispute is litigated in federal court under limited waivers of sovereign immunity.
+    dispute_resolution_locator: 'PART6: DISPUTE RESOLUTION - T H E TRIBE AND THE STATE, subdivisions B.1
+      and B.2'
+    source: compact-ok-kialegee-tribal-town-2020-09-08
+    confidence: high
+    verification: read-in-full
+    as_of: '2020-09-08'
+    locator: 'PART6: DISPUTE RESOLUTION - T H E TRIBE AND THE STATE, subdivisions B.1 and B.2'
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 89, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-ok-cherokee-nation-2005 without reading, and it described
+      the 2004-05 model compact's arbitration, which this 2020 compact replaced with mediation followed
+      by federal court. Status copied from this nation's most recent approved or deemed-approved entry
+      for this state in the Office of Indian Gaming list (2020-09-08).
   ordinances:
   - approved: '1997-10-23'
     link: https://www.nigc.gov?wpdmdl=10042&ind=10069

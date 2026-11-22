@@ -306,37 +306,42 @@ gaming:
   - state: CA
     status: approved
     dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
-      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
-      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
-      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
-      or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
-      Community compact, which follows the form California has used in its recent compacts; many California
-      nations still operate under 1999-era compacts with a different dispute section. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2004-12-20).
+      and meet and confer within 30 days; if unresolved, either party may seek arbitration before a single
+      arbitrator under the Commercial Arbitration Rules of the American Arbitration Association (though
+      neither must agree to arbitrate), and disagreements not otherwise resolved may be taken to the United
+      States District Court where the Tribe's Gaming Facility is located or to any state court of competent
+      jurisdiction in San Bernardino County, under a limited waiver of sovereign immunity that bars monetary
+      damages except payment of money the Compact requires.
+    dispute_resolution_locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1. Voluntary Resolution;
+      Court Resolution, subdivision (d)
+    source: compact-ca-fort-mojave-indian-tribe-2004-12-20
+    confidence: high
+    verification: read-in-full
+    as_of: '2004-12-20'
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1. Voluntary Resolution; Court Resolution,
+      subdivision (d)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 62, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-ca-cher-ae-heights-indian-community-of-the-2026 without
+      reading, and it left out the optional arbitration step that comes before court and limited the state-court
+      route to cases the federal court cannot hear. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2004-12-20).
   - state: NV
     status: approved
-    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
-      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
-      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
-      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
-    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
-      of Sovereign Immunity)
-    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
-    confidence: medium
-    verification: inferred
-    as_of: '2018-01-18'
-    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
-    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
-      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
-      deemed-approved entry for this state in the Office of Indian Gaming list (1990-04-02).
+    dispute_resolution_summary: The intergovernmental agreement between the Tribe and Nevada that serves
+      as the compact has no notice, cure, meeting, mediation, arbitration or immunity-waiver provisions;
+      it is governed by Nevada law, and any action to enforce it is to be brought in the District Court
+      of Nevada.
+    dispute_resolution_locator: E. Governing Law (page 11 of the agreement, PDF page 12)
+    source: compact-nv-fort-mojave-indian-tribe-1990-04-02
+    confidence: high
+    verification: read-in-full
+    as_of: '1990-04-02'
+    locator: E. Governing Law (page 11 of the agreement, PDF page 12)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 63, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-nv-washoe-tribe-of-nevada-and-california-2018 without reading,
+      and it gave a notice-and-cure process, a Washoe County federal venue and a limited immunity waiver,
+      none of which this agreement has. Status copied from this nation's most recent approved or deemed-approved
+      entry for this state in the Office of Indian Gaming list (1990-04-02).
   ordinances:
   - approved: '1994-02-22'
     link: https://www.nigc.gov?wpdmdl=9847&ind=9859

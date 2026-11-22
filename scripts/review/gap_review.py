@@ -4,6 +4,7 @@ research/reviews/, and fill in `verification` on profile facts that have none.
     python3 scripts/review/gap_review.py merge WORK_DIRECTORY
     python3 scripts/review/gap_review.py levels [--check]
     python3 scripts/review/gap_review.py apply [--check]
+    python3 scripts/review/gap_review.py rewrite-compacts [--check]
 
 `merge` reads the reviewers' output in WORK_DIRECTORY (names/, compacts/,
 courts/, levels/, as written by the briefs in research/reviews/briefs/) and
@@ -42,10 +43,29 @@ else in a profile changes. With `--check` it reports what it would change.
 
 Everything else in the review waits for the lead author. With `--check` it
 reports what it would change.
+
+`rewrite-compacts` (Nov. 22, 2026, approved by the lead author) finishes gap
+audit row 1 for the clauses that are clear:
+
+- a copied compact dispute clause that both reviewers, with high confidence,
+  found different from the nation's own compact gets the reviewers' proposed
+  summary (`SUMMARY_OVERRIDES` where the wording needed fixing) and is cited to
+  that compact with the reviewers' pinpoint;
+- research/reviews/2026-11-22-compact-clauses-recheck.json, a third reading of
+  the clauses the first review left undecided: rows with outcome `rewritten`
+  get the third reading's summary, rows with outcome `repointed` keep their
+  summary and are cited to the nation's own compact; rows with outcome `left`
+  wait for the lead author.
+
+Each changed fact's note says what was wrong with the copied summary
+(`REWRITE_REASONS`, or the recheck row's `copied_text_problem`). The governing
+document must already have a source record (matched by address); no source
+record is created. With `--check` it reports what it would change.
 """
 
 import collections
 import csv
+import urllib.parse
 import re
 import glob
 import json
@@ -425,6 +445,139 @@ def apply(check):
         print(f"skipped {line}")
 
 
+REWRITE_DATE = "2026-11-22"
+RECHECK = "2026-11-22-compact-clauses-recheck"
+
+_CA_ARB = "it left out the optional arbitration step that comes before court"
+_CA_STATE_COURT = _CA_ARB + " and limited the state-court route to cases the federal court cannot hear"
+_CA_2000 = "it gave the newer compacts' written-response and meeting deadlines and left out the arbitration step"
+_WA_OLD = ("it described the newer Washington clause (meeting within 20 business days, mediation and arbitration only "
+           "by agreement, court after mediation), but this compact has a 10-day meeting and lets either party take the "
+           "dispute to final arbitration")
+_WI_1992 = "it described the 1992 compact's clause, which a later amendment replaced"
+_OK_2020 = ("it described the 2004-05 model compact's arbitration, which this 2020 compact replaced with mediation "
+            "followed by federal court")
+_SECRETARIAL = ("it described a tribe-state process of notice, meeting and court that these Secretarial Procedures do "
+                "not contain")
+
+# What was wrong with each copied summary, by item of 2026-11-21-compact-clauses.json.
+REWRITE_REASONS = {
+    **{i: _CA_ARB for i in (2, 8, 12, 16, 18, 49, 53, 72, 77, 82, 95, 110, 117, 118, 126, 135, 137, 140, 167, 189,
+                            196, 212, 214, 230, 232, 233, 235, 236, 241, 245, 247, 252, 253, 254)},
+    **{i: _CA_STATE_COURT for i in (45, 59, 62, 67, 86, 143, 170)},
+    **{i: _CA_2000 for i in (76, 108, 113)},
+    **{i: _WA_OLD for i in (103, 106, 119, 124)},
+    **{i: _WI_1992 for i in (7, 57, 70, 97, 98, 132, 171, 204)},
+    **{i: _OK_2020 for i in (33, 89, 133, 237)},
+    39: "it named only a state court as the fallback forum, where the clause also allows a Tribal court",
+    40: "it required 90 days to pass before suit, a wait the clause does not have",
+    43: ("it gave a 30-day meeting and a 90-day wait, where the clause sets a 20-day meeting, allows mediation or "
+         "non-binding arbitration before court and has a separate expedited process"),
+    56: ("it had the arbitration board also decide license-suitability findings, where this compact gives the board "
+         "only gaming device disputes"),
+    131: ("it gave a 14-day meeting, three arbitrators and no money damages, where the clause gives five days, one "
+          "arbitrator from an agreed list and relief in law or equity"),
+    154: "it limited the procedure to violations found within two years, a limit this clause does not have",
+    157: ("it gave a two-year limit and a 20-day notice period, where this clause has no time limit, a 30-day meeting "
+          "and 90 days before a notice to cease"),
+    175: _SECRETARIAL,
+    180: "it added mediation and American Arbitration Association rules that the clause does not have",
+    198: ("it gave other deadlines, arbitrators chosen by the American Arbitration Association and no court review, "
+          "where the compact gives 10 and 30 days, arbitrators chosen by the parties and federal court review"),
+    240: ("it said the arbitrators may enjoin conduct and left out that arbitration binds both parties and bars a court "
+          "case"),
+    242: ("it gave 90 days to cure, a Washoe County federal venue, limited relief and a limited immunity waiver, where "
+          "this compact gives 60 days and any lawful remedy in any competent court"),
+    246: "it added mediation and American Arbitration Association rules that Section 20 does not have",
+}
+
+# Proposed summaries whose wording had to change before going into a profile.
+SUMMARY_OVERRIDES = {
+    57: ("Disputes under the Compact, including claims that a provision is invalid, that a party has failed to "
+         "comply, or about interpretation, are resolved by binding arbitration under the Rules for Non-Administered "
+         "Arbitration of the International Institute for Conflict Prevention and Resolution (using a last-best-offer "
+         "format unless a party opts out) unless the parties agree to negotiation, mediation or court, and listed "
+         "disputes go to a court of competent jurisdiction."),
+    175: ("These Secretarial Procedures, issued by the Secretary of the Interior in place of a tribal-state compact, "
+          "set out no dispute resolution process between the Tribe and the State; their dispute resolution section "
+          "(Sec. 9.0.1) says only that National Indian Gaming Commission enforcement must be consistent with the "
+          "Indian Gaming Regulatory Act and Commission regulations and that Commission decisions or actions are not "
+          "subject to arbitration."),
+}
+
+
+def compact_note(fact, row, review, rewritten, reason=None, extra=None):
+    status = re.search(r"Status copied from .*", str(fact.get("note", "")))
+    document = row["governing_document"]
+    kind = "Secretarial Procedures" if "Secretarial Procedures" in document["title"] else "compact"
+    if rewritten:
+        note = (f"Rewritten on {REWRITE_DATE} from this nation's own {kind} (data gap review item {row['item_id']}, "
+                f"research/reviews/{review}.json); the summary had been copied from {row['copied_from']} without "
+                f"reading, and {reason}.")
+    else:
+        note = (f"Checked on {REWRITE_DATE} against this nation's own {kind}, which the summary was first copied from "
+                f"{row['copied_from']} without reading; a third reading found the clause the same in substance "
+                f"(research/reviews/{review}.json, item {row['item_id']}).")
+    for part in (extra, status.group(0) if status else None):
+        if part:
+            note += f" {part}"
+    return note
+
+
+def rewrite_compacts(check):
+    tree = record_facts.Tree(ROOT)
+    by_link = {}
+    for key, source in tree.sources.items():
+        for link in record_facts.source_links(source):
+            by_link.setdefault(link, set()).add(key)
+            by_link.setdefault(urllib.parse.unquote(link).lower(), set()).add(key)
+
+    def source_for(link):
+        normalized = record_facts.normalized_link(link)
+        keys = by_link.get(normalized) or by_link.get(urllib.parse.unquote(normalized).lower()) or set()
+        return next(iter(keys)) if len(keys) == 1 else None
+
+    first = [(r, f"{PREFIX}compact-clauses", True, REWRITE_REASONS.get(r["item_id"]), None)
+             for r in json.loads((REVIEWS / f"{PREFIX}compact-clauses.json").read_text(encoding="utf-8"))
+             if r["verdict"] == "differs" and r["confidence"] == "high" and r["passes_agree"]]
+    recheck = [(r, RECHECK, r["outcome"] == "rewritten", r["copied_text_problem"], r["note"])
+               for r in json.loads((REVIEWS / f"{RECHECK}.json").read_text(encoding="utf-8"))
+               if r["outcome"] in ("rewritten", "repointed")]
+    changed, skipped, counts = set(), [], collections.Counter()
+    for row, review, rewritten, reason, extra in first + recheck:
+        item = f"{review} item {row['item_id']}"
+        profile = tree.profiles[row["profile"]]
+        matches = [f for f in profile.get("gaming", {}).get("compacts", [])
+                   if f.get("state") == row["state"] and "nation-specific text not checked" in str(f.get("note", ""))]
+        key = source_for(row["governing_document"]["link"])
+        if len(matches) != 1 or not key or (rewritten and not reason):
+            skipped.append(f"{item}: {len(matches)} matching facts, source {key}, reason {bool(reason)}")
+            continue
+        fact = matches[0]
+        note = compact_note(fact, row, review, rewritten, reason, extra)
+        if rewritten:
+            overrides = SUMMARY_OVERRIDES if review != RECHECK else {}
+            fact["dispute_resolution_summary"] = overrides.get(row["item_id"], row["proposed_summary"])
+        fact["source"] = key
+        fact["dispute_resolution_locator"] = row["locator"]
+        fact["locator"] = row["locator"]
+        fact["confidence"] = "high"
+        fact["verification"] = "read-in-full"
+        fact["as_of"] = row["governing_document"]["date"]
+        fact["note"] = note
+        counts["rewrote" if rewritten else "repointed"] += 1
+        changed.add(row["profile"])
+
+    if not check:
+        for relative in changed:
+            profile = {k: v for k, v in tree.profiles[relative].items() if not k.startswith("_")}
+            dump(ROOT / relative, profile)
+    print(f"{'would rewrite' if check else 'rewrote'} {counts['rewrote']} compact clauses and "
+          f"{'would repoint' if check else 'repointed'} {counts['repointed']} in {len(changed)} profiles")
+    for line in skipped:
+        print(f"skipped {line}")
+
+
 if __name__ == "__main__":
     if len(sys.argv) == 3 and sys.argv[1] == "merge":
         merge(pathlib.Path(sys.argv[2]))
@@ -432,5 +585,7 @@ if __name__ == "__main__":
         levels(check="--check" in sys.argv)
     elif len(sys.argv) in (2, 3) and sys.argv[1] == "apply":
         apply(check="--check" in sys.argv)
+    elif len(sys.argv) in (2, 3) and sys.argv[1] == "rewrite-compacts":
+        rewrite_compacts(check="--check" in sys.argv)
     else:
         sys.exit(__doc__)
