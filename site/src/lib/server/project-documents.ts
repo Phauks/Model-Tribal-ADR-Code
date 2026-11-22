@@ -160,6 +160,19 @@ function documentRenderer(from: string): Marked {
 	return renderer;
 }
 
+/**
+ * A footnote cited more than once gets a back link for each use, shown as
+ * "↩2", "↩3". Its accessible name must include the number it shows (WCAG
+ * 2.5.3, label in name), so "Back to reference x" becomes "Back to reference
+ * x, use 2".
+ */
+export function withNumberedBackLinks(html: string): string {
+	return html.replace(
+		/aria-label="(Back to reference [^"]+)">↩<sup>(\d+)<\/sup>/g,
+		(_whole, label: string, use: string) => `aria-label="${label}, use ${use}">↩<sup>${use}</sup>`
+	);
+}
+
 /** A project document as a title and HTML, as the website shows it. */
 export function renderProjectDocument(document: ProjectDocument): RenderedDocument {
 	const text = readFileSync(path.join(repositoryRoot, document.file), 'utf8').normalize('NFC');
@@ -169,10 +182,8 @@ export function renderProjectDocument(document: ProjectDocument): RenderedDocume
 	}
 	const heading = /^#\s+(.+)$/m.exec(text);
 	const body = heading ? text.slice(0, heading.index) + text.slice(heading.index + heading[0].length) : text;
-	return {
-		title,
-		html: documentRenderer(document.file).parse(withoutRepositoryOnlyText(body), { async: false }) as string
-	};
+	const html = documentRenderer(document.file).parse(withoutRepositoryOnlyText(body), { async: false }) as string;
+	return { title, html: withNumberedBackLinks(html) };
 }
 
 /** What a project document's page needs, for the address it is shown at. */

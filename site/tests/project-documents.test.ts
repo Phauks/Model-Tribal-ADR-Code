@@ -3,6 +3,7 @@ import {
 	addressOfFile,
 	projectDocumentPage,
 	resolveDocumentLink,
+	withNumberedBackLinks,
 	withoutRepositoryOnlyText
 } from '#lib/server/project-documents.ts';
 
@@ -74,5 +75,13 @@ describe('text marked repository-only', () => {
 				'by its own tradition<!-- repository-only --> ([decision record 0026](x.md))<!-- /repository-only -->.'
 			)
 		).toBe('by its own tradition.');
+	});
+});
+
+describe('back links of a footnote cited more than once', () => {
+	it('name the number they show', () => {
+		expect(
+			withNumberedBackLinks('<a href="#footnote-ref-x-2" data-footnote-backref aria-label="Back to reference x">↩<sup>2</sup></a>')
+		).toBe('<a href="#footnote-ref-x-2" data-footnote-backref aria-label="Back to reference x, use 2">↩<sup>2</sup></a>');
 	});
 });
