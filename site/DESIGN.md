@@ -458,22 +458,11 @@ found that there is no single one, and that some color sets are sacred:
 
 What the project does (project analysis):
 
-- Treats color as design, not as "Native meaning." The palette carries no
-  tribal symbolism. (The footer said so until Trevor asked on Nov. 22, 2026
-  for its notes to be removed.)
-- Never uses a nation's directional, ceremonial or flag colors, or a
-  medicine-wheel set, as decoration.
-- Keeps teal and orange as plain fields. No feathers, patterns or borders
-  that turn the palette into a "Southwest" costume standing in for 575
-  nations. No Native-authored source found names that palette as a cliché;
-  avoiding it follows from the guidance against pan-Indian imagery above.
-- Brings the commissioned Native artist in as a co-designer of the palette,
-  not a reviewer at the end, as IllumiNative's industry guide advises against
-  consultants brought in "to only rubber stamp or fix an issue at the end of
-  the creative process."[^illuminative]
-- Keeps the nation profile template neutral, so one aesthetic is not wrapped
-  around every nation. A nation's own seal or flag appears only with its
-  permission and is never recolored.
+- Treats color as design, not as "Native meaning." The palette carries no tribal symbolism. (The footer said so until Trevor asked on Nov. 22, 2026 for its notes to be removed.)
+- Never uses a nation's directional, ceremonial or flag colors, or a medicine-wheel set, as decoration.
+- Keeps teal and orange as plain fields. No feathers, patterns or borders that turn the palette into a "Southwest" costume standing in for 575 nations. No Native-authored source found names that palette as a cliché; avoiding it follows from the guidance against pan-Indian imagery above.
+- Brings the commissioned Native artist in as a co-designer of the palette, not a reviewer at the end, as IllumiNative's industry guide advises against consultants brought in "to only rubber stamp or fix an issue at the end of the creative process."[^illuminative]
+- Keeps the nation profile template neutral, so one aesthetic is not wrapped around every nation. A nation's own seal or flag appears only with its permission and is never recolored.
 
 ### Type
 
