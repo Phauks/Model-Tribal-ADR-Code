@@ -1,5 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { entityTypeLabels } from '#lib/nation-labels.ts';
+import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import { nations } from '#lib/server/content.ts';
 import { glossaryTermSummaries, publishedGlossary } from '#lib/server/glossary-entries.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
@@ -37,11 +38,16 @@ export const GET: RequestHandler = () => {
 			...(record?.names.former ?? []).map((name) => name.name)
 		];
 		const group = row.entityType === 'native-nation' ? undefined : entityTypeLabels[row.entityType];
+		// The seal or logo, only where the nation's page may show it (docs/official-images.md).
+		const showsImage = (record?.official_images ?? []).some(
+			(image) => image.private_copy && imageMayBeShown(image)
+		);
 		return {
 			kind: 'nation',
 			title: row.name,
 			...(also.length > 0 ? { also } : {}),
 			detail: [group, row.statesText].filter(Boolean).join(' · '),
+			...(showsImage ? { image: imagePath(row.id) } : {}),
 			link: `/nations/${row.id}`
 		};
 	});
