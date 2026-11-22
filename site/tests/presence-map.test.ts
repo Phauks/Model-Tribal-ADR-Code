@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { layoutPresenceMap, pathBounds, type SourceFrame } from '../src/lib/presence-map.ts';
+import {
+	layoutPresenceMap,
+	pathBounds,
+	pointInBox,
+	shapeInBox,
+	shareStateShapes,
+	type SourceFrame
+} from '../src/lib/presence-map.ts';
 import type { StateShape } from '../src/lib/map-geometry.ts';
 
 // A made-up map: a main box 951 by 600 units, and two boxes underneath.
@@ -55,5 +62,43 @@ describe('layoutPresenceMap', () => {
 		const map = layoutPresenceMap(frames, states, new Set(['WA', 'ME', 'HI']));
 		expect(map.boxes.map((box) => box.key)).toEqual(['main', 'hawaii']);
 		expect(map.zoomed).toBe(false);
+	});
+});
+
+describe('layoutPresenceMap with a focus', () => {
+	it('zooms to the focus shape rather than to the nation’s states', () => {
+		const focus = square(40, 40, 60);
+		const map = layoutPresenceMap(frames, states, new Set(['WA']), new Map(), { focus: [focus], closestZoom: 0.25 });
+		expect(map.boxes.map((box) => box.key)).toEqual(['main']);
+		const [main] = map.boxes;
+		// A quarter of the main box's width at the closest: a scale of 4 at most.
+		const scale = Number(main.transform.match(/scale\(([\d.]+)\)/)?.[1]);
+		expect(scale).toBeGreaterThan(2.5);
+		expect(scale).toBeLessThanOrEqual(4);
+		expect(shapeInBox(main, focus)).toBe(true);
+		expect(shapeInBox(main, square(860, 40, 80))).toBe(false);
+	});
+
+	it('places a point of the full map on the drawn box', () => {
+		const map = layoutPresenceMap(frames, states, new Set(['WA', 'OR']));
+		const [main] = map.boxes;
+		const placed = pointInBox(main, { x: main.view.x, y: main.view.y });
+		expect(placed).toEqual({ x: main.x, y: main.y });
+	});
+});
+
+describe('shareStateShapes', () => {
+	it('keeps one copy of each outline that several views draw', () => {
+		const statesView = layoutPresenceMap(frames, states, new Set(['WA', 'OR']));
+		const regionView = layoutPresenceMap(frames, states, new Set(['WA']), new Map(), { focus: [square(40, 40, 200)] });
+		const shared = shareStateShapes([statesView, regionView]);
+		const keys = shared.shapes.map((shape) => shape.key);
+		expect(new Set(keys).size).toBe(keys.length);
+		expect(shared.shapes.length).toBeLessThan(
+			statesView.boxes.flatMap((box) => box.states).length + regionView.boxes.flatMap((box) => box.states).length
+		);
+		const washington = shared.layouts[0].boxes[0].states.find((state) => state.code === 'WA');
+		expect(washington?.shape).toBe('WA-1');
+		expect(shared.layouts[1].boxes[0].states.find((state) => state.code === 'WA')?.shape).toBe('WA-1');
 	});
 });

@@ -196,6 +196,8 @@ export interface NationRecord {
 		appeals_to?: CitedFact & { court: string };
 	})[];
 	dispute_resolution_law?: string[];
+	jurisdiction?: (CitedFact & { topic: string; value?: string; detail?: string })[];
+	memberships?: (CitedFact & { organization: string })[];
 	dispute_resolution?: { forums?: (CitedFact & { kind: string; name?: string; link?: string })[] };
 	review: { status: string; last_verified?: string; note?: string };
 	sensitivity?: { restricted?: boolean; tribal_review_required?: boolean };
@@ -219,6 +221,8 @@ export interface DocumentVersion extends CitedFact {
 		>
 	>;
 	approval?: { authority: string; action: string; source?: string; locator?: string };
+	/** The project's copy of this version's text, found by its SHA-256 in the capture index. */
+	capture?: { path?: string; sha256?: string };
 	amends?: string[];
 	supersedes?: string[];
 	clauses?: { topic: string; locator?: string; summary: string }[];
@@ -317,6 +321,21 @@ export function nationsForReview(): { id: string; name: string; published: boole
 		.sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
 }
 
+/**
+ * The name and kind of every nation record that is not restricted, for the
+ * lines under a case or law box that name the nations or peoples a source
+ * concerns (src/lib/server/case-facts.ts), as the print build reads them.
+ */
+export function nationNamesAndKinds(): Map<string, { name: string; entityType: string }> {
+	const found = new Map<string, { name: string; entityType: string }>();
+	for (const file of yamlFilesUnder('content/tribes')) {
+		const record = readYaml<NationRecord>(file);
+		if (record.sensitivity?.restricted) continue;
+		found.set(record.id, { name: record.names.official, entityType: record.entity_type });
+	}
+	return found;
+}
+
 /** Glossary records with the file each comes from. Used by vite.config.ts. */
 export function glossaryForReview(): { id: string; term: string; file: string }[] {
 	return yamlFilesUnder('content/glossary').map((file) => {
@@ -409,19 +428,45 @@ export type { StoryRecord } from '../story-visibility.ts';
  */
 const neverServedTopics = new Set(['westlaw', 'articles']);
 
+let indexedCopyCache: PublicCopy[] | undefined;
 let publicCopyCache: PublicCopy[] | undefined;
 
+let publishedNations: Set<string> | undefined;
+let withheldDigests: Set<string> | undefined;
+
 /**
- * The files in the bucket the website may serve itself: rows of the capture
- * index whose redistribution column says "yes", that are PDF files and that
- * are originals rather than text extracts (src/lib/public-copies.ts). Empty
- * when the index is missing.
+ * Whether a copy belongs to material the site does not publish: a nation whose
+ * record is restricted or still waits for the nation's approval, or a document
+ * history marked restricted or held for review. A nation's constitution is
+ * filed under constitutions/<nation id>/, so the key names its nation too.
  */
-export function publicCopies(): PublicCopy[] {
-	if (!publicCopyCache) {
+function isWithheld(copy: PublicCopy): boolean {
+	const named = [...copy.nations];
+	if (copy.topic === 'constitutions') named.push(copy.key.split('/')[1] ?? '');
+	if (named.length === 0) return false;
+	publishedNations ??= new Set(nations().map((record) => record.id));
+	const published = publishedNations;
+	if (named.some((id) => id && !published.has(id))) return true;
+	withheldDigests ??= new Set(
+		yamlFilesUnder('content/documents')
+			.map((file) => readYaml<DocumentHistoryRecord>(file))
+			.filter((record) => record.sensitivity?.restricted || record.sensitivity?.tribal_review_required)
+			.flatMap((record) => record.versions.map((version) => version.capture?.sha256?.toLowerCase() ?? ''))
+			.filter(Boolean)
+	);
+	return withheldDigests.has(copy.sha256);
+}
+
+/**
+ * Rows of the capture index whose redistribution column says "yes", that are
+ * PDFs or saved web pages and originals rather than text extracts, before
+ * withheld material is taken out. Empty when the index is missing.
+ */
+function indexedCopies(): PublicCopy[] {
+	if (!indexedCopyCache) {
 		const indexPath = 'research/capture-index.csv';
 		const rows = existsSync(path.join(repositoryRoot, indexPath)) ? parseCsv(readText(indexPath)) : [];
-		publicCopyCache = rows
+		indexedCopyCache = rows
 			.filter(
 				(row) =>
 					row.redistribution === 'yes' &&
@@ -441,21 +486,45 @@ export function publicCopies(): PublicCopy[] {
 				links: row.link.split(/\s+/).filter((link) => linkForMatching(link)),
 				captured: row.captured.slice(0, 10),
 				title: row.title || row.key,
+				topic: row.topic || row.key.split('/')[0],
+				nations: row.nations.split(';').filter(Boolean),
 				rights: row.rights
 			}))
 			.filter((copy) => copy.links.length > 0)
 			.sort((first, second) => first.title.localeCompare(second.title));
 	}
+	return indexedCopyCache;
+}
+
+/**
+ * The files in the bucket the website may serve itself (src/lib/public-copies.ts):
+ * the indexed copies, without those of material the site does not publish.
+ */
+export function publicCopies(): PublicCopy[] {
+	publicCopyCache ??= indexedCopies().filter((copy) => !isWithheld(copy));
 	return publicCopyCache;
 }
 
 let publicCopyLinks: Map<string, PublicCopy> | undefined;
+
+let publicCopyHashes: Map<string, PublicCopy> | undefined;
+
+/** The copy the website serves of the file with this SHA-256, if it keeps one. */
+export function publicCopyWithDigest(sha256: string | undefined): PublicCopy | undefined {
+	if (!sha256) return undefined;
+	publicCopyHashes ??= new Map(indexedCopies().map((copy) => [copy.sha256, copy]));
+	const copy = publicCopyHashes.get(sha256.toLowerCase());
+	return copy && !isWithheld(copy) ? copy : undefined;
+}
 
 /** The copy the website serves of the document at this address, if it keeps one. */
 export function publicCopyFor(link: string | undefined): PublicCopy | undefined {
 	if (!link) return undefined;
 	const matching = linkForMatching(link);
 	if (!matching) return undefined;
-	publicCopyLinks ??= copiesByLink(publicCopies());
-	return publicCopyLinks.get(matching);
+	// Matched before withheld copies are taken out, so a page that cites no
+	// copy never has to read every nation record to find that out.
+	publicCopyLinks ??= copiesByLink(indexedCopies());
+	const copy = publicCopyLinks.get(matching);
+	return copy && !isWithheld(copy) ? copy : undefined;
 }

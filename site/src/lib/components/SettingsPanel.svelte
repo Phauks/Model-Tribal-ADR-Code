@@ -270,7 +270,7 @@
 				entries.
 			</p>
 			{@render choiceGroup(
-				'Glossary cards',
+				'Previews',
 				'glossary-cards',
 				glossaryCardOptions,
 				settings.glossaryCards,
