@@ -9,7 +9,7 @@
  */
 import { error } from '@sveltejs/kit';
 import { version as siteBuild } from '$app/env';
-import { essayCitations, essayTerms } from 'virtual:essay-library';
+import { essayBoxFacts, essayCitations, essayTerms } from 'virtual:essay-library';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
 import { essayDateTime } from '../essays/dates.ts';
@@ -27,7 +27,8 @@ import {
 
 export const essayLibrary: EssayLibrary = {
 	citation: (key) => essayCitations[key],
-	term: (id) => essayTerms[id]
+	term: (id) => essayTerms[id],
+	facts: (box, key) => (box === 'law' ? essayBoxFacts.laws[key] : essayBoxFacts.cases[key]) ?? []
 };
 
 export function storageForPages(): { database: D1Database; bucket: R2Bucket } {
