@@ -1,0 +1,109 @@
+profile: content/tribes/j/jamestown-sklallam-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/71ffb67d30545b0e8cdb.txt
+  query: Title 2 Arbitration
+  outcome: found
+  reason: Title 2 read in full from the captured PDF.
+  records:
+  - content/tribes/j/jamestown-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/jamestown_sklallam/index.html
+  query: Title 2 Arbitration
+  outcome: found
+  reason: NILL page lists Title 02 Arbitration and links to the nation's copy, which is the captured file.
+  records:
+  - content/tribes/j/jamestown-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://jamestowntribe.org/wp-content/uploads/2018/05/Title_02_-Arbitration_LPG_Edits_1-12-12.pdf
+  query: Title 2
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/jam2.txt) and the section read directly.'
+  records:
+  - content/tribes/j/jamestown-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/71ffb67d30545b0e8cdb.txt
+  query: Chapter 2.02 Agreement to Arbitrate; Section 2.02.01
+  outcome: found
+  reason: Chapter 2.02 read in full from the captured PDF.
+  records:
+  - content/tribes/j/jamestown-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://jamestowntribe.org/wp-content/uploads/2018/05/Title_02_-Arbitration_LPG_Edits_1-12-12.pdf
+  query: Chapter 2.02
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/jam2.txt) and the section read directly.'
+  records:
+  - content/tribes/j/jamestown-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/80ac8a188e2aa473d718.txt
+  query: Informal Dispute Resolution
+  outcome: not-found
+  reason: Captured Title 33 youth code only contains general references to informal dispute resolution,
+    not Chapter 13.10.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/jamestown_sklallam/index.html
+  query: Title 13 Tribal Court
+  outcome: dead-link
+  reason: NILL link to the 2013 Title 13 PDF on the tribe's govdocs path returned a 404 page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://jamestowntribe.org/wp-content/uploads/2023/02/Title_13_Tribal_Court-As-Amended-6-29-2021-1.pdf
+  query: Jamestown S'Klallam tribal code 13.10 informal dispute resolution
+  outcome: found
+  reason: Search returned the 2021 amended Title 13 PDF on the tribe's site, which was downloaded and
+    read.
+  records:
+  - content/tribes/j/jamestown-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://jamestowntribe.org/wp-content/uploads/2023/02/Title_13_Tribal_Court-As-Amended-6-29-2021-1.pdf
+  query: Chapter 13.10
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/jam13.txt) and the section read directly.'
+  records:
+  - content/tribes/j/jamestown-sklallam-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/jamestown_sklallam/index.html
+  query: Chapter 2.02 Agreement to Arbitrate
+  outcome: found
+  reason: 'Same heading as #2 on the NILL page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/jamestown_sklallam/index.html
+  query: Chapter 13.10 Informal Dispute Resolution
+  outcome: found
+  reason: 'Same heading as #3 on the NILL page.'

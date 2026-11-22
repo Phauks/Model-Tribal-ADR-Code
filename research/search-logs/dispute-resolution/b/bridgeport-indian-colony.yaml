@@ -1,0 +1,38 @@
+profile: content/tribes/b/bridgeport-indian-colony.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/bridgeport/index.html
+  query: Amended arbitration ordinance, 94-4
+  outcome: found
+  reason: The page lists the ordinance's heading and articles in its table of contents but has no link
+    to the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://nill.narf.org/codes/bridgeport/index.html
+  query: Bridgeport Indian Colony arbitration ordinance 94-4 certification
+  outcome: not-found
+  reason: Results were the NILL page, the NIGC gaming ordinance and the constitution page; none contained
+    the arbitration ordinance.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://nill.narf.org/tribes/bridgeport_paiute.html
+  query: Bridgeport Paiute Arbitration Council ordinance 94-4 pdf
+  outcome: not-found
+  reason: Results repeated the same NILL and constitution pages and no text of the ordinance.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://narf.org/nill/codes/bridgeport/index.html
+  outcome: not-found
+  reason: Retry found no text of the arbitration ordinance.

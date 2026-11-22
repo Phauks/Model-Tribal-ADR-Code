@@ -1,0 +1,59 @@
+profile: content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/shingle_springs_miwok/index.html
+  query: arbitration; dispute resolution
+  outcome: found
+  reason: 'The NILL page links only to the nation''s codes page. It lists headings only: ''Title VI Arbitration
+    Ordinance'' is in the Tribal Gaming Authority Bylaws, and ''Section 5. Dispute Resolution'' is in
+    the IGRA Trust Agreement.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.shinglespringsrancheria.com/government/codes-policies-and-bylaws/
+  query: arbitration; dispute
+  outcome: not-found
+  reason: The page links to donation and construction PDFs only. The Codes & Policies link goes to a code
+    site instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://shinglespringsband.municipalcodeonline.com/
+  query: Arbitration Ordinance; Title VI; Section 3
+  outcome: not-found
+  reason: The code site shows only its book list and no text of the arbitration or dispute provisions.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.shinglespringsrancheria.com/wp-content/uploads/Gaming-Ordinance.pdf
+  query: Arbitration; Dispute Resolution
+  outcome: not-found
+  reason: The Gaming Ordinance has no arbitration or dispute section (its sections are gaming licensing
+    and related matters).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Shingle Springs Band of Miwok Indians "Arbitration Ordinance" "Arbitration Award Not Appealable"
+    Tribal Gaming Authority pdf
+  outcome: not-found
+  reason: Results included a casino tort claims ordinance and patron dispute regulations, but no arbitration
+    ordinance text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://shinglespringsband.municipalcodeonline.com/book?type=ordinances
+  outcome: not-found
+  reason: The code site is a script-driven page whose section text is not served in the HTML; nothing
+    readable.

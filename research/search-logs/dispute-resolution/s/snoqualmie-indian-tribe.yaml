@@ -1,0 +1,48 @@
+profile: content/tribes/s/snoqualmie-indian-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/a8a07718b907d122e9b6.txt
+  outcome: not-found
+  reason: Capture has no text layer (11 characters); the PDF it names is the Judiciary Act 3.1, OCR'd,
+    with no arbitration section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/snoqualmie/index.html
+  outcome: found
+  reason: Index lists the Chapter 3 Arbitration Act headings and links the tribe's codified PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.snoqualmietribe.us/sites/default/files/arbitration_act.3.3.codified.pdf
+  outcome: dead-link
+  reason: Linked PDF returned HTTP 404 on http and https.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Snoqualmie-act3-1.pdf
+  outcome: not-found
+  reason: Downloaded and OCR'd; contains Act 3.1 (Judiciary) only.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Snoqualmie Tribal Council Arbitration Act Chapter 3 enforceability agreements to arbitrate
+  outcome: not-found
+  reason: No Snoqualmie arbitration text in results.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: http://www.snoqualmietribe.us/sites/default/files/arbitration_act.3.3.codified.pdf
+  outcome: dead-link
+  reason: 'Retry: link still dead; no other copy found.'

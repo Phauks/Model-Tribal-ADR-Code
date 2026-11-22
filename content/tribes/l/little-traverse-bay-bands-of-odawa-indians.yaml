@@ -358,30 +358,32 @@ dispute_resolution:
     as_of: 2015-08
   - kind: other
     title: 7.412 PATRON DISPUTE RESOLUTION
-    citation: 7.412 PATRON DISPUTE RESOLUTION
-    link: https://narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-codes-ltraverse
+    citation: WOTCL Title VII. Economic Development, 7.412
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2023/03/Vol.-7-TITLE-VII.-ECONOMIC-DEVELOPMENT.pdf
+    source: little-traverse-wotcl-title-vii-economic-development
     confidence: medium
-    verification: title-only
-    as_of: '2024'
-    locator: Table of Contents, under 'Chapter 4. Gaming Regulatory Statute'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: March 2024); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2011-02-26'
+    locator: '7.412'
+    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
+      is left for the lead author's review.
+    summary: Lets gaming patrons with gaming-related complaints against the establishment, an employee
+      or a management contractor file a petition for relief with the Gaming Commission, to be resolved
+      under procedures the Commission adopts.
   - kind: arbitration
     title: LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO AUTHORIZE
       ARBITRATION WITH DROPBOX
-    citation: LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO
-      AUTHORIZE ARBITRATION WITH DROPBOX
-    link: https://narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-codes-ltraverse
-    confidence: medium
-    verification: title-only
-    as_of: '2024'
-    locator: Table of Contents, under '18.400(6.23)(a)'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: March 2024); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    citation: WOTCL Title XVIII. Post Constitution Resolutions, Chapter 4. Sovereign Immunity, 18.400(6.23)(a)
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-title-xviii-post-constitution-resolutions
+    confidence: high
+    verification: read-in-full
+    as_of: '2024-03-01'
+    locator: 18.400(6.23)(a)
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Waives the Tribe's sovereign immunity for the sole purpose of consenting to arbitration with
+      Dropbox under its contract, provides that any arbitration judgment is enforceable under California
+      law, and limits the waiver to the value of the contract.
   clauses:
   - context: other
     kind: arbitration-clause

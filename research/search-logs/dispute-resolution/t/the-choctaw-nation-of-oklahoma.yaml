@@ -1,0 +1,189 @@
+profile: content/tribes/t/the-choctaw-nation-of-oklahoma.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/e1ee1bf922e8dabd345a.txt
+  query: Alternative Dispute Resolution
+  outcome: found
+  reason: A third-party NCORJ page reproduces the section text, which is not the nation's own copy.
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Choctaw Nation Children's Code pdf Family group conferencing settlement conference 1-4-504
+  outcome: found
+  reason: The search returned the nation's own Children and Juvenile Code PDF, which contains the section.
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctawnation.com/government/judicial-branch/tribal-codes
+  outcome: found
+  reason: The nation's Tribal Codes page lists the Children's Code, and the PDF it links to was read.
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.choctawnation.com/wp-content/uploads/2023/10/cno-childrens-code-updated-10-4-2023.pdf
+  query: 1-4-504
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/choc.txt) and the section read directly.'
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents (Choctaw captures)
+  query: Article XII oversight dispute resolution
+  outcome: not-found
+  reason: No captured Choctaw copy contains this article heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/choctaw/index.html
+  outcome: found
+  reason: The NILL page places the heading in the Adoption Code, and it points to the nation's Tribal
+    Codes page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Choctaw Nation Adoption Code pdf
+  outcome: found
+  reason: The search returned the nation's Adoption Code PDF, and the article reads Reserved.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: working copy downloaded during the reading (choc_adopt.txt)
+  query: Article XII
+  outcome: found
+  reason: Downloaded the PDF with curl and extracted it with pdftotext; the article heading (Interstate
+    Compact on the Placement of Children, in the Adoption Code) is followed only by the word Reserved.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: working copy downloaded during the reading (nill_choc.html)
+  query: Article XII
+  outcome: found
+  reason: NILL page lists this heading under Article 11 Interstate Compact for the Placement of Children
+    in the Adoption Code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents (Choctaw captures)
+  query: 107.2 guardian ad litem; referral to mediation
+  outcome: not-found
+  reason: No captured Choctaw copy contains this section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: 107.2 Appointment of guardian ad litem Referral to mediation or counseling False accusations
+    of child abuse or neglect Choctaw
+  outcome: found
+  reason: The search returned Oklahoma state statute pages and the nation's Marriage Act PDF, which contains
+    the section.
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (choc_marr.txt)
+  query: Section 107.2
+  outcome: found
+  reason: Downloaded the PDF and read the section with pdftotext; it is subsections A to D of the section,
+    within the PDF headed Choctaw Nation Marriage Act (the file also holds the divorce and child support
+    provisions).
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctawnation.com/wp-content/uploads/2022/04/bar-association-ethical-conduct-judicial-cannons.pdf
+  outcome: blocked
+  reason: The nation's copy returned 403 Forbidden with a browser user agent.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Choctaw Nation of Oklahoma code Former Judge or Arbitrator section
+  outcome: found
+  reason: The search returned the Choctaw Nation Bar Association Rules PDF on choctawnationcourt.com,
+    which contains Rule 1.12.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents (Choctaw captures)
+  query: former judge arbitrator
+  outcome: not-found
+  reason: No captured Choctaw copy contains the rule.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (choc_bar.txt)
+  query: Rule 1.12
+  outcome: found
+  reason: Downloaded the PDF from the court site and read Rule 1.12 with pdftotext.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/eacfc7b0df955bd5eb57.txt
+  query: Peacemaking Act
+  outcome: found
+  reason: The captured copy contains the full Act, sections 1 to 18.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctawnation.com/wp-content/uploads/2022/04/peacemaking-act.pdf
+  outcome: found
+  reason: The nation's own copy matches the captured text in size and content.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (choc_peace.txt)
+  query: Peacemaking Act
+  outcome: found
+  reason: Downloaded the PDF and read all 18 sections with pdftotext.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents (Choctaw captures)
+  query: Oversight, Dispute Resolution, Enforcement
+  outcome: not-found
+  reason: No captured Choctaw copy contains this heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctawnation.com/wp-content/uploads/2022/04/adoption-code.pdf
+  outcome: found
+  reason: 'The Adoption Code PDF shows the same article, which reads Reserved; this is the same section
+    as record #1.'

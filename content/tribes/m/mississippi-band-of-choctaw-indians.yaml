@@ -352,42 +352,54 @@ dispute_resolution:
     as_of: 2024-02
     note: Confidence high because the same file is published on the nation's own website (upload date
       used as as_of).
-  - kind: other
+  - kind: arbitration
     title: SECTION 10. DISPUTE RESOLUTION
-    citation: SECTION 10. DISPUTE RESOLUTION
-    link: https://narf.org/nill/codes/mississippichoctaw/index.html
-    source: national-indian-law-library-code-codes-mississippichoctaw
+    citation: Tribal-State Compact for Regulation of Class III Gaming on the Mississippi Band of Choctaw
+      Indians Reservation (as published with the Federal Register notice of Jan. 29, 1993), Compact Section
+      10 (10.1 and 10.2)
+    link: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.01.29_mississippi_choctaw_band_of_indians_tribal_state_gaming_compact.pdf
+    source: compact-ms-mississippi-band-of-choctaw-indians-1993
     confidence: medium
-    verification: title-only
-    as_of: '2015'
-    locator: Table of Contents, under 'CHAPTER 3. CLASS III (CASINO-TYPE) GAMING'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: 1993-01
+    locator: Compact Section 10 (10.1 and 10.2)
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "SECTION 10. DISPUTE RESOLUTION"; the printed heading, number or version differs (see
+      research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Under the gaming compact, a party alleging noncompliance or seeking an interpretation serves
+      written notice, the Governor and Tribal Chief (or designees) meet within thirty days, and if the
+      dispute is unresolved after ninety days it goes to arbitration before one agreed arbitrator or a
+      panel of three (each side picks one and those two pick a third, with the American Arbitration Association
+      appointing if they cannot agree), with costs split equally, a final and non-reviewable decision,
+      and any party free to seek the usual remedies to enforce it.
   - kind: peacemaking
-    title: § 3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
-    citation: § 3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
-    link: https://narf.org/nill/codes/mississippichoctaw/index.html
-    source: national-indian-law-library-code-codes-mississippichoctaw
-    confidence: medium
-    verification: title-only
-    as_of: '2015'
-    locator: Table of Contents, under 'CHAPTER 10. CRIMES INVOLVING DOMESTIC VIOLENCE'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    title: §3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
+    citation: TITLE III CRIMINAL OFFENSES, 3-10-15
+    link: https://www.choctaw.org/wp-content/uploads/2025/04/TITLE-03-Criminal-Offenses-Amd.-3.27.2025.pdf
+    source: mississippi-choctaw-title-iii-criminal-offenses
+    confidence: high
+    verification: read-in-full
+    locator: 3-10-15
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Lets a judge, in the judge's discretion after a criminal complaint or protective-order petition,
+      refer a domestic violence case to the Peacemaker Court for alternative resolution or disposition,
+      and requires the case to go back to criminal court within twenty days of the transfer order if the
+      Peacemaker Judge believes it cannot be resolved through peacemaking.
   - kind: peacemaking
-    title: CHAPTER 2. TRANSFER PROCEDURES FOR JUVENILE OFFENDERS TO ADULT COURT OR PEACEMAKER COURT
-    citation: CHAPTER 2. TRANSFER PROCEDURES FOR JUVENILE OFFENDERS TO ADULT COURT OR PEACEMAKER COURT
-    link: https://narf.org/nill/codes/mississippichoctaw/index.html
-    source: national-indian-law-library-code-codes-mississippichoctaw
-    confidence: medium
-    verification: title-only
-    as_of: '2015'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    title: CHAPTER 2. TRANSFER PROCEDURES FROM YOUTH COURT TO ADULT COURT, OR TO PEACEMAKER COURT
+    citation: TITLE XI CHOCTAW YOUTH CODE, 11-2-1 to 11-2-7 (Chapter 2)
+    link: https://www.choctaw.org/wp-content/uploads/2024/02/Title-11-Choctaw-Youth-Code.pdf
+    source: mississippi-choctaw-title-xi-choctaw-youth-code
+    confidence: high
+    verification: read-in-full
+    locator: 11-2-1 to 11-2-7 (Chapter 2)
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "CHAPTER 2. TRANSFER PROCEDURES FOR JUVENILE OFFENDERS TO ADULT COURT OR PEACEMAKER
+      COURT"; the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Sets how the Youth Court transfers a minor's case to adult criminal court, or, with voluntary
+      consent of the minor, family, counsel and the opposing parties, to the Peacemaker Court, which files
+      a written agreed resolution with the Youth Court (that may then recommend dismissal) or returns
+      the case if no agreement is reached; child welfare matters cannot be referred.
   database_listings:
   - title: Deferring Criminal Prosecution in a Vlnerable Adult Abuse Case
     citation: Choctaw Rules Title XXXI, §31-1-16

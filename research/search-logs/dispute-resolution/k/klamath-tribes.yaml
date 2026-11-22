@@ -1,0 +1,161 @@
+profile: content/tribes/k/klamath-tribes.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/8cded6f6d0cc96a4b535.txt
+  query: Klamath 36.11 Dispute Resolution
+  outcome: not-found
+  reason: The captured tribal-codes page lists Titles 1 to 8 with no Title 11 chapter 13, Title 36 or
+    Title 45 document.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/klamath/index.html
+  outcome: found
+  reason: Table of contents lists the heading; it links to no copy of the text.
+  records:
+  - content/tribes/k/klamath-tribes.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.klamathtribalcourts.com/tribal-laws/
+  query: Klamath 36.11 Dispute Resolution
+  outcome: not-found
+  reason: Nation's tribal-laws page lists documents for Titles 1 to 8 and 11 (Chapter 68 only); no Title
+    36, Title 45 or Title 11.13 document.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Klamath 36.11 Dispute Resolution
+  outcome: not-found
+  reason: Search returned no copy of the section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.klamathtribalcourts.com/en/documents/37/Title_5_Chapter_36_-_Bond_Ordinance.pdf
+  query: 36.11 Dispute Resolution
+  outcome: found
+  reason: The current tribal-laws page links Title 5 Chapter 36 Bond Ordinance; scan OCR'd.
+  records:
+  - content/tribes/k/klamath-tribes.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/8cded6f6d0cc96a4b535.txt
+  query: Klamath 45.63 Dispute Resolution management contractor customers
+  outcome: not-found
+  reason: The captured tribal-codes page lists Titles 1 to 8 with no Title 11 chapter 13, Title 36 or
+    Title 45 document.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.klamathtribalcourts.com/tribal-laws/
+  query: Klamath 45.63 Dispute Resolution management contractor customers
+  outcome: not-found
+  reason: Nation's tribal-laws page lists documents for Titles 1 to 8 and 11 (Chapter 68 only); no Title
+    36, Title 45 or Title 11.13 document.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Klamath 45.63 Dispute Resolution management contractor customers
+  outcome: not-found
+  reason: Search returned no copy of the section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.klamathtribalcourts.com/en/documents/20/Title_7_Chapter_45_-_Gaming_Ordinance.pdf
+  query: 45.63 Dispute Resolution
+  outcome: found
+  reason: Linked from the current tribal-laws page; scan OCR'd.
+  records:
+  - content/tribes/k/klamath-tribes.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/8cded6f6d0cc96a4b535.txt
+  query: Klamath 11.13 Klamath Peacemaker Court
+  outcome: not-found
+  reason: The captured tribal-codes page lists Titles 1 to 8 with no Title 11 chapter 13, Title 36 or
+    Title 45 document.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.klamathtribalcourts.com/tribal-laws/
+  query: Klamath 11.13 Klamath Peacemaker Court
+  outcome: not-found
+  reason: Nation's tribal-laws page lists documents for Titles 1 to 8 and 11 (Chapter 68 only); no Title
+    36, Title 45 or Title 11.13 document.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Klamath 11.13 Klamath Peacemaker Court
+  outcome: not-found
+  reason: Search returned no copy of the section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.klamathtribalcourts.com/en/documents/44/Title_2_Chapter_11_-_Tribal_Court_Ordinance_v2.pdf
+  query: 11.13 Klamath Peacemaker Court
+  outcome: found
+  reason: Site was reorganized; the tribal-laws page now links Title 2 Chapter 11. PDF is a scan, OCR'd.
+  records:
+  - content/tribes/k/klamath-tribes.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/e1e809efcfb90711c992.txt
+  query: Peacemaker Ordinance
+  outcome: not-public
+  reason: Captured copy is an image PDF with no text layer (16 characters).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/45d615040e91c3337b55.txt
+  query: Peacemaker Ordinance
+  outcome: not-public
+  reason: Captured copy is the same image PDF from the Klamath site (16 characters).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/klamath/index.html
+  outcome: found
+  reason: Table of contents lists the heading and links an earlier upload of the same 11-15-08 ordinance;
+    that copy was not read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.klamathtribalcourts.com/tribal-laws/
+  query: Title 2 Chapter 18
+  outcome: found
+  reason: Nation's current tribal-laws page links the Title 2 Chapter 18 PDF; downloaded and OCR'd.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.klamathtribalcourts.com/en/documents/28/Title_2_Chapter_18_-_The_Klamath_Peacemaker_Ordinance.pdf
+  outcome: found
+  reason: Re-downloaded; image-only PDF (16 pages) OCR'd at 200 dpi; pages 1-16 read in full.

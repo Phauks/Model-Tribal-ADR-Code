@@ -1,0 +1,75 @@
+profile: content/tribes/f/fort-mcdowell-yavapai-nation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/fort_mcdowell/index.html
+  outcome: found
+  reason: The NILL page links the Law and Order Code to the Municode site and lists no chapter text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+  outcome: blocked
+  reason: The Municode page returned a client error to the fetch tool, so no text was retrieved.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nptao.arizona.edu/sites/default/files/ft_mcdowell_law_order_code_0.pdf
+  outcome: not-found
+  reason: The PDF copy of the Law and Order Code contains Chapter 15 (exclusion) and Chapter 19 (antiquities)
+    only, and no Sec. 5-21.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Fort McDowell Yavapai Nation Law and Order Code pdf Conciliation and settlement of dispute
+  outcome: not-found
+  reason: No search result contained the text of Sec. 5-21.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://library.municode.com/
+  outcome: blocked
+  reason: 'Retry not attempted: Municode refuses scripted access and the brief says not to retry it.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/fort_mcdowell/index.html
+  outcome: found
+  reason: The NILL page gives only the heading and the Municode link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nigc.gov/images/uploads/gamingordinances/ftmcdowellyavapaination-ordappr121793.pdf
+  query: Resolution of Patron Disputes
+  outcome: found
+  reason: The 1993 Gaming Ordinance has Section 17 on patron disputes, which is a different section from
+    chapter 8.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nptao.arizona.edu/sites/default/files/ft_mcdowell_law_order_code_0.pdf
+  query: patron dispute resolution
+  outcome: not-found
+  reason: The PDF has no chapter 8 or patron dispute text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nigc.gov/images/uploads/gamingordinances/ftmcdowellyavapaination-ordappr121793.pdf
+  query: Resolution of Patron Disputes
+  outcome: found
+  reason: The 1993 Gaming Ordinance Section 17 on patron disputes exists but is not confirmed as this
+    provision.

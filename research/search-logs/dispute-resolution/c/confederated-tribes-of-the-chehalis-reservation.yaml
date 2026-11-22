@@ -1,0 +1,44 @@
+profile: content/tribes/c/confederated-tribes-of-the-chehalis-reservation.yaml
+topic: dispute-resolution
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.codepublishing.com/WA/ChehalisTribe/ (7268a810a0c01c6c561f.txt)
+  outcome: not-found
+  reason: Redirect notice to eCode360 with no code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.chehalistribe.org/?directory=office-of-the-tribal-attorney (0f462b36626c1eddb0a2.txt)
+  query: dispute
+  outcome: not-found
+  reason: Office page has no dispute resolution code text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ecode360.com/CH4710
+  query: 15.01.210
+  outcome: blocked
+  reason: HTTP 403 to curl.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://ecode360.com/
+  outcome: blocked
+  reason: 'Retry not attempted: eCode360 refuses scripted access and the brief says not to retry it.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.narf.org/nill/codes/
+  outcome: not-found
+  reason: Second search (NCORJ, peacemaking.narf.org, other hosts) found no non-eCode360 copy of the text.
+next_steps: The provisions this nation's profile lists by section title are still unread. A person could
+  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.

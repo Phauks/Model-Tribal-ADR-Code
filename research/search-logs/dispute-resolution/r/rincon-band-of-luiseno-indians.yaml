@@ -1,0 +1,149 @@
+profile: content/tribes/r/rincon-band-of-luiseno-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/2a8ea9a3f02d3962c96b.txt
+  outcome: found
+  reason: Section 2.107 appears in the captured ordinance text.
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (rincon_si.txt)
+  query: '2.107'
+  outcome: found
+  reason: Downloaded the PDF and read section 2.107 with pdftotext; the footer prints Adopted 5/1/12,
+    Amended 5/15/12; 1/8/26.
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for this nation
+  query: 7.3.01. Alternative Dispute Resolution
+  outcome: not-found
+  reason: No captured copy of this nation's code was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/rincon_luiseno/index.html
+  outcome: found
+  reason: The NILL table of contents lists the heading but links no copy of the provision.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/55de0a540ec9f83eb2c7.txt
+  query: Alternative Dispute Resolution
+  outcome: not-found
+  reason: The Rincon laws index lists no Chapter 7.3 section and no captured text has the heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://rincon-nsn.gov/government/office-of-the-attorney-general/laws-and-regulations/
+  query: Alternative Dispute Resolution 7.3.01
+  outcome: not-found
+  reason: The laws index lists chapters 1 to 15; no section 7.3.01 is listed.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Rincon Band Luiseno "6.1.61" OR "7.3.01" dispute resolution ordinance
+  outcome: not-found
+  reason: Results were Rincon code PDFs for other sections; none held section 7.3.01.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://rincon-nsn.gov/government/office-of-the-attorney-general/laws-and-regulations/
+  outcome: not-found
+  reason: Retry found no section 7.3.01.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for § 3.500
+  query: Request for Enforcement of Arbitration Decision
+  outcome: not-found
+  reason: No captured text of § 3.500 was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://rincon-nsn.gov/government/office-of-the-attorney-general/laws-and-regulations/
+  query: Arbitration
+  outcome: found
+  reason: The Rincon laws index links the Tribal Arbitration Enforcement Ordinance under 'Arbitration';
+    the PDF was downloaded and OCR'd.
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (rarb-*.txt)
+  query: Sections 4.02 and 4.03
+  outcome: found
+  reason: Downloaded the scanned PDF and ran pdftoppm at 200 dpi and tesseract on all 9 pages; read Chapters
+    III to V.
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: none for this nation
+  query: 6.1.61 Dispute Resolution of Violation of the Ordinance and/or Department of Regulations or Policy
+  outcome: not-found
+  reason: No captured copy of this nation's code was in the batch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/1d41f5b2b58de8a8f107.txt
+  query: 6.1.61 Dispute Resolution of Violation
+  outcome: not-found
+  reason: The captured 2024 gaming ordinance has its own Patron Disputes section (24.01 to 24.03), not
+    section 6.1.61.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Rincon Band Luiseno "6.1.61" OR "7.3.01" dispute resolution ordinance
+  outcome: not-found
+  reason: No result contained section 6.1.61.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://rincon-nsn.gov/government/office-of-the-attorney-general/laws-and-regulations/
+  outcome: not-found
+  reason: Retry found no section 6.1.61.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://rincon-nsn.gov/wp-content/uploads/2019/05/3_0500-Tribal-Arbitration-Enforcement-Ordinance.pdf
+  outcome: found
+  reason: The ordinance PDF contains the same two sections.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (rarb-*.txt)
+  query: Request for Enforcement of Arbitration Decision
+  outcome: found
+  reason: OCR of the ordinance shows 4.02 Request for Enforcement of Arbitration Decision and 4.03 Authority
+    of Special Master to Enforce Arbitration Award, the two headings in this record.

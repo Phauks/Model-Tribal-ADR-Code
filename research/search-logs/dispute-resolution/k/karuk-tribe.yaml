@@ -1,0 +1,197 @@
+profile: content/tribes/k/karuk-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
+  query: Peacemaker Mediation Forum
+  outcome: found
+  reason: Section 3.05.100 is printed in this copy and was read in full.
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/karuk/index.html
+  query: Section 10.9 Peacemaker Mediation Forum
+  outcome: found
+  reason: The NILL page lists the 2010 Title 10 ordinance and links to its karuk.us PDF.
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.karuk.us/images/docs/court/1.%20Karuk%20Tribal%20Court%20Ordinance.pdf
+  outcome: dead-link
+  reason: The link returned a 404 page on both http and browser user-agent requests.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: working copy downloaded during the reading (karuk35.txt)
+  query: 3.05.100
+  outcome: found
+  reason: Downloaded the peacemaking.narf.org PDF of Chapter 3.05 and read 3.05.100 with pdftotext.
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://karuk.tribal.codes/KTC/10.10.270
+  query: Article XI
+  outcome: blocked
+  reason: Cloudflare challenge page (403) for curl; not read raw.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.karuk.us/images/docs/court/1.%20Karuk%20Tribal%20Court%20Ordinance.pdf
+  query: Title 10
+  outcome: dead-link
+  reason: 404 for the NILL-linked Title 10 PDF.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/karuk/index.html
+  query: 'Section 11: Peacemaker Mediation Forum/Family Unity'
+  outcome: found
+  reason: The NILL page lists the 2009 Children and Family Code Title I PDF under this heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.karuk.us/images/docs/court/2.%2004.30.09%20Title%20I%20Karuk%20Children's%20Family%20Code.pdf
+  outcome: dead-link
+  reason: The NILL-linked 2009 PDF returned a 404 page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.karuk.us/images/docs/court/Chapter_10.10_KTC_Children_and_Youth_in_Need_of_Care_2.10.22.pdf
+  query: Karuk Tribe Children and Family Code Title I Peacemaker Mediation Forum Family Unity
+  outcome: dead-link
+  reason: The current chapter PDF returned by search returned a 404 page; the same text was read from
+    the tribal.codes site.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://karuk.tribal.codes/KTC/10.10.270
+  query: Karuk Tribe Children and Family Code Title I Peacemaker Mediation Forum Family Unity
+  outcome: found
+  reason: The current Article XI is printed here and was read through a summarizing fetch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ncorj.org/tribal-law/peacemaker-mediation-forum-in-child-welfare-cases/
+  query: KTC 10.10.270
+  outcome: found
+  reason: 'Raw HTML of a restorative justice database page quoting KTC 10.10.270(A) verbatim: the judge
+    may at any stage order the parties into the confidential Peacemaker Mediation Forum run under its
+    written guidelines.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://karuk.tribal.codes/KTC/10.10.270
+  query: Article XI
+  outcome: blocked
+  reason: Cloudflare challenge (403) for curl; the full section was seen by the first helper only through
+    a summarizing fetch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.karuk.us/images/docs/court/Chapter_10.10_KTC_Children_and_Youth_in_Need_of_Care_2.10.22.pdf
+  query: Chapter 10.10
+  outcome: dead-link
+  reason: 404; the tribe has removed its court documents from karuk.us.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: http://web.archive.org/web/2020/http://www.karuk.us/images/docs/court/2.%2004.30.09%20Title%20I%20Karuk%20Children's%20Family%20Code.pdf
+  query: 2009 code
+  outcome: blocked
+  reason: Blocked by egress policy.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
+  query: Dispute Resolution Mediation Peacemaking
+  outcome: not-found
+  reason: The chapter is Tribal Court only and has no such heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/karuk/index.html
+  query: Dispute Resolution-Mediation/Peacemaking
+  outcome: found
+  reason: The NILL page places the heading as subsection D of 2009 Children and Family Code Title I Section
+    1.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.karuk.us/images/docs/court/2.%2004.30.09%20Title%20I%20Karuk%20Children's%20Family%20Code.pdf
+  outcome: dead-link
+  reason: The 2009 PDF returned a 404 page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://karuk.tribal.codes/KTC/10.10.010
+  query: Dispute Resolution-Mediation/Peacemaking
+  outcome: not-found
+  reason: The current Article I, Purpose and Placement Preferences, has no dispute resolution subsection
+    in the fetched text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/karuk/index.html
+  query: Dispute Resolution-Mediation/Peacemaking
+  outcome: found
+  reason: 'Heading is Section 1.D of Children and Family Code Title II: Family Relations (2009), not Title
+    I.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.karuk.us/images/docs/court/3.%204.30.09%20Title%20II%20CHILDREN%20AND%20FAMILY%20CODE.pdf
+  outcome: dead-link
+  reason: '404.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://karuk.tribal.codes/KTC/10.05.040
+  query: Karuk Children and Family Code Dispute Resolution Mediation Peacemaking
+  outcome: found
+  reason: Current code section 10.05.040 carries the history note of Title 2 section 1(D), 4/30/2009.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: web.archive.org Karuk Title II PDF
+  outcome: blocked
+  reason: Proxy refused the Wayback download (403).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
+  query: Peacemaker Mediation Forum
+  outcome: found
+  reason: The same section as karuk-tribe#1 is printed in this copy.

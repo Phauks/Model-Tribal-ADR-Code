@@ -297,30 +297,32 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: mediation
+  - kind: other
     title: 15.10.04 Mediation Not Allowed
-    citation: 15.10.04 Mediation Not Allowed
-    link: https://narf.org/nill/codes/port_gamble/index.html
-    source: national-indian-law-library-code-codes-port-gamble
-    confidence: medium
-    verification: title-only
-    as_of: '2025'
-    locator: Table of Contents, under 'Chapter 15.10 Special Rules of Court and Other Matters'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: May 2025); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
+    citation: Port Gamble S'Klallam Tribe Title 15 Domestic Violence, 15.10.04
+    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-15-1.24.23.pdf
+    source: port-gamble-port-gamble-s-klallam-tribe-title-15-domestic
+    confidence: high
+    verification: read-in-full
+    as_of: '2023-01-24'
+    locator: 15.10.04
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Bars mediation in a domestic violence matter while a protection order is in effect, but lets
+      the court allow it at the victim's request after consultation with counsel or an advocate, only
+      with a certified mediator trained in domestic violence and with a support person present.
   - kind: other
     title: 20.01.13 Patron Dispute Resolution
-    citation: 20.01.13 Patron Dispute Resolution
-    link: https://narf.org/nill/codes/port_gamble/index.html
-    source: national-indian-law-library-code-codes-port-gamble
+    citation: Port Gamble S'Klallam Tribe Title 20 Gaming Code, 20.01.13
+    link: https://pgst.nsn.us/wp-content/uploads/2022/09/Title_20_Gaming_11-23-2015.pdf
+    source: port-gamble-port-gamble-s-klallam-tribe-title-20-gaming-code
     confidence: medium
-    verification: title-only
-    as_of: '2025'
-    locator: Table of Contents, under 'Chapter 20.01 Gaming'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: May 2025); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2015-11-23'
+    locator: 20.01.13
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Makes a written petition to the Gaming Commission a patron's sole remedy against the gaming
+      establishment, with a hearing within 30 days, a 30-day filing limit from the incident, caps on recovery
+      (higher for prize entitlement disputes), and a final Commission decision.
 gaming:
   compacts:
   - state: WA

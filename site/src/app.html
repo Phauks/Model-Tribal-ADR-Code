@@ -26,7 +26,7 @@
 						'glossaryCards'
 					].forEach(function (name) {
 						var value = settings && settings[name];
-						if (typeof value === 'string' && /^[a-z-]+$/.test(value)) root.dataset[name] = value;
+						if (typeof value === 'string' && /^[a-z0-9.-]+$/.test(value)) root.dataset[name] = value;
 					});
 					// Print options (src/lib/print-options.ts) apply only on paper.
 					var print = JSON.parse(localStorage.getItem('print-options') || '{}');
