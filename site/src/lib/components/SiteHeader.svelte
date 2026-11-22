@@ -7,9 +7,17 @@
 	// site's sections are in the sidebar (SiteSidebar.svelte), so the masthead
 	// has no menu row. The content version shows only on paper; on screen it
 	// is in the footer.
+	//
+	// On phones (Trevor approved this from the Wikiwand review, Nov. 22,
+	// 2026) the masthead is one short row: the name, search, and a "More"
+	// button. Report a problem, Contribute, Star, Print, Download, theme,
+	// Settings and sign-in move into a panel that More opens. The panel is a native
+	// popover, so it opens without scripts; on wider screens CSS shows its
+	// contents in the row as before, and the More button is hidden.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import Download from '@lucide/svelte/icons/download';
+	import Ellipsis from '@lucide/svelte/icons/ellipsis';
 	import { downloadFor } from '#lib/page-downloads.ts';
 	import AccountLink from './AccountLink.svelte';
 	import PrintOptions from './PrintOptions.svelte';
@@ -58,28 +66,40 @@
 			<a href="/">{siteName}</a>
 			<span class="edition print-only">Draft, content {contentVersion}</span>
 		</p>
-		<ul class="masthead-actions no-print">
-			<li><ReportProblem link={reportLink} /></li>
-			<li><a class="button" href="/requests?kind=contribute">Contribute</a></li>
-		</ul>
-		<div class="masthead-tools no-print">
+		<div class="masthead-phone no-print">
 			<SiteSearch />
-			<StarButton />
-			<PrintOptions />
-			{#if download}
-				<a
-					class="icon-button download-link"
-					href={download.link}
-					download
-					aria-label="{download.label} ({download.format})"
-					title="{download.label} ({download.format})"
-				>
-					<Download size={24} />
-				</a>
-			{/if}
-			<ThemeSetting />
-			<SettingsPanel />
-			<AccountLink />
+			<button
+				class="more-button"
+				type="button"
+				popovertarget="masthead-more"
+				aria-label="More: report a problem, contribute, star, print, settings and sign in"
+			>
+				<Ellipsis size={24} /><span aria-hidden="true">More</span>
+			</button>
+		</div>
+		<div class="masthead-more no-print" id="masthead-more" popover>
+			<ul class="masthead-actions">
+				<li><ReportProblem link={reportLink} /></li>
+				<li><a class="button" href="/requests?kind=contribute">Contribute</a></li>
+			</ul>
+			<div class="masthead-tools">
+				<StarButton />
+				<PrintOptions />
+				{#if download}
+					<a
+						class="icon-button download-link"
+						href={download.link}
+						download
+						aria-label="{download.label} ({download.format})"
+						title="{download.label} ({download.format})"
+					>
+						<Download size={24} />
+					</a>
+				{/if}
+				<ThemeSetting />
+				<SettingsPanel />
+				<AccountLink />
+			</div>
 		</div>
 	</div>
 </header>
@@ -133,6 +153,103 @@
 		color: var(--color-band-text);
 	}
 
+	/*
+	 * Wide screens: the More panel's contents sit in the row as flex items of
+	 * .masthead-top (display: contents overrides the popover's hidden state),
+	 * in the approved order: name, Report a problem and Contribute, search,
+	 * then the other controls. The More button is not shown.
+	 */
+	.masthead-more {
+		display: contents;
+		/*
+		 * The browser's popover styles set their own colors and a fixed position;
+		 * keep the band's colors and the row's flow (axe reads the position too).
+		 */
+		position: static;
+		color: inherit;
+		background: none;
+	}
+
+	.masthead-actions {
+		order: 1;
+	}
+
+	.masthead-phone {
+		order: 2;
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	.masthead-tools {
+		order: 3;
+	}
+
+	.more-button {
+		display: none;
+	}
+
+	/*
+	 * Phones: one row with the name, search and More. More opens the panel
+	 * under the masthead, in the band's colors, with the actions and controls
+	 * from the left.
+	 */
+	@media (max-width: 40rem) {
+		.masthead-top {
+			flex-wrap: nowrap;
+			gap: var(--space-2);
+		}
+
+		.wordmark a {
+			font-size: var(--font-size-body);
+		}
+
+		.more-button {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--space-1);
+			min-height: var(--layout-target-minimum);
+			padding: 0 var(--space-2);
+			border: 0;
+			border-radius: var(--radius-control);
+			background: none;
+			color: var(--color-band-text);
+			font: inherit;
+			font-weight: var(--font-weight-semibold);
+			cursor: pointer;
+		}
+
+		.more-button:hover {
+			background: color-mix(in srgb, currentColor 14%, transparent);
+		}
+
+		.more-button:focus-visible {
+			background-color: var(--color-focus);
+			color: var(--focus-text);
+		}
+
+		.masthead-more:not(:popover-open) {
+			display: none;
+		}
+
+		.masthead-more:popover-open {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-4);
+			position: fixed;
+			/* Just under the one-row masthead (about 4.25rem tall). */
+			inset: 4.5rem var(--space-2) auto;
+			max-height: calc(100dvh - 5rem);
+			overflow-y: auto;
+			margin: 0;
+			padding: var(--space-4);
+			border: 1px solid var(--color-band-text);
+			border-radius: var(--radius-panel);
+			background: var(--color-band);
+			color: var(--color-band-text);
+		}
+	}
+
 	/* The controls keep to the right; an open search box grows to their left. */
 	.masthead-tools {
 		display: flex;
@@ -143,19 +260,13 @@
 		gap: var(--space-2);
 	}
 
-	/* Phones: an open search box takes a line of its own above the buttons. */
 	@media (max-width: 40rem) {
 		.masthead-tools {
 			justify-content: flex-start;
 		}
-
-		.masthead-tools > :global(.site-search) {
-			flex: 1 0 100%;
-			width: 100%;
-		}
 	}
 
-	/* Print, Download, Report a problem and Contribute, before the controls. */
+	/* Report a problem and Contribute, before the controls. */
 	.masthead-actions {
 		display: flex;
 		flex-wrap: wrap;
