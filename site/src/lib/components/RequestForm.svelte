@@ -359,9 +359,13 @@
 		{/if}
 
 		<p class="small">
-			The request and any files are kept private, in our own storage, and never published.
-			Personal details are deleted 12 months after the request is resolved, unless you asked to be
-			credited.
+			{#if kind === 'restrict' || kind === 'remove'}
+				We never publish the material you ask us to make private or delete.
+			{:else}
+				Files and sources you send may be cited or published, because the work shows its sources.
+			{/if}
+			Your contact details are never published. Your name, role and contact details are deleted 12
+			months after the request is resolved, unless you asked to be credited.
 		</p>
 		<p><button class="button" type="submit">Send the request</button></p>
 	</form>

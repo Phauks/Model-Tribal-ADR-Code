@@ -120,7 +120,7 @@ The forms say all this before anyone signs.
 - **Where.** Filings go in the website's private database. Items and signed forms go in the private file bucket under `filings/<filing id>/`. No public page or API serves either ([decision record 0009](decisions/0009-private-requests-from-nations.md)). Contact details sit in a separate table, so a filing can be shared without them.
 - **Who.** The lead author and editors. A nation reviewer sees a filing only when it is sent for review, without contact details.
 - **How long.** As long as anything citing it is published, since the filing is the proof of permission. Request details, by contrast, go after 12 months ([requests.md](requests.md#how-it-is-built)). Once nothing cites a filing, its contact details go after 12 months, and the items are returned or destroyed as the contributor chose.
-- **Until the website is built,** keep filings in the private project folder. Never put them in git or a public issue.
+- **Forms sent through the website** are in the database and the private bucket (see [On the website](#on-the-website)). Recordings, transcripts and other items still go in the private project folder until the workspace can store them. Never put them in git or a public issue.
 
 ## Ethics review
 
@@ -137,16 +137,19 @@ The forms say all this before anyone signs.
 - **Research agreement with a nation,** when a nation asks. Its own template wins.
 - **Translations** of each form, once contributors ask for a language.
 
-## Website plan
+## On the website
 
-Not built. It would extend the request system ([site/COLLABORATION.md](../site/COLLABORATION.md)) and needs the lead author's go-ahead.
+Built in 2026 (site/COLLABORATION.md, "Forms"). The website's Forms page (`/forms`) lists every form in [contributor-forms/](contributor-forms/README.md), and later the model forms in `content/forms/`. Each form is one Markdown file, shown three ways from the same text:
 
-- **Tables:** `filings`, `filing_items`, `filing_forms` and `contacts`, following the schema. The `events` table gains a `filing` target.
-- **Contribute:** the request form's "Contribute" choice opens the contributor statement and creates a filing.
-- **Signing:** the page shows the form's full text and version. The person types their name and ticks "I agree." The site stores the text shown, its version, the time and a checksum.
-- **Workspace:** `/workspace/filings` lists filings by status, shows missing forms and the log, and exports a filing.
-- **Printable forms:** each form becomes a web page and a PDF from the same text.
-- **Lint rule:** an `interview` source needs a `contribution` block, and a `restricted` record never reaches public output.
+- **Online** (`/forms/<form>`). Every ☐ is a tick box and every blank a field. The person types their name in a signature line and ticks "The name I typed in the signature line is my signature" (the electronic signature above). The "Project use" lines are left for us.
+- **To print** (`/forms/<form>/print`). A blank copy to sign in ink.
+- **Signed paper copy.** The form's page takes a photo or scan of each page (PDF, PNG, JPEG or WebP, up to 10 MB each).
+
+Each form sent opens a request in the workspace (a "Change or withdrawal" opens a request to restrict, so the material is hidden first). The database records which form, its version, the SHA-256 of its file, how it was signed, the typed name and the answers. A form signed online is also kept, filled in, as a Markdown file in the private bucket under `forms/`, so the exact words signed survive later versions. The person sees their filled copy at once and can print it. An editor reads the form in the workspace and gives it a filing number (`filing-YYYY-NNNN`), new or existing. A request that came with a form keeps its contact details after it is resolved, because the form is the proof of permission.
+
+A model form is only filled in and printed. Nothing typed into one is sent.
+
+**Still to build:** a filings list in the workspace with missing forms and statuses, emailing the signer their copy (waits on a domain), and the lint rule that an `interview` source needs a `contribution` block.
 
 ## References
 
