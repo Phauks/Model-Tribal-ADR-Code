@@ -18,7 +18,12 @@
 
 <svelte:head>
 	<title>{story.title} · Stories · Model Tribal ADR Code</title>
-	<meta name="description" content="{story.kind} from {nationNames}, quoted in the teller’s own words with a link to the full telling." />
+	<meta
+		name="description"
+		content={story.fullText
+			? `${story.kind} from ${nationNames}, in full in the teller’s own words.`
+			: `${story.kind} from ${nationNames}, quoted in the teller’s own words with a link to the full telling.`}
+	/>
 </svelte:head>
 
 <nav aria-label="Breadcrumb" class="small">
@@ -80,8 +85,27 @@
 		{/if}
 	</dl>
 
+	{#if story.fullText}
+		<h2>The story</h2>
+		<p class="small muted">
+			{story.fullText.credit} ({story.fullText.locator})<CitationMarks marks={story.fullText.citations} />. {story.fullText.basisNote}
+		</p>
+		<blockquote class="full-text">
+			{#each story.fullText.paragraphs as paragraph, index (index)}
+				{#if 'text' in paragraph}
+					<p>{paragraph.text}</p>
+				{:else}
+					<p class="omission small" role="note">[{paragraph.omitted} ({paragraph.locator})]</p>
+				{/if}
+			{/each}
+		</blockquote>
+		<p class="small muted">
+			About this text: {story.fullText.transcribedFrom}{#each story.fullText.notes as note (note)}{' '}{note}{/each}
+		</p>
+	{/if}
+
 	{#if quoted.length > 0}
-		<h2>In the teller’s words</h2>
+		<h2>{story.fullText ? 'In other tellings' : 'In the teller’s words'}</h2>
 		{#each quoted as excerpt, index (index)}
 			<blockquote>
 				<p>{excerpt.text}</p>
@@ -157,6 +181,14 @@
 </div>
 
 <style>
+	.full-text p {
+		margin: 0 0 var(--space-3);
+	}
+
+	.full-text .omission {
+		font-style: italic;
+	}
+
 	.tellings {
 		padding: 0;
 		list-style: none;

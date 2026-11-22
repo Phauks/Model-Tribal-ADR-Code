@@ -1,6 +1,6 @@
 # 0029. Show story records on the website while their nations review them
 
-- **Status:** Accepted (lead author, Nov. 22, 2026)
+- **Status:** Accepted (lead author, Nov. 22, 2026); amended by [0034](0034-show-stories-in-full-where-rights-allow.md)
 - **Date:** 2026-11-22
 - **Amends:** [0019](0019-story-records.md), for website display only
 
