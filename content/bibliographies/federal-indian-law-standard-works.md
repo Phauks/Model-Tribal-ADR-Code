@@ -1,6 +1,6 @@
 # Federal Indian law and Tribal justice: standard works
 
-This list names the treatises, histories and source collections that stand behind Part I, Foundations. It is meant for a reader who wants to go past the timeline and the case digest to the books that lawyers, judges and scholars in the field rely on.
+This list names the treatises, histories and source collections that stand behind Part I, Foundations. It is meant for a reader who wants to go past the timeline and its cases to the books that lawyers, judges and scholars in the field rely on.
 
 How to read an entry:
 

@@ -6,7 +6,7 @@
 import assert from "node:assert/strict";
 import path from "node:path";
 import { test } from "node:test";
-import { CitationEngine, citationItems, normalizeSection, parsePinpoint } from "../pipeline/citations.mjs";
+import { CitationEngine, citationItems, courtAbbreviation, normalizeSection, parsePinpoint } from "../pipeline/citations.mjs";
 import { REPOSITORY_DIRECTORY } from "../pipeline/configuration.mjs";
 import { loadContent } from "../pipeline/content.mjs";
 
@@ -219,7 +219,7 @@ test("Federal Register documents print volume, first page and full date (Indigo 
   assert.equal(printed[4], "Exec. Order 12,988, 61 Fed. Reg. 4729.");
 });
 
-test("cases and books print as before, with a comma before 'at' after supra", () => {
+test("case names print in italics; books print with a comma before 'at' after supra", () => {
   const printed = notes([
     [{ key: "case", pinpoint: "52" }],
     [{ key: "book", pinpoint: "p. 12" }],
@@ -227,7 +227,7 @@ test("cases and books print as before, with a comma before 'at' after supra", ()
     [{ key: "book", pinpoint: "p. 14" }],
     [{ key: "book", pinpoint: "§ 3" }],
   ]);
-  assert.equal(printed[0], "Santa Clara Pueblo v. Martinez, 436 U.S. 49, 52 (1978).");
+  assert.equal(printed[0], "#emph[Santa Clara Pueblo v. Martinez], 436 U.S. 49, 52 (1978).");
   assert.equal(printed[1], "#small-capitals[Raymond D. Austin], #small-capitals[Navajo Courts and Navajo Common Law] 12 (2009).");
   assert.equal(printed[2], "#emph[Santa Clara Pueblo], 436 U.S. at 55.");
   assert.equal(printed[3], "#small-capitals[Austin], #emph[supra] note 2, at 14.");
@@ -255,4 +255,28 @@ test("every source record in content/ prints a full and a short form", () => {
       assert.doesNotMatch(text, /STYLE ERROR/);
     }
   }
+});
+
+test("courts print as the Indigo Book abbreviates them, and unreported cases by docket number", () => {
+  assert.equal(courtAbbreviation("United States Court of Appeals for the Federal Circuit"), "Fed. Cir.");
+  assert.equal(courtAbbreviation("U.S. Court of Appeals for the Ninth Circuit"), "9th Cir.");
+  assert.equal(courtAbbreviation("United States Court of Appeals for the District of Columbia Circuit"), "D.C. Cir.");
+  assert.equal(courtAbbreviation("United States Court of Federal Claims"), "Fed. Cl.");
+  assert.equal(courtAbbreviation("U.S. District Court, W.D. Oklahoma"), "W.D. Okla.");
+  assert.equal(courtAbbreviation("Supreme Court of Alaska"), "Alaska");
+  assert.equal(courtAbbreviation("Supreme Court of Canada"), "Supreme Court of Canada");
+  assert.equal(courtAbbreviation("Supreme Court of the United States", { "container-title": "U.S." }), "");
+  const items = citationItems([
+    {
+      key: "reported",
+      citation: { type: "legal_case", title: "Jones v. United States", authority: "United States Court of Appeals for the Federal Circuit", "container-title": "F.3d", volume: "846", page: "1343", issued: { "date-parts": [[2017]] } },
+    },
+    {
+      key: "unreported",
+      citation: { type: "legal_case", title: "Flying Horse v. United States", authority: "United States Court of Appeals for the Federal Circuit", number: "2017-1620", issued: { "date-parts": [[2017, 6, 13]] } },
+    },
+  ]);
+  const printed = notes([[{ key: "reported", pinpoint: "1350" }], [{ key: "unreported" }]], items);
+  assert.equal(printed[0], "#emph[Jones v. United States], 846 F.3d 1343, 1350 (Fed. Cir. 2017).");
+  assert.equal(printed[1], "#emph[Flying Horse v. United States], No. 2017-1620 (Fed. Cir. June 13, 2017).");
 });

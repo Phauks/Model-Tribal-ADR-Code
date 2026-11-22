@@ -78,10 +78,70 @@ export function normalizeSection(section) {
   return `§§\u00A0${symbol === "§§" ? numbers.replace(/(\w)-(\w)/g, "$1–$2") : numbers}`;
 }
 
+// Court names as the Indigo Book abbreviates them in a citation's
+// parenthetical (Indigo Book R10.1.3 and Table T1). A record keeps the court's
+// full name; the citation prints the abbreviation. The Supreme Court of the
+// United States is left out when the case is in the United States Reports.
+const ORDINALS = {
+  first: "1st", second: "2d", third: "3d", fourth: "4th", fifth: "5th", sixth: "6th", seventh: "7th",
+  eighth: "8th", ninth: "9th", tenth: "10th", eleventh: "11th", federal: "Fed.", "district of columbia": "D.C.", "d.c.": "D.C.",
+};
+const STATES = {
+  Alabama: "Ala.", Alaska: "Alaska", Arizona: "Ariz.", Arkansas: "Ark.", California: "Cal.", Colorado: "Colo.",
+  Connecticut: "Conn.", Florida: "Fla.", Idaho: "Idaho", Kansas: "Kan.", Michigan: "Mich.", Minnesota: "Minn.",
+  Montana: "Mont.", Nebraska: "Neb.", Nevada: "Nev.", "New Mexico": "N.M.", "New York": "N.Y.",
+  "North Dakota": "N.D.", Oklahoma: "Okla.", Oregon: "Or.", "South Dakota": "S.D.", Utah: "Utah",
+  Washington: "Wash.", Wisconsin: "Wis.", Wyoming: "Wyo.",
+};
+const COURTS = [
+  [/^Supreme Court of the United States$/, () => ""],
+  [/^(?:United States|U\.S\.) Court of Appeals for the (.+?) Circuit$/i, (name) => {
+    const ordinal = ORDINALS[name.toLowerCase()];
+    return ordinal ? `${ordinal} Cir.` : null;
+  }],
+  [/^United States Court of Federal Claims$/, () => "Fed. Cl."],
+  [/^United States Court of Claims$/, () => "Ct. Cl."],
+  [/^(?:United States|U\.S\.) District Court for the District of (.+)$/, (state) => (STATES[state] ? `D. ${STATES[state]}` : null)],
+  [/^(?:United States|U\.S\.) District Court for the (Northern|Southern|Eastern|Western|Central|Middle) District of (.+)$/,
+    (part, state) => (STATES[state] ? `${part[0]}.D. ${STATES[state]}` : null)],
+  [/^U\.S\. District Court, ([NSEWCM])\.D\. (.+)$/, (part, state) => (STATES[state] ? `${part}.D. ${STATES[state]}` : null)],
+  [/^Supreme Court of (Alaska|Wisconsin|Montana|Washington|Arizona|New Mexico|Oklahoma|Minnesota|Idaho|Nevada|California)$/,
+    (state) => STATES[state]],
+  [/^(Oklahoma|Alaska|Wisconsin|Montana|Washington|Arizona|New Mexico) Supreme Court$/, (state) => STATES[state]],
+  [/^Supreme Court of Guam$/, () => "Guam"],
+  [/^Supreme Court of the Virgin Islands$/, () => "V.I."],
+  [/^Supreme Court of the Commonwealth of the Northern Mariana Islands$/, () => "N. Mar. I."],
+];
+
+export function courtAbbreviation(authority, item = {}) {
+  if (typeof authority !== "string") return authority;
+  for (const [pattern, abbreviate] of COURTS) {
+    const match = pattern.exec(authority.trim());
+    if (!match) continue;
+    const short = abbreviate(...match.slice(1));
+    if (short === "" && item["container-title"] !== "U.S.") return authority;
+    if (short !== null && short !== undefined) return short;
+  }
+  return authority;
+}
+
+function caseItem(citation) {
+  const item = { ...citation };
+  const authority = courtAbbreviation(item.authority, item);
+  if (authority) item.authority = authority;
+  else delete item.authority;
+  // A docket number reads "No. 2017-1620" (Indigo Book R10.1.6).
+  if (typeof item.number === "string" && /^\d/.test(item.number.trim())) item.number = `No. ${item.number.trim()}`;
+  return item;
+}
+
 // Source records (content/sources/*.yaml) to CSL-JSON items keyed by id.
 export function citationItems(sources) {
   const items = {};
-  for (const source of sources) items[source.key] = { ...source.citation, id: source.key };
+  for (const source of sources) {
+    const citation = source.citation && source.citation.type === "legal_case" ? caseItem(source.citation) : source.citation;
+    items[source.key] = { ...citation, id: source.key };
+  }
   return items;
 }
 
@@ -128,6 +188,30 @@ export class CitationEngine {
     this.clusters.push({ citationID: citation.citationID, noteIndex });
     for (const [index, text] of updates) this.output.set(this.clusters[index].citationID, text);
     return citation.citationID;
+  }
+
+  // A citation printed on its own, outside the chapter's run of notes: the
+  // heading of a case block, or the source line under a quotation. Always the
+  // full form, and it does not change the short forms of later notes.
+  standalone(references) {
+    const engine = new CSL.Engine(
+      { retrieveLocale: () => this.locale, retrieveItem: (id) => {
+        if (!this.items[id]) throw new Error(`No source record for citation key "${id}"`);
+        return this.items[id];
+      } },
+      this.style,
+      "en-US",
+    );
+    engine.setOutputFormat("typst");
+    const citation = {
+      citationID: "standalone",
+      citationItems: references.map(({ key, pinpoint }) => ({ id: key, ...parsePinpoint(pinpoint) })),
+      properties: { noteIndex: 1 },
+    };
+    const [, updates] = engine.processCitationCluster(citation, [], []);
+    const text = updates.length ? updates[0][1] : "";
+    if (!text || /CSL STYLE ERROR/.test(text)) throw new Error(`Citation of ${JSON.stringify(references)} has no printed form`);
+    return separateCalls(text).replace(/\\\.$/, "");
   }
 
   text(citationID) {
