@@ -93,16 +93,35 @@ export function glossaryTerms(): Record<string, string> {
 	);
 }
 
-/** The essays in content/essays/ as git holds them, by file name without ".md". */
+/**
+ * The essays in content/essays/, and the back matter pages in
+ * content/back-matter/ (such as the index of cases by topic), as git holds
+ * them, by file name without ".md".
+ */
 export function essaysInGit(): Record<string, string> {
-	const folder = path.join(repositoryRoot, 'content', 'essays');
-	if (!existsSync(folder)) return {};
-	return Object.fromEntries(
-		readdirSync(folder)
-			.filter((name) => name.endsWith('.md') && name !== 'README.md')
-			.sort()
-			.map((name) => [name.replace(/\.md$/, ''), readFileSync(path.join(folder, name), 'utf8').normalize('NFC')])
-	);
+	const files: [string, string][] = [];
+	for (const folderName of ['essays', 'back-matter']) {
+		const folder = path.join(repositoryRoot, 'content', folderName);
+		if (!existsSync(folder)) continue;
+		for (const name of readdirSync(folder).filter((name) => name.endsWith('.md') && name !== 'README.md')) {
+			files.push([name.replace(/\.md$/, ''), readFileSync(path.join(folder, name), 'utf8').normalize('NFC')]);
+		}
+	}
+	return Object.fromEntries(files.sort(([first], [second]) => first.localeCompare(second)));
+}
+
+/**
+ * Each court case's name and decision date, by source key, for the index
+ * of cases by topic (src/lib/essays/case-topics.ts).
+ */
+export function caseNames(records: SourceRecord[] = [...sources().values()]): Record<string, { title: string; date: number[] }> {
+	const names: Record<string, { title: string; date: number[] }> = {};
+	for (const record of records) {
+		const citation = record.citation as { type?: string; title?: string; issued?: { 'date-parts'?: number[][] } };
+		if (citation.type !== 'legal_case' || !citation.title) continue;
+		names[record.key] = { title: citation.title, date: citation.issued?.['date-parts']?.[0] ?? [] };
+	}
+	return names;
 }
 
 /** Source types a law box can name: statutes, codes, regulations, treaties and bills. */
