@@ -131,6 +131,11 @@ export async function syncEssaysFromGit(database: D1Database, bucket: R2Bucket, 
 				outcomes.push({ identifier: essay.identifier, state: 'failed', problem: problem.message });
 				continue;
 			}
+			// A part the live database does not take yet (a migration still to apply) fails the same way each time.
+			if (/CHECK constraint/i.test(String(problem))) {
+				outcomes.push({ identifier: essay.identifier, state: 'failed', problem: 'The database does not take this part yet; apply the waiting migration.' });
+				continue;
+			}
 			console.error(`Could not bring in ${essay.identifier} from git`, problem);
 			outcomes.push({ identifier: essay.identifier, state: 'failed', problem: String(problem) });
 		}

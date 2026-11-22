@@ -66,7 +66,7 @@ export const actions: Actions = {
 		const row = number === null ? null : await version(database, identifier, number);
 		if (!row) return fail(400, { problem: 'Choose a saved version to publish.' });
 		// The same checks the print build makes: every citation and glossary link must point to a record.
-		const rendered = await renderedVersion(bucket, row);
+		const rendered = await renderedVersion(bucket, row, 'saved');
 		if (rendered.problems.length > 0) {
 			return fail(400, { problem: `Version ${number} cannot be published yet: ${rendered.problems.join(' ')}` });
 		}
