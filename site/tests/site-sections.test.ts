@@ -27,6 +27,6 @@ describe('site sections for the sidebar', () => {
 
 	it('links only sections whose pages exist', () => {
 		const built = siteSections.filter((section) => section.built).map((section) => section.link);
-		expect(built).toEqual(['/stories', '/nations', '/glossary']);
+		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/glossary']);
 	});
 });
