@@ -293,6 +293,13 @@ justice_institutions:
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  appeals_to:
+    court: Supreme Court
+    source: chickasaw-nation-code-title-5-2026
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-07-17'
+    locator: § 5-103.7(2); § 5-207.4(A)
 - kind: tribal-court
   name: Court Advocate
   link: https://judicial.chickasaw.net/

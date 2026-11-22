@@ -244,6 +244,14 @@ justice_institutions:
   note: The listed link (http://www.navajocourts.org/indexdistct.htm) no longer reached the court on 2026-11-22;
     the link is the court's page found in the second pass of the court review (research/reviews/2026-11-22-court-listings-second-pass.json,
     court-209).
+  appeals_to:
+    court: Navajo Nation Supreme Court
+    source: navajo-nation-judicial-branch-courts-and-peacemaking
+    confidence: medium
+    verification: read-in-full
+    as_of: '2021-02-23'
+    locator: Opening description of the court system
+    note: The guide says the trial courts (district courts and family courts) are appealed to the Supreme Court, the appellate court. The family courts are not yet listed in this profile.
 dispute_resolution:
   forums:
   - kind: peacemaking

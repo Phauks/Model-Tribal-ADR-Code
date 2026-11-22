@@ -467,6 +467,21 @@ def main() -> int:
     for path, record in records.get("tribe.schema.json", []):
         if record.get("part_of") and record["part_of"] not in tribe_ids:
             errors.append(f"{path}: part_of names a missing profile '{record['part_of']}'")
+        # A court's appeals_to names another court in the same profile, so the
+        # nation page can show the path of appeal (site/src/lib/nation-services.ts).
+        institutions = record.get("justice_institutions") or []
+        names = [institution.get("name", "") for institution in institutions]
+        for institution in institutions:
+            appeal = institution.get("appeals_to")
+            if not appeal:
+                continue
+            if appeal.get("court") == institution.get("name"):
+                errors.append(f"{path}: {institution.get('name')} appeals_to names itself")
+            elif appeal.get("court") not in names:
+                errors.append(
+                    f"{path}: {institution.get('name')} appeals_to names '{appeal.get('court')}', "
+                    "which is not a court in justice_institutions"
+                )
 
     check_documents(
         records.get("document-history.schema.json", []), sources, tribe_ids, sessions, methods,

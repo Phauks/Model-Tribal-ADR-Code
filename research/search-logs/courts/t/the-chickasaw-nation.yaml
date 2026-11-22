@@ -1,0 +1,21 @@
+profile: content/tribes/t/the-chickasaw-nation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://judicial.chickasaw.net/Courts/District-Court.aspx
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: The page says the Supreme Court has full authority on any appeal from the District Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: https://code.chickasaw.net/Title-05
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: 'Title 5 (amended as of July 17, 2026), §§ 5-103.7(2) and 5-207.4(A): the Supreme Court hears appeals from the District Court. No appeal route is stated for the Peacemaking Court.'
