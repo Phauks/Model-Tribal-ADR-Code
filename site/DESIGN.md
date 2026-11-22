@@ -283,9 +283,7 @@ bundled.[^lucide-svelte] The book and the ebook use the same drawings from
 `lucide-static`, at the same version number, which `site/package.json` pins
 exactly. Rules:
 
-- An icon sits beside words. The only icon-only control is the theme button,
-  and it carries an `aria-label` that names the action, because Lucide hides
-  icons from screen readers by default.[^lucide-a11y]
+- An icon sits beside words. There are two exceptions. The theme button is icon-only and carries an `aria-label` that names the action, because Lucide hides icons from screen readers by default.[^lucide-a11y] The text alignment choice in Settings shows only symbols, as Trevor asked on Nov. 22, 2026; each symbol is a radio button with a hidden name that screen readers read, and the picked choice's name and hint show in words just below it.
 - Beside 18 px body text, icons are 20 px with `strokeWidth` 1.75, which
   matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project
   measurement). Standalone controls use 24 px and the default 2 px stroke.
@@ -311,15 +309,13 @@ for by Trevor on Nov. 21, 2026): **Text** (size, font, spacing, alignment),
 **Colors** (theme, contrast), **Citations**, **Glossary** and **Saved for
 offline**. The reading settings are:
 
-- **Text size:** Standard, Large, Larger or Largest (100, 112.5, 125 or 150
-  percent). Every size on the site is in rem, so the whole page scales.
-- **Font:** Atkinson Hyperlegible Next (the default), Noto Serif,
-  OpenDyslexic or the device's own font (see [Type](#type)).
+- **Text size** (a dropdown): Standard, Large, Larger or Largest (100, 112.5, 125 or 150 percent). Every size on the site is in rem, so the whole page scales.
+- **Font** (a dropdown): Atkinson Hyperlegible Next (the default), Noto Serif, OpenDyslexic or the device's own font (see [Type](#type)). Each choice in the list, and the picked choice in the closed dropdown, is shown in its own typeface, as Trevor asked on Nov. 22, 2026, so a reader sees a font before picking it.
 - **Text spacing:** Standard or Wide. Wide uses the values WCAG 2.2, 1.4.12
   tests: line height 2 (at least 1.5), paragraph spacing 2 times, letter
   spacing 0.12 times and word spacing 0.16 times the font size.[^wcag-1412]
 - **Text alignment:** Left aligned (the default) or Justified, asked for by
-  Trevor on Nov. 21, 2026. Justified applies to reading text in the page's
+  Trevor on Nov. 21, 2026, shown as Lucide's `text-align-start` and `text-align-justify` symbols in one bordered strip (see Icons above). The picked symbol is filled and has a bar under it, so color is not the only cue. Justified applies to reading text in the page's
   main area (paragraphs, list items, definitions and quotations), not to
   headings, tables, forms or the masthead, and turns on automatic hyphenation
   (`hyphens: auto`), which uses each element's `lang` attribute to pick the
@@ -348,13 +344,13 @@ Each change applies at once and is kept in the browser's local storage on
 that device only, so it works offline and nothing is sent to the server. An
 inline script in `app.html` applies the stored settings before the page
 paints. "Reset settings to defaults" clears them, but leaves saved pages
-alone. Focus returns to the Settings button when the dialog closes. Choices
-are radio buttons in
-fieldsets, labels above hints. Without scripts the Settings and theme buttons
+alone. Focus returns to the Settings button when the dialog closes. Text size and font are dropdowns (see [Dropdown](#6-components) below), asked for by Trevor on Nov. 22, 2026; the other choices are radio buttons in fieldsets, labels above hints. Without scripts the Settings and theme buttons
 are hidden, since they cannot work. The theme stays a one-press button in the
 masthead as well as a choice in the dialog, because the button is the faster
 way for the most common change and Trevor chose it on Nov. 21, 2026; the
 dialog adds "Match this device," which the button lacks.
+
+**Dropdown.** One shared dropdown, `src/lib/components/Dropdown.svelte`, for picking one choice from a short list where a choice should be shown as it will look, such as the font setting. It follows the WAI-ARIA select-only combobox pattern rather than the browser's own `<select>`, because a `<select>` list cannot show each choice in its own typeface on every browser and device.[^apg-combobox] The label sits above the box and the picked choice's hint below it. Down, Up, Enter, Space or a letter opens the list; Up and Down move; Home and End jump to the first and last; Enter, Space or Tab picks; Escape closes the list without closing a dialog around it. The choice the keys are on is drawn like a focused control (yellow fill and ring), and the picked choice has a check mark and bold type, not color alone. Plain form fields elsewhere, such as the workspace filters, keep the browser's `<select>`.
 
 **Print.** A "Print" button with Lucide's `printer` icon, beside Settings in
 the masthead, opens the Modal titled "Print this page" (asked for by Trevor on
@@ -861,6 +857,7 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^mdn-hyphens]: MDN Web Docs, *hyphens*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens).
 [^wcag-148]: W3C, *Understanding Success Criterion 1.4.8: Visual Presentation*, [w3.org/WAI/WCAG22/Understanding/visual-presentation](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation).
 [^apg-tabs]: W3C WAI, *ARIA Authoring Practices Guide: Tabs Pattern*, [w3.org/WAI/ARIA/apg/patterns/tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
+[^apg-combobox]: W3C WAI, *ARIA Authoring Practices Guide: Select-Only Combobox Example*, [w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only/).
 [^webdev-lifecycle]: Jake Archibald, *The service worker lifecycle*, web.dev, [web.dev/articles/service-worker-lifecycle](https://web.dev/articles/service-worker-lifecycle) (accessed Nov. 21, 2026). Sections "Updating the service worker," "Waiting" and "Skip the waiting phase."
 [^sveltekit-updated]: SvelteKit, *$app/state: updated*, [svelte.dev/docs/kit/$app-state#updated](https://svelte.dev/docs/kit/$app-state#updated); the same text is in `@sveltejs/kit` 3.4.0's type definitions.
 [^mdn-skip-waiting]: MDN Web Docs, *ServiceWorkerGlobalScope: skipWaiting() method*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting).

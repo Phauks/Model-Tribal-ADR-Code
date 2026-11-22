@@ -10,7 +10,10 @@
 	import Palette from '@lucide/svelte/icons/palette';
 	import Quote from '@lucide/svelte/icons/quote';
 	import Settings from '@lucide/svelte/icons/settings';
+	import TextAlignJustify from '@lucide/svelte/icons/text-align-justify';
+	import TextAlignStart from '@lucide/svelte/icons/text-align-start';
 	import Type from '@lucide/svelte/icons/type';
+	import Dropdown from './Dropdown.svelte';
 	import Modal from './Modal.svelte';
 	import OfflineSaving from './OfflineSaving.svelte';
 	import {
@@ -18,6 +21,7 @@
 		defaultSettings,
 		downloadFont,
 		fontChoices,
+		fontFamilyTokens,
 		glossaryCardOptions,
 		loadSettings,
 		loadTheme,
@@ -30,7 +34,9 @@
 		textSpacingChoices,
 		themeChoices,
 		type Choice,
+		type Font,
 		type ReadingSettings,
+		type TextAlignment,
 		type Theme
 	} from '#lib/reading-settings.ts';
 
@@ -69,6 +75,16 @@
 		saveSettings($state.snapshot(settings));
 		if (name === 'font') downloadFont(value as ReadingSettings['font']);
 	}
+
+	/** Each font choice is shown in its own typeface. */
+	function fontStyle(font: Font): string {
+		return `font-family: var(${fontFamilyTokens[font]})`;
+	}
+
+	const alignmentIcons = { left: TextAlignStart, justified: TextAlignJustify } satisfies Record<
+		TextAlignment,
+		unknown
+	>;
 
 	function changeTheme(value: Theme) {
 		theme = value;
@@ -113,6 +129,41 @@
 	</fieldset>
 {/snippet}
 
+<!-- Text alignment shows symbols, as Trevor asked on Nov. 22, 2026. Each symbol is a radio button whose name is read out; the picked choice's name and hint show in words below. -->
+{#snippet alignmentGroup()}
+	<fieldset class="setting">
+		<legend>Text alignment</legend>
+		<div class="symbol-choices">
+			{#each textAlignmentChoices as choice (choice.value)}
+				{@const Icon = alignmentIcons[choice.value]}
+				<label class="symbol-choice">
+					<input
+						class="visually-hidden"
+						type="radio"
+						name="text-alignment"
+						value={choice.value}
+						checked={settings.textAlignment === choice.value}
+						aria-describedby="setting-text-alignment-{choice.value}-hint"
+						onchange={() => change('textAlignment', choice.value)}
+					/>
+					<Icon size={24} />
+					<span class="visually-hidden">{choice.label}</span>
+				</label>
+			{/each}
+		</div>
+		{#each textAlignmentChoices as choice (choice.value)}
+			<p
+				class="hint symbol-hint"
+				id="setting-text-alignment-{choice.value}-hint"
+				hidden={settings.textAlignment !== choice.value}
+			>
+				<strong>{choice.label}.</strong>
+				{choice.hint}
+			</p>
+		{/each}
+	</fieldset>
+{/snippet}
+
 <button
 	bind:this={opener}
 	class="settings-button needs-scripts"
@@ -134,12 +185,19 @@
 	{#snippet section(id: SectionIdentifier)}
 		<h3 class="section-heading">{sections.find((item) => item.id === id)?.label}</h3>
 		{#if id === 'text'}
-			{@render choiceGroup('Text size', 'text-size', textSizeChoices, settings.textSize, (value) =>
-				change('textSize', value)
-			)}
-			{@render choiceGroup('Font', 'font', fontChoices, settings.font, (value) =>
-				change('font', value)
-			)}
+			<Dropdown
+				label="Text size"
+				choices={textSizeChoices}
+				value={settings.textSize}
+				onchange={(value) => change('textSize', value)}
+			/>
+			<Dropdown
+				label="Font"
+				choices={fontChoices}
+				value={settings.font}
+				onchange={(value) => change('font', value)}
+				choiceStyle={fontStyle}
+			/>
 			{@render choiceGroup(
 				'Text spacing',
 				'text-spacing',
@@ -147,13 +205,7 @@
 				settings.textSpacing,
 				(value) => change('textSpacing', value)
 			)}
-			{@render choiceGroup(
-				'Text alignment',
-				'text-alignment',
-				textAlignmentChoices,
-				settings.textAlignment,
-				(value) => change('textAlignment', value)
-			)}
+			{@render alignmentGroup()}
 		{:else if id === 'colors'}
 			{@render choiceGroup('Theme', 'theme', themeChoices, theme, changeTheme)}
 			{@render choiceGroup('Contrast', 'contrast', contrastChoices, settings.contrast, (value) =>
@@ -260,6 +312,48 @@
 
 	.choice .hint {
 		margin: 0;
+	}
+
+	/* Symbol choices sit side by side in one bordered strip. The picked one is filled and has a bar under its symbol, not color alone. */
+	.symbol-choices {
+		display: inline-flex;
+		border: 2px solid var(--color-control-border);
+		border-radius: var(--radius-control);
+		overflow: hidden;
+	}
+
+	.symbol-choice {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: var(--layout-target-minimum);
+		min-height: var(--layout-target-minimum);
+		padding: var(--space-1) var(--space-3);
+		box-sizing: border-box;
+		background: var(--color-paper);
+		color: var(--color-ink);
+		cursor: pointer;
+	}
+
+	.symbol-choice + .symbol-choice {
+		border-left: 2px solid var(--color-control-border);
+	}
+
+	.symbol-choice:has(input:checked) {
+		background: var(--color-action);
+		color: var(--color-action-text);
+		box-shadow: inset 0 -4px 0 var(--color-action-text);
+	}
+
+	.symbol-choice:has(input:focus-visible) {
+		outline: 3px solid var(--color-focus-ring);
+		outline-offset: -3px;
+		background: var(--color-focus);
+		color: var(--focus-text);
+	}
+
+	.symbol-hint {
+		margin: var(--space-1) 0 0;
 	}
 
 	.saved-note {

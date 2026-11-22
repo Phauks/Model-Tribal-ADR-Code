@@ -238,6 +238,18 @@
         ],
         "$description": "The default for everything. Noto fonts load only for the characters Atkinson Hyperlegible Next lacks, through unicode-range. A reader can pick one of the other families in Settings; the site then points --font-family-reading at it."
       },
+      "atkinson-hyperlegible-next": {
+        "$value": [
+          "Atkinson Hyperlegible Next",
+          "Noto Sans",
+          "Noto Sans Cherokee",
+          "Noto Sans Osage",
+          "Noto Sans Canadian Aboriginal",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "The same list as reading. It never changes, so the font dropdown in Settings can show the default font in its own typeface after a reader has picked another font."
+      },
       "serif": {
         "$value": [
           "Noto Serif",
