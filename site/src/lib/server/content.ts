@@ -196,6 +196,8 @@ export interface NationRecord {
 		appeals_to?: CitedFact & { court: string };
 	})[];
 	dispute_resolution_law?: string[];
+	jurisdiction?: (CitedFact & { topic: string; value?: string; detail?: string })[];
+	memberships?: (CitedFact & { organization: string })[];
 	dispute_resolution?: { forums?: (CitedFact & { kind: string; name?: string; link?: string })[] };
 	review: { status: string; last_verified?: string; note?: string };
 	sensitivity?: { restricted?: boolean; tribal_review_required?: boolean };

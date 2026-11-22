@@ -9,8 +9,10 @@ import {
 	type CitedFact,
 	type NationRecord
 } from '#lib/server/content.ts';
-import { layoutPresenceMap } from '#lib/presence-map.ts';
-import { documentHistoriesFor } from '#lib/server/document-history.ts';
+import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
+import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
+import { readableDate } from '#lib/readable-date.ts';
+import { documentHeading, documentHistoriesFor } from '#lib/server/document-history.ts';
 import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
@@ -32,6 +34,8 @@ interface FactItem {
 	detail?: string;
 	/** A detail with linked citations, such as a status's legal basis; shown in place of detail. */
 	detailParts?: CitationPart[];
+	/** A short line under the value, such as what sources record in each state. */
+	note?: string;
 	/** The markers of the fact's sources (src/lib/citation-marks.ts). */
 	citations?: CitationMark[];
 }
@@ -70,55 +74,61 @@ function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	});
 }
 
+/** How the page words each kind of presence a source records in a state. */
+const presenceWords: Record<string, string> = {
+	land: 'land',
+	'government-office': 'government office',
+	other: 'census area'
+};
+
+/**
+ * The states with a presence as one line, "Arizona, New Mexico, Utah", and
+ * under it what sources record in each, grouped by kind: "Land: Arizona, New
+ * Mexico, Utah. Government office: Arizona." Every state fact keeps its marker.
+ */
+function statesItem(record: NationRecord, sources: SourceUses, label: string): FactItem[] {
+	const facts = record.states ?? [];
+	if (facts.length === 0) return [];
+	const citations: CitationMark[] = [];
+	const codes: string[] = [];
+	const byKind = new Map<string, string[]>();
+	for (const fact of facts) {
+		if (!codes.includes(fact.state)) codes.push(fact.state);
+		const kind = fact.presence ? (presenceWords[fact.presence] ?? humanize(fact.presence).toLocaleLowerCase('en-US')) : undefined;
+		if (kind) {
+			const list = byKind.get(kind) ?? [];
+			if (!list.includes(fact.state)) list.push(fact.state);
+			byKind.set(kind, list);
+		}
+		sources.citeFact(fact, label, `${stateName(fact.state)}${kind ? ` (${kind})` : ''}`, citations);
+	}
+	const names = (list: string[]) => list.map(stateName).sort((first, second) => first.localeCompare(second, 'en'));
+	const detail = [...byKind.entries()]
+		.map(([kind, list]) => `${kind.charAt(0).toLocaleUpperCase('en-US')}${kind.slice(1)}: ${names(list).join(', ')}.`)
+		.join(' ');
+	return [{ text: names(codes).join(', '), note: detail || undefined, citations }];
+}
+
 function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const statesLabel = 'States with a presence';
-	const stateItems = new Map<string, FactItem>();
-	for (const fact of record.states ?? []) {
-		const presence = fact.presence ? humanize(fact.presence).toLocaleLowerCase('en-US') : '';
-		let item = stateItems.get(fact.state);
-		if (item) {
-			if (presence && !item.detail?.includes(presence)) {
-				item.detail = [item.detail, presence].filter(Boolean).join('; ');
-			}
-		} else {
-			item = { text: stateName(fact.state), detail: presence || undefined, citations: [] };
-			stateItems.set(fact.state, item);
-		}
-		sources.citeFact(
-			fact,
-			statesLabel,
-			`${stateName(fact.state)}${presence ? ` (${presence})` : ''}`,
-			item.citations
-		);
-	}
-
 	const recognitionLabel = 'Recognition';
 	const regionLabel = 'Bureau of Indian Affairs region';
 	const languagesLabel = 'Heritage languages';
 	const administration = record.federal_administration;
 	return [
-		...group(
-			'recognition',
-			recognitionLabel,
-			(record.recognition ?? []).map((fact) => {
-				const view = recognitionView(fact);
-				return cited(sources, recognitionLabel, fact, {
-					text: view.label,
-					detail: fact.legal_basis,
-					detailParts: view.legalBasis.length > 0 ? view.legalBasis : undefined
-				});
-			})
-		),
-		...group('states', statesLabel, [...stateItems.values()]),
+		...group('recognition', recognitionLabel, recognitionItems(record, sources, recognitionLabel)),
+		...group('states', statesLabel, statesItem(record, sources, statesLabel)),
 		...group(
 			'federal_administration',
 			regionLabel,
 			administration?.bureau_of_indian_affairs_region
 				? [
 						cited(sources, regionLabel, administration, {
-							text: administration.bureau_of_indian_affairs_region,
+							text: `${administration.bureau_of_indian_affairs_region} Region`,
 							link: `/nations/map#${regionAnchor(administration.bureau_of_indian_affairs_region)}`,
-							detail: administration.bureau_of_indian_affairs_agency
+							note: administration.bureau_of_indian_affairs_agency
+								? `Agency: ${administration.bureau_of_indian_affairs_agency}`
+								: undefined
 						})
 					]
 				: []
@@ -131,8 +141,64 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 					? [cited(sources, languagesLabel, fact, { text: fact.name })]
 					: []
 			)
+		),
+		...group(
+			'memberships',
+			'Member of',
+			(record.memberships ?? []).map((fact) => cited(sources, 'Member of', fact, { text: fact.organization }))
 		)
 	];
+}
+
+/**
+ * The nation's recognition, one line for each status: two sources that both
+ * say "Federally recognized" make one line with both markers. Under it is the
+ * short form of each distinct legal basis, such as "25 C.F.R. Part 83",
+ * linked to the official text; the full wording stays with the cited source.
+ */
+function recognitionItems(record: NationRecord, sources: SourceUses, label: string): FactItem[] {
+	const byLabel = new Map<string, FactItem & { citations: CitationMark[]; detailParts: CitationPart[] }>();
+	for (const fact of record.recognition ?? []) {
+		const view = recognitionView(fact);
+		const item = byLabel.get(view.label) ?? { text: view.label, citations: [], detailParts: [] };
+		byLabel.set(view.label, item);
+		const short = view.short;
+		if (short && !item.detailParts.some((part) => part.text === short.text)) {
+			if (item.detailParts.length > 0) item.detailParts.push({ text: '; ' });
+			item.detailParts.push(short);
+		}
+		sources.citeFact(fact, label, view.label, item.citations);
+	}
+	return [...byLabel.values()].map((item) => ({
+		...item,
+		detailParts: item.detailParts.length > 0 ? item.detailParts : undefined
+	}));
+}
+
+/** The names the page gives each jurisdiction topic a record can hold. */
+const jurisdictionTopics: Record<string, string> = {
+	'public-law-280': 'Public Law 280',
+	'indian-child-welfare-act': 'Indian Child Welfare Act',
+	'violence-against-women-act-special-tribal-criminal-jurisdiction': 'Violence Against Women Act'
+};
+
+/**
+ * Jurisdiction: who has authority over what, as federal law and federal lists
+ * record it for the nation, such as Public Law 280 or a designated agent for
+ * Indian Child Welfare Act notices. Each line is the record's own cited detail.
+ */
+function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const section = 'Jurisdiction';
+	const byTopic = new Map<string, FactItem[]>();
+	for (const fact of record.jurisdiction ?? []) {
+		const label = jurisdictionTopics[fact.topic] ?? humanize(fact.topic);
+		const text = fact.detail ?? humanize(fact.value ?? '');
+		if (!text) continue;
+		const list = byTopic.get(label) ?? [];
+		list.push(cited(sources, section, fact, { label: undefined, text }));
+		byTopic.set(label, list);
+	}
+	return [...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items }));
 }
 
 /**
@@ -146,9 +212,34 @@ function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): 
 	);
 }
 
-function publishedLaw(record: NationRecord, sources: SourceUses): FactGroup[] {
+/** The section that joins the nation's published law and its documents' histories. */
+const lawHeading = 'Laws and agreements';
+
+/**
+ * Where the nation publishes its laws, and any published dispute resolution
+ * law: linked, not reproduced. Two entries with the same title, such as two
+ * "Tribal code" links, are told apart by the site each one is on. A
+ * document that has its own history below, such as a constitution, is not
+ * listed again; its source stays in the Sources list.
+ */
+function publishedLaw(
+	record: NationRecord,
+	sources: SourceUses,
+	documents: { kind: string }[]
+): FactGroup[] {
 	const lawLabel = 'Dispute resolution law';
 	const documentsLabel = 'Where the nation publishes its laws';
+	const hasHistory = (kind: string) => documents.some((document) => document.kind === humanize(kind));
+	const entries = (record.governing_documents ?? []).filter((fact) => {
+		if (!hasHistory(fact.kind)) return true;
+		sources.use(fact, documentsLabel, fact.title ?? humanize(fact.kind));
+		return false;
+	});
+	const titleOf = (fact: (typeof entries)[number]) => fact.title ?? humanize(fact.kind);
+	const host = (link: string | undefined) => {
+		const url = link && URL.canParse(link) ? new URL(link) : undefined;
+		return url?.hostname.replace(/^www\./, '');
+	};
 	return [
 		...group(
 			'dispute_resolution_law',
@@ -161,85 +252,112 @@ function publishedLaw(record: NationRecord, sources: SourceUses): FactGroup[] {
 		...group(
 			'governing_documents',
 			documentsLabel,
-			(record.governing_documents ?? []).map((fact) =>
-				cited(sources, documentsLabel, fact, {
-					text: fact.title ?? humanize(fact.kind),
+			entries.map((fact) => {
+				const title = titleOf(fact);
+				const shared = entries.filter((other) => titleOf(other) === title).length > 1;
+				const site = shared ? host(webLink(fact.link)) : undefined;
+				return cited(sources, documentsLabel, fact, {
+					text: site ? `${title} (${site})` : title,
 					link: webLink(fact.link),
 					detail: fact.title ? humanize(fact.kind) : undefined
-				})
-			)
+				});
+			})
 		)
 	];
 }
 
 /**
- * Short sentences generated only from cited facts, never inferred from
- * silence and never comparing one nation with another (site/DESIGN.md,
- * "Nation pages"). Each sentence's sources are listed under "Recorded
- * features" in the Sources section.
- */
-function recordedFeatures(record: NationRecord, sources: SourceUses): FactItem[] {
-	const section = 'Recorded features';
-	const features: FactItem[] = [];
-	const feature = (text: string, facts: CitedFact[]) => {
-		const citations: CitationMark[] = [];
-		for (const fact of facts) sources.citeFact(fact, section, text, citations);
-		features.push({ text, citations });
-	};
-
-	const peacemaking = [
-		...(record.justice_institutions ?? []),
-		...(record.dispute_resolution?.forums ?? [])
-	].filter((fact) => fact.kind.includes('peacemaking'));
-	if (peacemaking.length > 0) {
-		feature('A source records a peacemaking program or forum.', peacemaking);
-	}
-
-	const appeals = (record.justice_institutions ?? []).filter(
-		(fact) => fact.kind === 'court-of-appeals'
-	);
-	if (appeals.length > 0) feature('A source records a court of appeals.', appeals);
-
-	const laws = record.dispute_resolution_law ?? [];
-	if (laws.length > 0) {
-		const text = 'The nation has published law on peacemaking, mediation or a related process.';
-		const citations: CitationMark[] = [];
-		for (const key of laws) sources.cite(key, { section, text }, citations);
-		features.push({ text, citations });
-	}
-
-	const states = [...new Set((record.states ?? []).map((fact) => fact.state))];
-	if (states.length > 1) {
-		feature(
-			`Sources record a presence in ${states.length} states and territories: ${states
-				.map(stateName)
-				.join(', ')}.`,
-			record.states ?? []
-		);
-	}
-
-	return features;
-}
-
-/**
- * The small map of the states where sources record the nation's presence
- * (state presence only, never the nation's land). It reuses the shapes of the
- * nations map, simplified for a small drawing, and shows only the boxes that
- * hold the nation's states, the main one zoomed to them (src/lib/presence-map.ts).
- * It is left out when no state is recorded.
+ * The small map on the nation's page, with the same views as the map of all
+ * nations (Trevor, Nov. 22, 2026): the states where sources record the
+ * nation's presence, its Bureau of Indian Affairs region, and the Census land
+ * areas its entry names. Each view shows only the boxes that matter to the
+ * nation, the main one zoomed to them (src/lib/presence-map.ts). A view with
+ * nothing to show is left out; a page whose record lists no state has no map.
+ * The state outlines are kept once and shared by the views.
  */
 const zoomedPaths = new Map(geometry.zoomedStates.map((state) => [state.code, state.path]));
 
-function presenceMap(record: NationRecord, sources: SourceUses) {
+/** Land areas are small, so their view may zoom closer than the other views. */
+const landAreaClosestZoom = 0.1;
+
+/** A region fills most of the view, with its neighbors around it. */
+const regionClosestZoom = 0.25;
+
+function nationMap(record: NationRecord, sources: SourceUses): NationMapData | undefined {
 	const present = new Set((record.states ?? []).map((fact) => fact.state));
 	if (present.size === 0) return undefined;
+	const states = geometry.smallStates;
+	const views: { key: 'states' | 'region' | 'lands'; label: string; layout: PresenceMapLayout; layers: Record<string, BoxLayers> }[] = [];
+	const emptyLayers = (layout: PresenceMapLayout) =>
+		Object.fromEntries(layout.boxes.map((box) => [box.key, { shapes: [], dots: [], labels: [] } as BoxLayers]));
+
 	sources.add('census-cartographic-boundary-states-2017', {
-		section: 'Map of states with a presence',
+		section: 'Map',
 		text: 'state and territory outlines, through us-atlas 3.0.1'
 	});
+	const statesLayout = layoutPresenceMap(geometry.frames, states, present, zoomedPaths);
+	views.push({ key: 'states', label: 'States', layout: statesLayout, layers: emptyLayers(statesLayout) });
+
+	const regionName = record.federal_administration?.bureau_of_indian_affairs_region;
+	const region = geometry.regions.find((shape) => shape.name === regionName);
+	if (region) {
+		sources.add(geometry.regionSource.source, {
+			section: 'Map',
+			text: 'Bureau of Indian Affairs region outlines, simplified for a national map',
+			where: `retrieved ${geometry.regionSource.retrieved}`
+		});
+		const layout = layoutPresenceMap(geometry.frames, states, new Set(), zoomedPaths, {
+			focus: [region.path],
+			closestZoom: regionClosestZoom
+		});
+		const layers = emptyLayers(layout);
+		for (const box of layout.boxes) {
+			for (const shape of geometry.regions) {
+				if (!shapeInBox(box, shape.path)) continue;
+				layers[box.key].shapes.push({ path: shape.path, kind: shape === region ? 'nation-region' : 'region' });
+			}
+			if (shapeInBox(box, region.path)) {
+				layers[box.key].labels.push({ text: `${region.name} Region`, ...pointInBox(box, region.label) });
+			}
+		}
+		views.push({ key: 'region', label: 'Region', layout, layers });
+	}
+
+	const areaFacts = (record.census_areas ?? []).filter((fact) => !fact.vintage || fact.vintage === '2020');
+	const areas = geometry.landAreas.filter((shape) =>
+		areaFacts.some((fact) => fact.geographic_identifier === shape.identifier)
+	);
+	if (areas.length > 0) {
+		for (const fact of areaFacts) {
+			if (fact.source) sources.add(fact.source, { section: 'Map', text: `land area: ${fact.name}` });
+		}
+		sources.add(geometry.landAreaSource.source, {
+			section: 'Map',
+			text: 'land area outlines, simplified for a national map',
+			where: `retrieved ${geometry.landAreaSource.retrieved}`
+		});
+		const layout = layoutPresenceMap(geometry.frames, states, new Set(), zoomedPaths, {
+			focus: areas.map((area) => area.path),
+			closestZoom: landAreaClosestZoom
+		});
+		const layers = emptyLayers(layout);
+		for (const box of layout.boxes) {
+			for (const area of areas) {
+				if (!shapeInBox(box, area.path)) continue;
+				layers[box.key].shapes.push({ path: area.path, kind: 'land-area' });
+				if (area.dot) layers[box.key].dots.push(pointInBox(box, area.dot));
+			}
+		}
+		views.push({ key: 'lands', label: 'Land Areas', layout, layers });
+	}
+
+	const shared = shareStateShapes(views.map((view) => view.layout));
 	return {
-		...layoutPresenceMap(geometry.frames, geometry.smallStates, present, zoomedPaths),
-		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en'))
+		shapes: shared.shapes,
+		views: views.map((view, index) => ({ key: view.key, label: view.label, layout: shared.layouts[index], layers: view.layers })),
+		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
+		region: region ? { name: `${region.name} Region`, link: `/nations/map#${regionAnchor(region.name)}` } : undefined,
+		landAreas: areas.map((area) => ({ name: area.name, kind: landAreaKindLabels[area.kind] }))
 	};
 }
 
@@ -256,7 +374,10 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: displayName(record.names.official),
 		listedName: record.names.official,
-		review: { ...status, lastVerified: record.review?.last_verified },
+		review: {
+			...status,
+			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
+		},
 		withdrawn: record.review?.status === 'withdrawn-at-request'
 	};
 
@@ -267,12 +388,12 @@ export const load: PageServerLoad = ({ params }) => {
 			nameCitations: [],
 			selfDesignations: [],
 			pronunciations: [],
-			features: [],
 			glance: [],
 			contacts: { websites: [], offices: [] },
 			courts: [],
 			law: [],
 			documents: [],
+			jurisdiction: [],
 			map: undefined,
 			sources: [],
 			outline: {
@@ -344,57 +465,50 @@ export const load: PageServerLoad = ({ params }) => {
 		};
 	});
 
+	// Sources are numbered in the order the page first cites them, which is
+	// the order the page shows them: At a glance comes right after the title.
+	const names = [page.listedName, page.officialName];
+	const glance = atAGlance(record, sources);
+	const contacts = contactCard(record, sources);
+	const map = nationMap(record, sources);
+	const courts = courtsAndDisputeResolution(record, sources);
+	const documents = documentHistoriesFor(record.id, sources).map((document) => ({
+		...document,
+		heading: documentHeading(document.title, names)
+	}));
+	const law = publishedLaw(record, sources, documents);
+	const jurisdiction = jurisdictionFacts(record, sources);
 	const result = {
 		page,
 		image,
 		nameCitations,
 		selfDesignations,
 		pronunciations,
-		features: recordedFeatures(record, sources),
-		glance: atAGlance(record, sources),
-		contacts: contactCard(record, sources),
-		map: presenceMap(record, sources),
-		courts: courtsAndDisputeResolution(record, sources),
-		law: publishedLaw(record, sources),
-		documents: documentHistoriesFor(record.id, sources),
+		glance,
+		contacts,
+		map,
+		courts,
+		law,
+		documents,
+		jurisdiction,
 		sources: sources.list
 	};
 
-	// The page's outline, for the sidebar: one entry per heading the page shows.
-	// In the page's order: "At a glance" follows the main text (Trevor, Nov. 22, 2026).
+	// The page's outline, for the sidebar: one entry per heading, in the page's order.
 	const items: OutlineItem[] = [];
-	if (result.features.length > 0) items.push({ label: 'About this Nation', link: '#about-heading' });
-	if (result.courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
-	if (result.law.length > 0) items.push({ label: 'Published law', link: '#law-heading' });
-	if (result.documents.length > 0) {
+	const hasContacts = contacts.websites.length > 0 || contacts.offices.length > 0;
+	if (glance.length > 0 || map) items.push({ label: 'At a glance', link: '#glance-heading' });
+	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
+	if (courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	if (law.length > 0 || documents.length > 0) {
 		items.push({
-			label: 'Document history',
-			link: '#documents-heading',
-			children: result.documents.map((document) => ({
-				label: shortDocumentTitle(document.title, [page.listedName, page.officialName]),
-				link: `#document-${document.id}`
-			}))
+			label: lawHeading,
+			link: '#law-heading',
+			children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 		});
 	}
-	const contacts = result.contacts.websites.length > 0 || result.contacts.offices.length > 0;
-	if (result.glance.length > 0 || contacts || result.map) {
-		items.push({ label: 'At a glance', link: '#glance-heading' });
-	}
+	if (jurisdiction.length > 0) items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
 	items.push({ label: 'Sources', link: '#sources-heading' });
 
 	return { ...result, outline: { title: page.officialName, items } satisfies PageOutline as PageOutline };
 };
-
-/**
- * A document's title for the sidebar, without the nation's name that opens it
- * ("Navajo Nation–State of Arizona Gaming Compact" becomes "State of Arizona
- * Gaming Compact"), since the sidebar already names the nation above it.
- */
-function shortDocumentTitle(title: string, names: string[]): string {
-	for (const name of names) {
-		for (const dash of ['–', '-', '—']) {
-			if (title.startsWith(`${name}${dash}`)) return title.slice(name.length + 1);
-		}
-	}
-	return title;
-}

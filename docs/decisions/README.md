@@ -42,5 +42,6 @@ and says so.
 | [0028](0028-map-adds-census-land-areas.md) | Add a land areas view to the map, from the Census Bureau's boundaries | Accepted |
 | [0029](0029-show-stories-while-nations-review-them.md) | Show story records on the website while their nations review them | Accepted |
 | [0030](0030-keep-research-captures-in-the-private-bucket.md) | Keep research captures in the private bucket, with an index in git | Accepted |
+| [0033](0033-nation-page-map-has-the-big-maps-views.md) | Give the map on each nation's page the big map's views | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

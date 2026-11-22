@@ -6,9 +6,10 @@
 	import FactGroups from '#lib/components/FactGroups.svelte';
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
-	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
+	import NationMap from '#lib/components/NationMap.svelte';
 	import { newTabNoteId, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
 	import { contactsHeading } from '#lib/contact-card.ts';
+	import Clock from '@lucide/svelte/icons/clock';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -17,6 +18,7 @@
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
+	const hasContacts = $derived(data.contacts.websites.length > 0 || data.contacts.offices.length > 0);
 </script>
 
 <svelte:head>
@@ -29,10 +31,10 @@
 
 <!--
 	On wide screens the page has two columns: the text, held to a readable
-	line length, and beside it "At a glance" with the map, set off by a rule.
-	"At a glance" comes after the text in the page's order, so a selection in
-	one column stays in it; on narrow screens it sits after Document history,
-	before Sources.
+	line length, and beside it "At a glance" (the seal, key facts and map) and
+	the contacts, set off by a rule (site/DESIGN.md, "Nation pages"). In the
+	page's order "At a glance" comes right after the title, so on a narrow
+	screen it comes first, and the main column's sections all follow it.
 -->
 <span id={newTabNoteId} hidden>Opens in a new tab</span>
 <article class="profile" {@attach outsideLinksOpenInNewTab}>
@@ -46,19 +48,8 @@
 			</div>
 		{/if}
 
-		<!-- 1. Name, with the nation's seal or logo when it may be shown (docs/official-images.md) -->
+		<!-- 1. Name. The nation's seal or logo heads At a glance (docs/official-images.md). -->
 		<h1>{page.officialName}</h1>
-		{#if data.image && !imageFailed}
-			<figure class="nation-image" data-print-part="officialImages">
-				<img
-					src={data.image.src}
-					alt="{data.image.kind} of {page.officialName}"
-					loading="lazy"
-					decoding="async"
-					onerror={() => (imageFailed = true)}
-				/>
-			</figure>
-		{/if}
 		{#if !page.withdrawn}
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">
@@ -88,79 +79,89 @@
 			{/each}
 		{/if}
 
-		<!-- 2. Review status: a small badge and one line, not a panel (Trevor, Nov. 22, 2026) -->
+		<!-- 2. Review status: a small badge and one line, not a panel (Trevor, Nov. 22, 2026).
+		     Report a problem in the masthead takes requests, so the line has no link of its own. -->
 		<p class="review-status small" id="review-status" data-print-part="reviewStatus">
 			<span class="visually-hidden">Review status:</span>
-			<span class="status-badge">{page.review.label}</span>
+			<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
 			<span class="muted">
-				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources last checked {page.review.lastVerified}.{/if}
+				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
 			</span>
-			<a class="no-print" href="/requests?record={record}">Is this about your nation? Make a request</a>
 		</p>
-
-		{#if !page.withdrawn && data.features.length > 0}
-			<!-- 3. About this Nation: the recorded features. The placeholder for the
-			     nation's own description was removed (Trevor, Nov. 22, 2026); the
-			     description is shown once a nation writes or approves one. -->
-			<Collapsible heading="About this Nation" identifier="about-heading">
-				<ul>
-					{#each data.features as feature, index (index)}
-						<li>{feature.text}<CitationMarks marks={feature.citations} /></li>
-					{/each}
-				</ul>
-			</Collapsible>
-		{/if}
 	</div>
 
 	{#if !page.withdrawn}
+		<!--
+			3. At a glance, with the seal and the map, then the contacts. On wide
+			pages it is the right-hand column, set off by a rule; in the page's
+			order it comes right after the title, so on a phone the key facts come
+			first. Selecting text in the main column never takes it in, because the
+			main column's sections all follow it.
+		-->
+		{#if data.glance.length > 0 || data.map || hasContacts}
+			<aside class="profile-glance" aria-label="At a glance">
+				{#if data.glance.length > 0 || data.map}
+					<div class="glance-box">
+						{#if data.image && !imageFailed}
+							<figure class="nation-image" data-print-part="officialImages">
+								<img
+									src={data.image.src}
+									alt="{data.image.kind} of {page.officialName}"
+									loading="lazy"
+									decoding="async"
+									onerror={() => (imageFailed = true)}
+								/>
+							</figure>
+						{/if}
+						<Collapsible heading="At a glance" identifier="glance-heading">
+							<FactGroups groups={data.glance} />
+							{#if data.map}
+								<div class="glance-map">
+									<NationMap map={data.map} nationName={page.officialName} />
+								</div>
+							{/if}
+						</Collapsible>
+					</div>
+				{/if}
+				{#if hasContacts}
+					<Collapsible heading={contactsHeading} identifier="contacts-heading">
+						<ContactCard cards={data.contacts} headingLevel={3} />
+					</Collapsible>
+				{/if}
+			</aside>
+		{/if}
+
 		<div class="profile-details">
-			<!-- 5. Courts and dispute resolution -->
+			<!-- 4. Courts and dispute resolution -->
 			{#if data.courts.length > 0}
 				<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
 					<NationServices categories={data.courts} />
 				</Collapsible>
 			{/if}
 
-			<!-- 6. Published dispute resolution law: linked, not reproduced -->
-			{#if data.law.length > 0}
-				<Collapsible heading="Published law" identifier="law-heading">
-					<FactGroups groups={data.law} />
-				</Collapsible>
+			<!-- 5. Laws and agreements: where the nation publishes its laws, linked, not
+			     reproduced, and each document with recorded versions, oldest first
+			     (decision record 0018). -->
+			{#if data.law.length > 0 || data.documents.length > 0}
+				<div data-print-part="documentHistory">
+					<Collapsible heading="Laws and agreements" identifier="law-heading">
+						{#if data.law.length > 0}
+							<FactGroups groups={data.law} />
+						{/if}
+						<DocumentHistoryList documents={data.documents} />
+					</Collapsible>
+				</div>
 			{/if}
 
-			<!-- 7. Document history: every recorded version, oldest first (decision record 0018) -->
-			{#if data.documents.length > 0}
-				<div data-print-part="documentHistory">
-				<Collapsible heading="Document history" identifier="documents-heading">
-					<DocumentHistoryList documents={data.documents} />
+			<!-- 6. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
+			{#if data.jurisdiction.length > 0}
+				<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
+					<FactGroups groups={data.jurisdiction} />
 				</Collapsible>
-				</div>
 			{/if}
 		</div>
 
-		<!--
-			4. At a glance, with the map of states. It comes after the main text in
-			the page's order, so selecting text in the main column never takes in
-			the fact box (Trevor, Nov. 22, 2026); on wide pages it sits beside the
-			text, set off by a rule.
-		-->
-		{#if data.glance.length > 0 || data.contacts.websites.length > 0 || data.contacts.offices.length > 0 || data.map}
-			<aside class="profile-glance" aria-labelledby="glance-heading">
-				<Collapsible heading="At a glance" identifier="glance-heading">
-					{#if data.map}
-						<StatePresenceMap map={data.map} nationName={page.officialName} />
-					{/if}
-					<FactGroups groups={data.glance} />
-					{#if data.contacts.websites.length > 0 || data.contacts.offices.length > 0}
-						<h3 id="contacts-heading">{contactsHeading}</h3>
-						<ContactCard cards={data.contacts} headingLevel={4} />
-					{/if}
-				</Collapsible>
-			</aside>
-		{/if}
-
-
-		<!-- 9. Sources -->
+		<!-- 7. Sources -->
 		<div class="profile-sources">
 			<SourceList sources={data.sources} />
 		</div>
@@ -173,26 +174,56 @@
 	}
 
 	.status-badge {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 		margin-right: var(--space-2);
 		padding: 0 var(--space-2);
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-control);
+		border: 1px solid var(--color-control-border);
+		border-radius: 999px;
 		background: var(--color-surface);
 		font-weight: var(--font-weight-semibold);
 	}
 
+	/* The fact box: a filled panel, like a reference work's, with the seal on top. */
+	.glance-box {
+		padding: var(--space-4);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface);
+	}
+
+	.glance-box > :global(.collapsible) {
+		margin-top: 0;
+	}
+
+	.glance-map {
+		margin-top: var(--space-4);
+	}
+
 	.nation-image {
-		margin: var(--space-3) 0;
+		margin: 0 0 var(--space-3);
 	}
 
 	/* Seals are square and logos are often wide, so the box sets only the limits. */
 	.nation-image img {
 		display: block;
+		margin: 0 auto;
 		width: auto;
 		height: auto;
 		max-width: min(18rem, 100%);
-		max-height: 6rem;
+		max-height: 7rem;
+	}
+
+	/*
+	 * Sources is one of the page's folding sections, spaced like the others;
+	 * the rule other pages draw above their notes would sit right under the
+	 * last fact table's own line.
+	 */
+	.profile-sources :global(.notes) {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: 0;
 	}
 
 	.profile-introduction,
@@ -211,6 +242,8 @@
 		.profile {
 			display: grid;
 			grid-template-columns: minmax(0, var(--layout-measure)) minmax(22rem, 1fr);
+			/* The last row takes any height the right-hand column needs beyond the text's. */
+			grid-template-rows: auto auto 1fr;
 			column-gap: var(--space-6);
 			align-items: start;
 		}
@@ -230,16 +263,13 @@
 			grid-row: 3;
 		}
 
-		/* A rule between the columns marks the fact box as its own region. */
+		/* The fact box and contacts form the right-hand column. */
 		.profile-glance {
 			grid-column: 2;
 			grid-row: 1 / span 3;
-			align-self: stretch;
 			max-width: var(--layout-side-column);
-			/* Lines up with the page's first heading. */
-			margin-top: var(--space-5);
-			padding-left: var(--space-6);
-			border-left: 1px solid var(--color-line);
+			/* Lines up with the page's title. */
+			margin-top: var(--space-4);
 		}
 
 		.profile-glance > :global(.collapsible) {
@@ -252,7 +282,7 @@
 	}
 
 	/* In a narrow fact box, each label sits above its values. */
-	@container glance (max-width: 30rem) {
+	@container glance (max-width: 18rem) {
 		.profile-glance :global(.summary-list) {
 			grid-template-columns: 1fr;
 		}
@@ -263,9 +293,9 @@
 		}
 	}
 
-	@container glance (min-width: 30rem) {
+	@container glance (min-width: 18rem) {
 		.profile-glance :global(.summary-list) {
-			grid-template-columns: minmax(7rem, 11rem) 1fr;
+			grid-template-columns: minmax(6.5rem, 9rem) 1fr;
 		}
 	}
 </style>

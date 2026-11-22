@@ -9,6 +9,7 @@
  * Sources section.
  */
 import { humanize } from '../nation-labels.ts';
+import { readableDate } from '../readable-date.ts';
 import { copyPath } from '../public-copies.ts';
 import {
 	documentHistories,
@@ -75,11 +76,44 @@ function sentenceCase(text: string): string {
 	return text.charAt(0).toLocaleUpperCase('en-US') + text.slice(1);
 }
 
+/**
+ * The version's dates in words, events on the same day named together:
+ * "Published and listed Feb. 5, 2003".
+ */
 function datesPhrase(version: DocumentVersion): string | undefined {
 	if (!version.dates) return 'No date found in the text';
 	const dates = version.dates;
-	const parts = DATE_LABELS.filter(([field]) => dates[field]).map(([field, label]) => `${label} ${dates[field]}`);
+	const byDate = new Map<string, string[]>();
+	for (const [field, label] of DATE_LABELS) {
+		const date = dates[field];
+		if (!date) continue;
+		byDate.set(date, [...(byDate.get(date) ?? []), label]);
+	}
+	const parts = [...byDate.entries()].map(([date, labels]) => `${labels.join(' and ')} ${readableDate(date)}`);
 	return parts.length > 0 ? sentenceCase(parts.join('; ')) : undefined;
+}
+
+/**
+ * A document's heading on its nation's page, without the nation's name the
+ * page already shows: "Navajo Nation, Arizona, New Mexico, & Utah–State of
+ * Arizona Gaming Compact" becomes "Gaming compact with Arizona", and
+ * "Constitution of the Ione Band of Miwok Indians of California" becomes
+ * "Constitution". Other titles lose only the nation's name at the start.
+ */
+export function documentHeading(title: string, names: string[]): string {
+	let rest = title;
+	for (const name of names) {
+		for (const dash of ['–', '-', '—']) {
+			if (rest.startsWith(`${name}${dash}`)) rest = rest.slice(name.length + 1);
+		}
+	}
+	const compact = /^State of (.+?) (?:Class III )?Gaming Compact$/i.exec(rest);
+	if (compact) return `Gaming compact with ${compact[1]}`;
+	const constitution = /^(Constitution|Constitution and Bylaws)(?: of (?:the )?(.+))?$/i.exec(rest);
+	if (constitution && (!constitution[2] || names.some((name) => name.includes(constitution[2]) || constitution[2].includes(name)))) {
+		return sentenceCase(constitution[1].toLocaleLowerCase('en-US'));
+	}
+	return rest;
 }
 
 function labelOf(version: DocumentVersion | undefined, fallback: string): string {
