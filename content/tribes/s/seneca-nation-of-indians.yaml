@@ -254,14 +254,6 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
-- kind: court-of-appeals
-  name: Seneca Nation of New York – Allegany Reservation Court of Appeals
-  link: http://sni.org/government/
-  source: tribal-law-policy-institute-justice-systems
-  confidence: medium
-  verification: bulk-import
-  as_of: '2022'
-  locator: New York section, entry 'Seneca Nation of New York'
 - kind: peacemaking-program
   name: Seneca Nation of New York – Allegany Reservation Peacemaker’s Court
   link: http://sni.org/government/peacemakers-court/
@@ -270,6 +262,13 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: New York section, entry 'Seneca Nation of New York'
+  appeals_to:
+    court: Seneca Nation Court of Appeals
+    source: constitution-seneca-nation-of-indians-2026-text
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-03-24'
+    locator: Section IV
 - kind: tribal-court
   name: Seneca Nation of New York – Allegany Reservation Surrogate Court
   link: http://sni.org/government/surrogates-court/
@@ -278,15 +277,13 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: New York section, entry 'Seneca Nation of New York'
-- kind: court-of-appeals
-  name: Seneca Nation of New York – Cattaraugus Reservation Court of Appeals
-  source: tribal-law-policy-institute-justice-systems
-  confidence: medium
-  verification: bulk-import
-  as_of: '2022'
-  locator: New York section, entry 'Seneca Nation of New York'
-  note: 'Link check 2026-11-21: the link the source gives (http://sni.org/government/court-of-appeal/)
-    returned HTTP 404, so it is not recorded.'
+  appeals_to:
+    court: Seneca Nation Court of Appeals
+    source: constitution-seneca-nation-of-indians-2026-text
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-03-24'
+    locator: Section IV
 - kind: peacemaking-program
   name: Seneca Nation of New York – Cattaraugus Reservation Peacemaker’s Court
   link: http://sni.org/government/peacemakers-court/
@@ -295,6 +292,13 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: New York section, entry 'Seneca Nation of New York'
+  appeals_to:
+    court: Seneca Nation Court of Appeals
+    source: constitution-seneca-nation-of-indians-2026-text
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-03-24'
+    locator: Section IV
 - kind: tribal-court
   name: Seneca Nation of New York – Cattaraugus Reservation Surrogate Court
   link: http://sni.org/government/surrogates-court/
@@ -303,6 +307,22 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: New York section, entry 'Seneca Nation of New York'
+  appeals_to:
+    court: Seneca Nation Court of Appeals
+    source: constitution-seneca-nation-of-indians-2026-text
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-03-24'
+    locator: Section IV
+- kind: court-of-appeals
+  name: Seneca Nation Court of Appeals
+  link: https://sni.org/about-our-government/judicial/
+  source: constitution-seneca-nation-of-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-03-24'
+  locator: Section IV
+  note: The constitution provides for one Court of Appeals for the Nation. It replaces two entries copied from the Tribal Law and Policy Institute directory (2022), which listed a Court of Appeals for each of the Allegany and Cattaraugus Reservations. Decisions of the Court of Appeals may be appealed to the Council only by a writ of permission granted by at least seven Councillors.
 gaming:
   compacts:
   - state: NY

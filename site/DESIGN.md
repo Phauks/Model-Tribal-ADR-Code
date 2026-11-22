@@ -178,7 +178,7 @@ its fixed sections on each nation's page:
    and "Is this about your nation? Make a request."
 3. About this Nation (below; called "What is distinctive here" until Trevor renamed it on Nov. 22, 2026).
 4. At a glance: a small map of the states with a presence, then recognition, states with a presence, federal region, then the government contacts card.
-5. Courts and dispute resolution: each forum with its kind, source and date.
+5. Courts and dispute resolution: one heading for each kind of service (Courts, Peacemaking, Mediation and so on), so a kind is never repeated after a name; under Courts, how appeals move from the court that hears a case first to the highest court, where sources record it ([data model](../docs/data-model.md#courts-and-the-path-of-appeal)).
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
 7. Document history: each of the nation's documents that has recorded versions, such as a gaming compact or a constitution, with every version oldest first, its dates, what it did to earlier versions (amended, replaced), whether it is in effect, and how its key clauses changed ([decision record 0018](../docs/decisions/0018-document-version-history.md)). A line under each title names the versions in effect. Each version's name links to a public copy of its text, the source's own address or else its archived copy (Trevor, Nov. 22, 2026); the project's private captures are never linked. Each version ends with the markers of its sources, which are also listed under the document's title in Sources.
