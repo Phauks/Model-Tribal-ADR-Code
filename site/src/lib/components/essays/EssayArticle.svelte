@@ -110,7 +110,8 @@
 {/if}
 
 <article class="reading essay">
-	<h1>{title}</h1>
+	<!-- The editor shows the title as the essay's own first heading, to edit there. -->
+	<h1 class:visually-hidden={mode === 'editing'}>{title}</h1>
 	{#if !isNewest}
 		<div class="notice" role="note">
 			<p>
@@ -152,11 +153,13 @@
 		border-left-color: var(--color-link);
 	}
 
+	/* The label sits in the empty space to the right of the text column. */
 	.essay-text :global(.essay-draft-mark::before) {
 		content: attr(data-draft);
 		position: absolute;
-		right: 100%;
-		margin-right: var(--space-2);
+		top: 0;
+		left: 100%;
+		margin-left: var(--space-3);
 		font-size: var(--font-size-small);
 		color: var(--color-ink-muted);
 	}
