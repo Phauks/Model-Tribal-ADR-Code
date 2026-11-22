@@ -290,7 +290,7 @@ export const load: PageServerLoad = ({ params }) => {
 		(image) => image.private_copy && imageMayBeShown(image)
 	);
 	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
-	// that the nation does not endorse the project, go in its Sources entry,
+	// that the nation does not endorse the site, go in its Sources entry,
 	// and a removal request goes through Report a problem.
 	let image: { src: string; kind: string } | undefined;
 	if (shownImage) {
@@ -298,7 +298,7 @@ export const load: PageServerLoad = ({ params }) => {
 		sources.use(
 			shownImage,
 			kind,
-			'As the nation’s website publishes it. It belongs to the nation, which does not endorse this project.'
+			'As the nation’s website publishes it. It belongs to the nation, which does not endorse this site.'
 		);
 		image = { src: imagePath(record.id), kind };
 	}

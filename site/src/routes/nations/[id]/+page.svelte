@@ -96,23 +96,16 @@
 			</p>
 		</section>
 
-		{#if !page.withdrawn}
-			<!-- 3. About this Nation (formerly "What is distinctive here") -->
+		{#if !page.withdrawn && data.features.length > 0}
+			<!-- 3. About this Nation: the recorded features. The placeholder for the
+			     nation's own description was removed (Trevor, Nov. 22, 2026); the
+			     description is shown once a nation writes or approves one. -->
 			<Collapsible heading="About this Nation" identifier="about-heading">
-				<h3>In the nation’s own words</h3>
-				<p class="muted">
-					This space is for a short description that the nation writes or approves. The project does not
-					write it for the nation.
-					<a href="/requests?kind=contribute&record={record}">Contribute a description</a>.
-				</p>
-				{#if data.features.length > 0}
-					<h3>Recorded features</h3>
-					<ul>
-						{#each data.features as feature, index (index)}
-							<li>{feature.text}<CitationMarks marks={feature.citations} /></li>
-						{/each}
-					</ul>
-				{/if}
+				<ul>
+					{#each data.features as feature, index (index)}
+						<li>{feature.text}<CitationMarks marks={feature.citations} /></li>
+					{/each}
+				</ul>
 			</Collapsible>
 		{/if}
 	</div>
@@ -153,19 +146,12 @@
 			{#if data.documents.length > 0}
 				<div data-print-part="documentHistory">
 				<Collapsible heading="Document history" identifier="documents-heading">
-					<p class="small muted">
-						Each document below lists every version the project has found, what each version did to the ones before it, and how its key clauses changed.
-					</p>
 					<DocumentHistoryList documents={data.documents} />
 				</Collapsible>
 				</div>
 			{/if}
 
 			<!-- 9. Sources -->
-			<p class="no-print">
-				Know of a published source we have missed?
-				<a href="/requests?kind=contribute&record={record}">Add it</a>.
-			</p>
 			<SourceList sources={data.sources} />
 		</div>
 	{/if}

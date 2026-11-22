@@ -181,17 +181,14 @@ its fixed sections on each nation's page:
 5. Courts and dispute resolution: one heading for each kind of service (Courts, Peacemaking, Mediation and so on), so a kind is never repeated after a name; under Courts, how appeals move from the court that hears a case first to the highest court, where sources record it ([data model](../docs/data-model.md#courts-and-the-path-of-appeal)).
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
-7. Document history: each of the nation's documents that has recorded versions, such as a gaming compact or a constitution, with every version oldest first, its dates, what it did to earlier versions (amended, replaced), whether it is in effect, and how its key clauses changed ([decision record 0018](../docs/decisions/0018-document-version-history.md)). A line under each title names the versions in effect. Each version's name links to a public copy of its text, the source's own address or else its archived copy (Trevor, Nov. 22, 2026); the project's private captures are never linked. Each version ends with the markers of its sources, which are also listed under the document's title in Sources.
+7. Document history: each of the nation's documents that has recorded versions, such as a gaming compact or a constitution, with every version oldest first, its dates, what it did to earlier versions (amended, replaced), whether it is in effect, and how its key clauses changed ([decision record 0018](../docs/decisions/0018-document-version-history.md)). A line under each title names the versions in effect. Each version's name links to a public copy of its text, the source's own address or else its archived copy (Trevor, Nov. 22, 2026); the project's private captures are never linked. Each version ends with the markers of its sources, which are also listed under the document's title in Sources. The section opens straight onto the documents, with no introductory sentence (Trevor, Nov. 22, 2026).
 8. Notices and Labels from Local Contexts.
 9. Sources, each with links back to the markers that cite it, followed by the facts on the page that come from it, and the date the page was last checked.
 
 Each section from "About this Nation" on, including Sources, is collapsible (Trevor, Nov. 22, 2026): its heading is the summary of a `<details>` element that starts open (`Collapsible.svelte`), so it works without scripts, and every folded section opens before printing so paper always has the whole page. The glossary pages' Sources section uses the same component. The review panel stays open.
 
-**About this Nation** has two parts:
+**About this Nation** holds the recorded features, and the section is left out when there are none. A short description the nation writes or approves will open it once a nation sends one; until then the page shows no placeholder for it (Trevor, Nov. 22, 2026, removed the "In the nation's own words" box). The site never writes that description for the nation.
 
-- **In the nation's own words.** A short description the nation writes or
-  approves. Until then the space says so and offers a link to contribute;
-  the project never writes it for the nation.
 - **Recorded features.** Short sentences generated from the record's cited facts, each followed by the markers of its sources, for example: a peacemaking program beside the Tribal court (`justice_institutions`, `dispute_resolution.forums`); a published peacemaking or mediation law (`dispute_resolution_law`); a court of appeals; presence in more than one state (`states`); a heritage language as the nation writes it (`languages`); jurisdiction facts such as Public Law 280 (`jurisdiction`). A feature appears only when a source documents it, never inferred from silence, and features describe the one nation without comparing it with others ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
 
 **Layout.** On screens at least 64 rem wide (1,024 px at the default text
@@ -208,10 +205,7 @@ the "At a glance" heading (project choice, Nov. 21, 2026).
 
 **Contacts.** A phone number is a `tel:` link that opens the device's dialer; an email address is a `mailto:` link. Fax numbers stay as text. A value that cannot be read reliably, such as a phone number that is not ten digits, stays as text (Trevor, 2026-11-21). The contacts appear as a contact card, described under [Components](#6-components).
 
-**Missing information.** Empty fields are left out rather than shown as
-"unknown," so a page never suggests a nation lacks something it may simply
-not have published. A single line at the end offers: "Know of a published
-source we have missed? Add it."
+**Missing information.** Empty fields are left out rather than shown as "unknown," so a page never suggests a nation lacks something it may simply not have published. The page has no "Add it" line for missed sources (Trevor, Nov. 22, 2026); readers offer them through Contribute or Report a problem in the masthead.
 
 **Restricted and withdrawn records.** A record marked restricted gets no page
 at all. A withdrawn record's page says only that the material was withdrawn
