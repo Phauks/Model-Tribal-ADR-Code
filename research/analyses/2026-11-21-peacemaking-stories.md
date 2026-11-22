@@ -23,6 +23,7 @@ not repeat it.
 6. Leads that are not stories yet
 7. Gaps and next steps
 8. Second search: more nations
+9. Traditional stories
 
 ## 1. Ground rules for collecting stories
 
@@ -95,7 +96,7 @@ cell means no source read stated one, not that none exists.
 | `onondaga-nation-founding-of-the-great-peace`[^onondaga-history] | Onondaga Nation | historical account, long | nation government | | yes |
 | `onondaga-nation-two-row-wampum`[^two-row][^onondaga-timeline] | Onondaga Nation | historical account, short | nation government | | yes |
 | `haudenosaunee-wampum-records-agreements`[^onondaga-wampum][^hcf-wampum] | Onondaga Nation; Haudenosaunee Confederacy | teaching, short | nation government | sacred use of wampum | no |
-| `oneida-indian-nation-tree-of-peace`[^oneida] | Oneida Indian Nation | traditional story, not yet read | nation government | | not yet assessed |
+| `oneida-indian-nation-tree-of-peace`[^oneida] | Oneida Indian Nation | teaching, one sentence | nation government | | no |
 | `ltbb-reviving-odawa-peacemaking`[^ltbb] | Little Traverse Bay Bands of Odawa Indians | community voices, long | nation court | | yes |
 | `kake-guwakaan-deer-people`[^kake] | Organized Village of Kake | teaching in the Tribe's code, a paragraph | nation government | the code calls Guwakaan a sacred clan | no |
 | `tlingit-law-and-peace-ceremonies`[^shi-books][^shi-exhibit][^juneau] | Tlingit (regional Tribe's profile used) | historical account, book | Native institution; Tlingit author | ask about clan ownership | yes |
@@ -210,27 +211,13 @@ story the nation chooses to share. Others to follow:
 
 ## 7. Gaps and next steps
 
-- **Not reached or blocked** (see both session logs): Mohegan, Penobscot,
-  Oneida Nation of Wisconsin, Seneca, Tuscarora, Siletz, Swinomish, Zuni,
-  the Eastern Band's own sites, the Yurok code site, the Sault Ste. Marie
-  Tribe, the Mille Lacs Band, Nambé Pueblo and others. The lead author
-  offered on Nov. 21, 2026 to check blocked pages by hand.
-- **Ask, do not search.** The richest stories are likely to come from asking
-  the nations' cultural offices and peacemaking programs, through the
-  contributor intake forms, rather than from the web (project analysis). The
-  second search, which found program pages far more often than stories,
-  supports this.
-- **Pulls.** Nine items are in section 10 of the project's single Westlaw
-  list.
+- **Not reached or blocked** (see both session logs): Mohegan, Penobscot, Oneida Nation of Wisconsin, Seneca, Tuscarora, Siletz, Swinomish, Zuni, the Eastern Band's own sites, the Yurok code site, the Sault Ste. Marie Tribe, the Mille Lacs Band, Nambé Pueblo and others. The lead author offered on Nov. 21, 2026 to check blocked pages by hand.
+- **Ask, do not search.** The richest stories are likely to come from asking the nations' cultural offices and peacemaking programs, through the contributor intake forms, rather than from the web (project analysis). The second search, which found program pages far more often than stories, supports this.
+- **Pulls.** The library copies, Westlaw searches and pages blocked to automated requests are on the lead author's list of documents to get by hand (`research/documents-to-get.md` in the project's working files).
 
 ## 8. Second search: more nations
 
-The lead author approved a second search on Nov. 21, 2026, for Haudenosaunee
-and Wabanaki nations, Anishinaabe nations in Michigan, Minnesota and
-Wisconsin, Pomo and Oregon coast nations, and the Pueblos. Method and limits
-are in the session log,
-[2026-11-21-peacemaking-stories-second-sweep](../sessions/2026/2026-11-21-peacemaking-stories-second-sweep.md).
-It added seven stories, each quoted in the teller's own words:
+The lead author approved a second search on Nov. 21, 2026, for Haudenosaunee and Wabanaki nations, Anishinaabe nations in Michigan, Minnesota and Wisconsin, Pomo and Oregon coast nations, and the Pueblos. Method and limits are in the session log, [2026-11-21-peacemaking-stories-second-sweep](../sessions/2026/2026-11-21-peacemaking-stories-second-sweep.md). It added seven stories, each quoted in the teller's own words:
 
 | Record | Nation | Kind | Teller's voice | Anthology |
 | --- | --- | --- | --- | --- |
@@ -244,32 +231,34 @@ It added seven stories, each quoted in the teller's own words:
 
 **What the second search shows (project analysis).**
 
-- **A court's founding can be its own story.** The Coos, Lower Umpqua and
-  Siuslaw newspaper calls the Peacegiving Court's founding "a second
-  restoration," after federal restoration in 1984, and Judge Don Costello
-  says it "was a joint effort of our Tribe and members of the Coquille Indian
-  Tribe."[^clusi] This is the clearest account found so far of a community
-  telling how it built its own peacemaking forum.
-- **Old roles come back under their own names.** Cow Creek writes that in
-  historical accounts its peacemakers "are referenced as ' xaawiisaa ,' or
-  'go-between.'"[^cow-creek] (Spacing as on the page.)
-- **Welcome after consultation.** The Pueblo of Jemez's cultural office
-  writes that "[a]fter a long consultation with the Jemez leaders the P`ǽ
-  kish were welcomed and accepted by their kin."[^jemez-pecos] The same
-  page goes on to ceremonial matters, which the project does not describe.
-- **Pueblo sites say little about resolving disputes.** None of the Pueblo
-  pages reached described peacemaking or a traditional dispute process; the
-  courts' pages describe procedure. That is a fact about the pages, not
-  about the Pueblos.
+- **A court's founding can be its own story.** The Coos, Lower Umpqua and Siuslaw newspaper calls the Peacegiving Court's founding "a second restoration," after federal restoration in 1984, and Judge Don Costello says it "was a joint effort of our Tribe and members of the Coquille Indian Tribe."[^clusi] This is the clearest account found so far of a community telling how it built its own peacemaking forum.
+- **Old roles come back under their own names.** Cow Creek writes that in historical accounts its peacemakers "are referenced as ' xaawiisaa ,' or 'go-between.'"[^cow-creek] (Spacing as on the page.)
+- **Welcome after consultation.** The Pueblo of Jemez's cultural office writes that "[a]fter a long consultation with the Jemez leaders the P`ǽ kish were welcomed and accepted by their kin."[^jemez-pecos] The same page goes on to ceremonial matters, which the project does not describe.
+- **Pueblo sites say little about resolving disputes.** None of the Pueblo pages reached described peacemaking or a traditional dispute process; the courts' pages describe procedure. That is a fact about the pages, not about the Pueblos.
 
-**Leads from the second search.** Program pages with no story: the Little
-River Band's Peacemaking program (on hold, per the page), the Leech Lake
-Band's Bamenim Anishinaabeg program, the Klamath Tribes' Peacemaker Court,
-the Coos, Lower Umpqua and Siuslaw Peacegiving Court page, and the Northern
-California Intertribal Court. The Ogichidaa Storytellers' education materials
-on the Healing Circle Run, among Ojibwe nations after the treaty-rights
-conflicts, need a confirmed publisher before a record is made. The Mi'kmaq
-Nation's StoryMap journals ask for permission before any use.
+**Leads from the second search.** Program pages with no story: the Little River Band's Peacemaking program (on hold, per the page), the Leech Lake Band's Bamenim Anishinaabeg program, the Klamath Tribes' Peacemaker Court, the Coos, Lower Umpqua and Siuslaw Peacegiving Court page, and the Northern California Intertribal Court. The Ogichidaa Storytellers' education materials on the Healing Circle Run, among Ojibwe nations after the treaty-rights conflicts, need a confirmed publisher before a record is made. The Mi'kmaq Nation's StoryMap journals ask for permission before any use.
+
+## 9. Traditional stories
+
+The lead author asked on Nov. 21, 2026 whether the search had looked for traditional stories, which he called myth and mythology, and not only accounts of real events. The first two searches allowed them but found almost none. A third search looked only for traditional stories that nations themselves publish. Method and limits are in the session log, [2026-11-21-peacemaking-traditional-stories](../sessions/2026/2026-11-21-peacemaking-traditional-stories.md). The project says "traditional stories" rather than "myths," because many Native writers hear "myth" as "untrue" (project analysis; the terminology guide does not yet cover the word).
+
+| Record | Nation | Kind | Teller's voice | Anthology |
+| --- | --- | --- | --- | --- |
+| `seminole-little-frog`[^semtribe-frog] | Seminole Tribe of Florida | traditional story, a paragraph | nation government (told by Betty Mae Jumper) | yes |
+| `oneida-indian-nation-how-the-clans-were-chosen`[^oneida-clans] | Oneida Indian Nation | traditional story, short | nation government | yes |
+| `oneida-indian-nation-my-home-turtle-and-beaver`[^oneida-my-home] | Oneida Indian Nation | traditional story (described only) | nation government | not yet assessed |
+| `onondaga-nation-founding-of-the-great-peace` (second telling)[^hcf-creation] | Haudenosaunee Confederacy | founding account | the Confederacy | already a candidate |
+
+**What the traditional stories show (project analysis).**
+
+- **A village at an impasse.** The Oneida legend begins with a problem the leaders could not solve: "The leaders of the village were at an impasse." A young man proposes a way through, and the clans that result let one clan "console the grieving clan" while another carries on the village's business.[^oneida-clans] It is the closest thing in the catalog to a traditional story about solving a community problem by changing how people share duties.
+- **A quarrel and its consequence.** In Betty Mae Jumper's "Little Frog," a rabbit keeps pestering a frog "until the little frog got really mad and told him, 'I'll fix you up.'"[^semtribe-frog] The story explains a sound in the woods. It is a light story of provocation and consequence, not of reconciliation.
+- **Persuasion instead of force.** The Oneida Indian Nation describes "My Home" as a story in which a turtle "finds ways to convince beaver that getting along and caring about the land he lives in is a better way."[^oneida-my-home] The story itself still needs to be read.
+- **Deliberation under the tree.** The Haudenosaunee Confederacy's own account says the Peacemaker "told them that all issues concerning the confederacy would be discussed and deliberated under this tree."[^hcf-creation]
+
+**Rules nations state for telling stories.** Three nations say some stories are told only in winter. The Citizen Potawatomi Nation's newspaper says: "There are a number of traditional stories which we are only supposed to share in the wintertime."[^cpn-winter] A Salt River Pima-Maricopa Indian Community article describes "traditional O’odham stories that are told only during the winter months."[^srpmic-winter] The Gila River Indian News writes: "The Creation Stories are traditionally told only when rattlesnakes are hibernating."[^gric-winter] The Seminole Tribe of Florida asks that whoever receives a legend "retell the story as close to the original version as possible,"[^semtribe-frog] which the project follows by quoting, never retelling. None of these rules is stated for a story now in the catalog, but the website should be able to show a story only in its season if a nation asks (the record format already allows it; project analysis).
+
+**Left out on purpose.** The Chickasaw Nation's "The Migration Story" turns on a disagreement that talk could not settle, but the Nation describes its oral histories as sacred stories,[^chickasaw] so it waits for the Nation's guidance. Creation stories on the Seminole and Oneida sites, and a Ponca collection the Tribe calls sacred, were left out for the same reason.
 
 [^charter-4]: [Charter, commitment 4](../../docs/charter.md#4-consultation-before-publication).
 [^charter-5]: [Charter, commitment 5](../../docs/charter.md#5-cultural-knowledge-and-restricted-material).
@@ -319,3 +308,10 @@ Nation's StoryMap journals ask for permission before any use.
 [^jemez-pecos]: Christopher Toya, *Pecos Pueblo History*, Pueblo of Jemez, [jemezpueblo.org](https://www.jemezpueblo.org/about/pecos-pueblo/) (last visited Nov. 22, 2026). Source record: `pueblo-of-jemez-about-pecos-pueblo`.
 [^jemez-history]: *History and Culture*, Pueblo of Jemez, [jemezpueblo.org](https://www.jemezpueblo.org/about/history-and-culture/) (last visited Nov. 22, 2026) (text credited to William Whatley, 1993, edited by the Pueblo of Jemez Administration). Source record: `jemez-history-and-culture`.
 [^taos]: *Water Rights*, Taos Pueblo, [taospueblo.com](https://taospueblo.com/community/water-rights/) (last visited Nov. 22, 2026). Source record: `pueblo-of-taos-water-rights-page`.
+[^semtribe-frog]: Betty Mae Jumper, *Little Frog*, in *A Legendary Storyteller*, Seminole Tribe of Florida, [semtribe.com](https://semtribe.com/culture/a-legendary-storyteller) (last visited Nov. 22, 2026) (excerpt from her book *Legends of the Seminoles*). Source record: `seminole-tribe-of-florida-legendary-storyteller-page`.
+[^oneida-clans]: *How the Clans were Chosen*, Oneida Indian Nation, [oneidaindiannation.org](https://www.oneidaindiannation.org/how-the-clans-were-chosen) (last visited Nov. 22, 2026). Source record: `oneida-indian-nation-how-the-clans-were-chosen`.
+[^oneida-my-home]: *My Home: An Oneida Indian Legend*, Oneida Indian Nation, [oneidaindiannation.com](https://www.oneidaindiannation.com/news-and-media-my-home-an-oneida-indian-legend) (last visited Nov. 22, 2026). Source record: `oneida-indian-nation-my-home-legend`.
+[^hcf-creation]: *Confederacy's Creation*, Haudenosaunee Confederacy, [haudenosauneeconfederacy.com](https://www.haudenosauneeconfederacy.com/confederacys-creation/) (last visited Nov. 22, 2026). Source record: `haudenosaunee-confederacy-creation-page`.
+[^cpn-winter]: *Winter Storytelling*, Hownikan (Citizen Potawatomi Nation), Nov.-Dec. 2025, [potawatomi.org](https://www.potawatomi.org/wp-content/uploads/Hownikan-November-December-2025-Digital.pdf). Source record: `citizen-potawatomi-nation-hownikan-2025-winter-storytelling`.
+[^srpmic-winter]: *O'odham Lore Shared at Winter Storytelling Event*, O'odham Action News (Salt River Pima-Maricopa Indian Community), [oan.srpmic-nsn.gov](https://oan.srpmic-nsn.gov/oodham-lore-shared-at-winter-storytelling-event/) (last visited Nov. 22, 2026). Source record: `srpmic-oan-oodham-lore-winter-storytelling`.
+[^gric-winter]: *Ho'ok A'aga: Winter Storytelling 2026*, Gila River Indian News, [gricnews.org](https://www.gricnews.org/index.php/2026-articles/hook-aaga-winter--storytelling) (last visited Nov. 22, 2026). Source record: `gila-river-indian-news-2026-hook-aaga-winter-storytelling`.

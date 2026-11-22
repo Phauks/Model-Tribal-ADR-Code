@@ -201,14 +201,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.spiritlakenation.com/programs/tribal-council/
+  link: https://www.spiritlakenation.com/linkgen?media_id=1372
   source: national-indian-law-library-spirit-lake
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.spiritlakenation.com/programs/tribal-council/,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Spirit Lake Tribe Constitutions and Bylaws
   link: http://www.spiritlakenation.com/data/upfiles/media/SLT%20Constittution%202016.pdf
@@ -435,10 +436,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30691 (Tribe column of the designated agent table)
   note: 'Listed as: Spirit Lake Tribe, North Dakota Confidence lowered from high by the lead session:
     the notice prints its table as page images, so nation names were read from images and matched to the
-    roster.'
+    roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
+    verification level unchanged because the name was not matched word for word in machine-read text.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

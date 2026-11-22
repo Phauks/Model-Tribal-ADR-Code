@@ -224,14 +224,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://oneida-nsn.gov/government/register/laws/#ONEIDA-NATION-CONSTITUTION
+  link: https://oneida-nsn.gov/wp-content/uploads/2018/05/2015-06-16-Tribal-Constitution.pdf
   source: national-indian-law-library-oneida-nation
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://oneida-nsn.gov/government/register/laws/#ONEIDA-NATION-CONSTITUTION,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Oneida Nation Constitution and By-Laws
   source: tribal-law-policy-institute-justice-systems
@@ -257,9 +258,11 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/oneidachrtr.html
   source: university-of-oklahoma-indian-reorganization-act-oneidachrtr
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1937'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1937; the second gap review also confirmed this link.
 - kind: constitution
   title: Constitution (Oneida Tribe of Indians of Wisconsin)
   year: '1936'
@@ -592,11 +595,13 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
-  verification: inferred
+  verification: read-in-full
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30695 (Tribe column of the designated agent table)
   note: 'Listed as: Oneida Nation Confidence lowered from high by the lead session: the notice prints
-    its table as page images, so nation names were read from images and matched to the roster.'
+    its table as page images, so nation names were read from images and matched to the roster. Row re-read
+    on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
+    (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

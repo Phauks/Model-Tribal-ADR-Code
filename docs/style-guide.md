@@ -90,9 +90,7 @@ chosen for clarity and consistency in text a nation may enact.
   never a real nation's name ([data-model.md](data-model.md#built-for-templates)).
 - **Alternatives** are lettered (Alternative A, Alternative B) and each must
   work on its own when the others are deleted.
-- **Definitions inside a provision** apply only to that provision's chapter and
-  are written "In this chapter, 'party' means ...". Project-wide terms belong
-  in the glossary instead.
+- **Definitions.** A term defined for the whole code is defined in the general division, because a definition a nation enacts must sit in the code itself. A term used in only one division is defined there, written "In this division, 'party' means ...". The glossary explains words used in essays and other prose; where a word is also defined in the code, its glossary entry points to the code's definition so the two say the same thing ([outline, scope question 12](outline.md#open-scope-questions)).
 - **Numbering** follows [repository-layout.md](repository-layout.md#identifiers).
   Never renumber a published section; insert § 2-104A.
 

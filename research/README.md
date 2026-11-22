@@ -20,18 +20,7 @@ topic.
 
 ## Pull lists
 
-`pull-lists/` holds dated lists of what to pull or check in subscription
-databases such as Westlaw (citator checks, treatises, law review articles)
-after a research session. Each item names the source record to update, and
-an item is removed once its check is recorded in that record. Since 2026-11-21
-new items go in the project's single list of things to fetch by hand,
-`research/documents-to-get.md` in the project's working files (called
-`westlaw-links.md` until 2026-11-22). It is grouped by action (downloads,
-pages to save, Wayback saves, searches and library copies, Westlaw, asking
-people), and its top section gives the rules for adding an item. The
-documents themselves are private copies in the working files'
-`research/captures/`, never in this repository. The dated lists here point to
-it.
+`pull-lists/` holds dated lists of what to pull or check in subscription databases such as Westlaw (citator checks, treatises, law review articles) after a research session. Each item names the source record to update, and an item is removed once its check is recorded in that record. Since 2026-11-21 new items go in the project's single list of things to fetch by hand, `research/documents-to-get.md` in the project's working files. It is the only such list; older lists are kept as a record in `research/old-pull-lists/` there. It is grouped by action (downloads, pages to save, Wayback saves, searches and library copies, Westlaw, asking people), and its top section gives the rules for adding an item. The documents themselves are private copies in the working files' `research/captures/`, never in this repository. The dated lists here point to it.
 
 ## Analyses
 

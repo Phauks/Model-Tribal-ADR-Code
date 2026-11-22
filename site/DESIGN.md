@@ -102,13 +102,7 @@ fed the "Model text, not law in force" notice in section 6.
 
 ### Main menu
 
-The code, Peacemaking, Nations, Glossary, Sources, Downloads, About, and a
-Contribute button. Search, a "Sign in" link (it reads "Workspace" once a
-co-author has signed in), the theme setting and the offline state sit beside
-them. Nobody needs to sign in to read the site or to make a request. The
-footer of every page carries "Request a correction or removal," the requests
-log, the licenses and the three version numbers
-([requests.md](../docs/requests.md#where-the-request-starts)).
+The code, Peacemaking, Nations, Glossary, Sources, About, and a Contribute button. One search box for the whole site sits beside the site's name, with the theme button, the Settings button and, at the far right, a "Sign in" link that becomes a profile button once someone has signed in (Trevor asked for both on Nov. 22, 2026). Downloads and the changelog are linked from the footer, and Print and Download sit on each page they act on (see [Masthead](#6-components) and Page tools below). Nobody needs to sign in to read the site or to make a request. The footer of every page carries "Request a correction or removal," the requests log, the licenses and the three version numbers ([requests.md](../docs/requests.md#where-the-request-starts)).
 
 Peacemaking has its own menu item and landing page, because the project
 treats it as its own track, not a variant of ADR
@@ -129,7 +123,9 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Essay | `/essays/i-history-of-adr` |
 | Form | `/forms/agreement-to-participate` |
 | Peacemaking landing page | `/peacemaking` |
-| Nations directory, map and table | `/nations` |
+| Nations directory | `/nations` |
+| Nations by first letter and by state | `/nations/letter/a`, `/nations/state/nv` |
+| Search | `/search?q=<words>` |
 | Nation profile | `/nations/<id>` |
 | Native Hawaiian community | `/nations/native-hawaiian` (its own page, never listed as a tribe) |
 | Glossary and entry | `/glossary`, `/glossary/<id>` |
@@ -151,7 +147,8 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Section | Contents rail, text, margin | "Model text, not law in force" notice with the version and last change; hanging section number; status chips; text with alternatives and placeholders; Comment, Illustrations, Source note; previous and next; margin: On this page, notes, "Cite this section," "Adapt this section" |
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
-| Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice; "Is your nation missing? Ask to be added", also shown when a search finds no nation |
+| Nations directory | One column | Links to one page per first letter and one per state, each a short table (name, recognition with its legal basis linked, states, review status); the small groups (the Native Hawaiian community, the Indigenous peoples of the territories) listed in full in their own tables; a link to the map; "Is your nation missing? Ask to be added", also shown when a search finds no nation. Finding one nation by name is the site search's job, so the tables have no search box of their own |
+| Search | One column | The search box, a live count, and results grouped as nations and communities, glossary terms and pages; "Is your nation missing?" when nothing matches |
 | Glossary entry | Entry rail, text, margin | Term, usage status, "Report a problem" under the term, definition, how the project uses it, use instead, related terms, about this entry, other entries that use it, and a Sources section at the end |
 | Glossary | One column | "Report a problem" under the title; an A to Z index; every entry in full (term, usage, definition, how the project uses it, use instead, related terms), each with its own anchor such as `/glossary#native-nations`; one Sources section at the end |
 | Source record | Text and margin | Citation, original link, archived copies, change history, quotation basis, what cites it |
@@ -266,15 +263,11 @@ size, because the book's trim size is not yet decided (project choice).
 
 ## 6. Components
 
-**Masthead.** Wordmark and edition, main menu, Contribute, then a "Sign in"
-link, the theme button and the Settings button at the right end. Pages are
-built ahead of time, so the sign-in link cannot ask the server who is signed
-in; after a co-author signs in, the Worker sets a cookie that says only
-"signed in," and the link then reads "Workspace." Without scripts it stays
-"Sign in," which still works. Sign-in itself is described in
-[COLLABORATION.md](COLLABORATION.md#how-sign-in-works). Menu
-items are at least 44 px tall. The current section is marked with
-`aria-current="page"` and a 3 px underline.
+**Masthead.** Two rows on the band, as Trevor asked on Nov. 22, 2026. The first holds the wordmark and edition, the site search box, then the theme button, the Settings button and, at the far right, the sign-in control. The second holds the main menu, with Contribute at its right end. On screens narrower than 60 rem the search box moves to its own line under the name and controls; narrower than 40 rem, the name, the controls and the search box each take a line. Print and Download are not in the masthead, because they act on one page (see Page tools). Pages are built ahead of time, so the sign-in control cannot ask the server who is signed in; after someone signs in, the Worker sets a cookie that says only "signed in," and "Sign in" then becomes a round profile button. It opens a short list (WAI-ARIA disclosure pattern, not a menu, since the items are plain links and a form): Your profile, Workspace (a person without workspace access is sent to their profile) and Sign out. Escape or a click elsewhere closes it. Without scripts it stays "Sign in," which still works. Sign-in itself is described in [COLLABORATION.md](COLLABORATION.md#how-sign-in-works). Menu items are at least 44 px tall. The current section is marked with `aria-current="page"` and a 3 px underline.
+
+**Search.** One search box in the masthead searches the whole site, so lists do not need search boxes of their own (Trevor asked on Nov. 22, 2026). It is a plain form that opens `/search?q=…`. The search page is built ahead of time; in the browser it loads `/search/index.json`, built with the site from the nation records, the glossary and a short list of the site's own pages, and lists the matches as the reader types, grouped as nations and communities, glossary terms and pages, 25 to a group with "Show all" for the rest. Matching follows the tables' rules (`src/lib/site-search.ts`): case and accents are ignored and every word typed must appear. A match on a nation's official name ranks first, then a match on another name it is known by (shown as "also called"), then a match on the line under the name, such as a state. The index and the search page are kept for offline reading with the core pages. Without scripts the page says that search needs them and links to the nations by letter and state and the glossary from A to Z.
+
+**Page tools.** Print and, where the page has a file to offer, Download sit together under a page's title (`PageTools.svelte`), as quiet buttons. Each download is a file built with the site: a nation's record as JSON, the full nations index as CSV, and the glossary's terms as JSON. The book and the data exports stay on the Downloads page.
 
 **Icons.** All icons come from Lucide,[^lucide-license] chosen on Nov. 21,
 2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)).
@@ -283,9 +276,7 @@ bundled.[^lucide-svelte] The book and the ebook use the same drawings from
 `lucide-static`, at the same version number, which `site/package.json` pins
 exactly. Rules:
 
-- An icon sits beside words. The only icon-only control is the theme button,
-  and it carries an `aria-label` that names the action, because Lucide hides
-  icons from screen readers by default.[^lucide-a11y]
+- An icon sits beside words. The only icon-only controls are the theme button and the profile button (Trevor asked for a profile icon on Nov. 22, 2026), and each carries an `aria-label` that names it, because Lucide hides icons from screen readers by default.[^lucide-a11y] The text alignment choice in Settings also shows only symbols, as Trevor asked on Nov. 22, 2026; each symbol is a radio button with a hidden name that screen readers read, and the picked choice's name and hint show in words just below it.
 - Beside 18 px body text, icons are 20 px with `strokeWidth` 1.75, which
   matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project
   measurement). Standalone controls use 24 px and the default 2 px stroke.
@@ -296,113 +287,36 @@ exactly. Rules:
 
 **Password fields.** Every password field is `src/lib/components/PasswordInput.svelte`: the field with a "Show" button beside it, carrying Lucide's `eye` icon (`eye-off` and "Hide" while the password shows), as Trevor asked on Nov. 22, 2026. It follows the GOV.UK password input: the button names its action for screen readers ("Show password", "Hide password"), a polite announcement says "Your password is visible" or "hidden", and the field goes back to hidden when the form is sent so the browser does not store the password as ordinary text.[^govuk-password] Without scripts the button does not appear.
 
-**Modal.** One shared modal dialog, `src/lib/components/Modal.svelte`, for
-every dialog on the site. It is the browser's own `<dialog>` opened as a
-modal: focus moves into it, stays in it, Escape closes it, and the page
-behind is inert.[^mdn-dialog] With sections it has two panels, as Trevor asked
-on Nov. 21, 2026: a list of sections on the left and the chosen section on the
-right. The list follows the WAI-ARIA tabs pattern, so arrow keys move between
-sections and Home and End jump to the first and last.[^apg-tabs] The chosen
-section is marked by a bar and bold type as well as a fill. On narrow screens
-the list wraps above the section. Buttons such as "Done" sit along the
-bottom.
+**Modal.** One shared modal dialog, `src/lib/components/Modal.svelte`, for every dialog on the site. It is the browser's own `<dialog>` opened as a modal: focus moves into it, stays in it, Escape closes it, and the page behind is inert.[^mdn-dialog] With sections it has two panels, as Trevor asked on Nov. 21, 2026: a list of sections on the left and the chosen section on the right. The list follows the WAI-ARIA tabs pattern, so arrow keys move between sections and Home and End jump to the first and last.[^apg-tabs] The chosen section is marked by a bar and bold type as well as a fill. On narrow screens the list wraps above the section. A dialog may have buttons along the bottom, as Print does; Settings has none, because Close at the top closes it (Trevor, Nov. 22, 2026).
 
-**Settings.** A "Settings" button with Lucide's `settings` icon at the right
-end of the masthead opens the Modal with five sections (project choice, asked
-for by Trevor on Nov. 21, 2026): **Text** (size, font, spacing, alignment),
-**Colors** (theme, contrast), **Citations**, **Glossary** and **Saved for
-offline**. The reading settings are:
+**Settings.** A "Settings" button with Lucide's `settings` icon at the right end of the masthead opens the Modal with five sections (project choice, asked for by Trevor on Nov. 21, 2026): **Text** (size, font, spacing, alignment), **Colors** (theme, contrast), **Citations**, **Glossary** and **Data** (saved pages, updates, reset and delete; "Saved for offline" was renamed Data on Nov. 22, 2026, at Trevor's request). The reading settings are:
 
-- **Text size:** Standard, Large, Larger or Largest (100, 112.5, 125 or 150
-  percent). Every size on the site is in rem, so the whole page scales.
-- **Font:** Atkinson Hyperlegible Next (the default), Noto Serif,
-  OpenDyslexic or the device's own font (see [Type](#type)).
-- **Text spacing:** Standard or Wide. Wide uses the values WCAG 2.2, 1.4.12
-  tests: line height 2 (at least 1.5), paragraph spacing 2 times, letter
-  spacing 0.12 times and word spacing 0.16 times the font size.[^wcag-1412]
-- **Text alignment:** Left aligned (the default) or Justified, asked for by
-  Trevor on Nov. 21, 2026. Justified applies to reading text in the page's
-  main area (paragraphs, list items, definitions and quotations), not to
-  headings, tables, forms or the masthead, and turns on automatic hyphenation
-  (`hyphens: auto`), which uses each element's `lang` attribute to pick the
-  hyphenation rules.[^mdn-hyphens] Links are never hyphenated, so nation
-  names, citations and addresses stay whole. Left stays the default because
-  WCAG's enhanced visual presentation criterion asks that text not be
-  justified, since uneven word spacing makes reading harder for some
-  readers.[^wcag-148]
+- **Text size** (a dropdown): Standard, Large, Larger or Largest (100, 112.5, 125 or 150 percent). Only text grows, as Trevor asked on Nov. 22, 2026: the setting changes `--text-scale`, which multiplies every font size token (`src/lib/design-tokens.ts`), while boxes, spaces and controls keep their rem sizes. Controls still grow where their text needs room, because their heights are minimums. The root font size stays at the browser's own setting, so a reader's browser text size still scales the whole page.
+- **Font** (a dropdown): Atkinson Hyperlegible Next (the default), Noto Serif, OpenDyslexic or the device's own font (see [Type](#type)). Each choice in the list, and the picked choice in the closed dropdown, is shown in its own typeface, as Trevor asked on Nov. 22, 2026, so a reader sees a font before picking it.
+- **Text spacing:** Standard or Wide. Wide uses the values WCAG 2.2, 1.4.12 tests: line height 2 (at least 1.5), paragraph spacing 2 times, letter spacing 0.12 times and word spacing 0.16 times the font size.[^wcag-1412]
+- **Text alignment:** Left aligned (the default) or Justified, asked for by Trevor on Nov. 21, 2026, shown as Lucide's `text-align-start` and `text-align-justify` symbols in one bordered strip (see Icons above). The picked symbol is filled and has a bar under it, so color is not the only cue. Justified applies to reading text in the page's main area (paragraphs, list items, definitions and quotations), not to headings, tables, forms or the masthead, and turns on automatic hyphenation (`hyphens: auto`), which uses each element's `lang` attribute to pick the hyphenation rules.[^mdn-hyphens] Links are never hyphenated, so nation names, citations and addresses stay whole. Left stays the default because WCAG's enhanced visual presentation criterion asks that text not be justified, since uneven word spacing makes reading harder for some readers.[^wcag-148]
 - **Theme:** Match this device, Light or Dark (see [section 8](#8-themes)).
-- **Contrast:** Standard or More. More turns gray text to ink and light
-  dividing lines to the control border color; no new colors are added.
-- **When you select a note number** (Citations): go to the notes at the end
-  of the page (the default), or show the note under the paragraph. The number
-  stays a link to the note, so without scripts it always jumps.
-- **Links to sources** (Citations): the original page and the archived copy
-  (the default), the original only, or the archived copy where there is one.
-  An archived copy still opens when the original has moved or gone, which
-  matters for tribal codes whose addresses change
-  ([citation style](../docs/citation-style.md)).
-- **Glossary cards** (Glossary): on (the default) or off. See
-  [Glossary link and hover card](#6-components) below.
+- **Contrast:** Standard or More. More turns gray text to ink and light dividing lines to the control border color; no new colors are added.
+- **When you select a note number** (Citations): go to the notes at the end of the page (the default), or show the note under the paragraph. The number stays a link to the note, so without scripts it always jumps.
+- **Links to sources** (Citations): the original page and the archived copy (the default), the original only, or the archived copy where there is one. An archived copy still opens when the original has moved or gone, which matters for tribal codes whose addresses change ([citation style](../docs/citation-style.md)).
+- **Glossary cards** (Glossary): on (the default) or off. See [Glossary link and hover card](#6-components) below.
 
-"Saved for offline" is described in [section 10](#10-offline-and-installable).
+**Data** holds three things. Saving for offline and updates are described in [section 10](#10-offline-and-installable). "Reset settings to defaults" puts the reading settings and theme back at once. "Delete data on this device" lists what the site keeps (Settings, Print choices, Saved pages), all ticked; the reader can untick parts, and the button reads "Delete all data" or "Delete chosen data." Deleting asks once more in a box under the list, which takes focus: "Delete … from this device? This cannot be undone," with "Yes, delete" (danger color, with a trash icon and bold question so color is not the only cue) and "Cancel." Deleting saved pages removes every collection through the service worker, but keeps the site's own files, so the site still opens offline.
 
-Each change applies at once and is kept in the browser's local storage on
-that device only, so it works offline and nothing is sent to the server. An
-inline script in `app.html` applies the stored settings before the page
-paints. "Reset settings to defaults" clears them, but leaves saved pages
-alone. Focus returns to the Settings button when the dialog closes. Choices
-are radio buttons in
-fieldsets, labels above hints. Without scripts the Settings and theme buttons
-are hidden, since they cannot work. The theme stays a one-press button in the
-masthead as well as a choice in the dialog, because the button is the faster
-way for the most common change and Trevor chose it on Nov. 21, 2026; the
-dialog adds "Match this device," which the button lacks.
+Each change applies at once and is kept in the browser's local storage on that device only, so it works offline and nothing is sent to the server. An inline script in `app.html` applies the stored settings before the page paints. Focus returns to the Settings button when the dialog closes. Text size and font are dropdowns (see [Dropdown](#6-components) below), asked for by Trevor on Nov. 22, 2026; the other choices are radio buttons in fieldsets, labels above hints. Without scripts the Settings and theme buttons are hidden, since they cannot work. The theme stays a one-press button in the masthead as well as a choice in the dialog, because the button is the faster way for the most common change and Trevor chose it on Nov. 21, 2026; the dialog adds "Match this device," which the button lacks.
 
-**Print.** A "Print" button with Lucide's `printer` icon, beside Settings in
-the masthead, opens the Modal titled "Print this page" (asked for by Trevor on
-Nov. 21, 2026, after the delivery dialog of Westlaw, where a reader chooses
-what prints before printing). Westlaw splits its dialog into "Layout and
-Limits" (for example term highlighting, footnotes at the end or inline, and a
-cover page) and "Content to Append" (extra lists to add);[^westlaw-delivery]
-this dialog follows that split with two sections:
+**Dropdown.** One shared dropdown, `src/lib/components/Dropdown.svelte`, for picking one choice from a short list where a choice should be shown as it will look, such as the font setting. It follows the WAI-ARIA select-only combobox pattern rather than the browser's own `<select>`, because a `<select>` list cannot show each choice in its own typeface on every browser and device.[^apg-combobox] The label sits above the box and the picked choice's hint below it. Down, Up, Enter, Space or a letter opens the list; Up and Down move; Home and End jump to the first and last; Enter, Space or Tab picks; Escape closes the list without closing a dialog around it. The choice the keys are on is drawn like a focused control (yellow fill and ring), and the picked choice has a check mark and bold type, not color alone. Plain form fields elsewhere, such as the workspace filters, keep the browser's `<select>`.
 
-- **What to print:** a checkbox for each part the current page has, found
-  when the dialog opens from the page's `data-print-part` markers: Page
-  details, Review status, Seal or logo, Maps, Tables, Document history and
-  Sources. All are on by default. The main text always prints; menus,
-  buttons, request links and the footer never do. "Page details" is a line
-  that exists only on paper, under the site's name and content version,
-  giving the page's address and the date printed, so a paper copy leads back
-  to the current version (Westlaw's cover page plays the same role).
-- **Layout:** where citations go (note numbers with the Sources list,
-  each note under its paragraph, or no note numbers), whether each outside
-  link prints its web address, and whether defined terms keep their dotted
-  underline. Each choice is offered only when the page has notes, outside
-  links or defined terms.
+**Print.** A "Print" button with Lucide's `printer` icon, among the page tools under a page's title (moved out of the masthead on Nov. 22, 2026, at Trevor's request), opens the Modal titled "Print this page" (asked for by Trevor on Nov. 21, 2026, after the delivery dialog of Westlaw, where a reader chooses what prints before printing). Westlaw splits its dialog into "Layout and Limits" (for example term highlighting, footnotes at the end or inline, and a cover page) and "Content to Append" (extra lists to add);[^westlaw-delivery] this dialog follows that split with two sections:
 
-"Print" at the bottom closes the dialog and opens the browser's print window,
-where the reader can also save a PDF and set paper size, margins and scale.
-Text size, font and spacing follow the reading settings. Choices are kept on
-the device in local storage (`print-options`, non-default values only) and
-become `data-print-*` attributes on the root element, set before paint by the
-same inline script as the reading settings; `global.css` reacts to them only
-inside `@media print`, so the screen never changes and the browser's own
-Print command follows the same choices. Notes under their paragraphs are
-copied in on the window's `beforeprint` event and removed on
-`afterprint`.[^mdn-beforeprint] Without scripts the button is hidden and
-pages print with every part.
+- **What to print:** a checkbox for each part the current page has, found when the dialog opens from the page's `data-print-part` markers: Page details, Review status, Seal or logo, Maps, Tables, Document history and Sources. All are on by default. The main text always prints; menus, buttons, request links and the footer never do. "Page details" is a line that exists only on paper, under the site's name and content version, giving the page's address and the date printed, so a paper copy leads back to the current version (Westlaw's cover page plays the same role).
+- **Layout:** where citations go (note numbers with the Sources list, each note under its paragraph, or no note numbers), whether each outside link prints its web address, and whether defined terms keep their dotted underline. Each choice is offered only when the page has notes, outside links or defined terms.
 
-When the model code's provision pages are built, their parts join the list in
-`src/lib/print-options.ts` the same way: commentary, drafting notes,
-alternatives and version history are the expected ones. Leaving a part out
-of a print is a reader's choice; a page's notices (such as "This is a
-fictitious example") are never optional.
+"Print" at the bottom closes the dialog and opens the browser's print window, where the reader can also save a PDF and set paper size, margins and scale. Text size, font and spacing follow the reading settings. Choices are kept on the device in local storage (`print-options`, non-default values only) and become `data-print-*` attributes on the root element, set before paint by the same inline script as the reading settings; `global.css` reacts to them only inside `@media print`, so the screen never changes and the browser's own Print command follows the same choices. Notes under their paragraphs are copied in on the window's `beforeprint` event and removed on `afterprint`.[^mdn-beforeprint] Without scripts the button is hidden and pages print with every part.
 
-**Notices.** One style for status: "This is a working draft" on the home
-page; "Model text, not law in force" with the version and last change on
-every section, following legislation.gov.uk's status box; "You are offline;
-showing content as of [date]" when offline. A notice is a `role="note"`
-block, not an alert.
+When the model code's provision pages are built, their parts join the list in `src/lib/print-options.ts` the same way: commentary, drafting notes, alternatives and version history are the expected ones. Leaving a part out of a print is a reader's choice; a page's notices (such as "This is a fictitious example") are never optional.
+
+**Notices.** One style for status: "This is a working draft" on the home page; "Model text, not law in force" with the version and last change on every section, following legislation.gov.uk's status box; "You are offline; showing content as of [date]" when offline. A notice is a `role="note"` block, not an alert.
 
 **Section heading.** Track label, then the section number at display size in
 the track color, then the title as the page's `h1`.
@@ -454,17 +368,9 @@ the design does not chop pages into rows of identical cards (project choice).
 **Summary list.** A `<dl>` of label and value pairs for nation facts and for
 "Check your request," following the GOV.UK summary list.
 
-**Tables.** For data a reader compares across rows. Wide tables scroll inside
-their own box, so the page never scrolls sideways. Data tables use the
-`DataTable` component, the project's own, not a data grid library
-(`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is
-built with every row in order, as a plain table that reads the same without
-scripts. Once scripts run, sortable column headers become buttons, following
-the WAI-ARIA Authoring Practices sortable table example (the sorted header
-carries `aria-sort`), and a long table gets a search box with a live count.
-Sorting and search follow one set of rules in
-`src/lib/tables/table-definition.ts`: case and accents are ignored, numbers
-inside text sort as numbers, and empty cells stay last.
+**Tables.** For data a reader compares across rows. Wide tables scroll inside their own box, so the page never scrolls sideways. Data tables use the `DataTable` component, the project's own, not a data grid library (`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is built with every row in order, as a plain table that reads the same without scripts. Once scripts run, sortable column headers become buttons, following the WAI-ARIA Authoring Practices sortable table example (the sorted header carries `aria-sort`), and a table can get a search box with a live count, though public lists now leave finding to the site search. Sorting and search follow one set of rules in `src/lib/tables/table-definition.ts`: case and accents are ignored, numbers inside text sort as numbers, and empty cells stay last. A long list is split into short pages rather than drawn as one long table or a virtual-scrolling one: the table spike measured that a virtual-scrolling grid left most rows out of the page, so find-in-page, printing and reading without scripts could not reach them (`spikes/tables/REPORT.md`, "SVAR Svelte DataGrid: rejected").
+
+**Recognition.** Wherever a nation's recognition status is shown, its legal basis follows it in parentheses, and each citation in it links to the official text (Trevor asked on Nov. 22, 2026): Code of Federal Regulations parts and sections to the eCFR, United States Code sections to the Legal Information Institute, and the Statutes at Large (from 1951), Public Laws (from 1995) and the Federal Register to GovInfo's link service (`src/lib/legal-citations.ts`). Those are the address forms the project's source records already use. A legal basis with no such citation, such as a state executive order, links to the source the fact came from. Lists show a short form, such as "(25 C.F.R. Part 83)"; the nation's page shows the whole legal basis. This is a link on the authority itself, not a citation marker, so the facts' sources stay in the Sources section.
 
 **Forms.** Labels above fields; hints under labels; "(optional)" in the label;
 large choice buttons for single choices; errors stated in words beside the
@@ -512,13 +418,14 @@ luminance formula (project calculation).
 | ink-muted | `#5A524C` | 7.4:1 | `#B9C4C4` | 9.6:1 |
 | link, peacemaking track | `#1A6D76` | 5.8:1 | `#6CCAD3` | 9.0:1 |
 | action, ADR track | `#B4461A` | 5.3:1; white text on it 5.5:1 | `#FF9A66` | 8.2:1 |
-| link-visited | `#6B3F7A` | 7.7:1 | `#D7B3E6` | 9.4:1 |
 | control-border | `#7A6F66` | 4.7:1 | `#7F9599` | 5.4:1 |
 | danger | `#9C1C10` | 7.8:1 | `#FF8A80` | |
 | placeholder-background | `#FFF0B3` | ink 14.4:1 | `#4A3B00` | ink 9.3:1 |
 | focus | `#FFD34D` with a 3 px ink ring | | `#FFD34D` | |
 
 Ratios are against each theme's paper unless stated.
+
+Visited links keep the link color: Trevor asked on Nov. 22, 2026, that links not turn purple once used, so there is no separate visited-link token.
 
 Rules (project choice):
 
@@ -700,17 +607,7 @@ accessibility statement is published at `/about/accessibility`.
   and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry
   the build version, so each build replaces the old copy once the reader
   updates (see Updates below).
-- **What is saved:** every page a reader opens is saved as they read it. In
-  Settings, "Saved for offline" (also on `/offline`) lists each collection,
-  how many of its pages are saved, and the space they take, with a button to
-  save the rest and one to remove them. The collections are Nation profiles,
-  Glossary and Other pages; the model code joins them when its pages are
-  built. A collection the reader saves is "kept": it is saved again from each
-  new version. The section shows the space the whole site uses, from the
-  Storage API's estimate, and offers "Keep saved pages when space runs low,"
-  which asks the browser for persistent storage, since otherwise the browser
-  may clear the site's data under storage pressure.[^mdn-storage] Saving runs
-  six files at a time inside the service worker, with a progress bar.
+- **What is saved:** every page a reader opens is saved as they read it. In Settings, under Data (also on `/offline`), the site lists each collection, how many of its pages are saved, and the space they take, with a button to save the rest and one to remove them. The collections are Nation profiles, Glossary and Other pages; the model code joins them when its pages are built. A collection the reader saves is "kept": it is saved again from each new version. The section shows the space the whole site uses, from the Storage API's estimate, and offers "Keep saved pages when space runs low," which asks the browser for persistent storage, since otherwise the browser may clear the site's data under storage pressure.[^mdn-storage] Saving runs six files at a time inside the service worker, with a progress bar.
 - **Never cached:** any record with `sensitivity.restricted: true`, which is
   never published, exported, cached offline or served by any API
   ([data model, sensitivity flags](../docs/data-model.md#sensitivity-flags)).
@@ -746,11 +643,7 @@ change the website without changing the content.
    waiting for the reader. A nation's request to withdraw material therefore
    reaches every device on its next visit online
    ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
-4. **Ask.** A notice under the masthead says what the update brings, read
-   from `/edition.json` on the network: "It brings content version 0.3.0; you
-   are reading 0.2.0," or that only the website changed. It offers "Update
-   now," "What changed" (the changelog) and "Later." It is a notice, not an
-   alert, so it does not take focus.
+4. **Ask.** A small card fixed at the bottom left of the window (not a block in the page, as Trevor asked on Nov. 22, 2026) says what the update brings, read from `/edition.json` on the network: "It brings content version 0.3.0; you are reading 0.2.0," or that only the website changed. It offers "Update now," "What changed" (the changelog) and "Later." It is a notice, not an alert, so it does not take focus.
 5. **Apply.** "Update now" tells the waiting worker to take over
    (`skipWaiting`), and the page reloads once it has.[^mdn-skip-waiting] "Later"
    hides the notice for the visit; the browser applies the update by itself
@@ -865,6 +758,7 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^mdn-hyphens]: MDN Web Docs, *hyphens*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens).
 [^wcag-148]: W3C, *Understanding Success Criterion 1.4.8: Visual Presentation*, [w3.org/WAI/WCAG22/Understanding/visual-presentation](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation).
 [^apg-tabs]: W3C WAI, *ARIA Authoring Practices Guide: Tabs Pattern*, [w3.org/WAI/ARIA/apg/patterns/tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
+[^apg-combobox]: W3C WAI, *ARIA Authoring Practices Guide: Select-Only Combobox Example*, [w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only/).
 [^webdev-lifecycle]: Jake Archibald, *The service worker lifecycle*, web.dev, [web.dev/articles/service-worker-lifecycle](https://web.dev/articles/service-worker-lifecycle) (accessed Nov. 21, 2026). Sections "Updating the service worker," "Waiting" and "Skip the waiting phase."
 [^sveltekit-updated]: SvelteKit, *$app/state: updated*, [svelte.dev/docs/kit/$app-state#updated](https://svelte.dev/docs/kit/$app-state#updated); the same text is in `@sveltejs/kit` 3.4.0's type definitions.
 [^mdn-skip-waiting]: MDN Web Docs, *ServiceWorkerGlobalScope: skipWaiting() method*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting).

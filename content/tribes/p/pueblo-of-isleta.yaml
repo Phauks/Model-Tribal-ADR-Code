@@ -193,14 +193,15 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+  link: https://www.isletapueblo.com/wp-content/uploads/2018/05/2016poiconstitution-web.pdf
   source: national-indian-law-library-pueblo-isleta
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Pueblo of Isleta Tribal Constitution
   source: tribal-law-policy-institute-justice-systems
@@ -487,9 +488,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30716 (Tribe column of the designated agent table)
   note: 'Listed as: Pueblo of Isleta, New Mexico Confidence lowered from high by the lead session: the
-    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+    notice prints its table as page images, so nation names were read from images and matched to the roster.
+    Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
+    level unchanged because the name was not matched word for word in machine-read text.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

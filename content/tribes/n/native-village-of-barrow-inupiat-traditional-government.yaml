@@ -227,11 +227,13 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/barcons.html
   source: national-indian-law-library-native-barrow
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
-    of Oklahoma website . Constitution. (1940)".'
+    of Oklahoma website . Constitution. (1940)". Document opened on 2026-11-22 (the copy the constitution
+    catalog work saved); its opening text names the kind, nation, title and year 1940; the second gap
+    review also confirmed this link.'
 - kind: constitution
   title: Constitution
   year: '1940'
@@ -249,11 +251,13 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/barchrtr.html
   source: national-indian-law-library-native-barrow
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
-    of Oklahoma website . Corporate charter. (1940)".'
+    of Oklahoma website . Corporate charter. (1940)". Document opened on 2026-11-22 (the copy the constitution
+    catalog work saved); its opening text names the kind, nation, title and year 1940; the second gap
+    review also confirmed this link.'
 - kind: constitution
   title: Corporate charter.  See NILL catalog records for constitution and corporate charter
   year: '1940'
@@ -326,10 +330,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30673 (Tribe column of the designated agent table)
   note: 'Listed as: Native Village of Barrow Inupiat Traditional Government Confidence lowered from high
     by the lead session: the notice prints its table as page images, so nation names were read from images
-    and matched to the roster.'
+    and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
+    layer for the table); verification level unchanged because the name was not matched word for word
+    in machine-read text.'
 - topic: indian-child-welfare-act
   value: reassumed-jurisdiction
   detail: Approval of petition under 25 U.S.C. § 1918 covering children residing or domiciled within the

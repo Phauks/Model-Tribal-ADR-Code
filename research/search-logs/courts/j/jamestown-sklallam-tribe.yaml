@@ -1,0 +1,155 @@
+profile: content/tribes/j/jamestown-sklallam-tribe.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://jamestowntribe.org/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found not-found.'
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://jamestowntribe.org/program-staff/public-safety-justice/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 200; its reviewer found not-found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://jamestowntribe.org/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Home page status 200; 2 links mention a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://jamestowntribe.org/sitemap_index.xml
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Sitemap read; 2 addresses mention a court or judiciary.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://jamestowntribe.org/programs-staff/public-safety-and-justice-department/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://jamestowntribe.org/program-staff/public-safety-justice/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Court-related page on the nation''s site, status 200; it
+    does not show that this court operates now.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Jamestown S''Klallam”)'
+  outcome: found
+  reason: '“Jamestown S’Klallam Tribal Court”: Washington State Court Directory: Tribal Courts: lists
+    this nation; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/subsite/tscc/docs/TSCC%20WA%20State%20Tribal%20Court%20Directory.pdf
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Jamestown S''Klallam”)'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Washington Tribal State Court Consortium, Washington State
+    Tribal Court Directory: names this nation, but the reviewer did not find it shows this court operating
+    (see the review''s reason).'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Bureau of Indian Affairs, Court of Indian Offenses: list
+    of CFR Courts and the Tribes they serve: does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan.
+    7, 2020): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Jamestown S''Klallam”)'
+  outcome: found
+  reason: '“Jamestown S’Klallam Tribal Court”: Northwest Intertribal Court System, Tribal Courts: lists
+    this nation; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: American Indian Law Center, Southwest Intertribal Court
+    of Appeals (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Jamestown S''Klallam”)'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Tribal Court Clearinghouse (Tribal Law and Policy Institute),
+    Tribal Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://jamestowntribe.org/wp-content/uploads/2020/01/Title-33-Youth-Code-1-6-20-2.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    mentions a court in its title; no passage establishing a court was found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Jamestown-SKlallam-Title-33-Youth-Code-1-6-20-2.pdf
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: not-found
+  reason: '“Jamestown S’Klallam Tribal Court”: Law code or court rules collected on 2026-11-21 (research/tribal-law/documents.json):
+    mentions a court in its title; no passage establishing a court was found.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Jamestown S’Klallam Tribal Court”: Claude read the gathered evidence against the review brief;
+    verdict confirmed, from https://www.courts.wa.gov/court_dir/orgs/134.html.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-083

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
+	import PageTools from '#lib/components/PageTools.svelte';
 	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
@@ -80,6 +81,9 @@
 			{/each}
 		{/if}
 		<ReportLink {record} />
+		<PageTools
+			downloads={[{ label: 'Download this record', format: 'JSON', link: `/nations/${page.id}/record.json` }]}
+		/>
 
 		<!-- 2. Review panel -->
 		<section class="panel panel-filled" aria-labelledby="review-heading" data-print-part="reviewStatus">

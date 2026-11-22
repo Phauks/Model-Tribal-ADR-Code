@@ -181,25 +181,28 @@ governing_documents:
     . YST Ordinances and YST Resolutions.".'
 - kind: constitution
   title: Constitution
-  link: https://www.yombatribe.com/yst-law
+  link: https://www.yombatribe.com/_files/ugd/dfee40_b5f2f25d40b74445bb50243f686653b1.pdf
   source: national-indian-law-library-yomba
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.yombatribe.com/yst-law, a page that leads
+    to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution
   year: '1940'
   link: https://thorpe.law.ou.edu/IRA/yomba.html
   source: national-indian-law-library-yomba
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
-    of Oklahoma Law Library website . Constitution. (1940)".'
+    of Oklahoma Law Library website . Constitution. (1940)". Document opened on 2026-11-22 (the copy the
+    constitution catalog work saved); its opening text names the kind, nation, title and year 1940; the
+    second gap review also confirmed this link.'
 - kind: constitution
   title: Constitution
   link: https://www.loc.gov/item/40029073/
@@ -260,10 +263,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30722 (Tribe column of the designated agent table)
   note: 'Listed as: Yomba Shoshone Tribe of the Yomba Reservation, Nevada Confidence lowered from high
     by the lead session: the notice prints its table as page images, so nation names were read from images
-    and matched to the roster.'
+    and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
+    layer for the table); verification level unchanged because the name was not matched word for word
+    in machine-read text.'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

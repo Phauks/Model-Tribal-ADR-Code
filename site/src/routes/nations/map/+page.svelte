@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PageTools from '#lib/components/PageTools.svelte';
 	import { repositoryLink } from '#lib';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -74,6 +75,7 @@
 
 <div class="reading">
 	<h1>Map of Native nations</h1>
+	<PageTools />
 	<div class="notice" role="note">
 		<h2 class="notice-heading">What this map shows</h2>
 		<p>

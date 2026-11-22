@@ -192,14 +192,15 @@ governing_documents:
     . Legislative Research Center.".'
 - kind: constitution
   title: Constitution
-  link: https://www.cherokee.org/our-government/cherokee-nation-constitution/
+  link: https://www.cherokee.org/media/lsufapj1/constitution-of-the-cherokee-nation-1999-online.pdf
   source: national-indian-law-library-cherokee-nation
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link changed on 2026-11-22 from https://www.cherokee.org/our-government/cherokee-nation-constitution/,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution
   link: https://attorneygeneral.cherokee.org/Tribal-Code
@@ -449,11 +450,13 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
-  verification: inferred
+  verification: read-in-full
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30689 (Tribe column of the designated agent table)
   note: 'Listed as: Cherokee Nation Confidence lowered from high by the lead session: the notice prints
-    its table as page images, so nation names were read from images and matched to the roster.'
+    its table as page images, so nation names were read from images and matched to the roster. Row re-read
+    on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
+    (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
 - topic: violence-against-women-act-special-tribal-criminal-jurisdiction
   value: exercising
   detail: Exercising jurisdiction since 2018-05-17 (start date given by NCAI; jurisdiction began under

@@ -209,28 +209,37 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Navajo Nation Judicial Branch
-  link: http://www.navajocourts.org/
+  link: https://courts.navajo-nsn.gov/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Navajo Nation'
+  note: The listed link (http://www.navajocourts.org/) no longer reached the court on 2026-11-22; the
+    link is the court's page found in the second pass of the court review (research/reviews/2026-11-22-court-listings-second-pass.json,
+    court-207).
 - kind: court-of-appeals
   name: Navajo Nation Supreme Court
-  link: http://www.navajocourts.org/indexsuct.htm
+  link: https://courts.navajo-nsn.gov/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Navajo Nation'
+  note: The listed link (http://www.navajocourts.org/indexsuct.htm) no longer reached the court on 2026-11-22;
+    the link is the court's page found in the second pass of the court review (research/reviews/2026-11-22-court-listings-second-pass.json,
+    court-208).
 - kind: tribal-court
   name: Navajo Nation Judicial District Courts
-  link: http://www.navajocourts.org/indexdistct.htm
+  link: https://courts.navajo-nsn.gov/indexdistct.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Navajo Nation'
+  note: The listed link (http://www.navajocourts.org/indexdistct.htm) no longer reached the court on 2026-11-22;
+    the link is the court's page found in the second pass of the court review (research/reviews/2026-11-22-court-listings-second-pass.json,
+    court-209).
 dispute_resolution:
   forums:
   - kind: peacemaking
@@ -521,10 +530,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30696 (Tribe column of the designated agent table)
   note: 'Listed as: Navajo Nation, Arizona, New Mexico & Utah Confidence lowered from high by the lead
     session: the notice prints its table as page images, so nation names were read from images and matched
-    to the roster.'
+    to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
+    the table); verification level unchanged because the name was not matched word for word in machine-read
+    text.'
 memberships:
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home

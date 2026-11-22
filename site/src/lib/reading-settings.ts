@@ -109,6 +109,14 @@ export const fontChoices: Choice<Font>[] = [
 	{ value: 'device', label: 'Your device’s font', hint: 'The font your device uses for menus' }
 ];
 
+/** Each font's design token, so the font dropdown in Settings can show every choice in its own typeface. */
+export const fontFamilyTokens: Record<Font, string> = {
+	'atkinson-hyperlegible-next': '--font-family-atkinson-hyperlegible-next',
+	serif: '--font-family-serif',
+	opendyslexic: '--font-family-opendyslexic',
+	device: '--font-family-device'
+};
+
 export const textSpacingChoices: Choice<TextSpacing>[] = [
 	{ value: 'standard', label: 'Standard' },
 	{ value: 'wide', label: 'Wide', hint: 'More space between lines, paragraphs, letters and words' }

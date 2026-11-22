@@ -162,14 +162,15 @@ governing_documents:
     department website . Fish and Game Ordinances; Tribal Ordinances.".'
 - kind: constitution
   title: Constitution
-  link: https://www.passamaquoddy.com/?page_id=884
+  link: https://www.passamaquoddy.com/wp-content/uploads/tribalconstitution-1.pdf
   source: national-indian-law-library-passamaquoddy-tribe
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website (Indian Township) .".'
+    website (Indian Township) .". Link changed on 2026-11-22 from https://www.passamaquoddy.com/?page_id=884,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: constitution
   title: Constitution
   link: https://wabanaki.com/tribal_constitution/
@@ -204,13 +205,15 @@ governing_documents:
     versions of the constitution.".'
 - kind: constitution
   title: Passamaquoddy Tribe Constitution
-  link: https://www.passamaquoddy.com/?page_id=884
+  link: https://www.passamaquoddy.com/wp-content/uploads/tribalconstitution-1.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: title-only
   as_of: '2022'
   locator: Maine section, entry 'Passamaquoddy Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Link changed
+    on 2026-11-22 from https://www.passamaquoddy.com/?page_id=884, a page that leads to the text, to the
+    text itself (research/reviews/2026-11-22-governing-documents-full.md).
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -253,8 +256,10 @@ jurisdiction:
   confidence: medium
   verification: bulk-import
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
-  note: 'Listed as: Passamaquoddy Tribe - Indian Township; Passamaquoddy Tribe - Pleasant Point'
+  locator: 91 FR 30687 (Tribe column of the designated agent table)
+  note: 'Listed as: Passamaquoddy Tribe - Indian Township; Passamaquoddy Tribe - Pleasant Point. Row re-read
+    on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
+    level unchanged because the name was not matched word for word in machine-read text.'
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

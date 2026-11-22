@@ -230,20 +230,23 @@ governing_documents:
   link: https://mescaleroapachetribe.com/constitution/
   source: national-indian-law-library-mescalero-apache
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Document opened on 2026-11-22 (the copy the constitution catalog work saved); its opening
+    text names the kind, nation and title; the second gap review also confirmed this link.'
 - kind: constitution
   title: Mescalero Apache Tribe Constitution
   link: http://mescaleroapachetribe.com/constitution/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2022'
   locator: New Mexico section, entry 'Mescalero Apache Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation and title; the second gap review also confirmed this link.
 - kind: law-code
   title: Mescalero Apache Tribal Code
   source: tribal-law-policy-institute-justice-systems
@@ -417,10 +420,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30716 (Tribe column of the designated agent table)
   note: 'Listed as: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico Confidence lowered
     from high by the lead session: the notice prints its table as page images, so nation names were read
-    from images and matched to the roster.'
+    from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
+    PDF has no text layer for the table); verification level unchanged because the name was not matched
+    word for word in machine-read text.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

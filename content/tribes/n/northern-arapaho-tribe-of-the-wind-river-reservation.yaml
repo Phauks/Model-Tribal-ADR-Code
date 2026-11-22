@@ -187,14 +187,16 @@ governing_documents:
 - kind: constitution
   title: Constitution and By-Laws for Governing the Indians of the Wind River Reservation, Wyo
   year: '1938'
-  link: https://archive.org/stream/tribal-constitutions-rocky-mountains/Shoshone%20and%20Arapaho%20of%20Wind%20River%20Const%20and%20By-laws%2010.7.1938
+  link: https://archive.org/download/tribal-constitutions-rocky-mountains/Shoshone%20and%20Arapaho%20of%20Wind%20River%20Const%20and%20By-laws%2010.7.1938.pdf
   source: national-indian-law-library-arapahoe-wind-river
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Internet
-    Archive . Constitution and By-Laws for Governing the Indians of the Wind River Reservation, Wyo. (1938).".'
+    Archive . Constitution and By-Laws for Governing the Indians of the Wind River Reservation, Wyo. (1938).".
+    Link changed on 2026-11-22 from https://archive.org/stream/tribal-constitutions-rocky-mountains/Shoshone%20and%20Arapaho%20of%20Wind%20River%20Const%20and%20By-laws%2010.7.1938,
+    a page that leads to the text, to the text itself (research/reviews/2026-11-22-governing-documents-full.md).'
 - kind: law-code
   title: Northern Arapaho Tribal Code
   year: '2018'
@@ -591,10 +593,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30713 (Tribe column of the designated agent table)
   note: 'Listed as: Northern Arapaho Tribe of the Wind River Reservation, Wyoming Confidence lowered from
     high by the lead session: the notice prints its table as page images, so nation names were read from
-    images and matched to the roster.'
+    images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
+    no text layer for the table); verification level unchanged because the name was not matched word for
+    word in machine-read text.'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are
