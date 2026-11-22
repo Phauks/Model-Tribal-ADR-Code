@@ -67,7 +67,7 @@ dispute resolution provisions, under their own heading. They set up or
 recognize a nation's peacemaking forum and connect it to the nation's court
 and other forums. They do not define how peacemaking is done, which each
 nation decides by its own tradition
-([decision record 0025](decisions/0025-model-peacemaking-code.md)).
+([decision record 0026](decisions/0026-model-peacemaking-code.md)).
 
 ### 4. Consultation before publication
 

@@ -35,6 +35,7 @@ and says so.
 | [0022](0022-open-registration-for-contributors.md) | Let people register to help; keep workspace access with the lead author | Proposed |
 | [0023](0023-permission-levels-per-document.md) | Give each person a level on each document; keep a sealed activity log | Accepted |
 | [0024](0024-own-sign-in.md) | Sign people in with the site's own email codes and passwords, not Auth0 | Accepted |
-| [0025](0025-model-peacemaking-code.md) | Write model peacemaking provisions as part of the project's model code | Accepted |
+| [0025](0025-search-logs.md) | Log every search for a nation's information, including the ones that fail | Accepted |
+| [0026](0026-model-peacemaking-code.md) | Write model peacemaking provisions as part of the project's model code | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

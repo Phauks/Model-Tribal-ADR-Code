@@ -89,6 +89,8 @@
 	}
 	// One setting is made in the Cloudflare dashboard (Worker > Settings >
 	// Variables and Secrets) rather than here, because this file is public:
-	// LEAD_AUTHOR_EMAIL, the first lead author's address. No secret keys are
-	// needed. See COLLABORATION.md, "Setting up sign-in".
+	// LEAD_AUTHOR_EMAIL, the first lead author's address, added as the Secret
+	// type so that deploys keep it (plain-text dashboard variables are
+	// replaced by this file on each deploy). No secret keys are needed. See
+	// COLLABORATION.md, "Setting up sign-in".
 }

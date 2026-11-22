@@ -1,0 +1,62 @@
+profile: content/tribes/n/native-village-of-wales.yaml
+topic: dispute-resolution
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/tribal-law/documents.json
+  query: nation native-village-of-wales
+  outcome: not-found
+  reason: The tribal law text collection fetched 10 document(s) linked from this nation's profile (9 with
+    text) and found no dispute resolution provision in them; 1 passage(s) with dispute resolution words
+    were judged not to be provisions; 1 could not be read (no text layer, blocked or failed).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: constitutions catalog (private article readings)
+  query: topics dispute-resolution, peacemaking
+  outcome: not-found
+  reason: The constitutions catalog read 4 constitution text(s) for this nation and marked no article
+    as concerning dispute resolution or peacemaking (election disputes and judicial power not counted).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/trialcourts/rjp.htm
+  query: restorative justice plans
+  outcome: not-found
+  reason: The Alaska Court System's list of restorative justice referral plans has no plan for this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/native_wales.html
+  query: dispute resolution words
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://kawerak.org/
+  query: code, ordinance, law, court, judicial, justice, peacemaking, mediation, dispute (links, sitemap,
+    site search)
+  outcome: not-found
+  reason: The listed website is Kawerak's; it offers circle peacemaking training to Tribes in the region,
+    which is not a forum of this village.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.json
+  query: reading (Claude (AI assistant)) of the gathered passages and leads
+  outcome: not-found
+  reason: The listed website is Kawerak's; it offers circle peacemaking training to Tribes in the region,
+    which is not a forum of this village.
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

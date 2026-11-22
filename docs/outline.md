@@ -112,7 +112,7 @@ scope decisions so far:
 | Essay | The choice it explains | Status |
 | --- | --- | --- |
 | One code, many ways | Why one code with divisions, and why each division can be enacted alone | Decided; to write |
-| Leaving peacemaking to each nation | Why the peacemaking division sets up and connects a forum but does not define the process ([decision record 0025](decisions/0025-model-peacemaking-code.md)) | Decided; to write |
+| Leaving peacemaking to each nation | Why the peacemaking division sets up and connects a forum but does not define the process ([decision record 0026](decisions/0026-model-peacemaking-code.md)) | Decided; to write |
 | Alternatives, not answers | Why the code offers lettered alternatives instead of one rule ([charter, commitment 2](charter.md#2-respect-for-each-nations-own-institutions)) | To write |
 | Consent and safety first | Why referral, the meaning of silence and screening for domestic violence come before any process | After drafting |
 | Consent to be bound: immunity and enforcement | Why arbitration uses limited waivers | Scope question 3 |
@@ -161,7 +161,7 @@ after publication ([repository-layout.md](repository-layout.md#identifiers)).
 | Mediation | The process from start to close | Decided |
 | Arbitration | Agreements to arbitrate, awards, and limited waivers of immunity | Decided; waiver approach is scope question 3 |
 | Negotiation | Who may negotiate for the nation and how a settlement binds it | Tentative; scope question 4 |
-| Peacemaking | Creating or recognizing a nation's peacemaking forum, choosing peacemakers, coming to and leaving peacemaking, protecting what is sacred, effect of agreements; the process itself is left to the nation's tradition | Decided ([decision record 0025](decisions/0025-model-peacemaking-code.md)) |
+| Peacemaking | Creating or recognizing a nation's peacemaking forum, choosing peacemakers, coming to and leaving peacemaking, protecting what is sacred, effect of agreements; the process itself is left to the nation's tradition | Decided ([decision record 0026](decisions/0026-model-peacemaking-code.md)) |
 | Restorative processes | Only the hand-off points between a court case and a consensual process | Optional; scope question 2; Gate 1 |
 | Family matters | Parenting and family mediation with screening built in | Optional; scope question 6; Gate 1 |
 
@@ -212,7 +212,7 @@ results before a final answer; questions 11, 15 and 16 wait for the book. These 
 
 | # | Question | Recommendation | Why |
 | --- | --- | --- | --- |
-| 1 | How does peacemaking appear? | *Decided Nov. 22, 2026:* a peacemaking division of the one model code, which sets up or recognizes the forum and leaves the process to each nation | [Decision record 0025](decisions/0025-model-peacemaking-code.md) |
+| 1 | How does peacemaking appear? | *Decided Nov. 22, 2026:* a peacemaking division of the one model code, which sets up or recognizes the forum and leaves the process to each nation | [Decision record 0026](decisions/0026-model-peacemaking-code.md) |
 | 2 | Does the code cover diversion and restorative sentencing? | Only the hand-off points between a court case and a consensual process; no sentencing provisions | 161 records sit on this line: 121 diversion, 23 sentencing, 17 near it ([provision pre-review](../research/reviews/2026-11-21-provision-pre-review.md#the-scope-decision)) |
 | 3 | How does the arbitration division treat immunity? | Offer limited waivers as lettered alternatives, never a general waiver | The arbitration ordinances read tie awards to express waivers ([analysis, section 4](../research/analyses/2026-11-21-dispute-resolution-practice.md#4-arbitration-ordinances-and-immunity)) |
 | 4 | Keep a negotiation division? | Decide at Gate 2 with the advisors; if kept, limit it to who may negotiate for the nation and how a settlement binds it, and explain compact talks in an essay | Compact negotiation is government-to-government bargaining and compact clauses mostly follow state templates ([gaming note](../research/analyses/2026-11-21-gaming-compact-negotiation.md); [analysis, section 6](../research/analyses/2026-11-21-dispute-resolution-practice.md#6-gaming-compacts)) |
@@ -273,6 +273,6 @@ can be built from the same files.
 
 | Version | Date | Change |
 | --- | --- | --- |
-| 0.3 | Nov. 22, 2026 | Website first, book form later; five parts (Foundations, Model Code, Commentary, Essays, Methods and Manners); one model code in divisions with peacemaking as a division (decision record 0025); essays explain design choices; scope questions 15 and 16 added |
+| 0.3 | Nov. 22, 2026 | Website first, book form later; five parts (Foundations, Model Code, Commentary, Essays, Methods and Manners); one model code in divisions with peacemaking as a division (decision record 0026); essays explain design choices; scope questions 15 and 16 added |
 | 0.2 | Nov. 22, 2026 | Definitions moved to an appendix; case histories added; commentary placement stated; peacemaking reason in the project's own words; scope questions 12 to 14 added |
 | 0.1 | Nov. 22, 2026 | First working outline, for Gate 2 discussion |

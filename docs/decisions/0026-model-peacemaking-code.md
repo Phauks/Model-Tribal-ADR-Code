@@ -1,4 +1,4 @@
-# 0025. Write model peacemaking provisions as part of the project's model code
+# 0026. Write model peacemaking provisions as part of the project's model code
 
 - **Status:** Accepted (lead author, Nov. 22, 2026)
 - **Date:** 2026-11-22

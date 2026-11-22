@@ -234,7 +234,8 @@ dispute_resolution:
     name: Peacemaker Court of the Northern Arapaho Nation
     description: A department of the Tribal Court intended to give formal support, structure and enforcement
       to traditional Northern Arapaho methods of resolving disputes through mediation and traditional
-      ways without judges or lawyers.
+      ways without judges or lawyers. If parties agree in writing or orally, a peacemaker may hear all
+      sides of a dispute and issue a decision.
     legal_basis: Northern Arapaho Code, Title 7. Peacemaker Code, Sections 101-702
     case_types:
     - family
@@ -256,33 +257,16 @@ dispute_resolution:
     confidence: medium
     verification: inferred
     as_of: '2016-08-31'
-    locator: Title 7, Sections 101-107, 202, 601-605
+    locator: Title 7, Sections 101-107, 202, 601-605; Section 202(f), 203(a)
     note: Listed matters (Sec. 104) include marital and family strife, parent-child disputes, minor neighbor
       disputes, alcohol use by family or neighbors, and minor community business transactions of $1,500
       or less. Attorneys barred from proceedings (Sec. 106). Criminal transfers limited to cases without
       injury, with victim consent, or victimless offenses, or as a probation condition (Sec. 603-604).
-      $10 fee for a judgment or protective order (Sec. 309).
-  - kind: arbitration
-    name: Peacemaker decision by consent of the parties
-    description: If parties agree in writing or orally, a peacemaker may hear all sides of a dispute and
-      issue a decision.
-    legal_basis: Northern Arapaho Code, Title 7, Section 202(f)
-    case_types:
-    - civil
-    - family
-    - other
-    participation: voluntary
-    relationship_to_court: The decision is submitted to the Tribal Court for entry as a written judgment.
-    enforcement: Takes the effect of a court judgment once entered; appealable under the Tribal Court's
-      civil appeal rules.
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
-    source: northern-arapaho-title-7-peacemaker-code
-    confidence: medium
-    verification: inferred
-    as_of: '2016-08-31'
-    locator: Section 202(f), 203(a)
-    note: Kind recorded as arbitration because the code allows a binding decision by consent; the code
-      itself calls it a peacemaker decision, not arbitration.
+      $10 fee for a judgment or protective order (Sec. 309). Folded on 2026-11-22 from a separate forum
+      record for the same text (review queue item 5). Agreed decisions rest on Northern Arapaho Code,
+      Title 7, Section 202(f). The decision is submitted to the Tribal Court for entry as a written judgment,
+      and it takes the effect of a court judgment once entered; appealable under the Tribal Court's civil
+      appeal rules.
   provisions:
   - kind: peacemaking
     title: Title 7. Peacemaker Code

@@ -27,7 +27,7 @@ is cited; everything else is project planning.
 Peacemaking runs as its own track through every phase. In the model code it
 is its own division, never a kind of mediation or arbitration
 ([charter, commitment 3](charter.md#3-peacemaking-as-its-own-track);
-[decision record 0025](decisions/0025-model-peacemaking-code.md)).
+[decision record 0026](decisions/0026-model-peacemaking-code.md)).
 
 ## Phase 0: preparation (now)
 
@@ -116,7 +116,7 @@ recommendation for each and adds four more:
 | Does it include commercial arbitration and the link to sovereign immunity waivers? | Four arbitration ordinances read share one structure tying awards to express waivers (analysis, section 4) |
 | Are disputes between governments, such as compact disputes, a chapter or an essay? | Compact clauses mostly follow state templates (analysis, section 6) |
 | Are employment disputes in scope? | One employment tribunal and one employment mediation clause were found (analysis, sections 3 and 4) |
-| What does the code say about peacemaking, if anything? | *Decided Nov. 22, 2026: model peacemaking provisions of their own, which set up or recognize a nation's forum and connect it to the court without defining the process ([decision record 0025](decisions/0025-model-peacemaking-code.md)).* |
+| What does the code say about peacemaking, if anything? | *Decided Nov. 22, 2026: model peacemaking provisions of their own, which set up or recognize a nation's forum and connect it to the court without defining the process ([decision record 0026](decisions/0026-model-peacemaking-code.md)).* |
 | Which family and child welfare matters are in scope? | Family and child welfare matters appear in both forums and bulk records (analysis, sections 3 and 5) |
 | Does the code or its commentary address nations divided by an international border? | Akwesasne, the Blackfoot Confederacy, Tohono O'odham and others live on both sides of the Canadian or Mexican border, and each country sets their status by its own law ([Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md#7-what-the-comparison-suggests-project-analysis); [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md)) |
 
@@ -204,4 +204,6 @@ sources" (analysis, review queue item 12).
 
 Essays, the methods and manners collection, the website, the print interior
 and the ebook are built from the same records. Their own plans live with
-those tracks.
+those tracks. Work that waits on the project's domain (moving the website,
+sign-in and notice email, the address printed in the book) is listed in
+[Waiting on the domain](domain-to-do.md).
