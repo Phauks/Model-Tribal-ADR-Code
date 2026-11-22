@@ -112,6 +112,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation, California
+- kind: contact-page
+  value: https://www.lptribe.net/contact-us/
+  label: Contact page on the nation's website
+  source: lptribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - La Posta Band of Mission Indians". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: laposta@lptribe.net
+  label: General office email shown on the nation's website
+  source: lptribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: La Posta Band of Mission Indians

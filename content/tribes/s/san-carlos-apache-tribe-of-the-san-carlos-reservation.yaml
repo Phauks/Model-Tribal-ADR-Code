@@ -139,6 +139,22 @@ contacts:
   as_of: '2026-11-21'
   note: BIA directory lists an Inter Tribal Council of Arizona member page instead of the nation's own
     site; scat-nsn.gov is titled "SAN CARLOS APACHE TRIBE - OFFICIAL WEBSITE"
+- kind: contact-page
+  value: https://www.scat-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: scat-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | SAN CARLOS APACHE TRIBE - OFFICIAL WEBSITE". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@scat-nsn.gov
+  label: General office email shown on the nation's website
+  source: scat-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.scat-nsn.gov/wp-content/uploads/2026/08/dddddddd.png

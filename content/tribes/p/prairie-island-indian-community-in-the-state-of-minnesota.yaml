@@ -131,6 +131,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Prairie Island Indian Community in the State of Minnesota
+- kind: contact-page
+  value: https://prairieisland.org/our-government/our-departments/contact
+  label: Contact page on the nation's website
+  source: prairieisland-our-government-our-departments-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Prairie Island Indian Community". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Prairie Island Indian Community

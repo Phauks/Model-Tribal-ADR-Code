@@ -135,6 +135,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Otoe-Missouria Tribe of Indians, Oklahoma
+- kind: contact-page
+  value: https://www.omtribe.org/contact-us/
+  label: Contact page on the nation's website
+  source: omtribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | The Otoe-Missouria Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: Otoe Missouria Tribe

@@ -149,6 +149,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Directory URL redirects to bishoppaiute.net.
+- kind: contact-page
+  value: https://bishoppaiute.net/contact-us/
+  label: Contact page on the nation's website
+  source: bishoppaiute-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Bishop Paiute Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Bishop Paiute Tribe

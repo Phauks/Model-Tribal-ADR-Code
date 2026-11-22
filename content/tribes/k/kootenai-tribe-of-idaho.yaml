@@ -139,6 +139,14 @@ contacts:
   verification: inferred
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.kootenai.org/general-contacts
+  label: Contact page on the nation's website
+  source: kootenai-general-contacts
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "General Contacts". Its title is "General Contacts | Kootenai Tribe Of Id". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/33a7a2_68ccc30ec3484efc8f43a8430ce8fa3e~mv2.png/v1/fill/w_70,h_100,al_c,q_85,enc_avif,quality_auto/33a7a2_68ccc30ec3484efc8f43a8430ce8fa3e~mv2.png

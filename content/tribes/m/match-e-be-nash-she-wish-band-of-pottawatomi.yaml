@@ -157,6 +157,22 @@ contacts:
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
+- kind: contact-page
+  value: https://gunlaketribe-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: gunlaketribe-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Gun Lake Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@glt-nsn.gov
+  label: General office email shown on the nation's website
+  source: gunlaketribe-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://gunlaketribe-nsn.gov/wp-content/uploads/2022/10/logo.png

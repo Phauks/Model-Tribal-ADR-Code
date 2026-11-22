@@ -189,6 +189,22 @@ contacts:
   as_of: '2026-11-20'
   locator: Fort Sill—Chiricahua—Warm Springs—Apache Tribe (previously listed as Fort Sill Apache Tribe
     of Oklahoma)
+- kind: contact-page
+  value: https://fortsillapache-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: fortsillapache-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact – Fort Sill Apache Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: fsat@fortsillapache-nsn.gov
+  label: General office email shown on the nation's website
+  source: fortsillapache-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://fortsillapache-nsn.gov/wp-content/uploads/2024/05/fort_sill_apache_seal.png

@@ -140,6 +140,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mississippi Band of Choctaw Indians
+- kind: contact-page
+  value: https://www.choctaw.org/contact-us/
+  label: Contact page on the nation's website
+  source: choctaw-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "". Its title is "Contact Us - Mississippi Band of Choctaw Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://www.choctaw.org/wp-content/uploads/2023/05/cropped-seal_favicon_512-180x180.png

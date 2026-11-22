@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Manchester Band of Pomo Indians of the Manchester Rancheria, California
+- kind: contact-page
+  value: https://mpapomotribe.com/contact-us/
+  label: Contact page on the nation's website
+  source: mpapomotribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Manchester-Point Arena Band of Pomo Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://mpapomotribe.com/wp-content/uploads/2024/06/cropped-logo-082323-1-180x180.png

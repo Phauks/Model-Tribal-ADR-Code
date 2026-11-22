@@ -133,6 +133,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.ak-chin.nsn.us/contacts/
+  label: Contact page on the nation's website
+  source: ak-chin-contacts
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – Official Website of the Ak-Chin Indian Community". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.ak-chin.nsn.us/wp-content/uploads/2021/06/config-header-basic-settings-toplogo-field-value-150x150.png

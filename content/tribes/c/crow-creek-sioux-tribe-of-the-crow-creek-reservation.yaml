@@ -131,6 +131,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
+- kind: contact-page
+  value: https://sdtribalrelations.sd.gov/contact.aspx
+  label: Contact page on the nation's website
+  source: sdtribalrelations-contact-aspx
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | South Dakota Department of Tribal Relations". Found by scripts/tribes/find_contacts.py.
 languages:
 - name: Dakota
   language_tag: dak

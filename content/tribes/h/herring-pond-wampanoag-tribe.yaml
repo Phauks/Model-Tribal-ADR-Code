@@ -30,6 +30,31 @@ population:
   verification: read-in-full
   as_of: '2024-11-19'
   note: Order says the Tribe 'presently contains close to 200 members'; approximate.
+contacts:
+- kind: website
+  value: https://www.herringpondtribe.org/
+  label: Official website
+  source: herringpondtribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: email-general
+  value: info@herringpondtribe.org
+  label: General office email shown on the nation's website
+  source: herringpondtribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address as shown on the page.
+- kind: physical-address
+  value: 128 Herring Pond Road, Plymouth, MA 02360
+  label: Tribal government office
+  source: herringpondtribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

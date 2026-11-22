@@ -133,6 +133,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Timbisha Shoshone Tribe
+- kind: contact-page
+  value: https://timbisha.com/newsite/contact-us/
+  label: Contact page on the nation's website
+  source: timbisha-newsite-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – Timbisha Shoshone Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://ml80zyedf1dv.i.optimole.com/w:180/h:180/q:mauto/ig:avif/https://timbisha.com/newsite/wp-content/uploads/2021/12/cropped-LogoIcon.png

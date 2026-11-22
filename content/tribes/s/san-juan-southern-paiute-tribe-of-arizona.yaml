@@ -95,6 +95,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
+- kind: contact-page
+  value: https://www.sanjuanpaiute-nsn.gov/contact
+  label: Contact page on the nation's website
+  source: sanjuanpaiute-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact the Official Office of the San Juan Southern Paiute Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://cdn.prod.website-files.com/5c6d7e790cc9a809bb2f3cf4/5c6dca8f644ba03f86d09b47_mdAsset%206.png

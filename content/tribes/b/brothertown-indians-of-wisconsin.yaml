@@ -33,6 +33,55 @@ states:
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+contacts:
+- kind: website
+  value: https://brothertownindians.org
+  label: Official website
+  source: brothertownindians-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://brothertownindians.org/contact-us/
+  label: Contact page on the nation's website
+  source: brothertownindians-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: email-general
+  value: brothertownoffice@brothertownindians.org
+  label: General office email shown on the nation's website
+  source: brothertownindians-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address as shown on the page.
+- kind: phone
+  value: (920) 929-9964
+  label: Tribal government office
+  source: brothertownindians-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
+- kind: physical-address
+  value: 311 Winnebago Drive, Fond du Lac, WI
+  label: Tribal government office
+  source: brothertownindians-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
+- kind: mailing-address
+  value: PO Box 2206, Fond du Lac, WI 54936-2206
+  label: Tribal government office
+  source: brothertownindians-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

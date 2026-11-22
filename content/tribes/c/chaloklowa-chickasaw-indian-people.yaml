@@ -43,6 +43,23 @@ states:
   verification: bulk-import
   as_of: '2026'
   note: State-recognized entity with a South Carolina contact address.
+contacts:
+- kind: phone
+  value: (843) 992-4967
+  label: Tribal government office
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: As listed for the tribe in the state's directory.
+- kind: physical-address
+  value: 501 Tanner Lane, Hemingway, SC 29554
+  label: Tribal government office
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: As listed for the tribe in the state's directory.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

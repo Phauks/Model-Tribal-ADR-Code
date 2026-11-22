@@ -131,6 +131,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes and Bands of the Yakama Nation
+- kind: contact-page
+  value: https://yakama.com/contact/
+  label: Contact page on the nation's website
+  source: yakama-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT". Its title is "Contact Information and Agency Offices | Yakama Nation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Yakama Nation logo featuring an eagle, stars, and the text "Confederated Tribes and

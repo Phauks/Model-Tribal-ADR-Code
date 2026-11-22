@@ -93,6 +93,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Buena Vista Rancheria of Me-Wuk Indians of California
+- kind: contact-page
+  value: https://bvtribe.com/contact.php
+  label: Contact page on the nation's website
+  source: bvtribe-contact-php
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Us | Buena Vista Rancheria". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: Buena Vista Rancheria of Me-Wuk Indians seal

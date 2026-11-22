@@ -130,6 +130,14 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+- kind: email-general
+  value: machis@centurytel.net
+  label: General office email shown on the nation's website
+  source: machistribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: 'Ma-Chis Tribe '

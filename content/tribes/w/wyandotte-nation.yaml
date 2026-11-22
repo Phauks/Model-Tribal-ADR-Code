@@ -128,6 +128,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Wyandotte Nation
+- kind: contact-page
+  value: https://wyandotte-nation.org/aboutus/contact-us/
+  label: Contact page on the nation's website
+  source: wyandotte-nation-aboutus-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Wyandotte Nation". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@wyandotte-nation.org
+  label: General office email shown on the nation's website
+  source: wyandotte-nation-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://i0.wp.com/wyandotte-nation.org/wp-content/uploads/2022/03/favicon.jpg?fit=275%2C275&ssl=1

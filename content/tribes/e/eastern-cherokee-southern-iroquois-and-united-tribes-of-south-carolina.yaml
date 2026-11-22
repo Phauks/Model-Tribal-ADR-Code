@@ -27,6 +27,23 @@ states:
   verification: bulk-import
   as_of: '2026'
   note: State-recognized entity with a South Carolina contact address.
+contacts:
+- kind: phone
+  value: (864) 978-9525
+  label: Tribal government office
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: As listed for the tribe in the state's directory.
+- kind: physical-address
+  value: 649 Berry Shoals Rd., Duncan, SC 29334
+  label: Tribal government office
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: As listed for the tribe in the state's directory.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

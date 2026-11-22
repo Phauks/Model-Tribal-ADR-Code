@@ -122,6 +122,14 @@ contacts:
   locator: 'record "Village of Solomon" (community: Solomon, object 191)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.villageofsolomon.org/contact
+  label: Contact page on the nation's website
+  source: villageofsolomon-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "General 1 — Village of Solomon". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/v1/5f222cda0370702b56ed65a9/1605717346661-22WGYJ947A4YQ1AHRAOV/favicon.ico?format=100w

@@ -151,6 +151,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Alutiiq Tribe of Old Harbor" (community: Old Harbor, object 153)'
+- kind: email-general
+  value: atoh@alutiiqtribe.org
+  label: General office email shown on the nation's website
+  source: sites-alutiiqtribe-org-main-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 languages:
 - name: Sugt'stun (Alutiiq)
   language_tag: ems

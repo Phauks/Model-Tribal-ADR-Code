@@ -175,6 +175,14 @@ contacts:
   locator: 'record "Skagway Village" (community: Skagway, object 189)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.skagwaytraditional.org/new-page
+  label: Contact page on the nation's website
+  source: skagwaytraditional-new-page
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact us". Its title is "Contact us — Skagway Traditional Council". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/v1/57290068d210b8735c218f3d/1496272478498-4LZAE3OISEER2OPDFOFC/favicon.ico

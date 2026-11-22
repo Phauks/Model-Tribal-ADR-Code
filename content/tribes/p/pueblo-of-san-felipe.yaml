@@ -130,6 +130,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of San Felipe, New Mexico
+- kind: contact-page
+  value: https://sfpueblo.com/contact-us/
+  label: Contact page on the nation's website
+  source: sfpueblo-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Pueblo of San Felipe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@sfpueblo.com
+  label: General office email shown on the nation's website
+  source: pueblo-of-san-felipe-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://sfpueblo.com/wp-content/uploads/2025/04/logo-white-1-150x150.png

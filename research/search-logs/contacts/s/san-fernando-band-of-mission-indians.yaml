@@ -1,0 +1,21 @@
+profile: content/tribes/s/san-fernando-band-of-mission-indians.yaml
+topic: contacts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: San Fernando Band of Mission Indians California official website contact
+  outcome: found
+  reason: Found sfbmi.org among results; who-we-are page confirms it is the band's own site.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://sfbmi.org/
+  query: official website, contact page, general email
+  outcome: found
+  reason: Claude found the site by web search; a script opened it and found each value on the page named.

@@ -119,6 +119,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Modoc Nation
+- kind: contact-page
+  value: https://modocnation.com/contact/
+  label: Contact page on the nation's website
+  source: modocnation-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT". Its title is "Contact - Modoc Nation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://modocnation.com/wp-content/uploads/2020/03/cropped-ModocNation_logo2020_fullcolor.webp

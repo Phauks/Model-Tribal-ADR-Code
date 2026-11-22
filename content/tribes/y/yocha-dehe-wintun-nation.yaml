@@ -131,6 +131,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
+- kind: contact-page
+  value: https://yochadehe.gov/contact-us/
+  label: Contact page on the nation's website
+  source: yochadehe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Yocha Dehe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@yochadehe.gov
+  label: General office email shown on the nation's website
+  source: yochadehe-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Yocha Dehe

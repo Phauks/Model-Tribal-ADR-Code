@@ -210,7 +210,7 @@
         "$ref": "#/$defs/citedFact",
         "required": ["kind", "value"],
         "properties": {
-          "kind": { "type": "string", "enum": ["website", "physical-address", "mailing-address", "phone", "fax", "email-general"] },
+          "kind": { "type": "string", "enum": ["website", "contact-page", "physical-address", "mailing-address", "phone", "fax", "email-general"], "description": "contact-page is the nation's own Contact us page (a form, a staff or department list), recorded when it is on the nation's website; email-general is a general office address such as info@, never a person's own address." },
           "value": { "type": "string" },
           "label": { "type": "string", "description": "Which office, for example 'Tribal government headquarters'." },
           "link_status": {

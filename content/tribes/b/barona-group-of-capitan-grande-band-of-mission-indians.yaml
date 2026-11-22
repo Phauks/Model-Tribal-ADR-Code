@@ -121,6 +121,22 @@ contacts:
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
     Band of Mission Indians of the Barona Reservation, California'
+- kind: contact-page
+  value: https://www.barona-nsn.gov/contact
+  label: Contact page on the nation's website
+  source: barona-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Barona Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: counciloffice@barona-nsn.gov
+  label: General office email shown on the nation's website
+  source: barona-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 tribal_insignia_database_entries:
 - serial_number: '89000956'
   wordmark: BAND OF MISSION BARONA 1932 INDIANS

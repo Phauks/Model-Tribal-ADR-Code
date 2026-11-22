@@ -113,6 +113,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
+- kind: contact-page
+  value: https://trinidad-rancheria.org/contact/
+  label: Contact page on the nation's website
+  source: trinidad-rancheria-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact – Trinidad Rancheria". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Trinidad Rancheria

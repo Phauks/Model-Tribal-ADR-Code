@@ -123,6 +123,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santa Ynez Band of Chumash Mission Indians of the Santa Ynez Reservation, California
+- kind: contact-page
+  value: https://chumash.gov/contact
+  label: Contact page on the nation's website
+  source: chumash-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact — Santa Ynez Band of Chumash Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Santa Ynez Band of Chumash Indians

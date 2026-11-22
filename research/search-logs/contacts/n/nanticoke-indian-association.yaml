@@ -1,0 +1,21 @@
+profile: content/tribes/n/nanticoke-indian-association.yaml
+topic: contacts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Nanticoke Indian Association Delaware official website contact
+  outcome: found
+  reason: Returned nanticokeindians.org, which the fetch identified as the association's site; it names itself the Nanticoke Indian Tribe.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.nanticokeindians.org/
+  query: official website, contact page, general email
+  outcome: found
+  reason: Claude found the site by web search; a script opened it and found each value on the page named.

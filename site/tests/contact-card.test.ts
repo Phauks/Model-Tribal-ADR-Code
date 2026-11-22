@@ -11,6 +11,23 @@ import {
 const label = 'Tribal government office';
 
 describe('contact card', () => {
+	it('links the nation\'s own contact page in the office card, after the email', () => {
+		const { websites, offices } = contactCards([
+			{ kind: 'contact-page', value: 'https://bigpinepaiute.org/contact-us/', label },
+			{ kind: 'email-general', value: 'info@bigpinepaiute.org', label },
+			{ kind: 'website', value: 'https://bigpinepaiute.org/', label }
+		]);
+		expect(websites).toHaveLength(1);
+		expect(offices[0].rows.map((row) => row.label)).toEqual(['Email', 'Contact page']);
+		expect(offices[0].rows[1]).toMatchObject({
+			kind: 'contact-page',
+			lines: ['bigpinepaiute.org/contact-us'],
+			link: 'https://bigpinepaiute.org/contact-us/',
+			external: true,
+			linkHint: 'opens in a new tab'
+		});
+	});
+
 	it('keeps the website apart and names the office once', () => {
 		const { websites, offices } = contactCards([
 			{ kind: 'fax', value: '(928) 871-4025', label },

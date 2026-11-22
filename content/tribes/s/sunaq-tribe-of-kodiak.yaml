@@ -117,6 +117,14 @@ contacts:
   locator: 'record "Sun''aq Tribe of Kodiak" (community: Kodiak, object 104)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.sunaq.org/contact
+  label: Contact page on the nation's website
+  source: sunaq-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact — Sun'aq Tribe of Kodiak". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://images.squarespace-cdn.com/content/v1/67350d7e657b257be19ef9d5/82350cff-613c-4567-9739-c3ae3210acf4/favicon.ico?format=100w

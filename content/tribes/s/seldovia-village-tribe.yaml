@@ -132,6 +132,14 @@ contacts:
   locator: 'record "Seldovia Village Tribe" (community: Seldovia Village, object 183)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://svt.org/contact/
+  label: Contact page on the nation's website
+  source: svt-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Us - Seldovia Village Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Logo

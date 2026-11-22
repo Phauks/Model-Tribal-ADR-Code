@@ -121,6 +121,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+- kind: contact-page
+  value: https://www.bentonpaiutereservation.org/contact.htm
+  label: Contact page on the nation's website
+  source: bentonpaiutereservation-contact-htm
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Benton Paiute Reservation | Benton, CA". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: bentonpaiutetribe118@gmail.com
+  label: General office email shown on the nation's website
+  source: bentonpaiutereservation-contact-htm
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.bentonpaiutereservation.org/images/logo_img.png

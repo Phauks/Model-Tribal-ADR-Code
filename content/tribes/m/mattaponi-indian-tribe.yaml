@@ -95,6 +95,14 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+- kind: contact-page
+  value: https://Mattaponi.gov/contact-mattaponi
+  label: Contact page on the nation's website
+  source: mattaponi-contact-mattaponi
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Mattaponi Indian Reservation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://Mattaponi.gov/sites/default/files/inline-images/tribal-seal-sans-text-preweb.png

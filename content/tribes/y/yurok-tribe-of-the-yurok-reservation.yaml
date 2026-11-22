@@ -127,6 +127,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yurok Tribe of the Yurok Reservation, California
+- kind: contact-page
+  value: https://www.yuroktribe.org/contact
+  label: Contact page on the nation's website
+  source: yuroktribe-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Yurok Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png

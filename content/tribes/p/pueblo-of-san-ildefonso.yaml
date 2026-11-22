@@ -139,6 +139,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of San Ildefonso, New Mexico
+- kind: contact-page
+  value: https://sanipueblo.org/contact/
+  label: Contact page on the nation's website
+  source: sanipueblo-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact – San Ildefonso Pueblo". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://sanipueblo.org/wp-content/uploads/2021/07/SANILOGO-white-100x100.png

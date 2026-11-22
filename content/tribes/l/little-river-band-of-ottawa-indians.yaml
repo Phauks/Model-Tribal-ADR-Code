@@ -134,6 +134,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
+- kind: contact-page
+  value: https://www.lrboi-nsn.gov/contact-us
+  label: Contact page on the nation's website
+  source: lrboi-nsn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Little River Band of Ottawa Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: Home

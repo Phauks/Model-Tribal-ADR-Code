@@ -92,6 +92,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Potter Valley Tribe, California
+- kind: contact-page
+  value: https://pottervalleytribe.com/contact/
+  label: Contact page on the nation's website
+  source: pottervalleytribe-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact – Potter Valley Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: pvtsecretary@pottervalleytribe.com
+  label: General office email shown on the nation's website
+  source: pottervalleytribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Potter Valley Tribe Header Logo Refresh
