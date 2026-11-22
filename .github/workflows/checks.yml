@@ -3,7 +3,9 @@
 # It can also be started by hand or by another workflow (workflow_dispatch).
 # The archive workflow's catch-up job uses that: pull requests opened by the
 # workflow token start no workflows, so it starts these checks on its branch
-# itself, and the required "All checks" result lands on the branch's head.
+# itself. A started run is not attached to the pull request, so the final job
+# also posts its result as an "All checks" commit status, which is what the
+# ruleset then sees on the branch's head.
 #
 # The main branch ruleset requires only the final "All checks" job
 # (decision record 0008). To add a check, add a job here and list it under
@@ -180,8 +182,11 @@ jobs:
     if: always()
     needs: [text, records, lint, prose, site, print]
     runs-on: ubuntu-latest
+    permissions:
+      statuses: write
     steps:
       - name: Fail if any check failed or was cancelled
+        id: verdict
         env:
           RESULTS: ${{ join(needs.*.result, ' ') }}
         run: |
@@ -191,3 +196,18 @@ jobs:
               exit 1
             fi
           done
+      # A run started by hand or by another workflow is not attached to the
+      # pull request, so its "All checks" job does not count toward the
+      # ruleset. Posting the same result as a commit status on the commit does.
+      - name: Report the result on the commit for a started run
+        if: always() && github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OUTCOME: ${{ steps.verdict.outcome }}
+        run: |
+          state=failure
+          if [ "$OUTCOME" = "success" ]; then state=success; fi
+          gh api "repos/${{ github.repository }}/statuses/${{ github.sha }}" \
+            -f state="$state" -f context="All checks" \
+            -f description="Checks workflow run started on this branch" \
+            -f target_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
