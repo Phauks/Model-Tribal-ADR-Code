@@ -10,6 +10,7 @@ import { copyPath } from '../public-copies.ts';
 import {
 	documentHistories,
 	publicCopyFor,
+	publicCopyWithDigest,
 	sources as sourceRecords,
 	type DocumentHistoryRecord,
 	type DocumentVersion
@@ -120,13 +121,15 @@ function inEffectPhrase(versions: DocumentVersion[]): string | undefined {
 /**
  * The public copy of a version's text, so the history links to the document
  * itself (Trevor, Nov. 22, 2026): the copy this site serves when it keeps
- * one (src/lib/public-copies.ts), else the source's own address, else its
- * first archived copy. Private captures are never linked (texts stay
- * link-only).
+ * one (src/lib/public-copies.ts), matched first by the version's capture
+ * and then by its source's address, else the source's own address, else its
+ * first archived copy.
  */
-function textLink(sourceKey: string | undefined): string | undefined {
-	if (!sourceKey) return undefined;
-	const record = sourceRecords().get(sourceKey);
+function textLink(version: DocumentVersion): string | undefined {
+	const capture = publicCopyWithDigest(version.capture?.sha256);
+	if (capture) return copyPath(capture);
+	if (!version.source) return undefined;
+	const record = sourceRecords().get(version.source);
 	const saved = publicCopyFor(record?.original_link);
 	if (saved) return copyPath(saved);
 	if (record?.original_link) return record.original_link;
@@ -158,7 +161,7 @@ export function documentHistoryView(
 			event: EVENT_LABELS[version.event] ?? humanize(version.event),
 			status: humanize(version.status),
 			inEffect: version.status === 'in-effect',
-			link: textLink(version.source),
+			link: textLink(version),
 			dates: datesPhrase(version),
 			relation: relationPhrase(version, byId),
 			changes: (version.changes ?? []).map((change) => ({

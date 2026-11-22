@@ -180,9 +180,7 @@ The project quotes only what the law allows or what owners permit, and records
 the basis for every quotation. Fair use depends on four factors: the purpose and
 character of the use, the nature of the work, "the amount and substantiality of
 the portion used," and "the effect of the use upon the potential market."[^usc-107]
-Because tribal law belongs to each nation, the default for tribal legal texts is
-to cite and link rather than republish, until the nation permits more (project
-analysis, not legal advice).
+Because tribal law belongs to each nation, the project quotes tribal legal texts only as the permission statuses allow (project analysis, not legal advice). Since 2026-11-22 the website also serves its own copies of the nations' constitutions and laws it cites, each with its original address and a link to ask for its removal or redaction, which the project honors (decision record [0031](decisions/0031-serve-copies-of-documents-from-the-private-bucket.md)).
 
 ### 10. Positionality and transparency
 

@@ -7,11 +7,15 @@
  * a government site that may be slow, moved or down. The original address
  * stays the cited source.
  *
+ * Since decision record 0031 (Trevor, Nov. 22, 2026) the site also serves its
+ * copies of nations' constitutions and laws, until a nation asks for a copy
+ * to be removed or redacted.
+ *
  * The list comes from the capture index, research/capture-index.csv
- * (decision record 0027), which has one row for every file in the bucket.
+ * (decision record 0030), which has one row for every file in the bucket.
  * Only rows whose redistribution column says "yes" are listed here, and only
- * PDF files, so a private capture (a Westlaw printout, a nation's
- * constitution) is never served, whatever the bucket holds.
+ * PDFs and saved web pages, so a private capture (a Westlaw printout, a
+ * journal article) is never served, whatever the bucket holds.
  */
 
 export interface PublicCopy {
@@ -25,12 +29,26 @@ export interface PublicCopy {
 	/** The date the copy was made, as YYYY-MM-DD. */
 	captured: string;
 	title: string;
+	/** The capture index topic, such as govinfo or constitutions. */
+	topic: string;
+	/** The nations the document belongs to, by record id. */
+	nations: string[];
 	/** Why the project may share it, in words (project analysis, not legal advice). */
 	rights: string;
 }
 
-/** Media types the Worker serves as copies. */
-export const servedMediaTypes = new Set(['application/pdf']);
+/** Media types the Worker serves as copies. A saved web page is served in a sandbox, with nothing it could load or run. */
+export const servedMediaTypes = new Set(['application/pdf', 'text/html']);
+
+/** How a link names the file's kind, such as "PDF" or "saved web page". */
+export function mediaLabel(mediaType: string): string {
+	return mediaType === 'text/html' ? 'saved web page' : 'PDF';
+}
+
+/** The request form, filled in to ask that a copy be taken down or redacted (docs/requests.md). */
+export function removalRequestPath(copy: Pick<PublicCopy, 'key'>): string {
+	return `/requests?${new URLSearchParams({ kind: 'remove', record: `copies/${copy.key}` }).toString().replaceAll('%2F', '/')}`;
+}
 
 /** The site's own address of a copy. */
 export function copyPath(copy: Pick<PublicCopy, 'key'>): string {

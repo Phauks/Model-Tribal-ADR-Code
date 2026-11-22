@@ -334,7 +334,7 @@ and the government edicts doctrine applied to official state legal texts in
 Whether the edicts doctrine reaches tribal law is unsettled, and respect for
 tribal sovereignty points toward asking, so the default for tribal legal texts
 is `link-only` until a nation says otherwise (project analysis, not legal
-advice).
+advice). That default governs quotation. Serving the project's saved copy of a whole document is decided by the capture index instead (decision record [0031](decisions/0031-serve-copies-of-documents-from-the-private-bucket.md)).
 
 ## Review statuses
 

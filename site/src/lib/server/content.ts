@@ -190,6 +190,8 @@ export interface DocumentVersion extends CitedFact {
 		>
 	>;
 	approval?: { authority: string; action: string; source?: string; locator?: string };
+	/** The project's copy of this version's text, found by its SHA-256 in the capture index. */
+	capture?: { path?: string; sha256?: string };
 	amends?: string[];
 	supersedes?: string[];
 	clauses?: { topic: string; locator?: string; summary: string }[];
@@ -346,6 +348,29 @@ const neverServedTopics = new Set(['westlaw', 'articles']);
 
 let publicCopyCache: PublicCopy[] | undefined;
 
+let withheldDigests: Set<string> | undefined;
+
+/**
+ * Whether a copy belongs to material the site does not publish: a nation whose
+ * record is restricted or still waits for the nation's approval, or a document
+ * history marked restricted or held for review. A nation's constitution is
+ * filed under constitutions/<nation id>/, so the key names its nation too.
+ */
+function isWithheld(copy: PublicCopy): boolean {
+	const published = new Set(nations().map((record) => record.id));
+	const named = [...copy.nations];
+	if (copy.topic === 'constitutions') named.push(copy.key.split('/')[1] ?? '');
+	if (named.some((id) => id && !published.has(id))) return true;
+	withheldDigests ??= new Set(
+		yamlFilesUnder('content/documents')
+			.map((file) => readYaml<DocumentHistoryRecord>(file))
+			.filter((record) => record.sensitivity?.restricted || record.sensitivity?.tribal_review_required)
+			.flatMap((record) => record.versions.map((version) => version.capture?.sha256?.toLowerCase() ?? ''))
+			.filter(Boolean)
+	);
+	return withheldDigests.has(copy.sha256);
+}
+
 /**
  * The files in the bucket the website may serve itself: rows of the capture
  * index whose redistribution column says "yes", that are PDF files and that
@@ -376,15 +401,26 @@ export function publicCopies(): PublicCopy[] {
 				links: row.link.split(/\s+/).filter((link) => linkForMatching(link)),
 				captured: row.captured.slice(0, 10),
 				title: row.title || row.key,
+				topic: row.topic || row.key.split('/')[0],
+				nations: row.nations.split(';').filter(Boolean),
 				rights: row.rights
 			}))
-			.filter((copy) => copy.links.length > 0)
+			.filter((copy) => copy.links.length > 0 && !isWithheld(copy))
 			.sort((first, second) => first.title.localeCompare(second.title));
 	}
 	return publicCopyCache;
 }
 
 let publicCopyLinks: Map<string, PublicCopy> | undefined;
+
+let publicCopyHashes: Map<string, PublicCopy> | undefined;
+
+/** The copy the website serves of the file with this SHA-256, if it keeps one. */
+export function publicCopyWithDigest(sha256: string | undefined): PublicCopy | undefined {
+	if (!sha256) return undefined;
+	publicCopyHashes ??= new Map(publicCopies().map((copy) => [copy.sha256, copy]));
+	return publicCopyHashes.get(sha256.toLowerCase());
+}
 
 /** The copy the website serves of the document at this address, if it keeps one. */
 export function publicCopyFor(link: string | undefined): PublicCopy | undefined {

@@ -9,7 +9,7 @@
  * CitationCollector numbers them and records what each source supports.
  */
 import { marked } from 'marked';
-import { copyPath } from '../public-copies.ts';
+import { copyPath, mediaLabel } from '../public-copies.ts';
 import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
 
 export function escapeHtml(text: string): string {
@@ -76,7 +76,7 @@ export function savedCopyLink(source: SourceRecord | undefined): string {
 	const copy = publicCopyFor(source.original_link) ?? publicCopyFor(source.citation.URL);
 	if (!copy) return '';
 	const saved = copy.captured ? `, saved ${escapeHtml(formatCaptureDate(copy.captured))}` : '';
-	return ` <span class="source-saved">(<a href="${escapeHtml(copyPath(copy))}">copy on this site${saved}, PDF</a>)</span>`;
+	return ` <span class="source-saved">(<a href="${escapeHtml(copyPath(copy))}">copy on this site${saved}, ${mediaLabel(copy.mediaType)}</a>)</span>`;
 }
 
 function webAddress(link: string | undefined): URL | undefined {

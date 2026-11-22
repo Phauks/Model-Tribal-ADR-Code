@@ -79,14 +79,44 @@ FIELDS = [
 NEVER_SERVED = {"westlaw", "articles"}
 
 TOPIC_RIGHTS = {
-    "tribal-law": "Tribal law text: cited by link only (docs/data-model.md, permission statuses); private research copy, not redistributed.",
-    "constitutions": "A nation's governing document: private research copy; redistribution not cleared; a nation can ask for removal.",
+    "tribal-law": "A nation's law: served on the website under decision record 0031; the nation can ask for removal or redaction.",
+    "constitutions": "A nation's governing document: served on the website under decision record 0031; the nation can ask for removal or redaction.",
     "gaming": "Compact or ordinance as published by the Bureau of Indian Affairs or the National Indian Gaming Commission: private research copy; redistribution not cleared.",
     "nation-images": "A nation's seal or logo: reuse status is in the tribe profile's official_images; served only as decision record 0017 allows.",
     "westlaw": "Westlaw printout: subscription content for the lead author's educational use; never redistributed.",
     "articles": "Journal article: copyright held by the author or journal; private copy, not redistributed.",
 }
 DEFAULT_RIGHTS = "Private research copy; not redistributed."
+
+# Decision record 0031 (Trevor Goldsmith, 2026-11-22): the website serves the
+# project's copies of nations' constitutions and laws, whatever the citing
+# record's link-only status, except copies taken from commercial code
+# publishers, whose compilations carry their own copyright and terms. A
+# nation's removal request is carried out by setting "redistribution": "no"
+# for the key in research/capture-index-overrides.json, which wins.
+NATION_LAW_TOPICS = {"constitutions", "tribal-law"}
+CODE_PUBLISHERS = ("ecode360.com", "municode.com", "codepublishing.com", "amlegal.com")
+PUBLISHER_RIGHTS = ("Tribal law as compiled by a commercial code publisher: private research copy; "
+                    "the publisher's compilation and terms apply (decision record 0031).")
+
+
+# Files under govinfo/ come from GovInfo, the Government Publishing Office's
+# site: federal statutes and Federal Register documents, works of the United
+# States government with no copyright (17 U.S.C. 105), whatever the rights
+# note of a record that cites the same act says (site/tools/fetch-public-copies.mjs).
+GOVERNMENT_TOPICS = {"govinfo"}
+GOVERNMENT_RIGHTS = "Work of the United States government; no copyright (17 U.S.C. § 105). Served on the website (decision record 0031)."
+
+
+def nation_law_policy(topic: str, link: str) -> tuple[str, str] | None:
+    """(redistribution, rights) for a federal document or a nation's constitution or law; None for other topics."""
+    if topic in GOVERNMENT_TOPICS:
+        return "yes", GOVERNMENT_RIGHTS
+    if topic not in NATION_LAW_TOPICS:
+        return None
+    if any(publisher in link for publisher in CODE_PUBLISHERS):
+        return "no", PUBLISHER_RIGHTS
+    return "yes", TOPIC_RIGHTS[topic]
 
 
 # ---------------------------------------------------------------- helpers
@@ -349,12 +379,16 @@ def build_index(args) -> None:
             else "fetched during research" if cat.get("link") else "unknown")
         media = mimetypes.guess_type(key)[0] or ("text/plain" if key.endswith(".raw") else "application/octet-stream")
         orphan = not ({"source", "document-history", "story", "tribe-profile"} & kinds)
+        link = " ".join(extra["link"]) if isinstance(extra.get("link"), list) else (extra.get("link") or cat.get("link") or prev.get("link") or "")
+        policy = nation_law_policy(topic, link) if parent is None and "redistribution" not in extra else None
+        if policy:
+            redistributable, rights = policy
         rows.append({
             "key": key, "bytes": item["bytes"], "sha256": item["sha256"], "media_type": media,
             "topic": topic, "title": (title or "")[:300],
             "nations": ";".join(n for n in (cat.get("nations") or extra.get("nations")
                                             or prev.get("nations", "").split(";")) if n),
-            "obtained": obtained, "link": " ".join(extra["link"]) if isinstance(extra.get("link"), list) else (extra.get("link") or cat.get("link") or prev.get("link") or ""),
+            "obtained": obtained, "link": link,
             "captured": captured + captured_note,
             "records": ";".join(sorted(record_ids)), "record_kinds": ";".join(sorted(kinds)),
             "listed_in": ";".join(cat.get("listed_in") or []), "catalog": cat.get("catalog", ""),
@@ -511,6 +545,10 @@ def add(args) -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
         media = mimetypes.guess_type(key)[0] or "application/octet-stream"
+        redistribution, rights = args.redistribution, args.rights or TOPIC_RIGHTS.get(args.topic, DEFAULT_RIGHTS)
+        policy = nation_law_policy(args.topic, " ".join(args.link or [])) if args.redistribution == "unknown" else None
+        if policy:
+            redistribution, rights = policy[0], args.rights or policy[1]
         if s3 is not None:
             s3.upload_file(str(target), bucket, key, ExtraArgs={"ContentType": media, "Metadata": {
                 "sha256": digest, "captured": dt.date.today().isoformat()}})
@@ -521,8 +559,8 @@ def add(args) -> None:
             "topic": args.topic, "title": args.title or "", "nations": args.nations or "",
             "obtained": f"{args.obtained}, {dt.date.today().isoformat()}", "link": " ".join(args.link or []), "captured": dt.date.today().isoformat(),
             "records": args.record or "", "record_kinds": "source" if args.record else "", "listed_in": "",
-            "catalog": "", "derived_from": "", "rights": args.rights or TOPIC_RIGHTS.get(args.topic, DEFAULT_RIGHTS),
-            "redistribution": "no" if args.topic in NEVER_SERVED else args.redistribution,
+            "catalog": "", "derived_from": "", "rights": rights,
+            "redistribution": "no" if args.topic in NEVER_SERVED else redistribution,
             "keep_local": "no", "orphan": "no" if args.record else "yes",
         })
         if s3 is not None and not args.keep_local:

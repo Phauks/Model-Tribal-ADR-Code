@@ -40,5 +40,6 @@ and says so.
 | [0027](0027-diversion-and-restorative-justice-in-the-research-base.md) | Keep diversion and restorative justice records in the research base; apply the provision pre-review | Accepted |
 | [0028](0028-map-adds-census-land-areas.md) | Add a land areas view to the map, from the Census Bureau's boundaries | Accepted |
 | [0030](0030-keep-research-captures-in-the-private-bucket.md) | Keep research captures in the private bucket, with an index in git | Accepted |
+| [0031](0031-serve-copies-of-documents-from-the-private-bucket.md) | Serve the project's copies of cited documents, including nations' constitutions and laws | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.
