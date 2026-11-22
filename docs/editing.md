@@ -390,6 +390,7 @@ proposal.
 
 1. Approve the rest of the approach (ProseMirror + Yjs on Durable Objects,
    comments, history, the build order)?
+
 Settled by the lead author on Nov. 22, 2026:
 
 - The account is on the Workers Paid plan.
