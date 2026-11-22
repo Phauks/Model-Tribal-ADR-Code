@@ -79,9 +79,17 @@
 
 	.record-introduction,
 	.record-details,
-	.record-sources,
-	.record-glance {
+	.record-sources {
 		max-width: var(--layout-measure);
+	}
+
+	/*
+	 * The glance column holds boxes, not running text, so a text size below
+	 * 100 percent does not narrow it: it keeps the width it has at the
+	 * standard size (Trevor, Nov. 22, 2026: only text changes size).
+	 */
+	.record-glance {
+		max-width: max(var(--layout-measure), calc(var(--layout-measure) / var(--text-scale)));
 	}
 
 	/*

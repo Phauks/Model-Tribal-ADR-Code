@@ -170,8 +170,7 @@ is chosen. Each step is one question, as in the rest of the form.
    nation's government"; the project then contacts the nation itself.
 5. **Check your answers**, then a reference number and the date.
 
-The confirmation says what happens next, how long it usually takes, and that
-the application and any uploads are kept private.
+The confirmation says what happens next, how long it usually takes, that sources sent with the application may be cited or published, and that contact details are never published.
 
 ### How the project reviews it
 
