@@ -1,6 +1,6 @@
 # 0019. Record stories in their tellers' own words, with credit, permissions and protocols
 
-- **Status:** Proposed
+- **Status:** Accepted (lead author, Nov. 21, 2026)
 - **Date:** 2026-11-21
 
 ## Context
