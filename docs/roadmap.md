@@ -114,6 +114,7 @@ Each question comes from what the data shows (project analysis):
 | Are employment disputes in scope? | One employment tribunal and one employment mediation clause were found (analysis, sections 3 and 4) |
 | What does the code say about peacemaking, if anything? | Peacemaking is its own track; one option is provisions that only connect a court to a nation's own peacemaking forum (referral, return, entry of agreements) without defining peacemaking itself |
 | Which family and child welfare matters are in scope? | Family and child welfare matters appear in both forums and bulk records (analysis, sections 3 and 5) |
+| Does the code or its commentary address nations divided by an international border? | Akwesasne, the Blackfoot Confederacy, Tohono O'odham and others live on both sides of the Canadian or Mexican border, and each country sets their status by its own law ([Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md#7-what-the-comparison-suggests-project-analysis); [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md)) |
 
 ### Candidate outline, to confirm at Gate 2
 
@@ -157,6 +158,12 @@ as a decision record.
   ([charter, commitment 4](charter.md#4-consultation-before-publication)).
 - Each chapter is drafted on its own branch and pull request, with status
   `draft`, then `in-review`.
+- Comparative sidebars on Canada and Mexico: start from the research notes
+  ([Canada](../research/analyses/2026-11-21-canada-dispute-resolution.md), whose
+  section 8 holds a draft sidebar; [Mexico](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md)).
+  Before the text is final, clear the open pulls for both in the project's
+  Westlaw list (sections 11 and 12) and re-check the 2026 Criminal Code
+  restorative justice part and the Teslin Tlingit Peacemaker Court's status.
 
 ## Gate 3: consultation
 
