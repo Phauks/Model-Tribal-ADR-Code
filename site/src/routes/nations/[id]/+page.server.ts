@@ -13,7 +13,7 @@ import { documentHistoriesFor } from '#lib/server/document-history.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
-import { humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
+import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
@@ -263,7 +263,8 @@ export const load: PageServerLoad = ({ params }) => {
 	const page = {
 		id: record.id,
 		example: record.example === true,
-		officialName: record.names.official,
+		officialName: displayName(record.names.official),
+		listedName: record.names.official,
 		review: { ...status, lastVerified: record.review?.last_verified },
 		withdrawn: record.review?.status === 'withdrawn-at-request'
 	};

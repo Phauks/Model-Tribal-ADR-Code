@@ -75,7 +75,7 @@
 <dialog bind:this={dialog} class="modal" aria-labelledby="{identifier}-title" {onclose}>
 	<div class="modal-top">
 		<h2 id="{identifier}-title">{title}</h2>
-		<button class="button button-quiet close-button" type="button" aria-label="Close" onclick={close}>
+		<button class="icon-button close-button" type="button" aria-label="Close" title="Close" onclick={close}>
 			<X size={24} />
 		</button>
 	</div>
@@ -170,9 +170,7 @@
 
 	/* An X alone, as Trevor asked on Nov. 22, 2026; its name, "Close", comes from aria-label. */
 	.close-button {
-		justify-content: center;
-		width: var(--layout-target-minimum);
-		padding: 0;
+		flex-shrink: 0;
 	}
 
 	.modal-body {
