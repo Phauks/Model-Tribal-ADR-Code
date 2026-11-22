@@ -73,6 +73,6 @@ Limits:
 - No tool for starting separate reviewer agents was available, so Claude, in one session, read the pages and made the hand decisions. There was no second reader.
 - `scripts/lint_records.py` now reports a service with no link (check `service-link`): an error for a new or changed service, a warning for the 170 left here.
 
-## Pages that only mention a court (added Nov. 22, 2026)
+## Pages that only mention a court
 
-After this pass, eight courts whose nation has no court page and no directory entry were linked to a page on the nation's own site that names the court: Cow Creek (a post on peacemaker training), Mescalero (a public notice), Mississippi Choctaw, two entries (the Supreme Court opinions page), Omaha (a post on court dates), Turtle Mountain, two entries (a notice on amendments about the court clerk) and Winnemucca (the home page). Their rule in the files is `own-site-mention`, and each fact's note says the page only mentions the court. This follows the lead author's rule that a listed service should have a link, and is easy to revisit. That leaves 162 services with no link.
+The lead author decided on Nov. 22, 2026 that a page on the nation's own site that only mentions a court (a news post, notice or home page) does not count as the court's link. The eight courts where that was the only page found (Cow Creek, Mescalero, Mississippi Choctaw twice, Omaha, Turtle Mountain twice and Winnemucca) stay without a link, and their rows keep the question in `for_lead_author` for the record.

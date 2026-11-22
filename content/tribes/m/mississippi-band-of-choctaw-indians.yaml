@@ -287,22 +287,23 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.choctaw.org/supreme-court-opinions/
   source: national-indian-law-library-mississippi-choctaw
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/index.html) returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Supreme Court opinions page on the nation''s own site, which names the tribal courts; the nation has no court page of its own and no directory entry was found, so the link is a page that only mentions the court (lead author''s rule on service links, 2026-11-22).'
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.choctaw.org/government/court/index.html) returned HTTP 404, so it
+    is not recorded.'
 - kind: tribal-court
   name: Mississippi Band of Choctaw Indians Tribal Court
-  link: https://www.choctaw.org/supreme-court-opinions/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
-  note: 'Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/index.html) returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Supreme Court opinions page on the nation''s own site, which names the tribal courts; the nation has no court page of its own and no directory entry was found, so the link is a page that only mentions the court (lead author''s rule on service links, 2026-11-22).'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/index.html)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   forums:
   - kind: peacemaking
