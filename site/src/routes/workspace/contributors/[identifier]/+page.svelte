@@ -100,8 +100,8 @@
 		{#if !profile.personIdentifier}
 			<h2>Give workspace access</h2>
 			<p>
-				The person signs in with the same account they registered with; Auth0 has already verified their
-				email address, so access starts at once.
+				The person signs in with the same account they registered with. Their email address was
+				confirmed when they first signed in, so access starts at once.
 			</p>
 			<form method="post" action="?/access">
 				<div class="field">

@@ -8,10 +8,12 @@ source is cited.
 
 ## In short
 
-- **Sign-in** uses Auth0
-  ([decision record 0013](../docs/decisions/0013-sign-in-with-auth0.md)).
-  Auth0 proves who someone is. The site's own database decides what they may
-  do.
+- **Sign-in is the site's own**
+  ([decision record 0024](../docs/decisions/0024-own-sign-in.md)). People sign
+  in with a code sent to their email address, or with a password they chose.
+  No outside sign-in service is used and nobody needs an account anywhere
+  else. The account only proves who someone is. The site's database decides
+  what they may do.
 - **Nobody reaches the workspace until the lead author adds them.** There is
   no open access to the workspace. Anyone with a verified email address may
   sign in to register as a contributor and keep a profile
@@ -219,28 +221,54 @@ requester to make an account or solve a puzzle.
 ## How sign-in works
 
 The "Sign in" link in the masthead of every page, and "Co-author sign-in" in
-the footer, start here.
+the footer, start here. The design follows the lead author's Grimbinder
+project (`worker/account/` there).
 
-1. `/sign-in` sends the person to Auth0's sign-in page, using the Auth0
-   server SDK (`@auth0/auth0-server-js`) with PKCE.
-2. Auth0 sends them back to `/sign-in/callback`. The site matches the sign-in
-   to a person (`src/lib/server/people.ts`):
-   - someone who has signed in before, by their Auth0 identifier;
-   - someone signing in for the first time, by their email address, **only
-     if Auth0 says the address is verified**, so nobody can claim an
-     invitation by typing someone else's address;
-   - the very first lead author, by the `LEAD_AUTHOR_EMAIL` secret.
+1. **A code by email.** At `/sign-in` the person types their email address.
+   The site emails a six-digit code and a link through Cloudflare Email
+   Service (`src/lib/server/sign-in-email.ts`). Typing the code, or opening
+   the link and pressing "Sign in", signs them in. The first time, this also
+   makes their account (`src/lib/server/accounts.ts`), so there is no separate
+   sign-up. A code:
+   - works once, for 15 minutes, and only the newest one for an address works;
+   - stops working after 5 wrong tries;
+   - is kept in the database only as a SHA-256 hash, like the link.
+2. **A password, if they chose one.** Anyone signed in can choose a password
+   at `/profile/password`; it is optional. Passwords are stored only as salted
+   PBKDF2-SHA256 hashes with 100,000 iterations, the most Workers allow
+   (Cloudflare, ["Web
+   Crypto"](https://developers.cloudflare.com/workers/runtime-apis/web-crypto/)).
+   The rules follow NIST SP 800-63B: at least 12 characters, any characters,
+   no forced mixing of character types. A wrong password gets the same answer
+   whether or not the address has an account, so the form cannot be used to
+   find out who has signed up. Changing a password signs out every other
+   browser.
+3. **A link from the lead author.** On the People page the lead author gets a
+   one-time sign-in link for each person they invite, to send them
+   personally. It works once, for 7 days, only for someone who has never
+   signed in, and making one is recorded in the activity log. After using it,
+   the person is offered a password.
+4. **Limits.** Each email address may try each step 5 times a minute, and
+   each network address 30 times (`wrangler.jsonc`, `signInLimit` and
+   `signInNetworkLimit`).
+5. **Matching to a person.** After sign-in the site matches the account to a
+   person (`src/lib/server/people.ts`):
+   - someone who has signed in before, by their account;
+   - someone signing in for the first time, by their email address. Every
+     account has proved it receives mail at its address, so nobody can claim
+     an invitation by typing someone else's address;
+   - the very first lead author, by the `LEAD_AUTHOR_EMAIL` setting.
 
-   Anyone else with a verified email address stays signed in and goes to
-   their contributor profile (`/profile`), where they can register to help;
-   the workspace stays closed to them. Everyone else is signed out of Auth0
-   again and told why.
-3. The session is an encrypted, HTTP-only cookie. It lasts at most 12 hours,
-   and ends after 4 hours without use.
-4. On every workspace page the site checks the database again, so removing
+   Anyone else stays signed in and goes to their contributor profile
+   (`/profile`), where they can register to help. The workspace stays closed
+   to them. Someone whose access was removed is not signed in.
+6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax,
+   Secure cookie. The database keeps only its hash (`sessions` table). It
+   lasts at most 12 hours and ends after 4 hours without use. "Sign out"
+   deletes it.
+7. On every workspace page the site checks the database again, so removing
    someone's access takes effect at once, even if they are signed in.
-5. "Sign out" ends the session here and at Auth0.
-6. The masthead's link reads "Workspace" instead of "Sign in" while a
+8. The masthead's link reads "Workspace" instead of "Sign in" while a
    `signed-in-hint` cookie is present (`src/lib/signed-in-hint.ts`). It holds
    only "1", is readable by the page's script because public pages are built
    ahead of time and cannot ask the Worker, and grants nothing: it is set at a
@@ -251,52 +279,78 @@ Workspace pages, sign-in and the request form are never cached, by the
 browser or by the offline copy (`src/service-worker/index.ts`), and cannot be
 shown inside another site's frame.
 
+On a copy of the site running on your own computer (`npm run preview`,
+`localhost`), no email is sent: the code and link are shown on the sign-in
+page instead.
+
 ## Setting up sign-in
 
-These steps need Trevor's Auth0 and Cloudflare accounts. Until they are done,
-the public site works as before, `/requests` saves requests (once the
-database is migrated, below), and `/sign-in` explains which settings are
-missing.
+Nothing secret has to be set. There are two settings, and the site works
+without the first.
 
-### 1. In Auth0
+### 1. The address codes come from
 
-1. Create a tenant if there is none (Auth0 dashboard, top-left menu).
-2. **Applications > Applications > Create Application**: name it
-   "Model Tribal ADR Code website", type **Regular Web Applications**.
-3. In its **Settings**:
-   - **Allowed Callback URLs**:
-     `https://model-tribal-adr-code.trevordgoldsmith.workers.dev/sign-in/callback`
-   - **Allowed Logout URLs**:
-     `https://model-tribal-adr-code.trevordgoldsmith.workers.dev/, https://model-tribal-adr-code.trevordgoldsmith.workers.dev/sign-in/refused`
-   - **Allowed Web Origins**: leave empty.
-   - Add the same addresses with `http://localhost:8787` to try sign-in on a
-     computer, and the custom domain once there is one.
-4. **Authentication**: choose how people sign in (for example Google, and
-   email with password). Turning off public sign-ups for the database
-   connection is optional, because the site refuses anyone not on its list,
-   but it keeps stray accounts out of the tenant.
-5. Keep the application's **Domain**, **Client ID** and **Client Secret** for
-   the next step. Do not paste them into GitHub, an issue or a chat.
+Cloudflare Email Service sends only from a domain onboarded in Email Service
+on the same Cloudflare account (Cloudflare, ["Send
+emails"](https://developers.cloudflare.com/email-service/get-started/send-emails/)).
+The workers.dev address cannot send email.
 
-### 2. In Cloudflare
+1. Cloudflare dashboard > **Compute > Email Service > Email Sending** >
+   **Onboard Domain**, and choose the domain. Cloudflare adds the DNS records
+   it needs (SPF, DKIM, DMARC and bounce handling).
+2. In `site/wrangler.jsonc`, set `SIGN_IN_EMAIL_FROM` under `vars` to an
+   address on that domain, such as `sign-in@example.org`, and merge the
+   change. The address is not secret.
 
-Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**,
-type **Secret** for each:
+Until this is done, the site sends no email. People sign in with a password,
+or with a link from the lead author, and `/sign-in` says so.
 
-| Name | Value |
-| --- | --- |
-| `AUTH0_DOMAIN` | The application's Domain, such as `example.us.auth0.com` |
-| `AUTH0_CLIENT_ID` | The application's Client ID |
-| `AUTH0_CLIENT_SECRET` | The application's Client Secret |
-| `SESSION_SECRET` | At least 32 random characters, used to encrypt the session cookie. For example, the output of `openssl rand -base64 48`. |
-| `LEAD_AUTHOR_EMAIL` | The email address the lead author signs in with |
+### 2. The first lead author
 
-Secrets are kept when the Worker is deployed again (Cloudflare, ["Wrangler
-configuration: source of
+Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**:
+`LEAD_AUTHOR_EMAIL`, the lead author's email address. It is set in the
+dashboard rather than in `wrangler.jsonc` only because that file is public.
+Settings made in the dashboard are kept when the Worker is deployed again
+(Cloudflare, ["Wrangler configuration: source of
 truth"](https://developers.cloudflare.com/workers/wrangler/configuration/#source-of-truth)).
-To rotate `SESSION_SECRET`, replace it; everyone is signed out.
 
 ### Database
+
+The tables are created by the files in `migrations/`. Workers Builds does not
+run them, because its automatically created API token does not include D1
+permission (Cloudflare, ["Workers Builds configuration: API
+token"](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/#api-token)).
+Apply them once per new migration, from `site/` (migration 0002 adds access
+levels and the sealed activity log; apply it before deploying the code that
+uses it):
+
+```sh
+npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
+```
+
+Wrangler records which migrations ran, so running it again is safe. For the
+copy used by `npm run preview`, use `npm run database:migrate:local`.
+
+### First sign-in
+
+Open `/sign-in`, enter the `LEAD_AUTHOR_EMAIL` address and ask for a code.
+If the site cannot send email yet, someone with access to the Cloudflare
+account can make a one-time link from `site/`:
+
+```sh
+npm run sign-in-link -- lead@example.org   # works once, for one hour
+```
+
+The same command helps anyone who has lost both their password and access to
+their email.
+
+The workspace menu has a People page, where co-authors, advisors, editors,
+contributors and nation reviewers are added by email address, and an Access
+page, where their level on each document is raised or lowered. Each person
+signs in at `/sign-in` with that address, or with the link the People page
+gives you for them. Their access starts at their first sign-in.
+
+## Database
 
 The tables are created by the files in `migrations/`. Workers Builds does not
 run them, because its automatically created API token does not include D1
@@ -346,12 +400,23 @@ database match.
 ## Testing
 
 `npm test` runs the unit tests in `tests/` with Vitest, including the database
-code against the real migrations in an in-memory SQLite database. Sign-in
-itself needs a real Auth0 application, so it is tried by hand after the
-secrets are set.
+code against the real migrations in an in-memory SQLite database. That
+includes codes, links, passwords and sessions (`tests/sign-in.test.ts`).
+Sending real email is tried by hand once `SIGN_IN_EMAIL_FROM` is set.
 
 ## Sources
 
+- Cloudflare, *Email Sending Workers API*, Cloudflare Email Service Docs,
+  https://developers.cloudflare.com/email-service/api/send-emails/workers-api/.
+- Cloudflare, *Web Crypto*, Cloudflare Workers Docs,
+  https://developers.cloudflare.com/workers/runtime-apis/web-crypto/.
+- Paul A. Grassi et al., Nat'l Inst. of Standards & Tech., *Digital Identity
+  Guidelines: Authentication and Lifecycle Management*, NIST SP 800-63B
+  (2017), https://pages.nist.gov/800-63-3/sp800-63b.html.
+- OWASP Foundation, *Authentication Cheat Sheet*,
+  https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html.
+- OWASP Foundation, *Password Storage Cheat Sheet*,
+  https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html.
 - Cloudflare, *Rate Limiting*, Cloudflare Workers Docs,
   https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/.
 - Cloudflare, *Time Travel and backups*, Cloudflare D1 Docs,

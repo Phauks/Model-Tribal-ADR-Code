@@ -16,7 +16,7 @@ const leadAuthorEmail = 'lead@example.org';
 async function signInLeadAuthor(): Promise<SignedInPerson> {
 	const result = await matchSignIn(
 		database,
-		{ subject: 'auth0|lead', email: 'Lead@Example.org', emailVerified: true, name: 'Lead Author' },
+		{ subject: 'account-lead', email: 'Lead@Example.org', emailVerified: true, name: 'Lead Author' },
 		leadAuthorEmail
 	);
 	if (result.outcome !== 'signed-in') throw new Error(result.outcome);
@@ -41,19 +41,19 @@ describe('matching a sign-in to a person', () => {
 		const lead = await signInLeadAuthor();
 		expect(lead.role).toBe('lead-author');
 		expect(await countLeadAuthors(database)).toBe(1);
-		expect((await activePersonBySubject(database, 'auth0|lead'))?.identifier).toBe(lead.identifier);
+		expect((await activePersonBySubject(database, 'account-lead'))?.identifier).toBe(lead.identifier);
 	});
 
 	it('does not trust an unverified email address', async () => {
 		const result = await matchSignIn(
 			database,
-			{ subject: 'auth0|fake', email: leadAuthorEmail, emailVerified: false, name: 'Impostor' },
+			{ subject: 'account-fake', email: leadAuthorEmail, emailVerified: false, name: 'Impostor' },
 			leadAuthorEmail
 		);
 		expect(result.outcome).toBe('email-not-verified');
 	});
 
-	it('links an invitation at the first sign-in, then matches by Auth0 identifier', async () => {
+	it('links an invitation at the first sign-in, then matches by account identifier', async () => {
 		const lead = await signInLeadAuthor();
 		await invitePerson(
 			database,
@@ -78,7 +78,7 @@ describe('matching a sign-in to a person', () => {
 
 		const otherAccount = await matchSignIn(
 			database,
-			{ subject: 'auth0|clerk-password', email: 'reviewer@nation.example', emailVerified: true, name: 'C' },
+			{ subject: 'account-clerk-password', email: 'reviewer@nation.example', emailVerified: true, name: 'C' },
 			leadAuthorEmail
 		);
 		expect(otherAccount.outcome).toBe('different-account');

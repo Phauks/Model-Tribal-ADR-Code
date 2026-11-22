@@ -37,7 +37,7 @@ beforeEach(async () => {
 	database = testDatabase();
 	const result = await matchSignIn(
 		database,
-		{ subject: 'auth0|lead', email: 'lead@example.org', emailVerified: true, name: 'Lead Author' },
+		{ subject: 'account-lead', email: 'lead@example.org', emailVerified: true, name: 'Lead Author' },
 		'lead@example.org'
 	);
 	if (result.outcome !== 'signed-in') throw new Error(result.outcome);

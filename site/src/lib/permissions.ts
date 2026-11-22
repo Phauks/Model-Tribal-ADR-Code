@@ -10,7 +10,7 @@
  *    author can raise or lower it for one document, or for every document
  *    of a kind, with a grant.
  *
- * Roles and grants are stored in the database, not in Auth0, so the lead
+ * Roles and grants are stored in the database, apart from accounts, so the lead
  * author can change them from the website and every change is recorded. Each
  * check runs on the server for every request; the page only hides controls a
  * person cannot use.
