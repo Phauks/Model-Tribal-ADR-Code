@@ -13,6 +13,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
+import { parseCsv } from '../csv.ts';
 import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
@@ -331,19 +332,11 @@ export function servableImages(): ServableImage[] {
 
 /* Copies of public documents --------------------------------------------- */
 
-/** A row of research/capture-index.json, with the fields read here (decision record 0027). */
-interface CaptureIndexRow {
-	key: string;
-	bytes: number | string;
-	sha256: string;
-	media_type?: string;
-	title?: string;
-	link?: string;
-	captured?: string;
-	derived_from?: string;
-	rights?: string;
-	redistribution?: string;
-}
+/**
+ * Topics whose files are never shared, whatever a record says: printouts from
+ * Westlaw and copies of journal articles (decision record 0027).
+ */
+const neverServedTopics = new Set(['westlaw', 'articles']);
 
 let publicCopyCache: PublicCopy[] | undefined;
 
@@ -355,29 +348,29 @@ let publicCopyCache: PublicCopy[] | undefined;
  */
 export function publicCopies(): PublicCopy[] {
 	if (!publicCopyCache) {
-		const indexPath = 'research/capture-index.json';
-		const rows = existsSync(path.join(repositoryRoot, indexPath))
-			? (JSON.parse(readText(indexPath)) as { files?: CaptureIndexRow[] }).files ?? []
-			: [];
+		const indexPath = 'research/capture-index.csv';
+		const rows = existsSync(path.join(repositoryRoot, indexPath)) ? parseCsv(readText(indexPath)) : [];
 		publicCopyCache = rows
 			.filter(
 				(row) =>
 					row.redistribution === 'yes' &&
+					!neverServedTopics.has(row.key.split('/')[0]) &&
+					!neverServedTopics.has(row.topic) &&
 					!row.derived_from &&
-					servedMediaTypes.has(row.media_type ?? '') &&
+					servedMediaTypes.has(row.media_type) &&
 					/^[0-9a-f]{64}$/.test(row.sha256) &&
 					/^[a-z0-9][a-z0-9._/-]*$/i.test(row.key) &&
 					!row.key.split('/').includes('..')
 			)
 			.map((row) => ({
 				key: row.key,
-				mediaType: row.media_type as string,
+				mediaType: row.media_type,
 				sha256: row.sha256,
 				bytes: Number(row.bytes),
-				links: (row.link ?? '').split(/\s+/).filter((link) => linkForMatching(link)),
-				captured: (row.captured ?? '').slice(0, 10),
-				title: row.title ?? row.key,
-				rights: row.rights ?? ''
+				links: row.link.split(/\s+/).filter((link) => linkForMatching(link)),
+				captured: row.captured.slice(0, 10),
+				title: row.title || row.key,
+				rights: row.rights
 			}))
 			.filter((copy) => copy.links.length > 0)
 			.sort((first, second) => first.title.localeCompare(second.title));

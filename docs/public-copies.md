@@ -19,7 +19,7 @@ For a Federal Register document, the source record usually links the document's 
 
 ## One index for the bucket
 
-Every file in the private bucket, copies included, has one row in the capture index, `research/capture-index.csv` and `.json` (decision record 0027). A copy's row has:
+Every file in the private bucket, copies included, has one row in the capture index, `research/capture-index.csv` (decision record 0027). A copy's row has:
 
 - `key`: `govinfo/<package>/<file>.pdf` for GovInfo files (for example `govinfo/STATUTE-108/STATUTE-108-Pg4791.pdf`), or `<host>/<path>` for other government sites.
 - `link`: every address the document was published at, separated by spaces, with the address that serves the PDF directly first. The site matches a page's link against all of them.

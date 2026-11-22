@@ -144,3 +144,19 @@ describe('byte ranges', () => {
 		expect(isIndexedFile({ size: copy.bytes, customMetadata: {} } as never, copy)).toBe(true);
 	});
 });
+
+describe('reading the capture index', async () => {
+	const { parseCsv } = await import('../src/lib/csv.ts');
+	it('reads quoted fields with commas, quotes and line breaks', () => {
+		const rows = parseCsv('key,title,link\r\na.pdf,"Rule 2.4, ""Lawyer""",https://x.gov/a.pdf https://y.gov/b\nb.pdf,"two\nlines",\n');
+		expect(rows).toEqual([
+			{ key: 'a.pdf', title: 'Rule 2.4, "Lawyer"', link: 'https://x.gov/a.pdf https://y.gov/b' },
+			{ key: 'b.pdf', title: 'two\nlines', link: '' }
+		]);
+	});
+
+	it('matches Python on the real index header', () => {
+		const [row] = parseCsv('key,bytes,redistribution\nwestlaw/x.pdf,10,no\n');
+		expect(row).toEqual({ key: 'westlaw/x.pdf', bytes: '10', redistribution: 'no' });
+	});
+});

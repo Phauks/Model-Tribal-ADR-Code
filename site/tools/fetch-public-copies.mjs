@@ -27,12 +27,13 @@
  * --out keeps the downloads and writes DIR/plan.json, one entry per file.
  * --file runs mirror_captures.py add for each new file, with --captures
  * CAPTURES (the local captures folder the script files into). Files already
- * in research/capture-index.json, matched by SHA-256, are not filed again.
+ * in research/capture-index.csv, matched by SHA-256, are not filed again.
  */
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+import { parseCsv } from '../src/lib/csv.ts';
 import { citationParts } from '../src/lib/legal-citations.ts';
 import { nations, repositoryRoot, sources } from '../src/lib/server/content.ts';
 
@@ -140,9 +141,9 @@ for (let start = 0; start < numbers.length; start += 20) {
 }
 
 /** The capture index's SHA-256 values, so a file already filed is not filed twice. */
-const indexPath = path.join(repositoryRoot, 'research', 'capture-index.json');
+const indexPath = path.join(repositoryRoot, 'research', 'capture-index.csv');
 const indexed = new Map(
-	existsSync(indexPath) ? JSON.parse(readFileSync(indexPath, 'utf8')).files.map((row) => [row.sha256, row]) : []
+	existsSync(indexPath) ? parseCsv(readFileSync(indexPath, 'utf8')).map((row) => [row.sha256, row]) : []
 );
 
 /** The key of a copy: govinfo/<package>/<file> for GovInfo, else <host>/<path>. */

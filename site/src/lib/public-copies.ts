@@ -7,7 +7,7 @@
  * a government site that may be slow, moved or down. The original address
  * stays the cited source.
  *
- * The list comes from the capture index, research/capture-index.json
+ * The list comes from the capture index, research/capture-index.csv
  * (decision record 0027), which has one row for every file in the bucket.
  * Only rows whose redistribution column says "yes" are listed here, and only
  * PDF files, so a private capture (a Westlaw printout, a nation's
