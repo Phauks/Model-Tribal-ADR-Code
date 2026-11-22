@@ -32,7 +32,7 @@ and says so.
 | [0018](0018-document-version-history.md) | Record every version of a document, and how its key clauses changed | Accepted |
 | [0019](0019-story-records.md) | Record stories as pointers with credit, permissions and protocols, never as text | Proposed |
 | [0020](0020-file-every-contribution-from-a-person.md) | Keep a signed filing for every contribution that comes from a person | Proposed |
-| [0021](0021-edit-drafts-in-the-browser-publish-by-pull-request.md) | Edit drafts together in the browser; publish them by pull request | Proposed |
+| [0021](0021-edit-drafts-in-the-browser-keep-essays-in-the-bucket.md) | Edit drafts together in the browser; keep essays in the private bucket | Proposed |
 | [0023](0023-permission-levels-per-document.md) | Give each person a level on each document; keep a sealed activity log | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

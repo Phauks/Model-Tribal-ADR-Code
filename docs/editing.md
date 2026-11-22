@@ -3,8 +3,8 @@
 How co-authors and contributors will write and edit essays and other content
 on the website once it is running: the editor, working on the same draft at
 the same time, comments, version history, images and tables, and how a
-finished draft becomes part of the book. This is a **proposal**
-([decision record 0021](decisions/0021-edit-drafts-in-the-browser-publish-by-pull-request.md),
+finished essay is published and reaches the book. This is a **proposal**
+([decision record 0021](decisions/0021-edit-drafts-in-the-browser-keep-essays-in-the-bucket.md),
 status Proposed). Nothing here is built yet, and no code will be written until
 the lead author approves the approach.
 
@@ -15,14 +15,21 @@ Nov. 21, 2026.
 
 ## In short
 
-- **Work in progress lives in Cloudflare; finished text lives in git.**
-  Drafts, comments, versions and images never touch GitHub (see
-  [Why the finished text stays in git](#why-the-finished-text-stays-in-git-not-in-d1-or-r2)).
-- **The Markdown files in git stay the published text**
-  ([decision record 0004](decisions/0004-content-as-plain-files.md)). The
-  website gets a drafting room, not a second copy of the book. When a draft is
-  ready, the website opens a pull request with the changed Markdown, and the
-  usual checks and merge publish it.
+- **Essays live in the private R2 bucket**, from first draft to final
+  publication (lead author's direction, Nov. 22, 2026). Drafts, saved
+  versions, comments and images never touch GitHub. Each published version is
+  a new file in the bucket that is never overwritten, protected by a bucket
+  lock.
+- **Git gets an automatic, read-only copy** of each published version, made
+  by a scheduled GitHub workflow that fetches it from the website's public
+  copy. It keeps a public history and feeds the print and ebook builds,
+  without any Cloudflare key in GitHub or any GitHub key on the website (see
+  [Where published essays live](#where-published-essays-live)).
+- **Research records stay in git** as they are now (sources, nation
+  profiles, document histories, glossary entries;
+  [decision record 0004](decisions/0004-content-as-plain-files.md)). Only
+  essays, and later commentary and other long prose written by people, move
+  to the bucket.
 - **Our own small editor**, built on ProseMirror, offers exactly what the
   print book, the ebook and the website can all show: headings, paragraphs,
   **bold**, *italic*, underline, links, lists, quotations, tables, figures
@@ -37,10 +44,10 @@ Nov. 21, 2026.
   changes. Sign-offs keep using the existing review records.
 - **Version history** has three layers: every keystroke inside the draft
   room, named versions a writer saves ("Sent to advisors"), and published
-  versions, which are git commits on the content version track.
-- **Cost**: on the Workers Free plan this fits inside the daily free
-  allowance for a small writing team; on the Workers Paid plan it fits inside
-  the included usage, so the cost is the plan's $5 a month minimum. A hosted
+  versions, numbered per essay and kept in the bucket for good.
+- **Cost**: the account is on the Workers Paid plan (lead author, Nov. 22,
+  2026), and the expected use fits inside its included usage, so the cost is
+  the plan's $5 a month minimum. A hosted
   suite such as Collabora Online or Tiptap's paid platform is not needed.
 
 ## What writers can do
@@ -86,51 +93,80 @@ committed to git, for the same reason nations' seals are not: a public history
 cannot be fully rewritten if someone later asks for removal
 ([official-images.md](official-images.md), "Storage").
 
-What goes into git is a **media record** (`content/media/<id>.yaml`), the same
-pattern as a source record: the alternative text (required before a draft can
-be submitted), the credit, where it came from, the permission to use it, the
-SHA-256 of the file and the file's path in the bucket. Material contributed by
+Each image has a **media record** kept with the essay in the bucket (and
+copied to git with it), the same pattern as a source record: the alternative
+text (required before an essay can be published), the credit, where it came
+from, the permission to use it, the SHA-256 of the file and the file's path
+in the bucket. Material contributed by
 a person also carries the filing id and the shared consent fields from the
 contributions work (pull request #57, `docs/contributions.md`); a draft that
-uses contributed material without a filing cannot be submitted. The website,
+uses contributed material without a filing cannot be published. The website,
 print and ebook builds read the file from the bucket by that path.
 
-## Why the finished text stays in git, not in D1 or R2
+## Where published essays live
 
-The lead author asked (Nov. 21, 2026) why the text should go to GitHub at all,
-rather than living in the site's D1 database or R2 bucket. Three ways were
-compared (project analysis):
+The first version of this proposal kept drafts in Cloudflare and sent each
+finished essay to git by pull request. The lead author asked why the text
+should go to GitHub at all, and on Nov. 22, 2026 said most editing will
+happen in the R2 bucket and asked why published essays should not stay there
+too. Three ways were compared (project analysis):
 
-| | Git holds the finished text (proposed) | D1 or R2 holds everything | Both, kept in sync |
+| | Bucket is home, git gets a copy (proposed) | Bucket only | Git is home (first proposal) |
 | --- | --- | --- | --- |
-| Drafts, comments, named versions, images | Cloudflare (Durable Object, D1, R2) | Cloudflare | Cloudflare |
-| Finished, approved text | Markdown in git | Rows in D1 or files in R2 | Both, with one copied to the other |
-| Public record of every change | Git history, readable by anyone, as the charter's legislative-style history expects ([decision record 0004](decisions/0004-content-as-plain-files.md)) | Would have to be built: a public change log page and diff viewer | Git, if the copy never fails |
-| Checks before publishing | The existing ones: record lint, schema validation, site and print builds on every pull request | Would have to be rebuilt inside the Worker | Run twice, or only on one side |
-| Website build | Unchanged: the site is built ahead of time from the files (about 981 pages) | The build would read D1 or R2. Workers Builds' automatic token has no D1 permission ([site/COLLABORATION.md](../site/COLLABORATION.md), "Database"), so it needs a new Cloudflare token | Unchanged |
-| Print and ebook build | Unchanged: GitHub Actions reads the files | Needs a Cloudflare token inside GitHub, which [decision record 0006](decisions/0006-secrets-only-in-cloudflare.md) rules out, or moving the print build to Cloudflare | Unchanged |
-| Rebuilding an exact edition later | Check out the commit or tag | Needs dated snapshots kept for good. D1's own point-in-time recovery reaches back 30 days on the Paid plan and 7 on Free (Cloudflare, "D1 limits"); R2's bucket documentation lists lifecycle rules and bucket locks but no object versioning (Cloudflare, "R2 buckets," as read Nov. 21, 2026) | Check out the commit |
-| Research threads and Claude | Work on the files as now (about 5,900 files under `content/`, measured) | Would need tools to read and write the database | Two places to edit, so changes can collide |
-| Copies kept elsewhere | Every clone of the repository and GitHub itself | Only Cloudflare, unless exports are scheduled | Both |
-| Private material | Never enters git; restricted or contributed material stays in R2 under the consent rules | Same | Same |
-| Cost | Nothing new | D1 and R2 free allowances are ample at this size | Same as git |
-| What it adds | A GitHub App, or a person, to open the pull request | Instant publishing from the website, no GitHub step | The most moving parts |
+| Drafts, comments, saved versions, images | Cloudflare (Durable Object, D1, R2) | Cloudflare | Cloudflare |
+| Published essays | Never-overwritten files in R2 | Same | Markdown in git, by pull request |
+| Publishing step | One button on the website | Same | A pull request: a GitHub App on the website, or a person |
+| Website write access to GitHub | None | None | Needed for automatic pull requests |
+| Public record of every change | The website's history page for each essay, plus the git copy | The website's history page only | Git history |
+| Print and ebook build | Fetches the published essays from the website's public copy; no secret | Must read the private bucket: a Cloudflare key in GitHub, which [decision record 0006](decisions/0006-secrets-only-in-cloudflare.md) rules out, or moving the build to Cloudflare | Reads the files |
+| Rebuilding an exact edition later | Each version is a fixed file with a SHA-256 that the build records | Same, if the bucket lock holds | Check out the commit |
+| Copies outside Cloudflare | The git copy, and every clone of it | None, unless exports are scheduled | Git |
+| Checks before publishing | Run by the website at publish time (below) | Same | The existing pull request checks |
 
-**Recommendation (project analysis):** keep the split the proposal already
-makes. Everything still being worked on lives in Cloudflare and never touches
-GitHub: the draft text, every live change, named versions, comments, uploads
-and images. Only the text that is approved for the book goes into git, once
-per submission, where the checks, the public history and the print build
-already are. Moving the finished text to D1 or R2 would save the pull request
-step, but the project would then have to rebuild its checks, its public change
-history and its edition snapshots, and give GitHub a Cloudflare credential for
-the print build. Keeping both in sync would leave two places that can
-disagree.
+**Recommendation (project analysis):** the bucket is the home for essays, and
+git keeps an automatic copy. This gives the lead author's one-step publishing
+from the bucket while the print build, an outside backup and a public history
+keep working with no new secrets.
 
-If the pull request step turns out to slow writers down, the website can
-publish an essay to the live site straight from D1 as a "preview" and still
-send it to git for the book; that can be added later without changing this
-design.
+### How it works
+
+- **Publishing** is one button for someone with full access. The website
+  first runs the checks the print build would: every citation key and
+  glossary link must exist (the same Markdown reader the print build uses
+  rejects unknown ones, `pdf/pipeline/markdown.mjs`), every figure needs
+  alternative text and a credit, and contributed material needs a filing.
+  Then it writes the essay as a new file, `essays/<id>/versions/<number>.md`,
+  with its media records, and records the version, the SHA-256 and who
+  published it in D1 and in `events`.
+- **Never overwritten.** R2 does not keep earlier copies of an object, so each
+  version gets its own file name. A bucket lock on `essays/` stops any file
+  there being deleted or overwritten "indefinitely, until the lock is
+  explicitly removed" (Cloudflare, "Bucket locks"). If a nation asks for
+  material to be removed ([docs/requests.md](requests.md)), the lead author
+  lifts the lock for that removal, which is deliberate friction.
+- **Public copy.** The website serves every published version as Markdown at
+  a public address (it is already public as a web page), with a list of
+  versions and their SHA-256 values. Essays held back for a nation's review
+  or restricted are not listed.
+- **Git copy.** A scheduled GitHub workflow (hourly, and on demand) reads that
+  list, downloads new versions, checks their SHA-256 and commits them to a
+  separate `published-essays` branch, one commit per version. It is a branch
+  of its own, not `main`, for two reasons: `main` accepts changes only by pull
+  request with checks ([decision record 0008](decisions/0008-pull-requests-without-required-approval.md)),
+  and a pull request opened by a workflow's own token does not start other
+  workflows, so the checks would never run (GitHub Docs, "Triggering a
+  workflow," seen as a search result). A copy branch can also be rewritten
+  for a removal request without touching `main`'s history.
+- **Print and ebook.** The build fetches the published essays it needs from
+  the public copy and records each essay's version and SHA-256 in the book's
+  build record, so an edition can be rebuilt exactly.
+- **Website pages.** Essay pages are rendered by the Worker from the bucket
+  and cached, instead of being built ahead of time. Sources and glossary
+  entries still come from git with each site build, so an essay that cites a
+  new source can be published once that source's record is merged.
+- **The three essays already in `content/essays/`** move to the bucket once,
+  as version 1 of each; `content/essays/` then holds a note pointing to the
+  copy branch.
 
 ## Working on the same draft at the same time
 
@@ -160,7 +196,7 @@ design.
 4. Comment-level connections receive the text and can add comments; the
    object drops any text change they send. Contribute-level connections can
    edit and save named versions. Full access can also restore an earlier
-   version, resolve or hide others' comments, and submit the draft.
+   version, resolve or hide others' comments, and publish the essay.
 5. Access is checked again on every named save and at least once a minute
    while edits arrive, so a removed or lowered grant takes effect during a
    session, not only at the next sign-in (OWASP, *Authorization Cheat Sheet*,
@@ -234,7 +270,7 @@ computers.
 | --- | --- | --- | --- |
 | Live history | Every change, merged | The draft's Durable Object (Yjs updates, compacted into a snapshot as they pile up) | While the draft is open |
 | Named versions | A full copy of the draft as Markdown when a writer saves a version ("Sent to advisors"), with who, when and a note | Markdown in the private bucket under `drafts/<id>/versions/`; a row in D1; an `events` row | For good, unless the lead author deletes a draft |
-| Published versions | What readers and the book see | git commits from merged pull requests, numbered on the content version track ([decision record 0003](decisions/0003-three-version-tracks.md)) | For good |
+| Published versions | What readers and the book see | Never-overwritten files in the bucket under `essays/<id>/versions/`, numbered per essay, with an automatic copy in git | For good (bucket lock) |
 
 Any named version can be compared with any other, or with the published text,
 and restored by someone with full access (restoring creates a new version, so
@@ -244,36 +280,26 @@ constitutions, is a separate record ([decision record 0018](decisions/0018-docum
 
 ## From draft to book
 
-1. Someone with full access chooses **Submit for review**. The Worker writes
-   the Markdown and any new media records, opens a branch named after the
-   draft, commits, and opens a pull request that names the draft, its writers
-   and its open comments.
-2. The pull request runs the usual checks (record lint, site build, print
-   build). Merging publishes it, as with every other change.
-3. The draft's status becomes "submitted", then "published" when the pull
-   request merges.
+1. Someone with full access chooses **Publish**. The checks under
+   [How it works](#how-it-works) run; if any fail, the room lists what to fix.
+2. The essay is written to the bucket as a new version and the essay page
+   changes at once.
+3. Within the hour, the git copy picks up the new version; the next print or
+   ebook build uses it.
 
 **Untouched text stays untouched.** The essays are hand-wrapped at about 76
 characters. Written back naively, an essay changes on 16 to 85 percent of its
-lines even when nobody edited it (measured), which would bury real edits in
-the pull request. The proposal writes back only the paragraphs, list items and
-tables that changed and copies every other block exactly as it was; with no
-edits the file comes back identical, and one edit changes only that paragraph
+lines even when nobody edited it (measured), which would bury real edits when
+two versions are compared, on the website's history page or in the git copy.
+The proposal writes back only the paragraphs, list items and tables that
+changed and copies every other block exactly as it was; with no edits the
+file comes back identical, and one edit changes only that paragraph
 (measured). Changed paragraphs will be wrapped to the same width before
 writing (not yet built).
 
-**If the published file changed while the draft was open**, the room is told
-when it next loads, and shows which paragraphs changed underneath it, so a
-writer can accept them before submitting.
-
-**Opening the pull request** needs the Worker to act on GitHub. The proposal
-is a GitHub App installed only on this repository with permission to write
-contents and pull requests, its private key stored as a Cloudflare secret
-([decision record 0006](decisions/0006-secrets-only-in-cloudflare.md));
-a Worker authenticating as a GitHub App with its key in a Worker secret is a
-documented pattern (gr2m, `cloudflare-worker-github-app-example`). The
-alternative is that the website only produces the Markdown and a person opens
-the pull request, which keeps all write access to GitHub off the website.
+**If someone published while a draft was open**, the room says so and shows
+which paragraphs changed in the published version, so a writer can take them
+in before publishing again.
 
 ## Credit
 
@@ -285,7 +311,7 @@ and on the website come from the contributor profile being designed in the
 thread "Design contributor registration and profiles"
 (`docs/contributor-profiles.md`, decision record 0022, in progress). The
 editor reads the version of the profile the person last **confirmed**, at the
-moment a draft is submitted, rather than copying it or reading fields the
+moment an essay is published, rather than copying it or reading fields the
 person may still be editing.
 
 ## Data
@@ -295,21 +321,23 @@ tiers work, which adds migration `0002`):
 
 | Table | Holds |
 | --- | --- |
-| `drafts` | One row per draft: the document kind and identifier (the planned file id for a new essay), the published commit it started from, status (drafting, submitted, published, abandoned), the pull request number. |
+| `drafts` | One row per draft: the document kind and identifier (the planned file id for a new essay), the published version it started from, status (drafting, published, abandoned). |
+| `published_versions` | Each published version: essay, number, path in the bucket, SHA-256, who published it and when, whether it is listed publicly. |
 | `draft_versions` | Named versions: who, when, note, SHA-256 of the Markdown, its path in the bucket. |
 | `draft_contributions` | Who wrote, edited or commented on a draft, for credits. |
 | `comments` | Comment threads: the anchor (Yjs relative positions and the quoted words), author, replies, status. |
 | `media_uploads` | Uploaded files waiting to become media records. |
 
-The draft text itself lives in the Durable Object's own storage, and named
-versions in the private bucket. Saving a named version, restoring one,
-submitting, and resolving or hiding a comment each add an `events` row; the
-thousands of small live changes do not.
+The draft text itself lives in the Durable Object's own storage; named and
+published versions live in the private bucket. Saving a named version,
+restoring one, publishing, and resolving or hiding a comment each add an
+`events` row; the thousands of small live changes do not.
 
 ## Cost
 
-Durable Objects run on both Workers plans; the Free plan can use only the
-SQLite storage the proposal uses (Cloudflare, "Durable Objects pricing").
+The account is on the Workers Paid plan (lead author, Nov. 22, 2026).
+Durable Objects run on both plans; the Free plan can use only the SQLite
+storage the proposal uses (Cloudflare, "Durable Objects pricing").
 
 | | Workers Free | Workers Paid |
 | --- | --- | --- |
@@ -328,7 +356,8 @@ never hibernated, two hours is 7,200 s × 0.125 GB = 900 GB-s, about 7 percent
 of the Free plan's daily allowance; with hibernation it is far less. A draft
 the size of the longest essay takes about 186 KB as a shared document
 (measured), so 5 GB holds thousands of drafts. D1 rows and bucket storage
-for named versions are small next to the limits already in use. The other
+for named and published versions (a few hundred kilobytes per essay
+version) are small next to the limits already in use. The other
 options cost more: Tiptap's platform starts at $49 a month (Tiptap,
 "Pricing"), and Collabora needs a server of its own.
 
@@ -347,8 +376,10 @@ proposal.
 2. **Draft rooms**: the Durable Object, presence, named versions,
    `/workspace/drafts`.
 3. **Comments** on drafts.
-4. **Submit for review** as a pull request (or Markdown download, per the
-   decision above).
+4. **Publishing**: published versions in the bucket with a bucket lock, the
+   public copy, the git copy workflow, essay pages rendered from the bucket,
+   the print and ebook builds reading the public copy, and moving the three
+   existing essays.
 5. **Figures and media records**, including images in the Typst and EPUB
    builds.
 6. Later: suggested changes (tracked changes), offline drafting, wrapping of
@@ -356,13 +387,15 @@ proposal.
 
 ## Open questions for the lead author
 
-1. Approve the approach (ProseMirror + Yjs on Durable Objects, Markdown in git
-   stays the published text)?
-2. Should the website open pull requests itself through a GitHub App, or only
-   produce the Markdown for a person to submit?
-3. Keep underline, and if so, how should the style guide limit it?
-4. Which Workers plan the account is on. Both work; the Paid plan removes the
-   daily caps.
+1. Approve the approach (ProseMirror + Yjs on Durable Objects; essays live in
+   the bucket, with an automatic copy in git)?
+2. Keep underline, and if so, how should the style guide limit it?
+3. How published essays count toward the content version track
+   ([decision record 0003](decisions/0003-three-version-tracks.md)). The
+   proposal: each essay has its own version numbers, and the book's copyright
+   page lists the version of each essay it prints.
+
+Settled: the account is on the Workers Paid plan (lead author, Nov. 22, 2026).
 
 ## Evidence
 
@@ -398,7 +431,13 @@ shared files at `spikes/editing/`, like the ebook test build (decision record
   and "Time Travel and backups" (last updated Nov. 6, 2026),
   [developers.cloudflare.com/d1/reference/time-travel/](https://developers.cloudflare.com/d1/reference/time-travel/).
 - Cloudflare, "Buckets," *R2* (last updated Apr. 21, 2026),
-  [developers.cloudflare.com/r2/buckets/](https://developers.cloudflare.com/r2/buckets/).
+  [developers.cloudflare.com/r2/buckets/](https://developers.cloudflare.com/r2/buckets/),
+  and "Bucket locks" (last updated Oct. 28, 2026),
+  [developers.cloudflare.com/r2/buckets/bucket-locks/](https://developers.cloudflare.com/r2/buckets/bucket-locks/).
+- GitHub Docs, "Triggering a workflow" (on workflows started by the
+  `GITHUB_TOKEN`),
+  [docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)
+  (seen as a search result on Nov. 22, 2026; not read in full).
 - Cloudflare, "Durable Object class exports" (last updated Sept. 28, 2026),
   [developers.cloudflare.com/durable-objects/reference/durable-objects-migrations/](https://developers.cloudflare.com/durable-objects/reference/durable-objects-migrations/).
 - Cloudflare, PartyKit repository and `y-partyserver` README,
@@ -423,9 +462,6 @@ shared files at `spikes/editing/`, like the ebook test build (decision record
   (version 4.0.0 used in the test).
 - jillesme, `sveltekit-cloudflare-durable-objects`,
   [github.com/jillesme/sveltekit-cloudflare-durable-objects](https://github.com/jillesme/sveltekit-cloudflare-durable-objects).
-- gr2m, `cloudflare-worker-github-app-example`,
-  [github.com/gr2m/cloudflare-worker-github-app-example](https://github.com/gr2m/cloudflare-worker-github-app-example)
-  (its webhook signature check is incomplete; a pattern, not code to copy).
 - OWASP Foundation, *Authorization Cheat Sheet*,
   [cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
   (cited by the permission tiers work; not read for this page).
