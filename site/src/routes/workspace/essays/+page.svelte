@@ -1,15 +1,35 @@
 <script lang="ts">
+	// "Start an essay" is a plus button beside the heading that opens its form
+	// in a dialog (Trevor asked on Nov. 22, 2026), rather than a form at the
+	// foot of the list.
+	import Plus from '@lucide/svelte/icons/plus';
+	import Modal from '#lib/components/Modal.svelte';
 	import { accessLevelLabels } from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
+	let startDialog: Modal<string> | undefined = $state();
 </script>
 
 <svelte:head>
 	<title>Essays · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<h1>Essays</h1>
+<div class="heading-row">
+	<h1>Essays</h1>
+	{#if data.canStart}
+		<button
+			class="icon-button start-button"
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Start an essay"
+			title="Start an essay"
+			onclick={() => startDialog?.open()}
+		>
+			<Plus size={26} />
+		</button>
+	{/if}
+</div>
 <p>
 	Essays are kept in the site’s private storage. Every save keeps a new version and never overwrites an
 	earlier one. Readers see a version only once someone with full access publishes it.
@@ -76,30 +96,58 @@
 {/if}
 
 {#if data.canStart}
-	<form method="post" action="?/start" class="panel">
-		<h2>Start an essay</h2>
-		<div class="field">
-			<label for="essay-title">Title</label>
-			<input type="text" id="essay-title" name="title" required />
-		</div>
-		<div class="field">
-			<label for="essay-part">Where it goes</label>
-			<select id="essay-part" name="part">
-				{#each data.parts as part (part.value)}
-					<option value={part.value}>{part.label}</option>
-				{/each}
-			</select>
-		</div>
-		<div class="field">
-			<label for="essay-identifier">Address</label>
-			<p class="hint">Lower-case words joined by hyphens, such as why-consent-matters. It becomes the page’s address and cannot be changed later.</p>
-			<input type="text" id="essay-identifier" name="identifier" required pattern="[a-z0-9]+(-[a-z0-9]+)*" />
-		</div>
-		<button class="button" type="submit">Start the essay</button>
-	</form>
+	<Modal bind:this={startDialog} title="Start an essay" fitContent>
+		<form method="post" action="?/start" id="start-essay-form">
+			<div class="field">
+				<label for="essay-title">Title</label>
+				<input type="text" id="essay-title" name="title" required />
+			</div>
+			<div class="field">
+				<label for="essay-part">Where it goes</label>
+				<select id="essay-part" name="part">
+					{#each data.parts as part (part.value)}
+						<option value={part.value}>{part.label}</option>
+					{/each}
+				</select>
+			</div>
+			<div class="field">
+				<label for="essay-identifier">Address</label>
+				<p class="hint" id="essay-identifier-hint">Lower-case words joined by hyphens, such as why-consent-matters. It becomes the page’s address and cannot be changed later.</p>
+				<input
+					type="text"
+					id="essay-identifier"
+					name="identifier"
+					required
+					pattern="[a-z0-9]+(-[a-z0-9]+)*"
+					aria-describedby="essay-identifier-hint"
+				/>
+			</div>
+		</form>
+		{#snippet actions()}
+			<button class="button" type="submit" form="start-essay-form">Start the essay</button>
+			<button class="button button-quiet" type="button" onclick={() => startDialog?.close()}>Cancel</button>
+		{/snippet}
+	</Modal>
 {/if}
 
 <style>
+	.heading-row {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+
+	.heading-row h1 {
+		margin-right: auto;
+	}
+
+	/* Round, with a light fill, so it reads as a button on the page. */
+	.start-button {
+		flex: none;
+		border-radius: 50%;
+		background: var(--color-surface);
+		color: var(--color-link);
+	}
 	.essay-rows {
 		list-style: none;
 		padding: 0;
