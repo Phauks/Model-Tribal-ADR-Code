@@ -127,6 +127,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Makah Indian Tribe of the Makah Indian Reservation
+- kind: email-general
+  value: info@makah.com
+  label: General office email shown on the nation's website
+  source: makah-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Makah Tribe Logo

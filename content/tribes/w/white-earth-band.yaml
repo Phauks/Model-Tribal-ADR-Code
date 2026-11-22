@@ -71,6 +71,22 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   locator: home page
+- kind: contact-page
+  value: https://www.whiteearth.com/contact
+  label: Contact page on the nation's website
+  source: whiteearth-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "White Earth Nation | Contact". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: contact.wen@whiteearth-nsn.gov
+  label: General office email shown on the nation's website
+  source: whiteearth-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: White Earth Nation
@@ -203,6 +219,58 @@ justice_institutions:
     so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
     with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
     see research/reviews/2026-11-22-service-links.json, service-421.'
+- kind: district-court
+  name: White Earth District Court
+  link: https://www.whiteearth.com/divisions/judicial-services
+  part_of: White Earth Nation Tribal Court
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The White Earth District Court consists of a Chief Judge and two associate judges.”. The page says the District Court also handles juvenile court and child welfare matters; no separate juvenile court is named. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, white-earth-band#2).'
+  appeals_to:
+    court: White Earth Appellate Court
+    source: white-earth-nation-judicial-services
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “Appeals from the District Court shall be heard by a panel of three Appellate Court Justices.”.'
+- kind: court-of-appeals
+  name: White Earth Appellate Court
+  link: https://www.whiteearth.com/divisions/judicial-services
+  part_of: White Earth Nation Tribal Court
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The White Earth Appellate Court consists of a Chief Justice and two associate justices.”. No address given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, white-earth-band#3).'
+- kind: peacemaking-program
+  name: Peacemaking
+  link: https://www.whiteearth.com/divisions/judicial-services
+  part_of: White Earth Nation Tribal Court
+  source: white-earth-nation-judicial-services
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Peacemaking plays an important role in indigenous justice practices.”. Described in the Judicial Services page; the peacemaking subpage (whiteearth.com/divisions/judicial-services/peacemaking) was not fetched. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, white-earth-band#4).'
+- kind: healing-to-wellness-court
+  name: White Earth/Mahnomen County Healing to Wellness Drug Court
+  link: https://www.whiteearth.com/divisions/judicial-services
+  part_of: White Earth Nation Tribal Court
+  source: white-earth-nation-judicial-services
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “White Earth/Mahnomen County Healing to Wellness Drug Court”. A joint program with Mahnomen County, per the page heading. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, white-earth-band#5).'
+- kind: other
+  name: White Earth/Becker & Mahnomen Counties DWI Court
+  link: https://www.whiteearth.com/divisions/judicial-services
+  part_of: White Earth Nation Tribal Court
+  source: white-earth-nation-judicial-services
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “White Earth/Becker & Mahnomen Counties DWI Court”. Joint DWI court program named in the page heading; it is not a Healing to Wellness court by its own name, so kind is ''other''. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, white-earth-band#6).'
 dispute_resolution:
   forums:
   - kind: restorative-justice

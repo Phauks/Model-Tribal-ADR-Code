@@ -97,6 +97,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: http://alabama-quassarte.org/contact/
+  label: Contact page on the nation's website
+  source: alabama-quassarte-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "CONTACT – Alabama-Quassarte Tribal Town". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: http://alabama-quassarte.org/wp-content/uploads/2017/11/cropped-alabama-quas-200-192x192.jpg

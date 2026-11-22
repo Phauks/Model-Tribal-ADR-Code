@@ -32,3 +32,19 @@ searches:
     the lead author''s order (own page, then directory entry): own-page, https://gunlaketribe-nsn.gov/tribal-justice/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-149
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://gunlaketribe-nsn.gov/tribal-justice/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page fetched successfully; names the Tribal Court and Supreme Court with address.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Match-e-be-nash-she-wish Band Pottawatomi Tribal Court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned nation pages and michiganlegalhelp.org; the nation's Tribal Court page is the one confirmed by fetch.

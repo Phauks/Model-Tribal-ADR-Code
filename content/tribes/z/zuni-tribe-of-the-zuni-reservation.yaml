@@ -156,6 +156,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-21'
   note: listed with the main phone (505) 782-7000 on the official home page
+- kind: contact-page
+  value: https://ashiwi.org/contact-us/
+  label: Contact page on the nation's website
+  source: ashiwi-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: logo image

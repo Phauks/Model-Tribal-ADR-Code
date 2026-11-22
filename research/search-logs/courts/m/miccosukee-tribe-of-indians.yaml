@@ -120,6 +120,14 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-156
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://miccosukee.com/miccosukee-tribe-history/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Returned a bot-challenge page ('Just a moment...', HTTP 403); not bypassed.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-115,
   cannot-tell). A person could open in a browser the pages that refused the project''s link checker: https://miccosukee.com/miccosukee-tribe-history/.
   No website of the nation''s own could be read; the Tribe''s office could be asked whether it runs a

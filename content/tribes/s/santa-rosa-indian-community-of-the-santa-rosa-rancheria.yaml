@@ -122,6 +122,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santa Rosa Indian Community of the Santa Rosa Rancheria, California
+- kind: contact-page
+  value: https://www.tachi-yokut-nsn.gov/contact
+  label: Contact page on the nation's website
+  source: tachi-yokut-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact | Santa Rosa Rancheria Tachi Yokut Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@tachi-yokut-nsn.gov
+  label: General office email shown on the nation's website
+  source: tachi-yokut-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/c62a49_83663d03aac54ecabb90300330d3b158%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/c62a49_83663d03aac54ecabb90300330d3b158%7Emv2.png

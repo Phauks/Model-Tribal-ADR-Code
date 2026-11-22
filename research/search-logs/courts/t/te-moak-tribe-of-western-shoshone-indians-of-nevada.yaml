@@ -1,0 +1,29 @@
+profile: content/tribes/t/te-moak-tribe-of-western-shoshone-indians-of-nevada.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.temoaktribe.com/judicial.shtml
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's judicial page names Te-Moak Judicial Court & Administration with a court clerk and phone number.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: BIA list names the Western Region CFR Court serving the Te-Moak Band of Western Shoshone Indians (Nevada).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts/western-region-cfr-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: The BIA Western Region page returned 403 Access denied when fetched directly; not retried.

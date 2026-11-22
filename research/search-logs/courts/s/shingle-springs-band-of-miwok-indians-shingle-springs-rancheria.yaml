@@ -1,0 +1,13 @@
+profile: content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://shinglespringsrancheria.com/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribal court page fetched with fetch.py; it names the Tribal Court and the joint Family Wellness Court.

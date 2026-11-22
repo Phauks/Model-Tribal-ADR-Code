@@ -129,6 +129,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Chickasaw Nation
+- kind: contact-page
+  value: https://chickasaw.net/Our-Nation/Contact.aspx
+  label: Contact page on the nation's website
+  source: chickasaw-our-nation-contact-aspx
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Chickasaw Nation". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: citizensupport@chickasaw.net
+  label: General office email shown on the nation's website
+  source: chickasaw-our-nation-contact-aspx
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: Chickasaw Nation Seal and Logo
@@ -324,6 +340,36 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Chickasaw Nation'
+- kind: district-court
+  name: District Court
+  link: https://judicial.chickasaw.net/Courts/District-Court.aspx
+  location:
+    place: Ada
+    state: OK
+  source: the-chickasaw-nation-judicial-department-district-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Supreme Court has full authority on any appeal from the District Court”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-chickasaw-nation#2).'
+  appeals_to:
+    court: Supreme Court
+    source: the-chickasaw-nation-judicial-department-district-court
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Supreme Court has full authority on any appeal from the District Court to affirm, reverse, modify or vacate any action in the District Court”.'
+- kind: peacemaking-program
+  name: Peacemaking Court
+  link: https://judicial.chickasaw.net/Courts/Peacemaking-Court.aspx
+  part_of: District Court
+  location:
+    place: Ada
+    state: OK
+  source: chickasaw-peacemaking-court-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Peacemaking Court is a division of the Chickasaw Nation District Court.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-chickasaw-nation#3).'
 dispute_resolution:
   forums:
   - kind: peacemaking

@@ -127,6 +127,22 @@ contacts:
   as_of: '2026-04-02'
   locator: 'record "Central Council of the Tlingit & Haida Indian Tribes of Alaska" (community: Juneau,
     object 84)'
+- kind: contact-page
+  value: https://tlingitandhaida.gov/contact/
+  label: Contact page on the nation's website
+  source: tlingitandhaida-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Tlingit & Haida". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: communitynavigator@tlingitandhaida.gov
+  label: General office email shown on the nation's website
+  source: tlingitandhaida-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://tlingitandhaida.gov/wp-content/uploads/cropped-Group-7.png
@@ -257,6 +273,38 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-034.'
+- kind: supreme-court
+  name: Tribal Supreme Court
+  link: https://tlingitandhaida.gov/governance/tribal-court/
+  location:
+    state: AK
+  source: central-council-of-the-tlingit-haida-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “2. Tribal Supreme Court (Highest Level)”. Named on the nation''s court page as the highest tribal appellate level, with a ''Procedures for Appealing to Tribal Supreme Court'' link. Not a separate batch entry. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, central-council-of-the-tlingit-and-haida-indian-tribes#2).'
+- kind: healing-to-wellness-court
+  name: Tlingit & Haida Wellness Court
+  link: https://tlingitandhaida.gov/governance/tribal-court/
+  part_of: Tribal Court
+  location:
+    state: AK
+  source: central-council-of-the-tlingit-haida-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Tlingit & Haida Wellness Court is an alternative to the traditional State of Alaska criminal justice system”. Adult wellness court described on the nation''s court page as a voluntary four-phase program. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, central-council-of-the-tlingit-and-haida-indian-tribes#3).'
+- kind: healing-to-wellness-court
+  name: Youth Healing to Wellness Court
+  link: https://tlingitandhaida.gov/governance/tribal-court/
+  part_of: Tribal Court
+  location:
+    state: AK
+  source: central-council-of-the-tlingit-haida-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Youth Healing to Wellness Court”. Listed as a heading on the nation''s court page, with a contact address for the wellness court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, central-council-of-the-tlingit-and-haida-indian-tribes#4).'
 dispute_resolution:
   forums:
   - kind: restorative-justice

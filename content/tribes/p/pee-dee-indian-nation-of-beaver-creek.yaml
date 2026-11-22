@@ -58,6 +58,14 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+- kind: phone
+  value: (803) 446-1400
+  label: Tribal government office
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: As listed for the tribe in the state's directory.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

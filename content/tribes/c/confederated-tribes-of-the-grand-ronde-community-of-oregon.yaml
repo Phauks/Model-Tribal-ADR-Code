@@ -130,6 +130,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.grandronde.org/contact-us/
+  label: Contact page on the nation's website
+  source: grandronde-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Confederated Tribes of Grand Ronde". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.grandronde.org/favicon.ico

@@ -22,3 +22,19 @@ searches:
     (own page, then directory entry): own-page, https://www.shoalwaterbay-nsn.gov/tribal-court/shoalwater-bay-tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-349
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.shoalwaterbay-nsn.gov/tribal-court/shoalwater-bay-tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal court page names the Shoalwater Bay Tribal Court and its NICS contract.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists this nation's court.

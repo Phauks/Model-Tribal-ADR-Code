@@ -139,6 +139,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of San Ildefonso, New Mexico
+- kind: contact-page
+  value: https://sanipueblo.org/contact/
+  label: Contact page on the nation's website
+  source: sanipueblo-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact – San Ildefonso Pueblo". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://sanipueblo.org/wp-content/uploads/2021/07/SANILOGO-white-100x100.png
@@ -210,6 +218,37 @@ justice_institutions:
   locator: New Mexico section, entry 'Pueblo of San Ildefonso'
   note: 'Link check 2026-11-21: the link the source gives (http://sanipueblo.org/tribal-courts.aspx) returned
     HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Pueblo of San Ildefonso Tribal Court
+  link: https://law.sanipueblo.org/us/nsn/san-ildefonso/council/code/4/index.full.html
+  source: pueblo-de-san-ildefonso-law-library-judiciary
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “any action pending before the Pueblo of San Ildefonso Tribal Court”. Established in the nation''s code (Title 4), which is undated; the nation''s home page has no court page, so this is code text rather than a current court page. Location not stated. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-ildefonso#1).'
+  appeals_to:
+    court: San Ildefonso Court of Appeals
+    source: pueblo-de-san-ildefonso-law-library-judiciary
+    confidence: medium
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “to handle all appeals from the San Ildefonso Tribal Court as provided in this Code”.'
+- kind: court-of-appeals
+  name: San Ildefonso Court of Appeals
+  link: https://law.sanipueblo.org/us/nsn/san-ildefonso/council/code/4/index.full.html
+  source: pueblo-de-san-ildefonso-law-library-judiciary
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The San Ildefonso Court of Appeals is hereby established”. Established in the nation''s code (section 4.1.1.030); undated code text. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-ildefonso#2).'
+- kind: juvenile-court
+  name: Children's Court
+  link: https://law.sanipueblo.org/us/nsn/san-ildefonso/council/code/4/index.full.html
+  source: pueblo-de-san-ildefonso-law-library-judiciary
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Judge of the Children''s Court”. The code refers to a Children''s Court and its judge; undated code text and no separate description or address. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-ildefonso#3).'
 dispute_resolution:
   database_listings:
   - title: Judge Diverts to Treatment or Rehabilitation Center

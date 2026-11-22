@@ -240,6 +240,13 @@ justice_institutions:
     court''s page on the nation''s website, fetched with status 200 on 2026-11-21 by the court review
     (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-275.'
+  appeals_to:
+    court: Court of Appeals
+    source: oneida-nation-trial-court
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “to review decisions of the Oneida Trial and Family Courts”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oneida-indian-nation#1).'
 - kind: tribal-court
   name: Oneida Nation Court
   link: http://www.oneidaindiannation.com/court/
@@ -248,6 +255,37 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: New York section, entry 'Oneida Indian Nation'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://oneida-nsn.gov/judiciary/courtofappeals/
+  source: oneida-nation-trial-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Welcome to the Court of Appeals.”. The page says it reviews decisions of the Oneida Trial and Family Courts and has five appellate judges. It is new relative to the batch. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oneida-indian-nation#2).'
+- kind: family-court
+  name: Family Court
+  link: https://oneida-nsn.gov/judiciary/family-court/
+  source: oneida-nation-family-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Welcome to the Family Court.”. Described on the page as covering family law matters such as divorce, child support and custody. The About page calls it a branch of the Oneida Judiciary. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oneida-indian-nation#3).'
+  appeals_to:
+    court: Court of Appeals
+    source: oneida-nation-trial-court
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “to review decisions of the Oneida Trial and Family Courts”.'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://oneida-nsn.gov/judiciary/healing-to-wellness-court/
+  source: oneida-nation-healing-to-wellness-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Oneida Healing to Wellness Court (OHWC) provides the support and resources necessary for participants”. A post-conviction adult program for Oneida members in Brown County. The page says hearings are held at the Oneida Judiciary, but no street location is stated for this court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oneida-indian-nation#4).'
 dispute_resolution:
   forums:
   - kind: peacemaking

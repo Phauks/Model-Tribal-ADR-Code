@@ -192,6 +192,16 @@ justice_institutions:
     recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200
     on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see
     research/reviews/2026-11-22-service-links.json, service-128.'
+- kind: juvenile-court
+  name: Juvenile
+  link: https://www.lvpaiute.gov/tribal-court
+  location:
+    place: Las Vegas Paiute community
+  source: las-vegas-paiute-tribe-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Handles cases involving minors with a focus on rehabilitation, family support, and community wellness.”. Listed as a division of the Las Vegas Paiute Tribal Court under its ''Court Divisions'' heading; the division name ''Juvenile'' is taken from the page heading. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, las-vegas-tribe-of-paiute-indians-of-the-las-vegas-indian-colony#2).'
 dispute_resolution:
   database_listings:
   - title: Option for Informal Conference for Juveniles

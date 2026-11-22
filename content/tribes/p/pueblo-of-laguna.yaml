@@ -123,6 +123,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
+- kind: contact-page
+  value: https://www.lagunapueblo-nsn.gov/contact-us/
+  label: Contact page on the nation's website
+  source: lagunapueblo-nsn-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Pueblo of Laguna". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Pueblo of Laguna Logo
@@ -283,6 +291,15 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-306.'
+- kind: healing-to-wellness-court
+  name: Community Wellness Court
+  link: https://www.lagunapueblo-nsn.gov/departments/judicial-services/
+  part_of: Laguna Pueblo Court
+  source: pueblo-of-laguna-lagunapueblo-nsn-gov-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Children’s and Community Wellness Court”. Listed in the same sentence as Civil, Criminal, Traffic and Children''s divisions. The page does not describe them as separate courts, so only the wellness court is recorded; Children''s is not recorded separately. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-laguna#2).'
 dispute_resolution:
   provisions:
   - kind: other

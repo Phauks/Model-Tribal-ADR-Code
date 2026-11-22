@@ -131,6 +131,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+- kind: contact-page
+  value: https://utetribe.com/contact-us/
+  label: Contact page on the nation's website
+  source: utetribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – Ute Indian Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://utetribe.com/wp-content/uploads/2025/02/cropped-GreatTribalSeal-153x156.jpg

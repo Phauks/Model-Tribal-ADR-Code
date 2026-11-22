@@ -131,6 +131,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+- kind: contact-page
+  value: https://mescaleroapachetribe.com/contact-us-form/
+  label: Contact page on the nation's website
+  source: mescaleroapachetribe-contact-us-form
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Us Form - Official Website of the Mescalero Apache Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://mescaleroapachetribe.com/wp-content/uploads/cropped-Gahe-copy-180x180.png

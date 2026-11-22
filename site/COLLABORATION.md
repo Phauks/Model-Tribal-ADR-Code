@@ -363,11 +363,7 @@ npm run sign-in-link -- lead@example.org   # works once, for one hour
 The same command helps anyone who has lost both their password and access to
 their email.
 
-The workspace menu has a People page, where co-authors, advisors, editors,
-contributors and nation reviewers are added by email address, and an Access
-page, where their level on each document is raised or lowered. Each person
-signs in at `/sign-in` with that address, or with the link the People page
-gives you for them. Their access starts at their first sign-in.
+The Workspace group in the left sidebar has a People page, where co-authors, advisors, editors, contributors and nation reviewers are added by email address, and an Access page, where their level on each document is raised or lowered. Each person signs in at `/sign-in` with that address, or with the link the People page gives you for them. Their access starts at their first sign-in.
 
 ## Database
 
@@ -388,11 +384,7 @@ copy used by `npm run preview`, use `npm run database:migrate:local`.
 
 ### First sign-in
 
-Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The
-workspace menu has a People page, where co-authors, advisors, editors,
-contributors and nation reviewers are added by email address, and an Access
-page, where their level on each document is raised or lowered. Tell each person to sign in at
-`/sign-in` with that address; their access starts at their first sign-in.
+Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The Workspace group in the left sidebar has a People page, where co-authors, advisors, editors, contributors and nation reviewers are added by email address, and an Access page, where their level on each document is raised or lowered. Tell each person to sign in at `/sign-in` with that address; their access starts at their first sign-in.
 
 ## Database
 

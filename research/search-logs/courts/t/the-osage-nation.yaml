@@ -1,0 +1,13 @@
+profile: content/tribes/t/the-osage-nation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.osagenation-nsn.gov/who-we-are/judicial-branch/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Judicial Branch page (status 200) names the Supreme Court and the Trial Court.

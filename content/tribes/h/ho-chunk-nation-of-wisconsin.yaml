@@ -154,6 +154,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
+- kind: contact-page
+  value: https://ho-chunknation.com/contact/
+  label: Contact page on the nation's website
+  source: ho-chunknation-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Ho-Chunk Nation". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: Ho-Chunk Nation
@@ -280,6 +288,42 @@ justice_institutions:
   note: 'Link added 2026-11-22: the page of the same court this profile also lists as “Tribal Courts”,
     which the court review confirmed (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-097.'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://ho-chunknation.com/government/judicial-branch/courts/supreme-court-2/
+  location:
+    place: Black River Falls
+    state: WI
+    address: W9598 Hwy 54 E, Black River Falls, WI 54615
+  source: ho-chunk-nation-supreme-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Supreme Court Chief Justice”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, ho-chunk-nation-of-wisconsin#2).'
+- kind: traditional-forum
+  name: Traditional Court
+  link: https://ho-chunknation.com/government/judicial-branch/courts/traditional-court-2/
+  location:
+    place: Black River Falls
+    state: WI
+    address: W9598 Hwy 54 E, Black River Falls, WI 54615
+  source: ho-chunk-traditional-court-page
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Traditional Court plays an active role in providing knowledge of custom, traditions and Ho-Chunk core values”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, ho-chunk-nation-of-wisconsin#3).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://ho-chunknation.com/government/judicial-branch/courts/healing-to-wellness-court/
+  location:
+    place: Black River Falls
+    state: WI
+    address: W9598 Hwy 54 E, Black River Falls, WI 54615
+  source: ho-chunk-nation-healing-to-wellness-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Healing to Wellness Court”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, ho-chunk-nation-of-wisconsin#4).'
 dispute_resolution:
   forums:
   - kind: elders-council

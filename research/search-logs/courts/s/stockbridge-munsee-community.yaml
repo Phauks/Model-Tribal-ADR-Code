@@ -21,3 +21,11 @@ searches:
     (own page, then directory entry): own-page, https://mohican-nsn.gov/judiciary/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-362
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mohican-nsn.gov/judiciary/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Judiciary page fetched with fetch.py (status 200); names the Stockbridge-Munsee Tribal Court, its Court of Appeals, and Family and Trial Court headings, with a Bowler address.

@@ -130,6 +130,14 @@ contacts:
   locator: 'record "Native Village of Georgetown" (community: Georgetown, object 67)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://www.georgetowntc.com/contact
+  label: Contact page on the nation's website
+  source: georgetowntc-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact — Native Village of Georgetown". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Native Village of Georgetown

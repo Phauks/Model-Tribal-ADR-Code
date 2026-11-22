@@ -258,6 +258,27 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link is the entry in the Washington State Court Directory:
     Tribal Courts; no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
     service-164).'
+- kind: tribal-court
+  name: Muckleshoot Tribal Court
+  link: https://www.muckleshoot.nsn.us/services/tribal-court
+  location:
+    place: Auburn
+    state: WA
+    address: 39015 172nd Ave SE
+  source: muckleshoot-indian-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Muckleshoot Tribal Court administers the law pursuant to the Muckleshoot Code of Laws”. Nation''s own tribal court page. Street address comes from the state directory (the nation page gives a phone number only). Quote taken from a summarized fetch. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, muckleshoot-indian-tribe#1).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://www.muckleshoot.nsn.us/services/tribal-court
+  part_of: Muckleshoot Tribal Court
+  source: muckleshoot-indian-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Healing to Wellness Court”. Named as a program on the nation''s tribal court page; no separate address given. The page also names a Juvenile Court Coordinator, which is a staff title and was not recorded as a court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, muckleshoot-indian-tribe#2).'
 dispute_resolution:
   provisions:
   - kind: other

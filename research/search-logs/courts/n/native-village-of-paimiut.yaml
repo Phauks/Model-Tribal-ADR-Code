@@ -21,3 +21,19 @@ searches:
     directory entry): own-page, https://www.nativevillageofpaimiut.org/tribal-courts.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-217
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.nativevillageofpaimiut.org/tribal-courts.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal courts page (200) names and describes the Tribal Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 'Paimiut entry: active court Yes; type ''Tribal Court, working on a wellness court.'' Text read from the directory PDF as extracted in ak-dir/dir.txt (fetch.py does not extract PDFs).'

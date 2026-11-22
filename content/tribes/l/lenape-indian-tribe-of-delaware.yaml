@@ -67,6 +67,39 @@ census_areas:
   locator: AIANNHCE 9800, GEOID 9800R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
     by name comparison with the state-recognized helper list.
+contacts:
+- kind: website
+  value: https://lenapeindiantribeofdelaware.com/
+  label: Official website
+  source: lenapeindiantribeofdelaware-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://lenapeindiantribeofdelaware.com/contact.html
+  label: Contact page on the nation's website
+  source: lenapeindiantribeofdelaware-contact-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: phone
+  value: (302) 730-4601
+  label: Tribal government office
+  source: lenapeindiantribeofdelaware-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
+- kind: mailing-address
+  value: P.O. Box 79 Cheswold, DE 19936
+  label: Tribal government office
+  source: lenapeindiantribeofdelaware-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

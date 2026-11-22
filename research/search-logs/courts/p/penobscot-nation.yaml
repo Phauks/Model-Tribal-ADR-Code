@@ -32,3 +32,27 @@ searches:
     order (own page, then directory entry): own-page, https://www.penobscotnation.org/government/tribal_court/index.php.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-290
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.penobscotnation.org/government/tribal_court/index.php
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names the Tribal Court and its Healing to Wellness Court program (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://penobscotnation.org/departments/tribal-court/court-rules
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: dead-link
+  reason: Alternate URL returned 404; the nation's Tribal Court page was used instead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Penobscot Nation tribal court Indian Island'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search showed news items and Penobscot court rules PDFs; the nation's own page was used as the source.

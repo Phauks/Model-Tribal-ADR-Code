@@ -137,6 +137,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Standing Rock Sioux Tribe of North & South Dakota
+- kind: contact-page
+  value: https://www.standingrock.org/contact/
+  label: Contact page on the nation's website
+  source: standingrock-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Standing Rock Sioux Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.standingrock.org/wp-content/uploads/2021/09/standingrocksiouxtribe-Crest-Logo-WHT.png

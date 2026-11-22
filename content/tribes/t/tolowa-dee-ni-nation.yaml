@@ -248,6 +248,14 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
     see research/reviews/2026-11-22-service-links.json, service-375.'
+- kind: healing-to-wellness-court
+  name: Juvenile Wellness Court
+  link: https://www.tolowa.gov/208/Kii-daa-naa-dvn-Tribal-Judicial-System
+  source: tolowa-dee-ni-nation-k-ii-daa-naa-dvn-tribal-judicial-system
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The current programs at the Tribal Judicial system are as follows: Juvenile Wellness Court”. Listed under current programs on the page. The same page also lists ''Developing juvenile wellness court'' under projects, so its operating status should be checked. The page gives no court location. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, tolowa-dee-ni-nation#2).'
 dispute_resolution:
   provisions:
   - kind: mediation

@@ -202,3 +202,35 @@ searches:
     from https://www.wrtribalcourt.com/forms/rules-of-court/tribal-codes/.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-060
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://shoshone-arapaho-tribal-court.org
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: dead-link
+  reason: The host does not resolve (DNS name resolution failure), so the batch's link is dead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.wrtribalcourt.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Shoshone & Arapaho (Wind River) Tribal Court site fetched with fetch.py (status 200); describes the court and its history.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.wyocourts.gov/legal-help-by-topic/wind-river-tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Appeared in search results, but it was not fetched in this pass.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: Wind River Tribal Court Shoshone Arapaho court of appeals Fort Washakie'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search surfaced the Wyoming courts page, a Federal Register notice on Courts of Indian Offenses, and the Wind River court site, which was then fetched.

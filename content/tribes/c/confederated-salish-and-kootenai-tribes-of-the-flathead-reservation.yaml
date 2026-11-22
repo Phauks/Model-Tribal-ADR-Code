@@ -209,6 +209,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://cskt.org/contact/
+  label: Contact page on the nation's website
+  source: cskt-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact the Confederated Salish and Kootenai Tribes". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   alternative_text: CSKT Seal
@@ -411,6 +419,45 @@ justice_institutions:
     HTTP 404, so it is not recorded. Link added 2026-11-22: the page of the same court this profile also
     lists as “Tribal Court”, which the court review confirmed (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-054.'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://cskt.org/tribal-court/
+  location:
+    place: Pablo
+    state: MT
+  source: confederated-salish-and-kootenai-tribes-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tribal law places the judicial power of CSKT in the Tribal Court and Tribal Appellate Court.”. Pablo location is the Appellate Court''s physical address (42487 Complex Blvd.); the Tribal Court page lists the same mailing address (PO Box 278). Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-salish-and-kootenai-tribes-of-the-flathead-reservation#1).'
+  appeals_to:
+    court: Appellate Court
+    source: confederated-salish-and-kootenai-tribes-tribal-court-2
+    confidence: medium
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “to hear and decide appeals on the law taken from judgments, orders or rulings of the Tribal Court”.'
+- kind: court-of-appeals
+  name: Appellate Court
+  link: https://cskt.org/appellate-court/
+  location:
+    place: Pablo
+    state: MT
+    address: 42487 Complex Blvd., Pablo, MT 59855
+  source: confederated-salish-and-kootenai-tribes-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Court of Appeals was established by the Tribal Council to hear and decide appeals on the law taken from judgments, orders or rulings of the Tribal Court”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-salish-and-kootenai-tribes-of-the-flathead-reservation#2).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court Program
+  link: https://cskt.org/tribal-court/
+  part_of: Confederated Salish and Kootenai Tribal Court
+  source: confederated-salish-and-kootenai-tribes-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Healing to Wellness Court Program”. Only a link label on the Tribal Court page; sub-page not fetched. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-salish-and-kootenai-tribes-of-the-flathead-reservation#3).'
 dispute_resolution:
   database_listings:
   - title: Informal Adjustment Conference for Child Welfare

@@ -158,6 +158,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Miami Tribe of Oklahoma
+- kind: contact-page
+  value: https://www.miamination.com/contact/
+  label: Contact page on the nation's website
+  source: miamination-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Miamination.com". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://www.miamination.com/wp-content/uploads/2022/10/cropped-MTO-Official-Tribal-Seal-FINAL-no-back-scaled-1-180x180.png
@@ -307,6 +315,31 @@ justice_institutions:
     404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
     with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-155.'
+- kind: district-court
+  name: Miami Tribe of Oklahoma District Court
+  link: https://www.miamination.com/miami-tribe-of-oklahoma-court/
+  part_of: Tribal Court
+  source: miami-tribe-of-oklahoma-court-miamination-com
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The District Court is comprised of civil, criminal, and civil trial divisions”. Chief Judge oversees the court; divisions are civil, criminal and civil trial. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, miami-tribe-of-oklahoma#2).'
+  appeals_to:
+    court: Miami Tribe of Oklahoma Appellate Court
+    source: miami-tribe-of-oklahoma-court-miamination-com
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “considers appeals from final decisions of the District Court and certain interlocutory matters”.'
+- kind: court-of-appeals
+  name: Miami Tribe of Oklahoma Appellate Court
+  link: https://www.miamination.com/miami-tribe-of-oklahoma-court/
+  part_of: Tribal Court
+  source: miami-tribe-of-oklahoma-court-miamination-com
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Court sits in panels of three justices and considers appeals from final decisions of the District Court and certain interlocutory matters.”. The page calls it both the ''Court of Appeals'' and the ''Miami Tribe of Oklahoma Appellate Court''; the heading is used here. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, miami-tribe-of-oklahoma#3).'
 dispute_resolution:
   database_listings:
   - title: Court Discretionary Dismissal in Juvenile Court

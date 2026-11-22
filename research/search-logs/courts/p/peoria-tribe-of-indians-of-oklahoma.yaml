@@ -1,0 +1,21 @@
+profile: content/tribes/p/peoria-tribe-of-indians-of-oklahoma.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: BIA list names the Miami Agency CFR Court and lists the Peoria Tribe of Indians of Oklahoma among its tribes.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://peoriatribe.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Fetch redirected to peoriatribe.gov (status 200); the homepage text names no court.

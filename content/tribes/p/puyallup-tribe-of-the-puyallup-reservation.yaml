@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Puyallup Tribe of the Puyallup Reservation
+- kind: email-general
+  value: info@puyalluptribe-nsn.gov
+  label: General office email shown on the nation's website
+  source: puyalluptribe-nsn-directory-faqs
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Puyallup Tribe
@@ -282,6 +290,38 @@ justice_institutions:
   locator: Washington section, entry 'Puyallup Tribe of Indians'
   note: The listed link (http://www.puyallup-tribe.com/ourtribe/) no longer reached the court on 2026-11-21;
     the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
+- kind: tribal-court
+  name: Puyallup Tribal Court
+  link: https://www.puyalluptribe-nsn.gov/member-services/tribal-justice-safety/tribal-courts/puyallup-tribal-laws/
+  location:
+    place: Tacoma
+    state: WA
+    address: 3009 Portland Ave E.
+  source: puyallup-tribe-tribal-laws
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Puyallup Tribal Court Opinions”. Nation''s own Tribal Courts pages name the court through its rules and opinions. Address from the state directory. Quote taken from a summarized fetch. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, puyallup-tribe-of-the-puyallup-reservation#1).'
+- kind: court-of-appeals
+  name: Puyallup Tribal Court of Appeals
+  link: https://www.puyalluptribe-nsn.gov/member-services/tribal-justice-safety/tribal-courts/puyallup-tribal-laws/
+  source: puyallup-tribe-tribal-laws
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Puyallup Tribal Court of Appeals Opinions”. Nation''s page links to ''Puyallup Tribal Court of Appeals Opinions''. The page does not say where appeals from the trial court go, and it also lists ''NICS Appellate Court Opinions'', so the appellate arrangement is not settled. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, puyallup-tribe-of-the-puyallup-reservation#2).'
+- kind: intertribal-court
+  name: Northwest Intertribal Court System
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  location:
+    place: Lynnwood
+    state: WA
+    address: 20818 44th Ave W, Ste 120
+  source: washington-state-courts-administrative-office-of-court-direc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Northwest Intertribal Court System (NICS)”. Directory label for this nation''s court; the NICS site could not be read (connection reset), so its appellate court was not identified. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, puyallup-tribe-of-the-puyallup-reservation#3).'
 dispute_resolution:
   database_listings:
   - title: Deferred Prosecution and Treatment Plan

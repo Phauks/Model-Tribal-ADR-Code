@@ -110,6 +110,14 @@ contacts:
   verification: title-only
   as_of: '2026'
   note: Linked by the state agency as the nation's site.
+- kind: email-general
+  value: eptn1683@yahoo.com
+  label: General office email shown on the nation's website
+  source: easternpequottribalnation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: logo.png

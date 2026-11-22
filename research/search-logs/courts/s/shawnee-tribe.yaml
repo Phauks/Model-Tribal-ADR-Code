@@ -1,0 +1,21 @@
+profile: content/tribes/s/shawnee-tribe.yaml
+topic: courts
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://shawnee-nsn.gov/courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Page 'Courts - Shawnee Tribe' fetched (status 200); it lists only a court clerk email and a 'Tribal Courts Deputy Director' line, with no court names, addresses or appellate court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: BIA list was read; it names the Miami Agency CFR Court's tribes (Eastern Shawnee Tribe, not the Shawnee Tribe) and does not list the Shawnee Tribe.

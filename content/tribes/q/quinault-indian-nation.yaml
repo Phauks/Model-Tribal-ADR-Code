@@ -111,6 +111,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
+- kind: contact-page
+  value: https://www.quinaultindiannation.com/m/directory
+  label: Contact page on the nation's website
+  source: quinaultindiannation-m-directory
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Staff Directory • Quinault Indian Nation, WA • CivicEngage". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Home Page
@@ -233,6 +241,33 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Quinault Indian Nation'
+- kind: healing-to-wellness-court
+  name: Family Wellness Court
+  link: https://wa-quinaultindiannation.civicplus.com/157/Tribal-Court
+  part_of: Quinault Tribal Court
+  source: quinault-indian-nation-tribal-court-wa
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Family, Adult Criminal, and Juvenile Wellness Courts”. Page names three wellness courts together; the family one is named generically here. Kind is set to healing-to-wellness because it is a wellness court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, quinault-indian-nation#2).'
+- kind: healing-to-wellness-court
+  name: Adult Criminal Wellness Court
+  link: https://wa-quinaultindiannation.civicplus.com/157/Tribal-Court
+  part_of: Quinault Tribal Court
+  source: quinault-indian-nation-tribal-court-wa
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Family, Adult Criminal, and Juvenile Wellness Courts”. Named generically from the page''s list of three wellness courts; no separate location given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, quinault-indian-nation#3).'
+- kind: juvenile-court
+  name: Juvenile Wellness Court
+  link: https://wa-quinaultindiannation.civicplus.com/157/Tribal-Court
+  part_of: Quinault Tribal Court
+  source: quinault-indian-nation-tribal-court-wa
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Family, Adult Criminal, and Juvenile Wellness Courts”. Named generically from the page''s list of three wellness courts. The page also has a ''Juvenile court:'' heading for child dependency, juvenile offenses and truancy, which is a case type and not recorded separately. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, quinault-indian-nation#4).'
 dispute_resolution:
   database_listings:
   - title: Sentencing Policies

@@ -1,6 +1,6 @@
 profile: content/tribes/p/pueblo-of-sandia.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-21'
@@ -167,6 +167,30 @@ searches:
     (own page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-316
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sandiapueblo.nsn.us/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Home page has no tribal court, judicial or justice page and names no court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/contact/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: New Mexico tribal-state directory lists 'Pueblo of Sandia – Tribal Court' with 481 Sandia Loop, Bernalillo, NM 87004.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: "Pueblo of Sandia" tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Results contained no Sandia court page; the directory was the only official source found.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-243,
   not-found-after-search); Pueblo of Sandia Tribal Court (court-244, not-found-after-search). No page
   or official directory entry was found on 2026-11-22 for “Tribal Court”; “Pueblo of Sandia Tribal Court”

@@ -1,0 +1,29 @@
+profile: content/tribes/h/hannahville-indian-community.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://hannahville.net/judicial-services/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Judicial Services page names no court; it shows only a tribal court email address and a court clerk title (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://hannahville.net/legal-services/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Legal Services page returned no court text (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Hannahville Indian Community tribal court judicial services'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search showed a Michigan legal help page and a federal list; those are not official sources, so the Hannahville Tribal Court is unconfirmed.

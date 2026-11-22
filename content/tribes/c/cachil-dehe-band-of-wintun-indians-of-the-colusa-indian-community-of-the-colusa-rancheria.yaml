@@ -119,6 +119,14 @@ contacts:
   as_of: '2026-11-20'
   locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
     California
+- kind: contact-page
+  value: https://www.colusa-nsn.gov/general-contact/
+  label: Contact page on the nation's website
+  source: colusa-nsn-general-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT". Its title is "Colusa Indian Community Council | General Contact". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: 'Colusa Indian Community Council - '

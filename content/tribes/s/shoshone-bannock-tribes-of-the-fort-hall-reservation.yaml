@@ -276,6 +276,30 @@ justice_institutions:
   note: The listed link (http://www.shoshonebannocktribes.com/shoshone-bannock-courts.html) no longer
     reached the court on 2026-11-21; the link is the court's page on the nation's own site, found in the
     data gap review (research/reviews/2026-11-21-court-listings.json).
+- kind: tribal-court
+  name: Shoshone-Bannock Tribal Court
+  link: https://www.sbtribes.com/courts/
+  location:
+    place: Fort Hall
+    state: ID
+    address: Pima Drive, P.O. Box 306
+  source: shoshone-bannock-tribes-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Shoshone-Bannock Tribal Court has original jurisdiction for all civil and criminal matters arising within the exterior boundaries of the Fort Hall Reservation”. Checked with fetch.py. The page does not say where appeals go. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, shoshone-bannock-tribes-of-the-fort-hall-reservation#1).'
+- kind: other
+  name: Tribal Courts
+  link: https://www.sbtribes.com/courts/
+  location:
+    place: Fort Hall
+    state: ID
+    address: Pima Drive, P.O. Box 306
+  source: shoshone-bannock-tribes-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tribal Courts is comprised of approximately 30 employees including a chief judge, two associate judges,”. The umbrella court division named on the page, recorded as its own entry. The batch''s generic ''Tribal Court'' entry may refer to this same system; I did not match it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, shoshone-bannock-tribes-of-the-fort-hall-reservation#2).'
 gaming:
   compacts:
   - state: ID

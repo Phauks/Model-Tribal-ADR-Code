@@ -343,6 +343,14 @@ justice_institutions:
   locator: 'North Dakota section, entry ''Three Affiliated Tribes: Mandan, Hidatsa & Arikara Nation'''
   note: 'Link check 2026-11-21: the link the source gives (http://www.mhanation.com/main2/departments/fort-berthold-district-court/fort-berthold-district-court.html)
     returned HTTP 404, so it is not recorded.'
+- kind: district-court
+  name: Fort Berthold District Court
+  link: https://www.mhanation.com/
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Fort Berthold District Court”. The nation''s home page names the court and links to fbdcourt.com, which could not be reached (proxy error, twice). The page gives no location. Unclear whether it is the same as the existing ''Tribal Court'' entries. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, three-affiliated-tribes-of-the-fort-berthold-reservation#1).'
 dispute_resolution:
   provisions:
   - kind: arbitration

@@ -158,6 +158,30 @@ searches:
     (own page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-076
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://duckwatertribe.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Home page loads with no tribal court or judicial text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://duckwatertribe.org/tribal-government/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Tribal government page loads with no court text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: Duckwater Shoshone tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Results were narf.org and state/bar leads and a Duck Valley page for a different tribe; no official Duckwater court page found.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-058,
   not-found-after-search); Duckwater Shoshone Tribal Court (court-059, not-found-after-search). No page
   or official directory entry was found on 2026-11-22 for “Tribal Court”; “Duckwater Shoshone Tribal Court”

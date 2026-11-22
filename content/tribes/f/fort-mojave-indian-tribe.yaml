@@ -130,6 +130,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+- kind: contact-page
+  value: https://www.fortmojaveindiantribe.com/contact-us/
+  label: Contact page on the nation's website
+  source: fortmojaveindiantribe-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT". Its title is "Contact Us – Official Tribal Website". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Official Tribal Website Logo
@@ -202,6 +210,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Fort Mojave Indian Tribe'
+- kind: tribal-court
+  name: Fort Mojave Tribal Court
+  link: https://fortmojavetribalcourt.com/
+  location:
+    place: Mohave Valley
+    state: AZ
+    address: 8492 South Highway 95
+  source: fort-mojave-indian-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-02-19'
+  note: 'The page names the court: “Fort Mojave Tribal Court”. The court''s own site (updated 2026-02-19); the batch''s generic ''Tribal Court'' entry uses the same link and is most likely this court. The second existing link, http://mojaveindiantribe.com/tribal-court/, was not fetched. The site names no divisions or appellate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, fort-mojave-indian-tribe#1).'
 gaming:
   compacts:
   - state: AZ

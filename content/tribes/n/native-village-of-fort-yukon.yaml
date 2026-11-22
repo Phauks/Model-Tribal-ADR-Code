@@ -260,6 +260,14 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link is the entry in the Alaska Court System court directory:
     2022 Alaska Tribal Court Directory (prepared by Alaska Legal Services Corporation); no page of the
     court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-185).'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://www.fortyukon.org/tribal-governance
+  source: gwichyaa-zhee-gwich-in-tribal-government-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “COURT OF APPEALS”. Listed on the same governance page next to TRIBAL COURT. The page does not say which trial courts appeal to it, so no appeals_to is recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, native-village-of-fort-yukon#2).'
 dispute_resolution:
   database_listings:
   - title: Counseling, Treatment, and Community Service Sentencing

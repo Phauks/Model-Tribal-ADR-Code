@@ -150,3 +150,19 @@ searches:
     then directory entry): own-page, https://www.spokanetribe.com/government/court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-354
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.spokanetribe.com/government/court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's court page names the Spokane Tribal Court and its mission.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists this nation's court.

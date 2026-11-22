@@ -69,6 +69,22 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   locator: home page
+- kind: contact-page
+  value: https://boisforte.com/contact-us/
+  label: Contact page on the nation's website
+  source: boisforte-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Bois Forte". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: receptionist@boisforte-nsn.gov
+  label: General office email shown on the nation's website
+  source: boisforte-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Bois Forte
@@ -142,6 +158,23 @@ justice_institutions:
     it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with
     status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
     see research/reviews/2026-11-22-service-links.json, service-029.'
+- kind: juvenile-court
+  name: Children's Court
+  link: https://boisforte.com/departments/judicial/
+  part_of: Bois Forte Band of Chippewa Tribal Court
+  source: bois-forte-band-judicial
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Title 7: Rules for Children’s Court”. Page lists ''Title 7: Rules for Children''s Court'' and a 2nd Tuesday CHIPS (Children in Need of Protective Services) Court session; I recorded the court under the page''s ''Children''s Court'' name and did not confirm CHIPS as a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, bois-forte-band#2).'
+- kind: court-of-appeals
+  name: Bois Forte Court of Appeals
+  link: https://boisforte.com/departments/judicial/
+  source: bois-forte-band-judicial
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Bois Forte Appellate Court is a committee of three justices with one alternate that review appeals on Tribal Court Decisions and Tribal election appeals.”. The page''s heading is ''Bois Forte Court of Appeals'' and its text calls it the Bois Forte Appellate Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, bois-forte-band#3).'
 gaming:
   operates_gaming:
     value: true

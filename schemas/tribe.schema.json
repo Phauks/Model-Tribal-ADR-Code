@@ -210,7 +210,7 @@
         "$ref": "#/$defs/citedFact",
         "required": ["kind", "value"],
         "properties": {
-          "kind": { "type": "string", "enum": ["website", "physical-address", "mailing-address", "phone", "fax", "email-general"] },
+          "kind": { "type": "string", "enum": ["website", "contact-page", "physical-address", "mailing-address", "phone", "fax", "email-general"], "description": "contact-page is the nation's own Contact us page (a form, a staff or department list), recorded when it is on the nation's website; email-general is a general office address such as info@, never a person's own address." },
           "value": { "type": "string" },
           "label": { "type": "string", "description": "Which office, for example 'Tribal government headquarters'." },
           "link_status": {
@@ -349,6 +349,21 @@
           },
           "name": { "type": "string" },
           "link": { "$ref": "common.schema.json#/$defs/link" },
+          "part_of": {
+            "type": "string",
+            "minLength": 1,
+            "description": "For one court of a group that sources also list as a whole, such as one of the Navajo Nation's district courts: the name of the group's entry in this profile's justice_institutions, written exactly as it is there. The nation page lists the court under its group, and the court shares the group's place on the path of appeal. The fact's own source must say the court belongs to the group."
+          },
+          "location": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Where the court sits, as its source gives it: the town or community, the state and, when the source gives one, the street address. Never filled in from the nation's own address or worked out from the court's name.",
+            "properties": {
+              "place": { "type": "string", "minLength": 1, "description": "Town, community or chapter, as the source names it." },
+              "state": { "$ref": "common.schema.json#/$defs/stateCode" },
+              "address": { "type": "string", "minLength": 1, "description": "Street address, only when the source gives it." }
+            }
+          },
           "appeals_to": {
             "type": "object",
             "$ref": "#/$defs/citedFact",

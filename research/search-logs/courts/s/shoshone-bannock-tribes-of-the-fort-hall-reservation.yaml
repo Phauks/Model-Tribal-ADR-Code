@@ -1,0 +1,21 @@
+profile: content/tribes/s/shoshone-bannock-tribes-of-the-fort-hall-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.sbtribes.com/courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Courts page names the Shoshone-Bannock Tribal Court, the Tribal Courts division and an Appellate Court heading (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Shoshone-Bannock Tribal Court Fort Hall courts'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned the nation's courts page and Idaho Supreme Court tribal court pages, which I did not fetch.

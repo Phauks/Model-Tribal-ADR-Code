@@ -44,4 +44,12 @@ searches:
   reason: '“Westend Judicial Center”: Claude weighed the evidence against the lead author''s order (own page, then directory entry): own-page, https://www.gilariver.org/index.php/government/judical-branch.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-090
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.gilariver.org/index.php/government/judical-branch
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Names Community Court, Westend Judicial Center, Children's Court judges.
 next_steps: Read the Gila River Indian Community Code and the Community Court's own pages for a court of appeals; the court site was not fetched in this search.

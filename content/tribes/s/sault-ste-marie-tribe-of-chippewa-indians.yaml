@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sault Ste. Marie Tribe of Chippewa Indians, Michigan
+- kind: contact-page
+  value: https://www.saulttribe.com/about-us/contact-us
+  label: Contact page on the nation's website
+  source: saulttribe-about-us-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - The Sault Tribe of Chippewa Indians Official Web Site". Found by scripts/tribes/find_contacts.py.
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency
@@ -201,6 +209,13 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
+  appeals_to:
+    court: Tribal Appellate Court
+    source: sault-ste-marie-tribe-of-chippewa-tribal-court-the-official
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Tribal Appellate Court was established under Chapter 82 of the Tribal Code and has exclusive jurisdiction to review decisions of the Tribal Court.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, sault-ste-marie-tribe-of-chippewa-indians#1).'
 - kind: tribal-court
   name: Sault Ste. Marie Tribal Court
   link: http://www.saulttribe.com/government/tribal-court
@@ -209,6 +224,16 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Michigan section, entry 'Sault Ste. Marie Tribe of Chippewa Indians'
+- kind: court-of-appeals
+  name: Tribal Appellate Court
+  link: https://www.saulttribe.com/government/tribal-court
+  location:
+    state: MI
+  source: sault-ste-marie-tribe-of-chippewa-tribal-court-the-official
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Tribal Appellate Court was established under Chapter 82 of the Tribal Code and has exclusive jurisdiction to review decisions of the Tribal Court.”. The site''s own menu calls it Court of Appeals (https://www.saulttribe.com/government/tribal-court/32-government/tribal-court/8662-court-of-appeals). Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, sault-ste-marie-tribe-of-chippewa-indians#2).'
 dispute_resolution:
   forums:
   - kind: peacemaking

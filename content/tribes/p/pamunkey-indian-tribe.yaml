@@ -156,6 +156,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pamunkey Indian Tribe
+- kind: contact-page
+  value: https://www.pamunkey.org/form/contact
+  label: Contact page on the nation's website
+  source: pamunkey-form-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Pamunkey Indian Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: pamunkeytribe@pamunkey.org
+  label: General office email shown on the nation's website
+  source: pamunkey-form-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: logo

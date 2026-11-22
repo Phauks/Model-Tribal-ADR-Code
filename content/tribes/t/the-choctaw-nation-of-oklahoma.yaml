@@ -141,6 +141,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Choctaw Nation of Oklahoma
+- kind: contact-page
+  value: https://www.choctawnation.com/contact/
+  label: Contact page on the nation's website
+  source: choctawnation-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Choctaw Nation of Oklahoma". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://upload.wikimedia.org/wikipedia/commons/5/5c/Choctaw_seal.svg
@@ -270,6 +278,56 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the page of the same court this profile
     also lists as “Tribal Court”, which the court review confirmed (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-370.'
+- kind: district-court
+  name: Choctaw Nation OK District Court
+  link: https://www.choctawnationcourt.com/courts/district-court/
+  part_of: Choctaw Nation of Oklahoma Tribal Court
+  source: choctaw-nation-of-oklahoma-ok-district-court-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Choctaw Nation OK District Court | Choctaw Nation Judicial Branch”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-choctaw-nation-of-oklahoma#2).'
+  appeals_to:
+    court: Choctaw Nation Appellate Court
+    source: choctaw-nation-of-oklahoma-ok-district-court-judicial-branch-2
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Choctaw Nation Appellate Court exercises appellate jurisdiction for cases appealed from the District Court.”.'
+- kind: court-of-appeals
+  name: Choctaw Nation Appellate Court
+  link: https://www.choctawnationcourt.com/courts/appellate-court/
+  part_of: Choctaw Nation of Oklahoma Tribal Court
+  source: choctaw-nation-of-oklahoma-ok-district-court-judicial-branch-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Choctaw Nation Appellate Court exercises appellate jurisdiction for cases appealed from the District Court.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-choctaw-nation-of-oklahoma#3).'
+  appeals_to:
+    court: Choctaw Nation Constitutional Court
+    source: choctaw-nation-of-oklahoma-court-appeals-ok-appeals-court
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Court shall also have discretionary authority to hear an appeal from any judgment from the Appellate Division of the District Court”.'
+- kind: supreme-court
+  name: Choctaw Nation Constitutional Court
+  link: https://www.choctawnationcourt.com/courts/constitutional-court/
+  part_of: Choctaw Nation of Oklahoma Tribal Court
+  source: choctaw-nation-of-oklahoma-court-appeals-ok-appeals-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The decision of the Constitutional Court shall be final.”. Kind chosen by reviewer judgment: final court on constitutional disputes with supervisory authority over the District Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-choctaw-nation-of-oklahoma#4).'
+- kind: healing-to-wellness-court
+  name: Healing To Wellness Court
+  link: https://www.choctawnationcourt.com/courts/healing-to-wellness-court/
+  part_of: Choctaw Nation of Oklahoma Tribal Court
+  source: choctaw-nation-of-oklahoma-healing-to-wellness-court-judicia
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Atuya Healing to Wellness Court was developed to meet the needs of tribal members within the Choctaw Nation Reservation”. Called Atuya Healing to Wellness Court in the text; operates through the District Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-choctaw-nation-of-oklahoma#5).'
 dispute_resolution:
   forums:
   - kind: peacemaking

@@ -150,6 +150,14 @@ contacts:
   locator: 'record "Nulato Village" (community: Nulato, object 149)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: http://www.nulatotribe.net/home-2/location/
+  label: Contact page on the nation's website
+  source: nulatotribe-home-2-location
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "NULATO TRIBAL COUNCIL". Found by scripts/tribes/find_contacts.py.
 languages:
 - name: Denaakk'e (Koyukon)
   language_tag: koy

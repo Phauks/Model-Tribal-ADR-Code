@@ -142,6 +142,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Qawalangin Tribe of Unalaska" (community: Unalaska, object 217)'
+- kind: email-general
+  value: tribalservices@qawalangin.com
+  label: General office email shown on the nation's website
+  source: qawalangin-tribe-website
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/3728a0_d1f24ecd63344dac89a91d9189c4f9bc%7Emv2.png/v1/fit/w_2500,h_1330,al_c/3728a0_d1f24ecd63344dac89a91d9189c4f9bc%7Emv2.png

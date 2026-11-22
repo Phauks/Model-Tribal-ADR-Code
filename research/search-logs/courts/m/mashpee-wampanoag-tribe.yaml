@@ -22,3 +22,27 @@ searches:
     directory entry): own-page, https://mashpeewampanoagtribe-nsn.gov/tribal-court-homepage.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-147
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mashpeewampanoagtribe-nsn.gov/tribal-court-homepage
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Judicial Branch page names the Tribal Court and gives the Great Neck Road address (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mashpeewampanoagtribe-nsn.gov/about-peacemakers-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's About Peacemakers Court page names the Peacemakers Court as part of the Tribal Judiciary (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Mashpee Wampanoag Tribal Court peacemaker'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned the nation's court pages and non-official Peacemaking PDFs; the nation pages were used.

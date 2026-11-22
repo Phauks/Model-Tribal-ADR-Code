@@ -102,3 +102,35 @@ searches:
     page, then directory entry): own-page, https://ho-chunknation.com/government/judicial-branch/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-097
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ho-chunknation.com/government/judicial-branch/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Judicial Branch page lists four courts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ho-chunknation.com/government/judicial-branch/courts/trial-court-2/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Trial Court page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ho-chunknation.com/government/judicial-branch/courts/supreme-court-2/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Supreme Court page lists justices.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ho-chunknation.com/government/judicial-branch/courts/traditional-court-2/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Traditional Court page.

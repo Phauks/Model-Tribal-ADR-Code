@@ -123,6 +123,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada
+- kind: contact-page
+  value: https://www.moapabandofpaiutes.com/contact
+  label: Contact page on the nation's website
+  source: moapabandofpaiutes-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Moapa Band of Paiutes". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: receptionist@moapabandofpaiutes.org
+  label: General office email shown on the nation's website
+  source: moapabandofpaiutes-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://static.wixstatic.com/media/27666c_ccea3db23ead4201a35302c4fddb6cda%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/27666c_ccea3db23ead4201a35302c4fddb6cda%7Emv2.png

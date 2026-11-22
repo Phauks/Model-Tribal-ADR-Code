@@ -27,3 +27,11 @@ searches:
   query: where appeals from each listed court go (path of appeal)
   outcome: found
   reason: 'Chapter 11, Part I, § 1: the Court of Appeals is the highest court and hears all appeals from the Blackfeet Tribal Court. Nothing found on appeals from the Blackfeet Family Court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://blackfeetnation.com/government/court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court page names three courts and the appeal route.

@@ -103,6 +103,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://gratonrancheria.com/contact/
+  label: Contact page on the nation's website
+  source: gratonrancheria-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact | Federated Indians Graton Rancheria". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Federated Indians Graton Rancheria

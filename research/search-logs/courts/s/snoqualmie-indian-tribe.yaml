@@ -134,3 +134,19 @@ searches:
     confirmed, from https://www.courts.wa.gov/subsite/tscc/docs/TSCC%20WA%20State%20Tribal%20Court%20Directory.pdf.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-271
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Washington State Court Directory tribal court list has no Snoqualmie entry.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.snoqualmietribe.us/TribalCourt
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Fetch returned HTTP 503 (server error); the page could not be read.

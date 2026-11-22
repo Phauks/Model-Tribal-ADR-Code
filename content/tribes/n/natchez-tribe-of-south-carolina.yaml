@@ -31,6 +31,22 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+- kind: phone
+  value: (803) 988-1074
+  label: Tribal government office
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: As listed for the tribe in the state's directory.
+- kind: physical-address
+  value: 79 Bluff Road, Columbia, SC 29201
+  label: Tribal government office
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: As listed for the tribe in the state's directory.
 official_images:
 - kind: logo
   alternative_text: Natchez Tribe logo

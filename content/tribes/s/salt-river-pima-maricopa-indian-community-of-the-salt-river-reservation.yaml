@@ -193,6 +193,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+- kind: contact-page
+  value: https://srpmic-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: srpmic-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact U s". Its title is "Contact | Salt River Pima-Maricopa Indian Community". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://srpmic-nsn.gov/wp-content/uploads/2017/04/Logo_test-1.png
@@ -351,6 +359,16 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Salt River Pima-Maricopa Indian Community'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://www.srpmic-nsn.gov/government/court/
+  location:
+    state: AZ
+  source: salt-river-pima-maricopa-indian-community-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Court of Appeals”. Link label under the Court section; no address or appeals statement. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation#2).'
 dispute_resolution:
   forums:
   - kind: family-group-conference

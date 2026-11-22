@@ -50,3 +50,27 @@ searches:
     (own page, then directory entry): own-page, https://www.isletapueblo.com/government/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-302
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.isletapueblo.com/government/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribal Court page names the court, its branch and its staff.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.isletapueblo.com/government/appellate-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Appellate Court page names the appellate court and says it hears appeals of Isleta Tribal Court decisions.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.isletapueblo.com/tribal-court-peacemaking-program/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Peacemaking program page under the Tribal Court.

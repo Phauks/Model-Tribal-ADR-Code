@@ -293,6 +293,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Forest County Potawatomi'
+- kind: tribal-court
+  name: Forest County Potawatomi Tribal Court
+  link: https://www.fcpotawatomi.com/government/tribal-court/
+  location:
+    place: Crandon
+    state: WI
+    address: 5416 Everybody's Road
+  source: forest-county-potawatomi-community-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Forest County Potawatomi Tribal Court was established by the General Council pursuant to the Tribe’s constitution in 1994.”. The page says the court was established in 1994 and hears small claims, CHIPS, guardianship and other matters. The page has a ''Wellness Court Staff'' heading with a coordinator and clinician, but no wellness court is named, so none is recorded. No family, children''s, or appellate court is named. The Crandon address was taken from the page footer in the earlier pass and was not in the fetch.py text, so re-check it before display. Batch entry ''Tribal Court'' points to the same page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, forest-county-potawatomi-community#1).'
 dispute_resolution:
   provisions:
   - kind: mediation

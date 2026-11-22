@@ -131,6 +131,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Tesuque, New Mexico
+- kind: contact-page
+  value: https://www.tesuquepueblo.org/contact
+  label: Contact page on the nation's website
+  source: tesuquepueblo-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "CONTACT". Its title is "CONTACT | Pueblo of Tesuque". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/8738ba_10d4d05c42764e409e3b56e672e327f0%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/8738ba_10d4d05c42764e409e3b56e672e327f0%7Emv2.png

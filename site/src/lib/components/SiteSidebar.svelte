@@ -9,21 +9,51 @@
 	// built. A script, when it runs, adds two things: it remembers whether the
 	// reader hid the sidebar, and it marks the heading being read as the page
 	// scrolls. On paper the sidebar is not printed.
+	//
+	// For someone signed in with workspace access, a Workspace section lists
+	// the workspace pages their role opens. Workspace pages know this when the
+	// Worker renders them; the pages built ahead of time read it from the
+	// signed-in hint (src/lib/signed-in-hint.ts) once the script runs.
 	import { page } from '$app/state';
 	import Menu from '@lucide/svelte/icons/menu';
 	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
 	import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
 	import Star from '@lucide/svelte/icons/star';
+	import type { Permission } from '#lib/permissions.ts';
+	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
+	import {
+		isCurrentWorkspacePage,
+		workspacePagesFor,
+		workspacePagesNamed,
+		type WorkspacePage
+	} from '#lib/workspace-menu.ts';
 
 	const outline = $derived(page.data.outline as PageOutline | undefined);
 	const path = $derived(page.url.pathname);
 
 	const currentSection = $derived(sectionOf(path));
 
+	// The workspace pages to list: from the page itself in the workspace,
+	// otherwise from the signed-in hint, read in the browser.
+	let hintedPageNames = $state<string[]>([]);
+	$effect(() => {
+		hintedPageNames = readSignedInHint(document.cookie).workspacePageNames;
+	});
+	const permissions = $derived(page.data.permissions as Permission[] | undefined);
+	const workspaceMenu = $derived<WorkspacePage[]>(
+		permissions ? workspacePagesFor(permissions) : workspacePagesNamed(hintedPageNames)
+	);
+	const currentWorkspacePage = $derived(
+		workspaceMenu.find((item) => isCurrentWorkspacePage(item.link, path))
+	);
+
 	// Where the phone menu says the reader is, beside the word "Menu".
 	const whereLabel = $derived(
-		currentItemLabel(outline?.items ?? []) ?? outline?.title ?? currentSection?.label ?? 'Home'
+		currentItemLabel(outline?.items ?? []) ??
+			outline?.title ??
+			currentSection?.label ??
+			(currentWorkspacePage ? `Workspace: ${currentWorkspacePage.label}` : 'Home')
 	);
 
 	function currentItemLabel(items: OutlineItem[]): string | undefined {
@@ -38,6 +68,42 @@
 	const storageKey = 'sidebar-hidden';
 	let open = $state(true);
 	let activeHeading = $state<string | undefined>(undefined);
+	let wideSidebar: HTMLDetailsElement | undefined = $state();
+
+	// On wide screens the sidebar scrolls on its own, separately from the page
+	// (Trevor, Nov. 22, 2026). It stays in view as the page scrolls, and its
+	// height follows the part of the window it can use: below the masthead
+	// at the top of the page and above the footer at the end, so its last
+	// entries can always be scrolled into view without moving the page.
+	// Without scripts it is one window tall.
+	$effect(() => {
+		const sidebar = wideSidebar;
+		const column = sidebar?.parentElement;
+		if (!sidebar || !column) return;
+		let frame = 0;
+		const fit = () => {
+			frame = 0;
+			const area = column.getBoundingClientRect();
+			const top = Math.max(0, area.top);
+			const bottom = Math.min(window.innerHeight, area.bottom);
+			sidebar.style.height = `${Math.max(bottom - top, 0)}px`;
+		};
+		const schedule = () => {
+			if (!frame) frame = requestAnimationFrame(fit);
+		};
+		fit();
+		window.addEventListener('scroll', schedule, { passive: true });
+		window.addEventListener('resize', schedule);
+		const observer = new ResizeObserver(schedule);
+		for (const child of column.children) observer.observe(child);
+		return () => {
+			cancelAnimationFrame(frame);
+			window.removeEventListener('scroll', schedule);
+			window.removeEventListener('resize', schedule);
+			observer.disconnect();
+			sidebar.style.height = '';
+		};
+	});
 
 	$effect(() => {
 		try {
@@ -127,7 +193,7 @@
 	</ul>
 {/snippet}
 
-{#snippet sections()}
+{#snippet sections(idSuffix: string)}
 	<ul class="sections">
 		{#each siteSections as section (section.link)}
 			{@const current = section === currentSection}
@@ -146,6 +212,21 @@
 			</li>
 		{/each}
 	</ul>
+	{#if workspaceMenu.length > 0}
+		<!-- The workspace, for people signed in with access to it (site/COLLABORATION.md). -->
+		<div class="workspace-links">
+			<p class="group-title" id="sidebar-workspace-{idSuffix}">Workspace</p>
+			<ul class="sections" aria-labelledby="sidebar-workspace-{idSuffix}">
+				{#each workspaceMenu as item (item.link)}
+					<li>
+						<a href={item.link} aria-current={item === currentWorkspacePage ? 'page' : undefined}>
+							{item.label}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
 	<!-- The reader's own pages, kept on this device (site/DESIGN.md, section 6, "Star"). -->
 	<ul class="sections reader-links needs-scripts">
 		<li>
@@ -158,7 +239,7 @@
 {/snippet}
 
 <!-- Wide screens: a column beside the page that the reader can hide. -->
-<details class="sidebar-wide no-print" {open} ontoggle={remember}>
+<details class="sidebar-wide no-print" bind:this={wideSidebar} {open} ontoggle={remember}>
 	<summary>
 		<span class="when-open"><PanelLeftClose size={20} aria-hidden="true" /> Hide sidebar</span>
 		<span class="when-closed" title="Show sidebar"
@@ -166,7 +247,7 @@
 		>
 	</summary>
 	<nav aria-label="Site">
-		{@render sections()}
+		{@render sections('wide')}
 	</nav>
 </details>
 
@@ -178,7 +259,7 @@
 		<span class="where">{whereLabel}</span>
 	</summary>
 	<nav aria-label="Site">
-		{@render sections()}
+		{@render sections('narrow')}
 	</nav>
 </details>
 
@@ -217,6 +298,32 @@
 	.sections > li.current > a {
 		color: var(--color-link);
 		font-weight: var(--font-weight-bold);
+	}
+
+	.workspace-links {
+		margin-top: var(--space-3);
+		padding-top: var(--space-3);
+		border-top: 1px solid var(--color-line);
+	}
+
+	.group-title {
+		margin: 0 0 var(--space-1);
+		padding: 0 var(--space-3);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-ink-muted);
+	}
+
+	.workspace-links .sections > li > a {
+		font-weight: var(--font-weight-regular);
+	}
+
+	.workspace-links .sections > li > a[aria-current='page'] {
+		border-left: 3px solid var(--color-action);
+		border-radius: 0;
+		background: var(--color-surface);
+		color: var(--color-ink);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	.reader-links {

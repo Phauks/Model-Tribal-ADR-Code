@@ -165,6 +165,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Jemez, New Mexico
+- kind: contact-page
+  value: https://www.jemezpueblo.org/contact/
+  label: Contact page on the nation's website
+  source: jemezpueblo-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact – Pueblo of Jemez". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Pueblo of Jemez

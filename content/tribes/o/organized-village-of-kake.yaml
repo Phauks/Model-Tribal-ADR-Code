@@ -275,6 +275,17 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
+- kind: peacemaking-program
+  name: Kake Circle Peacemaking
+  link: https://kake-nsn.gov/tribal-court/
+  location:
+    state: AK
+    place: Kake
+  source: organized-village-of-kake-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Keeper of the Circle: Mike Jackson volunteers to maintain Kake Circle Peacemaking”. Nation''s page describes a peacemaking program, Kake Circle Peacemaking, which operates ''with or without the OVK Tribal Court Codes''. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, organized-village-of-kake#2).'
 dispute_resolution:
   forums:
   - kind: peacemaking

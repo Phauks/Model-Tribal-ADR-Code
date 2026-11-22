@@ -25,6 +25,39 @@ states:
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+contacts:
+- kind: website
+  value: https://www.mendotadakota.org/
+  label: Official website
+  source: mendotadakota-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: contact-page
+  value: https://www.mendotadakota.org/contact-us/
+  label: Contact page on the nation's website
+  source: mendotadakota-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Opened to confirm it is the nation's own contact page.
+- kind: phone
+  value: (651) 447-2056
+  label: Tribal government office
+  source: mendotadakota-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
+- kind: physical-address
+  value: 1200 Centre Pointe Curve, Suite 300, Mendota Heights, MN 55120
+  label: Tribal government office
+  source: mendotadakota-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: Main office contact as shown on the nation's website.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

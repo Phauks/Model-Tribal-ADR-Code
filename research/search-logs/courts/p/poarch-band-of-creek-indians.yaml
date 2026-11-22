@@ -1,6 +1,6 @@
 profile: content/tribes/p/poarch-band-of-creek-indians.yaml
 topic: courts
-status: partly-searched
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-21'
@@ -189,6 +189,30 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-293
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch query: "Poarch Band of Creek Indians" tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned leads only (Ballotpedia, NARF, Wikipedia); used to find the nation's own Legal page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://pci-nsn.gov/westminster/tribal_court.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: dead-link
+  reason: The project's existing court link returned a client error (not retrieved).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pci-nsn.gov/?p=11401
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: The nation's Legal page has a 'Tribal Judicial' section naming the Tribal Court and Tribal Supreme Court.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-238,
   cannot-tell); Poarch Band of Creek Indians Tribal Court (court-239, cannot-tell). A person could open
   in a browser the pages that refused the project''s link checker: http://pci-nsn.gov/, http://pci-nsn.gov/westminster/tribal_court.html,

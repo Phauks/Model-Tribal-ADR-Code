@@ -21,3 +21,43 @@ searches:
     directory entry): own-page, https://www.oneidaindiannation.org/nation-court.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-275
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/judiciary/trialcourt/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Oneida Nation Trial Court page (reached from the search lead oneida-nsn.gov/?p=5124) names the Trial Court and lists the other judiciary courts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/judiciary/about/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: About Judiciary page describes the Oneida Judiciary, its Trial Court and Court of Appeals, and the courthouse on West Mason Street in Green Bay.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/judiciary/courtofappeals/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court of Appeals page names the court and says it reviews decisions of the Trial and Family Courts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/judiciary/family-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Family Court page names the court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/judiciary/healing-to-wellness-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Healing to Wellness Court page names the court.

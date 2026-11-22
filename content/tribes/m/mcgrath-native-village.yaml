@@ -143,6 +143,14 @@ contacts:
   locator: 'record "McGrath Native Village" (community: McGrath, object 122)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+- kind: contact-page
+  value: https://mnvcdev.muniweb.com/how-do-i/contact/
+  label: Contact page on the nation's website
+  source: mnvcdev-how-do-i-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - McGrath Native Village Council". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://mnvcdev.muniweb.com/favicon.ico

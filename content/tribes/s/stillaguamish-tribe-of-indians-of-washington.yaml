@@ -119,6 +119,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
+- kind: contact-page
+  value: https://www.stillaguamish.com/our-history/contact/
+  label: Contact page on the nation's website
+  source: stillaguamish-our-history-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Stillaguamish Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Image
@@ -197,6 +205,30 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-361.'
+- kind: tribal-court
+  name: Stillaguamish Tribal Court
+  link: https://www.stillaguamish.com/departmentprogramservice/courts-and-justice/
+  location:
+    place: Arlington
+    state: WA
+    address: 3322 236th St. NE.
+  source: stillaguamish-tribe-courts-and-justice
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Stillaguamish Tribal Court is a necessary function of government”. Nation''s own Courts and Justice page. Address from the state directory. The batch''s generic ''Tribal Court'' entry is the same court. Quote taken from a summarized fetch. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, stillaguamish-tribe-of-indians-of-washington#1).'
+- kind: intertribal-court
+  name: Northwest Intertribal Court System
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  location:
+    place: Lynnwood
+    state: WA
+    address: 20818 44th Ave W, Ste 120
+  source: washington-state-courts-administrative-office-of-court-direc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Northwest Intertribal Court System (NICS)”. Directory label for this nation''s court; the NICS site could not be read (connection reset), so its appellate court was not identified. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, stillaguamish-tribe-of-indians-of-washington#2).'
 dispute_resolution: {}
 gaming:
   compacts:

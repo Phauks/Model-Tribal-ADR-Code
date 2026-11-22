@@ -137,6 +137,14 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-388
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: 'Directory entry has no court information: ALSC was unable to make contact with the Tribe in 2021.'
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-292,
   cannot-tell). No website of the nation''s own could be read; the Tribe''s office could be asked whether
   it runs a court. No page or official directory entry was found on 2026-11-22 for “Tribal Court” (research/reviews/2026-11-22-service-links.json).'

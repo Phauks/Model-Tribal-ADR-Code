@@ -57,3 +57,35 @@ searches:
     (own page, then directory entry): own-page, http://courts.menominee-nsn.gov/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-151
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.menominee-nsn.gov/About.aspx
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribal courts' About page fetched with fetch.py (status 200); names the Menominee Tribal Courts and the Supreme Court of the Tribe.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.menominee-nsn.gov/ChildrensCourt.aspx
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Children's Court page fetched with fetch.py (status 200); shows the Children's Court section and its custody forms.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.menominee-nsn.gov/Default.aspx
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Courts home page fetched with fetch.py (status 200); its header names the 'Wilmer J. Peters, Sr. Judicial Center', a building that is not recorded as a court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Menominee" tribal court Wilmer M Peters Judicial Center'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Search returned the tribal courts site pages and unrelated Michigan and Menominee County courts; no official page confirmed the batch's 'Wilmer M Peters Judicial Center' spelling.

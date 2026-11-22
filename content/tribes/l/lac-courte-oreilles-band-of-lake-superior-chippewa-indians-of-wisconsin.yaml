@@ -121,6 +121,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+- kind: contact-page
+  value: https://lco-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: lco-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – The Official Website of Lac Courte Oreilles". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://lco-nsn.gov/wp-content/uploads/2025/11/lco-logo12b-286x300.png

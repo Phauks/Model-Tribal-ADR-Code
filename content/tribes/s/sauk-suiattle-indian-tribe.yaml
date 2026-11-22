@@ -111,6 +111,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sauk-Suiattle Indian Tribe
+- kind: contact-page
+  value: https://www.sauk-suiattle.com/contact
+  label: Contact page on the nation's website
+  source: sauk-suiattle-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact — Sauk-Suiattle Indian Tribe". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Sauk-Suiattle Indian Tribe
@@ -220,6 +228,30 @@ justice_institutions:
   locator: Washington section, entry 'Sauk-Suiattle Indian Tribe'
   note: 'Link is the entry in the Washington State Court Directory: Tribal Courts; no page of the court''s
     own was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-344).'
+- kind: tribal-court
+  name: Sauk-Suiattle Tribal Court
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  location:
+    place: Darrington
+    state: WA
+    address: 5318 Chief Brown Ln
+  source: washington-state-courts-administrative-office-of-court-direc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Sauk-Suiattle Tribal Court (NICS)”. Only the state directory names this court; the nation''s home page has no court content and its court page was not found. Directory labels it ''(NICS)''. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, sauk-suiattle-indian-tribe#1).'
+- kind: intertribal-court
+  name: Northwest Intertribal Court System
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  location:
+    place: Lynnwood
+    state: WA
+    address: 20818 44th Ave W, Ste 120
+  source: washington-state-courts-administrative-office-of-court-direc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Northwest Intertribal Court System (NICS)”. Directory label for this nation''s court; the NICS site could not be read (connection reset), so its appellate court was not identified. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, sauk-suiattle-indian-tribe#2).'
 dispute_resolution:
   provisions:
   - kind: other

@@ -111,6 +111,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+- kind: contact-page
+  value: https://www.yombatribe.com/contact-8
+  label: Contact page on the nation's website
+  source: yombatribe-contact-8
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact | Yombatribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: admin@yombatribe.com
+  label: General office email shown on the nation's website
+  source: yombatribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/dfee40_b90761c69ee044ad806269ee294fb32d%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/dfee40_b90761c69ee044ad806269ee294fb32d%7Emv2.png
@@ -245,6 +261,21 @@ justice_institutions:
   locator: List of CFR Courts and the Tribes they Serve
   note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
     Indian Affairs list.
+  appeals_to:
+    court: Court of Indian Appeals
+    source: bureau-of-indian-affairs-court-offenses-western-region
+    confidence: medium
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Appellate Court for the Court of Indian Offenses of the Western Region is the Court of Indian Appeals.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, yomba-shoshone-tribe-of-the-yomba-reservation#1).'
+- kind: court-of-appeals
+  name: Court of Indian Appeals
+  link: https://www.bia.gov/regional-offices/western/court-indian-offenses
+  source: bureau-of-indian-affairs-court-offenses-western-region
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Appellate Court for the Court of Indian Offenses of the Western Region is the Court of Indian Appeals.”. Appellate court for the Western Region court, as the BIA names it; the BIA page links to the Court of Indian Appeals website, which was not fetched. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, yomba-shoshone-tribe-of-the-yomba-reservation#2).'
 dispute_resolution: {}
 jurisdiction:
 - topic: public-law-280

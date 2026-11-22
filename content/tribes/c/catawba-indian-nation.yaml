@@ -157,6 +157,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://www.catawba.com/contact-us
+  label: Contact page on the nation's website
+  source: catawba-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "The Catawba Nation - Contact Us". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: seal
   image_link: https://www.catawba.com/themes/catawba/assets/images/favicons/74seal196x196.png

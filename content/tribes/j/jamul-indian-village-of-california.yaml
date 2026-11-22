@@ -111,6 +111,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Jamul Indian Village of California
+- kind: contact-page
+  value: https://jamulindianvillage.com/contact/
+  label: Contact page on the nation's website
+  source: jamulindianvillage-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact Us - Jamul Indian Village". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Jamul Indian Village Logo

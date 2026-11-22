@@ -157,6 +157,22 @@ contacts:
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
+- kind: contact-page
+  value: https://gunlaketribe-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: gunlaketribe-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Gun Lake Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@glt-nsn.gov
+  label: General office email shown on the nation's website
+  source: gunlaketribe-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://gunlaketribe-nsn.gov/wp-content/uploads/2022/10/logo.png
@@ -255,6 +271,23 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-149.'
+- kind: supreme-court
+  name: Gun Lake Supreme Court
+  link: https://gunlaketribe-nsn.gov/tribal-justice/tribal-court/
+  part_of: Gun Lake Tribal Judiciary
+  source: gun-lake-tribe-match-e-be-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “composed of the Gun Lake Tribal Court and the Gun Lake Supreme Court”. No separate address or contact for the Supreme Court on the page. The page does not say where appeals go; the rules and ordinances subpage was not fetched. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, match-e-be-nash-she-wish-band-of-pottawatomi#2).'
+- kind: other
+  name: Gun Lake Tribal Judiciary
+  link: https://gunlaketribe-nsn.gov/tribal-justice/tribal-court/
+  source: gun-lake-tribe-match-e-be-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “composed of the Gun Lake Tribal Court and the Gun Lake Supreme Court”. Group entry for the judiciary as the page describes it; it is the group the two courts above belong to. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, match-e-be-nash-she-wish-band-of-pottawatomi#3).'
 dispute_resolution:
   database_listings:
   - title: Diversion Procedures for Juveniles

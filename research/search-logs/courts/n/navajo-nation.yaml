@@ -392,3 +392,27 @@ searches:
   query: where appeals from each listed court go (path of appeal)
   outcome: dead-link
   reason: The copy of Title 7 the profile already cites now answers 404, so 7 N.N.C. § 302 could not be read there.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.navajo-nsn.gov/?p=89073
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: The Judicial Branch page "Judicial District Courts" lists eleven judicial districts with addresses, read through the WebFetch tool (the site resets plain HTTPS requests).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.navajo-nsn.gov/distcts.htm
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: An older page, "The Judicial District Courts of the Navajo Nation", lists the same districts with different judges; not used, because the ?p=89073 page is the current site.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.navajo-nsn.gov/indexdistct.htm
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: '"The District and Family Courts of the Navajo Nation" is a frameset; no family court is named on the pages read.'

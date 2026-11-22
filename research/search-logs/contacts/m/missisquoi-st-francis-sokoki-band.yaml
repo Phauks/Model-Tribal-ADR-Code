@@ -1,0 +1,29 @@
+profile: content/tribes/m/missisquoi-st-francis-sokoki-band.yaml
+topic: contacts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Abenaki Nation of Missisquoi St. Francis Sokoki band official website contact
+  outcome: found
+  reason: Found abenakination.com, which identifies as Abenaki Nation of Missisquoi, with a contact page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Information on Vermont's Abenaki Bands (vcnaa.vermont.gov, fetched)
+  outcome: found
+  reason: State commission lists the Missisquoi band as Abenaki Nation of Missisquoi, but gives no URL.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://abenakination.com
+  query: official website, contact page, general email
+  outcome: found
+  reason: Claude found the site by web search; a script opened it and found each value on the page named.

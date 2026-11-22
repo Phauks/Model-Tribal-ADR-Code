@@ -134,6 +134,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+- kind: contact-page
+  value: https://easternshoshone.org/contact/
+  label: Contact page on the nation's website
+  source: easternshoshone-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact". Its title is "Contact - Eastern Shoshone". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: flag
   alternative_text: Eastern Shoshone
@@ -210,6 +218,14 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     site did not respond.'
+- kind: court-of-indian-offenses
+  name: Court of Indian Offenses
+  link: https://www.wrtribalcourt.com/
+  source: shoshone-arapaho-tribal-court-wind-river
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “A Court of Indian Offenses was implemented on the reservation for Eastern Shoshone tribal members”. The page''s history section describes this court as implemented for Eastern Shoshone members. The page gives no date and does not say whether it still operates, so its current status is unclear; the federal list of Courts of Indian Offenses was not checked. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, eastern-shoshone-tribe-of-the-wind-river-reservation#2).'
 dispute_resolution:
   provisions:
   - kind: peacemaking

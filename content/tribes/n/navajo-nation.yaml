@@ -284,6 +284,178 @@ justice_institutions:
     locator: Opening description of the court system
     note: The guide says the trial courts (district courts and family courts) are appealed to the Supreme
       Court, the appellate court. The family courts are not yet listed in this profile.
+- kind: district-court
+  name: Chinle Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Chinle
+    state: AZ
+    address: Navajo Route 27
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “1 - Chinle Judicial District”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#1).'
+- kind: district-court
+  name: Crownpoint Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Crownpoint
+    state: NM
+    address: 2925 State Route 371
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “2 - Crownpoint Judicial District”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#2).'
+- kind: circuit-court
+  name: Pueblo Pintado Circuit Court
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Crownpoint Judicial District
+  location:
+    place: Pueblo Pintado
+    state: NM
+    address: RA 3363D, East Route 9
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Pueblo Pintado Circuit Court”. Listed on the page under the Crownpoint Judicial District. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#3).'
+- kind: district-court
+  name: Kayenta Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Kayenta
+    state: AZ
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “3 - Kayenta Judicial District”. The page places the court north of milepost 394 and U.S. Highway 163 in Kayenta. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#4).'
+- kind: district-court
+  name: Ramah Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Ramah
+    state: NM
+    address: 429 B.I.A. 125 and Mountain View
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “4 - Ramah Judicial District”. The page places the court 20 miles southeast of Ramah. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#5).'
+- kind: district-court
+  name: Shiprock Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Shiprock
+    state: NM
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “5 - Shiprock Judicial District”. The page places the court north of the northeast corner of U.S. Highway 64 and U.S. Highway 491 in Shiprock. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#6).'
+- kind: district-court
+  name: Tuba City Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Tuba City
+    state: AZ
+    address: 240 South Main Street
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “6 - Tuba City Judicial District”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#7).'
+- kind: district-court
+  name: Window Rock Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Window Rock
+    state: AZ
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “7 - Window Rock Judicial District”. The page says the court is temporarily east of Navajo Nation Veterans Memorial Park in Window Rock. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#8).'
+- kind: district-court
+  name: Alamo/Tó'hajiilee Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    state: NM
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “8 - Alamo / TÓ''HAJIILEE Judicial District”. Written in capitals on the page. The district has two courts, listed under it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#9).'
+- kind: tribal-court
+  name: Alamo Court
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Alamo/Tó'hajiilee Judicial District
+  location:
+    place: Alamo
+    state: NM
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Alamo Court”. The page places the court 29 miles north of Magdalena on Highway 169. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#10).'
+- kind: tribal-court
+  name: Tó'hajiilee Court
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Alamo/Tó'hajiilee Judicial District
+  location:
+    place: Tó'hajiilee
+    state: NM
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tó''Hajiilee Court”. The page writes Tó''Hajiilee; spelled here as the Judicial Branch''s public guide spells the community. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#11).'
+- kind: district-court
+  name: Dilkon Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Dilkon
+    state: AZ
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “9 - Dilkon Judicial District”. The page places the court on the north side of the Dilkon Chapter House; its mailing address is in Winslow, Arizona. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#12).'
+- kind: district-court
+  name: Aneth Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Aneth
+    state: UT
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “10 - Aneth”. The page heads this entry "10 - Aneth" without "Judicial District"; the name follows the page''s other entries. Its mailing address is in Montezuma Creek, Utah. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#13).'
+- kind: district-court
+  name: Dził Yijiin Judicial District
+  link: https://courts.navajo-nsn.gov/?p=89073
+  part_of: Navajo Nation Judicial District Courts
+  location:
+    place: Piñon
+    state: AZ
+  source: judicial-branch-of-the-navajo-nation-district-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “11 - DZIŁ YIJIIN Judicial District”. Written in capitals on the page. The court is north of the Piñon Chapter House. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, navajo-nation#14).'
 dispute_resolution:
   forums:
   - kind: peacemaking

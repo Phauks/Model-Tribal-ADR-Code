@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Houlton Band of Maliseet Indians
+- kind: contact-page
+  value: https://maliseets.net/contact-us/
+  label: Contact page on the nation's website
+  source: maliseets-contact-us
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Contact The Houlton Band of Maliseet Indians in Littleton, ME | Houlton Band of Maliseet Indians". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://maliseets.net/files/2021/01/houlton.png
@@ -180,6 +188,15 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: The listed link (http://www.maliseets.com/tribal_courts.htm) no longer reached the court on 2026-11-21;
     the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://maliseets.net/maliseet-healing-to-wellness-court/
+  part_of: HBMI Tribal Court
+  source: houlton-band-of-maliseet-indians-nation-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The culturally-based Healing to Wellness Court program is available to Maliseet Nation tribal members”. A program on the same page as the Tribal Court. Recorded as a separate healing court because the page names it. No location is given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, houlton-band-of-maliseet-indians#2).'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

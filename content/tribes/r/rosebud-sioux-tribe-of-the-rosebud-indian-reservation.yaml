@@ -148,6 +148,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
+- kind: email-general
+  value: info@rst-nsn.gov
+  label: General office email shown on the nation's website
+  source: rosebudsiouxtribe-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/ed1fef_ba00136e98dd44fd9105b5955d6de3c0%7Emv2_d_1700_1700_s_2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/ed1fef_ba00136e98dd44fd9105b5955d6de3c0%7Emv2_d_1700_1700_s_2.png
@@ -281,6 +289,33 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the court''s own website, fetched with status 200
     on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see
     research/reviews/2026-11-22-service-links.json, service-335.'
+- kind: juvenile-court
+  name: Children’s Court
+  link: https://www.rstcourt.org/
+  part_of: Rosebud Sioux Tribal Court
+  source: rosebud-sioux-tribal-court-constitution-law-and-order-code-p
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “At the disposition hearing, the Children’s Court:”. Named in the code headings on the court site, not as a separate office; may be a function of the Tribal Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, rosebud-sioux-tribe-of-the-rosebud-indian-reservation#2).'
+- kind: court-of-appeals
+  name: Appellate Court
+  link: https://www.rstcourt.org/
+  part_of: Rosebud Sioux Tribal Court
+  source: rosebud-sioux-tribal-court-constitution-law-and-order-code-p
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “9-1-1. APPELLATE COURT.”. Heading in Title Nine of the code on the court site; no text under it was read. A heading also mentions an Intertribal Court of Appeals order, but no page states that court serves Rosebud, so it is not recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, rosebud-sioux-tribe-of-the-rosebud-indian-reservation#3).'
+- kind: juvenile-court
+  name: Tribal Juvenile Court
+  link: https://www.rstcourt.org/
+  part_of: Rosebud Sioux Tribal Court
+  source: rosebud-sioux-tribal-court-constitution-law-and-order-code-p
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “9-1-3. TRIBAL JUVENILE COURT.”. Code heading only; may be the same body as the Children’s Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, rosebud-sioux-tribe-of-the-rosebud-indian-reservation#4).'
 dispute_resolution:
   database_listings:
   - title: Attendance Review Conference for Truancy

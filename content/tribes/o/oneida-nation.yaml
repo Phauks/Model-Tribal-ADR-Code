@@ -129,6 +129,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
+- kind: contact-page
+  value: https://oneida-nsn.gov/contact/
+  label: Contact page on the nation's website
+  source: oneida-nsn-contact
+  confidence: high
+  verification: title-only
+  as_of: '2026-11-22'
+  note: The nation's own website links this page as "Contact Us". Its title is "Oneida Nation | Contact Us". Found by scripts/tribes/find_contacts.py.
 official_images:
 - kind: logo
   alternative_text: Oneida Nation
@@ -306,6 +314,71 @@ justice_institutions:
   note: 'Link check 2026-11-21: the site did not respond. The listed link (http://www.oneida-nsn.gov/judiciary/)
     no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
     found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
+- kind: tribal-court
+  name: Trial Court
+  link: https://oneida-nsn.gov/judiciary/trialcourt/
+  part_of: Oneida Nation of Wisconsin Judiciary
+  location:
+    place: Oneida
+    state: WI
+    address: N7210 Seminary Rd., Oneida, WI 54155
+  source: oneida-nation-trial-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Trial Court is the court that administers the judicial authorities and responsibilities of the Oneida Nation in Wisconsin”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oneida-nation#1).'
+  appeals_to:
+    court: Court of Appeals
+    source: oneida-nation-trial-court
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Court of Appeals is the branch of the Oneida Judiciary with the responsibility and authority to review decisions of the Oneida Trial and Family Courts”.'
+- kind: family-court
+  name: Family Court
+  link: https://oneida-nsn.gov/judiciary/family-court/
+  part_of: Oneida Nation of Wisconsin Judiciary
+  location:
+    place: Oneida
+    state: WI
+    address: N7210 Seminary Rd., Oneida, WI 54155
+  source: oneida-nation-family-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Oneida Family Court is a court convened to decide matters and make orders in relation to family law”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oneida-nation#2).'
+  appeals_to:
+    court: Court of Appeals
+    source: oneida-nation-trial-court
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Court of Appeals is the branch of the Oneida Judiciary with the responsibility and authority to review decisions of the Oneida Trial and Family Courts”.'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://oneida-nsn.gov/judiciary/courtofappeals/
+  part_of: Oneida Nation of Wisconsin Judiciary
+  location:
+    place: Oneida
+    state: WI
+    address: N7210 Seminary Rd., Oneida, WI 54155
+  source: oneida-nation-trial-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Court of Appeals is the branch of the Oneida Judiciary with the responsibility and authority to review decisions of the Oneida Trial and Family Courts”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oneida-nation#3).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://oneida-nsn.gov/judiciary/healing-to-wellness-court/
+  part_of: Oneida Nation of Wisconsin Judiciary
+  location:
+    place: Oneida
+    state: WI
+  source: oneida-nation-healing-to-wellness-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Oneida Healing to Wellness Court (OHWC) provides the support and resources necessary for participants”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oneida-nation#4).'
 dispute_resolution:
   forums:
   - kind: peacemaking

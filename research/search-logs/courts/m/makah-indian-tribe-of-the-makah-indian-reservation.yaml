@@ -198,3 +198,19 @@ searches:
     then directory entry): directory, https://www.courts.wa.gov/court_dir/orgs/134.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-142
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://makah.com/makah-tribal-info/program-directory/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's program directory names the Makah Tribal Court and its judicial services.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists Makah Tribal Court in Neah Bay.

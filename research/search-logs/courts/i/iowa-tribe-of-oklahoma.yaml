@@ -22,3 +22,11 @@ searches:
     order (own page, then directory entry): own-page, https://iowanation.org/government/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-108
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://iowanation.org/government/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Official Iowa Tribe tribal court page names the District Court and the Iowa Tribe Supreme Court.
