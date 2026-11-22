@@ -240,11 +240,16 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: judicial-branch
   name: Oglala Sioux Judiciary
+  link: https://ujs.sd.gov/tribal-courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: South Dakota section, entry 'Oglala Sioux Tribe'
+  note: 'Link added 2026-11-22: the court system has no page of its own on the Tribe''s website (www.oglala.gov,
+    checked 2026-11-22), so the link is the official directory entry that lists it, the Oglala Sioux Tribe
+    entry under "South Dakota Tribal Court Contact Information" on the South Dakota Unified Judicial System''s
+    Tribal Courts page (fetched with status 200 on 2026-11-22).'
 dispute_resolution:
   database_listings:
   - title: Restriction on Court Ordering Restorative Justice for Domestic Violence Cases
