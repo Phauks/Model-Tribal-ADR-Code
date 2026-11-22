@@ -90,33 +90,38 @@
 	{/snippet}
 
 	{#if !page.withdrawn}
+		<!-- 4-6. The legal sections always show, and say plainly when nothing was
+		     found, so a reader can see whether recourse may be available (Trevor,
+		     Nov. 22, 2026; src/lib/search-status.ts). -->
 		<!-- 4. Courts and dispute resolution -->
-		{#if data.courts.length > 0}
-			<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
+		<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
+			{#if data.empty.courts}
+				{@render emptySection(data.empty.courts)}
+			{:else}
 				<NationServices categories={data.courts} />
-			</Collapsible>
-		{/if}
+			{/if}
+		</Collapsible>
 
 		<!-- 5. Laws and agreements: where the nation publishes its laws, linked, not
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->
-		{#if data.law.length > 0 || data.documents.length > 0}
-			<div data-print-part="documentHistory">
-				<Collapsible heading="Laws and agreements" identifier="law-heading">
-					{#if data.law.length > 0}
-						<FactGroups groups={data.law} />
-					{/if}
-					<DocumentHistoryList documents={data.documents} />
-				</Collapsible>
-			</div>
-		{/if}
+		<div data-print-part="documentHistory">
+			<Collapsible heading="Laws and agreements" identifier="law-heading">
+				{#if data.law.length > 0}
+					<FactGroups groups={data.law} />
+				{/if}
+				<DocumentHistoryList documents={data.documents} />
+			</Collapsible>
+		</div>
 
 		<!-- 6. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
-		{#if data.jurisdiction.length > 0}
-			<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
+		<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
+			{#if data.empty.jurisdiction}
+				{@render emptySection(data.empty.jurisdiction)}
+			{:else}
 				<FactGroups groups={data.jurisdiction} />
-			</Collapsible>
-		{/if}
+			{/if}
+		</Collapsible>
 
 		<!-- 7. Other nations in the same states: plain lists, never a ranking -->
 		{#if data.neighbors.length > 0}
@@ -148,6 +153,11 @@
 		{/if}
 	{/snippet}
 </RecordPage>
+
+<!-- A legal section with nothing to show: the short answer, then how far the search went. -->
+{#snippet emptySection(empty: { text: string; note: string })}
+	<p class="empty-section"><strong>{empty.text}.</strong> {empty.note}</p>
+{/snippet}
 
 <!-- 3. At a glance, with the seal and the map, then the contacts. -->
 {#snippet glance()}
@@ -196,6 +206,13 @@
 		border-radius: 999px;
 		background: var(--color-surface);
 		font-weight: var(--font-weight-semibold);
+	}
+
+	.empty-section {
+		margin: 0 0 var(--space-5);
+		padding: var(--space-3) 0;
+		border-top: 1px solid var(--color-line);
+		border-bottom: 1px solid var(--color-line);
 	}
 
 	.glance-map {

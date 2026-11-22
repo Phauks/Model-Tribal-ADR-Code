@@ -6,10 +6,12 @@ import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-c
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
+	searchSummary,
 	sources as sourceRecords,
 	type CitedFact,
 	type NationRecord
 } from '#lib/server/content.ts';
+import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
@@ -42,15 +44,16 @@ interface FactItem {
 	citations?: CitationMark[];
 }
 
-/**
- * A labeled group of facts. `field` is the record field the group shows.
- * `section` is the id of the heading further down the page that shows the
- * same facts in full; the label then links to it.
- */
+/** What the courts and jurisdiction sections say when they have nothing to show. */
+interface EmptySections {
+	courts?: EmptyNote;
+	jurisdiction?: EmptyNote;
+}
+
+/** A labeled group of facts. `field` is the record field the group shows. */
 interface FactGroup {
 	field: string;
 	label: string;
-	section?: string;
 	items: FactItem[];
 }
 
@@ -321,12 +324,38 @@ function publishedLaw(
 }
 
 /**
+ * The rows "Laws and agreements" shows when the nation's constitution or its
+ * published laws are not on record, so the section always says whether they
+ * were found. The project keeps no search log for laws yet, so the note says
+ * how far the sources go rather than how far a search went.
+ */
+function missingLaw(record: NationRecord, documents: { kind: string }[]): FactGroup[] {
+	const kinds = new Set((record.governing_documents ?? []).map((fact) => fact.kind));
+	// Articles of association are some nations' governing document in place of
+	// a constitution. A corporate charter governs a business, so it is neither.
+	const governing = ['constitution', 'articles-of-association'];
+	const hasConstitution =
+		governing.some((kind) => kinds.has(kind)) ||
+		documents.some((document) => governing.map(humanize).includes(document.kind));
+	const hasLaws =
+		['law-code', 'court-rules', 'other'].some((kind) => kinds.has(kind)) ||
+		(record.dispute_resolution_law ?? []).length > 0;
+	const row = (field: string, label: string, what: string): FactGroup => {
+		const { text, note } = emptySectionNote(what, '', searchSummary(field, record.id));
+		return { field: `missing-${field}`, label, items: [{ text, note }] };
+	};
+	return [
+		...(hasConstitution ? [] : [row('constitution', 'Constitution', 'a constitution or other governing document')]),
+		...(hasLaws ? [] : [row('laws', 'Published laws', 'a law code or other published law')])
+	];
+}
+
 /**
  * The rows At a glance adds from the sections below it, so the key facts
  * come first, the way an encyclopedia's fact box does: the names of the
  * nation's courts and forums, and of the documents where it publishes its
- * laws. Each label links to the section that shows them in full. Each
- * name is cited under the same section and words as there, so the Sources
+ * laws. The labels are plain text, not links to those sections (Trevor,
+ * Nov. 22, 2026). Each name is cited under the same section and words as there, so the Sources
  * list names the fact once and simply links back to both markers. The same
  * name can come from two records (for example two "Tribal code" entries); it
  * is shown once, with the markers of both.
@@ -541,6 +570,7 @@ export const load: PageServerLoad = ({ params }) => {
 			law: [],
 			documents: [],
 			jurisdiction: [],
+			empty: {} as EmptySections,
 			neighbors: [],
 			map: undefined,
 			sources: [],
@@ -624,8 +654,28 @@ export const load: PageServerLoad = ({ params }) => {
 		...document,
 		heading: documentHeading(document.title, names)
 	}));
-	const law = publishedLaw(record, sources, documents);
+	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
 	const jurisdiction = jurisdictionFacts(record, sources);
+	// The legal sections always show, and say plainly when nothing was found,
+	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
+	const empty: EmptySections = {
+		courts:
+			courts.length > 0
+				? undefined
+				: emptySectionNote(
+						'a court or other forum',
+						'A nation can settle disputes through its council or a court that is not listed online; its government office can say.',
+						searchSummary('courts', record.id) ?? searchSummary('dispute-resolution', record.id)
+					),
+		jurisdiction:
+			jurisdiction.length > 0
+				? undefined
+				: emptySectionNote(
+						'the nation’s Public Law 280 status or an Indian Child Welfare Act agent',
+						'',
+						searchSummary('jurisdiction', record.id)
+					)
+	};
 	const result = {
 		page,
 		image,
@@ -639,6 +689,7 @@ export const load: PageServerLoad = ({ params }) => {
 		law,
 		documents,
 		jurisdiction,
+		empty,
 		neighbors: sameStates(record),
 		sources: sources.list
 	};
@@ -648,15 +699,13 @@ export const load: PageServerLoad = ({ params }) => {
 	const hasContacts = contacts.websites.length > 0 || contacts.offices.length > 0;
 	if (glance.length > 0 || map) items.push({ label: 'At a glance', link: '#glance-heading' });
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
-	if (courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
-	if (law.length > 0 || documents.length > 0) {
-		items.push({
-			label: lawHeading,
-			link: '#law-heading',
-			children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
-		});
-	}
-	if (jurisdiction.length > 0) items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
+	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	items.push({
+		label: lawHeading,
+		link: '#law-heading',
+		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
+	});
+	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
 	}
