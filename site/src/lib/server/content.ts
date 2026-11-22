@@ -109,8 +109,12 @@ export interface GlossaryRecord {
 	term: string;
 	kind: 'term' | 'acronym' | 'legal-term' | 'phrase';
 	expansion?: string;
+	part_of_speech?: 'noun' | 'adjective' | 'verb' | 'adverb';
 	usage: 'preferred' | 'acceptable' | 'context-only' | 'avoid';
 	definition: string;
+	other_senses?: { label?: string; definition: string }[];
+	/** The id of the model code provision that enacts a definition of the term, such as 01-102. */
+	code_definition?: string;
 	usage_note?: string;
 	aliases?: string[];
 	use_instead?: string[];
