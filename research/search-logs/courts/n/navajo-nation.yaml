@@ -368,3 +368,27 @@ searches:
     brief; verdict link-dead-court-found, from https://courts.navajo-nsn.gov/indexdistct.htm.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-209
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.navajo-nsn.gov/publicguide.htm
+  query: where appeals from each listed court go (path of appeal)
+  outcome: blocked
+  reason: The court site reset the connection from the project's fetcher.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://courts.navajo-nsn.gov/publicguide.htm
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: 'Read through a web-fetch tool: the public guide (revised Feb. 23, 2021) says cases begun in the trial courts may be appealed to the Navajo Nation Supreme Court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: narf-tribal-law-gateway
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Navajo-Title-7-Courts-and-Procedure.pdf
+  query: where appeals from each listed court go (path of appeal)
+  outcome: dead-link
+  reason: The copy of Title 7 the profile already cites now answers 404, so 7 N.N.C. § 302 could not be read there.

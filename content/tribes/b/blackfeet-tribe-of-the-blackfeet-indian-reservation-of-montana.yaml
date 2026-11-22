@@ -329,6 +329,13 @@ justice_institutions:
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  appeals_to:
+    court: Blackfeet Court of Appeals
+    source: national-indian-law-library-code-codes-blackfeetcode
+    confidence: medium
+    verification: read-in-full
+    locator: Chapter 11, Part I, § 1
+    note: Chapter 11 of the Blackfeet Tribal Law and Order Code, as the National Indian Law Library hosts it, names the Court of Appeals the highest court of the Blackfeet Tribe and gives it all appeals, criminal, civil and juvenile, from the Blackfeet Tribal Court. The copy is an older printing; the Family Court's appeals are not stated in it.
 - kind: tribal-court
   name: Blackfeet Family Court
   link: http://blackfeetnation.com/government/court/

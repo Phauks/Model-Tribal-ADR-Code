@@ -296,10 +296,11 @@
 
 // ---------- Glossary
 
-#let glossary-entry(term, expansion, usage, see-also, body) = block(above: 1.1em, breakable: true, {
+#let glossary-entry(term, label, expansion, usage, see-also, body) = block(above: 1.1em, breakable: true, {
   set par(justify: false)
   text(weight: "bold", term)
-  if expansion != none [ (#expansion)]
+  [ #emph(label)]
+  if expansion != none [ of #text(weight: "bold", expansion)]
   if usage != none [ #h(0.3em) #text(size: 0.85em, tracking: 0.04em, upper(usage))]
   parbreak()
   body

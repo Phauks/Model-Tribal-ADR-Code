@@ -9,12 +9,30 @@ jurisdictions:
 summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2013-09-26.
   Versions are only those found; others may exist.'
 versions:
+- id: 2011-text
+  label: 2011 constitution
+  event: edition
+  status: superseded
+  dates:
+    adopted: '2011-11-19'
+  source: constitution-klamath-tribes-2011-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/klamath-tribes/47edf7b5e6e89d2c.pdf
+    sha256: 47edf7b5e6e89d2c7aecc60971cdc1b5dd01ba6b1afcc6e802abe95bf174cac0
+    pages: 18
+  note: Scanned; footed "Approved by General Council - 11/19/2011". Older than the 2013 text, so marked
+    superseded. Version, status and dates read from the copy by the project (Claude), not yet checked
+    by the lead author.
 - id: 2013-text
   label: 2013 constitution, as amended
   event: edition
   status: in-effect
   dates:
     listed: '2013-09-26'
+  supersedes:
+  - 2011-text
   source: constitution-klamath-tribes-2013-text
   confidence: medium
   verification: read-in-full
@@ -52,7 +70,29 @@ versions:
     locator: Article XI (SUPERVISOR OVER ELECTIONS)
     summary: Article headed "SUPERVISOR OVER ELECTIONS"; found by its heading and not yet read.
     verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 2011-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: judicial-power
+    compared_with: 2011-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: peacemaking
+    compared_with: 2011-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+  - topic: removal-and-recall
+    compared_with: 2011-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

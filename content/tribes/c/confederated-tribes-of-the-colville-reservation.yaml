@@ -242,6 +242,13 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Confederated Tribes of the Colville Reservation'
+  appeals_to:
+    court: Court of Appeals
+    source: colville-tribal-court-page
+    confidence: medium
+    verification: read-in-full
+    locator: General Information
+    note: The page says the Tribal Court consists of a trial court and the Colville Tribal Court of Appeals; Colville Tribal Code § 1-1-41 (September 2010 version) establishes the Court of Appeals as the appellate court for the Reservation.
 dispute_resolution:
   forums:
   - kind: peacemaking

@@ -1,0 +1,29 @@
+profile: content/tribes/b/blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://blackfeetnation.com/government/court/
+  query: where appeals from each listed court go (path of appeal)
+  outcome: blocked
+  reason: The site answered 403 to the project's fetcher.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://indianlaw.mt.gov/_docs/blackfeet/codes/1999/chapter01.pdf
+  query: where appeals from each listed court go (path of appeal)
+  outcome: dead-link
+  reason: The Montana Governor's Office of Indian Affairs copy of the code answered 404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/blackfeetcode/ch11.pdf
+  query: where appeals from each listed court go (path of appeal)
+  outcome: found
+  reason: 'Chapter 11, Part I, § 1: the Court of Appeals is the highest court and hears all appeals from the Blackfeet Tribal Court. Nothing found on appeals from the Blackfeet Family Court.'
