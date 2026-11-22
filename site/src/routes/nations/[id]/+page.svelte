@@ -116,12 +116,14 @@
 	{#if !page.withdrawn}
 		<!-- 4. At a glance, with the map of states -->
 		{#if data.glance.length > 0 || data.map}
-			<Collapsible class="profile-glance" heading="At a glance" identifier="glance-heading">
-				{#if data.map}
-					<StatePresenceMap map={data.map} nationName={page.officialName} />
-				{/if}
-				<FactGroups groups={data.glance} />
-			</Collapsible>
+			<div class="profile-glance">
+				<Collapsible heading="At a glance" identifier="glance-heading">
+					{#if data.map}
+						<StatePresenceMap map={data.map} nationName={page.officialName} />
+					{/if}
+					<FactGroups groups={data.glance} />
+				</Collapsible>
+			</div>
 		{/if}
 
 		<div class="profile-details">
@@ -142,12 +144,14 @@
 
 			<!-- 7. Document history: every recorded version, oldest first (decision record 0018) -->
 			{#if data.documents.length > 0}
-				<Collapsible heading="Document history" identifier="documents-heading" printPart="documentHistory">
+				<div data-print-part="documentHistory">
+				<Collapsible heading="Document history" identifier="documents-heading">
 					<p class="small muted">
 						Each document below lists every version the project has found, what each version did to the ones before it, and how its key clauses changed.
 					</p>
 					<DocumentHistoryList documents={data.documents} />
 				</Collapsible>
+				</div>
 			{/if}
 
 			<!-- 9. Sources -->
@@ -211,7 +215,7 @@
 			margin-top: var(--space-5);
 		}
 
-		.profile-glance > h2 {
+		.profile-glance > :global(.collapsible) {
 			margin-top: 0;
 		}
 

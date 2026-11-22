@@ -6,7 +6,12 @@
  * version's source is listed in the Sources section, not beside it.
  */
 import { humanize } from '../nation-labels.ts';
-import { documentHistories, type DocumentHistoryRecord, type DocumentVersion } from './content.ts';
+import {
+	documentHistories,
+	sources as sourceRecords,
+	type DocumentHistoryRecord,
+	type DocumentVersion
+} from './content.ts';
 import type { SourceUses } from './source-uses.ts';
 
 export interface VersionChangeView {
@@ -21,6 +26,8 @@ export interface VersionView {
 	event: string;
 	status: string;
 	inEffect: boolean;
+	/** Where the text of this version can be read: its source's public copy, or an archived copy. */
+	link?: string;
 	/** The dates the sources give, in the order events happen, e.g. "Approved 2003-01-24; published 2003-02-05". */
 	dates?: string;
 	/** What the version did to earlier ones, e.g. "Replaced the 1993 compact". */
@@ -108,6 +115,20 @@ function inEffectPhrase(versions: DocumentVersion[]): string | undefined {
 	return rest.length > 0 ? `${first}, as amended by ${rest.join(' and ')}` : first;
 }
 
+/**
+ * The public copy of a version's text, so the history links to the document
+ * itself (Trevor, Nov. 22, 2026): the source's own address, or its first
+ * archived copy when it has no address. The project's own captures are
+ * private and are never linked (texts stay link-only).
+ */
+function textLink(sourceKey: string | undefined): string | undefined {
+	if (!sourceKey) return undefined;
+	const record = sourceRecords().get(sourceKey);
+	if (record?.original_link) return record.original_link;
+	const archived = record?.archives?.find((copy) => copy.link ?? copy.url);
+	return archived?.link ?? archived?.url;
+}
+
 /** The part of SourceUses this section needs, so tests can pass a stand-in. */
 type SourceRecorder = Pick<SourceUses, 'add' | 'use'>;
 
@@ -132,6 +153,7 @@ export function documentHistoryView(
 			event: EVENT_LABELS[version.event] ?? humanize(version.event),
 			status: humanize(version.status),
 			inEffect: version.status === 'in-effect',
+			link: textLink(version.source),
 			dates: datesPhrase(version),
 			relation: relationPhrase(version, byId),
 			changes: (version.changes ?? []).map((change) => ({

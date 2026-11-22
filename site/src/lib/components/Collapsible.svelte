@@ -18,17 +18,15 @@
 		heading: string;
 		/** The heading's id, unique on the page. */
 		identifier: string;
-		/** The part's name in the print dialog (data-print-part), if it has one. */
-		printPart?: string;
 		/** Extra classes for the section, such as a layout class. */
 		class?: string;
 		children: Snippet;
 	}
 
-	let { heading, identifier, printPart, class: extraClass = '', children }: Props = $props();
+	let { heading, identifier, class: extraClass = '', children }: Props = $props();
 </script>
 
-<details class="collapsible {extraClass}" open data-print-part={printPart}>
+<details class="collapsible {extraClass}" open>
 	<summary>
 		<span class="fold-mark no-print"><ChevronDown size={24} /></span>
 		<h2 id={identifier}>{heading}</h2>

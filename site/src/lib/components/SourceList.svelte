@@ -11,7 +11,8 @@
 </script>
 
 {#if sources.length > 0}
-	<Collapsible class="notes" heading="Sources" identifier="sources-heading" printPart="sources">
+	<div class="notes" data-print-part="sources">
+	<Collapsible heading="Sources" identifier="sources-heading">
 		<ol>
 			{#each sources as source (source.key)}
 				<li id="source-{source.number}">
@@ -29,4 +30,5 @@
 			{/each}
 		</ol>
 	</Collapsible>
+	</div>
 {/if}
