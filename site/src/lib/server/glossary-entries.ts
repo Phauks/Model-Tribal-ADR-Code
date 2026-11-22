@@ -4,16 +4,16 @@
  * on glossary links read. Built from content/glossary/*.yaml
  * (docs/terminology.md) when the site is built.
  *
- * Citations follow the nation pages (site/DESIGN.md, "Nation pages"): a
- * numbered marker in the text, and the citation itself, in the project's
- * Indigo Book style, in one Sources section at the end of the page, followed
- * by every entry on the page that the source supports.
+ * Citations follow the nation pages (site/DESIGN.md, section 6, "Citations"):
+ * a numbered marker in the text, and the citation itself, in the project's
+ * Indigo Book style, in one Sources section at the end of the page, which
+ * links back to each marker and names every entry the source supports.
  */
 import { sourceCitations } from 'virtual:source-citations';
 import { usageLabels } from '../glossary-labels.ts';
 import { glossary, sources, type GlossaryRecord } from './content.ts';
 import { formatSource, plainText, renderMarkdown, type CitationCollector } from './markdown.ts';
-import { SourceUses, type SourceEntry } from './source-uses.ts';
+import { SourceUses, type CitationMark, type SourceEntry } from './source-uses.ts';
 
 /** Another entry, named by its headword. */
 export interface TermReference {
@@ -78,14 +78,10 @@ class GlossaryCitations implements CitationCollector {
 	readonly uses = new SourceUses(citationOf);
 	part = { term: '', text: '' };
 
-	add(key: string, locator?: string): number {
+	cite(key: string, locator?: string): CitationMark {
 		// A subdivision of a code section, such as "(d)", reads as "subsection (d)".
 		const where = locator?.startsWith('(') ? `subsection ${locator}` : locator;
-		return this.uses.add(key, { section: this.part.term, text: this.part.text, where });
-	}
-
-	markerTarget(number: number): string {
-		return `#source-${number}`;
+		return this.uses.cite(key, { section: this.part.term, text: this.part.text, where });
 	}
 }
 

@@ -6,13 +6,16 @@
  * the site search in the masthead.
  */
 import { foldForSearch } from '../tables/table-definition.ts';
-import { entityTypeLabels, reviewStatusLabels, stateName } from '../nation-labels.ts';
+import { displayName, entityTypeLabels, reviewStatusLabels, stateName } from '../nation-labels.ts';
 import { nations, type NationRecord } from './content.ts';
 import { recognitionViews, type RecognitionView } from './recognition.ts';
 
 export interface NationIndexRow {
 	id: string;
+	/** The name as pages show it, without states the list adds (displayName). */
 	name: string;
+	/** The name exactly as the recognizing list gives it. */
+	listedName: string;
 	entityType: string;
 	/** "a" to "z", or "other" for a name that starts with anything else. */
 	letter: string;
@@ -47,9 +50,10 @@ function rowOf(record: NationRecord): NationIndexRow {
 	const states = [...new Set((record.states ?? []).map((fact) => fact.state))];
 	return {
 		id: record.id,
-		name: record.names.official,
+		name: displayName(record.names.official),
+		listedName: record.names.official,
 		entityType: record.entity_type,
-		letter: letterOf(record.names.official),
+		letter: letterOf(displayName(record.names.official)),
 		states,
 		statesText: states.map(stateName).join(', '),
 		review: reviewStatusLabels[record.review?.status]?.label ?? record.review?.status ?? '',
@@ -60,7 +64,9 @@ function rowOf(record: NationRecord): NationIndexRow {
 let rowCache: NationIndexRow[] | undefined;
 
 export function nationIndexRows(): NationIndexRow[] {
-	rowCache ??= nations().map(rowOf);
+	rowCache ??= nations()
+		.map(rowOf)
+		.sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
 	return rowCache;
 }
 

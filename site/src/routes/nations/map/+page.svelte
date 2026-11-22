@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { replaceState } from '$app/navigation';
-	import PageTools from '#lib/components/PageTools.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
@@ -201,7 +200,6 @@
 
 <div class="reading">
 	<h1>Map of Native nations</h1>
-	<PageTools />
 	<div class="notice" role="note">
 		<h2 class="notice-heading">What this map shows</h2>
 		<p>The map has more than one view. Choose one with the buttons above the map.</p>
@@ -497,6 +495,37 @@
 	.map-drawing :global(a:hover .region),
 	.map-drawing :global(a:focus .region) {
 		fill: var(--color-focus);
+	}
+
+	/* Small islands are only a few map units across, so on hover their outline
+	   also gets a wide stroke in the focus color, and the line to their marker
+	   darkens, so that the place itself visibly lights up. */
+	.map-drawing :global(a:hover .island),
+	.map-drawing :global(a:focus .island) {
+		stroke: var(--color-focus);
+		stroke-width: 3;
+	}
+	.map-drawing :global(a:hover .marker-line),
+	.map-drawing :global(a:focus .marker-line),
+	.map-drawing :global(.unlinked:hover .marker-line) {
+		stroke: var(--color-ink);
+		stroke-width: 1.2;
+	}
+
+	/* Places with no table row to go to are not links, but still outline on
+	   hover so a reader sees which place the tooltip names. */
+	.map-drawing :global(.unlinked:hover .state) {
+		stroke: var(--color-ink);
+		stroke-width: 1.5;
+	}
+
+	/* An invisible wide band around each small island that takes the pointer. */
+	.map-drawing :global(.hit-area) {
+		fill: none;
+		stroke: transparent;
+		stroke-width: 12;
+		stroke-linejoin: round;
+		pointer-events: stroke;
 	}
 
 	.map-drawing :global(.state-borders) {

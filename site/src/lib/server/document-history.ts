@@ -3,11 +3,19 @@
  * nation that has recorded versions (content/documents/, decision record
  * 0018), oldest version first, with what each version did to the ones before
  * it and how its key clauses changed. Like every fact on the page, each
- * version's source is listed in the Sources section, not beside it.
+ * version carries the markers of its sources, which link to the page's
+ * Sources section.
  */
 import { humanize } from '../nation-labels.ts';
-import { documentHistories, type DocumentHistoryRecord, type DocumentVersion } from './content.ts';
-import type { SourceUses } from './source-uses.ts';
+import { copyPath } from '../public-copies.ts';
+import {
+	documentHistories,
+	publicCopyFor,
+	sources as sourceRecords,
+	type DocumentHistoryRecord,
+	type DocumentVersion
+} from './content.ts';
+import type { CitationMark, SourceUses } from './source-uses.ts';
 
 export interface VersionChangeView {
 	topic: string;
@@ -21,11 +29,15 @@ export interface VersionView {
 	event: string;
 	status: string;
 	inEffect: boolean;
+	/** Where the text of this version can be read: its source's public copy, or an archived copy. */
+	link?: string;
 	/** The dates the sources give, in the order events happen, e.g. "Approved 2003-01-24; published 2003-02-05". */
 	dates?: string;
 	/** What the version did to earlier ones, e.g. "Replaced the 1993 compact". */
 	relation?: string;
 	changes: VersionChangeView[];
+	/** The markers of the version's source and of its approval notice. */
+	citations: CitationMark[];
 }
 
 export interface DocumentHistoryView {
@@ -108,8 +120,25 @@ function inEffectPhrase(versions: DocumentVersion[]): string | undefined {
 	return rest.length > 0 ? `${first}, as amended by ${rest.join(' and ')}` : first;
 }
 
+/**
+ * The public copy of a version's text, so the history links to the document
+ * itself (Trevor, Nov. 22, 2026): the copy this site serves when it keeps
+ * one (src/lib/public-copies.ts), else the source's own address, else its
+ * first archived copy. Private captures are never linked (texts stay
+ * link-only).
+ */
+function textLink(sourceKey: string | undefined): string | undefined {
+	if (!sourceKey) return undefined;
+	const record = sourceRecords().get(sourceKey);
+	const saved = publicCopyFor(record?.original_link);
+	if (saved) return copyPath(saved);
+	if (record?.original_link) return record.original_link;
+	const archived = record?.archives?.find((copy) => copy.link ?? copy.url);
+	return archived?.link ?? archived?.url;
+}
+
 /** The part of SourceUses this section needs, so tests can pass a stand-in. */
-type SourceRecorder = Pick<SourceUses, 'add' | 'use'>;
+type SourceRecorder = Pick<SourceUses, 'cite' | 'citeFact'>;
 
 export function documentHistoryView(
 	record: DocumentHistoryRecord,
@@ -118,13 +147,18 @@ export function documentHistoryView(
 	const byId = new Map(record.versions.map((version) => [version.id, version]));
 	const versions = record.versions.map((version): VersionView => {
 		const label = labelOf(version, version.id);
-		sources.use(version, record.title, label);
+		const citations: CitationMark[] = [];
+		sources.citeFact(version, record.title, label, citations);
 		if (version.approval?.source) {
-			sources.add(version.approval.source, {
-				section: record.title,
-				text: `${label}: ${humanize(version.approval.action).toLocaleLowerCase('en-US')}`,
-				where: version.approval.locator
-			});
+			sources.cite(
+				version.approval.source,
+				{
+					section: record.title,
+					text: `${label}: ${humanize(version.approval.action).toLocaleLowerCase('en-US')}`,
+					where: version.approval.locator
+				},
+				citations
+			);
 		}
 		return {
 			id: version.id,
@@ -132,13 +166,15 @@ export function documentHistoryView(
 			event: EVENT_LABELS[version.event] ?? humanize(version.event),
 			status: humanize(version.status),
 			inEffect: version.status === 'in-effect',
+			link: textLink(version.source),
 			dates: datesPhrase(version),
 			relation: relationPhrase(version, byId),
 			changes: (version.changes ?? []).map((change) => ({
 				topic: humanize(change.topic),
 				change: CHANGE_LABELS[change.change] ?? change.change,
 				summary: change.summary
-			}))
+			})),
+			citations
 		};
 	});
 	return {

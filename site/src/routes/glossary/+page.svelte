@@ -1,7 +1,5 @@
 <script lang="ts">
 	import GlossaryEntry from '#lib/components/GlossaryEntry.svelte';
-	import PageTools from '#lib/components/PageTools.svelte';
-	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { PageProps } from './$types';
 
@@ -21,17 +19,10 @@
 
 <div class="reading">
 	<h1>Glossary</h1>
-	<ReportLink record="glossary" />
-	<PageTools downloads={[{ label: 'Download every term', format: 'JSON', link: '/glossary/terms.json' }]} />
 	<p class="lead">
 		The {data.count} words the project defines, how it uses them, and what to write instead where a
 		word is best avoided. Each entry cites its sources, listed together at the end of the page, or says
 		it is the project’s own choice.
-	</p>
-	<p class="small muted">
-		To point to a term from another page, link to <code>/glossary#</code> followed by the term’s address,
-		for example <a href="#native-nations"><code>/glossary#native-nations</code></a>, or to the term’s own
-		page, such as <a href="/glossary/native-nations"><code>/glossary/native-nations</code></a>.
 	</p>
 </div>
 
@@ -59,7 +50,7 @@
 		</section>
 	{/each}
 
-	<SourceList sources={data.sources} introduction="Each source below is followed by the entries on this page that cite it." />
+	<SourceList sources={data.sources} />
 </div>
 
 <style>
