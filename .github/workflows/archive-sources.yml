@@ -27,10 +27,13 @@
 #   (workflow_dispatch is the one event that token may start) so the required
 #   "All checks" result appears on the pull request.
 #
-# GitHub may delay or skip scheduled runs, so a catch-up run that wrote new
-# captures also starts the next run itself (workflow_dispatch, which the
-# workflow token may start); the chain stops on its own once a run finds
-# nothing new to capture, and the schedule remains as a backstop.
+# GitHub may delay or skip scheduled runs, so a catch-up run that tried any
+# record also starts the next run itself (workflow_dispatch, which the
+# workflow token may start). A cache (archive-state.json) remembers which
+# records were looked up with no recent copy and which saves failed, so each
+# run looks up new records first and does not retry a failed save for a day;
+# the chain stops on its own once no record is due, and the schedule remains
+# as a backstop.
 #
 # A refused or failed capture is simply left for a later run.
 name: archive sources
@@ -101,16 +104,32 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Continue the open captures branch, if there is one
+      - name: Continue the open captures pull request, or start a new branch from main
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git fetch origin archive/captures 2>/dev/null; then
+          # The workflow token may not push a commit whose files under .github/workflows
+          # differ from what the branch (or, for a new branch, main) already has, so the
+          # job never merges main into the branch: it adds to an open pull request's
+          # branch as it is, or starts a new branch from main and rebases onto the
+          # latest main just before pushing.
+          if [ -n "$(gh pr list --head archive/captures --state open --json number --jq '.[].number')" ]; then
+            git fetch origin archive/captures
             git switch -c archive/captures FETCH_HEAD
-            git merge --no-edit origin/main
+            echo "CAPTURES_BASE=archive/captures" >> "$GITHUB_ENV"
           else
+            git push origin --delete archive/captures 2>/dev/null || true
             git switch -c archive/captures
+            echo "CAPTURES_BASE=main" >> "$GITHUB_ENV"
           fi
+      - name: Restore the record of earlier lookups and saves
+        uses: actions/cache/restore@v4
+        with:
+          path: archive-state.json
+          key: archive-state-${{ github.run_id }}
+          restore-keys: archive-state-
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
@@ -119,7 +138,13 @@ jobs:
         env:
           LIMIT: ${{ inputs.limit || '2000' }}
           KEYS: ${{ inputs.keys }}
-        run: python3 scripts/find_archived_copies.py --save --reuse-days 365 --limit "$LIMIT" --minutes 90 --report archive-report.json $KEYS
+        run: python3 scripts/find_archived_copies.py --save --reuse-days 365 --state archive-state.json --limit "$LIMIT" --minutes 90 --report archive-report.json $KEYS
+      - name: Keep the record of lookups and saves for the next run
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: archive-state.json
+          key: archive-state-${{ github.run_id }}
       - name: Write the captures into the records
         run: python3 scripts/apply_archive_report.py archive-report.json
       - name: Check the records
@@ -136,7 +161,10 @@ jobs:
           git add content/sources
           git commit -m "chore(content): add Wayback captures for $count source records" \
             -m "Written by the archive workflow's catch-up job (scripts/apply_archive_report.py) from its archive report."
-          git push origin archive/captures
+          git fetch origin main
+          git fetch origin "$CAPTURES_BASE"
+          git rebase FETCH_HEAD
+          git push origin HEAD:refs/heads/archive/captures
           echo "committed=true" >> "$GITHUB_OUTPUT"
           gh workflow run checks.yml --ref archive/captures \
             || echo "Could not start checks.yml on archive/captures; start it by hand so the pull request gets its required checks."
@@ -149,11 +177,13 @@ jobs:
             gh pr create --base main --head archive/captures --title "$title" --body "$body" \
               || echo "Could not open the pull request (the repository may not let workflows open pull requests); open one from branch archive/captures."
           fi
-      - name: Start the next run while there are new captures
-        if: steps.commit.outputs.committed == 'true'
+      - name: Start the next run while records are still being tried
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run archive-sources.yml --ref main || echo "Could not start the next run; the schedule will."
+        run: |
+          tried=$(python3 -c 'import json; print(len(json.load(open("archive-report.json"))))' 2>/dev/null || echo 0)
+          if [ "$tried" -eq 0 ]; then echo "No record was due this run; leaving the next run to the schedule."; exit 0; fi
+          gh workflow run archive-sources.yml --ref main || echo "Could not start the next run; the schedule will."
       - uses: actions/upload-artifact@v4
         if: always()
         with:
