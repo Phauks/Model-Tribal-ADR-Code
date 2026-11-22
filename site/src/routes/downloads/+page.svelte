@@ -74,7 +74,7 @@
 		</li>
 	</ul>
 	<p>
-		Material that a nation has asked the project to restrict is never included in a download.
+		Material that a nation has asked to restrict is never included in a download.
 	</p>
 
 	<h2>Until then</h2>
