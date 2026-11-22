@@ -30,7 +30,7 @@ export function requirePerson(event: WorkspaceEvent): SignedInPerson {
 	return event.locals.person;
 }
 
-/** Whoever is signed in with a verified email address, or a redirect to sign in and come back. */
+/** Whoever is signed in, or a redirect to sign in and come back. */
 export function requireAccount(event: WorkspaceEvent): SignedInAccount {
 	if (!event.locals.account) {
 		const returnTo = `${event.url.pathname}${event.url.search}`;
