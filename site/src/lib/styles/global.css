@@ -553,12 +553,15 @@ sup.citation {
 .source-list > li {
 	position: relative;
 	padding-left: 2.5em;
+	/* Each source's number is a link back to the text; a full line height keeps it a 24 pixel target (WCAG 2.2, 2.5.8) beside small text. */
+	min-height: 1.5rem;
 }
 
 .source-list .source-number {
 	position: absolute;
 	left: 0;
 	width: 2em;
+	min-height: 1.5rem;
 	text-align: right;
 }
 
@@ -600,6 +603,22 @@ sup.citation {
  * outranks the token rules of both themes, whatever order the style sheets
  * load in.
  */
+:root:root[data-text-size='50'] {
+	--text-scale: 0.5;
+}
+
+:root:root[data-text-size='62.5'] {
+	--text-scale: 0.625;
+}
+
+:root:root[data-text-size='75'] {
+	--text-scale: 0.75;
+}
+
+:root:root[data-text-size='87.5'] {
+	--text-scale: 0.875;
+}
+
 :root:root[data-text-size='112.5'] {
 	--text-scale: 1.125;
 }
@@ -634,7 +653,7 @@ sup.citation {
 
 /*
  * Line width (Settings, Text). The token's 51ch is Standard, about 75
- * characters of English in Atkinson Hyperlegible Next at 18 px.
+ * characters of English in Atkinson Hyperlegible Next at any size.
  */
 :root:root[data-line-width='narrow'] {
 	--layout-measure: 44ch;
@@ -949,6 +968,16 @@ sup.citation {
 
 	thead {
 		display: table-header-group;
+	}
+
+	/*
+	 * On paper the two smallest text sizes print at 75 percent, about 10
+	 * points, so a page set to 50 percent on screen still prints readable
+	 * text.
+	 */
+	:root:root[data-text-size='50'],
+	:root:root[data-text-size='62.5'] {
+		--text-scale: 0.75;
 	}
 
 	/* Links back to the text mean nothing on paper; the source's number stays. */

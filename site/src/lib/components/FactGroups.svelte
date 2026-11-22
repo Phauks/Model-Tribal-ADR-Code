@@ -69,10 +69,12 @@
 	 * its markers are not inside running text and need a full 24 by 24 pixel
 	 * target (WCAG 2.2, 2.5.8 Target Size (Minimum)). Padding gives the room
 	 * and keeps the marker inline, so it never wraps away from the fact's last
-	 * word; the room is after the number, which stays against the words.
+	 * word; the room is after the number, which stays against the words. The
+	 * padding is in pixels and sized for the 16 px standard text, so the box
+	 * reaches 24 by 24 pixels without growing the line.
 	 */
 	.summary-list :global(.note-marker) {
-		padding: 2px 6px 2px 0.05em;
+		padding: 4px 8px 4px 0.05em;
 	}
 
 	.fact-detail {
