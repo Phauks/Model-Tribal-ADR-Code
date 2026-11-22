@@ -212,6 +212,10 @@ behind them is in the
   calls "confident, well-formed fabrication" AI's "signature failure," and
   polished prose can hide it.[^garner]
 
+The `Prose flags` check ([scripts/check_prose.py](../scripts/check_prose.py))
+flags several of these habits on the lines a pull request adds. It only warns:
+each flag is a prompt to reread the sentence, not a ruling.
+
 ## 9. Review checklist
 
 Before opening a pull request with written content, check that:
