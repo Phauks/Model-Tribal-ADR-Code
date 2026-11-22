@@ -11,6 +11,8 @@ export interface OfficialImageRecord {
 	kind: string;
 	alternative_text?: string;
 	image_link: string;
+	/** Who made or published the copy and its license, when it is not the nation's own file. */
+	credit?: string;
 	media_type?: string;
 	sha256: string;
 	private_copy?: string;

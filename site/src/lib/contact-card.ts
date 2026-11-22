@@ -193,11 +193,6 @@ export function addressLines(value: string): string[] {
 	return [parts.slice(0, -2).join(', '), parts.slice(-2).join(', ')];
 }
 
-function sameAddress(first: string, second: string): boolean {
-	const normalize = (value: string) => value.toLocaleLowerCase('en-US').replace(/[^a-z0-9]/g, '');
-	return normalize(first) === normalize(second);
-}
-
 function row(fact: ContactFact, note: string | undefined): ContactRow {
 	const kind = contactKind(fact.kind);
 	const label = kindLabels[kind];
@@ -301,20 +296,6 @@ export function contactCards<Fact extends ContactFact>(
 			.sort(
 				(a, b) => rowOrder.indexOf(a.row.kind) - rowOrder.indexOf(b.row.kind) || a.index - b.index
 			);
-		// A mailing address that repeats the office's physical address says so instead of repeating it.
-		const physical = rows.find((entry) => entry.row.kind === 'physical-address');
-		for (const entry of rows) {
-			if (
-				physical &&
-				entry.row.kind === 'mailing-address' &&
-				sameAddress(entry.fact.value, physical.fact.value)
-			) {
-				entry.row.lines = ['Same as physical address'];
-				entry.row.link = undefined;
-				entry.row.external = undefined;
-				entry.row.linkHint = undefined;
-			}
-		}
 		// A website the directory lists that now leads to the nation's own site is shown once, as a note on that site.
 		const leadsHere = rows
 			.map(

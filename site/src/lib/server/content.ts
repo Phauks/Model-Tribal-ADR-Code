@@ -15,6 +15,7 @@ import { parse } from 'yaml';
 import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 import { parseCsv } from '../csv.ts';
+import type { SearchSummary } from '../search-status.ts';
 import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
@@ -301,6 +302,41 @@ export function nations(): NationRecord[] {
 		);
 	}
 	return nationCache;
+}
+
+let searchLogCache: Map<string, SearchSummary> | undefined;
+
+/**
+ * The nation's search log for a topic, such as "courts", summed up for its
+ * page (research/search-logs/, decision record 0025), or undefined when no
+ * one has logged a search for it.
+ */
+export function searchSummary(topic: string, nationId: string): SearchSummary | undefined {
+	if (!searchLogCache) {
+		searchLogCache = new Map();
+		for (const file of yamlFilesUnder('research/search-logs')) {
+			const log = readYaml<{
+				profile: string;
+				topic: string;
+				status: SearchSummary['status'];
+				last_searched?: string;
+				searches?: { address?: string; place_kind?: string }[];
+			}>(file);
+			const id = path.posix.basename(log.profile, '.yaml');
+			const searches = log.searches ?? [];
+			const kindCounts = new Map<string, number>();
+			for (const search of searches) {
+				if (search.place_kind) kindCounts.set(search.place_kind, (kindCounts.get(search.place_kind) ?? 0) + 1);
+			}
+			searchLogCache.set(`${log.topic}/${id}`, {
+				status: log.status,
+				lastSearched: log.last_searched,
+				places: new Set(searches.map((search, index) => search.address ?? `search ${index}`)).size,
+				placeKinds: [...kindCounts].sort((first, second) => second[1] - first[1]).map(([kind]) => kind)
+			});
+		}
+	}
+	return searchLogCache.get(`${topic}/${nationId}`);
 }
 
 /**

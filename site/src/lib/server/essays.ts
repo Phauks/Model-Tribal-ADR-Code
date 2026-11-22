@@ -257,6 +257,8 @@ export interface SaveInput {
 	/** Who saved it; null when the site saved text that came from git. */
 	personIdentifier: string | null;
 	note?: string | null;
+	/** Save a new version even when the text is the same as the newest one's: naming it ("Name this version"). */
+	evenIfUnchanged?: boolean;
 	origin: VersionRow['origin'];
 	/** For a new essay. */
 	part?: EssayPart;
@@ -281,7 +283,7 @@ export async function saveVersion(
 	if ((latest?.number ?? null) !== input.basedOn) throw new SaveConflict(latest?.number ?? 0);
 
 	const sha256 = await sha256Hex(text);
-	if (latest && latest.sha256 === sha256) return { version: latest, unchanged: true };
+	if (latest && latest.sha256 === sha256 && !input.evenIfUnchanged) return { version: latest, unchanged: true };
 
 	const number = (latest?.number ?? 0) + 1;
 	const objectKey = `essays/${input.identifier}/versions/${number}-${sha256.slice(0, 12)}.md`;

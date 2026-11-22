@@ -130,6 +130,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tonkawa Tribe of Indians of Oklahoma
+official_images:
+- kind: logo
+  alternative_text: Tonkawa Tribe of Oklahoma
+  image_link: https://tonkawatribe.com/wp-content/uploads/2022/09/tonkawa-tribe-logo.png
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 155da4b94eb60c0ae2853cc4a4fea4fb80067e7edf03a0f31cbf56f647822e19
+  private_copy: nation-images/tonkawa-tribe-of-indians-of-oklahoma/logo-155da4b94eb6.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2025 Tonkawa Tribe of Oklahoma.
+      link: https://tonkawatribe.com/
+      source: tonkawa-tribe-of-indians-of-oklahoma-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: tonkawa-tribe-of-indians-of-oklahoma-home
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 languages:
 - name: Tonkawa
   language_tag: tqw

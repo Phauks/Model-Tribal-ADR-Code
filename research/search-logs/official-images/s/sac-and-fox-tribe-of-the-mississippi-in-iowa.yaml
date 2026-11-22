@@ -1,0 +1,54 @@
+profile: content/tribes/s/sac-and-fox-tribe-of-the-mississippi-in-iowa.yaml
+topic: official-images
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.meskwaki.org/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: blocked
+  reason: scripts/tribes/find_official_images.py could not read the site (refused, timed out or failed
+    to connect).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.meskwaki.org/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: not-found
+  reason: 'Rendered in a headless Chromium browser (Playwright); no usable image: the header and logo
+    images were maps, photos, icons or another organization''s mark, or did not download.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikipedia
+  address: https://en.wikipedia.org/wiki/Sac_and_Fox_Tribe_of_the_Mississippi_in_Iowa
+  query: infobox image, seal, logo and flag fields
+  outcome: not-found
+  reason: The article's infobox has no seal or logo (at most a photo, map or flag).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikimedia-commons
+  address: https://commons.wikimedia.org/wiki/Category:Official_seals_of_Native_American_tribes
+  query: files in the categories of official seals, tribal insignia, logos, coats of arms and flags of
+    Native American tribes (three levels down), matched to the nation's name
+  outcome: not-found
+  reason: No seal or logo file matched the nation's name; a flag file did (Flag of the Sac and Fox Nation.svg),
+    left for a later decision on flags.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: the nation's own seal, emblem, logo or flag
+  outcome: not-found
+  reason: 'An AI lookup helper using web search and page fetches found nothing usable: meskwaki.org returns
+    a Cloudflare challenge to curl. Wikipedia redirects to the Meskwaki article, which has no seal image
+    in the fetched content.'
+next_steps: A person could check the nation's social media pages, newsletters or annual reports, or ask
+  the nation's office for a copy and permission; a flag on Wikimedia Commons is listed above if Trevor
+  decides flags should be shown.
