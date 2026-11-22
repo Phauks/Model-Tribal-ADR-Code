@@ -21,7 +21,7 @@ export const settingsStorageKey = 'reading-settings';
 export const themeStorageKey = 'theme';
 
 /** Text size as a percentage of the standard size; the slider in Settings steps through these. */
-export const textSizes = ['100', '112.5', '125', '137.5', '150', '175', '200'] as const;
+export const textSizes = ['50', '62.5', '75', '87.5', '100', '112.5', '125', '137.5', '150', '175', '200'] as const;
 export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic'] as const;
 export const textSpacings = ['standard', 'wide'] as const;
 export const textAlignments = ['left', 'justified'] as const;
@@ -98,17 +98,7 @@ export interface Choice<Value extends string> {
 	hint?: string;
 }
 
-/** The standard size of reading text, in pixels (font.size.body in design-tokens.json). */
-export const standardTextPixels = 18;
-
-export const textSizeChoices: Choice<TextSize>[] = textSizes.map((value) => {
-	const pixels = (standardTextPixels * Number(value)) / 100;
-	return {
-		value,
-		label: `${value}%`,
-		hint: `Reading text at ${Number.isInteger(pixels) ? pixels : pixels.toFixed(1)} pixels${value === '100' ? ', the standard size' : ''}`
-	};
-});
+export const textSizeChoices: Choice<TextSize>[] = textSizes.map((value) => ({ value, label: `${value}%` }));
 
 export const fontChoices: Choice<Font>[] = [
 	{ value: 'atkinson-hyperlegible-next', label: 'Atkinson Hyperlegible Next' },
