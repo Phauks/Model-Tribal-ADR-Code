@@ -10,6 +10,8 @@ import {
 } from '#lib/server/content.ts';
 import { documentHistoriesFor } from '#lib/server/document-history.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
+import { recognitionView } from '#lib/server/recognition.ts';
+import type { CitationPart } from '#lib/legal-citations.ts';
 import { humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -27,6 +29,8 @@ interface FactItem {
 	/** Words for screen readers after the link, such as "on Google Maps". */
 	linkHint?: string;
 	detail?: string;
+	/** A detail with linked citations, such as a status's legal basis; shown in place of detail. */
+	detailParts?: CitationPart[];
 }
 
 /** A labeled group of facts. `field` is the record field the group shows. */
@@ -114,12 +118,14 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 		...group(
 			'recognition',
 			recognitionLabel,
-			(record.recognition ?? []).map((fact) =>
-				cited(sources, recognitionLabel, fact, {
-					text: humanize(fact.type),
-					detail: fact.legal_basis
-				})
-			)
+			(record.recognition ?? []).map((fact) => {
+				const view = recognitionView(fact);
+				return cited(sources, recognitionLabel, fact, {
+					text: view.label,
+					detail: fact.legal_basis,
+					detailParts: view.legalBasis.length > 0 ? view.legalBasis : undefined
+				});
+			})
 		),
 		...group('states', statesLabel, [...stateItems.values()]),
 		...group(

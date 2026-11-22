@@ -102,13 +102,7 @@ fed the "Model text, not law in force" notice in section 6.
 
 ### Main menu
 
-The code, Peacemaking, Nations, Glossary, Sources, Downloads, About, and a
-Contribute button. Search, a "Sign in" link (it reads "Workspace" once a
-co-author has signed in), the theme setting and the offline state sit beside
-them. Nobody needs to sign in to read the site or to make a request. The
-footer of every page carries "Request a correction or removal," the requests
-log, the licenses and the three version numbers
-([requests.md](../docs/requests.md#where-the-request-starts)).
+The code, Peacemaking, Nations, Glossary, Sources, About, and a Contribute button. One search box for the whole site sits beside the site's name, with the theme button, the Settings button and, at the far right, a "Sign in" link that becomes a profile button once someone has signed in (Trevor asked for both on Nov. 22, 2026). Downloads and the changelog are linked from the footer, and Print and Download sit on each page they act on (see [Masthead](#6-components) and Page tools below). Nobody needs to sign in to read the site or to make a request. The footer of every page carries "Request a correction or removal," the requests log, the licenses and the three version numbers ([requests.md](../docs/requests.md#where-the-request-starts)).
 
 Peacemaking has its own menu item and landing page, because the project
 treats it as its own track, not a variant of ADR
@@ -129,7 +123,9 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Essay | `/essays/i-history-of-adr` |
 | Form | `/forms/agreement-to-participate` |
 | Peacemaking landing page | `/peacemaking` |
-| Nations directory, map and table | `/nations` |
+| Nations directory | `/nations` |
+| Nations by first letter and by state | `/nations/letter/a`, `/nations/state/nv` |
+| Search | `/search?q=<words>` |
 | Nation profile | `/nations/<id>` |
 | Native Hawaiian community | `/nations/native-hawaiian` (its own page, never listed as a tribe) |
 | Glossary and entry | `/glossary`, `/glossary/<id>` |
@@ -151,7 +147,8 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Section | Contents rail, text, margin | "Model text, not law in force" notice with the version and last change; hanging section number; status chips; text with alternatives and placeholders; Comment, Illustrations, Source note; previous and next; margin: On this page, notes, "Cite this section," "Adapt this section" |
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
-| Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice; "Is your nation missing? Ask to be added", also shown when a search finds no nation |
+| Nations directory | One column | Links to one page per first letter and one per state, each a short table (name, recognition with its legal basis linked, states, review status); the small groups (the Native Hawaiian community, the Indigenous peoples of the territories) listed in full in their own tables; a link to the map; "Is your nation missing? Ask to be added", also shown when a search finds no nation. Finding one nation by name is the site search's job, so the tables have no search box of their own |
+| Search | One column | The search box, a live count, and results grouped as nations and communities, glossary terms and pages; "Is your nation missing?" when nothing matches |
 | Glossary entry | Entry rail, text, margin | Term, usage status, "Report a problem" under the term, definition, how the project uses it, use instead, related terms, about this entry, other entries that use it, and a Sources section at the end |
 | Glossary | One column | "Report a problem" under the title; an A to Z index; every entry in full (term, usage, definition, how the project uses it, use instead, related terms), each with its own anchor such as `/glossary#native-nations`; one Sources section at the end |
 | Source record | Text and margin | Citation, original link, archived copies, change history, quotation basis, what cites it |
@@ -266,15 +263,11 @@ size, because the book's trim size is not yet decided (project choice).
 
 ## 6. Components
 
-**Masthead.** Wordmark and edition, main menu, Contribute, then a "Sign in"
-link, the theme button and the Settings button at the right end. Pages are
-built ahead of time, so the sign-in link cannot ask the server who is signed
-in; after a co-author signs in, the Worker sets a cookie that says only
-"signed in," and the link then reads "Workspace." Without scripts it stays
-"Sign in," which still works. Sign-in itself is described in
-[COLLABORATION.md](COLLABORATION.md#how-sign-in-works). Menu
-items are at least 44 px tall. The current section is marked with
-`aria-current="page"` and a 3 px underline.
+**Masthead.** Two rows on the band, as Trevor asked on Nov. 22, 2026. The first holds the wordmark and edition, the site search box, then the theme button, the Settings button and, at the far right, the sign-in control. The second holds the main menu, with Contribute at its right end. On screens narrower than 60 rem the search box moves to its own line under the name and controls; narrower than 40 rem, the name, the controls and the search box each take a line. Print and Download are not in the masthead, because they act on one page (see Page tools). Pages are built ahead of time, so the sign-in control cannot ask the server who is signed in; after someone signs in, the Worker sets a cookie that says only "signed in," and "Sign in" then becomes a round profile button. It opens a short list (WAI-ARIA disclosure pattern, not a menu, since the items are plain links and a form): Your profile, Workspace (a person without workspace access is sent to their profile) and Sign out. Escape or a click elsewhere closes it. Without scripts it stays "Sign in," which still works. Sign-in itself is described in [COLLABORATION.md](COLLABORATION.md#how-sign-in-works). Menu items are at least 44 px tall. The current section is marked with `aria-current="page"` and a 3 px underline.
+
+**Search.** One search box in the masthead searches the whole site, so lists do not need search boxes of their own (Trevor asked on Nov. 22, 2026). It is a plain form that opens `/search?q=…`. The search page is built ahead of time; in the browser it loads `/search/index.json`, built with the site from the nation records, the glossary and a short list of the site's own pages, and lists the matches as the reader types, grouped as nations and communities, glossary terms and pages, 25 to a group with "Show all" for the rest. Matching follows the tables' rules (`src/lib/site-search.ts`): case and accents are ignored and every word typed must appear. A match on a nation's official name ranks first, then a match on another name it is known by (shown as "also called"), then a match on the line under the name, such as a state. The index and the search page are kept for offline reading with the core pages. Without scripts the page says that search needs them and links to the nations by letter and state and the glossary from A to Z.
+
+**Page tools.** Print and, where the page has a file to offer, Download sit together under a page's title (`PageTools.svelte`), as quiet buttons. Each download is a file built with the site: a nation's record as JSON, the full nations index as CSV, and the glossary's terms as JSON. The book and the data exports stay on the Downloads page.
 
 **Icons.** All icons come from Lucide,[^lucide-license] chosen on Nov. 21,
 2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)).
@@ -283,9 +276,7 @@ bundled.[^lucide-svelte] The book and the ebook use the same drawings from
 `lucide-static`, at the same version number, which `site/package.json` pins
 exactly. Rules:
 
-- An icon sits beside words. The only icon-only control is the theme button,
-  and it carries an `aria-label` that names the action, because Lucide hides
-  icons from screen readers by default.[^lucide-a11y]
+- An icon sits beside words. The only icon-only controls are the theme button and the profile button (Trevor asked for a profile icon on Nov. 22, 2026), and each carries an `aria-label` that names it, because Lucide hides icons from screen readers by default.[^lucide-a11y]
 - Beside 18 px body text, icons are 20 px with `strokeWidth` 1.75, which
   matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project
   measurement). Standalone controls use 24 px and the default 2 px stroke.
@@ -356,13 +347,7 @@ masthead as well as a choice in the dialog, because the button is the faster
 way for the most common change and Trevor chose it on Nov. 21, 2026; the
 dialog adds "Match this device," which the button lacks.
 
-**Print.** A "Print" button with Lucide's `printer` icon, beside Settings in
-the masthead, opens the Modal titled "Print this page" (asked for by Trevor on
-Nov. 21, 2026, after the delivery dialog of Westlaw, where a reader chooses
-what prints before printing). Westlaw splits its dialog into "Layout and
-Limits" (for example term highlighting, footnotes at the end or inline, and a
-cover page) and "Content to Append" (extra lists to add);[^westlaw-delivery]
-this dialog follows that split with two sections:
+**Print.** A "Print" button with Lucide's `printer` icon, among the page tools under a page's title (moved out of the masthead on Nov. 22, 2026, at Trevor's request), opens the Modal titled "Print this page" (asked for by Trevor on Nov. 21, 2026, after the delivery dialog of Westlaw, where a reader chooses what prints before printing). Westlaw splits its dialog into "Layout and Limits" (for example term highlighting, footnotes at the end or inline, and a cover page) and "Content to Append" (extra lists to add);[^westlaw-delivery] this dialog follows that split with two sections:
 
 - **What to print:** a checkbox for each part the current page has, found
   when the dialog opens from the page's `data-print-part` markers: Page
@@ -452,17 +437,9 @@ the design does not chop pages into rows of identical cards (project choice).
 **Summary list.** A `<dl>` of label and value pairs for nation facts and for
 "Check your request," following the GOV.UK summary list.
 
-**Tables.** For data a reader compares across rows. Wide tables scroll inside
-their own box, so the page never scrolls sideways. Data tables use the
-`DataTable` component, the project's own, not a data grid library
-(`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is
-built with every row in order, as a plain table that reads the same without
-scripts. Once scripts run, sortable column headers become buttons, following
-the WAI-ARIA Authoring Practices sortable table example (the sorted header
-carries `aria-sort`), and a long table gets a search box with a live count.
-Sorting and search follow one set of rules in
-`src/lib/tables/table-definition.ts`: case and accents are ignored, numbers
-inside text sort as numbers, and empty cells stay last.
+**Tables.** For data a reader compares across rows. Wide tables scroll inside their own box, so the page never scrolls sideways. Data tables use the `DataTable` component, the project's own, not a data grid library (`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is built with every row in order, as a plain table that reads the same without scripts. Once scripts run, sortable column headers become buttons, following the WAI-ARIA Authoring Practices sortable table example (the sorted header carries `aria-sort`), and a table can get a search box with a live count, though public lists now leave finding to the site search. Sorting and search follow one set of rules in `src/lib/tables/table-definition.ts`: case and accents are ignored, numbers inside text sort as numbers, and empty cells stay last. A long list is split into short pages rather than drawn as one long table or a virtual-scrolling one: the table spike measured that a virtual-scrolling grid left most rows out of the page, so find-in-page, printing and reading without scripts could not reach them (`spikes/tables/REPORT.md`, "SVAR Svelte DataGrid: rejected").
+
+**Recognition.** Wherever a nation's recognition status is shown, its legal basis follows it in parentheses, and each citation in it links to the official text (Trevor asked on Nov. 22, 2026): Code of Federal Regulations parts and sections to the eCFR, United States Code sections to the Legal Information Institute, and the Statutes at Large (from 1951), Public Laws (from 1995) and the Federal Register to GovInfo's link service (`src/lib/legal-citations.ts`). Those are the address forms the project's source records already use. A legal basis with no such citation, such as a state executive order, links to the source the fact came from. Lists show a short form, such as "(25 C.F.R. Part 83)"; the nation's page shows the whole legal basis. This is a link on the authority itself, not a citation marker, so the facts' sources stay in the Sources section.
 
 **Forms.** Labels above fields; hints under labels; "(optional)" in the label;
 large choice buttons for single choices; errors stated in words beside the
@@ -510,13 +487,14 @@ luminance formula (project calculation).
 | ink-muted | `#5A524C` | 7.4:1 | `#B9C4C4` | 9.6:1 |
 | link, peacemaking track | `#1A6D76` | 5.8:1 | `#6CCAD3` | 9.0:1 |
 | action, ADR track | `#B4461A` | 5.3:1; white text on it 5.5:1 | `#FF9A66` | 8.2:1 |
-| link-visited | `#6B3F7A` | 7.7:1 | `#D7B3E6` | 9.4:1 |
 | control-border | `#7A6F66` | 4.7:1 | `#7F9599` | 5.4:1 |
 | danger | `#9C1C10` | 7.8:1 | `#FF8A80` | |
 | placeholder-background | `#FFF0B3` | ink 14.4:1 | `#4A3B00` | ink 9.3:1 |
 | focus | `#FFD34D` with a 3 px ink ring | | `#FFD34D` | |
 
 Ratios are against each theme's paper unless stated.
+
+Visited links keep the link color: Trevor asked on Nov. 22, 2026, that links not turn purple once used, so there is no separate visited-link token.
 
 Rules (project choice):
 

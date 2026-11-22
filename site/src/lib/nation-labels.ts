@@ -30,6 +30,24 @@ export const reviewStatusLabels: Record<string, { label: string; meaning: string
 	}
 };
 
+/**
+ * Words for each kind of recognition status (schemas/tribe.schema.json,
+ * recognition.type). A state status names its state when the record gives one.
+ */
+const recognitionTypeLabels: Record<string, string> = {
+	federal: 'Federally recognized',
+	state: 'State recognized',
+	petitioning: 'Petitioning for federal acknowledgment',
+	unrecognized: 'No current recognition',
+	'congressional-special-relationship': 'Special relationship recognized by Congress',
+	'territorial-law': 'Status under territorial law'
+};
+
+export function recognitionLabel(type: string, state?: string): string {
+	const label = recognitionTypeLabels[type] ?? humanize(type);
+	return state && (type === 'state' || type === 'territorial-law') ? `${label} (${stateName(state)})` : label;
+}
+
 export const entityTypeLabels: Record<string, string> = {
 	'native-nation': 'Native nations',
 	'native-hawaiian': 'Native Hawaiian community',
