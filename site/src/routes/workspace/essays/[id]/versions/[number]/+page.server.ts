@@ -9,7 +9,7 @@ export const load: PageServerLoad = async (event) => {
 	const { identifier, database, bucket } = await essayAccess(event, 'comment');
 	const row = await version(database, identifier, Number(event.params.number));
 	if (!row) error(404, 'No saved version has this number.');
-	const rendered = await renderedVersion(bucket, row);
+	const rendered = await renderedVersion(bucket, row, 'saved');
 	return {
 		identifier,
 		number: row.number,

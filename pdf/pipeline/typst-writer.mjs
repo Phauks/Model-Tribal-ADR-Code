@@ -2,7 +2,7 @@
 // typst/book.typ. One ChapterWriter handles one chapter, so that footnote
 // numbers and citation short forms restart with each chapter.
 
-import { escapeTypst, typstString } from "./typst-text.mjs";
+import { escapeTypst, separateCalls, typstString } from "./typst-text.mjs";
 
 // Kinds of document, which change how headings and paragraphs print.
 export const KINDS = { provision: "provision", commentary: "commentary", essay: "essay", glossary: "glossary" };
@@ -243,9 +243,17 @@ export class ChapterWriter {
         return `#case-part("Quotes")[${this.blocks(node.children)}]`;
       case "container_treatment":
         return `#case-part("Treatment")[${this.blocks(node.children)}]`;
+      case "container_topics":
+        return `#case-part("Topics")[${this.blocks(node.children)}]`;
       case "container_analysis": {
+        // The title names what the box analyzes; a case name in it is written in *italics*.
         const title = token.info.trim().replace(/^analysis\s*/, "");
-        return `#analysis-block(${title ? `[${escapeTypst(title)}]` : "none"})[${this.blocks(node.children)}]`;
+        const shown = title
+          .replaceAll("'", "’")
+          .split(/(\*[^*]+\*)/)
+          .map((piece) => (/^\*[^*]+\*$/.test(piece) ? `#emph[${escapeTypst(piece.slice(1, -1))}]` : escapeTypst(piece)))
+          .join("");
+        return `#analysis-block(${title ? `[${separateCalls(shown)}]` : "none"})[${this.blocks(node.children)}]`;
       }
       case "container_alternative": {
         const letter = token.info.trim().split(/\s+/)[1];
