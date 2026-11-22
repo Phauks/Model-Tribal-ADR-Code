@@ -21,8 +21,6 @@
 	interface FactGroup {
 		field: string;
 		label: string;
-		/** The id of a heading below that shows these facts in full; the label links to it. */
-		section?: string;
 		items: FactItem[];
 	}
 
@@ -47,7 +45,7 @@
 <dl class="summary-list">
 	{#each groups as group (group.field)}
 		<div>
-			<dt>{#if group.section}<a href="#{group.section}">{group.label}</a>{:else}{group.label}{/if}</dt>
+			<dt>{group.label}</dt>
 			<dd>
 				{#if group.items.length === 1}
 					{@render fact(group.items[0])}

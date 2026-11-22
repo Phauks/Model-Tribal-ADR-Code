@@ -6,6 +6,7 @@ import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-c
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
+	sources as sourceRecords,
 	type CitedFact,
 	type NationRecord
 } from '#lib/server/content.ts';
@@ -151,12 +152,29 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 		...group(
 			'memberships',
 			'Member of',
-			(record.memberships ?? []).map((fact) => cited(sources, 'Member of', fact, { text: fact.organization }))
+			(record.memberships ?? []).map((fact) =>
+				cited(sources, 'Member of', fact, { text: fact.organization, link: organizationHome(fact) })
+			)
 		)
 	];
 }
 
 const documentsLabel = 'Where the nation publishes its laws';
+
+/**
+ * The home page of an organization of nations, for the "Member of" row:
+ * the organization's own site, taken from the source the membership cites
+ * when the organization itself published it (its member list). Left out when
+ * the source is someone else's, so the row never links a third party's page
+ * as the organization's.
+ */
+function organizationHome(fact: CitedFact & { organization: string }): string | undefined {
+	const source = fact.source ? sourceRecords().get(fact.source) : undefined;
+	const publishedByIt = source?.citation.author?.some((author) => author.literal === fact.organization);
+	const address = source?.citation.URL ?? source?.original_link;
+	if (!publishedByIt || !address || !URL.canParse(address)) return undefined;
+	return webLink(`${new URL(address).origin}/`);
+}
 
 /**
  * The nation's recognition, one line for each status: two sources that both
@@ -348,14 +366,8 @@ function glanceSummary(record: NationRecord, sources: SourceUses): FactGroup[] {
 		}))
 	);
 	return [
-		...group('courts_summary', 'Courts and forums', courts).map((summary) => ({
-			...summary,
-			section: 'courts-heading'
-		})),
-		...group('governing_documents_summary', 'Published law', documents).map((summary) => ({
-			...summary,
-			section: 'law-heading'
-		}))
+		...group('courts_summary', 'Courts and forums', courts),
+		...group('governing_documents_summary', 'Published law', documents)
 	];
 }
 
