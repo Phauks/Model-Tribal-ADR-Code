@@ -29,6 +29,12 @@ export interface EssayLibrary {
 	 * vote and opinions (src/lib/server/case-facts.ts).
 	 */
 	facts?(box: 'case' | 'law', key: string): [string, string][];
+	/**
+	 * The address of the page that holds a case or law box ("case-<key>"),
+	 * for links to a box on another page, such as those in the index of
+	 * cases by topic.
+	 */
+	boxPage?(anchor: string): string | undefined;
 }
 
 /** One heading in the essay, for the page's outline. */
@@ -268,7 +274,14 @@ export function renderEssay(text: string, library: EssayLibrary): RenderedEssay 
 		tokens = tokens.slice(3);
 	}
 	markAttributions(tokens);
-	const html = markdown.renderer.render(tokens, markdown.options, environment);
+	// A link to a case or law box that is not on this page goes to the page that holds it.
+	const html = markdown.renderer
+		.render(tokens, markdown.options, environment)
+		.replace(/href="#((?:case|law)-[a-z0-9-]+)"/g, (link, anchor: string) => {
+			if (state.slugs.has(anchor)) return link;
+			const page = library.boxPage?.(anchor);
+			return page ? `href="${escapeHtml(page)}#${anchor}"` : link;
+		});
 	return {
 		title: title || 'Untitled',
 		html,

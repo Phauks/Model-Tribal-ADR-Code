@@ -9,12 +9,13 @@
  */
 import { error } from '@sveltejs/kit';
 import { version as siteBuild } from '$app/env';
-import { essayBoxFacts, essayCitations, essayTerms } from 'virtual:essay-library';
+import { essayBoxFacts, essayCitations, essayTerms, essaysInGit } from 'virtual:essay-library';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
 import { essayDateTime } from '../essays/dates.ts';
 import { workerEnvironment } from './environment.ts';
 import {
+	boxPages,
 	essayPath,
 	essayRow,
 	identifierFromPath,
@@ -25,10 +26,13 @@ import {
 	type PublicationRow
 } from './essays.ts';
 
+let boxPageList: Record<string, string> | undefined;
+
 export const essayLibrary: EssayLibrary = {
 	citation: (key) => essayCitations[key],
 	term: (id) => essayTerms[id],
-	facts: (box, key) => (box === 'law' ? essayBoxFacts.laws[key] : essayBoxFacts.cases[key]) ?? []
+	facts: (box, key) => (box === 'law' ? essayBoxFacts.laws[key] : essayBoxFacts.cases[key]) ?? [],
+	boxPage: (anchor) => (boxPageList ??= boxPages(essaysInGit))[anchor]
 };
 
 export function storageForPages(): { database: D1Database; bucket: R2Bucket } {

@@ -94,4 +94,18 @@ describe('rendering an essay', () => {
 			'No source record has the key "missing-source".'
 		]);
 	});
+
+	it('points a link to a box on another page at that page', () => {
+		const index = renderEssay('# Cases by Topic\n\n[*Worcester*](#case-worcester-v-georgia); [*Elsewhere*](#case-unknown-case).\n', {
+			...library,
+			boxPage: (anchor) => ({ 'case-worcester-v-georgia': '/foundations/legal-history-timeline' })[anchor]
+		});
+		expect(index.html).toContain('href="/foundations/legal-history-timeline#case-worcester-v-georgia"');
+		expect(index.html).toContain('href="#case-unknown-case"');
+		const sameplace = renderEssay(':::: case worcester-v-georgia\n::::\n\n[*Worcester*](#case-worcester-v-georgia)\n', {
+			...library,
+			boxPage: () => '/foundations/legal-history-timeline'
+		});
+		expect(sameplace.html).toContain('href="#case-worcester-v-georgia"');
+	});
 });

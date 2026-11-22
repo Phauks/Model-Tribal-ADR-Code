@@ -102,7 +102,7 @@ export const actions: Actions = {
 			return fail(400, { problem: 'The address uses lower-case letters, numbers and hyphens, such as "why-consent-matters".' });
 		}
 		if (await latestVersion(database, fullIdentifier)) return fail(400, { problem: 'An essay with this address exists already.' });
-		const frontMatter = [`title: ${JSON.stringify(title)}`, part === 'foundations' ? 'part: i' : '', 'status: draft'].filter(Boolean).join('\n');
+		const frontMatter = [`title: ${JSON.stringify(title)}`, part === 'foundations' ? 'part: i' : part === 'back-matter' ? 'part: back-matter' : '', 'status: draft'].filter(Boolean).join('\n');
 		await saveVersion(database, bucket, {
 			identifier: fullIdentifier,
 			text: `---\n${frontMatter}\n---\n\n# ${title}\n\n`,
