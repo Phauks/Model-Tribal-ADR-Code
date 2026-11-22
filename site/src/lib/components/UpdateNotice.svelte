@@ -5,7 +5,7 @@
 	// Nov. 22, 2026. A notice, not an alert: it does not interrupt reading or
 	// take focus.
 	import { onMount } from 'svelte';
-	import { updated } from '$app/state';
+	import { page, updated } from '$app/state';
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
 	import { version } from '$app/env';
 	import { buildTime } from '#lib/offline-collections.ts';
@@ -27,6 +27,8 @@
 	const contentChanged = $derived(available !== undefined && available.content !== versions.content);
 	/** The pull requests merged since the build this page runs, so the reader sees what the update applies. */
 	const changes = $derived(changesSince(available?.changes, buildTime(version)));
+	/** Whether the update changes the page being read, when both builds' fingerprints could be read. */
+	const pageChange = $derived(siteUpdates.changeTo(page.url.pathname));
 	const shownChanges = 8;
 </script>
 
@@ -42,8 +44,15 @@
 				{:else}
 					It brings changes to the website; the content stays at {versions.content}.
 				{/if}
-				Pages you keep for offline reading are saved again from the new version.
+				Pages saved on this device carry over, and only the ones that changed are downloaded again.
 			</p>
+			{#if pageChange === 'changed'}
+				<p>This update changes the page you are reading.</p>
+			{:else if pageChange === 'unchanged'}
+				<p>This update does not change the page you are reading.</p>
+			{:else if pageChange === 'removed'}
+				<p>This update removes the page you are reading.</p>
+			{/if}
 			{#if changes.length > 0}
 				<p class="changes-heading" id="update-changes">
 					It applies {changes.length === 1 ? 'this change' : `these ${changes.length} changes`}:
