@@ -227,6 +227,14 @@ fill in, and Cloudflare limits each connection to five submissions a minute
 (the `requestFormLimit` binding in `wrangler.jsonc`). Neither asks the
 requester to make an account or solve a puzzle.
 
+## Forms
+
+The Forms page (`/forms`) lists the contributor forms in `docs/contributor-forms/` and the model forms in `content/forms/` (docs/contributions.md, "On the website"). At build time `src/lib/server/form-catalog.ts` turns each Markdown file into a template: the form as HTML with a token where each field goes, the same Markdown with the tokens, the list of fields with their labels, and the file's SHA-256. The templates reach the Worker as the `virtual:forms` module, because the form pages answer forms sent to them. `src/lib/forms.ts` fills a template in three ways: fields to fill in online, lines to fill in by hand (`/forms/<form>/print`, built ahead of time), and the answers as text.
+
+A contributor form sent from `/forms/<form>` opens a request (kind `contribute`, or `restrict` for a change or withdrawal) with a row in `form_submissions`: the form, version, checksum, how it was signed, the typed name and the answers. Signed online, it also gets a filled copy in the bucket at `forms/<request>/<submission>.md`. Uploaded, the photos or scans are files of the request in `request_sources`, checked like any upload. Both ways use the hidden field and the `requestFormLimit` rate limit. A request with a form keeps its personal details after it is resolved.
+
+On the request's page in the workspace, editors see each form, open the filled form (while the site still has that exact version), download the stored copy, and file the forms under a filing number, which is logged.
+
 ## How sign-in works
 
 The "Sign in" link in the masthead of every page, and "Co-author sign-in" in
@@ -397,6 +405,7 @@ page, where their level on each document is raised or lowered. Tell each person 
 | `reviews` | Sign-offs and comments, with the content version. |
 | `requests` | Requests from the form, their status, outcome and targets. |
 | `request_sources` | Proof for adding a nation, and other uploaded files. |
+| `form_submissions` | Forms sent from the Forms pages: which form and version, how it was signed, the answers and the filing number (`migrations/0007_form_submissions.sql`). |
 | `events` | The activity log: who did what and when, numbered in order. Cannot be changed or deleted. |
 | `event_seals` | The seal of each activity log entry, chained to the one before. |
 
@@ -454,6 +463,7 @@ Sending real email is tried by hand once `SIGN_IN_EMAIL_FROM` is set.
   "Notification"). Until then, check `/workspace/requests`; the overview shows
   anything past a target.
 - The public "Requests log" page (docs/requests.md, "Public log").
+- A filings list in the workspace, and emailing a signer their copy of a form (waits on a domain).
 - Hiding material from the website directly from the workspace, before a pull
   request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly.

@@ -49,6 +49,11 @@ declare module 'virtual:essay-library' {
 	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
 }
 
+declare module 'virtual:forms' {
+	/** Every form at /forms, built from its Markdown file (src/lib/server/form-catalog.ts). */
+	export const forms: import('#lib/forms.ts').FormTemplate[];
+}
+
 declare module 'virtual:build' {
 	/** The git commit the site was built from, or empty when built on a computer. */
 	export const buildCommit: string;
