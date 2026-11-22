@@ -111,7 +111,7 @@
 	{/if}
 
 	<p>
-		Nobody needs to sign in to read the site or to send a request. To ask the project something, use
+		Nobody needs to sign in to read the site or to send a request. To ask us something, use
 		<a href="/requests">Make a request</a>.
 	</p>
 </div>

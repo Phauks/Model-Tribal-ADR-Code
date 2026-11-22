@@ -145,7 +145,7 @@
 	<p>
 		Essays are written and edited here, under <a href="/workspace/essays">Essays</a>. Every save
 		keeps a version that is never overwritten, and publishing a version puts it on the website. The
-		text of the code and the nation records lives in the project’s files and changes only by pull
+		text of the code and the nation records lives in the repository’s files and changes only by pull
 		request, so every change has a history. This workspace also records who approved which version,
 		handles requests from nations, and manages who can do what.
 	</p>

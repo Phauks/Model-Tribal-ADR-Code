@@ -292,7 +292,7 @@
 			<legend><svelte:element this={heading}>Details{kind === 'add-nation' ? ' (optional)' : ''}</svelte:element></legend>
 			<div class="field">
 				<label for="{prefix}details">
-					{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else the project should know{:else}Your question{/if}
+					{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{:else}Your question{/if}
 				</label>
 				{@render fieldError('details')}
 				<textarea
@@ -328,18 +328,18 @@
 					<input type="text" id="{prefix}creditPreference" name="creditPreference" value={value('creditPreference')} />
 				</div>
 				<fieldset>
-					<legend>May the project publish what you send?</legend>
+					<legend>May we publish what you send?</legend>
 					{@render fieldError('publicationPermission')}
 					<div class="choice">
 						<input type="radio" id="{prefix}publicationPermission-publish" name="publicationPermission" value="publish" checked={value('publicationPermission') === 'publish'} />
 						<label for="{prefix}publicationPermission-publish">
-							Yes, under the project’s licenses
+							Yes, under the site’s licenses
 							<span class="hint"><a href="/licenses">Licenses by material</a></span>
 						</label>
 					</div>
 					<div class="choice">
 						<input type="radio" id="{prefix}publicationPermission-review-only" name="publicationPermission" value="review-only" checked={value('publicationPermission') === 'review-only'} />
-						<label for="{prefix}publicationPermission-review-only">No, share it with the project for review only</label>
+						<label for="{prefix}publicationPermission-review-only">No, share it with us for review only</label>
 					</div>
 				</fieldset>
 			</fieldset>
@@ -359,7 +359,7 @@
 		{/if}
 
 		<p class="small">
-			The request and any files are kept private, in the project’s own storage, and never published.
+			The request and any files are kept private, in our own storage, and never published.
 			Personal details are deleted 12 months after the request is resolved, unless you asked to be
 			credited.
 		</p>

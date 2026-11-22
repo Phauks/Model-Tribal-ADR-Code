@@ -7,6 +7,8 @@
 	interface FactGroup {
 		field: string;
 		label: string;
+		/** The id of a heading below that shows these facts in full; the label links to it. */
+		section?: string;
 		items: {
 			label?: string;
 			text: string;
@@ -24,13 +26,13 @@
 <dl class="summary-list">
 	{#each groups as group (group.field)}
 		<div>
-			<dt>{group.label}</dt>
+			<dt>{#if group.section}<a href="#{group.section}">{group.label}</a>{:else}{group.label}{/if}</dt>
 			<dd>
 				<ul>
 					{#each group.items as item, index (index)}
 						<li>
-							{#if item.label}{item.label}:{' '}{/if}{#if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}
-							{#if item.detailParts}{' '}<span class="muted small"
+							{#if item.label}{item.label}:{' '}{/if}{#if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}{#if item.detailParts}{' '}<span
+									class="muted small"
 									>({#each item.detailParts as part, partIndex (partIndex)}{#if part.link}<a
 												href={part.link}>{part.text}</a
 											>{:else}{part.text}{/if}{/each})</span

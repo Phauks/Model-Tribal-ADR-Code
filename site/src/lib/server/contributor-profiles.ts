@@ -325,6 +325,37 @@ export async function deleteProfile(database: D1Database, profile: Profile): Pro
 	]);
 }
 
+/** How long a declined registration is kept before it is deleted. */
+export const declinedRetentionMonths = 12;
+
+/**
+ * Deletes registrations declined more than 12 months ago, with everything in
+ * them, the same period requests are kept after they are resolved. Runs when
+ * the lead author or an editor opens the contributors list, so no scheduled
+ * job is needed. Returns how many were deleted.
+ */
+export async function deleteExpiredDeclinedProfiles(database: D1Database, today: Date = new Date()): Promise<number> {
+	const cutoff = new Date(today);
+	cutoff.setUTCMonth(cutoff.getUTCMonth() - declinedRetentionMonths);
+	const expired = await database
+		.prepare(`SELECT identifier FROM contributor_profiles WHERE status = 'declined' AND decided_at < ?`)
+		.bind(cutoff.toISOString())
+		.all<{ identifier: string }>();
+	if (expired.results.length === 0) return 0;
+	await database.batch(
+		expired.results.flatMap(({ identifier }) => [
+			database.prepare('DELETE FROM contributor_profiles WHERE identifier = ?').bind(identifier),
+			eventStatement(database, {
+				personIdentifier: null,
+				action: `Deleted ${declinedRetentionMonths} months after the registration was declined`,
+				targetKind: 'profile',
+				targetIdentifier: identifier
+			})
+		])
+	);
+	return expired.results.length;
+}
+
 export interface ConfirmedVersion {
 	version: number;
 	creditLine: string | null;
