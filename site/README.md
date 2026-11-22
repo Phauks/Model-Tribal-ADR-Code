@@ -57,7 +57,7 @@ dashboard are:
 
 Each merge to `main` deploys to
 `https://model-tribal-adr-code.trevordgoldsmith.workers.dev` until a domain is
-chosen. `wrangler.jsonc` has no `main` or `assets` setting because
+chosen ([what waits on the domain](../docs/domain-to-do.md)). `wrangler.jsonc` has no `main` or `assets` setting because
 `@sveltejs/adapter-cloudflare` sets both when it builds.
 
 ## Cloudflare resources
