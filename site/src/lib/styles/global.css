@@ -540,12 +540,15 @@ sup.citation {
 .source-list > li {
 	position: relative;
 	padding-left: 2.5em;
+	/* Each source's number is a link back to the text; a full line height keeps it a 24 pixel target (WCAG 2.2, 2.5.8) beside small text. */
+	min-height: 1.5rem;
 }
 
 .source-list .source-number {
 	position: absolute;
 	left: 0;
 	width: 2em;
+	min-height: 1.5rem;
 	text-align: right;
 }
 
