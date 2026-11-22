@@ -51,11 +51,23 @@ Accordingly (project analysis):
 
 ### 3. Peacemaking as its own track
 
-The Native American Rights Fund's Indigenous Peacemaking Initiative states that
-"peacemaking is not alternative dispute resolution" and that the term "refers to
-traditional ways of resolving conflict in Indigenous communities."[^narf-ipi]
-The project therefore treats traditional peacemaking as a distinct track, not as
-a variant of Western mediation or arbitration.
+Peacemaking rests on each nation's own traditions, language and institutions,
+not on the theory behind mediation or arbitration (project analysis). Nations'
+own laws show this: the Navajo Nation directs its Peacemaking Program to
+conform its procedures to Navajo concepts such as K'é and clanship, and many
+nations choose peacemakers for their standing and knowledge of custom rather
+than for training as neutrals.[^peacemaking-research] The Native American
+Rights Fund's Indigenous Peacemaking Initiative, which collects nations'
+peacemaking laws, describes peacemaking as "traditional ways of resolving
+conflict in Indigenous communities."[^narf-ipi]
+
+The project therefore keeps peacemaking as its own track. Its model
+peacemaking provisions and commentary are kept apart from the alternative
+dispute resolution provisions, under their own heading. They set up or
+recognize a nation's peacemaking forum and connect it to the nation's court
+and other forums. They do not define how peacemaking is done, which each
+nation decides by its own tradition
+([decision record 0026](decisions/0026-model-peacemaking-code.md)).
 
 ### 4. Consultation before publication
 
@@ -206,6 +218,7 @@ own research or data rules, which take precedence where they apply.
 [^undrip-34]: *Id.* art. 34.
 [^eo-13175]: Exec. Order No. 13175, *Consultation and Coordination With Indian Tribal Governments*, 65 Fed. Reg. 67249 (Nov. 9, 2000), [govinfo.gov](https://www.govinfo.gov/content/pkg/FR-2000-11-09/html/00-29003.htm).
 [^ncai]: NCAI Policy Research Center & MSU Center for Native Health Partnerships, *"Walk Softly and Listen Carefully": Building Research Relationships with Tribal Communities* 13 (2012), [archive.ncai.org](https://archive.ncai.org/resources/ncai_publications/walk-softly-and-listen-carefully-building-research-relationships-with-tribal-communities).
+[^peacemaking-research]: [Comparing model codes and dispute frameworks](../content/essays/i-comparative-model-codes-and-frameworks.md), section 3 (citing Navajo Nation Code tit. 7, §§ 409–411, 413); [Peacemaking programs in the United States: a first survey](../research/analyses/2026-11-21-peacemaking-programs.md), section 2.
 [^narf-ipi]: Native American Rights Fund, *Indigenous Peacemaking Initiative* (home page), [peacemaking.narf.org](https://peacemaking.narf.org/) (accessed Nov. 20, 2026).
 [^lc-tk]: Local Contexts, *TK Notice*, [localcontexts.org/notice/tk-notice](https://localcontexts.org/notice/tk-notice/) (accessed Nov. 20, 2026).
 [^usc-107]: 17 U.S.C. § 107, [law.cornell.edu](https://www.law.cornell.edu/uscode/text/17/107).
