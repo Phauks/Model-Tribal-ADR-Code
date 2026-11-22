@@ -1,6 +1,5 @@
 <script lang="ts">
 	import PageTools from '#lib/components/PageTools.svelte';
-	import { repositoryLink } from '#lib';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -81,10 +80,7 @@
 		<p>
 			The first map shades each state and territory by how many nations the project’s sources
 			record as having a presence there. It draws no nation’s land: a nation with land or offices in
-			several states is counted in each
-			(<a href="{repositoryLink}/blob/main/docs/decisions/0007-map-shows-state-presence.md"
-				>decision record 0007</a
-			>).
+			several states is counted in each.
 		</p>
 		<p>
 			The second map shows the twelve regions of the Bureau of Indian Affairs, as the Bureau draws

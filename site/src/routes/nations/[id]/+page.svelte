@@ -5,6 +5,7 @@
 	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
+	import { newTabNoteId, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -33,7 +34,8 @@
 	line length, and beside it "At a glance" with the map. On narrow screens
 	the parts stack in the order of site/DESIGN.md, "Nation pages".
 -->
-<article class="profile">
+<span id={newTabNoteId} hidden>Opens in a new tab</span>
+<article class="profile" {@attach outsideLinksOpenInNewTab}>
 	<div class="profile-introduction">
 		{#if page.example}
 			<div class="notice" role="note">

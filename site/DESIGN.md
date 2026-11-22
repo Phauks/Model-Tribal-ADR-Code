@@ -269,7 +269,7 @@ size, because the book's trim size is not yet decided (project choice).
 
 **Page tools.** Print and, where the page has a file to offer, Download sit together under a page's title (`PageTools.svelte`), as quiet buttons. Each download is a file built with the site: a nation's record as JSON, the full nations index as CSV, and the glossary's terms as JSON. The book and the data exports stay on the Downloads page.
 
-**Icons.** All icons come from Lucide,[^lucide-license] chosen on Nov. 21,
+**Icons.** All icons but one (the GitHub mark, the last rule below) come from Lucide,[^lucide-license] chosen on Nov. 21,
 2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)).
 The site imports single icons from `@lucide/svelte`, so only the icons used are
 bundled.[^lucide-svelte] The book and the ebook use the same drawings from
@@ -284,6 +284,15 @@ exactly. Rules:
   `feather`, `tent`, `tent-tree` and `bow-arrow`.
 - In print, Typst draws `currentColor` as black, which suits the black-and-white
   interior.
+- The one exception is the GitHub mark (`GithubMark.svelte`), GitHub's own logo from Primer Octicons (MIT License, `LICENSES/Octicons.txt`), because Lucide no longer ships brand icons. It appears only beside the word "GitHub" on a link that goes there (see Links stay on the site, below).
+
+**Links stay on the site.** Three standing rules from Trevor, Nov. 22, 2026:
+
+- *No link sends a reader to GitHub unless its words say so,* such as the footer's "GitHub" link with the GitHub mark, or "Every change to it on GitHub." What the project wrote for readers is a page on the site: the charter is `/charter`, and the licenses by material are `/licenses`, with each full license text under it. They are rendered at build time from the same files, `docs/charter.md`, `LICENSE.md` and `LICENSES/` (`src/lib/server/project-documents.ts`), so the files stay the one source. Inside them, a link to the other shown document goes to its page; a link to any other repository file becomes plain words; a link to github.com is followed by "(GitHub)"; and each page ends with links to its file and its history on GitHub, which say so. In code, link to the site page (`/charter`, `/licenses`), never to `repositoryLink` plus a file path, unless the link's words name GitHub. The co-authors' workspace may link to a record's file and history on GitHub, saying so.
+- *No page names the project's internal documents:* no "(decision record 0007)," no file names such as `requests.md`, and no pointers to the roadmap, the outline, the data model or other specifications in `docs/`. Those explain the project to its maintainers; the site explains things to readers in its own words. Where the charter or `LICENSE.md` cross-references an internal document, the reference sits between `<!-- repository-only -->` and `<!-- /repository-only -->`: GitHub hides the markers and shows the text, and the site leaves it out.
+- *On nation pages, links to other websites open in a new tab* (sources, laws, constitutions, a nation's own website), with `rel="noopener noreferrer"` and a hidden "Opens in a new tab" note that screen readers announce through `aria-describedby` (`src/lib/new-tab-links.ts`, WCAG technique G201). Links within the site open in the same tab.
+
+`tools/check-built-site.mjs` enforces the first two: it fails when a link to github.com names GitHub neither in its words nor just before them, and when a page's text says "decision record" with a number or names a `.md` file.
 
 **Password fields.** Every password field is `src/lib/components/PasswordInput.svelte`: the field with a "Show" button beside it, carrying Lucide's `eye` icon (`eye-off` and "Hide" while the password shows), as Trevor asked on Nov. 22, 2026. It follows the GOV.UK password input: the button names its action for screen readers ("Show password", "Hide password"), a polite announcement says "Your password is visible" or "hidden", and the field goes back to hidden when the form is sent so the browser does not store the password as ordinary text.[^govuk-password] Without scripts the button does not appear.
 
@@ -456,8 +465,7 @@ request" and "Request sent" (project choice).
 go there. When art arrives, the box becomes a figure with a credit line naming
 the artist and nation, as the artist chooses.
 
-**Footer.** Request a correction or removal; requests log; charter; changelog;
-licenses by material; the three version numbers.
+**Footer.** Request a correction or removal; charter; changelog; downloads; licenses by material; GitHub (with the GitHub mark, in place of "Source files", as Trevor asked on Nov. 22, 2026); help with the project; co-author sign-in; the three version numbers.
 
 ## 7. Design tokens
 

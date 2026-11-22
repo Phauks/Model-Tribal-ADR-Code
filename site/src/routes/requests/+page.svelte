@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { repositoryLink } from '#lib';
 	import {
 		authorityStatementLabels,
 		authorityStatements,
@@ -120,9 +119,7 @@
 				<p><button class="button" type="submit">Continue</button></p>
 			</form>
 			<p class="small muted">
-				How requests are handled: <a href="{repositoryLink}/blob/main/docs/requests.md"
-					>Requests from Native nations and contributors</a
-				>. Please do not use public GitHub issues for a request about a nation.
+				Please do not use public GitHub issues for a request about a nation.
 			</p>
 		{:else}
 			<p>
@@ -374,7 +371,7 @@
 								<input type="radio" id="publicationPermission-publish" name="publicationPermission" value="publish" checked={value('publicationPermission') === 'publish'} />
 								<label for="publicationPermission-publish">
 									Yes, under the project’s licenses
-									<span class="hint"><a href="{repositoryLink}/blob/main/LICENSE.md">Licenses by material</a></span>
+									<span class="hint"><a href="/licenses">Licenses by material</a></span>
 								</label>
 							</div>
 							<div class="choice">
