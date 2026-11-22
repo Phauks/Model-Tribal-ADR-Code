@@ -324,20 +324,23 @@ dispute_resolution:
     link: https://ho-chunknation.com/wp-content/uploads/2025/02/06.05.17-1HCC1-Judiciary-Est-Org-Act.Technical-Correction-1.pdf
     source: ho-chunk-1-hcc-1-judiciary-act
     confidence: high
+    verification: read-in-full
     as_of: '2017-06-05'
   - kind: arbitration
-    title: 13. Arbitration Ordinance
-    citation: 13. Arbitration Ordinance
-    link: https://narf.org/nill/codes/hochunkcode/index.html
-    source: national-indian-law-library-code-codes-hochunkcode
+    title: SECTION 13-ARBITRATION ORDINANCE
+    citation: Ho-Chunk Nation Code, Title 2 Government Code, Section 13 Arbitration Ordinance (2 HCC 13),
+      1-13 (2 HCC 13)
+    link: https://ho-chunknation.com/wp-content/uploads/2019/10/2HCC13-Arbitration-Ordinance-12.28.04.pdf
+    source: ho-chunk-2-hcc-13-arbitration
     confidence: medium
-    as_of: '2019'
-    locator: Table of Contents, under 'Remarks'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
-      April 2019 Downloaded with permission from the tribe''s website . Individual sections include dates
-      of amendments. Disclaimer: Although every effort is made to present current and accurate information,
-      if you need an official version of the tribe’s laws, please contact the tribe.); the provision itself
-      was not read. The heading it falls under is taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2004-12-28'
+    locator: 1-13 (2 HCC 13)
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Makes written agreements to arbitrate disputes under contracts in transactions within the
+      Nation's jurisdiction valid and enforceable, requires the Tribal Forum to stay its own proceedings
+      and order arbitration on a party's application, and has it confirm awards as written and enforce
+      them as civil judgments, with no appeal from orders enforcing agreements or awards.
   clauses:
   - context: commercial-code
     kind: arbitration-clause
@@ -352,61 +355,6 @@ dispute_resolution:
     as_of: '2004-12-28'
     locator: §§ 2-3, 8-10, 12-13
   database_listings:
-  - title: Considering Alternatives to Incarceration in Bifurcated Sentences
-    citation: SECTION 973 – SENTENCING
-    link: https://ncorj.org/tribal-law/considering-alternatives-to-incarceration-in-bifurcated-sentences/
-    practice_area: Tribal Justice
-    phase: N/A
-    form_of_practice: Alternative
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/considering-alternatives-to-incarceration-in-bifurcated-sentences/
-  - title: Domestic Abuse Treatment Program In Lieu of Fines for Stalking
-    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
-    link: https://ncorj.org/tribal-law/domestic-abuse-treatment-program-in-lieu-of-fines-for-stalking/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Program; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-abuse-treatment-program-in-lieu-of-fines-for-stalking/
-  - title: Domestic Abuse Treatment Program
-    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
-    link: https://ncorj.org/tribal-law/domestic-abuse-treatment-program/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Program; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-abuse-treatment-program/
-  - title: Ho-Chunk Nation Family Healing to Wellness Court
-    citation: HO-CHUNK NATION CODE (HCC) ELDER WELFARE SECTION 16 – FAMILY WELLNESS COURT CODE
-    link: https://ncorj.org/tribal-law/ho-chunk-nation-family-healing-to-wellness-court/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/ho-chunk-nation-family-healing-to-wellness-court/
-  - title: Ho-Chunk Nation Healing to Wellness Court
-    citation: HO-CHUNK NATION CODE (HCC) ELDER WELFARE SECTION 15 – HEALING TO WELLNESS COURT CODE
-    link: https://ncorj.org/tribal-law/ho-chunk-nation-healing-to-wellness-court/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/ho-chunk-nation-healing-to-wellness-court/
   - title: Informal Agreements in Child Welfare
     citation: SECTION 3 – HOOCAK NATION CHILDREN AND FAMILY ACT
     link: https://ncorj.org/tribal-law/informal-agreements-in-child-welfare/
@@ -429,49 +377,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
-  - title: Preventative and Community Purposes of Hoocak Nation Children and Family Act
-    citation: GENERAL PROVISIONS, POLICIES AND DEFINITIONS,
-    link: https://ncorj.org/tribal-law/preventative-and-community-purposes-of-hoocak-nation-children-and-family-act/
-    practice_area: Tribal Child Welfare/Family
-    phase: N/A
-    form_of_practice: Alternative; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/preventative-and-community-purposes-of-hoocak-nation-children-and-family-act/
-  - title: Rehabilitation Intent in Substance Use Convictions
-    citation: SECTION 961 – CONTROLLED SUBSTANCES ACT
-    link: https://ncorj.org/tribal-law/rehabilitation-intent-in-substance-use-convictions/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitation-intent-in-substance-use-convictions/
-  - title: Sentence to Alternative to Incarceration Program
-    citation: SECTION 973 – SENTENCING
-    link: https://ncorj.org/tribal-law/sentence-to-alternative-to-incarceration-program/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentence-to-alternative-to-incarceration-program/
-  - title: Voluntary Domestic Abuse Treatment for Orders of Protection
-    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
-    link: https://ncorj.org/tribal-law/voluntary-domestic-abuse-treatment-for-orders-of-protection/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Program; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/voluntary-domestic-abuse-treatment-for-orders-of-protection/
 gaming:
   compacts:
   - state: WI

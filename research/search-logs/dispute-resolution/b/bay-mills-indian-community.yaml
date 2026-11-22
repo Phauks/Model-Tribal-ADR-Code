@@ -1,0 +1,36 @@
+profile: content/tribes/b/bay-mills-indian-community.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/67f4029bcd32c7019151.txt
+  query: ARBITRATION AGAINST THE TRIBE
+  outcome: found
+  reason: Sections 1803 and 1804 appear at about line 81 of the captured Chapter XVIII text, under the
+    heading matching the record.
+  records:
+  - content/tribes/b/bay-mills-indian-community.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://narf.org/nill/codes/baymillscode/index.html
+  outcome: found
+  reason: The record comes from the NILL table of contents (updated June 2017) that lists these headings;
+    the NILL page was not separately read.
+  records:
+  - content/tribes/b/bay-mills-indian-community.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/67f4029bcd32c7019151.txt
+  query: 1803; 1804
+  outcome: found
+  reason: Re-read sections 1803 and 1804 in the raw captured text.
+  records:
+  - content/tribes/b/bay-mills-indian-community.yaml#dispute_resolution.provisions

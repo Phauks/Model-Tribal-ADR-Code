@@ -282,59 +282,42 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: 11. Pre-Hearing, Scheduling or Settlement Conference; Stipulations.
-    citation: 11. Pre-Hearing, Scheduling or Settlement Conference; Stipulations.
-    link: https://www.narf.org/nill/codes/southernute/index.html
-    source: national-indian-law-library-code-codes-southernute
+    title: 12. Pre-Hearing, Scheduling or Settlement Conference; Stipulations.
+    citation: Southern Ute Indian Tribe, Administrative Appeals and Hearings Office (AAHO) Amended Rules
+      to Govern Appeals and Hearings, 12 (NILL lists it as 11)
+    link: https://www.southernute-nsn.gov/wp-content/uploads/sites/15/2023/05/1c-AAHO-Amended-Hearing-Rules-4-29-19.pdf
+    source: southern-ute-southern-ute-indian-tribe-administrative-appeals
     confidence: medium
-    as_of: '2026-11-21'
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
-      index; as_of is the access date.
+    verification: read-in-full
+    as_of: '2019-04-29'
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "11. Pre-Hearing, Scheduling or Settlement Conference; Stipulations."; the printed heading,
+      number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: The hearing officer decides whether a pre-hearing, scheduling or settlement conference is
+      appropriate, with notice set within ten days after the response to a petition, and a settlement
+      or stipulation signed by both parties is given to the hearing officer, who issues an order consistent
+      with it if it complies with tribal law.
+    locator: 12 (NILL lists it as 11)
   - kind: other
-    title: Article III. DISPUTE RESOLUTION
-    citation: Article III. DISPUTE RESOLUTION; 24-3-103. Benefits Continue During Dispute Resolution.
-    link: https://www.narf.org/nill/codes/southernute/index.html
-    source: national-indian-law-library-code-codes-southernute
-    confidence: medium
-    as_of: '2026-11-21'
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
-      index; as_of is the access date.
-  - kind: other
-    title: DISPUTE RESOLUTION
-    citation: DISPUTE RESOLUTION; Benefits Continue During Dispute Resolution.
-    link: https://narf.org/nill/codes/southernute/index.html
-    source: national-indian-law-library-code-codes-southernute
-    confidence: medium
-    as_of: '2020'
-    locator: Table of Contents, under 'Title 24. WORKERS' COMPENSATION CODE'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Most
-      recent update received: October 2020); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    title: Article 3. DISPUTE RESOLUTION
+    citation: Southern Ute Indian Tribal Code, Title 24 Workers' Compensation Code, Article 3 (24-3-101
+      to 24-3-104 read); record cites 24-3-103
+    link: https://www.southernute-nsn.gov/wp-content/uploads/sites/15/2023/05/Title-24-Workers-Compensation-official-final-version-12May2023.pdf
+    source: southern-ute-southern-ute-indian-tribal-code-title-24-workers
+    confidence: high
+    verification: read-in-full
+    as_of: '2023-05-25'
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "Article III. DISPUTE RESOLUTION"; the printed heading, number or version differs (see
+      research/reviews/2026-11-22-title-only-provisions.json). Whether this is a dispute resolution provision
+      is left for the lead author's review.
+    summary: An employee may ask the administrator to reconsider a benefit decision in writing within
+      30 days, and if not satisfied may request a hearing before the Administrative Appeals and Hearings
+      Office, whose hearing officer issues a decision binding on the parties unless appealed; benefits
+      already approved continue during the process and payments made are not recouped except for fraud,
+      overpayment or error.
+    locator: Article 3 (24-3-101 to 24-3-104 read); record cites 24-3-103
   database_listings:
-  - title: Criminal Code Purpose – Rehabilitation & Alternatives
-    citation: SUITC Title 5 § 5-1-101
-    link: https://www.southernute-nsn.gov/government/tribal-code/
-    practice_area: Tribal Justice
-    phase: All phases
-    form_of_practice: Deferred Prosecution; Diversion; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/criminal-code-purpose-rehabilitation-alternatives/
-  - title: Drug Offense Diversion & Treatment Policy
-    citation: SUITC Title 5 § 5-15-101(4)
-    link: https://www.southernute-nsn.gov/government/tribal-code/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication; Pre-arrest; Sentencing
-    form_of_practice: Deferred Prosecution; Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/drug-offense-diversion-treatment-policy/
   - title: Informal Conference (Juvenile)
     citation: SUITC Title 4 § 4-14-110
     link: https://www.southernute-nsn.gov/government/tribal-code/

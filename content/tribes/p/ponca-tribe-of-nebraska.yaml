@@ -363,39 +363,23 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: mediation
-    title: Section 4-3-4. Waiting Period Before Trial of Divorce, Annulment or Separate Maintenance/Mediation
-    citation: Section 4-3-4. Waiting Period Before Trial of Divorce, Annulment or Separate Maintenance/Mediation
-    link: https://narf.org/nill/codes/ponca_necode/index.html
-    source: national-indian-law-library-code-codes-ponca-necode
+    title: Section 4-4-6. Separation Agreements (paragraph 9)
+    citation: Ponca Tribe Law and Order Code, Title IV Domestic Relations, Chapter 4 Dissolution and Separation,
+      4-4-6(9)
+    link: https://poncatribe-ne.gov/wp-content/uploads/2026/11/law_code_full_261026.pdf
+    source: ponca-nebraska-ponca-tribe-law-and-order-code-title-iv-domestic
     confidence: medium
-    as_of: '2015'
-    locator: Table of Contents, under 'TITLE IV DOMESTIC RELATIONS'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: May 2015); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2024-10-22'
+    locator: 4-4-6(9)
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "Section 4-3-4. Waiting Period Before Trial of Divorce, Annulment or Separate Maintenance/Mediation";
+      the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Allows the court, on the parties' written agreement or on its own motion, to order or refer
+      parties in a dissolution or separation case to mediation or traditional dispute resolution to help
+      them reach a separation agreement, with costs shared, but not where a protection order is in effect
+      or domestic or family abuse is shown.
   database_listings:
-  - title: Dispositional Options for Child Offenders and their family
-    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-24
-    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-options-for-child-offenders-and-their-family/
-  - title: Dispotional Hearings for Child Offenders
-    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-23
-    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispotional-hearings-for-child-offenders/
   - title: Informal Conference for Juveniles
     citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-15
     link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/

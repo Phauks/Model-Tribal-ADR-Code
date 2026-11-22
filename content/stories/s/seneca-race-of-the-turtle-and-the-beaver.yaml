@@ -1,0 +1,64 @@
+id: seneca-race-of-the-turtle-and-the-beaver
+title: The Race of the Turtle and the Beaver
+nations:
+- seneca-nation-of-indians
+- tonawanda-band-of-seneca
+kind: traditional-story
+length: short
+excerpts:
+- telling: parker-1923
+  locator: page 310, lines beginning "Well, what right have you here?"
+  text: '"Well, what right have you here?" asked Beaver. "This is my home," said Turtle. "I have lived here a long
+    time."'
+  words: 21
+  sha256: 432d147c2954b90f8fc7ccec10479940aa3dd30baca3a05aeb04ad23c2bf2d22
+- telling: parker-1923
+  locator: page 310, line beginning "How shall we settle this thing?"
+  text: '"How shall we settle this thing?" asked Turtle.'
+  words: 8
+  sha256: 5a5c35bee59d0ca449a9340d9492f72c58c0db907d0dbbdbb3ac6bd45a6b15fc
+topics:
+- quarrel-between-animals
+- land-dispute
+- settled-by-contest
+tellings:
+- id: parker-1923
+  source: parker-1923-seneca-myths-and-folk-tales
+  locator: tale 41, pages 309-311
+  teller:
+    form: name
+    name: Arthur C. Parker
+    role: recorder and editor, of Seneca descent; the teller of this tale is not named
+  published_by: Buffalo Historical Society
+  authority: member-author
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+protocols:
+- kind: seasonal
+  statement: 'Parker writes in the book''s introduction: "Thus the modern Iroquois, following the old time custom,
+    reserves his tales of adventures, myth and fable for winter when the year''s work is over and all nature slumbers."'
+  source: parker-1923-seneca-myths-and-folk-tales
+  how_the_project_follows_it: The record notes the winter custom. The lead author decided on Nov. 22, 2026 that
+    the website shows stories with a winter rule year-round, with the rule shown beside them.
+access:
+  level: nation-review-first
+anthology:
+  candidate: false
+  reason: Ask the Seneca Nation first; the tale was written down by an author of Seneca descent, and the teller
+    is not named (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-22-peacemaking-ancestor-stories
+notes: Turtle and Beaver both claim the same water and agree to settle it by a race. The Oneida Indian Nation's
+  My Home (record oneida-indian-nation-my-home-turtle-and-beaver) is a Turtle and Beaver story too, ending instead
+  in persuasion; the two have not been compared beyond that.

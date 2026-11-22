@@ -240,18 +240,21 @@ dispute_resolution:
       from the Tribe's identity; the source does not name the language.
   provisions:
   - kind: arbitration
-    title: Chapter 95 - Arbitration Ordinance
-    citation: Chapter 95 - Arbitration Ordinance; 95.102 Agreements to Arbitrate are Enforceable; 95.104
-      Stay of Proceedings and Order to Proceed with Arbitration; 95.108 Arbitration Award Not Appealable;
-      95.110 Requirement of Independent Agreement for Arbitration of Waiver of Immunity
-    link: https://narf.org/nill/codes/sault_ste_marie/index.html
-    source: national-indian-law-library-code-codes-sault-ste-marie
+    title: 'CHAPTER 95: ARBITRATION ORDINANCE'
+    citation: Sault Ste. Marie Tribal Code, Chapter 95 Arbitration Ordinance, 95.101-95.110
+    link: https://www.saulttribe.com/government/tribal-code/download-files/download-file?path=chaptr95.pdf
+    source: sault-ste-sault-ste-marie-tribal-code-chapter-95
     confidence: medium
-    as_of: '2016'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2016); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '1999-06-22'
+    locator: 95.101-95.110
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Written agreements to arbitrate controversies under contracts entered by the Tribe, its instrumentalities
+      or others subject to Tribal jurisdiction are valid, irrevocable and specifically enforceable; the
+      Tribal Court must stay its own proceedings and order arbitration when a party asks, confirms awards
+      and enforces them as civil judgments, with no appeal from an order enforcing an agreement or award,
+      and the Tribe's or an instrumentality's court exposure depends on an explicit waiver of immunity,
+      which the ordinance itself does not supply (95.110).
   database_listings:
   - title: Bekaadziiwiin (Peaceful Life) Peacemaking Diversion
     citation: Tribal Code Chapter 36, §36.405
@@ -263,46 +266,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/bekaadziiwiin-peaceful-life-peacemaking-diversion/
-  - title: Continuum of Services – Prevention and Community-Based Alternatives
-    citation: Tribal Code Chapter 30, §30.102(4)
-    link: https://www.saulttribe.com/government/tribal-code
-    practice_area: Tribal Child Welfare/Family
-    form_of_practice: Community-based alternatives; Early intervention; Prevention
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/continuum-of-services-prevention-and-community-based-alternatives/
-  - title: Prevention and Community-Based Alternatives
-    citation: Tribal Code Chapter 36, §36.102(7)
-    link: https://www.saulttribe.com/government/tribal-code
-    practice_area: Tribal Juvenile/Youth Justice
-    form_of_practice: Community-based alternatives; Early intervention; Prevention
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/prevention-and-community-based-alternatives/
-  - title: Restitution as Disposition
-    citation: Tribal Code Chapter 36, §36.413(5)(c)
-    link: https://www.saulttribe.com/government/tribal-code
-    practice_area: Tribal Juvenile/Youth Justice
-    form_of_practice: Restitution; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-as-disposition/
-  - title: Restitution to Victims as Sentencing Option
-    citation: Tribal Code Chapter 70, §70.127(2)
-    link: https://www.saulttribe.com/government/tribal-code
-    practice_area: Tribal Criminal Justice
-    form_of_practice: Restitution; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-to-victims-as-sentencing-option/
 gaming:
   compacts:
   - state: MI

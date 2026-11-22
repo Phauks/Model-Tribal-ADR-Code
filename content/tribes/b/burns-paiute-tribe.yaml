@@ -270,18 +270,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   database_listings:
-  - title: Conditional and Contingent Orders of Exclusion
-    citation: Burns Paiute Tribal Code. Title 2 Rules of Procedure. Chapter 2.4 Exclusion. Section 2.4.64
-      Conditional and Contingent Orders of Exclusion.
-    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-3-Title-1-Title-2.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/conditional-and-contingent-orders-of-exclusion/
   - title: Informal Conference & Adjustment in Juvenile Proceedings
     citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section. 5.2.150 Informal
       Conferences, Section 5.2.151 Informal Conferences - Disposition, & Section 5.2.152 Informal Conference
@@ -307,30 +295,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-in-child-welfare/
-  - title: Restorative Alternatives in Child In Need of Care Predispositional Reports
-    citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section 5.2.290 Predispositional
-      Report.
-    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-4-Title-3-Title-5.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-alternatives-in-child-in-need-of-care-predispositional-reports/
-  - title: Restorative Alternatives in Juvenile Predispositional Reports
-    citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section 5.2.173 Predispositional
-      Report.
-    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-4-Title-3-Title-5.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-alternatives-in-juvenile-predispositional-reports/
   - title: Restorative Dispositional Alternatives in Child In Need of Care
     citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section 5.2.293 Dispositional
       Alternatives.

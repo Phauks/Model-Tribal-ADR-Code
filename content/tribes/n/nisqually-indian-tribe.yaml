@@ -324,112 +324,79 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
     source: nisqually-title-50-youth-code
     confidence: high
+    verification: read-in-full
     as_of: '2023-06-08'
-  - kind: arbitration
+  - kind: other
     title: 8.50.290 Arbitration Agreements
-    citation: 8.50.290 Arbitration Agreements
-    link: https://narf.org/nill/codes/nisqually/index.html
-    source: national-indian-law-library-code-codes-nisqually
-    confidence: medium
-    as_of: '2016'
-    locator: Table of Contents, under 'CHAPTER II - GOVERNMENTAL CORPORATIONS'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
+    citation: Nisqually Tribal Code Title 8 Commerce and Trade, Chapter II Governmental Corporations (Ch.
+      8.50), 8.50.290
+    link: https://www.nisqually-nsn.gov/download_file/view/9a7ecab1-bb21-4a3e-aa2e-1e8393154967/430
+    source: nisqually-nisqually-tribal-code-title-8-commerce-and-trade
+    confidence: high
+    verification: read-in-full
+    locator: 8.50.290
+    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
+      is left for the lead author's review.
+    summary: Despite the immunity from suit of governmental corporations chartered under the chapter,
+      an arbitration agreement approved by such a corporation and any award made under it are enforceable
+      against the corporation, but only in Nisqually Tribal Court.
   - kind: mediation
     title: 24.19 MEDIATION OF DISPUTES
     citation: 24.19 MEDIATION OF DISPUTES; 24.19.01 Request for Mediation; 24.19.02 Mediator
     link: https://narf.org/nill/codes/nisqually/index.html
     source: national-indian-law-library-code-codes-nisqually
     confidence: medium
+    verification: title-only
     as_of: '2016'
     locator: Table of Contents, under 'CHAPTER II – RULUES OF CIVIL PROCEDURES'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
+      taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read.
+      Places searched: research/search-logs/dispute-resolution/n/nisqually-indian-tribe.yaml.'
   - kind: mediation
-    title: 50.27.03 Mediator
-    citation: 50.27.03 Mediator; 50.33 MEDIATION OF DISPUTES; 50.33.01 Request for Mediation; 50.33.02
-      Mediator; 50.33.03 Time of Mediation Hearing; 50.33.04 Mediation Hearing; 50.33.05 Results of Mediation
-      Hearing
-    link: https://www.narf.org/nill/codes/nisqually/index.html
-    source: national-indian-law-library-code-codes-nisqually
+    title: 50.40 MEDIATION OF DISPUTES; 50.34.03 Mediator
+    citation: TITLE 50 YOUTH, 50.34.03 (Mediator) and 50.40 (Mediation of Disputes), 50.40.01-50.40.05
+    link: https://peacemaker.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
+    source: nisqually-title-50-youth
     confidence: medium
-    as_of: 2016-05
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
+    verification: read-in-full
+    as_of: '2023-06-08'
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "50.27.03 Mediator"; the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Lets any party in a youth matter ask, before the fact-finding hearing, for a mediation hearing
+      before a court-appointed impartial mediator (preference to elders and people familiar with informal
+      dispute resolution), and if the judge finds an informal resolution the court orders compliance and
+      dismisses the charges once the terms are met, otherwise trial proceeds and statements at mediation
+      are not usable as evidence without the youth's consent.
+    locator: 50.34.03 (Mediator) and 50.40 (Mediation of Disputes), 50.40.01-50.40.05
+  - kind: peacemaking
     title: Title 50 – Youth
     citation: Title 50 – Youth
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
     source: narf-ipi-youth-family-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-08-25'
     locator: Nisqually Indian Tribe of Washington
     note: 'Native American Rights Fund description (provision itself not read): Provides referral procedures,
       procedures, and formalization of agreement requirements.'
   - kind: peacemaking
-    title: 50.16 PEACEMAKER CONFERENCE
-    citation: 50.16 PEACEMAKER CONFERENCE; 50.16.01 Request for Peacemaker Conference; 50.16.02 Setting
-      the Peacemaker Conference; 50.16.03 Peacemaker Conference - Required Notice; 50.16.04 Peacemaker
-      Conference - Procedure
-    link: https://narf.org/nill/codes/nisqually/index.html
-    source: national-indian-law-library-code-codes-nisqually
+    title: 50.20 PEACEMAKER CONFERENCE
+    citation: TITLE 50 YOUTH, 50.20 (Peacemaker Conference), 50.20.01-50.20.04
+    link: https://peacemaker.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
+    source: nisqually-title-50-youth
     confidence: medium
-    as_of: '2016'
-    locator: Table of Contents, under 'CHAPTER I - NISQUALLY YOUTH CODE'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
-  - kind: mediation
-    title: 50.27.03 Mediator
-    citation: 50.27.03 Mediator; 50.33 MEDIATION OF DISPUTES; 50.33.01 Request for Mediation; 50.33.02
-      Mediator; 50.33.03 Time of Mediation Hearing; ...
-    link: https://narf.org/nill/codes/nisqually/index.html
-    source: national-indian-law-library-code-codes-nisqually
-    confidence: medium
-    as_of: '2016'
-    locator: Table of Contents, under 'CHAPTER II – JUVENILE JUSTICE'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2023-06-08'
+    locator: 50.20 (Peacemaker Conference), 50.20.01-50.20.04
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "50.16 PEACEMAKER CONFERENCE"; the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Lets any party to a youth (child welfare) proceeding, or the court on its own motion, ask
+      for a peacemaker conference after a preliminary hearing, to be held within twenty days on notice
+      to the family, with an informal process, a written agreement signed by the child, parents or guardian,
+      child advocate and the Tribe's representative that lasts no longer than the child's eighteenth birthday,
+      and a draft order the court may enter and enforce like any other order.
   database_listings:
-  - title: Alternative Dispositions for Juvenile Offenders
-    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.39 Court Proceedings. Section 50.39.06
-      Predisposition Report, 50.39.07 Disposition Hearing, 50.39.08 Disposition Alternatives, & 50.39.09
-      Modification of Disposition Order.
-    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-dispositions-for-juvenile-offenders/
-  - title: Deferred Court Procedures for Alcohol and Drug Offenses for Juveniles
-    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.39 Court Proceedings. Section 50.39.10
-      Deferred Court Procedures for Alcohol and Drug Offenses.
-    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-court-procedures-for-alcohol-and-drug-offenses-for-juveniles/
-  - title: Deferred Penalty for Juvenile Curfew
-    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.28 Juvenile Curfew. Section 50.28.06 Penalties
-      for Children Ages Twelve to Seventeen.
-    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-penalty-for-juvenile-curfew/
   - title: Family Conference and Proection Plans in Elder Abuse Cases
     citation: Nisqually Tribal Code. Title 51 Nisqually Elder Abuse Code. Chapter 51.08 Agreed Voluntary
       Protective Services and Family Conference. Section 51.08.01 Agreed Voluntary Protective Services
@@ -443,18 +410,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-conference-and-proection-plans-in-elder-abuse-cases/
-  - title: Family Preservation Plan for Child In Need Of Care
-    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.07 Committee Meetings. Section 50.07.07
-      Family Preservation Plan.
-    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-preservation-plan-for-child-in-need-of-care-2/
   - title: Mediation of Disputes in Juvenile Justice
     citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.40 Mediation of Disputes.
     link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
@@ -466,17 +421,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mediation-of-disputes-in-juvenile-justice/
-  - title: Peacemaker Conference for Child Welfare
-    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.20 Peacemaker Conference.
-    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaker-conference-for-child-welfare/
 gaming:
   compacts:
   - state: WA

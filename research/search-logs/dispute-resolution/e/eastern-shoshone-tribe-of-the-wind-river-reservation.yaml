@@ -1,0 +1,58 @@
+profile: content/tribes/e/eastern-shoshone-tribe-of-the-wind-river-reservation.yaml
+topic: dispute-resolution
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.wrtribalcourt.com/forms/rules-of-court/tribal-codes/
+  query: Peacemaker Court Title XVI
+  outcome: not-found
+  reason: Captured Wind River tribal codes page lists Title XVI as Fish and Game Code; no peacemaker title
+    in the captured titles.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/shoshonearapaho
+  query: 'DRAFT Title XVI: Peacemaker Court'
+  outcome: not-public
+  reason: NILL page lists the draft's chapter outline only and says the tribe has not permitted full-text
+    online publication; asks for contact with the library.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://narf.org/nill/codes/shoshonearapaho
+  query: Eastern Shoshone Wind River Peacemaker Court Title XVI draft 1989
+  outcome: not-found
+  reason: Search returned the NILL Shoshone and Arapaho code page only; no full text of the draft found.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/
+  outcome: not-public
+  reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
+    not worked around.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/shoshonearapaho
+  query: 'DRAFT Title XVI: Peacemaker Court'
+  outcome: not-public
+  reason: 'Same draft as #0; the NILL page does not allow full text online.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/shoshonearapaho/index.html
+  query: 'DRAFT Title XVI: Peacemaker Court'
+  outcome: not-public
+  reason: NILL lists the draft (dated June 20, 1989) with seven chapters, but the page says the tribe
+    has not given permission for the full text to be online; its table of contents was created June 2018.
+next_steps: The provisions this nation's profile lists by section title are still unread. A person could
+  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.

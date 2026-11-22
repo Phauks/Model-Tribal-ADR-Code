@@ -7,8 +7,6 @@
 -->
 <script lang="ts">
 	import GithubMark from './GithubMark.svelte';
-	import PageTools from './PageTools.svelte';
-	import ReportLink from './ReportLink.svelte';
 
 	interface Crumb {
 		label: string;
@@ -44,8 +42,6 @@
 
 <div class="reading project-document">
 	<h1>{title}</h1>
-	<ReportLink record={file} />
-	<PageTools />
 	{@html html}
 
 	<p class="document-source small no-print">

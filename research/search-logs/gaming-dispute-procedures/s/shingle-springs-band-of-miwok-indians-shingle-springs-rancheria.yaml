@@ -1,0 +1,39 @@
+profile: content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/shinglespringsband-shingleord080696.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 1996-08-06
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#shingle-springs-band-of-miwok-indians-ordinance-1996-08-06#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/shinglespringsband-OrdAppr11042010.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2010-11-04 has no text layer on most pages (37 of 37 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/shinglespringsband-2014.08.27-Ltr-re-Ord-approval-Shingle-Springs.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: not-found
+  reason: scripts/review/ordinance_disputes.py read this amendment listed 2014-08-27 and found no candidate
+    section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
+next_steps: Read the scanned amendment listed 2010-11-04 (https://www.nigc.gov/wp-content/uploads/2025/03/shinglespringsband-OrdAppr11042010.pdf)
+  with OCR or by hand.

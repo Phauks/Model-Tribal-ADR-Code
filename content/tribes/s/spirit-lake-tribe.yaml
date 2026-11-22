@@ -307,33 +307,29 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-09-29'
     locator: Spirit Lake Tribe of North Dakota
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
       philosophy, values, and tribal prayer, standards of conduct, authority to use traditional ways and
       instruct on tribal teachings, referral standards, and procedures.'
   - kind: peacemaking
-    title: 'Peacemakers: Qualifications, Appointments, Authorities'
-    citation: 'Peacemakers: Qualifications, Appointments, Authorities; Peacemaker Process'
-    link: https://narf.org/nill/codes/spirit_lake/index.html
-    source: national-indian-law-library-code-codes-spirit-lake
+    title: '§21-1-110 Peacemakers: Qualifications, Appointment, Authorities.'
+    citation: 'Spirit Lake Law and Order Code, Title 21: Wodakota: Traditional Court Ordinance, 21-1-110
+      and 21-1-115'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
+    source: spirit-lake-title-21-wodakota
     confidence: medium
-    as_of: '2014'
-    locator: Table of Contents, under 'Chapter Three. Community Notification'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Last
-      Amended: March 24, 2014); the provision itself was not read. The heading it falls under is taken
-      from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2014-03-24'
+    locator: 21-1-110 and 21-1-115
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Requires a roster of at least three contracted peacemakers chosen by a panel and the Traditional
+      Court Coordinator who must pass a background check and qualifications, and sets the peacemaking
+      process in which the appointed peacemaker works with consenting parties toward a written compact
+      that the parties may affirm, modify or reject, that has no coercion, and that carries the force
+      of a Tribal Court order and judgment once signed.
   database_listings:
-  - title: Domestic Abuse – Mandatory Counseling and Traditional Healing
-    citation: Title 3, § 3-7-430(G)
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Justice
-    form_of_practice: Healing
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-abuse-mandatory-counseling-and-traditional-healing/
   - title: Informal Adjustments for Juveniles
     citation: Title 23, §§ 23-6-111 to 23-6-114
     link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
@@ -345,50 +341,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustments-for-juveniles/
-  - title: Juvenile Diversion Agreements
-    citation: Title 23, §§ 23-6-108 to 23-6-110
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Diversion; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-diversion-agreements/
-  - title: Suspended Sentences with Rehabilitative and Restorative Conditions
-    citation: Title 3, § 3-6-107(F)
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Rehabilitation; Restitution
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/suspended-sentences-with-rehabilitative-and-restorative-conditions/
-  - title: Traditional Court
-    citation: 'SPIRIT LAKE LAW AND ORDER CODE Title 21: WODAKOTA: TRADITIONAL COURT ORDINANCE'
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/traditional-court/
-  - title: Traditional Restitution and Custom Law Recognition
-    citation: Title 3, § 3-7-020(OO), (ZZ)
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/traditional-restitution-and-custom-law-recognition/
 gaming:
   compacts:
   - state: ND

@@ -354,23 +354,14 @@ dispute_resolution:
     link: https://narf.org/nill/codes/threeaffiliated/index.html
     source: national-indian-law-library-code-codes-threeaffiliated
     confidence: medium
+    verification: title-only
     as_of: '2004'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
       2004 (no longer current)); the provision itself was not read. The heading it falls under is taken
-      from the page layout and may be imprecise.'
+      from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places
+      searched: research/search-logs/dispute-resolution/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml.'
   database_listings:
-  - title: DUI Treatment and Community Service Requirements
-    citation: TAT Criminal Code § 3-26 (DUI provisions)
-    link: https://www.mhanation.com/tribal-code
-    practice_area: Tribal Justice
-    phase: Post-adjudication/Sentencing
-    form_of_practice: Community service; Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dui-treatment-and-community-service-requirements/
   - title: Restitution and Reparation (Victim Compensation)
     citation: TAT Criminal Code §§ 3-9-4.1(e), 3-9-8.1, 3-9-8.2
     link: https://www.mhanation.com/tribal-code
@@ -393,17 +384,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-factor-making-restitution-to-victim/
-  - title: Treatment in Lieu of Prosecution/Sentence (Diversion)
-    citation: TAT Criminal Code §§ 3-9-7.1, 3-9-7.2
-    link: https://www.mhanation.com/tribal-code
-    practice_area: Tribal Justice
-    phase: Pre or post-adjudication
-    form_of_practice: Diversion; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-prosecution-sentence-diversion/
 gaming:
   compacts:
   - state: ND

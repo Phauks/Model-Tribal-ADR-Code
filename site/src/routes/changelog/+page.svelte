@@ -1,5 +1,4 @@
 <script lang="ts">
-	import PageTools from '#lib/components/PageTools.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -11,7 +10,6 @@
 
 <div class="reading">
 	<h1>Changelog</h1>
-	<PageTools />
 	<p class="lead">
 		The content, the website and the print edition each have their own version number, starting at
 		0.0.1. Each version below lists what changed.

@@ -278,50 +278,54 @@ dispute_resolution:
     link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: read-in-full
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/mandatory-mediation/
   - kind: other
     title: Section 670 Dispute Resolution
-    citation: Section 670 Dispute Resolution
-    link: https://narf.org/nill/codes/pascua-yaqui/index.html
-    source: national-indian-law-library-code-codes-pascua-yaqui
-    confidence: medium
-    as_of: '2018'
-    locator: Table of Contents, under 'SUBCHAPTER G PROCUREMENT'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    citation: Pascua Yaqui Tribal Code, Title 2 Government Administration, Chapter 5-1 Fiscal Management,
+      670 (2 PYTC 5-1-670)
+    link: https://www.pascuayaqui-nsn.gov/_static_pages/tribalcodes/docs/2_PYTC/5-1_Fiscal_Management_FINAL.pdf
+    source: pascua-yaqui-pascua-yaqui-tribal-code-title-2-government
+    confidence: high
+    verification: read-in-full
+    as_of: '2025-07-24'
+    locator: 670 (2 PYTC 5-1-670)
+    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
+      is left for the lead author's review.
+    summary: The Chairman must adopt dispute resolution procedures for disputes arising from procurement
+      actions, meant to resolve them timely and fairly while protecting tribal interests; the section
+      itself sets out no procedure.
   - kind: other
     title: SUBCHAPTER C CONCILIATION
-    citation: SUBCHAPTER C CONCILIATION; Section 260 Conciliation; Section 290 Petition Invoking Jurisdiction
-      or for Transfer of Action to Conciliation Division
-    link: https://www.narf.org/nill/codes/pascua-yaqui/index.html
-    source: national-indian-law-library-code-codes-pascua-yaqui
+    citation: Pascua Yaqui Tribal Code, Title 5 Civil Code, Chapter 2 Domestic Relations, 260 and 290
+      (Subchapter C Conciliation, read 260-370)
+    link: https://www.pascuayaqui-nsn.gov/wp-content/legacy-tribalcodes/docs/5_PYTC/2_Domestic_Relations_FINAL.pdf
+    source: pascua-yaqui-pascua-yaqui-tribal-code-title-5-civil-code
     confidence: medium
-    as_of: 2018-10
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    verification: read-in-full
+    as_of: '2006-08-09'
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: A conciliation division of the Tribal Court holds informal, confidential conferences to reconcile
+      spouses or settle family controversies, a spouse may file a petition invoking it before an annulment,
+      dissolution or separation action or have a pending action transferred to it, and a reconciliation
+      agreement may be put in writing and made a court order with the parties' consent.
+    locator: 260 and 290 (Subchapter C Conciliation, read 260-370)
   - kind: arbitration
     title: CHAPTER 6- ARBITRATION
-    citation: CHAPTER 6- ARBITRATION; Section 40 Agreements to Arbitrate are Enforceable; Section 60 Stay
-      of Proceedings and Order to Proceed with Arbitration; Section 100 Arbitration Award Not Appealable
-    link: https://www.narf.org/nill/codes/pascua-yaqui/index.html
-    source: national-indian-law-library-code-codes-pascua-yaqui
+    citation: Pascua Yaqui Tribal Code, Title 7 Business and Commercial Code, Chapter 6 Arbitration, 40,
+      60 and 100 (chapter read in full, 10-150)
+    link: https://www.pascuayaqui-nsn.gov/wp-content/legacy-tribalcodes/docs/7_PYTC/6_Arbitration.pdf
+    source: pascua-yaqui-7-pytc-6-arbitration
     confidence: medium
-    as_of: 2018-10
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: arbitration
-    title: CHAPTER 6- ARBITRATION
-    citation: CHAPTER 6- ARBITRATION
-    link: https://narf.org/nill/codes/pascua-yaqui/index.html
-    source: national-indian-law-library-code-codes-pascua-yaqui
-    confidence: medium
-    as_of: '2018'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
+    verification: read-in-full
+    as_of: '2010-03-24'
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Written agreements to arbitrate contract disputes with the tribe are enforceable, the Tribal
+      Court must stay its own proceedings and order arbitration when a party asks, and the court confirms
+      awards and enforces them as civil judgments, with no appeal from an order enforcing an agreement
+      or award.
+    locator: 40, 60 and 100 (chapter read in full, 10-150)
   clauses:
   - context: commercial-code
     kind: arbitration-clause
@@ -337,39 +341,6 @@ dispute_resolution:
     as_of: '2010-03-24'
     locator: §§ 6-40, 6-90, 6-100, 6-110, 6-130, 6-140
   database_listings:
-  - title: Drug Treatment Probation
-    citation: 4 PYTC § 2-300.1
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Diversion; Program; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/drug-treatment-probation/
-  - title: Family Counseling for Status Offenders
-    citation: 3 PYTC § 2-6-180(F)
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Family conferencing; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-counseling-for-status-offenders/
-  - title: In-Home Intervention for Child in Need of Protection
-    citation: 5 PYTC § 7-395
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Alternative to removal; Rehabilitation program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/in-home-intervention-for-child-in-need-of-protection/
   - title: Informal Adjustment for Juvenile Offenders
     citation: 5 PYTC § 7-120
     link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
@@ -381,49 +352,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustment-for-juvenile-offenders/
-  - title: Intensive Probation with Restitution
-    citation: 4 PYTC § 2-300.2
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Program; Rehabilitation; Restore
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/intensive-probation-with-restitution/
-  - title: Juvenile Disposition Alternatives
-    citation: 3 PYTC § 2-6-110(D)
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Program; Rehabilitation; Restore
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-disposition-alternatives/
-  - title: Juvenile Medical Assessment for Treatment
-    citation: 3 PYTC § 2-6-120
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    practice_area: Tribal Juvenile/Youth Justice
-    form_of_practice: Alternative; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-medical-assessment-for-treatment/
-  - title: Mandatory Mediation
-    citation: Pascua Yaqui Tribe TITLE 5 – CIVIL CODE CHAPTER 9 – MEDIATION
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Mediation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mandatory-mediation/
   - title: Misdemeanor Compromise/Restitution
     citation: 4 PYTC § 2-208.01
     link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
@@ -435,17 +363,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/misdemeanor-compromise-restitution/
-  - title: Probation with Rehabilitation
-    citation: 4 PYTC § 2-300
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Program; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/probation-with-rehabilitation/
 gaming:
   compacts:
   - state: AZ

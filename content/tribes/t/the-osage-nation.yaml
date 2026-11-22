@@ -231,48 +231,23 @@ justice_institutions:
   locator: Oklahoma section, entry 'Osage Nation'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Subchapter 8. Dispute Resolution
-    citation: Subchapter 8. Dispute Resolution; § 4–801. Arbitration
-    link: https://www.narf.org/nill/codes/osage/index.html
-    source: national-indian-law-library-code-codes-osage
-    confidence: medium
-    as_of: 2018-02
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: arbitration
-    title: Dispute Resolution
-    citation: Dispute Resolution; Arbitration
-    link: https://narf.org/nill/codes/osage/index.html
-    source: national-indian-law-library-code-codes-osage
+    title: Subchapter 8 Dispute Resolution; § 4-801. Arbitration
+    citation: Osage Nation Code, Second Edition, Volume II, Title 19 Labor and Employment, Chapter 4 Workers'
+      Compensation, 19 ONC 4-801 (Subchapter 8)
+    link: https://www.dropbox.com/s/175za50tstrzlm4/ONC%20Second%20Edition%20V2.pdf?dl=1
+    source: osage-osage-nation-code-second-edition-volume-ii-title
     confidence: medium
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'TITLE 19. LABOR AND EMPLOYMENT'
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+    verification: read-in-full
+    as_of: '2012-10-01'
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: A worker who disputes the Administrator's final workers' compensation decision may, within
+      twenty days and by written request to the employer's human resources office, have it reviewed in
+      arbitration before a single arbitrator chosen by agreement from the Trial Court's list (or drawn
+      by the Clerk if the parties cannot agree), with a filing fee refunded to a prevailing worker, costs
+      borne by the employer, and a final and binding award enforceable in the Osage Nation Trial Court.
+    locator: 19 ONC 4-801 (Subchapter 8)
   database_listings:
-  - title: Child Abuse/Neglect Diversion Program
-    citation: 2 ONC § 2-133
-    link: https://osage.nation.codes
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/child-abuse-neglect-diversion-program/
-  - title: Committed to Treatment Facility
-    citation: 6 ONC § 5-136 & § 5-139
-    link: https://osage.nation.codes
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/committed-to-treatment-facility/
   - title: Court Diversion by Stipulation for Children
     citation: 2 ONC § 2-118 & § 2-119
     link: https://osage.nation.codes
@@ -284,94 +259,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/court-diversion-by-stipulation-for-children/
-  - title: Deferred Prosecution Agreements for Juveniles
-    citation: 2 ONC § 5-114 & § 5-115
-    link: https://osage.nation.codes
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-prosecution-agreements-for-juveniles/
-  - title: Deferred Prsecution in Juvenile Deliquency Cases
-    citation: 2 ONC § 5-114 & § 5-115
-    link: https://osage.nation.codes
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-prsecution-in-juvenile-deliquency-cases/
-  - title: Dismissing a Petition when Child has Completed Treatment
-    citation: 2 ONC § 1-123 & § 5-128
-    link: https://osage.nation.codes
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dismissing-a-petition-when-child-has-completed-treatment/
-  - title: Diversion Contracts for Children
-    citation: 2 ONC § 2-109 & § 2-110
-    link: https://osage.nation.codes
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-contracts-for-children/
-  - title: Mandatory Conditions for Domestic Violence Sentencing
-    citation: 6 ONC § 2-185
-    link: https://osage.nation.codes
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mandatory-conditions-for-domestic-violence-sentencing/
-  - title: Penalties for Minors for Sexting
-    citation: 6 ONC § 2-255
-    link: https://osage.nation.codes
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/penalties-for-minors-for-sexting/
-  - title: Purpose of a Hearing for a Child
-    citation: 2 ONC § 1-135 & § 5-137
-    link: https://osage.nation.codes
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-a-hearing-for-a-child/
-  - title: Required Rehabilitation Process in an Order of Protection
-    citation: 2 ONC § 2-138
-    link: https://osage.nation.codes
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/required-rehabilitation-process-in-an-order-of-protection/
   - title: Sentencing Policy
     citation: 7 ONC § 4-103
     link: https://osage.nation.codes
@@ -383,28 +270,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-policy/
-  - title: Supervised Work Program for Probation for Juveniles
-    citation: 2 ONC § 5-140
-    link: https://osage.nation.codes
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/supervised-work-program-for-probation-for-juveniles/
-  - title: Victim’s Rights in a Trial
-    citation: 6 ONC § 5-503 & § 5-504
-    link: https://osage.nation.codes
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/victims-rights-in-a-trial/
 gaming:
   compacts:
   - state: OK

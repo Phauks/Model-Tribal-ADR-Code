@@ -291,124 +291,56 @@ justice_institutions:
   note: 'Link check 2026-11-21: the site did not respond.'
 dispute_resolution:
   provisions:
-  - kind: mediation
-    title: SECTION 11-5-12. Mediation Prohibited
-    citation: SECTION 11-5-12. Mediation Prohibited
-    link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
-    source: national-indian-law-library-code-codes-omaha-of-nebraska
-    confidence: medium
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'CHAPTER 5. PROTECTION ORDERS'
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
-  - kind: arbitration
-    title: Title 49 Arbitration Ordinance
-    citation: Title 49 Arbitration Ordinance
-    link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
-    source: national-indian-law-library-code-codes-omaha-of-nebraska
-    confidence: medium
-    as_of: '2026-11-21'
-    locator: Table of Contents
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
-  - kind: arbitration
-    title: CHAPTER 1. ARBITRATION
-    citation: CHAPTER 1. ARBITRATION; SECTION 49-1-3. Enforceability of Agreements to Arbitrate; SECTION
-      49-1-5. Stay of Proceedings in Tribal Court and Order to Proceed with Arbitration; SECTION 49-1-9.
-      Arbitration Award Not
-    link: https://www.narf.org/nill/codes/omaha_of_nebraska/index.html
-    source: national-indian-law-library-code-codes-omaha-of-nebraska
-    confidence: medium
-    as_of: 2016-01
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: other
-    title: Binding Dispute Resolution for Non-Material Breach
-    citation: Binding Dispute Resolution for Non-Material Breach
-    link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
-    source: national-indian-law-library-code-codes-omaha-of-nebraska
+    title: SECTION 11-5-12. Mediation Prohibited.
+    citation: Title 11 Domestic Violence (Omaha Tribal Code), 11-5-12
+    link: https://www.omahatribe.com/wp-content/uploads/2024/05/Title-11.-Domestic-Violence.pdf
+    source: omaha-nebraska-title-11-domestic-violence-omaha-tribal-code
     confidence: medium
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'Appendix D 2006 Gaming Compact with State of Iowa'
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+    verification: read-in-full
+    as_of: '2013'
+    locator: 11-5-12
+    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
+      is left for the lead author's review. Read from a scanned copy by OCR.
+    summary: Bars the Tribal Court, in protection order proceedings, from ordering the parties into counseling,
+      mediation, restorative justice, peacemaking, circle sentencing, traditional ceremonies or similar
+      processes that would put the petitioner in direct dealing with the respondent, even if the petitioner
+      may refuse to take part.
   - kind: arbitration
-    title: CHAPTER 1. ARBITRATION
-    citation: CHAPTER 1. ARBITRATION
-    link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
-    source: national-indian-law-library-code-codes-omaha-of-nebraska
+    title: TITLE 49. ARBITRATION ORDINANCE
+    citation: Title 49 Arbitration Ordinance (Omaha Tribal Code, 2013), 49-1-1 to 49-1-13
+    link: https://www.omahatribe.com/wp-content/uploads/2024/05/Title-49-Arbitration-Ordinance.pdf
+    source: omaha-nebraska-title-49-arbitration-ordinance-omaha-tribal-code
     confidence: medium
-    as_of: '2026-11-21'
-    locator: Table of Contents
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
-  database_listings:
-  - title: Court cannot Order Restorative Justice in Domestic Violence Cases
-    citation: Omaha Tribal Code 11-5-12
-    link: https://www.omahatribe.com/tribal-codes/
-    practice_area: Tribal Child Welfare/Family; Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    verification: read-in-full
+    as_of: '2007-06-07'
+    locator: 49-1-1 to 49-1-13
+    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. The table
+      of contents also lists this section as "CHAPTER 1. ARBITRATION"; that record was folded into this
+      one on 2026-11-22.
+    summary: Authorizes arbitration of disputes under written contracts approved by Tribal Council resolution,
+      makes agreements to arbitrate enforceable, requires the Tribal Court to stay its own proceedings
+      and order arbitration, and lets a party obtain court confirmation of an award, which the court confirms
+      as written unless it finds listed grounds to decline or may modify for listed errors, with no appeal
+      from orders enforcing agreements or awards.
+  - kind: arbitration
+    title: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    citation: Compact between the Omaha Tribe of Nebraska and the State of Iowa (Appendix D to the Omaha
+      Tribal Code per the NILL list), Compact Section 20
+    link: https://dial.iowa.gov/media/7193/download
+    source: omaha-nebraska-compact-between-the-omaha-tribe-of-nebraska-and
     confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-cannot-order-restorative-justice-in-domestic-violence-cases/
-  - title: Definitions of Treatment Programs for Domestic Violence
-    citation: Omaha Tribal Code 11-1-4
-    link: https://www.omahatribe.com/tribal-codes/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/definitions-of-treatment-programs-for-domestic-violence/
-  - title: Disposition Options for Child in Need of Care Cases
-    citation: Omaha Tribal Code 12-7-12
-    link: https://www.omahatribe.com/tribal-codes/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-child-in-need-of-care-cases/
-  - title: Disposition Options for Juvenile Delinquency
-    citation: Omaha Tribal Code 12-8-13
-    link: https://www.omahatribe.com/tribal-codes/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-delinquency/
-  - title: Rehabilitative Efforts for Curfew Violations
-    citation: Omaha Tribal Code 12-7-3
-    link: https://www.omahatribe.com/tribal-codes/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitative-efforts-for-curfew-violations/
-  - title: Truancy Counseling and Help
-    citation: Omaha Tribal Code 12-11-3
-    link: https://www.omahatribe.com/tribal-codes/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/truancy-counseling-and-help/
+    verification: read-in-full
+    locator: Compact Section 20
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "Binding Dispute Resolution for Non-Material Breach"; the printed heading, number or
+      version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: When the Tribe or the State believes the other has committed a non-material breach of the
+      gaming compact, it gives written notice and the parties confer within fifteen days, and if that
+      fails and the demand to halt or remedy the breach is rejected or ignored within ten days, the parties
+      go to mediation under American Arbitration Association commercial rules and then, on a mediator's
+      summary of the disagreement, to binding arbitration before one agreed arbitrator or a three-arbitrator
+      panel, with the losing party paying arbitration costs and each side its own attorney fees.
 gaming:
   compacts:
   - state: IA

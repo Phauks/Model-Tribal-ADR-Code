@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import {
 		searchEntries,
 		searchKindLabels,
@@ -15,7 +16,7 @@
 		type SearchResult
 	} from '#lib/site-search.ts';
 
-	const kinds: SearchKind[] = ['nation', 'term', 'page'];
+	const kinds: SearchKind[] = ['nation', 'story', 'term', 'page'];
 	/** Results shown per group before "Show all". */
 	const firstShown = 25;
 
@@ -93,20 +94,24 @@
 	{#if failed}
 		<div class="notice notice-problem" role="note">
 			<p>
-				The search index could not be loaded. If you are offline, save the site for offline reading in Settings first. You can still browse the <a href="/nations">nations</a> and the <a href="/glossary">glossary</a>.
+				The search index could not be loaded. If you are offline, save the site for offline reading in Settings first. You can still browse the <a href="/nations">nations</a>, the <a href="/stories">stories</a> and the <a href="/glossary">glossary</a>.
 			</p>
 		</div>
 	{/if}
 
 	<p class="small muted" role="status">{status}</p>
 
+	<!-- Each kind of result is its own group that the reader can fold away (Trevor, Nov. 22, 2026). Groups start open. -->
 	{#each groups as group (group.kind)}
-		<section aria-labelledby="results-{group.kind}">
-			<h2 id="results-{group.kind}">
-				{searchKindLabels[group.kind]}
-				<span class="muted small">{group.results.length.toLocaleString('en-US')}</span>
-			</h2>
-			<ol class="results">
+		<details class="result-group" open>
+			<summary>
+				<span class="fold-mark"><ChevronDown size={24} /></span>
+				<h2 id="results-{group.kind}">
+					{searchKindLabels[group.kind]}
+					<span class="muted small">{group.results.length.toLocaleString('en-US')}</span>
+				</h2>
+			</summary>
+			<ol class="results" aria-labelledby="results-{group.kind}">
 				{#each shown(group.kind, group.results) as result (result.link)}
 					<li>
 						<a href={result.link}>{result.title}</a>
@@ -123,16 +128,54 @@
 					{searchKindLabels[group.kind].toLocaleLowerCase('en-US')} results
 				</button>
 			{/if}
-		</section>
+		</details>
 	{/each}
 
 	{#if entries && trimmed !== '' && results.length === 0}
 		<p>Nothing matches “{trimmed}”. Check the spelling, try fewer words, or browse the <a href="/nations">nations</a> and the <a href="/glossary">glossary</a>.</p>
-		<p><strong>Is your nation missing?</strong> <a href="/requests?kind=add-nation">Ask to be added</a>.</p>
 	{/if}
 </div>
 
 <style>
+	.result-group {
+		margin-top: var(--space-5);
+		border-top: 1px solid var(--color-line);
+	}
+
+	/* The summary is the group's heading; the marker shows it can be folded. */
+	.result-group summary {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		min-height: var(--layout-target-minimum);
+		list-style: none;
+		cursor: pointer;
+	}
+
+	.result-group summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.fold-mark {
+		display: inline-flex;
+		transition: transform 0.15s;
+	}
+
+	.result-group:not([open]) .fold-mark {
+		transform: rotate(-90deg);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.fold-mark {
+			transition: none;
+		}
+	}
+
+	.result-group summary h2 {
+		display: inline;
+		margin: var(--space-3) 0;
+	}
+
 	.results {
 		list-style: none;
 		padding: 0;

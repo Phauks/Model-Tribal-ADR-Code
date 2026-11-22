@@ -1,0 +1,48 @@
+profile: content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/ (none for this code)
+  outcome: not-found
+  reason: No captured copy of the Arbitration Code was among the captures for this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/grand_traverse/index.html
+  outcome: found
+  reason: Index lists 'Ch. 4. Grand Traverse Band Arbitration Code' under Title 3 and links the title
+    PDFs.
+  records:
+  - content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/grand_traverse/Title_3.pdf
+  outcome: found
+  reason: Title 3 PDF on the NILL site contains Chapter 4 with sections 401-409 in full text.
+  records:
+  - content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://narf.org/nill/codes/grand_traverse/Title_3.pdf (downloaded to item2/recheck-out-4/gt3.txt)
+  query: Chapter 4 Grand Traverse Band Arbitration Code
+  outcome: found
+  reason: Downloaded the raw PDF with a browser user agent and read all of Chapter 4.
+  records:
+  - content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/grand_traverse/index.html
+  outcome: found
+  reason: 'Heading appears in the Title 3 index as the same chapter as record #1.'

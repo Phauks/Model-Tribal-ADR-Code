@@ -235,51 +235,23 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: traditional-dispute-resolution
-    title: ORDINANCE NO 00-08 Use of Tribal Custom and Traditional Law Ordinance
-    citation: ORDINANCE NO 00-08 Use of Tribal Custom and Traditional Law Ordinance
-    link: https://www.narf.org/nill/codes/bluelakecode/index.html
-    source: national-indian-law-library-code-codes-bluelakecode
-    confidence: medium
-    as_of: 2019-03
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: other
-    title: ORDINANCE NO 04-02 BLHA Dispute Resolution Ordinance
-    citation: ORDINANCE NO 04-02 BLHA Dispute Resolution Ordinance
-    link: https://narf.org/nill/codes/bluelakecode/index.html
-    source: national-indian-law-library-code-codes-bluelakecode
+    title: 'BLUE LAKE HOUSING AUTHORITY DISPUTE RESOLUTION ORDINANCE (NILL heading: ''BLHA Dispute Resolution
+      Ordinance'')'
+    citation: Blue Lake Housing Authority Dispute Resolution Ordinance (Ordinance No. 04-02), Sections
+      1-9 (Section 6 Dispute Resolution, with subsection B Arbitration)
+    link: https://www.bluelakerancheria-nsn.gov/wp-content/uploads/2024/09/04-02.pdf
+    source: blue-lake-blue-lake-housing-authority-dispute-resolution
     confidence: medium
-    as_of: '2019'
-    locator: Table of Contents, under '2004 ORDINANCES:'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: March 2019); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  database_listings:
-  - title: Penalty Alternatives
-    citation: Blue Lake Rancheria Law and Order Ordinance. Chapter 11 Penalties. Section 11.01 General
-      Penalty Provisions.
-    link: https://www.bluelakerancheria-nsn.gov/wp-content/uploads/2024/09/16_01.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/penalty-alternatives/
-  - title: Treatment as Penalty
-    citation: Blue Lake Rancheria Law and Order Ordinance. Chapter 11 Penalties. Section 11.04 Referral
-      for Treatment.
-    link: https://www.bluelakerancheria-nsn.gov/wp-content/uploads/2024/09/16_01.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-as-penalty/
+    verification: read-in-full
+    as_of: '2004-04-02'
+    locator: Sections 1-9 (Section 6 Dispute Resolution, with subsection B Arbitration)
+    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
+    summary: Lets the Blue Lake Housing Authority consent to suit or arbitration only by resolution of
+      its governing body, limits any immunity waiver to enforcing money awards, arbitral determinations
+      (including specific performance or injunctions) and actions to compel arbitration after written
+      notice of the claim within 360 days, makes agreements to arbitrate enforceable with tribal court
+      confirmation of awards and no further appeal, and keeps the Tribe's own immunity intact.
 gaming:
   compacts:
   - state: CA

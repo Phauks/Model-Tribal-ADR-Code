@@ -1,0 +1,40 @@
+profile: content/tribes/s/suquamish-indian-tribe-of-the-port-madison-reservation.yaml
+topic: gaming-dispute-procedures
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/suquamish-suquamishord010596.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: found
+  reason: 'Small-model reviewers read the passages the script cut from this ordinance listed 1996-01-05
+    and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#suquamish-indian-tribe-ordinance-1996-01-05#i1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/suquamish-suquamishamend010406.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2006-01-04 has no text layer on most pages (6 of 6 pages have no text
+    layer; no OCR available).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/suquamish-OrdAmdAppr51409.pdf
+  query: headings and passages on patron or gaming public disputes, complaints and claims, grievances,
+    arbitration, mediation, peacemaking, hearings, appeals and Tribal court review
+  outcome: scanned-unreadable
+  reason: This amendment listed 2009-05-14 has no text layer on most pages (60 of 60 pages have no text
+    layer; no OCR available).
+next_steps: Read the scanned amendment listed 2006-01-04 (https://www.nigc.gov/wp-content/uploads/2025/03/suquamish-suquamishamend010406.pdf)
+  with OCR or by hand. Read the scanned amendment listed 2009-05-14 (https://www.nigc.gov/wp-content/uploads/2025/03/suquamish-OrdAmdAppr51409.pdf)
+  with OCR or by hand.

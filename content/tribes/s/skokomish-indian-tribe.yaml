@@ -290,114 +290,52 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
     source: skokomish-stc-9-11-sentencing
     confidence: medium
+    verification: read-in-full
     as_of: '2017-07-05'
-  - kind: other
-    title: FAMILY GROUP CONFERENCE
-    citation: FAMILY GROUP CONFERENCE; 3.03.095 Family Group Conference; PATRON DISPUTE RESOLUTION; 4.02.118
-      Patron Dispute Resolution
-    link: https://www.narf.org/nill/codes/skokomish/index.html
-    source: national-indian-law-library-code-codes-skokomish
-    confidence: medium
-    as_of: 2018-10
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: other
-    title: 'Title 9 – Skokomish Criminal Code, S.T.C. 9.11: Sentencing, Sentencing Guidelines'
-    citation: 'Title 9 – Skokomish Criminal Code, S.T.C. 9.11: Sentencing, Sentencing Guidelines'
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Skokomish Indian Tribe of Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      referral procedures, and procedures.'
-  - kind: other
-    title: FAMILY GROUP CONFERENCE
-    citation: FAMILY GROUP CONFERENCE; 3.03.095 Family Group Conference
-    link: https://narf.org/nill/codes/skokomish/index.html
-    source: national-indian-law-library-code-codes-skokomish
-    confidence: medium
-    as_of: '2018'
-    locator: 'Table of Contents, under ''S.T.C. 3.02 SKOKOMISH YOUTH CODE (REPEALED) – Repealed by Res.
-      # 16-24 2/2/2016 S.T.C. 3.03. SKOKOMISH CHILD PROTECTION AND FAMILY PRESERVATION ORDINANCE'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: other
-    title: PATRON DISPUTE RESOLUTION
-    citation: PATRON DISPUTE RESOLUTION; 4.02.118 Patron Dispute Resolution
-    link: https://narf.org/nill/codes/skokomish/index.html
-    source: national-indian-law-library-code-codes-skokomish
-    confidence: medium
-    as_of: '2018'
-    locator: 'Table of Contents, under ''TTITLE FOUR — COMMERCE S.T.C. 4.01 – SKOKOMISH INDIAN TRIBAL
-      ENTERPRISES ORDINANCE AND CORPORATE CHARTER (REPEALED) – Repealed by Res. # 15-118 9/30/2016 S.T.C.
-      4.02 – SKOKOMISH GAMING CODE'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   - kind: mediation
-    title: iii) Submit the dispute to mediation processes provided for under the Tribe s law.
-    citation: iii) Submit the dispute to mediation processes provided for under the Tribe s law.
-    link: https://narf.org/nill/constitutions/skokomish/index.html
-    source: national-indian-law-library-constitution-constitutions-skokomish
+    title: Family Group Conference
+    citation: Skokomish Child Protection and Family Preservation Ordinance (S.T.C. 3.03), 3.03.095 (record
+      also cites 4.02.118; printed 4.02.110)
+    link: http://www.skokomish.org/wp-content/uploads/2017/07/S.T.C.-3.03.pdf
+    source: skokomish-skokomish-child-protection-and-family
     confidence: medium
-    as_of: '1980'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Amended:
-      March 17, 1980); the provision itself was not read. The heading it falls under is taken from the
-      page layout and may be imprecise.'
-  database_listings:
-  - title: Family Group Conference
-    citation: S.T.C. 3.03.095
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    form_of_practice: Alternative; Family conferencing
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    verification: read-in-full
+    as_of: '2017-07-05'
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Lets the youth's family, or the caseworker, convene a family group conference run by a facilitator
+      and mediators, through which the family prepares a plan; an agreement reached before any court proceeding
+      and signed by the parties is a binding contract enforceable in court.
+    locator: 3.03.095 (record also cites 4.02.118; printed 4.02.110)
+  - kind: other
+    title: Patron Dispute Resolution
+    citation: Chapter 4.02 STC, Revised Skokomish Gaming Ordinance, 4.02.110
+    link: http://www.skokomish.org/wp-content/uploads/2021/02/01_Chapter-4.02-STC-Revised-Skokomish-Gaming-Ordinance-2021-01-07-Post-v.1-Final.pdf
+    source: skokomish-chapter-4-02-stc-revised-skokomish-gaming
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-01-07'
+    locator: 4.02.110
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "PATRON DISPUTE RESOLUTION"; the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Makes a petition to the Tribal Gaming Commission the patron's sole remedy for gaming-related
+      complaints, to be filed in writing within 30 days of the incident, with a hearing within 30 days,
+      recovery limits, and a decision that is final and not appealable.
+  - kind: mediation
+    title: Section 12 - Disputes
+    citation: Compact of Self-Governance between the Skokomish Indian Tribe and the United States of America,
+      Section 12(b)(iii)
+    link: http://www.skokomish.org/wp-content/uploads/2017/07/Compact.pdf
+    source: skokomish-compact-of-self-governance-between-the-skokomish
     confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-group-conference/
-  - title: Juvenile Alternative Sentencing
-    citation: S.T.C. 9.12.050
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Juvenile/Youth Justice
-    form_of_practice: Alternative; Rehabilitation; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-alternative-sentencing/
-  - title: Purpose Statement – Restorative Justice Framework
-    citation: S.T.C. 3.03.002
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Child Welfare/Family
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-statement-restorative-justice-framework/
-  - title: Restitution-Based Sentencing Policy
-    citation: S.T.C. 9.11.010
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Justice
-    form_of_practice: Alternative; Restitution; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-based-sentencing-policy/
-  - title: Traditional Peacemaking Forum
-    citation: S.T.C. 9.11.030
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    practice_area: Tribal Justice
-    form_of_practice: Alternative; Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/traditional-peacemaking-forum/
+    verification: read-in-full
+    as_of: '1995-06-07'
+    locator: Section 12(b)(iii)
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "iii) Submit the dispute to mediation processes provided for under the Tribe s law.";
+      the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Lets the parties to the Compact, in addition to the remedies in Section 110 of Pub. L. 93-638,
+      send a dispute to third-party mediation, to the Tribe's Court, or to mediation processes under tribal
+      law, and the Secretary is expected to accept mediated or court decisions.
 gaming:
   compacts:
   - state: WA

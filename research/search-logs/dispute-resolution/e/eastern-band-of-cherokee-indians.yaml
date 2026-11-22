@@ -1,0 +1,43 @@
+profile: content/tribes/e/eastern-band-of-cherokee-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/eastern_band_cherokee/index.html
+  outcome: found
+  reason: Table of contents lists the heading; it links to no copy of the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://library.municode.com/index.aspx?clientId=13359
+  query: Ch. 94 Arbitration
+  outcome: blocked
+  reason: Municode code library could not be loaded (client error from the fetch tool).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Eastern Band Cherokee Code Chapter 94 Arbitration
+  outcome: not-found
+  reason: Search returned no copy of Chapter 94 text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://library.municode.com/
+  outcome: blocked
+  reason: 'Retry not attempted: Municode refuses scripted access and the brief says not to retry it.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/eastern_band_cherokee/index.html
+  query: Arbitration
+  outcome: found
+  reason: Re-fetched; one 'Ch. 94 - Arbitration' entry.

@@ -34,6 +34,7 @@
 		sourceLinkOptions,
 		textAlignmentChoices,
 		textSizeChoices,
+		textSizes,
 		textSpacingChoices,
 		themeChoices,
 		type Choice,
@@ -91,6 +92,9 @@
 		unknown
 	>;
 
+	const textSizeIndex = $derived(Math.max(0, textSizes.indexOf(settings.textSize)));
+	const textSizeChoice = $derived(textSizeChoices[textSizeIndex]);
+
 	function changeTheme(value: Theme) {
 		theme = value;
 		saveTheme(value);
@@ -134,6 +138,32 @@
 	</fieldset>
 {/snippet}
 
+<!-- Text size is a slider, as Trevor asked on Nov. 22, 2026. It steps through the sizes in reading-settings.ts; arrow keys move one step, Home and End jump to the ends. The current size shows beside the label and is read out as words. -->
+{#snippet textSizeSlider()}
+	<div class="setting text-size">
+		<div class="slider-label">
+			<label for="setting-text-size">Text size</label>
+			<output for="setting-text-size" aria-hidden="true">{textSizeChoice.label}</output>
+		</div>
+		<div class="slider-row">
+			<span class="slider-end slider-end-small" aria-hidden="true">A</span>
+			<input
+				type="range"
+				id="setting-text-size"
+				min="0"
+				max={textSizes.length - 1}
+				step="1"
+				value={textSizeIndex}
+				aria-valuetext="{textSizeChoice.value} percent"
+				aria-describedby="setting-text-size-hint"
+				oninput={(event) => change('textSize', textSizes[Number(event.currentTarget.value)])}
+			/>
+			<span class="slider-end slider-end-large" aria-hidden="true">A</span>
+		</div>
+		<p class="hint" id="setting-text-size-hint">{textSizeChoice.hint}</p>
+	</div>
+{/snippet}
+
 <!-- Text alignment shows symbols, as Trevor asked on Nov. 22, 2026. Each symbol is a radio button whose name is read out; the picked choice's name and hint show in words below. -->
 {#snippet alignmentGroup()}
 	<fieldset class="setting">
@@ -171,13 +201,14 @@
 
 <button
 	bind:this={opener}
-	class="settings-button needs-scripts"
+	class="icon-button needs-scripts"
 	type="button"
 	aria-haspopup="dialog"
+	aria-label="Settings"
+	title="Settings"
 	onclick={open}
 >
-	<Settings size={20} strokeWidth={1.75} />
-	<span>Settings</span>
+	<Settings size={24} />
 </button>
 
 <Modal
@@ -190,12 +221,7 @@
 	{#snippet section(id: SectionIdentifier)}
 		<h3 class="section-heading">{sections.find((item) => item.id === id)?.label}</h3>
 		{#if id === 'text'}
-			<Dropdown
-				label="Text size"
-				choices={textSizeChoices}
-				value={settings.textSize}
-				onchange={(value) => change('textSize', value)}
-			/>
+			{@render textSizeSlider()}
 			<Dropdown
 				label="Font"
 				choices={fontChoices}
@@ -251,27 +277,21 @@
 			{#key dataRead}
 				<OfflineSaving headingLevel={4} />
 			{/key}
-			<LocalData headingLevel={4} onreset={reset} ondeleted={() => (dataRead += 1)} />
+			<LocalData
+				headingLevel={4}
+				onreset={reset}
+				ondeleted={() => (dataRead += 1)}
+				onimported={() => {
+					settings = loadSettings();
+					theme = loadTheme();
+				}}
+			/>
 		{/if}
 	{/snippet}
 </Modal>
 
 <style>
-	.settings-button {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-band-text);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
-		cursor: pointer;
-	}
-
+	/* Icon only, the same size as the theme button beside it (Trevor, Nov. 22, 2026). */
 	.section-heading {
 		margin: 0 0 var(--space-2);
 	}
@@ -310,6 +330,59 @@
 
 	.choice .hint {
 		margin: 0;
+	}
+
+	.slider-label {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--space-3);
+		width: min(100%, 24rem);
+		margin-bottom: var(--space-1);
+	}
+
+	.slider-label label {
+		font-weight: var(--font-weight-bold);
+	}
+
+	.slider-label output {
+		font-weight: var(--font-weight-semibold);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.slider-row {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		width: min(100%, 24rem);
+	}
+
+	.slider-row input {
+		flex: 1;
+		min-width: 0;
+		min-height: var(--layout-target-minimum);
+		margin: 0;
+		accent-color: var(--color-action);
+		cursor: pointer;
+	}
+
+	/* The two letters show which end is smaller; they stay a fixed size, since the setting changes text. */
+	.slider-end {
+		flex: none;
+		line-height: 1;
+		color: var(--color-ink-muted);
+	}
+
+	.slider-end-small {
+		font-size: 1rem;
+	}
+
+	.slider-end-large {
+		font-size: 1.5rem;
+	}
+
+	.text-size .hint {
+		margin: var(--space-1) 0 0;
 	}
 
 	/* Symbol choices sit side by side in one bordered strip. The picked one is filled and has a bar under its symbol, not color alone. */

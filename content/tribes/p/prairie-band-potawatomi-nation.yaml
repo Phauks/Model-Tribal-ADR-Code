@@ -326,6 +326,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
     source: prairie-band-potawatomi-constitution-2007
     confidence: medium
+    verification: read-in-full
     as_of: '2007-12-06'
   - kind: mediation
     title: 3-3 MEDIATION
@@ -333,22 +334,13 @@ dispute_resolution:
     link: https://narf.org/nill/codes/prairie_band_potawatomi/index.html
     source: national-indian-law-library-code-codes-prairie-band-potawatomi
     confidence: medium
+    verification: title-only
     as_of: '2019'
     locator: Table of Contents, under 'Title 3. Grievance Committee'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Current
       Through : January 24, 2019); the provision itself was not read. The heading it falls under is taken
-      from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: Constitution of the Prairie Band of Potawatomi Nation, Article VI – Dispute Resolution System
-    citation: Constitution of the Prairie Band of Potawatomi Nation, Article VI – Dispute Resolution System
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Prairie Band Potawatomi Nation of Kansas
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      peacemaker duties, foreclosure of further District Court proceedings, and procedures (including
-      attorney ban).'
+      from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places
+      searched: research/search-logs/dispute-resolution/p/prairie-band-potawatomi-nation.yaml.'
   - kind: peacemaking
     title: 2-2 JUDICIAL COUNCIL AND PEACEMAKERS CIRCLE GENERALLY.
     citation: 2-2 JUDICIAL COUNCIL AND PEACEMAKERS CIRCLE GENERALLY.; 2-5 PEACEMAKERS; 2-5-1 Peacemakers
@@ -356,26 +348,14 @@ dispute_resolution:
     link: https://narf.org/nill/codes/prairie_band_potawatomi/index.html
     source: national-indian-law-library-code-codes-prairie-band-potawatomi
     confidence: medium
+    verification: title-only
     as_of: '2019'
     locator: Table of Contents, under 'Title 2. Courts'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Current
       Through : January 24, 2019); the provision itself was not read. The heading it falls under is taken
-      from the page layout and may be imprecise.'
-  - kind: peacemaking
-    title: ARTICLE VI DISPUTE RESOLUTION SYSTEM
-    citation: ARTICLE VI DISPUTE RESOLUTION SYSTEM; A separate mediating branch known as Peacemakers Circle
-      shall also be established.; Peacemakers shall be of such number as may be determined by the General
-      Council and shall have the responsibility for mediating disputes voluntarily submitted to them by
-      the parties.; Peacemakers shall be selected by the Nation’s members at a General Council Meeting.;
-      Magistrates and peacemakers may be removed by their appointing authority.; ...
-    link: https://narf.org/nill/constitutions/prairie_band_potawatomi/index.html
-    source: national-indian-law-library-constitution-constitutions-prairie-band-potawatomi
-    confidence: medium
-    as_of: '2007'
-    locator: Table of Contents
-    note: Identified from section headings in the National Indian Law Library table of contents (Approved
-      December 6, 2007); the provision itself was not read. The heading it falls under is taken from the
-      page layout and may be imprecise.
+      from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read. A copy
+      was located at https://ncorj.org/?p=17823, but only an automated summary of it could be seen, so
+      the section is not recorded as read. Places searched: research/search-logs/dispute-resolution/p/prairie-band-potawatomi-nation.yaml.'
   database_listings:
   - title: Disposition Options for Juvenile Offenders
     citation: Potawatomi Law and Order Code 27-6-13 and 27-6-15
@@ -399,28 +379,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/peacemaker-circles/
-  - title: Sentencing Policy of the Nation
-    citation: Potawatomi Law and Order Code 16-4-3
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-policy-of-the-nation/
-  - title: Sex Offender Treatment Program for Sentence Reduction
-    citation: Potawatomi Law and Order Code 15-11-21
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sex-offender-treatment-program-for-sentence-reduction/
 gaming:
   compacts:
   - state: KS

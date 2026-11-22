@@ -1,0 +1,65 @@
+id: dakota-the-badger-and-the-bear
+title: The Badger and the Bear
+nations:
+- yankton-sioux-tribe-of-south-dakota
+kind: traditional-story
+length: short
+excerpts:
+- telling: zitkala-sa-1901
+  locator: page 66, father badger to the bear
+  text: '"I fed you. I called you friend, though you came here a stranger and a beggar. For the sake of my little
+    ones leave us in peace."'
+  words: 27
+  sha256: 309b0819e2596334d33514fd4569b1b090d3796d970b032fc47d1f332c983739
+- telling: zitkala-sa-1901
+  locator: page 74, the avenger to the bear
+  text: '"I come to do justice. You have returned only a knife to my poor father. Now return to him his dwelling."'
+  words: 21
+  sha256: 70a1812f598db0a78e52df47aa03f9e911295e10e72b4ff7c2b9ccd643639d8f
+topics:
+- abuse-of-hospitality
+- taking-a-home
+- restitution
+- justice
+tellings:
+- id: zitkala-sa-1901
+  source: zitkala-sa-1901-old-indian-legends
+  locator: pages 59-74
+  teller:
+    form: name-and-nation
+    name: Zitkala-Ša
+    nation: yankton-sioux-tribe-of-south-dakota
+    role: author; retold from Dakota storytellers (preface)
+  published_by: Ginn & Company
+  authority: member-author
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: Quoted from the 1901 printing; spaces the typesetter put before punctuation are dropped.
+access:
+  level: nation-review-first
+anthology:
+  candidate: true
+  reason: A Dakota story in which a guest seizes his host's home, and justice is done when the home is given back;
+    retold by a Yankton Dakota author (project analysis).
+  telling: zitkala-sa-1901
+  permission_from:
+  - holder: Yankton Sioux Tribe
+    for: cultural-authority
+    nation: yankton-sioux-tribe-of-south-dakota
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-22-peacemaking-ancestor-stories
+notes: The avenger in the story comes from a prayer in a sweat lodge. The project quotes nothing from that part
+  and describes nothing of the lodge. Zitkala-Ša heard her legends across both Dakotas; ask before treating the
+  story as one nation's alone.

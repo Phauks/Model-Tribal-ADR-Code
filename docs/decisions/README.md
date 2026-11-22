@@ -17,7 +17,7 @@ and says so.
 | [0004](0004-content-as-plain-files.md) | Keep content as plain files in git, one file per entity | Accepted |
 | [0005](0005-print-with-lulu.md) | Print and distribute through Lulu, typeset with Typst | Accepted |
 | [0006](0006-secrets-only-in-cloudflare.md) | Keep secrets only in Cloudflare | Accepted |
-| [0007](0007-map-shows-state-presence.md) | Map shows state presence, not boundaries | Accepted |
+| [0007](0007-map-shows-state-presence.md) | Map shows state presence, not boundaries | Accepted; amended by 0029 |
 | [0008](0008-pull-requests-without-required-approval.md) | Require pull requests and checks, not a second approval | Accepted |
 | [0009](0009-private-requests-from-nations.md) | Take requests from nations privately, not in public issues | Accepted |
 | [0010](0010-glossary-records-and-term-links.md) | Define terms once, as records, and link them from text | Accepted |
@@ -30,12 +30,16 @@ and says so.
 | [0016](0016-component-bands-own-profiles.md) | Give component bands their own profiles | Accepted |
 | [0017](0017-serve-nation-images-from-the-private-bucket.md) | Serve nations' seals and logos from the private bucket | Accepted |
 | [0018](0018-document-version-history.md) | Record every version of a document, and how its key clauses changed | Accepted |
-| [0019](0019-story-records.md) | Record stories in their tellers' own words, with credit, permissions and protocols | Accepted |
+| [0019](0019-story-records.md) | Record stories in their tellers' own words, with credit, permissions and protocols | Accepted; website display amended by 0029 |
 | [0020](0020-file-every-contribution-from-a-person.md) | Keep a signed filing for every contribution that comes from a person | Proposed |
 | [0022](0022-open-registration-for-contributors.md) | Let people register to help; keep workspace access with the lead author | Proposed |
 | [0023](0023-permission-levels-per-document.md) | Give each person a level on each document; keep a sealed activity log | Accepted |
 | [0024](0024-own-sign-in.md) | Sign people in with the site's own email codes and passwords, not Auth0 | Accepted |
 | [0025](0025-search-logs.md) | Log every search for a nation's information, including the ones that fail | Accepted |
 | [0026](0026-model-peacemaking-code.md) | Write model peacemaking provisions as part of the project's model code | Accepted |
+| [0027](0027-diversion-and-restorative-justice-in-the-research-base.md) | Keep diversion and restorative justice records in the research base; apply the provision pre-review | Accepted |
+| [0028](0028-map-adds-census-land-areas.md) | Add a land areas view to the map, from the Census Bureau's boundaries | Accepted |
+| [0029](0029-show-stories-while-nations-review-them.md) | Show story records on the website while their nations review them | Accepted |
+| [0030](0030-keep-research-captures-in-the-private-bucket.md) | Keep research captures in the private bucket, with an index in git | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

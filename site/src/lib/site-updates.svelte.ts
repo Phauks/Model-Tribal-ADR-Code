@@ -19,12 +19,15 @@
  */
 import { updated } from '$app/state';
 import { controllingWorker, resumeSaving, type Progress } from './offline-saving.ts';
+import type { Change } from './recent-changes.ts';
 
 export interface Edition {
 	build: string;
 	content: string;
 	site: string;
 	print: string;
+	/** Pull requests merged most recently, newest first (src/lib/recent-changes.ts). */
+	changes?: Change[];
 }
 
 const dismissedKey = 'update-dismissed';

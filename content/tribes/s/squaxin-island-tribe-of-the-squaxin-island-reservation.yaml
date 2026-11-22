@@ -214,20 +214,20 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: mediation
-    title: 4.04.140 Informal dispute resolution.) 4.08 Administrative Rules (4.08.010 Clerk.
-    citation: 4.04.140 Informal dispute resolution.) 4.08 Administrative Rules (4.08.010 Clerk.; 4.52
-      Arbitration Code (4.52.010 Authority.; 4.52.030 Agreements to arbitrate are enforceable.; 4.52.050
-      Stay of proceedings and order to proceed with arbitration.; 4.52.090 Arbitration award not appealable.;
-      ...
-    link: https://narf.org/nill/codes/squaxinisland/index.html
-    source: national-indian-law-library-code-codes-squaxinisland
+  - kind: other
+    title: 4.04.140 Informal dispute resolution.
+    citation: Squaxin Island Tribal Code Title 4, as reproduced by the National Center on Restorative
+      Justice, 4.04.140
+    link: https://ncorj.org/tribal-law/informal-dispute-resolution/
+    source: squaxin-island-squaxin-island-tribal-code-title-4-as-reproduced
     confidence: medium
-    as_of: '2014'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
-      February 2014); the provision itself was not read. The heading it falls under is taken from the
-      page layout and may be imprecise.'
+    verification: read-in-full
+    locator: 4.04.140
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "4.04.140 Informal dispute resolution.) 4.08 Administrative Rules (4.08.010 Clerk.";
+      the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+    summary: Provides that nothing in Title 4 or the Squaxin Island Tribal Court's rules prevents people
+      in a dispute from submitting it to informal dispute resolution.
   database_listings:
   - title: Community Boards Mediation for Youth in Need of Care
     citation: SITC Title 10 § 10.08.050
@@ -240,113 +240,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/community-boards-mediation-for-youth-in-need-of-care/
-  - title: Deferred Prosecution for Minor First Offenses
-    citation: SITC Title 9 § 9.12.1200
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Deferred Prosecution
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-prosecution-for-minor-first-offenses/
-  - title: Deferred Prosecution for Substance Abuse-Related Offenses
-    citation: SITC Title 9 § 9.12.1205
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Deferred Prosecution
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-prosecution-for-substance-abuse-related-offenses/
-  - title: Informal Dispute Resolution
-    citation: SITC Title 4 § 4.04.140
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Informal hearing
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-dispute-resolution/
-  - title: Mandatory Investigation of Alternatives for Youth Offenders
-    citation: SITC Title 9 § 9.12.1235
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative to incarceration
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mandatory-investigation-of-alternatives-for-youth-offenders/
-  - title: Mandatory Treatment Option for Abuse and Sexual Offenses
-    citation: SITC Title 9 § 9.12.150, § 9.12.155, § 9.12.157, § 9.12.450, § 9.12.735
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mandatory-treatment-option-for-abuse-and-sexual-offenses/
-  - title: Restitution to Victims
-    citation: SITC Title 9 § 9.12.1215
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restitution
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-to-victims-2/
-  - title: Substance Abuse Treatment for Youth in Need of Care
-    citation: SITC Title 10 § 10.08.040(I)(7)
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/substance-abuse-treatment-for-youth-in-need-of-care/
-  - title: Suspended Sentences with Alternatives to Incarceration
-    citation: SITC Title 9 § 9.12.1230
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative to incarceration
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/suspended-sentences-with-alternatives-to-incarceration/
-  - title: Treatment and Counseling for Domestic Violence
-    citation: SITC Title 9 § 9.12.1055
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-and-counseling-for-domestic-violence/
-  - title: Truancy Interventions – Counseling and Community Service
-    citation: SITC Title 10 § 10.24.100(B)(2)
-    link: https://library.municode.com/tribes_and_tribal_nations/squaxin_island_tribe/codes/code_of_ordinances
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Counseling
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/truancy-interventions-counseling-and-community-service/
 gaming:
   compacts:
   - state: WA

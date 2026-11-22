@@ -5,11 +5,14 @@
  *   [[id]] and [[id|shown text]]   a link to a glossary entry
  *   [@key] and [@key, p. 3]        a citation of a source record
  *
- * Citations become numbered markers linked to the page's Sources section; a
- * CitationCollector numbers them and records what each source supports.
+ * Citations become numbered markers in square brackets, linked to the page's
+ * Sources section and back (src/lib/citation-marks.ts); a CitationCollector
+ * numbers them and records what each source supports.
  */
 import { marked } from 'marked';
-import { glossary, type SourceRecord } from './content.ts';
+import { marksHtml, type CitationMark } from '../citation-marks.ts';
+import { copyPath } from '../public-copies.ts';
+import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
 
 export function escapeHtml(text: string): string {
 	return text
@@ -62,7 +65,20 @@ export function formatSource(
 			text += `. <span class="source-links">${original}</span>`;
 		}
 	}
-	return text;
+	return text + savedCopyLink(source);
+}
+
+/**
+ * A link to the copy this site keeps of the source's document, when it keeps
+ * one (src/lib/public-copies.ts), with the date the copy was made. The
+ * original address stays in the citation as the source cited.
+ */
+export function savedCopyLink(source: SourceRecord | undefined): string {
+	if (!source) return '';
+	const copy = publicCopyFor(source.original_link) ?? publicCopyFor(source.citation.URL);
+	if (!copy) return '';
+	const saved = copy.captured ? `, saved ${escapeHtml(formatCaptureDate(copy.captured))}` : '';
+	return ` <span class="source-saved">(<a href="${escapeHtml(copyPath(copy))}">copy on this site${saved}, PDF</a>)</span>`;
 }
 
 function webAddress(link: string | undefined): URL | undefined {
@@ -80,13 +96,12 @@ export function formatCaptureDate(date: string): string {
 }
 
 /**
- * Collects the citations on one page. add() records a citation and returns
- * the number of the source entry its marker points to, and markerTarget()
- * gives the address of that entry on the page.
+ * Collects the citations on one page. cite() records a citation and returns
+ * the marker to show for it (src/lib/citation-marks.ts), numbered by its
+ * source's place in the page's Sources section.
  */
 export interface CitationCollector {
-	add(key: string, locator?: string): number;
-	markerTarget(number: number): string;
+	cite(key: string, locator?: string): CitationMark;
 }
 
 const termLinkPattern = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g;
@@ -104,15 +119,17 @@ function resolveTermLinks(markdown: string): string {
 	});
 }
 
+/** A citation with the spaces before it, so the marker sits right against the words it supports. */
+const citationWithSpacePattern = /[ \t]*\[(@[a-z0-9-]+[^\]]*)\]/g;
+
 function resolveCitations(markdown: string, citations: CitationCollector): string {
-	return markdown.replace(citationPattern, (_whole, inside: string) => {
-		const markers = inside.split(';').map((part) => {
-			const match = part.trim().match(/^@([a-z0-9-]+)(?:,\s*(.+))?$/);
-			if (!match) return escapeHtml(part);
-			const number = citations.add(match[1], match[2]?.trim());
-			return `<a href="${citations.markerTarget(number)}" class="note-marker" aria-label="Source ${number}">${number}</a>`;
-		});
-		return `<sup>${markers.join(', ')}</sup>`;
+	return markdown.replace(citationWithSpacePattern, (whole, inside: string) => {
+		const parts = inside.split(';').map((part) => part.trim().match(/^@([a-z0-9-]+)(?:,\s*(.+))?$/));
+		// Text in brackets that is not wholly citations stays as it was written.
+		if (parts.some((match) => !match)) return escapeHtml(whole);
+		const marks: CitationMark[] = [];
+		for (const match of parts) marks.push(citations.cite(match![1], match![2]?.trim()));
+		return marksHtml(marks);
 	});
 }
 

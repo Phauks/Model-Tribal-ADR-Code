@@ -76,14 +76,11 @@ Gate 1 is passed when Trevor has:
    *Decided Nov. 21, 2026: a separate field,
    `dispute_resolution.database_listings`
    ([decision record 0015](decisions/0015-database-listings-apart-from-provisions.md)).*
-2. **Triaged the bulk records** in line with that decision: kept, relabeled or
-   dropped. Sampling is acceptable if the sample and its result are recorded.
+2. **Triaged the bulk records** in line with that decision: kept, relabeled or dropped. Sampling is acceptable if the sample and its result are recorded. *Decided Nov. 22, 2026: the pre-review's recommendations accepted, with diversion to a consensual process and restorative justice kept; 258 listings and 229 provisions remain, and 41 records wait for their sources ([decision record 0027](decisions/0027-diversion-and-restorative-justice-in-the-research-base.md)).*
 3. **Confirmed the text-read tier** for every record a draft is likely to rely
    on: forums, clauses and text-read provisions, re-reading OCR and
    summary-tool reads where they matter (analysis, review queue item 10).
-4. **Resolved the duplicates**: 71 repeated provision titles, four doubled
-   source records and forums recorded under two kinds (review queue items 3
-   to 5).
+4. **Resolved the duplicates**: 71 repeated provision titles, four doubled source records and forums recorded under two kinds (review queue items 3 to 5). *Provision duplicates removed Nov. 22, 2026 (decision record 0027).*
 5. **Decided how bands inside one profile are counted**, starting with the
    Minnesota Chippewa Tribe profile (review queue item 7).
    *Decided Nov. 21, 2026: each of the six component bands has its own
@@ -156,6 +153,8 @@ used yet; remove it when the work is picked up (project choice, Nov. 22, 2026).
 
 | Topic | Where it is | Comes back at | Next step when it does |
 | --- | --- | --- | --- |
+| Provision pre-review: records kept but not yet read | [Pre-review files](../research/reviews/2026-11-21-provision-pre-review.md) (PR #19; `lead_author_decision` column filled per decision record 0027) | Phase 1 reading of the evidence; drafting of any section that cites a nation's code | Read and summarize the 258 kept listings before moving any to `provisions`; apply the relabel notes on titles and citations; settle the 41 unverified records when the pull list (sections 1e, 2f, 4c) returns their texts |
+| Provisions known only by section title: the 55 still unread | [Reading results](../research/reviews/2026-11-22-title-only-provisions.json) and the nations' [search logs](../research/search-logs/README.md) (review queue item 2, Nov. 22, 2026) | Phase 1 reading of the evidence; drafting of any section that cites one of these codes | 27 sit on sites that refused automated requests (mostly eCode360, Municode and some nations' own sites) and 4 were seen only through an automated summary: a person can open them in a browser (pull list, part 2). The rest are not online; the National Indian Law Library's Ask NILL service or the nation's court clerk could supply them |
 | Indigenous dispute resolution in Canada (comparative sidebar) | [Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md) (PR #62; PR #70 adds its Gate 2 scope question and Phase 2 sidebar step) | Gate 2 scope question on nations divided by a border; Phase 2 sidebar drafting | Review the draft sidebar in section 8 of the note; clear Westlaw list section 12; follow-ups from section 9 |
 | Indigenous dispute resolution in Mexico (comparative sidebar) | [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md) (PR #59) | Same as Canada: Gate 2 border question; Phase 2 sidebar drafting | Check whether Mexico's general law on Indigenous rights has passed; clear Westlaw list section 11 |
 | Peacemaking programs (peacemaking track) | [Peacemaking note](../research/analyses/2026-11-21-peacemaking-programs.md) (PRs #49, #56) | Drafting of the model peacemaking code ([outline, the model code](outline.md#the-model-code-part-ii)) | Outcome evidence is thin (one comparison study); weigh the domestic violence critique; start further sweeps from the gaps in section 7 |
@@ -163,7 +162,8 @@ used yet; remove it when the work is picked up (project choice, Nov. 22, 2026).
 | Reader profiles and shared collections (website) | [Proposal](https://claude.ai/artifact/2MjsixaGafnQvepg4MTzqC) (permission tiers thread) | Step 1 any time; step 2 (sync) after the model code has stable section numbers | All decisions made: build on-device saves first, then linked accounts and shared anonymous links |
 | "Nemesis" adversarial review agent | Idea only (project memory) | After Gate 2, when drafting starts | Trevor defines its scope; then design an agent that hunts loopholes in the model code and systems |
 | Tribal rules of evidence and dispute resolution confidentiality | [Spike note](../research/analyses/2026-11-21-tribal-rules-of-evidence.md) (PRs #65, #67) | Gate 2, outline item 1 (confidentiality) and items 2 and 4 (return to court, agreements); then drafting of those sections | Compare the four confidentiality models across the 85 provisions with the Uniform Mediation Act; check Uniform Mediation Act enactments (Westlaw list, section 13) |
-| Native nations' constitutions and their versions | [Constitutions catalog](../research/constitutions/README.md) (PR #55); captures kept privately in the project files | Gate 1 data review; drafting of the sections on courts, removal and sovereign immunity | Check the AI readings and inferred changes; fix the Lumbee profile's citations to Buckland's constitution; pull the Wayback copies and ask about the 189 nations without a text (pull list, parts 1c, 1d, 2e and 6); copy the captures to R2 |
+| Native nations' constitutions and their versions | [Constitutions catalog](../research/constitutions/README.md) (PR #55); captures kept privately in the project files | Gate 1 data review; drafting of the sections on courts, removal and sovereign immunity | Check the AI readings and inferred changes; fix the Lumbee profile's citations to Buckland's constitution; pull the Wayback copies and ask about the 189 nations without a text (pull list, parts 1c, 1d, 2e and 6); captures move to R2 under decision record 0030 |
+| Foundations: the two chapters that wait on Gate 1, and the open checks for the three drafted chapters | [Part plan](../research/analyses/2026-11-22-foundations-part-plan.md) and [source audit](../research/reviews/2026-11-22-foundations-source-audit.md) | Gate 1 (chapters 4 and 5 need reviewed data); Gate 2 (whether Hawaiʻi and the territories become a chapter, whether the bad-men cases join the digest) | Re-run the dispute resolution analysis on reviewed data, then draft chapter 4 and chapter 5; clear the KeyCite, library and page-image items on the pull list (parts 4 and 5b) |
 
 ## Gate 2: scope and outline approved
 

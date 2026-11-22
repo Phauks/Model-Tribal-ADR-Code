@@ -1,0 +1,35 @@
+profile: content/tribes/h/ho-chunk-nation-of-wisconsin.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/c5021de6823264f48759.txt
+  query: Arbitration Ordinance
+  outcome: found
+  reason: Captured PDF of 2 HCC 13 found (text hit) and read in full.
+  records:
+  - content/tribes/h/ho-chunk-nation-of-wisconsin.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://ho-chunknation.com/government/legislative-branch/ho-chunk-nation-laws/
+  query: Arbitration Ordinance
+  outcome: found
+  reason: The captured Ho-Chunk laws listing includes the ordinance and links the PDF.
+  records:
+  - content/tribes/h/ho-chunk-nation-of-wisconsin.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: working copy downloaded during the reading (hoc.txt)
+  query: Arbitration Ordinance
+  outcome: found
+  reason: Downloaded the PDF (text layer) and read all 13 sections.
+  records:
+  - content/tribes/h/ho-chunk-nation-of-wisconsin.yaml#dispute_resolution.provisions

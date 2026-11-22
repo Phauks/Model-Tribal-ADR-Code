@@ -1,0 +1,149 @@
+profile: content/tribes/h/hoopa-valley-tribe.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/a1bea1eed4558862faa2.txt
+  query: RULE 42 INFORMAL DISPUTE RESOLUTION
+  outcome: found
+  reason: Heading found at the offset region; full Rule 42 text read in the Title 3 Rules capture.
+  records:
+  - content/tribes/h/hoopa-valley-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title03-Rules_of_the_court_08-15-2008.pdf
+  query: Rule 42
+  outcome: found
+  reason: Downloaded; OCR text layer read; Rule 42 and the signature page read.
+  records:
+  - content/tribes/h/hoopa-valley-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: 'research/captures/tribal-law/documents/ (Hoopa captures: Titles 2, 3, 14, 40 and policy)'
+  outcome: not-found
+  reason: Heading not found in the Hoopa captures (Title 14 capture is the Child/Family Assistance code,
+    not Title 14A).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/hoopacode/index.html
+  outcome: found
+  reason: Index fetched; it links the title PDFs but gives no text for this heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title13-TERO041105.pdf
+  outcome: blocked
+  reason: Linked title PDF on hoopa-nsn.gov returned HTTP 429 (rate limited) on repeated attempts across
+    the session; not read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.hoopa-nsn.gov/forms-documents/tribal-titles-and-codes/
+  outcome: blocked
+  reason: Titles page returned HTTP 429.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title13-TERO041105.pdf
+  outcome: dead-link
+  reason: 'Retried slowly over http and https: HTTP 404 each time.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.hoopa-nsn.gov/
+  outcome: not-found
+  reason: Searches for the heading found no other copy of Title 13.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/hoopacode/index.html
+  outcome: found
+  reason: Index fetched; it links the title PDFs but gives no text for this heading.
+  records:
+  - content/tribes/h/hoopa-valley-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14A-Domestic-Relations-Code-June-19-2008pdf.pdf
+  outcome: blocked
+  reason: Linked title PDF on hoopa-nsn.gov returned HTTP 429 (rate limited) on repeated attempts across
+    the session; not read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14A-Domestic-Relations-Code-June-19-2008pdf.pdf
+  query: 14A.3.30 Informal Dispute Resolution; 14A.5.40 Mediation
+  outcome: found
+  reason: Retried slowly; PDF downloaded (scan, 50 pages), OCR'd at 150 dpi with tesseract; both sections
+    located.
+  records:
+  - content/tribes/h/hoopa-valley-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title46-WorkersComp072000.pdf
+  query: Selection of Arbitrator
+  outcome: found
+  reason: Located Title 46 from the NILL heading list (Workers Comp, Section 5 D and J); downloaded and
+    OCR'd.
+  records:
+  - content/tribes/h/hoopa-valley-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title61-LaborRelations062000.pdf
+  outcome: dead-link
+  reason: Located the heading in the NILL list under Title 61 (casino labor relations); the PDF returned
+    404.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.hoopa-nsn.gov/
+  outcome: not-found
+  reason: Search found only other tribes' California Tribal Labor Relations Ordinance copies and compacts,
+    not Hoopa's Title 61.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title13-TERO041105.pdf
+  outcome: dead-link
+  reason: 'Retried slowly: HTTP 404.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14A-Domestic-Relations-Code-June-19-2008pdf.pdf
+  query: 14A.3.30 Informal Dispute Resolution; 14A.5.40 Mediation
+  outcome: found
+  reason: Retried slowly; PDF downloaded (scan, 50 pages), OCR'd at 150 dpi with tesseract; both sections
+    located.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title46-WorkersComp072000.pdf
+  query: Selection of Arbitrator
+  outcome: found
+  reason: Located Title 46 from the NILL heading list (Workers Comp, Section 5 D and J); downloaded and
+    OCR'd.

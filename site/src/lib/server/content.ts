@@ -12,7 +12,10 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
+import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
+import { parseCsv } from '../csv.ts';
+import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
 
@@ -44,6 +47,24 @@ function yamlFilesUnder(relativeFolder: string): string[] {
 
 export function readChangelog(track: 'content' | 'site' | 'pdf'): string {
 	return readText(`${track}/CHANGELOG.md`);
+}
+
+/* Front matter ------------------------------------------------------------ */
+
+/** A front matter page in content/front-matter/, such as the acknowledgments, which the book prints too. */
+export interface FrontMatterPage {
+	id: string;
+	title: string;
+	sources: string[];
+	body: string;
+}
+
+export function readFrontMatterPage(id: string): FrontMatterPage {
+	const text = readText(`content/front-matter/${id}.md`);
+	const match = /^---\n([\s\S]*?)\n---\n/.exec(text);
+	if (!match) throw new Error(`content/front-matter/${id}.md has no front matter`);
+	const data = parse(match[1]) as { title?: string; sources?: string[] };
+	return { id, title: data.title ?? id, sources: data.sources ?? [], body: text.slice(match[0].length) };
 }
 
 /* Sources ----------------------------------------------------------------- */
@@ -143,6 +164,12 @@ export interface NationRecord {
 	};
 	recognition?: (CitedFact & { type: string; legal_basis?: string })[];
 	states?: (CitedFact & { state: string; presence?: string })[];
+	census_areas?: (CitedFact & {
+		geographic_identifier: string;
+		name: string;
+		area_type?: string;
+		vintage?: string;
+	})[];
 	contacts?: (CitedFact & {
 		kind: string;
 		value: string;
@@ -326,4 +353,99 @@ export function servableImages(): ServableImage[] {
 				sha256: image.sha256
 			}))
 	);
+}
+
+/* Methods ----------------------------------------------------------------- */
+
+export interface MethodRecord {
+	id: string;
+	name: string;
+}
+
+let methodCache: Map<string, MethodRecord> | undefined;
+
+/** Dispute resolution method records in content/methods/, by id. */
+export function methods(): Map<string, MethodRecord> {
+	if (!methodCache) {
+		methodCache = new Map(
+			yamlFilesUnder('content/methods').map((file) => {
+				const record = readYaml<MethodRecord>(file);
+				return [record.id, record];
+			})
+		);
+	}
+	return methodCache;
+}
+
+/* Stories ----------------------------------------------------------------- */
+
+let storyCache: StoryRecord[] | undefined;
+
+/** Every story record in content/stories/ (schemas/story.schema.json), unfiltered. What the site shows is decided in src/lib/story-visibility.ts. */
+export function storyRecords(): StoryRecord[] {
+	if (!storyCache) {
+		storyCache = yamlFilesUnder('content/stories').map((file) => readYaml<StoryRecord>(file));
+	}
+	return storyCache;
+}
+
+export type { StoryRecord } from '../story-visibility.ts';
+
+/* Copies of public documents --------------------------------------------- */
+
+/**
+ * Topics whose files are never shared, whatever a record says: printouts from
+ * Westlaw and copies of journal articles (decision record 0027).
+ */
+const neverServedTopics = new Set(['westlaw', 'articles']);
+
+let publicCopyCache: PublicCopy[] | undefined;
+
+/**
+ * The files in the bucket the website may serve itself: rows of the capture
+ * index whose redistribution column says "yes", that are PDF files and that
+ * are originals rather than text extracts (src/lib/public-copies.ts). Empty
+ * when the index is missing.
+ */
+export function publicCopies(): PublicCopy[] {
+	if (!publicCopyCache) {
+		const indexPath = 'research/capture-index.csv';
+		const rows = existsSync(path.join(repositoryRoot, indexPath)) ? parseCsv(readText(indexPath)) : [];
+		publicCopyCache = rows
+			.filter(
+				(row) =>
+					row.redistribution === 'yes' &&
+					!neverServedTopics.has(row.key.split('/')[0]) &&
+					!neverServedTopics.has(row.topic) &&
+					!row.derived_from &&
+					servedMediaTypes.has(row.media_type) &&
+					/^[0-9a-f]{64}$/.test(row.sha256) &&
+					/^[a-z0-9][a-z0-9._/-]*$/i.test(row.key) &&
+					!row.key.split('/').includes('..')
+			)
+			.map((row) => ({
+				key: row.key,
+				mediaType: row.media_type,
+				sha256: row.sha256,
+				bytes: Number(row.bytes),
+				links: row.link.split(/\s+/).filter((link) => linkForMatching(link)),
+				captured: row.captured.slice(0, 10),
+				title: row.title || row.key,
+				rights: row.rights
+			}))
+			.filter((copy) => copy.links.length > 0)
+			.sort((first, second) => first.title.localeCompare(second.title));
+	}
+	return publicCopyCache;
+}
+
+let publicCopyLinks: Map<string, PublicCopy> | undefined;
+
+/** The copy the website serves of the document at this address, if it keeps one. */
+export function publicCopyFor(link: string | undefined): PublicCopy | undefined {
+	if (!link) return undefined;
+	const matching = linkForMatching(link);
+	if (!matching) return undefined;
+	publicCopyLinks ??= copiesByLink(publicCopies());
+	return publicCopyLinks.get(matching);
 }

@@ -1,12 +1,17 @@
 <script lang="ts">
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). Two rows: the
-	// site's name, the search box and the reader's controls (theme, Settings,
-	// then sign-in or the account menu at the far right); under them, the main
-	// menu and Contribute. Print and Download act on one page, so they sit on
-	// that page (PageTools.svelte), not here.
+	// site's name, then the reader's controls (search, theme, Settings, then
+	// sign-in or the account menu at the far right); under them, the main menu
+	// and, at its right end, Print, Download (where the page has a file),
+	// Report a problem and Contribute (Trevor, Nov. 22, 2026). Print and
+	// Download act on the page the reader is on. The content version shows
+	// only on paper; on screen it is in the footer.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
+	import Download from '@lucide/svelte/icons/download';
+	import { downloadFor } from '#lib/page-downloads.ts';
 	import AccountLink from './AccountLink.svelte';
+	import PrintOptions from './PrintOptions.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
 	import SiteSearch from './SiteSearch.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
@@ -18,8 +23,36 @@
 	// section 4). Downloads and the changelog are linked from the footer.
 	const menu = [
 		{ label: 'Nations', link: '/nations' },
+		{ label: 'Stories', link: '/stories' },
 		{ label: 'Glossary', link: '/glossary' }
 	];
+
+	/**
+	 * "Report a problem" goes to the request form, where the reader picks
+	 * what is wrong, including "Add a nation that is missing". On a nation or
+	 * glossary page, or a story's page, it names that record, so the report says which page it is
+	 * about. Trevor asked on Nov. 22, 2026 for this one link in the masthead in
+	 * place of a link on each page.
+	 */
+	const reportLink = $derived.by(() => {
+		const path = page.url.pathname;
+		const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
+		const term = /^\/glossary\/([^/]+)$/.exec(path)?.[1];
+		const story = /^\/stories\/([^/]+)$/.exec(path)?.[1];
+		const record =
+			nation && nation !== 'map'
+				? `tribes/${nation}`
+				: term
+					? `glossary/${term}`
+					: story
+						? `stories/${story}`
+						: path === '/glossary' || path === '/stories'
+							? path.slice(1)
+							: undefined;
+		return record ? `/requests?record=${encodeURIComponent(record).replaceAll('%2F', '/')}` : '/requests';
+	});
+
+	const download = $derived(downloadFor(page.url.pathname));
 
 	function isCurrent(link: string): boolean {
 		const path = page.url.pathname;
@@ -32,12 +65,10 @@
 	<div class="page-width masthead-top">
 		<p class="wordmark">
 			<a href="/">{siteName}</a>
-			<span class="edition">Draft, content {contentVersion}</span>
+			<span class="edition print-only">Draft, content {contentVersion}</span>
 		</p>
-		<div class="masthead-search no-print">
-			<SiteSearch />
-		</div>
 		<div class="masthead-tools no-print">
+			<SiteSearch />
 			<ThemeSetting />
 			<SettingsPanel />
 			<AccountLink />
@@ -53,7 +84,17 @@
 						</a>
 					</li>
 				{/each}
-				<li class="contribute"><a class="button" href="/requests?kind=contribute">Contribute</a></li>
+				<li class="page-actions"><PrintOptions /></li>
+				{#if download}
+					<li>
+						<a class="download-link" href={download.link} download>
+							<Download size={20} strokeWidth={1.75} />
+							<span>{download.label} <span class="format">({download.format})</span></span>
+						</a>
+					</li>
+				{/if}
+				<li><a href={reportLink}>Report a problem</a></li>
+				<li><a class="button" href="/requests?kind=contribute">Contribute</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -80,23 +121,17 @@
 		color: var(--color-band-text);
 	}
 
-	/*
-	 * Wide screens: name, search and controls on one line. Narrow screens: the
-	 * name and controls share the first line and the search box takes the
-	 * whole second line, so it never shrinks below a usable width.
-	 */
 	.masthead-top {
-		display: grid;
-		grid-template-columns: auto minmax(0, 1fr) auto;
-		grid-template-areas: 'name search tools';
+		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
+		justify-content: space-between;
 		gap: var(--space-3) var(--space-5);
 		padding-top: var(--space-3);
 		padding-bottom: var(--space-3);
 	}
 
 	.wordmark {
-		grid-area: name;
 		margin: 0;
 		display: flex;
 		flex-direction: column;
@@ -114,50 +149,25 @@
 		color: var(--color-band-text);
 	}
 
-	.masthead-search {
-		grid-area: search;
-		display: flex;
-		justify-content: center;
-	}
-
+	/* The controls keep to the right; an open search box grows to their left. */
 	.masthead-tools {
-		grid-area: tools;
 		display: flex;
+		flex: 1 1 auto;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: flex-end;
 		gap: var(--space-2);
 	}
 
-	@media (max-width: 60rem) {
-		.masthead-top {
-			grid-template-columns: minmax(0, 1fr) auto;
-			grid-template-areas:
-				'name tools'
-				'search search';
-		}
-
-		.masthead-search {
-			justify-content: stretch;
-		}
-
-		.masthead-search :global(.site-search) {
-			max-width: none;
-		}
-	}
-
-	/* Phones: the name gets its own line, then the controls, then the search box. */
+	/* Phones: an open search box takes a line of its own above the buttons. */
 	@media (max-width: 40rem) {
-		.masthead-top {
-			grid-template-columns: minmax(0, 1fr);
-			grid-template-areas:
-				'name'
-				'tools'
-				'search';
-		}
-
 		.masthead-tools {
 			justify-content: flex-start;
+		}
+
+		.masthead-tools > :global(.site-search) {
+			flex: 1 0 100%;
+			width: 100%;
 		}
 	}
 
@@ -176,8 +186,25 @@
 		padding: var(--space-1) 0;
 	}
 
-	nav .contribute {
+	nav .page-actions {
 		margin-left: auto;
+	}
+
+	nav .download-link {
+		gap: var(--space-2);
+		padding: 0 var(--space-3);
+		border: 1px solid var(--color-band-text);
+		border-radius: var(--radius-control);
+	}
+
+	nav .download-link:hover {
+		border-bottom-color: var(--color-band-text);
+		text-decoration: underline;
+	}
+
+	.format {
+		font-weight: var(--font-weight-regular);
+		font-size: var(--font-size-small);
 	}
 
 	nav a:not(.button) {
