@@ -13,6 +13,7 @@
  * box):
  *
  *   :::: case <source key>       a court case, headed by its full citation
+ *   ::: background ... :::       the law and events behind it
  *   ::: question ... :::         the question the court decided
  *   ::: holding ... :::          what the court held
  *   ::: quotes  ... :::          the court's words
@@ -23,8 +24,10 @@
  *   ::: quotes ... :::           its text
  *   ::: treatment ... :::        amendments, court readings, repeal
  *   ::::
- *   ::: quote ... :::            a quotation; a last paragraph that starts
- *                                with "— " is its attribution
+ *   ::: quote ... :::            a quotation; a last paragraph that is only
+ *                                a citation, perhaps with a parenthetical
+ *                                such as "(Gorsuch, J., dissenting)", is its
+ *                                attribution
  *   ::: analysis [title] ... ::: analysis, set apart from what sources say
  *
  * A block that holds another block opens with more colons than the block
@@ -85,6 +88,7 @@ function termLinkRule(state: StateInline, silent: boolean): boolean {
 export const essayBlocks = {
 	case: new RegExp(`^case\\s+(${keyPattern})$`),
 	law: new RegExp(`^law\\s+(${keyPattern})$`),
+	background: /^background$/,
 	question: /^question$/,
 	holding: /^holding$/,
 	summary: /^summary$/,
@@ -97,10 +101,11 @@ export type EssayBlock = keyof typeof essayBlocks;
 
 /**
  * The parts of a case or law box, in the order they come, with the label
- * each shows. A case uses question, holding, quotes and treatment; a law
+ * each shows. A case uses background, question, holding, quotes and treatment; a law
  * uses summary, quotes and treatment.
  */
 export const boxParts = {
+	background: 'Background',
 	question: 'Question',
 	holding: 'Holding',
 	summary: 'What it does',
@@ -108,8 +113,19 @@ export const boxParts = {
 	treatment: 'Treatment'
 } as const;
 export type BoxPart = keyof typeof boxParts;
-export const casePartOrder: BoxPart[] = ['question', 'holding', 'quotes', 'treatment'];
+export const casePartOrder: BoxPart[] = ['background', 'question', 'holding', 'quotes', 'treatment'];
 export const lawPartOrder: BoxPart[] = ['summary', 'quotes', 'treatment'];
+
+/**
+ * Whether a paragraph is the attribution of a quotation: only a citation,
+ * perhaps followed by an Indigo Book parenthetical for a separate opinion,
+ * such as "[@key, p. 17] (Gorsuch, J., dissenting)" (docs/style-guide.md,
+ * section 5.1). The older form, "— " before the citation, is still read.
+ */
+export function isAttribution(paragraph: string): boolean {
+	const text = paragraph.trim();
+	return /^(—|--)\s/.test(text) || /^\[@[^\]]+\](\s*\([^()]*\))?\.?$/.test(text);
+}
 
 /**
  * Whether a quotation leaves out words without saying so, by the rule the
