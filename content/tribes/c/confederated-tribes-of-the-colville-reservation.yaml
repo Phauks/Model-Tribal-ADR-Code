@@ -246,6 +246,7 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Peacemaking Circle (juvenile)
+    link: https://www.cct-pmc.com/peacemaker-circle
     description: Per NARF, the Colville juvenile code provides for mandatory peacemaking referrals in
       both juvenile offender and child-in-need-of-care cases, with notice requirements, confidentiality
       and enforcement of disposition.
@@ -260,8 +261,10 @@ dispute_resolution:
     confidence: medium
     verification: inferred
     as_of: '2025-08-25'
-    note: NARF's linked PDF (Colville-Juvenile-Peacemaking-Circle-Code.pdf) returned 404 on 2026-11-21,
-      so the code text was not read.
+    note: 'NARF''s linked PDF (Colville-Juvenile-Peacemaking-Circle-Code.pdf) returned 404 on 2026-11-21,
+      so the code text was not read. Link added 2026-11-22: the Peacemaker Circle program''s own site,
+      linked as “Peacemaker Circle” from the Colville Tribes'' website; the page does not say whether
+      it covers the juvenile circle named in the code (fetched with status 200 on 2026-11-22).'
   provisions:
   - kind: peacemaking
     title: Juveniles – Peacemaking Circle

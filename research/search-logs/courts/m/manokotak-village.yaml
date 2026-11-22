@@ -104,3 +104,30 @@ searches:
     from https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-105
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: '“Tribal Court”: Read the Nov. 21 court review''s result for this court (verdict cannot-tell);
+    it gives no page of the court''s own fetched with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Tribal Court”: Read the Nov. 22 court review''s result (court-105, verdict confirmed-other-name,
+    state-court-directory https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf); it is now
+    the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-144

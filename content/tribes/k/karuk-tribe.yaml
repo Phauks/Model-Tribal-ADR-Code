@@ -270,6 +270,7 @@ justice_institutions:
     whether it currently operates was not checked.
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.karuk.us/departments/judicial-system
   source: national-indian-law-library-karuk
   confidence: medium
   verification: bulk-import
@@ -277,16 +278,21 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (http://www.karuk.us/index.php/departments/judicial-system) returned HTTP 404,
-    so it is not recorded.'
+    so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
+    with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-115.'
 - kind: tribal-court
   name: Karuk Judicial System
+  link: https://www.karuk.us/departments/judicial-system
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Karuk Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.karuk.us/index.php/departments/judicial-system)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
+    website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-116.'
 dispute_resolution:
   forums:
   - kind: mediation

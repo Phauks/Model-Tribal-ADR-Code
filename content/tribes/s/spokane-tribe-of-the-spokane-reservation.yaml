@@ -243,11 +243,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Spokane Tribal Court
+  link: https://www.spokanetribe.com/government/court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Spokane Tribe of Indians'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see
+    research/reviews/2026-11-22-service-links.json, service-354.'
 dispute_resolution:
   provisions:
   - kind: arbitration

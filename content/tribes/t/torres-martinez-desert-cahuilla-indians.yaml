@@ -176,13 +176,16 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Torrez Martinez Tribal Court
+  link: https://www.intertribalcourt.org/member-tribes
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Torres Martinez Desert Cahuilla Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.torresmartinez.org/Government/Commissions/TribalCourt.aspx)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link is the entry in the Intertribal Court of Southern California,
+    Member Tribes; no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
+    service-380).'
 dispute_resolution:
   database_listings:
   - title: Peacemaking and Family Conference Preference in Child Welfare

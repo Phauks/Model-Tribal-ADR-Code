@@ -305,11 +305,15 @@ justice_institutions:
     found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Native Village of Barrow Tribal Court
+  link: https://nvb-nsn.gov/tribal-courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Native Village of Barrow'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-171.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

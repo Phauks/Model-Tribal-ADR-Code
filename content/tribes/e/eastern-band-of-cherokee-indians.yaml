@@ -225,11 +225,15 @@ justice_institutions:
     review (research/reviews/2026-11-21-court-listings.json).'
 - kind: tribal-court
   name: Eastern Band of Cherokee Tribal Court
+  link: https://www.ebci.gov/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: North Carolina section, entry 'Eastern Band of Cherokee'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-077.'
 dispute_resolution:
   training_programs:
   - name: Two-part peacemaking facilitation training (October 23-25, 2017 and January 9-10, 2018) for

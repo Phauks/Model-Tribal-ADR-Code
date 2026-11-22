@@ -216,29 +216,39 @@ governing_documents:
 justice_institutions:
 - kind: other
   name: Yurok Justice Center
+  link: https://yuroktribalcourt.org/
   source: national-indian-law-library-yurok
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'Link check 2026-11-21: the link the source gives (http://www.yuroktribe.org/tribalcourt/) returned
-    HTTP 404, so it is not recorded.'
+    HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the court''s own website,
+    fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-430.'
 - kind: tribal-court
   name: Yurok Tribal Court
+  link: https://yuroktribalcourt.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Yurok Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.yuroktribe.org/tribalcourt/) returned
-    HTTP 404, so it is not recorded.'
+    HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the court''s own website,
+    fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-431.'
 - kind: other
   name: Yurok Justice Center
+  link: https://yuroktribalcourt.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Yurok Tribe'
+  note: 'Link added 2026-11-22: the court''s page on the court''s own website, fetched with status 200
+    on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-432.'
 dispute_resolution:
   provisions:
   - kind: other

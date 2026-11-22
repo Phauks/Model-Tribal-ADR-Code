@@ -194,3 +194,30 @@ searches:
     from https://www.llojibwe.org/court/court.html.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-118
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Tribal Court”: Read the Nov. 22 court review''s result (court-118, verdict confirmed, nation-website
+    https://www.llojibwe.org/court/court.html); it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.llojibwe.org/court/bamenim.html
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Tribal Court”: Status 200; not used as the link: it does not name the service or is not its
+    own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): own-page, https://www.llojibwe.org/court/court.html.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-130

@@ -152,3 +152,68 @@ searches:
     confirmed, from https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-134
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Read the Nov. 21 court review''s result
+    for this court (verdict cannot-tell); it gives no page of the court''s own fetched with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Tribal Court”: Read the Nov. 22 court review''s result (court-133, verdict confirmed, state-court-directory
+    https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf); it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.alaska.gov/trialcourts/calendars.htm
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Status 200 (read from the Nov. 22 court
+    review''s saved copy, not fetched again); not used as the link: it does not name the service or is
+    not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://bbna.com/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Home page status 200; read from the Nov.
+    22 court review''s saved copy, not fetched again; 1 linked pages mentioning a court, judiciary, justice
+    or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-167
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Aleknagik Tribal Court”: Read the Nov. 22 court review''s result (court-134, verdict confirmed,
+    state-court-directory https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf); it is now
+    the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Aleknagik Tribal Court”: Claude weighed the evidence against the lead author''s order (own
+    page, then directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-168
