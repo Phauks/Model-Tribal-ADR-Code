@@ -1,10 +1,6 @@
 # Repository layout
 
-All content is kept as plain files in git, and the website and the print
-edition are two separate builds from the same files. This gives a line-by-line
-history of every change, lets contributors propose changes by pull request,
-and makes each edition reproducible
-([decision record 0004](decisions/0004-content-as-plain-files.md)).
+All content is kept as plain files in git, and the website and the print edition are two separate builds from the same files. This gives a line-by-line history of every change, lets contributors propose changes by pull request, and makes each edition reproducible ([decision record 0004](decisions/0004-content-as-plain-files.md)).
 
 ```text
 .
@@ -67,17 +63,11 @@ and makes each edition reproducible
 
 ## Three version tracks
 
-`content/`, `site/` and `pdf/` each have their own `version.txt` and
-`CHANGELOG.md`, starting at 0.0.1
-([decision record 0003](decisions/0003-three-version-tracks.md)). A change to
-a file inside one of those folders counts toward that track's next release.
-Changes elsewhere (docs, schemas, research logs) do not bump any track.
+`content/`, `site/` and `pdf/` each have their own `version.txt` and `CHANGELOG.md`, starting at 0.0.1 ([decision record 0003](decisions/0003-three-version-tracks.md)). A change to a file inside one of those folders counts toward that track's next release. Changes elsewhere (docs, schemas, research logs) do not bump any track.
 
 ## Identifiers
 
-File names are the stable identifiers that citations, the website and the API
-(if one is built) use. Once published, an identifier never changes; a renamed
-or removed record leaves a redirect entry instead.
+File names are the stable identifiers that citations, the website and the API (if one is built) use. Once published, an identifier never changes; a renamed or removed record leaves a redirect entry instead.
 
 | Record | File name pattern | Example |
 | --- | --- | --- |
@@ -93,14 +83,6 @@ or removed record leaves a redirect entry instead.
 | Research session | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | `research/sessions/2026/2026-11-20-foundational-scan.md` |
 | Outreach organization | `research/outreach/<id>.yaml` | `research/outreach/native-american-rights-fund.yaml` |
 
-Tribe profiles and source records sit in a subfolder named for the first
-letter of their id or key (`content/tribes/n/`, `content/sources/u/`). An id or
-key that starts with anything else (ids allow only a to z and 0 to 9, so in
-practice a digit) goes in `_other/`, whose leading underscore sorts it above the letter folders. These
-folders will hold thousands of records, and a folder that large is hard to
-browse on GitHub and in editors. The first letter is the only grouping that
-never moves a file: status, state and region can all change, but an id cannot.
-Links and citations use the id or key, never the path (project choice).
+Tribe profiles and source records sit in a subfolder named for the first letter of their id or key (`content/tribes/n/`, `content/sources/u/`). An id or key that starts with anything else (ids allow only a to z and 0 to 9, so in practice a digit) goes in `_other/`, whose leading underscore sorts it above the letter folders. These folders will hold thousands of records, and a folder that large is hard to browse on GitHub and in editors. The first letter is the only grouping that never moves a file: status, state and region can all change, but an id cannot. Links and citations use the id or key, never the path (project choice).
 
-Section numbers leave room for later editions: a new section between § 2-104
-and § 2-105 becomes § 2-104A rather than renumbering what follows.
+Section numbers leave room for later editions: a new section between § 2-104 and § 2-105 becomes § 2-104A rather than renumbering what follows.
