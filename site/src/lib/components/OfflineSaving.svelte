@@ -34,11 +34,29 @@
 	let problem = $state<string | undefined>();
 	let available = $state(true);
 	let online = $state(true);
+	/** About how many bytes each whole collection takes, from /offline-sizes.json (written after the build). */
+	let sizes = $state<Partial<Record<CollectionIdentifier, number>>>({});
 
 	const versions = $derived(page.data.versions as { content: string; site: string; print: string } | undefined);
 	const built = buildTime(version);
 	const numbers = new Intl.NumberFormat('en-US');
 	const heading = $derived(`h${headingLevel}`);
+
+	async function loadSizes(): Promise<void> {
+		try {
+			const response = await fetch('/offline-sizes.json');
+			if (response.ok) sizes = await response.json();
+		} catch {
+			// Offline or missing: the sizes are left out.
+		}
+	}
+
+	/** About how much more saving the rest of a collection would take, or undefined when not known. */
+	function sizeToSave(id: CollectionIdentifier, savedBytes: number): string | undefined {
+		const total = sizes[id];
+		if (typeof total !== 'number') return undefined;
+		return `about ${formatBytes(Math.max(total - savedBytes, 1000))}`;
+	}
 
 	async function refresh(): Promise<void> {
 		available = controllingWorker() !== null;
@@ -89,6 +107,7 @@
 		window.addEventListener('online', update);
 		window.addEventListener('offline', update);
 		void refresh();
+		void loadSizes();
 		return () => {
 			window.removeEventListener('online', update);
 			window.removeEventListener('offline', update);
@@ -119,6 +138,7 @@
 			{#each collections as collection (collection.id)}
 				{@const state = status.collections.find((item) => item.id === collection.id)}
 				{@const running = progress[collection.id]}
+				{@const toSave = state ? sizeToSave(collection.id, state.bytes) : undefined}
 				{#if state}
 					<li class="collection">
 						<svelte:element this={heading} class="collection-name">
@@ -127,11 +147,12 @@
 						<p class="hint">{collection.hint}</p>
 						<p>
 							{#if state.saved === 0}
-								Not saved yet. {numbers.format(state.total)} pages.
+								Not saved yet. {numbers.format(state.total)} pages{#if toSave}, {toSave}{/if}.
 							{:else}
 								{numbers.format(state.saved)} of {numbers.format(state.total)} pages saved, {formatBytes(
 									state.bytes
-								)}.
+								)}.{#if toSave && state.saved < state.total}
+									Saving the rest takes {toSave}.{/if}
 							{/if}
 							{#if state.kept}Kept: saved again after each update.{/if}
 						</p>

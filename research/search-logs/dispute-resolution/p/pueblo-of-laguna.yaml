@@ -1,0 +1,62 @@
+profile: content/tribes/p/pueblo-of-laguna.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/a13638eb28b79b37f148.txt
+  query: Dispute resolution
+  outcome: not-found
+  reason: The captured Pueblo of Laguna POL Codes page lists code titles and links to Municode, but contains
+    no section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/pueblo_laguna/index.html
+  outcome: found
+  reason: The NILL page links each title to Municode and gives no section text; it links the tribe's site
+    only as a code page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.municode.com/library/nm/pueblo_of_laguna/codes/tribal_code?nodeId=TITXIVGA
+  query: Section 14-1-9 Dispute resolution
+  outcome: blocked
+  reason: The Municode title page returned a client error to the fetch tool, so no code text was retrieved.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Pueblo of Laguna code Section 11-2-9 OR Section 14-1-9 Dispute resolution pdf
+  outcome: not-found
+  reason: The results were the NILL page, the tribe's POL Codes page and unrelated documents; none contained
+    the section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Pueblo of Laguna Dispute Resolution section 15 general civil title XII pdf
+  outcome: not-found
+  reason: No result contained a Pueblo of Laguna section titled Dispute Resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+  outcome: not-found
+  reason: The nation's POL Codes page refers to the Municode compilation and lists only elections, business
+    licensing and similar titles, with no matching section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://library.municode.com/
+  outcome: blocked
+  reason: 'Retry not attempted: Municode refuses scripted access and the brief says not to retry it.'

@@ -1,0 +1,48 @@
+profile: content/tribes/z/zuni-tribe-of-the-zuni-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/66402472f10e2e4745f3.txt
+  query: Mediation.; mediation
+  outcome: found
+  reason: The captured Zuni code has no heading 'Mediation.' Mediation appears in the Children's Court
+    provisions, and the text_hit offsets land in unrelated sections (a criminal rule and a children's
+    services section).
+  records:
+  - content/tribes/z/zuni-tribe-of-the-zuni-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/5896088a07d14aee7314.txt
+  query: Mediation; mediat
+  outcome: found
+  reason: The Children's Code has mediation in Section 9-7-8(B) (pre-adjudication) and 9-7-7 (continued
+    detention pending mediation); no heading 'Mediation.' is printed.
+  records:
+  - content/tribes/z/zuni-tribe-of-the-zuni-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.ashiwi.org/Documents/ZuniChildrensCode.pdf
+  query: Mediation
+  outcome: found
+  reason: NILL-linked 2006 Children's Code PDF downloads and has 9-6-8 and 9-7-6 headed Mediation.
+  records:
+  - content/tribes/z/zuni-tribe-of-the-zuni-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://ashiwi.org/Documents/ApprovedChildrensCode.pdf
+  query: Mediation
+  outcome: found
+  reason: Current version has 9-4-1(C) and 9-7-8(B) but no section headed Mediation.
+  records:
+  - content/tribes/z/zuni-tribe-of-the-zuni-reservation.yaml#dispute_resolution.provisions

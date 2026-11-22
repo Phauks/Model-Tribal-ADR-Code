@@ -1,15 +1,15 @@
 {
   "profiles": 954,
-  "profiles_with_any_dispute_resolution_record": 186,
+  "profiles_with_any_dispute_resolution_record": 151,
   "federally_recognized_profiles": 575,
-  "federally_recognized_profiles_with_any_record": 183,
+  "federally_recognized_profiles_with_any_record": 148,
   "component_profiles": 6,
   "component_profiles_with_any_record": 3,
-  "profiles_with_a_record_besides_database_listings": 106,
+  "profiles_with_a_record_besides_database_listings": 105,
   "coverage_by_recognition": {
     "federal": {
       "profiles": 560,
-      "with_record": 178
+      "with_record": 143
     },
     "unrecognized": {
       "profiles": 280,
@@ -59,27 +59,27 @@
   "coverage_by_bureau_region": {
     "Alaska": {
       "federally_recognized": 224,
-      "with_any_record": 8,
+      "with_any_record": 7,
       "with_forum": 4
     },
     "Eastern": {
       "federally_recognized": 35,
-      "with_any_record": 12,
+      "with_any_record": 10,
       "with_forum": 5
     },
     "Eastern Oklahoma": {
       "federally_recognized": 20,
-      "with_any_record": 11,
+      "with_any_record": 10,
       "with_forum": 2
     },
     "Great Plains": {
       "federally_recognized": 16,
-      "with_any_record": 12,
+      "with_any_record": 10,
       "with_forum": 2
     },
     "Midwest": {
       "federally_recognized": 30,
-      "with_any_record": 25,
+      "with_any_record": 22,
       "with_forum": 10
     },
     "Navajo": {
@@ -89,32 +89,32 @@
     },
     "Northwest": {
       "federally_recognized": 45,
-      "with_any_record": 37,
+      "with_any_record": 34,
       "with_forum": 13
     },
     "Pacific": {
       "federally_recognized": 105,
-      "with_any_record": 24,
+      "with_any_record": 19,
       "with_forum": 6
     },
     "Rocky Mountain": {
       "federally_recognized": 9,
-      "with_any_record": 8,
+      "with_any_record": 6,
       "with_forum": 2
     },
     "Southern Plains": {
       "federally_recognized": 24,
-      "with_any_record": 14,
+      "with_any_record": 12,
       "with_forum": 4
     },
     "Southwest": {
       "federally_recognized": 24,
-      "with_any_record": 10,
+      "with_any_record": 5,
       "with_forum": 1
     },
     "Western": {
       "federally_recognized": 42,
-      "with_any_record": 21,
+      "with_any_record": 12,
       "with_forum": 3
     }
   },
@@ -148,25 +148,26 @@
       }
     },
     "provisions": {
-      "items": 323,
-      "nations": 98,
+      "items": 227,
+      "nations": 97,
       "kinds": {
-        "peacemaking": 107,
-        "other": 84,
-        "arbitration": 69,
-        "mediation": 44,
-        "traditional-dispute-resolution": 19
+        "peacemaking": 73,
+        "other": 60,
+        "arbitration": 52,
+        "mediation": 31,
+        "traditional-dispute-resolution": 11
       },
       "confidence": {
-        "medium": 313,
-        "high": 9,
+        "medium": 193,
+        "high": 33,
         "low": 1
       },
       "as_of_period": {
-        "2010_to_2019": 181,
-        "2020_or_later": 115,
-        "2000_to_2009": 20,
-        "before_2000": 7
+        "2010_to_2019": 90,
+        "2020_or_later": 69,
+        "2000_to_2009": 43,
+        "undated": 13,
+        "before_2000": 12
       }
     },
     "clauses": {
@@ -224,61 +225,56 @@
       }
     },
     "database_listings": {
-      "items": 938,
-      "nations": 167,
+      "items": 258,
+      "nations": 115,
       "kinds": {
-        "None": 938
+        "None": 258
       },
       "confidence": {
-        "medium": 938
+        "medium": 258
       },
       "as_of_period": {
-        "2020_or_later": 938
+        "2020_or_later": 258
       }
     }
   },
   "provisions_by_evidence_tier": {
-    "section_title_only": 225,
-    "text_read": 95,
-    "bulk_database_record": 3
+    "text_read": 172,
+    "section_title_only": 55
   },
   "provisions_by_evidence_tier_and_kind": {
-    "section_title_only/other": 73,
-    "section_title_only/arbitration": 68,
-    "text_read/peacemaking": 63,
-    "section_title_only/peacemaking": 41,
-    "section_title_only/mediation": 39,
-    "text_read/traditional-dispute-resolution": 15,
-    "text_read/other": 11,
-    "text_read/mediation": 5,
-    "section_title_only/traditional-dispute-resolution": 4,
-    "bulk_database_record/peacemaking": 3,
-    "text_read/arbitration": 1
+    "text_read/peacemaking": 67,
+    "text_read/arbitration": 38,
+    "text_read/other": 37,
+    "section_title_only/other": 23,
+    "text_read/mediation": 21,
+    "section_title_only/arbitration": 14,
+    "section_title_only/mediation": 10,
+    "text_read/traditional-dispute-resolution": 9,
+    "section_title_only/peacemaking": 6,
+    "section_title_only/traditional-dispute-resolution": 2
   },
-  "provisions_with_summary": 48,
+  "provisions_with_summary": 152,
   "nations_by_strongest_evidence": {
-    "bulk_database_records_only": 80,
-    "has_text_read_or_curated_record": 61,
-    "bulk_database_records_and_section_titles_only": 34,
-    "section_titles_only": 11
+    "has_text_read_or_curated_record": 82,
+    "bulk_database_records_only": 46,
+    "section_titles_only": 13,
+    "bulk_database_records_and_section_titles_only": 10
   },
   "bulk_database_practice_area": {
-    "Tribal Justice": 409,
-    "Tribal Juvenile/Youth Justice": 358,
-    "Tribal Child Welfare/Family": 285,
-    "Tribal Criminal Justice": 6,
-    "Family": 4,
+    "Tribal Juvenile/Youth Justice": 103,
+    "Tribal Justice": 92,
+    "Tribal Child Welfare/Family": 86,
     "Peacemaking": 2,
-    "Tribal Court General": 2,
-    "Tribal Civil Justice": 1
+    "Family": 1
   },
   "bulk_database_phase_top": {
-    "Pre-adjudication": 454,
-    "Post-adjudication": 375,
-    "N/A": 26,
-    "All phases": 15,
-    "Post-adjudication/Sentencing": 11,
-    "Post-Conviction Sentencing": 5
+    "Pre-adjudication": 190,
+    "Post-adjudication": 50,
+    "All phases": 6,
+    "N/A": 5,
+    "Any phase": 2,
+    "Post-adjudication (probation)": 2
   },
   "forums": {
     "nations_by_kind": {
@@ -415,10 +411,10 @@
     }
   },
   "review_flags": {
-    "provisions_repeating_a_title_within_one_profile": 19,
-    "urls_with_more_than_one_source_record": 5,
-    "source_records_without_an_archived_copy": 4404,
-    "source_records": 4627,
+    "provisions_repeating_a_title_within_one_profile": 1,
+    "urls_with_more_than_one_source_record": 8,
+    "source_records_without_an_archived_copy": 5110,
+    "source_records": 5344,
     "method_records_found": 33,
     "record_kinds_without_a_method_record": [
       "traditional-dispute-resolution"

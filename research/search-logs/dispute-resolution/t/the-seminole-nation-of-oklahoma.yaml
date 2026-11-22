@@ -1,0 +1,38 @@
+profile: content/tribes/t/the-seminole-nation-of-oklahoma.yaml
+topic: dispute-resolution
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances (323bb1796716368c54aa.txt)
+  query: 809; dispute
+  outcome: not-found
+  reason: Page is an application shell with no section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/seminole_nation_ok/
+  query: Section 809. Internal Dispute Resolution Policy
+  outcome: not-found
+  reason: Listed in search results as the table of contents only; not fetched for text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Seminole Nation of Oklahoma code "Internal Dispute Resolution Policy" section 809
+  outcome: not-found
+  reason: Results showed the table of contents and unrelated documents.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances
+  outcome: not-found
+  reason: Script-driven code site; no section text in the served HTML.
+next_steps: The provisions this nation's profile lists by section title are still unread. A person could
+  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.

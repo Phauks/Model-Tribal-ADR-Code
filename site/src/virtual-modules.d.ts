@@ -23,6 +23,14 @@ declare module 'virtual:nation-images' {
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];
 }
 
+declare module 'virtual:public-copies' {
+	/** The copies of public documents the Worker may serve at /copies/, listed at build time. */
+	export const publicCopies: Pick<
+		import('#lib/public-copies.ts').PublicCopy,
+		'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'
+	>[];
+}
+
 declare module 'virtual:source-citations' {
 	/** The full citation, as HTML in the project's Indigo Book style, of each source the glossary cites, by key. */
 	export const sourceCitations: Record<string, string>;
@@ -31,6 +39,8 @@ declare module 'virtual:source-citations' {
 declare module 'virtual:build' {
 	/** The git commit the site was built from, or empty when built on a computer. */
 	export const buildCommit: string;
+	/** Pull requests merged most recently, newest first (src/lib/recent-changes.ts). */
+	export const recentChanges: import('#lib/recent-changes.ts').Change[];
 }
 
 declare module 'cloudflare:workers' {

@@ -375,30 +375,36 @@ dispute_resolution:
     confidence: high
     verification: read-in-full
     as_of: '2025-05-16'
-  - kind: mediation
-    title: Section 3-3605 Arbitration or Mediation Authorized
-    citation: Section 3-3605 Arbitration or Mediation Authorized
-    link: https://narf.org/nill/codes/chickasaw/index.html
-    source: national-indian-law-library-code-codes-chickasaw
+  - kind: other
+    title: Arbitration or Mediation Authorized
+    citation: Title 3, Chapter 3 Gaming Licenses and Regulations (Article F, Disputes with Management),
+      3-3605
+    link: https://code.chickasaw.net/Title-03
+    source: chickasaw-title-3-chapter-3-gaming-licenses-and-regulations
     confidence: medium
-    verification: title-only
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'TITLE 3. BUSINESS REGULATIONS AND LICENSING:'
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+    verification: read-in-full
+    as_of: '1994-01-24'
+    locator: 3-3605
+    note: Read in full on 2026-11-22 (review queue item 2).
+    summary: Lets the Gaming Commissioner, at any time before deciding a grievance filed by a gaming participant
+      or supplier against gaming management, suspend the proceedings and direct that the grievance go
+      to arbitration or mediation on terms the Commissioner sets.
   - kind: mediation
-    title: Section 6-101.37 Best Interest of Child Considered in Awarding Custody or Appointing Guardian
-      - Joint Custody - Plan - Mediation
-    citation: Section 6-101.37 Best Interest of Child Considered in Awarding Custody or Appointing Guardian
-      - Joint Custody - Plan - Mediation
-    link: https://narf.org/nill/codes/chickasaw/index.html
-    source: national-indian-law-library-code-codes-chickasaw
-    confidence: medium
-    verification: title-only
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'TITLE 6. DOMESTIC RELATIONS AND FAMILIES:'
-    note: Identified from section headings in the National Indian Law Library table of contents; the provision
-      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+    title: Best Interest of Child Considered in Awarding Custody or Appointing Guardian - Joint Custody
+      - Plan - Mediation
+    citation: Title 6, Chapter 1 Marriage, Article A Dissolution of Marriage, 6-101.37
+    link: https://code.chickasaw.net/Title-06
+    source: chickasaw-title-6-chapter-1-marriage-article-a-dissolution
+    confidence: high
+    verification: read-in-full
+    as_of: '2023-07-21'
+    locator: 6-101.37
+    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
+      is left for the lead author's review.
+    summary: Requires custody and guardianship decisions to turn on the child's best interests with due
+      regard for tribal custom, allows joint custody under a plan the parties file, and lets the court
+      appoint a mediator to resolve a dispute over how a plan provision is read, with the court allowed
+      to end the joint custody decree if a party refuses mediation.
   published_materials:
   - kind: guide
     title: 'Peacemaking: A Way of Life (presentation with Peacemaking Court forms, rules and procedures)'

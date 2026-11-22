@@ -1,0 +1,186 @@
+profile: content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/f52057d1796d0c8b18f5.txt (capture of https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf)
+  query: Section 8.11 Child Protective Board Mediation Panel Hearings
+  outcome: found
+  reason: Provision found in the captured Ch. 1-17 code and read in full.
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+  query: Section 8.11
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/kick1-17.txt) and the section read
+    directly.'
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.narf.org/nill/codes/kickapoo_texas/index.html
+  query: Chapter 26 Arbitration
+  outcome: not-found
+  reason: No captured Chapter 26 text in the captured Ch. 1-17 compilation (it stops at Chapter 18 reserved).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/kickapoo_texas/index.html
+  query: Chapter 26 Arbitration Ordinance
+  outcome: found
+  reason: NILL page lists the chapter and links to the nation's site.
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://kickapootexas.org/tribal-operations/tribal-court/
+  query: KTTT-Ch-26-Arbitration-Ordinance.pdf
+  outcome: found
+  reason: Tribal court page links to the Chapter 26 PDF, which was downloaded and read.
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-26-Arbitration-Ordinance.pdf
+  query: Chapter 26
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/k26img/p-1..4.png (pdftoppm -r 200
+    of kick26.pdf)) and the section read directly.'
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/f52057d1796d0c8b18f5.txt
+  query: Patron Dispute Resolution
+  outcome: not-found
+  reason: The captured Ch. 1-17 compilation does not include the gaming ordinance.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/kickapoo_texas/index.html
+  query: Section 11. Patron Dispute Resolution
+  outcome: found
+  reason: Heading listed under the Gaming Ordinance in the NILL table of contents; the NILL page gives
+    no link to the gaming ordinance text.
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://kickapootexas.org/tribal-operations/tribal-court/
+  query: gaming ordinance
+  outcome: not-found
+  reason: No gaming ordinance link on the nation's court or code pages that were checked.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://nigc.gov/images/uploads/gamingordinances/kickapootraditionaltrbtx-kickapootribeord121806.pdf
+  query: Kickapoo Traditional Tribe of Texas gaming ordinance patron dispute resolution
+  outcome: found
+  reason: A 2006 gaming ordinance copy on the NIGC site has a Patron Dispute Resolution section (§ 113);
+    fetched once and read through a summarizing fetch. A direct download of the file returned an error
+    page.
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://kickapootexas.org/tribal-operations/tribal-court-2/
+  query: gaming ordinance
+  outcome: found
+  reason: Tribal Court page links 'KTTT-Gaming-Ordinance' (NIGC-Approval-Ltr.pdf).
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://kickapootexas.org/wp-content/uploads/2017/09/NIGC-Approval-Ltr.pdf
+  query: Patron Dispute Resolution
+  outcome: found
+  reason: Image-only PDF, 31 pages, OCR'd with tesseract; Section 11 is on page 16.
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nigc.gov/images/uploads/gamingordinances/kickapootraditionaltrbtx-kickapootribeord121806.pdf
+  query: 2006 ordinance
+  outcome: dead-link
+  reason: The first reading's NIGC address now returns 404 (and its capture was an HTML error page).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/f52057d1796d0c8b18f5.txt (capture of https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf)
+  query: Peacemaker Program
+  outcome: found
+  reason: Section 1.7 found in the captured code (text hit) and read.
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+  query: Section 1.7
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/kick1-17.txt) and the section read
+    directly.'
+  records:
+  - content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/f52057d1796d0c8b18f5.txt
+  query: CHAPTER 4 THE PEACEMAKER SYSTEM
+  outcome: found
+  reason: Chapter 4 is in the captured Ch. 1-17 compilation (text hits found), and the separate 2025 Chapter
+    4 PDF was read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/KTTT-Ch-4-Peacemaking.pdf
+  query: Chapter 4
+  outcome: found
+  reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/kick4.txt) and the section read directly.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/kickapoo_texas/index.html
+  query: CHAPTER 26. ARBITRATION
+  outcome: found
+  reason: 'Same chapter as #2 on the NILL page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://kickapootexas.org/tribal-operations/tribal-court/
+  query: KTTT-Ch-26-Arbitration-Ordinance.pdf
+  outcome: found
+  reason: 'Chapter 26 PDF read under #2.'

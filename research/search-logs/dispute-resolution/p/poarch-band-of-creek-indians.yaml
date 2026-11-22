@@ -1,0 +1,44 @@
+profile: content/tribes/p/poarch-band-of-creek-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/poarchcode/index.html
+  query: 41-1-9 Enforcement and Dispute Resolution
+  outcome: found
+  reason: Table of contents heading only; no text. Its external links point to Municode.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
+  outcome: blocked
+  reason: HTTP 403 (access blocked) to curl.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Poarch Band of Creek Indians code "44-4-7" "Dispute Resolution" OR "41-1-9" "Enforcement and
+    Dispute Resolution"
+  outcome: not-found
+  reason: No result contained the section text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://library.municode.com/
+  outcome: blocked
+  reason: 'Retry not attempted: Municode refuses scripted access and the brief says not to retry it.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/poarchcode/index.html
+  query: 44-4-7 Dispute Resolution
+  outcome: found
+  reason: Table of contents heading only; no text.

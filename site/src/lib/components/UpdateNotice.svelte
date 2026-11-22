@@ -7,6 +7,9 @@
 	import { onMount } from 'svelte';
 	import { updated } from '$app/state';
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
+	import { version } from '$app/env';
+	import { buildTime } from '#lib/offline-collections.ts';
+	import { changesSince } from '#lib/recent-changes.ts';
 	import { siteUpdates } from '#lib/site-updates.svelte.ts';
 	import type { TrackVersions } from '#lib/server/versions.ts';
 
@@ -22,6 +25,9 @@
 
 	const available = $derived(siteUpdates.available);
 	const contentChanged = $derived(available !== undefined && available.content !== versions.content);
+	/** The pull requests merged since the build this page runs, so the reader sees what the update applies. */
+	const changes = $derived(changesSince(available?.changes, buildTime(version)));
+	const shownChanges = 8;
 </script>
 
 <div class="update-toasts no-print">
@@ -38,6 +44,19 @@
 				{/if}
 				Pages you keep for offline reading are saved again from the new version.
 			</p>
+			{#if changes.length > 0}
+				<p class="changes-heading" id="update-changes">
+					It applies {changes.length === 1 ? 'this change' : `these ${changes.length} changes`}:
+				</p>
+				<ul class="changes" aria-labelledby="update-changes">
+					{#each changes.slice(0, shownChanges) as change (change.number)}
+						<li><span class="change-number">#{change.number}</span> {change.title}</li>
+					{/each}
+					{#if changes.length > shownChanges}
+						<li>and {changes.length - shownChanges} more</li>
+					{/if}
+				</ul>
+			{/if}
 			<p class="update-actions">
 				<button class="button" type="button" onclick={() => siteUpdates.apply()}>
 					<RefreshCw size={20} strokeWidth={1.75} />
@@ -86,6 +105,24 @@
 
 	.update-toast p:not(:last-child) {
 		margin: 0 0 var(--space-3);
+	}
+
+	.update-toast .changes-heading {
+		margin-bottom: var(--space-1);
+	}
+
+	.changes {
+		margin: 0 0 var(--space-3);
+		padding-left: var(--space-4);
+	}
+
+	.changes li {
+		margin: 0;
+	}
+
+	.change-number {
+		font-variant-numeric: tabular-nums;
+		color: var(--color-ink-muted);
 	}
 
 	.update-actions {

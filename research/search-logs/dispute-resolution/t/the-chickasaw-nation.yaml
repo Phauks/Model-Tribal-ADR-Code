@@ -1,0 +1,88 @@
+profile: content/tribes/t/the-chickasaw-nation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: captured Chickasaw copies in the project
+  query: 3-3605
+  outcome: not-found
+  reason: No captured copy contains Title 3 or this section number.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://code.chickasaw.net/Title-03
+  query: Chickasaw Nation Code 3-3605 Arbitration or Mediation Authorized
+  outcome: found
+  reason: The Title 3 code page contains Chapter 3 Article F, where the section is printed.
+  records:
+  - content/tribes/t/the-chickasaw-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://code.chickasaw.net/Title-03
+  query: 3-3605
+  outcome: found
+  reason: The link returns the Title 3 PDF; raw text extracted and section 3-3605 and Article F read in
+    full.
+  records:
+  - content/tribes/t/the-chickasaw-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: captured Chickasaw copies in the project
+  query: 6-101.37
+  outcome: not-found
+  reason: No captured copy contains Title 6 or this section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://code.chickasaw.net/Title-06
+  query: Chickasaw Nation Code 6-101.37 Best Interest of Child Considered
+  outcome: found
+  reason: The Title 6 code page prints the section in Chapter 1 Article A.
+  records:
+  - content/tribes/t/the-chickasaw-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://code.chickasaw.net/Title-06
+  query: 6-101.37
+  outcome: found
+  reason: The link returns the Title 6 PDF (8 pages in the header, about 14,000 lines of text); raw text
+    extracted and subsections A-I read in full.
+  records:
+  - content/tribes/t/the-chickasaw-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/The-Chickasaw-Nation-Title-5-5.16.2025.pdf
+  query: CHAPTER 14 CHICKASAW NATION PEACEMAKING COURT
+  outcome: found
+  reason: The chapter is printed in this copy and was read in full.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://ncorj.org/tribal-law/chickasaw-nation-peacemaking-court/
+  query: Chickasaw Nation Peacemaking Court
+  outcome: found
+  reason: A summary page on the peacemaking court; not used as the provision text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/The-Chickasaw-Nation-Title-5-5.16.2025.pdf
+    (downloaded to item2/recheck-out-4/ch5.txt)
+  query: CHAPTER 14 CHICKASAW NATION PEACEMAKING COURT
+  outcome: found
+  reason: Downloaded the raw PDF and read the whole chapter.

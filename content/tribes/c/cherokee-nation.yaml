@@ -296,18 +296,26 @@ dispute_resolution:
     confidence: medium
     verification: title-only
     as_of: 2016-07
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title. Searched for the
+      text on 2026-11-22 and not read. Places searched: research/search-logs/dispute-resolution/c/cherokee-nation.yaml.'
   - kind: other
-    title: Rule 93. Settlement conference
-    citation: Rule 93. Settlement conference; XVII. ARBITRATORS
-    link: https://www.narf.org/nill/codes/cherokee_nation/index.html
-    source: national-indian-law-library-code-codes-cherokee-nation
+    title: Rule 113. Settlement conference
+    citation: Cherokee Nation Supreme Court Rules and Procedures (SC-AD-19-02), 20 CNCA App., Rule 113
+    link: https://www.cherokeecourts.org/Portals/cherokeecourts/Documents/Rules/SC-AD-19-02%20Supreme%20Court%20Rules.pdf
+    source: cherokee-cherokee-nation-supreme-court-rules-and
     confidence: medium
-    verification: title-only
-    as_of: 2016-07
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    verification: read-in-full
+    as_of: '2019'
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "Rule 93. Settlement conference"; the printed heading, number or version differs (see
+      research/reviews/2026-11-22-title-only-provisions.json). Read from a scanned copy by OCR.
+    summary: Each Supreme Court case is set for a mandatory settlement conference at the earliest practicable
+      time, presided over by a disinterested district judge or past Justice designated by the Chief Justice,
+      with attorneys and parties who can bind themselves required to attend in person, discussions kept
+      confidential and not usable as admissions, and the settlement judge reporting only briefly to the
+      Chief Justice.
+    locator: Rule 113
   - kind: arbitration
     title: CHAPTER 2 DISPUTE RESOLUTION
     citation: Title 85 (Workers' Compensation), CHAPTER 2 DISPUTE RESOLUTION; § 47. Arbitration
@@ -316,20 +324,28 @@ dispute_resolution:
     confidence: medium
     verification: title-only
     as_of: 2016-07
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title. Searched for the
+      text on 2026-11-22 and not read. Places searched: research/search-logs/dispute-resolution/c/cherokee-nation.yaml.'
   - kind: arbitration
-    title: ARBITRATORS
-    citation: ARBITRATORS
-    link: https://narf.org/nill/codes/cherokee_nation/index.html
-    source: national-indian-law-library-code-codes-cherokee-nation
+    title: XVI. ARBITRATORS (Rules 160 Eligibility, 161 Qualification, 162 Application, 163 Listing of
+      Arbitrators, 164 Continuing Arbitration Education)
+    citation: Cherokee Nation Supreme Court Rules and Procedures (SC-AD-19-02), 20 CNCA App., Part XVI,
+      Rules 160-164
+    link: https://www.cherokeecourts.org/Portals/cherokeecourts/Documents/Rules/SC-AD-19-02%20Supreme%20Court%20Rules.pdf
+    source: cherokee-cherokee-nation-supreme-court-rules-and
     confidence: medium
-    verification: title-only
-    as_of: '2014'
-    locator: Table of Contents, under 'APPENDIX I TO TITLE 20'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Published:
-      2014); the provision itself was not read. The heading it falls under is taken from the page layout
-      and may be imprecise.'
+    verification: read-in-full
+    as_of: '2019'
+    locator: Part XVI, Rules 160-164
+    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
+      lists it as "ARBITRATORS"; the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json).
+      Read from a scanned copy by OCR.
+    summary: 'Sets who may serve as an arbitrator for the Nation and its business entities: any active
+      Cherokee Nation Bar member in good standing with listed qualifications (seven years of experience
+      and arbitration or workers'' compensation training), who applies with documentation and a fee, is
+      listed by the Supreme Court Clerk, and must complete six hours of continuing education every two
+      years.'
   database_listings:
   - title: Informal Adjustment for Juveniles
     citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104. Preliminary

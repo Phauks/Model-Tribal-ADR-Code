@@ -1,0 +1,105 @@
+profile: content/tribes/r/reno-sparks-indian-colony.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/adcdd232ff9832ba60f4.txt
+  query: Reno-Sparks Title 6 Part 9 informal conference mediation conflict resolution gathering 6-1-901
+  outcome: not-found
+  reason: Captured Tribal Ordinances page lists Titles I, II, III, IV, V and 9 only; no Title 6 youth
+    code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/reno-sparks/index.html
+  outcome: found
+  reason: Table of contents lists the heading; it links to no copy of the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.rsic.org/205/Tribal-Ordinances
+  query: Reno-Sparks Title 6 Part 9 informal conference mediation conflict resolution gathering 6-1-901
+  outcome: not-found
+  reason: Nation's current Tribal Ordinances page has no Title 6 document. Titles I, II, III, IV, V and
+    9 were downloaded and searched; none contains an informal conference or arbitration provision.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Reno-Sparks Title 6 Part 9 informal conference mediation conflict resolution gathering 6-1-901
+  outcome: not-found
+  reason: Search returned only generic juvenile-justice resources, no copy of the Reno-Sparks text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://ncorj.org/
+  outcome: not-found
+  reason: Searched NCORJ and other sites; results were other tribes' juvenile codes (Pyramid Lake, Fallon)
+    with similar wording, not Reno-Sparks Title 6.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/adcdd232ff9832ba60f4.txt
+  query: Reno-Sparks Arbitration
+  outcome: not-found
+  reason: Captured Tribal Ordinances page lists Titles I, II, III, IV, V and 9 only; no Title 6 youth
+    code.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.rsic.org/205/Tribal-Ordinances
+  query: Reno-Sparks Arbitration
+  outcome: not-found
+  reason: Nation's current Tribal Ordinances page has no Title 6 document. Titles I, II, III, IV, V and
+    9 were downloaded and searched; none contains an informal conference or arbitration provision.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: unknown
+  query: Reno-Sparks Arbitration
+  outcome: not-found
+  reason: Search returned only generic juvenile-justice resources, no copy of the Reno-Sparks text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: https://www.rsic.org/DocumentCenter/View/1175/Title-II_RSIC-Rules-of-Civil-Procedure
+  query: arbitration
+  outcome: found
+  reason: Title II text read; 'arbitration and award' appears only in a list of affirmative defenses.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.rsic.org/205/Tribal-Ordinances
+  outcome: not-found
+  reason: Retry found no arbitration chapter.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/reno-sparks/index.html
+  query: Informal Conference, Mediation
+  outcome: found
+  reason: NILL (received July 2012) lists Title 6 Family Code ch. 1 Part 9 'Informal Conference, Mediation
+    or Conflict Resolution Gathering' with sections 6-1-901 and 6-1-902; no link to the text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Reno-Sparks Title 6 6-1-901 informal conference mediation
+  outcome: not-found
+  reason: Search returned only NILL and unrelated tribal-law summaries; no copy of the Colony's Title
+    6 text.

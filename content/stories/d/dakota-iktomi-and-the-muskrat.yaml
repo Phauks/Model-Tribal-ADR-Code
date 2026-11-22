@@ -1,0 +1,74 @@
+id: dakota-iktomi-and-the-muskrat
+title: Iktomi and the Muskrat
+nations:
+- yankton-sioux-tribe-of-south-dakota
+kind: traditional-story
+length: short
+excerpts:
+- telling: zitkala-sa-1901
+  locator: page 28, paragraph beginning "That was the custom"
+  text: That was the custom of the plains people. Yet Iktomi sat silent.
+  words: 12
+  sha256: 3269b2ca490d9a363ec13bb2735099d9a03a5bd31938498be554dd52d252d9fd
+- telling: zitkala-sa-1901
+  locator: page 29, Iktomi's proposal
+  text: '"My friend, let us run a race to see who shall win this pot of fish. If I win, I shall not need to share
+    it with you. If you win, you shall have half of it."'
+  words: 37
+  sha256: 2550e63dffeed6fb4e2a293dff9e7049dd0581451d29baa2b1214e93ebd0b34a
+- telling: zitkala-sa-1901
+  locator: page 32, Iktomi's cry
+  text: '"Oh, if only I had shared my food like a real Dakota, I would not have lost it all!'
+  words: 19
+  sha256: c4728c202ae2808deccb10651588490141a10ed20992965ccc953b75714d68cd
+- telling: zitkala-sa-1901
+  locator: page 33, the muskrat's last words
+  text: '"Next time, say to a visiting friend, ''Be seated beside me, my friend. Let me share with you my food.'''
+  words: 20
+  sha256: 854eb533d15452fb83b785bb85fb06980fe94fc2e233239e850f6e383fe75ec1
+topics:
+- breaking-a-custom
+- sharing-resources
+- settled-by-contest
+- lesson-learned
+tellings:
+- id: zitkala-sa-1901
+  source: zitkala-sa-1901-old-indian-legends
+  locator: pages 25-33
+  teller:
+    form: name-and-nation
+    name: Zitkala-Ša
+    nation: yankton-sioux-tribe-of-south-dakota
+    role: author; retold from Dakota storytellers (preface)
+  published_by: Ginn & Company
+  authority: member-author
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: Quoted from the 1901 printing; spaces the typesetter put before punctuation are dropped.
+access:
+  level: nation-review-first
+anthology:
+  candidate: true
+  reason: A complete, short Dakota trickster story about refusing to share, a claim put to a contest, and the lesson
+    the loser learns, retold by a Yankton Dakota author (project analysis).
+  telling: zitkala-sa-1901
+  permission_from:
+  - holder: Yankton Sioux Tribe
+    for: cultural-authority
+    nation: yankton-sioux-tribe-of-south-dakota
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-22-peacemaking-ancestor-stories
+notes: Zitkala-Ša heard her legends from storytellers across both Dakotas, so the story may belong to more Dakota
+  nations than the Yankton Sioux Tribe; ask before treating it as one nation's alone.

@@ -1,0 +1,193 @@
+profile: content/tribes/m/mississippi-band-of-choctaw-indians.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/c32cc6a08ac25e36e8cb.txt
+  query: dispute; section headings; class III
+  outcome: not-found
+  reason: Chapter 3 of the captured Title XV text has Sections 15-3-1 to 15-3-3 only, with no dispute
+    resolution section.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/(all other Choctaw captures)
+  query: dispute resolution; section 10
+  outcome: not-found
+  reason: Grep of the other Choctaw title texts found no matching section heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/codes/mississippichoctaw/index.html
+  query: SECTION 10. DISPUTE RESOLUTION
+  outcome: found
+  reason: The table of contents lists the heading under Title XV Chapter 3, but the page gives no body
+    text.
+  records:
+  - content/tribes/m/mississippi-band-of-choctaw-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.choctaw.org/government/tribal_code/TITLE 15 GAMING.pdf (NILL-linked old path)
+  outcome: dead-link
+  reason: The fetch failed with a client error.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctaw.org/government/tribal_code/TITLE%2015%20GAMING.pdf
+  outcome: dead-link
+  reason: The fetch failed with a client error.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: web search
+  query: Mississippi Band of Choctaw gaming code "SECTION 10. DISPUTE RESOLUTION" Class III Tribal-State
+    Compact
+  outcome: not-found
+  reason: Results were compacts and an unrelated Title 15 Gaming Code PDF that did not contain the heading.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://choctaw.org/wp-content/uploads/2024/02/Title-15-Gaming-Code.pdf
+  query: Dispute Resolution
+  outcome: not-found
+  reason: Current Title 15 has no dispute resolution section; Chapter 3 only incorporates the Tribal-State
+    Compact.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.01.29_mississippi_choctaw_band_of_indians_tribal_state_gaming_compact.pdf
+  query: Mississippi Choctaw Title 15 Gaming Dispute Resolution Section 10
+  outcome: found
+  reason: The compact has the same Section 1-18 list as the NILL heading list; Section 10 is Dispute Resolution.
+  records:
+  - content/tribes/m/mississippi-band-of-choctaw-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/f96aceb5be91489ac546.txt
+  query: 3-10-15 Peacemaker
+  outcome: found
+  reason: The section appears in the body at the printed heading, and the table of contents also lists
+    it.
+  records:
+  - content/tribes/m/mississippi-band-of-choctaw-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/f96aceb5be91489ac546.txt
+  query: 3-10-15 Peacemaker Court
+  outcome: found
+  reason: Re-read section 3-10-15 in the raw captured text.
+  records:
+  - content/tribes/m/mississippi-band-of-choctaw-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/152896109568ba3a4b84.txt
+  query: transfer to peacemaker court; chapter 2
+  outcome: found
+  reason: The table of contents and body have Chapter 2 and Section 11-2-7 at the printed locations.
+  records:
+  - content/tribes/m/mississippi-band-of-choctaw-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctaw.org/wp-content/uploads/2024/02/Title-11-Choctaw-Youth-Code.pdf
+  query: Chapter 2; 11-2-7
+  outcome: found
+  reason: Downloaded and read with pdftotext; Chapter 2 and 11-2-7 read in full.
+  records:
+  - content/tribes/m/mississippi-band-of-choctaw-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/mississippichoctaw/index.html
+  query: Peacemaker Court
+  outcome: found
+  reason: Re-fetched; the Title XI list there uses older numbering (11-2-3 Transfer to Peacemaker Court).
+  records:
+  - content/tribes/m/mississippi-band-of-choctaw-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/152896109568ba3a4b84.txt
+  query: 11-4-14; informal hearing; informal
+  outcome: found
+  reason: Section 11-4-14 is found, but the printed heading differs. A grep for 'informal hearing' returned
+    nothing.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctaw.org/wp-content/uploads/2024/02/Title-11-Choctaw-Youth-Code.pdf
+  query: 11-4-14; informal hearing
+  outcome: found
+  reason: Downloaded and read with pdftotext; 11-4-14 is Modification of Dispositional Order; no 'informal
+    hearing' text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/mississippichoctaw/index.html
+  query: 11-4-14
+  outcome: found
+  reason: Re-fetched; NILL lists 11-4-14 Informal Hearing or Transfer to Peacemaker Court under the older
+    numbering.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: http://web.archive.org/web/20150311202459/http://www.choctaw.org:80/government/court/code.html
+  query: 2015 code page
+  outcome: blocked
+  reason: Archive copy of the 2015 code page returned 403 through the proxy.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/5e9dbb600a0cb0a1736c.txt
+  query: Peacemaker Code; Sections 24-1-1 to 24-1-12
+  outcome: found
+  reason: The title, purpose, initiation, agreement, and enforcement sections are read in full.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
+  query: Title XXIV
+  outcome: found
+  reason: Downloaded and read with pdftotext in full.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/captures/tribal-law/documents/5e9dbb600a0cb0a1736c.txt
+  query: CHAPTER 1. CHOCTAW PEACEMAKER CODE
+  outcome: found
+  reason: The chapter heading and text are found at the printed location.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
+  query: Chapter 1
+  outcome: found
+  reason: 'Downloaded and read with pdftotext: 24-1-1 to 24-1-17 read.'
