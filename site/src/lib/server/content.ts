@@ -317,6 +317,21 @@ export function nationsForReview(): { id: string; name: string; published: boole
 		.sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
 }
 
+/**
+ * The name and kind of every nation record that is not restricted, for the
+ * lines under a case or law box that name the nations or peoples a source
+ * concerns (src/lib/server/case-facts.ts), as the print build reads them.
+ */
+export function nationNamesAndKinds(): Map<string, { name: string; entityType: string }> {
+	const found = new Map<string, { name: string; entityType: string }>();
+	for (const file of yamlFilesUnder('content/tribes')) {
+		const record = readYaml<NationRecord>(file);
+		if (record.sensitivity?.restricted) continue;
+		found.set(record.id, { name: record.names.official, entityType: record.entity_type });
+	}
+	return found;
+}
+
 /** Glossary records with the file each comes from. Used by vite.config.ts. */
 export function glossaryForReview(): { id: string; term: string; file: string }[] {
 	return yamlFilesUnder('content/glossary').map((file) => {

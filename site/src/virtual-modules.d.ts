@@ -41,6 +41,8 @@ declare module 'virtual:essay-library' {
 	export const essayCitations: Record<string, string>;
 	/** Glossary terms by id, for every entry that has a page. */
 	export const essayTerms: Record<string, string>;
+	/** The lines under each case or law box's heading, as [label, HTML] pairs. */
+	export const essayBoxFacts: { cases: Record<string, [string, string][]>; laws: Record<string, [string, string][]> };
 	/** The essays in content/essays/ as git held them when the site was built, by id. */
 	export const essaysInGit: Record<string, string>;
 }

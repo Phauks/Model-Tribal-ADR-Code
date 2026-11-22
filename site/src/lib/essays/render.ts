@@ -23,6 +23,12 @@ export interface EssayLibrary {
 	citation(key: string): string | undefined;
 	/** A glossary entry's term, if the entry is published. */
 	term(id: string): string | undefined;
+	/**
+	 * The lines under a case or law box's heading, as [label, HTML] pairs:
+	 * when a case was decided, the nations it concerns, the Supreme Court's
+	 * vote and opinions (src/lib/server/case-facts.ts).
+	 */
+	facts?(box: 'case' | 'law', key: string): [string, string][];
 }
 
 /** One heading in the essay, for the page's outline. */
@@ -175,7 +181,11 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 			const id = state.slugs.has(anchor) ? '' : ` id="${escapeHtml(anchor)}"`;
 			state.slugs.add(anchor);
 			const classes = box === 'law' ? 'essay-case essay-law' : 'essay-case';
-			return `<section class="${classes}"${id}>\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${citation}${marksHtml([mark])}</p>\n`;
+			const facts = state.library.facts?.(box, key) ?? [];
+			const factList = facts.length
+				? `<dl class="essay-case-facts">\n${facts.map(([name, value]) => `<div><dt>${escapeHtml(name)}</dt><dd>${value}</dd></div>`).join('\n')}\n</dl>\n`
+				: '';
+			return `<section class="${classes}"${id}>\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${citation}${marksHtml([mark])}</p>\n${factList}`;
 		};
 		rules[`container_${box}_close`] = () => '</section>\n';
 	}
