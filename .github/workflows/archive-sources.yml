@@ -23,7 +23,9 @@
 #   captured on the branch are skipped); once it is merged and the branch
 #   deleted, the next run starts a new one from main. Pull requests opened by
 #   the workflow's own token do not start other workflows, so the job runs the
-#   record checks itself before pushing.
+#   record checks itself before pushing, then starts checks.yml on the branch
+#   (workflow_dispatch is the one event that token may start) so the required
+#   "All checks" result appears on the pull request.
 #
 # A refused or failed capture is simply left for a later run.
 name: archive sources
@@ -85,6 +87,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      actions: write
     concurrency:
       group: archive-sources-catch-up
       cancel-in-progress: false
@@ -128,9 +131,11 @@ jobs:
           git commit -m "chore(content): add Wayback captures for $count source records" \
             -m "Written by the archive workflow's catch-up job (scripts/apply_archive_report.py) from its archive report."
           git push origin archive/captures
+          gh workflow run checks.yml --ref archive/captures \
+            || echo "Could not start checks.yml on archive/captures; start it by hand so the pull request gets its required checks."
           total=$(git diff --name-only origin/main...HEAD -- content/sources | wc -l)
           title="chore(content): add Wayback captures for source records"
-          body="The archive workflow's catch-up job captured these source records' original links in the Wayback Machine, or reused a copy taken within 365 days of the record's retrieval date, and wrote each capture into the record's \`archives\` list. Only \`archives\` lines change. Runs every two hours add to this pull request until it is merged ($total records so far). The job ran \`check_text.py\` and \`validate_records.py\` before each push; pull requests opened by the workflow's token do not start other workflows."
+          body="The archive workflow's catch-up job captured these source records' original links in the Wayback Machine, or reused a copy taken within 365 days of the record's retrieval date, and wrote each capture into the record's \`archives\` list. Only \`archives\` lines change. Runs every two hours add to this pull request until it is merged ($total records so far). The job ran \`check_text.py\` and \`validate_records.py\` before each push and then started the checks workflow on the branch, because pull requests opened by the workflow's token do not start other workflows."
           if [ -n "$(gh pr list --head archive/captures --state open --json number --jq '.[].number')" ]; then
             gh pr edit archive/captures --body "$body" || true
           else
