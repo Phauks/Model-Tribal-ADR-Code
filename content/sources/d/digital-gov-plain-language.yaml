@@ -10,7 +10,10 @@ citation:
     date-parts: [[2026, 11, 20]]
 original_link: https://digital.gov/guides/plain-language
 retrieved: 2026-11-20
-archives: []   # Wayback capture pending: archive.org was not reachable from the research environment on 2026-11-20
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261117204245/https://digital.gov/guides/plain-language
+  captured: '2026-11-17'
 history:
   status: live
   last_checked: 2026-11-20
