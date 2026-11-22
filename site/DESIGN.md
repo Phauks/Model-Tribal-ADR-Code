@@ -370,8 +370,7 @@ request" and "Request sent" (project choice).
 go there. When art arrives, the box becomes a figure with a credit line naming
 the artist and nation, as the artist chooses.
 
-**Footer.** Request a correction or removal; requests log; charter; changelog;
-licenses by material; the three version numbers.
+**Footer.** Request a correction or removal; requests log; charter; changelog; licenses by material; the three version numbers. Trevor asked on Nov. 22, 2026 that it carry no notes beyond the version line: the "model text, not law in force" note and the colophon about colors, fonts and icons were removed. The font and icon licenses stay listed under Licenses by material (LICENSE.md).
 
 ## 7. Design tokens
 
@@ -459,9 +458,9 @@ found that there is no single one, and that some color sets are sacred:
 
 What the project does (project analysis):
 
-- Treats color as design, not as "Native meaning." The site's colophon says
-  the palette carries no tribal symbolism, and later names the artist whose
-  work informs it.
+- Treats color as design, not as "Native meaning." The palette carries no
+  tribal symbolism. (The footer said so until Trevor asked on Nov. 22, 2026
+  for its notes to be removed.)
 - Never uses a nation's directional, ceremonial or flag colors, or a
   medicine-wheel set, as decoration.
 - Keeps teal and orange as plain fields. No feathers, patterns or borders
