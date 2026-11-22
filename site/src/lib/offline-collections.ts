@@ -24,7 +24,7 @@ export const collections: Collection[] = [
 	{
 		id: 'other',
 		label: 'Other pages',
-		hint: 'The home page, changelog, downloads and help pages'
+		hint: 'The home page, stories, changelog, downloads and help pages'
 	}
 ];
 

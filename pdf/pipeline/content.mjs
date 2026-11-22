@@ -55,7 +55,12 @@ export function loadContent(contentDirectory) {
   const essays = listFiles(path.join(contentDirectory, "essays"), ".md")
     .map(readMarkdownRecord)
     .filter((record) => publishable(record.data));
-  return { sources, glossary, variables, provisions, commentary, essays };
+  // Front matter pages the website shows too, such as the acknowledgments.
+  const frontMatter = listFiles(path.join(contentDirectory, "front-matter"), ".md")
+    .filter((file) => path.basename(file) !== "README.md")
+    .map(readMarkdownRecord)
+    .filter((record) => publishable(record.data));
+  return { sources, glossary, variables, provisions, commentary, essays, frontMatter };
 }
 
 // Part II chapters: provisions grouped by chapter, in section order.
