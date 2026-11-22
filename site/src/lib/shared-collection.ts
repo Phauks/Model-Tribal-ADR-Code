@@ -7,8 +7,8 @@
  * "#" never reaches the server, so the site stores nothing and never sees
  * what was shared. Notes are never included. The title and description are
  * the only words a reader writes onto the site, so they are plain text,
- * capped, and shown with the label "A collection made by a reader, not by
- * the project."
+ * capped, and shown with the label "A reader's collection, shared by
+ * link."
  *
  * This module must work in the browser and in Node (for tests).
  */

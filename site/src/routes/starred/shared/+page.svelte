@@ -4,7 +4,7 @@
 	// so this page is built ahead of time and reads the link in the browser
 	// (src/lib/shared-collection.ts). The title and description are a
 	// reader's words, so they are shown as plain text under the label "A
-	// collection made by a reader, not by the project." Each page's name comes
+	// reader's collection, shared by link." Each page's name comes
 	// from the site's own search index, not from the link, so a link cannot
 	// put other words on the site. The whole site is kept out of search
 	// engines (noindex in the layout).
@@ -83,7 +83,7 @@
 	<h1>{heading}</h1>
 	<p class="made-by" role="note">
 		<Info size={20} strokeWidth={1.75} />
-		<span>A collection made by a reader, not by the project.</span>
+		<span>A reader’s collection, shared by link.</span>
 	</p>
 	<noscript>
 		<p class="notice" role="note">This page reads the collection from its link with a script, and scripts are turned off in this browser.</p>
