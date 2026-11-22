@@ -223,7 +223,7 @@ def main():
     for line in table:
         line["lead_author_decision"] = decisions.get(line["id"]) or ""
     with open(REVIEW + ".csv", "w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(table)
     return 0
