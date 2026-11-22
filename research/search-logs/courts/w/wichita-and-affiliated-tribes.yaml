@@ -1,0 +1,87 @@
+profile: content/tribes/w/wichita-and-affiliated-tribes.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-21'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://wichitatribe.com/
+  query: 'scripts/review/court_listings.py: words for a court'
+  outcome: blocked
+  reason: '“Wichita Tribal Court”: The first pass of the court review (research/reviews/2026-11-21-court-listings.json)
+    fetched this page with status 403; its reviewer found cannot-tell.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://wichitatribe.com/
+  query: 'scripts/review/court_listings_second_pass.py: words for a court, judiciary, justice, peacemaking
+    or a judge'
+  outcome: blocked
+  reason: '“Wichita Tribal Court”: Home page status 403; 0 links mention a court; the site refused or
+    failed the request.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/CFRCourts
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Wichita”)'
+  outcome: found
+  reason: '“Wichita Tribal Court”: Bureau of Indian Affairs, Court of Indian Offenses: list of CFR Courts
+    and the Tribes they serve: lists this nation; the reviewer used it as evidence.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.govinfo.gov/content/pkg/FR-2020-01-07/html/2019-27997.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Wichita Tribal Court”: List of Courts of Indian Offenses, 85 Fed. Reg. 645 (Jan. 7, 2020):
+    does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.nics.ws/tribal-courts.html
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Wichita Tribal Court”: Northwest Intertribal Court System, Tribal Courts: does not name this
+    nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.ailc-inc.org/switca/
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names'
+  outcome: not-found
+  reason: '“Wichita Tribal Court”: American Indian Law Center, Southwest Intertribal Court of Appeals
+    (appellate only): does not name this nation.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribal-institute.org/lists/justice.htm
+  query: 'scripts/review/court_listings_second_pass.py: the nation''s names (matched “Wichita”)'
+  outcome: not-found
+  reason: '“Wichita Tribal Court”: Tribal Court Clearinghouse (Tribal Law and Policy Institute), Tribal
+    Courts list: names this nation; it is a supporting source that cannot confirm a court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: state-court-directory
+  address: No OK state court directory of tribal courts found
+  outcome: not-found
+  reason: '“Wichita Tribal Court”: No Oklahoma state court system list of tribal courts was found by web
+    search on 2026-11-22.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Wichita Tribal Court”: Claude read the gathered evidence against the review brief; verdict
+    served-by-court-of-indian-offenses, from https://bia.gov/CFRCourts.'
+  records:
+  - research/reviews/2026-11-22-court-listings-second-pass.json#court-321

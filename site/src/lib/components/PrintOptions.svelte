@@ -1,5 +1,6 @@
 <script lang="ts">
-	// Print button and dialog (site/DESIGN.md, section 6, "Print"). Like the
+	// Print button and dialog (site/DESIGN.md, section 6, "Print"). The
+	// button sits on the page, in PageTools.svelte, not in the masthead. Like the
 	// delivery dialogs of legal research services, it lets a reader choose
 	// what prints (the parts this page has) and how it is laid out, then opens
 	// the browser's print window, where the reader can also save a PDF. The
@@ -150,7 +151,7 @@
 
 <button
 	bind:this={opener}
-	class="print-button needs-scripts"
+	class="button button-quiet needs-scripts"
 	type="button"
 	aria-haspopup="dialog"
 	onclick={open}
@@ -230,21 +231,6 @@
 </Modal>
 
 <style>
-	.print-button {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-band-text);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
-		cursor: pointer;
-	}
-
 	.section-heading {
 		margin: 0 0 var(--space-2);
 	}

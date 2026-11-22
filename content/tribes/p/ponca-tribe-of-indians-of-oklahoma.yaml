@@ -215,20 +215,23 @@ governing_documents:
   link: https://www.ponca-nsn.gov/constitution.html
   source: national-indian-law-library-ponca-oklahoma
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Document opened on 2026-11-22 (the copy the constitution catalog work saved); its opening
+    text names the kind, nation and title; the second gap review also confirmed this link.'
 - kind: corporate-charter
   title: Corporate charter (Ponca Indian Tribe Oklahoma)
   year: '1950'
   link: https://thorpe.law.ou.edu/IRA/okponchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-okponchrtr
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1950'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1950; the second gap review also confirmed this link.
 - kind: constitution
   title: Constitution (Ponca Tribe of Indians Oklahoma)
   year: '1950'
@@ -368,10 +371,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30715 (Tribe column of the designated agent table)
   note: 'Listed as: Ponca Tribe of Indians of Oklahoma Confidence lowered from high by the lead session:
     the notice prints its table as page images, so nation names were read from images and matched to the
-    roster.'
+    roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
+    verification level unchanged because the name was not matched word for word in machine-read text.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

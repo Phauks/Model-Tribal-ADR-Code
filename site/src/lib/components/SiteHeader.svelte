@@ -1,21 +1,25 @@
 <script lang="ts">
+	// The masthead (site/DESIGN.md, section 6, "Masthead"). Two rows: the
+	// site's name, the search box and the reader's controls (theme, Settings,
+	// then sign-in or the account menu at the far right); under them, the main
+	// menu and Contribute. Print and Download act on one page, so they sit on
+	// that page (PageTools.svelte), not here.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import AccountLink from './AccountLink.svelte';
-	import PrintOptions from './PrintOptions.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
+	import SiteSearch from './SiteSearch.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
 
 	let { contentVersion }: { contentVersion: string } = $props();
 
 	// Only pages that exist are listed. "The code", "Peacemaking", "Sources"
-	// and "About" join the menu when their pages are built (site/DESIGN.md, section 4).
+	// and "About" join the menu when their pages are built (site/DESIGN.md,
+	// section 4). Downloads and the changelog are linked from the footer.
 	const menu = [
 		{ label: 'Nations', link: '/nations' },
 		{ label: 'Stories', link: '/stories' },
-		{ label: 'Glossary', link: '/glossary' },
-		{ label: 'Downloads', link: '/downloads' },
-		{ label: 'Changelog', link: '/changelog' }
+		{ label: 'Glossary', link: '/glossary' }
 	];
 
 	function isCurrent(link: string): boolean {
@@ -26,12 +30,22 @@
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="masthead">
-	<div class="page-width masthead-inner">
+	<div class="page-width masthead-top">
 		<p class="wordmark">
 			<a href="/">{siteName}</a>
 			<span class="edition">Draft, content {contentVersion}</span>
 		</p>
-		<nav aria-label="Main" class="no-print">
+		<div class="masthead-search no-print">
+			<SiteSearch />
+		</div>
+		<div class="masthead-tools no-print">
+			<ThemeSetting />
+			<SettingsPanel />
+			<AccountLink />
+		</div>
+	</div>
+	<div class="masthead-menu no-print">
+		<nav aria-label="Main" class="page-width">
 			<ul>
 				{#each menu as item (item.link)}
 					<li>
@@ -40,15 +54,9 @@
 						</a>
 					</li>
 				{/each}
-				<li><a class="button contribute" href="/requests?kind=contribute">Contribute</a></li>
+				<li class="contribute"><a class="button" href="/requests?kind=contribute">Contribute</a></li>
 			</ul>
 		</nav>
-		<div class="masthead-tools no-print">
-			<AccountLink />
-			<ThemeSetting />
-			<PrintOptions />
-			<SettingsPanel />
-		</div>
 	</div>
 </header>
 
@@ -73,17 +81,23 @@
 		color: var(--color-band-text);
 	}
 
-	.masthead-inner {
-		display: flex;
-		flex-wrap: wrap;
+	/*
+	 * Wide screens: name, search and controls on one line. Narrow screens: the
+	 * name and controls share the first line and the search box takes the
+	 * whole second line, so it never shrinks below a usable width.
+	 */
+	.masthead-top {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		grid-template-areas: 'name search tools';
 		align-items: center;
-		justify-content: space-between;
 		gap: var(--space-3) var(--space-5);
 		padding-top: var(--space-3);
 		padding-bottom: var(--space-3);
 	}
 
 	.wordmark {
+		grid-area: name;
 		margin: 0;
 		display: flex;
 		flex-direction: column;
@@ -96,27 +110,75 @@
 		text-decoration: none;
 	}
 
-	.masthead-tools {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: var(--space-2);
-		margin-left: auto;
-	}
-
 	.edition {
 		font-size: var(--font-size-small);
 		color: var(--color-band-text);
+	}
+
+	.masthead-search {
+		grid-area: search;
+		display: flex;
+		justify-content: center;
+	}
+
+	.masthead-tools {
+		grid-area: tools;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-end;
+		gap: var(--space-2);
+	}
+
+	@media (max-width: 60rem) {
+		.masthead-top {
+			grid-template-columns: minmax(0, 1fr) auto;
+			grid-template-areas:
+				'name tools'
+				'search search';
+		}
+
+		.masthead-search {
+			justify-content: stretch;
+		}
+
+		.masthead-search :global(.site-search) {
+			max-width: none;
+		}
+	}
+
+	/* Phones: the name gets its own line, then the controls, then the search box. */
+	@media (max-width: 40rem) {
+		.masthead-top {
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-areas:
+				'name'
+				'tools'
+				'search';
+		}
+
+		.masthead-tools {
+			justify-content: flex-start;
+		}
+	}
+
+	/* The menu row: a thin rule divides it from the row above. */
+	.masthead-menu {
+		border-top: 1px solid color-mix(in srgb, var(--color-band-text) 25%, transparent);
 	}
 
 	nav ul {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: var(--space-1) var(--space-4);
+		gap: var(--space-1) var(--space-5);
 		list-style: none;
 		margin: 0;
-		padding: 0;
+		padding: var(--space-1) 0;
+	}
+
+	nav .contribute {
+		margin-left: auto;
 	}
 
 	nav a:not(.button) {

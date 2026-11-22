@@ -255,18 +255,22 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kalchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-kalchrtr
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1938'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1938; the second gap review also confirmed this link.
 - kind: constitution
   title: Constitution (Kalispel Indian Community of the Kalispel Reservation Washington)
   year: '1938'
   link: https://thorpe.law.ou.edu/IRA/kalcons.html
   source: university-of-oklahoma-indian-reorganization-act-kalcons
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '1938'
-  note: Historical text as originally approved; the nation may have amended or replaced it since.
+  note: Historical text as originally approved; the nation may have amended or replaced it since. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation, title and year 1938; the second gap review also confirmed this link.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -680,10 +684,12 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30698 (Tribe column of the designated agent table)
   note: 'Listed as: Kalispel Indian Community of the Kalispel Reservation Confidence lowered from high
     by the lead session: the notice prints its table as page images, so nation names were read from images
-    and matched to the roster.'
+    and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
+    layer for the table); verification level unchanged because the name was not matched word for word
+    in machine-read text.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

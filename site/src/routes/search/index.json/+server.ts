@@ -1,0 +1,62 @@
+import { json } from '@sveltejs/kit';
+import { entityTypeLabels } from '#lib/nation-labels.ts';
+import { nations } from '#lib/server/content.ts';
+import { glossaryTermSummaries, publishedGlossary } from '#lib/server/glossary-entries.ts';
+import { nationIndexRows } from '#lib/server/nation-index.ts';
+import { storySummaries } from '#lib/server/stories.ts';
+import type { SearchEntry } from '#lib/site-search.ts';
+import type { RequestHandler } from './$types';
+
+// The site search's index (src/lib/site-search.ts), built with the site.
+export const prerender = true;
+
+/** The site's own pages a reader may look for by name. */
+const pages: SearchEntry[] = [
+	{ kind: 'page', title: 'Native nations', also: ['Nations', 'Tribes', 'Directory'], detail: 'Every nation and community, by first letter and by state', link: '/nations' },
+	{ kind: 'page', title: 'Map of Native nations', also: ['Map', 'Bureau of Indian Affairs regions'], detail: 'Nations by state, with the Bureau of Indian Affairs regions', link: '/nations/map' },
+	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Accounts', 'Teachings'], detail: 'Stories about making peace, in the words of the nations and people who tell them', link: '/stories' },
+	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'The words the project defines', link: '/glossary' },
+	{ kind: 'page', title: 'Downloads', also: ['Book', 'PDF', 'EPUB', 'Data'], detail: 'The book and the data behind this site', link: '/downloads' },
+	{ kind: 'page', title: 'Changelog', also: ['Versions', 'What changed'], detail: 'What changed in each version', link: '/changelog' },
+	{ kind: 'page', title: 'Make a request', also: ['Correct', 'Remove', 'Report a problem', 'Add a nation', 'Contribute'], detail: 'Correct, restrict, remove, add or contribute', link: '/requests' },
+	{ kind: 'page', title: 'Help with the project', also: ['Join', 'Volunteer'], link: '/join' },
+	{ kind: 'page', title: 'Read offline', also: ['Offline', 'Install'], detail: 'Save pages to read without a connection', link: '/offline' }
+];
+
+export const GET: RequestHandler = () => {
+	const records = new Map(nations().map((record) => [record.id, record]));
+	const nationEntries: SearchEntry[] = nationIndexRows().map((row) => {
+		const record = records.get(row.id);
+		const also = [
+			...(record?.names.self_designation ?? []).map((name) => name.name),
+			...(record?.names.former ?? []).map((name) => name.name)
+		];
+		const group = row.entityType === 'native-nation' ? undefined : entityTypeLabels[row.entityType];
+		return {
+			kind: 'nation',
+			title: row.name,
+			...(also.length > 0 ? { also } : {}),
+			detail: [group, row.statesText].filter(Boolean).join(' · '),
+			link: `/nations/${row.id}`
+		};
+	});
+	const aliases = new Map(publishedGlossary().map((record) => [record.id, record.aliases ?? []]));
+	const termEntries: SearchEntry[] = glossaryTermSummaries().map((term) => {
+		const also = [...(term.expansion ? [term.expansion] : []), ...(aliases.get(term.id) ?? [])];
+		return {
+			kind: 'term',
+			title: term.term,
+			...(also.length > 0 ? { also } : {}),
+			detail: term.summary,
+			link: term.page
+		};
+	});
+	// A story is found by its title or its nations' names; its detail line is its kind and nations, never a summary (decision record 0019).
+	const storyEntries: SearchEntry[] = storySummaries().map((story) => ({
+		kind: 'story',
+		title: story.title,
+		detail: [story.kind, ...story.nations.map((nation) => nation.name)].join(' · '),
+		link: `/stories/${story.id}`
+	}));
+	return json([...pages, ...nationEntries, ...storyEntries, ...termEntries]);
+};

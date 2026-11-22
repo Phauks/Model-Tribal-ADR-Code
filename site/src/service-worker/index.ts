@@ -41,7 +41,8 @@ import {
 
 const cacheName = `site-${version}`;
 const offlinePage = '/offline';
-const corePages = ['/', '/glossary', '/changelog', offlinePage];
+// The search page and its index are kept too, so the masthead's search box works offline.
+const corePages = ['/', '/glossary', '/changelog', '/search', offlinePage];
 // edition.json says which edition the server has now, so it always comes from the network.
 const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/edition.json'];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
@@ -83,7 +84,7 @@ const corePageFiles = corePages.flatMap((page) => [
 const precached = [
 	...shell,
 	...staticFiles,
-	...['/manifest.webmanifest', '/icon.svg', '/glossary/terms.json', ...corePageFiles].filter((path) =>
+	...['/manifest.webmanifest', '/icon.svg', '/glossary/terms.json', '/search/index.json', ...corePageFiles].filter((path) =>
 		builtPaths.has(path)
 	)
 ];

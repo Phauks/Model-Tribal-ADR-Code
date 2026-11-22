@@ -251,10 +251,12 @@ governing_documents:
   link: http://www.tolc-nsn.org/docs/Constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2022'
   locator: Arizona section, entry 'Tohono O’odham Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: Title is the link text in the directory; link not re-checked and may be out of date. Document
+    opened on 2026-11-22 (the copy the constitution catalog work saved); its opening text names the kind,
+    nation and title; the second gap review also confirmed this link.
 - kind: law-code
   title: Tohono O’odham Code
   source: tribal-law-policy-institute-justice-systems
@@ -502,10 +504,11 @@ jurisdiction:
   confidence: medium
   verification: inferred
   as_of: '2026-05-26'
-  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  locator: 91 FR 30721 (Tribe column of the designated agent table)
   note: 'Listed as: Tohono O''odham Nation of Arizona Confidence lowered from high by the lead session:
     the notice prints its table as page images, so nation names were read from images and matched to the
-    roster.'
+    roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
+    verification level unchanged because the name was not matched word for word in machine-read text.'
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
