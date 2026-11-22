@@ -15,8 +15,8 @@ export type RequestKind = (typeof requestKinds)[number];
 
 export const requestKindLabels: Record<RequestKind, string> = {
 	correct: 'Correct something',
-	restrict: 'Restrict something',
-	remove: 'Remove something',
+	restrict: 'Make something private',
+	remove: 'Delete something',
 	'add-nation': 'Add a nation that is missing',
 	contribute: 'Contribute (sources, review, terms, writing)',
 	question: 'Ask a question'
@@ -25,9 +25,9 @@ export const requestKindLabels: Record<RequestKind, string> = {
 export const requestKindHints: Record<RequestKind, string> = {
 	correct: 'A fact, name, spelling or citation is wrong.',
 	restrict:
-		'Material should not be public, for example because it is sensitive or held by the community. It is taken out of public view before the request is reviewed.',
+		'We keep it in our private records but stop showing it, for example because it is sensitive or belongs to the community. We hide it within 7 days, then review it.',
 	remove:
-		'Material about a nation should be withdrawn. It is taken out of public view before the request is reviewed.',
+		'We delete it from the website and from later editions of the book. We hide it within 7 days, then review it.',
 	'add-nation':
 		'A nation is not listed. One federal or state government source that names it is enough.',
 	contribute: 'Offer sources, review, preferred terms or writing.',

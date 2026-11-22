@@ -23,3 +23,15 @@ These forms go with material that comes to the project from a person, such as an
 - Only answers marked required are required.
 - If two forms disagree, the stricter one wins, and we ask.
 - We fill in the placeholders, such as `{{filing.identifier}}`, before handing a form out.
+
+## On the website
+
+The website's Forms page shows every form here, to fill in online or print, and takes signed forms ([contributions.md](../contributions.md#on-the-website)). A new form needs only its Markdown file and a row in the table above. The site reads the file this way:
+
+- The first line is `# Title`. A line such as ``Form `id`, version 1.0.0.`` gives the ids and version.
+- `☐` is a tick box. Four or more underscores (`______`) is a line to write on, or a box when it stands alone in a paragraph. An empty table cell is a line.
+- A line whose label names a date asks for a date. One that names a signature is a signature line. A form sent online needs at least one signature line filled in.
+- A placeholder such as `{{interview.purpose}}` is a line labeled with its name. `{{project.lead_author}}` and `{{project.contact}}` are filled in by the site.
+- A paragraph starting `**Project use.**`, and `{{filing.identifier}}`, are for us. They print but are not asked online.
+
+Model forms for nations go in `content/forms/`, one file each, written the same way. They can be filled in and printed, but nothing is sent.
