@@ -94,6 +94,7 @@ export const essayBlocks = {
 	summary: /^summary$/,
 	quotes: /^quotes$/,
 	treatment: /^treatment$/,
+	topics: /^topics$/,
 	quote: /^quote$/,
 	analysis: /^analysis(?:\s+(.+))?$/
 } as const;
@@ -101,8 +102,8 @@ export type EssayBlock = keyof typeof essayBlocks;
 
 /**
  * The parts of a case or law box, in the order they come, with the label
- * each shows. A case uses background, question, holding, quotes and treatment; a law
- * uses summary, quotes and treatment.
+ * each shows. A case uses background, question, holding, quotes, treatment
+ * and topics; a law uses summary, quotes and treatment.
  */
 export const boxParts = {
 	background: 'Background',
@@ -110,11 +111,21 @@ export const boxParts = {
 	holding: 'Holding',
 	summary: 'What it does',
 	quotes: 'Quotes',
-	treatment: 'Treatment'
+	treatment: 'Treatment',
+	topics: 'Topics'
 } as const;
 export type BoxPart = keyof typeof boxParts;
-export const casePartOrder: BoxPart[] = ['background', 'question', 'holding', 'quotes', 'treatment'];
+export const casePartOrder: BoxPart[] = ['background', 'question', 'holding', 'quotes', 'treatment', 'topics'];
 export const lawPartOrder: BoxPart[] = ['summary', 'quotes', 'treatment'];
+
+/**
+ * The topics a case box's Topics part names, separated by semicolons:
+ * "Gaming; Sovereign immunity". The index of cases by topic is built from
+ * them (case-topics.ts).
+ */
+export function topicsIn(text: string): string[] {
+	return [...new Set(text.split(';').map((topic) => topic.replace(/\s+/g, ' ').trim().replace(/\.$/, '')).filter(Boolean))];
+}
 
 /**
  * Whether a paragraph is the attribution of a quotation: only a citation,

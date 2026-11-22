@@ -743,6 +743,24 @@ sup.citation {
 	border-top: 1px solid var(--color-line);
 }
 
+/* A case box's topics, as tags; the index of cases by topic is built from them. */
+.essay-topics {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.essay-topics li {
+	padding: var(--space-1) var(--space-3);
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius-panel);
+	font-size: var(--font-size-small);
+	overflow-wrap: anywhere;
+}
+
 .essay-quote,
 .essay-text blockquote {
 	margin-left: 0;
