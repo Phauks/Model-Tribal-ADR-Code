@@ -59,10 +59,11 @@ if (existsSync(path.join(output, 'offline-fingerprints.json'))) {
 	const fingerprints = JSON.parse(readFileSync(path.join(output, 'offline-fingerprints.json'), 'utf8'));
 	const { version } = JSON.parse(readFileSync(path.join(output, '_app', 'version.json'), 'utf8'));
 	if (fingerprints.version !== version) problem('offline-fingerprints.json is not from this build');
-	// /copies is read from the network only, so it has no fingerprint.
+	// /copies and its lists are read from the network only, so they have no fingerprint.
 	for (const file of pages) {
 		const address = `/${path.relative(output, file).split(path.sep).join('/')}`.replace(/(\/index)?\.html$/, '') || '/';
-		if (!(address in (fingerprints.pages ?? {})) && address !== '/copies') problem(`offline-fingerprints.json does not list ${address}`);
+		const networkOnly = address === '/copies' || address.startsWith('/copies/');
+		if (!(address in (fingerprints.pages ?? {})) && !networkOnly) problem(`offline-fingerprints.json does not list ${address}`);
 	}
 }
 for (const file of pages) {
