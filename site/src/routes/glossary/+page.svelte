@@ -79,8 +79,16 @@
 		scroll-margin-top: var(--space-6);
 	}
 
+	.letter-group > h2 {
+		margin-bottom: var(--space-2);
+		padding-bottom: var(--space-1);
+		font-size: var(--font-size-display);
+		color: var(--color-link);
+		border-bottom: 3px solid var(--color-link);
+	}
+
 	.letter-group :global(.glossary-entry) {
-		padding-bottom: var(--space-4);
+		padding: var(--space-3) 0 var(--space-5);
 		border-bottom: 1px solid var(--color-line);
 	}
 

@@ -21,6 +21,14 @@ export interface TermReference {
 	term: string;
 }
 
+/** One sense of an entry, ready to show. */
+export interface GlossarySense {
+	/** A label that applies to this sense only, such as "often capitalized". */
+	label?: string;
+	/** The sense as HTML, with term links and numbered source markers. */
+	definition: string;
+}
+
 /** One entry, ready to show. */
 export interface GlossaryEntryView {
 	id: string;
@@ -32,9 +40,15 @@ export interface GlossaryEntryView {
 	basis?: GlossaryRecord['basis'];
 	status: NonNullable<GlossaryRecord['status']>;
 	aliases: string[];
+	/** The part of speech or class shown in italics after the headword, such as "noun" or "abbreviation". */
+	functionalLabel: string;
 	/** The definition as HTML, with term links and numbered source markers. */
 	definition: string;
-	/** "How the project uses it", as HTML, when the entry has a usage note. */
+	/** Every sense, the definition first; numbered on the page only when there are two or more. */
+	senses: GlossarySense[];
+	/** The model code section that enacts a definition of the term, when one does, such as "§ 1-102". */
+	codeDefinition?: string;
+	/** "As used here", as HTML, when the entry has a usage note. */
 	usageNote?: string;
 	useInstead: TermReference[];
 	seeAlso: TermReference[];
@@ -89,6 +103,20 @@ class GlossaryCitations implements CitationCollector {
 	}
 }
 
+/** A provision's display number from its id: 01-102 is § 1-102 (schemas/provision.schema.json). */
+export function sectionNumberOf(provision: string): string {
+	const [chapter, section] = provision.split('-');
+	return `§ ${Number(chapter)}-${section}`;
+}
+
+/** The italic label after the headword, as a dictionary gives one: the part of speech, or the kind of entry. */
+export function functionalLabelOf(record: GlossaryRecord): string {
+	if (record.kind === 'acronym') return 'abbreviation';
+	if (record.kind === 'phrase') return 'phrase';
+	const partOfSpeech = record.part_of_speech ?? 'noun';
+	return record.kind === 'legal-term' ? `${partOfSpeech}, legal term` : partOfSpeech;
+}
+
 /**
  * The given entries, rendered, and the Sources section for a page that shows
  * them all. A source the entry lists but its text does not cite is still
@@ -102,9 +130,17 @@ export function glossaryEntryViews(records: GlossaryRecord[]): {
 	const entries = records.map((record): GlossaryEntryView => {
 		citations.part = { term: record.term, text: 'definition' };
 		const definition = renderMarkdown(record.definition, citations);
-		citations.part = { term: record.term, text: 'how the project uses it' };
+		const otherSenses = (record.other_senses ?? []).map((sense, index) => {
+			citations.part = { term: record.term, text: `sense ${index + 2}` };
+			return { label: sense.label, definition: renderMarkdown(sense.definition, citations) };
+		});
+		citations.part = { term: record.term, text: 'as used here' };
 		const usageNote = record.usage_note ? renderMarkdown(record.usage_note, citations) : undefined;
-		const citedInText = `${record.definition} ${record.usage_note ?? ''}`;
+		const citedInText = [
+			record.definition,
+			...(record.other_senses ?? []).map((sense) => sense.definition),
+			record.usage_note ?? ''
+		].join(' ');
 		for (const key of record.sources ?? []) {
 			if (!new RegExp(`@${key}(?![a-z0-9-])`).test(citedInText)) {
 				citations.uses.add(key, {
@@ -122,8 +158,11 @@ export function glossaryEntryViews(records: GlossaryRecord[]): {
 			usageLabel: usageLabels[record.usage] ?? record.usage,
 			basis: record.basis,
 			status: record.status ?? 'draft',
-			aliases: record.aliases ?? [],
+			aliases: (record.aliases ?? []).filter((form) => form !== record.term),
+			functionalLabel: functionalLabelOf(record),
 			definition,
+			senses: [{ definition }, ...otherSenses],
+			codeDefinition: record.code_definition ? sectionNumberOf(record.code_definition) : undefined,
 			usageNote,
 			useInstead: termReferences(record.use_instead),
 			seeAlso: termReferences(record.see_also)
@@ -180,6 +219,21 @@ export function entriesLinkingTo(id: string): TermReference[] {
 	const link = new RegExp(`\\[\\[${id}(?:\\||\\]\\])`);
 	return publishedGlossary()
 		.filter((record) => record.id !== id)
-		.filter((record) => link.test(`${record.definition} ${record.usage_note ?? ''}`))
+		.filter((record) =>
+			link.test(
+				[record.definition, ...(record.other_senses ?? []).map((sense) => sense.definition), record.usage_note ?? ''].join(' ')
+			)
+		)
 		.map((record) => ({ id: record.id, term: record.term }));
+}
+
+/** The entries just before and after this one in alphabetical order, as a dictionary lists the words near an entry. */
+export function nearbyEntries(id: string, count = 3): { before: TermReference[]; after: TermReference[] } {
+	const all = publishedGlossary();
+	const index = all.findIndex((record) => record.id === id);
+	const reference = (record: GlossaryRecord) => ({ id: record.id, term: record.term });
+	return {
+		before: all.slice(Math.max(0, index - count), index).map(reference),
+		after: all.slice(index + 1, index + 1 + count).map(reference)
+	};
 }
