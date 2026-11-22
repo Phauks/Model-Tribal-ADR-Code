@@ -9,7 +9,7 @@
  * and the Origin header otherwise, as the OWASP Cross-Site Request Forgery
  * Prevention Cheat Sheet recommends ("Fetch Metadata headers"; "Verifying
  * origin with standard headers"). The session cookie is also SameSite=Lax
- * (set by the Auth0 server SDK).
+ * (src/lib/server/sign-in.ts).
  */
 
 /** Methods that change something. GET and HEAD must never change anything. */

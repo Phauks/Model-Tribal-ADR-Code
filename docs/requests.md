@@ -245,8 +245,8 @@ all secrets in Cloudflare
   private R2 bucket. Neither is exposed through any public API.
 - **Notification:** the maintainer is emailed a link to the request, not its
   contents.
-- **Maintainer view:** `/workspace/requests`, for editors who sign in with
-  Auth0 ([decision record 0013](decisions/0013-sign-in-with-auth0.md)),
+- **Maintainer view:** `/workspace/requests`, for editors who sign in to the
+  site ([decision record 0024](decisions/0024-own-sign-in.md)),
   listing requests by status with the targets above.
 - **Retention:** personal details are deleted 12 months after a request is
   resolved, unless the person is credited as a contributor (project choice).

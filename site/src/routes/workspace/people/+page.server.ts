@@ -10,6 +10,8 @@ import {
 	personByIdentifier,
 	setRemoved
 } from '#lib/server/people.ts';
+import { codeLifetimeMinutes, issueCode } from '#lib/server/accounts.ts';
+import { eventStatement } from '#lib/server/events.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -55,6 +57,33 @@ function readRole(form: FormData): { role: Role; nationIdentifier: string | null
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * A sign-in link for someone the lead author invited, for them to send the
+ * person themselves (site/COLLABORATION.md, "Inviting someone"). It works
+ * once, for 7 days, and only for the invited address. Making one is recorded.
+ */
+async function invitationLink(
+	database: Parameters<typeof issueCode>[0],
+	origin: string,
+	email: string,
+	targetIdentifier: string,
+	madeBy: string
+): Promise<string> {
+	const issued = await issueCode(database, email, 'invitation', madeBy);
+	await eventStatement(database, {
+		personIdentifier: madeBy,
+		action: 'Made a sign-in link for an invited person',
+		targetKind: 'person',
+		targetIdentifier,
+		note: `Works once, until ${issued.expiresAt.slice(0, 10)}`
+	}).run();
+	const link = new URL('/sign-in/link', origin);
+	link.searchParams.set('token', issued.linkToken);
+	return link.href;
+}
+
+const linkDays = codeLifetimeMinutes.invitation / (24 * 60);
+
 export const actions: Actions = {
 	invite: async (event) => {
 		const person = requirePermission(event, 'manage-people');
@@ -76,8 +105,29 @@ export const actions: Actions = {
 			});
 		}
 		await invitePerson(database, { email, displayName, ...role }, person);
+		const invited = await personByEmail(database, email);
 		return {
-			done: `${displayName} is invited. Ask them to sign in at /sign-in with ${email}; their access starts at their first sign-in.`
+			done: `${displayName} is invited. They can sign in at /sign-in with ${email}, or with the link below; their access starts at their first sign-in.`,
+			link: invited ? await invitationLink(database, event.url.origin, email, invited.identifier, person.identifier) : undefined
+		};
+	},
+
+	link: async (event) => {
+		const person = requirePermission(event, 'manage-people');
+		const { database } = storage(event);
+		const form = await event.request.formData();
+		const target = await personByIdentifier(database, formText(form, 'identifier') ?? '');
+		if (!target) return fail(404, { problem: 'That person is not on the list.' });
+		// Only for someone who has never signed in: a link for an existing
+		// account would let whoever holds it sign in as that person.
+		if (target.status !== 'invited') {
+			return fail(400, {
+				problem: `${target.displayName} has already signed in. They can sign in with a code sent to their email address.`
+			});
+		}
+		return {
+			done: `Here is a sign-in link for ${target.displayName}. Send it to them yourself; it works once, for ${linkDays} days.`,
+			link: await invitationLink(database, event.url.origin, target.email, target.identifier, person.identifier)
 		};
 	},
 

@@ -28,7 +28,7 @@ export interface PersonRow extends SignedInPerson {
 const personColumns = `people.identifier, people.display_name AS displayName, people.email,
 	people.role, people.nation_identifier AS nationIdentifier`;
 
-/** The claims from Auth0 that matching needs. */
+/** What matching needs to know about the account that signed in (src/lib/server/accounts.ts). */
 export interface SignInClaims {
 	subject: string;
 	email: string | undefined;
@@ -41,16 +41,18 @@ export type SignInResult =
 	| { outcome: 'not-on-list' | 'removed' | 'email-not-verified' | 'different-account' };
 
 /**
- * Matches a completed Auth0 sign-in to a person in the database.
+ * Matches a completed sign-in to a person in the database.
  *
- * 1. Someone who has signed in before is matched by their Auth0 identifier.
+ * 1. Someone who has signed in before is matched by their account identifier.
  * 2. Someone signing in for the first time is matched to an invitation by
- *    email, but only when Auth0 says the email address is verified, so
- *    nobody can claim an invitation by typing someone else's address.
+ *    email. Every account has proved it receives mail at its address (a
+ *    code, a link, or an invitation link), so nobody can claim an invitation
+ *    by typing someone else's address.
  * 3. The very first lead author is matched by the LEAD_AUTHOR_EMAIL secret,
  *    so the workspace can be set up without editing the database by hand.
  *
- * Everyone else is refused: there is no open sign-up.
+ * Everyone else stays signed in without workspace access, and can keep a
+ * contributor profile (docs/contributor-profiles.md).
  */
 export async function matchSignIn(
 	database: D1Database,
@@ -82,8 +84,9 @@ export async function matchSignIn(
 		.first<SignedInPerson & { status: PersonStatus; signInSubject: string | null }>();
 	if (invited) {
 		if (invited.status === 'removed') return { outcome: 'removed' };
-		// The address already belongs to another Auth0 account, for example one
-		// made with a password when the person first used Google.
+		// The invitation was already taken up by a different account. Accounts
+		// are unique by address, so this only happens if the database was
+		// changed by hand.
 		if (invited.signInSubject) return { outcome: 'different-account' };
 		await database.batch([
 			database
@@ -142,7 +145,7 @@ export async function matchSignIn(
 	return { outcome: 'not-on-list' };
 }
 
-/** The active person with this Auth0 identifier, if any. Checked on every request. */
+/** The active person with this account identifier, if any. Checked on every request. */
 export async function activePersonBySubject(
 	database: D1Database,
 	subject: string

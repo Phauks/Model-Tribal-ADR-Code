@@ -1,123 +1,23 @@
 /**
- * Sign-in with Auth0 (site/COLLABORATION.md, "How sign-in works").
+ * Finishing a sign-in and keeping the session cookie
+ * (site/COLLABORATION.md, "How sign-in works"; decision record 0024).
  *
- * Auth0 proves who someone is; the site's own database decides what they may
- * do. The session lives in an encrypted, HTTP-only cookie written by the
- * Auth0 server SDK, so the Worker keeps no session table. Every setting comes
- * from Worker secrets set in the Cloudflare dashboard, never from GitHub
- * (decision record 0006).
+ * The site signs people in itself: a code or link sent by email, a password,
+ * or a link the lead author made for someone they invited. Accounts and
+ * sessions are in the site's own database (src/lib/server/accounts.ts). No
+ * outside sign-in service is involved and no secret has to be set.
  */
-import {
-	CookieTransactionStore,
-	ServerClient,
-	StatelessStateStore,
-	type CookieHandler,
-	type CookieSerializeOptions
-} from '@auth0/auth0-server-js';
+import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import type { Cookies } from '@sveltejs/kit';
-
-/** What the SDK's stores need from the current request: SvelteKit's cookies. */
-export interface StoreOptions {
-	cookies: Cookies;
-}
-
-class SvelteKitCookieHandler implements CookieHandler<StoreOptions> {
-	setCookie(
-		name: string,
-		value: string,
-		options?: CookieSerializeOptions,
-		storeOptions?: StoreOptions
-	): void {
-		storeOptions?.cookies.set(name, value, { ...options, path: options?.path ?? '/' });
-	}
-
-	getCookie(name: string, storeOptions?: StoreOptions): string | undefined {
-		return storeOptions?.cookies.get(name);
-	}
-
-	getCookies(storeOptions?: StoreOptions): Record<string, string> {
-		const found: Record<string, string> = {};
-		for (const { name, value } of storeOptions?.cookies.getAll() ?? []) found[name] = value;
-		return found;
-	}
-
-	deleteCookie(name: string, storeOptions?: StoreOptions, options?: CookieSerializeOptions): void {
-		storeOptions?.cookies.delete(name, { ...options, path: options?.path ?? '/' });
-	}
-}
-
-export interface SignInSettings {
-	domain: string;
-	clientIdentifier: string;
-	clientSecret: string;
-	sessionSecret: string;
-}
-
-/** The secrets sign-in needs, or the names of the ones that are missing. */
-export function signInSettings(
-	environment: WorkerEnvironment
-): { settings: SignInSettings } | { missing: string[] } {
-	const values = {
-		AUTH0_DOMAIN: environment.AUTH0_DOMAIN?.trim(),
-		AUTH0_CLIENT_ID: environment.AUTH0_CLIENT_ID?.trim(),
-		AUTH0_CLIENT_SECRET: environment.AUTH0_CLIENT_SECRET?.trim(),
-		SESSION_SECRET: environment.SESSION_SECRET?.trim()
-	};
-	const missing = Object.entries(values)
-		.filter(([, value]) => !value)
-		.map(([name]) => name);
-	if (values.SESSION_SECRET && values.SESSION_SECRET.length < 32) missing.push('SESSION_SECRET (at least 32 characters)');
-	if (missing.length > 0) return { missing };
-	return {
-		settings: {
-			// Auth0 wants a bare host name, so a pasted "https://" or "/" is removed.
-			domain: values.AUTH0_DOMAIN!.replace(/^https?:\/\//, '').replace(/\/+$/, ''),
-			clientIdentifier: values.AUTH0_CLIENT_ID!,
-			clientSecret: values.AUTH0_CLIENT_SECRET!,
-			sessionSecret: values.SESSION_SECRET!
-		}
-	};
-}
-
-/** The address Auth0 sends people back to. It must be listed in the Auth0 application. */
-export const callbackPath = '/sign-in/callback';
-
-const sessionHours = 12;
-const inactivityHours = 4;
-
-// One client per site address and settings, kept while the Worker instance
-// lives, so Auth0's discovery document is fetched once rather than on every
-// request.
-const clients = new Map<string, ServerClient<StoreOptions>>();
-
-export function signInClient(settings: SignInSettings, origin: string): ServerClient<StoreOptions> {
-	const key = JSON.stringify([origin, settings.domain, settings.clientIdentifier]);
-	let client = clients.get(key);
-	if (!client) {
-		const cookieHandler = new SvelteKitCookieHandler();
-		client = new ServerClient<StoreOptions>({
-			domain: settings.domain,
-			clientId: settings.clientIdentifier,
-			clientSecret: settings.clientSecret,
-			authorizationParams: {
-				redirect_uri: new URL(callbackPath, origin).href,
-				scope: 'openid profile email'
-			},
-			transactionStore: new CookieTransactionStore({ secret: settings.sessionSecret }, cookieHandler),
-			stateStore: new StatelessStateStore(
-				{
-					secret: settings.sessionSecret,
-					rolling: true,
-					absoluteDuration: sessionHours * 60 * 60,
-					inactivityDuration: inactivityHours * 60 * 60
-				},
-				cookieHandler
-			)
-		});
-		clients.set(key, client);
-	}
-	return client;
-}
+import {
+	endAllSessions,
+	sessionCookie,
+	startSession,
+	type Account,
+	type SessionMethod
+} from './accounts.ts';
+import { matchSignIn } from './people.ts';
+import { markSignedIn } from './signed-in-hint.ts';
 
 /**
  * A path inside this site to return to after signing in, or the workspace.
@@ -136,4 +36,48 @@ export function safeReturnPath(candidate: string | null | undefined): string {
 	} catch {
 		return '/workspace';
 	}
+}
+
+/** Sets the session cookie: HTTP-only, so page scripts cannot read it; SameSite=Lax; Secure except on localhost. */
+export function setSessionCookie(cookies: Cookies, token: string, expiresAt: Date): void {
+	cookies.set(sessionCookie, token, { path: '/', httpOnly: true, sameSite: 'lax', expires: expiresAt });
+}
+
+export function clearSessionCookie(cookies: Cookies): void {
+	if (cookies.get(sessionCookie) !== undefined) cookies.delete(sessionCookie, { path: '/' });
+}
+
+export type FinishedSignIn =
+	| { outcome: 'signed-in'; destination: string }
+	| { outcome: 'refused'; reason: 'removed' };
+
+/**
+ * Starts a session for someone who has just proved who they are, and works
+ * out where they go next. Someone with workspace access goes where they were
+ * heading. Someone without it goes to their contributor profile, where they
+ * can register to help (docs/contributor-profiles.md). Someone whose access
+ * was removed is not signed in.
+ */
+export async function finishSignIn(
+	database: D1Database,
+	cookies: Cookies,
+	account: Account,
+	method: SessionMethod,
+	returnTo: string,
+	leadAuthorEmail: string | undefined
+): Promise<FinishedSignIn> {
+	const match = await matchSignIn(
+		database,
+		{ subject: account.identifier, email: account.email, emailVerified: true, name: undefined },
+		leadAuthorEmail
+	);
+	if (match.outcome === 'removed' || match.outcome === 'different-account') {
+		await endAllSessions(database, account.identifier);
+		return { outcome: 'refused', reason: 'removed' };
+	}
+	const { token, expiresAt } = await startSession(database, account.identifier, method);
+	setSessionCookie(cookies, token, expiresAt);
+	markSignedIn(cookies);
+	if (match.outcome === 'signed-in') return { outcome: 'signed-in', destination: returnTo };
+	return { outcome: 'signed-in', destination: returnTo.startsWith('/profile') ? returnTo : '/profile' };
 }

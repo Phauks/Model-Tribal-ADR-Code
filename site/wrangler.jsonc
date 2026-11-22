@@ -60,10 +60,35 @@
 			"name": "workspaceChangeLimit",
 			"namespace_id": "1002",
 			"simple": { "limit": 30, "period": 60 }
+		},
+		// Limits sign-in tries for each email address: five a minute for each
+		// step (asking for a code, typing a code, typing a password), so codes
+		// and passwords cannot be guessed by trying many quickly
+		// (COLLABORATION.md, "How sign-in works").
+		{
+			"name": "signInLimit",
+			"namespace_id": "1003",
+			"simple": { "limit": 5, "period": 60 }
+		},
+		// And for each network address, more loosely, because a whole office
+		// or tribal government building can share one address.
+		{
+			"name": "signInNetworkLimit",
+			"namespace_id": "1004",
+			"simple": { "limit": 30, "period": 60 }
 		}
-	]
-	// Secrets, set in the Cloudflare dashboard (Worker > Settings > Variables
-	// and Secrets), never in this file or in GitHub: AUTH0_DOMAIN,
-	// AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET, SESSION_SECRET and
-	// LEAD_AUTHOR_EMAIL. See COLLABORATION.md, "Setting up sign-in".
+	],
+	// Cloudflare Email Service, for sign-in codes. It sends only from a domain
+	// onboarded in Email Service on this Cloudflare account; the address is
+	// SIGN_IN_EMAIL_FROM below. While that is empty, the site sends no email
+	// and people sign in with a password or a link from the lead author
+	// (COLLABORATION.md, "Setting up sign-in").
+	"send_email": [{ "name": "signInEmail" }],
+	"vars": {
+		"SIGN_IN_EMAIL_FROM": ""
+	}
+	// One setting is made in the Cloudflare dashboard (Worker > Settings >
+	// Variables and Secrets) rather than here, because this file is public:
+	// LEAD_AUTHOR_EMAIL, the first lead author's address. No secret keys are
+	// needed. See COLLABORATION.md, "Setting up sign-in".
 }

@@ -358,6 +358,7 @@ fieldset > legend:not(:has(h2, h3)) {
 
 input[type='text'],
 input[type='email'],
+input[type='password'],
 input[type='search'],
 textarea {
 	display: block;

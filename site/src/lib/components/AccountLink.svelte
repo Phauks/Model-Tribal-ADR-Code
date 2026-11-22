@@ -3,8 +3,7 @@
 	// show "Sign in" until the browser reads the signed-in hint
 	// (src/lib/signed-in-hint.ts) and then show "Workspace". Without scripts the
 	// link stays "Sign in", which still works: a signed-in person who follows it
-	// goes on to the workspace. Until Auth0 is set up, /sign-in says that
-	// sign-in is not available yet (site/COLLABORATION.md). Nobody needs to
+	// is told so there, with links to the workspace and their profile. Nobody needs to
 	// sign in to read the site or to make a request.
 	import { onMount } from 'svelte';
 	import LogIn from '@lucide/svelte/icons/log-in';
