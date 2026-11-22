@@ -21,7 +21,6 @@ purpose: >-
 queries:
 - court of appeals, supreme court, appellate jurisdiction, appeals from the district court (per nation)
 sources_added:
-- navajo-nation-courts-public-guide
 - chickasaw-nation-code-title-5-2026
 - muscogee-creek-nation-code-title-26
 - colville-tribal-court-page
