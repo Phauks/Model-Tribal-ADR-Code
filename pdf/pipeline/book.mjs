@@ -3,6 +3,7 @@
 // Part III essays, and the glossary.
 
 import path from "node:path";
+import { caseNameFrom, casesByTopicMarkdown, taggedCases } from "./case-topics.mjs";
 import { CitationEngine, citationItems } from "./citations.mjs";
 import { essaysForPart, provisionChapters } from "./content.mjs";
 import { createMarkdown, parseMarkdown } from "./markdown.mjs";
@@ -98,10 +99,18 @@ export function assembleBook({ book, content: records }) {
     chapters.push({ number: null, title: "Glossary", glossary: pieces });
   }
 
-  // Back matter prints after the glossary, in file-name order.
+  // Back matter prints after the glossary, in file-name order. A page that
+  // says "generated: cases-by-topic" is followed by the index built from
+  // the Topics parts of the essays' case boxes (case-topics.mjs).
+  const recordsByKey = new Map(records.sources.map((source) => [source.key, source]));
   for (const page of [...(records.backMatter || [])].sort((first, second) => first.file.localeCompare(second.file))) {
     if (!page.data.title) throw new Error(`${relative(page.file)}: back matter pages need a title`);
-    chapters.push({ number: null, title: page.data.title, pieces: [parse(KINDS.essay, page.file, page.body, page.data)] });
+    let body = page.body;
+    if (page.data.generated === "cases-by-topic") {
+      const tagged = records.essays.flatMap((essay) => taggedCases(essay.body));
+      body = `${body.trimEnd()}\n\n${casesByTopicMarkdown(tagged, (key) => caseNameFrom(recordsByKey.get(key)))}\n`;
+    }
+    chapters.push({ number: null, title: page.data.title, pieces: [parse(KINDS.essay, page.file, body, page.data)] });
   }
 
   // Write every chapter: number its notes first, then write the markup.

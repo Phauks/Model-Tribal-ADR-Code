@@ -64,6 +64,7 @@ export function createMarkdown({ sourceKeys, glossaryIds }) {
     .use(container, "summary", { validate: (info) => info.trim() === "summary" })
     .use(container, "quotes", { validate: (info) => info.trim() === "quotes" })
     .use(container, "treatment", { validate: (info) => info.trim() === "treatment" })
+    .use(container, "topics", { validate: (info) => info.trim() === "topics" })
     .use(container, "quote", { validate: (info) => info.trim() === "quote" })
     .use(container, "analysis", { validate: (info) => /^analysis(?:\s+.+)?$/.test(info.trim()) });
   markdown.disable("replacements");
