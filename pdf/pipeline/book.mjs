@@ -11,6 +11,12 @@ import { escapeTypst, typstString } from "./typst-text.mjs";
 
 const USAGE_LABELS = { preferred: "Preferred", acceptable: "Acceptable", "context-only": "Context only", avoid: "Avoid" };
 
+const FRONT_MATTER_ORDER = ["acknowledgments"];
+const frontMatterRank = (page) => {
+  const rank = FRONT_MATTER_ORDER.indexOf(page.data.id);
+  return rank === -1 ? FRONT_MATTER_ORDER.length : rank;
+};
+
 const content = (text) => `[${escapeTypst(text)}]`;
 
 export function assembleBook({ book, content: records }) {
@@ -31,6 +37,16 @@ export function assembleBook({ book, content: records }) {
       if (!essay.data.title) throw new Error(`${relative(essay.file)}: essays need a title in their front matter`);
       return { number: null, title: essay.data.title, pieces: [parse(KINDS.essay, essay.file, essay.body, essay.data)] };
     });
+
+  // Front matter pages print after the contents, before Part I, in the
+  // order FRONT_MATTER_ORDER gives (others follow by file name).
+  const frontMatter = [...(records.frontMatter || [])].sort(
+    (first, second) => frontMatterRank(first) - frontMatterRank(second) || first.file.localeCompare(second.file),
+  );
+  for (const page of frontMatter) {
+    if (!page.data.title) throw new Error(`${relative(page.file)}: front matter pages need a title`);
+    chapters.push({ number: null, title: page.data.title, pieces: [parse(KINDS.essay, page.file, page.body, page.data)] });
+  }
 
   const partOne = essayChapters(essaysForPart(records.essays, "i"));
   if (partOne.length) addPart(book.parts.essays);

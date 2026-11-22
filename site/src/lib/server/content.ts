@@ -48,6 +48,24 @@ export function readChangelog(track: 'content' | 'site' | 'pdf'): string {
 	return readText(`${track}/CHANGELOG.md`);
 }
 
+/* Front matter ------------------------------------------------------------ */
+
+/** A front matter page in content/front-matter/, such as the acknowledgments, which the book prints too. */
+export interface FrontMatterPage {
+	id: string;
+	title: string;
+	sources: string[];
+	body: string;
+}
+
+export function readFrontMatterPage(id: string): FrontMatterPage {
+	const text = readText(`content/front-matter/${id}.md`);
+	const match = /^---\n([\s\S]*?)\n---\n/.exec(text);
+	if (!match) throw new Error(`content/front-matter/${id}.md has no front matter`);
+	const data = parse(match[1]) as { title?: string; sources?: string[] };
+	return { id, title: data.title ?? id, sources: data.sources ?? [], body: text.slice(match[0].length) };
+}
+
 /* Sources ----------------------------------------------------------------- */
 
 export interface CitationName {
