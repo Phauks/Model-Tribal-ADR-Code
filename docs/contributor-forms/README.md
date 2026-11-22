@@ -2,9 +2,8 @@
 
 **Status:** drafts, version 0.1.0, for review by the lead author and the
 project's advisors. Not legal advice. Do not use any form with a contributor
-until it is approved and the ethics review question in
-[contributions.md](../contributions.md#ethics-review-must-be-settled-first)
-is answered.
+until it is approved, and check the nation's own research rules before any
+interview ([contributions.md](../contributions.md#ethics-review)).
 
 These are the project's own forms for material that reaches it from a person
 rather than from a published source. How they fit together, and the filing

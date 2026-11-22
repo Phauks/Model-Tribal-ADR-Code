@@ -32,9 +32,10 @@ needs a shared way to point at it.
   permission to the project; an open license is the contributor's choice.
 - Community-held knowledge needs a cultural authority permission from the
   office the nation designates, whatever the contributor agreed.
-- No form is used with a contributor until the lead author approves it and a
-  determination on ethics review (university and, where one exists, the
-  nation's) is recorded.
+- No form is used with a contributor until the lead author approves it.
+  The lead author reads UNLV's human subjects rules as aimed at biomedical
+  and scientific study and does not plan to seek university IRB review; any
+  nation's own research rules are checked and followed before an interview.
 
 ## Consequences
 

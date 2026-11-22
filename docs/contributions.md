@@ -3,9 +3,8 @@
 **Status:** draft for review by the lead author and the project's advisors.
 Nothing here is legal advice. The forms it names are drafts in
 [contributor-forms/](contributor-forms/README.md); none may be used with a
-contributor until the lead author approves it and the
-[ethics review question](#ethics-review-must-be-settled-first) below is
-answered.
+contributor until the lead author approves it. Before any interview, check
+the nation's own research rules ([ethics review](#ethics-review)).
 
 Most of the project's evidence is published: codes, court rules, cases,
 articles, web pages. Each of those has a source record that cites it. Some
@@ -268,36 +267,36 @@ the project can do.
   folder, never in git or a public issue, and log each step in the filing
   file itself.
 
-## Ethics review must be settled first
+## Ethics review
 
-The lead author's earlier expectation was that no institutional review board
-(IRB) review would be needed. Before any interview, that should be confirmed,
-not assumed, for two reasons (project analysis):
+**The lead author's position (2026-11-21).** The lead author reads UNLV's
+human subjects rules as directed at biomedical and scientific study, not
+cultural or legal scholarship, and does not plan to seek institutional review
+board (IRB) review for this project. Federal rules likewise deem "scholarly
+and journalistic activities (e.g., oral history, journalism, biography,
+literary criticism, legal research, and historical scholarship), that focus
+directly on the specific individuals about whom the information is collected"
+not to be research.[^cfr-46]
 
-1. **The university.** Federal rules exclude from "research" "scholarly and
-   journalistic activities (e.g., oral history, journalism, biography,
-   literary criticism, legal research, and historical scholarship), that focus
-   directly on the specific individuals about whom the information is
-   collected."[^cfr-46] Whether interviews about a nation's dispute resolution
-   *practices*, rather than about the individuals, fit that exclusion is a
-   judgment call. UNLV's rules say "researchers must contact the ORI-HS for
-   assistance prior to conducting any project activities" and that "the ORI-HS
-   has the authority to determine the need for IRB review";[^unlv-rules] its
-   procedure makes it "the responsibility of each PI to seek IRB/ORI-HS review
-   and approval/acknowledgment."[^unlv-sop] Whether these rules reach a
-   student's personal project that is not for credit is itself a question for
-   that office. **Action for the lead author:** ask UNLV's Office of Research
-   Integrity, Human Subjects, for a written determination, and record it in a
-   research session.
-2. **The nations.** Some nations regulate research themselves, whatever a
-   university decides. NCAI advises that "tribal nations can establish their
-   own IRBs, but they all have the right to tribal approval of research," and
-   that "many Tribal Nations do not have an exempt category."[^ncai-faq] The
-   Navajo Nation, for example, has a Human Research Review Board under the
-   Navajo Nation Human Research Code, 13 N.N.C. §§ 3251–3271.[^nnhrrb]
-   **Rule:** before interviewing within a nation, or about a nation's
-   practices, check whether the nation has a research code or review board,
-   and follow it. Record the check in the filing log.
+**For the record (project analysis).** UNLV's rules state that research
+"includes, but is not limited to, surveys and interviews," that "researchers
+must contact the ORI-HS for assistance prior to conducting any project
+activities," and that the office "has the authority to determine the need for
+IRB review";[^unlv-rules] its procedure makes it "the responsibility of each
+PI to seek IRB/ORI-HS review and approval/acknowledgment."[^unlv-sop] If an
+advisor, a nation or a publisher asks whether the project was reviewed, a
+short written determination from that office would answer it. That step is
+optional and is the lead author's call.
+
+**The nations' own rules still apply.** Some nations regulate research
+themselves, whatever a university decides. NCAI advises that "tribal nations
+can establish their own IRBs, but they all have the right to tribal approval
+of research," and that "many Tribal Nations do not have an exempt
+category."[^ncai-faq] The Navajo Nation, for example, has a Human Research
+Review Board under the Navajo Nation Human Research Code, 13 N.N.C.
+§§ 3251–3271.[^nnhrrb] **Rule:** before interviewing within a nation, or
+about a nation's practices, check whether the nation has a research code or
+review board, and follow it. Record the check in the filing log.
 
 ## Forms not drafted here
 
