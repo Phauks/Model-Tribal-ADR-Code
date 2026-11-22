@@ -24,6 +24,22 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2016-2017)
+  decision_type: majority opinion
+  vote: {majority: 8, minority: 0}
+  justices:
+  - {name: "Ruth Bader Ginsburg", vote: majority, opinion: majority}
+  - {name: "John G. Roberts, Jr.", vote: majority}
+  - {name: "Anthony M. Kennedy", vote: majority}
+  - {name: "Clarence Thomas", vote: majority, opinion: concurrence}
+  - {name: "Stephen G. Breyer", vote: majority}
+  - {name: "Samuel A. Alito, Jr.", vote: majority}
+  - {name: "Sonia Sotomayor", vote: majority}
+  - {name: "Elena Kagan", vote: majority}
+  source: https://api.oyez.org/cases/2015/15-420
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work

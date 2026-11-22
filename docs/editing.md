@@ -25,8 +25,9 @@ Writers have asked for underline, italics, bold, images, tables and "other rich 
 | Headings, lists, quotations | standard Markdown | yes | yes | yes |
 | Tables | pipe tables | yes; on paper no row is split across pages | yes; rows never split across pages | yes |
 | Citations, glossary links | the project's syntax (docs/citation-style.md, docs/terminology.md) | yes, as numbered markers with the Sources list | yes | yes |
-| Case box | `:::: case <source key>` with `::: quotes` and `::: treatment` inside, closed by `::::` | yes | being added by the Foundations work | to be added |
-| Quotation box | `::: quote`, with a last paragraph starting "— " as the attribution | yes | being added | to be added |
+| Case box | `:::: case <source key>` with `::: background`, `::: question`, `::: holding`, `::: quotes` and `::: treatment` inside, in that order, closed by `::::` | yes | yes (Foundations work) | to be added |
+| Law box | `:::: law <source key>` with `::: summary` (shown as "What it does"), `::: quotes` and `::: treatment` inside, closed by `::::` | yes | yes (Foundations work) | to be added |
+| Quotation box | `::: quote`, with a last paragraph that is only the citation, such as `[@key, p. 17]` or `[@key, p. 17] (Gorsuch, J., dissenting)`, as the attribution | yes | being added | to be added |
 | Analysis box | `::: analysis [title]` | yes | being added | to be added |
 | Figures | `::: figure <media id>` with the caption inside | to be added | to be added | to be added |
 
@@ -34,16 +35,26 @@ Not offered: font choices, colors, text size, alignment other than table columns
 
 ### The essay boxes
 
-The lead author asked on Nov. 22, 2026 for court cases to get "a specialized block," with "Quotes" and "Treatment" parts; for quotations to "get their own block"; and for the project's own analysis to sit "in special box, same as how we are separating cases out." The syntax was agreed with the Foundations chapters so the website and the print book read the same files:
+The lead author asked on Nov. 22, 2026 for court cases to get "a specialized block," with "Quotes" and "Treatment" parts; for quotations to "get their own block"; and for the project's own analysis to sit "in special box, same as how we are separating cases out." Later that day the lead author added that "cases treat question and holding different from quotes and treatment," that "Acts and Laws should also have their own boxes," and that quotations "should be in italics" and "should use "..." when there is stuff before or after." The syntax was agreed with the Foundations chapters so the website and the print book read the same files:
 
 ```markdown
 :::: case worcester-v-georgia
-What the Court held.
+::: background
+The law and events behind the case.
+:::
+
+::: question
+Whether Georgia's laws had any force in the Cherokee Nation.
+:::
+
+::: holding
+They did not: the Cherokee Nation is a distinct community in which the laws of Georgia "can have no force."
+:::
 
 ::: quotes
 > The Cherokee nation, then, is a distinct community.
 
-— [@worcester-v-georgia, at 561]
+[@worcester-v-georgia, at 561]
 :::
 
 ::: treatment
@@ -51,10 +62,26 @@ How later courts treated it, including negative treatment.
 :::
 ::::
 
+:::: law usc-25-1301
+::: summary
+What the law does.
+:::
+
+::: quotes
+> No Indian tribe in exercising powers of self-government shall ...
+
+[@usc-25-1301, § 1302]
+:::
+
+::: treatment
+Amendments and how courts have read it.
+:::
+::::
+
 ::: quote
 Peacemaking is not alternative dispute resolution.
 
-— [@narf-ipi-home]
+[@narf-ipi-home]
 :::
 
 ::: analysis Why the holding matters here
@@ -62,7 +89,7 @@ The essay's own reading, set apart from what the sources say.
 :::
 ```
 
-A case box is headed by the full citation of its source record, so the writer types only the key. A box that holds another box opens with more colons than the box inside it, because markdown-it-container ends a block at the first bare fence at least as long as its opening; the editor counts the colons itself. On the website a case box is outlined, a quotation has a bar at its left, and analysis is filled, and each box is labeled, so color is never the only cue ([site/DESIGN.md](../site/DESIGN.md)). Body paragraphs have a first-line indent except after a heading or a box (lead author, Nov. 22, 2026: "Use proper tabbing please").
+A case or law box is headed by the full citation of its source record, so the writer types only the key, and carries an anchor (`#case-<key>`, `#law-<key>`) that other pages, such as the cases by topic list, link to. Quoted words are set in italics on the website and in print. A quotation that starts with a lowercase letter (or a bracketed change such as "[w]e") needs a leading "... ", and one that does not end in ".", "?" or "!" needs a trailing " ..."; the editor's preview and the version page list quotations that break this rule, and publishing still goes ahead, because the writer may be quoting a whole fragment on purpose. A box that holds another box opens with more colons than the box inside it, because markdown-it-container ends a block at the first bare fence at least as long as its opening; the editor counts the colons itself. On the website a case box is outlined, a quotation has a bar at its left, and analysis is filled, and each box is labeled, so color is never the only cue ([site/DESIGN.md](../site/DESIGN.md)). Body paragraphs have a first-line indent except after a heading or a box (lead author, Nov. 22, 2026: "Use proper tabbing please").
 
 **Underline** is a plain underline in the text color, in every edition; links keep the site's link color and underline (lead author's decision, Nov. 22, 2026). The Indigo Book's italics remain the form for case names and titles (docs/citation-style.md).
 

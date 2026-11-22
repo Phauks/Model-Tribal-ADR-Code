@@ -114,6 +114,42 @@
         "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
       }
     },
+    "supreme_court": {
+      "type": "object",
+      "description": "Who decided a Supreme Court case: the Court (named for the Chief Justice), the bench, the vote and each justice's part. From Oyez's public case data (scripts/law/supreme_court_benches.py), or from the official report where Oyez has none.",
+      "additionalProperties": false,
+      "required": ["court", "natural_court", "vote", "justices", "source", "checked"],
+      "properties": {
+        "court": { "type": "string", "description": "The Court named for its Chief Justice, such as \"Warren Court\"." },
+        "natural_court": { "type": "string", "description": "The bench that heard the case, as Oyez names it, such as \"Warren Court (1958-1962)\"." },
+        "decision_type": { "type": "string" },
+        "vote": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["majority", "minority"],
+          "properties": {
+            "majority": { "type": ["integer", "null"], "minimum": 0 },
+            "minority": { "type": ["integer", "null"], "minimum": 0 }
+          }
+        },
+        "justices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "vote"],
+            "properties": {
+              "name": { "type": "string" },
+              "vote": { "type": "string" },
+              "opinion": { "type": "string", "description": "The opinion the justice wrote: majority, concurrence, dissent and the like." }
+            }
+          }
+        },
+        "source": { "type": "string", "format": "uri", "description": "The Oyez case, or the official report when Oyez has no vote data." },
+        "note": { "type": "string", "description": "What the source does not settle, such as votes the report does not state." },
+        "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
+      }
+    },
     "rights": { "$ref": "permission.schema.json" },
     "contribution": {
       "type": "object",

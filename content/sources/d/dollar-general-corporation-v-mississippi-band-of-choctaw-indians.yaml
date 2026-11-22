@@ -24,6 +24,23 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2016-2017)
+  decision_type: equally divided Court
+  vote: {majority: 4, minority: 4}
+  justices:
+  - {name: "John G. Roberts, Jr.", vote: not recorded}
+  - {name: "Anthony M. Kennedy", vote: not recorded}
+  - {name: "Clarence Thomas", vote: not recorded}
+  - {name: "Ruth Bader Ginsburg", vote: not recorded}
+  - {name: "Stephen G. Breyer", vote: not recorded}
+  - {name: "Samuel A. Alito, Jr.", vote: not recorded}
+  - {name: "Sonia Sotomayor", vote: not recorded}
+  - {name: "Elena Kagan", vote: not recorded}
+  source: https://www.supremecourt.gov/opinions/boundvolumes/579BV.pdf
+  note: "Affirmed by an equally divided Court. Individual votes are not disclosed; 4-4 follows from the eight justices then sitting (579 U.S. front matter)."
+  checked: '2026-11-22'
 rights:
   status: no-permission-needed
   basis: us-government-work
