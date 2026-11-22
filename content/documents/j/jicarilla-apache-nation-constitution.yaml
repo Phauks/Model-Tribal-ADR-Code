@@ -1,0 +1,158 @@
+id: jicarilla-apache-nation-constitution
+kind: constitution
+title: Constitution of the Jicarilla Apache Nation, New Mexico
+nations:
+- jicarilla-apache-nation
+jurisdictions:
+- level: tribal
+  tribe: jicarilla-apache-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1969-02-13
+  to 2000-01-22. Versions are only those found; others may exist.'
+versions:
+- id: 1969-text
+  label: Revised Constitution of the Jicarilla Apache Tribe (1969)
+  event: original
+  status: superseded
+  dates:
+    approved: '1969-02-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/jicarilla-apache-nation/6782c6369f7da4aa.pdf
+    sha256: 6782c6369f7da4aada4f8caa7ca7bb90d5a5df766c7f22d2443892dea1077d26
+    pages: 29
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VII (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: 'Article XXIII (THE JUDICIARY: JUDICIAL POWERS)'
+    summary: 'Article headed "THE JUDICIARY: JUDICIAL POWERS"; found by its heading and not yet read.'
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XXIV (COMPOSITION OF THE TRIBAL COURTS)
+    summary: Article headed "COMPOSITION OF THE TRIBAL COURTS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1990-amendment
+  label: Jicarilia Apache Constitution m follows i as amended through Article XIII (judicial powers) amendment,
+    Secretarial election authorized May 24, 1990
+  event: amendment
+  status: unknown
+  dates:
+    listed: '1990'
+  amends:
+  - 1969-text
+  source: constitution-jicarilla-apache-nation-1990-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/_unmatched/db75f5f8d54ce365.pdf
+    sha256: db75f5f8d54ce3659178eddafdefb3ab5ef87aa7fdf25c133c7631efe341447b
+    pages: 6
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: judicial-power
+    compared_with: 1969-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: election-disputes
+    compared_with: 1969-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1969-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 2000-text
+  label: REVISED CONSTITUTION OF THE JICARILLA APACHE TRIBE as amended through Articles VII and XIV amended,
+    2000-01-22
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2000-01-22'
+  supersedes:
+  - 1969-text
+  source: constitution-jicarilla-apache-nation-2000-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/jicarilla-apache-nation/dc7d11c60e46685f.pdf
+    sha256: dc7d11c60e46685fc695efa4efb2b522076a0d0b131a41380bdfadcb75ef3a73
+    pages: 18
+  note: The text also prints adopted 1968-12-23, approved 1969-02-13, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article III (MEMBERSHIP)
+    summary: Makes the tribal court decide paternity questions for enrollment, with appeal to the Tribe's
+      appellate court, whose decision is final.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VII (NOMINATIONS AND ELECTIONS)
+    summary: Gives the five-member election board sole duty to count votes, settle voting challenges,
+      and resolve election protests and disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XV (PRESIDENT AND VICE PRESIDENT VACANCIES AND SUCCESSION)
+    summary: Article headed "PRESIDENT AND VICE PRESIDENT VACANCIES AND SUCCESSION"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: 'Article XXIII (THE JUDICIARY: JUDICIAL POWERS)'
+    summary: Vests the Jicarilla judicial power in tribal trial and appellate courts, with criminal jurisdiction
+      over Indians and civil jurisdiction.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XXIV (COMPOSITION OF THE TRIBAL COURTS)
+    summary: Sets the trial court's composition, with judges appointed by the President with three-fourths
+      Council concurrence, and leaves court duties to ordinance.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1969-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.20, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1969-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.25, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1969-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.52, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

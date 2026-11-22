@@ -1,0 +1,89 @@
+id: forest-county-potawatomi-community-constitution
+kind: constitution
+title: Constitution of the Forest County Potawatomi Community, Wisconsin
+nations:
+- forest-county-potawatomi-community
+jurisdictions:
+- level: tribal
+  tribe: forest-county-potawatomi-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-10-08
+  to 1982-06-05. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: Constitution and By-Laws of the Forest County Potawatomi Community Wisconsin (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-10-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-forestconst
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/forest-county-potawatomi-community/d8977ac5bd26b896.html
+    sha256: d8977ac5bd26b896fd02c529bc8c0e874d3554a6bfcc028fe8b87718abfabfe0
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1975-text
+  label: CONSTITUTION AND BY-LAWS OF THE FOREST COUNTY POTAWATOMI COMMUNITY, WISCONSIN as amended through
+    Amendment II, 1975
+  event: edition
+  status: superseded
+  dates:
+    listed: '1975'
+  supersedes:
+  - 1936-text
+  source: constitution-forest-county-potawatomi-community-1975-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/forest-county-potawatomi-community/efab64b6f379a3a0.pdf
+    sha256: efab64b6f379a3a09a11a0c3d284e24d48715a13a6d901ca84fbb47052db3012
+    pages: 14
+  note: The text also prints approved 1937-02-06, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+- id: 1982-text
+  label: Constitution of the Forest County Potawatomi Community (1982)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1982-06-05'
+    approved: '1982-07-14'
+    effective: '1982-07-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1975-text
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/forest-county-potawatomi-community/c1119ceacad6927d.pdf
+    sha256: c1119ceacad6927d75fa0d9b59d86f6f73532051e53ecbb2815016c1344ecead
+    pages: 10
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES, REMOVAL AND RECALL FROM OFFICE)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL FROM OFFICE"; found by its heading and not
+      yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1975-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

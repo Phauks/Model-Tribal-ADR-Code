@@ -1,0 +1,193 @@
+id: round-valley-indian-tribes-round-valley-reservation-constitution
+kind: constitution
+title: Constitution of the Round Valley Indian Tribes, Round Valley Reservation, California
+nations:
+- round-valley-indian-tribes-round-valley-reservation
+jurisdictions:
+- level: tribal
+  tribe: round-valley-indian-tribes-round-valley-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1975-05-08
+  to 2006-03-04. Versions are only those found; others may exist.'
+versions:
+- id: 1975-text
+  label: CONSTITUTION AND BY-LAWS OF THE COVELO INDIAN COMMUNITY, ROUND VALLEY RESERVATION, CALIFORNIA
+    as amended through Amendment IX, 1975-05-08
+  event: edition
+  status: superseded
+  dates:
+    listed: '1975-05-08'
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/round-valley-indian-tribes-round-valley-reservation/d39d6c8c5305c5cc.pdf
+    sha256: d39d6c8c5305c5cc1e880e2b603edf35dbddc31246ed4ae289a1a9dc0edbf079
+    pages: 35
+  note: The text also prints adopted 1958-11-22, approved 1959-02-24, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked superseded because a later dated text was found (project inference). Type and dates read from
+    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL FROM OFFICE)
+    summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VI (CONDUCT OF ELECTIONS AND NOMINATIONS)
+    summary: Article headed "CONDUCT OF ELECTIONS AND NOMINATIONS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1994-text
+  label: CONSTITUTION OF THE ROUND VALLEY INDIAN TRIBES (1994)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1994-08-03'
+  supersedes:
+  - 1975-text
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/round-valley-indian-tribes-round-valley-reservation/a9f1e597ab8fefd4.pdf
+    sha256: a9f1e597ab8fefd4baa90d40d50e28dd68d143cf4a57b5ab9b76cde0d9d6cab8
+    pages: 21
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VI (THE JUDICIARY)
+    summary: Article headed "THE JUDICIARY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1975-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1975-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.04, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1975-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: sovereign-immunity
+    compared_with: 1975-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 1994-text-2
+  label: CONSTITUTION OF THE ROUND VALLEY INDIAN TRIBES (1994)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1994-09-14'
+    effective: '1994-09-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1994-text
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/round-valley-indian-tribes-round-valley-reservation/97188fa8cbf6bbc2.pdf
+    sha256: 97188fa8cbf6bbc2444644e6b0b2e12b93afea005cf1498ffed38b9b10e16ddb
+    pages: 23
+  note: The text also prints adopted 1994-08-03, which belong to the earlier text it compiles. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: 'Article VIII (Elections, Section 6 - Voting Age, of the current Constitution, reads: “All
+      trib)'
+    summary: 'Article headed "Elections, Section 6 - Voting Age, of the current Constitution, reads: “All
+      tribal"; found by its heading and not yet read.'
+    verification: title-only
+  - topic: judicial-power
+    locator: Article VI (THE JUDICIARY)
+    summary: Article headed "THE JUDICIARY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIII (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.53, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.52, by script); not yet read side by side.
+  - topic: sovereign-immunity
+    compared_with: 1994-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.63, by script); not yet read side by side.
+- id: 2006-amendment
+  label: Amendment No. 1 of the Constitution of the Round Valley Indian Tribes, Round Valley Indian Reservation,
+    California as amended through Amendment No. 1, 2006-03-04
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '2006-03-04'
+    approved: '2006-03-16'
+    effective: '2006-03-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1994-text-2
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-2006-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/round-valley-indian-tribes-round-valley-reservation/f7fa7cb69dffefa1.pdf
+    sha256: f7fa7cb69dffefa16c2a93e3b78d147df629f0b5930bcdd4f706eb1acb2cc611
+    pages: 4
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VIII (Elections, Section 6 - Voting Age, of the current Constitution, reads! “All
+      trib)
+    summary: Article headed "Elections, Section 6 - Voting Age, of the current Constitution, reads! “All
+      tribal"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1994-text-2
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: election-disputes
+    compared_with: 1994-text-2
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: sovereign-immunity
+    compared_with: 1994-text-2
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

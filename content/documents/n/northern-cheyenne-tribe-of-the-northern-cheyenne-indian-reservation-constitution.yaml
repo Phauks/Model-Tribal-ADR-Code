@@ -1,0 +1,150 @@
+id: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana
+nations:
+- northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 dated versions, from 1935-10-11
+  to 1996-05-31. Versions are only those found; others may exist.'
+versions:
+- id: 1935-text
+  label: CONSTITUTION AND BYLAWS OF THE (1935)
+  event: original
+  status: superseded
+  dates:
+    approved: '1935-10-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-ncheycons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation/5a71d56770533317.html
+    sha256: 5a71d567705333171db443d246752b6be095b15e26f11de862debbdeb5f475e1
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL FROM OFFICE)
+    summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1996-text
+  label: Amended Constitution and Bylaws of the Northern Cheyenne Tribe of the Northern Cheyenne Indian
+    Reservation as amended through Amendment C (Code of Ethics), 1996-05-10
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1996-05-10'
+    approved: '1996-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1935-text
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/eastern-shoshone-tribe-of-the-wind-river-reservation/a9b8e571db5c303b.html
+    sha256: a9b8e571db5c303b5d575b1212009096848fe43819f19a5c87032851ae10f9d7
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL FROM OFFICE, FILLING)
+    summary: Article headed "REMOVAL FROM OFFICE, FILLING"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1935-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
+- id: 1996-text-2
+  label: AMENDED CONSTITUTION AND BYLAWS OF THE NORTHERN CHEYENNE TRIBE OF THE NORTHERN CHEYENNE INDIAN
+    RESERVATION as amended through Amendment C, 1996-05-10
+  event: edition
+  status: superseded
+  dates:
+    listed: '1996-05-31'
+  supersedes:
+  - 1996-text
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/eastern-shoshone-tribe-of-the-wind-river-reservation/ef30692b335a3352.pdf
+    sha256: ef30692b335a335222c2c3b89783aa1a55cc9014591be2997a63b98c920976ec
+    pages: 17
+  note: The text also prints approved 1996-05-31, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1996-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1996-text-3
+  label: Amended Constitution and Bylaws of the Northern Cheyenne Tribe of the Northern Cheyenne Indian
+    Reservation as amended through Amendments A, B and C, ratified 1996-05-10 (approved 1996-05-31)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1996-05-31'
+  supersedes:
+  - 1996-text-2
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation/10f8595528e2be17.pdf
+    sha256: 10f8595528e2be17273666b4335c3567ba34d798f04333ac78b13bb249d2f37a
+    pages: 17
+  note: The text also prints adopted 1996-05-10, approved 1996-05-31, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked superseded because a later dated text was found (project inference). Type and dates read from
+    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1996-text-4
+  label: Amended Constitution and Bylaws of the Northern Cheyenne Tribe of the Northern Cheyenne Indian
+    Reservation as amended through Amendments A, B and C, ratified 1996-05-10 (approved 1996-05-31)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1996-05-31'
+  supersedes:
+  - 1996-text-3
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text-4
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation/8ba6cad7675ce864.pdf
+    sha256: 8ba6cad7675ce8643c8cd74ad4cc622aec87db5f9e0ece22669be0b1187e002f
+    pages: 17
+  note: The text also prints adopted 1996-05-10, approved 1996-05-31, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL FROM OFFICE, FILLING VACANCIES)
+    summary: Article headed "REMOVAL FROM OFFICE, FILLING VACANCIES"; found by its heading and not yet
+      read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1996-text-3
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

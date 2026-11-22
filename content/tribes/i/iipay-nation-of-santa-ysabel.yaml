@@ -186,22 +186,27 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: CA
     status: approved
-    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
-      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
-      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
-      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
-      or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
-      Community compact, which follows the form California has used in its recent compacts; many California
-      nations still operate under 1999-era compacts with a different dispute section. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2003-12-22).
+    dispute_resolution_summary: The parties give written notice and meet and confer not later than ten
+      days after receipt of the notice; if the dispute is not resolved within thirty calendar days after
+      the first meeting, either party may seek arbitration before one neutral arbitrator under the Commercial
+      Arbitration Rules of the American Arbitration Association (though neither must agree to arbitrate),
+      and disagreements not otherwise resolved may be taken to the United States District Court where
+      the Tribe's Gaming Facility is located (or, if federal courts lack jurisdiction, a state court),
+      under a limited waiver of sovereign immunity for claims seeking only injunctive, specific-performance
+      or declaratory relief.
+    dispute_resolution_locator: Section 9.0. DISPUTE RESOLUTION PROVISIONS; Sec. 9.1. Voluntary Resolution;
+      Reference to Other Means of Resolution, subdivision (c); Sec. 9.2
+    source: compact-ca-iipay-nation-of-santa-ysabel-2003-12-22
+    confidence: high
+    verification: read-in-full
+    as_of: '2003-12-22'
+    locator: Section 9.0. DISPUTE RESOLUTION PROVISIONS; Sec. 9.1. Voluntary Resolution; Reference to
+      Other Means of Resolution, subdivision (c); Sec. 9.2
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 76, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-ca-cher-ae-heights-indian-community-of-the-2026 without
+      reading, and it gave the newer compacts' written-response and meeting deadlines and left out the
+      arbitration step. Status copied from this nation's most recent approved or deemed-approved entry
+      for this state in the Office of Indian Gaming list (2003-12-22).
   ordinances:
   - approved: '1996-04-30'
     link: https://www.nigc.gov?wpdmdl=9931&ind=9946

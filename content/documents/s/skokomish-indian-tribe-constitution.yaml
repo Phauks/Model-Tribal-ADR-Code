@@ -1,0 +1,87 @@
+id: skokomish-indian-tribe-constitution
+kind: constitution
+title: Constitution of the Skokomish Indian Tribe
+nations:
+- skokomish-indian-tribe
+jurisdictions:
+- level: tribal
+  tribe: skokomish-indian-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-02-24
+  to 1980-01-15. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-02-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-skokcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/skokomish-indian-tribe/344ca859a08e1740.html
+    sha256: 344ca859a08e17406f81d0340dd9f01aaf6a6e0238b02e0a8ee8b2519efec310
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTION FOR THE TRIBAL COUNCIL)
+    summary: Article headed "ELECTION FOR THE TRIBAL COUNCIL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1980-text
+  label: Constitution of the Skokomish Indian Tribe as amended through AS AMENDED MARCH 17, 1980
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1980-01-15'
+    approved: '1980-03-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1938-text
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/skokomish-indian-tribe/b5e8a2feee43f3ed.pdf
+    sha256: b5e8a2feee43f3edbda20172f0609d027e79c1cd345b8a1b24184224c3f58e4f
+    pages: 14
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VII (ELECTION, INAUGURATION, AND REMOVAL OF OFFICERS)
+    summary: Article headed "ELECTION, INAUGURATION, AND REMOVAL OF OFFICERS"; found by its heading and
+      not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (ELECTION, INAUGURATION, AND REMOVAL OF OFFICERS)
+    summary: Article headed "ELECTION, INAUGURATION, AND REMOVAL OF OFFICERS"; found by its heading and
+      not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

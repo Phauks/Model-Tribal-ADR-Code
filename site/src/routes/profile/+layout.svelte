@@ -12,6 +12,7 @@
 	<span class="small">Signed in as <strong>{data.email}</strong></span>
 	<span class="links">
 		{#if data.hasWorkspaceAccess}<a href="/workspace">Workspace</a>{/if}
+		<a href="/profile/password">Password</a>
 		<form method="post" action="/sign-out">
 			<button class="button button-quiet" type="submit">Sign out</button>
 		</form>

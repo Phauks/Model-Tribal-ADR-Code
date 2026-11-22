@@ -24,7 +24,8 @@
 		"check:built-site": "node tools/check-built-site.mjs",
 		"check:accessibility": "node tools/check-accessibility.mjs",
 		"database:migrate:local": "wrangler d1 migrations apply database --local",
-		"database:migrate:remote": "wrangler d1 migrations apply database --remote"
+		"database:migrate:remote": "wrangler d1 migrations apply database --remote",
+		"sign-in-link": "node tools/make-sign-in-link.mjs"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^5.20261121.1",
@@ -64,8 +65,5 @@
 		"vitest": "^5.1.1",
 		"wrangler": "^4.166.0",
 		"yaml": "^2.9.1"
-	},
-	"dependencies": {
-		"@auth0/auth0-server-js": "^1.17.0"
 	}
 }

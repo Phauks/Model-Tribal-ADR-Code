@@ -1,0 +1,85 @@
+id: lumbee-tribe-of-north-carolina-constitution
+kind: constitution
+title: Constitution of the Lumbee Tribe of North Carolina
+nations:
+- lumbee-tribe-of-north-carolina
+jurisdictions:
+- level: tribal
+  tribe: lumbee-tribe-of-north-carolina
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1950-10-13
+  to 2003-03-08. Versions are only those found; others may exist.'
+versions:
+- id: 1950-text
+  label: Constitution and By-Laws of the Native Village of Buckland Alaska (1950)
+  event: original
+  status: superseded
+  dates:
+    approved: '1950-10-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-buckcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/lumbee-tribe-of-north-carolina/59fa3b7270c43f1c.html
+    sha256: 59fa3b7270c43f1c4b850dcaec983b7941b8069d7a5de095b5ad9a16c11669bf
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 2003-text
+  label: CONSTITUTION OF THE LUMBEE TRIBE OF NORTH CAROLINA as amended through Article I, Section 2 amended,
+    2003-03-08
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2003-03-08'
+  supersedes:
+  - 1950-text
+  source: constitution-lumbee-tribe-of-north-carolina-2003-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lumbee-tribe-of-north-carolina/fd807a9cf4082f2c.pdf
+    sha256: fd807a9cf4082f2cacc4f8c32671982bc5da92f1bc82f608f9e43fd186393d7c
+    pages: 12
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (Recall)
+    summary: Article headed "Recall"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article IX (Judiciary)
+    summary: Vests judicial power in a Supreme Court and any inferior courts the council establishes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article IX (Judiciary)
+    summary: Gives the Supreme Court original jurisdiction over all cases and controversies under the
+      constitution and ordinances.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1950-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1950-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1950-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

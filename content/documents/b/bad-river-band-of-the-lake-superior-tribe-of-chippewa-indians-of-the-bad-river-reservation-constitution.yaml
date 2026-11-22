@@ -1,0 +1,126 @@
+id: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+kind: constitution
+title: Constitution of the Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River
+  Reservation, Wisconsin
+nations:
+- bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation
+jurisdictions:
+- level: tribal
+  tribe: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-04-13
+  to 1978-03-08. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-04-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-badrivcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation/fec0da14e80c3d1c.html
+    sha256: fec0da14e80c3d1cc33872b758ab9854aa42d591a935e0ca02cc6e0901cc9a94
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1978-amendment
+  label: AMENDMENTS TO THE CONSTITUTION AND BYLAWS OF THE BAD RIVER BAND OF CHIPPEWA INDIANS as amended
+    through Amendment XXVIII, 1978-01-11
+  event: amendment
+  status: unknown
+  dates:
+    listed: '1978-01-11'
+  amends:
+  - 1936-text
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation/d7e1a8e2441e8ede.pdf
+    sha256: d7e1a8e2441e8ede61ffd00e9c6f3111c48e93d8a2c6107ef27edb17377866ce
+    pages: 65
+  note: The text also prints approved 1942-12-01, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (REMOVAL shall Xe .amended by adding a new section (4))
+    summary: Article headed "REMOVAL shall Xe .amended by adding a new section (4)"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 1978-text
+  label: Constitution and ByLaws (amended) as amended through Amendment XIII through XXVIII, approved
+    March 8, 1978
+  event: edition
+  status: in-effect
+  dates:
+    effective: '1978-03-08'
+  supersedes:
+  - 1936-text
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation/73f3007de5285886.html
+    sha256: 73f3007de5285886792cd8aa644e1feb74049c1b33c3e59a0dadfe0d91ada196
+  note: 'The text also prints approved 1936-06-20, which belong to the earlier text it compiles. Marked
+    in effect because it is the newest dated text found, on the nation''s own site, on 2026-11-21; a later
+    amendment may not be posted. Dates read from another copy of the same text: effective 1978-03-08.
+    Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.'
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.25, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

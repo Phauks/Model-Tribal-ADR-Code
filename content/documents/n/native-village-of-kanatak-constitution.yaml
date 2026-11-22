@@ -1,0 +1,114 @@
+id: native-village-of-kanatak-constitution
+kind: constitution
+title: Constitution of the Native Village of Kanatak
+nations:
+- native-village-of-kanatak
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-kanatak
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1940-05-15
+  to 2001-12-07. Versions are only those found; others may exist.'
+versions:
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS (1940)
+  event: original
+  status: superseded
+  dates:
+    approved: '1940-05-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-kanacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-kanatak/ddab9db6634bbf3e.html
+    sha256: ddab9db6634bbf3edf147ad38380906d0fa09dbcd3bcad17e5e2195007241451
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1941-text
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF KANATAK (1941)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1941-03-01'
+  supersedes:
+  - 1940-text
+  source: constitution-native-village-of-kanatak-1941-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-kanatak/93952a650634bf0a.pdf
+    sha256: 93952a650634bf0ad632d3c154f22f8e306f041c23a89d3a4b430e69de4ab369
+    pages: 6
+  note: The text prints an approval date (1940-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 2001-text
+  label: CONSTITUTION OF THE NATIVE TRIBE OF KANATAK, ALASKA (2001)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2001-12-07'
+  supersedes:
+  - 1941-text
+  source: constitution-native-village-of-kanatak-2001-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-kanatak/95777a81fd0213e5.pdf
+    sha256: 95777a81fd0213e51cc985dac5155765697f666c2bd3c44c042cabf450b8f5d4
+    pages: 13
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VI (ELECTIONS AND MEETINGS)
+    summary: Assigns settling of disputes about how elections are conducted to the election ordinance,
+      which also covers petitions and certification.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VI (ELECTIONS AND MEETINGS)
+    summary: Requires the election ordinance to provide for settling disputes about how elections are
+      conducted, along with petitions and certification.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (COUNCIL MEETINGS)
+    summary: Vests judicial power in the Tribal Council, which may delegate it or create tribal courts
+      by ordinance, with set requirements for those courts.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

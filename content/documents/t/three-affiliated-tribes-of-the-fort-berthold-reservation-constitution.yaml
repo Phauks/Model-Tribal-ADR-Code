@@ -1,0 +1,146 @@
+id: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+kind: constitution
+title: Constitution of the Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
+nations:
+- three-affiliated-tribes-of-the-fort-berthold-reservation
+jurisdictions:
+- level: tribal
+  tribe: three-affiliated-tribes-of-the-fort-berthold-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1936-03-11
+  to 1986-06-25. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-03-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-ftbertcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/three-affiliated-tribes-of-the-fort-berthold-reservation/5ec95d0af08b3ba1.html
+    sha256: 5ec95d0af08b3ba12a753497c236b63df950811aa3391486b4989d50a78a9853
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1974-amendment
+  label: 1:8 G.0[sign2.ted as Amendments III~ IV and V. as amended through Amendment V, approved 1974-09-10
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1974-08-13'
+    approved: '1974-09-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1936-text
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1974-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/three-affiliated-tribes-of-the-fort-berthold-reservation/2563282c33eed110.pdf
+    sha256: 2563282c33eed1105cf9d2109db2d2a707f47db7b34df0edf81c781239b4b6bd
+    pages: 47
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  changes:
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 1975-text
+  label: CONSTITUTION AND BYLAWS OF THE THREE AFFILIATED TRIBES OF THE FORT BERTHOLD RESERVATION as amended
+    through Amendment No. VI, effective 1975-12-12
+  event: edition
+  status: unknown
+  dates:
+    listed: '1975-12-12'
+  supersedes:
+  - 1936-text
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/three-affiliated-tribes-of-the-fort-berthold-reservation/3aa6cde1eb16ec0f.pdf
+    sha256: 3aa6cde1eb16ec0f692b27a318bad37c0771836d55cf92bcb7136349a27df884
+    pages: 47
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VIII (SECTION 5. All elections shall be held under the supervision)
+    summary: Article headed "SECTION 5. All elections shall be held under the supervision"; found by its
+      heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.04, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+- id: 1986-amendment
+  label: Original Certifications of the Results of the June 25, 1986, Secretarial Election (1986)
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1986-06-25'
+  amends:
+  - 1975-text
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1986-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/three-affiliated-tribes-of-the-fort-berthold-reservation/52e411993d176518.pdf
+    sha256: 52e411993d17651874a72d96ec5ef7569bd20b6f50e8a42a4835c31cbcd085cf
+    pages: 24
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  changes:
+  - topic: election-disputes
+    compared_with: 1975-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1975-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

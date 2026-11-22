@@ -56,6 +56,12 @@
 			{#if listed.role !== 'lead-author'}
 				<a class="small" href="/workspace/access?person={listed.identifier}">Document access</a>
 			{/if}
+			{#if listed.status === 'invited'}
+				<form method="post" action="?/link" class="row-form">
+					<input type="hidden" name="identifier" value={listed.identifier} />
+					<button class="button button-quiet" type="submit">Make a sign-in link</button>
+				</form>
+			{/if}
 			<form method="post" action="?/access" class="row-form">
 				<input type="hidden" name="identifier" value={listed.identifier} />
 				{#if listed.status === 'removed'}
@@ -83,7 +89,14 @@
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
 {:else if form && 'done' in form}
-	<div class="notice" role="status"><p>{form.done}</p></div>
+	<div class="notice" role="status">
+		<p>{form.done}</p>
+		{#if 'link' in form && form.link}
+			<p><label for="invitation-link">Sign-in link</label></p>
+			<input id="invitation-link" class="link-box" type="text" readonly value={form.link} onfocus={(event) => event.currentTarget.select()} />
+			<p class="small">Send it by a private message or email. Anyone who has the link can sign in as this person, once.</p>
+		{/if}
+	</div>
 {/if}
 
 <h2>Roles</h2>
@@ -129,8 +142,8 @@
 <form method="post" action="?/invite" class="panel">
 	<h2>Add a person</h2>
 	<p class="small">
-		They sign in with Auth0 using this email address. Auth0 must have verified the address, for
-		example by signing in with Google or by the link Auth0 emails after sign-up.
+		They sign in with this email address, using a code the site emails them. You also get a sign-in
+		link to send them yourself, which works once, for 7 days.
 	</p>
 	<div class="field">
 		<label for="displayName">Name</label>
@@ -185,5 +198,10 @@
 
 	.history {
 		padding-left: var(--space-5);
+	}
+
+	.link-box {
+		width: 100%;
+		font-family: monospace;
 	}
 </style>

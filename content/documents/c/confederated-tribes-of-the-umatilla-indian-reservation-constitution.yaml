@@ -1,0 +1,93 @@
+id: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Confederated Tribes of the Umatilla Indian Reservation
+nations:
+- confederated-tribes-of-the-umatilla-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: confederated-tribes-of-the-umatilla-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1949-11-04
+  to 2021. Versions are only those found; others may exist.'
+versions:
+- id: 1949-text
+  label: CONSTITUTION AND BYLAWS (1949)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1949-11-04'
+  source: university-of-oklahoma-indian-reorganization-act-umacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-umatilla-indian-reservation/5e6ddb7df1897875.html
+    sha256: 5e6ddb7df1897875db916e3f49dfb8afe2eb0148a44e81f1b8b063660c5cf104
+  note: The text prints an approval date (1949-05-27) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read by rule from the certificates on the library page.
+- id: 1949-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE CONFEDERATED TRIBES OF THE UMATILLA INDIAN RESERVATION, OREGON
+    (1949)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1949-12-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1949-text
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-1949-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-umatilla-indian-reservation/283f61621fac8dcd.pdf
+    sha256: 283f61621fac8dcddcaf6a9e8833559f85645db332fa10992e646f04bfd0dcc6
+    pages: 7
+  note: The text also prints adopted 1949-11-04, which belong to the earlier text it compiles. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1992-text
+  label: Umatilla Tribe's Approval of Amendment to Constitution and By-Laws as amended through Amendment
+    VI, approved by Portland Area Director, memo dated 1992-10-09
+  event: edition
+  status: superseded
+  dates:
+    listed: '1992-10-09'
+  supersedes:
+  - 1949-text-2
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-1992-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-umatilla-indian-reservation/5a782b85cb6ff070.pdf
+    sha256: 5a782b85cb6ff070f73c1f6953f4be10638d82390570a80df007936584470e2c
+    pages: 25
+  note: The text also prints adopted 1949-11-04, approved 1949-12-07, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked superseded because a later dated text was found (project inference). Type and dates read from
+    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 2021-text
+  label: Constitution and Bylaws of the Confederated Tribes of the Umatilla Indian Reservation as amended
+    through Amendment No. XVIII, 2021
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2021'
+  supersedes:
+  - 1992-text
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-umatilla-indian-reservation/af60621dfac83a74.pdf
+    sha256: af60621dfac83a74193507a73f2925874fea403a41f2c67cd8d6a5162c1d3a73
+    pages: 8
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

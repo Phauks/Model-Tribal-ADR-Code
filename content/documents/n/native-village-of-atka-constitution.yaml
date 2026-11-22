@@ -1,0 +1,92 @@
+id: native-village-of-atka-constitution
+kind: constitution
+title: Constitution of the Native Village of Atka
+nations:
+- native-village-of-atka
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-atka
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-05-15
+  to 1939-05-23. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: Constitutiona and By-Laws of the Native Village of Atka Alaska (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-atkacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-atka/a2415be09f7664da.html
+    sha256: a2415be09f7664dadcf13648a28b6d67340c276f78b0d7b35cc8b48abf25082b
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF ATKA (1939)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1939-05-23'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-atka-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-atka/51057502792d17b4.pdf
+    sha256: 51057502792d17b4aade097809bfe4723407b7a4d3500ce01cf1e66921da5808
+    pages: 5
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-3
+  label: Constitution and By-laws of the Native Village of Atka, Alaska (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-05-23'
+  supersedes:
+  - 1939-text-2
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-atka/68792ec4cf724042.pdf
+    sha256: 68792ec4cf7240420a92670d04b13f26a229f71aeec0d66d51f53c90ece70777
+    pages: 5
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-05-23, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1939-text-4
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF ATKA (1939)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-05-23'
+  supersedes:
+  - 1939-text-3
+  source: constitution-native-village-of-atka-1939-text-4
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-atka/f720cc3d80eebc5a.pdf
+    sha256: f720cc3d80eebc5ab119732e642d04e916710346e4d9e0e7af9722df06def4f4
+    pages: 6
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-05-23, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

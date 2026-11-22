@@ -1,0 +1,76 @@
+id: fond-du-lac-band-constitution
+kind: constitution
+title: Constitution of the Fond du Lac Band
+nations:
+- fond-du-lac-band
+jurisdictions:
+- level: tribal
+  tribe: fond-du-lac-band
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1963-11-23
+  to 2006-01-05. Versions are only those found; others may exist.'
+versions:
+- id: 1964-text
+  label: Revised Constitution and Bylaws of the Minnesota Chippewa Tribe, Minnesota (1964)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1963-11-23'
+    approved: '1964-03-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-fond-du-lac-band-1964-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fond-du-lac-band/82457152c30df162.pdf
+    sha256: 82457152c30df162f6275fc95e4287cdf987fbf3a5b68bea7f0b78231ee470db
+    pages: 13
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 2006-text
+  label: Constitution of the Minnesota Chippewa Tribe as amended through Amendment IV, 2006-01-05
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2006-01-05'
+  supersedes:
+  - 1964-text
+  source: constitution-fond-du-lac-band-2006-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/fond-du-lac-band/444fb3e73984bbfc.html
+    sha256: 444fb3e73984bbfc8196b6b6633cc464c84f8ea219f997e2dd499d1bde9e7f85
+  note: The text also prints adopted 1963-11-23, approved 1964-03-03, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (Tribal Elections)
+    summary: Makes each Reservation Business Committee the sole judge of the qualifications of its voters
+      under a uniform election ordinance.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article X (Vacancies and Removal)
+    summary: Article headed "Vacancies and Removal"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1964-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1964-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

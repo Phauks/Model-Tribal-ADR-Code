@@ -1,0 +1,51 @@
+id: native-village-of-gambell-constitution
+kind: constitution
+title: Constitution of the Native Village of Gambell
+nations:
+- native-village-of-gambell
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-gambell
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-12-31
+  to 1939-12-31. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF GAMBELL (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-12-31'
+  source: constitution-native-village-of-gambell-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-gambell/413b725b8cc4c298.pdf
+    sha256: 413b725b8cc4c298adae8936a077d31e9bcff8ac56831311817a10a20dc1f533
+    pages: 5
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF GAMBELL (1939)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-12-31'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-gambell-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-gambell/732d0be6240ae574.html
+    sha256: 732d0be6240ae574583bd213bee19df880c9e6570902a69de1ccf96ccb4c93ee
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-12-31, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

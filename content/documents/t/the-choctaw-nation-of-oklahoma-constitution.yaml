@@ -1,0 +1,259 @@
+id: the-choctaw-nation-of-oklahoma-constitution
+kind: constitution
+title: Constitution of The Choctaw Nation of Oklahoma
+nations:
+- the-choctaw-nation-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: the-choctaw-nation-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 7 dated versions, from 1838-10
+  to 1983-07-09. Versions are only those found; others may exist.'
+versions:
+- id: 1838-text
+  label: CONSTITUTION OF THE CHOCTAW NATION (1838)
+  event: original
+  status: superseded
+  dates:
+    adopted: 1838-10
+  source: constitution-the-choctaw-nation-of-oklahoma-1838-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-choctaw-nation-of-oklahoma/9469f61a0fd84ce9.pdf
+    sha256: 9469f61a0fd84ce9d8ad8d4e09a683a111df51ecfd93688702f7feda9e2a7a87
+    pages: 8
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (Judicial Department)
+    summary: Article headed "Judicial Department"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (Impeachment)
+    summary: Article headed "Impeachment"; found by its heading and not yet read.
+    verification: title-only
+- id: 1842-text
+  label: CONSTITUTION OF THE CHOCTAW NATION (1842)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1842-11-10'
+  supersedes:
+  - 1838-text
+  source: constitution-the-choctaw-nation-of-oklahoma-1842-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-choctaw-nation-of-oklahoma/f8ae9b29cb15b7e1.pdf
+    sha256: f8ae9b29cb15b7e1112a67e8a1ce7ce8fcc39d6c0acca05ebb946742e30d8139
+    pages: 11
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (JUDICIAL DEPARTMENT)
+    summary: Article headed "JUDICIAL DEPARTMENT"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1838-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.17, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1838-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+- id: 1850-text
+  label: CONSTITUTION OF THE CHOCTAW NATION (1850)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1850-10-14'
+  supersedes:
+  - 1842-text
+  source: constitution-the-choctaw-nation-of-oklahoma-1850-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-choctaw-nation-of-oklahoma/1c023c26c796abb0.pdf
+    sha256: 1c023c26c796abb0fa989c79c1ab506e734767e25fef6da1ff917cea413cce9e
+    pages: 13
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VI (JUDICIAL DEPARTMENT)
+    summary: Article headed "JUDICIAL DEPARTMENT"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1842-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.06, by script); not yet read side by side.
+- id: 1857-text
+  label: CONSTITUTION OF THE CHOCTAW NATION (1857)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1857-01-05'
+  supersedes:
+  - 1850-text
+  source: constitution-the-choctaw-nation-of-oklahoma-1857-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-choctaw-nation-of-oklahoma/d0110786227c15bd.pdf
+    sha256: d0110786227c15bd3fceb798fb522d8e3b7850abf439823e256dd22bd408d9ab
+    pages: 17
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article IV (JUDICIAL DEPARTMENT)
+    summary: Article headed "JUDICIAL DEPARTMENT"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (IMPEACHMENTS)
+    summary: Article headed "IMPEACHMENTS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1850-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.09, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1850-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 1860-text
+  label: CONSTITUTION OF THE CHOCTAW NATION (1860)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1860-01-11'
+  supersedes:
+  - 1857-text
+  source: constitution-the-choctaw-nation-of-oklahoma-1860-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-choctaw-nation-of-oklahoma/cae1511c6850155d.pdf
+    sha256: cae1511c6850155d206252d226d589d5ce06564d0c4c69e36517702e4376ca6b
+    pages: 19
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article IV (JUDICIAL DEPARTMENT)
+    summary: Article headed "JUDICIAL DEPARTMENT"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (IMPEACHMENTS)
+    summary: Article headed "IMPEACHMENTS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1857-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.09, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1857-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
+- id: 1979-proposed
+  label: CONSTITUTION OF THE CHOCTAW NATION OF OKLAHOMA (1979)
+  event: revision
+  status: proposed
+  dates:
+    approved: '1979-03-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-the-choctaw-nation-of-oklahoma-1979-proposed
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-choctaw-nation-of-oklahoma/426b905bb78a0362.pdf
+    sha256: 426b905bb78a0362d818984c7eb94c49f2b62eb35b65cf3ff47e42dd2ec559cd
+    pages: 11
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XII (JUDICIAL DEPARTMENT)
+    summary: Article headed "JUDICIAL DEPARTMENT"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XIV (FILLING VACANCIES)
+    summary: Article headed "FILLING VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XV (REMOVAL OF OFFICALS)
+    summary: Article headed "REMOVAL OF OFFICALS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1983-text
+  label: CONSTITUTION OF THE CHOCTAW NATION OF OKLAHOMA (1983)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '1983-07-09'
+  supersedes:
+  - 1860-text
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-choctaw-nation-of-oklahoma/cfb1a537bcfc6495.pdf
+    sha256: cfb1a537bcfc64959cf7c4b4decd6a98e85cbb1d04d11f45cafcd5c44fcd8f1e
+    pages: 11
+  note: The text prints an approval date (1983-06-09) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked in effect because it is the newest dated
+    text found, on the nation's own site, on 2026-11-21; a later amendment may not be posted. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article IX (PRIVILEGES, DUTIES AND POWERS OF LEGISLATIVE)
+    summary: Has the Tribal Council sit as a court in impeachment cases.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XIII (PRIVILEGES, DUTIES AND POWERS OF JUDICIAL)
+    summary: Makes the Tribal Court the body with jurisdiction over constitutional and regulatory disputes,
+      with its decision final.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article XIII (PRIVILEGES, DUTIES AND POWERS OF JUDICIAL)
+    summary: Gives the Tribal Court exclusive jurisdiction to decide disputes arising under the constitution
+      or Tribal Council rules, by vote of two members.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1860-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: dispute-resolution
+    compared_with: 1860-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1860-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

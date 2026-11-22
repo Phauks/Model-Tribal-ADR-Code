@@ -1,0 +1,94 @@
+id: mississippi-band-of-choctaw-indians-constitution
+kind: constitution
+title: Constitution of the Mississippi Band of Choctaw Indians
+nations:
+- mississippi-band-of-choctaw-indians
+jurisdictions:
+- level: tribal
+  tribe: mississippi-band-of-choctaw-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1945-01-11
+  to 2006-04-11. Versions are only those found; others may exist.'
+versions:
+- id: 1945-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1945)
+  event: original
+  status: superseded
+  dates:
+    approved: '1945-01-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-misschoccons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/mississippi-band-of-choctaw-indians/0b3b61e2a68c83d2.html
+    sha256: 0b3b61e2a68c83d229ab4ac97ec1d3f3c86419100e2c1496169d1a971ed724f9
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1975-text
+  label: REVISED CONSTITUTION AND BYLAWS OF THE MISSISSIPPI BAND OF CHOCTAW INDIANS (1975)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1975-03-28'
+    effective: '1975-03-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1945-text
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/mississippi-band-of-choctaw-indians/e9921d48f72c1f1d.pdf
+    sha256: e9921d48f72c1f1de3bbc9b89ae4d5c70dec00a26fc26a8c5c77ea0b98fbb4c8
+    pages: 15
+  note: The text also prints adopted 1974-12-17, which belong to the earlier text it compiles. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1945-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 2006-amendment
+  label: AMENDMENT NO. I as amended through Amendment No. I, 2006-04-11
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '2006-04-11'
+    approved: '2006-05-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1975-text
+  source: constitution-mississippi-band-of-choctaw-indians-2006-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/mississippi-band-of-choctaw-indians/59dcc8bd9425eae8.pdf
+    sha256: 59dcc8bd9425eae8e6c9aacdefeb59bcdcaf46e9745abf8cb733339c5c4283e7
+    pages: 6
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1975-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

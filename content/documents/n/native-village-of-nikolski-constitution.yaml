@@ -1,0 +1,51 @@
+id: native-village-of-nikolski-constitution
+kind: constitution
+title: Constitution of the Native Village of Nikolski
+nations:
+- native-village-of-nikolski
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-nikolski
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-05-23
+  to 1939-06-12. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-nikocons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-nikolski/015900bee69bf488.html
+    sha256: 015900bee69bf4887eb21591acd87dc813e65595361276eaa959d4df214951b4
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1939-text-2
+  label: Constitution and By-laws of the Native Village of Nikolski (1939)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1939-06-12'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-nikolski-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-nikolski/f96217d64f484d31.pdf
+    sha256: f96217d64f484d3190843d62c0e4e802f5fb29ac22b4ecb2e92f4642dcab8502
+    pages: 6
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

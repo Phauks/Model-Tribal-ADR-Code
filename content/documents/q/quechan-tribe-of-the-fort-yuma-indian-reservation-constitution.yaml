@@ -1,0 +1,65 @@
+id: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
+nations:
+- quechan-tribe-of-the-fort-yuma-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: quechan-tribe-of-the-fort-yuma-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-11-03
+  to 1974-11-18. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS OF (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-11-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/quechan-tribe-of-the-fort-yuma-indian-reservation/53b6f9bac67b0fc3.html
+    sha256: 53b6f9bac67b0fc35f22ac8922c5f759e689bbd9d642f8d6017aafc54e3a5577
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+- id: 1974-text
+  label: CONSTITUTION AND BY-LAWS OF THE QUECHAN TRIBE OF THE FORT YUMA RESERVATION as amended through
+    Revised Amendments, 1974-11-18
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1974-11-18'
+  supersedes:
+  - 1936-text
+  source: constitution-quechan-tribe-of-the-fort-yuma-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/quechan-tribe-of-the-fort-yuma-indian-reservation/b7cbe4beaa4ba240.pdf
+    sha256: b7cbe4beaa4ba24021a6eec99fa6ddc73719940f46ef112390527162b3b1723f
+    pages: 18
+  note: The text also prints approved 1936-12-18, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

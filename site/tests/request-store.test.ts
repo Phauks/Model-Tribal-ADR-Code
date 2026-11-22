@@ -26,7 +26,7 @@ beforeEach(async () => {
 	} as unknown as R2Bucket;
 	const result = await matchSignIn(
 		database,
-		{ subject: 'auth0|lead', email: 'lead@example.org', emailVerified: true, name: 'Lead' },
+		{ subject: 'account-lead', email: 'lead@example.org', emailVerified: true, name: 'Lead' },
 		'lead@example.org'
 	);
 	if (result.outcome !== 'signed-in') throw new Error('not signed in');

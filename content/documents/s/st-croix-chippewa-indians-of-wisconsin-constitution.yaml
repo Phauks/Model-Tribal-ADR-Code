@@ -1,0 +1,52 @@
+id: st-croix-chippewa-indians-of-wisconsin-constitution
+kind: constitution
+title: Constitution of the St. Croix Chippewa Indians of Wisconsin
+nations:
+- st-croix-chippewa-indians-of-wisconsin
+jurisdictions:
+- level: tribal
+  tribe: st-croix-chippewa-indians-of-wisconsin
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1942-08-29
+  to 1942-11-12. Versions are only those found; others may exist.'
+versions:
+- id: 1942-text
+  label: CONSTITUTION AND BY-LAWS (1942)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1942-08-29'
+  source: university-of-oklahoma-indian-reorganization-act-croixcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/st-croix-chippewa-indians-of-wisconsin/8735e816bb5ac2d4.html
+    sha256: 8735e816bb5ac2d4999f5ce839ffb89f67ce7019a4d62934e6c29e4e8e338399
+  note: 'The text prints an approval date (1942-07-20) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1942-08-29. Dates
+    read by rule from the certificates on the library page.'
+- id: 1942-text-2
+  label: Constitution and By-laws of the St. Croix Chippewa Indians of Wisconsin (1942)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1942-11-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1942-text
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/st-croix-chippewa-indians-of-wisconsin/2fc6754249e32f33.pdf
+    sha256: 2fc6754249e32f33bdcfef586a3cc4b0816039b0f6e08ecfdf9f07cfa633cde0
+    pages: 6
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

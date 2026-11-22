@@ -1,0 +1,92 @@
+id: organized-village-of-kwethluk-constitution
+kind: constitution
+title: Constitution of the Organized Village of Kwethluk
+nations:
+- organized-village-of-kwethluk
+jurisdictions:
+- level: tribal
+  tribe: organized-village-of-kwethluk
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-05-11
+  to 1940-01-11. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-kwetcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/organized-village-of-kwethluk/5c14585681a655e3.html
+    sha256: 5c14585681a655e368fe3f8420b9f03944802d45c890d4caa1836d867f833d8a
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1940-text
+  label: Constitution and By-laws of the Organized Village of Kwethluk (1940)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1940-01-11'
+  supersedes:
+  - 1939-text
+  source: constitution-organized-village-of-kwethluk-1940-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-kwethluk/16e410ca2eb3773f.pdf
+    sha256: 16e410ca2eb3773ff025ce474a18a20658fafa09cdb3760d9d1ffdc5fee7f7ec
+    pages: 5
+  note: The text prints an approval date (1939-05-11) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1940-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE ORGANIZED VILLAGE OF KWETHLUK (1940)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1940-01-11'
+  supersedes:
+  - 1940-text
+  source: constitution-organized-village-of-kwethluk-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-kwethluk/88e8c0113bb1f166.pdf
+    sha256: 88e8c0113bb1f1663042ff7942f18f947719d8a2254aabffc83f0eb53a7e98e8
+    pages: 5
+  note: The text prints an approval date (1938-05-11) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1940-01-11, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Type
+    and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1940-text-3
+  label: CONSTITUTION AND BY-LAWS OF THE ORGANIZED VILLAGE OF KWETHLUK (1940)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1940-01-11'
+  supersedes:
+  - 1940-text-2
+  source: constitution-organized-village-of-kwethluk-1940-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-kwethluk/d028de36dc7d3f8d.pdf
+    sha256: d028de36dc7d3f8d42e9b3517544463cf705680ce9cbbf7cec73fdcc00e8f495
+    pages: 6
+  note: The text prints an approval date (1938-05-11) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1940-01-11, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,129 @@
+id: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+kind: constitution
+title: Constitution of the White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+nations:
+- white-mountain-apache-tribe-of-the-fort-apache-reservation
+jurisdictions:
+- level: tribal
+  tribe: white-mountain-apache-tribe-of-the-fort-apache-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1938-06-20
+  to 1993-09-30. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY- LAWS (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-06-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-conswhtmtnapache
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/white-mountain-apache-tribe-of-the-fort-apache-reservation/015481ea52af51b5.pdf
+    sha256: 015481ea52af51b597060358f0f2778e2f39b945f82bf10a862b9f10fb914c05
+    pages: 8
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1974-text
+  label: Amended Constitution and Bylaws of the White Mountain Apache Tribe of the Fort Apache Indian
+    Reservation, Arizona (1974)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1974-01-24'
+    approved: '1974-01-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1938-text
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/white-mountain-apache-tribe-of-the-fort-apache-reservation/561c81b342a3584d.pdf
+    sha256: 561c81b342a3584d1ce39c167e8935d90164c9766bfd4adb1c57fc0710c1ebb2
+    pages: 23
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL FROM OFFICE)
+    summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1993-text
+  label: CONSTITUTION OF THE WHITE MOUNTAIN APACHE TRIBE - FORT APACHE RESERVATION as amended through
+    last amended, 1993 (no amendment label or day given)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '1993-09-30'
+    approved: '1993-11-12'
+    effective: '1993-11-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1974-text
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/white-mountain-apache-tribe-of-the-fort-apache-reservation/1f192e41b6ef83d6.html
+    sha256: 1f192e41b6ef83d67c90fe7b3d22772e23a9063ecef2b9454a1c90361ee5b658
+  note: 'Marked in effect because it is the newest dated text found, on the nation''s own site, on 2026-11-21;
+    a later amendment may not be posted. Dates read from another copy of the same text: approved 1993-11-12,
+    effective 1993-11-12. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet
+    checked by the lead author.'
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (ELECTIONS)
+    summary: Has the Council adopt ordinances that set procedures for challenging voting rights and settling
+      election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL FROM OFFICE)
+    summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1974-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.30, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1974-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.51, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

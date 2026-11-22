@@ -1,6 +1,6 @@
 # 0013. Sign in co-authors with Auth0; keep roles in the site's database
 
-- **Status:** Accepted
+- **Status:** Superseded by [0024](0024-own-sign-in.md) for how people sign in. The rest (roles kept in the site's database, no open access to the workspace) stands.
 - **Date:** 2026-11-21
 
 ## Context

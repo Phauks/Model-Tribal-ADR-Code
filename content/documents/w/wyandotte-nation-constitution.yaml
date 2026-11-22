@@ -1,0 +1,204 @@
+id: wyandotte-nation-constitution
+kind: constitution
+title: Constitution of the Wyandotte Nation
+nations:
+- wyandotte-nation
+jurisdictions:
+- level: tribal
+  tribe: wyandotte-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1937-07-17
+  to 1999-09-29. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS (1937)
+  event: original
+  status: superseded
+  dates:
+    approved: '1937-07-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-wyancons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/wyandotte-nation/b3663391a92057e0.html
+    sha256: b3663391a92057e07da794ce91ce965fcf1c33ef33af573b9b293dff205edd21
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article X (GRIEVANCES)
+    summary: Article headed "GRIEVANCES"; found by its heading and not yet read.
+    verification: title-only
+- id: 1937-text-2
+  label: Constitution and By-Laws of the Wyandotte Tribe of Oklahoma (1937)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1937-07-24'
+  supersedes:
+  - 1937-text
+  source: constitution-wyandotte-nation-1937-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/wyandotte-nation/aeaf5dbc5be58379.pdf
+    sha256: aeaf5dbc5be58379f3722bcee145929e9fea4cd1d1f6a6b3159c7d33e48c4562
+    pages: 7
+  note: The text prints an approval date (1937-07-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (Vacancies)
+    summary: Article headed "Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article X (Grievances)
+    summary: Article headed "Grievances"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1937-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.90, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1937-text
+    change: unchanged
+    verification: inferred
+    note: The article texts match (word-run overlap 1.00, by script).
+- id: 1985-text
+  label: Constitution of the Wyandotte Tribe of Oklahoma (1985)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1985-08-21'
+  supersedes:
+  - 1937-text-2
+  source: constitution-wyandotte-nation-1985-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/wyandotte-nation/f831121383723a83.pdf
+    sha256: f831121383723a83ce4394dd718867795a3b3a50571d248fbbce5e4292f171d2
+    pages: 11
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (REMOVAL/RECALL/FORFEITURE)
+    summary: Article headed "REMOVAL/RECALL/FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1937-text-2
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: election-disputes
+    compared_with: 1937-text-2
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1937-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+- id: 1999-text
+  label: Constitution of the Wyandotte Tribe of Oklahoma (1999)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '1999-09-29'
+  supersedes:
+  - 1985-text
+  source: constitution-wyandotte-nation-1999-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/wyandotte-nation/fcea11315830b9b9.pdf
+    sha256: fcea11315830b9b9af7809d480493947a10ce4eb56c553207457de070d7720e6
+    pages: 10
+  note: The text prints an approval date (1999-06-11) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked in effect because it is the newest dated
+    text found, on the nation's own site, on 2026-11-21; a later amendment may not be posted. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article 6 (Organization of the Government)
+    summary: States that the Nation Council's final decisions on membership cannot be appealed.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article 7 (Powers and Responsibilities of the)
+    summary: Vests the Nation's judicial power in a Supreme Court of five Justices and any inferior courts
+      established by Nation law.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article 7 (Powers and Responsibilities of the)
+    summary: A Grievance Committee investigates complaints of officer misconduct, and the Nation Council
+      may remove an officer after a hearing.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - fact-finding
+    - council-hearing
+  - topic: dispute-resolution
+    locator: Article 9 (Elections)
+    summary: Requires the Board's election law to set procedures for handling protests and resolving election
+      disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article 9 (Elections)
+    summary: Requires the Board's election law to set procedures for handling protests and resolving election
+      disputes, with an Election Board conducting elections.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article 10 (Removal/Recall)
+    summary: Article headed "Removal/Recall"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1985-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1985-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1985-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.08, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1985-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.14, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

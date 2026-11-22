@@ -1,0 +1,139 @@
+id: citizen-potawatomi-nation-constitution
+kind: constitution
+title: Constitution of the Citizen Potawatomi Nation, Oklahoma
+nations:
+- citizen-potawatomi-nation
+jurisdictions:
+- level: tribal
+  tribe: citizen-potawatomi-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-10-17
+  to 1987-04-22. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY- LAWS (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-10-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-opotcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/citizen-potawatomi-nation/4e8b9023899cb338.html
+    sha256: 4e8b9023899cb338d764e57ffe7660dddb1b408f5420b4b225a3eae67c6b624a
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1987-text
+  label: CONSTITUTION OF THE CITIZEN BAND POTAWATOMI INDIAN TRIBE OF OKLAHOMA (1987)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1987-04-22'
+  supersedes:
+  - 1938-text
+  source: constitution-citizen-potawatomi-nation-1987-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/citizen-potawatomi-nation/4938c26635fc5c64.pdf
+    sha256: 4938c26635fc5c6475be48fa6d1511f91915e1c22f13c3a2639f4608edfc14bb
+    pages: 52
+  note: The text prints an approval date (1986-12-29) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article 8 (RECALL)
+    summary: Has a Grievance Committee hear misconduct complaints against officials and act as a fact-finding
+      body before cases go to tribal courts for recall.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - fact-finding
+  - topic: removal-and-recall
+    locator: Article 8 (RECALL)
+    summary: Article headed "RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article 12 ((f) shall be necessary to recall the officer from his)
+    summary: Lets any person bring misconduct complaints against Business Committee members or judicial
+      officers to the Court, which decides whether a recall election is needed.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article 12 ((f) shall be necessary to recall the officer from his)
+    summary: Article headed "(f) shall be necessary to recall the officer from his"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article 9 (REMOVAL AND FORFEITURE)
+    summary: Lets a removed official appeal the removal directly to the Supreme Court, which must expedite
+      the appeal and keeps the official suspended until a final decision.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article 9 (REMOVAL AND FORFEITURE)
+    summary: Article headed "REMOVAL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article 11 (COURTS)
+    summary: Vests judicial power in a seven-justice Supreme Court and any lower courts the tribe establishes,
+      gives courts appellate and general jurisdiction, and lets tribal courts void unconstitutional enactments.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article 12 (ELECTIONS)
+    summary: Delays installation of newly elected officers until any challenge period expires or any election
+      dispute is finally resolved as provided by law.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article 15 (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (Vacancies, shall be amendecUto)
+    summary: Article headed "Vacancies, shall be amendecUto"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1938-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1938-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1938-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

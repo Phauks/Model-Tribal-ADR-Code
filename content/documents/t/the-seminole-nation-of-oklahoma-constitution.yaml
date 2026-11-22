@@ -1,0 +1,74 @@
+id: the-seminole-nation-of-oklahoma-constitution
+kind: constitution
+title: Constitution of The Seminole Nation of Oklahoma
+nations:
+- the-seminole-nation-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: the-seminole-nation-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1969-03-08
+  to 1989-02-25. Versions are only those found; others may exist.'
+versions:
+- id: 1969-text
+  label: CONSTITUTION OF THE SEMINOLE NATION OF OKLAHOMA (1969)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1969-03-08'
+  source: constitution-the-seminole-nation-of-oklahoma-1969-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-seminole-nation-of-oklahoma/5bc34f092ea5e4f9.pdf
+    sha256: 5bc34f092ea5e4f9074fe9635fd7072fc1daf197f511b2683cde490e42dcdb61
+    pages: 12
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL AND THE FILLING OF VACANCIES)
+    summary: Article headed "REMOVAL AND THE FILLING OF VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+- id: 1989-text
+  label: CONSTITUTION OF THE SEMINOLE NATION OF OKLAHOMA (AS AMENDED) as amended through As amended, 1989-02-25
+  event: edition
+  status: unknown
+  dates:
+    listed: '1989-02-25'
+  supersedes:
+  - 1969-text
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-seminole-nation-of-oklahoma/8aea761ddb08f937.pdf
+    sha256: 8aea761ddb08f937769106f4f074029a86360922674fc37c2c82da2ec1c3864c
+    pages: 17
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL AND THE FILLING)
+    summary: Article headed "REMOVAL AND THE FILLING"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article X (ELECTIONS)
+    summary: Has an election board determine candidates' eligibility, register voters, count ballots and
+      conduct any runoff election.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: election-disputes
+    compared_with: 1969-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1969-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.48, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

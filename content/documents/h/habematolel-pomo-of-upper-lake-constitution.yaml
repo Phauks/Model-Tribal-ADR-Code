@@ -1,0 +1,290 @@
+id: habematolel-pomo-of-upper-lake-constitution
+kind: constitution
+title: Constitution of the Habematolel Pomo of Upper Lake, California
+nations:
+- habematolel-pomo-of-upper-lake
+jurisdictions:
+- level: tribal
+  tribe: habematolel-pomo-of-upper-lake
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 dated versions, from 1940-04-13
+  to 2026-06-13. Versions are only those found; others may exist.'
+versions:
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS FOR THE (1940)
+  event: original
+  status: superseded
+  dates:
+    approved: '1940-04-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-capomocons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/habematolel-pomo-of-upper-lake/0ec40a245e705f8f.html
+    sha256: 0ec40a245e705f8f9a4ec131d7f7e0eb544e229bffede73fb0dd7dca74b0538d
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1941-text
+  label: CONSTITUTION AND BY-LAWS (1941)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1941-10-22'
+  supersedes:
+  - 1940-text
+  source: university-of-oklahoma-indian-reorganization-act-uppomocons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/habematolel-pomo-of-upper-lake/e9487abc994aa5a2.html
+    sha256: e9487abc994aa5a2454ca917f25cb18496f5442de628e0b13c14d59da28ea17d
+  note: The text prints an approval date (1941-05-29) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1940-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.19, by script); not yet read side by side.
+- id: 2004-text
+  label: CONSTITUTION OF THE HABEMATOLEL POMO OF UPPER LAKE as amended through Rev. 2, 2003-06-19
+  event: revision
+  status: superseded
+  dates:
+    adopted: '2004-04-17'
+    approved: '2004-05-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1941-text
+  source: constitution-habematolel-pomo-of-upper-lake-2004-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/habematolel-pomo-of-upper-lake/c955a9505bd7fe73.pdf
+    sha256: c955a9505bd7fe73cfab0a5c805a81295ec387399c2063f9a131cdb0ca7fdcea
+    pages: 21
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (NOMINATION AND ELECTIONS)
+    summary: Article headed "NOMINATION AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (Removal, Recall and Forfeiture)
+    summary: Article headed "Removal, Recall and Forfeiture"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (Removal, Recall and Forfeiture)
+    summary: Article headed "Removal, Recall and Forfeiture"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (JUDICIARY)
+    summary: Article headed "JUDICIARY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (Judiciary)
+    summary: Article headed "Judiciary"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (Judiciary)
+    summary: Article headed "Judiciary"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1941-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1941-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+- id: 2024-text
+  label: CONSTITUTION of the HABEMATOLEL Pomo of Upper Lake (Second Amended) as amended through Second
+    Amended Constitution, 2024-06-08 (page footer)
+  event: edition
+  status: superseded
+  dates:
+    effective: '2024-06-08'
+  supersedes:
+  - 2004-text
+  source: constitution-habematolel-pomo-of-upper-lake-2024-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/habematolel-pomo-of-upper-lake/bc0d26fc3ad6314e.pdf
+    sha256: bc0d26fc3ad6314e9d12c4ffc5b5b4f99185100d8192ded5da489e12dfd0721e
+    pages: 19
+  note: The text also prints adopted 2004-05-12, which belong to the earlier text it compiles. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (Nominations and Elections)
+    summary: Article headed "Nominations and Elections"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (Removal, Recall and Forfeiture)
+    summary: Article headed "Removal, Recall and Forfeiture"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (Removal, Recall and Forfeiture)
+    summary: Article headed "Removal, Recall and Forfeiture"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (Judiciary)
+    summary: Article headed "Judiciary"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (Judiciary)
+    summary: Article headed "Judiciary"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 2004-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.55, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 2004-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.34, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 2004-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.40, by script); not yet read side by side.
+- id: 2026-text
+  label: CONSTITUTION of the HABEMATOLEL Pomo of Upper Lake (Third Amended) as amended through Third Amended
+    Constitution, 2026-06-13
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2026-06-13'
+    effective: '2026-06-13'
+  supersedes:
+  - 2024-text
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/habematolel-pomo-of-upper-lake/c09fc5bcd7f90963.pdf
+    sha256: c09fc5bcd7f909635ebf6239dcbb3099a76c15c2112510d2a4153193ef6f0f73
+    pages: 20
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (Nominations and Elections)
+    summary: Has the Election Committee preside over elections, with its appeal procedures to be set in
+      an Election Ordinance.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article VIII (Removal, Recall and Forfeiture)
+    summary: Has the Tribal Court hear charges against officials before removal, with appeals going to
+      a Tribal Court of Appeals.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VIII (Removal, Recall and Forfeiture)
+    summary: Article headed "Removal, Recall and Forfeiture"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (Removal, Recall and Forfeiture)
+    summary: Article headed "Removal, Recall and Forfeiture"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article X (Powers)
+    summary: Lets the Executive Council waive the Tribe's sovereign immunity from suit only if the General
+      Membership specifically approves.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XI (Land)
+    summary: Makes the Tribal Court of Appeals the body that decides land appeals, with the Executive
+      Council appointing one from General Membership if none exists.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article XI (Land)
+    summary: Sends appeals of Executive Council land acts and other land disputes to the Tribal Court
+      of Appeals, whose decision is final.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XII (Judiciary)
+    summary: Governs appointment, vacancies, qualifications, compensation and removal of Tribal Court
+      and Court of Appeals judges.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XII (Judiciary)
+    summary: Lets parties appeal civil and criminal judgments to the Tribal Court of Appeals, which reviews
+      matters of law and reverses findings only if arbitrary or contrary to law.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 2024-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.69, by script); not yet read side by side.
+  - topic: dispute-resolution
+    compared_with: 2024-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 2024-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.39, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 2024-text
+    change: unchanged
+    verification: inferred
+    note: The article texts match (word-run overlap 0.98, by script).
+  - topic: sovereign-immunity
+    compared_with: 2024-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

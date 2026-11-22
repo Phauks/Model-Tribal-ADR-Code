@@ -1,0 +1,217 @@
+id: peoria-tribe-of-indians-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Peoria Tribe of Indians of Oklahoma
+nations:
+- peoria-tribe-of-indians-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: peoria-tribe-of-indians-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1939-08-16
+  to 1997-07-23. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-08-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-peocons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/peoria-tribe-of-indians-of-oklahoma/acb7c9b173329b99.html
+    sha256: acb7c9b173329b9970527ec022cb81ebde2f160e46d77be7036a5f1ac3eec28b
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE PEORIA TRIBE OF INDIANS OF OKLAHOMA (1939)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1939-10-10'
+  supersedes:
+  - 1939-text
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/peoria-tribe-of-indians-of-oklahoma/80cc720e6978a5b7.pdf
+    sha256: 80cc720e6978a5b7a3c1c485fcfb7c61f8aec38d2399582fdb9839fc68ee492d
+    pages: 6
+  note: The text prints an approval date (1939-08-16) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (Vacancies)
+    summary: Article headed "Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (Removal of Officers)
+    summary: Article headed "Removal of Officers"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1939-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.85, by script); not yet read side by side.
+- id: 1981-text
+  label: CONSTITUTION OF THE PEORIA TRIBE OF INDIANS OF OKLAHOMA (1981)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1981-07-30'
+  supersedes:
+  - 1939-text-2
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1981-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/peoria-tribe-of-indians-of-oklahoma/1041ecff86aa38af.pdf
+    sha256: 1041ecff86aa38afa4024e52308d6b63451ee0559d8b1538cad00214e298d4e6
+    pages: 11
+  note: The text prints an approval date (1980-05-29) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VII (GRIEVANCE COMMITTEE)
+    summary: Article headed "GRIEVANCE COMMITTEE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1939-text-2
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1939-text-2
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1939-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
+- id: 1997-text
+  label: CONSTITUTION OF THE PEORIA TRIBE OF INDIANS OF OKLAHOMA (1997)
+  event: revision
+  status: unknown
+  dates:
+    adopted: '1997-07-23'
+    approved: '1997-08-13'
+    effective: '1997-08-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1981-text
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/peoria-tribe-of-indians-of-oklahoma/b8b092e798381cf0.pdf
+    sha256: b8b092e798381cf0d6bb1b1911658ac3a29dcc5fac3e32f7a94a3328b3e40503
+    pages: 18
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VII (GRIEVANCE COMMITTEE)
+    summary: Creates a five-member Grievance Committee that decides constitutional interpretations and
+      disputes about Business Committee actions, with those decisions taken to the Peoria Council.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+    - council-hearing
+  - topic: dispute-resolution
+    locator: Article IX (ELECTIONS)
+    summary: Requires the Business Committee's election ordinance to set a procedure for handling protests
+      and resolving election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Requires the election ordinance to provide a procedure for handling election protests and
+      resolving election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Lets each body remove its members for cause, and has the Grievance Committee investigate
+      and hear charges against officials before deciding whether they are cleared or removed.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+    - fact-finding
+  - topic: removal-and-recall
+    locator: Article XI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XVI (TRIBAL COURT)
+    summary: Vests the Tribe's judicial authority in the Court of Indian Offenses until the Peoria Council
+      sets up a Tribal Court to exercise it.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1981-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1981-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.61, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1981-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.40, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1981-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.75, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

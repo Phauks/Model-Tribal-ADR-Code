@@ -1,0 +1,67 @@
+id: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+kind: constitution
+title: Constitution of the Grindstone Indian Rancheria of Wintun-Wailaki Indians of California
+nations:
+- grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california
+jurisdictions:
+- level: tribal
+  tribe: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1974-04-20
+  to 1974-06. Versions are only those found; others may exist.'
+versions:
+- id: 1974-text
+  label: CONSTITUTION AND BYLAWS OF GRINDSTONE INDIAN RANCHERIA, GLENN COUNTY, CALIFORNIA as amended through
+    Amendments I, II and III, 1974-04-20
+  event: edition
+  status: superseded
+  dates:
+    listed: '1974-04-20'
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california/bf06b15c5f322f62.pdf
+    sha256: bf06b15c5f322f624c5cf5b7d7842e5d9a8ddee94662e373c6d7261d98346c90
+    pages: 11
+  note: The text also prints approved 1971-08-19, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1974-text-2
+  label: CONSTITUTION AND BYLAWS OF GRINDSTONE INDIAN RANCHERIA, GLENN COUNTY, CALIFORNIA as amended through
+    Amendment III, 1974-06
+  event: edition
+  status: unknown
+  dates:
+    listed: 1974-06
+  supersedes:
+  - 1974-text
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california/f5aa04dd50a66c7c.pdf
+    sha256: f5aa04dd50a66c7cf3979cf6365f591a5d305c1e667139446b6fa8a6bc10850a
+    pages: 18
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1974-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.94, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

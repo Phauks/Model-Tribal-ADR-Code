@@ -1,0 +1,178 @@
+id: kenaitze-indian-tribe-constitution
+kind: constitution
+title: Constitution of the Kenaitze Indian Tribe
+nations:
+- kenaitze-indian-tribe
+jurisdictions:
+- level: tribal
+  tribe: kenaitze-indian-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1971-06-21
+  to 2019-02-28. Versions are only those found; others may exist.'
+versions:
+- id: 1971-text
+  label: Constitution of the Kenaitze Indian Tribe (1971)
+  event: original
+  status: superseded
+  dates:
+    approved: '1971-06-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-kenaitze-indian-tribe-1971-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kenaitze-indian-tribe/965826f5611ebb93.pdf
+    sha256: 965826f5611ebb93b4cd7e75d1c86b91916a228612648f804b93aeeacd517f6f
+    pages: 4
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1997-text
+  label: Constitution of the Kenaitze Indian Tribe (1997)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1997-06-16'
+    approved: '1997-07-16'
+    effective: '1997-07-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1971-text
+  source: constitution-kenaitze-indian-tribe-1997-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kenaitze-indian-tribe/49b095a949cb69ea.pdf
+    sha256: 49b095a949cb69eab908043335e1e7f2065d7e005da24f6b841d6845c518233a
+    pages: 16
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (MEETINGS AND ELECTIONS)
+    summary: Article headed "MEETINGS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL, RECALL, FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1971-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1971-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 1997-text-2
+  label: CONSTITUTION OF THE KENAITZE INDIAN TRIBE (1997)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1997-07-16'
+  supersedes:
+  - 1997-text
+  source: constitution-kenaitze-indian-tribe-1997-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kenaitze-indian-tribe/86e30965813fac5d.pdf
+    sha256: 86e30965813fac5dcf15475a1ad8b33cd2b89a05ba2a0bca0351433e6a4a30b5
+    pages: 16
+  note: The text also prints approved 1997-07-16, effective 1997-07-16, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked superseded because a later dated text was found (project inference). Type and dates read from
+    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (MEETINGS AND ELECTIONS)
+    summary: Article headed "MEETINGS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL, RECALL, FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1997-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.40, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1997-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.79, by script); not yet read side by side.
+- id: 2019-text
+  label: CONSTITUTION OF THE KENAITZE INDIAN TRIBE as amended through Amended February 28, 2019
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2019-02-28'
+    effective: '2019-04-25'
+  supersedes:
+  - 1997-text-2
+  source: constitution-kenaitze-indian-tribe-2019-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kenaitze-indian-tribe/298bee8312a672eb.pdf
+    sha256: 298bee8312a672eb38b87e161b994a32c545c4d85d4a0fa05d4b8f52bb0d00d7
+    pages: 14
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VI (MEETINGS AND ELECTIONS)
+    summary: Requires the tribal election ordinance to set out how election disputes are settled.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VI (MEETINGS AND ELECTIONS)
+    summary: Requires the tribal election ordinance to include provisions for settling election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL, RECALL, FORFEITURE, AND VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURE, AND VACANCIES"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article X (POWERS)
+    summary: Lists among the Council's powers the exercise of judicial powers, with the text shown cut
+      off mid-clause.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1997-text-2
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1997-text-2
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1997-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.48, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1997-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.80, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

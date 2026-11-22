@@ -1,0 +1,149 @@
+id: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+kind: constitution
+title: Constitution of the Tule River Indian Tribe of the Tule River Reservation, California
+nations:
+- tule-river-indian-tribe-of-the-tule-river-reservation
+jurisdictions:
+- level: tribal
+  tribe: tule-river-indian-tribe-of-the-tule-river-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1940-05-24
+  to 1974-03-04. Versions are only those found; others may exist.'
+versions:
+- id: 1940-text
+  label: CONSTITUTION AND BYLAWS OF THE TULE RIVER INDIAN TRIBE OF CALIFORNIA as amended through Amendment
+    II, adopted 1940-05-24
+  event: edition
+  status: superseded
+  dates:
+    listed: '1940-05-24'
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1940-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tule-river-indian-tribe-of-the-tule-river-reservation/03de94998366fc25.pdf
+    sha256: 03de94998366fc25869b25e4e8c4f43f0bdd16f70ae13801f7780536be5eccef
+    pages: 14
+  note: The text also prints approved 1936-01-15, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+- id: 1974-text
+  label: CONSTITUTION AND BYLAWS OF THE TULE RIVER INDIAN TRIBE OF CALIFORNIA as amended through Amendment
+    V, adopted 1974-01
+  event: edition
+  status: superseded
+  dates:
+    listed: 1974-01
+  supersedes:
+  - 1940-text
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tule-river-indian-tribe-of-the-tule-river-reservation/be9c72d0f53fa594.pdf
+    sha256: be9c72d0f53fa5947e8b76c2d49bc8706276d033f97fc99e840e06b1574b57a7
+    pages: 21
+  note: The text also prints approved 1936-01-15, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+- id: 1974-text-2
+  label: CONSTITUTION AND BYLAWS OF THE TULE RIVER INDIAN TRIBE, CALIFORNIA as amended through Amendment
+    V, approved 1974-03-04
+  event: edition
+  status: superseded
+  dates:
+    listed: '1974-03-04'
+  supersedes:
+  - 1974-text
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tule-river-indian-tribe-of-the-tule-river-reservation/bc46778ab8157044.pdf
+    sha256: bc46778ab8157044092b61e3a02e8c69992ff50474a2cdad6c574e3c12293e30
+    pages: 18
+  note: The text also prints approved 1936-01-15, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal from Office)
+    summary: Article headed "Vacancies and Removal from Office"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article VI (Powers and Duties of the Tribal Council)
+    summary: Empowers the Tribal Council to establish courts that adjudicate claims or disputes among
+      tribal members, and to help members present claims elsewhere.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article V (Tribal Court (Judicial Code))
+    summary: Requires the council to establish a tribal court with jurisdiction over offenses and over
+      disputes among Indians on the reservation, including cases brought by stipulation.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1974-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1974-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1974-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 1974-text-3
+  label: Constitution and Bylaws of the Tule River Indian Tribe of California as amended through Amendment
+    V, approved 1974-03-04
+  event: edition
+  status: unknown
+  dates:
+    listed: '1974-03-04'
+  supersedes:
+  - 1974-text-2
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tule-river-indian-tribe-of-the-tule-river-reservation/8b45c1385396e432.html
+    sha256: 8b45c1385396e4325c85f2e32e85768f95c4f152d144e9776494672dd6016800
+  note: The text also prints approved 1936, which belong to the earlier text it compiles. The date recorded
+    as listed is that of the latest amendment the text says it includes. Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article V (TRIBAL COURT (JUDICIAL CODE))
+    summary: Article headed "TRIBAL COURT (JUDICIAL CODE)"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1974-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.77, by script); not yet read side by side.
+  - topic: dispute-resolution
+    compared_with: 1974-text-2
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1974-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.76, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

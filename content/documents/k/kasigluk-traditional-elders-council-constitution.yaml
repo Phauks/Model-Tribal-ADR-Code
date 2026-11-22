@@ -1,0 +1,82 @@
+id: kasigluk-traditional-elders-council-constitution
+kind: constitution
+title: Constitution of the Kasigluk Traditional Elders Council
+nations:
+- kasigluk-traditional-elders-council
+jurisdictions:
+- level: tribal
+  tribe: kasigluk-traditional-elders-council
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 2008-11
+  to 2008-11. Versions are only those found; others may exist.'
+versions:
+- id: 2008-text
+  label: Traditional Constitutions and Bylaws of the Native Village of Kasigluk, Alaska (2008)
+  event: original
+  status: superseded
+  dates:
+    adopted: 2008-11
+  source: constitution-kasigluk-traditional-elders-council-2008-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kasigluk-traditional-elders-council/8dc22450bea7cdd2.pdf
+    sha256: 8dc22450bea7cdd298210c070e8176a135b20b36f276566c466d2effe3c7f6ce
+    pages: 9
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 2008-text-2
+  label: Traditional Constitutions and Bylaws of the Native Village of Kasigluk, Alaska (2008)
+  event: edition
+  status: unknown
+  dates:
+    listed: 2008-11
+  supersedes:
+  - 2008-text
+  source: constitution-kasigluk-traditional-elders-council-2008-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kasigluk-traditional-elders-council/9a0a01fa3066e70a.pdf
+    sha256: 9a0a01fa3066e70a94550941e08ada3017c93edbc12b86a82cbfb232deca3ab0
+    pages: 9
+  note: The text also prints adopted 2008-11, which belong to the earlier text it compiles. The date recorded
+    as listed is that of the latest amendment the text says it includes. Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: peacemaking
+    locator: Article VI (Governmental Powers)
+    summary: Makes the Traditional Council and Elders the final arbiter of disputes over the Constitution's
+      interpretation, and lets the Council create courts or conflict resolution mechanisms.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - elders-council
+  - topic: election-disputes
+    locator: Article VII (Elections)
+    summary: Article headed "Elections"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (Removal, Recall, Forfeitures and Vacancy from Office)
+    summary: Article headed "Removal, Recall, Forfeitures and Vacancy from Office"; found by its heading
+      and not yet read.
+    verification: title-only
+  changes:
+  - topic: peacemaking
+    compared_with: 2008-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 2008-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 2008-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

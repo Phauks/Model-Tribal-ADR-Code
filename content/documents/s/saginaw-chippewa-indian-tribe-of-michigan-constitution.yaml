@@ -1,0 +1,74 @@
+id: saginaw-chippewa-indian-tribe-of-michigan-constitution
+kind: constitution
+title: Constitution of the Saginaw Chippewa Indian Tribe of Michigan
+nations:
+- saginaw-chippewa-indian-tribe-of-michigan
+jurisdictions:
+- level: tribal
+  tribe: saginaw-chippewa-indian-tribe-of-michigan
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1937-03-08
+  to 1986-11-04. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1937)
+  event: original
+  status: superseded
+  dates:
+    approved: '1937-03-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-sagcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/saginaw-chippewa-indian-tribe-of-michigan/cf02d2e036dffe4e.html
+    sha256: cf02d2e036dffe4e4f1d5cad57ffcc2f03041d59c297baeff836b221b488f9af
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1937-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE SAGINAW CHIPPEWA INDIAN TRIBE OF MICHIGAN (1937)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1937-03-27'
+    approved: '1937-05-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1937-text
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1937-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/saginaw-chippewa-indian-tribe-of-michigan/986e618a71ff0f33.pdf
+    sha256: 986e618a71ff0f33fdc147ed33151b2b69e9ce45f013f96b736a01598b5243a5
+    pages: 8
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1986-text
+  label: THE AMENDED CONSTITUTION AND BY-LAWS OF THE SAGINAW CHIPPEWA INDIAN TRIBE OF MICHIGAN as amended
+    through Amended constitution, 1986-11-04
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '1986-11-04'
+  supersedes:
+  - 1937-text-2
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/saginaw-chippewa-indian-tribe-of-michigan/9c5725303b00a3e6.pdf
+    sha256: 9c5725303b00a3e611fde3ece8edcb9a506bdd8a6c03b114e6153e00de526fb3
+    pages: 10
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

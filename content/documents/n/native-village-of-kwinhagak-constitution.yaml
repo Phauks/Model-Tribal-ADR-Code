@@ -1,0 +1,51 @@
+id: native-village-of-kwinhagak-constitution
+kind: constitution
+title: Constitution of the Native Village of Kwinhagak
+nations:
+- native-village-of-kwinhagak
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-kwinhagak
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1948-08-07
+  to 1948-08-07. Versions are only those found; others may exist.'
+versions:
+- id: 1948-text
+  label: CONSTITUTION AND BY-LAWS (1948)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1948-08-07'
+  source: university-of-oklahoma-indian-reorganization-act-kwincons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-kwinhagak/1eae7439dc8ac6a0.html
+    sha256: 1eae7439dc8ac6a031028c7cfe12d92e9488ccb40067c5e2f4232621318c89c2
+  note: 'The text prints an approval date (1948-06-11) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1948-08-07. Dates
+    read by rule from the certificates on the library page.'
+- id: 1948-text-2
+  label: Constitution and By-laws of the Native Village of Kwinhagak (1948)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1948-08-07'
+  supersedes:
+  - 1948-text
+  source: constitution-native-village-of-kwinhagak-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-kwinhagak/d962775d54713dc3.pdf
+    sha256: d962775d54713dc3324a3141bc69002ec7e3e2eafbefd22ad1dddbbcf44c04f6
+    pages: 6
+  note: The text prints an approval date (1948-06-11) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1948-08-07, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

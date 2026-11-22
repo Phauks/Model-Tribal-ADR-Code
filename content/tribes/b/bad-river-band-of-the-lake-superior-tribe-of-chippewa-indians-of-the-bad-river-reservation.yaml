@@ -176,6 +176,9 @@ government_structure:
   detail: Constitution (Bad River Band of the Lake Superior Tribe of the Chippewa Indians of the State
     of Wisconsin) (approved 1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-badrivcons
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1936-text
   confidence: medium
   verification: read-in-full
   as_of: '1936'
@@ -256,6 +259,9 @@ governing_documents:
   year: '1936'
   link: https://thorpe.law.ou.edu/IRA/badrivcons.html
   source: university-of-oklahoma-indian-reorganization-act-badrivcons
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1936-text
   confidence: medium
   verification: title-only
   as_of: '1936'
@@ -339,20 +345,21 @@ gaming:
       Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.04.03%20%20Bad%20River%20Band%20of%20Lake%20Superior%20Chippewa%20Indians%20Gaming%20Compact.pdf.'
   - state: WI
     status: deemed-approved
-    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
-      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
-      mediation or arbitration only by mutual agreement.
-    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
-    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
-    confidence: medium
-    verification: inferred
-    as_of: '1992-08-10'
-    locator: Section XXIII (Dispute Resolution) of the 1992 compact
-    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
-      compact; later amendments renumbered this section XXIV and revised it for at least some nations
-      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
-      from this nation's most recent approved or deemed-approved entry for this state in the Office of
-      Indian Gaming list (2003-07-22).
+    dispute_resolution_summary: After written notice the State and Tribe meet within 10 days, then must
+      go through non-binding mediation (at least two sessions) before either may demand binding arbitration
+      before a single arbitrator, with the United States District Court handling actions to compel arbitration
+      or confirm an award and other relief reserved to court.
+    dispute_resolution_locator: Section XXII. DISPUTE RESOLUTION, E. Arbitration
+    source: compact-wi-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-2003-07-22
+    confidence: high
+    verification: read-in-full
+    as_of: '2003-07-22'
+    locator: Section XXII. DISPUTE RESOLUTION, E. Arbitration
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 7, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-wi-menominee-indian-tribe-of-wisconsin-1992 without reading,
+      and it described the 1992 compact's clause, which a later amendment replaced. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2003-07-22).
   ordinances:
   - approved: '1993-11-10'
     link: https://www.nigc.gov?wpdmdl=3319&ind=3321

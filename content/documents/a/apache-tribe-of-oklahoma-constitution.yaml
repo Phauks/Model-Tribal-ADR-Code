@@ -1,0 +1,95 @@
+id: apache-tribe-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Apache Tribe of Oklahoma
+nations:
+- apache-tribe-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: apache-tribe-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1987
+  to 1987-06-20. Versions are only those found; others may exist.'
+versions:
+- id: 1987-text
+  label: Constitution of the Apache Tribe of Oklahoma as amended through Amendments II, III and IV, adopted
+    June 20, 1987
+  event: edition
+  status: superseded
+  dates:
+    listed: '1987'
+  source: constitution-apache-tribe-of-oklahoma-1987-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/apache-tribe-of-oklahoma/08240dd514b54d84.pdf
+    sha256: 08240dd514b54d84768a5d06b48a255b67b36de60ec7630cb4a776b41517f354
+    pages: 6
+  note: The text prints an approval date (1971-12-01) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1972-02-05, effective
+    1972-02-05, which belong to the earlier text it compiles. The date recorded as listed is that of the
+    latest amendment the text says it includes. Marked superseded because a later dated text was found
+    (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1987-text-2
+  label: CONSTITUTION OF THE APACHE TRIBE OF OKLAHOMA as amended through Amendment IV, 1987-06-20
+  event: edition
+  status: unknown
+  dates:
+    listed: '1987-06-20'
+  supersedes:
+  - 1987-text
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/apache-tribe-of-oklahoma/e82d004f0ef61fbb.pdf
+    sha256: e82d004f0ef61fbbbc61b8ca601e76359171b8b733400a30ad80c95ecaedd6a6
+    pages: 6
+  note: The text also prints adopted 1972-02-05, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VII (Elections)
+    summary: Article headed "Elections"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (Vacancies)
+    summary: Article headed "Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (within sixty (60) days of the vacancy; provided, that if such)
+    summary: Article headed "within sixty (60) days of the vacancy; provided, that if such"; found by
+      its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (Recall of Officers)
+    summary: Article headed "Recall of Officers"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1987-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.78, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1987-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.43, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

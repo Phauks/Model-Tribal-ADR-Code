@@ -1,0 +1,141 @@
+id: miami-tribe-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Miami Tribe of Oklahoma
+nations:
+- miami-tribe-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: miami-tribe-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-10-10
+  to 2008-02-01. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-10-10'
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/miami-tribe-of-oklahoma/1bcc3a078e82e87d.html
+    sha256: 1bcc3a078e82e87d71147545231e1dfb066f9d5affcc95b412616de8d4783182
+  note: 'The text prints an approval date (1939-08-16) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1939-10-10. Dates
+    read by rule from the certificates on the library page.'
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1964-amendment
+  label: 'AMENDMENT: Constitution and Bylaws of the Miami Tribe of Oklahoma as amended through Amendment
+    IV, 1964-08-31'
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1964-09-01'
+  amends:
+  - 1939-text
+  source: constitution-miami-tribe-of-oklahoma-1964-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/miami-tribe-of-oklahoma/71b31f0bf0739e30.pdf
+    sha256: 71b31f0bf0739e3041ab55a462b108253d6ffe5b49b67f98a95bf0184d3693cd
+    pages: 4
+  note: The text prints an approval date (1964-06-12) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1939-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 2008-text
+  label: CONSTITUTION OF THE MIAMI TRIBE OKLAHOMA as amended through Amendment No. 1, 2008-02-01
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2008-02-01'
+  supersedes:
+  - 1939-text
+  source: constitution-miami-tribe-of-oklahoma-2008-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/miami-tribe-of-oklahoma/9f52f7c1b35139f1.pdf
+    sha256: 9f52f7c1b35139f17c02e48571601400cf10604129560adf98853e85eca5dc41
+    pages: 13
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VI (COMMITTEES)
+    summary: Has a five-member Grievance Committee determine disputes by vote, with appeal first to the
+      Business Committee and then to a special General Council meeting.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+    - council-hearing
+  - topic: judicial-power
+    locator: Article VIL (JUDICIAL BRANCH)
+    summary: Gives the Court of Indian Offenses judicial authority until the Business Committee establishes
+      a Tribal Court, and allows restoring that court's jurisdiction.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XI (RECALL AND REMOVAL OF OFFICERS)
+    summary: Allows removal of officers for cause and recall by petition; the Grievance Committee may
+      investigate and report findings, and a General Council hearing may follow.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - fact-finding
+    - council-hearing
+  - topic: removal-and-recall
+    locator: Article XI (RECALL AND REMOVAL OF OFFICERS)
+    summary: Article headed "RECALL AND REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1939-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1939-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1939-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1939-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

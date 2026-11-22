@@ -1,0 +1,80 @@
+id: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+kind: constitution
+title: Constitution of the Walker River Paiute Tribe of the Walker River Reservation, Nevada
+nations:
+- walker-river-paiute-tribe-of-the-walker-river-reservation
+jurisdictions:
+- level: tribal
+  tribe: walker-river-paiute-tribe-of-the-walker-river-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1937
+  to 1945-04-05. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS OF THE WALKER RIVER PAIUTE TRIBE OF NEVADA (1937)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1937'
+    approved: '1937-03-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-walker-river-paiute-tribe-of-the-walker-river-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/walker-river-paiute-tribe-of-the-walker-river-reservation/b2410091679011ad.pdf
+    sha256: b2410091679011ad73f564260f1e441b8983fecc8177fa3e77c8b15253c24870
+    pages: 22
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS AND NOMINATIONS FOR THE TRIBAL COUNCIL)
+    summary: Article headed "ELECTIONS AND NOMINATIONS FOR THE TRIBAL COUNCIL"; found by its heading and
+      not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL “FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL “FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1945-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1945)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1945-04-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1937-text
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/walker-river-paiute-tribe-of-the-walker-river-reservation/db74b2d5490bbddc.html
+    sha256: db74b2d5490bbddcb6f883bcf0117f448757846818ee42eb50050aefa9757083
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1937-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1937-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.13, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

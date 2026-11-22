@@ -1,0 +1,130 @@
+id: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+kind: constitution
+title: Constitution of the Shoshone-Bannock Tribes of the Fort Hall Reservation
+nations:
+- shoshone-bannock-tribes-of-the-fort-hall-reservation
+jurisdictions:
+- level: tribal
+  tribe: shoshone-bannock-tribes-of-the-fort-hall-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-03-13
+  to 2013. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS FOR THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-03-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-fthallcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/shoshone-bannock-tribes-of-the-fort-hall-reservation/c304d6c87a90eac1.html
+    sha256: c304d6c87a90eac1fa551175311601101009f45719ed358324173715a94764d8
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 2013-text
+  label: CONSTITUTION AND BYLAWS FOR THE SHOSHONE-BANNOCK TRIBES OF THE FORT HALL RESERVATION OF IDAHO
+    as amended through Amended as of August 15, 2013
+  event: edition
+  status: superseded
+  dates:
+    listed: '2013'
+  supersedes:
+  - 1936-text
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/shoshone-bannock-tribes-of-the-fort-hall-reservation/65128f9628e1b9d8.pdf
+    sha256: 65128f9628e1b9d89611a7bb4264b52ea3438d2195a58fd081049655c1f98b09
+    pages: 12
+  note: The text also prints approved 1936-04-30, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article I (The Fort Hall Business Council Fort Hall Reservation shall be the sole judge of
+      )
+    summary: Article headed "The Fort Hall Business Council Fort Hall Reservation shall be the sole judge
+      of the"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+- id: 2013-text-2
+  label: CONSTITUTION AND BYLAWS FOR THE SHOSHONE-BANNOCK TRIBES OF THE FORT HALL RESERVATION, IDAHO as
+    amended through Amended August 15, 2013
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2013'
+  supersedes:
+  - 2013-text
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/shoshone-bannock-tribes-of-the-fort-hall-reservation/bc5bd1292096bd21.html
+    sha256: bc5bd1292096bd213f28169921e70cbeab982811e876c97d575a2eaeac9d4a34
+  note: The text also prints approved 1936-04-30, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 2013-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: election-disputes
+    compared_with: 2013-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 2013-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

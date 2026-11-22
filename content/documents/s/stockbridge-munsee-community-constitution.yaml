@@ -1,0 +1,97 @@
+id: stockbridge-munsee-community-constitution
+kind: constitution
+title: Constitution of the Stockbridge Munsee Community, Wisconsin
+nations:
+- stockbridge-munsee-community
+jurisdictions:
+- level: tribal
+  tribe: stockbridge-munsee-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1937-10-30
+  to 1995-11-14. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS OF THE STOCKBRIDGE MUNSEE COMMUNITY, WISCONSIN (1937)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1937-10-30'
+    approved: '1937-11-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-stockbridge-munsee-community-1937-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/stockbridge-munsee-community/a2a034579d397e57.pdf
+    sha256: a2a034579d397e574ddc6937fefed4410cd8adc1deaa37cc5b5aab4daaa8a85c
+    pages: 8
+  note: 'Marked superseded because a later dated text was found (project inference). Dates read from another
+    copy of the same text: adopted 1937-10-30. Type and dates read from the text by an AI reviewer (Claude
+    Haiku), not yet checked by the lead author.'
+- id: 1995-text
+  label: Constitution and By-Laws of the Stockbridge-Munsee Community as amended through Amendment No.
+    1, 1995-11-14
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1995-11-14'
+  supersedes:
+  - 1937-text
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/stockbridge-munsee-community/e59ad23956a48782.html
+    sha256: e59ad23956a48782454f5e473abf2715e7f30acdfb6a46cf5dff3e4ea2789382
+  note: The text also prints adopted 1937-10-30, approved 1937-11-18, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (Removal)
+    summary: Article headed "Removal"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1937-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1995-amendment
+  label: AMENDMENT I, CONSTITUTION OF THE STOCKBRIDGE-MUNSEE COMMUNITY as amended through Amendment I,
+    1995-11-14
+  event: amendment
+  status: unknown
+  dates:
+    listed: '1995-11-14'
+  amends:
+  - 1995-text
+  source: constitution-stockbridge-munsee-community-1995-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/stockbridge-munsee-community/1c1d1a40620e9e5c.pdf
+    sha256: 1c1d1a40620e9e5c446b6aae19dcf7c4d53af69d9a84d6da11834565514cf4be
+    pages: 2
+  note: The text also prints adopted 1995-11-14, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1995-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

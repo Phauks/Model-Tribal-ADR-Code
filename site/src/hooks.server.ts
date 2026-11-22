@@ -8,21 +8,23 @@ import type { Handle } from '@sveltejs/kit/hooks';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { eventStatement, refusedAction } from '#lib/server/events.ts';
+import { sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
-import { signInClient, signInSettings } from '#lib/server/sign-in.ts';
+import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
 
 /** Pages that show private information and must never be cached or framed. */
 const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests'];
 
 /** Pages that need to know who is signed in. */
-const signedInPrefixes = ['/workspace', '/profile'];
+const signedInPrefixes = ['/workspace', '/profile', '/sign-in'];
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.person = undefined;
 	event.locals.account = undefined;
 	event.locals.refused = undefined;
+	event.locals.session = undefined;
 	const path = event.url.pathname;
 	const changing = changesSomething(event.request.method);
 
@@ -40,20 +42,19 @@ export const handle: Handle = async ({ event, resolve }) => {
 	// no Worker and nobody is signed in.
 	if (!building && signedInPrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
 		const environment = workerEnvironment();
-		const configured = signInSettings(environment);
-		if ('settings' in configured && environment.database) {
-			const client = signInClient(configured.settings, event.url.origin);
-			const user = await client.getUser({ cookies: event.cookies }).catch(() => undefined);
-			if (user?.sub) {
-				event.locals.person = await activePersonBySubject(environment.database, user.sub);
-				// Registration needs an address Auth0 has verified (docs/contributor-profiles.md).
-				if (typeof user.email === 'string' && user.email_verified === true) {
-					event.locals.account = {
-						subject: user.sub,
-						email: user.email,
-						name: typeof user.name === 'string' ? user.name : null
-					};
+		if (environment.database) {
+			const session = await sessionAccount(environment.database, event.cookies.get(sessionCookie)).catch(
+				(problem) => {
+					console.error('Could not read the session', problem);
+					return undefined;
 				}
+			);
+			if (session) {
+				event.locals.session = session;
+				event.locals.account = { subject: session.account.identifier, email: session.account.email, name: null };
+				event.locals.person = await activePersonBySubject(environment.database, session.account.identifier);
+			} else {
+				clearSessionCookie(event.cookies);
 			}
 		}
 		// Keep the masthead's "Workspace" or "Sign in" link in step with the session.

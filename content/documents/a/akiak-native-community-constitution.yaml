@@ -1,0 +1,52 @@
+id: akiak-native-community-constitution
+kind: constitution
+title: Constitution of the Akiak Native Community
+nations:
+- akiak-native-community
+jurisdictions:
+- level: tribal
+  tribe: akiak-native-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1949-05-11
+  to 1949-11-21. Versions are only those found; others may exist.'
+versions:
+- id: 1949-text
+  label: CONSTITUTION AND BY-LAWS OF THE AKIAK NATIVE COMMUNITY (1949)
+  event: original
+  status: superseded
+  dates:
+    approved: '1949-05-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-akiak-native-community-1949-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/akiak-native-community/0fb3bfa44e24381e.pdf
+    sha256: 0fb3bfa44e24381e3d79df9ae74a20f73f3ac4fee1bf4ada50e764a23a89891a
+    pages: 5
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1949-text-2
+  label: Constitution and By-Laws of the Akiak Native Community (1949)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1949-11-21'
+  supersedes:
+  - 1949-text
+  source: constitution-akiak-native-community-1949-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/akiak-native-community/9163796a70584a39.pdf
+    sha256: 9163796a70584a3921af66eb847a033b2b51fc274a90288d19b4abe262c3a538
+    pages: 5
+  note: The text prints an approval date (1949-05-11) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,119 @@
+id: stillaguamish-tribe-of-indians-of-washington-constitution
+kind: constitution
+title: Constitution of the Stillaguamish Tribe of Indians of Washington
+nations:
+- stillaguamish-tribe-of-indians-of-washington
+jurisdictions:
+- level: tribal
+  tribe: stillaguamish-tribe-of-indians-of-washington
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1953-01-31
+  to 1986-08-28. Versions are only those found; others may exist.'
+versions:
+- id: 1953-text
+  label: CONSTITUTION (1953)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1953-01-31'
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1953-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/stillaguamish-tribe-of-indians-of-washington/0a5cf12b5c027a70.pdf
+    sha256: 0a5cf12b5c027a70d498176ba8f538fa8453b6617f535a5075bbb6e329d66f46
+    pages: 6
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1986-text
+  label: ARTICLE XVIII - APPROVAL (1986)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1986-08-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1953-text
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/stillaguamish-tribe-of-indians-of-washington/6e4596aaca88b0c4.pdf
+    sha256: 6e4596aaca88b0c4a59d18687e219128e18a78d76fdb5f42a25abc8a82e445c4
+    pages: 1
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1986-text-2
+  label: CONSTITUTION OF THE STILLAGUAMISH TRIBE OF INDIANS OF WASHINGTON (1986)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1986-08-28'
+  supersedes:
+  - 1986-text
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/stillaguamish-tribe-of-indians-of-washington/d31d8fa1e095ca57.pdf
+    sha256: d31d8fa1e095ca577835a84d2880954b4f6cf350e0be316ef9bc47228d453cd0
+    pages: 12
+  note: The text also prints adopted 1986-06-18, approved 1986-08-28, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article V (TRIBAL ELECTIONS)
+    summary: Requires the election ordinance to provide for settling election disputes, with appeals allowed
+      to the tribe's judicial authority.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article V (TRIBAL ELECTIONS)
+    summary: Requires the election ordinance to provide for settling election disputes, with appeals allowed
+      to the tribe's judicial authority.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VI (CREATION AND FILLING OF VACANCIES)
+    summary: Article headed "CREATION AND FILLING OF VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XI (JUDICIAL AUTHORITY)
+    summary: Vests judicial authority in an inter-tribal court system, or later in a separate Tribal Court
+      with elected judges if the tribe chooses to create one.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article XI (JUDICIAL AUTHORITY)
+    summary: Gives an existing inter-tribal court system judicial authority, including settlement of tribal
+      disputes, until a separate Tribal Court is established.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1986-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: dispute-resolution
+    compared_with: 1986-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: election-disputes
+    compared_with: 1986-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1986-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

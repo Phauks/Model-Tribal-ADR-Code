@@ -271,8 +271,8 @@ link, the theme button and the Settings button at the right end. Pages are
 built ahead of time, so the sign-in link cannot ask the server who is signed
 in; after a co-author signs in, the Worker sets a cookie that says only
 "signed in," and the link then reads "Workspace." Without scripts it stays
-"Sign in," which still works. Until Auth0 is set up, `/sign-in` says that
-sign-in is not available yet ([COLLABORATION.md](COLLABORATION.md)). Menu
+"Sign in," which still works. Sign-in itself is described in
+[COLLABORATION.md](COLLABORATION.md#how-sign-in-works). Menu
 items are at least 44 px tall. The current section is marked with
 `aria-current="page"` and a 3 px underline.
 

@@ -1,0 +1,96 @@
+id: prairie-band-potawatomi-nation-constitution
+kind: constitution
+title: Constitution of the Prairie Band Potawatomi Nation
+nations:
+- prairie-band-potawatomi-nation
+jurisdictions:
+- level: tribal
+  tribe: prairie-band-potawatomi-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1965
+  to 2007-11-30. Versions are only those found; others may exist.'
+versions:
+- id: 1965-text
+  label: CONSTITUTION AND BY LAWS OF THE PRAIRIE BAND OF POTAWATOMI INDIANS as amended through General
+    Council resolution amending Section 2(b) (quorum), 1965
+  event: edition
+  status: superseded
+  dates:
+    listed: '1965'
+  source: constitution-prairie-band-potawatomi-nation-1965-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/prairie-band-potawatomi-nation/89f1121e32662eac.pdf
+    sha256: 89f1121e32662eacbb09e118d00d3239a05e55522b5edec2dda4bb0d4350b2a6
+    pages: 21
+  note: The text also prints approved 1961-01-17, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (RECALL)
+    summary: Article headed "RECALL"; found by its heading and not yet read.
+    verification: title-only
+- id: 2007-text
+  label: Constitution of the Prairie Band Potawatomi Nation as amended through 2007 amendments, approved
+    December 6, 2007
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2007-11-30'
+    approved: '2007-12-06'
+    effective: '2007-12-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1965-text
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/prairie-band-potawatomi-nation/4674280cae3d87f8.pdf
+    sha256: 4674280cae3d87f883729582eb1cc68ad57335ea81ac4d7169eac6449e830b6f
+    pages: 14
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article V (ENUMERATED POWERS OF TRIBAL COUNCIL)
+    summary: Empowers the Tribal Council to establish procedures governing resolution of disputes and
+      non-dispute proceedings.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ETHICAL RESPONSIBILITIES OF OFFICIALS)
+    summary: Sets the Election Board's timing for announcing results and provides that tied election outcomes
+      are decided by coin toss or drawing straws.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1965-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: election-disputes
+    compared_with: 1965-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1965-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

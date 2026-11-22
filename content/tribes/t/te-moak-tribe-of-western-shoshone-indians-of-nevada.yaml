@@ -252,6 +252,9 @@ government_structure:
   detail: Constitution (Te-Moak Bands of Western Shoshone Indians Nevada) (approved 1938) states it was
     adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-tecons
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1938-text
   confidence: medium
   verification: read-in-full
   as_of: '1938'
@@ -304,6 +307,9 @@ governing_documents:
   year: '1938'
   link: https://thorpe.law.ou.edu/IRA/tecons.html
   source: university-of-oklahoma-indian-reorganization-act-tecons
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1938-text
   confidence: medium
   verification: title-only
   as_of: '1938'
@@ -372,16 +378,19 @@ gaming:
       to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
       court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
       of sovereign immunity, with mediation or arbitration available by mutual written agreement.
-    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
-      of Sovereign Immunity)
-    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
-    confidence: medium
-    verification: inferred
-    as_of: '2018-01-18'
-    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
-    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
-      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
-      deemed-approved entry for this state in the Office of Indian Gaming list (2014-10-23).
+    dispute_resolution_locator: ARTICLE XIII. DEFAULT AND TERMINATION, 1. Default. (with ARTICLE X. LIMITED
+      WAIVER OF SOVEREIGN IMMUNITY)
+    source: nevada-te-moak-tribe-gaming-compact-2014
+    confidence: high
+    verification: read-in-full
+    as_of: '2014-10-23'
+    locator: ARTICLE XIII. DEFAULT AND TERMINATION, 1. Default. (with ARTICLE X. LIMITED WAIVER OF SOVEREIGN
+      IMMUNITY)
+    note: Checked on 2026-11-22 against this nation's own compact, which the summary was first copied
+      from compact-nv-washoe-tribe-of-nevada-and-california-2018 without reading; a third reading found
+      the clause the same in substance (research/reviews/2026-11-22-compact-clauses-recheck.json, item
+      216). Status copied from this nation's most recent approved or deemed-approved entry for this state
+      in the Office of Indian Gaming list (2014-10-23).
   ordinances:
   - approved: '2009-05-13'
     link: https://www.nigc.gov?wpdmdl=11334&ind=11356

@@ -1,0 +1,54 @@
+id: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+kind: constitution
+title: Constitution of the Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+nations:
+- big-valley-band-of-pomo-indians-of-the-big-valley-rancheria
+jurisdictions:
+- level: tribal
+  tribe: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-01-15
+  to 1940-04-13. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: Constitution and By-laws for the Big Valley Band of Pomo Indians of the Big Valley Rancheria,
+    California (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-01-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/big-valley-band-of-pomo-indians-of-the-big-valley-rancheria/ca9945a8d7d8c377.pdf
+    sha256: ca9945a8d7d8c377b73fc965fe4378a86360224e8786fbb3cd7a5973db1e05f6
+    pages: 7
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS FOR THE BIG VALLEY BAND OF POMO (1940)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1940-04-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/big-valley-band-of-pomo-indians-of-the-big-valley-rancheria/232e306aac41bdc0.html
+    sha256: 232e306aac41bdc0b9ab84c64a53a1827f7d9b41c69a79df5b57b9bf05d2e808
+  note: Dates read by rule from the certificates on the library page.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

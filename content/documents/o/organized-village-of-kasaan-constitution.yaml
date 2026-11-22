@@ -1,0 +1,89 @@
+id: organized-village-of-kasaan-constitution
+kind: constitution
+title: Constitution of the Organized Village of Kasaan
+nations:
+- organized-village-of-kasaan
+jurisdictions:
+- level: tribal
+  tribe: organized-village-of-kasaan
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1938-10-15
+  to 1938-10-15. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS OF THE ORGANIZED VILLAGE OF KASAAN, ALASKA (1938)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1938-10-15'
+  source: constitution-organized-village-of-kasaan-1938-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-kasaan/3b2f72778164bf1a.pdf
+    sha256: 3b2f72778164bf1a0256665af94bf60f176abcb668c622b21d3532312629e1ac
+    pages: 7
+  note: The text prints an approval date (1938-08-22) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1938-text-2
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1938-10-15'
+  supersedes:
+  - 1938-text
+  source: university-of-oklahoma-indian-reorganization-act-kascons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/organized-village-of-kasaan/a560a4e7d7bab4f3.html
+    sha256: a560a4e7d7bab4f3d8ce043d31f1f55fd260f6747ae1102add94d7de8beb844e
+  note: 'The text prints an approval date (1938-08-22) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1938-10-15, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1938-10-15. Dates read by rule from the certificates
+    on the library page.'
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1938-text-3
+  label: Constitution and By-laws of the Organized Village of Kasaan, Alaska (1938)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1938-10-15'
+  supersedes:
+  - 1938-text-2
+  source: constitution-organized-village-of-kasaan-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-kasaan/deb69be0794cdb9f.pdf
+    sha256: deb69be0794cdb9fb8ebf23df852eba4ff8fd4c8cd4cd5833d36d1c5653299f4
+    pages: 8
+  note: The text prints an approval date (1938-08-22) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1938-10-15, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

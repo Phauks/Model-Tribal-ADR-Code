@@ -1,0 +1,45 @@
+id: red-lake-nation-dakota-seek-peace
+title: '[Account of the Dakota seeking peace with the Anishinaabe]'
+nations:
+- red-lake-band-of-chippewa-indians
+kind: historical-account
+length: paragraph
+excerpts:
+- telling: red-lake-history-page
+  locator: 17th Century section, last two sentences of the paragraph
+  text: Eventually, the Anishinaabe established an alliance with some Dakota and penetrated the plains of present-day
+    North Dakota, western South Dakota and Montana. The alliance was strong, and as a result, many Dakota began
+    seeking peace from the Anishinaabe.
+  words: 38
+  sha256: d7a1473deaf707f41bbce5c0b4e2f477d02a9bf93153f499295a7e61a8a59ef9
+methods:
+- negotiation
+topics:
+- peace-between-nations
+- alliances
+tellings:
+- id: red-lake-history-page
+  source: red-lake-nation-tribal-history-page
+  locator: 17th Century section
+  published_by: Red Lake Nation
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+access:
+  level: nation-review-first
+anthology:
+  candidate: false
+  reason: Two sentences within a longer history page; useful as context, not as a chapter (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories-second-sweep

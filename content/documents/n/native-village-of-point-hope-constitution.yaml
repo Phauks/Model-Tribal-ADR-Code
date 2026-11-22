@@ -1,0 +1,72 @@
+id: native-village-of-point-hope-constitution
+kind: constitution
+title: Constitution of the Native Village of Point Hope
+nations:
+- native-village-of-point-hope
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-point-hope
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-15
+  to 1940-02-29. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-phcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-point-hope/8b798722c188655a.html
+    sha256: 8b798722c188655afd8eaf225de55d5c959adb47bc8aaf0df09c5de172a0a3ff
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1940-text
+  label: Constitution and By-laws of the Native Village of Point Hope, Alaska (1940)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1940-02-29'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-point-hope-1940-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-point-hope/4d4ae7522f192af3.pdf
+    sha256: 4d4ae7522f192af3051e201d0dd28a4e568861ad8bac6f1d962e8f65fab8bf4f
+    pages: 6
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1940-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF POINT HOPE (1940)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1940-02-29'
+  supersedes:
+  - 1940-text
+  source: constitution-native-village-of-point-hope-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-point-hope/fa4cb8a77bca3b89.pdf
+    sha256: fa4cb8a77bca3b89d00832a424af6518f7085476c39b0377c3b78d47c317fe07
+    pages: 6
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1940-02-29, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

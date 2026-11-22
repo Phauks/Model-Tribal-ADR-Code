@@ -1,0 +1,75 @@
+id: tohono-oodham-nation-of-arizona-constitution
+kind: constitution
+title: Constitution of the Tohono O'odham Nation of Arizona
+nations:
+- tohono-oodham-nation-of-arizona
+jurisdictions:
+- level: tribal
+  tribe: tohono-oodham-nation-of-arizona
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-11-12
+  to 1986-01-18. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS OF (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-11-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-papcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/tohono-oodham-nation-of-arizona/1b41064b930c2e5e.html
+    sha256: 1b41064b930c2e5e46df4cfa40363fad1519c148861cbeb91126e5b18998e77b
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: judicial-power
+    locator: Article VII (APPOINTMENT OF JUDGES AND POLICE)
+    summary: Article headed "APPOINTMENT OF JUDGES AND POLICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1986-text
+  label: CONSTITUTION OF THE TOHONO O'ODHAM NATION (1986)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1986-01-18'
+    effective: '1986-03-06'
+  supersedes:
+  - 1936-text
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tohono-oodham-nation-of-arizona/a8a4f21c6b4413fc.pdf
+    sha256: a8a4f21c6b4413fcb282dc862777a10d961c3d780af619d548adc856c63cd52e
+    pages: 21
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article X (and they shall hold their offices until their successors have been)
+    summary: Has the Tohono O'odham Council decide election matters, including candidate eligibility,
+      as final, and sets rules for settling election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: dispute-resolution
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

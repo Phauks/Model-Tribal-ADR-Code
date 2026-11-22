@@ -1,0 +1,109 @@
+id: cherokee-nation-constitution
+kind: constitution
+title: Constitution of the Cherokee Nation
+nations:
+- cherokee-nation
+jurisdictions:
+- level: tribal
+  tribe: cherokee-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1975-09-05
+  to 2003. Versions are only those found; others may exist.'
+versions:
+- id: 1975-proposed
+  label: PROPOSED CONSTITUTION FOR THE CHEROKEE NATION (1975)
+  event: revision
+  status: proposed
+  dates:
+    approved: '1975-09-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-cherokee-nation-1975-proposed
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cherokee-nation/fc114a1fa0ad8c83.pdf
+    sha256: fc114a1fa0ad8c8304aa4770d1f93647e40f04205d580892a3fa431a541bb25c
+    pages: 13
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VII (JUDICIAL)
+    summary: Article headed "JUDICIAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (REMOVAL FROM OFFICE)
+    summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1976-text
+  label: CONSTITUTION OF THE CHEROKEE NATION OF OKLAHOMA (1976)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1976-06-26'
+  source: constitution-cherokee-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cherokee-nation/82d46c4a06bd5549.pdf
+    sha256: 82d46c4a06bd5549526fa58d34d1eaaf747e8efb70ee638be208187d69c4a861
+    pages: 12
+  note: The text prints an approval date (1975-09-05) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article Vn (JUDICIAL)
+    summary: Article headed "JUDICIAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (REMOVAL FROM OFFICE ')
+    summary: Article headed "REMOVAL FROM OFFICE '"; found by its heading and not yet read.
+    verification: title-only
+- id: 2003-text
+  label: Constitution of the Cherokee Nation 1999 (2003)
+  event: edition
+  status: in-effect
+  dates:
+    effective: '2003'
+  supersedes:
+  - 1976-text
+  source: constitution-cherokee-nation-2003-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cherokee-nation/0286d72117d4048d.pdf
+    sha256: 0286d72117d4048de4f396fefc24529fbf4f6578c2eeba43fadd64a8dce1bc0f
+    pages: 14
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VIII (Judicial)
+    summary: Vests judicial power in a Supreme Court and lower courts the Council establishes, with justices
+      appointed by the Principal Chief and confirmed by the Council.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XI (Removal From Office)
+    summary: Article headed "Removal From Office"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1976-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.07, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1976-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

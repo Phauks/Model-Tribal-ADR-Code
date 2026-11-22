@@ -1,0 +1,55 @@
+id: dry-creek-rancheria-band-of-pomo-indians-constitution
+kind: constitution
+title: Constitution of the Dry Creek Rancheria Band of Pomo Indians, California
+nations:
+- dry-creek-rancheria-band-of-pomo-indians
+jurisdictions:
+- level: tribal
+  tribe: dry-creek-rancheria-band-of-pomo-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1977-08-29
+  to 1977-08-29. Versions are only those found; others may exist.'
+versions:
+- id: 1977-text
+  label: Articles of Association of the Dry Creek Rancheria as amended through Amendment I, approved 1977-08-29
+    (Resolution 77-2 adopted 1977-05-22)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1977-08-29'
+    effective: '1977-08-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/dry-creek-rancheria-band-of-pomo-indians/25fafc1c456cd920.pdf
+    sha256: 25fafc1c456cd920dbe05671c06b6131822ec8f87d7a0108666b9b909faf9a1c
+    pages: 26
+  note: The text also prints adopted 1972-09-13, which belong to the earlier text it compiles. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1977-text-2
+  label: ARTICLES OF ASSOCIATION OF THE DRY CREEK RANCHERIA as amended through Amendment I, 1977-08-29
+  event: edition
+  status: unknown
+  dates:
+    listed: '1977-08-29'
+  supersedes:
+  - 1977-text
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/dry-creek-rancheria-band-of-pomo-indians/3bcdabf92bebfc61.pdf
+    sha256: 3bcdabf92bebfc6174676889d3ab1e7de17bc2e1fe1777d812a7f589a74370f1
+    pages: 9
+  note: The text also prints approved 1977-08-29, effective 1977-08-29, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

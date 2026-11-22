@@ -1,0 +1,69 @@
+id: nisqually-indian-tribe-constitution
+kind: constitution
+title: Constitution of the Nisqually Indian Tribe
+nations:
+- nisqually-indian-tribe
+jurisdictions:
+- level: tribal
+  tribe: nisqually-indian-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1946-08-01
+  to 1994-10-28. Versions are only those found; others may exist.'
+versions:
+- id: 1946-text
+  label: CONSTITUTION AND BYLAWS (1946)
+  event: original
+  status: superseded
+  dates:
+    approved: '1946-08-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-nisqcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/nisqually-indian-tribe/576945f5967faefb.html
+    sha256: 576945f5967faefb6a25364e89c69324ec7a313ffa86061527931ff4e3d1e8cc
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1994-text
+  label: Constitution and Bylaws of the Nisqually Indian Tribe as amended through Amendment Nos. I through
+    X, 1994-10-28
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1994-10-28'
+  supersedes:
+  - 1946-text
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/nisqually-indian-tribe/d45ddf96a9d46e34.html
+    sha256: d45ddf96a9d46e3431deeb7adb09be75d2220870c9d043f65dd5a727252e1001
+  note: The text also prints approved 1946-09-09, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1946-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.73, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

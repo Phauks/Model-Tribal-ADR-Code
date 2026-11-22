@@ -1,0 +1,72 @@
+id: hydaburg-cooperative-association-constitution
+kind: constitution
+title: Constitution of the Hydaburg Cooperative Association
+nations:
+- hydaburg-cooperative-association
+jurisdictions:
+- level: tribal
+  tribe: hydaburg-cooperative-association
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1938-04-14
+  to 1938-04-14. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: Constitution and By-laws of the Hydaburg Cooperative Association, Alaska (1938)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1938-04-14'
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hydaburg-cooperative-association/03415f00552a64c4.pdf
+    sha256: 03415f00552a64c4e5fe2aa02c0f99a8ac12555aa69afc68793f25903882992f
+    pages: 9
+  note: The text prints an approval date (1938-04-07) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1938-text-2
+  label: CONSTITUTION AND BY- LAWS (1938)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1938-04-14'
+  supersedes:
+  - 1938-text
+  source: university-of-oklahoma-indian-reorganization-act-hydacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/hydaburg-cooperative-association/a370c4e94fc8ad9c.html
+    sha256: a370c4e94fc8ad9c71259ae959f00263ce6155ada5e8e92c4bd2271bc72d1d0e
+  note: 'The text prints an approval date (1938-04-07) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1938-04-14, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Marked superseded because a later dated text was found (project inference). Dates
+    read from another copy of the same text: adopted 1938-04-14. Dates read by rule from the certificates
+    on the library page.'
+- id: 1938-text-3
+  label: Constitution and By-Laws of the Hydaburg Cooperative Association, Alaska (1938)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1938-04-14'
+  supersedes:
+  - 1938-text-2
+  source: constitution-hydaburg-cooperative-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hydaburg-cooperative-association/d9ae132ba6be2a11.pdf
+    sha256: d9ae132ba6be2a11eea463f2bb616a2d17f98be8f29b0f70ed2a725a5ce732b5
+    pages: 8
+  note: The text prints an approval date (1938-04-07) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1938-04-14, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

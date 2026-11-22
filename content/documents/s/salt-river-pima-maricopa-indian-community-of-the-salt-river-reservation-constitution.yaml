@@ -1,0 +1,66 @@
+id: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+kind: constitution
+title: Constitution of the Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+nations:
+- salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
+jurisdictions:
+- level: tribal
+  tribe: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1940-04-12
+  to 2024-03-26. Versions are only those found; others may exist.'
+versions:
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS (1940)
+  event: original
+  status: superseded
+  dates:
+    approved: '1940-04-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-pimacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation/68541da8220fa60e.html
+    sha256: 68541da8220fa60ef373a1605d5179276ecd8d8614971a62a69c90031430fd16
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 2024-text
+  label: CONSTITUTION OF THE SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY as amended through Supplement No.
+    5, 2024-03-26
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2024-03-26'
+  supersedes:
+  - 1940-text
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation/15e07972a3b4b75c.pdf
+    sha256: 15e07972a3b4b75ce40f63288334ca09317e8c3af4cc0cd9672046d3f24d2272
+    pages: 15
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (NOMINATIONS AND)
+    summary: Sets voter qualifications and lets the polling-site Election Board Judge decide whether an
+      impaired member may vote.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: election-disputes
+    compared_with: 1940-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -10,9 +10,9 @@ add a job to the workflow and list it under `all-checks.needs`.
 | Script | Checks | Needs |
 | --- | --- | --- |
 | `check_text.py` | Every text file is UTF-8 without a byte order mark, in Unicode Normalization Form C, with LF line endings and a final newline | Python 3 standard library |
-| `validate_records.py` | Every schema, example and content record is valid, and every citation key, glossary link, research session reference and document version link resolves | `pip install -r scripts/requirements.txt` |
+| `validate_records.py` | Every schema, example and content record is valid, and every citation key, glossary link, research session reference and document version link resolves; each search log (decision record 0025) sits in its topic and letter folder, names an existing profile, and has a status and `last_searched` date that agree with its searches | `pip install -r scripts/requirements.txt` |
 | `lint_records.py` | Catches unchecked data (decision record 0014): profile facts with no `verification` level, two source records at one address, forum kinds with no method record, sources still unarchived 30 days after retrieval, sources cited by content headed for an edition that are unarchived, lack a citator result or are marked unverified, and (decision record 0018) document versions whose dates, order or status disagree, clause topics with no recorded change between versions, source records whose `document_version` does not match, and profile facts citing a version no longer in effect without naming it. With `--base <ref>` it fails only on problems the pull request adds or changes; run it with `--edition` before exporting an edition | `scripts/requirements.txt` |
-| `coverage_report.py` | Counts how much of the dataset has been checked and how closely: facts by section and verification level, dispute resolution coverage by region, archives, citator checks, document histories and their versions, clauses and changes, method and glossary status. With `--base <ref>` it shows each count beside the base's. In continuous integration the report goes to the job summary | `scripts/requirements.txt` |
+| `coverage_report.py` | Counts how much of the dataset has been checked and how closely: facts by section and verification level, dispute resolution coverage by region, archives, citator checks, document histories and their versions, clauses and changes, method and glossary status, and search logs (nations by status per topic, dispute resolution searches by region, failed searches by kind of place and outcome). With `--base <ref>` it shows each count beside the base's. In continuous integration the report goes to the job summary | `scripts/requirements.txt` |
 
 `record_facts.py` holds the helpers both share.
 
@@ -67,7 +67,18 @@ and fill in the `verification` level from [decision record 0014](../docs/decisio
 | `review/name_matches.py` | `gather` lists every profile fact joined to a nation by name, beside the label its source uses, and marks the exact matches; it never changes a profile | `pip install -r scripts/requirements.txt` |
 | `review/compact_clauses.py` | `gather` downloads each nation's own gaming compacts for every compact dispute clause copied from another nation's compact, extracts the text and writes evidence files with the dispute resolution sections; it never changes a profile | `pip install -r scripts/requirements.txt`, plus `curl` and `pdftotext` |
 | `review/court_listings.py` | `gather` fetches the listed link, the nation's website and its court pages for every court listed from a directory, and keeps the passages that mention a court; it never changes a profile | `pip install -r scripts/requirements.txt requests beautifulsoup4` |
-| `review/gap_review.py` | `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md); `levels` sets `verification` on every profile fact that has none (except provisions) from the fact's note or its group's level in `research/reviews/2026-11-21-verification-levels.json`, adding only that key; `apply` makes the review's clear fixes (copied compact clauses both reviewers found the same, cited to the nation's own compact; dead court links replaced with the court page the review fetched) | `pip install -r scripts/requirements.txt` |
+| `review/gap_review.py` | `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md); `levels` sets `verification` on every profile fact that has none (except provisions) from the fact's note or its group's level in `research/reviews/2026-11-21-verification-levels.json`, adding only that key; `apply` makes the review's clear fixes (copied compact clauses both reviewers found the same, cited to the nation's own compact; dead court links replaced with the court page the review fetched); `rewrite-compacts` rewrites copied compact clauses from the nation's own compact (both Nov. 21 reviewers found them different, or the Nov. 22 re-check in `research/reviews/2026-11-22-compact-clauses-recheck.json` came out clear) and cites that compact | `pip install -r scripts/requirements.txt` |
+
+## Dispute resolution coverage search
+
+Run by hand, never in continuous integration. It follows up row 2 of the
+[dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and
+writes the [search logs](../research/search-logs/README.md) of decision record
+0025. It never changes a profile.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/coverage_search.py` | `gather` reads what the project already holds for every federally recognized nation with no dispute resolution record (tribal law texts, constitution readings, justice institutions, raw facts, peacemaking sources, the Alaska Court System's restorative justice plans), then fetches its National Indian Law Library page, its website (home page, sitemap, site search and linked law and court pages), court pages and code links with an honestly named link checker that obeys robots.txt and logs a refusal as `blocked`, keeping passages around dispute resolution words in a private work folder; `batches` writes review batches and a fixed 10 percent sample of nations with nothing found; `second` re-fetches the evidence page of every first-pass candidate for the second reader; `merge` drops candidates the second reader set aside and writes `research/reviews/2026-11-22-dispute-resolution-coverage.{json,csv}` (empty decision column), a counts file and one search log per profile | `pip install -r scripts/requirements.txt requests beautifulsoup4`, plus `pdftotext` |
 
 ## Gaming compacts and ordinances
 
@@ -97,3 +108,25 @@ profile. The documents they download, and the quotations, stay private.
 | --- | --- | --- |
 | `law/collect_law_texts.py` | `targets` lists every law code, court rules and dispute resolution link the profiles cite; `fetch` downloads each one and the chapters its index page links to, pacing each site; `scan` cuts the passages around dispute resolution terms into batches for reviewers; `merge` checks their quotations against the text and writes the provision files | `scripts/requirements.txt`, `curl`, `pdftotext`, `pandoc` |
 | `law/second_pass.py` | `prepare` writes review batches of the hard cases and a fixed random sample; `apply` writes the second reader's verdicts beside the provisions | Python 3 standard library |
+
+## Constitutions
+
+Run by hand, in this order, never in continuous integration. They build the
+catalog in [`research/constitutions/`](../research/constitutions/README.md)
+and the constitution version histories in `content/documents/`. The documents
+they download stay private, outside the repository; the work files (JSON
+between steps) go in a scratch folder.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `constitutions/collect_seeds.py` | Lists each federal profile's governing-document links and official websites | `scripts/requirements.txt` |
+| `constitutions/fetch_documents.py` | Fetches those links and crawls each nation's site for constitution links (one request a second per host), saving each document and its text | `pip install requests beautifulsoup4 lxml`, `pdftotext` |
+| `constitutions/find_more_versions.py` | `listed` adds the Tribal Law and Policy Institute list and looks up dead links in the Wayback Machine; `versions` lists earlier captures of known links | `requests` |
+| `constitutions/fetch_library_of_congress.py` | Downloads the PDF of each Library of Congress item the profiles cite, through the item's JSON view | `pip install requests`, `pdfinfo`, `pdftotext` |
+| `constitutions/fetch_archive_collection.py` | Downloads the Bureau of Indian Affairs constitution files on the Internet Archive and matches each file name to a nation | `requests` |
+| `constitutions/combine_found.py` | Joins the fetched lists into one | Python 3 standard library |
+| `constitutions/read_documents.py` | Reads each document (optical character recognition for scans), splits it into articles and tags articles by topic | `pdftotext`, `pdftoppm`, `tesseract` |
+| `constitutions/review_batches.py` | `split` writes batches for AI reviewers to classify (skipping those already answered); `merge` joins the answers | Python 3 standard library |
+| `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers | `scripts/requirements.txt` and `requests` |
+| `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, history records and source records | `scripts/requirements.txt` and `requests` |
+| `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |

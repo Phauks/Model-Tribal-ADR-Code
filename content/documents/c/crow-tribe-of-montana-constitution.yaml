@@ -1,0 +1,99 @@
+id: crow-tribe-of-montana-constitution
+kind: constitution
+title: Constitution of the Crow Tribe of Montana
+nations:
+- crow-tribe-of-montana
+jurisdictions:
+- level: tribal
+  tribe: crow-tribe-of-montana
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1948-06-24
+  to 2001-07-14. Versions are only those found; others may exist.'
+versions:
+- id: 1949-text
+  label: Constitution and Bylaws of the Crow Tribal Council of Montana (1949)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1948-06-24'
+    approved: '1949-05-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-crow-tribe-of-montana-1949-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/eastern-shoshone-tribe-of-the-wind-river-reservation/2228eabaa35cf0ff.html
+    sha256: 2228eabaa35cf0ff8e8a5da35b53d39152cb50b4625ac1f61a7d99795318be04
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1949-text-2
+  label: CONSTITUTION AND BYLAWS OF THE CROW TRIBAL COUNCIL (1949)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1949-05-23'
+  supersedes:
+  - 1949-text
+  source: constitution-crow-tribe-of-montana-1949-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/eastern-shoshone-tribe-of-the-wind-river-reservation/ff49e3cc80867bd1.pdf
+    sha256: ff49e3cc80867bd155e1c074379b06c29b51da9b57ea225447b5ef9043ac0b23
+    pages: 8
+  note: The text also prints adopted 1948-06-24, approved 1949-05-23, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked superseded because a later dated text was found (project inference). Type and dates read from
+    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 2001-text
+  label: Constitution and By-Laws of the Crow Tribe of Indians (2001)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2001-07-14'
+    approved: '2001-12-04'
+    effective: '2001-07-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1949-text-2
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/crow-tribe-of-montana/e49e7f0730c97d4f.pdf
+    sha256: e49e7f0730c97d4fda9ffeae1349e1c240a3de2d150c321fd627b24be95dc841
+    pages: 15
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL AND RECALL)
+    summary: Article headed "REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XV (APPROVAL)
+    summary: Establishes a Judicial Branch as one of three separated branches of government, alongside
+      the Executive and Legislative Branches.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1949-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1949-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

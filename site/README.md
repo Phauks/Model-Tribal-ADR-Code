@@ -72,10 +72,13 @@ resource can be renamed or replaced by editing that file.
 | `sourceDocuments` | Private R2 bucket | Copies of source documents, and files sent with requests (under `requests/`). Not served publicly. |
 | `requestFormLimit` | Rate limit | At most five request-form submissions a minute from one connection. |
 
-Secrets (set in the Cloudflare dashboard, never in GitHub): `AUTH0_DOMAIN`,
-`AUTH0_CLIENT_ID`, `AUTH0_CLIENT_SECRET`, `SESSION_SECRET`,
-`LEAD_AUTHOR_EMAIL`. For trying sign-in on a computer, put them in
-`site/.dev.vars`, which git ignores.
+| `signInLimit`, `signInNetworkLimit` | Rate limits | Sign-in tries: five a minute per email address and step, thirty per network address. |
+| `signInEmail` | Email Service | Sends sign-in codes from the `SIGN_IN_EMAIL_FROM` address in `vars` ([COLLABORATION.md](COLLABORATION.md#setting-up-sign-in)). |
+
+No secrets are needed. One setting, `LEAD_AUTHOR_EMAIL`, is made in the
+Cloudflare dashboard because this repository is public. For trying sign-in on
+a computer, put it in `site/.dev.vars`, which git ignores; codes are then
+shown on the sign-in page instead of being emailed.
 
 ## How the parts fit
 

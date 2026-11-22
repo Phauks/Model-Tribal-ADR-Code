@@ -200,6 +200,9 @@ government_structure:
   detail: Constitution (Red Cliff Band of Lake Superior Chippewa Indians Wisconsin) (approved 1936) states
     it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-rccons
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1936-text
   confidence: medium
   verification: read-in-full
   as_of: '1936'
@@ -291,6 +294,9 @@ governing_documents:
   year: '1936'
   link: https://thorpe.law.ou.edu/IRA/rccons.html
   source: university-of-oklahoma-indian-reorganization-act-rccons
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1936-text
   confidence: medium
   verification: title-only
   as_of: '1936'
@@ -426,20 +432,22 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: WI
     status: approved
-    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
-      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
-      mediation or arbitration only by mutual agreement.
-    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
-    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
-    confidence: medium
-    verification: inferred
-    as_of: '1992-08-10'
-    locator: Section XXIII (Dispute Resolution) of the 1992 compact
-    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
-      compact; later amendments renumbered this section XXIV and revised it for at least some nations
-      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
-      from this nation's most recent approved or deemed-approved entry for this state in the Office of
-      Indian Gaming list (2010-11-08).
+    dispute_resolution_summary: After written notice, representatives designated by the Governor of Wisconsin
+      and the Tribe meet within ten days; if one negotiation session does not resolve it either party
+      may demand non-binding mediation (at least two sessions), and if mediation fails either party may
+      demand binding arbitration before a single arbitrator at a neutral location, with actions to compel
+      or confirm an award brought in the United States District Court.
+    dispute_resolution_locator: Section XXII. DISPUTE RESOLUTION., E. Arbitration.
+    source: compact-wi-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-2003-09-16
+    confidence: high
+    verification: read-in-full
+    as_of: '2003-09-16'
+    locator: Section XXII. DISPUTE RESOLUTION., E. Arbitration.
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 171, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-wi-menominee-indian-tribe-of-wisconsin-1992 without reading,
+      and it described the 1992 compact's clause, which a later amendment replaced. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2010-11-08).
   ordinances:
   - approved: '1994-02-15'
     link: https://www.nigc.gov?wpdmdl=10880&ind=10895

@@ -1,0 +1,112 @@
+id: skagway-village-constitution
+kind: constitution
+title: Constitution of the Skagway Village
+nations:
+- skagway-village
+jurisdictions:
+- level: tribal
+  tribe: skagway-village
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 2018
+  to 2021. Versions are only those found; others may exist.'
+versions:
+- id: 2018-text
+  label: CONSTITUTION & BYLAWS (Skagway Village) as amended through Amendments adopted 2018 (year only)
+  event: edition
+  status: superseded
+  dates:
+    listed: '2018'
+  source: constitution-skagway-village-2018-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/skagway-village/98e986de3d8044ec.pdf
+    sha256: 98e986de3d8044ec41561fc9641b5a7ab447e7c26d85090d0cdf3b66dd8cd89e
+    pages: 13
+  note: The text also prints adopted 1980-11-09, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article 5 (Elections)
+    summary: Article headed "Elections"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article 8 (Removal, Recall, Forfeiture and Vacancies)
+    summary: Article headed "Removal, Recall, Forfeiture and Vacancies"; found by its heading and not
+      yet read.
+    verification: title-only
+- id: 2021-text
+  label: CONSTITUTION & BYLAWS as amended through amendments adopted in 2021
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2021'
+  supersedes:
+  - 2018-text
+  source: constitution-skagway-village-2021-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/skagway-village/0d545b7a3f713d25.pdf
+    sha256: 0d545b7a3f713d25ad0bd712a82fba68e8d3debf086a90534387da4eff000b84
+    pages: 14
+  note: The text also prints adopted 1980-11-09, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article 4 (Governing Body)
+    summary: Has the Council decide by majority vote any objection to the President's ruling on a council
+      member's conflict of interest.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article 5 (Elections)
+    summary: Requires the Election Ordinance to provide for settling election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article 5 (Elections)
+    summary: Requires the Election Ordinance to provide for settling election disputes, and has an appointed
+      Election Committee supervise and certify elections.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article 8 (Removal, Recall, Forfeiture and Vacancies)
+    summary: Article headed "Removal, Recall, Forfeiture and Vacancies"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article 9 (Powers)
+    summary: Lets the Council regulate child custody and adoption and establish tribal courts or other
+      judicial bodies.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 2018-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 2018-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 2018-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.76, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 2018-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.96, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -510,18 +510,20 @@ gaming:
     status: approved
     dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
       meet within 30 days; if unresolved within 90 days either party may sue in the United States District
-      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
-      dispute resolution methods remain available by mutual agreement.
-    dispute_resolution_locator: Section 17 (Dispute Resolution)
-    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
-    confidence: medium
-    verification: inferred
-    as_of: '2023-02-08'
-    locator: Section 17 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
-      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2008-03-17).
+      Court for the District of Oregon, or in a state court if the federal court declines jurisdiction
+      (but a State suit declined because of a State defense goes to the Burns Paiute Tribal Court), and
+      other dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: SECTION 16. DISPUTE RESOLUTION., A.2
+    source: compact-or-burns-paiute-tribe-2003-03-18
+    confidence: high
+    verification: read-in-full
+    as_of: '2003-03-18'
+    locator: SECTION 16. DISPUTE RESOLUTION., A.2
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 17, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-or-confederated-tribes-of-the-grand-ronde-c-2023 without
+      reading, and it left out that a State suit the federal court declines because of a State defense
+      goes to the Burns Paiute Tribal Court. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (2008-03-17).
   ordinances:
   - approved: '1997-09-12'
     link: https://www.nigc.gov?wpdmdl=3449&ind=3451

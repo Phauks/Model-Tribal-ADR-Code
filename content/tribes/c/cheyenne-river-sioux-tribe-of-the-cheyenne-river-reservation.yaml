@@ -185,6 +185,9 @@ government_structure:
   detail: Constitution (Cheyenne River Sioux Tribe South Dakota) (approved 1935) states it was adopted
     under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
   confidence: medium
   verification: read-in-full
   as_of: '1935'
@@ -228,6 +231,9 @@ governing_documents:
   year: '1935'
   link: https://thorpe.law.ou.edu/IRA/sdsiouxcons.html
   source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
   confidence: medium
   verification: title-only
   as_of: '1935'
@@ -266,20 +272,23 @@ gaming:
   - state: SD
     status: approved
     dispute_resolution_summary: Either party may bring a dispute over interpretation of the compact in
-      federal district court, while a separate three-person binding Arbitration Board that includes the
-      chairs of the state and tribal gaming commissions decides contested license-suitability and slot
-      machine compliance findings.
-    dispute_resolution_locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration
-      procedure
-    source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
-    confidence: medium
-    verification: inferred
-    as_of: '2019-04-01'
-    locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
-    note: state model compact; nation-specific text not checked. The same federal-court clause appears
-      in the 2019 Sisseton-Wahpeton Oyate compact (Section 13.1) and the 2016 Yankton Sioux Tribe compact
-      (Section 14.1); other South Dakota compacts were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (1993-12-03).
+      federal district court, and a separate three-person binding Arbitration Board (one member chosen
+      by the tribal gaming commission, one by the state gaming commission and one jointly by them) decides
+      contested findings that a gaming device does not comply, with appeal to federal district court if
+      permitted by law.
+    dispute_resolution_locator: 11. General Provisions, 11.1 (see also 8.7 Remedies for Non-Complying
+      Gaming Devices)
+    source: compact-sd-cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-1993-12-03
+    confidence: high
+    verification: read-in-full
+    as_of: '1993-12-03'
+    locator: 11. General Provisions, 11.1 (see also 8.7 Remedies for Non-Complying Gaming Devices)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 26, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019 without
+      reading, and it said the arbitration board includes the commission chairs and hears license-suitability
+      disputes, where this compact has the commissions choose its members and gives it only gaming device
+      disputes. Status copied from this nation's most recent approved or deemed-approved entry for this
+      state in the Office of Indian Gaming list (1993-12-03).
   ordinances:
   - approved: '1995-05-04'
     link: https://www.nigc.gov?wpdmdl=9478&ind=9501

@@ -225,6 +225,9 @@ government_structure:
   detail: Constitution (Winnebago Tribe Winnebago Reservation in the State of Nebraska) (approved 1936)
     states it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-winncons
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1936-text
   confidence: medium
   verification: read-in-full
   as_of: '1936'
@@ -305,6 +308,9 @@ governing_documents:
   year: '1936'
   link: https://thorpe.law.ou.edu/IRA/winncons.html
   source: university-of-oklahoma-indian-reorganization-act-winncons
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1936-text
   confidence: medium
   verification: title-only
   as_of: '1936'
@@ -409,18 +415,22 @@ gaming:
   - state: IA
     status: approved
     dispute_resolution_summary: For a non-material breach the parties meet and confer within 15 days of
-      written notice, the complaining party may then make a written demand, a refused demand goes to mediation
-      under American Arbitration Association commercial mediation rules, and issues left in the mediator's
-      summary report go to binding arbitration under American Arbitration Association rules.
-    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
-    source: compact-ia-ponca-tribe-of-nebraska-2021
-    confidence: medium
-    verification: inferred
-    as_of: '2021-03-05'
-    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
-    note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
-      compact with Iowa; other Iowa compacts were not checked. Status copied from this nation's most recent
-      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-02-22).
+      written notice, the complaining party may then make a written demand, and if the demand is rejected
+      or unanswered within 10 days either party may request binding arbitration before one agreed arbitrator
+      or a third arbitrator picked by two party-chosen arbitrators; for a material breach each party may
+      instead give notice to terminate the compact, with immunity waived for declaratory or injunctive
+      relief only.
+    dispute_resolution_locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    source: compact-ia-winnebago-tribe-of-nebraska-2005-02-22
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-02-22'
+    locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 246, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-ia-ponca-tribe-of-nebraska-2021 without reading, and it
+      added mediation and American Arbitration Association rules that Section 20 does not have. Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2005-02-22).
   ordinances:
   - approved: '1994-03-23'
     link: https://www.nigc.gov?wpdmdl=11526&ind=11571

@@ -1,0 +1,51 @@
+id: klawock-cooperative-association-constitution
+kind: constitution
+title: Constitution of the Klawock Cooperative Association
+nations:
+- klawock-cooperative-association
+jurisdictions:
+- level: tribal
+  tribe: klawock-cooperative-association
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-10-04
+  to 1938-10-04. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: Constitution and By-Laws of the Klawock Cooperative Association, Alaska (1938)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1938-10-04'
+  source: constitution-klawock-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/klawock-cooperative-association/94e893939917ac7c.pdf
+    sha256: 94e893939917ac7c6177ab4122984db5b93ea9c772fddf981722aa21f17190ae
+    pages: 8
+  note: The text prints an approval date (1938-06-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1938-text-2
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1938-10-04'
+  supersedes:
+  - 1938-text
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/klawock-cooperative-association/b9c5c8647f9806a3.html
+    sha256: b9c5c8647f9806a3d787a9ed0be05ec4b01f83569f4425cf6fe279009bddfbe4
+  note: 'The text prints an approval date (1938-06-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1938-10-04, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Dates read from another copy of the same text: adopted 1938-10-04. Dates read by
+    rule from the certificates on the library page.'
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

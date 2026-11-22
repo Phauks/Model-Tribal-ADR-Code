@@ -1,0 +1,65 @@
+id: santee-sioux-nation-constitution
+kind: constitution
+title: Constitution of the Santee Sioux Nation, Nebraska
+nations:
+- santee-sioux-nation
+jurisdictions:
+- level: tribal
+  tribe: santee-sioux-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-01-15
+  to 1936-04-03. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-01-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-nesancons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/santee-sioux-nation/af0c0772eb7ec96a.html
+    sha256: af0c0772eb7ec96a00f0b1a24b1806db27ce82fe021f47ff036f28b65ced555a
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1936-text-2
+  label: and bylaws, notice of such adoption and approval shallh~ .. E}~ (1936)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1936-04-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/santee-sioux-nation/20f0c05562e29e18.pdf
+    sha256: 20f0c05562e29e1885b16a5022bda460b65711826afd0b98aa2c84de8690db4c
+    pages: 11
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

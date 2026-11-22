@@ -1,0 +1,133 @@
+id: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+nations:
+- hualapai-indian-tribe-of-the-hualapai-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: hualapai-indian-tribe-of-the-hualapai-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1948-05-25
+  to 1991-02-14. Versions are only those found; others may exist.'
+versions:
+- id: 1948-text
+  label: CONSTITUTION AND BY-LAWS (1948)
+  event: original
+  status: superseded
+  dates:
+    approved: '1948-05-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-huacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/hualapai-indian-tribe-of-the-hualapai-indian-reservation/27c85233bbd83b5d.html
+    sha256: 27c85233bbd83b5d07495674710e0e8c600e12cb3247a79753deec8e3930e2df
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1955-text
+  label: CONSTITUTION AND BYLAWS (1955)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1955-12-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1948-text
+  source: university-of-oklahoma-indian-reorganization-act-amhuacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/hualapai-indian-tribe-of-the-hualapai-indian-reservation/f5b2b855b14c2a90.html
+    sha256: f5b2b855b14c2a90763e3cbc578f2288cdc675d6c736115d209da1d6112e5632
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL AND RESIGNATION FROM OFFICE)
+    summary: Article headed "REMOVAL AND RESIGNATION FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1948-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1948-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.23, by script); not yet read side by side.
+- id: 1991-text
+  label: Constitution of the Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona (1991)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1991-02-14'
+  supersedes:
+  - 1955-text
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hualapai-indian-tribe-of-the-hualapai-indian-reservation/a24c2bf5c1de895d.pdf
+    sha256: a24c2bf5c1de895db0d662a8ba7fd67c83b11eaf790a319eff37bba8bfe0ca53
+    pages: 18
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VI (THE JUDICIAL DEPARTMENT)
+    summary: Vests the judicial power of the Tribe in a Tribal Court, a Court of Appeals, and lower courts
+      the Council may create.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XVI (SOVEREIGN IMMUNITY)
+    summary: Makes the Tribe immune from suit unless the Tribal Council expressly waives immunity, and
+      requires a special election for large waivers.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1955-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1955-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1955-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: sovereign-immunity
+    compared_with: 1955-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,64 @@
+profile: content/tribes/m/mentasta-traditional-council.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/tribal-law/documents.json
+  query: nation mentasta-traditional-council
+  outcome: not-found
+  reason: The tribal law text collection holds no document for this nation, because its profile cites
+    no law code, court rules or dispute resolution link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: constitutions catalog (private article readings)
+  query: topics dispute-resolution, peacemaking
+  outcome: not-found
+  reason: The constitutions catalog read 1 constitution text(s) for this nation and marked no article
+    as concerning dispute resolution or peacemaking (election disputes and judicial power not counted).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/trialcourts/rjp.htm
+  query: restorative justice plans
+  outcome: found
+  reason: The Alaska Court System lists a restorative justice referral plan for 'Mentasta Traditional
+    Council'.
+  records:
+  - research/reviews/2026-11-22-dispute-resolution-coverage.json#mentasta-traditional-council-1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/mentasta.html
+  query: dispute resolution words
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.mentastacouncil.org/
+  query: code, ordinance, law, court, judicial, justice, peacemaking, mediation, dispute (links, sitemap,
+    site search)
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.json
+  query: first and second reading (Claude (AI assistant)) of the gathered passages and leads
+  outcome: found
+  reason: 1 candidate(s) kept for the lead author's review (Gate 1); none is in the profile yet.
+  records:
+  - research/reviews/2026-11-22-dispute-resolution-coverage.json#mentasta-traditional-council-1
+next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile.

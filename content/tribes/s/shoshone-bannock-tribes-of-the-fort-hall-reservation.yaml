@@ -196,6 +196,9 @@ government_structure:
   detail: Constitution (Shoshone-Bannock Tribes of the Fort Hall Reservation Idaho) (approved 1936) states
     it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-fthallcons
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 1936-text
   confidence: medium
   verification: read-in-full
   as_of: '1936'
@@ -245,6 +248,9 @@ governing_documents:
   year: '1936'
   link: https://thorpe.law.ou.edu/IRA/fthallcons.html
   source: university-of-oklahoma-indian-reorganization-act-fthallcons
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 1936-text
   confidence: medium
   verification: title-only
   as_of: '1936'
@@ -289,20 +295,25 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: ID
     status: approved
-    dispute_resolution_summary: After written notice the parties meet within 10 working days, and if the
-      dispute is not resolved within 60 days either party may pursue binding arbitration before a three-member
-      panel selected by the American Arbitration Association, with no judicial review of the decision
-      (disputes under Article 6 follow that article's own procedure).
-    dispute_resolution_locator: Article 21 (Dispute Resolution)
-    source: compact-id-coeur-dalene-tribe-1993
-    confidence: medium
-    verification: inferred
-    as_of: '1993-02-12'
-    locator: Article 21 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 1993 Coeur d'Alene Tribe
-      compact; later Idaho compacts and amendments (2003, 2008) were not checked. Status copied from this
-      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
-      list (2000-09-08).
+    dispute_resolution_summary: After written notice the parties meet within 10 days, and if the dispute
+      is not resolved within 30 days after notice either party may require binding arbitration before
+      three arbitrators (one picked by each side and a third picked by those two, with the American Arbitration
+      Association as the default source), with arbitration decisions effective unless a federal court
+      determines otherwise and both sides consenting to the United States District Court for the District
+      of Idaho for any dispute under the compact.
+    dispute_resolution_locator: 18. General Dispute Resolution, a. Compliance, (1) Informal Dispute Resolution,
+      (B)
+    source: compact-id-shoshone-bannock-tribes-of-the-fort-hall-reservation-2000-09-08
+    confidence: high
+    verification: read-in-full
+    as_of: '2000-09-08'
+    locator: 18. General Dispute Resolution, a. Compliance, (1) Informal Dispute Resolution, (B)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 198, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-id-coeur-dalene-tribe-1993 without reading, and it gave
+      other deadlines, arbitrators chosen by the American Arbitration Association and no court review,
+      where the compact gives 10 and 30 days, arbitrators chosen by the parties and federal court review.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2000-09-08).
   ordinances:
   - approved: '1994-10-18'
     link: https://www.nigc.gov?wpdmdl=11149&ind=11163

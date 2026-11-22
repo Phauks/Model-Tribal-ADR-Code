@@ -1,0 +1,95 @@
+id: federated-indians-of-graton-rancheria-constitution
+kind: constitution
+title: Constitution of the Federated Indians of Graton Rancheria, California
+nations:
+- federated-indians-of-graton-rancheria
+jurisdictions:
+- level: tribal
+  tribe: federated-indians-of-graton-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1997-05-03
+  to 2012-07-21. Versions are only those found; others may exist.'
+versions:
+- id: 1997-text
+  label: CONSTITUTION OF THE FEDERATED INDIANS OF GRATON RANCHERIA (1997)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1997-05-03'
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/federated-indians-of-graton-rancheria/b4c016b5ed23894e.pdf
+    sha256: b4c016b5ed23894edf251cc66b668f051ca14f086437ac3fcb8d51516c33981a
+    pages: 20
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES, REMOVAL AND RECALL)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+- id: 2013-text
+  label: Constitution of the Federated Indians of Graton Rancheria as amended through Amended Constitution,
+    2012-07-21
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2012-07-21'
+    approved: 2013-01
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1997-text
+  source: constitution-federated-indians-of-graton-rancheria-2013-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/federated-indians-of-graton-rancheria/38272d5f01236e69.pdf
+    sha256: 38272d5f01236e6902f5c926cbda365fb9e19cef10072d26b5cdb0cdb0f10b68
+    pages: 24
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (TRIBAL COUNCIL VACANCIES, REMOVAL AND RECALL)
+    summary: Article headed "TRIBAL COUNCIL VACANCIES, REMOVAL AND RECALL"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article IX (DISPUTE RESOLUTION)
+    summary: Reserves to the General Council the power to adopt, modify or confirm legislation that creates
+      a court or other dispute resolution system.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1997-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.10, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1997-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.13, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

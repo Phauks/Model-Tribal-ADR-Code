@@ -1,0 +1,88 @@
+id: ponca-tribe-of-indians-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Ponca Tribe of Indians of Oklahoma
+nations:
+- ponca-tribe-of-indians-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: ponca-tribe-of-indians-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1950-05-23
+  to 1950-09-20. Versions are only those found; others may exist.'
+versions:
+- id: 1950-text
+  label: CONSTITUTION AND BYLAWS (1950)
+  event: original
+  status: superseded
+  dates:
+    approved: '1950-05-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-okponcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/ponca-tribe-of-indians-of-oklahoma/1b743a70dded4f6a.html
+    sha256: 1b743a70dded4f6a01d45ebaa66a0621a5ba2bb96e09eb22ad417d1d97a93d04
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1950-text-2
+  label: Constitution of the Ponca Tribe of Indians of Oklahoma (1950)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1950-09-20'
+  supersedes:
+  - 1950-text
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ponca-tribe-of-indians-of-oklahoma/8cd2d7b075809407.pdf
+    sha256: 8cd2d7b075809407914cbb553e2695828b526db754c8fb8cf13ec5a4c2c69d6f
+    pages: 9
+  note: The text prints an approval date (1950-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked in effect because it is the newest dated
+    text found, on the nation's own site, on 2026-11-21; a later amendment may not be posted. Type and
+    dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article VIII (JURISDICTION AND POWERS FOR THE PONCA)
+    summary: Gives the Business Committee judicial power and lets it set up a tribal judicial system that
+      can take over some or all of that power.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1950-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: election-disputes
+    compared_with: 1950-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1950-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

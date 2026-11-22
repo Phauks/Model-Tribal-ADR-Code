@@ -1,0 +1,71 @@
+id: bay-mills-indian-community-constitution
+kind: constitution
+title: Constitution of the Bay Mills Indian Community, Michigan
+nations:
+- bay-mills-indian-community
+jurisdictions:
+- level: tribal
+  tribe: bay-mills-indian-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-09-15
+  to 1936-10-08. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS OF (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-09-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-michbaycons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/bay-mills-indian-community/389adea5ff7e0055.html
+    sha256: 389adea5ff7e0055eec9ed3ae911e6d7b0529dab61dfc0e7f3935bf8951055a0
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1936-text-2
+  label: Constitution and Bylaws of the Bay Mills Indian Community (1936)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1936-10-08'
+    approved: '1936-11-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/bay-mills-indian-community/b87d90af984c47bf.html
+    sha256: b87d90af984c47bfad1969e044f58dc60cf8685e9dd7896aea72697e7ff243a6
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.87, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

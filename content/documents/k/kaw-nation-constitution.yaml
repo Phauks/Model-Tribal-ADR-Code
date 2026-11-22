@@ -1,0 +1,122 @@
+id: kaw-nation-constitution
+kind: constitution
+title: Constitution of the Kaw Nation, Oklahoma
+nations:
+- kaw-nation
+jurisdictions:
+- level: tribal
+  tribe: kaw-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1990-07-31
+  to 2011-08-20. Versions are only those found; others may exist.'
+versions:
+- id: 1990-text
+  label: Constitution of the Kaw Nation of Oklahoma (1990)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1990-07-31'
+  source: constitution-kaw-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kaw-nation/1b6595229f41aa66.pdf
+    sha256: 1b6595229f41aa66013836477ebdc7e6dbface2003e21671aa46453e840b3a3e
+    pages: 24
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (RECALL AND REMOVAL OF OFFICERS)
+    summary: Article headed "RECALL AND REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article V (COURTS)
+    summary: Article headed "COURTS"; found by its heading and not yet read.
+    verification: title-only
+- id: 2006-amendment
+  label: Proposed Amendment A, now designated Amendment I (Kaw Nation Constitution, Article VIII) as amended
+    through Amendment I, effective October 13, 2006
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '2006-10-13'
+    effective: '2006-10-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: not-required
+  amends:
+  - 1990-text
+  source: constitution-kaw-nation-2006-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kaw-nation/a5fce682fb8c4ce2.pdf
+    sha256: a5fce682fb8c4ce2f6af221a20d739159b7785cf916d3b122e15e5369becc40a
+    pages: 10
+  note: The text prints an approval date (2006-06-12) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: judicial-power
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 2016-text
+  label: CONSTITUTION OF THE KAW NATION as amended through Amended, 2016-04-29 (cover)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '2011-08-20'
+  supersedes:
+  - 1990-text
+  source: constitution-kaw-nation-2016-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kaw-nation/ae43c7556811025f.pdf
+    sha256: ae43c7556811025f82555d620bd8a16d30ccecb434a360ac75d50428ca96905d
+    pages: 19
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VIII (JUDICIARY)
+    summary: Vests the Kaw Nation's judicial power in a three-justice Supreme Court and inferior courts
+      set by tribal law.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ELECTION)
+    summary: Article headed "ELECTION"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (RESIGNATION, RECALL, AND IMPEACHMENT)
+    summary: Article headed "RESIGNATION, RECALL, AND IMPEACHMENT"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.26, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1990-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

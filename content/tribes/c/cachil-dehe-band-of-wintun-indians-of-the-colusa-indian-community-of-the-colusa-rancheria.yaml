@@ -186,6 +186,9 @@ government_structure:
   detail: Constitution (Cahil Dehe Band of Wintun Indians of the Colusa Indian Community California) (approved
     1941) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-wincons
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text
   confidence: medium
   verification: read-in-full
   as_of: '1941'
@@ -250,6 +253,9 @@ governing_documents:
   year: '1941'
   link: https://thorpe.law.ou.edu/IRA/wincons.html
   source: university-of-oklahoma-indian-reorganization-act-wincons
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text
   confidence: medium
   verification: title-only
   as_of: '1941'
@@ -319,22 +325,22 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: CA
     status: approved
-    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
-      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
-      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
-      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
-      or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
-      Community compact, which follows the form California has used in its recent compacts; many California
-      nations still operate under 1999-era compacts with a different dispute section. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2023-12-22).
+    dispute_resolution_summary: These Secretarial Procedures, issued by the Secretary of the Interior
+      in place of a tribal-state compact, set out no dispute resolution process between the Tribe and
+      the State; they make earlier compacts between the Tribe and the State void and say that nothing
+      in them waives the Tribe's sovereign immunity as to the State.
+    dispute_resolution_locator: Sec. 16.2. Effect of Procedures; Sec. 16.12. No Waiver of Sovereign Immunity
+    source: secretarial-procedures-ca-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-2024-05-10
+    confidence: high
+    verification: read-in-full
+    as_of: '2024-05-10'
+    locator: Sec. 16.2. Effect of Procedures; Sec. 16.12. No Waiver of Sovereign Immunity
+    note: Rewritten on 2026-11-22 from this nation's own Secretarial Procedures (data gap review item
+      19, research/reviews/2026-11-22-compact-clauses-recheck.json); the summary had been copied from
+      compact-ca-cher-ae-heights-indian-community-of-the-2026 without reading, and it described a tribe-state
+      process of notice, meeting and court that these Secretarial Procedures do not contain. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2023-12-22).
   ordinances:
   - approved: '1994-06-13'
     link: https://www.nigc.gov?wpdmdl=9425&ind=9435
