@@ -13,6 +13,7 @@ import { essayBoxFacts, essayCitations, essayTerms } from 'virtual:essay-library
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
 import { essayDateTime } from '../essays/dates.ts';
+import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
 import { workerEnvironment } from './environment.ts';
 import {
 	essayPath,
@@ -82,6 +83,8 @@ function outlineOf(title: string, headings: EssayHeading[]) {
 export async function essayPage(part: EssayPart, slug: string, publicationNumber?: number) {
 	const identifier = identifierFromPath(part, slug);
 	const { database, bucket } = storageForPages();
+	// Text merged in git since the build is saved as a draft version; readers see it once published.
+	await syncEssaysFromGitOnce(database, bucket);
 	const essay = await essayRow(database, identifier);
 	if (!essay || essay.part !== part) error(404, 'No essay has this address.');
 	const listed = await publications(database, identifier, true);

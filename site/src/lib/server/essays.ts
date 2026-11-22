@@ -231,7 +231,8 @@ export interface SaveInput {
 	text: string;
 	/** The version the writer started from; null for a new essay. */
 	basedOn: number | null;
-	personIdentifier: string;
+	/** Who saved it; null when the site saved text that came from git. */
+	personIdentifier: string | null;
 	note?: string | null;
 	origin: VersionRow['origin'];
 	/** For a new essay. */
@@ -268,7 +269,7 @@ export async function saveVersion(
 		onlyIf: new Headers({ 'If-None-Match': '*' }) as unknown as R2Conditional,
 		sha256,
 		httpMetadata: { contentType: 'text/markdown; charset=utf-8' },
-		customMetadata: { essay: input.identifier, version: String(number), savedBy: input.personIdentifier }
+		customMetadata: { essay: input.identifier, version: String(number), savedBy: input.personIdentifier ?? 'git' }
 	});
 	// null: a file with this name exists already, which can only be the same
 	// text saved by a request that failed before it was recorded.
