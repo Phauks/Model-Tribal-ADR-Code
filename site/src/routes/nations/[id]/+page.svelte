@@ -135,17 +135,22 @@
 	</div>
 
 	{#if !page.withdrawn}
-		<!-- 4. At a glance, with the map of states -->
+		<!--
+			4. At a glance: the key facts first, as a label and value table like an
+			encyclopedia's fact box, then the contacts, then the map of states.
+		-->
 		{#if data.glance.length > 0 || data.contacts.length > 0 || data.map}
 			<div class="profile-glance">
 				<Collapsible heading="At a glance" identifier="glance-heading">
-					{#if data.map}
-						<StatePresenceMap map={data.map} nationName={page.officialName} />
-					{/if}
 					<FactGroups groups={data.glance} />
 					{#if data.contacts.length > 0}
 						<h3 id="contacts-heading">{contactsHeading}</h3>
 						<ContactCard offices={data.contacts} headingLevel={4} />
+					{/if}
+					{#if data.map}
+						<div class="glance-map">
+							<StatePresenceMap map={data.map} nationName={page.officialName} />
+						</div>
 					{/if}
 				</Collapsible>
 			</div>
@@ -178,6 +183,28 @@
 				</div>
 			{/if}
 
+			<!-- 8. Other nations in the same states: plain lists, never a ranking -->
+			{#if data.neighbors.length > 0}
+				<div class="no-print">
+					<Collapsible heading="Other nations in the same states" identifier="neighbors-heading">
+						{#each data.neighbors as entry (entry.state)}
+							<h3 class="neighbors-state">{entry.stateName}</h3>
+							{#if entry.nations.length > 0}
+								<ul class="neighbors">
+									{#each entry.nations as nation (nation.id)}
+										<li><a href="/nations/{nation.id}">{nation.name}</a></li>
+									{/each}
+								</ul>
+							{:else}
+								<p>
+									<a href={entry.link}>All {entry.count} other nations in {entry.stateName}</a>
+								</p>
+							{/if}
+						{/each}
+					</Collapsible>
+				</div>
+			{/if}
+
 			<!-- 9. Sources -->
 			<p class="no-print">
 				Know of a published source we have missed?
@@ -205,6 +232,23 @@
 
 	.nation-image figcaption {
 		margin: 0;
+	}
+
+	.glance-map {
+		margin-top: var(--space-5);
+	}
+
+	.neighbors-state {
+		font-size: var(--font-size-body);
+	}
+
+	.neighbors {
+		columns: 2 14rem;
+		column-gap: var(--space-5);
+	}
+
+	.neighbors li {
+		break-inside: avoid;
 	}
 
 	.profile-introduction,

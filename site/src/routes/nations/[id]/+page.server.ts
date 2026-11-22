@@ -14,6 +14,7 @@ import { documentHistoriesFor } from '#lib/server/document-history.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
+import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -35,10 +36,15 @@ interface FactItem {
 	citations?: CitationMark[];
 }
 
-/** A labeled group of facts. `field` is the record field the group shows. */
+/**
+ * A labeled group of facts. `field` is the record field the group shows.
+ * `section` is the id of the heading further down the page that shows the
+ * same facts in full; the label then links to it.
+ */
 interface FactGroup {
 	field: string;
 	label: string;
+	section?: string;
 	items: FactItem[];
 }
 
@@ -134,9 +140,11 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	];
 }
 
+const courtsLabel = 'Courts and justice institutions';
+const forumsLabel = 'Dispute resolution forums';
+const documentsLabel = 'Where the nation publishes its laws';
+
 function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): FactGroup[] {
-	const courtsLabel = 'Courts and justice institutions';
-	const forumsLabel = 'Dispute resolution forums';
 	return [
 		...group(
 			'justice_institutions',
@@ -165,7 +173,6 @@ function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): 
 
 function publishedLaw(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const lawLabel = 'Dispute resolution law';
-	const documentsLabel = 'Where the nation publishes its laws';
 	return [
 		...group(
 			'dispute_resolution_law',
@@ -239,6 +246,95 @@ function recordedFeatures(record: NationRecord, sources: SourceUses): FactItem[]
 }
 
 /**
+ * The rows At a glance adds from the sections below it, so the key facts
+ * come first, the way an encyclopedia's fact box does: the names of the
+ * nation's courts and forums, and of the documents where it publishes its
+ * laws. Each label links down to the section that shows them in full. Each
+ * name is cited under the same section and words as there, so the Sources
+ * list names the fact once and simply links back to both markers. The same
+ * name can come from two records (for example two "Tribal code" entries); it
+ * is shown once, with the markers of both.
+ */
+function glanceSummary(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const rows = (entries: { fact: CitedFact; text: string; section: string }[]) => {
+		const byName = new Map<string, FactItem & { citations: CitationMark[] }>();
+		for (const { fact, text, section } of entries) {
+			const item = byName.get(text) ?? { text, citations: [] };
+			byName.set(text, item);
+			sources.citeFact(fact, section, text, item.citations);
+		}
+		return [...byName.values()];
+	};
+	const courts = rows([
+		...(record.justice_institutions ?? []).map((fact) => ({ fact, text: fact.name, section: courtsLabel })),
+		...(record.dispute_resolution?.forums ?? []).map((fact) => ({
+			fact,
+			text: fact.name ?? humanize(fact.kind),
+			section: forumsLabel
+		}))
+	]);
+	const documents = rows(
+		(record.governing_documents ?? []).map((fact) => ({
+			fact,
+			text: fact.title ?? humanize(fact.kind),
+			section: documentsLabel
+		}))
+	);
+	return [
+		...group('courts_summary', 'Courts and forums', courts).map((summary) => ({
+			...summary,
+			section: 'courts-heading'
+		})),
+		...group('governing_documents_summary', 'Published law', documents).map((summary) => ({
+			...summary,
+			section: 'law-heading'
+		}))
+	];
+}
+
+/** Another nation that sources record in one of the same states. */
+interface Neighbor {
+	id: string;
+	name: string;
+}
+
+/** The other nations in one state, listed in full when short, else counted with a link to the state's list. */
+interface StateNeighbors {
+	state: string;
+	stateName: string;
+	link: string;
+	count: number;
+	nations: Neighbor[];
+}
+
+/** States with more other nations than this are summed up with a link to the state's list. */
+const neighborListLimit = 30;
+
+/**
+ * "Other nations in the same states": for each state where sources record
+ * the nation, the other nations recorded there, in alphabetical order. A
+ * plain list, never a ranking or a comparison (site/DESIGN.md, "Nation
+ * pages"). Long lists give way to a link to the state's page.
+ */
+function sameStates(record: NationRecord): StateNeighbors[] {
+	const codes = [...new Set((record.states ?? []).map((fact) => fact.state))];
+	const rows = nationIndexRows();
+	return codes
+		.map((code) => {
+			const others = rows.filter((row) => row.id !== record.id && row.states.includes(code));
+			return {
+				state: code,
+				stateName: stateName(code),
+				link: `/nations/state/${code.toLocaleLowerCase('en-US')}`,
+				count: others.length,
+				nations: others.length <= neighborListLimit ? others.map(({ id, name }) => ({ id, name })) : []
+			};
+		})
+		.filter((entry) => entry.count > 0)
+		.sort((first, second) => first.stateName.localeCompare(second.stateName, 'en'));
+}
+
+/**
  * The small map of the states where sources record the nation's presence
  * (state presence only, never the nation's land). It reuses the shapes of the
  * nations map, simplified for a small drawing, and shows only the boxes that
@@ -290,6 +386,7 @@ export const load: PageServerLoad = ({ params }) => {
 			courts: [],
 			law: [],
 			documents: [],
+			neighbors: [],
 			map: undefined,
 			sources: []
 		};
@@ -348,19 +445,28 @@ export const load: PageServerLoad = ({ params }) => {
 		};
 	});
 
+	// Sources are numbered in the order they are first cited, which is the
+	// order the page shows them.
+	const features = recordedFeatures(record, sources);
+	const glance = [...atAGlance(record, sources), ...glanceSummary(record, sources)];
+	const contacts = contactCard(record, sources);
+	const map = presenceMap(record, sources);
+	const courts = courtsAndDisputeResolution(record, sources);
+	const law = publishedLaw(record, sources);
 	return {
 		page,
 		image,
 		nameCitations,
 		selfDesignations,
 		pronunciations,
-		features: recordedFeatures(record, sources),
-		glance: atAGlance(record, sources),
-		contacts: contactCard(record, sources),
-		map: presenceMap(record, sources),
-		courts: courtsAndDisputeResolution(record, sources),
-		law: publishedLaw(record, sources),
+		features,
+		glance,
+		contacts,
+		map,
+		courts,
+		law,
 		documents: documentHistoriesFor(record.id, sources),
+		neighbors: sameStates(record),
 		sources: sources.list
 	};
 };

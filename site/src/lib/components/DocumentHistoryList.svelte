@@ -5,6 +5,7 @@
 	// has one, and its label ends with the markers of its sources.
 	import type { DocumentHistoryView } from '#lib/server/document-history.ts';
 	import CitationMarks from './CitationMarks.svelte';
+	import DocumentTimeline from './DocumentTimeline.svelte';
 
 	let { documents }: { documents: DocumentHistoryView[] } = $props();
 </script>
@@ -18,6 +19,7 @@
 		{#if document.summary}
 			<p>{document.summary}</p>
 		{/if}
+		<DocumentTimeline versions={document.versions} />
 		<ol class="version-list">
 			{#each document.versions as version (version.id)}
 				<li>
