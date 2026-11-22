@@ -1,0 +1,219 @@
+id: saint-regis-mohawk-tribe-new-york-gaming-compact
+kind: gaming-compact
+title: Saint Regis Mohawk Tribe–State of New York Gaming Compact
+nations:
+- saint-regis-mohawk-tribe
+states:
+- NY
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Saint Regis Mohawk Tribe and the State of New York under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Saint Regis Mohawk Tribe
+  and the State of New York as of Nov. 21, 2026: 1 original, 3 amendments and 2 disapproved compacts. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-12-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-ny-saint-regis-mohawk-tribe-1993-12-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508_compliant_1993.12.13_saint_regis_mohawk_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: c21690bf3a4d2e738e1a4f2eaa7224de7aebab59b85499175cad15eb1e35e37b
+    pages: 241
+  clauses:
+  - topic: dispute-resolution
+    locator: (f) Resolution of disputed State expenses.
+    summary: The compact provides that disputed State expense items are resolved under the procedures in Section
+      14 of the compact, and undisputed items are paid while the dispute is pending; Section 14 is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 13. Amendment and Modification., paragraphs (a) to (c)
+    summary: Section 13 provides that the compact may be amended only by written agreement of the Tribe and the
+      State; either party may request amendment in writing, the parties must meet within ten days and negotiate
+      in good faith, and amendment disputes are not subject to Section 14 arbitration.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1995-01-30'
+    published: '1995-01-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-2193
+    locator: 60 Fed. Reg. 5814 (Jan. 30, 1995)
+  source: compact-ny-saint-regis-mohawk-tribe-1995-01-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508 Compliant 1995.01.30 Saint Regis Mohawk Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 9fb5895a6b9795e3a47abfa4147b737fa377da4c932bdd6a9f113e8e5bf5032e
+    pages: 21
+  clauses:
+  - topic: renegotiation
+    locator: Amendment preamble (reference to Section 13)
+    summary: The amendment states it is made under Section 13 of the compact, which requires mutual written agreement,
+      and it amends subdivision (a) of Section 4 and Sections 5 and 6 only.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1995 amendment states that it amends subdivision (a) of Section 4 and Sections 5 and 6 only, so
+      Section 14 (the arbitration provision referred to in the 1993 compact's enforcement section) is not among
+      the provisions amended and the earlier dispute process still governs. The Section 14 text itself is not in
+      the excerpts, so this rests on the amendment's list of amended provisions.
+    locator_before: Sec. 11(a)(2)
+    locator_after: Amendment, operative paragraph (Sections 4(a), 5 and 6 only)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1995 amendment amends subdivision (a) of Section 4 and Sections 5 and 6 only. Section 13 (amendment
+      and modification), which requires written agreement of the Tribe and the State, is not among the provisions
+      amended, so the earlier amendment clause still governs.
+    locator_before: Sec. 13(a)-(b)
+    locator_after: Amendment, operative paragraph
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1999-08-13'
+    published: '1999-08-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-99-20931
+    locator: 64 Fed. Reg. 44234 (Aug. 13, 1999)
+  source: compact-ny-saint-regis-mohawk-tribe-1999-08-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508 compliant 1999.08.13 Saint Regis Mohawk Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 559800fb84d0ed0cee575db16708a0538c7e78f757537370364b5ada90ee8f87
+    pages: 65
+  clauses:
+  - topic: renegotiation
+    locator: WHEREAS recitals, Amendment of May 27, 1999
+    summary: The amendment recites that the parties negotiated it in light of federal court decisions, and the Tribe
+      agrees that a failure to extend the agreement beyond its expiration date is not bad faith under IGRA; the
+      excerpt does not describe a reopening procedure.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1999 amendment, as shown in the excerpts, amends only Appendix A (Electronic Gaming Devices), so
+      Section 14 (the arbitration provision referred to in the 1993 compact's enforcement section) is not among
+      the provisions amended and the earlier dispute process still governs. The later dispute excerpt is Appendix
+      A count and reporting text, not a dispute clause.
+    locator_before: Sec. 11(a)(2)
+    locator_after: Amendment to Appendix A
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1999 amendment changes only Appendix A, so Section 13 (amendment and modification), which requires
+      written agreement of the Tribe and the State, is not among the provisions amended and the earlier amendment
+      clause still governs.
+    locator_before: Sec. 13(a)
+    locator_after: Amendment, opening paragraph
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2000-disapproval
+  label: 2000 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2000-07-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ny-saint-regis-mohawk-tribe-2000-07-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508 Compliant 2000.07.26 St Regis Mohawk Tribe Tribal State
+      Gaming Compact Disapproval Letter.pdf
+    sha256: fcb285626eb34e08ea69a62852819bd8d8ecb6b0f4caca0a7be71adde0705fa8
+    pages: 2
+- id: 2000-disapproval-2
+  label: 2000 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2000-12-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ny-saint-regis-mohawk-tribe-2000-12-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508 Compliant 2000.12.07 St Regis Mohawk Tribe Tribal State
+      Gaming Compact Disapproval letter.pdf
+    sha256: 8d070852af8c006fcdabace88079ee88150afb6d0796666b6199fbd3fbb8bf4f
+    pages: 2
+- id: 2005-amendment
+  label: 2005 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2005-03-07'
+    published: '2005-03-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-4365
+    locator: 70 Fed. Reg. 11027 (Mar. 7, 2005)
+  source: compact-ny-saint-regis-mohawk-tribe-2005-03-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508 Compliant 2005.03.07 St Regis Mohawk Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: fe0a6038ce0cbe5f518148eeac3cef3d7f58ede452eb0bcd1f2a6febd811f42f
+    pages: 129
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

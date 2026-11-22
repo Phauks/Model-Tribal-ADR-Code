@@ -1,0 +1,240 @@
+id: jackson-band-of-miwuk-indians-california-gaming-compact
+kind: gaming-compact
+title: Jackson Band of Miwuk Indians–State of California Gaming Compact
+nations:
+- jackson-band-of-miwuk-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Jackson Band of Miwuk Indians and the State of California under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Jackson Band of Miwuk Indians
+  and the State of California as of Nov. 21, 2026: 1 original, 2 replacements and 1 amendment. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-10-22'
+    published: '1998-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-28308
+    locator: 63 Fed. Reg. 56660 (Oct. 22, 1998)
+  source: compact-ca-jackson-band-of-miwuk-indians-1998-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_1998.10.22_jackson_rancheria_of_miwuk_indians_tribal_state_gaming_compact_0.pdf
+    sha256: 48903cd6d30c75bf801a97b0f387a3b3aea1b9ac0cee8a133f825a6f1e957d46
+    pages: 143
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 8.3.3 and Sec. 2.7
+    summary: The excerpt refers to arbitration under the AAA Commercial Arbitration Rules (subsections 17.2.10.2
+      to 17.2.10.5) and to an arbitral tribunal under subsection 17.2.10 when a court declines jurisdiction over
+      a Jackson Band proceeding, but the subsections setting out the steps are not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 2.4.2, Sec. 2.5 and Sec. 2.7
+    summary: Either party may request good-faith negotiations to amend the compact when IGRA or a state statute
+      or constitutional provision changes permitted Class III gaming; a termination notice takes effect no earlier
+      than 12 months after service for some grounds or 6 months for others, and the Governor must then negotiate
+      a new compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-jackson-band-of-miwuk-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_jackson_rancheria_bnd_of_miwuk_tribal_state_gaming_compact_0.pdf
+    sha256: 1b32ae799d87005c3b738013bc313bbed1345d2bf444da12c1c3a8d88f16b01f
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.4
+    summary: The compact may be amended by mutual written agreement, and the Jackson Band may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The 1998 compact's Section 2.5 lets either party request negotiations to amend the compact when IGRA
+      or a state law changes class III gaming; the 2000 compact's Section 12 provides mutual written amendment,
+      renegotiation for new class III games (no request for 12 months after the effective date), a written request
+      to the Tribal Chairperson or Governor, a 30-day schedule for talks, and a tribal termination right if exclusivity
+      is abrogated (Section 12.4). The 2000 Section 2 is not in the excerpts, so whether a change-of-law trigger
+      remains cannot be confirmed.
+    locator_before: '2.5'
+    locator_after: '12.2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2000 dispute article (Section 9) is the same text as in the 2000 Hopland
+      compact in batch 029, which is a shared template. The 1998 compact''s Section 2.7 also refers to an arbitral
+      tribunal under subsection 17.2.10. The later excerpts include an unrelated labor ordinance under the dispute
+      heading.'
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  dates:
+    listed: '2015-10-23'
+    published: '2015-10-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-27090
+    locator: 80 Fed. Reg. 64442 (Oct. 23, 2015)
+  source: compact-ca-jackson-band-of-miwuk-indians-2015-10-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2015.10.23 Jackson Band of Miwuk Indians Tribal
+      State Gaming Compact.pdf
+    sha256: 24475eb4e5cf5dc5ec9899a20ed2f7469d63060c1ce1edffacbca9c037622f6f
+    pages: 233
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.7 (excerpt begins at Sec. 9.6 text)
+    summary: Disputes over which regulation to adopt go to a single retired-judge JAMS arbitrator under Comprehensive
+      Arbitration Rules, whose order takes effect on issuance with review waived; the general Section 13 dispute
+      clause is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 5.2(h) and SECTION 15.0. AMENDMENTS; RENEGOTIATIONS. Sec. 15.1 and Sec. 15.2
+    summary: The compact may be amended by mutual written agreement; either party may request reopening of Section
+      5.2(a) if the revenue fund balances exceed or fall short of long-term needs, and no sooner than eighteen months
+      before termination the parties may negotiate an extension or new compact.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: changed
+    summary: The 2000 Section 12 allows mutual written amendment, renegotiation if the Tribe seeks new class III
+      games (after 12 months), a written request and a 30-day schedule, and a Tribal termination right on loss of
+      exclusivity; the 2015 Section 15 allows amendment by mutual written agreement during the term with written
+      consent to negotiate, requests to extend or replace the compact no sooner than 18 months before termination,
+      an automatic one-year extension if no agreement, and a 45-day schedule for talks; the 2015 excerpts do not
+      show a new-games renegotiation right, and Section 5.2(h) allows reopening of revenue-fund amounts.
+    locator_before: '12.1'
+    locator_after: '15.2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2015 Section 14 (term and termination) and the 2015 general dispute
+      article are not in the excerpts, so confirm the 2015 terms and dispute process in the full compact. The 2015
+      Section 9.6 arbitration binds the parties to the chosen regulatory proposal and includes a sovereign immunity
+      waiver for the arbitration. The excerpts under the dispute heading include unrelated safety and employee text.'
+- id: 2016-amendment
+  label: 2016 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2015-replacement
+  dates:
+    listed: '2016-10-31'
+    published: '2016-10-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-26250
+    locator: 81 Fed. Reg. 75428 (Oct. 31, 2016)
+  source: compact-ca-jackson-band-of-miwuk-indians-2016-10-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2016.10.31 Jackson Band of Miwuk Indians Gaming
+      Compact.pdf
+    sha256: 4f2ddb74db559c00257f1124667e11d9abcfc4bfd860b959552d2e85b861cebc
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Preamble (recitals) of the First Amendment
+    summary: The amendment recites that the 2015 compact may be amended by mutual agreement under Section 15.1 and
+      that Section 5.2(h) allows a reopening of negotiations on the revenue fund balances.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2015-replacement
+    change: unchanged
+    summary: The First Amendment repeals and replaces Compact Sections 5.2(a), 5.2(b) and 5.3 (revenue sharing and
+      credits) and does not list the dispute provisions, so the 2015 dispute provisions appear to still govern.
+    locator_before: '9.6'
+    locator_after: 2 and 3
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The visible text of the amendment ends partway through the new Section 5.3(f),
+      so any further amended provisions after that point cannot be seen; the ''unchanged'' answers rest on the visible
+      list of amended sections. The Secretary''s approval letter notes that the approval does not change the 2015
+      compact''s deemed-approval status under IGRA.'
+  - topic: renegotiation
+    compared_with: 2015-replacement
+    change: unchanged
+    summary: The First Amendment does not list Section 15 (amendments and renegotiations) among the sections it
+      changes; its recitals restate that Section 15.1 allows amendment by mutual agreement, so the 2015 Section
+      15 still governs.
+    locator_before: '15.1'
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The visible text of the amendment ends partway through the new Section 5.3(f),
+      so any further amended provisions after that point cannot be seen; the ''unchanged'' answers rest on the visible
+      list of amended sections. The Secretary''s approval letter notes that the approval does not change the 2015
+      compact''s deemed-approval status under IGRA.'
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -95,7 +95,7 @@
 
 <section aria-labelledby="by-state-heading">
 	<h2 id="by-state-heading">Nations by state</h2>
-	<figure class="map-figure">
+	<figure class="map-figure" data-print-part="maps">
 		<div class="map-drawing" data-nations-map>
 			<!-- svelte-ignore hydration_html_changed -->
 			{@html data.drawings.states}
@@ -126,7 +126,7 @@
 
 <section aria-labelledby="bureau-of-indian-affairs-regions">
 	<h2 id="bureau-of-indian-affairs-regions">Bureau of Indian Affairs regions</h2>
-	<figure class="map-figure">
+	<figure class="map-figure" data-print-part="maps">
 		<div class="map-drawing">
 			<!-- svelte-ignore hydration_html_changed -->
 			{@html data.drawings.regions}

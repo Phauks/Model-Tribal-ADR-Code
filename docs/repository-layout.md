@@ -16,6 +16,7 @@ and makes each edition reproducible
 │   ├── tribes/              One profile per nation or community         CC BY
 │   ├── sources/             One record per cited source                 CC BY
 │   ├── documents/           One version history per changing document   CC BY
+│   ├── stories/             Stories, quoted in tellers' own words       CC BY
 │   ├── glossary/            One entry per defined term or acronym       CC BY
 │   ├── methods/             One record per dispute resolution method    CC BY
 │   ├── bibliographies/      Annotated reading lists                     CC BY
@@ -49,6 +50,8 @@ and makes each edition reproducible
 │   ├── terminology.md       How terms are chosen, defined and linked
 │   ├── style-guide.md       Tone and writing standards
 │   ├── requests.md          Correction, restriction, removal and contribution flow
+│   ├── contributions.md     Filings for material that comes from people, not publications
+│   ├── contributor-forms/   Consent, release and permission forms for those filings
 │   ├── roadmap.md           Order of work and review gates toward drafting
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records

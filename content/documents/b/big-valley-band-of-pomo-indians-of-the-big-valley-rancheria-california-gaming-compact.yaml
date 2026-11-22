@@ -1,0 +1,114 @@
+id: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California–State of California Gaming Compact
+nations:
+- big-valley-band-of-pomo-indians-of-the-big-valley-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Big Valley Band of Pomo Indians of the Big Valley Rancheria, California and
+    the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Big Valley Band of Pomo Indians
+  of the Big Valley Rancheria, California and the State of California as of Nov. 21, 2026: 1 original and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-05'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-2000-05-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Big Valley Rancheria Tribal State
+      Gaming Compact.pdf
+    sha256: 3402f8f9cb1a5047311e2067a293371a5b94a7e06e64cd303735273c96a063a1
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0 (dispute resolution), Sec. 9.2 Arbitration Rules
+    summary: If a dispute is not resolved within 30 calendar days after the first meeting, either party may seek
+      arbitration under the American Arbitration Association Commercial Rules, the arbitrator's written decision
+      is binding and judgment may be entered in any federal or state court, and alternative dispute resolution is
+      to be explored before judicial process.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Governor or the Band may
+      request renegotiation to add other forms of Class III gaming, with negotiations to begin within 30 days of
+      the request and no such request for 12 months after the effective date; the excerpt does not show what happens
+      if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2018-12-27'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-28135
+    locator: 83 Fed. Reg. 66741 (Dec. 27, 2018)
+  source: compact-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-2018-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.12.27_big_valley_band_of_pomo_indians_tribal_state_gamig_compact.pdf
+    sha256: c1809ef0d009cf11173f0d769e102aac61d3e7e58b5f449e9f9f8544a79c7181
+    pages: 143
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.4
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations. Sec. 15.4 requires the State to negotiate in good faith within 45 days of the Tribe's written
+      request where changed market conditions materially and adversely affect the Tribe's Gaming Operation and make
+      its obligations unduly onerous, if the Tribe supplies adequate information.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

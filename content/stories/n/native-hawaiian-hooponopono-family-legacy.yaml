@@ -1,0 +1,80 @@
+id: native-hawaiian-hooponopono-family-legacy
+title: How the Hoʻopono Program Became a Family Legacy
+titles_in_language:
+- text: hoʻoponopono
+  language: haw
+  source: liliuokalani-trust-2024-hoopono-family-legacy
+nations:
+- native-hawaiian-community
+kind: oral-history
+length: short
+excerpts:
+- telling: trust-column-2024
+  locator: '"A Legacy Across Generations"'
+  text: Growing up, my parents raised all of us this way. Hoʻoponopono was an automatic way of life, and I thought
+    this was the way that all ‘ohana did things.
+  words: 29
+  sha256: 5511ded8bf9215452502de13a820f5791baaaf2c44d54cb2ad71410647bd5905
+- telling: trust-column-2024
+  locator: pull quote
+  text: Ho’oponopono belongs in the family.
+  words: 5
+  sha256: 652e7e4dabd6aaa093605dcea4ce7347ee3530fff77c7082ab1bcef595842d07
+methods:
+- customary-dispute-resolution
+topics:
+- family-dispute
+- hooponopono
+tellings:
+- id: trust-column-2024
+  source: liliuokalani-trust-2024-hoopono-family-legacy
+  as_of: '2024-09-09'
+  teller:
+    form: name
+    name: Kaʻaiʻai Paglinawan
+    role: social worker and Hoʻopono practitioner
+  published_by: Liliʻuokalani Trust
+  authority: native-organization
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+- id: nana-i-ke-kumu-1972
+  source: pukui-haertig-lee-1972-nana-i-ke-kumu-1
+  as_of: '1972'
+  published_by: Hui Hānai (Liliʻuokalani Trust)
+  authority: native-organization
+  verification: title-only
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: *id001
+  note: The book's section on hoʻoponopono was not read.
+access: *id001
+anthology:
+  candidate: true
+  reason: A first-person account from a Native Hawaiian institution (project analysis). Native Hawaiians are not
+    a tribe; a Native Hawaiian section would be labeled as such.
+  telling: trust-column-2024
+  permission_from:
+  - holder: Liliʻuokalani Trust
+    for: copyright
+    where_to_ask: https://onipaa.org/
+  - holder: The teller, Kaʻaiʻai Paglinawan (through the Trust)
+    for: cultural-authority
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

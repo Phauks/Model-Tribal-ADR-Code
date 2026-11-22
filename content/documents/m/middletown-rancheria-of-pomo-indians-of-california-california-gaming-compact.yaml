@@ -1,0 +1,150 @@
+id: middletown-rancheria-of-pomo-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Middletown Rancheria of Pomo Indians of California–State of California Gaming Compact
+nations:
+- middletown-rancheria-of-pomo-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Middletown Rancheria of Pomo Indians of California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Middletown Rancheria of Pomo
+  Indians of California and the State of California as of Nov. 21, 2026: 1 original, 2 disapproved compacts and
+  2 extensions. The order, the kind of each event and which version is in effect are inferred from the list (project
+  analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-middletown-rancheria-of-pomo-indians-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Middletown Rancheria of Pomo Tribal
+      State Gaming Compact.pdf
+    sha256: baf0cf66275cd42b0748d612a5947dfae44db6d7f56098e5ce1d466f30eb8e73
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS. Sec. 9.1 and Sec. 9.2. Arbitration Rules.
+    summary: Disputes go through written notice, a meeting within ten days and thirty days of negotiation, then
+      binding AAA commercial arbitration, with federal or state court available to enforce.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS. Sec. 12.1 to Sec. 12.4.
+    summary: The compact may be amended by mutual written agreement, and the Tribe may request renegotiation for
+      forms of Class III gaming not authorized, after twelve months; the parties confer within thirty days.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2021-disapproval
+  label: 2021 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2021-11-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ca-middletown-rancheria-of-pomo-indians-of-california-2021-11-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2021.10.14 Middleton Rancheria Tribal State
+      Gaming Compact.pdf
+    sha256: c4fc2f200c9f22a88da140444c85b285750da8f40aaece7188f4112db051bcac
+    pages: 144
+- id: 2022-disapproval
+  label: 2022 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2022-07-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ca-middletown-rancheria-of-pomo-indians-of-california-2022-07-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.07.22_middletown_rancheria_disapproval_letter_tribe.pdf
+    sha256: b880083cc2d401c0cd5e7243ecf262e352b517a311e0c7fb381bed5a1a916601
+    pages: 12
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2023-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-14084
+    locator: 88 Fed. Reg. 42386 (June 30, 2023)
+  source: compact-ca-middletown-rancheria-of-pomo-indians-of-california-2022-06-30
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: Federal Register notice published 365 days from the listed date.'
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_middletown_rancheria_of_pomo_indians_tribal_state_gaming_compact_0.pdf
+    sha256: 15724e608a8ea2278660cfafa1b00ac769e6cb5dacc1006955fffd57913adbec
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2023-extension-2
+  label: 2023 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2023-06-30'
+    published: '2023-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-14084
+    locator: 88 Fed. Reg. 42386 (June 30, 2023)
+  source: compact-ca-middletown-rancheria-of-pomo-indians-of-california-2023-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.06.30_middletown_rancheria_of_pomo_indians_tribal_state_gaming_compact_0.pdf
+    sha256: e4d3e29472c0fb056da8b28e5977fbf3ca9ae977c55eb4d179e2a8b342c146b3
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

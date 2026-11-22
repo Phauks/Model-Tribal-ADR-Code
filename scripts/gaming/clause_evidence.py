@@ -3,6 +3,7 @@ sections out of the governing compact documents, for reviewers to summarize,
 and check the reviewers' quotations against the text afterwards.
 
     python3 scripts/gaming/clause_evidence.py gather CAPTURE_DIRECTORY WORK_DIRECTORY [BATCH_SIZE]
+    python3 scripts/gaming/clause_evidence.py gather-history CAPTURE_DIRECTORY WORK_DIRECTORY
     python3 scripts/gaming/clause_evidence.py check CAPTURE_DIRECTORY WORK_DIRECTORY
     python3 scripts/gaming/clause_evidence.py merge WORK_DIRECTORY
 
@@ -97,11 +98,18 @@ def governing(catalog):
     return kept
 
 
-def gather(captures, work, batch_size=10):
+def gather(captures, work, batch_size=10, history=False):
+    """With history=True, gather the older versions (every approved, deemed-approved or procedures
+    document not already answered in WORK_DIRECTORY/checked.json) into WORK_DIRECTORY/history-batches."""
     catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
-    (work / "batches").mkdir(parents=True, exist_ok=True)
+    folder = "history-batches" if history else "batches"
+    (work / folder).mkdir(parents=True, exist_ok=True)
     items, skipped = [], []
-    for record in governing(catalog):
+    chosen = governing(catalog)
+    if history:
+        done = {a["id"] for a in json.loads((work / "checked.json").read_text(encoding="utf-8"))}
+        chosen = [r for r in catalog if r["decision"] in KEPT and r.get("capture") and r["id"] not in done]
+    for record in chosen:
         text_file = (captures / record["capture"]["capture"]).with_suffix(".txt")
         text = text_file.read_text(encoding="utf-8", errors="replace") if text_file.exists() else ""
         if len(re.sub(r"\s", "", text)) < 500:
@@ -116,9 +124,9 @@ def gather(captures, work, batch_size=10):
         if not any(items[-1]["sections"].values()):  # a short amendment: give the reviewer its text
             items[-1]["text_start"] = re.sub(r"[ \t]+", " ", text[:DOCUMENT_CHARACTERS])
     for number in range(0, len(items), batch_size):
-        path = work / "batches" / f"batch-{number // batch_size + 1:03d}.json"
+        path = work / folder / f"batch-{number // batch_size + 1:03d}.json"
         path.write_text(json.dumps(items[number:number + batch_size], indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    (work / "skipped.json").write_text(json.dumps(skipped, indent=1) + "\n", encoding="utf-8")
+    (work / ("history-skipped.json" if history else "skipped.json")).write_text(json.dumps(skipped, indent=1) + "\n", encoding="utf-8")
     print(f"{len(items)} documents in {(len(items) + batch_size - 1) // batch_size} batches; {len(skipped)} skipped")
 
 
@@ -205,7 +213,9 @@ def merge(work):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) in (4, 5) and sys.argv[1] == "gather":
+    if len(sys.argv) == 4 and sys.argv[1] == "gather-history":
+        gather(pathlib.Path(sys.argv[2]), pathlib.Path(sys.argv[3]), history=True)
+    elif len(sys.argv) in (4, 5) and sys.argv[1] == "gather":
         gather(pathlib.Path(sys.argv[2]), pathlib.Path(sys.argv[3]), int(sys.argv[4]) if len(sys.argv) == 5 else 10)
     elif len(sys.argv) == 3 and sys.argv[1] == "merge":
         merge(pathlib.Path(sys.argv[2]))

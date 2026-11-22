@@ -1,0 +1,164 @@
+id: dry-creek-rancheria-band-of-pomo-indians-california-gaming-compact
+kind: gaming-compact
+title: Dry Creek Rancheria Band of Pomo Indians, California–State of California Gaming Compact
+nations:
+- dry-creek-rancheria-band-of-pomo-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Dry Creek Rancheria Band of Pomo Indians, California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Dry Creek Rancheria Band
+  of Pomo Indians, California and the State of California as of Nov. 21, 2026: 1 original, 1 replacement and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-dry-creek-rancheria-band-of-pomo-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_dry_creek_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 57ded8a19efb1f2ab4eb4265c2740c27c053151bf2fcee757ee16f3b7e7b3c26
+    pages: 62
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.4
+    summary: The compact may be amended by mutual written agreement, and the Tribe may request renegotiation in
+      writing for Class III games other than those authorized, but not within 12 months of the effective date; talks
+      are to be scheduled within 30 days and conducted under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2018-01-22'
+    published: '2018-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-01058
+    locator: 83 Fed. Reg. 3015 (Jan. 22, 2018)
+  source: compact-ca-dry-creek-rancheria-band-of-pomo-indians-2018-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.01.22_dry_creek_rancheria_band_of_pomo_indians_tribal_state_gaming_compact.pdf
+    sha256: 11600625f38bfa088ca273a48135bb531dcc1dc148be885ccd5a3e42777c5805
+    pages: 144
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 11.8
+    summary: For an intergovernmental agreement with the County not reached within 75 days of the Final TEIR, either
+      party may demand binding arbitration before a JAMS arbitrator under JAMS Comprehensive Arbitration, with the
+      arbitrator choosing one party's last offer; the general compact dispute process is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 15.1 to Sec. 15.4
+    summary: Amendments require mutual written agreement, and either party may request negotiations for an extension
+      or new compact no sooner than 18 months before the termination date; the State must negotiate within 45 days
+      of a written request if changed market conditions materially and adversely affect the Tribe's operation.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The earlier compact provides written notice, a meeting within 10 days, then optional AAA arbitration
+      (neither party required to agree) held on Tribal land and federal or state court; the later compact provides
+      written notice, a written response within 15 days, a meeting within 30 days, then optional arbitration before
+      a JAMS arbitrator with an optional JAMS appeal procedure and court action in federal or state court, with
+      Section 13.4 remedies as the exclusive remedies and no damages or attorney fees; it also keeps a separate
+      binding arbitration for county agreement disputes (Section 11.8).
+    locator_before: Sec. 9.0 (9.1-9.4)
+    locator_after: Section 13.0 (13.1-13.4)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: 'The replacement compact replaces the earlier 12.2 renegotiation right for new Class III games (available
+      after 12 months) and the 30-day scheduling rule in 12.3 with a Section 15 that: allows either party to request
+      negotiations for an extension or a new compact no sooner than eighteen months before termination, with automatic
+      one-year extension if no agreement is reached; and requires the State, within forty-five days of a written
+      request based on changed market conditions that materially and adversely affect the Tribe''s operation, to
+      participate in good-faith negotiations to amend the compact.'
+    locator_before: 12.2, 12.3
+    locator_after: 15.2, 15.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2018-replacement
+  dates:
+    listed: '2018-12-27'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-28135
+    locator: 83 Fed. Reg. 66741 (Dec. 27, 2018)
+  source: compact-ca-dry-creek-rancheria-band-of-pomo-indians-2018-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.12.27_dry_creek_rancheria_band_of_pomo_indians_tribal_state_gaming_compact.pdf
+    sha256: b10fb2fc3b0bd8693a173ca940613e138a2d78596a348b669ee17dad8a944208
+    pages: 21
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2018-replacement
+    change: changed
+    summary: The earlier compact's general dispute clause (Section 13.0) is not restated or amended, and its binding
+      JAMS arbitration for unresolved county agreement terms (Section 11.8) provides that the arbitral award becomes
+      part of the intergovernmental agreements with the State; the later amendment replaces Section 11.8(f) so the
+      award becomes the intergovernmental agreement with the County, and replaces Appendix C (the labor ordinance),
+      which has its own mediation and arbitration steps between the Native nation and unions rather than the State.
+    locator_before: Section 11.8(f); Section 13.0
+    locator_after: Amendment, Section 11.8(f); Appendix C, Section 13
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2018-replacement
+    change: unchanged
+    summary: The amendment does not amend Section 15 (amendments and renegotiation). It amends Sections 4.5(c),
+      6.4.3(f) and 11.8(f), replaces Appendix C and adds Section 18.9, and says it is made under Section 15.1 of
+      the 2018 compact, so the Section 15 provisions still govern.
+    locator_before: '15.1'
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

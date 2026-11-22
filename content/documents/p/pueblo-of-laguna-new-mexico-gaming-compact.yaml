@@ -1,0 +1,195 @@
+id: pueblo-of-laguna-new-mexico-gaming-compact
+kind: gaming-compact
+title: Pueblo of Laguna, New Mexico–State of New Mexico Gaming Compact
+nations:
+- pueblo-of-laguna
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pueblo of Laguna, New Mexico and the State of New Mexico under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pueblo of Laguna, New Mexico
+  and the State of New Mexico as of Nov. 21, 2026: 1 original, 2 replacements and 1 amendment. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1997-original
+  label: 1997 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1997-08-29'
+    published: '1997-08-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-97-22989
+    locator: 62 Fed. Reg. 45867 (Aug. 29, 1997)
+  source: compact-nm-pueblo-of-laguna-1997-08-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1997.08.29_pueblo_of_laguna_tribal_state_gaming_compact.pdf
+    sha256: 1695657acac54730547c5fea387c4a0f3934c028520a53fb08f609598ce859f1
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(1)
+    summary: The compact provides for written notice of noncompliance; the excerpt ends before the rest of the dispute
+      procedure.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 11. Binding Effect and Duration., paragraphs B-D
+    summary: Either party may request reopening of negotiations at any time while the compact is in effect, and
+      written notice may be served one year before the end of each term to request renegotiation; no change is required,
+      and any amendment needs approval by the Native nation, the State and the Secretary of the Interior and publication
+      in the Federal Register.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1997-original
+  dates:
+    listed: '2001-12-14'
+    published: '2001-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-30908
+    locator: 66 Fed. Reg. 64856 (Dec. 14, 2001)
+  source: compact-nm-pueblo-of-laguna-2001-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2001.12.14_pueblo_of_laguna_tribal_state_gaming_compact.pdf
+    sha256: 2f5330cff3fa137d29cca64f58d8bebe3b6841b74501afce2e874861f5187958
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator; the results are final and binding and enforceable in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2007-10-15'
+    published: '2007-10-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-20197
+    locator: 72 Fed. Reg. 58333 (Oct. 15, 2007)
+  source: compact-nm-pueblo-of-laguna-2007-10-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2007.10.15_pueblo_of_laguna_tribal_state_gaming_compact.pdf
+    sha256: b10fd1081595c164e284055ff10cd02ebfab4622cab81e99a73baed477d8283b
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator within thirty days; the results are final and binding and enforceable in any court of competent
+      jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: changed
+    summary: The later compact provides 30-day deadlines for the noticing party and then the responding party to
+      select arbitrators, and 30 days (earlier ten) for the two arbitrators to choose a third before the American
+      Arbitration Association acts; the notice, 20-day, 10-day response and binding-results steps are the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2001-replacement
+  - 2007-amendment
+  dates:
+    listed: '2015-10-23'
+    published: '2015-10-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-27088
+    locator: 80 Fed. Reg. 64442 (Oct. 23, 2015)
+  source: compact-nm-pueblo-of-laguna-new-mexico-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.10.23_pueblo_of_laguna_tribal_state_gaming_compact.pdf
+    sha256: 75bad2b47325f3dbeab60299aee5c4cf0cf5cdd52f12274ee6fa78d0a09146c2
+    pages: 43
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be amended only by a written instrument signed by the Native nation and the State and
+      approved by the Secretary of the Interior, with approval of the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: changed
+    summary: The later compact provides a two-year limit for invoking the procedure (counted from discovery, with
+      a two-year window for the State to raise pre-compact payment breaches), allows the parties to agree to one
+      arbitrator, and sets 30-day deadlines for each side's arbitrator and for the third (earlier ten days), with
+      the case proceeding before a single arbitrator if the responding party does not select one. The 20-day cease-conduct
+      step and binding results are the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A), 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,41 @@
+id: navajo-nation-journey-narrative-and-the-courts
+title: The Journey Narrative as the beginning of the Navajo judiciary
+nations:
+- navajo-nation
+kind: teaching
+length: paragraph
+excerpts:
+- telling: navajo-public-guide
+  locator: part A, History
+  text: The history of our judiciary begins in our ancient history.
+  words: 10
+  sha256: 0ac18f1ab78ac128373851de0ca94d3a86ecd693a72b37d8f679ea94483e44e5
+methods:
+- peacemaking
+topics:
+- origin-of-a-court
+tellings:
+- id: navajo-public-guide
+  source: navajo-nation-judicial-branch-courts-and-peacemaking
+  published_by: Judicial Branch of the Navajo Nation
+  authority: nation-court
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+access: *id001
+anthology:
+  candidate: false
+  reason: The guide only refers to the narrative; the narrative may be ceremonial or seasonal, which no source read
+    says either way. Ask the Peacemaking Program before going further (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

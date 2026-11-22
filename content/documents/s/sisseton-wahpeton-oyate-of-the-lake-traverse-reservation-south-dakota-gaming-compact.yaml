@@ -1,0 +1,397 @@
+id: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-south-dakota-gaming-compact
+kind: gaming-compact
+title: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota–State of South Dakota Gaming Compact
+nations:
+- sisseton-wahpeton-oyate-of-the-lake-traverse-reservation
+states:
+- SD
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota and
+    the State of South Dakota under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Sisseton-Wahpeton Oyate of
+  the Lake Traverse Reservation, South Dakota and the State of South Dakota as of Nov. 21, 2026: 1 original, 1 replacement,
+  7 amendments and 1 restatement. The order, the kind of each event and which version is in effect are inferred
+  from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1991-04-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1991-04-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1991.04.01 Sisseton Wahpeton Oyate Tribal
+      State Gaming Compact.pdf
+    sha256: 06bf4bf09f0eb390533478e4dfd3f9a8a8b03d7dfa2ca226bd964c6ef658bcfe
+    pages: 15
+  clauses:
+  - topic: renegotiation
+    locator: 10. Duration
+    summary: Either party may give notice of provisions requiring review or amendment before the two-year period
+      ends, the parties then make good faith efforts to resolve the issues, and a party may terminate for a substantial
+      breach after 30 days' notice.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1991-replacement
+  label: 1991 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1991-original
+  dates:
+    listed: '1991-12-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1991-12-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1991.12.04 Sisseton Wahpeton Oyate of the
+      Lake Traverse Reservation Tribal State Gaming Compact_0.pdf
+    sha256: caf91f87a6d81e4aaa1bbc6d357ea9fc69ac8cf12f994d4e76bea3e879481780
+    pages: 22
+  clauses:
+  - topic: dispute-resolution
+    locator: 2.1 General provisions
+    summary: The compact provides that either party may sue in federal district court to resolve a dispute over
+      interpretation of the compact, and the excerpt also assigns private civil cases to tribal or state court depending
+      on party membership.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 1993-amendment
+  label: 1993 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1991-replacement
+  dates:
+    listed: '1993-10-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1993-10-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1993.10.07 Sisseton Wahpeton Oyate Tribal
+      State Gaming Compact.pdf
+    sha256: d5a7707c9818c197665aa1ca84211164d5dcbc3bda4225669e5614a40a3a044c
+    pages: 16
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 11.1 (General Provisions)
+    summary: Either party may commence an action in federal district court to resolve a dispute over interpretation
+      of the compact; the excerpt shows no notice, meet-and-confer or arbitration step.
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 10 (Duration)
+    summary: The compact is reviewed at three-year intervals, and either party may give written notice of provisions
+      it wants reviewed or amended before each review date, after which the parties negotiate in good faith.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1991-replacement
+  dates:
+    listed: '1995-02-16'
+    published: '1995-02-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-3840
+    locator: 60 Fed. Reg. 9258 (Feb. 16, 1995)
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1995-02-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1995.02.16 Sissteon Wahpeton Oyate of the
+      Lake Traverse Reservation Tribal State Gaming Compact_0.pdf
+    sha256: 9fae25605b1ce9a06aec5d130a2e438902aaf73806176409a865d52bd8f3dd7f
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1991-replacement
+  dates:
+    listed: '1998-05-08'
+    published: '1998-05-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-12260
+    locator: 63 Fed. Reg. 25519 (May 8, 1998)
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1998-05-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1998.05.08 Sisseton Wahpeton Oyate of the
+      Lake Traverse Reservation Tribal State Gaming Compact.pdf
+    sha256: 053673f8c526341ad14d46ba9f73ebdd2cc8c01f40063ed7b3c8a9ffd57c7ecf
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+- id: 2000-restatement
+  label: 2000 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 1991-replacement
+  - 1993-amendment
+  - 1995-amendment
+  - 1998-amendment
+  dates:
+    listed: '2000-11-08'
+    published: '2000-11-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-28587
+    locator: 65 Fed. Reg. 67016 (Nov. 8, 2000)
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2000-11-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2000.11.08 Sisseton Wahpeton Oyate of the
+      Lake Traverse Reservation Tribal State Gaming Compact.pdf
+    sha256: 1cc9bc90e5c4c31ae5934ae5a5924fcd3e916d41ed782fa9853a0661d28aa7b4
+    pages: 10
+  clauses:
+  - topic: dispute-resolution
+    locator: 11.1 General Provisions
+    summary: The compact provides that either party may commence an action in federal district court to resolve
+      a dispute over the compact's interpretation or the parties' rights and obligations.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 10. Duration
+    summary: The compact is reviewed at four-year intervals; a party may give notice of provisions to review or
+      amend before the period ends, the parties then engage in good faith efforts, and the compact is extended for
+      four years if no notice is given or if a party says termination should not result from disagreement.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+- id: 2012-amendment
+  label: 2012 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2012-12-28'
+    published: '2012-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2012-31180
+    locator: 77 Fed. Reg. 76513 (Dec. 28, 2012)
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2012-12-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2012.12.28 Sisseton Wahpeton Oyate of the
+      Lake Traverse Reservation Tribal State Gaming Compact.pdf
+    sha256: c9cce08507cf75ce4fa639cde49b41b83b2fae037458ea6164332d3d74d61d38
+    pages: 22
+  clauses:
+  - topic: renegotiation
+    locator: 10. Duration
+    summary: The compact is subject to review at ten-year intervals, and either party may give written notice of
+      provisions to review before the period expires, after which the parties have 180 days to negotiate.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: changed
+    summary: The earlier compact provides that, if the Tribal Gaming Commission disagrees with a State suitability
+      determination, a three-person binding Arbitration Board decides it (one member chosen by each commission and
+      one jointly), with appeal to federal district court if permitted by law; Section 11.1 lets either party sue
+      in federal district court over interpretation disputes. The later compact provides a revised board (the two
+      commission chairs or designees plus a jointly selected third member), a notice-and-hearing procedure within
+      45 days, and a decision that is final and non-reviewable; the federal-court interpretation clause continues
+      as Section 13.1.
+    locator_before: Sec. 7 (suitability arbitration); Sec. 11.1
+    locator_after: Sec. 7 (suitability arbitration); Sec. 13.1
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: changed
+    summary: Section 10 now sets review at ten-year intervals, not four-year intervals, and automatic extensions
+      run for ten years. The notice, 180-day negotiating period, extension and termination mechanics, and the substantial-breach
+      termination right are otherwise the same in the excerpt.
+    locator_before: Section 10
+    locator_after: Section 10
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2019-04-01'
+    published: '2019-04-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-06296
+    locator: 84 Fed. Reg. 12273 (Apr. 1, 2019)
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2019.04.01_sisseton_wahpeton_oyate_of_the_lake_traverse_reservation_tribal_state_gaming_compact.1.pdf
+    sha256: f8dc1d7771d18110fe9254830996914b5a3e0a91e3059bc2734225c627599a36
+    pages: 19
+  clauses:
+  - topic: renegotiation
+    locator: 10. Duration
+    summary: The compact is subject to review at ten-year intervals, and either party may give written notice of
+      provisions to review before the period expires, followed by good-faith efforts and a 180-day negotiation period.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: changed
+    summary: The earlier compact provides that, if the Tribal Gaming Commission disagrees with a State suitability
+      determination, a three-person binding Arbitration Board decides it (one member chosen by each commission and
+      one jointly), with appeal to federal district court if permitted by law; Section 11.1 lets either party sue
+      in federal district court over interpretation disputes. The later compact provides a revised board (the two
+      commission chairs or designees plus a jointly selected third member), a notice-and-hearing procedure within
+      45 days, and a decision that is final and non-reviewable; the federal-court interpretation clause continues
+      as Section 13.1.
+    locator_before: Sec. 7 (suitability arbitration); Sec. 11.1
+    locator_after: Sec. 7 (suitability arbitration); Sec. 13.1
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: changed
+    summary: Section 10 now sets review at ten-year intervals, not four-year intervals. The effective-date sentence
+      now reads that the compact takes effect on November 1, 2018, or upon Secretarial approval and publication,
+      whichever is later. The notice, 180-day negotiating period, extension and termination mechanics are otherwise
+      the same in the excerpt.
+    locator_before: Section 10
+    locator_after: Section 10
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2021-07-13'
+    published: '2021-07-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-14833
+    locator: 86 Fed. Reg. 36765 (July 13, 2021)
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2021-07-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2021.07.13 Sisseton Wahpeton Oyate Tribal
+      State Gaming Compact.pdf
+    sha256: 4d51477e850dc0d78cd2df502c1ffa9929e37faa5650332310c155d1df04fd94
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+- id: 2021-amendment-2
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2021-12-03'
+    published: '2021-12-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-26274
+    locator: 86 Fed. Reg. 68682 (Dec. 3, 2021)
+  source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2021-12-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2021.10.14 Sisseton Wahpeton Oyate Tribal
+      State Gaming Compact.pdf
+    sha256: 6464b0fb35b645ac12759d1e41eba4647efedb678d64d8f84c83df63a1d514b6
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

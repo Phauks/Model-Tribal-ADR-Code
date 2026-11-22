@@ -1,0 +1,246 @@
+id: cocopah-tribe-of-arizona-arizona-gaming-compact
+kind: gaming-compact
+title: Cocopah Tribe of Arizona–State of Arizona Gaming Compact
+nations:
+- cocopah-tribe-of-arizona
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Cocopah Tribe of Arizona and the State of Arizona under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Cocopah Tribe of Arizona
+  and the State of Arizona as of Nov. 21, 2026: 1 original, 1 replacement, 2 amendments and 1 restatement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-08-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-az-cocopah-tribe-of-arizona-1993-08-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_1993.08.18_cocopah_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 274649185df559ab7bde1e0b94ef76da81cf48cf584e064292fc5338fce346e4
+    pages: 93
+  clauses:
+  - topic: dispute-resolution
+    locator: Subsections (e)-(g) before SECTION 16 (section number and heading not printed in excerpt)
+    summary: The compact provides for arbitration of disputes, with the majority decision of the arbitrator(s) final,
+      binding and unappealable and a failure to comply with the award treated as a breach of the compact; the arbitration
+      body is not named in the excerpt, and U.S. District Courts have jurisdiction over actions to enjoin class
+      III gaming conducted in violation of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS
+    summary: The compact provides that any amendment must be in writing and signed by both parties, and the excerpt
+      sets out no request right, trigger or time limit for reopening.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-replacement
+  label: 2003 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1993-original
+  dates:
+    listed: '2003-02-05'
+    published: '2003-02-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-2787
+    locator: 68 Fed. Reg. 5912 (Feb. 5, 2003)
+  source: compact-az-cocopah-tribe-of-arizona-2003-02-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2003.02.05_cocopah_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 4c33453d4ac3062b3863899d926ec54a26eba0c909a9023e36562b477d51ada0
+    pages: 63
+  clauses:
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Within 180 days after the Effective Date either party may propose amendments to listed regulatory provisions;
+      the parties then negotiate in good faith for 90 days and, failing agreement, mediate under Section 15(b),
+      while other provisions may be amended by written mutual agreement signed by both parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: The 2003 compact adds a reopener under Section 17(a) that lets the State or the Tribe propose amendments
+      within 180 days to twelve listed regulatory topics, followed by good-faith negotiation (90 days), mediation
+      under Section 15(b), and a 30-day period to document amendments, where the 1993 compact provided only that
+      amendments be in writing and signed by both parties.
+    locator_before: '17'
+    locator_after: 17(a)-(c)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2003 Section 17(b) mediation refers to Section 15(b), which is not in
+      either excerpt. The 2003 definitions refer to the CPR Institute for Dispute Resolution, but the section that
+      uses it is not shown. The 1993 compact Section 23 also allows the State to seek a declaration that the compact
+      is invalid if federal law changes, which is not a renegotiation term.'
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2009-03-25'
+    published: '2009-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-6585
+    locator: 74 Fed. Reg. 12889 (Mar. 25, 2009)
+  source: compact-az-cocopah-tribe-of-arizona-2009-03-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2009.03.25_cocopah_tribal_gaming_compact.pdf
+    sha256: 5061deca4ae487fd30add1dea0a700d4440eea9755d0c09d58d3b965220bfe92
+    pages: 14
+  changes:
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-replacement
+  - 2009-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-cocopah-tribe-of-arizona-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Cocopah Tribe Tribal State Gaming Compact.pdf
+    sha256: 1772a90ec6ad29e2ece9358763144aca572cbf759a2f13ed1670da80a6565887
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(B)-(C)
+    summary: For appendix disputes, either party may request a new or modified appendix in writing, and if no agreement
+      is reached within 180 days either may initiate Section 15 dispute resolution, where an arbitration under Section
+      15(c) is conducted before a single neutral arbitrator selected by CPR in a last best offer format; the general
+      Section 15 procedure is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3) and SECTION 17. AMENDMENTS
+    summary: Either Cocopah Tribe or the State Gaming Agency may request in writing to negotiate a new or modified
+      appendix, and after 180 days without agreement either may initiate Section 15 dispute resolution; compact
+      amendments must be in writing, signed by both parties, and approved or deemed approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: changed
+    summary: The 2021 compact drops the 2003 Section 17 reopener for regulatory amendments and instead provides
+      a request-to-negotiate process for gaming appendices in Section 3(b)(3), which can go to Section 15 dispute
+      resolution after 180 days, and an optional single-neutral, last-best-offer arbitration selected through CPR;
+      Section 17 now provides for amendment by mutual agreement at any time.
+    locator_before: 17(a)
+    locator_after: 3(b)(3), 17
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2021 Section 15 is not in the excerpt, so the dispute comparison cannot
+      be made. The 2021 Section 17 names the Governor''s authority to agree to amendments consistent with Title
+      5, Chapter 6 of the Arizona Revised Statutes, and an amendment opportunity for the Hopi Tribe or San Juan
+      Southern Paiute Tribe.'
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-cocopah-tribe-of-arizona-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_cocopah_tribe_tribal_state_gaming_compact.pdf
+    sha256: 6f3def7ee820f31a414949353a352ca311bdd929ca972ead968971ce9b66f098
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 amendment does not list Section 15 among the provisions it amends, and its paragraph 12 says
+      disputes under the amendment use the Section 15 dispute provisions of the compact, so Section 15 still governs.
+    locator_before: '15'
+    locator_after: '12'
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 amendment does not list Section 17 among the provisions it amends and states that the parties
+      do not intend to amend any other provisions, so the 2021 Section 17 amendment terms still govern.
+    locator_before: '17'
+    locator_after: '4'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

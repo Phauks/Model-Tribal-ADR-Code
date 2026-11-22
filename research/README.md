@@ -40,3 +40,10 @@ named in the analysis to reproduce its counts.
 Reviews of the project's own data, done to help the lead author's review, are
 kept in [`reviews/`](reviews/README.md). They record findings and suggested
 actions; they never change a record by themselves.
+
+## Tribal law texts
+
+[`tribal-law/`](tribal-law/README.md) lists the dispute resolution provisions
+found in Native nations' own law codes, court rules and ordinances, read by
+machine and awaiting the lead author's review. Quotations and fetched copies
+stay private.

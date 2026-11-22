@@ -1,0 +1,484 @@
+id: burns-paiute-tribe-oregon-gaming-compact
+kind: gaming-compact
+title: Burns Paiute Tribe–State of Oregon Gaming Compact
+nations:
+- burns-paiute-tribe
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Burns Paiute Tribe and the State of Oregon under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Burns Paiute Tribe and the
+  State of Oregon as of Nov. 21, 2026: 1 original, 8 amendments and 1 restatement. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1997-original
+  label: 1997 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1997-02-25'
+    published: '1997-02-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-4597
+    locator: 62 Fed. Reg. 8456 (Feb. 25, 1997)
+  source: compact-or-burns-paiute-tribe-1997-02-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1997.02.12 Burns Paiute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: e581ab6dbf4ac230753479d635368703752819d79075d720286277946e55a5ba
+    pages: 59
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4(F)(2) Procedure for Resolving Disputes Concerning Operational Decisions
+    summary: The State may give written notice of an operational concern, the parties meet and confer within 15
+      days, either party may start non-binding arbitration within 45 days, and an action may be brought in the United
+      States District Court for the District of Oregon if the concern is unresolved.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 11.D.1 and 11.D.3 Amendments
+    summary: Either party may request in writing, by certified mail, negotiations to amend, replace or repeal the
+      compact when a listed trigger occurs; the compact stays in effect during negotiations, and a Native nation
+      request is treated under the Act with a 100-day period instead of 180 days.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '1998-10-19'
+    published: '1998-10-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-27932
+    locator: 63 Fed. Reg. 55887 (Oct. 19, 1998)
+  source: compact-or-burns-paiute-tribe-1998-10-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.10.19 Burns Paiute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: fecdeae536e1b11b472a1afb54ec4b7767ae4553b5fdc7f9f108183d5b0f3c24
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment I changes only the maximum term of Class III gaming contracts in Section 6. It states that
+      its terms are in addition to the original Compact and do not supersede its other provisions, so the 1997 dispute
+      procedures (meet-and-confer, non-binding arbitration) carry over. The 1998 excerpts contain no dispute text
+      of their own.
+    locator_before: Sec. 6 (operational decisions dispute procedure)
+    locator_after: Amendment I (intro); whole text
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment I changes only Paragraph 8(a) of Section 6 (contract term) and does not alter the Section
+      11 amendment and renegotiation conditions, which remain in the original Compact.
+    locator_before: Sec. 11.D.1
+    locator_after: Amendment I, paragraph I
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1998-amendment-2
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '1998-11-24'
+    published: '1998-11-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-31405
+    locator: 63 Fed. Reg. 64968 (Nov. 24, 1998)
+  source: compact-or-burns-paiute-tribe-1998-11-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.11.24 Burns Paiute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: c75d3dcb786ebd71272ae1535ee6beed029a798b0f6d80819dc916204d08cdfb
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment II changes only the expiry date for house-banked blackjack in Section 4. It states that its
+      terms are in addition to the original Compact and do not supersede its other provisions, so the 1997 operational-decisions
+      dispute procedure carries over unchanged.
+    locator_before: Sec. 6 (operational decisions dispute procedure)
+    locator_after: Amendment II (intro); whole text
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment II changes only the blackjack authorization expiry in Section 4, Subsection E, Paragraph
+      4, and does not alter the Section 11 amendment and renegotiation conditions.
+    locator_before: Sec. 11.D.1
+    locator_after: Amendment II, paragraph I
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '1999-09-01'
+    published: '1999-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-22706
+    locator: 64 Fed. Reg. 47857 (Sept. 1, 1999)
+  source: compact-or-burns-paiute-tribe-1999-09-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1999.09.01 Burns Paiute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 4b11cce16cb057f35bf2757503df883ca6a9acbd239485d1d3aad82d0c6ab1ea
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 9 State Assessment of Costs for Oversight, as amended by Amendment III
+    summary: Disputes over the state assessment that the parties cannot agree on are resolved under Section 15 of
+      the compact, whose text is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment III changes only the blackjack expiry date in Section 4, Subsection E, Paragraph 4, and the
+      assessment provisions of Section 9. Section 11 is not among the provisions amended, and the amendment states
+      that it does not supersede the original compact or Amendments I or II, so the earlier amendment conditions
+      still govern.
+    locator_before: Sec. 11.D.1
+    locator_after: Amendment III (intro)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later Section 9 text is garbled in the OCR, so the dispute route to
+      Section 15 is paraphrased rather than quoted. The Section 15 text is not in the excerpts.'
+- id: 2000-amendment
+  label: 2000 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '2000-05-31'
+    published: '2000-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-13494
+    locator: 65 Fed. Reg. 34726 (May 31, 2000)
+  source: compact-or-burns-paiute-tribe-2000-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2000.05.31 Burns Paiute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 81df7360e146abb268eb78915e1928cc29d2cf797f9877172a32a12f33d4de9b
+    pages: 98
+  clauses:
+  - topic: renegotiation
+    locator: Amendment IV, Section III (amended Section 7), paragraph B
+    summary: The minimum internal control standards in the Appendix may be modified or supplemented by mutual agreement
+      of the parties without a further amendment to the compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment IV changes only the blackjack expiry date in Section 4, the Section 4(B)(1) text, and Section
+      7 on operating regulations. It states that its terms do not supersede the original compact or Amendments I,
+      II or III, and none of the amended provisions is a dispute procedure, so the earlier operational-decisions
+      dispute procedure still governs.
+    locator_before: Sec. 6 (operational decisions dispute procedure)
+    locator_after: Amendment IV (intro)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Section 7 text is OCR-garbled in places, so the renegotiation quote
+      is limited to the clean passage. The amendment''s other changes are to the blackjack expiry date and Section
+      4(B)(1).'
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: changed
+    summary: Amendment IV keeps the Section 11.D amendment conditions, but its Section 7 provides that minimum internal
+      control standards in the Appendix may be modified or supplemented by mutual agreement without a further formal
+      amendment of the compact. The change is limited to those standards.
+    locator_before: Sec. 11.D.1
+    locator_after: Amendment IV, Section III (Section 7.B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Section 7 text is OCR-garbled in places, so the renegotiation quote
+      is limited to the clean passage. The amendment''s other changes are to the blackjack expiry date and Section
+      4(B)(1).'
+- id: 2002-amendment
+  label: 2002 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '2002-02-19'
+    published: '2002-02-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-3860
+    locator: 67 Fed. Reg. 7393 (Feb. 19, 2002)
+  source: compact-or-burns-paiute-tribe-2002-02-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2002.02.19 Burns Paiute Tribe Tribal State GamingCompact.pdf
+    sha256: 5ddc0b7a3c5f9e15a43ebf8b8836cd42ae1e4e0503b52a56ceaa8ff07b835b91
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment V changes only the expiry date for house-banked blackjack in Section 4(E)(4). It states that
+      its terms do not supersede the original compact or Amendments I through IV, so the earlier operational-decisions
+      dispute procedure still governs.
+    locator_before: Sec. 6 (operational decisions dispute procedure)
+    locator_after: Amendment V (intro)
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment V amends only Section 4(E)(4) and does not alter the Section 11.D amendment conditions, so
+      the earlier conditions still govern any further amendment.
+    locator_before: Sec. 11.D.1
+    locator_after: Amendment V, paragraph I
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2002-amendment-2
+  label: 2002 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '2002-09-17'
+    published: '2002-09-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-23597
+    locator: 67 Fed. Reg. 58633 (Sept. 17, 2002)
+  source: compact-or-burns-paiute-tribe-2002-09-17
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+- id: 2002-amendment-3
+  label: 2002 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '2002-12-18'
+    published: '2002-12-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-31874
+    locator: 67 Fed. Reg. 77509 (Dec. 18, 2002)
+  source: compact-or-burns-paiute-tribe-2002-12-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2002.12.18 Burns Paiute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: d733eafdace1c5e149441f23f5ad6f943168821a09e3d89fe6da14578cc7b10c
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment VII changes only the expiry date for house-banked blackjack in Section 4(E)(4). It states
+      that its terms do not supersede the original compact or the earlier amendments, so the earlier operational-decisions
+      dispute procedure still governs.
+    locator_before: Sec. 6 (operational decisions dispute procedure)
+    locator_after: Amendment VII (intro)
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: unchanged
+    summary: Amendment VII amends only Section 4(E)(4) and does not alter the Section 11.D amendment conditions,
+      so the earlier conditions still govern any further amendment.
+    locator_before: Sec. 11.D.1
+    locator_after: Amendment VII, paragraph I
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2003-restatement
+  label: 2003 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 1997-original
+  - 1998-amendment
+  - 1998-amendment-2
+  - 1999-amendment
+  - 2000-amendment
+  - 2002-amendment
+  - 2002-amendment-2
+  - 2002-amendment-3
+  dates:
+    listed: '2003-03-18'
+    published: '2003-03-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-6350
+    locator: 68 Fed. Reg. 12931 (Mar. 18, 2003)
+  source: compact-or-burns-paiute-tribe-2003-03-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2003.03.18 Burns Paiute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: da896ac9b96151938dd98ce888d2c95bb425ff539e80931195525b26739e7ebd
+    pages: 56
+  clauses:
+  - topic: dispute-resolution
+    locator: Subsection B, Procedure for Resolving Disputes Concerning Operational Decisions, paragraphs 1-4
+    summary: The State may give written notice of operational concerns, the parties meet and confer within fifteen
+      days, either party may seek non-binding arbitration within forty-five days, and the matter may then go to
+      the United States District Court for the District of Oregon, with an expedited procedure for immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 12, subsection D, paragraph 1
+    summary: The compact may not be amended for three years after its effective date unless the State joins a compact
+      with another tribe, expands gaming by statute, or the parties agree in writing; either party may then request
+      negotiations.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: changed
+    summary: Both compacts provide notice, a meeting within 30 days and a federal court action in the District of
+      Oregon after 90 days, plus an operational-decisions procedure (meet and confer in 15 days, non-binding arbitration
+      binding by agreement) and an expedited 24-hour procedure; the later compact adds terms on the state-court
+      fallback, with the Native nation waiving immunity for state court suits when the federal court declines jurisdiction
+      on its motion and providing the Burns Paiute Tribal Court for State suits when it declines on the State's
+      motion.
+    locator_before: Section 15.A; Section 6(2) (operational decisions, expedited procedures)
+    locator_after: Section 16.A; Section 6.B
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: changed
+    summary: The 1997 compact's Section 11.D allowed amendment after eighteen months and on listed triggers, and
+      its Section 11.D.3 allowed either party to request negotiations to amend, replace or repeal it. The 2003 replacement's
+      Section 12.D bars amendment for three years after its effective date unless one of its listed conditions occurs,
+      and its Section 12.B allows termination for a material breach after the Section 6 dispute process is exhausted
+      and 60 days have passed after notice.
+    locator_before: Sec. 11.D.1 (with 11.D.1.b)
+    locator_after: Sec. 12.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2003-restatement
+  dates:
+    listed: '2008-03-17'
+    published: '2008-03-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-5198
+    locator: 73 Fed. Reg. 14267 (Mar. 17, 2008)
+  source: compact-or-burns-paiute-tribe-2008-03-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2008.03.17 Burns Paiute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 63eaff84acbd60deeea54f1337f5cf5f1c5bb0d0a6454508626c7466bb85928d
+    pages: 5
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-restatement
+    change: unchanged
+    summary: Amendment I revises only Section 10.A (the State police payment) and states that its terms do not supersede
+      any provision of the original compact. Neither the operational-decisions dispute procedure nor the expedited
+      procedure is among the amended provisions, so the earlier dispute procedure still governs.
+    locator_before: Sec. 6.B.2
+    locator_after: Amendment I (intro)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2008 amendment''s cover is headed as an amended and restated compact,
+      but its text is an amendment to the 2003 compact that states it does not supersede the original. The full
+      restated compact is not in the excerpts, so the unchanged findings rest on the amendment''s scope clause.
+      The amendment''s OCR is garbled in places.'
+  - topic: renegotiation
+    compared_with: 2003-restatement
+    change: unchanged
+    summary: Amendment I does not amend the Section 12 amendment and termination provisions. It moves the State
+      police payment terms into a memorandum of understanding that can be amended without amending the compact,
+      which is a change to Section 10 only.
+    locator_before: Sec. 12.D.1
+    locator_after: Amendment I, Section 10.A.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2008 amendment''s cover is headed as an amended and restated compact,
+      but its text is an amendment to the 2003 compact that states it does not supersede the original. The full
+      restated compact is not in the excerpts, so the unchanged findings rest on the amendment''s scope clause.
+      The amendment''s OCR is garbled in places.'
+found_in:
+- 2026-11-21-gaming-compact-histories

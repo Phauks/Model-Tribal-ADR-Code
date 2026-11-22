@@ -1,0 +1,122 @@
+id: la-jolla-band-of-luiseno-indians-california-gaming-compact
+kind: gaming-compact
+title: La Jolla Band of Luiseno Indians, California–State of California Gaming Compact
+nations:
+- la-jolla-band-of-luiseno-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for La Jolla Band of Luiseno Indians, California and the State of California under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for La Jolla Band of Luiseno
+  Indians, California and the State of California as of Nov. 21, 2026: 1 original and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-la-jolla-band-of-luiseno-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_la_jolla_band_of_luiseno_mission_indians_tribal_state_gaming_compact_0.pdf
+    sha256: 31182d018971a3065160f7266725911d1a6e57dadb4d90cbc002e11e0b68b264
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.4
+    summary: The compact may be amended by mutual written agreement, and the La Jolla Band may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2018-12-27'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-28135
+    locator: 83 Fed. Reg. 66741 (Dec. 27, 2018)
+  source: compact-ca-la-jolla-band-of-luiseno-indians-2018-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.12.27_la_jolla_band_of_luiseno_indians_tribal_state_gaming_compact.pdf
+    sha256: 3a6de0fc15f2e0bf1fb6f168b27cb6d151630bc77f58bd5f22050f07f75feb62
+    pages: 174
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.5
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations. Sec. 15.3 requires the parties to meet within 30 days and negotiate a replacement if a court
+      holds a compact provision invalid or inoperable because of a change in the law. Sec. 15.4 requires the State
+      to negotiate in good faith within 45 days of the Tribe's written request where changed conditions either materially
+      and adversely affect the Tribe's gaming operation or create new opportunities to expand beyond the device
+      or facility limits; Sec. 15.5 requires good-faith negotiation to add Class III games the State newly authorizes.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The later compact adds a change-in-law duty to meet and negotiate within 30 days after a ruling of
+      invalidity, allows requests to negotiate a new compact 18 months before termination with an automatic one-year
+      extension (two years if talks are progressing), and does not restrict renegotiation to a 12-month window;
+      the earlier compact allowed renegotiation to add new Class III forms, but not within 12 months of the effective
+      date.
+    locator_before: '12.0'
+    locator_after: '15.0'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later Section 15.4 text is cut off in the excerpt, so the full scope
+      of the renegotiation entitlement cannot be confirmed.'
+found_in:
+- 2026-11-21-gaming-compact-histories

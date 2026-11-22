@@ -1,0 +1,314 @@
+id: stillaguamish-tribe-of-indians-of-washington-washington-gaming-compact
+kind: gaming-compact
+title: Stillaguamish Tribe of Indians of Washington–State of Washington Gaming Compact
+nations:
+- stillaguamish-tribe-of-indians-of-washington
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Stillaguamish Tribe of Indians of Washington and the State of Washington under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Stillaguamish Tribe of Indians
+  of Washington and the State of Washington as of Nov. 21, 2026: 1 original, 5 amendments and 1 disapproved compact.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2001-original
+  label: 2001 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2001-03-21'
+    published: '2001-03-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-6934
+    locator: 66 Fed. Reg. 15882 (Mar. 21, 2001)
+  source: compact-wa-stillaguamish-tribe-of-indians-of-washington-2001-03-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2001.03.21 Stillaguamish Tribe of Indians Tribal
+      State Gaming Compact 2001_0.pdf
+    sha256: e4e55af8e6bba3a2a3f73caf70abca006dd1e7115db3d01af652025e5d321672
+    pages: 128
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION (Appendix X)
+    summary: Disputes under Appendix X are resolved under any dispute provisions made applicable in that Appendix,
+      and otherwise under the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XV.D Adjustments/Renegotiations (2), (3), (4), (5) and (6)
+    summary: The Tribe may request adjustment on written notice when state law or a court decision expands gaming
+      or federal legislation authorizes new gaming, after a thirty-six month moratorium on Section III E, H, I and
+      J scope changes; either party may request re-negotiation for unforeseen circumstances, and negotiations begin
+      within thirty days of a request.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2001-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-stillaguamish-tribe-of-indians-of-washington-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2007.05.31 Stillaguamish Tribe of Indians Tribal
+      State Gaming Compact.pdf
+    sha256: 7002220ae5dabb29ff2fd760ef958dc03114a5679bc399200ea67d10b9de7d6a
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2001-original
+    change: unchanged
+    summary: The First Amendment has only two numbered items, which add Appendix X2 and recognize Tribal Lottery
+      Systems under Section III; neither amends Section XV, so the earlier amendment and effective-date terms still
+      govern.
+    locator_before: XV.A
+    locator_after: Amendment items 1-2
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The dispute question depends on text inside the new Appendix X2, which is
+      not in the excerpts. The earlier XV renegotiation clause is visible, but the amendment does not touch it.'
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2001-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-stillaguamish-tribe-of-indians-of-washington-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Stillaquamish Tribe of Indians Tribal
+      State Gaming Compact.pdf
+    sha256: ae4f9c0c6e1861690ebdbd719068f455ffb7c7d86bac787985350805e69d87a3
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, 4.1 and 4.2
+    summary: If a dispute arises over the addendum terms, including the number of Player Terminals Available for
+      Lease, the State and Tribe must meet and attempt resolution at least 30 days before the increased allocation
+      takes effect, and if that fails either party may use the compact's dispute provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-original
+    change: changed
+    summary: 'The later amendment''s Appendix X2 Addendum adds a step for disputes over the Player Terminal allocation:
+      the State and Native nation must meet and attempt to resolve the dispute at least 30 days before the increased
+      allocation takes effect, after which either or both may use the Compact''s dispute resolution provisions.
+      The earlier compact''s Section XII.C (written notice, a meeting within ten days, then AAA arbitration) continues
+      unamended.'
+    locator_before: Sec. XII.C
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2001-original
+    change: unchanged
+    summary: The Second Amendment has five numbered items that add Compact Section III, amend Appendix X2 Sections
+      12.1, 13.4 and 14.4-14.5, and incorporate the Addendum; Section XV is not among them, so the earlier amendment
+      and effective-date terms still govern.
+    locator_before: XV
+    locator_after: Amendment items 1-5
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2001-original
+  dates:
+    listed: '2021-09-01'
+    published: '2021-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-18822
+    locator: 86 Fed. Reg. 49051 (Sept. 1, 2021)
+  source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.01_stillaguamish_tribe_tribal_state_gaming_compact.pdf
+    sha256: dedafa59c861ef68a3aa8fc5dfcaff4e931906d0a241c05b81273f62ae4a62e2
+    pages: 223
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XIV.B (Dispute Resolution Alternatives)
+    summary: Either party gives written notice and the parties meet and confer within twenty business days; if unresolved
+      they may seek mediation by agreement, and if dissatisfied may seek judicial resolution, while arbitration
+      occurs only by mutual agreement with a final decision within one year.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XVII.G(2) (Amendments)
+    summary: The compact may be amended at any time by mutual written agreement, and Stillaguamish may request renegotiation
+      of gaming scope when state law expands gaming or a court or federal law permits a new activity.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2001-original
+    change: not-compared
+    verification: inferred
+- id: 2024-disapproval
+  label: 2024 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2024-07-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-wa-stillaguamish-tribe-of-indians-of-washington-2024-07-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2024.07.24_stillaguamish_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 7ede2f82a98206595c732ffa09e49b8e08ac9ee2b9c4f975d054a2e5e2c901c7
+    pages: 14
+- id: 2025-amendment
+  label: 2025 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2001-original
+  dates:
+    listed: '2025-01-15'
+    published: '2025-01-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2025-00772
+    locator: 90 Fed. Reg. 3908 (Jan. 15, 2025)
+  source: compact-wa-stillaguamish-tribe-of-indians-of-washington-2025-01-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2025.01.15_stillaguamish_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: b3e1af63772be1270cdc3c78bfe0be34ad0c03eb8bc8199eb077b4ccf7191c94
+    pages: 11
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-original
+    change: unchanged
+    summary: The Fifth Amendment has five numbered items that amend Compact Sections II, III(D)(5) and IV(B), remove
+      Appendix X2 Section 14.5, and add an electronic table game appendix; none of these is a dispute provision,
+      and the appendix contents shown have no dispute section.
+    locator_before: 16 (Appendix X)
+    locator_after: Amendment items 1-5
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2001-original
+    change: unchanged
+    summary: The Fifth Amendment does not list Section XV among its five items, so the earlier amendment and renegotiation
+      terms still govern; the amendment's introduction says it was negotiated at the Tribe's request.
+    locator_before: XV
+    locator_after: Amendment items 1-5
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2001-original
+  dates:
+    listed: '2026-10-14'
+    published: '2026-10-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-20896
+    locator: 91 Fed. Reg. 65252 (Oct. 14, 2026)
+  source: compact-wa-stillaguamish-tribe-of-indians-of-washington-2026-10-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/2026_stillaguamish_tribe_gaming_compact_508.pdf
+    sha256: dd7aecf88acc07bf870a0248e800ff658f34c77ec74bb8d40b89af11772a2f9d
+    pages: 2
+  clauses:
+  - topic: renegotiation
+    locator: Recital 6 (describing Section XVII.G.(2)d) of the Third Amendment)
+    summary: The Third Amendment provides that if the state lottery approves a higher ticket price, the parties
+      incorporate the change through a Memorandum of Incorporation, which this document is.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-original
+    change: unchanged
+    summary: The 2026 memorandum amends only Appendix X2 Sections 3.2.1(b) and 4.1.4 (ticket and wager price limits),
+      so no dispute provision is amended; the earlier Appendix X Section 16 is not changed.
+    locator_before: 16 (Appendix X)
+    locator_after: Items 5.1-5.2
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This is a memorandum of incorporation, not a compact amendment, and it relies
+      on restated-compact Section XVII.G.(2)(d), which is not in the file. The earlier pair is the 2001 compact,
+      so the change may reflect the 2021 restatement as well as this memorandum.'
+  - topic: renegotiation
+    compared_with: 2001-original
+    change: added
+    summary: The memorandum recites that the 2021 restated compact provides that purchase-price changes approved
+      by the Lottery are to be incorporated by memorandum of incorporation, a mechanism the 2001 compact does not
+      contain; the memorandum itself amends only the Appendix X2 price limits.
+    locator_before: XV (no equivalent)
+    locator_after: Recital 6 (restated XVII.G.(2)(d))
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This is a memorandum of incorporation, not a compact amendment, and it relies
+      on restated-compact Section XVII.G.(2)(d), which is not in the file. The earlier pair is the 2001 compact,
+      so the change may reflect the 2021 restatement as well as this memorandum.'
+found_in:
+- 2026-11-21-gaming-compact-histories

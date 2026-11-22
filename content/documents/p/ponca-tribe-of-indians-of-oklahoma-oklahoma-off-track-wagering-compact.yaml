@@ -1,0 +1,55 @@
+id: ponca-tribe-of-indians-of-oklahoma-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: Ponca Tribe of Indians of Oklahoma–State of Oklahoma Off-Track Wagering Compact
+nations:
+- ponca-tribe-of-indians-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for Ponca Tribe of Indians of Oklahoma and the State of Oklahoma under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for Ponca Tribe of
+  Indians of Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2002-original
+  label: 2002 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2002-02-08'
+    published: '2002-02-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-3041
+    locator: 67 Fed. Reg. 6050 (Feb. 8, 2002)
+  source: compact-ok-ponca-tribe-of-indians-of-oklahoma-2002-02-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2002.02.08_ponca_tribe_tribal_state_gaming_compact.pdf
+    sha256: 094b6693a7f00fb06d91b6139f1e93cecee432af336678efbd1beb4b43278bbb
+    pages: 51
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15 DISPUTE RESOLUTION, a. Voluntary Resolution
+    summary: The compact provides for written notice, a meeting of State and Nation within 30 days, non-binding
+      arbitration after 60 days with an arbitrator named by the American Arbitration Association if the arbitrators
+      cannot agree, and an action for breach in the United States District Court for the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 19. AMENDMENTS
+    summary: Either party may request negotiations to amend or modify the compact, which stays in effect during
+      talks; the parties have 180 days to negotiate, after which Act procedures apply, and amendments must be approved
+      by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+found_in:
+- 2026-11-21-gaming-compact-histories

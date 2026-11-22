@@ -1,0 +1,49 @@
+id: wiyot-tribe-california-gaming-compact
+kind: gaming-compact
+title: Wiyot Tribe, California–State of California Gaming Compact
+nations:
+- wiyot-tribe
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Wiyot Tribe, California and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Wiyot Tribe, California and
+  the State of California as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version is
+  in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2013-original
+  label: 2013 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2013-09-06'
+    published: '2013-09-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-21739
+    locator: 78 Fed. Reg. 54908 (Sept. 6, 2013)
+  source: compact-ca-wiyot-tribe-2013-09-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2013.09.06_wiyot_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 93e9f76bbf44938e1844a9b0b16426b64be782dc1ce171745169a62c6878e6bd
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 5.2. Arbitration Rules.
+    summary: After written notice by certified mail, a 15-day response and a meet-and-confer within 30 days, either
+      party may seek arbitration before a single arbitrator under the AAA Commercial Rules, whose written and reasoned
+      decision is binding; disputes not arbitrated may go to the federal district court where the Native nation's
+      lands are located or to a state court in Humboldt County.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

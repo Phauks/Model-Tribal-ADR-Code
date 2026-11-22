@@ -1,0 +1,71 @@
+id: lakota-wolakota-leaders-mediate
+title: 'Wolakota: Code of Behavior'
+titles_in_language:
+- text: Wolakota
+  language: lkt
+  source: rosebud-sioux-tribe-of-the-rosebud-india-history-culture
+nations:
+- rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+- standing-rock-sioux-tribe-of-north-and-south-dakota
+kind: teaching
+length: short
+excerpts:
+- telling: rosebud-history-culture
+  locator: 'Wolakota: Code of Behavior, on leaders'
+  text: Leaders should always look for a compromise between two irreconcilable forces. Never take sides because
+    a leader should be able to mediate in order to make the best decision for the people.
+  words: 32
+  sha256: 02d50e73d72ffe2339ddcd900647ed4c9bbaf5ef2dd09a4a21e6a59b948ff9b8
+methods:
+- mediation
+- customary-dispute-resolution
+topics:
+- leadership
+- respect
+tellings:
+- id: rosebud-history-culture
+  source: rosebud-sioux-tribe-of-the-rosebud-india-history-culture
+  published_by: Rosebud Sioux Tribe
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+- id: standing-rock-handout
+  source: standing-rock-wolakota-information-for-participants
+  as_of: 2024-06
+  published_by: Standing Rock Sioux Tribe
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: *id001
+access: *id001
+anthology:
+  candidate: true
+  reason: Short, complete, published by two nations, and directly about the mediator's role (project analysis).
+  telling: rosebud-history-culture
+  permission_from:
+  - holder: Rosebud Sioux Tribe
+    for: both
+    nation: rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+  - holder: Standing Rock Sioux Tribe
+    for: both
+    nation: standing-rock-sioux-tribe-of-north-and-south-dakota
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

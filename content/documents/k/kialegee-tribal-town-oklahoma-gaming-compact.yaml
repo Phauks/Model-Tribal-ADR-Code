@@ -1,0 +1,109 @@
+id: kialegee-tribal-town-oklahoma-gaming-compact
+kind: gaming-compact
+title: Kialegee Tribal Town–State of Oklahoma Gaming Compact
+nations:
+- kialegee-tribal-town
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Kialegee Tribal Town and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Kialegee Tribal Town and
+  the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2011-original
+  label: 2011 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2011-07-19'
+    published: '2011-07-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2011-18079
+    locator: 76 Fed. Reg. 42722 (July 19, 2011)
+  source: compact-ok-kialegee-tribal-town-2011-07-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2011.07.09 Kialegee Tribal Town Tribal State
+      Gaming Compact.pdf
+    sha256: f22df4db7b0923274c80136d29c2abc401fa38ab8d1cacf420bdd3651cdcdb53
+    pages: 32
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: The compact provides for written notice, a meeting within 30 days, arbitration under American Arbitration
+      Association rules with one arbitrator chosen from an AAA list if the parties cannot agree, and de novo review
+      of any award in federal district court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, B.
+    summary: Either Kialegee or the State, acting through its Governor, may request renegotiation of Part 11 subsections
+      A and E within 180 days of expiration of the term or any renewal.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2020-replacement
+  label: 2020 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2011-original
+  dates:
+    listed: '2020-09-08'
+    published: '2020-09-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2020-19707
+    locator: 85 Fed. Reg. 55472 (Sept. 8, 2020)
+  source: compact-ok-kialegee-tribal-town-2020-09-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2020.09.08 Kialegee Tribal Town State of Oklahoma
+      Gaming Compact_1.pdf
+    sha256: 24bef3b00d2f3804e738f2762116d25ceedb749a4458ad03162f8cc0cc95bd46
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: 'PART 6: DISPUTE RESOLUTION - THE TRIBE AND THE STATE, subsection B'
+    summary: Disputes between the Tribe and the State go first to mediation with a mutually agreed mediator, and
+      if mediation fails, or injunctive relief to prevent irreparable harm is sought, the dispute is litigated in
+      federal court with limited waivers of sovereign immunity; arbitration is not provided for in the excerpt.
+    methods:
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: PART 13 ADDITIONAL TERMS & CONDITIONS, subsection A; ASSESSMENTS, subsection B(5)(a)
+    summary: Amendments require a writing executed by all Parties, and at the end of the renewal-rate meet-and-confer
+      period all provisions and terms of the Compact are eligible for renegotiation.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2011-original
+    change: changed
+    summary: 'The 2020 compact provides a two-step process for disputes between the Tribe and the State: mandatory
+      mediation with an agreed mediator (unless irreparable harm requires direct injunctive action), then litigation
+      in federal court if mediation fails, with limited sovereign immunity waivers and venue in the district where
+      events occurred. The 2011 compact provided written notice, a meeting within 30 days, and arbitration under
+      AAA rules before one arbitrator at either party''s request, with de novo review of the award in federal court.'
+    locator_before: Part 12, paras. 1-3
+    locator_after: Part 6.B-E
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2011-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

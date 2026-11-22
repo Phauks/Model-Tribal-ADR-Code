@@ -1,0 +1,193 @@
+id: yocha-dehe-wintun-nation-california-gaming-compact
+kind: gaming-compact
+title: Yocha Dehe Wintun Nation, California–State of California Gaming Compact
+nations:
+- yocha-dehe-wintun-nation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Yocha Dehe Wintun Nation, California and the State of California under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Yocha Dehe Wintun Nation,
+  California and the State of California as of Nov. 21, 2026: 1 original, 2 replacements and 1 amendment. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-10-22'
+    published: '1998-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-28309
+    locator: 63 Fed. Reg. 56660 (Oct. 22, 1998)
+  source: compact-ca-yocha-dehe-wintun-nation-1998-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 1998.10.08 Yocha DeHe Wintun Nation Tribal
+      State Gaming Compact.pdf
+    sha256: fec5042970d6e605f8f515aeb5e9ad3970966329b153481f01efb5e24bb7d14e
+    pages: 2
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-yocha-dehe-wintun-nation-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Yocha Dehe Wintun Nation Tribal
+      State Gaming Compact_0.pdf
+    sha256: 7186e6ceca5c1f3aadf09616a44471293e6deabf586f306db30f59ef4dcc3d58
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution (Secs. 9.2-9.3 also)
+    summary: Disputes first go through written notice and a good-faith meet-and-confer, then either party may seek
+      AAA Commercial Rules arbitration with a binding award (neither party must agree to arbitrate), and otherwise
+      may sue in the U.S. District Court where the Tribe's Gaming Facility is located and the Ninth Circuit, or
+      in a state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS (Secs. 12.1-12.3)
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to add Class III games other than those authorized, but not within 12 months of the effective date,
+      with talks to be scheduled within 30 days; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+- id: 2004-amendment
+  label: 2004 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2004-09-02'
+    published: '2004-09-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-20000
+    locator: 69 Fed. Reg. 53733 (Sept. 2, 2004)
+  source: compact-ca-yocha-dehe-wintun-nation-2004-09-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2004.09.02_yocha_dehe_wintun_nation_tribal_state_gaming_compact_0.pdf
+    sha256: d7e081a001f0d17b4830c48a1cec2ff5d32543d70d2bccf4724c0a9834566fe7
+    pages: 49
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10.8.9 (Arbitration)
+    summary: If no County agreement on off-reservation project mitigation is reached within the period in Section
+      10.8.9, any party may demand binding arbitration before a single arbitrator under AAA Commercial Rules, limited
+      to one party's last best offer, and the Tribe waives sovereign immunity for the arbitrator's jurisdiction
+      and enforcement.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  - 2004-amendment
+  dates:
+    listed: '2016-12-05'
+    published: '2016-12-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-29076
+    locator: 81 Fed. Reg. 87585 (Dec. 5, 2016)
+  source: compact-ca-yocha-dehe-wintun-nation-2016-12-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2016.12.05_yocha_dehe_wintun_nation_tribal_state_gaming_compact.pdf
+    sha256: 87fb012411edc4fe0e8fbd62308567286f117df38e3e36cf068af7c2ce026ec6
+    pages: 134
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 13.1. Voluntary Resolution; Court Resolution.
+    summary: Disputes go first through written notice, a written response within fifteen days and a meet-and-confer
+      within thirty days; either party may then seek arbitration before a JAMS arbitrator (neither is required to
+      agree), and unresolved disputes may go to the U.S. District Court or a state court of competent jurisdiction.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Sec. 15.2. Negotiations for a New Compact.
+    summary: The compact may be amended by mutual written agreement; either party may request talks on an extension
+      or new compact no sooner than 18 months before the termination date, and Sec. 15.4 requires the State to negotiate
+      within 45 days of a request based on changed market conditions.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: changed
+    summary: The 2000 Section 12 lets the parties amend the Compact, makes it subject to renegotiation on the Tribe's
+      request, and sets a 30-day scheduling rule. The 2016 Section 15 keeps mutual written amendment (15.1) and
+      adds a new-compact negotiation process with automatic one-year or two-year extensions (15.2), a 45-day scheduling
+      rule (15.3) and an entitlement under 15.4 that obliges the State to negotiate in good faith within 45 days
+      of a Tribal request, but only where changed market conditions are the stated basis.
+    locator_before: Sec. 12.2
+    locator_after: Sec. 15.4 (Entitlement To Renegotiate Compact)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 document is a replacement of the 2000 Compact, and its Section
+      15 is a restructured amendments-and-renegotiations article, not a renumbered copy. The 2016 excerpts show
+      Section 11.8 as County arbitration and do not show the 2016 State-Tribe dispute article.'
+found_in:
+- 2026-11-21-gaming-compact-histories

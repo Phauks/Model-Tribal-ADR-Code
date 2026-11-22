@@ -1,0 +1,270 @@
+id: quileute-tribe-of-the-quileute-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Quileute Tribe of the Quileute Reservation–State of Washington Gaming Compact
+nations:
+- quileute-tribe-of-the-quileute-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Quileute Tribe of the Quileute Reservation and the State of Washington under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Quileute Tribe of the Quileute
+  Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 4 amendments. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-02-24'
+    published: '1995-02-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-4586
+    locator: 60 Fed. Reg. 10470 (Feb. 24, 1995)
+  source: compact-wa-quileute-tribe-of-the-quileute-reservation-1995-02-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1995.02.24_quileute_tribe_tribal_state_gaming_compact.pdf
+    sha256: b41d57471227d38af85e0041d662c60e2b9a9eed1398f289100aa40fd04bf206
+    pages: 98
+  clauses:
+  - topic: dispute-resolution
+    locator: D.4 Renegotiation - State (Section XVI.D.4)
+    summary: Unresolved State-requested renegotiation goes to Section XII.C, which is mandatory and binding in that
+      instance; community contribution disputes may use the arbitration provisions of Section XII, which the excerpt
+      does not reproduce.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: D. Amendments/Renegotiations (Section XVI.D)
+    summary: The compact may be amended at any time by mutual written agreement, the Tribe may request renegotiation
+      on changes in state law, a court decision, or new games, and the State may request renegotiation of health
+      and safety provisions; either party may request renegotiation after 36 months from opening.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '1995-10-06'
+    published: '1995-10-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-24894
+    locator: 60 Fed. Reg. 52409 (Oct. 6, 1995)
+  source: compact-wa-quileute-tribe-of-the-quileute-reservation-1995-10-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1995.10.06 Quileute Indian Tribal State Gaming
+      Compact.pdf
+    sha256: 96e3cb5acaa52bd4004ee8bc56c7f00dcd9fa3eee9ca90d77f07f3b910cce903
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: C. Other Class III Table Games (Section III)
+    summary: Disputes over new games are first met and resolved by the Tribal and State Gaming Agencies before play
+      begins, and unresolved matters may go to the dispute resolution provisions of Section XII.C, which may include
+      arbitration and is not reproduced in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: D. Amendments/Renegotiations (Section XVI.D)
+    summary: Amendments are by mutual written agreement, and renegotiation may be requested on changes in state
+      law, a court decision, federal legislation or the Tribe's wish to conduct other games, with Sections III F,
+      I, J and K protected by a 36-month moratorium unless listed events occur.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: changed
+    summary: 'The first amendment rewrites Section XVI.D: amendment by mutual agreement is made subject to XVI.D.3;
+      contractual renegotiation of wagering limits, hours and scope becomes an adjustment of the compact upon the
+      Tribe''s written request; Section III.F, I, J and K scope is not subject to renegotiation for 36 months from
+      the amendment date except on listed events, including a court decision or greater gaming by another tribe;
+      the Tribe may start newly authorized State-permitted activity before the subsequent negotiations finish; and
+      a most-favored-tribe clause is added for tribes in listed counties.'
+    locator_before: XVI.D.2
+    locator_after: XVI.D (as amended)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment''s renegotiation text is heavily garbled (OCR with strike-through
+      text mixed in), so the list of events and the most-favored-tribe clause are hard to read exactly and should
+      be checked against the original PDF. The earlier compact''s Section XVI.D.4 and the later XVI.D.3 and XVI.D.5
+      cross-references are not fully legible. The compared text is the Quileute 1995 compact pair, and the earlier
+      document shows no dispute text.'
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-05-14'
+    published: '1999-05-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-12226
+    locator: 64 Fed. Reg. 26435 (May 14, 1999)
+  source: compact-wa-quileute-tribe-of-the-quileute-reservation-1999-05-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.05.14 Quileute Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 0b31e5694fd8f816f1dafb01d8de75929a3128c5bf4350df0e2b090c3c58d147
+    pages: 53
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION.
+    summary: Disputes that cannot be resolved by the parties are resolved under the binding arbitration provisions
+      of the Compact, which the excerpt does not detail.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. MORATORIUM
+    summary: The Tribe agrees not to seek an amendment on gambling devices for three years from execution of the
+      Amendment, except if state or federal law is amended, a court decision permits such devices, or another Washington
+      tribe obtains them.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: The later document adds Appendix X (tribal lottery systems) and leaves the earlier Section XII.C (meet
+      and confer within 10 days, then JAMS arbitration with a final and unappealable decision) untouched. Appendix
+      X adds Section 16 sending disputes under the appendix to any procedure it specifies or otherwise the compact's
+      binding arbitration provisions, a 72-hour player-dispute process at the tribal gaming agency, and a rule that
+      regulatory fee disputes are paid into escrow and resolved by binding arbitration.
+    locator_before: Section XII.C.1-8
+    locator_after: Appendix X, Sections 3.6, 13.5 and 16
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The second amendment states that it amends Section III and adds Appendix X and its operative paragraphs
+      list only Section III.A and Appendix X, so the earlier Section XVI.D amendment and renegotiation provisions
+      still govern.
+    locator_before: XVI.D.1
+    locator_after: Recitals; paragraphs 1-2
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-quileute-tribe-of-the-quileute-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_quileute_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: d03a9dfbc3d5eae6ab43d9158434fcf367c32657c8b432832901ce02d8cea888
+    pages: 55
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The 2007 amendment's operative paragraphs add Appendix X2 and recognize lottery systems under Section
+      III, and do not list Section XVI, so the earlier Section XVI.D amendment and renegotiation provisions still
+      govern.
+    locator_before: XVI.D.1
+    locator_after: 1 and 2
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier 1995 compact''s dispute section is not in the excerpts, and
+      the 2007 amendment''s Appendix X2 dispute text is not visible, so the dispute row rests on the amendment''s
+      operative paragraphs. The earlier XVI.D.2 and XVI.D.3 renegotiation triggers are not affected by the visible
+      directives.'
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-quileute-tribe-of-the-quileute-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Quileute Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 57196df99900d627afc08ebcf465c57cc3548485a9c19305ffb934478bc1cc8a
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, item 4.2
+    summary: Quileute and the State meet and confer on disputes about the Addendum, and if no resolution is reached
+      either party may use the Compact's dispute resolution provisions, which are not in the excerpt.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: 'The later amendment''s optional Addendum adds a step for disputes over the Player Terminal allocation:
+      the State and Native nation must meet and attempt to resolve the dispute at least 30 days before the increased
+      allocation takes effect, after which either may use the Compact''s dispute resolution provisions. The earlier
+      compact already provided in Section XII.C for notice, a meeting within ten days, and JAMS arbitration.'
+    locator_before: Sec. XII.C
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

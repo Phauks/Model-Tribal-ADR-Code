@@ -1,0 +1,588 @@
+id: confederated-tribes-of-the-umatilla-indian-reservation-oregon-gaming-compact
+kind: gaming-compact
+title: Confederated Tribes of the Umatilla Indian Reservation–State of Oregon Gaming Compact
+nations:
+- confederated-tribes-of-the-umatilla-indian-reservation
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Tribes of the Umatilla Indian Reservation and the State of Oregon
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Tribes of the
+  Umatilla Indian Reservation and the State of Oregon as of Nov. 21, 2026: 1 original, 10 amendments and 2 restatements.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1994-02-15'
+    published: '1994-02-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-3397
+    locator: 59 Fed. Reg. 0 (Feb. 15, 1994)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-1994-02-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1994.02.15 Confederated Tribes of Umatilla Tribal
+      State Gaming Compact.pdf
+    sha256: 2d5502315b81b90bd2a8f3737af007f03ba7e94835d7f0a1844e421cc9e0e002
+    pages: 60
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, dispute procedure for operational decisions, paragraphs 3(b) to 6 (as printed; the section
+      number of paragraphs 1 to 3 is not in the excerpt)
+    summary: Operational-decision disputes may go to non-binding arbitration with arbitrators chosen from a list
+      supplied by U.S. Arbitration and Mediation of Oregon, which is binding only if both parties agree, and then
+      to the United States District Court for the District of Oregon under section 16; the State may use an expedited
+      procedure for immediate threats. The notice and meeting steps are not in the excerpt.
+    methods:
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 12.D Amendments
+    summary: The compact may not be amended for three years after its effective date except when a listed condition
+      occurs, such as the State becoming party to another compact with broader authorization, a state statute expanding
+      Class III gaming, or the parties agreeing in writing to enter amendment negotiations; the Native nation may
+      not renegotiate authorized forms of gaming unless the State consents.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1994-amendment
+  label: 1994 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1994-10-18'
+    published: '1994-10-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-25705
+    locator: 59 Fed. Reg. 0 (Oct. 18, 1994)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-1994-10-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1994.10.18 Confederated Tribes of the Umatilla
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 448be040a6b6b141167b51187563efb9f80008ab4e9a6eeb5563d5b875dff014
+    pages: 9
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment I (an interim gaming facility) does not amend Section 6. Its paragraph 11 applies all other
+      Compact terms to the interim facility, so the earlier dispute procedure still governs.
+    locator_before: '6'
+    locator_after: Amendment I, paragraph 11
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment I does not amend the renegotiation provisions; the earlier Section 12(D) still governs.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1995-12-14'
+    published: '1995-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-30467
+    locator: 60 Fed. Reg. 64176 (Dec. 14, 1995)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-1995-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1995.12.14 Confederated Tribes of the Umatilla
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: f549aa863577950c394d82b637e9e89982ff41bfb971f37e89843e848da431f8
+    pages: 21
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment II adds Section 4(G) and Appendix D (house-banked blackjack) and amends only Section 4, so
+      Section 6 still governs disputes. Its one dispute-related term requires the Tribal Gaming Commission to adopt
+      a player-complaint procedure, which is not a process between the Tribes and the State.
+    locator_before: '6'
+    locator_after: Amendment II, paragraph I
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment II says it does not supersede the Compact's other provisions except as stated, and it amends
+      only Section 4, so the earlier Section 12(D) still governs.
+    locator_before: 12(D)
+    locator_after: Amendment II, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1996-09-09'
+    published: '1996-09-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-22950
+    locator: 61 Fed. Reg. 47525 (Sept. 9, 1996)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-1996-09-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.09.09 Confederated Tribes of the Umatilla
+      Reservation Tribal State Gaming  Compact.pdf
+    sha256: d8f618f3ec15242fb95d63b06219c5da03a465db518cc68ae5e4c7848a132e98
+    pages: 9
+  clauses:
+  - topic: dispute-resolution
+    locator: Immediate-threat examples in the expedited dispute procedure, as printed in Amendment III (paragraph
+      before VIII)
+    summary: The excerpt reproduces the list of immediate-threat examples that allow the State to act under the
+      expedited dispute procedure; the other steps of the procedure are not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: changed
+    summary: The earlier compact's expedited procedure lets the State give written notice to the Tribes of an immediate
+      threat, then confer within five days, then go to federal court in the District of Oregon if unresolved; Amendment
+      III revises subparagraph 6.B.5.a so notice goes to the Tribal Gaming Commission with a recommended action,
+      the State and Commission meet and confer within 24 hours, and the Commission takes action to address the concern,
+      after which either party may invoke the compact's dispute procedures, and it expands the list of immediate
+      threats (key employees, impaired equipment security, patron safety, a continuing pattern of non-enforcement).
+    locator_before: Section 6.B.5
+    locator_after: Amendment III, paragraphs VI-VII (6.B.5.a and 6.B.5.d)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+- id: 1997-amendment
+  label: 1997 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1997-12-05'
+    published: '1997-12-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-31918
+    locator: 62 Fed. Reg. 64397 (Dec. 5, 1997)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-1997-12-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1997.12.05 Confederated Tribes of the Umatilla  Indian
+      Reservation Tribal State  Gaming Compact.pdf
+    sha256: 62362270126701af9e4733c7d135973d26e67899f0e16f35ee5f83e050ce4d70
+    pages: 5
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment IV amends only Section 4(G)(4), Section 4(D) limits as they apply to video lottery terminals,
+      and the memorandum of understanding, so Section 6 still governs.
+    locator_before: '6'
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment IV amends only Section 4(G)(4) and the memorandum of understanding, so the earlier Section
+      12(D) still governs.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1998-02-27'
+    published: '1998-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-5071
+    locator: 63 Fed. Reg. 10035 (Feb. 27, 1998)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-1998-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.02.27 Confederated Tribes of the Umatilla
+      Indian Reservation Tribal State Gaming Compact.pdf
+    sha256: 2f55245a0a48f5e63fa8f2dec000ea9c9465a552dba1061d7b9213784e41c5bc
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment V amends only paragraph 8 of Subsection 4(G), extending blackjack authority, so Section 6
+      still governs.
+    locator_before: '6'
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment V amends only paragraph 8 of Subsection 4(G), so the earlier Section 12(D) still governs.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1999-06-01'
+    published: '1999-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-13730
+    locator: 64 Fed. Reg. 29333 (June 1, 1999)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-1999-06-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1999.06.01Confederated Tribes of the  Umatilla
+      Indian Reservation and State of Oregon Tribal State Gaming Compact.pdf
+    sha256: a485bc1d4cd196af1d4d2893e8ac9822394908ed5617ecdd72fdc2e48f0e4896
+    pages: 7
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10 State Assessment of Costs for Oversight, subsection C (as amended by Amendment VII)
+    summary: Disputes over the state assessment that the parties cannot agree on are resolved under a compact section
+      that the garbled text cross-references but that is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+- id: 2000-restatement
+  label: 2000 amended and restated compact
+  event: restatement
+  status: superseded
+  supersedes:
+  - 1994-original
+  - 1994-amendment
+  - 1995-amendment
+  - 1996-amendment
+  - 1997-amendment
+  - 1998-amendment
+  - 1999-amendment
+  dates:
+    listed: '2000-04-03'
+    published: '2000-04-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-8067
+    locator: 65 Fed. Reg. 17527 (Apr. 3, 2000)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-2000-04-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2000.04.03 Confederated Tribes of the Umatilla
+      Indian Reservation Tribal State Gaming Compact.pdf
+    sha256: e9a88c7ce4cc7c63cb6a0ca4bfc53605cefed8e511d6e12da6b5fb0d371d0313
+    pages: 153
+  clauses:
+  - topic: dispute-resolution
+    locator: Subsection B, Procedure for Resolving Disputes Concerning Operational Decisions (section number not
+      printed in the excerpt)
+    summary: The State may give written notice of an operational concern, the parties meet and confer within 15
+      days, either party may start non-binding arbitration within 45 days (binding only if both parties agree),
+      and an action may be brought in the United States District Court for the District of Oregon as provided in
+      section 16; the State may use an expedited procedure for immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 12.D Amendments; Section 10.C(8) Termination or Modification of Fund Contributions
+    summary: The compact may not be amended for three years after its effective date except under listed conditions,
+      such as the State becoming party to another compact with broader authorization, a state statute expanding
+      Class III gaming, or the parties agreeing in writing to negotiate; community benefit fund contributions may
+      also be renegotiated if certain games are prohibited.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: changed
+    summary: The general dispute clause (notice, 30-day meeting, District of Oregon action after 90 days) and the
+      operational-decisions steps (meet and confer within 15 days, non-binding arbitration binding by agreement,
+      federal court) are the same in both; the later compact rewrites the expedited procedure so notice goes to
+      the Tribes and the Tribal Gaming Commission with a recommended action, the State and Commission meet and confer
+      within 24 hours, the Commission acts on the concern before either party may invoke the dispute procedures,
+      the five-day conference happens on request, and the list of immediate threats grows.
+    locator_before: Section 6.B.5; Section 16
+    locator_after: Section 6.B.5; Section 16
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: changed
+    summary: The replacement compact adds an exception for Section 4D's video lottery terminal limits to the amendment
+      bar in 12(D)(1), drops the earlier 12(D)(1)(c) that allowed amendment when a rule corresponding to Appendices
+      A, B or C changes, and adds 'for all purposes by all persons' to the automatic-amendment clause in 12(C)(1).
+    locator_before: 12(D)(1)(c)
+    locator_after: 12(D)(1)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2007-03-19'
+    published: '2007-03-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-4905
+    locator: 72 Fed. Reg. 12813 (Mar. 19, 2007)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-2007-03-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2007.03.19 Confederated Tribes of the Umatilla
+      Indian Reservation Tribal State Gaming Compact.pdf
+    sha256: dfa672e33e4c67272f400b23b51f854a85d3ae1d0246a35fefd26573312737d0
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: Amendment I amends only Section 7.A(6)(t) and Section 10.C(4)(a) (the community benefit fund), so Section
+      6 still governs disputes.
+    locator_before: 6(B)
+    locator_after: Amendment I, paragraph II
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: Amendment I does not amend Section 12, so the earlier renegotiation provisions in 12(D) still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2008-03-04'
+    published: '2008-03-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-4059
+    locator: 73 Fed. Reg. 11661 (Mar. 4, 2008)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-2008-03-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2008.03.04Confederated Tribes of the Umatilla Reservation
+      Tribal State Gaming Compact.pdf
+    sha256: 23332f09d3256075e94ec6e1520eaf5aa83ed6324d3812788c6b1132805def6f
+    pages: 6
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+- id: 2009-restatement
+  label: 2009 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2000-restatement
+  - 2007-amendment
+  - 2008-amendment
+  dates:
+    listed: '2009-02-19'
+    published: '2009-02-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-3501
+    locator: 74 Fed. Reg. 7699 (Feb. 19, 2009)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-2009-02-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2009.02.19 Confederated Tribes of the Umatilla
+      Indian Reservation Tribal State Gaming Compact.pdf
+    sha256: a0d88fe144ae6c04df25ce279da4e95016cabf0ea20fefee2f0fa141cec07817
+    pages: 68
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, subsection B (Procedure for Resolving Disputes Concerning Operational Decisions), paragraphs
+      1-5
+    summary: The State may give written notice of operational concerns, the parties meet and confer within 15 days,
+      either party may seek non-binding arbitration within 45 days, and the matter may then go to the United States
+      District Court for the District of Oregon; an expedited procedure applies to immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 4.B.3 and Section 4.C.2
+    summary: Negotiation of additional Class III games is started under Section 12.D, which the excerpt does not
+      reproduce, and the memorandum of understanding that governs VLT leasing can be amended without amending the
+      Compact.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: reworded
+    summary: The replacement compact keeps the same dispute steps (meet and confer, non-binding arbitration, then
+      the federal court, and the expedited procedure with the Commission step). The visible changes are cross-references
+      (Section 6.A, Section 6.B.1 to 3, Section 16) and capitalised defined terms (Key Employee, Owner) in the list
+      of immediate threats.
+    locator_before: 6(B)
+    locator_after: 6(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later excerpts cut off inside the list of examples and do not show Section
+      6(C) or Section 12. The earlier 2000 excerpt is cut at the start of Section 6(B).'
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+- id: 2014-amendment
+  label: 2014 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2009-restatement
+  dates:
+    listed: '2014-06-11'
+    published: '2014-06-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-13645
+    locator: 79 Fed. Reg. 33592 (June 11, 2014)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-2014-06-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2014.06.11 Confederated Tribes of  the Umatilla
+      Indian Reservation Tribal State Gaming Compact.pdf
+    sha256: 97a0baeea2adb7fa3626937d0c3115169265de0a404053b8123da5dc2b91e907
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2009-restatement
+    change: unchanged
+    summary: Amendment I revises only Section 7(B)(6) (vendor licensing factors) and does not amend Section 6, so
+      the earlier dispute procedure still governs.
+    locator_before: 6(B)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2009-restatement
+    change: unchanged
+    summary: Amendment I does not amend the renegotiation provisions (Section 12), so the earlier clause still governs.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2020-amendment
+  label: 2020 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2009-restatement
+  dates:
+    listed: '2020-09-09'
+    published: '2020-09-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-19928
+    locator: 85 Fed. Reg. 55686 (Sept. 9, 2020)
+  source: compact-or-confederated-tribes-of-the-umatilla-indian-reservation-2020-09-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2020.09.09 Umatilla Compact Amendment.pdf
+    sha256: 6d217a29dbf0e547b22db652436f4a265ee3ff53ba4d58c8ef600881ed045648
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2009-restatement
+    change: unchanged
+    summary: Amendment II revises only Section 10.C.8 (a one-year waiver of the community benefit fund contribution
+      for 2020), so Section 6 still governs disputes.
+    locator_before: 6(B)
+    locator_after: Amendment II, first paragraph
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2009-restatement
+    change: unchanged
+    summary: Amendment II revises only Section 10.C.8, so the earlier Section 12 renegotiation provisions still
+      govern.
+    locator_before: 12(D)
+    locator_after: Amendment II, first paragraph
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,122 @@
+id: jamul-indian-village-of-california-california-gaming-compact
+kind: gaming-compact
+title: Jamul Indian Village of California–State of California Gaming Compact
+nations:
+- jamul-indian-village-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Jamul Indian Village of California and the State of California under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Jamul Indian Village of California
+  and the State of California as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-jamul-indian-village-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Jamul Indian Village Tribal State
+      Gaming Compact.pdf
+    sha256: d59e1b82706f3fab56cf29d8297dd174c72d913b8e321156342c265e11a8831f
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and the Jamul Indian Village may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2016-12-05'
+    published: '2016-12-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-29076
+    locator: 81 Fed. Reg. 87585 (Dec. 5, 2016)
+  source: compact-ca-jamul-indian-village-of-california-2016-12-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2016.12.05_jamul_indian_village_tribal_state_gaming_compact_0.pdf
+    sha256: de896b0fde0f66f95a21600a24e622bb849feb1f923d214470c37af31b2adbcb
+    pages: 141
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county. Sec. 13.4 limits remedies to injunctive relief, specific performance and declaratory relief.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.3; Sec. 5.2(f)
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations; Sec. 5.2(f) also lets either party request reopening of the Revenue Sharing Trust Fund payment
+      terms if the fund balance exceeds or falls short of long-term needs, which the other party may decline.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2000 Section 12 allows mutual written amendment, renegotiation for new class III games (after 12
+      months), a written request and a schedule for talks; the 2016 Section 15 allows amendment by mutual written
+      agreement during the term, with each party's written consent to negotiate, requests to extend or replace the
+      compact no sooner than 18 months before termination, an automatic one-year extension and a further two-year
+      extension if both parties agree talks are progressing, and says amendments supersede prior understandings
+      on the subject. The 2016 new-games renegotiation right is not in the excerpts.
+    locator_before: '12.1'
+    locator_after: '15.2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 general dispute article and the 2016 Section 14 term provisions
+      are not in the excerpts, so confirm them in the full compact. The 2000 dispute excerpts also include the labor-ordinance
+      text that is unrelated to the compact''s dispute clause.'
+found_in:
+- 2026-11-21-gaming-compact-histories

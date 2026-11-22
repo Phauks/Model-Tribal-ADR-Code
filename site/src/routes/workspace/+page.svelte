@@ -24,6 +24,17 @@
 	{roleLabels[data.person.role]}: {roleDescriptions[data.person.role]}
 </p>
 
+{#if data.profileState !== 'confirmed'}
+	<div class="notice" role="note">
+		<p>
+			{data.profileState === 'missing'
+				? 'You have not set up your contributor profile yet. It records how you want to be credited in the book and on the website.'
+				: 'Your contributor profile has changes you have not confirmed yet.'}
+			<a href="/profile">{data.profileState === 'missing' ? 'Set up your profile' : 'Check and confirm'}</a>
+		</p>
+	</div>
+{/if}
+
 {#if data.ownNation}
 	<section class="panel">
 		<h2>Your nation’s record</h2>
@@ -31,6 +42,44 @@
 			You review the record for <strong>{data.ownNation.title}</strong> on behalf of the nation.
 		</p>
 		<p><a class="button" href="/workspace/reviews/nation/{data.ownNation.identifier}">Review the record</a></p>
+	</section>
+{/if}
+
+{#if data.administration}
+	<section class="panel">
+		<h2>Administration</h2>
+		<ul>
+			<li>
+				{data.administration.grants} access {data.administration.grants === 1 ? 'grant' : 'grants'} in force{#if data.administration.grantsExpiringSoon}, {data.administration.grantsExpiringSoon} ending within 14 days{/if}.
+				<a href="/workspace/access">Manage access</a>
+			</li>
+			<li>
+				{data.administration.refusedLastThirtyDays} refused {data.administration.refusedLastThirtyDays === 1 ? 'attempt' : 'attempts'} in the last 30 days.
+				<a href="/workspace/activity">See the activity log</a>
+			</li>
+			<li>
+				{#if data.administration.seals.intact}
+					Activity log intact ({data.administration.seals.checked} entries checked).
+				{:else}
+					<strong>Activity log check failed at entry {data.administration.seals.brokenAt}.</strong>
+					<a href="/workspace/activity">See why</a>
+				{/if}
+			</li>
+		</ul>
+	</section>
+{/if}
+
+{#if data.granted.length > 0}
+	<section>
+		<h2>Documents opened to you</h2>
+		<ul>
+			{#each data.granted as subject (`${subject.kind}/${subject.identifier}`)}
+				<li>
+					<a href="/workspace/reviews/{subject.kind}/{subject.identifier}">{subject.title}</a>
+					({subjectKindLabels[subject.kind].toLocaleLowerCase('en-US')})
+				</li>
+			{/each}
+		</ul>
 	</section>
 {/if}
 

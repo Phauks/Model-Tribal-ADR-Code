@@ -1,0 +1,521 @@
+id: lower-sioux-indian-community-in-the-state-of-minnesota-minnesota-blackjack-compact
+kind: gaming-compact
+title: Lower Sioux Indian Community in the State of Minnesota–State of Minnesota Blackjack Compact
+nations:
+- lower-sioux-indian-community-in-the-state-of-minnesota
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Lower Sioux Indian Community in the State of Minnesota and the State of
+    Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Lower Sioux Indian Community
+  in the State of Minnesota and the State of Minnesota as of Nov. 21, 2026: 1 original and 11 amendments. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-1991-10-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_lower_sioux_indian_community_tribal_state_gaming_comapct_blackjack.pdf
+    sha256: 72f3ea941d016207f074e3adc54a61f787c6068383d25b63cbf82056636029a6
+    pages: 18
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10, Effect of Breach
+    summary: Section 10 provides that if a tribal government bound by the consent judgment breaches it or the compact,
+      the State directs any legal action only at the breaching tribal government.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 2.2, Renegotiation
+    summary: Either the State or the Community may, by appropriate and lawful means, request in writing by certified
+      mail negotiations to amend, replace or repeal the compact; the parties have 180 days to negotiate before IGRA
+      procedures apply, and the Community waives certain requests under Section 2.3.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2023.10.04_lower_sioux_indian_community_amendment_blackjack.pdf
+    sha256: 473e5ceeeaa7dba650fc16da2e0c3d620650e09643ddb6c166cd152f8908e150
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Second Amendment (reference to compact Section 7)
+    summary: The second amendment says it was agreed by the State Commissioner of Public Safety and the Lower Sioux
+      community under Section 7 of the compact, but Section 7 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2023 amendment changes Section 4.5(6)(K) of the blackjack standards and is made under Section 7;
+      it does not amend Section 2.2 (renegotiation) or Section 7 (amendment procedure), so the earlier renegotiation
+      terms still apply.
+    locator_before: 2.2(1); 7
+    locator_after: Recitals; I
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2023-amendment-2
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-2
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2020.12.03_lower_sioux_indian_community_amendment_blackjack.pdf
+    sha256: 5ed802deb4421a34e50a402fe69afd4574b407648bc83d099856bab20a415f87
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Third Amendment (reference to compact section 7)
+    summary: The third amendment says it was agreed by the State Commissioner of Public Safety and the Community
+      under section 7 of the compact, but section 7 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2020 amendment to the blackjack technical standards is made pursuant to Section 7 and amends Section
+      4.5(2) only as shown, so the 1991 Section 7 procedure still governs and nothing in the excerpts changes Sections
+      2.2 or 2.3.
+    locator_before: '7'
+    locator_after: Pursuant to section 7; amends 4.5(2)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2023-amendment-3
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-3
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_01.06.1990_lower_sioux_indian_community_amendment_video_games.pdf
+    sha256: acd0347309d76004be7270d1f51db18c434b602d04aa29046390985c7cb20ab5
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to First Amendment (reference to compact Section 6.12)
+    summary: The first amendment says it was made under Section 6.12 of the video games compact, by agreement of
+      the State Commissioner of Public Safety and the Community, but Section 6.12 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2023-amendment-4
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-4
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2002_lower_sioux_indian_community_undated_amendment_video_games.pdf
+    sha256: f5e157ffadd7eae9b666bdfbe84376373d355b35941d55c793a2b1bb0e833956
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Second Amendment (reference to compact Section 6.12)
+    summary: The undated second amendment says it was made under Section 6.12 of the video games compact, by agreement
+      of the State Commissioner of Public Safety and the Community, but Section 6.12 itself is not shown in the
+      excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2023-amendment-5
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-5
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2003.02.25_lower_sioux_indian_community_second_amendment_video_games.pdf
+    sha256: 559496e1ab8e8e8b0ef1aaef97efe7d3528fd49385b45a4a0584e8347bffb4fe
+    pages: 9
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Second Amendment (reference to compact Section 6.12)
+    summary: The second amendment says it was made under Section 6.12 of the video games compact, by agreement of
+      the State Commissioner of Public Safety and the Community, but Section 6.12 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: 'The 2003 second amendment does not amend Section 2.2 or 2.3 of the 1991 blackjack compact: it amends
+      only Section 6.9 of the separate video games of chance compact (under that compact''s Section 6.12), so the
+      earlier renegotiation clauses still govern the blackjack compact.'
+    locator_before: '2.2'
+    locator_after: 6.9 (video games compact)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document amends the Tribal-State Compact for Control of Class
+      III Video Games of Chance, while the earlier document is the 1991 blackjack compact, so the pairing may be
+      wrong and counsel should confirm the intended earlier document. The 1991 Section 7 (amendment of blackjack
+      technical standards by mutual written agreement) is also in the earlier excerpts but is not referred to by
+      the 2003 amendment. The earlier title is misspelled in the file (''comapct'').'
+- id: 2023-amendment-6
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-6
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2003.11.12_lower_sioux_indian_community_amendment_video_games.pdf
+    sha256: 3850f010cd58255b76eb5524c5f42416689bc7f28fbafe7be94b031d9aa52bb2
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Third Amendment (reference to compact Section 6.12)
+    summary: The third amendment says it was made under Section 6.12 of the video games compact, by agreement of
+      the State Commissioner of Public Safety and the Community, but Section 6.12 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2023-amendment-7
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-7
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2010.04.02_lower_sioux_indian_community_amendment_video_games.pdf
+    sha256: 169417841a1931edda7118a1993c390e17b0fa9d5c2cb6d14adc27d8cc6b53da
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Amendment (reference to compact Section 6.12)
+    summary: The amendment says it was made under Section 6.12 of the video games compact, by agreement of the State
+      Commissioner of Public Safety and the Community, but Section 6.12 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2023-amendment-8
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-8
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2015.04.02_lower_sioux_indian_community_amendment_video_games.pdf
+    sha256: b0c8cff06397b1d6abca9076f55e5d3f3c26c40c6a20cf2d7d05faf30b93b461
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Second Amendment (reference to compact Section 6.12)
+    summary: The second amendment says it was made under Section 6.12 of the video games compact, by agreement of
+      the State Commissioner of Public Safety and the Band, but Section 6.12 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2023-amendment-9
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-9
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2023.08.16_lower_sioux_indian_community_video_games_of_chance.pdf
+    sha256: 1d71e200b3ea7bd83b6d79138450aa02db1f9fa59c5fb5acd80342e564bcb662
+    pages: 13
+  clauses:
+  - topic: renegotiation
+    locator: Section 6.12 (as referenced in the amendment preamble)
+    summary: The amendment is made under Section 6.12 of the compact by agreement of the Community and the State,
+      and the excerpt does not show who may request renegotiation or the time limits.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2023-amendment-10
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22029
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2023-10-04-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2023.08.16_lower_sioux_indian_community_amendment_blackjack.pdf
+    sha256: eac0618b46dab4c5f40c09ef26e6b8dd8c253d3e42dc42e5b16093bf6045c9f7
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Amendment to Technical Standards (reference to compact Section 7)
+    summary: The amendment says it was agreed by the Lower Sioux community and the State Commissioner of Public
+      Safety under Section 7 of the compact, but Section 7 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2023 amendment changes Section 4.5 of the blackjack standards (Part I) and consolidates earlier
+      amendments (Part II), and is made under Section 7; it does not amend Section 2.2 or Section 7, so the earlier
+      renegotiation terms still apply.
+    locator_before: 2.2(1); 7
+    locator_after: Recitals; Parts I-II
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2025-amendment
+  label: 2025 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2025-12-15'
+    published: '2025-12-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2025-22802
+    locator: 90 Fed. Reg. 58049 (Dec. 15, 2025)
+  source: compact-mn-lower-sioux-indian-community-in-the-state-of-minnesota-2025-12-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/2025.12.03_lower_sioux_indian_community_compact_amendment_blackjack.pdf
+    sha256: c0f9d5eb94464b4623b883874f452ebbeec8be48c0e4554721d5a940b4c2c149
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4.2(b), Violations by the Community of this Addendum (Section 4. Enforcement and Disputes)
+    summary: The Department of Public Safety gives the Community an Alleged Violation Notice, the Community's Gaming
+      Commission has thirty days to investigate and order corrective action, and if the Community disputes an alleged
+      violation the parties meet within fifteen days before either party may pursue remedies under the IGRA.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: added
+    summary: 'The later amendment adds a process for violations of the card-game addendum: the Department of Public
+      Safety sends an Alleged Violation Notice, the Community''s Gaming Commission has 30 days to investigate and
+      order corrective action, and if the Community disputes the violation the parties meet within 15 days and otherwise
+      each may pursue remedies under IGRA. The earlier compact has no process for disputes between the Community
+      and the State; it only says it does not limit jurisdiction or remedies under IGRA.'
+    locator_before: '3.1'
+    locator_after: 4.2(a)-(c)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2025 Addendum relies on Sections 2.2 and 2.3 of the compact as the basis for negotiating card games
+      and does not list them as amended, so the earlier renegotiation terms still apply.
+    locator_before: 2.2(1)
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

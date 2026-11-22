@@ -1,0 +1,126 @@
+id: peoria-tribe-of-indians-of-oklahoma-oklahoma-gaming-compact
+kind: gaming-compact
+title: Peoria Tribe of Indians of Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- peoria-tribe-of-indians-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Peoria Tribe of Indians of Oklahoma and the State of Oklahoma under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Peoria Tribe of Indians of
+  Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original, 1 replacement and 1 amendment. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2005-01-05'
+    published: '2005-01-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-189
+    locator: 70 Fed. Reg. 916 (Jan. 5, 2005)
+  source: compact-ok-peoria-tribe-of-indians-of-oklahoma-2005-01-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.01.05 Peoria Tribe of Indians Tribal State
+      Gaming Compact.pdf
+    sha256: fd62b88b4a95955afa800f9b7be8acf944081600b8c4923d32133c366a39d181
+    pages: 56
+- id: 2005-replacement
+  label: 2005 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2005-original
+  dates:
+    listed: '2005-03-11'
+    published: '2005-03-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-4885
+    locator: 70 Fed. Reg. 12230 (Mar. 11, 2005)
+  source: compact-ok-peoria-tribe-of-indians-of-oklahoma-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.03.11 Peoria Tribe of Indians Tribal State
+      Gaming Compact.pdf
+    sha256: 5ec3159ccedf514a676901668ff65c257115cab48a74a278162a9016ed2a8861
+    pages: 56
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: Disputes start with written notice and a meeting of tribal and state representatives within thirty
+      days, then either party may refer the dispute to arbitration under AAA rules, and an award may be reviewed
+      de novo by a federal district court whose decision is subject to appeal.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days after expiration of the Compact or any renewal, either the tribe or the state, acting
+      through its Governor, may request renegotiation of subsections A and E of Part 11; the Compact otherwise renews
+      automatically for fifteen-year terms if electronic gaming is authorized.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: not-compared
+    verification: inferred
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-replacement
+  dates:
+    listed: '2018-08-27'
+    published: '2018-08-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-18424
+    locator: 83 Fed. Reg. 43704 (Aug. 27, 2018)
+  source: compact-ok-peoria-tribe-of-indians-of-oklahoma-2018-08-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.27 Peoria Tribe 2018 Compact Amendments.pdf
+    sha256: 8f6202d3b3784487b16c9a9b69ea41430fbdaeb30353bf0c1c8fe98b418d4683
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The 2018 supplement adds non-house banked table games and states that they are governed by the existing
+      compact; it does not amend Part 12, which is not among its provisions, so the Part 12 dispute process (notice,
+      30-day meeting, optional AAA arbitration, federal court review) still governs.
+    locator_before: Part 12
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The 2018 supplement contains no renegotiation provision and does not amend Part 15, so the Part 15.B
+      renegotiation request right after the 2020 expiration still applies under the 2005 compact.
+    locator_before: Part 15
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

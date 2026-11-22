@@ -1,0 +1,51 @@
+id: hopi-clan-land-dispute-ross-v-sulu
+title: Ross v. Sulu (a land dispute between clans)
+nations:
+- hopi-tribe-of-arizona
+community: First Mesa
+kind: court-opinion
+length: long
+excerpts:
+- telling: hopi-appellate-opinion
+  locator: part II (discussion of jurisdiction)
+  held_privately: true
+  words: 27
+  sha256: 7d68dbbc551ff7ca47d6e22759698df7503e74fd4ae199d5ede0149bbb01ba46
+methods:
+- customary-dispute-resolution
+topics:
+- clan-land
+- village-authority
+- court-opinion
+tellings:
+- id: hopi-appellate-opinion
+  source: ross-v-sulu-hopi-appellate-court
+  published_by: Appellate Court of the Hopi Tribe (copy hosted by the Tribal Law and Policy Institute)
+  authority: nation-court
+  verification: read-in-full
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+protocols:
+- kind: permission-required
+  statement: The Hopi Cultural Preservation Office says many Hopi stories told to outsiders were published without
+    the storytellers' permission.
+  source: hopi-cultural-preservation-office-page
+  how_the_project_follows_it: No Hopi story or clan history is described; ask the Cultural Preservation Office before
+    using any.
+access: *id001
+anthology:
+  candidate: false
+  reason: A court decision is cited, not reprinted; the clan history in the testimony should not be retold (project
+    analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

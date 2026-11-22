@@ -1,0 +1,58 @@
+id: citizen-potawatomi-nation-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: Citizen Potawatomi Nation, Oklahoma–State of Oklahoma Off-Track Wagering Compact
+nations:
+- citizen-potawatomi-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for Citizen Potawatomi Nation, Oklahoma and the State of Oklahoma under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for Citizen Potawatomi
+  Nation, Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1997-original
+  label: 1997 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1997-02-03'
+    published: '1997-02-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-2551
+    locator: 62 Fed. Reg. 5033 (Feb. 3, 1997)
+  source: compact-ok-citizen-potawatomi-nation-1997-02-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 1997.02.03 Citizen Potawatomi Off Track Wagering
+      Compact.pdf
+    sha256: 1d71c21c65346e67c08e863462608043b09792848fa226cc16a04566e87899c7
+    pages: 41
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 14. DISPUTE RESOLUTION, a. Voluntary Resolution.
+    summary: The compact provides written notice and a meeting within thirty days, then non-binding arbitration
+      after sixty days with each party naming an arbitrator and the American Arbitration Association naming a third
+      if needed, and a declaratory judgment action in the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 18. AMENDMENTS.
+    summary: Either party may request negotiations to amend the compact, which stays in effect during talks; the
+      parties have 180 days to negotiate, after which Act remedies apply, and any amendment must be in writing and
+      approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

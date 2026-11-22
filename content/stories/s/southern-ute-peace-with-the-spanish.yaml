@@ -1,0 +1,51 @@
+id: southern-ute-peace-with-the-spanish
+title: Peace between the Utes and the Spanish
+nations:
+- southern-ute-indian-tribe-of-the-southern-ute-reservation
+kind: historical-account
+length: book
+excerpts:
+- telling: tribal-history-1972
+  locator: chapter on Spanish relations
+  text: A peace between the groups was not established until 1786 when the Utes, the Comanches and the Spanish met
+    at Pecos.
+  words: 21
+  sha256: 2f877ffc589ac5db0f7fa50a0e2bb4122d019003a2c5f1edc8486a4ba7b822ba
+- telling: tribal-history-1972
+  locator: same passage
+  text: In support of these alliances a second peace treaty between the Utes and the Spanish was signed in 1789.
+  words: 19
+  sha256: 5b659449fa0327fe779202ea45528fe0b484f43abe81ec18533d58fb8bfe26c6
+methods:
+- negotiation
+topics:
+- peace-between-nations
+- treaties
+tellings:
+- id: tribal-history-1972
+  source: jefferson-delaney-thompson-1972-southern-utes
+  as_of: '1972'
+  teller:
+    form: name
+    name: James Jefferson, Robert W. Delaney and Gregory C. Thompson; Floyd A. O'Neil, ed.
+  published_by: Southern Ute Tribe
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+access: *id001
+anthology:
+  candidate: false
+  reason: A 1972 history; ask the Tribe whether it has a current telling it prefers (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

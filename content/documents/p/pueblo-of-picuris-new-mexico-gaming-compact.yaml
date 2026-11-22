@@ -1,0 +1,114 @@
+id: pueblo-of-picuris-new-mexico-gaming-compact
+kind: gaming-compact
+title: Pueblo of Picuris, New Mexico–State of New Mexico Gaming Compact
+nations:
+- pueblo-of-picuris
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pueblo of Picuris, New Mexico and the State of New Mexico under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pueblo of Picuris, New Mexico
+  and the State of New Mexico as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1997-original
+  label: 1997 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1997-11-05'
+    published: '1997-11-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-97-29300
+    locator: 62 Fed. Reg. 59878 (Nov. 5, 1997)
+  source: compact-nm-pueblo-of-picuris-1997-11-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1997.11.05_pueblo_of_picuris_tribal_state_gaming_compact.pdf
+    sha256: 4bb3c1532feede66662a17209a267ec313750624a34fa2be4b8357180591e47e
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(3)
+    summary: The compact provides for arbitration under the Commercial Arbitration Rules of the American Arbitration
+      Association with attorney arbitrators, and the results are enforceable by an action for injunctive relief
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 11. Binding Effect and Duration., paragraphs B-D
+    summary: Either party may request reopening of negotiations at any time while the compact is in effect, and
+      written notice may be served one year before the end of each term to request renegotiation; no change is required,
+      and any amendment needs approval by the Native nation, the State and the Secretary of the Interior and publication
+      in the Federal Register.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1997-original
+  dates:
+    listed: '2007-07-05'
+    published: '2007-07-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-12904
+    locator: 72 Fed. Reg. 36717 (July 5, 2007)
+  source: compact-nm-pueblo-of-picuris-2007-07-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2007.07.05_pueblo_of_picuris_tribal_state_gaming_compact.pdf
+    sha256: 881a71922cffd2f23c1bb1d067ab92717cbc9d91021676a5b84be05583a79a84
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be amended only by a written instrument signed by the Native nation and the State and
+      approved by the Secretary of the Interior, with approval of the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: changed
+    summary: 'The later compact provides a shorter track: the 30-day meeting of State and Native nation representatives
+      after notice is dropped, the notice to cease conduct may follow after 20 days instead of 90, the responding
+      party has 10 days instead of 30 to stop or invoke arbitration, each side selects its arbitrator within 30
+      days with 30 days (earlier ten) for the third, and results are stated to be final and binding. The earlier
+      compact already had a cease-conduct step and AAA arbitration by three attorney-arbitrators with injunctive
+      enforcement.'
+    locator_before: Section 7(A)(1)-(5)
+    locator_after: Section 7(A)(1)-(5)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

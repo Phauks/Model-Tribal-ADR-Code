@@ -1,0 +1,322 @@
+id: fort-mcdowell-yavapai-nation-arizona-gaming-compact
+kind: gaming-compact
+title: Fort McDowell Yavapai Nation, Arizona–State of Arizona Gaming Compact
+nations:
+- fort-mcdowell-yavapai-nation
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Fort McDowell Yavapai Nation, Arizona and the State of Arizona under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Fort McDowell Yavapai Nation,
+  Arizona and the State of Arizona as of Nov. 21, 2026: 1 original, 2 replacements, 2 amendments and 1 restatement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-12-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-az-fort-mcdowell-yavapai-nation-1992-12-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_1992.12.30_fort_mcdowell_mohave-apache_indian_community_tribal_state_gaming_compact.pdf
+    sha256: de5c0416f088ea623857a5a4057667763118a531fcaa2f728077e5ea828f8121
+    pages: 99
+  clauses:
+  - topic: dispute-resolution
+    locator: Subsections (c)-(e) before SECTION 16 (section number and heading not printed in excerpt)
+    summary: The compact provides for arbitration of disputes, with the majority decision of the arbitrator(s) final,
+      binding and unappealable and a failure to comply with the award treated as a breach of the compact; the arbitration
+      body is not named in the excerpt, and U.S. District Courts have jurisdiction over actions to enjoin class
+      III gaming conducted in violation of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS AND WAIVERS
+    summary: The compact can be modified only by written agreement of the parties with approval by the Secretary
+      of the Interior, and the excerpt sets out no separate right to request reopening, trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1993-replacement
+  label: 1993 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  dates:
+    listed: '1993-08-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-az-fort-mcdowell-yavapai-nation-1993-08-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_1993.08.18_fort_mcdowell_mohave_apache_tribal_state_gaming_compact.pdf
+    sha256: 4c61ed6788f27c0b1310544a582d2e021abbc72ba6f64492523e97b738a7edb6
+    pages: 117
+  clauses:
+  - topic: dispute-resolution
+    locator: Subsections (a)-(g) before SECTION 16 (section number and heading not printed in excerpt)
+    summary: The compact provides for written notice, a meeting within ten days, and arbitration in Arizona if the
+      dispute is not resolved within thirty days, with one agreed arbitrator or a panel of three whose third member
+      the American Arbitration Association appoints if the two cannot agree; the majority decision is final, binding
+      and unappealable, and U.S. District Courts have jurisdiction over actions to enjoin class III gaming in violation
+      of the compact.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Subsection (a) of dispute section; SECTION 17. AMENDMENTS; Section 23(b)(5)
+    summary: On written notice and request by either party the parties may discuss and reconsider specified sections
+      and appendices, amendments must be in writing and signed by both parties, and after notice of nonrenewal Fort
+      McDowell Yavapai Nation may request negotiation of a successor compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: The 1992 compact provides that its terms may be amended only by written agreement of the parties and
+      upon approval by the Secretary of the Interior. The 1993 replacement's Section 17 provides only that an amendment
+      must be in writing and signed by both parties, and the terms remain in effect until amended, modified or terminated;
+      the Secretary's approval is not mentioned in the excerpt.
+    locator_before: '17'
+    locator_after: '17'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1993 compact is a replacement compact dated August 18, 1993. Its Secretary-approval
+      language is not shown, so the approval point is a gap in the excerpt rather than a confirmed change.'
+- id: 2003-replacement
+  label: 2003 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1993-replacement
+  dates:
+    listed: '2003-02-05'
+    published: '2003-02-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-2787
+    locator: 68 Fed. Reg. 5912 (Feb. 5, 2003)
+  source: compact-az-fort-mcdowell-yavapai-nation-2003-02-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2003.02.05_fort_mcdowell_tribal_gaming_compact_0.pdf
+    sha256: 7f83a3ce1b249d4efedfae9e11eae036ee1a55568839396c5b4d2984b9362029
+    pages: 60
+  clauses:
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Within 180 days after the Effective Date either party may propose amendments to listed regulatory provisions;
+      the parties then negotiate in good faith for 90 days and, failing agreement, mediate under Section 15(b),
+      while other provisions may be amended by written mutual agreement signed by both parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-replacement
+    change: changed
+    summary: The 1993 Section 17 requires that any amendment be in writing and signed by both parties. The 2003
+      Section 17(a) lets the State or the Nation propose amendments within 180 days after the effective date to
+      enhance listed regulatory provisions, including tribal judicial review of nonpayment of alleged winnings,
+      remedies for violations, and background investigations.
+    locator_before: '17'
+    locator_after: 17(a)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2003 compact is for the Fort McDowell Yavapai Nation. The 2003 Section
+      17(b) and (c) text, including the general amendment rule, is not in the excerpts.'
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2009-03-25'
+    published: '2009-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-6585
+    locator: 74 Fed. Reg. 12889 (Mar. 25, 2009)
+  source: compact-az-fort-mcdowell-yavapai-nation-2009-03-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2009.03.25_fort_mcdowell_tribal_gaming_compact_0.pdf
+    sha256: d0ce9b6a645fbcff507f45774060acd0d87cadb0a6d23d4504fa203806df2ef3
+    pages: 14
+  clauses:
+  - topic: renegotiation
+    locator: AGREEMENT, paragraph 10
+    summary: The parties may renegotiate provisions of the agreement under the compact, and the agreement may be
+      amended only in a writing signed by the parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: The Agreement amends the nine listed compact sections and not Section 17 (amendments). Paragraph 10
+      states that the parties may renegotiate provisions of the Agreement pursuant to the compact, which is consistent
+      with the earlier Section 17(a) process.
+    locator_before: 17(a)
+    locator_after: '10'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Agreement to Amend is dated December 19, 2008 and is made under Section
+      17(c) of the compact, whose text is not in the excerpts. The amendments are to specific attachments (1 to
+      9), and the excerpt does not show the attachments.'
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-replacement
+  - 2009-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-fort-mcdowell-yavapai-nation-arizona-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Fort McDowell Yavapai Nation Tribal
+      State Gaming Compact.pdf
+    sha256: 3379fd9728fcb2fd156bf33759fb913dec23da46f6b3b35390edbbec660915cf
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(B)-(C)
+    summary: For appendix disputes, either party may request a new or modified appendix in writing, and if no agreement
+      is reached within 180 days either may initiate Section 15 dispute resolution, where an arbitration under Section
+      15(c) is conducted before a single neutral arbitrator selected by CPR in a last best offer format; the general
+      Section 15 procedure is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3) and SECTION 17. AMENDMENTS
+    summary: Either Fort McDowell Yavapai Nation or the State Gaming Agency may request in writing to negotiate
+      a new or modified appendix, and after 180 days without agreement either may initiate Section 15 dispute resolution;
+      compact amendments must be in writing, signed by both parties, and approved or deemed approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: changed
+    summary: The 2003 Section 17(a) lets the State or the Nation propose amendments within 180 days after the effective
+      date to enhance listed regulatory provisions. The 2021 Section 17 instead says that any amendment must be
+      in writing and signed by both parties (approved by the Secretary where the Act requires), that any provision
+      may be amended at any time by mutual agreement, and that the Governor may agree to amendments not inconsistent
+      with Arizona law, including those for the Hopi Tribe or San Juan Southern Paiute Tribe. The 2021 text also
+      allows appendices to be modified without being an amendment.
+    locator_before: 17(a)
+    locator_after: '17'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2021 replacement''s Section 17 also covers the Governor''s authority
+      to agree to amendments for other Arizona tribes, which is a new mechanism. The earlier dispute process is
+      not in the excerpts.'
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-fort-mcdowell-yavapai-nation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_fort_mcdowell_yavapai_nation_tribal_state_gaming_compact.pdf
+    sha256: 8107f3cf746b8056f704970832b7e58380052f4fce2ffc654681598c5661645b
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 Agreement to Amend amends listed definitions and compact sections and does not list Section
+      15. It states that a dispute under the agreement is resolved under the compact's Section 15 dispute provisions,
+      which therefore continue to apply.
+    locator_after: 12 (agreement), referring to Section 15
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The Agreement amends listed compact provisions and does not list Section 17. Its own amendment clause
+      (paragraph 10) requires a written, signed document, which is consistent with the 2021 Section 17.
+    locator_before: '17'
+    locator_after: '10'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,150 @@
+id: augustine-band-of-cahuilla-indians-california-gaming-compact
+kind: gaming-compact
+title: Augustine Band of Cahuilla Indians, California–State of California Gaming Compact
+nations:
+- augustine-band-of-cahuilla-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Augustine Band of Cahuilla Indians, California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Augustine Band of Cahuilla
+  Indians, California and the State of California as of Nov. 21, 2026: 1 original and 3 extensions. The order, the
+  kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-07-06'
+    published: '2000-07-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-16985
+    locator: 65 Fed. Reg. 41721 (July 6, 2000)
+  source: compact-ca-augustine-band-of-cahuilla-indians-2000-07-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.07.06_augustine_band_of_cahuilla_indian_tribal_state_gaming_compact_0.pdf
+    sha256: 7a9162fe42b1d7886c1196e66c879ef46a0d0d8339a80f27632bca69c69472f0
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS, Sec. 9.1 to 9.3
+    summary: The parties give written notice and meet and confer within 10 days; if unresolved 30 days after the
+      first meeting either party may seek arbitration under AAA Commercial Arbitration Rules (binding if used, but
+      neither party must agree to arbitrate), and disputes not otherwise resolved may be heard in the U.S. District
+      Court, the Ninth Circuit, or state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Band may request renegotiation
+      to add other forms of Class III gaming after 12 months, with a negotiation schedule set within 30 days and
+      IGRA good-faith standards applying.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-augustine-band-of-cahuilla-indians-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_augustine_band_of_cahuilla_indians_tribal_state_gaming_compact.pdf
+    sha256: c043f71eca7ce617a1a0a3369d93d1866e53f043b36583c0abacfd9c461532d1
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2023-12-22'
+    published: '2023-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28198
+    locator: 88 Fed. Reg. 88640 (Dec. 22, 2023)
+  source: compact-ca-augustine-band-of-cahuilla-indians-2023-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12.22_augustine_band_of_cahuilla_indians_tribal_state_gaming_compact.pdf
+    sha256: 95fea86702abe363dc81a11a60e116fa7e1189dd6c5452ca2e3cffdf02413399
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2025-extension
+  label: 2025 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2025-02-20'
+    published: '2025-02-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2025-02848
+    locator: 90 Fed. Reg. 9973 (Feb. 20, 2025)
+  source: compact-ca-augustine-band-of-cahuilla-indians-2025-02-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2025.02.20_augustine_band_of_cahuilla_indians_tribal_state_compact_third_amendment).pdf
+    sha256: f42c13f1fd6bfa4ec6f354d29784db28391130f537c0bdd211499a18def4b105
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+related:
+- document: augustine-band-of-cahuilla-indians-california-secretarial-procedures
+  relation: replaced-by
+  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+found_in:
+- 2026-11-21-gaming-compact-histories

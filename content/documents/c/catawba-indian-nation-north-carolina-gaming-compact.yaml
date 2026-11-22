@@ -1,0 +1,121 @@
+id: catawba-indian-nation-north-carolina-gaming-compact
+kind: gaming-compact
+title: Catawba Indian Nation–State of North Carolina Gaming Compact
+nations:
+- catawba-indian-nation
+states:
+- NC
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Catawba Indian Nation and the State of North Carolina under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Catawba Indian Nation and
+  the State of North Carolina as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2021-original
+  label: 2021 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2021-03-25'
+    published: '2021-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-06111
+    locator: 86 Fed. Reg. 15958 (Mar. 25, 2021)
+  source: compact-nc-catawba-indian-nation-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-carolina/508 Compliant 2021.03.25 Catawba Indian Nation Tribal
+      State Gaming Compact.pdf
+    sha256: 61d7fd48c8169d26ae6baaddffb2f0a4e51b139396a4b186ca29992caae29dfa
+    pages: 38
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 13(A)-(C), Dispute Resolution
+    summary: A party alleging noncompliance gives written notice and the parties meet within thirty days; if the
+      dispute is unresolved ninety days after notice, either party may pursue any available remedy, and either party
+      may commence an action in federal district court, while mediation or arbitration is available only by mutual
+      agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 12, Amendments
+    summary: Amendments require written agreement of the parties and enactment as set out in Sections 4(B) and 15;
+      either party may request renegotiation of the terms after a change in federal or State law that alters gaming
+      permitted under North Carolina law.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2025-replacement
+  label: 2025 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2021-original
+  dates:
+    listed: '2025-12-15'
+    published: '2025-12-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2025-22803
+    locator: 90 Fed. Reg. 58049 (Dec. 15, 2025)
+  source: compact-nc-catawba-indian-nation-2025-12-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-carolina/catawba_tribal_compact.pdf
+    sha256: 52fefe0dc3d7aeef3b33c0b7497effc6e835ce886277f4082e2302d176c0376e
+    pages: 37
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 13, Dispute Resolution, paragraphs (A), (B) and (C)
+    summary: The State gives written notice, the Tribe responds within twenty days, the parties meet within thirty
+      days, and if unresolved within ninety days either party may pursue any available remedy, including an action
+      in federal district court; mediation or arbitration only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section 12, Amendments
+    summary: The compact may be modified only by written agreement and enactment under Sections 4(B) and 15, and
+      either party may request re-negotiation based on a change in federal or State law that alters gaming permitted
+      under North Carolina law.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-original
+    change: unchanged
+    summary: 'The 2025 replacement''s Section 13 repeats the 2021 compact''s dispute terms: the State''s cease-and-desist
+      and written-response steps under Section 13(A), the 30-day meet-and-confer and 90-day wait before any available
+      remedy under Section 13(B), and the federal district court action in Section 13(C). The text matches on these
+      points, so the dispute process is unchanged.'
+    locator_before: Section 13(B)(1)
+    locator_after: Section 13(B)(1)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Both sides are OCR-noisy in the excerpts; the quotes are the clean passages.
+      The renegotiation excerpts open with technical standards text, so the Section 12 passage is taken from the
+      second renegotiation excerpt on each side.'
+  - topic: renegotiation
+    compared_with: 2021-original
+    change: unchanged
+    summary: 'The 2025 replacement''s Section 12 repeats the 2021 text: the terms can be modified only by written
+      agreement of the parties and enactment under Sections 4(B) and 15, and either party may request re-negotiation
+      based on a change in federal or State law that alters permitted gaming. The wording matches in substance.'
+    locator_before: Section 12
+    locator_after: Section 12
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Both sides are OCR-noisy in the excerpts; the quotes are the clean passages.
+      The renegotiation excerpts open with technical standards text, so the Section 12 passage is taken from the
+      second renegotiation excerpt on each side.'
+found_in:
+- 2026-11-21-gaming-compact-histories

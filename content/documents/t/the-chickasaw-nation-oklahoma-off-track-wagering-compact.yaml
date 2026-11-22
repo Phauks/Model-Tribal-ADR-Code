@@ -1,0 +1,119 @@
+id: the-chickasaw-nation-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: The Chickasaw Nation–State of Oklahoma Off-Track Wagering Compact
+nations:
+- the-chickasaw-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for The Chickasaw Nation and the State of Oklahoma under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for The Chickasaw
+  Nation and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-10-02'
+    published: '2000-10-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-25124
+    locator: 65 Fed. Reg. 58790 (Oct. 2, 2000)
+  source: compact-ok-the-chickasaw-nation-2000-10-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2000.10.02_chickasaw_nation_tribal_state_gaming_compact.pdf
+    sha256: 0634e9e5180667d3ee6e8000673b66bfbe9952ca94b769aa0e1d20f1f55322ae
+    pages: 35
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION.
+    summary: The compact provides written notice and a meeting within 30 days, then non-binding arbitration after
+      60 days with each party naming an arbitrator and the American Arbitration Association naming a third if needed,
+      and a declaratory judgment action in the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 19. AMENDMENTS.
+    summary: Either party may request negotiations to amend the compact, which stays in effect during talks; the
+      parties have 180 days to negotiate, extendable by mutual agreement, after which Act remedies apply, and any
+      amendment must be in writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2004-replacement
+  label: 2004 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2004-06-22'
+    published: '2004-06-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-14125
+    locator: 69 Fed. Reg. 34686 (June 22, 2004)
+  source: compact-ok-the-chickasaw-nation-2004-06-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2004.06.22 Chickasaw Nation Tribal State Gaming
+      Compact.pdf
+    sha256: c962de31fc552a7ef2f0b2e88118ca9f6cc46c15300b50c15751b866a0e1713b
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION
+    summary: The compact provides written notice and a meeting within 30 days, then non-binding arbitration after
+      60 days with each party naming an arbitrator and the American Arbitration Association naming a third if needed,
+      and a declaratory judgment action in the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 19. AMENDMENTS
+    summary: Either party may request negotiations to amend the compact, which stays in effect during talks; the
+      parties have 180 days to negotiate, extendable by mutual agreement, after which Act remedies apply, and any
+      amendment must be in writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: unchanged
+    summary: 'The 2004 replacement''s Section 15 keeps the same steps as the earlier Section 15: written notice,
+      a meeting within 30 days, non-binding arbitration after 60 days, and a declaratory judgment action in the
+      U.S. District Court for the Western District of Oklahoma, with the same limited waiver of immunity.'
+    locator_before: Section 15
+    locator_after: Section 15
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: unchanged
+    summary: 'Section 19 (Amendments) is the same in both documents: either party may request negotiations, the
+      compact stays in effect during negotiations, the Nation''s requests for other forms of gaming are treated
+      as requests under the Act with a 180-day negotiation period that the parties may extend by agreement, and
+      amendments must be in writing and approved by the Secretary of the Interior.'
+    locator_before: Section 19
+    locator_after: Section 19
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

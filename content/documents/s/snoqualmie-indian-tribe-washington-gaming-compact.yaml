@@ -1,0 +1,350 @@
+id: snoqualmie-indian-tribe-washington-gaming-compact
+kind: gaming-compact
+title: Snoqualmie Indian Tribe–State of Washington Gaming Compact
+nations:
+- snoqualmie-indian-tribe
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Snoqualmie Indian Tribe and the State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Snoqualmie Indian Tribe and
+  the State of Washington as of Nov. 21, 2026: 1 original and 7 amendments. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2002-original
+  label: 2002 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2002-04-15'
+    published: '2002-04-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-9008
+    locator: 67 Fed. Reg. 18237 (Apr. 15, 2002)
+  source: compact-wa-snoqualmie-indian-tribe-2002-04-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2002.04.15 Snoqualmie Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 5587a067a55a845f320993a0c7952fec3b271b21bc9782e2513d5576b4e2a333
+    pages: 127
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION (Appendix X)
+    summary: Disputes under Appendix X are resolved under any dispute provisions made applicable in that Appendix,
+      and otherwise under the binding arbitration provisions of the compact; Appendix B refers disputes on simulcast
+      consent to arbitration under Section XII.C of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: XV.D Adjustments/Renegotiations (2), (3), (4), (6)
+    summary: Either party may request re-negotiation of any section of the compact on written notice, negotiations
+      begin within thirty days, and the Tribe may request adjustment when state or federal law or a court decision
+      changes; original terms remain in effect until the parties agree.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-snoqualmie-indian-tribe-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_snoqualmie_indian_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: a2c6a30252001651ac23c7fe624d64962d3b1b7c2ea5eea5db801af8defc241a
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION (Appendix X2)
+    summary: Disputes under Appendix X2 are resolved under any dispute provisions made applicable in that Appendix,
+      and otherwise under the dispute resolution provisions of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After a three-year moratorium, the Tribe may seek an amendment when federal or state law changes, when
+      a court decision permits a device, or when another tribe obtains materially different equipment, subject to
+      good faith negotiation.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: reworded
+    summary: 'The compact''s main dispute clause (Section XII.C: notice, a meeting within ten days, AAA arbitration
+      with a final decision) is not amended. The appendix fallback rule is reworded: Appendix X, Section 16 sends
+      appendix disputes to provisions made applicable in the appendix or otherwise to the Compact''s binding arbitration
+      provisions, while Appendix X2, Section 17 sends them to the Compact''s Dispute Resolution provisions.'
+    locator_before: Sec. XII.C; Appendix X, Sec. 16
+    locator_after: Appendix X2, Sec. 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: unchanged
+    summary: The amendment adds Appendix X2 and recognizes its activities under Section III, and it does not list
+      Section XV.D. The earlier renegotiation clause therefore still governs.
+    locator_before: Section XV.D.1
+    locator_after: Paragraph 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2008-10-22'
+    published: '2008-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-25197
+    locator: 73 Fed. Reg. 63007 (Oct. 22, 2008)
+  source: compact-wa-snoqualmie-indian-tribe-2008-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2008.10.22 Snoqualmie Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 09a9c41a8452c7fdd5c504cdc63af770dc33753ebbb0a0786005409c63471157
+    pages: 13
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-snoqualmie-indian-tribe-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Snoqualmie Tribal State Gaming  Compact.pdf
+    sha256: fdabc877ffa3736889c3f85f5689d81ace7851ff7d7e14afcb859cb948463c5c
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, 4.1 and 4.2
+    summary: If a dispute arises over the addendum terms, including the number of Player Terminals Available for
+      Lease, the State and Tribe must meet and attempt resolution at least 30 days before the increased allocation
+      takes effect, and if that fails either party may use the compact's dispute resolution provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: changed
+    summary: 'The Third Amendment''s optional Addendum adds a step for disputes over the Player Terminal allocation:
+      the State and Native nation must meet and attempt to resolve the dispute at least 30 days before the increased
+      allocation takes effect, after which either or both may use the Compact''s dispute resolution provisions.
+      The earlier compact''s Section XII.C (notice, a meeting within ten days, AAA arbitration) continues unamended.'
+    locator_before: Sec. XII.C
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: unchanged
+    summary: The amendment's listed changes are Section III.P, Appendix X2 Sections 12.1, 13.4 and 14.4 to 14.5,
+      and the Addendum. Section XV.D is not listed, so the earlier renegotiation clause still governs.
+    locator_before: Section XV.D.1
+    locator_after: Paragraph 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2021-07-13'
+    published: '2021-07-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-14834
+    locator: 86 Fed. Reg. 36770 (July 13, 2021)
+  source: compact-wa-snoqualmie-indian-tribe-2021-07-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.07.13_snoqualmie_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 919be0a09475149dfa82cc56ff4093c212b271297b09de1e9572c437e4e1e7ba
+    pages: 24
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+- id: 2021-amendment-2
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2021-09-01'
+    published: '2021-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-18819
+    locator: 86 Fed. Reg. 49049 (Sept. 1, 2021)
+  source: compact-wa-snoqualmie-indian-tribe-2021-09-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.01_snoqualmie_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: fc2e75af31a2af2e3485f2f6424a9bd2715f86d1bfb6f545ec601d57b7bc57ec
+    pages: 25
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2024-09-05'
+    published: '2024-09-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-19947
+    locator: 89 Fed. Reg. 72418 (Sept. 5, 2024)
+  source: compact-wa-snoqualmie-indian-tribe-2024-09-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2024.09.05_snoqualmie_tribe_tribal_state_gaming_compact.pdf
+    sha256: 2e5c6ebdbdbf913f5ef3681d5cff2c6c02ba8ed035891fd290a94db852ff7756
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: unchanged
+    summary: The 2024 Appendix A revision changes only Appendix A Sections 9(2) and 10(1) on cashier banks, so Section
+      16 is not among the provisions amended and the earlier clause still governs.
+    locator_before: '16'
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: unchanged
+    summary: The Appendix A revision does not amend Section XV, which is not among the provisions it revises, so
+      the earlier renegotiation terms still govern.
+    locator_before: XV.D.3
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2025-amendment
+  label: 2025 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2025-09-12'
+    published: '2025-09-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2025-17697
+    locator: 90 Fed. Reg. 44216 (Sept. 12, 2025)
+  source: compact-wa-snoqualmie-indian-tribe-2025-09-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/snoqualmie_indian_tribe_tribal_state_gaming_compact_508.pdf
+    sha256: b3d944747f6c0d526632d2567709a2f8a5beed949578de8adceb646037ea1ad3
+    pages: 10
+  clauses:
+  - topic: renegotiation
+    locator: Section XV.D.6 (as cited in the Most Favored Nation Amendment introduction)
+    summary: Under the Most Favored Nation clause, the compact is amended at Snoqualmie's request when the Secretary
+      approves another tribe's compact that gives more gaming facilities, activities, gaming stations or higher
+      wager limits.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: unchanged
+    summary: The Most Favored Nation amendment lists its changes as Compact Section II.O, the Pit definition in
+      Section II, Section III.A and a new Appendix G, and does not list Section 16; Appendix G has no dispute section
+      in its table of contents.
+    locator_before: '16'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Appendix G (Electronic Table Games) is added in its entirety, but the file
+      shows only its table of contents and first sections, so a dispute or renegotiation term inside Appendix G
+      cannot be ruled out. The amendment is a Memorandum of Incorporation that uses the XV.D.6 automatic-amendment
+      process.'
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: unchanged
+    summary: The amendment invokes Compact Section XV.D.6 as its basis but does not amend Section XV, and says modifications
+      requiring formal amendment or renegotiation will be addressed separately.
+    locator_before: XV.D.6
+    locator_after: Introduction (cites XV.D.6)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Appendix G (Electronic Table Games) is added in its entirety, but the file
+      shows only its table of contents and first sections, so a dispute or renegotiation term inside Appendix G
+      cannot be ruled out. The amendment is a Memorandum of Incorporation that uses the XV.D.6 automatic-amendment
+      process.'
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,208 @@
+id: redding-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Redding Rancheria, California–State of California Gaming Compact
+nations:
+- redding-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Redding Rancheria, California and the State of California under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Redding Rancheria, California
+  and the State of California as of Nov. 21, 2026: 1 original, 2 replacements and 1 extension. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-10-19'
+    published: '1998-10-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-27934
+    locator: 63 Fed. Reg. 55887 (Oct. 19, 1998)
+  source: compact-ca-redding-rancheria-1998-10-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_1998.10.19_redding_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 6fb06229fb609cc59ca7a5d791b7f47dc5df19f56f4261da2225e12d0f6c02f2
+    pages: 145
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 8.3.3
+    summary: The State may dispute the Tribe's confidentiality designations in binding arbitration under the AAA
+      Commercial Arbitration Rules; the general compact dispute procedure (subsection 17.2.10) is referenced but
+      its text is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 2.7 (Obligation to Negotiate Following Termination)
+    summary: If the Governor rejects a tribal notice of renewal, gives notice of non-renewal, or gives notice of
+      termination, the Governor must begin good-faith negotiations for a new compact, and a court or arbitral tribunal
+      may consider the Governor's stated reasons.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-redding-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_redding_rancheria_tribal_state_gaming_compact_1.pdf
+    sha256: 0904bc1db4bd74b53159705991bd86fe66462455cb5976628416b841926451bd
+    pages: 61
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: Disputes start with written notice and a meet-and-confer within 10 days, then either party may seek
+      arbitration under the AAA Commercial Arbitration Rules if the dispute is unresolved within 30 days of the
+      first meeting, with a binding award once submitted; unresolved disputes may go to the U.S. District Court
+      and Ninth Circuit, or to state courts if the federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to offer Class III games not authorized in the compact, but not within 12 months of the effective
+      date; the parties set a negotiation schedule within 30 days of the request, under IGRA good-faith standards
+      enforceable in federal court.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The earlier excerpt shows an obligation to negotiate a new compact after termination or non-renewal
+      (Section 2.7); the later compact adds a procedure for amendments by mutual written agreement and for renegotiation
+      requests, including written requests, a 30-day schedule for negotiations, and a 12-month bar before renegotiation
+      for new Class III games.
+    locator_before: '2.7'
+    locator_after: Sec. 12.1-12.3
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document is a replacement compact (2000) and the earlier is the
+      1998 compact. The earlier excerpts do not show the general dispute article (Section 17.2.10), so the dispute
+      comparison is limited. The earlier renegotiation clause shown (Section 2.7) is triggered by termination or
+      non-renewal, while the later Section 12.0 covers amendments and renegotiation requests, so the two are not
+      identical in scope.'
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-redding-rancheria-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_redding_rancheria_tribal_state_gaming_compact.pdf
+    sha256: ddb3bd8c16c410b3c2713f4ada65f12ed40e9315f44ceeb8f3d8ed15f98337a1
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2023-replacement
+  label: 2023 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  - 2022-extension
+  dates:
+    listed: '2023-11-30'
+    published: '2023-11-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-26376
+    locator: 88 Fed. Reg. 83576 (Nov. 30, 2023)
+  source: compact-ca-redding-rancheria-california-2023
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.11.30_redding_rancheria_tribal_state_gaming_compact.pdf
+    sha256: e8a3012ed81a55944c0278bee662f00ea6c3f0e947aeffd20b952ed09812c0d6
+    pages: 124
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 (a) to (e); Sec. 13.2; Sec. 13.4. Judicial Remedies
+      for Material Breach
+    summary: After written notice, a written response within 15 days and a meet-and-confer within 30 days, unresolved
+      disputes may be heard in the U.S. District Court for the district of the gaming facility or, if it lacks jurisdiction,
+      a state court in the County, with remedies limited to injunctive relief, specific performance and declaratory
+      relief; after exhausting Section 13 either party may seek a federal declaration of material breach and, if
+      uncured, termination; other methods such as mediation only by mutual written agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to 15.6
+    summary: The compact may be amended at any time by mutual written agreement with each party voluntarily consenting
+      to the negotiation; either party may request negotiations no sooner than eighteen months before the termination
+      date, the State must negotiate within 45 days on changed market conditions or new State-authorized Class III
+      games, and the parties must negotiate replacements after a court-ordered change-in-law invalidity.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: changed
+    summary: The earlier compact provides notice, a meet-and-confer within 10 days, and then, after 30 days, optional
+      AAA arbitration with a binding award, or federal court. The later compact provides written notice, a 15-day
+      written response and a 30-day meet-and-confer, then court resolution in federal or state court, with no arbitration
+      step for compact disputes; the remedies in Section 13.3(a)(ii) are the sole remedies and damages and attorney
+      fees are not available.
+    locator_before: Sec. 9.1(c), 9.2
+    locator_after: Sec. 13.1(a)-(d)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

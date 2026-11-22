@@ -1,0 +1,134 @@
+id: quapaw-nation-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: Quapaw Nation–State of Oklahoma Off-Track Wagering Compact
+nations:
+- quapaw-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for Quapaw Nation and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for Quapaw Nation
+  and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2002-original
+  label: 2002 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2002-04-01'
+    published: '2002-04-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-7742
+    locator: 67 Fed. Reg. 15407 (Apr. 1, 2002)
+  source: compact-ok-quapaw-nation-2002-04-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2002.04.01 Quapaw Nation Tribal State  Gaming
+      Compact..pdf
+    sha256: c3374601c8b0c55f5575470f0b3e6e024f9ce77c0e23dff753377e9862a399fe
+    pages: 57
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15 Dispute Resolution, paragraphs (A) to (C)
+    summary: Notice is served, the parties meet within 30 days, unresolved disputes may go to non-binding arbitration
+      with the American Arbitration Association naming any third arbitrator, and either party may bring an action
+      for breach in the United States District Court for the Western Northern District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 19 Amendments
+    summary: Either party may request negotiations to amend or modify the compact; it stays in effect during a 180-day
+      negotiation period, which the parties may extend by agreement, after which the remedies in the Act apply,
+      and any amendment must be in writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2008-replacement
+  label: 2008 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2002-original
+  dates:
+    listed: '2008-08-05'
+    published: '2008-08-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e8-17851
+    locator: 73 Fed. Reg. 45471 (Aug. 5, 2008)
+  source: compact-ok-quapaw-nation-2008-08-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2008.08.05_quapaw_nation_tribal_state_gaming_compact.pdf
+    sha256: 0820eaa2c3f78b6e717b69d3e7e79041b38387a68b84b97fbb1c4ff020907f30
+    pages: 28
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION, subsections a to c
+    summary: The parties first give written notice and meet within 30 days; if the dispute is not resolved within
+      sixty days, either party may refer it to non-binding arbitration with arbitrators named by the parties and,
+      if needed, the American Arbitration Association, and either party may bring an action for breach in the United
+      States District Court for the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 19. AMENDMENTS
+    summary: Either party may request negotiations to amend or modify the compact; the compact remains in effect
+      during negotiations, the parties have 180 days to negotiate, and after that the procedures and remedies under
+      the Act apply unless the Tribe and State agree to extend the period.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: reworded
+    summary: The 2008 compact's Section 15 keeps the same sequence (written notice and a 30-day meeting, non-binding
+      arbitration after 60 days, then a declaratory judgment action in the federal court for the Western District
+      of Oklahoma), and the differences visible in the excerpts are wording only, such as 'may' for 'could' in the
+      termination clause.
+    locator_before: '15'
+    locator_after: '15'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2002 Section 15(D) (sovereign immunity; limits any waiver to Sections
+      15(A) to (C)) does not appear in the 2008 excerpt, so whether it was carried forward cannot be told. The 2008
+      Section 3 (the approval provision that Section 19 refers to) is not in the excerpts. The 2002 Section 19 also
+      said requests may include approval of gaming activities within the scope of the Act; the 2008 excerpt omits
+      that sentence. The 2008 document''s Section 1 titles it an Off-Track Wagering Compact, so its scope may differ
+      from the 2002 compact. Some OCR text is garbled (for example ''am.end'', ''i.n''); quotations copy the text
+      as it appears.'
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: changed
+    summary: The 2008 compact's Section 19 keeps the request, 180-day negotiation and remain-in-effect provisions,
+      but it omits the 2002 sentence treating the Tribe's additional requests to negotiate other gaming as requests
+      under the Act, and it says amendments are approved 'as provided in Section 3' rather than directly by the
+      Secretary of the Interior.
+    locator_before: '19'
+    locator_after: '19'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2002 Section 15(D) (sovereign immunity; limits any waiver to Sections
+      15(A) to (C)) does not appear in the 2008 excerpt, so whether it was carried forward cannot be told. The 2008
+      Section 3 (the approval provision that Section 19 refers to) is not in the excerpts. The 2002 Section 19 also
+      said requests may include approval of gaming activities within the scope of the Act; the 2008 excerpt omits
+      that sentence. The 2008 document''s Section 1 titles it an Off-Track Wagering Compact, so its scope may differ
+      from the 2002 compact. Some OCR text is garbled (for example ''am.end'', ''i.n''); quotations copy the text
+      as it appears.'
+found_in:
+- 2026-11-21-gaming-compact-histories

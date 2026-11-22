@@ -1,0 +1,384 @@
+id: standing-rock-sioux-tribe-of-north-and-south-dakota-south-dakota-gaming-compact
+kind: gaming-compact
+title: Standing Rock Sioux Tribe of North & South Dakota–State of South Dakota Gaming Compact
+nations:
+- standing-rock-sioux-tribe-of-north-and-south-dakota
+states:
+- SD
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Standing Rock Sioux Tribe of North & South Dakota and the State of South Dakota
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Standing Rock Sioux Tribe
+  of North & South Dakota and the State of South Dakota as of Nov. 21, 2026: 1 original, 4 replacements, 3 extensions
+  and 1 amendment. The order, the kind of each event and which version is in effect are inferred from the list (project
+  analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-12-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-1992-12-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_1992.12.21_standing_rock_sioux_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 13abd9454f0aea8cb2d73ce45f61fce37b9825422037d0785335b4f236220b44
+    pages: 23
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION
+    summary: A party gives written notice and the parties meet within thirty days; if unresolved after ninety days,
+      the State may serve a notice to cease gaming and the Tribe may stop or invoke arbitration under American Arbitration
+      Association rules, and either party may then sue in the United States District Court for the District of North
+      Dakota.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 2.2 (Renegotiation)
+    summary: Either the State or the Tribe may request in writing, by certified mail, negotiation to amend, replace
+      or repeal the compact; the compact stays in effect during talks and renegotiation runs 180 days.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  dates:
+    listed: '2001-10-25'
+    published: '2001-10-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-26877
+    locator: 66 Fed. Reg. 54025 (Oct. 25, 2001)
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-2001-10-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2001.10.25 Standing Rock Sioux Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 748e277382808b63e4248a3f274b9f2810598a6cd6112a7607bd3994070f9dee
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION
+    summary: Noncompliance is first raised by written notice and a meeting within thirty days, then a 90-day period,
+      after which the State may order gaming stopped or either side may invoke arbitration under American Arbitration
+      Association rules; unresolved disputes may go to federal court.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 1. DURATION AND RENEGOTIATION, 2.2 Renegotiation
+    summary: Either the State or the Standing Rock Sioux Tribe may request negotiation to amend, replace or repeal
+      the compact by certified mail notice; the compact stays in effect during talks, with a 180-day negotiating
+      term under IGRA.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: Section 15 (notice, a 30-day meeting, a 90-day period, and then state notice to cease gaming with arbitration)
+      reads the same in the 1992 and 2001 documents, apart from OCR and capitalization differences.
+    locator_before: '15'
+    locator_after: '15'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2001 document is titled as amendments between the State of South Dakota
+      and the Standing Rock Sioux Tribe, and the earlier excerpts do not show which state is the party. Confirm
+      the parties before relying on this pair.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2009-replacement
+  label: 2009 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2001-replacement
+  dates:
+    listed: '2009-08-19'
+    published: '2009-08-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e9-19886
+    locator: 74 Fed. Reg. 41931 (Aug. 19, 2009)
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-2009-08-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2009.08.19_standing_rock_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: eaa01fa56c187bf4c819bcdc3a76b711425baefb85b97a9fdbf6d64f5c955de0
+    pages: 16
+  clauses:
+  - topic: dispute-resolution
+    locator: 12. GENERAL PROVISIONS, 12.1; 7. (licensing, arbitration procedure); 8. (non-complying devices)
+    summary: Either party may bring an action in federal district court to resolve a dispute over interpretation
+      of the compact; separately, a single arbitrator from an agreed list decides disputes over licensing suitability
+      (Section 7) and, on the Tribe's election, State findings that gaming devices do not comply (Section 8), in
+      open proceedings with a written decision made available to the public.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 11. DURATION
+    summary: The compact is reviewed at ten-year intervals; either party may give written notice at least ninety
+      days before expiry, the parties have 180 days to negotiate with IGRA remedies available, and the compact then
+      terminates unless extended.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2018-extension
+  label: 2018 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2009-replacement
+  dates:
+    listed: '2019-10-15'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-28135
+    locator: 83 Fed. Reg. 66741 (Dec. 27, 2018)
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-2019-10-15
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: Federal Register notice published 292 days from the listed date; no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2019.10.15_standing_rock_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: d77c584d100fce9b073c2088a64ebb1c89abf52e82b8fd8f1b7935146919ecd4
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2009-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2009-replacement
+    change: not-compared
+    verification: inferred
+- id: 2020-extension
+  label: 2020 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2009-replacement
+  dates:
+    listed: '2020-04-16'
+    published: '2020-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-07994
+    locator: 85 Fed. Reg. 21264 (Apr. 16, 2020)
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-2020-04-16
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 4.16.2020 Standing Rock Gaming Compact Extension.pdf
+    sha256: 00ec686d32be79d7c02a5026b1ceaf4b65574e98d1718494a381afed5354b155
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2009-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2009-replacement
+    change: not-compared
+    verification: inferred
+- id: 2020-replacement
+  label: 2020 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2009-replacement
+  - 2018-extension
+  - 2020-extension
+  dates:
+    listed: '2020-08-19'
+    published: '2020-08-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-18080
+    locator: 85 Fed. Reg. 51044 (Aug. 19, 2020)
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-2020-08-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2020.08.19 Standing Rock Sioux Tribe and
+      State of South Dakota 2020.pdf
+    sha256: 93c786d1a1eaaca2181a3757efcf0f83d5e1ccd94145d6d09f36353686837554
+    pages: 12
+  clauses:
+  - topic: dispute-resolution
+    locator: 12. GENERAL PROVISIONS, 12.1
+    summary: Either party may bring an action in federal district court to resolve a dispute over interpretation
+      of the compact or the parties' rights, responsibilities or obligations.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 11. DURATION
+    summary: The compact is reviewed at three-year intervals; either party may give written notice at least ninety
+      days before expiry, the parties have 180 days to negotiate with IGRA remedies available, and the compact then
+      terminates unless extended.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2009-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2009-replacement
+    change: not-compared
+    verification: inferred
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2020-replacement
+  dates:
+    listed: '2022-04-22'
+    published: '2022-04-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-08652
+    locator: 87 Fed. Reg. 24193 (Apr. 22, 2022)
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-2022-04-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2022.04.22_standing_rock_sioux_tribal_state_compact_tribe_ltr_0.pdf
+    sha256: 2ecf2d2faee2333f93c9558089a969e8cb51e8abd0a1911c2f791940878fee83
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2020-replacement
+    change: unchanged
+    summary: The 2022 amendment's visible text sets conditions on gaming devices and sports wagering systems (purchase
+      from licensed suppliers and testing by a gaming test laboratory) and does not amend any dispute provision
+      shown; the 2020 dispute text is not in the file.
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment excerpt is short and shows only the device and sports-wagering
+      conditions, so a clause elsewhere in the amendment is not ruled out. The 2020 consolidated compact text that
+      this amendment amends is not in the file, so the "unchanged" reading depends on the amendment being complete.'
+  - topic: renegotiation
+    compared_with: 2020-replacement
+    change: unchanged
+    summary: The 2022 amendment's visible text does not amend the duration or renegotiation terms, and the Secretary's
+      letter describes it as adding sports wagering; the 2020 renegotiation text is not in the file.
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment excerpt is short and shows only the device and sports-wagering
+      conditions, so a clause elsewhere in the amendment is not ruled out. The 2020 consolidated compact text that
+      this amendment amends is not in the file, so the "unchanged" reading depends on the amendment being complete.'
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2020-replacement
+  dates:
+    listed: '2023-11-07'
+    published: '2023-11-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-24604
+    locator: 88 Fed. Reg. 76845 (Nov. 7, 2023)
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-2023-11-07
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2023.11.07_standing_rock_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: fb398a60a7dc92b9629a6145f8d28ba77aac8bbb185d570fe5b2949406da6990
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2020-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2020-replacement
+    change: not-compared
+    verification: inferred
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2020-replacement
+  - 2022-amendment
+  - 2023-extension
+  dates:
+    listed: '2024-03-22'
+    published: '2024-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-06124
+    locator: 89 Fed. Reg. 20492 (Mar. 22, 2024)
+  source: compact-sd-standing-rock-sioux-tribe-of-north-and-south-dakota-2024-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2024.03.22_standing_rock_sioux_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 02c2aa584bd479b6dfc4f4a5ad81903be1bb58ccdee2b9abafeb2bee6f92d49f
+    pages: 18
+  clauses:
+  - topic: renegotiation
+    locator: 11. DURATION
+    summary: The compact is reviewed every ten years; either party may give written notice at least 180 days before
+      expiry, the parties have 180 days to negotiate with IGRA remedies available, and the compact then terminates
+      unless extended.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2020-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2020-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

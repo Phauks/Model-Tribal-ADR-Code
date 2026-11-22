@@ -82,7 +82,21 @@ The documents they download stay private, outside the repository.
 | `gaming/build_catalog.py` | Joins both lists to the profiles and to Federal Register notices, writes the catalog files and a source record for each notice | `scripts/requirements.txt` |
 | `gaming/check_quotes.py` | Fetches each cited page and marks whether each quotation appears on it word for word | `curl`, `pdftotext` |
 | `gaming/build_context.py` | Merges the checked context research into `research/gaming/compact-context.*` and adds source records for its cases, regulations and rules | `scripts/requirements.txt`, `curl` |
-| `gaming/clause_evidence.py` | `gather` cuts clause sections from the governing documents for reviewers; `check` checks their quotations against the text; `merge` writes `research/gaming/compact-clauses.*` | Python 3 standard library and the saved text |
+| `gaming/clause_evidence.py` | `gather` cuts clause sections from the governing documents (or, with `gather-history`, from every older version) for reviewers; `check` checks their quotations against the text; `merge` writes `research/gaming/compact-clauses.*` | Python 3 standard library and the saved text |
+| `gaming/build_histories.py` | `pairs` orders each nation's compact documents and pairs each amendment, replacement or set of Secretarial Procedures with the version before it for reviewers; `check` checks their quotations; `merge` writes `research/gaming/compact-history-versions.*` | `scripts/requirements.txt` and the saved text |
+| `gaming/build_documents.py` | Writes a document history record (`content/documents/`) for each nation's compact with each state, each Oklahoma off-track wagering compact and each set of Secretarial Procedures, with a source record for every version | `scripts/requirements.txt` and the saved text |
+| `gaming/build_procedures.py` | Merges the Secretarial Procedures research into `research/gaming/secretarial-procedures.*` and `research/gaming/part-291-history.*`, checking quotations against the saved text | `scripts/requirements.txt`, `curl`, `pdftotext` |
+
+## Tribal law texts
+
+Run by hand, never in continuous integration. They build
+[`research/tribal-law/`](../research/tribal-law/README.md) and never change a
+profile. The documents they download, and the quotations, stay private.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `law/collect_law_texts.py` | `targets` lists every law code, court rules and dispute resolution link the profiles cite; `fetch` downloads each one and the chapters its index page links to, pacing each site; `scan` cuts the passages around dispute resolution terms into batches for reviewers; `merge` checks their quotations against the text and writes the provision files | `scripts/requirements.txt`, `curl`, `pdftotext`, `pandoc` |
+| `law/second_pass.py` | `prepare` writes review batches of the hard cases and a fixed random sample; `apply` writes the second reader's verdicts beside the provisions | Python 3 standard library |
 
 ## Constitutions
 

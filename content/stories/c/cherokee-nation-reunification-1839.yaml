@@ -1,0 +1,49 @@
+id: cherokee-nation-reunification-1839
+title: Reunification after the Removal-era conflict
+nations:
+- cherokee-nation
+kind: historical-account
+length: paragraph
+excerpts:
+- telling: cherokee-history-page
+  locator: section on the period after Removal
+  text: After a period of internal disputes, violence, and political conflict over the signing of the 1835 Treaty
+    and how to organize the Cherokee Nation government on the Reservation, in 1839 the Nation came together under
+    a new Constitution, modeled on the 1827 Constitution.
+  words: 43
+  sha256: 137cf99fba4706a110c738237c2099ceba48ab41f7f9cd11cdb443575cc37c1e
+methods: []
+topics:
+- internal-conflict
+- reunification
+- constitution
+tellings:
+- id: cherokee-history-page
+  source: cherokee-nation-history-page
+  published_by: Cherokee Nation
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+protocols:
+- kind: ceremonial
+  statement: The Nation says much of the spiritual and ceremonial side of traditional Cherokee life is not shared
+    publicly.
+  source: cherokee-nation-culture-page
+  how_the_project_follows_it: Only the Nation's published political history is used.
+access: *id001
+anthology:
+  candidate: false
+  reason: A short history paragraph; cite it (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

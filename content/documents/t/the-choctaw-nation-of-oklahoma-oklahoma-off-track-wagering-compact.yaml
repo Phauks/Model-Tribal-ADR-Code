@@ -1,0 +1,208 @@
+id: the-choctaw-nation-of-oklahoma-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: The Choctaw Nation of Oklahoma–State of Oklahoma Off-Track Wagering Compact
+nations:
+- the-choctaw-nation-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for The Choctaw Nation of Oklahoma and the State of Oklahoma under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for The Choctaw Nation
+  of Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original, 2 amendments and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1997-original
+  label: 1997 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1997-04-15'
+    published: '1997-04-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-9592
+    locator: 62 Fed. Reg. 18357 (Apr. 15, 1997)
+  source: compact-ok-the-choctaw-nation-of-oklahoma-1997-04-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_1997.04.15_choctaw_nation_tribal_state_gaming_compact_0.pdf
+    sha256: d377ab3975bea839f800c4ae7982c3f99a5bf26f2c9449144319ebcea5b864e0
+    pages: 68
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION
+    summary: The compact provides written notice and a meeting of the Governor and Tribal Chief's representatives
+      within thirty days, then non-binding arbitration with each party naming an arbitrator and the American Arbitration
+      Association naming a third if needed, and a declaratory judgment action in the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 20. AMENDMENTS
+    summary: Either party may request negotiations to amend the compact, which stays in effect during talks; the
+      parties have 180 days to negotiate, after which Act remedies apply, and any amendment must be in writing and
+      approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2000-amendment
+  label: 2000 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '2000-05-12'
+    published: '2000-05-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-11942
+    locator: 65 Fed. Reg. 30605 (May 12, 2000)
+  source: compact-ok-the-choctaw-nation-of-oklahoma-2000-05-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2000.05.12 Choctaw Nation Off Track Wagering
+      Compact Amdt.pdf
+    sha256: 48336a72b1a6b8eb15bb28cbe3ae6259a562e260f2351b7a14d7e4267ce50dad
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: WHEREAS recitals and WHEREFORE clause, paragraphs (A) to (E)
+    summary: The amendment recites that the State gave notice of non-renewal effective April 15, 2000 while the
+      parties negotiated amendments, and it amends Section 19(b) to extend the term to July 31, 2000 with a three-year
+      automatic renewal; the State withdraws its termination notice with a reservation of rights.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: unchanged
+    summary: The 2000 amendment's only operative amendment is to Section 19(b), so Section 15 is not among the provisions
+      amended, and the earlier Section 15 steps (meeting within 30 days, non-binding arbitration, and a declaratory
+      judgment action in the Western District of Oklahoma) continue to govern.
+    locator_before: Section 15(b)
+    locator_after: Amendment (A)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document is an amendment that rewrites only Section 19(b); other
+      operative terms (withdrawal of the non-renewal notice, preserved rights, and the retroactivity clause in (C))
+      are part of the amendment. The earlier quote on renegotiation is the term clause in 19(b), which shows the
+      earlier term rule, not the earlier renegotiation rule. The earlier Section 19(c) and Section 20 (Amendments)
+      are not in the excerpts. The 2000 Interior letter in the excerpts approves the amendment.'
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+- id: 2000-amendment-2
+  label: 2000 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '2000-10-02'
+    published: '2000-10-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-25125
+    locator: 65 Fed. Reg. 58790 (Oct. 2, 2000)
+  source: compact-ok-the-choctaw-nation-of-oklahoma-2000-10-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2000.10.02 Choctaw Nation Modification Compact
+      for Off Track Wagering.pdf
+    sha256: 08bc59d63d24f0d8788a8de7594e0bb9d5eaae69b3f16e636fcc508abcaaacf8
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: (11) Section 24 of the Compact is modified to provide as follows, paragraph (a)
+    summary: The modification provides that either party may sue in federal district court for breach, and if the
+      parties voluntarily agree to binding arbitration, failure to comply with the award is a material breach.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1997-original
+  - 2000-amendment
+  - 2000-amendment-2
+  dates:
+    listed: '2001-06-07'
+    published: '2001-06-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-14308
+    locator: 66 Fed. Reg. 30748 (June 7, 2001)
+  source: compact-ok-the-choctaw-nation-of-oklahoma-2001-06-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2001.06.07 Choctaw Nation Off Track Wagering
+      Compact.pdf
+    sha256: 5118fa9304ca37a104e6cc2bc58a2a8add8f3b303d369465806975d9c49802c2
+    pages: 66
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION, (A) Voluntary Resolution.
+    summary: The compact provides written notice and a meeting of the Governor and Tribal Chief's representatives
+      within thirty days, then non-binding arbitration after sixty days, and a declaratory judgment action in the
+      Eastern District of Oklahoma, with patron claims going first to the Nation and then to state district court
+      or Tribal Court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 20. AMENDMENTS
+    summary: Either party may request negotiations to amend or modify the compact, which stays in effect during
+      talks; the parties have 180 days to negotiate, after which Act remedies apply, and any amendment must be in
+      writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: changed
+    summary: Both compacts have a meeting within 30 days of notice, non-binding arbitration and a declaratory judgment
+      action. The later compact starts arbitration after 60 days (the earlier after 30 days) and places the declaratory
+      judgment action in the Eastern District of Oklahoma (the earlier named the Western District); the later Section
+      15 also refers to immediate judicial relief under Section 4(A).
+    locator_before: Section 15(a)-(c)
+    locator_after: Section 15(A)-(C)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

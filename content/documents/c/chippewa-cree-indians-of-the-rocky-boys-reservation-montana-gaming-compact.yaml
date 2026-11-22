@@ -1,0 +1,194 @@
+id: chippewa-cree-indians-of-the-rocky-boys-reservation-montana-gaming-compact
+kind: gaming-compact
+title: Chippewa Cree Indians of the Rocky Boy's Reservation, Montana–State of Montana Gaming Compact
+nations:
+- chippewa-cree-indians-of-the-rocky-boys-reservation
+states:
+- MT
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Chippewa Cree Indians of the Rocky Boy's Reservation, Montana and the State
+    of Montana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Chippewa Cree Indians of
+  the Rocky Boy''s Reservation, Montana and the State of Montana as of Nov. 21, 2026: 1 original, 2 amendments and
+  1 replacement. The order, the kind of each event and which version is in effect are inferred from the list (project
+  analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-10-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-1993-10-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1993.10.20_chippewa_cree_indians_tribal_state_gaming_compact.pdf
+    sha256: 087f93876178ada8b98509735385ceeff755bc4e71978b62945a9fabec49929c
+    pages: 40
+  clauses:
+  - topic: dispute-resolution
+    locator: Section VIII.A, Default
+    summary: After written notice of default and a 90-day cure period, the parties meet within thirty days, and
+      if the dispute is not resolved either party may pursue any lawful remedy, including an action under 25 U.S.C.
+      2710(d)(7)(A); mediation or arbitration only by mutual written agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section IX, Amendments; Section X.A, Reservation of Rights
+    summary: The interim agreement may be amended only by written instrument signed by both parties; after a change
+      in IGRA or state law the parties negotiate in good faith, and the Tribe may sue in federal district court
+      if the State does not negotiate in good faith on a long-term compact.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2006-amendment
+  label: 2006 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2006-06-07'
+    published: '2006-06-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e6-8811
+    locator: 71 Fed. Reg. 33000 (June 7, 2006)
+  source: compact-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-2006-06-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2006.06.07_chippewa_cree_tribe_tribal_state_gaming_compact.pdf
+    sha256: ae7a8d9ccf69d11d57c98ce6a26b801a02d5dec430e1e8fc6e81f09e0b38848b
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Recitals
+    summary: The interim agreement may be amended by the parties under its Section IX and continues until another
+      compact is agreed upon between the State and the Tribe.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2006 amendment changes only Section V.B and Appendix A of the 1993 interim agreement. It states
+      that, except as expressly amended, all terms of the agreement remain in full force, so the 1993 dispute terms
+      are not amended. The dispute text itself is not in the excerpts.
+    locator_after: Amendment, signature clause
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2006 amendment does not amend Section IX of the 1993 agreement, which governs amendments and renegotiation
+      after changes in IGRA or State law. The amendment states that it is made under Section IX and that all terms
+      not expressly amended remain in effect.
+    locator_before: Section IX
+    locator_after: Recitals; Section V.B
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2008-04-03'
+    published: '2008-04-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-6884
+    locator: 73 Fed. Reg. 18297 (Apr. 3, 2008)
+  source: compact-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-2008-04-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2008.04.03_chippewa_cree_tribal_tribal_state_gaming_compact.pdf
+    sha256: bee442a6f1421243502a0ce9b2480aa22676552a40a406050806395de73c320a
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Recitals
+    summary: The interim agreement may be amended by the parties under its Section IX and continues until another
+      compact is agreed upon between the State and the Tribe.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2008 amendment does not amend Section IX, so the earlier amendment clause still governs; it states
+      that all terms not expressly amended remain in effect.
+    locator_before: IX
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment lists the provisions it changes and leaves Section IX untouched.
+      The 1993 excerpts show no dispute resolution section, so the dispute comparison cannot be made from these
+      excerpts.'
+- id: 2013-replacement
+  label: 2013 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1993-original
+  - 2006-amendment
+  - 2008-amendment
+  dates:
+    listed: '2013-02-13'
+    published: '2013-02-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-03326
+    locator: 78 Fed. Reg. 10203 (Feb. 13, 2013)
+  source: compact-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-2013-02-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2013.02.13_chippewa_cree_tribe_tribal_state_gaming_compact.pdf
+    sha256: 5e8661c0235043d85f0bfdf19b07d5d763aff04e2dfcf7ba3cf94bb9665af1be
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: X. DEFAULT AND TERMINATION, B. Default by State
+    summary: 'The compact has no negotiation, arbitration or court process for disputes; its only mechanism is default:
+      a party in substantial and continuing failure may be terminated by the other after 90 days written notice
+      and a failure to cure within 90 days.'
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: XI. MISCELLANEOUS TERMS, C. Amendments
+    summary: The compact may be amended only with both parties' consent by signed written instrument; the parties
+      must negotiate in good faith if IGRA or state law changes, and either party may request a review of all compact
+      terms every two years on thirty days notice.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

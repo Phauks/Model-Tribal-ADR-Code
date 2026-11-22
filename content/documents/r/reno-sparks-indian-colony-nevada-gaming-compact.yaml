@@ -1,0 +1,99 @@
+id: reno-sparks-indian-colony-nevada-gaming-compact
+kind: gaming-compact
+title: Reno-Sparks Indian Colony, Nevada–State of Nevada Gaming Compact
+nations:
+- reno-sparks-indian-colony
+states:
+- NV
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Reno-Sparks Indian Colony, Nevada and the State of Nevada under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Reno-Sparks Indian Colony,
+  Nevada and the State of Nevada as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1996-original
+  label: 1996 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1996-02-06'
+    published: '1996-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-96-2448
+    locator: 61 Fed. Reg. 4478 (Feb. 6, 1996)
+  source: compact-nv-reno-sparks-indian-colony-1996-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_1996.02.06_reno_sparks_indian_colony_tribal_state_gaming_compact.pdf
+    sha256: 70a3c416230b3452a27e882ac88d5c8379de92784c7c970e3b6ead57f57ce23a
+    pages: 33
+  clauses:
+  - topic: dispute-resolution
+    locator: ARTICLE X. DEFAULT AND TERMINATION, 1. Default
+    summary: After written notice of a default the party has sixty days to correct; if not, the parties meet within
+      thirty days, and if still unresolved either party may pursue any lawful remedy, including a federal action
+      under 25 U.S.C. 2710(d)(7)(A); the parties consent to the jurisdiction of any court of competent jurisdiction
+      and may agree in writing to mediation or arbitration.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: ARTICLE XI. AMENDMENTS
+    summary: The compact may be amended only with both parties' consent by signed written instrument; the parties
+      must negotiate in good faith if applicable law changes in a substantial way, and the term may be extended
+      by mutual agreement if the Native nation plans a financed casino.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2005-amendment
+  label: 2005 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2005-03-21'
+    published: '2005-03-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-5481
+    locator: 70 Fed. Reg. 13536 (Mar. 21, 2005)
+  source: compact-nv-reno-sparks-indian-colony-2005-03-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_2005.03.21_reno-sparks_indian_colony_tribal_state_gaming_compact.pdf
+    sha256: 610cbae00caed09d9418cbc4341ad286f51f59dc3338db0abc98da07fe0f0d5e
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (quoting Article XI); paragraph 1 (Article IX).
+    summary: The original compact may be amended only with both parties' consent by signed written instrument; the
+      amendment recites that authority, and the Native nation may assert an IGRA good-faith negotiation claim if
+      the State does not agree to extend the term.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: unchanged
+    summary: The First Amendment restates the amendment clause and amends only Article IX (term of the compact),
+      and states that all other terms remain in effect; Article XI is not among the provisions amended, so the earlier
+      amendment and renegotiation provision still governs.
+    locator_before: Article XI
+    locator_after: Recitals; paragraph 2 (Article IX amended in paragraph 1)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

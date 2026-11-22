@@ -92,6 +92,13 @@ export async function matchSignIn(
 					 WHERE identifier = ?`
 				)
 				.bind(claims.subject, now(), invited.identifier),
+			// Someone who registered before they were invited keeps their profile.
+			database
+				.prepare(
+					`UPDATE contributor_profiles SET person_identifier = ?
+					 WHERE sign_in_subject = ? AND person_identifier IS NULL`
+				)
+				.bind(invited.identifier, claims.subject),
 			eventStatement(database, {
 				personIdentifier: invited.identifier,
 				action: 'Accepted the invitation and signed in for the first time',

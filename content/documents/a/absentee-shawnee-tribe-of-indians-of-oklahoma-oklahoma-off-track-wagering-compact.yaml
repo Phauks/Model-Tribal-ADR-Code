@@ -1,0 +1,56 @@
+id: absentee-shawnee-tribe-of-indians-of-oklahoma-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: Absentee-Shawnee Tribe of Indians of Oklahoma–State of Oklahoma Off-Track Wagering Compact
+nations:
+- absentee-shawnee-tribe-of-indians-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for Absentee-Shawnee Tribe of Indians of Oklahoma and the State of
+    Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for Absentee-Shawnee
+  Tribe of Indians of Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2001-original
+  label: 2001 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2001-05-04'
+    published: '2001-05-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-11418
+    locator: 66 Fed. Reg. 22593 (May 4, 2001)
+  source: compact-ok-absentee-shawnee-tribe-of-indians-of-oklahoma-2001-05-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant  2001.05.04 Absentee Shawnee Tribe of Indians
+      Tribal State Gaming Compact.pdf
+    sha256: ec792f8f474200033ec104ceb834a0adef99ed5ee6243e336958d427d3d58f7b
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION.
+    summary: The compact provides written notice and a meeting within 30 days, then non-binding arbitration after
+      60 days with each party naming an arbitrator and the American Arbitration Association naming a third if needed,
+      and a declaratory judgment action in the Western District of Oklahoma for breach.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 19. AMENDMENTS.
+    summary: Either party may request negotiations to amend the compact, which stays in effect during talks; the
+      parties have 180 days to negotiate, extendable by mutual agreement, after which Act remedies apply, and any
+      amendment must be in writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,449 @@
+id: swinomish-indian-tribal-community-washington-gaming-compact
+kind: gaming-compact
+title: Swinomish Indian Tribal Community–State of Washington Gaming Compact
+nations:
+- swinomish-indian-tribal-community
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Swinomish Indian Tribal Community and the State of Washington under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Swinomish Indian Tribal Community
+  and the State of Washington as of Nov. 21, 2026: 1 original and 8 amendments. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-02-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wa-swinomish-indian-tribal-community-1993-02-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1993.02.19 Swinomish Indian Tribal Community
+      Tribal State Gaming Compact.pdf
+    sha256: 3316f6690a4cc1487e879000ea143dcc573cc2cef7c62958cb25edb32895aabd
+    pages: 102
+  clauses:
+  - topic: dispute-resolution
+    locator: C. Dispute Resolution, items 1 to 7; L. Certification Decisions - Dispute Resolution for Tribal Members
+    summary: The compact provides for written notice, a meet-and-confer within ten days, then arbitration by the
+      American Arbitration Association of Seattle whose decision is final and unappealable, with the Judicial Arbitration
+      and Management Service of Seattle as a substitute if AAA ceases to provide the services; the Tribe bears the
+      arbitration costs of certification disputes.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XIV.D Amendments/Renegotiations (1) to (7)
+    summary: The compact allows amendment by mutual written agreement and requires the parties to amend or renegotiate
+      on the Tribe's written request when state law or a court decision expands gaming, when another Washington
+      tribe obtains greater gaming levels, or when the Tribe wishes other Class III games; either party may request
+      renegotiation after thirty-six months, and the State may request renegotiation of listed sections, with mandatory
+      and binding resolution under Section XI.C if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1995-03-31'
+    published: '1995-03-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-7939
+    locator: 60 Fed. Reg. 16764 (Mar. 31, 1995)
+  source: compact-wa-swinomish-indian-tribal-community-1995-03-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1995.03.31 Swinomish Indian Tribal Community
+      Tribal State Gaming Compact.pdf
+    sha256: 9c5182c268bac0708eabfae48ca0d58f5d49bcdf4658018c67027a77465be0f7
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section III.G.2 Phase Two (First Amendment)
+    summary: Disputes over the Phase Two conditions for expanded gaming stations, hours and wager limits are resolved
+      through the compact's Section XI dispute resolution procedures, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The earlier compact already had Section XI.C (notice, meeting within 10 days, AAA arbitration after
+      20 days, final decision). The later amendment adds that a dispute over whether the Phase Two conditions were
+      satisfied is resolved through the Section XI dispute resolution procedures, extending the clause to that kind
+      of dispute without altering its steps.
+    locator_before: Sec. XI.C
+    locator_after: Section III (Phase Two conditions)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: The First Amendment rewrites Section XIV.D.2(c), which is the trigger for contractual renegotiation
+      of gaming limits. The earlier trigger covered only tribes in the Point Elliott, Point No-Point and Medicine
+      Creek treaty areas. The amended text covers any tribe west of the Cascade Mountains that obtains greater levels
+      of wagering, hours or scope.
+    locator_before: XIV.D.2
+    locator_after: XIV.D.2.(c)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1997-amendment
+  label: 1997 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1997-01-07'
+    published: '1997-01-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-244
+    locator: 62 Fed. Reg. 997 (Jan. 7, 1997)
+  source: compact-wa-swinomish-indian-tribal-community-1997-01-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1997.01.07 Swinomish Indian Tribal Community
+      Tribal State Gaming Compact.pdf
+    sha256: 615d4a19dbaf7e5dd3153580aa898813f55dddc92ff634b4228823a6163cb8c0
+    pages: 8
+  clauses:
+  - topic: dispute-resolution
+    locator: Appendix B, Section 4.3.1(c)
+    summary: For a dispute over whether the Washington Horse Racing Commission has unreasonably withheld its consent
+      to out-of-state signals, either the Tribe or the State may request arbitration under Section XI.C of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1997 Second Amendment adds Section III(A) satellite wagering on horse races and does not contain
+      dispute text. The general dispute article (Section C) is not amended in the visible text.
+    locator_before: C. Dispute Resolution
+    locator_after: None in excerpt
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Second Amendment is adopted pursuant to Section XIV and does not amend the amendment article. The
+      visible text changes only Section III(A) and adds Appendix B.
+    locator_before: XIV.A
+    locator_after: Recitals; Section III(A)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1925
+    locator: 64 Fed. Reg. 4460 (Jan. 28, 1999)
+  source: compact-wa-swinomish-indian-tribal-community-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.01.28 Swinomish Indian Tribal Community
+      Tribal State Gaming Compact.pdf
+    sha256: 91b07271bbc1bf72a3c8e30417b72cbbf44ce276aba56770d2be79fc2fb948e5
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION (Appendix X)
+    summary: Disputes under Appendix X are resolved under any dispute provisions made applicable in that Appendix,
+      and otherwise under the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. MORATORIUM, 15.1 Three year moratorium
+    summary: Appendix X Section 15.1 bars the Tribe from seeking an amendment on gambling devices for three years
+      after execution, subject to exceptions for changes in federal or state law, court decisions, and other tribes
+      obtaining comparable devices.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The earlier compact already had Section XI.C (notice, meeting, AAA arbitration with a final decision).
+      The later amendment adds an Appendix X rule that disputes under the appendix follow any appendix-specific
+      process or otherwise the compact's binding arbitration provisions, and that state-tribal gaming agency disputes
+      follow the compact's process, extending the existing clause to appendix disputes.
+    locator_before: Sec. XI.C
+    locator_after: Appendix X Section 16 and 3.6.4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Section XIV amendment article (amended only under its own provisions) is not changed by the Third
+      Amendment, which amends Section III.A and adds Appendix X for tribal lottery systems.
+    locator_before: XIV.A
+    locator_after: Amendment items 1-2
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-swinomish-indian-tribal-community-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_swinomish_indian_tribal_community_tribal_state_gaming_compact.pdf
+    sha256: c3cbc6497e1ce8fcc3d1033778ae91348e650cad4860a2f39a6e896e0559e467
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION (Appendix X2)
+    summary: Disputes under Appendix X2 are resolved under any dispute provisions made applicable in that Appendix,
+      and otherwise under the Dispute Resolution provisions of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After the Appendix X2 moratorium expires, the Tribe may seek an amendment when federal or state law
+      changes, when a court decision permits a device, or when another tribe obtains materially different equipment,
+      subject to good faith negotiation.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The earlier compact already had Section XI.C (notice, meeting, AAA arbitration with a final decision).
+      The later Appendix X2 adds that appendix disputes follow any appendix-specific process or otherwise the compact's
+      Dispute Resolution provisions, and that state-tribal gaming agency disputes follow the compact's process,
+      extending the existing clause to appendix disputes.
+    locator_before: Sec. XI.C
+    locator_after: Appendix X2 Section 17 and 3.6.4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Section XIV amendment article is not changed by the Fourth Amendment, which adds Appendix X2 for
+      tribal lottery systems and amends the compact by adding that appendix.
+    locator_before: XIV.A
+    locator_after: 'Heads: Appendix X2 added'
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2014-amendment
+  label: 2014 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2014-07-23'
+    published: '2014-07-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-17374
+    locator: 79 Fed. Reg. 42808 (July 23, 2014)
+  source: compact-wa-swinomish-indian-tribal-community-2014-07-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2014.07.23 Swinomish Indian Tribal Community
+      Tribal State Gaming Compact.pdf
+    sha256: 7c9ed30183cce17471d0cbd36cc82219f85d8c7ffe3349d9b221f267f5932402
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2014 Fifth Amendment amends Section III (nature, size and scope of Class III gaming) and contains
+      no dispute text in the excerpt, so the general dispute article is not amended in the visible text.
+    locator_before: C. Dispute Resolution
+    locator_after: None in excerpt
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The excerpt is short (about 4,000 characters of the amendment) and is cut
+      before the full text, so the unchanged findings are limited to the visible text.'
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Fifth Amendment is adopted under the compact and amends Section III. It does not amend Section
+      XIV, the amendment article, in the visible text.
+    locator_before: XIV.A
+    locator_after: 'Heads: Section III'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The excerpt is short (about 4,000 characters of the amendment) and is cut
+      before the full text, so the unchanged findings are limited to the visible text.'
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-swinomish-indian-tribal-community-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Swinomish Indian Tribal Community
+      Tribal State Gaming Compact.pdf
+    sha256: 55003e3da5c7b059b7537089fd17bcafa0c0c4db84def77b0857e9acb7c10609
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, 4.1 and 4.2
+    summary: If a dispute arises over the addendum terms, including the number of Player Terminals Available for
+      Lease, the State and Tribe must meet and attempt resolution at least 30 days before the increased allocation
+      takes effect, and if that fails either party may use the compact's dispute provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The earlier compact already had Section XI.C (notice, meeting within 10 days, AAA arbitration after
+      20 days). The later amendment adds, for disputes over the Appendix X2 addendum (such as Player Terminal allocations),
+      a meeting at least 30 days before an increased allocation takes effect, and then use of the compact's dispute
+      resolution provisions if that fails.
+    locator_before: Sec. XI.C
+    locator_after: Addendum Section 4 (4.1-4.2)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: 'The amendment does not amend Section XIV.D: its numbered list amends Section III (new subsection P),
+      Appendix X2 sections 12.1, 13.4, 14.4 and 14.5, and incorporates the Addendum, and Section XIV.D is not among
+      them, so the earlier renegotiation provisions continue to govern.'
+    locator_before: XIV.D
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2021-10-22'
+    published: '2021-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-23064
+    locator: 86 Fed. Reg. 58685 (Oct. 22, 2021)
+  source: compact-wa-swinomish-indian-tribal-community-2021-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.10.22_swinomish_indian_tribal_community_tribal_state_gaming_compact.pdf
+    sha256: ddcee711db5d6af51f6c3904543f8b77e27aaa441849879d8fe6e1c4b47dd2ad
+    pages: 25
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2024-08-22'
+    published: '2024-08-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-18836
+    locator: 89 Fed. Reg. 67959 (Aug. 22, 2024)
+  source: compact-wa-swinomish-indian-tribal-community-2024-08-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2024.08.14_swinomish_compact_rescan).pdf
+    sha256: a985622770681e31f2ba1c6faa8e8d4b241e907b9143f3430a8df3c97fd9a5af
+    pages: 37
+  clauses:
+  - topic: renegotiation
+    locator: Memorandum of Incorporation, preamble (Compact Section XIV.D.2(c) and (d))
+    summary: Under Compact Section XIV.D.2(c) and (d), the compact is amended upon written notice and request by
+      the Tribe to the State when the Secretary approves a compact with another tribe that changes gaming scope
+      or expands terms.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,223 @@
+id: spokane-tribe-of-the-spokane-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Spokane Tribe of the Spokane Reservation–State of Washington Gaming Compact
+nations:
+- spokane-tribe-of-the-spokane-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Spokane Tribe of the Spokane Reservation and the State of Washington under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Spokane Tribe of the Spokane
+  Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 4 amendments. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2007-original
+  label: 2007 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2007-04-30'
+    published: '2007-04-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-8136
+    locator: 72 Fed. Reg. 21284 (Apr. 30, 2007)
+  source: compact-wa-spokane-tribe-of-the-spokane-reservation-2007-04-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.04.30_spokane_tribe_tribal_state_gaming_compact.pdf
+    sha256: faef29db07b6af2f578398c581f98c24230a1a352293228ff07b27f57c9ae1f3
+    pages: 129
+  clauses:
+  - topic: dispute-resolution
+    locator: XII.(A)(2) Standard Arbitration; XII.(A)(3) Temporary Resolution - Expedited Binding Arbitration; XII.B
+      Judicial Resolution of Disputes
+    summary: Disputes proceed from written notice to informal or formal mediation, then by agreement to arbitration
+      under AAA Commercial Rules with alternating sites, with an expedited binding arbitration available on an interim
+      basis, and finally litigation in a United States district court.
+    methods:
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-original
+  dates:
+    listed: '2008-10-24'
+    published: '2008-10-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-25349
+    locator: 73 Fed. Reg. 63503 (Oct. 24, 2008)
+  source: compact-wa-spokane-tribe-of-the-spokane-reservation-2008-10-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2008.10.24_spokane_tribe_tribal_state_gaming_compact.pdf
+    sha256: 1f122e6cfc6b7e17a0a75e142f7b225bc3484bd334000947ee1434da0bda7006
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION (Appendix X2)
+    summary: Disputes under Appendix X2 are resolved under any dispute provisions made applicable in that Appendix,
+      and otherwise under the Dispute Resolution provisions of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After the moratorium in Section 15.1 expires, the Tribe may seek an amendment when federal or state
+      law changes, when a court decision permits a device, or when another tribe obtains materially different equipment,
+      subject to good faith negotiation.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-original
+    change: unchanged
+    summary: The First Amendment adds Appendix X2, whose Section 17 sends disputes under it to any dispute provisions
+      made applicable in the appendix or otherwise to the Compact's Dispute Resolution provisions. The earlier compact's
+      Section XII (meet and confer in 10 business days, mediation, then arbitration only by agreement, with judicial
+      resolution) is not amended.
+    locator_before: Sec. XII.A
+    locator_after: Appendix X2, Sec. 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2007-original
+    change: unchanged
+    summary: The seven numbered items of the First Amendment change Player Terminal allocation, table games, Appendix
+      X2, and Section III and set its effective date; none of them amends Section XV, so the earlier amendment clause
+      still governs.
+    locator_before: XV
+    locator_after: Amendment items 1-7
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-spokane-tribe-of-the-spokane-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Spokane Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: c1b55227af8a8e9e5b409886070bec14ac0ddfb8bd6e656bf454ff928e495d70
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, 4.1 and 4.2
+    summary: If a dispute arises over the addendum terms, including the number of Player Terminals Available for
+      Lease, the State and Tribe must meet and attempt resolution at least 30 days before the increased allocation
+      takes effect, and if that fails either party may use the compact's dispute provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-original
+    change: changed
+    summary: 'The later amendment''s Appendix X2 Addendum adds a step for disputes over the Player Terminal allocation:
+      the State and Native nation must meet and attempt to resolve the dispute at least 30 days before the increased
+      allocation takes effect, after which either or both may use the Compact''s dispute resolution provisions.
+      The earlier compact''s Section XII (meet and confer in 10 business days, mediation, then arbitration only
+      by agreement, with judicial resolution) continues unamended.'
+    locator_before: Sec. XII.A
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-original
+  dates:
+    listed: '2021-09-01'
+    published: '2021-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-18818
+    locator: 86 Fed. Reg. 49046 (Sept. 1, 2021)
+  source: compact-wa-spokane-tribe-of-the-spokane-reservation-2021-09-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.01_spokane_tribe_tribal_state_gaming_compact.pdf
+    sha256: d05edf1798ee99903b5353da7cdaa7c3597a17b53b1fb25a83fdb99370db1fda
+    pages: 25
+  clauses:
+  - topic: renegotiation
+    locator: Section 6 (Digital Wallet), Third Amendment
+    summary: A proposal to connect a patron's digital wallet is not approved by this amendment, and if the compact
+      does not allow it, additional amendments or negotiations may be initiated.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2007-original
+    change: not-compared
+    verification: inferred
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-original
+  dates:
+    listed: '2023-11-01'
+    published: '2023-11-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-24088
+    locator: 88 Fed. Reg. 75016 (Nov. 1, 2023)
+  source: compact-wa-spokane-tribe-of-the-spokane-reservation-2023-11-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2023.11.01_spokane_tribe_tribal_state_gaming_compact.pdf
+    sha256: 089ec5d9a1e7a8639d6c4f6a9c3a45e183b763ec2811e0ad73d834b2caec70b7
+    pages: 11
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-original
+    change: unchanged
+    summary: The Fourth Amendment amends only Compact Section II.P, Section III.A, the Pit definition in Appendix
+      A, and adds Appendix G; Section XII is not among these, and the visible text of Appendix G has no dispute
+      provision, so the earlier mediation and arbitration process still governs.
+    locator_before: XII.A.2
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

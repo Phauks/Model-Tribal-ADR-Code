@@ -1,0 +1,115 @@
+id: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-california-gaming-compact
+kind: gaming-compact
+title: La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation, California–State of California
+  Gaming Compact
+nations:
+- la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation,
+    California and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for La Posta Band of Diegueno
+  Mission Indians of the La Posta Indian Reservation, California and the State of California as of Nov. 21, 2026:
+  1 original and 1 replacement. The order, the kind of each event and which version is in effect are inferred from
+  the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2003-original
+  label: 2003 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2003-12-22'
+    published: '2003-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-31474
+    locator: 68 Fed. Reg. 71131 (Dec. 22, 2003)
+  source: compact-ca-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-2003-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2003.12.22_laposta_band_of_diegueno_mission_indians_tribal_state_gaming_compact_0.pdf
+    sha256: 244d9b02a1d961765f93af146464ce4eff328c9713993bc06a3ff8f0e88be2a9
+    pages: 61
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The La Posta compact provides for written notice, a good-faith meeting within ten days and, if unresolved
+      after thirty days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise
+      the dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.5
+    summary: The compact may be amended by mutual written agreement, and the La Posta Tribe may request renegotiation
+      in writing for Class III games other than those authorized, but not within twelve months of the effective
+      date; if exclusivity is lost the Tribe may terminate or continue on reduced rates, and either party may request
+      negotiations in March 2008 and every fourth March thereafter.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2003-original
+  dates:
+    listed: '2024-12-26'
+    published: '2024-12-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-30744
+    locator: 89 Fed. Reg. 105090 (Dec. 26, 2024)
+  source: compact-ca-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-2024-12-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.12.26_la_posta_band_of_diegueno_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 5f184db2fadee04026c9e1678217df1be57b453de2d2607a7d608782db0902b0
+    pages: 130
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS. Sec. 13.1 (d)
+    summary: Disputes go through written notice, a written response within fifteen days, a meet and confer within
+      thirty days of negotiation, and then may be resolved in the United States District Court or, if that court
+      lacks jurisdiction, a state court, without binding arbitration.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Table of Contents, Sec. 15.4 and Sec. 15.5
+    summary: The table of contents lists entitlements to renegotiate on changed market conditions and on new forms
+      of Class III gaming; the operative text is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: changed
+    summary: The 2024 compact provides written notice, a written response within 15 days, a meet and confer within
+      30 days, and then court action in federal district court (or state court if federal court lacks jurisdiction),
+      with remedies limited to injunctive relief, specific performance and declaratory relief and a separate judicial
+      process for material breach; arbitration is no longer in the clause. The 2003 compact provided written notice,
+      a meet and confer within 10 days, and after 30 more days optional arbitration (neither party required to agree)
+      under AAA rules, then federal or state court.
+    locator_before: 9.1-9.4
+    locator_after: 13.1-13.4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

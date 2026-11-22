@@ -1,0 +1,225 @@
+id: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation-montana-gaming-compact
+kind: gaming-compact
+title: Confederated Salish and Kootenai Tribes of the Flathead Reservation–State of Montana Gaming Compact
+nations:
+- confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+states:
+- MT
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Salish and Kootenai Tribes of the Flathead Reservation and the
+    State of Montana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Salish and Kootenai
+  Tribes of the Flathead Reservation and the State of Montana as of Nov. 21, 2026: 1 original, 1 amendment, 1 extension
+  and 2 replacements. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1997-original
+  label: 1997 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1997-05-16'
+    published: '1997-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-12821
+    locator: 62 Fed. Reg. 27065 (May 16, 1997)
+  source: compact-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation-1997-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1997.05.16_kootenai_tribe_tribal_state_gaming_compact.pdf
+    sha256: 85973fb257245cc5653cac94316fea123e52b92808145f93addc985ae6ba725c
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: X. DEFAULT AND TERMINATION, A. Default by Tribes
+    summary: 'The agreement uses a default procedure: a party in failure may be terminated after ninety days written
+      notice if the breach is not agreed to be remedied and is not in fact remedied; the Native nations may sue
+      in Montana state courts for a declaratory ruling or to enjoin termination, and the parties agree to negotiate
+      disputed gaming compact issues in good faith.'
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: XI. MISCELLANEOUS TERMS, B. Amendments
+    summary: The agreement may be amended only with both parties' consent by signed written instrument; the parties
+      must negotiate in good faith if IGRA or state law changes, and the Native nations may notify the State that
+      they want additional Class III games.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2000-amendment
+  label: 2000 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '2000-05-12'
+    published: '2000-05-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-11943
+    locator: 65 Fed. Reg. 30605 (May 12, 2000)
+  source: compact-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation-2000-05-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2000.05.12_kootenai_tribe_tribal_state_gaming_compact.pdf
+    sha256: 10cbeba64ce90e9cf75d913afc26f4af9454a15ad1b1029cf76edcb3673ff545
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Recitals and Agreement paragraph
+    summary: While the agreement continues, the Tribes may keep negotiating proposed changes and the State agrees
+      to engage in good faith negotiations on them.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: changed
+    summary: The 2000 renewal extends the 1997 agreement to November 7, 2000, or until a revised or new compact
+      is executed, and records that the Tribes may propose changes and Montana will negotiate them in good faith;
+      Section B's amendment clause is not changed.
+    locator_before: B
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The renewal does not list the provisions it changes. It states that all
+      terms and conditions remain in full force, so the 1997 Section B amendment clause still applies. The 1997
+      agreement''s dispute terms are not in the excerpts. The Interior letter approves the amendment under 25 U.S.C.
+      2710(d)(8)(A).'
+- id: 2000-extension
+  label: 2000 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1997-original
+  dates:
+    listed: '2000-11-24'
+    published: '2000-11-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-30036
+    locator: 65 Fed. Reg. 70609 (Nov. 24, 2000)
+  source: compact-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation-2000-11-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2000.11.24_kootenai_tribe_tribal_state_gaming_compact.pdf
+    sha256: c3e47aed0a80bb360211de4bd1dbba3ea1db02a369218e6ccc0867d72171f8ab
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1997-original
+  - 2000-amendment
+  - 2000-extension
+  dates:
+    listed: '2001-12-14'
+    published: '2001-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-30906
+    locator: 66 Fed. Reg. 64855 (Dec. 14, 2001)
+  source: compact-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation-2001-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2001.12.14_kootenai_tribe_tribal_state_gaming_compact.pdf
+    sha256: 08ae1cfe23e0e665384d498791fdb903b65c63f4a565a4c0c3ac056235cdb78d
+    pages: 9
+  clauses:
+  - topic: dispute-resolution
+    locator: IX. DEFAULT AND TERMINATION, A and B
+    summary: There is no negotiation or arbitration ladder; for default, the non-defaulting party gives 90 days'
+      written notice and may terminate if the breach is not remedied, and the Tribes may sue in Montana state court
+      for a declaratory ruling or to enjoin termination while the State reserves its immunity from suit in federal
+      or tribal forums.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: X. MISCELLANEOUS TERMS, B. Amendments; IX. D. Continuing Duty to Bargain; X. D. Expansion of Class
+      III Gaming
+    summary: The agreement may be amended only with the consent of both parties by signed written instrument, the
+      parties must negotiate in good faith if IGRA or state law changes, and the State's duty to negotiate under
+      IGRA is not waived; Article X(D) also deems the agreement amended when the State authorizes additional Class
+      III games.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: not-compared
+    verification: inferred
+- id: 2026-replacement
+  label: 2026 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2001-replacement
+  dates:
+    listed: '2026-01-26'
+    published: '2026-01-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-01390
+    locator: 91 Fed. Reg. 3214 (Jan. 26, 2026)
+  source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/2025.10.09_salish_&_kootenai_compact.pdf
+    sha256: 0fc8c2dd73f0c588052f7c4a02afeae6f6586a1bddfb791cd48416a8aef7fafb
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: Section X.A and X.B, Default by Tribes and Default by State
+    summary: Default is handled by written notice and a 90-day cure period before the non-defaulting party may terminate
+      the compact; the excerpt names no further dispute steps.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section XI.B, Amendments; Section X.D, Continuing Duty to Bargain
+    summary: The compact may be amended only by written instrument signed by both parties; after a change in IGRA
+      or state law the parties negotiate in good faith, and after termination the State must negotiate a successor
+      compact on a request under 25 U.S.C. 2710(d)(3)(A).
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

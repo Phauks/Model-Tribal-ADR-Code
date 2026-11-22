@@ -1,0 +1,240 @@
+id: big-sandy-rancheria-of-western-mono-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Big Sandy Rancheria of Western Mono Indians of California–State of California Gaming Compact
+nations:
+- big-sandy-rancheria-of-western-mono-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Big Sandy Rancheria of Western Mono Indians of California and the State of
+    California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Big Sandy Rancheria of Western
+  Mono Indians of California and the State of California as of Nov. 21, 2026: 1 original, 2 replacements, 2 extensions
+  and 1 disapproved compact. The order, the kind of each event and which version is in effect are inferred from
+  the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-10-22'
+    published: '1998-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-28310
+    locator: 63 Fed. Reg. 56659 (Oct. 22, 1998)
+  source: compact-ca-big-sandy-rancheria-of-western-mono-indians-of-california-1998-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_1998.10.22_big_sandy_rancheria_of_western_mono_indians_tribal_state_gaming_compact.pdf
+    sha256: dbdc2196c4ed79fa1079c2d872f1b09399fc937c3cdab36cb4ba5423eda6bb34
+    pages: 139
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.5 Amendments
+    summary: Either party may request the other to negotiate in good faith to amend the compact when IGRA is amended
+      or a state law or constitutional provision changes the types of Class III gaming, and the other party must
+      then negotiate in good faith; the excerpt gives no deadline or result if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-big-sandy-rancheria-of-western-mono-indians-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_big_sandy_rancheria_tribal_state_gaming_compact_0.pdf
+    sha256: 87e42f5e22a2332e43174812640c9255abfc8f8051a12da27a8ac067cc85b57e
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0 (dispute resolution), Sec. 9.2 Arbitration Rules
+    summary: If a dispute is not resolved within 30 calendar days after the first meeting, either party may seek
+      arbitration under the American Arbitration Association Commercial Rules, the arbitrator's written decision
+      is binding and judgment may be entered in any federal or state court, and alternative dispute resolution is
+      to be explored before judicial process.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Governor or the Band may
+      request renegotiation to add other forms of Class III gaming, with negotiations to begin within 30 days of
+      the request and no such request for 12 months after the effective date; the excerpt does not show what happens
+      if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The 1998 compact's Section 2.5 requires good faith negotiation on request after an IGRA or state-law
+      change, and Sections 2.3 to 2.7 set renewal, termination and a Governor's duty to negotiate a new compact;
+      the 2000 compact's Section 12 provides for amendment by mutual written agreement, bars a request to renegotiate
+      for new games for 12 months, sets an IGRA-based request and confer process, and gives the nation a termination
+      right if exclusivity is abrogated.
+    locator_before: Sections 2.5, 2.3-2.7
+    locator_after: Sec. 12.1-12.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 Big Sandy compact is in the same family as the 1998 Barona compact,
+      and its excerpts for the dispute heading are labor and workers'' compensation text. The 2000 compact''s dispute
+      section is identical in wording to the other 2000 Section 9.0 texts in this batch. The 1998 compact''s Section
+      13.7 arbitration concerns labor matters and is not a state-nation dispute process as shown in the excerpts.'
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-big-sandy-rancheria-of-western-mono-indians-of-california-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_big_sandy_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 2dce2bc0f385a1257168eedb2a4f9ab4758e15d73be41dbbc959191a773801c8
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2023-12-22'
+    published: '2023-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28198
+    locator: 88 Fed. Reg. 88640 (Dec. 22, 2023)
+  source: compact-ca-big-sandy-rancheria-of-western-mono-indians-of-california-2023-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12.22_big_sandy_rancheria_of_western_mono_indians_tribal_state_gamign_compact.pdf
+    sha256: f6dfe456386e5fdd4c62859814346c470b199d80d193f682ddd7fe2e20a204a7
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2024-disapproval
+  label: 2024 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2024-11-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ca-big-sandy-rancheria-of-western-mono-indians-of-california-2024-11-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.11.15_big_sandy_racheria_tribal_state_gaming_compact.pdf
+    sha256: 02c797523c18da0fbb72de5a85d8bb448eb2ac40d28e28cf4c49eac9da659278
+    pages: 135
+- id: 2025-replacement
+  label: 2025 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  - 2022-extension
+  - 2023-extension
+  dates:
+    listed: '2025-09-22'
+    published: '2025-09-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2025-18304
+    locator: 90 Fed. Reg. 45407 (Sept. 22, 2025)
+  source: compact-ca-big-sandy-rancheria-of-western-mono-indi-2025
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/1_big_sandy_rancheria_gaming_compact_2025_compressed.pdf
+    sha256: 0ebb728c8e05c5aa6e05a37bdf343547169c90539c7c80f6347ff4364cbaf915
+    pages: 134
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution, subdivision
+      (d)
+    summary: After written notice, the parties meet and confer within 30 days to negotiate; unresolved disputes
+      may then be resolved in the United States District Court where the gaming facility is located or, if the federal
+      court lacks jurisdiction, in any state court, and the parties may by mutual written agreement use mediation,
+      with no arbitration clause in the excerpt.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: changed
+    summary: The earlier compact provides written notice, a meeting within 10 days, then either party may seek AAA
+      arbitration (not required to agree) producing a binding award, with federal or state court for matters not
+      otherwise resolved; the later compact provides written notice, a written response within 15 days, a meeting
+      within 30 days, then court action only, in federal district court or state court, with the Section 13.3(a)(ii)
+      remedies as the exclusive remedies and no damages or attorney fees, and mediation only by mutual agreement.
+    locator_before: Sec. 9.0 (9.1-9.3)
+    locator_after: Section 13.0 (13.1-13.2)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

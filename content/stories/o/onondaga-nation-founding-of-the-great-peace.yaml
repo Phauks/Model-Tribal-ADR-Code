@@ -1,0 +1,56 @@
+id: onondaga-nation-founding-of-the-great-peace
+title: History (the founding of the Haudenosaunee Confederacy)
+nations:
+- onondaga-nation
+kind: historical-account
+length: long
+excerpts:
+- telling: onondaga-history-page
+  locator: opening of the account
+  text: The people of the five nations had forgotten their original ways and their actions saddened the Creator.
+    The Creator decided to send a messenger to the people so that the five nations could live in peace.
+  words: 36
+  sha256: 475ab4691c3dd3379d2dea1366fb5421f57163bca51c63c9ffa494e6149c57e8
+methods:
+- peacemaking
+- customary-dispute-resolution
+topics:
+- peace-between-nations
+- origin-of-a-confederacy
+tellings:
+- id: onondaga-history-page
+  source: onondaga-nation-history-page
+  as_of: 2026-09
+  published_by: Onondaga Nation
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+access: *id001
+anthology:
+  candidate: true
+  reason: A complete account on the Nation's own site, central to any collection on peacemaking (project analysis).
+    The Nation's site does not name the Peacemaker personally; any reprint should follow the Nation's text exactly.
+  telling: onondaga-history-page
+  permission_from:
+  - holder: Onondaga Nation (copyright holder of the website)
+    for: copyright
+    nation: onondaga-nation
+  - holder: Onondaga Nation Council of Chiefs
+    for: cultural-authority
+    nation: onondaga-nation
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories
+notes: The other Haudenosaunee nations tell this history too; only the Onondaga Nation's telling was read. Look
+  for the other nations' own tellings before treating this one as the Confederacy's.

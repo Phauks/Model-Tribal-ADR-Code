@@ -1,0 +1,187 @@
+id: mescalero-apache-tribe-of-the-mescalero-reservation-new-mexico-gaming-compact
+kind: gaming-compact
+title: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico–State of New Mexico Gaming Compact
+nations:
+- mescalero-apache-tribe-of-the-mescalero-reservation
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Mescalero Apache Tribe of the Mescalero Reservation, New Mexico and the State
+    of New Mexico under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Mescalero Apache Tribe of
+  the Mescalero Reservation, New Mexico and the State of New Mexico as of Nov. 21, 2026: 1 original and 3 replacements.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-03-22'
+    published: '1995-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6966
+    locator: 60 Fed. Reg. 15194 (Mar. 22, 1995)
+  source: compact-nm-mescalero-apache-tribe-of-the-mescalero-reservation-1995-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1995.03.22_mescalero_apache_tribe_tribal_state_gaming_compact.pdf
+    sha256: f11a1fa9f94bb54c24ff94b7fbbac181367cfb4c2fa89300099c4039d07fad3c
+    pages: 40
+  clauses:
+  - topic: renegotiation
+    locator: SECTION 11. Binding Effect and Duration., paragraphs B-C
+    summary: Either party may serve written notice of its desire to renegotiate one year before the end of the fifteen-year
+      term or each five-year renewal period, the Native nation may then request a new compact under IGRA, and the
+      existing compact stays in force while remedies are pursued.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1997-replacement
+  label: 1997 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1995-original
+  dates:
+    listed: '1997-08-29'
+    published: '1997-08-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-97-22989
+    locator: 62 Fed. Reg. 45867 (Aug. 29, 1997)
+  source: compact-nm-mescalero-apache-tribe-of-the-mescalero-reservation-1997-08-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1997.08.23_mescalero_apache_tribe_tribal_state_gaming_compact.pdf
+    sha256: f3cae9ac21b61874ff0d2cb3a8ecea95bd19829e68c511fcb0744c65f3cece65
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraphs A(1)-(5)
+    summary: The compact provides for written notice and a response period, then arbitration under the Commercial
+      Arbitration Rules of the American Arbitration Association with attorney arbitrators, and the results are enforceable
+      by an action for injunctive relief in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2004-replacement
+  label: 2004 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1997-replacement
+  dates:
+    listed: '2004-08-05'
+    published: '2004-08-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-17882
+    locator: 69 Fed. Reg. 47459 (Aug. 5, 2004)
+  source: compact-nm-mescalero-apache-tribe-of-the-mescalero-reservation-2004-08-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2004.08.05_mescalero_apache_tribe_tribal_state_gaming_compact.pdf
+    sha256: ca0b3eace6d413621e8114fc400762b3cd292020d12a7d8a4600587c521f135d
+    pages: 28
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator; the results are final and binding and enforceable in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-replacement
+    change: changed
+    summary: 'The 2004 compact shortens the periods in Section 7: a complaining party may serve a notice to cease
+      the game after 20 days (earlier 90 days), and the responding party must stop or invoke arbitration within
+      10 days (earlier 30 days). It also drops the earlier required meeting within 30 days of the notice, lets the
+      complaining party invoke arbitration if the other side does neither, adds discovery and open-or-closed hearing
+      rules and a bar on ruling on the compact''s validity, and states that results are final and binding.'
+    locator_before: 7.A.1-5
+    locator_after: 7.A.1-5
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2004-replacement
+  dates:
+    listed: '2015-06-22'
+    published: '2015-06-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-15207
+    locator: 80 Fed. Reg. 35668 (June 22, 2015)
+  source: compact-nm-mescalero-apache-tribe-of-the-mescalero-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.06.22_mescalero_apache_tribe_tribal_state_gaming_compact.pdf
+    sha256: 9f189e75c1298c9f04f78c08b1cb30d0b40713ff0f4db7f8bdbfb74cab14b3fc
+    pages: 47
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be amended only by a written instrument signed by the Native nation and the State and
+      approved by the Secretary of the Interior, with approval of the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2004-replacement
+    change: changed
+    summary: The 2015 compact adds a two-year window to start the Section 7 procedure (and a two-year window from
+      the effective date for the State to raise pre-effective-date payment breaches), lets the parties agree in
+      writing to a single arbitrator, sets 30-day periods for choosing arbitrators (if the responding party does
+      not choose, the arbitration goes ahead with the single arbitrator picked by the noticing party), and lengthens
+      the third-arbitrator period from 10 to 30 days.
+    locator_before: 7.A.1-5
+    locator_after: 7.A.1-4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2004-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

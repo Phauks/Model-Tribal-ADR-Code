@@ -1,0 +1,403 @@
+id: crow-creek-sioux-tribe-of-the-crow-creek-reservation-south-dakota-gaming-compact
+kind: gaming-compact
+title: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota–State of South Dakota Gaming Compact
+nations:
+- crow-creek-sioux-tribe-of-the-crow-creek-reservation
+states:
+- SD
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota and the
+    State of South Dakota under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Crow Creek Sioux Tribe of
+  the Crow Creek Reservation, South Dakota and the State of South Dakota as of Nov. 21, 2026: 1 original, 3 amendments,
+  6 extensions and 1 replacement. The order, the kind of each event and which version is in effect are inferred
+  from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-04-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1992-04-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1992.04.15 Crow Creek Sioux Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: b5473835a22d4db22e776d639fdeb5506443b0f64a158cb7cd322eb23271e165
+    pages: 18
+  clauses:
+  - topic: dispute-resolution
+    locator: 12. General Provisions, 12.1
+    summary: Either party may commence an action in federal district court to resolve a dispute over the compact's
+      interpretation; the excerpt shows no notice, negotiation or arbitration step before suit.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 11. Duration, 11.2 to 11.4
+    summary: The terms are subject to review at three-year intervals, either party may give written notice of provisions
+      needing review, the parties then have 180 days to negotiate, and if unresolved the compact terminates and
+      IGRA procedures apply.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1993-amendment
+  label: 1993 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1993-04-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1993-04-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1993.04.08 Crow Creek Sioux Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 6596dd5355b3d2b31f580e0b73265177c45128d14d551f83942cad1f522453a6
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2001-amendment
+  label: 2001 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2001-09-11'
+    published: '2001-09-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-22672
+    locator: 66 Fed. Reg. 47239 (Sept. 11, 2001)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2001-09-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2001.09.11 Crow Creek Sioux Tribe Tribal
+      State Gaming Compact_0.pdf
+    sha256: 7eb514043f9b0f77bd6f7a59b71c5ca0443ca85c99e68f3986c7f73cfb350247
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Amendment item 7, amending Section 11.2 (Duration)
+    summary: Either party may identify provisions needing amendment by written notice 180 days before December 1,
+      2003 or before any automatic two-year extension, and the parties then negotiate in good faith with IGRA remedies
+      available.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2014-extension
+  label: 2014 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2014-01-17'
+    published: '2014-01-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-00901
+    locator: 79 Fed. Reg. 3242 (Jan. 17, 2014)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2014-01-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2014.01.07 Crow Creek Sioux Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 6da1770976cded8b6de18599076b3f8772bc801004d02f375f12a83025498365
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2015-extension
+  label: 2015 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2015-02-03'
+    published: '2015-02-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-01973
+    locator: 80 Fed. Reg. 5781 (Feb. 3, 2015)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2015-02-03
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2015.02.03 Crow Creek Sioux Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 1d8f3a3c6f8618d27c1aff0c9c1946fb3ae5c8c3f72fbdb53975a26f75ff4562
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2015-extension-2
+  label: 2015 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2015-08-13'
+    published: '2015-08-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-19970
+    locator: 80 Fed. Reg. 48558 (Aug. 13, 2015)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2015-08-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2015.08.13 Crow Creek Sioux Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 0a91cdb6ad173fa41cca0fe05c03a895ea036360a29507e9c2c1100454d768c4
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2016-extension
+  label: 2016 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2016-02-12'
+    published: '2016-02-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-02917
+    locator: 81 Fed. Reg. 7583 (Feb. 12, 2016)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2016-02-12
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2016.02.12 Crow Creek Compact Extension.pdf
+    sha256: 1373273e924e34a4edf58becedc6638b20fdfc56b0e7971640f74f19f05b2cc7
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2016-extension-2
+  label: 2016 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2016-08-26'
+    published: '2016-08-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-20436
+    locator: 81 Fed. Reg. 58960 (Aug. 26, 2016)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2016-08-26
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2016.08.26  Crow Creek Sioux Tribe Compact
+      Extension.pdf
+    sha256: 793d40badfeee64e551ab0654da819e5ae9121d1b33e59a198e4ff44473f6e6d
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2017-extension
+  label: 2017 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2017-03-23'
+    published: '2017-03-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2017-05813
+    locator: 82 Fed. Reg. 14910 (Mar. 23, 2017)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2017-03-23
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2017.03.23 Crow Creek Compact Extension to
+      6.28.17.pdf
+    sha256: b142c97dbbc7fcb1d20a9ad3dc1c85f83f90613e7df673b254d8a9b19ce76664
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2017-replacement
+  label: 2017 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1992-original
+  - 1993-amendment
+  - 2001-amendment
+  - 2014-extension
+  - 2015-extension
+  - 2015-extension-2
+  - 2016-extension
+  - 2016-extension-2
+  - 2017-extension
+  dates:
+    listed: '2017-08-02'
+    published: '2017-08-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2017-16215
+    locator: 82 Fed. Reg. 35989 (Aug. 2, 2017)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2017-08-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2017.08.02 Crow Creek Sioux Tribe Compact.pdf
+    sha256: 8e581edab613c97800bc7ea28402a1077d37038c670f458579c38cb58a331564
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: 12. General Provisions, 12.1
+    summary: Either party may commence an action in federal district court to resolve a dispute over interpretation
+      of the compact; separately, disputes over the State's suitability determinations go to a three-person binding
+      Arbitration Board with possible appeal to federal court, and either party may terminate for substantial breach
+      after thirty days written notice.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 11. Duration, 11.1
+    summary: 'The compact is reviewed at ten-year intervals: either party may give written notice of provisions
+      needing review or amendment before each ten-year period ends, the parties negotiate in good faith with IGRA
+      remedies available, and the compact stays in effect 180 days after expiry if unresolved; it may also be amended
+      in writing under 12.10.'
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2017-replacement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12742
+    locator: 87 Fed. Reg. 35994 (June 14, 2022)
+  source: compact-sd-crow-creek-sioux-tribe-of-the-crow-creek-reservation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2022.06.07_crow_creek_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: 0929805e8c86d375ba81acd3b8e91e38873c51c338f1f1d99144ddce4e7f821c
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Amended Section 3.3
+    summary: The Tribe may operate other Class III games authorized by state law only by written amendment, under
+      a separate agreement, or as authorized by the South Dakota Commission on Gaming.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2017-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2017-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

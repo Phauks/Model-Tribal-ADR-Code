@@ -1,0 +1,42 @@
+id: bois-forte-band-minnesota-video-games-of-chance-compact
+kind: gaming-compact
+title: Bois Forte Band (Nett Lake)–State of Minnesota Video Games of Chance Compact
+nations:
+- bois-forte-band
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III video games of chance compact for Bois Forte Band (Nett Lake) and the State of Minnesota under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III video games of chance compact documents the Office of Indian Gaming lists for Bois Forte
+  Band (Nett Lake) and the State of Minnesota as of Nov. 21, 2026: 1 original. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1990-original
+  label: 1990 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1990-04-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-bois-forte-band-1990-04-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1990.04.02_bois_forte_band_of_chippewa_indians_tribal_state_gaming.pdf
+    sha256: ce7966e08f59f690f7df03530c05338748d52dc07d91409f03b8e36954ffebbd
+    pages: 19
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2, Renegotiation
+    summary: Either the State or the Band may request in writing, by certified mail, negotiations to amend, replace
+      or repeal the compact; the compact stays in effect during renegotiation, the parties have 180 days to negotiate
+      (extendable by agreement), and IGRA procedures then apply.
+    verification: read-in-full
+    reviewer: small model, older version
+found_in:
+- 2026-11-21-gaming-compact-histories

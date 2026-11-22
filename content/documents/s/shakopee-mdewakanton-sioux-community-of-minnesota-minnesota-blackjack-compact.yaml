@@ -1,0 +1,76 @@
+id: shakopee-mdewakanton-sioux-community-of-minnesota-minnesota-blackjack-compact
+kind: gaming-compact
+title: Shakopee Mdewakanton Sioux Community of Minnesota–State of Minnesota Blackjack Compact
+nations:
+- shakopee-mdewakanton-sioux-community-of-minnesota
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Shakopee Mdewakanton Sioux Community of Minnesota and the State of Minnesota
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Shakopee Mdewakanton Sioux
+  Community of Minnesota and the State of Minnesota as of Nov. 21, 2026: 2 amendments. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  dates:
+    listed: '2021-10-01'
+    published: '2021-10-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-21384
+    locator: 86 Fed. Reg. 54469 (Oct. 1, 2021)
+  source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-2021-10-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508 Compliant 2021.10.01 Shakopee Mdewakanton Sioux Community
+      Tribal State Gaming Compact.pdf
+    sha256: e1fad165284480a9a5064973da09eb41069a1b3d8790e816c18765255c2f4312
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Section 7 (as cited in the amendment preamble)
+    summary: The amendment is made under Section 7 of the Blackjack compact by agreement of the State and the Community,
+      and the excerpt does not show request or time-limit terms.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  dates:
+    listed: '2024-03-13'
+    published: '2024-03-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-05276
+    locator: 89 Fed. Reg. 18427 (Mar. 13, 2024)
+  source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-2024-03-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2024.03.13_shakopee_mdewakanton_sioux_community_tribal_state_gaming_compact_0.pdf
+    sha256: db99a58952043ad1a25fe6c517809eea148865a19979896756debf791be02427
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: 4.0 Enforcement and Disputes, Section 4.2(a) and (b)
+    summary: The Department of Public Safety serves an Alleged Violation Notice and the Gaming Commission has 30
+      days to investigate and order corrective action; if the Community disputes a violation, the parties meet within
+      15 days, and if no resolution is reached each party may pursue remedies under the IGRA.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

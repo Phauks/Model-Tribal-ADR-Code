@@ -1,0 +1,102 @@
+id: pinoleville-pomo-nation-california-gaming-compact
+kind: gaming-compact
+title: Pinoleville Pomo Nation, California–State of California Gaming Compact
+nations:
+- pinoleville-pomo-nation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pinoleville Pomo Nation, California and the State of California under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pinoleville Pomo Nation,
+  California and the State of California as of Nov. 21, 2026: 1 disapproved compact, 1 original and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2011-disapproval
+  label: 2011 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2011-02-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ca-pinoleville-pomo-nation-2011-02-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2011.02.25_pinoleville_pomo_nation_tribal_state_gaming_compact_disapproval_letter_0.pdf
+    sha256: 643db7b72f3cd58ae688fc1567e0534ce5e35d77a187a188afc8850ceb94730c
+    pages: 6
+- id: 2012-original
+  label: 2012 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2012-02-03'
+    published: '2012-02-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2012-2441
+    locator: 77 Fed. Reg. 5566 (Feb. 3, 2012)
+  source: compact-ca-pinoleville-pomo-nation-2012-02-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2012.02.03_pinoleville_pomo_nation_tribal_state_gaming_compact.pdf
+    sha256: 50198f3c70aec8c64c7acb4d8fcdc4f4660aa54be82fdc1105e512cd812f41ea
+    pages: 238
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 11.8.8. Arbitration.
+    summary: If an intergovernmental agreement with the County or an Impacted City is not reached within 75 days,
+      either party may demand binding JAMS arbitration before a retired judge, and the award becomes part of the
+      written agreement; the general dispute section is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS. Sec. 15.1 to 15.3.
+    summary: The compact may be amended by mutual written agreement during its term, and either party may request
+      negotiations to extend it or for a new compact no sooner than 18 months before termination, with a schedule
+      set within 45 days.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2012-original
+  dates:
+    listed: '2026-01-26'
+    published: '2026-01-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-01395
+    locator: 91 Fed. Reg. 3214 (Jan. 26, 2026)
+  source: compact-ca-pinoleville-pomo-nation-2026-01-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/pinoleville_pomo_nation_tribal_state_compact_amendment.pdf
+    sha256: f94301fadebbc4bc558190a213a1dee8c960491ec97efa22c738c18c6d81893b
+    pages: 13
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2012-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2012-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

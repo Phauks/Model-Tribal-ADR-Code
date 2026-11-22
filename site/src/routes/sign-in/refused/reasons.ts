@@ -2,7 +2,7 @@
 export const refusalCookie = 'sign-in-refused';
 
 export const refusalReasons = {
-	'not-on-list': 'This account is not on the list of co-authors. Ask the lead author to add the email address you signed in with, then sign in again.',
+	'not-on-list': 'This account does not have access to the workspace. You can register to help with the project from your profile, and the lead author will be in touch.',
 	removed: 'Access for this account has been removed. Ask the lead author if you think this is a mistake.',
 	'email-not-verified': 'Auth0 has not verified this email address yet. Open the verification email Auth0 sent you, then sign in again.',
 	'different-account': 'This email address is already linked to a different sign-in, for example a password instead of Google. Sign in the same way you did before.',

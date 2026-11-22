@@ -1,0 +1,560 @@
+id: assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-montana-gaming-compact
+kind: gaming-compact
+title: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana–State of Montana Gaming Compact
+nations:
+- assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation
+states:
+- MT
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana and
+    the State of Montana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Assiniboine and Sioux Tribes
+  of the Fort Peck Indian Reservation, Montana and the State of Montana as of Nov. 21, 2026: 1 original, 6 amendments,
+  4 extensions and 2 replacements. The order, the kind of each event and which version is in effect are inferred
+  from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-07-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-1992-07-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant1992.07.01_assiniboine_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: dbb5899a66c98ed67209d2e924bd52d09c96af335a0a48a4a9b6cee1d1e8a495
+    pages: 9
+  clauses:
+  - topic: dispute-resolution
+    locator: VII. DEFAULT AND TERMINATION, A. Default by Tribes
+    summary: 'The agreement has no negotiation, arbitration or court process for disputes; its only mechanism is
+      default: a party in substantial and continuing default may be terminated by the other after at least ninety
+      days written notice and a failure to cure within ninety days.'
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: VIII. GENERAL TERMS, B. Amendments
+    summary: The agreement may be amended only with the consent of both parties in a signed written instrument;
+      the parties must negotiate in good faith if IGRA or state law changes, must review the agreement annually
+      at first, and must negotiate additional Class III games when the Tribes give notice.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 1992-amendment
+  label: 1992 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1992-09-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-1992-09-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1992.09.08_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: ce60955a3e25496b0fc07b0312e8e34caf19eeb54a7caa9477c33b71615e62ce
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The First Amendment adds only a lottery definition at Part III.P and a lottery provision at Part V.D
+      and does not amend any dispute resolution provision, so the earlier compact's clause still governs; the earlier
+      dispute text is not in the excerpts.
+    locator_after: Part III.P; Part V.D
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact''s dispute and renegotiation text is not in the excerpts
+      (the earlier excerpt is cut off after the opening Part of the agreement), so the unchanged finding rests on
+      the amendment''s own statement of what it adds. The amendment was approved June 24, 1992 per the Interior
+      letter and is listed as 1992-09-08 in the Federal Register notice dated September 8, 1992.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The First Amendment does not amend any renegotiation or amendment provision; by its terms it adds only
+      Part III.P and Part V.D, so the earlier compact's clause still governs, and the earlier clause text is not
+      in the excerpts.
+    locator_after: Part III.P; Part V.D
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact''s dispute and renegotiation text is not in the excerpts
+      (the earlier excerpt is cut off after the opening Part of the agreement), so the unchanged finding rests on
+      the amendment''s own statement of what it adds. The amendment was approved June 24, 1992 per the Interior
+      letter and is listed as 1992-09-08 in the Federal Register notice dated September 8, 1992.'
+- id: 1992-amendment-2
+  label: 1992 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1992-11-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-1992-11-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1992.11.18_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: 31ed5dc917521e1488f0ed6a601719f432c2953e50ec29a4d231fa52803c63d7
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The Second Amendment deletes wording in Article III Sections A, B and D and adds a new Article V Section
+      E on live keno and live poker, and it does not amend any dispute resolution provision, so the earlier compact's
+      clause still governs; the earlier dispute text is not in the excerpts.
+    locator_after: Article III, Sections A, B, D; Article V, Section E
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact''s dispute and renegotiation text is not in the excerpts,
+      so the unchanged finding rests on the amendment''s own description of what it changes. The amendment is a
+      second amendment to the April 6, 1992 agreement; the Interior letter refers to a first amendment approved
+      September 1, 1992. The Federal Register notice gives the amendment''s approval date as November 18, 1992,
+      which is the listed date.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The Second Amendment does not amend any renegotiation or amendment provision; it changes only Article
+      III Sections A, B and D and adds Article V Section E, so the earlier compact's clause still governs and the
+      earlier text is not in the excerpts.
+    locator_after: Article III, Sections A, B, D; Article V, Section E
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact''s dispute and renegotiation text is not in the excerpts,
+      so the unchanged finding rests on the amendment''s own description of what it changes. The amendment is a
+      second amendment to the April 6, 1992 agreement; the Interior letter refers to a first amendment approved
+      September 1, 1992. The Federal Register notice gives the amendment''s approval date as November 18, 1992,
+      which is the listed date.'
+- id: 1993-amendment
+  label: 1993 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1993-04-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-1993-04-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1993.04.14_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: ed50f4405b0daf66fdde5bc9fc80e84fe379ed2adf7e41c8a7f25db483a59f44
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Preamble (Article VII B reference in the amendment text)
+    summary: The Third Amendment states that it is made pursuant to Article VII B of the Agreement; the excerpt
+      does not show what that article provides for requests, time limits or failure.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The Third Amendment amends only Appendix A paragraphs on machine locks, ticket vouchers and electronic
+      transaction reporting, and does not amend any dispute resolution provision, so the earlier compact's clause
+      still governs; the earlier dispute text is not in the excerpts.
+    locator_after: Appendix A d(iv), d(vii), (1) d(xi)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact''s dispute and renegotiation text is not in the excerpts,
+      and the later amendment''s visible text is cut off after Appendix A(1) d(xi)(B), so later provisions cannot
+      be checked. The Interior letter says the amendment was received February 23, 1993. The listed date is 1993-04-14,
+      the Federal Register notice date.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The Third Amendment is made under Article VII B of the agreement, the amendment provision cited in
+      its text, and does not amend a renegotiation provision, so the earlier clause still governs; the earlier text
+      is not in the excerpts.
+    locator_after: Preamble (citing Article VII B)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact''s dispute and renegotiation text is not in the excerpts,
+      and the later amendment''s visible text is cut off after Appendix A(1) d(xi)(B), so later provisions cannot
+      be checked. The Interior letter says the amendment was received February 23, 1993. The listed date is 1993-04-14,
+      the Federal Register notice date.'
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1998-10-19'
+    published: '1998-10-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-27933
+    locator: 63 Fed. Reg. 55887 (Oct. 19, 1998)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-1998-10-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1998.10.19_assiniboine_and_sioux_tribes_tribal_state_gaming_compact_0.pdf
+    sha256: 0ac3a4a805f3222c891a9cddf734d7a77c7fc6024de7502a412188192f3bcd84
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Preamble (Article VIIIB reference in the amendment text)
+    summary: The Fourth Amendment is made by the Tribes and the State under Article VIIIB of the Agreement; the
+      excerpt does not show request, time-limit or failure terms.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The Fourth Amendment amends only Sections IV.C, V.A.2 and V.B.1 to allow tribal licensing of individual
+      Indians to operate gaming, and it states that all terms not specifically amended remain in effect, so the
+      earlier compact's dispute clause still governs; the earlier text is not in the excerpts.
+    locator_after: Paragraph 4
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact''s dispute and renegotiation text is not in the excerpts,
+      so the unchanged finding rests on the amendment''s own statement. The Fourth Amendment cites Article VIIIB
+      of the agreement as its authority, while the Third Amendment cites Article VII B; the Interior letter for
+      the Second Amendment cites Article VIII. B. The Interior approval recites a dated August 6, 1998 amendment
+      and the listed date is 1998-10-19.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The Fourth Amendment does not amend any renegotiation or amendment provision; it amends Sections IV.C,
+      V.A.2 and V.B.1 and states that all terms not specifically amended remain in effect, so the earlier clause
+      still governs and the earlier text is not in the excerpts.
+    locator_after: Paragraph 4
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact''s dispute and renegotiation text is not in the excerpts,
+      so the unchanged finding rests on the amendment''s own statement. The Fourth Amendment cites Article VIIIB
+      of the agreement as its authority, while the Third Amendment cites Article VII B; the Interior letter for
+      the Second Amendment cites Article VIII. B. The Interior approval recites a dated August 6, 1998 amendment
+      and the listed date is 1998-10-19.'
+- id: 2002-extension
+  label: 2002 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2002-06-11'
+    published: '2002-06-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-14665
+    locator: 67 Fed. Reg. 40003 (June 11, 2002)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-2002-06-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2002.06.11_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: fa62191e3b9e857d9f62416e62efe8439405fcb7af5f7050c2d9576dd135676d
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2002-extension-2
+  label: 2002 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2002-08-09'
+    published: '2002-08-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-20143
+    locator: 67 Fed. Reg. 51867 (Aug. 9, 2002)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-2002-08-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2002.08.09_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: 93564f2a6b2d7dd72fbcf03811f4068dc6c4d6afa2201b89a7b57579cede3d2a
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2002-extension-3
+  label: 2002 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2002-12-09'
+    published: '2002-12-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-30966
+    locator: 67 Fed. Reg. 72967 (Dec. 9, 2002)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-2002-12-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2002.12.09_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: 33ade190e7a88ef77b01340b3f58ae045f61613d423d8c3ec8d426cc5659ae80
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-02-27'
+    published: '2003-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-4656
+    locator: 68 Fed. Reg. 9095 (Feb. 27, 2003)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-2003-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2003.02.27_assiniboine_and_sioux_tribes_triba_l_state_gaming_compact.pdf
+    sha256: c38c00ec2c3f1505129da2c9cdd9447d5538a949643ea99fb8d683a4b15f93d0
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Recitals
+    summary: The parties extend the existing agreement while they negotiate a long-term compact, and it continues
+      until a revised or new compact is executed.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2003 extension amends only Appendix A(1)(d)(v)(B) on bill acceptors and states that all other terms
+      remain in effect, so the earlier compact's dispute clause still governs; the earlier text is not in the excerpts.
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This is an extension and partial amendment rather than a new compact, and
+      its visible text does not show the earlier term or amendment articles. The Interior letter says the extension
+      was received January 17, 2003 and approved February 12, 2003 (signature date 2002 is printed on the Interior
+      block). The listed date is 2003-02-27.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2003-amendment-2
+  label: 2003 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-09-25'
+    published: '2003-09-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-24298
+    locator: 68 Fed. Reg. 55411 (Sept. 25, 2003)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-2003-09-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2003.09.25_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: 5eaa0b046832ad84b9f9aeeb0d59c0915c26a36774356f13565a9f8522468fa0
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Recitals and paragraph 1 of the Agreement
+    summary: The parties extend the existing agreement while continuing good faith negotiations toward another long-term
+      compact, and they may agree to renew it for a term they set.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2003 extension amends only the term article, the prize limit in Article V.B.1 and an Appendix A
+      definition, and states that all other terms remain in effect, so the earlier compact's dispute clause still
+      governs; the earlier text is not in the excerpts.
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later extension refers to Article VII.A for the term, while the February
+      2003 extension refers to Article VIII.A for the same subject, so the article numbering differs between the
+      two extensions. The extension also changes the prize limit in Article V.B.1 from $1,000 to $1,500 for tribally
+      owned premises, which is not a dispute or renegotiation provision. The Interior letter says the extension
+      was received January 17, 2003 and approved in February 2003; the listed date is 2003-09-25.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2004-extension
+  label: 2004 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2004-07-06'
+    published: '2004-07-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-15194
+    locator: 69 Fed. Reg. 40646 (July 6, 2004)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-2004-07-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2004.07.06_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: 8d8cd4a625f3e9b4dbd78984e602962a8e5fa0c2d1a8c1a7e624da8d45a718d4
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2012-replacement
+  label: 2012 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  - 1992-amendment
+  - 1992-amendment-2
+  - 1993-amendment
+  - 1998-amendment
+  - 2002-extension
+  - 2002-extension-2
+  - 2002-extension-3
+  - 2003-amendment
+  - 2003-amendment-2
+  - 2004-extension
+  dates:
+    listed: '2012-12-28'
+    published: '2012-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2012-31176
+    locator: 77 Fed. Reg. 76514 (Dec. 28, 2012)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-2012-12-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2012.12.20_assiniboine_and_sioux_tribes_tribal_state_gaming_compact.pdf
+    sha256: 9d7a913db7edd92d7c20dc9d679111f0e4a5d9b49f1c349391cbf7a7021ea926
+    pages: 12
+  clauses:
+  - topic: dispute-resolution
+    locator: Section X.A and X.B, Default by Tribes and Default by State
+    summary: A default is handled by written notice and a 90-day cure period, after which the non-defaulting party
+      may terminate the compact; the excerpt states no further dispute steps.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section XI.B, Amendments; Section X.D, Continuing Duty to Bargain
+    summary: The compact may be amended only by written instrument signed by both parties; after a change in IGRA
+      or state law the parties negotiate in good faith, and after termination the State must negotiate a successor
+      compact on a request under 25 U.S.C. 2710(d)(3)(A).
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2012-replacement
+  dates:
+    listed: '2024-01-29'
+    published: '2024-01-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-01700
+    locator: 89 Fed. Reg. 5572 (Jan. 29, 2024)
+  source: compact-mt-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation-2024-01-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2024.01_assiniboine_&_sioux_tribes_of_the_fort_peck_indian_reservation_tribal_state_gaming_compact.pdf
+    sha256: e844e244a351e13a44c58c587c591ff932be87e817a3dd5a8bceb5331df5d960
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: Section IV.D, Resolving Jurisdictional Disputes
+    summary: Jurisdictional disputes may be resolved by mutual consent of the Tribes and the State; the excerpt
+      names no other step, court or arbitration.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section XI.B, Amendments; Section X.D, Continuing Duty to Bargain
+    summary: The compact may be amended only by written instrument signed by both parties; after a change in IGRA
+      or state law the parties negotiate in good faith, and after termination the State must negotiate a successor
+      compact on a request under 25 U.S.C. 2710(d)(3)(A).
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2012-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2012-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

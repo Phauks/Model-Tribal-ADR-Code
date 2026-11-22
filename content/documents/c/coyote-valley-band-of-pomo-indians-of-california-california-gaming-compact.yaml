@@ -1,0 +1,118 @@
+id: coyote-valley-band-of-pomo-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Coyote Valley Band of Pomo Indians of California–State of California Gaming Compact
+nations:
+- coyote-valley-band-of-pomo-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Coyote Valley Band of Pomo Indians of California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Coyote Valley Band of Pomo
+  Indians of California and the State of California as of Nov. 21, 2026: 1 original and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2004-original
+  label: 2004 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2004-12-20'
+    published: '2004-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-04-27712
+    locator: 69 Fed. Reg. 76004 (Dec. 20, 2004)
+  source: compact-ca-coyote-valley-band-of-pomo-indians-of-california-2004-12-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_12.20.2004_coyote_valley_band_of_pomo_indians_tribal_state_gaming_compact.pdf
+    sha256: 4145bcbaf142ec96a2f965ad1216b46865bd778ed55a01ef8f3056c5a1a17c85
+    pages: 85
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.6
+    summary: Under Section 9.6, disputes over regulations proceed, when demanded, before a single arbitrator under
+      the AAA Commercial Arbitration Rules, who selects one of the parties' proposed regulations in a binding order
+      with review waived; the Tribe waives sovereign immunity for arbitral enforcement, and patron disputes under
+      Section 10.0 go to a retired judge.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 15.1 to Sec. 15.3
+    summary: Either party may amend by mutual written agreement, and a request to amend or renegotiate must be in
+      writing with negotiations scheduled within 90 days; if exclusivity is lost in Marin, Mendocino or Sonoma counties,
+      the Tribe may terminate or continue with a 1,100 Gaming Device cap.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2012-replacement
+  label: 2012 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2004-original
+  dates:
+    listed: '2012-12-28'
+    published: '2012-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2012-31181
+    locator: 77 Fed. Reg. 76514 (Dec. 28, 2012)
+  source: compact-ca-coyote-valley-band-of-pomo-indians-of-california-2012-12-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2012.12.28_coyote_valley_band_of_pomo_indians_tribal_state_gaming_compact.pdf
+    sha256: 2881dd93fbdbdfe546348d6ae0cb8909e5de43b291af08cbcd7eea2f75779eda
+    pages: 223
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution and Sec. 13.2 Arbitration
+      Rules
+    summary: Disputes under the amended compact begin with a written notice, a written response within 15 days and
+      a meet-and-confer within 30 days; either party may then seek arbitration before a single JAMS arbitrator,
+      but neither party is required to agree to arbitrate, and unresolved disputes may go to the federal district
+      court for the Gaming Facility's district or a state court in Mendocino County; an arbitrator's written decision,
+      if arbitration is used, is binding.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS; LOSS OF EXCLUSIVITY, Sec. 15.1 to Sec. 15.4
+    summary: The amended compact may be amended at any time by mutual written agreement if each party voluntarily
+      consents (Sec. 15.1), either party may request negotiation of an extension or new compact no sooner than 18
+      months before the termination date in Sec. 14.2(a) (Sec. 15.2), written requests lead to a schedule within
+      45 days (Sec. 15.3), and loss of tribal exclusivity in the named counties gives the Tribe options (Sec. 15.4).
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2004-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2004-original
+    change: changed
+    summary: The replacement compact requires any amendment during the term to be by mutual written agreement with
+      each party's written consent to the negotiations; allows either party to request negotiations for an extension
+      or a new compact no sooner than eighteen months before termination, with automatic one-year extension if no
+      agreement is reached; and sets the scheduling deadline after a request at forty-five days, where the earlier
+      compact used ninety days.
+    locator_before: 15.1, 15.2
+    locator_after: 15.1, 15.2, 15.3
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The excerpts do not show the state-tribe dispute section (Section 13) of
+      either compact, so the dispute answer is not-compared. The later compact also adds a loss-of-exclusivity clause
+      at Section 15.4, which is not part of the renegotiation comparison above.'
+found_in:
+- 2026-11-21-gaming-compact-histories

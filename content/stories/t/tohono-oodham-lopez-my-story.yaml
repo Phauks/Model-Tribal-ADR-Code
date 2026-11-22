@@ -1,0 +1,60 @@
+id: tohono-oodham-lopez-my-story
+title: My Story
+nations:
+- tohono-oodham-nation-of-arizona
+kind: oral-history
+length: long
+excerpts:
+- telling: aildi-pdf
+  locator: section on tribal court and traditional settlement
+  text: However, many O’odham and even the Anglo lawyers try to go back to the traditional way of settling matters,
+    especially when women are involved.
+  words: 24
+  sha256: d153ebf89f1e80947ae941d2b56d2753d353783610131cb35a300f1e7dbfdce1
+methods:
+- customary-dispute-resolution
+topics:
+- family-dispute
+- memoir
+- himdag
+tellings:
+- id: aildi-pdf
+  source: lopez-my-story-aildi
+  teller:
+    form: name-and-nation
+    name: Danny Lopez
+    nation: tohono-oodham-nation-of-arizona
+    role: elder
+  published_by: American Indian Language Development Institute, University of Arizona
+  authority: member-author
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+access: *id001
+anthology:
+  candidate: true
+  reason: A first-person account by a Tohono O'odham elder, written to be shared with his people (project analysis).
+    Only a short part concerns disputes; an excerpt is more likely than the whole.
+  telling: aildi-pdf
+  permission_from:
+  - holder: The author's family or estate
+    for: copyright
+  - holder: American Indian Language Development Institute, University of Arizona
+    for: copyright
+    where_to_ask: https://aildi.arizona.edu/
+  - holder: Tohono O'odham Nation (office to be identified)
+    for: cultural-authority
+    nation: tohono-oodham-nation-of-arizona
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

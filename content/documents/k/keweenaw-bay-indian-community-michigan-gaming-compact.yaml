@@ -1,0 +1,53 @@
+id: keweenaw-bay-indian-community-michigan-gaming-compact
+kind: gaming-compact
+title: Keweenaw Bay Indian Community, Michigan–State of Michigan Gaming Compact
+nations:
+- keweenaw-bay-indian-community
+states:
+- MI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Keweenaw Bay Indian Community, Michigan and the State of Michigan under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Keweenaw Bay Indian Community,
+  Michigan and the State of Michigan as of Nov. 21, 2026: 1 original. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-11-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mi-keweenaw-bay-indian-community-michigan-1993
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_1993.11.30_keweenaw_bay_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 8a21d3a219a950452a8c96369399c1b514ba12e0e01d60474675f4aa9d8a8d8e
+    pages: 17
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution, paragraph (A)
+    summary: Disputes start with written notice and a 30-day meeting; if the State's claim is not resolved within
+      90 days, the State may serve notice to stop the disputed games, and the Tribe may stop them or invoke arbitration
+      under the AAA Commercial Arbitration rules while the games continue; the excerpt does not say whether the
+      award binds.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 12. Binding Effect, Duration, and Severability, subsections (B) and (C)
+    summary: Either party may serve written notice of its right to renegotiate one year before the 20-year term
+      ends and before each later five-year period, after which the Tribe may request successor-compact negotiations
+      under IGRA, and the compact stays in effect pending exhaustion of remedies.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,56 @@
+id: iipay-nation-of-santa-ysabel-california-gaming-compact
+kind: gaming-compact
+title: Iipay Nation of Santa Ysabel, California–State of California Gaming Compact
+nations:
+- iipay-nation-of-santa-ysabel
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Iipay Nation of Santa Ysabel, California and the State of California under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Iipay Nation of Santa Ysabel,
+  California and the State of California as of Nov. 21, 2026: 1 original. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2003-original
+  label: 2003 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2003-12-22'
+    published: '2003-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-31474
+    locator: 68 Fed. Reg. 71131 (Dec. 22, 2003)
+  source: compact-ca-iipay-nation-of-santa-ysabel-2003-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2003.12.22 Iipay Nation of Santa Ysabel Tribal
+      State Gaming Compact.pdf
+    sha256: 7a1715b55434ce3b6af5c75bc58c9f78a52a18d8833cef8e1463e669570971cb
+    pages: 70
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 9.0. DISPUTE RESOLUTION PROVISIONS. Sec. 9.1 and Sec. 9.2.
+    summary: Disputes go through written notice, a meeting within ten days and thirty days of negotiation, then
+      binding arbitration under the AAA Commercial Arbitration Rules, with federal or state court available to enforce.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 12.0. AMENDMENTS; RENEGOTIATIONS. Sec. 12.2 and Sec. 12.5.
+    summary: The compact may be amended by mutual written agreement, and the Tribe may seek renegotiation for new
+      forms of Class III gaming after twelve months; the parties agree to negotiate in good faith every fourth March.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

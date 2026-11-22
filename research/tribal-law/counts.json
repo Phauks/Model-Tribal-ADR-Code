@@ -1,0 +1,98 @@
+{
+ "documents": 8921,
+ "documents_by_status": {
+  "2xx": 8441,
+  "4xx": 180,
+  "0xx": 287,
+  "5xx": 12,
+  "error": 1
+ },
+ "documents_with_text": 6748,
+ "documents_with_provisions": 531,
+ "passages": 2700,
+ "passages_unparsed": 0,
+ "batches_missing": [],
+ "provisions": 2127,
+ "provisions_not_duplicates": 1867,
+ "nations_with_provisions": 117,
+ "by_method": {
+  "peacemaking": 729,
+  "arbitration": 495,
+  "mediation": 302,
+  "other": 256,
+  "administrative-adjudication": 123,
+  "negotiation": 49,
+  "settlement-conference": 47,
+  "customary-dispute-resolution": 37,
+  "conciliation": 31,
+  "family-group-conference": 21,
+  "restorative-justice": 9,
+  "circle-process": 9,
+  "council-hearing": 9,
+  "elders-council": 8,
+  "ombuds": 2
+ },
+ "by_scope": {
+  "borderline": 421,
+  "dispute-resolution": 1706
+ },
+ "by_setting": {
+  "court-annexed": 663,
+  "court-referral": 501,
+  "agency-or-government": 404,
+  "other": 258,
+  "contract-or-compact": 254,
+  "pre-filing": 42,
+  "community-program": 5
+ },
+ "by_subject_area": {
+  "general": 652,
+  "commercial": 313,
+  "juvenile": 168,
+  "gaming": 153,
+  "family": 146,
+  "criminal": 142,
+  "civil": 133,
+  "employment": 124,
+  "child-welfare": 114,
+  "other": 54,
+  "housing": 46,
+  "land-or-resources": 41,
+  "tribal-government": 21,
+  "probate": 13,
+  "elections": 7
+ },
+ "by_quote_check": {
+  "exact": 2123,
+  "whitespace": 4
+ },
+ "by_confidence": {
+  "high": 1709,
+  "medium": 339,
+  "low": 79
+ },
+ "no_provision_reasons": {
+  "term-used-in-other-sense": 566,
+  "table-of-contents-only": 382,
+  "other": 249,
+  "diversion-to-services": 156,
+  "ordinary-court-procedure": 145,
+  "listing-or-menu": 71,
+  "not-law": 46,
+  "unreadable": 2
+ },
+ "second_pass": {
+  "reviewed": 688,
+  "selected": 688,
+  "missing": 0,
+  "by_reason_and_verdict": {
+   "hard-case: cannot-tell": 5,
+   "hard-case: change": 117,
+   "hard-case: confirm": 257,
+   "hard-case: drop": 189,
+   "random-sample: change": 34,
+   "random-sample: confirm": 84,
+   "random-sample: drop": 2
+  }
+ }
+}

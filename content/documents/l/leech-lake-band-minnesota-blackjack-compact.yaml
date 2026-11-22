@@ -1,0 +1,94 @@
+id: leech-lake-band-minnesota-blackjack-compact
+kind: gaming-compact
+title: Leech Lake Band–State of Minnesota Blackjack Compact
+nations:
+- leech-lake-band
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Leech Lake Band and the State of Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Leech Lake Band and the
+  State of Minnesota as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-leech-lake-band-1991-10-03
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_leech_lake_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: 605b9c22fb22c5215e6e99585a20fe9787555742de9f2e6719f3f467be23916f
+    pages: 17
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10, Effect of Breach
+    summary: Section 10 provides that if a tribal government bound by the consent judgment breaches it or the compact,
+      the State directs any legal action only at the breaching tribal government.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 2.2, Renegotiation
+    summary: Either the State or the Band may, by appropriate and lawful means, request negotiations to amend, replace
+      or repeal the compact; the parties have 180 days to negotiate before IGRA procedures apply, and the compact
+      stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-12-22'
+    published: '2023-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28230
+    locator: 88 Fed. Reg. 88639 (Dec. 22, 2023)
+  source: compact-mn-leech-lake-band-2023-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2023.12.22_leech_lake_band_of_chippewa_indians_tribal_state_gaming_compact_blackjack.pdf
+    sha256: c7f1ae2f03a27ffbdb871c9e78ac87c05a527967d62a04c1db76274eada8ff10
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Preamble to Third Amendment (reference to compact Section 7)
+    summary: The amendment states that it was agreed by the State Commissioner of Public Safety and the Leech Lake
+      Band under Section 7 of the compact, but Section 7 itself is not shown in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2023 third amendment to the blackjack technical standards is made pursuant to Section 7 of the
+      compact and amends Section 4.5 only as shown, so the 1991 Section 7 amendment procedure still governs and
+      nothing in the excerpts changes Sections 2.2 or 2.3.
+    locator_before: '7'
+    locator_after: Pursuant to Section 7; amends 4.5
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

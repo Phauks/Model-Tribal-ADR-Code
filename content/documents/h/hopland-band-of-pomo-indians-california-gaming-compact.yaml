@@ -1,0 +1,89 @@
+id: hopland-band-of-pomo-indians-california-gaming-compact
+kind: gaming-compact
+title: Hopland Band of Pomo Indians, California–State of California Gaming Compact
+nations:
+- hopland-band-of-pomo-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Hopland Band of Pomo Indians, California and the State of California under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Hopland Band of Pomo Indians,
+  California and the State of California as of Nov. 21, 2026: 1 original and 1 extension. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-hopland-band-of-pomo-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_hopland_band_of_pomo_indians_tribal_state_gaming_compact.pdf
+    sha256: 98f5f89def9bd204b00f1fcac4edd945bef0b2bf59b48c8d7c93017aceadb979
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS. Sec. 9.1 and Sec. 9.2.
+    summary: Disputes go through written notice, a meeting within ten days and thirty days of negotiation, then
+      binding arbitration under the AAA Commercial Arbitration Rules, with federal or state court available to enforce.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS. Sec. 12.2 and Sec. 12.3.
+    summary: The compact may be amended by mutual written agreement, and the Tribe may request renegotiation for
+      forms of Class III gaming not authorized, after twelve months, with the parties conferring within thirty days.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-hopland-band-of-pomo-indians-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_hopland_band_of_pomo_indians_tribal_state_gaming_compact.pdf
+    sha256: 4d2d1d6c98d76ef3ac1ff6c9b0e53e247adc522f8e072517e37fffc4fe0d5b9f
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+related:
+- document: hopland-band-of-pomo-indians-california-secretarial-procedures
+  relation: replaced-by
+  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+found_in:
+- 2026-11-21-gaming-compact-histories

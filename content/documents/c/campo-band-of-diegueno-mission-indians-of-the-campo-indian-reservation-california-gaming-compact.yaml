@@ -1,0 +1,178 @@
+id: campo-band-of-diegueno-mission-indians-of-the-campo-indian-reservation-california-gaming-compact
+kind: gaming-compact
+title: Campo Band of Diegueno Mission Indians of the Campo Indian Reservation, California–State of California Gaming
+  Compact
+nations:
+- campo-band-of-diegueno-mission-indians-of-the-campo-indian-reservation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Campo Band of Diegueno Mission Indians of the Campo Indian Reservation, California
+    and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Campo Band of Diegueno Mission
+  Indians of the Campo Indian Reservation, California and the State of California as of Nov. 21, 2026: 1 original,
+  2 extensions and 1 replacement. The order, the kind of each event and which version is in effect are inferred
+  from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-campo-band-of-diegueno-mission-indians-of-the-campo-indian-reservation-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_campo_band_of_diegueno_mision_indians_tribal_state_gaming_compact.pdf
+    sha256: c025e50eefe5542926eb356361ddfc25203aa0ff42081f23f436d36874c3bb6d
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and either party may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days and conducted under IGRA good-faith standards enforceable in federal
+      court.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-campo-band-of-diegueno-mission-indians-of-the-campo-indian-reservation-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_campo_band_of_diegueno_mission_indians_tribal_state_gamign_compact.pdf
+    sha256: b5181081a1844a98a2b5a6e731ece7ad5546edcda25cf18b2aab45aa78bbd92c
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2023-12-22'
+    published: '2023-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28198
+    locator: 88 Fed. Reg. 88640 (Dec. 22, 2023)
+  source: compact-ca-campo-band-of-diegueno-mission-indians-of-the-campo-indian-reservation-2023-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12,22_campo_band_of_diegueno_mission_indians_of_the_campo_indian_reservation_tribal_state_gaming_compact.pdf
+    sha256: 5537556f4785bd43e052c03bf5f59e2838c7c4e852c4096957fc6dd081f4c73f
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2022-extension
+  - 2023-extension
+  dates:
+    listed: '2024-12-26'
+    published: '2024-12-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-30744
+    locator: 89 Fed. Reg. 105090 (Dec. 26, 2024)
+  source: compact-ca-campo-band-of-diegueno-mission-indians-o-2024
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.12.26_campo_band_of_diegueno_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 6e4a9f92d99ef8f4bef11e9cad7d7be8ca022f237f2ab237a0744e9b0088adb8
+    pages: 122
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution, subdivision
+      (d)
+    summary: After written notice and meeting and conferring in good faith, unresolved disputes may be resolved
+      in the United States District Court where the gaming facility is located or, if the federal court lacks jurisdiction,
+      in any state court; the parties may by mutual written agreement use other methods such as mediation.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 and Sec. 15.2
+    summary: The compact may be amended at any time by mutual written agreement, either party may request negotiations
+      no sooner than 18 months before the termination date, and Section 15.3 addresses changes in law; the excerpt
+      is cut before the full section 15.3 text.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The earlier compact provides written notice, a meeting within 10 days, then optional AAA arbitration
+      (neither party required to agree) and federal or state court; the later compact provides written notice, a
+      written response within 15 days, a meeting within 30 days, then federal or state court action with the Section
+      13.4 remedies as the sole remedies and no damages or attorney fees, and adds a Section 13.4 federal-court
+      action for material breach with cure period and possible termination; it contains no arbitration step between
+      the nation and the state.
+    locator_before: Sec. 9.0 (9.1-9.3)
+    locator_after: Section 13.0 (13.1-13.4)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

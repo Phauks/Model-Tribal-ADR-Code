@@ -1,0 +1,600 @@
+id: tulalip-tribes-of-washington-washington-gaming-compact
+kind: gaming-compact
+title: Tulalip Tribes of Washington–State of Washington Gaming Compact
+nations:
+- tulalip-tribes-of-washington
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Tulalip Tribes of Washington and the State of Washington under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Tulalip Tribes of Washington
+  and the State of Washington as of Nov. 21, 2026: 1 original and 12 amendments. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wa-tulalip-tribes-of-washington-1991-10-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1991.10.03 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: 39b04c8022e15816ac328ffce5a7d3353f8f528dec4370876f6b00ac9a59787b
+    pages: 89
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 12(c) Dispute Resolution, items (i) to (vii)
+    summary: Disputes are handled by written notice, a meeting within ten days, and then JAMS arbitration in Seattle,
+      with the AAA Seattle rules supplementing JAMS; the JAMS decision is final and unappealable.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1992-amendment
+  label: 1992 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '1992-07-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wa-tulalip-tribes-of-washington-1992-07-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1992.07.24 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: a9baca21fcff32b6f7af664d15e8ab72da46824ae2fd7b5deab02fbc952e7611
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 1992 First Amendment only corrects the statute citation in Section 9(c), and it does not refer
+      to Section 12(c). The earlier Section 12(c) dispute process (notice, meet and confer, JAMS hearing and decision)
+      therefore still governs.
+    locator_before: Section 12(c)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1993-amendment
+  label: 1993 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '1993-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+  source: compact-wa-tulalip-tribes-of-washington-1993-12-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1993.12.20 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: a1cac54da927e2a6457264d15a67b0fb7f00d4470bfb19fabb4c55f7c2e8b9a5
+    pages: 4
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(g) (as amended, Second Amendment)
+    summary: The Second Amendment says disputes over wagering limits are resolved under Section 12(c) of the compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 1993 Second Amendment changes Section 3(f), (g) and (h) on gaming stations and wagering limits.
+      Its amended text still sends disputes to Section 12(c), so the earlier Section 12(c) process (notice, meet
+      and confer, JAMS hearing and decision) still governs.
+    locator_before: Section 12(c)
+    locator_after: Section 3(g)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '1995-03-31'
+    published: '1995-03-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-7940
+    locator: 60 Fed. Reg. 16764 (Mar. 31, 1995)
+  source: compact-wa-tulalip-tribes-of-washington-1995-03-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant1995.03.31 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: 4adeaa55e394861be00827235314c209d1cb3c3a2b16c60a6520aaf86252a1cb
+    pages: 16
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(a)(xx) and (xxii), as amended by the Third Amendment
+    summary: Disputes over poker and lottery-type games between the Tulalip Tribes and the State Gaming Agency are
+      referred to Section 12(c) of the Compact, whose procedure is not reproduced in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3, (vii) Interim Restrictions on Renegotiation/Amendments
+    summary: Under the Third Amendment, Sections 3(c), (f), (g) and (h) cannot be renegotiated for 36 months except
+      on listed triggers such as a change in state or federal law or a court decision, and disputes follow Section
+      12(c).
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 1995 Third Amendment does not amend the Section 12(c) dispute process. Its new Section 15 (vii)
+      says disputes under that subsection are handled under Section 12(c), so the earlier JAMS process still governs
+      and is the forum the amendment names.
+    locator_before: Section 12(c)
+    locator_after: Section 15 (vii)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Third Amendment rewrites parts of Sections 3, 14 and 15 and adds Appendix
+      C, so it is a partial amendment and the earlier Section 15 body is not in the excerpts. The later excerpt
+      is OCR-damaged in places (for example ''authori2ed'', ''er periods ef'', ''Mountains''), and the quoted lines
+      are clean. The interim restriction in Section 15 (vii) has an exception for ongoing renegotiation about gambling
+      devices and for Tribal/State declaratory judgment lawsuits.'
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: changed
+    summary: 'The Third Amendment adds an interim restriction: Compact subsections 3(c), (f), (g) and (h) cannot
+      be renegotiated or amended for 36 months from execution, except after a change in state or federal law expanding
+      gaming, a court decision, or a compact approved for another tribe with greater gaming levels. The excerpts
+      show only the table of contents for Section 15(d) of the earlier compact, so the earlier rule on renegotiation
+      cannot be compared in full.'
+    locator_before: Section 15(d)
+    locator_after: Section 15 (vii)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Third Amendment rewrites parts of Sections 3, 14 and 15 and adds Appendix
+      C, so it is a partial amendment and the earlier Section 15 body is not in the excerpts. The later excerpt
+      is OCR-damaged in places (for example ''authori2ed'', ''er periods ef'', ''Mountains''), and the quoted lines
+      are clean. The interim restriction in Section 15 (vii) has an exception for ongoing renegotiation about gambling
+      devices and for Tribal/State declaratory judgment lawsuits.'
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1928
+    locator: 64 Fed. Reg. 4460 (Jan. 28, 1999)
+  source: compact-wa-tulalip-tribes-of-washington-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.01.28 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: e8cbc37d48ee87d6af747569c10cf3c03f65798240d34946f2a6514a7f84bb69
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION (Appendix X)
+    summary: Disputes under Appendix X are resolved under any dispute provisions made applicable in that Appendix,
+      and otherwise under the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. MORATORIUM, 15.1 Three year moratorium
+    summary: Appendix X Section 15.1 bars the Tribe from seeking an amendment on gambling devices for three years
+      after execution, subject to exceptions for changes in federal or state law, court decisions, and other tribes
+      obtaining comparable devices.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: changed
+    summary: 'The earlier compact already had Section 12(c): written notice, a meeting within 10 days, and JAMS
+      hearing and decision (final and unappealable) if unresolved 20 days after the first meeting. The later amendment
+      adds an Appendix X rule that disputes under the appendix follow any appendix-specific process or otherwise
+      the compact''s binding arbitration provisions, extending the existing process to appendix disputes.'
+    locator_before: Section 12(c)
+    locator_after: Appendix X, Section 16
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The Fourth Amendment amends only Section 3(a), adds Section (xxiv) on Tribal Lottery Systems, and adds
+      Appendix X. Section 15 is not among the provisions it amends, so the earlier renegotiation and amendment clause
+      still governs, though the excerpts do not show its text.
+    locator_before: Section 15(d)
+    locator_after: Opening paragraph, Section 1
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2002-amendment
+  label: 2002 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2002-08-09'
+    published: '2002-08-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-20142
+    locator: 67 Fed. Reg. 51868 (Aug. 9, 2002)
+  source: compact-wa-tulalip-tribes-of-washington-2002-08-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2002.08.09 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: bbc870535fb834003e44e5613448a60dbbcff429b33125fd5c8128455f97d989
+    pages: 69
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(a)(xxi) (as amended, Fifth Amendment)
+    summary: Under the Fifth Amendment, if a dispute arises over a newly authorized Nevada table game, the game
+      may not be used until the dispute is resolved under Section 12(c) of the compact, which the excerpt does not
+      include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2002 Fifth Amendment changes Sections 2 and 3 only, and it leaves Section 12(c) alone. Its amended
+      Section 3 items still send disputes about poker, lottery-type and other table games to Section 12(c), so the
+      earlier JAMS dispute process still governs.
+    locator_before: Section 12(c)
+    locator_after: Section 3(a)(xx)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2003-04-08'
+    published: '2003-04-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-8560
+    locator: 68 Fed. Reg. 17072 (Apr. 8, 2003)
+  source: compact-wa-tulalip-tribes-of-washington-2003-04-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2003.04.08_tulalip_tribes_tribal_state_gaming_compact.pdf
+    sha256: a1a2a3415a72631886174b4748538e82477f1c301a1e522ab6bf0f28ef501682
+    pages: 16
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(a)(xxi)-(xxii), as amended by the Sixth Amendment
+    summary: A new table game or lottery-type game may not be used while a dispute over it is open, and disputes
+      are resolved under Section 12(c) of the Compact, whose procedure is not reproduced in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Memorandum of Incorporation of Amendments, Introduction
+    summary: The Sixth Amendment was incorporated into the compact at the Tulalip Tribes' request under Compact
+      Section 15(d)(ii)(cc), which allows the Tribes to adopt increases the State granted another tribe under its
+      compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2003 Sixth Amendment amends only Section 3(a), and it does not amend Section 12(c). Its amended
+      Section 3(a) items still send disputes about poker and other table games to Section 12(c), so the earlier
+      JAMS dispute process still governs.
+    locator_before: Section 12(c)
+    locator_after: Section 3(a)(xx)
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The Sixth Amendment is incorporated into the compact under Section 15(d)(ii)(cc), which is the same
+      amendment route the earlier compact provides. It amends Section 3(a) only and does not change Section 15,
+      so the earlier Section 15 process still governs, though the excerpts do not show its text.
+    locator_before: Section 15(d)
+    locator_after: Introduction
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-tulalip-tribes-of-washington-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2007.05.31 Tulalip Tribes Tribal State Gaming
+      Compact. Amdt VII.pdf
+    sha256: c4ea19d8feb2456c910b4be9f4ce1636f7fb88d779d0695243656c81fb3ba00c
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION (Appendix X2)
+    summary: Disputes under Appendix X2 are resolved under any dispute provisions made applicable in that Appendix,
+      and otherwise under the Dispute Resolution provisions of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After the Appendix X2 moratorium expires, the Tribe may seek an amendment when federal or state law
+      changes, when a court decision permits a device, or when another tribe obtains materially different equipment,
+      subject to good faith negotiation.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: changed
+    summary: 'The earlier compact already had Section 12(c): notice, a meeting within 10 days, and a JAMS hearing
+      and final decision. The later amendment adds an Appendix X2 rule that disputes under the appendix follow any
+      appendix-specific process or otherwise the compact''s Dispute Resolution provisions, extending the existing
+      process to appendix disputes.'
+    locator_before: Section 12(c)
+    locator_after: Appendix X2, Section 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The Seventh Amendment only adds Appendix X2 and recognizes Tribal Lottery Systems under Section 3.
+      It does not amend Section 15, so the earlier amendment and renegotiation process still governs, though the
+      excerpts do not show its text.
+    locator_before: Section 15(d)
+    locator_after: Amendment, opening paragraph
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2007-amendment-2
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2007-12-10'
+    published: '2007-12-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-23886
+    locator: 72 Fed. Reg. 69706 (Dec. 10, 2007)
+  source: compact-wa-tulalip-tribes-of-washington-2007-12-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2007.12.10 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: bc1473d4add7b88ed65df95909a000b880c2f9588ce3f4325e12e4731b6d142f
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: unchanged
+    summary: The Appendix X2 Revision changes only the technical requirement in Appendix X2 Section 5.3 and contains
+      no dispute clause. It does not amend Section 12(c) or Appendix X2 Section 17, so the earlier Section 12(c)
+      process still governs.
+    locator_before: Section 12(c)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This is an appendix revision between the State Gambling Commission and the
+      Tribe, not an amendment to the Compact itself. It partly rewrites Appendix X2 Section 5.3 and relies on the
+      Appendix X2 Section 11 alternative-standards clause. The Interior approval block shows a March 13, 2007 date,
+      while the letter says the revision was received October 10, 2007, so the dates should be checked. The later
+      document has no dispute or renegotiation clause of its own.'
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2009-10-08'
+    published: '2009-10-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-24300
+    locator: 74 Fed. Reg. 51874 (Oct. 8, 2009)
+  source: compact-wa-tulalip-tribes-of-washington-2009-10-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2009.10.08 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: ee4fc4785e0ecdf6c03e0ff54384bc8fa2d8026336e796d8beaef91479d8d723
+    pages: 18
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 12. Remedies for Breach of Compact Provisions - Dispute Resolution, introduction and (a) to
+      (b)
+    summary: The compact first requires written notice, a meet-and-confer within ten business days and then formal
+      mediation, after which either party may seek judicial resolution, and the parties may agree to other mechanisms
+      such as binding arbitration; the Section 12 text is heavily garbled in the excerpt.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: changed
+    summary: The later compact provides negotiation (10 business days), then formal mediation by agreement, after
+      which a dissatisfied party may seek judicial resolution; arbitration occurs only if both parties elect it.
+      The earlier compact went from a 10-day meeting to JAMS arbitration 20 days after the first meeting, with a
+      final, unappealable decision.
+    locator_before: Section 12(c)(i)-(vii)
+    locator_after: Section 12(a)-(c) as amended
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-tulalip-tribes-of-washington-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 06.04.2015 Tulalip Tribes Tribal State Gaming
+      Compact.pdf
+    sha256: 70ed2aa28774f46093b6591584968dfd6b0fe048ec1b88d9e7ede6504fb35b1a
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4, Dispute Resolution, 4.1 and 4.2 (Addendum)
+    summary: The State and the Tulalip Tribes must meet and attempt to resolve a dispute over player terminal numbers
+      at least 30 days before the increase takes effect, and if no resolution is reached either party may use the
+      Compact's dispute resolution provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: changed
+    summary: 'The earlier compact already had Section 12(c): notice, a meeting within 10 days, and JAMS arbitration
+      20 days after the first meeting. The later amendment adds, for disputes over the Appendix X2 addendum (such
+      as terminal allocations), a meeting at least 30 days before an increased allocation takes effect, and then
+      use of the compact''s dispute resolution provisions; it also routes a dispute over the State''s revised cost
+      allocation model to Section 13.5 after a 30-day meeting.'
+    locator_before: Section 12(c)(i)-(vii)
+    locator_after: Addendum Section 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2021-09-01'
+    published: '2021-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-18821
+    locator: 86 Fed. Reg. 49054 (Sept. 1, 2021)
+  source: compact-wa-tulalip-tribes-of-washington-2021-09-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.01_tulalip_tribes_tribal_state_gaming_compact.pdf
+    sha256: 6d228f53fabea1b577f49d04246870535b6d4aeb79095c83360527eac58b4a63
+    pages: 36
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2024-02-06'
+    published: '2024-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-02350
+    locator: 89 Fed. Reg. 8238 (Feb. 6, 2024)
+  source: compact-wa-tulalip-tribes-of-washington-2024-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2024.02.06_tulalip_tribes_tribal_state_gaming_compact.pdf
+    sha256: c1e1bd6501c63e878da2a6735bef0e3a6297acf2584e18aa37a00bc202a63282
+    pages: 21
+  clauses:
+  - topic: renegotiation
+    locator: Memorandum of Incorporation, preamble (Compact Section 15(d)(ii)(cc))
+    summary: Under the most-favored-nation section 15(d)(ii)(cc), the compact is amended at the tribe's request
+      when the Secretary approves a compact with another tribe that includes more gaming facilities, activities,
+      gaming stations or higher wager limits.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

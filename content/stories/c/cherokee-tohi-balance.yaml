@@ -1,0 +1,46 @@
+id: cherokee-tohi-balance
+title: Tohi (balance or peace)
+titles_in_language:
+- text: tohi
+  language: chr
+  source: museum-of-the-cherokee-people-cherokee-history-page
+nations:
+- eastern-band-of-cherokee-indians
+kind: teaching
+length: paragraph
+excerpts:
+- telling: motcp-history-page
+  locator: opening section
+  text: Tohi has no one direct translation to English but has often been most commonly associated with the English
+    words balance or peace.
+  words: 22
+  sha256: 63419b87204c3ad1718d4ee5cf1ab576b96885f740479c4fdab4bd8e39f26797
+methods: []
+topics:
+- balance
+- values
+tellings:
+- id: motcp-history-page
+  source: museum-of-the-cherokee-people-cherokee-history-page
+  published_by: Museum of the Cherokee People
+  authority: native-organization
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+  note: The museum's relation to the Eastern Band's government was not confirmed.
+access: *id001
+anthology:
+  candidate: false
+  reason: A short teaching; cite it (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

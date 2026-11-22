@@ -1,0 +1,97 @@
+id: kiowa-tribe-oklahoma-gaming-compact
+kind: gaming-compact
+title: Kiowa Tribe–State of Oklahoma Gaming Compact
+nations:
+- kiowa-tribe
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Kiowa Tribe and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Kiowa Tribe and the State
+  of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2006-original
+  label: 2006 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2006-10-23'
+    published: '2006-10-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e6-17703
+    locator: 71 Fed. Reg. 62120 (Oct. 23, 2006)
+  source: compact-ok-kiowa-tribe-2006
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2006.10.23 Kiowa Tribe Tribal State Gaming Compact.pdf
+    sha256: 54bfc6d65f8c3b3c922ca0402a372dc9d2d9e23119b8ba42d3adfe635c23f54d
+    pages: 30
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION, paragraphs 1 to 3
+    summary: Disputes go first to written notice and a meeting of tribal and state representatives within thirty
+      days, then either party may refer the dispute to arbitration under AAA rules, and an award may be reviewed
+      de novo by a federal district court whose decision is subject to appeal.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days after expiration of the Compact or any renewal, either the tribe or the state, acting
+      through its Governor, may request renegotiation of subsections A and E of Part 11; the Compact otherwise renews
+      automatically for fifteen-year terms if electronic gaming is authorized.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2006-original
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-07470
+    locator: 84 Fed. Reg. 15634 (Apr. 16, 2019)
+  source: compact-ok-kiowa-tribe-2019-04-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 04.16.2019 Kiowa Tribe Oklahoma Model Tribal
+      Gaming Compact Supplement.pdf
+    sha256: 1d5b872271eb2ee2a45e442bd6f9c2fca7ea32776d20139a961ae052d6a4ef5b
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-original
+    change: unchanged
+    summary: The 2019 Model Tribal Gaming Compact Supplement covers non-house-banked table games and does not mention
+      Part 12 or list it as amended, so the earlier Part 12 process appears to remain in force.
+    locator_before: Part 12
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The supplement is governed by the Compact and refers to Part 11 only. The
+      ''unchanged'' calls rest on the absence of any reference to Parts 12 or 15.'
+  - topic: renegotiation
+    compared_with: 2006-original
+    change: unchanged
+    summary: The supplement does not mention Part 15 or list it as amended, so the earlier renegotiation clause
+      appears to remain in force.
+    locator_before: Part 15
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The supplement is governed by the Compact and refers to Part 11 only. The
+      ''unchanged'' calls rest on the absence of any reference to Parts 12 or 15.'
+found_in:
+- 2026-11-21-gaming-compact-histories

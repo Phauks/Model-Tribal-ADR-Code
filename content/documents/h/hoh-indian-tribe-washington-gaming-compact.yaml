@@ -1,0 +1,163 @@
+id: hoh-indian-tribe-washington-gaming-compact
+kind: gaming-compact
+title: Hoh Indian Tribe–State of Washington Gaming Compact
+nations:
+- hoh-indian-tribe
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Hoh Indian Tribe and the State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Hoh Indian Tribe and the
+  State of Washington as of Nov. 21, 2026: 1 original and 2 amendments. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 2001-original
+  label: 2001 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2001-01-17'
+    published: '2001-01-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-1263
+    locator: 66 Fed. Reg. 4038 (Jan. 17, 2001)
+  source: compact-wa-hoh-indian-tribe-2001-01-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2001.01.17_hoh_indian_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 2a630d1cb92e1d85b0ef67daeaf01077d72b4f90b0833a0fbc845545b3ec3bcd
+    pages: 74
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4 (satellite wagering), subparagraph c
+    summary: Disputes over whether the Commission has unreasonably withheld consent to satellite wagering may be
+      taken to arbitration under Section XII.C of the compact, which the excerpt does not contain.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XV.D.3 and XV.D.5
+    summary: Section III items F, I, J and K cannot be renegotiated for thirty-six months unless a listed event
+      occurs, and other sections may be renegotiated on written notice when unforeseen circumstances arise, with
+      negotiations starting within thirty days.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2001-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-hoh-indian-tribe-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_hoh_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 77b14c990bb7bcd1ef559bbbbf1f31ff04eb8d0293479c4ce7f72210168aabf2
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION
+    summary: Disputes under the Appendix are resolved under any dispute provisions made applicable in the Appendix,
+      and otherwise under the Compact's dispute provisions, which are not reproduced in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After the moratorium expires, the Hoh Indian Tribe may seek an amendment when law or a court permits
+      new devices or another Washington tribe obtains materially different devices or higher wagers, subject to
+      good faith negotiation with the State.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-original
+    change: unchanged
+    summary: 'The 2007 Second Amendment adds Appendix X2 (tribal lottery systems) and does not amend the compact''s
+      dispute clause. The appendix only routes disputes: Section 17 sends them to any dispute provisions made applicable
+      in the appendix, or otherwise to the compact''s provisions, and Section 3.6.4 sends tribal-versus-state agency
+      disputes to the compact''s process. The 2001 compact''s Section XII.C (written notice, a meeting within 10
+      days, then AAA arbitration after 20 days) stays in place.'
+    locator_before: XII.C
+    locator_after: Appendix X2 Sec. 17, 3.6.4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2001-original
+    change: unchanged
+    summary: The second amendment adds Appendix X2 and recognizes lottery systems under Section III. It does not
+      list Section XV, so the earlier XV.D mutual adjustment provision still governs.
+    locator_before: XV.D.1
+    locator_after: '1'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2001-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-hoh-indian-tribe-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2015.06.04_hoh_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 2b26560ca4cd5a6d158b6532dd971fa37082bf5dfbf85d1a5dedda75310141d1
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution (4.1 and 4.2)
+    summary: Disputes over the addendum terms, including the number of player terminals, must be met on at least
+      30 days before the increased allocation, and if no resolution is reached either party may use the Compact's
+      dispute provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2001-original
+    change: unchanged
+    summary: The Third Amendment amends only Compact Section III (new subsection Q), Appendix X2 Sections 12.1,
+      13.4 and 14.4-14.5, and incorporates an Addendum; Section XV.D is not among them and the excerpts show no
+      clause saying the rest is unchanged, so the 2001 renegotiation clause appears to still govern.
+    locator_before: XV.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Dispute process: the 2015 text is Section 4 of an Addendum and refers to
+      the Compact''s dispute provisions and to Appendix X2 Section 13.5, neither of which is in the excerpts. Renegotiation:
+      the amendment does not list Section XV.D, but does not expressly say no other provision is amended, so the
+      earlier clause is inferred to govern. The 2015 amendment takes effect on Federal Register publication of Secretarial
+      approval.'
+found_in:
+- 2026-11-21-gaming-compact-histories

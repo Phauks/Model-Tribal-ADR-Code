@@ -1,0 +1,103 @@
+id: delaware-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: Delaware Nation, Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- delaware-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Delaware Nation, Oklahoma and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Delaware Nation, Oklahoma
+  and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-06-01'
+    published: '2005-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-10877
+    locator: 70 Fed. Reg. 31499 (June 1, 2005)
+  source: compact-ok-delaware-nation-oklahoma-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/2005.06.01 Delaware Nation Tribal State Gaming Compact.pdf
+    sha256: b3eec5cf3df432c6210afc18f1dc27900cd5f8d1c2eb6841e86d25b02a6a8e47
+    pages: 27
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: Either party gives written notice and representatives meet within thirty days; either party may then
+      refer the dispute to AAA arbitration, with awards subject to enforcement or de novo review by a federal district
+      court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days before the term or any renewal expires, either the Tribe or the State, acting through
+      its Governor, may request renegotiation of subsections A and E of Part 11.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2023-01-24'
+    published: '2023-01-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-01279
+    locator: 88 Fed. Reg. 4204 (Jan. 24, 2023)
+  source: compact-ok-delaware-nation-2023-01-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2023_01.24_delaware_nation_tribal_state_gaming_compact.pdf
+    sha256: 63388a676a741ee27bcc1f70b0b4916283fe436af6ffd42d120814f70a99d704
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: The Supplement does not amend Part 12 (dispute resolution). It provides that operation of the non-house-banked
+      table games is treated as subject to the Compact's terms for enforcement and exclusivity, so the earlier Part
+      12 process continues to apply.
+    locator_before: Part 12, paragraph 2
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Supplement adds a 10% monthly net win payment on non-house-banked table
+      games and is approved by the tribal official alone under Part 3. It is a supplement to the compact, not a
+      replacement, and the earlier compact''s Parts 11 and 12 are referenced rather than amended. The 2023 approval
+      status is not shown in the excerpt beyond the tribal signature block.'
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The Supplement does not amend Part 15 (duration and negotiation). Part 15.B allows the tribe or the
+      state to request renegotiation of Part 11 subsections A and E, and the Supplement does not change those subsections,
+      although it describes its 10% payment as an exclusivity and fee payment under Part 11 paragraph 2 of subsection
+      A.
+    locator_before: Part 15.B
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Supplement adds a 10% monthly net win payment on non-house-banked table
+      games and is approved by the tribal official alone under Part 3. It is a supplement to the compact, not a
+      replacement, and the earlier compact''s Parts 11 and 12 are referenced rather than amended. The 2023 approval
+      status is not shown in the excerpt beyond the tribal signature block.'
+found_in:
+- 2026-11-21-gaming-compact-histories

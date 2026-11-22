@@ -1,0 +1,75 @@
+id: fond-du-lac-band-minnesota-video-games-of-chance-compact
+kind: gaming-compact
+title: Fond du Lac Band–State of Minnesota Video Games of Chance Compact
+nations:
+- fond-du-lac-band
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III video games of chance compact for Fond du Lac Band and the State of Minnesota under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III video games of chance compact documents the Office of Indian Gaming lists for Fond du Lac
+  Band and the State of Minnesota as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1990-original
+  label: 1990 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1990-04-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-fond-du-lac-band-1990-04-02
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1990.04.02_fond_du_lac_band_of_chippewa_indians_tribal_state_gaming.pdf
+    sha256: 565c82055bb3aa55242462e7ba0cbc4693e9eb567b676e348532bc4bdaa1182b
+    pages: 18
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2, Renegotiation
+    summary: Either the State or the Band may request in writing, by certified mail, negotiations to amend, replace
+      or repeal the compact; the compact stays in effect during renegotiation, the parties have 180 days to negotiate
+      (extendable by agreement), and IGRA procedures then apply.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1991-replacement
+  label: 1991 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1990-original
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-fond-du-lac-band-1991-10-03
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_fond_du_lac_band_tribal_state_gaming_compact_blackjack.pdf
+    sha256: 50dcaa74b0708bab495cd7dcefa5845369abf0fb37c612f7772245cbd88dc92c
+    pages: 35
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Band may request in writing, by certified mail, negotiations to amend, replace
+      or repeal the compact; the parties have 180 days to negotiate before IGRA procedures and remedies apply, and
+      the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: renegotiation
+    compared_with: 1990-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

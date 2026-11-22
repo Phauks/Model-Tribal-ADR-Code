@@ -1,0 +1,55 @@
+id: wilton-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Wilton Rancheria, California–State of California Gaming Compact
+nations:
+- wilton-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Wilton Rancheria, California and the State of California under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Wilton Rancheria, California
+  and the State of California as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2018-original
+  label: 2018 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2018-01-22'
+    published: '2018-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-01058
+    locator: 83 Fed. Reg. 3015 (Jan. 22, 2018)
+  source: compact-ca-wilton-rancheria-2018-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.01.22_wilton_rancheria_tribal_state_gaming_compact.pdf
+    sha256: dae360a9ab973e9e6dd34a6fbab8a726d00ba86e28e7ca9552d27b889297eff2
+    pages: 147
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 13.1. Voluntary Resolution; Court Resolution.
+    summary: Disputes go first through written notice, a written response within fifteen days and a meet-and-confer
+      within thirty days; either party may then seek arbitration before a JAMS arbitrator (neither is required to
+      agree), and unresolved disputes may go to the U.S. District Court or a state court of competent jurisdiction.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Sec. 15.2. Negotiations for a New Compact.
+    summary: The compact may be amended by mutual written agreement; either party may request talks on a new compact
+      no sooner than 18 months before the termination date, and either party may request a reopening limited to
+      the Sec. 5.2(a) payments depending on the revenue fund balance.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

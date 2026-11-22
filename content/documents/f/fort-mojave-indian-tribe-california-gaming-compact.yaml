@@ -1,0 +1,59 @@
+id: fort-mojave-indian-tribe-california-gaming-compact
+kind: gaming-compact
+title: Fort Mojave Indian Tribe of Arizona, California & Nevada–State of California Gaming Compact
+nations:
+- fort-mojave-indian-tribe
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Fort Mojave Indian Tribe of Arizona, California & Nevada and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Fort Mojave Indian Tribe
+  of Arizona, California & Nevada and the State of California as of Nov. 21, 2026: 1 original. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2004-original
+  label: 2004 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2004-12-20'
+    published: '2004-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-27714
+    locator: 69 Fed. Reg. 76004 (Dec. 20, 2004)
+  source: compact-ca-fort-mojave-indian-tribe-2004-12-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2004.12.20_fort_mojave_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: e39817250b359d9a90383042e738da4803d7e79a3381e7710b09b7998b8e3f27
+    pages: 65
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution and Sec. 13.2 Arbitration
+      Rules
+    summary: Disputes begin with a written notice, a written response within 15 days and a meet-and-confer within
+      30 days; either party may then seek arbitration before a single American Arbitration Association arbitrator,
+      but neither party is required to agree to arbitrate, and unresolved disputes may go to the federal district
+      court for the Gaming Facility's district or a state court in San Bernardino County; an arbitrator's decision,
+      if arbitration is used, is binding.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.3; Sec. 14.2(a)
+    summary: The compact may be amended at any time by mutual written agreement (Sec. 15.1), written requests to
+      amend or renegotiate lead to a negotiation schedule within 90 days (Sec. 15.2), either party may request negotiation
+      of an extension or new compact no sooner than 18 months before the termination date (Sec. 14.2(a)), and loss
+      of tribal exclusivity within 50 miles lets the Tribe terminate or continue on reduced terms (Sec. 15.3).
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

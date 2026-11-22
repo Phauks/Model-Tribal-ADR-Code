@@ -1,0 +1,54 @@
+id: narragansett-indian-tribe-rhode-island-gaming-compact
+kind: gaming-compact
+title: Narragansett Indian Tribe–State of Rhode Island Gaming Compact
+nations:
+- narragansett-indian-tribe
+states:
+- RI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Narragansett Indian Tribe and the State of Rhode Island under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Narragansett Indian Tribe
+  and the State of Rhode Island as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1994-12-16'
+    published: '1994-12-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-30880
+    locator: 59 Fed. Reg. 0 (Dec. 16, 1994)
+  source: compact-ri-narragansett-indian-tribe-1994
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/rhode-island/508 Compliant 1994.12.16 Narragansett Indian Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 8373368656b77c6dd51cf7be9ed889bb10636fe495d5d5f4dce4dbb013ec8123
+    pages: 77
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 12. Enforcement of Compact provisions, (c) Enforcement by parties
+    summary: A gaming agency that finds non-monetary non-compliance delivers a notice, the other agency has thirty
+      Business Days (extendable by fifteen) to cure, and failing that the requesting agency may sue in U.S. District
+      Court; a failure to pay a monetary amount within five business days is a breach; the parties may agree to
+      another means of dispute resolution.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15. Effective Date; Duration; Renewals; Amendments and other matters, (c) Amendment and modification
+    summary: The compact may be modified only by written agreement of both parties and enactment under subsection
+      (a); specified sections are amended automatically if the West Greenwich referendum fails or the Native nation
+      is prevented from building there; the Native nation may request negotiation for later-authorized Class III
+      games.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

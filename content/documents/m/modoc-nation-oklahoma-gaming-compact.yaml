@@ -1,0 +1,161 @@
+id: modoc-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: Modoc Nation–State of Oklahoma Gaming Compact
+nations:
+- modoc-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Modoc Nation and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Modoc Nation and the State
+  of Oklahoma as of Nov. 21, 2026: 1 original, 1 replacement and 1 amendment. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1996-original
+  label: 1996 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1996-02-06'
+    published: '1996-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-2449
+    locator: 61 Fed. Reg. 4478 (Feb. 6, 1996)
+  source: compact-ok-modoc-nation-1996-02-06
+  note: A joint document, also a version of the history of miami-tribe-of-oklahoma.
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 1996.02.06 Miami and Modoc Tribes Tribal State
+      Gaming Compact.pdf
+    sha256: 188f7d160ec0092eb7237292f6589fb375d07b428eef0f58f358f6b7196c44e5
+    pages: 69
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION, subsections (a) to (c)
+    summary: The parties first give written notice and the Governor and tribal chief meet within thirty days; if
+      unresolved, either party may refer the dispute to non-binding arbitration with the arbitrators named by the
+      parties and, if needed, the American Arbitration Association, and either party may then seek a declaratory
+      judgment in the United States District Court for the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 20. AMENDMENTS
+    summary: Either the State or the Tribes may request negotiations to amend or modify the compact; the compact
+      stays in effect during negotiations, the parties have 180 days to negotiate, after which the remedies under
+      the Act apply, and amendments must be in writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2005-replacement
+  label: 2005 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1996-original
+  dates:
+    listed: '2005-06-01'
+    published: '2005-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-10877
+    locator: 70 Fed. Reg. 31499 (June 1, 2005)
+  source: compact-ok-modoc-nation-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.06.01 Modoc & Miami Tribes Tribal State
+      Gaming Compact_0.pdf
+    sha256: 770462e41f3a1f4c25e737e834c450fd4fbc78b342713f9f650c23862486d7b8
+    pages: 27
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: Disputes start with written notice and a meeting of tribal and state representatives within thirty
+      days, then either party may refer the dispute to arbitration under AAA rules, and an award may be reviewed
+      de novo by a federal district court whose decision is subject to appeal.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days after expiration of the Compact or any renewal, either the tribes or the state, acting
+      through its Governor, may request renegotiation of subsections A and E of Part 11; the Compact otherwise renews
+      automatically for fifteen-year terms if electronic gaming is authorized.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: changed
+    summary: The 2005 compact provides written notice, a meeting within 30 days, and then arbitration that either
+      party may refer to the American Arbitration Association before one arbitrator chosen from an AAA list, limited
+      to enforcement of the compact, with de novo review of the award in federal district court. The 1996 compact
+      provided a 30-day meeting, then non-binding arbitration by a party-named three-member panel after 30 days,
+      and a declaratory judgment action in the Western District of Oklahoma.
+    locator_before: 15(a)-(c)
+    locator_after: Part 12, paras. 1-3
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: changed
+    summary: The 1996 Section 20 lets either side request negotiations to amend or modify the Compact at any time.
+      The 2005 Part 15 limits renegotiation to a window within 180 days of the term's expiry for subsections A and
+      E of Part 11 and sets a 2020 term.
+    locator_before: Section 20
+    locator_after: Part 15(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-replacement
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-07471
+    locator: 84 Fed. Reg. 15633 (Apr. 16, 2019)
+  source: compact-ok-modoc-nation-2019-04-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant.2019.04.16 Modoc Tribe and State of Oklahoma
+      Tribal State Compact.2019_1.pdf
+    sha256: ace4662cbd7631747d282ecf0948256df08af9e659253652338f4683330569ad
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The 2019 Supplement accepts additional covered games and states that the non-house-banked table games
+      are subject to the Compact's enforcement and exclusivity provisions. It does not list Part 12, so the 2005
+      dispute process still applies.
+    locator_before: Part 12
+    locator_after: Part 2
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The 2019 Supplement is a games supplement that does not list Part 15; the Secretarial letter calls
+      it an amendment, and the renegotiation term in the 2005 Compact is not shown as changed.
+    locator_before: Part 15(B)
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

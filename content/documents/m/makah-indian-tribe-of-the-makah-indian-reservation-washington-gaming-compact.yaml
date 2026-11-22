@@ -1,0 +1,168 @@
+id: makah-indian-tribe-of-the-makah-indian-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Makah Indian Tribe of the Makah Indian Reservation–State of Washington Gaming Compact
+nations:
+- makah-indian-tribe-of-the-makah-indian-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Makah Indian Tribe of the Makah Indian Reservation and the State of Washington
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Makah Indian Tribe of the
+  Makah Indian Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 2 amendments. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2000-07-28'
+    published: '2000-07-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-19061
+    locator: 65 Fed. Reg. 46492 (July 28, 2000)
+  source: compact-wa-makah-indian-tribe-of-the-makah-indian-reservation-2000-07-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2000.07.28_makah_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 0319892492a24ae1e359104236a3bde02a64b41ee6aa33dd8c941de5edd80d46
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Section VII (Dispute Resolution), items 1-6
+    summary: Disputes go through written notice and a meet-and-confer within ten days; if unresolved within twenty
+      days, either party may seek resolution by AAA commercial arbitration at alternating sites, and the arbitrator's
+      decision is final and unappealable; other remedies are preserved.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section X (X-Renegotiations)
+    summary: The Tribe may request renegotiation for gaming on its Tribal lands at any time, including a transferable
+      allocation of table games, and either party may request renegotiation of other terms at any time in writing;
+      negotiations start within thirty days.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-makah-indian-tribe-of-the-makah-indian-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_makah_indian_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 46c99d0eeeb6bdfd2093f73c614039029710c35db705e0e45c4b923ec521e365
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 17. Dispute Resolution
+    summary: Disputes under the Appendix X2 are resolved under any dispute provisions made applicable in that Appendix,
+      or otherwise under the Compact's dispute resolution provisions, which are not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 15.2 (Post-Moratorium), item 15.2.3
+    summary: Makah may seek an amendment after the Moratorium expires when listed triggers occur, and negotiations
+      on the resulting equipment are subject to the Compact's dispute resolution provisions.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: unchanged
+    summary: The 2007 amendment adds Appendix X2 and does not amend the compact's Section VII. The appendix's dispute
+      section sends appendix disputes to its own provisions or otherwise to the compact's Dispute Resolution provisions,
+      where the 2000 Appendix X said the compact's binding arbitration provisions; since Section VII (notice, a
+      meeting within 10 days, then final and unappealable AAA arbitration after 20 days) is the same, the process
+      does not change.
+    locator_before: VII.1-6; App. X Sec. 16
+    locator_after: App. X2 Sec. 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: unchanged
+    summary: The 2007 amendment adds Appendix X2 and amends Section III; it does not list Section IX or X (amendments
+      and renegotiations) among its changes, so the earlier renegotiation terms still apply.
+    locator_before: X
+    locator_after: Recitals; Section III
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-makah-indian-tribe-of-the-makah-indian-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Makah Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 61cc8b683bc1a4734a6a21ccc0f0d3d42fe4a05e3a3865370d06cccaa4ff23c9
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, item 4.2
+    summary: Makah and the State first meet and confer on disputes about the Addendum, and if no resolution is reached
+      either party may use the Compact's dispute resolution provisions, which are not in the excerpt.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: 'The 2015 Addendum adds a step for disputes over its terms, such as the number of player terminals:
+      the State and Tribe must meet and attempt to resolve the dispute not later than 30 days before an increased
+      allocation takes effect, and then either may use the compact''s dispute resolution provisions. The 2000 Section
+      VII (notice, a meeting within 10 days, then AAA arbitration after 20 days) is not amended.'
+    locator_before: VII
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: unchanged
+    summary: The 2015 amendment amends Appendix X2 sections 12.1, 13.4 and 14.6.3 and incorporates an Addendum;
+      it does not list Section X (renegotiations) among its changes, so the earlier renegotiation terms still apply.
+    locator_before: X
+    locator_after: Operative paragraphs
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

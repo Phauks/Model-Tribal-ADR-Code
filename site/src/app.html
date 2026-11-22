@@ -28,6 +28,24 @@
 						var value = settings && settings[name];
 						if (typeof value === 'string' && /^[a-z-]+$/.test(value)) root.dataset[name] = value;
 					});
+					// Print options (src/lib/print-options.ts) apply only on paper.
+					var print = JSON.parse(localStorage.getItem('print-options') || '{}');
+					[
+						'pageDetails',
+						'reviewStatus',
+						'officialImages',
+						'maps',
+						'tables',
+						'documentHistory',
+						'sources',
+						'notes',
+						'linkAddresses',
+						'termMarks'
+					].forEach(function (name) {
+						var value = print && print[name];
+						if (typeof value === 'string' && /^[a-z-]+$/.test(value))
+							root.dataset['print' + name.charAt(0).toUpperCase() + name.slice(1)] = value;
+					});
 				} catch (error) {}
 			})();
 		</script>

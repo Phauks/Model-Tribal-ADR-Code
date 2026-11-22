@@ -1,0 +1,114 @@
+id: winnebago-tribe-of-nebraska-iowa-gaming-compact
+kind: gaming-compact
+title: Winnebago Tribe of Nebraska–State of Iowa Gaming Compact
+nations:
+- winnebago-tribe-of-nebraska
+states:
+- IA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Winnebago Tribe of Nebraska and the State of Iowa under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Winnebago Tribe of Nebraska
+  and the State of Iowa as of Nov. 21, 2026: 1 amendment, 1 original and 1 replacement. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: superseded
+  dates:
+    listed: '1995-12-18'
+    published: '1995-12-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-30655
+    locator: 60 Fed. Reg. 65064 (Dec. 18, 1995)
+  source: compact-ia-winnebago-tribe-of-nebraska-1995-12-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_1995.12.18_winnebago_tribe_tribal_state_gaming_compact.pdf
+    sha256: 8425ca10856021cc32641179f8524ec8ae6caff563bacee3771ee390ebae5b8f
+    pages: 7
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Sec. 4(b) of the Original Compact); Sections 1-3 of Second Amendment
+    summary: The Original Compact (Sec. 4(b)) lets the Tribe apply to the Director to amend it to add any additional
+      Class III gaming permitted in Iowa; this Second Amendment adds poker and mini baccarat under that process
+      and was approved by the Assistant Secretary under Section 24 of the Original Compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-10-19'
+    published: '1998-10-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-27935
+    locator: 63 Fed. Reg. 55888 (Oct. 19, 1998)
+  source: compact-ia-winnebago-tribe-of-nebraska-1998-10-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_1998.10.19_winnebago_tribe_tribal_state_gaming_compact.pdf
+    sha256: ccc5777d6a86894cf4a336e1a34848f716d90c2d598a40b17291f9ad5bbbd65b
+    pages: 64
+- id: 2005-replacement
+  label: 2005 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1995-amendment
+  - 1998-original
+  dates:
+    listed: '2005-02-22'
+    published: '2005-02-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-3227
+    locator: 70 Fed. Reg. 8608 (Feb. 22, 2005)
+  source: compact-ia-winnebago-tribe-of-nebraska-2005-02-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_2005.02.22_winnebago_tribe_tribal_state_gaming_compact.pdf
+    sha256: c7b5d26a2e51f9bfcacd3db183f0946e04f3e2009191064bde121a045eb56307
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH; 21. REMEDIES FOR MATERIAL BREACH
+    summary: For a non-material breach, the parties give written notice and meet and confer within 15 days, a demand
+      to halt or remedy follows with a 10-day response, and either party may then request binding arbitration before
+      one agreed arbitrator or a three-arbitrator panel; for a material breach each party may instead give 30 days'
+      notice of termination, and judicial and other remedies are preserved.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 19. AMENDMENTS AND WAIVERS; 31. RENEGOTIATION; 41. RENEGOTIATION AND DURATION
+    summary: The compact may be modified only by written agreement of the parties, effective on Secretary approval,
+      except appendices and technical standards; renegotiation under Section 41 (notice 12 to 18 months before the
+      term ends) is conducted in good faith as if a request to negotiate a compact.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-amendment
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-amendment
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

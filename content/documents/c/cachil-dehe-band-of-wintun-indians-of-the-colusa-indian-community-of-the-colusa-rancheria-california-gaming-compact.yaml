@@ -1,0 +1,121 @@
+id: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria, California–State
+  of California Gaming Compact
+nations:
+- cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa
+    Rancheria, California and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Cachil DeHe Band of Wintun
+  Indians of the Colusa Indian Community of the Colusa Rancheria, California and the State of California as of Nov.
+  21, 2026: 1 original and 2 extensions. The order, the kind of each event and which version is in effect are inferred
+  from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_cachil_dehe_band_colusa_tribal_state_gaming_compact_0.pdf
+    sha256: 0a9bfc288dfc8fe78c65c252252f2ca22add332ce10cf58484e19abc9c70b633
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0 DISPUTE RESOLUTION PROVISIONS, Sec. 9.1 Voluntary Resolution; Reference to Other Means of
+      Resolution
+    summary: The compact requires written notice, a meet-and-confer within 10 days and 30 days of negotiation; either
+      party may then seek optional arbitration under AAA Commercial Rules, with a binding award, and unresolved
+      disputes may go to the federal district court and Ninth Circuit or, if those lack jurisdiction, to state court.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to Sec. 12.4
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      to engage in Class III games not authorized by the compact, but not within 12 months of the effective date;
+      the Tribe may terminate if state exclusivity over gaming devices is abrogated.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_cachil_dehe_band_of_wintun_indians_tribal_state_gaming_compact.pdf
+    sha256: 4e7a6d1d3ce6972d35db32c08dbdefac947bc91bb150d30d0f34c1eae9f80dd1
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2023-12-22'
+    published: '2023-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28198
+    locator: 88 Fed. Reg. 88640 (Dec. 22, 2023)
+  source: compact-ca-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-2023-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12.22_cachil_dehe_band_of_wintun_indians_tribal_state_gaming_compact.pdf
+    sha256: 17ea3157e1fd340c25fe4b159a52835ca9dca88a8c283a0eee3440ef75da56de
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+related:
+- document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-california-secretarial-procedures
+  relation: replaced-by
+  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,42 @@
+id: fort-mojave-indian-tribe-nevada-gaming-compact
+kind: gaming-compact
+title: Fort Mojave Indian Tribe of Arizona, California & Nevada–State of Nevada Gaming Compact
+nations:
+- fort-mojave-indian-tribe
+states:
+- NV
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Fort Mojave Indian Tribe of Arizona, California & Nevada and the State of Nevada
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Fort Mojave Indian Tribe
+  of Arizona, California & Nevada and the State of Nevada as of Nov. 21, 2026: 1 original. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1990-original
+  label: 1990 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1990-04-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-nv-fort-mojave-indian-tribe-1990-04-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_1990.04.02_fort_mojave_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 81dbb4ba7a50104585f5da7b57ef9ecbbad413356ef59592ec5c4de33bcb67b0
+    pages: 14
+  clauses:
+  - topic: renegotiation
+    locator: Section B. Modification in Writing (Intergovernmental Agreement).
+    summary: The agreement may be changed only by a written instrument adopted and approved under the Nevada Interlocal
+      Cooperation Act provisions (NRS 277.080 to 277.180); the excerpt describes no reopening trigger.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

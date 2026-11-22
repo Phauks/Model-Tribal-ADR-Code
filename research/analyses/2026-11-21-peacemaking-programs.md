@@ -1,11 +1,13 @@
 # Peacemaking programs in the United States: a first survey
 
-**Status:** research notes, written Nov. 21, 2026, for the peacemaking track.
-It is not a finding about any nation's law or practice. It reports what each
+**Status:** research notes, written Nov. 21, 2026, for the peacemaking track,
+with a second sweep added the same day. It is not a finding about any nation's law or practice. It reports what each
 nation, or a named secondary source, has published about how its program
 works, and it says where the evidence is thin. Interpretations are labeled
-project analysis. The search method and its limits are in the session log,
-[2026-11-21-peacemaking-programs](../sessions/2026/2026-11-21-peacemaking-programs.md).
+project analysis. The search method and its limits are in the session logs,
+[2026-11-21-peacemaking-programs](../sessions/2026/2026-11-21-peacemaking-programs.md)
+and
+[2026-11-21-peacemaking-second-sweep](../sessions/2026/2026-11-21-peacemaking-second-sweep.md).
 
 Following the charter, peacemaking is treated as its own track, not as a kind
 of alternative dispute resolution.[^charter-3] The Native American Rights
@@ -39,9 +41,8 @@ and recorded peacemaking forums on 37 nations' profiles.[^narf-laws][^analysis]
 Section 2 of the dispute resolution practice analysis counted structural
 features in those records: placement in the court, consent to enter, return
 to court, and agreements entered as judgments.[^analysis] This note builds on
-that work. It does not re-read the codes. A separate thread is parsing the
-full text of the codes, and its peacemaking provisions will be added in a
-follow-up.
+that work. It does not re-read the codes itself; section 2.1 summarizes a separate
+pass over the full code texts.
 
 What was missing was the operating picture: who the peacemakers are, how
 cases arrive, what happens to agreements, how many cases programs handle, and
@@ -64,6 +65,7 @@ program lacks the feature. (project analysis, from the sources in section 3)
 | Confederated Tribes of Coos, Lower Umpqua and Siuslaw, Peacegiving Court[^coos] | Division of the Tribal Court, under the Chief Judge | Trained volunteer Peacegivers with yearly background checks | By agreement, whether or not a case is filed in Tribal or state court | |
 | Confederated Tribes of Grand Ronde, Peacemaker Program[^grand-ronde] | Part of the Tribal Court since 2007 | Members at least 25, approved by Tribal Council | Request form | No counsel at peacemaking conferences |
 | Little River Band of Ottawa Indians, Odenaang Enjinoojimoying[^lrboi] | Tribal judicial program (on hold for rebuilding) | Two peacemakers, one male and one female, at least 21 | Voluntary; no court case needed | Written agreement signed by all |
+| Pueblo of Isleta, Peacemaking Program[^isleta] | Program within the Tribal Court, made permanent in 2020 after a pilot | Enrolled members of good character who know Pueblo custom, chosen by the Chief Judge with the sitting peacemakers' agreement; training required | Court referral; once referred, the parties must attend, and no attorney or advocate may attend | Signed agreement binds the parties; the court enters it as an order or returns the case to the docket; no appeal, but a motion to enforce |
 | Organized Village of Kake, Circle Peacemaking[^kake-hn] | The Tribe's court; works alongside the Alaska state court | Village volunteers with a keeper of the circle | State court may send a juvenile's sentencing to the circle with prosecutor, defender and offender agreeing | Non-compliant offenders return to state court for sentencing |
 
 Four choices recur and differ in ways that matter for drafting (project
@@ -78,6 +80,9 @@ analysis):
   failure to respond to a referral motion as an objection; the Mashpee
   Wampanoag Tribe treats a non-response as a "declaration to participate."
   [^choctaw-act][^mashpee] These are opposite defaults on the same question.
+  Isleta goes further: once a case is referred, the parties must attend, and
+  the court may fine a party up to $100 for missing a session without good
+  cause.[^isleta]
 - **Who decides.** Most programs leave the outcome to the parties. The
   Choctaw Act lets a peacemaker hear a matter only when "all parties to the
   dispute agree to be bound by the decision of the peacemaker," and the
@@ -85,9 +90,70 @@ analysis):
   agreement is reached.[^choctaw-act][^pbpn] The earlier analysis found seven
   nations' codes with a peacemaker who decides only with everyone's
   consent.[^analysis]
+- **Peacemaker or judge.** Some forums with a peacemaking name are run by
+  judges. At Habematolel Pomo of Upper Lake the elected Associate Judges act
+  as peacemakers on matters the Chief Judge refers, and may recommend but not
+  decide.[^hpul] The Zuni Rules of Criminal Procedure and the Santee Sioux
+  Nation's code both provide a judge-led "customary" pretrial conference,
+  in wording so close that the two likely share a model, not yet traced
+  (project analysis).[^zuni][^santee]
 - **Finality.** Oneida, Choctaw and Prairie Band Potawatomi give agreements
   the force of a court order, and Choctaw and Prairie Band bar appeal. Several
   program pages say nothing about enforcement at all.[^oneida][^choctaw-act][^pbpn]
+
+### 2.1 What the code texts add
+
+A second thread read the full texts of the peacemaking codes already in the
+dataset and tagged each peacemaking provision with a design feature. It found
+580 provisions from 39 nations.[^code-pass] These are machine readings, checked
+by script against the text and sampled by a second reviewer, but not yet
+reviewed by the lead author, so the counts are a guide only. Quotations from
+that pass stay private under the project's link-only rule for Tribal law; this
+note uses counts and paraphrase.
+
+| Feature | Provisions | Nations |
+| --- | --- | --- |
+| Placement of the forum (court division or separate) | 138 | 37 |
+| How a case enters (consent, referral, request) | 132 | 32 |
+| Return to court when no agreement is reached | 90 | 27 |
+| How peacemakers are selected | 77 | 24 |
+| Agreement entered as a judgment or order | 47 | 20 |
+| Peacemaker qualifications or training | 37 | 22 |
+| Confidentiality | 32 | 19 |
+| Matters covered | 29 | 18 |
+| Fees or compensation | 27 | 15 |
+| Appeal, review, or removal of a peacemaker | 18 | 13 |
+| Peacemaker decides only with all parties' consent | 17 | 11 |
+| Matters excluded | 14 | 8 |
+| Participation of non-members | 7 | 6 |
+
+A provision can carry several tags, and 127 provisions had none. Twenty-one
+passages had ceremonial or spiritual content and were listed without quotation
+or summary.[^code-pass]
+
+Patterns the code texts show (project analysis, from the machine summaries):
+
+- **A shared drafting family.** Several codes use nearly the same rule: a
+  peacemaker mediates by traditional methods and may decide a disputed matter
+  only if every party agrees to that authority, usually in writing. It appears
+  in the Kickapoo Traditional Tribe of Texas, Northern Arapaho, Sokaogon
+  Chippewa, Spirit Lake and Stockbridge-Munsee codes, and the
+  Alabama-Coushatta and Choctaw Nation of Oklahoma codes bar a peacemaker from
+  deciding a matter the parties cannot settle.[^consent-family] The likeness
+  suggests a common model, which this note has not traced.
+- **A way out of peacemaking.** The Northern Arapaho, Pit River and Kickapoo
+  codes let a party, witness or participant ask the Tribal Court to end or
+  limit peacemaking for harassment or similar conduct.[^way-out]
+- **Who pays.** The Siletz, Kickapoo, Sokaogon and Stockbridge-Munsee codes
+  set a small fee paid by the parties to compensate the peacemaker, while the
+  Coquille code makes Peacegivers unpaid volunteers.[^fees]
+- **No appeal, but a way to adjust.** The Siletz code bars appeal of a
+  Community Law Court judgment but lets a party move to modify it, and the
+  Mashpee ordinance makes an agreement final without appeal.[^no-appeal]
+- **Reaching beyond members.** The Nez Perce code lets its Peacemaker Court
+  serve people outside the Tribal Court's jurisdiction on minor matters, and
+  the Chitimacha code lets parties choose, with court approval, a peacemaker
+  who is not a Tribal member.[^beyond-members]
 
 ## 3. Program notes by region
 
@@ -115,10 +181,26 @@ How it runs, from the Judicial Branch's own documents:
 - **Agreements.** The peacemaker does not write the agreement for the
   parties: "The peacemaker is not allowed to write the agreement for
   you."[^nn-plan] Outcome summaries go back to the referring court.[^nn-plan]
-- **Volume.** In fiscal year 2022 the program reports 473 new cases and 615
-  handled, and in the fourth quarter of fiscal year 2025, 100 new cases and
-  97 pending.[^nn-fy22][^nn-fy25] These figures were read through a fetch
-  tool and should be re-checked against the reports before publication.
+- **Volume.** The Judicial Branch's quarterly reports to the Navajo Nation
+  Council, checked against the copies the Council posts, give these
+  Peacemaking Program figures:[^nn-fy25][^nn-fy26q1][^nn-fy26q2]
+
+  | Quarter | New cases | Closed | Pending at end | Clearance |
+  | --- | --- | --- | --- | --- |
+  | July to Sept. 2025 | 100 | 61 | 97 | 61% |
+  | Oct. to Dec. 2025 | 122 | 68 | 109 | 55% |
+  | Jan. to Mar. 2026 | 129 | 80 | 102 | 62% |
+
+  The spring 2026 report's narrative gives a different count for the same
+  quarter: 65 cases received, of which 14 were peacemaking, 44 Life Value
+  Engagement, 5 Diné Family Group Conferencing and 2 probate or quiet title,
+  with 56 referred and 9 walk-ins.[^nn-fy26q2] The report does not explain
+  the gap, so neither number should be used alone (project analysis). The
+  same report says 15 peacemakers were oriented and trained in January
+  2026.[^nn-fy26q2] For fiscal year 2022 the annual report gives 473 new
+  cases and 615 handled; that report is posted only on the Judicial Branch
+  site, which refuses direct downloads, so it was read through a fetch tool
+  and remains unchecked.[^nn-fy22]
 
 The program's own pages describe a ceremonial dimension; it is not recorded
 here.
@@ -196,6 +278,75 @@ Several other nations in the region have peacemaking codes in the dataset
 but their court pages, as opened, describe no program
 operations.[^analysis]
 
+The second sweep added Washington, Idaho, Nevada and more of California:
+
+- **Snoqualmie Indian Tribe.** The Judiciary Act names a Peacemaker Court
+  with jurisdiction over minor civil disputes between members, but the
+  section on its composition reads only "Reserved."[^snoqualmie] (project
+  analysis) A forum created on paper but not yet built.
+- **Skokomish Indian Tribe.** The sentencing code lets the court refer some
+  minor offenses to a traditional peacemaking forum that reports back; the
+  code does not describe the forum.[^skokomish]
+- **Habematolel Pomo of Upper Lake.** Associate Judges serve as peacemakers
+  (see section 2).[^hpul]
+- **Nevada.** No peacemaking process appeared on the court pages or codes of
+  the eight Nevada nations whose pages could be opened. A 2024 bar journal overview notes that many Nevada
+  nations use the shared Inter-Tribal Court of Appeals for Nevada.[^nv-lawyer]
+- **No process found.** Most Washington and Idaho court pages checked, and
+  several California ones, show no peacemaking process; the list is in the
+  second session log. Muckleshoot's court lists healing circles, not
+  described further.
+
+### Plains
+
+- **Spirit Lake Tribe.** Its Wodakota: Traditional Court is a peacemaking
+  forum despite the name; the code-text pass covers it (section 2.1).
+- **Chippewa Cree Tribe (Rocky Boy's).** A 2010 newspaper account describes
+  a plan, started by the Tribe's child support director, for elders to hear
+  family and child support disputes, with three leaders chosen from a pool
+  for each case.[^chippewa-cree] No code or later report was found, so its
+  current status is unknown.
+- **Standing Rock Sioux Tribe.** Its children's code lists participation in
+  "tribal peacemaking or other extrajudicial alternatives" as a possible
+  term of a juvenile disposition.[^standing-rock]
+- **Omaha Tribe of Nebraska.** Its domestic violence code bars the court from
+  ordering parties into mediation, restorative justice or peacemaking in
+  protection-order cases.[^omaha] See section 5.
+- **Sisseton-Wahpeton Oyate.** The judicial code has court-annexed mediation
+  and a rule that the court seek elders' advice on custom. This is closer to
+  alternative dispute resolution than to peacemaking (project
+  analysis).[^swo]
+- **Wind River.** A 2005 Wyoming bar journal article, read at abstract level,
+  says the Northern Arapaho Tribe "codified support for its traditional
+  dispute resolution" and the Eastern Shoshone Tribe had taken similar
+  action; the Eastern Shoshone code
+  was not found.[^baldwin]
+- **Not a Tribal program.** South Dakota's Oyate Court is a state and
+  community diversion program that uses a circle of Lakota elders.[^oyate]
+
+No peacemaking process appeared on the court pages of most other Plains
+nations checked; the list is in the second session log.
+
+### Southwest outside the Navajo Nation
+
+- **Pueblo of Isleta.** See the table in section 2. The 2020 resolution also
+  directs the court to include data and evaluations of the program in its
+  regular reports to the Tribal Council.[^isleta]
+- **Pueblo of Zuni.** The Customary Pretrial Conference is a judge-led
+  settlement step in criminal cases, not a peacemaker program (see
+  section 2).[^zuni]
+- **Pueblo of Acoma.** The code lets the court, with Council approval, create
+  mediation procedures and refer family matters to the Fiscales.[^acoma]
+- **Hopi Tribe.** The 1936 constitution leaves the adjustment of family
+  disputes to the villages, so much family dispute resolution may sit outside
+  the Tribal courts (project analysis).[^hopi] The 1993 amendments were not read.
+- **Mescalero Apache Tribe.** A 2012 handbook lists a mediation program in
+  the Tribal Court system; nothing later was found.[^mescalero]
+
+Laguna, Pascua Yaqui, Tohono O'odham, Gila River and the two Ute nations
+checked showed no peacemaking process on the pages opened. Salt River, White
+Mountain Apache, San Carlos, Jicarilla and Southern Ute could not be reached.
+
 ### Oklahoma, Texas and the South
 
 - **Chickasaw Nation.** The Peacemaking Court is a division of the District
@@ -247,6 +398,31 @@ support for member children.[^john-v-baker][^ccthita-2016]
   summarized in a national database, let the Tribal court use traditional
   dispute resolution in children's cases (Sitka) and refer cases to a
   Traditional Conflict Resolution Program (Kenaitze).[^ncorj]
+- **The state-court route.** Alaska Criminal Rule 11(i) lets state judges
+  send a criminal case to a tribe or community program for a sentencing
+  recommendation. Statewide procedures adopted in 2023 and amended in 2024
+  say that referral "requires the consent of the defendant, the prosecutor,
+  and any victim," and that the judge "is not bound by the
+  recommendation."[^ak-rjp] Individual plans exist with, among others, the
+  Native Village of Minto and the Nenana Peacemaking Circle; the Nenana plan
+  has the circle meet at least 15 days before sentencing.[^nenana][^minto]
+  NARF described the rule change in 2018.[^narf-ak-2018] A 2012 article
+  describes circle recommendations accepted by the Galena magistrate.[^hyslop]
+  (project analysis) In this route the Tribal process advises and the state
+  court keeps the final say.
+- **Regional organizations.** The regional nonprofits mostly support village
+  courts rather than run peacemaking themselves. Tanana Chiefs Conference
+  offers Tribal court assistance and training; the Association of Village
+  Council Presidents set a goal in 2015 of a court in each of its 56
+  villages; Kawerak lists circle peacemaking training among its legal
+  services; and the Alaska Native Justice Center notes that some Tribes
+  "convene Elders to decide conflicts."[^tcc][^avcp][^kawerak][^anjc]
+- **History.** A 1993 Alaska Judicial Council survey found, for example, that
+  in the Bering Straits region "Fifteen of the villages have adopted tribal
+  court ordinances; in eight, a court of elders also is established by
+  ordinance," and that in the Aleutian-Pribilof region "no community
+  currently has a functioning tribal court."[^ajc-1993] It is a snapshot of
+  1993, not current practice.
 
 ## 4. What the evaluations show, and what they do not
 
@@ -297,7 +473,9 @@ court responsible for program evaluations.[^grand-ronde-302]
   peacemakers favored keeping marriages together.[^coker-1999] Her 2006
   article returns to the question of screening and safety.[^coker-2006] The
   Navajo Plan's rule that domestic abuse matters must first be filed in court
-  is one response.[^nn-plan] Both articles were read at abstract level only.
+  is one response.[^nn-plan] The Omaha Tribe's code goes further and bars
+  the court from ordering peacemaking at all in protection-order
+  cases.[^omaha] Both Coker articles were read at abstract level only.
 - **Voluntariness under pressure.** The Red Hook study found that defendants
   sent by a judge did not always grasp that they could decline.[^lambson]
   Programs that take court or prosecutor referrals face the same risk
@@ -342,19 +520,25 @@ of agreements) without defining peacemaking itself.[^roadmap]
 
 ## 7. Gaps and next steps
 
-- **Not reached:** most Plains and Southwest nations, several California,
-  Puget Sound and Nevada nations, and Alaska regional organizations (see the
-  session log). A second sweep should start there.
+- **Not reached after the second sweep:** Salt River, White Mountain
+  Apache, San Carlos, Jicarilla, Southern Ute, Fort Belknap, Crow, Meskwaki,
+  Swinomish, Quinault, Pechanga, Iipay, Te-Moak, Duck Valley and most New
+  Mexico Pueblos (see the second session log). Several of these sites refused
+  automated requests; a person visiting them, or a request to the nation,
+  may do better.
 - **To read in full** (added to the project's single pull list): Yazzie
   1994, Zion 1983, Bluehouse & Zion 1993, Coker 1999 and 2006, Melton 1995,
   Valencia-Weber 1994, Goldberg 1997, and Nielsen & Zion 2005.[^yazzie][^zion][^bluehouse][^melton][^valencia][^nielsen-zion]
-- **To re-check:** the Navajo Judicial Branch figures and brochure, the
-  Prairie Band Potawatomi code at its new host, and the Tulalip figures.
+- **To re-check:** the Navajo fiscal year 2022 annual report and the 2025
+  brochure (the recent quarterly figures are now checked), the gap between
+  the two spring 2026 Navajo counts, the Prairie Band Potawatomi code at its
+  new host, the Tulalip figures, and the Hualapai Family Conciliation
+  Division (code read only from page images).
 - **Version history:** the Coos amendment and the Navajo Plan's 2013
   amendment are candidates for document-history records once the format in
   pull request #47 is merged.
-- **Codes:** the code-parsing thread will supply peacemaking provisions from
-  the full code texts; a follow-up will fold them into section 2.
+- **Codes:** the code-parsing pass is summarized in section 2.1; its
+  provisions need the lead author's review before any is cited in commentary.
 - **Consultation:** every program described here belongs to a nation that
   can correct or remove it (charter; requests process). Before any of this
   appears in commentary, the nations named should be asked.
@@ -371,7 +555,7 @@ of agreements) without defining peacemaking itself.[^roadmap]
 [^nn-code]: 7 N.N.C. §§ 409-413. Source record: `navajo-title-7-courts-and-procedures`.
 [^nn-brochure]: Judicial Branch of the Navajo Nation, Peacemaking Program, *Peacemaking Program* (brochure, Oct. 2025), [courts.navajo-nsn.gov](https://courts.navajo-nsn.gov/wp-content/uploads/2025/10/Peacemaking-Program-Brochure-OCT.2025.pdf) (accessed Nov. 21, 2026) (read through a page-fetch tool). Source record: `navajo-peacemaking-program-brochure-2025`.
 [^nn-fy22]: Judicial Branch of the Navajo Nation, *FY 2022 Annual Report* 5 (2022), [courts.navajo-nsn.gov](https://courts.navajo-nsn.gov/wp-content/uploads/2024/07/FY-2022-ANNUAL-REPORT-1.pdf) (accessed Nov. 21, 2026) (read through a page-fetch tool). Source record: `navajo-judicial-branch-annual-report-fy2022`.
-[^nn-fy25]: Judicial Branch of the Navajo Nation, *Fiscal Year 2025 Fourth Quarter Report* 12 (Oct. 2025), [courts.navajo-nsn.gov](https://courts.navajo-nsn.gov/wp-content/uploads/2025/10/Judicial-Branch-Quarterly-Report-Fall-25-Part-1.pdf) (accessed Nov. 21, 2026) (read through a page-fetch tool). Source record: `navajo-judicial-branch-quarterly-report-fy2025-q4`.
+[^nn-fy25]: Judicial Branch of the Navajo Nation, *Fiscal Year 2025 Fourth Quarter Report* 12 (Oct. 2025), [courts.navajo-nsn.gov](https://courts.navajo-nsn.gov/wp-content/uploads/2025/10/Judicial-Branch-Quarterly-Report-Fall-25-Part-1.pdf) (accessed Nov. 21, 2026); figures checked against the copy posted by the Navajo Nation Council, [navajonationcouncil.org](https://www.navajonationcouncil.org/wp-content/uploads/2025/10/20OCT2025_Judicial_Branch_Quarterly_Report-Fall_2025.pdf). Source record: `navajo-judicial-branch-quarterly-report-fy2025-q4`.
 [^chickasaw-page]: *Peacemaking Court*, Chickasaw Nation Judicial Department, [judicial.chickasaw.net](https://judicial.chickasaw.net/Courts/Peacemaking-Court.aspx) (last visited Nov. 21, 2026). Source record: `chickasaw-peacemaking-court-page`. The court's statute is the Peacemaking Court Act of 2003, Chickasaw Nation Code tit. 5, ch. 14; source record `chickasaw-title-5-courts-and-procedures`.
 [^choctaw-act]: Choctaw Nation of Oklahoma, Peacemaking Act §§ 4, 10(A), 11(D), 13, [choctawnation.com](https://www.choctawnation.com/wp-content/uploads/2022/04/peacemaking-act.pdf) (accessed Nov. 21, 2026). Source record: `choctaw-nation-peacemaking-act`.
 [^mashpee]: *Peacemakers*, Mashpee Wampanoag Tribe, Tribal Judiciary, [mashpeewampanoagtribe-nsn.gov](https://mashpeewampanoagtribe-nsn.gov/peacemakers) (last visited Nov. 21, 2026). Source record: `mashpee-peacemakers-page`. See also source record `mashpee-chapter-3-peacemaker-court`.
@@ -416,3 +600,38 @@ of agreements) without defining peacemaking itself.[^roadmap]
 [^melton]: Ada Pecos Melton, *Indigenous Justice Systems and Tribal Society*, 79 Judicature (No. 3, Nov.-Dec. 1995). Source record: `melton-indigenous-justice-systems-and-tribal-society-1995`.
 [^valencia]: Gloria Valencia-Weber, *Tribal Courts: Custom and Innovative Law*, 24 N.M. L. Rev. 225 (1994). Source record: `valencia-weber-1994-tribal-courts-custom-innovative-law`.
 [^nielsen-zion]: *Navajo Nation Peacemaking: Living Traditional Justice* (Marianne O. Nielsen & James W. Zion eds., 2005). Source record: `nielsen-zion-2005-navajo-nation-peacemaking`.
+[^code-pass]: Peacemaking provisions from the full texts of Tribal codes, court rules and ordinances (machine reading, Nov. 21, 2026; kept with the project's private working files, not published, because Tribal law is link-only). Counts computed for this note.
+[^consent-family]: Kickapoo Traditional Tribe of Texas Code ch. 4, §§ 4.3, 4.22 (2005); Northern Arapaho Code tit. 7, §§ 105(b), 203 (2016); Sokaogon Chippewa Community Code ch. 1, § 1.1.8(G) (2011); Spirit Lake Law and Order Code tit. 21, § 21-1-110(8), (10) (2014); Stockbridge-Munsee Tribal Code ch. TCT.04, § TCT.04.06; Alabama-Coushatta Comprehensive Codes of Justice tit. II, ch. I, § 105(A) (2014); Choctaw Nation Peacemaking Act § 5. Source records: `kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system`, `northern-arapaho-title-7-peacemaker-code`, `sokaogon-chapter-1-tribal-governance-2011`, `spirit-lake-title-21-wodakota`, `stockbridge-munsee-tct-04-peacemaker-ordinance`, `alabama-coushatta-title-2-peacemaker-code`, `choctaw-nation-peacemaking-act`.
+[^way-out]: Northern Arapaho Code tit. 7, §§ 401-402 (2016); Pit River Tribe, Title 8 Family/Children's Code ch. 15; Kickapoo Traditional Tribe of Texas Code ch. 4, § 4.40 (2005). Source records: `northern-arapaho-title-7-peacemaker-code`, `pit-river-title-8-chapter-15-peacemaker-program`, `kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system`.
+[^fees]: Siletz Tribal Code § 3.314 (amended 2025); Kickapoo Traditional Tribe of Texas Code ch. 4, § 4.35 (2005); Sokaogon Chippewa Community Code ch. 1, § 1.1.9(B)(1) (2011); Stockbridge-Munsee Tribal Code ch. TCT.04, § TCT.04.14; Coquille Tribal Ordinance ch. 655, § 655.300 (2005). Source records: `siletz-code-3-300-community-law-court-2025`, `kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system`, `sokaogon-chapter-1-tribal-governance-2011`, `stockbridge-munsee-tct-04-peacemaker-ordinance`, `coquille-ordinance-655-peacegiving`.
+[^no-appeal]: Siletz Tribal Code § 3.320 (amended 2025); Mashpee Wampanoag Tribe Ordinance ch. 3, § 2(f). Source records: `siletz-code-3-300-community-law-court-2025`, `mashpee-chapter-3-peacemaker-court`.
+[^beyond-members]: Nez Perce Tribal Code tit. 1, ch. 1-8, § 1-8-11 (2019); Chitimacha Comprehensive Codes of Justice tit. I-A, § 201(d). Source records: `nez-perce-title-1-chapter-1-8-peacemaker-court`, `chitimacha-title-1a-peacemaker-court`.
+
+[^nn-fy26q1]: Judicial Branch of the Navajo Nation, *Fiscal Year 2026 First Quarter Report* 10 (Jan. 26, 2026), [navajonationcouncil.org](https://www.navajonationcouncil.org/wp-content/uploads/2026/01/26JAN2026_Judicial_Branch_Quarterly_Report_Winter_Session_26.pdf) (accessed Nov. 21, 2026). Source record: `navajo-judicial-branch-quarterly-report-fy2026-q1`.
+[^nn-fy26q2]: Judicial Branch of the Navajo Nation, *Fiscal Year 2026 Second Quarter Report* 8-9 (Apr. 20, 2026), [navajonationcouncil.org](https://www.navajonationcouncil.org/wp-content/uploads/2026/04/20APR2026_Judicial_Branch_Second_Quarterly_Report-Spring_2026.pdf) (accessed Nov. 21, 2026). Source record: `navajo-judicial-branch-quarterly-report-fy2026-q2`.
+[^isleta]: Pueblo of Isleta, Res. No. 2020-028 (June 11, 2020) (Resolution Establishing Pueblo of Isleta Peacemaking Program), and Pueblo of Isleta Tribal Court Peacemaking Program Rules 3, 5, 6 (2020), [isletapueblo.com](https://www.isletapueblo.com/wp-content/uploads/2020/10/ResolutionforPeacemakingProgramandRules-100820.pdf) (accessed Nov. 21, 2026). Source record: `isleta-resolution-2020-028-peacemaking`.
+[^hpul]: Habematolel Pomo of Upper Lake Judicial Code § 5.2(B)(2)-(3) (Dec. 10, 2021), [hpultribe-nsn.gov](https://www.hpultribe-nsn.gov/wp-content/uploads/2022/07/2-1-Judicial-Code-2021-12-10.pdf) (accessed Nov. 21, 2026). Source record: `habematolel-pomo-judicial-code-2021`.
+[^zuni]: Zuni Tribal Code, R. Crim. P. 18 (rev. Aug. 2022), [ashiwi.org](https://ashiwi.org/Documents/ZuniTribalCodeAffirmed_8-22-22.pdf) (accessed Nov. 21, 2026). Source record: `zuni-tribal-code-2022`.
+[^santee]: Santee Sioux Nation Code tit. I, ch. 1, § 11, as summarized in Nat'l Ctr. on Restorative Just., *Pre-Trial Conference for Traditional Dispute Resolution*, [ncorj.org](https://ncorj.org/tribal-law/pre-trial-conference-for-traditional-dispute-resolution/) (accessed Nov. 21, 2026). Source record: `santee-code-title-1-sec-11-ncorj-summary`.
+[^snoqualmie]: Snoqualmie Tribal Council Act 3.1 (Act Establishing the Judiciary) §§ 5.0(c), 7.4 (2013). Source record: `snoqualmie-judiciary-act-3-1`. Read in the Tribe's own copy, [snoqualmietribe.us](https://snoqualmietribe.us/wp-content/uploads/TribalCodes/act3-1.pdf) (accessed Nov. 21, 2026).
+[^skokomish]: Skokomish Tribal Code § 9.11.030. Source record: `skokomish-stc-9-11-sentencing`. Read in the Tribe's own copy, [skokomish.org](http://www.skokomish.org/wp-content/uploads/2017/07/STC-9.11.pdf) (accessed Nov. 21, 2026).
+[^nv-lawyer]: *Nevada's Tribal Courts: Applicable Laws, Court Rules, and Contact Information*, Nev. Law., Feb. 2024, [nvbar.org](https://nvbar.org/wp-content/uploads/NevadaLawyer_February2024_NevadasTribalCourts.pdf) (accessed Nov. 21, 2026). Source record: `nevada-lawyer-2024-nevadas-tribal-courts`.
+[^chippewa-cree]: John Kelleher, *Traditional Peacemakers*, Havre Daily News (Jan. 6, 2010), [havredailynews.com](https://www.havredailynews.com/story/2010/01/06/local/traditional-peacemakers/404173.html) (accessed Nov. 21, 2026). Source record: `havre-daily-news-2010-traditional-peacemakers`.
+[^standing-rock]: Standing Rock Sioux Tribe Children's Code § 6-814(2), as summarized in Nat'l Ctr. on Restorative Just., *Peacemaking and Extrajudicial Alternatives: Disposition Agreement*, [ncorj.org](https://ncorj.org/tribal-law/peacemaking-and-extrajudicial-alternatives-disposition-agreement/) (accessed Nov. 21, 2026). Source record: `standing-rock-children-code-6-814-ncorj-summary`.
+[^omaha]: Omaha Tribe of Nebraska Code § 11-5-12, as summarized in Nat'l Ctr. on Restorative Just., *Court Cannot Order Restorative Justice in Domestic Violence Cases*, [ncorj.org](https://ncorj.org/tribal-law/court-cannot-order-restorative-justice-in-domestic-violence-cases/) (accessed Nov. 21, 2026). Source record: `omaha-code-11-5-12-ncorj-summary`.
+[^swo]: Sisseton-Wahpeton Oyate Judicial Code ch. 21, § 21-15 & Civ. R. 1(a) (as amended July 23, 2025), [swo-nsn.gov](https://swo-nsn.gov/media/wgwjlo2k/chapter-21-judicial-code-1.pdf) (accessed Nov. 21, 2026). Source record: `sisseton-wahpeton-judicial-code-chapter-21-2025`.
+[^baldwin]: Andrew W. Baldwin, *Peacemaker Court: The Traditional Alternative*, Wyo. Law., Dec. 2005 (abstract only). Source record: `baldwin-2005-peacemaker-court-wyoming-lawyer`.
+[^oyate]: C.J. Keene, *Oyate Court Program to Expand Reach*, S.D. Pub. Broad. (Jan. 10, 2023), [sdpb.org](https://www.sdpb.org/crime-courts/2023-01-10/oyate-court-program-to-expand-reach) (accessed Nov. 21, 2026). Source record: `sdpb-2023-oyate-court`.
+[^acoma]: Pueblo of Acoma Laws tit. 1, § 1-5-4 (2026 replacement), [puebloofacoma.org](https://www.puebloofacoma.org/wp-content/uploads/2026/06/Title-1-Preliminary-Matters-2026.pdf) (accessed Nov. 21, 2026). Source record: `acoma-tribal-code-title-1-2026`.
+[^hopi]: Constitution and By-laws of the Hopi Tribe art. III, § 2 (1936), [naair.arizona.edu](https://naair.arizona.edu/sites/default/files/constitution_hopi_0%20(1).pdf) (accessed Nov. 21, 2026). Source record: `hopi-constitution-1936-naair`.
+[^mescalero]: N.M. Tribal-State Judicial Consortium, *Mescalero Apache Tribal Court Handbook* (2012), [tribalstate.nmcourts.gov](https://tribalstate.nmcourts.gov/wp-content/uploads/sites/56/2023/11/mescalero-apache-tribal-handbook-2012.pdf) (accessed Nov. 21, 2026). Source record: `mescalero-apache-tribal-court-handbook-2012`.
+[^ak-rjp]: In re Statewide Restorative Justice Procedures in Criminal Proceedings (Amended) ¶¶ 3, 6 (Alaska Trial Cts. Aug. 16, 2024), [courts.alaska.gov](https://courts.alaska.gov/jord/docs/2024/statewide-rjp.pdf) (accessed Nov. 21, 2026). Source record: `alaska-trial-courts-statewide-restorative-justice-procedures-2024`.
+[^nenana]: Plan Adopted by the Nenana Peacemaking Circle and the Alaska Court System for Restorative Justice Referrals Under Alaska Criminal Rule 11(i) ¶¶ 3, 5, 8 (2020), [courts.alaska.gov](https://courts.alaska.gov/trialcourts/rjp/Nenana.pdf) (accessed Nov. 21, 2026). Source record: `alaska-court-system-nenana-peacemaking-circle-plan`.
+[^minto]: Plan Adopted by Native Village of Minto and the Alaska Court System for Restorative Justice Referrals Under Alaska Criminal Rule 11(i) (n.d.), [courts.alaska.gov](https://courts.alaska.gov/trialcourts/rjp/minto.pdf) (accessed Nov. 21, 2026). Source record: `alaska-court-system-minto-restorative-justice-plan`.
+[^narf-ak-2018]: Native American Rights Fund, Indigenous Peacemaking Initiative, *Article: Alaska State Court Acts to Advance Tribal Circle Sentencing* (Feb. 2018), [peacemaking.narf.org](https://peacemaking.narf.org/2018/02/article-alaska-state-court-acts-to-advance-tribal-circle-sentencing/) (accessed Nov. 21, 2026). Source record: `narf-ipi-2018-alaska-state-court-circle-sentencing`.
+[^hyslop]: Polly E. Hyslop, *Restorative Justice in Rural Alaska*, Alaska J. Disp. Resol. 17, 21 (2012). Source record: `hyslop-2012-restorative-justice-rural-alaska`.
+[^tcc]: *Tribal Court & Governance*, Tanana Chiefs Conference, [tananachiefs.org](https://www.tananachiefs.org/services/tribal-court-governance/) (last visited Nov. 21, 2026). Source record: `tcc-tribal-court-governance-page`.
+[^avcp]: Anna Rose MacArthur, *AVCP Aims to Establish Tribal Court in Every YK Village*, Alaska Pub. Media (Nov. 17, 2015), [alaskapublic.org](https://alaskapublic.org/2015/11/17/avcp-aims-to-establish-tribal-court-in-every-yk-village/) (accessed Nov. 21, 2026). Source record: `alaska-public-media-2015-avcp-tribal-court-every-village`.
+[^kawerak]: *Tribal Legal Services*, Kawerak, Inc., [kawerak.org](https://kawerak.org/community-services/tribal-legal-services/) (last visited Nov. 21, 2026). Source record: `kawerak-tribal-legal-services-page`.
+[^anjc]: *Tribal Justice Support*, Alaska Native Justice Center, [anjc.org](https://anjc.org/services/tribal-justice-support/) (last visited Nov. 21, 2026). Source record: `anjc-tribal-justice-support-page`.
+[^ajc-1993]: Alaska Judicial Council, *Resolving Disputes Locally: A Statewide Report and Directory* (Apr. 1993) (NCJ 143827), at PDF pp. 50, 78, [ojp.gov](https://www.ojp.gov/pdffiles1/Photocopy/143827NCJRS.pdf) (accessed Nov. 21, 2026). Source record: `alaska-judicial-council-1993-resolving-disputes-locally`.

@@ -1,0 +1,163 @@
+id: nottawaseppi-huron-band-of-the-potawatomi-michigan-gaming-compact
+kind: gaming-compact
+title: Nottawaseppi Huron Band of the Potawatomi, Michigan–State of Michigan Gaming Compact
+nations:
+- nottawaseppi-huron-band-of-the-potawatomi
+states:
+- MI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Nottawaseppi Huron Band of the Potawatomi, Michigan and the State of Michigan
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Nottawaseppi Huron Band of
+  the Potawatomi, Michigan and the State of Michigan as of Nov. 21, 2026: 1 original and 2 amendments. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1999-original
+  label: 1999 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1999-02-18'
+    published: '1999-02-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-4005
+    locator: 64 Fed. Reg. 8111 (Feb. 18, 1999)
+  source: compact-mi-nottawaseppi-huron-band-of-the-potawatomi-1999-02-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_1999.02.18_nottawaseppi_huron_band_of_potawatomi_tribal_state_gaming_compact.pdf
+    sha256: 31b088df2c86da7603c61882c31556960d2975aff237725a1f237180f8b2fa72
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 7(A), Dispute Resolution
+    summary: Section 7 requires written notice, a meeting within thirty days, a ninety-day period, and then arbitration
+      under the American Arbitration Association Commercial Arbitration rules before a three-attorney panel, with
+      each party bearing its own costs.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 16, Amendment; SECTION 12(B)
+    summary: The compact may be amended by mutual agreement, the receiving party must answer a proposed amendment
+      within thirty days, and agreed amendments go to the Secretary of the Interior for approval; Section 12(B)
+      separately allows either party to give notice to renegotiate at the twenty-year point and each five-year period.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-original
+  dates:
+    listed: '2009-10-08'
+    published: '2009-10-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-24301
+    locator: 74 Fed. Reg. 51875 (Oct. 8, 2009)
+  source: compact-mi-nottawaseppi-huron-band-of-the-potawatomi-2009-10-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_2009.10.08_nottawaseppi_huron_band_of_potawatomi_tribal_state_gaming_compact.pdf
+    sha256: 8d746d94df09b64c47a547741d58d8a77c2347d6055eb77ff7fd7de9882ac1b5
+    pages: 9
+  clauses:
+  - topic: renegotiation
+    locator: Section 12(B), as amended
+    summary: The amended Section 12(B) lets either party serve written notice of its right to renegotiate one year
+      before the compact expires and before each later five-year period.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-original
+    change: unchanged
+    summary: The 2009 amendment rewrites only Sections 3, 4(M)(5), 12(A) and 12(B), 17 and 18 as shown and says
+      all other provisions remain in effect, so Section 7 (written notice, 30-day meeting, 90-day period, then AAA
+      commercial arbitration with Michigan-licensed arbitrators) still governs; the amendment text is cut off in
+      Section 18.
+    locator_before: '7'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document is an amendment to the 1998 compact (executed July 23,
+      2009; the Interior letter is dated September 4, 2009). The excerpt of the amendment is cut off in Section
+      17(C)(3), so later amended sections beyond those shown (including whether Section 7 or Section 16 are amended)
+      cannot be confirmed; Section 12(A) makes the compact binding until October 31, 2030.'
+  - topic: renegotiation
+    compared_with: 1999-original
+    change: changed
+    summary: The 2009 amendment rewrites Section 12(B) to give either party a right to serve written notice to renegotiate
+      at least one year before the 2030 expiration and at each later five-year period, and provides that 25 U.S.C.
+      2710(d)(3) through (8) apply to successor compacts; the 1999 amendment procedure in Section 16 (mutual agreement,
+      a 30-day response and Secretarial approval) is not shown as amended.
+    locator_before: '16'
+    locator_after: 12(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document is an amendment to the 1998 compact (executed July 23,
+      2009; the Interior letter is dated September 4, 2009). The excerpt of the amendment is cut off in Section
+      17(C)(3), so later amended sections beyond those shown (including whether Section 7 or Section 16 are amended)
+      cannot be confirmed; Section 12(A) makes the compact binding until October 31, 2030.'
+- id: 2016-amendment
+  label: 2016 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-original
+  dates:
+    listed: '2016-12-12'
+    published: '2016-12-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-29744
+    locator: 81 Fed. Reg. 89504 (Dec. 12, 2016)
+  source: compact-mi-nottawaseppi-huron-band-of-the-potawatomi-2016-12-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508 Compliant 2016.12.12 Nottawaseppi Huron Band Gaming Compact.pdf
+    sha256: 4aaf73cf7551a1ed6b6337629f67a0a06bf4dd8648b91e2d8abc4798a31d5556
+    pages: 10
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-original
+    change: unchanged
+    summary: The 2016 Second Amendment amends only Section 17 and Section 18 as shown and says all other provisions
+      remain in effect, so the 1999 Section 7 dispute process (written notice, 30-day meeting, 90-day period, then
+      AAA commercial arbitration with Michigan-licensed arbitrators) still governs; the amendment text is cut off
+      in Section 18.
+    locator_before: 7(A)(2)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 document amends a compact already amended in 2009. The 2009 first
+      amendment rewrote Section 12(B) to add a periodic right to serve notice to renegotiate, which is not in the
+      earlier 1999 excerpts, so compare with that amendment too. The 2016 excerpt ends inside Section 18(B)(4),
+      so the full list of amended sections cannot be confirmed.'
+  - topic: renegotiation
+    compared_with: 1999-original
+    change: unchanged
+    summary: The 2016 amendment is made under Section 16 and does not list Section 16 among the sections it amends,
+      so the 1999 Section 16 amendment procedure (mutual agreement, a 30-day response and Secretarial approval)
+      still governs.
+    locator_before: '16'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 document amends a compact already amended in 2009. The 2009 first
+      amendment rewrote Section 12(B) to add a periodic right to serve notice to renegotiate, which is not in the
+      earlier 1999 excerpts, so compare with that amendment too. The 2016 excerpt ends inside Section 18(B)(4),
+      so the full list of amended sections cannot be confirmed.'
+found_in:
+- 2026-11-21-gaming-compact-histories

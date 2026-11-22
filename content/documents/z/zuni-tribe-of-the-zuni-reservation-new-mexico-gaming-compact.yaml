@@ -1,0 +1,71 @@
+id: zuni-tribe-of-the-zuni-reservation-new-mexico-gaming-compact
+kind: gaming-compact
+title: Zuni Tribe of the Zuni Reservation, New Mexico–State of New Mexico Gaming Compact
+nations:
+- zuni-tribe-of-the-zuni-reservation
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Zuni Tribe of the Zuni Reservation, New Mexico and the State of New Mexico
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Zuni Tribe of the Zuni Reservation,
+  New Mexico and the State of New Mexico as of Nov. 21, 2026: 1 disapproved compact and 1 original. The order, the
+  kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2014-disapproval
+  label: 2014 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2014-09-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-nm-zuni-tribe-of-the-zuni-reservation-2014-09-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2014.09.10_pueblo_of_zuni_tribal_state_gaming_compact.pdf
+    sha256: 45428d4408e347473fc505bbddd82f336c96c20e6036b232e52ea3e7c7d52cb4
+    pages: 34
+- id: 2015-original
+  label: 2015 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2015-08-14'
+    published: '2015-08-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-19969
+    locator: 80 Fed. Reg. 48910 (Aug. 14, 2015)
+  source: compact-nm-zuni-tribe-of-the-zuni-reservation-new-m-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.08.14_pueblo_of_zuni_tribal_state_gaming_compact.pdf
+    sha256: e78959c52e6086d7672a616a523a921c9b93c3719d0b21a527bf603f4bee3a98
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be amended only by a written instrument signed by the Native nation and the State and
+      approved by the Secretary of the Interior, with approval of the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

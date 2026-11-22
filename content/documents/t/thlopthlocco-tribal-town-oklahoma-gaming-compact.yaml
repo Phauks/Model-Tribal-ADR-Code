@@ -1,0 +1,54 @@
+id: thlopthlocco-tribal-town-oklahoma-gaming-compact
+kind: gaming-compact
+title: Thlopthlocco Tribal Town–State of Oklahoma Gaming Compact
+nations:
+- thlopthlocco-tribal-town
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Thlopthlocco Tribal Town and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Thlopthlocco Tribal Town
+  and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-10-03'
+    published: '2005-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-19733
+    locator: 70 Fed. Reg. 57617 (Oct. 3, 2005)
+  source: compact-ok-thlopthlocco-tribal-town-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.10.03 Thlopthlocco Tribal Town Tribal State
+      Gaming Compact.pdf
+    sha256: d9bb35a92567a1e52f57181fd4affb6da9db8f3600caf43b5a9f3d66270333d0
+    pages: 32
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION, paragraphs 1-3
+    summary: Representatives meet within thirty days of written notice; then either party may refer the dispute
+      to American Arbitration Association arbitration, and a federal district court may review the award de novo.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: The compact can be reopened only at the end of its term or a renewal, when either the Thlopthlocco
+      Tribal Town or the State, acting through its Governor, may request renegotiation of Parts 11A and 11E within
+      180 days.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

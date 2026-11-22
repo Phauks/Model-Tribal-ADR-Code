@@ -1,0 +1,152 @@
+id: yavapai-prescott-indian-tribe-arizona-gaming-compact
+kind: gaming-compact
+title: Yavapai-Prescott Indian Tribe–State of Arizona Gaming Compact
+nations:
+- yavapai-prescott-indian-tribe
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Yavapai-Prescott Indian Tribe and the State of Arizona under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Yavapai-Prescott Indian Tribe
+  and the State of Arizona as of Nov. 21, 2026: 1 original, 1 replacement and 1 amendment. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-08-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-az-yavapai-prescott-indian-tribe-1993-08-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_1993.08.18_yavapai-apache_nation_tribal_state_gaming_compact_2.pdf
+    sha256: c084132815ce36657d8d260df9d70e5df7c6b4c801a4985ae4c41367f82f98d3
+    pages: 74
+  clauses:
+  - topic: dispute-resolution
+    locator: Dispute resolution provisions, subsections (d)-(g) (section heading garbled in excerpt)
+    summary: Unresolved disputes after thirty days from notice go to arbitration in Arizona before arbitrators agreed
+      by the parties or, failing agreement, appointed with the American Arbitration Association; the decision is
+      final, binding and unappealable, and U.S. District Courts may hear actions to enjoin unlawful Class III gaming.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-replacement
+  label: 2003 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1993-original
+  dates:
+    listed: '2003-08-21'
+    published: '2003-08-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-21464
+    locator: 68 Fed. Reg. 50548 (Aug. 21, 2003)
+  source: compact-az-yavapai-prescott-indian-tribe-2003
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2003.08.21_yavapai-prescott_tribe_tribal_state_gaming_compact.pdf
+    sha256: ab3b2bdf1ab1ddd61a427fef3085c2f834e1acbd514f8c6e40f9378ac6a9991c
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(d)(4), State Gaming Agency denial of transfer
+    summary: A denied transfer of gaming device operating rights may be disputed under Section 15, but the excerpt
+      does not include the Section 15 steps.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Either party may propose amendments to listed regulatory provisions, and failed good-faith negotiations
+      go to mediation under Section 15(b) before the parties document any amendment; any provision may also be amended
+      at any time by mutual agreement in a signed writing.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The later compact provides a 10-day negotiation step with escalation, then non-binding CPR mediation
+      on request, then binding CPR arbitration on demand after 30 days, normally before three arbitrators. The earlier
+      compact went from a meeting within 10 days to arbitration in Arizona after 30 days, with one arbitrator or
+      a panel of three and a final, binding and unappealable decision.
+    locator_before: Section 15(a)-(f)
+    locator_after: Section 15(a)-(c)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: The 1993 Section 17 says amendments must be in writing and signed by both parties, and that the terms
+      stay in effect until amended, modified or terminated. The 2003 Section 17 keeps those rules in 17(c) and adds
+      a list of regulatory provisions the State or Tribe may propose to amend within 180 days, a 90-day good-faith
+      negotiation duty, mediation under Section 15(b) if talks fail, and Governor authority to agree to amendments.
+    locator_before: Section 17 (Amendments)
+    locator_after: Section 17(a)-(c)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2022-07-26'
+    published: '2022-07-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-16024
+    locator: 87 Fed. Reg. 44421 (July 26, 2022)
+  source: compact-az-yavapai-prescott-indian-tribe-2022-07-26
+  confidence: high
+  verification: bulk-import
+  note: The posted file holds only the approval letter of July 13, 2022 and the 2022 Agreement to Amend, not the
+    amended and restated compact it amends; that text has not yet been obtained (project thread "Build version history
+    for all documents").
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.07.26_yavapai_prescott_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: a67e9faf08df6a2e9c9f50cc8b29bcc3fb5adba329a6be9abedcdfde488b8d3c
+    pages: 21
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

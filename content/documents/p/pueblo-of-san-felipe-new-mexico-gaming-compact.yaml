@@ -1,0 +1,230 @@
+id: pueblo-of-san-felipe-new-mexico-gaming-compact
+kind: gaming-compact
+title: Pueblo of San Felipe, New Mexico–State of New Mexico Gaming Compact
+nations:
+- pueblo-of-san-felipe
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pueblo of San Felipe, New Mexico and the State of New Mexico under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pueblo of San Felipe, New
+  Mexico and the State of New Mexico as of Nov. 21, 2026: 1 original, 3 replacements and 1 amendment. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-03-22'
+    published: '1995-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6966
+    locator: 60 Fed. Reg. 15194 (Mar. 22, 1995)
+  source: compact-nm-pueblo-of-san-felipe-1995-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1995.03.22_pueblo_of_san_felipe_tribal_state_gaming_compact.pdf
+    sha256: 12b657731f6700f6fdde842050f8692296137f5b1c462037c358ee113bc6ab7f
+    pages: 43
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(1)
+    summary: The compact provides for written notice and a meeting of State and Native nation representatives within
+      thirty days; the excerpt ends before the later dispute steps.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1997-replacement
+  label: 1997 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1995-original
+  dates:
+    listed: '1997-08-29'
+    published: '1997-08-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-97-22989
+    locator: 62 Fed. Reg. 45867 (Aug. 29, 1997)
+  source: compact-nm-pueblo-of-san-felipe-1997-08-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1997.08.29_pueblo_of_san_felipe_tribal_state_gaming_compact.pdf
+    sha256: 2b79fc2742bc5e4f9f3c64c34732799322570f8ff57d0814dd05c5fd94f74166
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraphs A(1)-(5)
+    summary: The compact provides for written notice, a meeting of State and Native nation representatives within
+      thirty days, a notice to cease disputed gaming, and arbitration under the Commercial Arbitration Rules of
+      the American Arbitration Association with attorney arbitrators; the results are enforceable by an action in
+      any court of competent jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1997-replacement
+  dates:
+    listed: '2001-12-14'
+    published: '2001-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-30907
+    locator: 66 Fed. Reg. 64856 (Dec. 14, 2001)
+  source: compact-nm-pueblo-of-san-felipe-2001-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2001.12.14_pueblo_of_san_felipe_tribal_state_gaming_compact.pdf
+    sha256: 31c06f9b6f2ce1418ce18277ed5170d51bc87023c9af75989d09f09a0fe05a2f
+    pages: 25
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator; the results are final and binding and enforceable in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-replacement
+    change: changed
+    summary: 'The later compact provides a shorter track: the 30-day meeting of State and Native nation representatives
+      after notice is dropped, the notice to cease conduct may follow after 20 days instead of 90, the responding
+      party has 10 days instead of 30 to stop or invoke arbitration (with a right for the complaining party to invoke
+      arbitration if it does not act), arbitrators get discovery and open-hearing rules, and results are stated
+      to be final and binding. Both use attorney-arbitrators chosen by each side and a third.'
+    locator_before: Section 7(A)(1)-(5)
+    locator_after: Section 7(A)(1)-(5)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2007-07-05'
+    published: '2007-07-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-12904
+    locator: 72 Fed. Reg. 36717 (July 5, 2007)
+  source: compact-nm-pueblo-of-san-felipe-2007-07-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2007.07.05_pueblo_of_san_felipe_tribal_state_gaming_compact.pdf
+    sha256: 4c5d5bf02c80b442057fc988d8ada4fd6aa351e01085a1b6f484213f87539ea6
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator; the results are final and binding and enforceable in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: changed
+    summary: The later compact provides 30-day deadlines for the noticing party and then the responding party to
+      select arbitrators, and 30 days (earlier ten) for the two arbitrators to choose a third before the American
+      Arbitration Association acts; the notice, 20-day, 10-day response and binding-results steps are the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2001-replacement
+  - 2007-amendment
+  dates:
+    listed: '2016-04-04'
+    published: '2016-04-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-07620
+    locator: 81 Fed. Reg. 19236 (Apr. 4, 2016)
+  source: compact-nm-pueblo-of-san-felipe-new-mexico-2016
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508 Compliant 2016.04.04 Pueblo of San Felipe Compact.pdf
+    sha256: f2b32638467b3a6b2acf5e370cdbcec1f420d9041c60c6d28d54c3f6d59d017e
+    pages: 34
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and twenty days, the complaining party may issue a notice to cease the disputed
+      activity; the responding party may stop or invoke arbitration before a three-arbitrator panel (third arbitrator
+      named by the American Arbitration Association if needed), and the result is final and binding, enforceable
+      by injunctive action in any court of competent jurisdiction; other available remedies are preserved.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be changed only by a signed written instrument approved by the Secretary of the Interior,
+      and may not be amended without the express approval of the Pueblo of San Felipe, the Governor and the State
+      Legislature; no reopening trigger or negotiation timeline is stated.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: changed
+    summary: The later compact provides a two-year limit for invoking the procedure (counted from discovery, with
+      a two-year window for the State to raise pre-compact payment breaches), allows the parties to agree to one
+      arbitrator, and sets 30-day deadlines for each side's arbitrator and for the third (earlier ten days), with
+      the case proceeding before a single arbitrator if the responding party does not select one. The 20-day cease-conduct
+      step and binding results are the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A), 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories
