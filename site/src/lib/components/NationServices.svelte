@@ -20,7 +20,7 @@
 		>{/if}<CitationMarks marks={entry.citations} />
 {/snippet}
 
-<dl class="summary-list">
+<dl class="summary-list services">
 	{#each categories as category (category.id)}
 		<div>
 			<dt>{category.heading}</dt>
@@ -67,6 +67,19 @@
 </dl>
 
 <style>
+	/*
+	 * A service's name is a link, so its line has no plain text around the
+	 * markers, and WCAG 2.5.8 (target size) applies to each marker. Each one
+	 * gets a 24px box, so markers side by side or on the next line never
+	 * crowd one another.
+	 */
+	.services :global(.note-marker) {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		text-align: center;
+	}
+
 	.appeal-path {
 		list-style: none;
 		margin: 0 0 var(--space-3);
