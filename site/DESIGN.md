@@ -179,8 +179,7 @@ its fixed sections on each nation's page:
    nation, reviewed by the nation, approved by the nation), what that means,
    and "Is this about your nation? Make a request."
 3. What is distinctive here (below).
-4. At a glance: a small map of the states with a presence, then recognition,
-   states with a presence, federal region, then the government contacts card.
+4. At a glance: a small map of the states with a presence, then recognition, states with a presence, federal region, then the government contacts card.
 5. Courts and dispute resolution: each forum with its kind, source and date.
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
