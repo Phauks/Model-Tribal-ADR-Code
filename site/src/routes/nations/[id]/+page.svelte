@@ -159,9 +159,31 @@
 					<FactGroups groups={data.jurisdiction} />
 				</Collapsible>
 			{/if}
+
+			<!-- 7. Other nations in the same states: plain lists, never a ranking -->
+			{#if data.neighbors.length > 0}
+				<div class="no-print">
+					<Collapsible heading="Other nations in the same states" identifier="neighbors-heading">
+						{#each data.neighbors as entry (entry.state)}
+							<h3 class="neighbors-state">{entry.stateName}</h3>
+							{#if entry.nations.length > 0}
+								<ul class="neighbors">
+									{#each entry.nations as nation (nation.id)}
+										<li><a href="/nations/{nation.id}">{nation.name}</a></li>
+									{/each}
+								</ul>
+							{:else}
+								<p>
+									<a href={entry.link}>All {entry.count} other nations in {entry.stateName}</a>
+								</p>
+							{/if}
+						{/each}
+					</Collapsible>
+				</div>
+			{/if}
 		</div>
 
-		<!-- 7. Sources -->
+		<!-- 8. Sources -->
 		<div class="profile-sources">
 			<SourceList sources={data.sources} />
 		</div>
@@ -224,6 +246,19 @@
 		margin-top: 0;
 		padding-top: 0;
 		border-top: 0;
+	}
+
+	.neighbors-state {
+		font-size: var(--font-size-body);
+	}
+
+	.neighbors {
+		columns: 2 14rem;
+		column-gap: var(--space-5);
+	}
+
+	.neighbors li {
+		break-inside: avoid;
 	}
 
 	.profile-introduction,

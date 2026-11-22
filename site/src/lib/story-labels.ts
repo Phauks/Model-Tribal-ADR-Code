@@ -26,7 +26,7 @@ export const authorityLabels: Record<string, string> = {
 	'native-organization': 'A Native organization',
 	'co-published-with-nation': 'Published with the nation',
 	'member-author': 'A citizen of the nation, writing in their own name',
-	contributor: 'A person who shared it with the project',
+	contributor: 'A person who shared it with us',
 	'outside-recorder': 'An outside writer or recorder'
 };
 

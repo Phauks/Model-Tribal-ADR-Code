@@ -27,7 +27,7 @@
 	{:else}
 		<h1>Make a request</h1>
 		<p class="lead">
-			Ask the project to correct, restrict or remove material about a Native nation, ask to add a
+			Ask us to correct, restrict or remove material about a Native nation, ask to add a
 			nation that is missing, offer to contribute, or ask a question. No account is needed.
 		</p>
 

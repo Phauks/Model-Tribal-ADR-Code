@@ -32,6 +32,8 @@ export interface VersionView {
 	dates?: string;
 	/** What the version did to earlier ones, e.g. "Replaced the 1993 compact". */
 	relation?: string;
+	/** The earliest date the sources give for the version (YYYY-MM-DD), which places it on the timeline. */
+	date?: string;
 	/** The markers of the version's source and of its approval notice. */
 	citations: CitationMark[];
 }
@@ -116,6 +118,15 @@ export function documentHeading(title: string, names: string[]): string {
 	return rest;
 }
 
+/** The earliest of a version's recorded dates, leaving out the date it ended. */
+function earliestDate(version: DocumentVersion): string | undefined {
+	const dates = DATE_LABELS.filter(([field]) => field !== 'ended')
+		.map(([field]) => version.dates?.[field])
+		.filter((date): date is string => typeof date === 'string' && /^\d{4}(-\d{2}){0,2}$/.test(date))
+		.sort();
+	return dates[0];
+}
+
 function labelOf(version: DocumentVersion | undefined, fallback: string): string {
 	return version?.label ?? fallback;
 }
@@ -187,6 +198,7 @@ export function documentHistoryView(
 			link: textLink(version.source),
 			dates: datesPhrase(version),
 			relation: relationPhrase(version, byId),
+			date: earliestDate(version),
 			citations
 		};
 	});

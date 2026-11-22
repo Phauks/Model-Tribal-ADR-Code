@@ -15,14 +15,14 @@ const pages: SearchEntry[] = [
 	{ kind: 'page', title: 'Native nations', also: ['Nations', 'Tribes', 'Directory'], detail: 'Every nation and community, by first letter and by state', link: '/nations' },
 	{ kind: 'page', title: 'Map of Native Nations', also: ['Map', 'Bureau of Indian Affairs Regions', 'Land Areas'], detail: 'Nations by State, Bureau of Indian Affairs Regions and Land Areas', link: '/nations/map' },
 	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Accounts', 'Teachings'], detail: 'Stories about making peace, in the words of the nations and people who tell them', link: '/stories' },
-	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'The words the project defines', link: '/glossary' },
+	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'Defined terms, and how to use them', link: '/glossary' },
 	{ kind: 'page', title: 'Downloads', also: ['Book', 'PDF', 'EPUB', 'Data'], detail: 'The book and the data behind this site', link: '/downloads' },
 	{ kind: 'page', title: 'Acknowledgments', also: ['Credits', 'Land acknowledgment', 'Southern Paiute', 'Nuwuvi'], detail: 'Credits, and the land where this work was written', link: '/acknowledgments' },
 	{ kind: 'page', title: 'Changelog', also: ['Versions', 'What changed'], detail: 'What changed in each version', link: '/changelog' },
 	{ kind: 'page', title: 'Make a request', also: ['Correct', 'Remove', 'Report a problem', 'Add a nation', 'Contribute'], detail: 'Correct, restrict, remove, add or contribute', link: '/requests' },
-	{ kind: 'page', title: 'Help with the project', also: ['Join', 'Volunteer'], link: '/join' },
-	{ kind: 'page', title: 'Project charter', also: ['Charter', 'CARE principles', 'Commitments'], detail: 'How the project gathers, credits, publishes and protects knowledge', link: '/charter' },
-	{ kind: 'page', title: 'Licenses by material', also: ['License', 'Licenses', 'Copyright', 'CC0', 'CC BY'], detail: 'Which license covers each part of the project', link: '/licenses' },
+	{ kind: 'page', title: 'Help with this work', also: ['Join', 'Volunteer'], link: '/join' },
+	{ kind: 'page', title: 'Project charter', also: ['Charter', 'CARE principles', 'Commitments'], detail: 'How knowledge is gathered, credited, published and protected here', link: '/charter' },
+	{ kind: 'page', title: 'Licenses by material', also: ['License', 'Licenses', 'Copyright', 'CC0', 'CC BY'], detail: 'Which license covers each part of the site, the code and the book', link: '/licenses' },
 	{ kind: 'page', title: 'Read offline', also: ['Offline', 'Install'], detail: 'Save pages to read without a connection', link: '/offline' }
 ];
 

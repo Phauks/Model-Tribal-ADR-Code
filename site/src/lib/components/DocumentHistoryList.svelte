@@ -9,6 +9,7 @@
 	// status the sources do not record is left out rather than shown as "Unknown".
 	import type { DocumentHistoryView } from '#lib/server/document-history.ts';
 	import CitationMarks from './CitationMarks.svelte';
+	import DocumentTimeline from './DocumentTimeline.svelte';
 
 	let { documents }: { documents: (DocumentHistoryView & { heading?: string })[] } = $props();
 </script>
@@ -23,6 +24,7 @@
 				{document.kind}{#if document.inEffect}. In effect: {document.inEffect}{/if}.
 			</p>
 		{/if}
+		<DocumentTimeline versions={document.versions} />
 		<ol class="version-list">
 			{#each document.versions as version (version.id)}
 				<li>

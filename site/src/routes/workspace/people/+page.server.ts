@@ -140,7 +140,7 @@ export const actions: Actions = {
 		const role = readRole(form);
 		if (typeof role === 'string') return fail(400, { problem: role });
 		if (target.role === 'lead-author' && role.role !== 'lead-author' && (await countLeadAuthors(database)) <= 1) {
-			return fail(400, { problem: 'The project needs at least one lead author. Add another first.' });
+			return fail(400, { problem: 'There must be at least one lead author. Add another first.' });
 		}
 		await changeRole(database, target.identifier, role.role, role.nationIdentifier, person);
 		return { done: `${target.displayName}’s role is changed.` };
@@ -157,7 +157,7 @@ export const actions: Actions = {
 			return fail(400, { problem: 'You cannot remove your own access.' });
 		}
 		if (remove && target.role === 'lead-author' && (await countLeadAuthors(database)) <= 1) {
-			return fail(400, { problem: 'The project needs at least one lead author.' });
+			return fail(400, { problem: 'There must be at least one lead author.' });
 		}
 		await setRemoved(database, target.identifier, remove, person);
 		return {

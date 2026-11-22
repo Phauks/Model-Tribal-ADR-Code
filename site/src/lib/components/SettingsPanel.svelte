@@ -262,7 +262,7 @@
 			)}
 		{:else if id === 'glossary'}
 			<p class="hint">
-				Terms the project defines are marked with a dotted underline and link to their glossary
+				Terms defined in the glossary are marked with a dotted underline and link to their glossary
 				entries.
 			</p>
 			{@render choiceGroup(
