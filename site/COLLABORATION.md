@@ -26,9 +26,7 @@ source is cited.
 - **Readers and requesters never need an account.** The request form at
   `/requests` works without signing in and without JavaScript
   (docs/requests.md, principle 5).
-- **Content still changes only by pull request.** The workspace records who
-  approved which version of a record, handles requests, and manages access;
-  it does not edit the content files.
+- **Essays are edited here; other content changes by pull request.** Essays live in the private bucket and are written, saved and published in the workspace (see [Essays](#essays) and [docs/editing.md](../docs/editing.md)). Every other record still changes only by pull request; for those the workspace records who approved which version, handles requests, and manages access.
 - **Secrets live only in Cloudflare**
   ([decision record 0006](../docs/decisions/0006-secrets-only-in-cloudflare.md)).
 
@@ -104,6 +102,17 @@ A nation reviewer is how a nation's own office can approve its record
 (charter, commitment 4: "sent to nation", "reviewed by nation", "approved by
 nation"). The approval is recorded in the workspace; the record's
 `review.status` is then changed by pull request, citing the approval.
+
+## Essays
+
+Essays are kept in the private `sourceDocuments` bucket and edited at `/workspace/essays` ([decision record 0021](../docs/decisions/0021-edit-drafts-in-the-browser-keep-essays-in-the-bucket.md), [docs/editing.md](../docs/editing.md)).
+
+- **Levels.** Comment access lets a person read every saved version and compare them. Contribute access lets them edit and save versions. Full access also lets them publish a version, restore an earlier one as a new version, hold a publication back from readers, bring in the text from git, and start a new essay (full access to every essay). Each page and action checks the level on that essay with `requireDocumentLevel`, as every workspace page does.
+- **Versions never change.** Each save writes a new file, `essays/<id>/versions/<number>-<first 12 characters of the SHA-256>.md`, refused if the name is taken (`If-None-Match: *`), and adds a row to `essay_versions` and an entry to the activity log. Database triggers refuse any change to a saved version or deletion of one. A save names the version the writer started from; if someone saved after that, the save is refused and the editor shows both, so nobody's text is lost.
+- **Publishing** makes a saved version the essay's page. Before publishing, the site renders the version and refuses it if a citation key or glossary link points to nothing. A publication can be held back from readers (with a reason, for the log), for example while a nation's request is reviewed; it is never deleted.
+- **Pages.** The Worker renders essay pages on request from the newest listed publication (`/foundations/<id>` for Part I, `/essays/<id>` for the rest) and caches the result for each file and site build. Earlier publications stay readable from the page's version list.
+- **Git copy.** `/published-essays.json` lists every listed publication with its SHA-256, and `/published-essays/<id>/<number>.md` serves each one. The hourly workflow `.github/workflows/copy-published-essays.yml` copies new ones to the `published-essays` branch.
+- **Bringing in git text.** While other work still changes essays in `content/essays/` by pull request, the Essays page lists each essay whose git text differs from its newest version here. "Bring in" saves the git text as a new version; nothing is overwritten.
 
 ## Reviews and sign-offs
 
@@ -447,5 +456,5 @@ Sending real email is tried by hand once `SIGN_IN_EMAIL_FROM` is set.
 - The public "Requests log" page (docs/requests.md, "Public log").
 - Hiding material from the website directly from the workspace, before a pull
   request; for now hiding is a pull request.
-- Editing content from the website. Content changes stay pull requests, which
-  keeps history orderly.
+- Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly.
+- Live co-editing of an essay by several people at once, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

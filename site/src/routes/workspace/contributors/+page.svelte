@@ -64,8 +64,18 @@
 	<h2>Credits as they would be printed today</h2>
 	<p>
 		Welcomed contributors placed in a section, from the version each person last confirmed, in order
-		of family name. Changes a person has not confirmed are never used.
+		of family name. Changes a person has not confirmed are never used. Website credits show on the
+		public <a href="/contributors">Contributors</a> page at once.
 	</p>
+	{#if data.canExport}
+		<p>
+			<a class="button button-quiet" href="/workspace/contributors/credits.md" download>Download the book’s Credits page</a>
+		</p>
+		<p class="small muted">
+			Before each edition, ask everyone credited to check their credit, then download this file and add
+			it to the book’s front matter. It holds only credits chosen for the book.
+		</p>
+	{/if}
 	{#each creditSections as section (section)}
 		{@const entries = data.credits.filter((credit) => credit.section === section)}
 		{#if entries.length > 0}

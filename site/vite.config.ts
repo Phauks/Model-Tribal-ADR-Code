@@ -8,6 +8,7 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
+import { essaysInGit, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
 import {
 	essaysForReview,
 	glossary,
@@ -204,6 +205,33 @@ function sourceCitations(): Plugin {
 	};
 }
 
+const essayLibraryModule = 'virtual:essay-library';
+const resolvedEssayLibraryModule = `\0${essayLibraryModule}`;
+
+/**
+ * What the Worker needs to render essays, which live in the private bucket
+ * and are rendered on request (docs/editing.md): the full citation of every
+ * source record, so an essay can cite any of them; the glossary terms; and
+ * the essays as git holds them, which the workspace can bring into the
+ * bucket as a new version (src/lib/server/essay-library.ts).
+ */
+function essayLibrary(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:essay-library',
+		resolveId(identifier) {
+			return identifier === essayLibraryModule ? resolvedEssayLibraryModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedEssayLibraryModule) return undefined;
+			return [
+				`export const essayCitations = ${JSON.stringify(everyFullCitation())};`,
+				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
+				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`
+			].join('\n');
+		}
+	};
+}
+
 const buildModule = 'virtual:build';
 const resolvedBuildModule = `\0${buildModule}`;
 
@@ -253,6 +281,7 @@ export default defineConfig({
 		nationImages(),
 		publicCopiesList(),
 		sourceCitations(),
+		essayLibrary(),
 		buildInformation(),
 		sveltekit({
 			compilerOptions: {

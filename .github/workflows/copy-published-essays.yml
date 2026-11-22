@@ -1,0 +1,62 @@
+# Keeps a copy in git of every essay version published on the website
+# (docs/editing.md, "Git copy"). Essays live in the website's private storage;
+# this workflow reads the website's public list of published versions
+# (/published-essays.json), downloads the new ones, checks each file's SHA-256
+# and commits each to the published-essays branch, one commit per version.
+#
+# A branch of its own, not main: main changes only by pull request with checks
+# (decision record 0008), and a pull request opened by this workflow's token
+# would not start the checks. The branch can also be rewritten for a removal
+# request without touching main's history. Uses no secrets: everything it
+# reads is public on the website.
+name: copy published essays
+
+on:
+  schedule:
+    # Every hour, at 23 minutes past.
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: copy-published-essays
+  cancel-in-progress: false
+
+jobs:
+  copy:
+    name: Copy published essays to the published-essays branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SITE_URL: ${{ vars.SITE_URL || 'https://model-tribal-adr-code.trevordgoldsmith.workers.dev' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: tools
+          sparse-checkout: scripts/copy_published_essays.py
+          sparse-checkout-cone-mode: false
+      - name: Check out the published-essays branch, or start it
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads "https://github.com/${GITHUB_REPOSITORY}.git" published-essays >/dev/null; then
+            git clone --quiet --branch published-essays "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" copy
+          else
+            git init --quiet --initial-branch published-essays copy
+            git -C copy remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            printf '%s\n' \
+              '# Published essays' \
+              '' \
+              'A copy of every essay version published on the website, made every hour by .github/workflows/copy-published-essays.yml on main. Each essay has a folder with one file per publication, never changed, and a file at the top with its newest publication. Do not edit by hand: the website is where essays are written (docs/editing.md on main).' \
+              > copy/README.md
+            git -C copy add README.md
+            git -C copy commit --quiet -m "Start the copy of published essays"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Copy new publications
+        run: python3 tools/scripts/copy_published_essays.py --site "$SITE_URL" --folder copy --commit
+      - name: Push
+        run: git -C copy push --quiet origin published-essays

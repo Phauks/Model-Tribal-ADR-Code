@@ -36,6 +36,15 @@ declare module 'virtual:source-citations' {
 	export const sourceCitations: Record<string, string>;
 }
 
+declare module 'virtual:essay-library' {
+	/** The full citation, as HTML in the project's Indigo Book style, of every source record, by key. */
+	export const essayCitations: Record<string, string>;
+	/** Glossary terms by id, for every entry that has a page. */
+	export const essayTerms: Record<string, string>;
+	/** The essays in content/essays/ as git held them when the site was built, by id. */
+	export const essaysInGit: Record<string, string>;
+}
+
 declare module 'virtual:build' {
 	/** The git commit the site was built from, or empty when built on a computer. */
 	export const buildCommit: string;
