@@ -587,6 +587,22 @@ sup.citation {
  * outranks the token rules of both themes, whatever order the style sheets
  * load in.
  */
+:root:root[data-text-size='50'] {
+	--text-scale: 0.5;
+}
+
+:root:root[data-text-size='62.5'] {
+	--text-scale: 0.625;
+}
+
+:root:root[data-text-size='75'] {
+	--text-scale: 0.75;
+}
+
+:root:root[data-text-size='87.5'] {
+	--text-scale: 0.875;
+}
+
 :root:root[data-text-size='112.5'] {
 	--text-scale: 1.125;
 }
@@ -918,6 +934,16 @@ sup.citation {
 
 	thead {
 		display: table-header-group;
+	}
+
+	/*
+	 * On paper the two smallest text sizes print at 75 percent, about 10
+	 * points, so a page set to 50 percent on screen still prints readable
+	 * text.
+	 */
+	:root:root[data-text-size='50'],
+	:root:root[data-text-size='62.5'] {
+		--text-scale: 0.75;
 	}
 
 	/* Links back to the text mean nothing on paper; the source's number stays. */
