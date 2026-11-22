@@ -29,9 +29,7 @@ project's own choice, it says so.
   nation's own law-making process. Avoid "should" when addressing a nation;
   prefer "a nation may" or "Alternative A suits a nation that" (project
   choice).
-- **Source and analysis kept apart.** Say what a source says, then label the
-  project's own view, for example "(project analysis)" or "in the project's
-  view" ([citation-style.md](citation-style.md#rules-the-project-adds)).
+- **Source and analysis kept apart.** Say what a source says, then label the project's own view, for example "(project analysis)" or "in the project's view" ([citation-style.md](citation-style.md#rules-the-project-adds)). In essays and other text readers see in the book or on the website, put that view in an Analysis box instead (section 5), and never call the authors "the project" (Trevor, Nov. 22, 2026).
 
 ## 2. Plain language
 
@@ -108,21 +106,42 @@ chosen for clarity and consistency in text a nation may enact.
 - **Essays** may use a more discursive voice, but the same terminology,
   citation and labeling rules apply.
 
+### 5.1 How essays look in the book and on the website
+
+Trevor set these rules on Nov. 22, 2026, after reading the first print draft of Part I. They apply to every essay, front matter page and glossary text that readers see.
+
+| Topic | Rule |
+| --- | --- |
+| Structure | Break long text into sections (`##`) and subsections (`###`), not continuous blocks of text. A timeline entry is a paragraph that opens with its year in bold, such as `**1887. General Allotment Act.**`. |
+| Bullets | Use a list only when the content really is a list. Otherwise write paragraphs. |
+| Court cases | A case discussed as an entry goes in a case box. `:::: case KEY` opens it (the heading is the record's full citation), and its parts come in this order, each optional: `::: background` (the law and events behind it), `::: question`, `::: holding`, `::: quotes` (the court's words) and `::: treatment` (later treatment); `::::` closes it. A box that runs onto another page repeats its heading with "(continued)" and says "Continued on next page". The box shows the decision date from the record's `citation.issued`, the nations or peoples from its `tribes`, and for the Supreme Court of the United States the Court as it sat, the vote and the Majority and Dissent, with each opinion's writer in bold and the opinion named (opinion of the Court, concurring opinion, dissenting opinion), from the record's `supreme_court` block (Oyez, or the official report). |
+| Acts and laws | A statute, regulation or other law discussed as an entry goes in a law box: `:::: law KEY` with `::: summary` (printed "What it does"), `::: quotes` and `::: treatment`. |
+| Index | Cases by topic is back matter (`content/back-matter/cases-by-topic.md`); a link `[*Name* (1883)](#case-KEY)` prints the page of the case's box. |
+| Treatment | State negative treatment that matters (overruled, abrogated, superseded by statute, declined to extend, distinguished). Never name the citator, the database or its flag colors (KeyCite, Westlaw). Unverified leads stay in research notes. |
+| Quotations | A long quotation goes in a quote box (`::: quote`, or a plain `>` quotation inside `::: quotes`), set in italics without quotation marks. Mark text left out before or after with "...". Follow it with an attribution paragraph that is only the citation, such as `[@key, p. 17]`. Never use an em dash (—) in our own text or as an attribution mark; dashes stay only inside quoted sources. |
+| Analysis | The authors' own reading goes in `::: analysis` (or `::: analysis Title`), which prints as a box labeled "Analysis". |
+| Self-reference | Never "the project", "this essay" or "an essay" in reader-facing text, and no references to the charter. |
+| Case names | Italic, including short forms (*Montana*'s exception). A party's name used as a person or company stays roman. Citations follow the Indigo Book, with the court abbreviated and a docket number for an unreported decision, for example *Flying Horse v. United States*, No. 2017-1620 (Fed. Cir. June 13, 2017). |
+| Acronyms | When an acronym is introduced, the words it stands for are capitalized: Alternative Dispute Resolution (ADR). |
+| Territories | Never "the territories" as a group. Name each one discussed: American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the U.S. Virgin Islands. |
+| Notes | The book prints citations as endnotes at the end of each chapter (`notes: endnotes` in `pdf/book.yaml`), starting on a new page. |
+| Layout | Paragraphs have first-line indents, and lists, quotations and boxes are indented. A table row never splits across pages unless it is longer than a page. |
+
 ## 6. Mechanics
 
 | Topic | Rule | Basis |
 | --- | --- | --- |
 | Spelling | American English | Project choice |
 | Lists in a sentence | Use the serial comma: "negotiation, mediation, and arbitration" | Project choice, to avoid ambiguity in legal text. Existing project documents will be brought into line in a later pass |
-| Headings | Sentence case | Project choice |
-| Dashes | Prefer commas, colons, parentheses or a new sentence over dashes | Project choice |
+| Headings | Title case for chapter titles and section headings: capitalize the first and last words and every major word; lowercase articles, coordinating conjunctions and prepositions ("Civil Jurisdiction over Nonmembers") | Lead author, Nov. 22, 2026; The Chicago Manual of Style § 8.159 |
+| Dashes | Do not use the em dash (—) in our own text, including before a quote's source; use a comma, colon, parentheses or a new sentence. Dashes inside quoted text stay as the source has them | Lead author, Nov. 22, 2026 |
 | Section sign | "§ 2-104", "§§ 2-104 to 2-106", with a non-breaking space after the sign | Project choice |
 | Dates | "Nov. 20, 2026" in text and citations; YYYY-MM-DD in data files | Citation style; data model |
 | Numbers | Words for one to nine, numerals for 10 and above, numerals always for sections, dates, money and percentages | Project choice |
 | People | "They" for a person whose pronouns are unknown or for an unspecified person | Project choice |
 | Capitalization | As set in each glossary entry (for example Native, Indigenous, Tribal; lowercase sovereignty) | [terminology.md](terminology.md) |
 | Links | Descriptive link text, never "click here". On the website, link to the site's page (`/charter`, `/licenses`), never to GitHub unless the link's words say it goes to GitHub, and never name internal project documents such as decision records or `docs/` files | Project choice; Trevor, Nov. 22, 2026; [site/DESIGN.md](../site/DESIGN.md), section 6, "Links stay on the site" |
-| Acronyms | Allowed for named things (NARF, ISBN); link the first use in each piece to its glossary entry so the build writes it out | [terminology.md](terminology.md) |
+| Acronyms | Allowed for named things (NARF, ISBN); link the first use in each piece to its glossary entry so the build writes it out, with the words it stands for capitalized: "Alternative Dispute Resolution (ADR)" | [terminology.md](terminology.md); Trevor, Nov. 22, 2026 |
 
 ## 7. Files, encoding and code
 
@@ -222,7 +241,7 @@ Before opening a pull request with written content, check that:
 
 - [ ] each defined term's first use is linked with `[[id]]`, and no "avoid"
       term appears outside a quotation;
-- [ ] each factual claim cites a source, and project analysis is labeled;
+- [ ] each factual claim cites a source, and project analysis is labeled (in reader-facing essays, in an Analysis box, with cases in case boxes as section 5.1 sets out);
 - [ ] nations are named as they name themselves, in the present tense for
       living practice;
 - [ ] provisions use must, must not and may, name the actor, and use template

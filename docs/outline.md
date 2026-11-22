@@ -54,8 +54,7 @@ Keeping the code and its commentary in separate parts also keeps their licenses 
 
 | Chapter | Purpose | Status |
 | --- | --- | --- |
-| Federal Indian law and Tribal justice: a timeline | Eras of federal policy and how Tribal courts and peacemaking fit in them | Exists ([draft](../content/essays/i-legal-history-timeline.md)) |
-| Key cases in federal Indian law | Digest of the cases a drafter must know, those most relevant to dispute resolution first | Exists ([draft](../content/essays/i-key-cases-digest.md)) |
+| Federal Indian law and Tribal justice: a timeline | Eras of federal policy, with the cases a drafter must know in boxes in their place, and how Tribal courts and peacemaking fit in them (the key cases digest was merged into it on Nov. 22, 2026, so readers read one timeline) | Exists ([draft](../content/essays/i-legal-history-timeline.md)) |
 | Comparing model codes and dispute frameworks | Uniform acts, earlier model Tribal codes, compacts and international frameworks side by side | Exists ([draft](../content/essays/i-comparative-model-codes-and-frameworks.md)) |
 | Dispute resolution in Native nations today | What the nations' own published law shows, from the reviewed data | Gate 1 |
 | Peacemaking in nations' own words | How nations describe their own practice and build their programs, quoted, not summarized | Research exists; Gate 1 |

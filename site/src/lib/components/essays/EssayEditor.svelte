@@ -16,7 +16,7 @@
 	import { EditorView } from 'prosemirror-view';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
-	import { joinFrontMatter, splitFrontMatter } from '#lib/essays/syntax.ts';
+	import { boxParts, casePartOrder, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
 
 	let {
@@ -46,17 +46,32 @@
 
 	let host: HTMLDivElement | undefined = $state();
 	let view: EditorView | undefined;
-	let active = $state<{ marks: Set<string>; block: string; inside: Set<string>; caseSource: string | null; analysisTitle: string | null }>({
+	type Box = 'case_block' | 'law_block';
+	let active = $state<{
+		marks: Set<string>;
+		block: string;
+		inside: Set<string>;
+		box: Box | null;
+		boxSource: string | null;
+		boxParts: Set<string>;
+		analysisTitle: string | null;
+	}>({
 		marks: new Set(),
 		block: 'paragraph',
 		inside: new Set(),
-		caseSource: null,
+		box: null,
+		boxSource: null,
+		boxParts: new Set(),
 		analysisTitle: null
 	});
+	/** The parts the box around the cursor can take and does not have yet. */
+	const missingParts = $derived(
+		active.box ? (active.box === 'law_block' ? lawPartOrder : casePartOrder).filter((kind) => !active.boxParts.has(kind)) : []
+	);
 
 	/* Dialogs --------------------------------------------------------------- */
 
-	type Picker = 'citation' | 'case' | 'term' | 'link' | 'analysis-title';
+	type Picker = 'citation' | 'case' | 'law' | 'term' | 'link' | 'analysis-title';
 	let picker = $state<Picker | null>(null);
 	let pickerDialog: HTMLDialogElement | undefined = $state();
 	let query = $state('');
@@ -99,7 +114,7 @@
 		chosenKey = '';
 		shownText = '';
 		linkAddress = '';
-		if (kind === 'citation' || kind === 'case' || kind === 'term') void loadLibrary();
+		if (kind === 'citation' || kind === 'case' || kind === 'law' || kind === 'term') void loadLibrary();
 		if (kind === 'link' && view) {
 			const { from, to } = view.state.selection;
 			let existing = '';
@@ -110,7 +125,7 @@
 			linkAddress = existing;
 		}
 		if (kind === 'analysis-title') shownText = active.analysisTitle ?? '';
-		if (kind === 'case') chosenKey = active.caseSource ?? '';
+		if ((kind === 'case' && active.box === 'case_block') || (kind === 'law' && active.box === 'law_block')) chosenKey = active.boxSource ?? '';
 		tick().then(() => pickerDialog?.showModal());
 	}
 
@@ -163,12 +178,22 @@
 		};
 	}
 
+	function newPart(kind: BoxPart, text?: string): EditorNode {
+		const paragraph = schema.node('paragraph', null, text ? schema.text(text) : undefined);
+		return schema.node('case_part', { kind }, [kind === 'quotes' ? schema.node('blockquote', null, paragraph) : paragraph]);
+	}
+
 	function newCase(source: string): EditorNode {
 		return schema.node('case_block', { source }, [
-			schema.node('paragraph', null, schema.text('What the court held.')),
-			schema.node('case_part', { kind: 'quotes' }, [schema.node('blockquote', null, schema.node('paragraph'))]),
-			schema.node('case_part', { kind: 'treatment' }, [schema.node('paragraph')])
+			newPart('question', 'The question the court decided.'),
+			newPart('holding'),
+			newPart('quotes'),
+			newPart('treatment')
 		]);
+	}
+
+	function newLaw(source: string): EditorNode {
+		return schema.node('law_block', { source }, [newPart('summary', 'What the law does.'), newPart('quotes'), newPart('treatment')]);
 	}
 
 	/** The nearest enclosing node of a type, and its position. */
@@ -181,12 +206,23 @@
 		return null;
 	}
 
-	function addCasePart(kind: 'quotes' | 'treatment'): Command {
+	/** Adds a part to the case or law box around the cursor, in its place in the order of parts. */
+	function addBoxPart(kind: BoxPart): Command {
 		return (state, dispatch) => {
-			const found = enclosing(state, 'case_block');
+			const found = enclosing(state, 'case_block') ?? enclosing(state, 'law_block');
 			if (!found) return false;
-			const part = schema.node('case_part', { kind }, [schema.node('paragraph')]);
-			if (dispatch) dispatch(state.tr.insert(found.position + found.node.nodeSize - 1, part).scrollIntoView());
+			const order = found.node.type.name === 'law_block' ? lawPartOrder : casePartOrder;
+			let at = found.position + found.node.nodeSize - 1;
+			let offset = found.position + 1;
+			for (let index = 0; index < found.node.childCount; index += 1) {
+				const child = found.node.child(index);
+				if (child.type.name === 'case_part' && order.indexOf(child.attrs.kind) > order.indexOf(kind)) {
+					at = offset;
+					break;
+				}
+				offset += child.nodeSize;
+			}
+			if (dispatch) dispatch(state.tr.insert(at, newPart(kind)).scrollIntoView());
 			return true;
 		};
 	}
@@ -222,10 +258,15 @@
 			} else {
 				run(insertInline(schema.node('citation', { text: citation })));
 			}
-		} else if (picker === 'case') {
+		} else if (picker === 'case' || picker === 'law') {
 			const key = chosenKey.trim().replace(/^@/, '');
 			if (!key) return;
-			run(active.inside.has('case_block') ? setAttributes('case_block', { source: key }) : insertBlock(schema.nodes.case_block, { source: key }, () => newCase(key)));
+			const box: Box = picker === 'law' ? 'law_block' : 'case_block';
+			run(
+				active.box === box
+					? setAttributes(box, { source: key })
+					: insertBlock(schema.nodes[box], { source: key }, () => (box === 'law_block' ? newLaw(key) : newCase(key)))
+			);
 		} else if (picker === 'term') {
 			const id = chosenKey.trim();
 			if (!id) return;
@@ -263,6 +304,14 @@
 
 	/* The editor -------------------------------------------------------------- */
 
+	function partsOf(node: EditorNode | undefined): Set<string> {
+		const kinds = new Set<string>();
+		node?.forEach((child) => {
+			if (child.type.name === 'case_part') kinds.add(child.attrs.kind);
+		});
+		return kinds;
+	}
+
 	function describe(state: EditorState): void {
 		const marks = new Set<string>();
 		for (const name of ['em', 'strong', 'underline', 'code', 'link']) {
@@ -273,11 +322,14 @@
 		const block = parent.type.name === 'heading' ? `h${parent.attrs.level}` : parent.type.name;
 		const inside = new Set<string>();
 		for (let depth = start.depth; depth > 0; depth -= 1) inside.add(start.node(depth).type.name);
+		const boxFound = enclosing(state, 'case_block') ?? enclosing(state, 'law_block');
 		active = {
 			marks,
 			block,
 			inside,
-			caseSource: enclosing(state, 'case_block')?.node.attrs.source ?? null,
+			box: boxFound ? (boxFound.node.type.name as Box) : null,
+			boxSource: boxFound?.node.attrs.source ?? null,
+			boxParts: partsOf(boxFound?.node),
 			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null
 		};
 	}
@@ -488,11 +540,11 @@
 				<button type="button" class="tool" onclick={() => run(wrapInList(schema.nodes.ordered_list))}>Numbered list</button>
 			</div>
 			<div role="group" aria-label="Boxes">
-				<button type="button" class="tool" onclick={() => openPicker('case')}>{active.inside.has('case_block') ? 'Change case' : 'Case'}</button>
-				{#if active.inside.has('case_block')}
-					<button type="button" class="tool" onclick={() => run(addCasePart('quotes'))}>Add Quotes</button>
-					<button type="button" class="tool" onclick={() => run(addCasePart('treatment'))}>Add Treatment</button>
-				{/if}
+				<button type="button" class="tool" onclick={() => openPicker('case')}>{active.box === 'case_block' ? 'Change case' : 'Case'}</button>
+				<button type="button" class="tool" onclick={() => openPicker('law')}>{active.box === 'law_block' ? 'Change law' : 'Law'}</button>
+				{#each missingParts as kind (kind)}
+					<button type="button" class="tool" onclick={() => run(addBoxPart(kind))}>Add {boxParts[kind]}</button>
+				{/each}
 				<button type="button" class="tool" onclick={() => run(insertBlock(schema.nodes.quote_block))}>Quotation box</button>
 				<button type="button" class="tool" onclick={() => run(wrapIn(schema.nodes.blockquote))}>Quoted passage</button>
 				{#if active.inside.has('analysis_block')}
@@ -513,8 +565,8 @@
 		{/if}
 	</div>
 
-	{#if active.caseSource && mode === 'rich'}
-		<p class="small muted context">In a case: <code>{active.caseSource}</code>. Its heading on the page is this source’s full citation.</p>
+	{#if active.boxSource && mode === 'rich'}
+		<p class="small muted context">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</p>
 	{/if}
 
 	<div class="editor-area" hidden={mode !== 'rich'} bind:this={host}></div>
@@ -535,6 +587,12 @@
 				<div class="notice notice-problem" role="alert">
 					<p><strong>Publishing will be refused until these are fixed:</strong></p>
 					<ul>{#each preview.problems as problem (problem)}<li>{problem}</li>{/each}</ul>
+				</div>
+			{/if}
+			{#if preview.warnings?.length}
+				<div class="notice" role="note">
+					<p><strong>Check before publishing:</strong></p>
+					<ul>{#each preview.warnings as warning, index (index)}<li>{warning}</li>{/each}</ul>
 				</div>
 			{/if}
 			<article class="reading essay">
@@ -592,12 +650,12 @@
 			}}
 		>
 			<h2 id="picker-heading">
-				{#if picker === 'citation'}Cite a source{:else if picker === 'case'}Case block: choose the case{:else if picker === 'term'}Link a glossary term{:else if picker === 'link'}Link{:else}Analysis title{/if}
+				{#if picker === 'citation'}Cite a source{:else if picker === 'case'}Case box: choose the case{:else if picker === 'law'}Law box: choose the act or law{:else if picker === 'term'}Link a glossary term{:else if picker === 'link'}Link{:else}Analysis title{/if}
 			</h2>
-			{#if picker === 'citation' || picker === 'case' || picker === 'term'}
+			{#if picker === 'citation' || picker === 'case' || picker === 'law' || picker === 'term'}
 				<div class="field">
 					<label for="picker-search">Search</label>
-					<input id="picker-search" type="search" bind:value={query} autocomplete="off" placeholder={picker === 'term' ? 'peacemaking' : 'worcester georgia'} />
+					<input id="picker-search" type="search" bind:value={query} autocomplete="off" placeholder={picker === 'term' ? 'peacemaking' : picker === 'law' ? 'indian civil rights act' : 'worcester georgia'} />
 				</div>
 				{#if libraryProblem}<p class="field-error">{libraryProblem}</p>{/if}
 				<ul class="matches" aria-label="Matches">
