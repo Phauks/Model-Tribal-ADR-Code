@@ -21,6 +21,8 @@ const pages: SearchEntry[] = [
 	{ kind: 'page', title: 'Changelog', also: ['Versions', 'What changed'], detail: 'What changed in each version', link: '/changelog' },
 	{ kind: 'page', title: 'Make a request', also: ['Correct', 'Remove', 'Report a problem', 'Add a nation', 'Contribute'], detail: 'Correct, restrict, remove, add or contribute', link: '/requests' },
 	{ kind: 'page', title: 'Help with the project', also: ['Join', 'Volunteer'], link: '/join' },
+	{ kind: 'page', title: 'Project charter', also: ['Charter', 'CARE principles', 'Commitments'], detail: 'How the project gathers, credits, publishes and protects knowledge', link: '/charter' },
+	{ kind: 'page', title: 'Licenses by material', also: ['License', 'Licenses', 'Copyright', 'CC0', 'CC BY'], detail: 'Which license covers each part of the project', link: '/licenses' },
 	{ kind: 'page', title: 'Read offline', also: ['Offline', 'Install'], detail: 'Save pages to read without a connection', link: '/offline' }
 ];
 

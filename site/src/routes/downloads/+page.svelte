@@ -74,17 +74,14 @@
 		</li>
 	</ul>
 	<p>
-		Material that a nation has asked the project to restrict is never included in a download
-		(<a href="{repositoryLink}/blob/main/docs/data-model.md#sensitivity-flags">data model,
-			sensitivity flags</a
-		>).
+		Material that a nation has asked the project to restrict is never included in a download.
 	</p>
 
 	<h2>Until then</h2>
 	<p>
 		Every page of this site can be saved on your device and read without a connection. See
-		<a href="/offline">Read offline</a>. The files the site is built from are public in the
-		<a href={repositoryLink}>project’s repository</a>.
+		<a href="/offline">Read offline</a>. The files the site is built from are public on
+		<a href={repositoryLink}>GitHub</a>.
 	</p>
 </div>
 
