@@ -1,0 +1,40 @@
+id: kokhanok-village-constitution
+kind: constitution
+title: Constitution of the Kokhanok Village
+nations:
+- kokhanok-village
+jurisdictions:
+- level: tribal
+  tribe: kokhanok-village
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2004-01-28.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2004-text
+  label: 2004 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '2004-01-28'
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kokhanok-village/e1bb876931d6b68a.pdf
+    sha256: e1bb876931d6b68a7af2c49eda8a30fdcc1cba8803ef7d8a9d2f3dfd5f00bb53
+    pages: 9
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL, AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL, AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article IX (TRIBAL JUDICIARY)
+    summary: Article headed "TRIBAL JUDICIARY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

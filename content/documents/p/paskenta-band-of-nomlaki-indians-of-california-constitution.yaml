@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1998-04-18. Versions are only those found; others may exist.'
 versions:
 - id: 1993-text
-  label: CONSTITUTION of the PASKENTA BAND OF NOMLAKI INDIANS (1993)
+  label: 1993 constitution
   event: original
   status: superseded
   dates:
@@ -34,7 +34,7 @@ versions:
     summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
     verification: title-only
 - id: 1998-text
-  label: CONSTITUTION of the PASKENTA BAND OF NOMLAKI INDIANS (1998)
+  label: 1998 constitution
   event: revision
   status: unknown
   dates:
@@ -58,8 +58,7 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article IV (ELECTIONS)
-    summary: Requires the General Council to enact an election ordinance that prescribes procedures for
-      settling election disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

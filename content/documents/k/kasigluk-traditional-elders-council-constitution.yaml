@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2008-11. Versions are only those found; others may exist.'
 versions:
 - id: 2008-text
-  label: Traditional Constitutions and Bylaws of the Native Village of Kasigluk, Alaska (2008)
+  label: 2008 constitution (text 1)
   event: original
   status: superseded
   dates:
@@ -25,7 +25,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Type and dates read
     from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
 - id: 2008-text-2
-  label: Traditional Constitutions and Bylaws of the Native Village of Kasigluk, Alaska (2008)
+  label: 2008 constitution (text 2)
   event: edition
   status: unknown
   dates:
@@ -45,12 +45,9 @@ versions:
   clauses:
   - topic: peacemaking
     locator: Article VI (Governmental Powers)
-    summary: Makes the Traditional Council and Elders the final arbiter of disputes over the Constitution's
-      interpretation, and lets the Council create courts or conflict resolution mechanisms.
+    summary: Article headed "Governmental Powers"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - elders-council
   - topic: election-disputes
     locator: Article VII (Elections)
     summary: Article headed "Elections"; found by its heading and not yet read.

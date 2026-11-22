@@ -1,0 +1,77 @@
+id: the-osage-nation-constitution
+kind: constitution
+title: Constitution of The Osage Nation
+nations:
+- the-osage-nation
+jurisdictions:
+- level: tribal
+  tribe: the-osage-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2024.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2024-text
+  label: 2024 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2024'
+  source: constitution-the-osage-nation-2024-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/the-osage-nation/13e7f608ae48520c.pdf
+    sha256: 13e7f608ae48520cd499fc61080abf79cc31f2353a32728ab1ba84a98ea0c5fb
+    pages: 33
+  note: The text also prints adopted 2006-03-11, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article VIII (JUDICIARY)
+    summary: Article headed "JUDICIARY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VIII (JUDICIARY)
+    summary: Article headed "JUDICIARY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article VIII (JUDICIARY)
+    summary: Article headed "JUDICIARY"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XI (CITIZEN INITIATIVE, REFERENDUM AND RECALL)
+    summary: Article headed "CITIZEN INITIATIVE, REFERENDUM AND RECALL"; an AI reviewer confirmed it covers
+      this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XI (CITIZEN INITIATIVE, REFERENDUM AND RECALL)
+    summary: Article headed "CITIZEN INITIATIVE, REFERENDUM AND RECALL"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XII (REMOVAL)
+    summary: Article headed "REMOVAL"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XII (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XIII (SUFFRAGE AND ELECTIONS)
+    summary: Article headed "SUFFRAGE AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XIX (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

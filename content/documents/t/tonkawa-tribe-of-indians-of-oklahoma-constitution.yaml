@@ -1,0 +1,39 @@
+id: tonkawa-tribe-of-indians-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Tonkawa Tribe of Indians of Oklahoma
+nations:
+- tonkawa-tribe-of-indians-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: tonkawa-tribe-of-indians-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1938-04-21.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: 1938 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1938-04-21'
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/tonkawa-tribe-of-indians-of-oklahoma/bdc5bb82abf7dc57.html
+    sha256: bdc5bb82abf7dc57d147182ff6e604ffc51d1b8d02902dc710dcacb9ae179d22
+  note: 'The text prints an approval date (1938-03-16) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Dates read from another copy of the same text: adopted
+    1938-04-21. Dates read by rule from the certificates on the library page.'
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

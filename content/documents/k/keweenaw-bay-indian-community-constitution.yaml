@@ -1,0 +1,45 @@
+id: keweenaw-bay-indian-community-constitution
+kind: constitution
+title: Constitution of the Keweenaw Bay Indian Community, Michigan
+nations:
+- keweenaw-bay-indian-community
+jurisdictions:
+- level: tribal
+  tribe: keweenaw-bay-indian-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1936-11-07.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: 1936 constitution and bylaws
+  event: original
+  status: in-effect
+  dates:
+    adopted: '1936-11-07'
+    approved: '1936-12-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/keweenaw-bay-indian-community/0bbcfd45d1c6af92.html
+    sha256: 0bbcfd45d1c6af923f7eb5a3b31971e83bd3cde295a8891511f908b602460b81
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article IX (JUDICIAL BRANCH)
+    summary: Article headed "JUDICIAL BRANCH"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

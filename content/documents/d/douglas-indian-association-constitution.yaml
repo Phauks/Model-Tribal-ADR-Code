@@ -1,0 +1,30 @@
+id: douglas-indian-association-constitution
+kind: constitution
+title: Constitution of the Douglas Indian Association
+nations:
+- douglas-indian-association
+jurisdictions:
+- level: tribal
+  tribe: douglas-indian-association
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1941-11-24.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1941-text
+  label: 1941 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1941-11-24'
+  source: university-of-oklahoma-indian-reorganization-act-dougcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/douglas-indian-association/8673bb1c66f9b819.html
+    sha256: 8673bb1c66f9b819787315aa8bf561a24698433b65154f94b17d67a2e565a52c
+  note: 'The text prints an approval date (1941-05-29) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Dates read from another copy of the same text: adopted
+    1941-11-24. Dates read by rule from the certificates on the library page.'
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

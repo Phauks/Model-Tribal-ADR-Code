@@ -10,8 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2007-11-30. Versions are only those found; others may exist.'
 versions:
 - id: 1965-text
-  label: CONSTITUTION AND BY LAWS OF THE PRAIRIE BAND OF POTAWATOMI INDIANS as amended through General
-    Council resolution amending Section 2(b) (quorum), 1965
+  label: 1965 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -37,8 +36,7 @@ versions:
     summary: Article headed "RECALL"; found by its heading and not yet read.
     verification: title-only
 - id: 2007-text
-  label: Constitution of the Prairie Band Potawatomi Nation as amended through 2007 amendments, approved
-    December 6, 2007
+  label: 2007 constitution and bylaws, as amended
   event: edition
   status: in-effect
   dates:
@@ -64,14 +62,14 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article V (ENUMERATED POWERS OF TRIBAL COUNCIL)
-    summary: Empowers the Tribal Council to establish procedures governing resolution of disputes and
-      non-dispute proceedings.
+    summary: Article headed "ENUMERATED POWERS OF TRIBAL COUNCIL"; an AI reviewer confirmed it covers
+      this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article IX (ETHICAL RESPONSIBILITIES OF OFFICIALS)
-    summary: Sets the Election Board's timing for announcing results and provides that tied election outcomes
-      are decided by coin toss or drawing straws.
+    summary: Article headed "ETHICAL RESPONSIBILITIES OF OFFICIALS"; an AI reviewer confirmed it covers
+      this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

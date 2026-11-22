@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1989-02-25. Versions are only those found; others may exist.'
 versions:
 - id: 1969-text
-  label: CONSTITUTION OF THE SEMINOLE NATION OF OKLAHOMA (1969)
+  label: 1969 constitution
   event: original
   status: superseded
   dates:
@@ -30,7 +30,7 @@ versions:
     summary: Article headed "REMOVAL AND THE FILLING OF VACANCIES"; found by its heading and not yet read.
     verification: title-only
 - id: 1989-text
-  label: CONSTITUTION OF THE SEMINOLE NATION OF OKLAHOMA (AS AMENDED) as amended through As amended, 1989-02-25
+  label: 1989 constitution, as amended
   event: edition
   status: unknown
   dates:
@@ -53,8 +53,7 @@ versions:
     verification: title-only
   - topic: election-disputes
     locator: Article X (ELECTIONS)
-    summary: Has an election board determine candidates' eligibility, register voters, count ballots and
-      conduct any runoff election.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

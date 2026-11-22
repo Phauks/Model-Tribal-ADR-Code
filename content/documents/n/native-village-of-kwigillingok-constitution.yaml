@@ -1,0 +1,34 @@
+id: native-village-of-kwigillingok-constitution
+kind: constitution
+title: Constitution of the Native Village of Kwigillingok
+nations:
+- native-village-of-kwigillingok
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-kwigillingok
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1949-10-24.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1949-text
+  label: 1949 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    approved: '1949-10-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-native-village-of-kwigillingok-1949-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-kwigillingok/651c08037c9e681b.pdf
+    sha256: 651c08037c9e681b72e03fb195d9fb1ccd86424203cfd4e36487903b63debaaf
+    pages: 7
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

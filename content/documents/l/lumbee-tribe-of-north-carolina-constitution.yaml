@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2003-03-08. Versions are only those found; others may exist.'
 versions:
 - id: 1950-text
-  label: Constitution and By-Laws of the Native Village of Buckland Alaska (1950)
+  label: 1950 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -28,8 +28,7 @@ versions:
   note: Marked superseded because a later dated text was found (project inference). Dates read by rule
     from the certificates on the library page.
 - id: 2003-text
-  label: CONSTITUTION OF THE LUMBEE TRIBE OF NORTH CAROLINA as amended through Article I, Section 2 amended,
-    2003-03-08
+  label: 2003 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -54,13 +53,12 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article IX (Judiciary)
-    summary: Vests judicial power in a Supreme Court and any inferior courts the council establishes.
+    summary: Article headed "Judiciary"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article IX (Judiciary)
-    summary: Gives the Supreme Court original jurisdiction over all cases and controversies under the
-      constitution and ordinances.
+    summary: Article headed "Judiciary"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

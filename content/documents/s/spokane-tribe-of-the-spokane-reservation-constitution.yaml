@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2021. Versions are only those found; others may exist.'
 versions:
 - id: 1951-text
-  label: CONSTITUTION AND BYLAWS (1951)
+  label: 1951 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -29,8 +29,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 2020-text
-  label: CONSTITUTION OF THE SPOKANE TRIBE-SPOKANE RESERVATION as amended through Article VI, Sec. 4,
-    Initiative, 2020-10-24
+  label: 2020 constitution, as amended
   event: edition
   status: superseded
   dates:
@@ -54,8 +53,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 2021-text
-  label: CONSTITUTION OF THE SPOKANE TRIBE-SPOKANE RESERVATION as amended through Article X, Sec. 4, Referendum
-    2021-003, 2021-06-12
+  label: 2021 constitution, as amended
   event: edition
   status: in-effect
   dates:

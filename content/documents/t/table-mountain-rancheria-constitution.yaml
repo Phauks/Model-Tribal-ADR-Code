@@ -1,0 +1,43 @@
+id: table-mountain-rancheria-constitution
+kind: constitution
+title: Constitution of the Table Mountain Rancheria
+nations:
+- table-mountain-rancheria
+jurisdictions:
+- level: tribal
+  tribe: table-mountain-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1980.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1980-text
+  label: 1980 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1980'
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/table-mountain-rancheria/8de7c5102871ecbd.pdf
+    sha256: 8de7c5102871ecbdd76d7d8e1f8693628843c99f6b911b4845ce0be86b9ef9ca
+    pages: 36
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (REFERENDUM, IMITATIVE AMD RECALL)
+    summary: Article headed "REFERENDUM, IMITATIVE AMD RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

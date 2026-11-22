@@ -1,0 +1,32 @@
+id: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+kind: constitution
+title: Constitution of the Little Shell Tribe of Chippewa Indians of Montana
+nations:
+- little-shell-tribe-of-chippewa-indians-of-montana
+jurisdictions:
+- level: tribal
+  tribe: little-shell-tribe-of-chippewa-indians-of-montana
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2015-11-11.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2015-text
+  label: 2015 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2015-11-11'
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/little-shell-tribe-of-chippewa-indians-of-montana/7df97237f58e8f8c.pdf
+    sha256: 7df97237f58e8f8cfc39739a61d98909b0420fef797dc199daae86f3091b8a94
+    pages: 6
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

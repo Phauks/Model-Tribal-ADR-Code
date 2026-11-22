@@ -1,0 +1,30 @@
+id: sitka-tribe-of-alaska-constitution
+kind: constitution
+title: Constitution of the Sitka Tribe of Alaska
+nations:
+- sitka-tribe-of-alaska
+jurisdictions:
+- level: tribal
+  tribe: sitka-tribe-of-alaska
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1938-10-11.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: 1938 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1938-10-11'
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/sitka-tribe-of-alaska/2cfed40904a1df14.html
+    sha256: 2cfed40904a1df142b565eea847a79d118fa755457d24422167b34774b71856e
+  note: 'The text prints an approval date (1938-07-13) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Dates read from another copy of the same text: adopted
+    1938-10-11. Dates read by rule from the certificates on the library page.'
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

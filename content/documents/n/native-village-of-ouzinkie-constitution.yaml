@@ -1,0 +1,28 @@
+id: native-village-of-ouzinkie-constitution
+kind: constitution
+title: Constitution of the Native Village of Ouzinkie
+nations:
+- native-village-of-ouzinkie
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-ouzinkie
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date.
+  Versions are only those found; others may exist.'
+versions:
+- id: undated-text
+  label: Undated constitution
+  event: original
+  status: unknown
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-ouzinkie/b1e1ca80ab904392.pdf
+    sha256: b1e1ca80ab904392b1c293aa53247a25e6d53eda975b42af0c82afd9af776d39
+    pages: 8
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

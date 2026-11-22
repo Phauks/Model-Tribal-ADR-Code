@@ -1,0 +1,37 @@
+id: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada
+nations:
+- moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1942-02-13.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1942-text
+  label: 1942 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    approved: '1942-02-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation/80d6602271a112a4.html
+    sha256: 80d6602271a112a435c3aa7a33d4faa31210f6d4ecdfca18681191eeb3f2a4df
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

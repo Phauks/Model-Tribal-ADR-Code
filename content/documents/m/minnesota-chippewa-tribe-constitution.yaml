@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 date
   to 2006-01-05. Versions are only those found; others may exist.'
 versions:
 - id: 1936-text
-  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  label: 1936 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -32,7 +32,7 @@ versions:
       read.
     verification: title-only
 - id: 1964-text
-  label: REVISED CONSTITUTION AND BYLAWS OF THE MINNESOTA CHIPPEWA TRIBE, MINNESOTA (1964)
+  label: 1964 constitution and bylaws
   event: revision
   status: superseded
   dates:
@@ -60,8 +60,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1972-text
-  label: REVISED CONSTITUTION AND BYLAWS OF THE MINNESOTA CHIPPEWA TRIBE, MINNESOTA as amended through
-    Amendment II, 1972-09-08
+  label: 1972 constitution and bylaws, as amended (1972-09-08)
   event: edition
   status: superseded
   dates:
@@ -90,8 +89,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 1972-text-2
-  label: Revised Constitution and Bylaws of the Minnesota Chippewa Tribe, Minnesota as amended through
-    Amendment II, 1972-11-06
+  label: 1972 constitution and bylaws, as amended (1972-11-06)
   event: edition
   status: superseded
   dates:
@@ -129,8 +127,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.88, by script); not yet read side by side.
 - id: 2006-text
-  label: MCT Constitution (Revised Constitution and Bylaws of the Minnesota Chippewa Tribe) as amended
-    through Amendment IV, 2006-01-05
+  label: 2006 constitution and bylaws, as amended
   event: edition
   status: in-effect
   dates:
@@ -151,8 +148,7 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article IV (Tribal Elections)
-    summary: Makes each reservation business committee the sole judge of its voters' qualifications, and
-      requires a uniform election ordinance covering election procedures.
+    summary: Article headed "Tribal Elections"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

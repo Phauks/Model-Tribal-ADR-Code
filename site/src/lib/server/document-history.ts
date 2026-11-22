@@ -38,7 +38,7 @@ export interface DocumentHistoryView {
 	versions: VersionView[];
 }
 
-const DATE_LABELS: [keyof DocumentVersion['dates'], string][] = [
+const DATE_LABELS: [keyof NonNullable<DocumentVersion['dates']>, string][] = [
 	['signed', 'signed'],
 	['adopted', 'adopted'],
 	['submitted', 'submitted'],
@@ -80,9 +80,9 @@ function sentenceCase(text: string): string {
 }
 
 function datesPhrase(version: DocumentVersion): string | undefined {
-	const parts = DATE_LABELS.filter(([field]) => version.dates?.[field]).map(
-		([field, label]) => `${label} ${version.dates[field]}`
-	);
+	if (!version.dates) return 'No date found in the text';
+	const dates = version.dates;
+	const parts = DATE_LABELS.filter(([field]) => dates[field]).map(([field, label]) => `${label} ${dates[field]}`);
 	return parts.length > 0 ? sentenceCase(parts.join('; ')) : undefined;
 }
 

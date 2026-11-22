@@ -1,0 +1,43 @@
+id: kalispel-indian-community-of-the-kalispel-reservation-constitution
+kind: constitution
+title: Constitution of the Kalispel Indian Community of the Kalispel Reservation
+nations:
+- kalispel-indian-community-of-the-kalispel-reservation
+jurisdictions:
+- level: tribal
+  tribe: kalispel-indian-community-of-the-kalispel-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2019-11-08.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2019-text
+  label: 2019 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2019-11-08'
+  source: constitution-kalispel-indian-community-of-the-kalispel-reservation-2019-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kalispel-indian-community-of-the-kalispel-reservation/4cd6a2e773350896.pdf
+    sha256: 4cd6a2e773350896e975145894e6560da9bf270bd88d962434260ea665c004ba
+    pages: 25
+  note: The text also prints adopted 1967-07-27, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal from Office)
+    summary: Article headed "Vacancies and Removal from Office"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article VII (] — Amendments)
+    summary: Article headed "] — Amendments"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

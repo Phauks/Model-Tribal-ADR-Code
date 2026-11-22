@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 date
   to 2017. Versions are only those found; others may exist.'
 versions:
 - id: 1936-text
-  label: CONSTITUTION AND BY-LAWS (1936)
+  label: 1936 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -37,8 +37,7 @@ versions:
     summary: Article headed "DISPUTES BETWEEN VILLAGES"; found by its heading and not yet read.
     verification: title-only
 - id: 1936-text-2
-  label: Constitution and By-laws of the Hopi Tribe of Arizona as amended through Amendment III, FEB 14
-    1590 (as printed)
+  label: 1936 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -80,8 +79,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.07, by script); not yet read side by side.
 - id: 1993-text
-  label: Constitution and By-laws of the Hopi Tribe as amended through Amendment No. X (Proposed Amendment
-    G), DEC 3D 1993
+  label: 1993 constitution and bylaws, as amended (1993)
   event: edition
   status: superseded
   dates:
@@ -124,7 +122,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.10, by script); not yet read side by side.
 - id: 1993-text-2
-  label: Constitution and By-laws of the Hopi Tribe as amended through Amendment E, 1993-12-07
+  label: 1993 constitution and bylaws, as amended (1993-12-07)
   event: edition
   status: superseded
   dates:
@@ -154,8 +152,7 @@ versions:
     verification: inferred
     note: The script could not split one of the two texts into articles; compare by hand.
 - id: 2017-text
-  label: Constitution and By-Laws of the Hopi Tribe as amended through 2017 Secretarial election (date
-    unclear in OCR; ballot deadline May 25, 2017)
+  label: 2017 constitution and bylaws, as amended
   event: edition
   status: in-effect
   dates:
@@ -187,12 +184,9 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article VIII (DISPUTES BETWEEN VILLAGES)
-    summary: Lets the Tribal Council hear disputes between villages at a special meeting requested by
-      a village's Kikmongwi, then decide by majority vote.
+    summary: Article headed "DISPUTES BETWEEN VILLAGES"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - council-hearing
   changes:
   - topic: dispute-resolution
     compared_with: 1993-text-2

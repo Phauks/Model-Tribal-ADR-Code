@@ -1,0 +1,63 @@
+id: village-of-iliamna-constitution
+kind: constitution
+title: Constitution of the Village of Iliamna
+nations:
+- village-of-iliamna
+jurisdictions:
+- level: tribal
+  tribe: village-of-iliamna
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 texts with no legible date.
+  Versions are only those found; others may exist.'
+versions:
+- id: undated-text
+  label: Undated constitution (text 1)
+  event: other
+  status: unknown
+  source: constitution-village-of-iliamna-undated-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/village-of-iliamna/5d979a64258ea40e.pdf
+    sha256: 5d979a64258ea40eb39a13dac13058124c4b5ec1305bd603555d93f6a44d2fe1
+    pages: 9
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL. AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL. AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XIII (TRIBAL COURT)
+    summary: Article headed "TRIBAL COURT"; found by its heading and not yet read.
+    verification: title-only
+- id: undated-text-2
+  label: Undated constitution (text 2)
+  event: other
+  status: unknown
+  source: constitution-village-of-iliamna-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/village-of-iliamna/a4b4a4eb3f088fc1.pdf
+    sha256: a4b4a4eb3f088fc10ed425f96ba94a0ee9430d0fe6e5aba8138a2477bee337d2
+    pages: 9
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (_vacanctes)
+    summary: Article headed "_vacanctes"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

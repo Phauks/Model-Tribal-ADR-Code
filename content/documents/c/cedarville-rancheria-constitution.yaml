@@ -1,0 +1,32 @@
+id: cedarville-rancheria-constitution
+kind: constitution
+title: Constitution of the Cedarville Rancheria, California
+nations:
+- cedarville-rancheria
+jurisdictions:
+- level: tribal
+  tribe: cedarville-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date.
+  Versions are only those found; others may exist.'
+versions:
+- id: undated-text
+  label: Undated constitution and bylaws
+  event: original
+  status: unknown
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cedarville-rancheria/950ee2d6fa76e977.html
+    sha256: 950ee2d6fa76e97730e6ee1ab7cdad20c34b983a0ecbd86e43242981c39b6446
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

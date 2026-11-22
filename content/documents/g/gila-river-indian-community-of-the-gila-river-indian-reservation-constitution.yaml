@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1974-01-28. Versions are only those found; others may exist.'
 versions:
 - id: 1946-text
-  label: CONSTITUTION AND BYLAWS (1946)
+  label: 1946 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,7 +33,7 @@ versions:
     summary: Article headed "VACANCIES"; found by its heading and not yet read.
     verification: title-only
 - id: 1960-text
-  label: CONSTITUTION AND BYLAWS (1960)
+  label: 1960 constitution and bylaws
   event: edition
   status: superseded
   dates:
@@ -52,14 +52,12 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article VIII (TENURE OF OFFICE)
-    summary: Sets three-year terms for the Chief Judge and Associate Judges, who are elected from the
-      Community-at-large.
+    summary: Article headed "TENURE OF OFFICE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article IX (VACANCIES)
-    summary: Requires the Council to hold a special election to fill a vacancy in the office of Chief
-      Judge or Associate Judge.
+    summary: Article headed "VACANCIES"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -82,8 +80,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.22, by script); not yet read side by side.
 - id: 1974-text
-  label: CONSTITUTION AND BYLAWS OF THE GILA RIVER INDIAN COMMUNITY OF ARIZONA as amended through Amendment
-    II, 1974-01-28
+  label: 1974 constitution and bylaws, as amended
   event: revision
   status: unknown
   dates:

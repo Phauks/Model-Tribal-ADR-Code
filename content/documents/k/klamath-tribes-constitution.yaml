@@ -1,0 +1,58 @@
+id: klamath-tribes-constitution
+kind: constitution
+title: Constitution of the Klamath Tribes
+nations:
+- klamath-tribes
+jurisdictions:
+- level: tribal
+  tribe: klamath-tribes
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2013-09-26.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2013-text
+  label: 2013 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2013-09-26'
+  source: constitution-klamath-tribes-2013-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/klamath-tribes/f0b6070b40256271.pdf
+    sha256: f0b6070b40256271ea1846b39b89d29224b99cc3382e235d9f593de87eab8ae6
+    pages: 16
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (JUDICIAL BRANCH)
+    summary: Article headed "JUDICIAL BRANCH"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: peacemaking
+    locator: Article V (JUDICIAL BRANCH)
+    summary: Article headed "JUDICIAL BRANCH"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VIII (NOMINATIONS AND ELECTIONS OF TRIBAL COUNCIL)
+    summary: Article headed "NOMINATIONS AND ELECTIONS OF TRIBAL COUNCIL"; an AI reviewer confirmed it
+      covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL OF TRIBAL COUNCIL MEMBERS AND FILLING)
+    summary: Article headed "REMOVAL OF TRIBAL COUNCIL MEMBERS AND FILLING"; found by its heading and
+      not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XI (SUPERVISOR OVER ELECTIONS)
+    summary: Article headed "SUPERVISOR OVER ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

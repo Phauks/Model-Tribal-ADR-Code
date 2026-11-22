@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1980-12-19. Versions are only those found; others may exist.'
 versions:
 - id: 1938-text
-  label: CONSTITUTION AND BY-LAWS (1938)
+  label: 1938 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1980-text
-  label: CONSTITUTION AND BYLAWS OF THE OTTAWA TRIBE OF OKLAHOMA (1980)
+  label: 1980 constitution and bylaws (Bureau of Indian Affairs file)
   event: edition
   status: superseded
   dates:
@@ -58,41 +58,31 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article VII (GRIEVANCE COMMITTEE)
-    summary: Creates a five-member grievance committee to resolve tribal members' grievances about tribal
-      officials and hear related complaints.
+    summary: Article headed "GRIEVANCE COMMITTEE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
   - topic: dispute-resolution
     locator: Article X (ensure that the individuals rights of tribal members which have)
-    summary: Lets the grievance committee investigate officer misconduct and hear rights and constitutional
-      disputes, with the Ottawa Council making final decisions.
+    summary: Article headed "ensure that the individuals rights of tribal members which have"; an AI reviewer
+      confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
   - topic: dispute-resolution
     locator: Article VIII (ELECTIONS)
-    summary: Requires the election ordinance to set a procedure for handling protests and resolving election
-      disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article VIII (ELECTIONS)
-    summary: Requires the election ordinance to set a procedure for handling protests and resolving election
-      disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
-    summary: Lets each body remove its members for cause, and has the grievance committee investigate
-      and hear charges against officials before deciding whether they are cleared or removed.
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
-    - fact-finding
   - topic: removal-and-recall
     locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
     summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
@@ -103,12 +93,9 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article I (DUTIES OF OFFICERS)
-    summary: Lets a member refused access to council records ask the grievance committee to order that
-      access be provided.
+    summary: Article headed "DUTIES OF OFFICERS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
   changes:
   - topic: dispute-resolution
     compared_with: 1938-text
@@ -126,7 +113,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.04, by script); not yet read side by side.
 - id: 1980-text-2
-  label: Constitution and Bylaws of the Ottawa Tribe of Oklahoma (1980)
+  label: 1980 constitution and bylaws (website copy)
   event: edition
   status: in-effect
   dates:
@@ -149,35 +136,28 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article VII (GRIEVANCE COMMITTEE)
-    summary: Establishes a five-member grievance committee, elected by the Ottawa Council, that shall
-      resolve grievances.
+    summary: Article headed "GRIEVANCE COMMITTEE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article X (ensure that the individuals rights of tribal members which have)
-    summary: Has the grievance committee hear and investigate complaints and disputes, with final decisions
-      made by the Ottawa Council.
+    summary: Article headed "ensure that the individuals rights of tribal members which have"; an AI reviewer
+      confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - fact-finding
-    - council-hearing
   - topic: dispute-resolution
     locator: Article VIII (ELECTIONS)
-    summary: Requires the election ordinance to set a procedure for handling protests and resolving election
-      disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article VIII (ELECTIONS)
-    summary: Requires the election ordinance to set a procedure for handling protests and resolving election
-      disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article IX (REMOVAL RECALL AND FORFEITURE)
-    summary: Lets charges against an official be heard by the grievance committee, which decides whether
-      the accused is cleared or removed from office.
+    summary: Article headed "REMOVAL RECALL AND FORFEITURE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

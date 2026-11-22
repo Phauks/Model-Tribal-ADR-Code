@@ -1,0 +1,37 @@
+id: puyallup-tribe-of-the-puyallup-reservation-constitution
+kind: constitution
+title: Constitution of the Puyallup Tribe of the Puyallup Reservation
+nations:
+- puyallup-tribe-of-the-puyallup-reservation
+jurisdictions:
+- level: tribal
+  tribe: puyallup-tribe-of-the-puyallup-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1936-03-11.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: 1936 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    approved: '1936-03-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/puyallup-tribe-of-the-puyallup-reservation/d2a9a8c219c56b54.html
+    sha256: d2a9a8c219c56b54547bc51a2cc3a9bd59938b5290917b2adf407dbf31ac9c35
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

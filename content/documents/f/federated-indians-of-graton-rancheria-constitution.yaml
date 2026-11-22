@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2012-07-21. Versions are only those found; others may exist.'
 versions:
 - id: 1997-text
-  label: CONSTITUTION OF THE FEDERATED INDIANS OF GRATON RANCHERIA (1997)
+  label: 1997 constitution
   event: original
   status: superseded
   dates:
@@ -34,8 +34,7 @@ versions:
     summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
     verification: title-only
 - id: 2013-text
-  label: Constitution of the Federated Indians of Graton Rancheria as amended through Amended Constitution,
-    2012-07-21
+  label: 2013 constitution, as amended
   event: revision
   status: in-effect
   dates:
@@ -69,8 +68,7 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article IX (DISPUTE RESOLUTION)
-    summary: Reserves to the General Council the power to adopt, modify or confirm legislation that creates
-      a court or other dispute resolution system.
+    summary: Article headed "DISPUTE RESOLUTION"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

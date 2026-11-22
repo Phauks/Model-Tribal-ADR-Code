@@ -1,0 +1,36 @@
+id: native-village-of-unga-constitution
+kind: constitution
+title: Constitution of the Native Village of Unga
+nations:
+- native-village-of-unga
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-unga
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1989-09-30.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1989-text
+  label: 1989 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1989-09-30'
+  source: constitution-native-village-of-unga-1989-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-unga/0fa337365daf5123.pdf
+    sha256: 0fa337365daf5123f815417ce09aeeea76b00946d352ca4bcb4ee10d77fe9a39
+    pages: 7
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article II (TERRITORIAL JURISDICTION)
+    summary: Article headed "TERRITORIAL JURISDICTION"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

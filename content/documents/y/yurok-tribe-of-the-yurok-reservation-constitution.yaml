@@ -1,0 +1,49 @@
+id: yurok-tribe-of-the-yurok-reservation-constitution
+kind: constitution
+title: Constitution of the Yurok Tribe of the Yurok Reservation, California
+nations:
+- yurok-tribe-of-the-yurok-reservation
+jurisdictions:
+- level: tribal
+  tribe: yurok-tribe-of-the-yurok-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1993-11-19.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1993-text
+  label: 1993 constitution
+  event: original
+  status: in-effect
+  dates:
+    adopted: '1993-11-19'
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/yurok-tribe-of-the-yurok-reservation/5386db5cbdda42bc.pdf
+    sha256: 5386db5cbdda42bce8a884b44151e138dbc38671d66d56429e268cd6fe513414
+    pages: 22
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article III (­ Election of Yurok Tribal Council)
+    summary: Article headed "­ Election of Yurok Tribal Council"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article VII (­ TRIBAL JUSTICE SYSTEM)
+    summary: Article headed "­ TRIBAL JUSTICE SYSTEM"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (­ RECALL OF OFFICIALS)
+    summary: Article headed "­ RECALL OF OFFICIALS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article XIV (­ EFFECTIVE DATE AND INITIAL ELECTION)
+    summary: Article headed "­ EFFECTIVE DATE AND INITIAL ELECTION"; found by its heading and not yet
+      read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

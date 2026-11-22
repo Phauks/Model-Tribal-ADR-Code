@@ -1,0 +1,56 @@
+id: mashpee-wampanoag-tribe-constitution
+kind: constitution
+title: Constitution of the Mashpee Wampanoag Tribe
+nations:
+- mashpee-wampanoag-tribe
+jurisdictions:
+- level: tribal
+  tribe: mashpee-wampanoag-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2004-06-26.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2004-text
+  label: 2004 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2004-06-26'
+  source: constitution-mashpee-wampanoag-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/mashpee-wampanoag-tribe/cdfb4d6f11ccc68d.pdf
+    sha256: cdfb4d6f11ccc68dc289bc62fb033f62b2d754ea16cb1ce03c5d8949a4096b93
+    pages: 18
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article X (of this Constitution. Until that time)
+    summary: Article headed "of this Constitution. Until that time"; an AI reviewer confirmed it covers
+      this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article X (of this Constitution. Until that time)
+    summary: Article headed "of this Constitution. Until that time"; an AI reviewer confirmed it covers
+      this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article X (of this Constitution. Until that time)
+    summary: Article headed "of this Constitution. Until that time"; an AI reviewer confirmed it covers
+      this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article X (reasonable compensation, as fixed from time to)
+    summary: Article headed "reasonable compensation, as fixed from time to"; an AI reviewer confirmed
+      it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,53 @@
+id: timbisha-shoshone-tribe-constitution
+kind: constitution
+title: Constitution of the Timbisha Shoshone Tribe
+nations:
+- timbisha-shoshone-tribe
+jurisdictions:
+- level: tribal
+  tribe: timbisha-shoshone-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1986-01-25.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1986-text
+  label: 1986 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1986-01-25'
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/timbisha-shoshone-tribe/d80fdc215a9d729e.pdf
+    sha256: d80fdc215a9d729e7eb817b700ba36b3e5af77c6c5b5c4d2a44a7af0fd2b1cbf
+    pages: 35
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: sovereign-immunity
+    locator: Article V (Powers)
+    summary: Article headed "Powers"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VI (Elections)
+    summary: Article headed "Elections"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (Vacancies)
+    summary: Article headed "Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (Removal and Recall)
+    summary: Article headed "Removal and Recall"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XIII (Judiciary)
+    summary: Article headed "Judiciary"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

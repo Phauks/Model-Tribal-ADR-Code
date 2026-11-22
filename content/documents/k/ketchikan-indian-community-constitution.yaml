@@ -1,0 +1,37 @@
+id: ketchikan-indian-community-constitution
+kind: constitution
+title: Constitution of the Ketchikan Indian Community
+nations:
+- ketchikan-indian-community
+jurisdictions:
+- level: tribal
+  tribe: ketchikan-indian-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1939-12-20.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: 1939 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    approved: '1939-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-ketcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/ketchikan-indian-community/7ea893f9237be9eb.html
+    sha256: 7ea893f9237be9ebd1125249131c2417e760417021aed2fd2b3ca1530a356e9f
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

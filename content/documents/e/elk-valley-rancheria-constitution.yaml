@@ -1,0 +1,44 @@
+id: elk-valley-rancheria-constitution
+kind: constitution
+title: Constitution of the Elk Valley Rancheria, California
+nations:
+- elk-valley-rancheria
+jurisdictions:
+- level: tribal
+  tribe: elk-valley-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1994-12-27.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1994-text
+  label: 1994 constitution
+  event: original
+  status: unknown
+  dates:
+    approved: '1994-12-27'
+    effective: '1994-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/elk-valley-rancheria/4c1f46f0e8a7668a.html
+    sha256: 4c1f46f0e8a7668ab6a4b975614ac7c6ef73d83e58299b9dff867347ba3b7584
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: sovereign-immunity
+    locator: Article V (POWERS OF TRIBAL COUNCIL)
+    summary: Article headed "POWERS OF TRIBAL COUNCIL"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,50 @@
+id: blue-lake-rancheria-constitution
+kind: constitution
+title: Constitution of the Blue Lake Rancheria, California
+nations:
+- blue-lake-rancheria
+jurisdictions:
+- level: tribal
+  tribe: blue-lake-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2001.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2001-text
+  label: 2001 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2001'
+  source: constitution-blue-lake-rancheria-2001-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/blue-lake-rancheria/f9a451e2672b7660.pdf
+    sha256: f9a451e2672b766023f007ab749107f5932253afbf4e0b9ce909e63a0d024627
+    pages: 23
+  note: The text also prints adopted 1994-02-11, approved 1994-03-07, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article 1 (] - TERRITORY AND JURISDICTION shall be amended to read as follows)
+    summary: Article headed "] - TERRITORY AND JURISDICTION shall be amended to read as follows"; an AI
+      reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

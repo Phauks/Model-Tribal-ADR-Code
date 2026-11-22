@@ -1,0 +1,39 @@
+id: ak-chin-indian-community-constitution
+kind: constitution
+title: Constitution of the Ak-Chin Indian Community
+nations:
+- ak-chin-indian-community
+jurisdictions:
+- level: tribal
+  tribe: ak-chin-indian-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2005-04-16.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2005-text
+  label: 2005 articles of association, as amended
+  event: edition
+  status: unknown
+  dates:
+    adopted: '2005-04-16'
+  source: constitution-ak-chin-indian-community-2005-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ak-chin-indian-community/a0fbca5617d02276.pdf
+    sha256: a0fbca5617d02276a9b1d44d1ca2b5308205447c940450f6ddf2e05e62bb100a
+    pages: 27
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCY)
+    summary: Article headed "VACANCY"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -127,6 +127,6 @@ between steps) go in a scratch folder.
 | `constitutions/combine_found.py` | Joins the fetched lists into one | Python 3 standard library |
 | `constitutions/read_documents.py` | Reads each document (optical character recognition for scans), splits it into articles and tags articles by topic | `pdftotext`, `pdftoppm`, `tesseract` |
 | `constitutions/review_batches.py` | `split` writes batches for AI reviewers to classify (skipping those already answered); `merge` joins the answers | Python 3 standard library |
-| `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers | `scripts/requirements.txt` and `requests` |
-| `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, history records and source records | `scripts/requirements.txt` and `requests` |
+| `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers. The summaries stay in the private work files: no AI summaries of constitutions are published | `scripts/requirements.txt` and `requests` |
+| `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, a history record for every nation with a text, and source records | `scripts/requirements.txt` and `requests` |
 | `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |

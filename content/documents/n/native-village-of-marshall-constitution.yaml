@@ -1,0 +1,42 @@
+id: native-village-of-marshall-constitution
+kind: constitution
+title: Constitution of the Native Village of Marshall
+nations:
+- native-village-of-marshall
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-marshall
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date.
+  Versions are only those found; others may exist.'
+versions:
+- id: undated-text
+  label: Undated constitution
+  event: original
+  status: unknown
+  source: constitution-native-village-of-marshall-undated-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-marshall/cea30b45d7cd3fe3.pdf
+    sha256: cea30b45d7cd3fe3df6f4de0a6c93431c4d8db33669c252628f7d47f75bc2f95
+    pages: 10
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article 7 (REMOVAL, RECALL, FORFEITURE, VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, FORFEITURE, VACANCIES"; found by its heading and not yet
+      read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article 8 (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article 12 (SOVEREIGN IMMUNITY OF MARSHALL)
+    summary: Article headed "SOVEREIGN IMMUNITY OF MARSHALL"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

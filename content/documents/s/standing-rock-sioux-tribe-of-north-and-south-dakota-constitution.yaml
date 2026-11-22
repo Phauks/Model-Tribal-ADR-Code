@@ -1,0 +1,39 @@
+id: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+kind: constitution
+title: Constitution of the Standing Rock Sioux Tribe of North & South Dakota
+nations:
+- standing-rock-sioux-tribe-of-north-and-south-dakota
+jurisdictions:
+- level: tribal
+  tribe: standing-rock-sioux-tribe-of-north-and-south-dakota
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2008.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2008-text
+  label: 2008 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2008'
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/standing-rock-sioux-tribe-of-north-and-south-dakota/eb8a5ae3204a012a.pdf
+    sha256: eb8a5ae3204a012adbb77adcf1859964a947f44b2e8f2dc2f043fe0ee1c76aca
+    pages: 15
+  note: The text also prints adopted 1959-02-11, approved 1959-04-24, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XII (JUDiCiARy PAGE 12)
+    summary: Article headed "JUDiCiARy PAGE 12"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

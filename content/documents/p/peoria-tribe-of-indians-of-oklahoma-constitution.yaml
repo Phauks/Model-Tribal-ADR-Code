@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 date
   to 1997-07-23. Versions are only those found; others may exist.'
 versions:
 - id: 1939-text
-  label: CONSTITUTION AND BY-LAWS (1939)
+  label: 1939 constitution and bylaws (1939-08-16)
   event: original
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
 - id: 1939-text-2
-  label: CONSTITUTION AND BY-LAWS OF THE PEORIA TRIBE OF INDIANS OF OKLAHOMA (1939)
+  label: 1939 constitution and bylaws (1939-10-10)
   event: edition
   status: superseded
   dates:
@@ -71,7 +71,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.85, by script); not yet read side by side.
 - id: 1981-text
-  label: CONSTITUTION OF THE PEORIA TRIBE OF INDIANS OF OKLAHOMA (1981)
+  label: 1981 constitution
   event: revision
   status: superseded
   dates:
@@ -123,7 +123,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
 - id: 1997-text
-  label: CONSTITUTION OF THE PEORIA TRIBE OF INDIANS OF OKLAHOMA (1997)
+  label: 1997 constitution
   event: revision
   status: unknown
   dates:
@@ -148,23 +148,17 @@ versions:
   clauses:
   - topic: dispute-resolution
     locator: Article VII (GRIEVANCE COMMITTEE)
-    summary: Creates a five-member Grievance Committee that decides constitutional interpretations and
-      disputes about Business Committee actions, with those decisions taken to the Peoria Council.
+    summary: Article headed "GRIEVANCE COMMITTEE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
-    - council-hearing
   - topic: dispute-resolution
     locator: Article IX (ELECTIONS)
-    summary: Requires the Business Committee's election ordinance to set a procedure for handling protests
-      and resolving election disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article IX (ELECTIONS)
-    summary: Requires the election ordinance to provide a procedure for handling election protests and
-      resolving election disputes.
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -173,21 +167,17 @@ versions:
     verification: title-only
   - topic: dispute-resolution
     locator: Article XI (REMOVAL, RECALL AND FORFEITURE)
-    summary: Lets each body remove its members for cause, and has the Grievance Committee investigate
-      and hear charges against officials before deciding whether they are cleared or removed.
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
-    - fact-finding
   - topic: removal-and-recall
     locator: Article XI (REMOVAL, RECALL AND FORFEITURE)
     summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
     verification: title-only
   - topic: judicial-power
     locator: Article XVI (TRIBAL COURT)
-    summary: Vests the Tribe's judicial authority in the Court of Indian Offenses until the Peoria Council
-      sets up a Tribal Court to exercise it.
+    summary: Article headed "TRIBAL COURT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

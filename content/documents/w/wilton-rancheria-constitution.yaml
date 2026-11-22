@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 2011-11-12. Versions are only those found; others may exist.'
 versions:
 - id: 1940-text
-  label: CONSTITUTION AND BY-LAWS FOR THE (1940)
+  label: 1940 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -33,7 +33,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 2011-text
-  label: Constitution of Wilton Rancheria (2011)
+  label: 2011 constitution, as amended
   event: edition
   status: unknown
   dates:
@@ -53,47 +53,38 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article IV (ORGANIZATION OF THE GOVERNMENT)
-    summary: Lists a Tribal Court among the separate branches of government, none of which may exercise
-      another branch's powers.
+    summary: Article headed "ORGANIZATION OF THE GOVERNMENT"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity
     locator: Article V (CHAIRPERSON)
-    summary: Requires Tribal Council approval before the Chairperson may enter any agreement that waives
-      the Tribe's sovereign immunity, directly or indirectly.
+    summary: Article headed "CHAIRPERSON"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity
     locator: Article VI (TRIBAL COUNCIL)
-    summary: Gives the Tribal Council power to approve agreements of any kind that waive the Tribe's sovereign
-      immunity.
+    summary: Article headed "TRIBAL COUNCIL"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article VIII (TRIBAL COURT)
-    summary: Vests the tribe's judicial power in a Tribal Court that may construe the constitution and
-      the tribe's laws, customs and traditions.
+    summary: Article headed "TRIBAL COURT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article VIII (TRIBAL COURT)
-    summary: Gives the Tribal Court original jurisdiction over civil and criminal cases, and a Traditional
-      Court of elders helps resolve cases involving members.
+    summary: Article headed "TRIBAL COURT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - elders-council
   - topic: peacemaking
     locator: Article VIII (TRIBAL COURT)
-    summary: Creates a Traditional Court of appointed elders that assists the Tribal Court in resolving
-      cases involving members and advises on custom.
+    summary: Article headed "TRIBAL COURT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - elders-council
   - topic: sovereign-immunity
     locator: Article VIII (TRIBAL COURT)
-    summary: States that Tribal Court jurisdiction over cases does not waive the Tribe's sovereign immunity.
+    summary: Article headed "TRIBAL COURT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -102,8 +93,7 @@ versions:
     verification: title-only
   - topic: sovereign-immunity
     locator: Article XIII (SOVEREIGN IMMUNITY)
-    summary: Makes the tribe immune from suit unless the Tribal Council expressly waives immunity, and
-      makes officials acting within their duties immune too.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1994-08-13. Versions are only those found; others may exist.'
 versions:
 - id: 1987-text
-  label: Constitution of the Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona (1987)
+  label: 1987 constitution
   event: original
   status: superseded
   dates:
@@ -43,8 +43,7 @@ versions:
     summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
     verification: title-only
 - id: 1994-text
-  label: CONSTITUTION OF THE KAIBAB BAND OF PAIUTE INDIANS OF THE KAIBAB INDIAN RESERVATION, ARIZONA as
-    amended through Amendment I, 1994-08-13
+  label: 1994 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -65,8 +64,7 @@ versions:
   clauses:
   - topic: election-disputes
     locator: Article X (ELECTION)
-    summary: Lets candidates refused by the election committee appeal to the tribal court within five
-      working days, and makes that court's decision final.
+    summary: Article headed "ELECTION"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall
@@ -76,8 +74,7 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: Article XI (JUDICIAL BRANCH OF GOVERNMENT)
-    summary: Establishes a tribal judiciary with a trial court and an appellate court, vesting the band's
-      judicial power in them.
+    summary: Article headed "JUDICIAL BRANCH OF GOVERNMENT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: sovereign-immunity

@@ -1,0 +1,45 @@
+id: confederated-tribes-of-the-colville-reservation-constitution
+kind: constitution
+title: Constitution of the Confederated Tribes of the Colville Reservation
+nations:
+- confederated-tribes-of-the-colville-reservation
+jurisdictions:
+- level: tribal
+  tribe: confederated-tribes-of-the-colville-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date.
+  Versions are only those found; others may exist.'
+versions:
+- id: undated-text
+  label: Undated constitution, as amended
+  event: original
+  status: unknown
+  source: constitution-confederated-tribes-of-the-colville-reservation-undated-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-colville-reservation/6a514e87e5fda103.pdf
+    sha256: 6a514e87e5fda103e6eb9fd05a1046b059d19c7f89b3a9b34c37f530968f33c2
+    pages: 13
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
+    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article III (Nominations and Elections)
+    summary: Article headed "Nominations and Elections"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IV (Vacancies and Removal from Office)
+    summary: Article headed "Vacancies and Removal from Office"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article VIII (Judiciary)
+    summary: Article headed "Judiciary"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IV (Vacancies and Removal from Office)
+    summary: Article headed "Vacancies and Removal from Office"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

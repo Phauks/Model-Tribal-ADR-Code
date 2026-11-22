@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2000-01-22. Versions are only those found; others may exist.'
 versions:
 - id: 1969-text
-  label: Revised Constitution of the Jicarilla Apache Tribe (1969)
+  label: 1969 constitution
   event: original
   status: superseded
   dates:
@@ -46,8 +46,7 @@ versions:
     summary: Article headed "COMPOSITION OF THE TRIBAL COURTS"; found by its heading and not yet read.
     verification: title-only
 - id: 1990-amendment
-  label: Jicarilia Apache Constitution m follows i as amended through Article XIII (judicial powers) amendment,
-    Secretarial election authorized May 24, 1990
+  label: 1990 amendment
   event: amendment
   status: unknown
   dates:
@@ -80,8 +79,7 @@ versions:
     verification: inferred
     note: An amendment changes only what it names; compare by hand.
 - id: 2000-text
-  label: REVISED CONSTITUTION OF THE JICARILLA APACHE TRIBE as amended through Articles VII and XIV amended,
-    2000-01-22
+  label: 2000 constitution, as amended
   event: edition
   status: in-effect
   dates:
@@ -103,18 +101,14 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article III (MEMBERSHIP)
-    summary: Makes the tribal court decide paternity questions for enrollment, with appeal to the Tribe's
-      appellate court, whose decision is final.
+    summary: Article headed "MEMBERSHIP"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
     locator: Article VII (NOMINATIONS AND ELECTIONS)
-    summary: Gives the five-member election board sole duty to count votes, settle voting challenges,
-      and resolve election protests and disputes.
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - administrative-adjudication
   - topic: removal-and-recall
     locator: Article VIII (VACANCIES AND REMOVAL FROM OFFICE)
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
@@ -126,14 +120,14 @@ versions:
     verification: title-only
   - topic: judicial-power
     locator: 'Article XXIII (THE JUDICIARY: JUDICIAL POWERS)'
-    summary: Vests the Jicarilla judicial power in tribal trial and appellate courts, with criminal jurisdiction
-      over Indians and civil jurisdiction.
+    summary: 'Article headed "THE JUDICIARY: JUDICIAL POWERS"; an AI reviewer confirmed it covers this
+      topic.'
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article XXIV (COMPOSITION OF THE TRIBAL COURTS)
-    summary: Sets the trial court's composition, with judges appointed by the President with three-fourths
-      Council concurrence, and leaves court duties to ordinance.
+    summary: Article headed "COMPOSITION OF THE TRIBAL COURTS"; an AI reviewer confirmed it covers this
+      topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

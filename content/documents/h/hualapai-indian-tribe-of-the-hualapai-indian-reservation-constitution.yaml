@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 1991-02-14. Versions are only those found; others may exist.'
 versions:
 - id: 1948-text
-  label: CONSTITUTION AND BY-LAWS (1948)
+  label: 1948 constitution and bylaws
   event: original
   status: superseded
   dates:
@@ -37,7 +37,7 @@ versions:
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1955-text
-  label: CONSTITUTION AND BYLAWS (1955)
+  label: 1955 constitution and bylaws
   event: edition
   status: superseded
   dates:
@@ -73,7 +73,7 @@ versions:
     verification: inferred
     note: The article texts differ (word-run overlap 0.23, by script); not yet read side by side.
 - id: 1991-text
-  label: Constitution of the Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona (1991)
+  label: 1991 constitution
   event: edition
   status: unknown
   dates:
@@ -92,8 +92,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article VI (THE JUDICIAL DEPARTMENT)
-    summary: Vests the judicial power of the Tribe in a Tribal Court, a Court of Appeals, and lower courts
-      the Council may create.
+    summary: Article headed "THE JUDICIAL DEPARTMENT"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
@@ -102,8 +101,7 @@ versions:
     verification: title-only
   - topic: sovereign-immunity
     locator: Article XVI (SOVEREIGN IMMUNITY)
-    summary: Makes the Tribe immune from suit unless the Tribal Council expressly waives immunity, and
-      requires a special election for large waivers.
+    summary: Article headed "SOVEREIGN IMMUNITY"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:

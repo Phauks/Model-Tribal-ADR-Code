@@ -66,6 +66,9 @@ YAML fields rather than that vocabulary (project choice).
 
 - A history is worth recording only where versions matter. Single-version
   documents need no history record; their source record is enough.
+  Constitutions are the exception: every nation with a constitution text
+  found has a history record, even with one version, so its page lists the
+  constitution (lead author, Nov. 22, 2026).
 - Catalogs in `research/` (the compact catalog, the constitutions catalog and
   the tribal law catalog) can be converted into history records one document
   at a time; rows not yet read become versions with `verification:

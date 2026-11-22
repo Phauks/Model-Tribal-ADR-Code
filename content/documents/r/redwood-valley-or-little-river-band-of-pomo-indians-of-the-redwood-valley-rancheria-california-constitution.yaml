@@ -1,0 +1,45 @@
+id: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+kind: constitution
+title: Constitution of the Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria
+  California
+nations:
+- redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california
+jurisdictions:
+- level: tribal
+  tribe: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1987-06-20.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1987-text
+  label: 1987 constitution
+  event: original
+  status: unknown
+  dates:
+    adopted: '1987-06-20'
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california/fa2cd7ac8bf9b861.pdf
+    sha256: fa2cd7ac8bf9b861791bcfd711db1d2cca42f372887f733a171f52e3554897af
+    pages: 24
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article V (ELECTIONS)
+    summary: Article headed "ELECTIONS"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

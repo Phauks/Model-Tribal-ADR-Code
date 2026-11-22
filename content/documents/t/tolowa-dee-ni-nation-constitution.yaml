@@ -1,0 +1,36 @@
+id: tolowa-dee-ni-nation-constitution
+kind: constitution
+title: Constitution of the Tolowa Dee-ni' Nation
+nations:
+- tolowa-dee-ni-nation
+jurisdictions:
+- level: tribal
+  tribe: tolowa-dee-ni-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2024-02-22.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2024-text
+  label: 2024 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2024-02-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: not-required
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/tolowa-dee-ni-nation/490439775dc5ffed.pdf
+    sha256: 490439775dc5ffed649e86bc26b665a4fe2afab3fb684c38e95b5f2b737ff349
+    pages: 13
+  note: The text also prints adopted 1987, which belong to the earlier text it compiles. The date recorded
+    as listed is that of the latest amendment the text says it includes. Marked in effect because it is
+    the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may not be
+    posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the
+    lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,35 @@
+id: coeur-dalene-tribe-constitution
+kind: constitution
+title: Constitution of the Coeur D'Alene Tribe
+nations:
+- coeur-dalene-tribe
+jurisdictions:
+- level: tribal
+  tribe: coeur-dalene-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 1947-06-05.
+  Versions are only those found; others may exist.'
+versions:
+- id: 1947-text
+  label: 1947 constitution and bylaws
+  event: original
+  status: unknown
+  dates:
+    adopted: '1947-06-05'
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/coeur-dalene-tribe/5bd2e005af89f1b2.html
+    sha256: 5bd2e005af89f1b2df5ad8a8df5da471bc01a09b4abbae777ec52001fc0891de
+  note: The text prints an approval date (1947-05-06) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Dates read by rule from the certificates on the
+    library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

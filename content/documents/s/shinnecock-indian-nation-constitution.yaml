@@ -1,0 +1,65 @@
+id: shinnecock-indian-nation-constitution
+kind: constitution
+title: Constitution of the Shinnecock Indian Nation
+nations:
+- shinnecock-indian-nation
+jurisdictions:
+- level: tribal
+  tribe: shinnecock-indian-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2015-04-07.
+  Versions are only those found; others may exist.'
+versions:
+- id: 2015-text
+  label: 2015 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2015-04-07'
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/shinnecock-indian-nation/3facbf485e4f22c5.pdf
+    sha256: 3facbf485e4f22c531d8a5b729a847e8b12f77f42990b9372db45141ed439aa8
+    pages: 100
+  note: The text also prints adopted 2013-02-26, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: peacemaking
+    locator: Article VIII (COUNCIL OF ELDERS)
+    summary: Article headed "COUNCIL OF ELDERS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article X (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XII (VACANCIES AND RECALL)
+    summary: Article headed "VACANCIES AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article XIII (INITIATIVE AND REFERENDUM)
+    summary: Article headed "INITIATIVE AND REFERENDUM"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article XVI (JUDICIARY)
+    summary: Article headed "JUDICIARY"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Chapter 4 (ETHICS AND CONDUCT)
+    summary: Article headed "ETHICS AND CONDUCT"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VII (Section 2 (d))
+    summary: Article headed "Section 2 (d)"; an AI reviewer confirmed it covers this topic.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

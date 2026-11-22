@@ -10,7 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 date
   to 2003. Versions are only those found; others may exist.'
 versions:
 - id: 1975-proposed
-  label: PROPOSED CONSTITUTION FOR THE CHEROKEE NATION (1975)
+  label: 1975 proposed constitution
   event: revision
   status: proposed
   dates:
@@ -38,7 +38,7 @@ versions:
     summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
 - id: 1976-text
-  label: CONSTITUTION OF THE CHEROKEE NATION OF OKLAHOMA (1976)
+  label: 1976 constitution
   event: original
   status: superseded
   dates:
@@ -64,7 +64,7 @@ versions:
     summary: Article headed "REMOVAL FROM OFFICE '"; found by its heading and not yet read.
     verification: title-only
 - id: 2003-text
-  label: Constitution of the Cherokee Nation 1999 (2003)
+  label: 2003 constitution
   event: edition
   status: in-effect
   dates:
@@ -84,8 +84,7 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article VIII (Judicial)
-    summary: Vests judicial power in a Supreme Court and lower courts the Council establishes, with justices
-      appointed by the Principal Chief and confirmed by the Council.
+    summary: Article headed "Judicial"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: removal-and-recall

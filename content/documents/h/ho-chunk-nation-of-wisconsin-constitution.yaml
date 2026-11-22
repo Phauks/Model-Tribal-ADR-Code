@@ -10,8 +10,7 @@ summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 date
   to 1994-09-17. Versions are only those found; others may exist.'
 versions:
 - id: 1963-text
-  label: Constitution and Bylaws of the Wisconsin Winnebago Tribe (including Amendments I and II) as amended
-    through Amendment II, date not in the text seen
+  label: 1963 constitution and bylaws, as amended
   event: edition
   status: superseded
   dates:
@@ -40,7 +39,7 @@ versions:
     summary: Article headed "VACANCIES"; found by its heading and not yet read.
     verification: title-only
 - id: 1994-text
-  label: Constitution of the Ho-Chunk Nation (1994)
+  label: 1994 constitution
   event: revision
   status: unknown
   dates:
@@ -65,38 +64,32 @@ versions:
   clauses:
   - topic: judicial-power
     locator: Article XIII (including those which reverse decisions of the Judiciary interpreting this)
-    summary: Lets the General Council reverse Judiciary decisions that interpret the Constitution, and
-      sets its meeting and quorum rules.
+    summary: Article headed "including those which reverse decisions of the Judiciary interpreting this";
+      an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article VI (EXECUTIVE)
-    summary: Establishes a Supreme Court and a Trial Court, plus lower or special-jurisdiction forums
-      the Legislature may create.
+    summary: Article headed "EXECUTIVE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: dispute-resolution
     locator: Article VI (EXECUTIVE)
-    summary: Allows the Legislature to create special-jurisdiction forums for traditional dispute resolution.
+    summary: Article headed "EXECUTIVE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - customary-dispute-resolution
   - topic: peacemaking
     locator: Article VI (EXECUTIVE)
-    summary: Allows the Legislature to create special-jurisdiction forums for traditional dispute resolution.
+    summary: Article headed "EXECUTIVE"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
-    methods:
-    - customary-dispute-resolution
   - topic: removal-and-recall
     locator: Article IX (REMOVAL, RECALL AND VACANCIES)
     summary: Article headed "REMOVAL, RECALL AND VACANCIES"; found by its heading and not yet read.
     verification: title-only
   - topic: sovereign-immunity
     locator: Article XI (STATUTES AND RESOLUTIONS)
-    summary: Makes the Nation immune from suit unless the Legislature expressly waives immunity, and allows
-      equitable suits against officials who exceed their duties.
+    summary: Article headed "STATUTES AND RESOLUTIONS"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   changes:
