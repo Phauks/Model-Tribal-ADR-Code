@@ -4,7 +4,15 @@
 	interface FactGroup {
 		field: string;
 		label: string;
-		items: { label?: string; text: string; link?: string; linkHint?: string; detail?: string }[];
+		items: {
+			label?: string;
+			text: string;
+			link?: string;
+			linkHint?: string;
+			detail?: string;
+			/** A detail with linked citations, such as a recognition status's legal basis. */
+			detailParts?: { text: string; link?: string }[];
+		}[];
 	}
 
 	let { groups }: { groups: FactGroup[] } = $props();
@@ -23,7 +31,11 @@
 											{item.linkHint}</span
 										>{/if}</a
 								>{:else}{item.text}{/if}
-							{#if item.detail}{' '}<span class="muted small">({item.detail})</span>{/if}
+							{#if item.detailParts}{' '}<span class="muted small"
+									>({#each item.detailParts as part, partIndex (partIndex)}{#if part.link}<a
+												href={part.link}>{part.text}</a
+											>{:else}{part.text}{/if}{/each})</span
+								>{:else if item.detail}{' '}<span class="muted small">({item.detail})</span>{/if}
 						</li>
 					{/each}
 				</ul>
