@@ -1,7 +1,7 @@
 # 0022. Let people register to help; keep workspace access with the lead author
 
-- **Status:** Proposed
-- **Date:** 2026-11-21
+- **Status:** Accepted
+- **Date:** 2026-11-21 (accepted 2026-11-22)
 
 ## Context
 
