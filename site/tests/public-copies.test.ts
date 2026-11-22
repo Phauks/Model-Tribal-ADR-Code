@@ -160,3 +160,27 @@ describe('reading the capture index', async () => {
 		expect(row).toEqual({ key: 'westlaw/x.pdf', bytes: '10', redistribution: 'no' });
 	});
 });
+
+describe('copies of nations’ documents', async () => {
+	const { removalRequestPath, mediaLabel } = await import('../src/lib/public-copies.ts');
+	it('links each copy to a filled-in removal request', () => {
+		expect(removalRequestPath({ key: 'constitutions/sample-nation/0123456789abcdef.pdf' })).toBe(
+			'/requests?kind=remove&record=copies/constitutions/sample-nation/0123456789abcdef.pdf'
+		);
+	});
+
+	it('serves a saved web page in a sandbox', async () => {
+		const page = new TextEncoder().encode('<html><script>x()</script>Constitution</html>').buffer as ArrayBuffer;
+		const saved: ServableCopy = {
+			key: 'constitutions/sample-nation/0123456789abcdef.html',
+			mediaType: 'text/html',
+			sha256: await hexDigest(page),
+			bytes: page.byteLength,
+			links: ['https://sample-nation.example/constitution']
+		};
+		const { bucket } = memoryBucket({ [saved.key]: { bytes: page, sha256: saved.sha256 } });
+		const response = await servePublicCopy(new Request('https://site.test/copies/x'), saved, bucket, network({}));
+		expect(response.headers.get('content-security-policy')).toContain('sandbox');
+		expect(mediaLabel(saved.mediaType)).toBe('saved web page');
+	});
+});
