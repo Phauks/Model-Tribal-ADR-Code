@@ -207,6 +207,28 @@ justice_institutions:
     HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website,
     fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-283.'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://orutsararmiut.org/departments/tribal-courts/
+  part_of: Orutsaramiut Tribal Court
+  location:
+    state: AK
+  source: orutsararmiut-native-council-tribal-courts-bethel-alaska
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “comprised of the Supreme Court and the Trial Court”. Named as a part of the ONC Tribal Court in the nation''s constitutional text on the page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, orutsararmiut-traditional-native-council#2).'
+- kind: tribal-court
+  name: Trial Court
+  link: https://orutsararmiut.org/departments/tribal-courts/
+  part_of: Orutsaramiut Tribal Court
+  location:
+    state: AK
+  source: orutsararmiut-native-council-tribal-courts-bethel-alaska
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “comprised of the Supreme Court and the Trial Court”. Named with the Supreme Court as parts of the ONC Tribal Court; the page does not give a separate location. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, orutsararmiut-traditional-native-council#3).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

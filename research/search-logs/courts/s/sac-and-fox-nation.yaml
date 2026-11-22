@@ -22,3 +22,19 @@ searches:
     author''s order (own page, then directory entry): own-page, https://www.sacandfoxnation-nsn.gov/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-337
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.sacandfoxnation-nsn.gov/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Fetch returned status 200 but only a 'One moment, please...' interstitial with no page text, which looks like a bot challenge.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.sacandfoxnation-nsn.gov/departments/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Same 'One moment, please...' interstitial with no page text.

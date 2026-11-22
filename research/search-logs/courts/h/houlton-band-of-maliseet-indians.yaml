@@ -1,0 +1,29 @@
+profile: content/tribes/h/houlton-band-of-maliseet-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://maliseets.net/maliseet-healing-to-wellness-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Maliseet Nation Tribal Court page names the Tribal Court and its Healing to Wellness program (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://maliseets.net/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation homepage links to the Maliseet Nation Tribal Court page; no other court is named there.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Houlton Band of Maliseet Indians tribal court HBMI'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search showed Maine statute and Rules of Court PDFs; the nation's own page was used instead.

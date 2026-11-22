@@ -274,6 +274,14 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-288.'
+- kind: supreme-court
+  name: Pawnee Nation Supreme Court
+  link: https://pawneenation.org/pawnee-nation-court/
+  source: pawnee-nation-of-oklahoma-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Pawnee Nation Supreme Court hears appeals resulting from all final orders or judgments that have been issued by the District Court.”. Named on the nation''s court page as the appellate court for District Court judgments. No street address is given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pawnee-nation-of-oklahoma#2).'
 gaming:
   compacts:
   - state: OK

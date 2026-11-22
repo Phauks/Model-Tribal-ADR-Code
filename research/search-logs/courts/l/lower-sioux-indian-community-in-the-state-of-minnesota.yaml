@@ -1,0 +1,29 @@
+profile: content/tribes/l/lower-sioux-indian-community-in-the-state-of-minnesota.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://lowersioux.com/departments/legal/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court & Legal page fetched with fetch.py (200); names the Tribal Court and the Clerk of Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://lowersioux.com/departments/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Not fetched; the Court & Legal page above is the nation's court page the fetch confirmed, and the earlier WebFetch budget ran out before this link was tried.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Lower Sioux Indian Community tribal court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned the nation's Associate Judge job posting and judicial code pages on NARF; the nation's court page above was confirmed by fetch.

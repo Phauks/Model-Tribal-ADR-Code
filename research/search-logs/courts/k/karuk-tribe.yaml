@@ -32,3 +32,27 @@ searches:
     page, then directory entry): own-page, https://www.karuk.us/departments/judicial-system.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-116
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.karuk.us/departments/judicial-system
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Judicial System page loaded (status 200) and links to the Tribal Court website.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.karuktribalcourt.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Karuk Tribal Court site loaded (status 200) and names the court and a Youth Wellness Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Directory lists 'Karuk Tribal Court' in Siskiyou County.

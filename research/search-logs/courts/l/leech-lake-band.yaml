@@ -221,3 +221,27 @@ searches:
     directory entry): own-page, https://www.llojibwe.org/court/court.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-130
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.llojibwe.org/court/court.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page fetched with fetch.py (200); names the trial court, the Bamenim Anishinabeg program, the Family Drug Court and the courtroom address.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.llojibwe.org/court/bamenim.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Bamenim Anishinabeg program page fetched with fetch.py (200); heading names the program.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Leech Lake Band of Ojibwe tribal court district courts"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned llojibwe.org court pages and mncourts.gov/tribaljustice items on joint wellness courts; the nation pages above were confirmed by fetch.

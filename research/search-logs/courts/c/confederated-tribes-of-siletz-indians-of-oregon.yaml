@@ -165,6 +165,14 @@ searches:
     review brief; verdict cannot-tell.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-051
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/court-and-justice/judges
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Server returned HTTP 403 with a 'Just a moment...' challenge page, so the page was not read.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-050,
   cannot-tell); Confederated Tribes of Siletz Tribal Court (court-051, cannot-tell). A person could open
   in a browser the pages that refused the project''s link checker: http://www.ctsi.nsn.us/, http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/court-and-justice/judges,

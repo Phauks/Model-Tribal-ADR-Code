@@ -21,3 +21,35 @@ searches:
     directory entry): own-page, https://www.lummi-nsn.gov/node/Website.php?PageID=442.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-140
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lummi-nsn.gov/node/Website.php?PageID=442
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names the Lummi Tribal Court, Family Wellness Court and Healing to Wellness Drug/DUI Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists Lummi Tribal Court (NICS) at 2665 Kwina Rd, Bellingham.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lummi-nsn.gov/Website.php?PageID=957
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Surfaced by search but not fetched; no court information taken from it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: http://www.nics.ws/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Connection reset by peer on fetch of NICS court pages.

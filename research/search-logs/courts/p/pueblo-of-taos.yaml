@@ -140,3 +140,27 @@ searches:
     (own page, then directory entry): own-page, https://taospueblo-nsn.gov/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-321
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://taospueblo.org/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Redirects (302) to taospueblo-nsn.gov, where the tribal court page was read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://taospueblo-nsn.gov/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal court page (Taos Pueblo CMS) names the Tribal Court and its staff.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/contact/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: New Mexico tribal-state directory lists 'Pueblo of Taos – Tribal Court' with a P.O. Box 1846 address (no street address recorded).

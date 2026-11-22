@@ -289,6 +289,33 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-135.'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://ltbbodawa-nsn.gov/judicial-branch/
+  location:
+    place: Petoskey
+    state: MI
+    address: 911 Spring St.
+  source: little-traverse-bay-bands-of-odawa-ltbb-official-website-jud
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The judicial power of the Little Traverse Bay Bands of Odawa Indians is vested in a tribal court system composed of a court of general jurisdiction, called Tribal Court, and an appellate court, called Tribal Appellate Court.”. Address is from the page''s notice that the Tribal Court is located at 911 Spring St., Petoskey, MI. The page calls this the court of general jurisdiction; ''Tribal Court'' is the page''s heading name. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, little-traverse-bay-bands-of-odawa-indians#1).'
+  appeals_to:
+    court: Tribal Appellate Court
+    source: little-traverse-bay-bands-of-odawa-ltbb-official-website-jud
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Tribal Appellate Court consists of a chief justice and two associate justices that hear appeals from Tribal Court.”.'
+- kind: court-of-appeals
+  name: Tribal Appellate Court
+  link: https://ltbbodawa-nsn.gov/judicial-branch/
+  source: little-traverse-bay-bands-of-odawa-ltbb-official-website-jud
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Tribal Appellate Court consists of a chief justice and two associate justices that hear appeals from Tribal Court.”. No physical address for the appellate court is given; the contact page lists it as ''APPELLATE COURT (leave message with court)''. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, little-traverse-bay-bands-of-odawa-indians#2).'
 dispute_resolution:
   forums:
   - kind: peacemaking

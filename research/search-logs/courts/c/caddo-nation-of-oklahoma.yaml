@@ -1,0 +1,21 @@
+profile: content/tribes/c/caddo-nation-of-oklahoma.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mycaddonation.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Fetch failed twice (connection reset by peer), so the nation's own site was not read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts/southern-plains-cfr-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Southern Plains CFR Court page lists Caddo Nation of Oklahoma among tribes located in the court and names the Court of Indian Appeals.

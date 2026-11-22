@@ -187,3 +187,19 @@ searches:
     evidence against the review brief; verdict served-by-intertribal-court, from https://www.intertribalcourt.org/member-tribes.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-106
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: ICSC member page lists Manzanita Band of the Kumeyaay Nation as a member tribe.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Directory lists Intertribal Court of Southern California for San Diego and Riverside counties; no Manzanita row.

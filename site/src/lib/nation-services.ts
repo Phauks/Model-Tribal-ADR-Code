@@ -11,11 +11,17 @@
  * Where one court's appeals go comes only from a cited `appeals_to` fact on
  * the court (schemas/tribe.schema.json); it is never worked out from a
  * court's name or kind.
+ *
+ * Trevor also asked (Nov. 22, 2026) that every court of a nation be listed,
+ * such as each of the Navajo Nation's district courts. A court that belongs
+ * to a group the records also list, such as "Navajo Nation Judicial District
+ * Courts", names the group in a cited `part_of` and is listed under it, with
+ * where it sits; it shares the group's place on the path of appeal.
  */
 import type { CitationMark } from './citation-marks.ts';
 import type { CitedFact } from './server/content.ts';
 import { webLink } from './contact-links.ts';
-import { humanize } from './nation-labels.ts';
+import { humanize, stateName } from './nation-labels.ts';
 
 /** Where a court's appeals go, as a cited fact naming another court in the same record. */
 export type AppealFact = CitedFact & { court: string };
@@ -26,6 +32,10 @@ export type ServiceFact = CitedFact & {
 	name?: string;
 	link?: string;
 	appeals_to?: AppealFact;
+	/** The exact name of the group this court belongs to, another entry in the same record. */
+	part_of?: string;
+	/** Where the court sits, as its source gives it. */
+	location?: { place?: string; state?: string; address?: string };
 };
 
 /** One service as the page shows it: its name, a link and, rarely, a detail the heading does not already say. */
@@ -33,6 +43,10 @@ export interface ServiceEntry {
 	text: string;
 	link?: string;
 	detail?: string;
+	/** Where the court sits, such as "Chinle, Arizona". */
+	location?: string;
+	/** The courts of a group, such as each district court, listed under it. */
+	members?: ServiceEntry[];
 	/** The markers of the sources that list the service (src/lib/citation-marks.ts). */
 	citations: CitationMark[];
 }
@@ -208,6 +222,8 @@ interface Merged {
 	names: string[];
 	kinds: Set<string>;
 	links: Set<string>;
+	/** The courts that name this entry in `part_of`, merged the same way. */
+	members: Merged[];
 }
 
 /**
@@ -233,6 +249,14 @@ function shownName(entry: Merged): string {
 	return candidates.reduce((best, name) => (name.length > best.length ? name : best));
 }
 
+/** "Chinle, Arizona": the place and state of the first fact that gives them. */
+function locationOf(entry: Merged): string | undefined {
+	const location = entry.facts.map((fact) => fact.location).find((found) => found?.place || found?.state);
+	if (!location) return undefined;
+	const parts = [location.place, location.state ? stateName(location.state) : undefined].filter(Boolean);
+	return parts.join(', ');
+}
+
 function entryFor(entry: Merged): ServiceEntry {
 	const text = shownName(entry);
 	const link = entry.facts.map((fact) => webLink(fact.link)).find(Boolean);
@@ -243,7 +267,37 @@ function entryFor(entry: Merged): ServiceEntry {
 			if (special && !special.unlessNamed.test(text)) detail = special.detail;
 		}
 	}
-	return { text, link, detail, citations: [] };
+	const location = locationOf(entry);
+	return { text, link, detail, ...(location ? { location } : {}), citations: [] };
+}
+
+/** Adds a fact to the first entry it describes, or to a new entry at the end of `list`. */
+function mergeInto(
+	list: Merged[],
+	fact: ServiceFact,
+	name: string,
+	category: { id: string; heading: string },
+	matches: (entry: Merged) => boolean
+): Merged {
+	const link = comparableLink(fact.link);
+	const existing = list.find(matches);
+	if (existing) {
+		existing.facts.push(fact);
+		if (!existing.names.includes(name)) existing.names.push(name);
+		existing.kinds.add(fact.kind);
+		if (link) existing.links.add(link);
+		return existing;
+	}
+	const created: Merged = {
+		category,
+		facts: [fact],
+		names: [name],
+		kinds: new Set([fact.kind]),
+		links: new Set(link ? [link] : []),
+		members: []
+	};
+	list.push(created);
+	return created;
 }
 
 /**
@@ -266,8 +320,31 @@ export function nationServices(facts: ServiceFact[], cite: Cite): ServiceCategor
 			return fact.kind === 'judicial-branch' && link ? [link] : [];
 		})
 	);
+	// A court is listed under its group only when the group is in the record;
+	// otherwise it is listed on its own.
+	const allNames = new Set(facts.map((fact) => comparableName(fact.name ?? humanize(fact.kind))));
+	// Another listing of the same court, from a source that does not name the
+	// group, is listed with it under the group.
+	const groupsByName = new Map(
+		facts.flatMap((fact) => (fact.part_of && fact.name ? [[comparableName(fact.name), fact.part_of] as const] : []))
+	);
+	// A court on a path of appeal is shown on the path, not under its group.
+	const onAppealPath = new Set(
+		facts.flatMap((fact) => [
+			...(fact.appeals_to ? [comparableName(fact.appeals_to.court), comparableName(fact.name ?? '')] : [])
+		])
+	);
+	const groupOf = (fact: ServiceFact): string | undefined => {
+		const own = comparableName(fact.name ?? '');
+		if (onAppealPath.has(own)) return undefined;
+		const partOf = fact.part_of ?? groupsByName.get(own);
+		if (!partOf) return undefined;
+		const group = comparableName(partOf);
+		return group !== own && allNames.has(group) ? group : undefined;
+	};
 	const merged: Merged[] = [];
 	for (const fact of facts) {
+		if (groupOf(fact)) continue;
 		const name = fact.name ?? humanize(fact.kind);
 		const onAppealPath = Boolean(fact.appeals_to) || appealNames.has(comparableName(name));
 		const link = comparableLink(fact.link);
@@ -277,34 +354,62 @@ export function nationServices(facts: ServiceFact[], cite: Cite): ServiceCategor
 			: judicialBranchSite
 				? categories['judicial-branch']
 				: categoryOf(fact.kind);
-		const existing = merged.find(
+		mergeInto(
+			merged,
+			fact,
+			name,
+			category,
 			(entry) =>
 				entry.category.id === category.id &&
 				(sameService(entry, fact, name) ||
 					(category.id === 'judicial-branch' && link !== undefined && entry.links.has(link)))
 		);
-		if (existing) {
-			existing.facts.push(fact);
-			if (!existing.names.includes(name)) existing.names.push(name);
-			existing.kinds.add(fact.kind);
-			if (link) existing.links.add(link);
-		} else {
-			merged.push({
-				category,
-				facts: [fact],
-				names: [name],
-				kinds: new Set([fact.kind]),
-				links: new Set(link ? [link] : [])
-			});
-		}
 	}
+	// Each court of a group joins the group's entry, merged with another
+	// listing of the same court, in the order the record gives them. A group
+	// can itself belong to a group (a district with two courthouses), so
+	// courts whose group is not placed yet wait for a later round.
+	const placed = (entries: Merged[]): Merged[] => entries.flatMap((entry) => [entry, ...placed(entry.members)]);
+	let waiting = facts.filter((fact) => groupOf(fact));
+	while (waiting.length > 0) {
+		const next: ServiceFact[] = [];
+		for (const fact of waiting) {
+			const group = groupOf(fact)!;
+			const parent = placed(merged).find((entry) => entry.names.some((name) => comparableName(name) === group));
+			if (!parent) {
+				next.push(fact);
+				continue;
+			}
+			const name = fact.name ?? humanize(fact.kind);
+			mergeInto(parent.members, fact, name, parent.category, (entry) => sameService(entry, fact, name));
+		}
+		// Groups that name each other in a loop are never placed; list those courts on their own.
+		if (next.length === waiting.length) {
+			for (const fact of next) {
+				const name = fact.name ?? humanize(fact.kind);
+				const category = categoryOf(fact.kind);
+				mergeInto(merged, fact, name, category, (entry) => entry.category.id === category.id && sameService(entry, fact, name));
+			}
+			break;
+		}
+		waiting = next;
+	}
+
+	// The courts of a group, each cited under the group's heading, with their own courts under them.
+	const membersOf = (group: Merged, heading: string): ServiceEntry[] =>
+		group.members.map((member) => {
+			const memberEntry = entryFor(member);
+			for (const fact of member.facts) cite(fact, heading, memberEntry.text, memberEntry.citations);
+			if (member.members.length > 0) memberEntry.members = membersOf(member, heading);
+			return memberEntry;
+		});
 
 	const shown = new Map(merged.map((entry) => [entry, entryFor(entry)]));
 	for (const entry of merged) {
 		const text = shown.get(entry)!.text;
 		for (const fact of entry.facts) cite(fact, entry.category.heading, text, shown.get(entry)!.citations);
+		if (entry.members.length > 0) shown.get(entry)!.members = membersOf(entry, entry.category.heading);
 	}
-
 	const courts = merged.filter((entry) => entry.category.id === 'courts');
 	const appealsTo = new Map<Merged, Merged>();
 	// The markers for "Appeals go to" above each court, from every appeals_to fact that names it.

@@ -239,6 +239,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Kansas section, entry 'Iowa Tribe of Kansas and Nebraska'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://iowatribeofkansasandnebraska.com/tribal-court/
+  location:
+    place: White Cloud
+    state: KS
+    address: 3313 Thrasher Rd.
+  source: iowa-tribe-of-kansas-and-nebraska-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tribal Court--Iowa Tribe of Kansas and Nebraska”. Checked with fetch.py: the page lists the Tribal Court with ''3313 Thrasher Rd.'' (clerk) and ''3345 B Thrasher Rd, White Cloud, KS 66094'' in the footer; the two addresses are not explained, so only the clerk address is recorded. The page lists an ''Appellate Judge'' position with no named appellate court, so no appeals court is recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, iowa-tribe-of-kansas-and-nebraska#1).'
 gaming:
   compacts:
   - state: KS

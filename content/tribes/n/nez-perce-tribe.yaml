@@ -272,6 +272,18 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-255.'
+- kind: tribal-court
+  name: Nez Perce Tribal Court
+  link: https://nezperce.org/government/law-and-justice/tribal-court/
+  location:
+    place: Lapwai
+    state: ID
+    address: 222 Wildcat Avenue, P.O. Box 305
+  source: nez-perce-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “NEZ PERCE TRIBAL COURT”. Name is the page''s all-caps heading, normalized to title case. The page says nothing about appeals. The batch''s ''Tribal Court'' entry is the same page. The batch''s ''Peacemaker Court'' (link null) does not appear on the nation''s Tribal Court page and was not confirmed anywhere I could read, so it is unresolved and left out. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, nez-perce-tribe#1).'
 dispute_resolution:
   forums:
   - kind: peacemaking

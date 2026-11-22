@@ -148,3 +148,27 @@ searches:
     directory entry): directory, https://www.courts.wa.gov/subsite/tscc/docs/TSCC%20WA%20State%20Tribal%20Court%20Directory.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-339
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists this nation's court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.samishtribe.nsn.us/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nation's home page loaded and has no court content.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.samishtribe.nsn.us/government
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nation's government overview page loaded and has no court content.

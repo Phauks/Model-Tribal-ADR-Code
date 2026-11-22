@@ -1,0 +1,29 @@
+profile: content/tribes/o/ottawa-tribe-of-oklahoma.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: "Ottawa Tribe of Oklahoma" tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned the nation's tribal court page and the BIA CFR court pages.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.ottawatribe.gov/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal court page names the Ottawa Tribal Criminal Court and the Miami Agency CFR court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: BIA list names the Miami Agency CFR Court and lists the Ottawa Tribe of Oklahoma among the tribes it serves.

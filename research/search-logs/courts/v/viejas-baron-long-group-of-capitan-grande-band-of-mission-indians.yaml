@@ -207,3 +207,19 @@ searches:
     evidence against the review brief; verdict confirmed, from https://viejasbandofkumeyaay.org/judicial-system/.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-298
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: The ICSC member list does not include Viejas, although the batch lists Viejas under the ICSC.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://viejasbandofkumeyaay.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Homepage fetched with fetch.py; it names no court (it refers only generically to judicial branches).

@@ -334,6 +334,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Gila River Indian Community'
+- kind: tribal-court
+  name: Westend Judicial Center
+  link: https://www.gilariver.org/index.php/government/judical-branch
+  part_of: Gila River Indian Community Court
+  location:
+    place: Laveen
+    state: AZ
+  source: gila-river-indian-community-judicial-branch-government
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Westend Judicial Center”. Second court office. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, gila-river-indian-community-of-the-gila-river-indian-reservation#2).'
 dispute_resolution: {}
 gaming:
   compacts:

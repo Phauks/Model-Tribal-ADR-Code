@@ -1,0 +1,21 @@
+profile: content/tribes/f/fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.fmpst.org/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal court page names the Tribal Court, its court clerk and dockets; no appeal route stated.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: Fort McDermitt tribal court Paiute Shoshone'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Results were narf.org code and court rule PDFs, not official nation pages; not fetched.

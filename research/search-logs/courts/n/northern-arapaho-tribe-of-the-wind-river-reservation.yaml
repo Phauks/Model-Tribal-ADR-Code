@@ -1,0 +1,21 @@
+profile: content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.wrtribalcourt.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Shoshone & Arapaho (Wind River) Tribal Court site fetched with fetch.py (status 200); describes the joint court and its history.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: Wind River Tribal Court Shoshone Arapaho court of appeals Fort Washakie'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search surfaced the Wind River court site and a Northern Arapaho Title 17 Tribal Courts document, which was not fetched.

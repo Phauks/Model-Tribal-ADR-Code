@@ -32,3 +32,19 @@ searches:
     page, then directory entry): own-page, https://orutsararmiut.org/departments/tribal-courts/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-283
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://orutsararmiut.org/departments/tribal-courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal courts page names the ONC Tribal Court, Supreme Court and Trial Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Alaska Court System-hosted 2022 Tribal Court Directory PDF, read in full via text extraction; gives a Tribal Court section for each village.

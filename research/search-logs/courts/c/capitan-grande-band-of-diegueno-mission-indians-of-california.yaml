@@ -1,6 +1,6 @@
 profile: content/tribes/c/capitan-grande-band-of-diegueno-mission-indians-of-california.yaml
 topic: courts
-status: partly-searched
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-22'
@@ -131,6 +131,30 @@ searches:
     order (own page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-032
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Directory lists Intertribal Court of Southern California for San Diego and Riverside counties; there is no Capitan Grande row.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://www.intertribalcourt.org/member-tribes
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: The ICSC member and MOA lists do not name Capitan Grande.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch query: "Capitan Grande Band" Diegueno tribal court Intertribal Court of Southern California'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Search returned only leads (NARF, ballotpedia, sheriff pages), with no official nation court page.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Intertribal Court
   of Southern California (court-027, cannot-tell). No website of the nation''s own could be read; the
   Tribe''s office could be asked whether it runs a court. No page or official directory entry was found

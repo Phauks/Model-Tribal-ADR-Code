@@ -267,6 +267,40 @@ justice_institutions:
     verification: read-in-full
     as_of: '2026-04-02'
     locator: § 3.315(j)(1)
+- kind: tribal-court
+  name: Rincon Civil Trial Court
+  link: https://rincontribalcourt.org/
+  location:
+    state: CA
+  source: rincon-band-of-luiseno-indians
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Rincon Civil Trial Court and the Rincon Court of Appeals are administered by the Judicial Administration Committee”. The nation''s court site names the Rincon Civil Trial Court as part of its judicial system. The existing entry links a laws page on rincon-nsn.gov; the court''s own site is recorded here. Appeals go to the Rincon Court of Appeals. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, rincon-band-of-luiseno-indians#1).'
+  appeals_to:
+    court: Rincon Band of Luiseño Indians Court of Appeals
+    source: rincon-band-of-luiseno-indians-2
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “hears appeals of judgments issued by the Rincon Civil Trial Court, and appeals from the Intertribal Court of Southern California in which the Rincon Band is a party.”.'
+- kind: intertribal-court
+  name: Intertribal Court of Southern California
+  link: https://rincontribalcourt.org/
+  location:
+    state: CA
+  source: rincon-band-of-luiseno-indians
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The judicial system of the Rincon Band of Luiseño Indians is an independent branch of the Rincon Tribal Government, composed of the:”. The nation''s site lists the Intertribal Court of Southern California as part of its judicial system. Appeals from it go to the Rincon Court of Appeals only where the Rincon Band is a party. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, rincon-band-of-luiseno-indians#3).'
+  appeals_to:
+    court: Rincon Band of Luiseño Indians Court of Appeals
+    source: rincon-band-of-luiseno-indians-2
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “appeals from the Intertribal Court of Southern California in which the Rincon Band is a party.”.'
 dispute_resolution:
   provisions:
   - kind: other

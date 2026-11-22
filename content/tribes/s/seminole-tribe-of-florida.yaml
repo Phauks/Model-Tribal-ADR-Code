@@ -404,6 +404,22 @@ justice_institutions:
   note: The listed link (http://www.semtribe.com/Government/TribalCourt/TribalCourt.aspx) no longer reached
     the court on 2026-11-21; the link is the court's page on the nation's own site, found in the data
     gap review (research/reviews/2026-11-21-court-listings.json).
+  appeals_to:
+    court: Seminole Appellate Court
+    source: seminole-tribe-of-florida-tribal-court
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “Appeals from the Trial Court shall be heard by a panel of three Appellate Court Justices.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, seminole-tribe-of-florida#2).'
+- kind: court-of-appeals
+  name: Seminole Appellate Court
+  link: https://www.semtribe.com/government/tribal-court
+  part_of: Tribal Court
+  source: seminole-tribe-of-florida-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Seminole Appellate Court consists of a Chief Justice and two associate justices.”. Name converted from the page''s all-caps heading ''SEMINOLE APPELLATE COURT''. The page says the Appellate Court''s decisions cannot be overturned by Tribal Council. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, seminole-tribe-of-florida#3).'
 gaming:
   compacts:
   - state: FL

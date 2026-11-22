@@ -163,6 +163,17 @@ justice_institutions:
     Court System court directory: 2022 Alaska Tribal Court Directory (prepared by Alaska Legal Services
     Corporation); no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
     service-429).'
+- kind: other
+  name: Council
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  location:
+    place: Saint Mary's
+    state: AK
+  source: alaska-legal-services-corporation-hosted-at-2022-tribal-cour
+  confidence: medium
+  verification: read-in-full
+  as_of: '2022'
+  note: 'The page names the court: “Type of Justice System Council”. Directory says Active Court: Yes and the justice system is a council. The directory gives a Saint Mary''s address for the Tribe, but place is not given for the court, so the Tribe''s community is used; existing is null because no tribal court is named. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, yupiit-of-andreafski#1).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

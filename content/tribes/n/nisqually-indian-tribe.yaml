@@ -297,6 +297,39 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-261.'
+- kind: tribal-court
+  name: Nisqually Tribal Court
+  link: https://www.nisqually-nsn.gov/tribal-services/Judicial-Services
+  location:
+    place: Olympia
+    state: WA
+    address: 11702 Yelm HWY SE
+  source: nisqually-indian-tribe-judicial-services
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tribal Court”. Nation''s Judicial Services page has a ''Tribal Court'' section; the batch''s generic ''Tribal Court'' entry is the same court. Address from the state directory (location, not mailing address). The page lists court types ''CRIMINAL, TRAFFIC, CIVIL, & YOUTH COURT - TRUANCY & ICW'' as functions of this court; no separate youth court was recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, nisqually-indian-tribe#1).'
+- kind: healing-to-wellness-court
+  name: Wellness Court
+  link: https://www.nisqually-nsn.gov/tribal-services/Judicial-Services
+  part_of: Nisqually Tribal Court
+  source: nisqually-indian-tribe-judicial-services
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “WELLNESS COURT- adult/juvenile”. Page heading is all caps; name written in normal capitals. Page says it covers adult and juvenile participants; no separate location given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, nisqually-indian-tribe#2).'
+- kind: intertribal-court
+  name: Northwest Intertribal Court System
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  location:
+    place: Lynnwood
+    state: WA
+    address: 20818 44th Ave W, Ste 120
+  source: washington-state-courts-administrative-office-of-court-direc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Northwest Intertribal Court System (NICS)”. Directory labels this nation''s court ''(NICS)''; the nation page does not mention NICS. NICS''s own site could not be read (connection reset), and its appellate court was not identified. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, nisqually-indian-tribe#3).'
 dispute_resolution:
   forums:
   - kind: family-group-conference

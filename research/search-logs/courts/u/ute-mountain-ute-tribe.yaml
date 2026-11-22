@@ -48,3 +48,19 @@ searches:
     directory entry): own-page, https://www.utemountainutetribe.com/CFR%20courts.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-396
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.utemountainutetribe.com/CFR%20courts.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: CFR court page fetched with fetch.py; it names the Ute Mountain Agency Court of Indian Offenses.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: BIA page lists a Southwest Region CFR Court and a Western Region CFR Court, but does not name the Ute Mountain Agency or this nation, so the batch's BIA entry is not confirmed for this nation.

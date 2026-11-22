@@ -201,5 +201,29 @@ searches:
     stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-160
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctaw.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Homepage and /tribal-members/ show no court page; links to Tribal Code titles.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctaw.org/wp-content/uploads/2025/01/Title-07-Establishment-of-the-Supreme-Court-Effective-January-1-2025.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Title VII PDF exists (Supreme Court) but fetch tool does not extract PDF text, so nothing could be quoted.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: Mississippi Band of Choctaw Tribal Court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Leads to Title VII Supreme Court and a Tribal Court only via PDFs and non-official sites.
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court”; “Mississippi
   Band of Choctaw Indians Tribal Court” (research/reviews/2026-11-22-service-links.json).

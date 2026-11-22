@@ -1,0 +1,21 @@
+profile: content/tribes/a/assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.fptc.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Redirected to https://fptc.org/ and fetched with fetch.py (200); the page is titled 'Fort Peck Tribal Court'.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Fort Peck Tribal Court Assiniboine Sioux"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Returned Montana Indian Law code and decision PDFs and NARF pages, but no nation court page; the court's own site above was confirmed by fetch.

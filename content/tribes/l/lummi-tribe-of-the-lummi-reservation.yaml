@@ -248,6 +248,48 @@ justice_institutions:
   note: 'Link check 2026-11-21: the site did not respond. The listed link (http://www.lummi-nsn.org/website/dept_pages/law_order/courts.shtml)
     no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
     found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
+- kind: tribal-court
+  name: Lummi Tribal Court
+  link: https://www.lummi-nsn.gov/node/Website.php?PageID=442
+  location:
+    place: Bellingham
+    state: WA
+    address: 2665 Kwina Rd
+  source: lummi-nation-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Welcome to the Lummi Tribal Court Home Page”. Nation''s own Tribal Court page; the page gives no year but lists upcoming clinic dates. The batch''s generic ''Tribal Court'' entry is the same court. Quotes were taken from a summarized page fetch. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lummi-tribe-of-the-lummi-reservation#1).'
+- kind: family-court
+  name: Family Wellness Court
+  link: https://www.lummi-nsn.gov/node/Website.php?PageID=442
+  part_of: Lummi Tribal Court
+  source: lummi-nation-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Family Wellness Court”. Named only in an ''Explore More'' link list on the nation''s page, with no address or description. Whether it is a separate court or a program of the tribal court is not stated. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lummi-tribe-of-the-lummi-reservation#2).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Drug/DUI Court
+  link: https://www.lummi-nsn.gov/node/Website.php?PageID=442
+  part_of: Lummi Tribal Court
+  source: lummi-nation-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Healing to Wellness Drug/DUI Court”. Named only in an ''Explore More'' link list on the nation''s page, with no address or description. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lummi-tribe-of-the-lummi-reservation#3).'
+- kind: intertribal-court
+  name: Northwest Intertribal Court System
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  location:
+    place: Lynnwood
+    state: WA
+    address: 20818 44th Ave W, Ste 120
+  source: washington-state-courts-administrative-office-of-court-direc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Lummi Tribal Court (NICS)”. The directory labels the Lummi court ''(NICS)''. The NICS''s own site was not verified (connection reset on the NICS site), and the appellate court it uses was not identified. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lummi-tribe-of-the-lummi-reservation#4).'
 dispute_resolution:
   database_listings:
   - title: Family Conference in Child Welfare

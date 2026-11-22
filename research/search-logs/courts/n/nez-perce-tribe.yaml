@@ -21,3 +21,19 @@ searches:
     page, then directory entry): own-page, https://nezperce.org/government/law-and-justice/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-255
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nezperce.org/government/law-and-justice/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names the court and gives the Lapwai address (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Nez Perce Tribe tribal court Peacemaker'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned nation pages and non-official Peacemaking-model pages; no official Peacemaker Court page surfaced.

@@ -32,3 +32,11 @@ searches:
     page, then directory entry): own-page, https://www.chehalistribe.org/department/court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-058
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.chehalistribe.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'Not researched: the WebFetch proxy returned HTTP 403 because the session''s fetch budget was exhausted.'

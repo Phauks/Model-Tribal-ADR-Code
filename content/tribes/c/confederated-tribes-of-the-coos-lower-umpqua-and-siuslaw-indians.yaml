@@ -287,6 +287,17 @@ justice_institutions:
     so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched
     with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-062.'
+- kind: peacemaking-program
+  name: Peacegiving Court
+  link: https://ctclusi.org/tribal-court-peacegiving/
+  location:
+    place: Coos Bay
+    state: OR
+  source: coos-peacegiving-court-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “These programs are Peacegiving Court, and Healing to Wellness Court.”. Problem-solving program of the CTCLUSI Tribal Court. The page says it is available by agreement with parties. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians#2).'
 dispute_resolution:
   forums:
   - kind: peacemaking

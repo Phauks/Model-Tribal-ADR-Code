@@ -1,0 +1,29 @@
+profile: content/tribes/k/keweenaw-bay-indian-community.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.kbic-nsn.gov/content/court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's own court page fetched successfully and names the Tribal Court with address.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.kbic-nsn.gov/index.php/departments/court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Returned a 'One moment, please... verified' bot-challenge page instead of content.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Keweenaw Bay Indian Community Tribal Court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned nation pages and michiganlegalhelp.org; only the nation page above was confirmed by fetch.

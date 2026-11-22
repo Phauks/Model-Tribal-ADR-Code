@@ -170,6 +170,17 @@ justice_institutions:
     Court System court directory: 2022 Alaska Tribal Court Directory (prepared by Alaska Legal Services
     Corporation); no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
     service-117).'
+- kind: healing-to-wellness-court
+  name: Wellness Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  part_of: Tribal Court
+  location:
+    state: AK
+  source: alaska-legal-services-corporation-hosted-at-2022-tribal-cour
+  confidence: medium
+  verification: read-in-full
+  as_of: '2022'
+  note: 'The page names the court: “with wellness courts”. The directory says the tribal court operates with wellness courts (plural); recorded as one entry with no separate name given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, kasigluk-traditional-elders-council#2).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -122,3 +122,11 @@ searches:
     from https://www.courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-001
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.aguacaliente.org/tribalcourt
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'Not fetched: the session''s WebFetch budget was exhausted (proxy 403).'

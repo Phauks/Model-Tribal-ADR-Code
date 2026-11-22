@@ -1,6 +1,6 @@
 profile: content/tribes/e/evansville-village.yaml
 topic: courts
-status: partly-searched
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-21'
@@ -286,6 +286,22 @@ searches:
     page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-083
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 2022 directory text read; Evansville Village entry shows no court type and says ALSC and partners were unable to make contact with the tribe as of September 2021.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.tananachiefs.org/about/communities/evansville/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Fetched with fetch.py (200); only a state 'Judicial District 4' geography label, no tribal court text.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-066,
   cannot-tell); Evansville Tribal Court (court-067, cannot-tell). No page or official directory entry
   was found on 2026-11-22 for “Tribal Court”; “Evansville Tribal Court” (research/reviews/2026-11-22-service-links.json).'

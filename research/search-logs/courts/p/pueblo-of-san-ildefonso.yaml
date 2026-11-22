@@ -1,6 +1,6 @@
 profile: content/tribes/p/pueblo-of-san-ildefonso.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-21'
@@ -177,6 +177,30 @@ searches:
     order (own page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-314
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sanipueblo.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Home page has no tribal court or judicial page; its only related item is a Law Library link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://law.sanipueblo.org/us/nsn/san-ildefonso/council/code/4/index.full.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: The nation's Law Library Title 4 (Judiciary) page establishes the Tribal Court, the Court of Appeals and a Children's Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/contact/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: New Mexico tribal-state directory lists the pueblo with a 02 Tunyo Po address but no court.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-241,
   not-found-after-search); Pueblo of San Ildefonso Tribal Court (court-242, not-found-after-search). No
   page or official directory entry was found on 2026-11-22 for “Tribal Court”; “Pueblo of San Ildefonso

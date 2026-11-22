@@ -301,6 +301,13 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
+  appeals_to:
+    court: Supreme Court
+    source: united-keetoowah-band-of-cherokee-indians-tribal-court-ukb
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “the Supreme Court hears cases of appeals and other matters as may be conferred by statute”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, united-keetoowah-band-of-cherokee-indians-in-oklahoma#1).'
 - kind: tribal-court
   name: United Keetoowah Band Tribal Court System
   link: http://www.keetoowahcherokee.org/government/tribal-courts
@@ -309,6 +316,15 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'United Keetoowah Band of Cherokee Indians in Oklahoma'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://www.ukb-nsn.gov/ukbtribalcourt
+  part_of: Tribal Court
+  source: united-keetoowah-band-of-cherokee-indians-tribal-court-ukb
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “the Supreme Court hears cases of appeals and other matters as may be conferred by statute”. Named on the nation''s Tribal Court page as the appellate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, united-keetoowah-band-of-cherokee-indians-in-oklahoma#2).'
 dispute_resolution:
   database_listings:
   - title: Restorative Sentencing Policy – Restitution and Reconciliation

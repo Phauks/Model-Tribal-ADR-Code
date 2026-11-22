@@ -305,6 +305,51 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-383.'
+  appeals_to:
+    court: Tulalip Court of Appeals
+    source: tulalip-tribes-tribal-court-home
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “When a matter is appealed from the Tulalip Tribal Court, the case is sent to the Northwest Intertribal Court System (NICS) who administers the court of appeals for the Tulalip Tribes.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, tulalip-tribes-of-washington#1).'
+- kind: court-of-appeals
+  name: Tulalip Court of Appeals
+  link: https://www.tulaliptribalcourt-nsn.gov/GeneralCourtInfo/AppellateCourt
+  source: tulalip-tribes-tribal-court-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Tulalip Tribal Justice System calls for a Tulalip Court of Appeals (Title 2, Chapter 2.05.040).”. Administered by the Northwest Intertribal Court System; panel of three judges from a NICS roster. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, tulalip-tribes-of-washington#2).'
+- kind: intertribal-court-of-appeals
+  name: Northwest Intertribal Court System
+  link: https://www.tulaliptribalcourt-nsn.gov/GeneralCourtInfo/AppellateCourt
+  source: tulalip-tribes-tribal-court-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “the Northwest Intertribal Court System (NICS) who administers the court of appeals for the Tulalip Tribes”. Provides the appellate panels for Tulalip; recorded as the intertribal body. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, tulalip-tribes-of-washington#3).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness Court
+  link: https://www.tulaliptribalcourt-nsn.gov/
+  location:
+    place: Tulalip
+    state: WA
+  source: tulalip-tribes-tribal-court-home-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Healing to Wellness Court”. Listed among the court''s services; subpage /ProgramsAndServices/WellnessCourt exists. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, tulalip-tribes-of-washington#4).'
+- kind: traditional-forum
+  name: Tribal Court Elders Panel
+  link: https://www.tulaliptribalcourt-nsn.gov/
+  location:
+    place: Tulalip
+    state: WA
+  source: tulalip-tribes-tribal-court-home-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tribal Court Elders Panel to hear young, first-time, nonviolent offense cases”. Elders panel for first-time nonviolent offenses. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, tulalip-tribes-of-washington#5).'
 dispute_resolution:
   forums:
   - kind: mediation

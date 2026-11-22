@@ -263,6 +263,14 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Kenaitze Indian Tribe'
+- kind: healing-to-wellness-court
+  name: Henu Community Wellness Court
+  link: https://www.kenaitze.org/tribal-government/tribal-court/
+  source: kenaitze-indian-tribe-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Henu Community Wellness Court”. Listed in the Tribal Court section navigation of the same page; the page text read did not describe it further, so the healing-to-wellness kind is inferred from the name. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, kenaitze-indian-tribe#2).'
 dispute_resolution:
   forums:
   - kind: customary-dispute-resolution

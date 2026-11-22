@@ -161,3 +161,19 @@ searches:
     page, then directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-198
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sites.google.com/alaska.edu/nativevillageofkongiganak/kong-tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Kong Tribal Court page (200) names the court and gives procedures.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 'Kongiganak entry: active court Yes; type ''Tribal Court, with a wellness court.'' Text read from the directory PDF as extracted in ak-dir/dir.txt (fetch.py does not extract PDFs).'

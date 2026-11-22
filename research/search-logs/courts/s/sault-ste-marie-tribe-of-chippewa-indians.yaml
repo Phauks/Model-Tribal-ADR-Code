@@ -1,0 +1,21 @@
+profile: content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.saulttribe.com/government/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribal Court page describes trial and appellate courts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.saulttribe.com/government/tribal-court/32-government/tribal-court/8662-court-of-appeals
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court of Appeals page exists.

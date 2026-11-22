@@ -1,6 +1,6 @@
 profile: content/tribes/o/oglala-sioux-tribe.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-21'
@@ -206,6 +206,30 @@ searches:
     page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-272
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.oglala.gov/programs/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Programs page lists Court Administration and Supreme Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://ujs.sd.gov/tribal-courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: SD UJS entry names no court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: Oglala Sioux Tribe Tribal Court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Only codes, news, Facebook pages; none official and fetched.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-225,
   not-found-after-search); Oglala Sioux Judiciary (court-226, not-found-after-search). No page or official
   directory entry was found on 2026-11-22 for “Tribal Court”; “Oglala Sioux Judiciary” (research/reviews/2026-11-22-service-links.json).'

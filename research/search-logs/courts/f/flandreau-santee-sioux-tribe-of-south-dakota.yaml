@@ -32,3 +32,27 @@ searches:
     order (own page, then directory entry): own-page, https://fsst-nsn.gov/judiciary.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-085
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://fsst-nsn.gov/judiciary
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Judicial Services page names the FSST Judicial Courts, a Court of General Jurisdiction and an Appellate Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://ujs.sd.gov/tribal-courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: State directory links to the nation's Judiciary and places the reservation in Moody County, but names no separate court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: Flandreau Santee Sioux Tribal Court judiciary'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search surfaced the nation's judiciary page and a juvenile code and appellate judge document, which were not read.

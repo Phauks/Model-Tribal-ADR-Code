@@ -274,6 +274,67 @@ justice_institutions:
   note: The listed link (http://www.pbpindiantribe.com/contact_member/tribal-court/) no longer reached
     the court on 2026-11-21; the link is the court's page on the nation's own site, found in the data
     gap review (research/reviews/2026-11-21-court-listings.json).
+- kind: district-court
+  name: Tribal District Court
+  link: https://www.pbpindiantribe.com/tribal-court
+  location:
+    place: Mayetta
+    state: KS
+    address: 11444 158th Road
+  source: prairie-band-potawatomi-nation-judicial-center
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “is a general jurisdiction court of record that hears all matters within the Prairie Band Potawatomi Nation’s jurisdiction except for election and employment-related disputes.”. Checked with fetch.py. The page also calls it ''The District Court'' and names it as established in 1992 with the Court of Appeals. The address shown is the Judicial Center''s Mayetta mailing address, which the page gives for mail to the District Court and Court of Appeals. The batch''s ''Judicial Council'' entries are a different body (see below). Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, prairie-band-potawatomi-nation#1).'
+  appeals_to:
+    court: Court of Appeals
+    source: prairie-band-potawatomi-nation-judicial-center
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Court of Appeals is the Court of last resort to which appeals may be taken from the District Court.”.'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://www.pbpindiantribe.com/tribal-court
+  location:
+    place: Mayetta
+    state: KS
+    address: 11444 158th Road
+  source: prairie-band-potawatomi-nation-judicial-center
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The judicial decisions of the Court of Appeals are final and are not subject to further appeal.”. The page calls the Court of Appeals the court of last resort; its decisions are final. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, prairie-band-potawatomi-nation#2).'
+- kind: other
+  name: Employment Disputes Tribunal
+  link: https://www.pbpindiantribe.com/tribal-court
+  location:
+    state: KS
+  source: prairie-band-potawatomi-nation-judicial-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “has the responsibility for deciding all government employment-related disputes”. A tribunal, court-like. The page says its procedures are ''as defined by the Nation’s law'' and does not say where its decisions go. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, prairie-band-potawatomi-nation#4).'
+- kind: peacemaking-program
+  name: Peacemakers Circle
+  link: https://www.pbpindiantribe.com/tribal-court
+  location:
+    state: KS
+  source: prairie-band-potawatomi-nation-judicial-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “is a mediating branch”. The page calls it a separate mediating branch that takes disputes voluntarily submitted by the parties. Included as a peacemaking body; the reviewer may decide it is not a court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, prairie-band-potawatomi-nation#5).'
+- kind: healing-to-wellness-court
+  name: PBPN Healing to Wellness court (HTWC)
+  link: https://www.pbpindiantribe.com/tribal-court
+  location:
+    state: KS
+  source: prairie-band-potawatomi-nation-judicial-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The PBPN Healing to Wellness court (HTWC) is unlike the typical criminal court.”. The page describes it as a team-based treatment approach rather than a traditional court; recorded because the nation''s page names it as a court. No location given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, prairie-band-potawatomi-nation#6).'
 dispute_resolution:
   forums:
   - kind: peacemaking

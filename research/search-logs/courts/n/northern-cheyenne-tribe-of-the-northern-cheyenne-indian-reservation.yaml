@@ -1,0 +1,53 @@
+profile: content/tribes/n/northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cheyennenation.com/judicial.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's judicial page gives the Northern Cheyenne Tribal Court name, a PO Box mailing address and a link to the new court website.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.nctribalcourts.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: The court's own site names the Trial Court, Appellate Court and Constitutional Court under the Judicial Branch.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.nctribalcourts.com/trial-judges
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Trial Court page describes the court's jurisdiction.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.nctribalcourts.com/appellate-court-1
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Appellate Court page describes its review of Trial Court decisions.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.nctribalcourts.com/constitutional-court-1
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Constitutional Court page describes its role.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://indianlaw.mt.gov/nc
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: dead-link
+  reason: Returned a 404 page after redirect to mt.gov/nc.

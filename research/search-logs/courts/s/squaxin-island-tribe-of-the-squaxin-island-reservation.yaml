@@ -32,3 +32,27 @@ searches:
     (own page, then directory entry): own-page, https://squaxinisland.org/departments/public-safety-justice/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-356
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://squaxinisland.org/government/departments/public-safety-justice/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Public Safety & Justice page says the department manages the Squaxin Island Tribal Court with three divisions.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists this nation's court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: http://www.nics.ws/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Connection reset by peer on fetch of NICS court pages.

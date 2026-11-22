@@ -136,3 +136,19 @@ searches:
     the review brief; verdict link-dead-court-found, from https://www.redlakenation.org/courts/.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-254
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.redlakenation.org/courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Courts page has only two document links.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.mncourts.gov/mncourtsgov/media/scao_library/CJI/TCSCF-Members-Tribal-Court-Judges-(website-December-2022).pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Returned 403 bot challenge; not circumvented.

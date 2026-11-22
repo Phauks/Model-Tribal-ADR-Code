@@ -38,3 +38,19 @@ searches:
     directory entry): own-page, https://stcroixojibwe-nsn.gov/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-357
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://stcroixojibwe-nsn.gov/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's home page fetched with fetch.py (status 200); says the nation has a dedicated court system and points to its legal page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://stcroixojibwe-nsn.gov/department/legal/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Legal department page fetched with fetch.py (status 200); names the St. Croix Chippewa Tribal Court and describes its cases.

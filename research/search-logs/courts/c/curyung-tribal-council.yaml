@@ -21,3 +21,27 @@ searches:
     then directory entry): own-page, http://www.curyungtribe.com/tribalcourt.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-074
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.curyungtribe.com/tribalcourt.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Fetched with fetch.py (200); the page names the Curyung Tribal Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.curyungtribe.com/tribalcourt.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'fetch.py: TLS certificate verification failed; the http address was used instead. Certificate verification was not disabled.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 2022 directory text read; Curyung Tribal Council entry is active with a Tribal Court.

@@ -1,0 +1,13 @@
+profile: content/tribes/b/bear-river-band-of-the-rohnerville-rancheria.yaml
+topic: courts
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.bearriverrancheria.org/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'Not fetched: the session''s WebFetch budget was exhausted (proxy 403).'

@@ -179,6 +179,38 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-428
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ypt-nsn.gov/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Fetch failed through the proxy (connection refused or closed) on two attempts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://yeringtonpaiute.us/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Fetch failed through the proxy on retry; the old tribal court URL (yeringtonpaiute.us/index.php/tribal-court) redirects to ypt-nsn.gov.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nvcourts.gov/__data/assets/pdf_file/0031/48496/Nevada_Tribal_Jurisdictions_and_Services_Resource_1.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nevada directory lists the Yerington Paiute Tribe among tribes with courts but names no specific court for it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/regional-offices/western/court-indian-offenses
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Western Region court's served-tribes list does not include the Yerington Paiute Tribe.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-324,
   cannot-tell); Yerington Paiute Tribal Court (court-325, cannot-tell). A person could open in a browser
   the pages that refused the project''s link checker: http://yeringtonpaiute.us/, http://yeringtonpaiute.us/index.php/tribal-court,

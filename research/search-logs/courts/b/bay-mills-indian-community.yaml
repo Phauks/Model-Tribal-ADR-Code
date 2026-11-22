@@ -39,3 +39,27 @@ searches:
     order (own page, then directory entry): own-page, https://baymillstribalcourt.org/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-023
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://baymillstribalcourt.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court's own home page names the Bay Mills Tribal Court and links to an Appellate Court page (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://baymillstribalcourt.org/appellate-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Appellate Court page names the Bay Mills Tribal Appellate Court and its jurisdiction over appeals from the Tribal Court (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Bay Mills Indian Community tribal court baymillstribalcourt'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search showed the court's own site and a Michigan legal help page; the court's own site was used.

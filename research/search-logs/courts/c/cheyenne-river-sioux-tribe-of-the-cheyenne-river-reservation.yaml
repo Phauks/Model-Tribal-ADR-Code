@@ -48,3 +48,11 @@ searches:
     order (own page, then directory entry): own-page, https://www.cheyenneriversioux.com/judicial-department.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-038
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cheyenneriversioux.com/judicial-department
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Judicial Department page lists three courts; no appeals statement.

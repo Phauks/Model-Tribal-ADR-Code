@@ -205,3 +205,35 @@ searches:
     order (own page, then directory entry): own-page, https://millelacsband.com/government/judicial/district-court.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-158
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://millelacsband.com/government/judicial
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Judicial Branch page fetched with fetch.py (200); names the Court of Central Jurisdiction, District Court, Court of Appeals and Wellness Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://millelacsband.com/government/judicial/district-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: District Court page fetched with fetch.py (200); names the trial court and the Family Healing to Wellness Court staff.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mlbo.dev/government/judicial-branch
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: dead-link
+  reason: Returned 404; the search-result path on mlbo.dev is not a valid page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Mille Lacs Band of Ojibwe judicial branch district court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned mlbo.dev and court-rule documents; the nation's millelacsband.com pages above were confirmed by fetch.

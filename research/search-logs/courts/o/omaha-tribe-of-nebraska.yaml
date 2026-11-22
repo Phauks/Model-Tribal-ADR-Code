@@ -200,4 +200,20 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-274
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.omahatribe.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Homepage fetched with fetch.py; it contains no court text.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://omaha-nsn.gov/tribe/government/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Proxy returned 502 and the host later failed to resolve, so the page could not be read.
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court” (research/reviews/2026-11-22-service-links.json).

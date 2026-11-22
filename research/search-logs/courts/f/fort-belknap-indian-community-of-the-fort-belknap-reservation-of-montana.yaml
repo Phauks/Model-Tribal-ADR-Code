@@ -158,6 +158,30 @@ searches:
     page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-087
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ftbelknap.org/courts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: The Courts page (fetched with fetch.py) has only a request form link and names no court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://indianlaw.mt.gov/fb
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: dead-link
+  reason: Returned a 404 page after redirect to mt.gov/fb.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Fort Belknap" tribal court Montana'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Search returned no official Fort Belknap court page beyond the nation's Courts page, which names no court.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-068,
   not-found-after-search); Fort Belknap Tribal Court (court-069, not-found-after-search). No page or official
   directory entry was found on 2026-11-22 for “Tribal Court”; “Fort Belknap Tribal Court” (research/reviews/2026-11-22-service-links.json).'

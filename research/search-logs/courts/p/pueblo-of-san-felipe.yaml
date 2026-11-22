@@ -32,3 +32,19 @@ searches:
     order (own page, then directory entry): own-page, https://sfpueblo.com/tribal-programs/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-312
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sfpueblo.com/tribal-programs/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal court page describes a traditional Tribal Court and a Contemporary Tribal Court with five divisions; no appeal route stated.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/contact/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: New Mexico tribal-state directory lists 'Pueblo of San Felipe – Tribal Court' (P.O. Box address only, so no street address recorded).

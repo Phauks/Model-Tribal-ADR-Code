@@ -249,6 +249,18 @@ justice_institutions:
     verification: read-in-full
     locator: General Information
     note: The page says the Tribal Court consists of a trial court and the Colville Tribal Court of Appeals; Colville Tribal Code § 1-1-41 (September 2010 version) establishes the Court of Appeals as the appellate court for the Reservation.
+- kind: tribal-court
+  name: Colville Tribal Court
+  link: https://www.cct-crt.com/
+  location:
+    place: Nespelem
+    state: WA
+    address: 38 School Loop Rd., Nespelem, WA
+  source: confederated-tribes-of-the-colville-reservation-cct-crt
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Tribal Court consists of a trial court and the Colville Tribal Court of appeals.”. Trial court; address from the page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-tribes-of-the-colville-reservation#1).'
 dispute_resolution:
   forums:
   - kind: peacemaking

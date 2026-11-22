@@ -1,0 +1,29 @@
+profile: content/tribes/c/chitimacha-tribe-of-louisiana.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.chitimacha.gov/departments-services/tribal-courts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Courts page names the Chitimacha Tribal Courts with the Navarro Street address (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://chitimacha.gov/sites/default/files/CCCJ%20Title%20IA%20-%20Chitimacha%20Peacemaker%20Court.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Official PDF returned status 200, but fetch.py could not extract its text, so the Peacemaker Court could not be quoted.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Chitimacha Tribe tribal courts peacemaker'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search showed the nation's Peacemaker Court PDF and Title I courts PDF; no quotable text was read from them.

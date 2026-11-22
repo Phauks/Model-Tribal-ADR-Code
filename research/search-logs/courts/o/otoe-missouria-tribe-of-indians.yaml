@@ -1,0 +1,29 @@
+profile: content/tribes/o/otoe-missouria-tribe-of-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: "Otoe-Missouria" tribal court CFR court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned the BIA CFR court pages and the nation's CFR court page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.omtribe.org/what-we-do/police-tribal-court/cfr-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's CFR court page names the Court of Indian Offenses for the Southern Plains Region and gives the building address.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: BIA list places the Otoe-Missouria Tribe of Indians under the Southern Plains CFR Court.
