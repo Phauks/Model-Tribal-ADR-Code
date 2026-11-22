@@ -326,52 +326,7 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Gila River Indian Community'
-dispute_resolution:
-  database_listings:
-  - title: Diversionary Prosecution
-    citation: Gila River Indian Community Ordinance GR-03-13, § 405, § 406 & GR-97-13, § 5.401, Rule 33.
-    link: https://www.gilariver.org/index.php/government/judical-branch
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Diversion; Drug; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-27'
-    locator: https://ncorj.org/tribal-law/diversionary-prosecution-2/
-  - title: Limitations and Guidelines for Diversionary Prosecution
-    citation: Gila River Indian Community Ordinance GR-03-13, Chapter 4 (Sentencing) Revisions
-    link: https://www.gilariver.org/index.php/government/judical-branch
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Diversion
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/limitations-and-guidelines-for-diversionary-prosecution/
-  - title: Notice to Domestic Violence Victims
-    citation: Gila River Indian Community Ordinance GR-03-13, § 710
-    link: https://www.gilariver.org/index.php/government/judical-branch
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/notice-to-domestic-violence-victims/
-  - title: Probation Must Include Programs to Promote Rehabilitation
-    citation: Gila River Indian Community Ordinance GR-03-13, § 406
-    link: https://www.gilariver.org/index.php/government/judical-branch
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Program; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/probation-must-include-programs-to-promote-rehabilitation/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: AZ

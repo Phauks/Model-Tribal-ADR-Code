@@ -256,6 +256,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/spokane/index.html
     source: national-indian-law-library-code-codes-spokane
     confidence: medium
+    verification: title-only
     as_of: '2001'
     locator: Table of Contents, under 'CHAPTER 4 - CIVIL ACTIONS.'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
@@ -268,6 +269,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/spokane/index.html
     source: national-indian-law-library-code-codes-spokane
     confidence: medium
+    verification: title-only
     as_of: '2001'
     locator: Table of Contents, under '.'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
@@ -279,6 +281,7 @@ dispute_resolution:
     link: https://narf.org/nill/codes/spokane/index.html
     source: national-indian-law-library-code-codes-spokane
     confidence: medium
+    verification: title-only
     as_of: '2001'
     locator: Table of Contents, under 'CHAPTER 7 - DOMESTIC RELATIONS'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
@@ -296,49 +299,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispute-resolution-in-parenting-plans/
-  - title: Domestic Violence Treatment Program (Deferred Sentence Option)
-    citation: RSLOC Chapter 29 § 29-4.10
-    link: https://www.spokanetribe.com/government/legal/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-violence-treatment-program-deferred-sentence-option/
-  - title: Informal Dispute Resolution in Domestic Relations
-    citation: RSLOC Chapter 7 § 7-3.04
-    link: https://www.spokanetribe.com/government/legal/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Conflict resolution
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-dispute-resolution-in-domestic-relations/
-  - title: Restitution to Victims
-    citation: RSLOC Chapter 16 § 16-1.04, § 16-2.05
-    link: https://www.spokanetribe.com/government/legal/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-to-victims/
-  - title: Youth Restitution and Community Service
-    citation: RSLOC Chapter 6 § 6-7.07(a)(5)
-    link: https://www.spokanetribe.com/government/legal/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/youth-restitution-and-community-service/
 gaming:
   compacts:
   - state: WA

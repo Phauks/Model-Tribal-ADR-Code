@@ -222,63 +222,7 @@ justice_institutions:
   locator: New Mexico section, entry 'Pueblo of Pojoaque'
   note: 'Link check 2026-11-21: the link the source gives (http://pojoaque.org/community/tribal-courts/)
     returned HTTP 404, so it is not recorded.'
-dispute_resolution:
-  database_listings:
-  - title: Deferral and Treatment Programs for DUI Cases
-    citation: Pueblo of Pojoaque Law and Order Code M-49
-    link: https://pojoaque.org/legal/law-order-code/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferral-and-treatment-programs-for-dui-cases/
-  - title: Deferral of Penalties for Ilegal Opiods and Stimulants Control Act
-    citation: Pueblo of Pojoaque Law and Order Code J-25 and M-59
-    link: https://pojoaque.org/legal/law-order-code/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferral-of-penalties-for-ilegal-opiods-and-stimulants-control-act/
-  - title: Family Plan after Adjudication of Abuse of Neglect
-    citation: Pueblo of Pojoaque Law and Order Code L-16
-    link: https://pojoaque.org/legal/law-order-code/
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-plan-after-adjudication-of-abuse-of-neglect/
-  - title: Path to Wellness Court
-    citation: Pueblo of Pojoaque Law and Order Code B-6 and C-10
-    link: https://pojoaque.org/legal/law-order-code/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/path-to-wellness-court/
-  - title: Youth Path to Wellness Court
-    citation: Pueblo of Pojoaque Law and Order Code B-7 and C-11
-    link: https://pojoaque.org/legal/law-order-code/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/youth-path-to-wellness-court/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: NM

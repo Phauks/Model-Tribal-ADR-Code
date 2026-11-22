@@ -321,53 +321,25 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Confederated-Coos-Ch-2-14-Peacegiving-Court-2-9.pdf
     source: coos-lower-umpqua-siuslaw-ch-2-14-peacegiving-court
     confidence: medium
+    verification: read-in-full
     as_of: '2005-11-13'
-  - kind: other
-    title: Chapter 2-13 – Wellness Court Rules
-    citation: CTCLUSI Tribal Code, Title 2 – Rules of Procedure, Chapter 2-13
-    summary: Per NARF, provides procedures, purposes, policies and sanctions for a Wellness Court that
-      diverts offenders with substance abuse issues from mainstream courts.
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Confederated-Coos-Ch-2-13-Wellness-Court.pdf
-    source: narf-ipi-youth-family-peacemaking-laws
-    confidence: medium
-    as_of: '2025-08-25'
-    note: Summary from NARF's description; listed among NARF's youth and family peacemaking laws.
   - kind: arbitration
     title: Chapter 2-3. Arbitration (10/24/12)
     citation: Chapter 2-3. Arbitration (10/24/12)
     link: https://www.narf.org/nill/codes/cooscode/index.html
     source: national-indian-law-library-code-codes-cooscode
     confidence: medium
+    verification: title-only
     as_of: 2024-04
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: peacemaking
-    title: Title 2 – Rules of Procedures, Chapter 14 – Peacegiving Court
-    citation: Title 2 – Rules of Procedures, Chapter 14 – Peacegiving Court
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Confederated-Coos-Ch-2-14-Peacegiving-Court-2-9.pdf
-    source: narf-ipi-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians of Oregon
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      qualifications, standards of conduct, and referrals.'
-  - kind: other
-    title: Title 2 – Rules of Procedure, Chapter 2-13 – Wellness Court Rules
-    citation: Title 2 – Rules of Procedure, Chapter 2-13 – Wellness Court Rules
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Confederated-Coos-Ch-2-13-Wellness-Court.pdf
-    source: narf-ipi-youth-family-peacemaking-laws
-    confidence: medium
-    as_of: '2025-08-25'
-    locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians of Oregon
-    note: 'Native American Rights Fund description (provision itself not read): Provides procedures, purposes,
-      policies, and sanctions for the Wellness Court to divert offenders with substance abuse issues away
-      from mainstream courts.'
   - kind: peacemaking
     title: Arbitration (10/24/12
     citation: Arbitration (10/24/12; Peacegiving Court (11/13/05
     link: https://narf.org/nill/codes/cooscode/index.html
     source: national-indian-law-library-code-codes-cooscode
     confidence: medium
+    verification: title-only
     as_of: '2024'
     locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Most
@@ -385,18 +357,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alternative-penalties-2/
-  - title: Alternative Processes in Lieu of Incarceration or Fines
-    citation: CONFEDERATED TRIBES OF COOS, LOWER UMPQUA AND SIUSLAW INDIANS TRIBAL CODE. TITLE 3 - OFFENSES.
-      CHAPTER 3-3 VIOLATIONS. 3-3-6 Classification of Violations; Penalties
-    link: https://ctclusi.org/wp-content/uploads/2023/01/Ch-3-3-Violations1-30-2023.pdf
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative; Restorative
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-processes-in-lieu-of-incarceration-or-fines/
   - title: Informal Adjustment for Juvenile Offenders
     citation: CTCLUSI TC Ch 4-2 § 4-2-11(b)-©
     link: https://ctclusi.org/tribalcode/
@@ -452,39 +412,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/peacegiving-court-for-juvenile-offenders/
-  - title: Peacegiving Court Procedures
-    citation: CHAPTER 2-14 PEACEGIVING COURT.
-    link: https://ncorj.org/tribal-law/peacegiving-court-procedures/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacegiving-court-procedures/
-  - title: Remedial Efforts for Families in Dependency Cases
-    citation: CTCLUSI TC Ch 4-4 § 4-4-22
-    link: https://ctclusi.org/tribalcode/
-    practice_area: Tribal Child Welfare/Family
-    phase: All phases
-    form_of_practice: Rehabilitation; Remedial
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/remedial-efforts-for-families-in-dependency-cases/
-  - title: Wellness Court Procedures
-    citation: CHAPTER 2-13 WELLNESS COURT.
-    link: https://ncorj.org/tribal-law/wellness-court-procedures-2/
-    practice_area: Tribal Justice
-    phase: Post-adjudication; Pre-adjudication
-    form_of_practice: Healing to Wellness Court
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/wellness-court-procedures-2/
 gaming:
   compacts:
   - state: OR

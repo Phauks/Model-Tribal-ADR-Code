@@ -305,28 +305,7 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'San Carlos Apache – Ndeh Nation'
-dispute_resolution:
-  database_listings:
-  - title: Batterer’s Treatment Program
-    citation: San Carlos Apache Domestic Violence Code, Section 5.8.1(C)(1)(d)
-    link: https://www.scatcourt-nsn.com/law-codes/
-    practice_area: Tribal Justice
-    form_of_practice: Alternative to incarceration; Deferred Prosecution; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/batterers-treatment-program/
-  - title: Treatment as Alternative to Incarceration
-    citation: San Carlos Apache Domestic Violence Code, Section 5.8.1(B)(8)
-    link: https://www.scatcourt-nsn.com/law-codes/
-    practice_area: Tribal Justice
-    form_of_practice: Alternative to incarceration; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-as-alternative-to-incarceration/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: AZ

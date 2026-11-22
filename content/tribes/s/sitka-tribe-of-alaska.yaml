@@ -319,7 +319,7 @@ dispute_resolution:
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/traditional-tlingit-law-in-childrens-cases/
   provisions:
-  - kind: traditional-dispute-resolution
+  - kind: other
     title: Problem Solving (alternative and traditional tools for dispute resolution)
     citation: Sitka Tribe Children's Code § 2.08
     summary: Allows the Presiding Judge to order alternative and traditional dispute resolution tools
@@ -327,31 +327,9 @@ dispute_resolution:
     link: https://sitkatribe.org/our-government/governance-documents/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: read-in-full
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/alternative-and-traditional-dispute-resolution/
-  database_listings:
-  - title: Alternative and Traditional Dispute Resolution
-    citation: Sitka Tribe Children's Code § 2.08
-    link: https://sitkatribe.org/our-government/governance-documents/
-    practice_area: Tribal Child Welfare/Family
-    phase: Any phase
-    form_of_practice: Alternative dispute resolution; Problem solving
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-and-traditional-dispute-resolution/
-  - title: Traditional Tlingit Law in Children’s Cases
-    citation: Sitka Tribe Children's Code § 7.01
-    link: https://sitkatribe.org/our-government/governance-documents/
-    practice_area: Tribal Child Welfare/Family
-    phase: Any phase
-    form_of_practice: Cultural practices; Healing; Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/traditional-tlingit-law-in-childrens-cases/
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -210,41 +210,7 @@ justice_institutions:
   note: The listed link (http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188) no longer
     reached the court on 2026-11-21; the link is the court's page on the nation's own site, found in the
     data gap review (research/reviews/2026-11-21-court-listings.json).
-dispute_resolution:
-  database_listings:
-  - title: Dispositional Alternatives for Child in Need of Care
-    citation: Ysleta Der Sur Pueblo Code of Laws 5.11.20
-    link: https://www.narf.org/nill/codes/ysletacode/index.html
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-child-in-need-of-care/
-  - title: Genalty Penalty Provisions
-    citation: Ysleta Der Sur Pueblo Code of Laws 4.2.10
-    link: https://www.narf.org/nill/codes/ysletacode/index.html
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/genalty-penalty-provisions/
-  - title: Referral for Treatment by Court
-    citation: Ysleta Der Sur Pueblo Code of Laws 4.2.70
-    link: https://www.narf.org/nill/codes/ysletacode/index.html
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/referral-for-treatment-by-court/
+dispute_resolution: {}
 gaming:
   ordinances:
   - approved: '1993-10-19'

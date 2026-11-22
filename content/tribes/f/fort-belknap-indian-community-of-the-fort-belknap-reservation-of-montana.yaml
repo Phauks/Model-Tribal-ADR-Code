@@ -308,29 +308,7 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Montana section, entry 'Fort Belknap Indian Community'
-dispute_resolution:
-  database_listings:
-  - title: Assessment and Treatment for Sex Offensers and Victims
-    citation: Fort Belknap Indian Community Code Title IV, Part 7, Section XVII
-    link: https://ftbelknap.org/forms%2Fdocuments
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Program; Substance
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/assessment-and-treatment-for-sex-offensers-and-victims/
-  - title: Victim Restitution for Sex Offender Victims
-    citation: Fort Belknap Indian Community Code Title IV, Part 7, Section III
-    link: https://ftbelknap.org/forms%2Fdocuments
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/victim-restitution-for-sex-offender-victims/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: MT

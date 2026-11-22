@@ -242,20 +242,7 @@ justice_institutions:
   locator: List of CFR Courts and the Tribes they Serve
   note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
     Indian Affairs list.
-dispute_resolution:
-  database_listings:
-  - title: Rehabilitation Program in Lieu of Imprisonment or Fine for Substance Use
-    citation: YOMBA SHOSHONE TRIBE LAW AND ORDER CODE. Title 5 Code of Criminal Offenses. Sec. 11 Misuse
-      of Controlled or Hypnotic Substance
-    link: https://www.narf.org/nill/codes/yombacode/index.html
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitation-program-in-lieu-of-imprisonment-or-fine-for-substance-use/
+dispute_resolution: {}
 jurisdiction:
 - topic: public-law-280
   value: retroceded

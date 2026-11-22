@@ -37,5 +37,6 @@ and says so.
 | [0024](0024-own-sign-in.md) | Sign people in with the site's own email codes and passwords, not Auth0 | Accepted |
 | [0025](0025-search-logs.md) | Log every search for a nation's information, including the ones that fail | Accepted |
 | [0026](0026-model-peacemaking-code.md) | Write model peacemaking provisions as part of the project's model code | Accepted |
+| [0027](0027-diversion-and-restorative-justice-in-the-research-base.md) | Keep diversion and restorative justice records in the research base; apply the provision pre-review | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

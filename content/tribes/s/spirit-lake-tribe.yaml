@@ -306,6 +306,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-09-29'
     locator: Spirit Lake Tribe of North Dakota
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
@@ -317,22 +318,13 @@ dispute_resolution:
     link: https://narf.org/nill/codes/spirit_lake/index.html
     source: national-indian-law-library-code-codes-spirit-lake
     confidence: medium
+    verification: title-only
     as_of: '2014'
     locator: Table of Contents, under 'Chapter Three. Community Notification'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Last
       Amended: March 24, 2014); the provision itself was not read. The heading it falls under is taken
       from the page layout and may be imprecise.'
   database_listings:
-  - title: Domestic Abuse – Mandatory Counseling and Traditional Healing
-    citation: Title 3, § 3-7-430(G)
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Justice
-    form_of_practice: Healing
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-abuse-mandatory-counseling-and-traditional-healing/
   - title: Informal Adjustments for Juveniles
     citation: Title 23, §§ 23-6-111 to 23-6-114
     link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
@@ -344,50 +336,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustments-for-juveniles/
-  - title: Juvenile Diversion Agreements
-    citation: Title 23, §§ 23-6-108 to 23-6-110
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Diversion; Program
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-diversion-agreements/
-  - title: Suspended Sentences with Rehabilitative and Restorative Conditions
-    citation: Title 3, § 3-6-107(F)
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Rehabilitation; Restitution
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/suspended-sentences-with-rehabilitative-and-restorative-conditions/
-  - title: Traditional Court
-    citation: 'SPIRIT LAKE LAW AND ORDER CODE Title 21: WODAKOTA: TRADITIONAL COURT ORDINANCE'
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Peacemaking
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/traditional-court/
-  - title: Traditional Restitution and Custom Law Recognition
-    citation: Title 3, § 3-7-020(OO), (ZZ)
-    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/traditional-restitution-and-custom-law-recognition/
 gaming:
   compacts:
   - state: ND

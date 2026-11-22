@@ -217,18 +217,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   database_listings:
-  - title: Diversion for Juveniles
-    citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 20, Section 312 & Section 313
-      & Section 314
-    link: https://www.sacandfoxks.com/entities/tribal-court
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-for-juveniles/
   - title: Limitations of Court in Domestic Violence Cases
     citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 30, Section 311 & Section 407
     link: https://www.sacandfoxks.com/entities/tribal-court
@@ -240,50 +228,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/limitations-of-court-in-domestic-violence-cases/
-  - title: Purpose of the Juvenile Procedure Code
-    citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 20, Section 101
-    link: https://www.sacandfoxks.com/entities/tribal-court
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-the-juvenile-procedure-code/
-  - title: Requirement for Sac and Fox Domestic Violence Offender’s Program
-    citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 30, Section 307
-    link: https://www.sacandfoxks.com/entities/tribal-court
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/requirement-for-sac-and-fox-domestic-violence-offenders-program/
-  - title: Senetncing Policy for Criminal Offenses
-    citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 11, Section 403
-    link: https://www.sacandfoxks.com/entities/tribal-court
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/senetncing-policy-for-criminal-offenses/
-  - title: Sentencing Policy for Domestic Violence Cases
-    citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 30, Section 231
-    link: https://www.sacandfoxks.com/entities/tribal-court
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-policy-for-domestic-violence-cases/
 gaming:
   compacts:
   - state: KS

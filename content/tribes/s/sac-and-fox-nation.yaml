@@ -293,50 +293,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   database_listings:
-  - title: Child Abuse and Child Neglect Diversion Program
-    citation: Sac & Fox Nation, Oklahoma Title 20 Section 511
-    link: https://www.sacandfoxnation-nsn.gov/code-of-laws/
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-program-2/
-  - title: Dispositons for Child in Need of Supervision
-    citation: Sac & Fox Nation, Oklahoma Title 20 Section 421
-    link: https://www.sacandfoxnation-nsn.gov/code-of-laws/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositons-for-child-in-need-of-supervision/
-  - title: Diversion Types for Juvenile Procedures
-    citation: Sac & Fox Nation, Oklahoma Title 20 Section 303 & Section 304 & Section 305
-    link: https://www.sacandfoxnation-nsn.gov/code-of-laws/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-types-for-juvenile-procedures/
-  - title: Domestic Violence Sentencing and Probation
-    citation: Sac & Fox Nation, Oklahoma Title 10 Section 207.6 & Section 207.7
-    link: https://www.sacandfoxnation-nsn.gov/code-of-laws/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-violence-sentencing-and-probation/
   - title: Limitations of Court in Domestic Violence Cases
     citation: Sac & Fox Nation, Oklahoma Title 9 Section 9-218
     link: https://www.sacandfoxnation-nsn.gov/code-of-laws/
@@ -348,39 +304,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/limitations-of-court-in-domestic-violence-cases-2/
-  - title: Limitations on Diversions for Juvenile Procedures
-    citation: Sac & Fox Nation, Oklahoma Title 20 Section 306
-    link: https://www.sacandfoxnation-nsn.gov/code-of-laws/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/limitations-on-diversions-for-juvenile-procedures/
-  - title: Sentencing Policy for Criminal Offenses
-    citation: Sac & Fox Nation, Oklahoma Title 11 Section 403
-    link: https://www.sacandfoxnation-nsn.gov/code-of-laws/
-    practice_area: Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-policy-for-criminal-offenses/
-  - title: Treatment Plan for Juvenile Procedures
-    citation: Sac & Fox Nation, Oklahoma Title 20 Section 403
-    link: https://www.sacandfoxnation-nsn.gov/code-of-laws/
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-plan-for-juvenile-procedures/
 gaming:
   compacts:
   - state: OK

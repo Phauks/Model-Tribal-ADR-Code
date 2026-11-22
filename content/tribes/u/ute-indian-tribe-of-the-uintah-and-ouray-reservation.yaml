@@ -222,30 +222,7 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Utah section, entry 'Ute Indian Tribe Uintah & Ouray Reservation'
-dispute_resolution:
-  database_listings:
-  - title: Disposition Options for Juvenile Cases
-    citation: Ute Indian Tribe 4-13-1
-    link: https://www.narf.org/nill/codes/ute_uintah_ouray/index.html
-    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-cases/
-  - title: Suspension of Sentence and Probation
-    citation: Ute Indian Tribe 13-3-15 and 13-3-16
-    link: https://www.narf.org/nill/codes/ute_uintah_ouray/index.html
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/suspension-of-sentence-and-probation/
+dispute_resolution: {}
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

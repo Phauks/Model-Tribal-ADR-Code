@@ -183,19 +183,7 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'La Jolla Band of Luiseno Indians'
-dispute_resolution:
-  database_listings:
-  - title: Referral for Treatment
-    citation: Reservation. Section 6 Civil Penalties. D Referral for Treatment.
-    link: https://ncorj.org/tribal-law/referral-for-treatment-2/
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/referral-for-treatment-2/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: CA

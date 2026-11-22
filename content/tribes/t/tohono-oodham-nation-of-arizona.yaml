@@ -297,31 +297,7 @@ justice_institutions:
   locator: Arizona section, entry 'Tohono O’odham Nation'
   note: 'Link check 2026-11-21: the link the source gives (http://www.tolc-nsn.org/opinions.htm) returned
     HTTP 404, so it is not recorded.'
-dispute_resolution:
-  database_listings:
-  - title: Informal, Non-Adversarial Child in Need of Care Proceedings
-    citation: 3 T.O.C. Ch. 1, § 1506(B)
-    link: https://tolc-nsn.org/tohono-oodham-code/
-    practice_area: Tribal Child Welfare/Family
-    phase: Adjudication
-    form_of_practice: Informal hearing; Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-non-adversarial-child-in-need-of-care-proceedings/
-  - title: Juvenile Justice Code Purpose — Rehabilitation, Prevention, Early Intervention, and Community-Based
-      Alternatives
-    citation: 3 T.O.C. Ch. 2, § 2101
-    link: https://tolc-nsn.org/tohono-oodham-code/
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: General/Policy
-    form_of_practice: Alternative (community-based); Early intervention; Program; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-justice-code-purpose-rehabilitation-prevention-early-intervention-and-community-based-alternatives/
+dispute_resolution: {}
 gaming:
   compacts:
   - state: AZ

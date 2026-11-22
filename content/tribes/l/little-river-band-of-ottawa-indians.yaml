@@ -336,6 +336,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
     source: little-river-900-02-juvenile-code-2011
     confidence: medium
+    verification: read-in-full
     as_of: '2011-07-27'
   - kind: arbitration
     title: Title 02 - Arbitration Ordinance
@@ -343,15 +344,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/little_river_band/index.html
     source: national-indian-law-library-code-codes-little-river-band
     confidence: medium
-    as_of: 2018-11
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: arbitration
-    title: '* Arbitration Ordinance (Commercial Court)'
-    citation: '* Arbitration Ordinance (Commercial Court)'
-    link: https://www.narf.org/nill/codes/little_river_band/index.html
-    source: national-indian-law-library-code-codes-little-river-band
-    confidence: medium
+    verification: title-only
     as_of: 2018-11
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title.
@@ -361,32 +354,23 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-09-29'
     locator: Little River Band of Ottawa Indians, Michigan
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
       philosophical background, referral standards (including option for traditional request), procedure,
       qualifications, standards of conduct, and forms.'
-  - kind: other
+  - kind: peacemaking
     title: Chapter 900 – Family, Title 2 – Juvenile Code
     citation: Chapter 900 – Family, Title 2 – Juvenile Code
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
     source: narf-ipi-youth-family-peacemaking-laws
     confidence: medium
+    verification: read-in-full
     as_of: '2025-08-25'
     locator: Little River Band of Ottawa Indians, Michigan
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
       philosophical background, procedures, and referral standards.'
-  - kind: arbitration
-    title: Title 02 - Arbitration Ordinance
-    citation: Title 02 - Arbitration Ordinance; * Arbitration Ordinance (Commercial Court
-    link: https://narf.org/nill/codes/little_river_band/index.html
-    source: national-indian-law-library-code-codes-little-river-band
-    confidence: medium
-    as_of: '2018'
-    locator: Table of Contents, under 'Chapter 300 - Judiciary'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: November 2018); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   published_materials:
   - kind: guide
     title: Appendix 1 – Peacemaking Guidelines (Odenaang Enjinoojimoying), 2008
@@ -444,39 +428,6 @@ dispute_resolution:
     as_of: '2001-06-18'
     locator: Sections 4.03(a)-(c), 10.02
   database_listings:
-  - title: Alternative Permanent Placement Plans
-    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 20.04'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    practice_area: Tribal Child Welfare/Family
-    phase: Post-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-permanent-placement-plans/
-  - title: Case Plan with Dispositional Alternatives for Minors
-    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 18.02; 18.03; and, 18.04.'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/case-plan-with-dispositional-alternatives-for-minors/
-  - title: Domestic Violence Program
-    citation: 'Little River Band of Ottawa Indians Ordinance #04-400-05: 4.03; 4.06; and, 8.06.'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-violence-program/
   - title: Informal Adjustment Conference for Minors
     citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 13.05.'
     link: https://www.lrboi-nsn.gov/government/tribal-code
@@ -488,48 +439,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-minors/
-  - title: Least Restrictive Aternative Apporach to Elder Protection Orders
-    citation: 'Little River Band of Ottawa Indians Ordinance #11-900-03: 10.1; and, 10.03'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    practice_area: Family; Tribal Justice
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/least-restrictive-aternative-apporach-to-elder-protection-orders/
-  - title: Purpose and Intent of the Children’s Protection Code
-    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 2.01'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Restorative justice; Restorative practice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-intent-of-the-childrens-protection-code/
-  - title: Rehabilitative Measures Penalty in Sentencing
-    citation: 'Little River Band of Ottawa Indians Ordinance #03-300-03: 8-03'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitative-measures-penalty-in-sentencing/
-  - title: Treatment and Counseling for Substance Abuse Perpetrators
-    citation: 'Little River Band of Ottawa Indians Ordinance #04-400-05: 5:01; 5.02; and, 5:05'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-and-counseling-for-substance-abuse-perpetrators/
 gaming:
   compacts:
   - state: MI
