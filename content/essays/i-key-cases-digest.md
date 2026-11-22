@@ -10,44 +10,18 @@ companion: i-legal-history-timeline
 
 # Key cases in federal Indian law: a digest
 
-This digest summarizes 65 court decisions that shape how
-[[native-nations|Native nations]] resolve disputes, how far their
-[[tribal-court|Tribal courts]] and other forums reach, and whether other
-courts respect and enforce the results. It has 54 decisions of the
-Supreme Court of the United States and 11 decisions of federal courts of appeals
-and state supreme and appellate courts, chosen for their bearing on
-arbitration, comity and enforcement. The annotated timeline
-(`content/essays/i-legal-history-timeline.md`) places each case among the
-statutes of its era.
+This digest summarizes 65 court decisions that shape how [[native-nations|Native nations]] resolve disputes, how far their [[tribal-court|Tribal courts]] and other forums reach, and whether other courts respect and enforce the results. It has 54 decisions of the Supreme Court of the United States and 11 decisions of federal courts of appeals and state supreme and appellate courts, chosen for their bearing on arbitration, comity and enforcement. The annotated timeline (`content/essays/i-legal-history-timeline.md`) places each case among the statutes of its era.
 
 ## How to read an entry
 
-- **Citation line.** The official citation, the court, the author of the
-  opinion and the vote, then the nations involved, named as each nation or
-  the Bureau of Indian Affairs list writes its name today. Some nations use
-  another name for themselves; that is noted where known, and each name is
-  to be confirmed with the nation before publication.
-- **Question and Holding.** A short summary in the project's words. Holdings
-  use the Court's own legal categories, such as "non-Indian" and
-  "nonmember," because the rule depends on them.
-- **In the court's words.** Quotations checked word for word against the
-  official U.S. Reports scans, the Supreme Court's own opinions or, for other
-  courts, the court's own site or a public copy. A pinpoint page follows each
-  quotation. Where only an unofficial copy was available, the entry says the
-  page is not verified.
-- **Later treatment.** Later decisions or statutes that changed or applied
-  the case, each with its source. A line marked "Lead to check" was not
-  verified and is on the Westlaw list.
-- **Why it matters here.** The project's own analysis of what the case means
-  for a model code. It is not a statement of the court and not legal advice.
-- **Topics.** Tags used by the index below and, later, by the website's
-  filters.
+- **Citation line.** The official citation, the court, the author of the opinion and the vote, then the nations involved, named as each nation or the Bureau of Indian Affairs list writes its name today. Some nations use another name for themselves; that is noted where known, and each name is to be confirmed with the nation before publication.
+- **Question and Holding.** A short summary in the project's words. Holdings use the Court's own legal categories, such as "non-Indian" and "nonmember," because the rule depends on them.
+- **In the court's words.** Quotations checked word for word against the official U.S. Reports scans, the Supreme Court's own opinions or, for other courts, the court's own site or a public copy. A pinpoint page follows each quotation. Where only an unofficial copy was available, the entry says the page is not verified.
+- **Later treatment.** Later decisions or statutes that changed or applied the case, each with its source. A line marked "Lead to check" was not verified and is on the Westlaw list.
+- **Why it matters here.** The project's own analysis of what the case means for a model code. It is not a statement of the court and not legal advice.
+- **Topics.** Tags used by the index below and, later, by the website's filters.
 
-No case here has been checked in a citator yet. Each source record carries a
-`citator` field to be filled after a KeyCite check; the list of checks is in
-`research/pull-lists/2026-11-21-legal-history-westlaw.md`. Older opinions use
-language about Native people that is offensive today; quotations are chosen
-for their legal content and are reproduced as written (project choice).
+No case here has been checked in a citator yet. Each source record carries a `citator` field to be filled after a KeyCite check; the list of checks is in `research/pull-lists/2026-11-21-legal-history-westlaw.md`. Older opinions use language about Native people that is offensive today; quotations are chosen for their legal content and are reproduced as written (project choice).
 
 ## Index by topic
 
@@ -68,25 +42,16 @@ for their legal content and are reproduced as written (project choice).
 
 This grouping is project analysis.
 
-- **Legitimacy of Tribal forums, including nonjudicial ones.** Santa Clara
-  Pueblo v. Martinez, Williams v. Lee, Fisher v. District Court and United
-  States v. Wheeler.
-- **Consent and jurisdiction over people who are not citizens of the
-  nation.** Montana v. United States, Strate v. A-1 Contractors, Nevada v.
-  Hicks, Atkinson Trading Co. v. Shirley and Plains Commerce Bank. Written
-  consent to a Tribal forum is the most reliable basis.
-- **Arbitration and immunity.** C & L Enterprises, Kiowa, Bay Mills,
-  Ninigret, Val-U, Sokaogon Gaming and Smith v. Hopland Band.
-- **Recognition and enforcement.** Wilson v. Marchington, Bird v. Glacier
-  Electric, AT&T Corp. v. Coeur d'Alene Tribe, John v. Baker and the two
-  Teague decisions; and, for finality, Iowa Mutual.
+- **Legitimacy of Tribal forums, including nonjudicial ones.** Santa Clara Pueblo v. Martinez, Williams v. Lee, Fisher v. District Court and United States v. Wheeler.
+- **Consent and jurisdiction over people who are not citizens of the nation.** Montana v. United States, Strate v. A-1 Contractors, Nevada v. Hicks, Atkinson Trading Co. v. Shirley and Plains Commerce Bank. Written consent to a Tribal forum is the most reliable basis.
+- **Arbitration and immunity.** C & L Enterprises, Kiowa, Bay Mills, Ninigret, Val-U, Sokaogon Gaming and Smith v. Hopland Band.
+- **Recognition and enforcement.** Wilson v. Marchington, Bird v. Glacier Electric, AT&T Corp. v. Coeur d'Alene Tribe, John v. Baker and the two Teague decisions; and, for finality, Iowa Mutual.
 
 ## Treaty era (1492 to 1871)
 
 ### Johnson v. M'Intosh (1823)
 
-*21 U.S. (8 Wheat.) 543 (1823)* [@johnson-v-mintosh]. Supreme Court of the United States; opinion by Marshall, C.J.; unanimous (no separate opinions).
-Nations: Peoria Tribe of Indians of Oklahoma (successor to the Illinois Confederacy and the Piankashaw, the sellers in the 1773 and 1775 deeds).
+*21 U.S. (8 Wheat.) 543 (1823)* [@johnson-v-mintosh]. Supreme Court of the United States; opinion by Marshall, C.J.; unanimous (no separate opinions). Nations: Peoria Tribe of Indians of Oklahoma (successor to the Illinois Confederacy and the Piankashaw, the sellers in the 1773 and 1775 deeds).
 
 **Question.** Can a title to land bought directly from Native nations by private purchasers before the Revolution be recognized in United States courts over a later federal patent?
 
@@ -110,8 +75,7 @@ Nations: Peoria Tribe of Indians of Oklahoma (successor to the Illinois Confeder
 
 ### Cherokee Nation v. Georgia (1831)
 
-*30 U.S. (5 Pet.) 1 (1831)* [@cherokee-nation-v-georgia]. Supreme Court of the United States; opinion by Marshall, C.J.; Johnson and Baldwin, JJ., concurring separately; Thompson, J., joined by Story, J., dissenting. The report does not mention Duvall, J., so the vote count is not given here.
-Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Band of Cherokee Indians in Oklahoma.
+*30 U.S. (5 Pet.) 1 (1831)* [@cherokee-nation-v-georgia]. Supreme Court of the United States; opinion by Marshall, C.J.; Johnson and Baldwin, JJ., concurring separately; Thompson, J., joined by Story, J., dissenting. The report does not mention Duvall, J., so the vote count is not given here. Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Band of Cherokee Indians in Oklahoma.
 
 **Question.** Is the Cherokee Nation a "foreign State" that may bring an original action in the Supreme Court against Georgia?
 
@@ -135,8 +99,7 @@ Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Ban
 
 ### Worcester v. Georgia (1832)
 
-*31 U.S. (6 Pet.) 515 (1832)* [@worcester-v-georgia]. Supreme Court of the United States; opinion by Marshall, C.J.; Marshall, C.J., for the Court; McLean, J., concurring; Baldwin, J., dissenting.
-Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Band of Cherokee Indians in Oklahoma.
+*31 U.S. (6 Pet.) 515 (1832)* [@worcester-v-georgia]. Supreme Court of the United States; opinion by Marshall, C.J.; Marshall, C.J., for the Court; McLean, J., concurring; Baldwin, J., dissenting. Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Band of Cherokee Indians in Oklahoma.
 
 **Question.** May Georgia apply its criminal laws to a non-Indian missionary living in the Cherokee Nation under federal license?
 
@@ -163,8 +126,7 @@ Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Ban
 
 ### Ex parte Crow Dog (1883)
 
-*109 U.S. 556 (1883)* [@ex-parte-crow-dog]. Supreme Court of the United States; opinion by Matthews, J.; unanimous.
-Nations: Rosebud Sioux Tribe (Sicangu Lakota Oyate); Crow Dog and Spotted Tail were Brulé (Sicangu) Lakota.
+*109 U.S. 556 (1883)* [@ex-parte-crow-dog]. Supreme Court of the United States; opinion by Matthews, J.; unanimous. Nations: Rosebud Sioux Tribe (Sicangu Lakota Oyate); Crow Dog and Spotted Tail were Brulé (Sicangu) Lakota.
 
 **Question.** Did a federal territorial court have jurisdiction to try and sentence a Lakota man for killing another Lakota man within the Great Sioux Reservation?
 
@@ -206,8 +168,7 @@ Nations: Rosebud Sioux Tribe (Sicangu Lakota Oyate); Crow Dog and Spotted Tail w
 
 ### United States v. Kagama (1886)
 
-*118 U.S. 375 (1886)* [@united-states-v-kagama]. Supreme Court of the United States; opinion by Miller, J.; unanimous.
-Nations: Hoopa Valley Tribe (crime alleged on the Hoopa Valley Reservation).
+*118 U.S. 375 (1886)* [@united-states-v-kagama]. Supreme Court of the United States; opinion by Miller, J.; unanimous. Nations: Hoopa Valley Tribe (crime alleged on the Hoopa Valley Reservation).
 
 **Question.** Does Congress have power to make crimes by one Indian against another within a reservation federal offenses (the Major Crimes Act)?
 
@@ -228,8 +189,7 @@ Nations: Hoopa Valley Tribe (crime alleged on the Hoopa Valley Reservation).
 
 ### Talton v. Mayes (1896)
 
-*163 U.S. 376 (1896)* [@talton-v-mayes]. Supreme Court of the United States; opinion by White, J.; 8-1 (Harlan, J., dissenting).
-Nations: Cherokee Nation.
+*163 U.S. 376 (1896)* [@talton-v-mayes]. Supreme Court of the United States; opinion by White, J.; 8-1 (Harlan, J., dissenting). Nations: Cherokee Nation.
 
 **Question.** Does the Fifth Amendment's grand jury requirement apply to a murder prosecution under Cherokee Nation law in Cherokee courts?
 
@@ -248,8 +208,7 @@ Nations: Cherokee Nation.
 
 ### Lone Wolf v. Hitchcock (1903)
 
-*187 U.S. 553 (1903)* [@lone-wolf-v-hitchcock]. Supreme Court of the United States; opinion by White, J.; unanimous in judgment (Harlan, J., concurring in the result).
-Nations: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma.
+*187 U.S. 553 (1903)* [@lone-wolf-v-hitchcock]. Supreme Court of the United States; opinion by White, J.; unanimous in judgment (Harlan, J., concurring in the result). Nations: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma.
 
 **Question.** May Congress allot and open reservation land in breach of the 1867 Medicine Lodge Treaty's requirement that three-fourths of adult men consent to any cession?
 
@@ -272,8 +231,7 @@ Nations: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma.
 
 ### United States v. Winans (1905)
 
-*198 U.S. 371 (1905)* [@united-states-v-winans]. Supreme Court of the United States; opinion by McKenna, J.; 8-1 (White, J., dissenting).
-Nations: Confederated Tribes and Bands of the Yakama Nation.
+*198 U.S. 371 (1905)* [@united-states-v-winans]. Supreme Court of the United States; opinion by McKenna, J.; 8-1 (White, J., dissenting). Nations: Confederated Tribes and Bands of the Yakama Nation.
 
 **Question.** Does the Yakama Nation's 1855 treaty right to take fish at "usual and accustomed places" survive private ownership of riverbank land?
 
@@ -294,8 +252,7 @@ Nations: Confederated Tribes and Bands of the Yakama Nation.
 
 ### Winters v. United States (1908)
 
-*207 U.S. 564 (1908)* [@winters-v-united-states]. Supreme Court of the United States; opinion by McKenna, J.; 8-1 (Brewer, J., dissenting).
-Nations: Fort Belknap Indian Community (Gros Ventre/Aaniiih and Assiniboine/Nakoda).
+*207 U.S. 564 (1908)* [@winters-v-united-states]. Supreme Court of the United States; opinion by McKenna, J.; 8-1 (Brewer, J., dissenting). Nations: Fort Belknap Indian Community (Gros Ventre/Aaniiih and Assiniboine/Nakoda).
 
 **Question.** Did the agreement creating the Fort Belknap Reservation impliedly reserve water from the Milk River for the reservation, as against later upstream settlers?
 
@@ -316,8 +273,7 @@ Nations: Fort Belknap Indian Community (Gros Ventre/Aaniiih and Assiniboine/Nako
 
 ### United States v. Sandoval (1913)
 
-*231 U.S. 28 (1913)* [@united-states-v-sandoval]. Supreme Court of the United States; opinion by Van Devanter, J.; unanimous.
-Nations: Pueblo of Santa Clara; Ohkay Owingeh (formerly San Juan Pueblo).
+*231 U.S. 28 (1913)* [@united-states-v-sandoval]. Supreme Court of the United States; opinion by Van Devanter, J.; unanimous. Nations: Pueblo of Santa Clara; Ohkay Owingeh (formerly San Juan Pueblo).
 
 **Question.** May Congress prohibit bringing liquor into Pueblo lands in New Mexico, even though the Pueblos held fee title?
 
@@ -340,8 +296,7 @@ Nations: Pueblo of Santa Clara; Ohkay Owingeh (formerly San Juan Pueblo).
 
 ### Tee-Hit-Ton Indians v. United States (1955)
 
-*348 U.S. 272 (1955)* [@tee-hit-ton-indians-v-united-states]. Supreme Court of the United States; opinion by Reed, J.; 6-3 (Douglas, J., joined by Warren, C.J., and Frankfurter, J., dissenting).
-Nations: Tee-Hit-Ton clan of the Tlingit (Stikine Tlingit, Wrangell area); the Wrangell Cooperative Association is the federally recognized tribe there.
+*348 U.S. 272 (1955)* [@tee-hit-ton-indians-v-united-states]. Supreme Court of the United States; opinion by Reed, J.; 6-3 (Douglas, J., joined by Warren, C.J., and Frankfurter, J., dissenting). Nations: Tee-Hit-Ton clan of the Tlingit (Stikine Tlingit, Wrangell area); the Wrangell Cooperative Association is the federally recognized tribe there.
 
 **Question.** Is the taking of timber from aboriginal Tlingit land that Congress never recognized a compensable taking under the Fifth Amendment?
 
@@ -360,8 +315,7 @@ Nations: Tee-Hit-Ton clan of the Tlingit (Stikine Tlingit, Wrangell area); the W
 
 ### Williams v. Lee (1959)
 
-*358 U.S. 217 (1959)* [@williams-v-lee]. Supreme Court of the United States; opinion by Black, J.; unanimous.
-Nations: Navajo Nation.
+*358 U.S. 217 (1959)* [@williams-v-lee]. Supreme Court of the United States; opinion by Black, J.; unanimous. Nations: Navajo Nation.
 
 **Question.** May an Arizona state court hear a non-Indian trader's suit to collect a debt from Navajo citizens for goods sold on the Navajo Reservation?
 
@@ -382,8 +336,7 @@ Nations: Navajo Nation.
 
 ### Native American Church v. Navajo Tribal Council (1959)
 
-*272 F.2d 131 (10th Cir. 1959)* [@native-american-church-v-navajo-tribal-council]. United States Court of Appeals for the Tenth Circuit; opinion by Huxman, J. (panel: Murrah, C.J., Phillips and Huxman, JJ.); 3-0.
-Nations: Navajo Nation.
+*272 F.2d 131 (10th Cir. 1959)* [@native-american-church-v-navajo-tribal-council]. United States Court of Appeals for the Tenth Circuit; opinion by Huxman, J. (panel: Murrah, C.J., Phillips and Huxman, JJ.); 3-0. Nations: Navajo Nation.
 
 **Question.** Do federal courts have jurisdiction to hear a First Amendment challenge to a Navajo Tribal Council ordinance prohibiting peyote on the reservation?
 
@@ -405,8 +358,7 @@ Nations: Navajo Nation.
 
 ### Menominee Tribe of Indians v. United States (1968)
 
-*391 U.S. 404 (1968)* [@menominee-tribe-v-united-states]. Supreme Court of the United States; opinion by Douglas, J.; 6-2 (Stewart, J., joined by Black, J., dissenting; Marshall, J., not participating).
-Nations: Menominee Indian Tribe of Wisconsin.
+*391 U.S. 404 (1968)* [@menominee-tribe-v-united-states]. Supreme Court of the United States; opinion by Douglas, J.; 6-2 (Stewart, J., joined by Black, J., dissenting; Marshall, J., not participating). Nations: Menominee Indian Tribe of Wisconsin.
 
 **Question.** Did the Menominee Termination Act of 1954 silently abrogate the Menominee's treaty hunting and fishing rights?
 
@@ -425,8 +377,7 @@ Nations: Menominee Indian Tribe of Wisconsin.
 
 ### McClanahan v. State Tax Commission of Arizona (1973)
 
-*411 U.S. 164 (1973)* [@mcclanahan-v-arizona-state-tax-commission]. Supreme Court of the United States; opinion by Marshall, J.; 9-0.
-Nations: Navajo Nation.
+*411 U.S. 164 (1973)* [@mcclanahan-v-arizona-state-tax-commission]. Supreme Court of the United States; opinion by Marshall, J.; 9-0. Nations: Navajo Nation.
 
 **Question.** May Arizona impose its personal income tax on a Navajo citizen whose income came wholly from reservation sources?
 
@@ -464,8 +415,7 @@ Nations: Navajo Nation.
 
 ### Fisher v. District Court (1976)
 
-*424 U.S. 382 (1976)* [@fisher-v-district-court]. Supreme Court of the United States; per curiam (no dissent noted).
-Nations: Northern Cheyenne Tribe.
+*424 U.S. 382 (1976)* [@fisher-v-district-court]. Supreme Court of the United States; per curiam (no dissent noted). Nations: Northern Cheyenne Tribe.
 
 **Question.** Does a Montana state court have jurisdiction over an adoption proceeding in which all parties are Northern Cheyenne citizens residing on the reservation?
 
@@ -486,8 +436,7 @@ Nations: Northern Cheyenne Tribe.
 
 ### Bryan v. Itasca County (1976)
 
-*426 U.S. 373 (1976)* [@bryan-v-itasca-county]. Supreme Court of the United States; opinion by Brennan, J.; 9-0.
-Nations: Minnesota Chippewa Tribe (Leech Lake Band of Ojibwe).
+*426 U.S. 373 (1976)* [@bryan-v-itasca-county]. Supreme Court of the United States; opinion by Brennan, J.; 9-0. Nations: Minnesota Chippewa Tribe (Leech Lake Band of Ojibwe).
 
 **Question.** Does Public Law 280 authorize a State to impose a personal property tax on a Native person's mobile home on trust land within a reservation?
 
@@ -508,8 +457,7 @@ Nations: Minnesota Chippewa Tribe (Leech Lake Band of Ojibwe).
 
 ### Oliphant v. Suquamish Indian Tribe (1978)
 
-*435 U.S. 191 (1978)* [@oliphant-v-suquamish-indian-tribe]. Supreme Court of the United States; opinion by Rehnquist, J.; 6-2 (Marshall, J., joined by Burger, C.J., dissenting; Brennan, J., not participating).
-Nations: Suquamish Tribe.
+*435 U.S. 191 (1978)* [@oliphant-v-suquamish-indian-tribe]. Supreme Court of the United States; opinion by Rehnquist, J.; 6-2 (Marshall, J., joined by Burger, C.J., dissenting; Brennan, J., not participating). Nations: Suquamish Tribe.
 
 **Question.** Do Tribal courts have inherent criminal jurisdiction over non-Indians?
 
@@ -530,8 +478,7 @@ Nations: Suquamish Tribe.
 
 ### United States v. Wheeler (1978)
 
-*435 U.S. 313 (1978)* [@united-states-v-wheeler]. Supreme Court of the United States; opinion by Stewart, J.; 8-0 (Brennan, J., not participating).
-Nations: Navajo Nation.
+*435 U.S. 313 (1978)* [@united-states-v-wheeler]. Supreme Court of the United States; opinion by Stewart, J.; 8-0 (Brennan, J., not participating). Nations: Navajo Nation.
 
 **Question.** Does the Double Jeopardy Clause bar a federal prosecution of a Navajo citizen after his conviction in Navajo Tribal court for an offense arising from the same incident?
 
@@ -552,8 +499,7 @@ Nations: Navajo Nation.
 
 ### Santa Clara Pueblo v. Martinez (1978)
 
-*436 U.S. 49 (1978)* [@santa-clara-pueblo-v-martinez]. Supreme Court of the United States; opinion by Marshall, J.; 7-1 (White, J., dissenting; Rehnquist, J., joining all but Part III; Blackmun, J., not participating).
-Nations: Pueblo of Santa Clara.
+*436 U.S. 49 (1978)* [@santa-clara-pueblo-v-martinez]. Supreme Court of the United States; opinion by Marshall, J.; 7-1 (White, J., dissenting; Rehnquist, J., joining all but Part III; Blackmun, J., not participating). Nations: Pueblo of Santa Clara.
 
 **Question.** Does the Indian Civil Rights Act authorize a federal civil action against a Pueblo and its officer to challenge a membership ordinance as sex discrimination?
 
@@ -575,8 +521,7 @@ Nations: Pueblo of Santa Clara.
 
 ### White Mountain Apache Tribe v. Bracker (1980)
 
-*448 U.S. 136 (1980)* [@white-mountain-apache-tribe-v-bracker]. Supreme Court of the United States; opinion by Marshall, J.; 6-3 (Stevens, J., joined by Stewart and Rehnquist, JJ., dissenting; Powell, J., concurring).
-Nations: White Mountain Apache Tribe.
+*448 U.S. 136 (1980)* [@white-mountain-apache-tribe-v-bracker]. Supreme Court of the United States; opinion by Marshall, J.; 6-3 (Stevens, J., joined by Stewart and Rehnquist, JJ., dissenting; Powell, J., concurring). Nations: White Mountain Apache Tribe.
 
 **Question.** May Arizona impose motor carrier and fuel taxes on a non-Indian logging company working exclusively for a Tribal enterprise on the reservation?
 
@@ -597,8 +542,7 @@ Nations: White Mountain Apache Tribe.
 
 ### Montana v. United States (1981)
 
-*450 U.S. 544 (1981)* [@montana-v-united-states]. Supreme Court of the United States; opinion by Stewart, J.; 6-3 (Blackmun, J., joined by Brennan and Marshall, JJ., dissenting in part; Stevens, J., concurring).
-Nations: Crow Tribe of Montana (Apsáalooke Nation).
+*450 U.S. 544 (1981)* [@montana-v-united-states]. Supreme Court of the United States; opinion by Stewart, J.; 6-3 (Blackmun, J., joined by Brennan and Marshall, JJ., dissenting in part; Stevens, J., concurring). Nations: Crow Tribe of Montana (Apsáalooke Nation).
 
 **Question.** May the Crow Tribe regulate hunting and fishing by nonmembers on land within the reservation owned in fee by non-Indians?
 
@@ -621,8 +565,7 @@ Nations: Crow Tribe of Montana (Apsáalooke Nation).
 
 ### Merrion v. Jicarilla Apache Tribe (1982)
 
-*455 U.S. 130 (1982)* [@merrion-v-jicarilla-apache-tribe]. Supreme Court of the United States; opinion by Marshall, J.; 6-3 (Stevens, J., joined by Burger, C.J., and Rehnquist, J., dissenting).
-Nations: Jicarilla Apache Nation.
+*455 U.S. 130 (1982)* [@merrion-v-jicarilla-apache-tribe]. Supreme Court of the United States; opinion by Marshall, J.; 6-3 (Stevens, J., joined by Burger, C.J., and Rehnquist, J., dissenting). Nations: Jicarilla Apache Nation.
 
 **Question.** May the Jicarilla Apache Nation impose a severance tax on oil and gas extracted by non-Indian lessees from Tribal lands?
 
@@ -643,8 +586,7 @@ Nations: Jicarilla Apache Nation.
 
 ### National Farmers Union Insurance Cos. v. Crow Tribe of Indians (1985)
 
-*471 U.S. 845 (1985)* [@national-farmers-union-insurance-companies-v-crow-tribe]. Supreme Court of the United States; opinion by Stevens, J.; 9-0.
-Nations: Crow Tribe of Montana (Apsáalooke Nation).
+*471 U.S. 845 (1985)* [@national-farmers-union-insurance-companies-v-crow-tribe]. Supreme Court of the United States; opinion by Stevens, J.; 9-0. Nations: Crow Tribe of Montana (Apsáalooke Nation).
 
 **Question.** May a non-Indian party go directly to federal court to challenge a Tribal court's civil jurisdiction, and must it first exhaust Tribal court remedies?
 
@@ -665,8 +607,7 @@ Nations: Crow Tribe of Montana (Apsáalooke Nation).
 
 ### Iowa Mutual Insurance Co. v. LaPlante (1987)
 
-*480 U.S. 9 (1987)* [@iowa-mutual-insurance-company-v-laplante]. Supreme Court of the United States; opinion by Marshall, J.; 8-1 (Stevens, J., concurring in part and dissenting in part).
-Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation of Montana).
+*480 U.S. 9 (1987)* [@iowa-mutual-insurance-company-v-laplante]. Supreme Court of the United States; opinion by Marshall, J.; 8-1 (Stevens, J., concurring in part and dissenting in part). Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation of Montana).
 
 **Question.** Does the Tribal-exhaustion requirement apply when federal jurisdiction rests on diversity of citizenship?
 
@@ -690,8 +631,7 @@ Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation o
 
 ### California v. Cabazon Band of Mission Indians (1987)
 
-*480 U.S. 202 (1987)* [@california-v-cabazon-band-of-mission-indians]. Supreme Court of the United States; opinion by White, J.; 6-3 (Stevens, J., joined by O'Connor and Scalia, JJ., dissenting).
-Nations: Cabazon Band of Cahuilla Indians; Morongo Band of Mission Indians.
+*480 U.S. 202 (1987)* [@california-v-cabazon-band-of-mission-indians]. Supreme Court of the United States; opinion by White, J.; 6-3 (Stevens, J., joined by O'Connor and Scalia, JJ., dissenting). Nations: Cabazon Band of Cahuilla Indians; Morongo Band of Mission Indians.
 
 **Question.** May California and Riverside County enforce their bingo and card-game laws on the Cabazon and Morongo reservations?
 
@@ -713,8 +653,7 @@ Nations: Cabazon Band of Cahuilla Indians; Morongo Band of Mission Indians.
 
 ### Mississippi Band of Choctaw Indians v. Holyfield (1989)
 
-*490 U.S. 30 (1989)* [@mississippi-band-of-choctaw-indians-v-holyfield]. Supreme Court of the United States; opinion by Brennan, J.; 6-3 (Stevens, J., joined by Rehnquist, C.J., and Kennedy, J., dissenting).
-Nations: Mississippi Band of Choctaw Indians.
+*490 U.S. 30 (1989)* [@mississippi-band-of-choctaw-indians-v-holyfield]. Supreme Court of the United States; opinion by Brennan, J.; 6-3 (Stevens, J., joined by Rehnquist, C.J., and Kennedy, J., dissenting). Nations: Mississippi Band of Choctaw Indians.
 
 **Question.** Under the Indian Child Welfare Act, were twin children born off the reservation to parents domiciled on it "domiciled" on the reservation, so that the Tribal court had exclusive jurisdiction over their adoption?
 
@@ -733,8 +672,7 @@ Nations: Mississippi Band of Choctaw Indians.
 
 ### Duro v. Reina (1990)
 
-*495 U.S. 676 (1990)* [@duro-v-reina]. Supreme Court of the United States; opinion by Kennedy, J.; 7-2 (Brennan, J., joined by Marshall, J., dissenting).
-Nations: Salt River Pima-Maricopa Indian Community; Torres Martinez Desert Cahuilla Indians (Duro's nation).
+*495 U.S. 676 (1990)* [@duro-v-reina]. Supreme Court of the United States; opinion by Kennedy, J.; 7-2 (Brennan, J., joined by Marshall, J., dissenting). Nations: Salt River Pima-Maricopa Indian Community; Torres Martinez Desert Cahuilla Indians (Duro's nation).
 
 **Question.** May a Native nation exercise criminal jurisdiction over an Indian who is not one of its members?
 
@@ -753,8 +691,7 @@ Nations: Salt River Pima-Maricopa Indian Community; Torres Martinez Desert Cahui
 
 ### Oklahoma Tax Commission v. Citizen Band Potawatomi Indian Tribe of Oklahoma (1991)
 
-*498 U.S. 505 (1991)* [@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe]. Supreme Court of the United States; opinion by Rehnquist, C.J.; 9-0 (Stevens, J., concurring).
-Nations: Citizen Potawatomi Nation.
+*498 U.S. 505 (1991)* [@oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe]. Supreme Court of the United States; opinion by Rehnquist, C.J.; 9-0 (Stevens, J., concurring). Nations: Citizen Potawatomi Nation.
 
 **Question.** Did the Nation waive its sovereign immunity from the State's counterclaim to collect cigarette taxes by suing to enjoin the tax assessment?
 
@@ -777,8 +714,7 @@ Nations: Citizen Potawatomi Nation.
 
 ### Sokaogon Gaming Enterprise Corp. v. Tushie-Montgomery Associates, Inc. (1996)
 
-*86 F.3d 656 (7th Cir. 1996)* [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates]. United States Court of Appeals for the Seventh Circuit; argued Apr. 2, decided June 5, 1996; opinion by Posner, C.J., for a unanimous panel (Ripple and Manion, JJ.).
-Nations: Sokaogon Chippewa Community (Mole Lake Band of Lake Superior Chippewa).
+*86 F.3d 656 (7th Cir. 1996)* [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates]. United States Court of Appeals for the Seventh Circuit; argued Apr. 2, decided June 5, 1996; opinion by Posner, C.J., for a unanimous panel (Ripple and Manion, JJ.). Nations: Sokaogon Chippewa Community (Mole Lake Band of Lake Superior Chippewa).
 
 **Question.** Did a Tribal gaming enterprise waive its sovereign immunity by agreeing to an arbitration clause in an architect's contract?
 
@@ -798,8 +734,7 @@ Nations: Sokaogon Chippewa Community (Mole Lake Band of Lake Superior Chippewa).
 
 ### Seminole Tribe of Florida v. Florida (1996)
 
-*517 U.S. 44 (1996)* [@seminole-tribe-v-florida-1996]. Supreme Court of the United States; opinion by Rehnquist, C.J.; 5-4 (Stevens, J., dissenting; Souter, J., joined by Ginsburg and Breyer, JJ., dissenting).
-Nations: Seminole Tribe of Florida.
+*517 U.S. 44 (1996)* [@seminole-tribe-v-florida-1996]. Supreme Court of the United States; opinion by Rehnquist, C.J.; 5-4 (Stevens, J., dissenting; Souter, J., joined by Ginsburg and Breyer, JJ., dissenting). Nations: Seminole Tribe of Florida.
 
 **Question.** May Congress, under the Indian Commerce Clause, authorize a Tribe to sue a State in federal court to compel good-faith negotiation of a gaming compact under the Indian Gaming Regulatory Act?
 
@@ -821,8 +756,7 @@ Nations: Seminole Tribe of Florida.
 
 ### Strate v. A-1 Contractors (1997)
 
-*520 U.S. 438 (1997)* [@strate-v-a-1-contractors]. Supreme Court of the United States; opinion by Ginsburg, J.; 9-0.
-Nations: Mandan, Hidatsa and Arikara Nation (Three Affiliated Tribes of the Fort Berthold Reservation).
+*520 U.S. 438 (1997)* [@strate-v-a-1-contractors]. Supreme Court of the United States; opinion by Ginsburg, J.; 9-0. Nations: Mandan, Hidatsa and Arikara Nation (Three Affiliated Tribes of the Fort Berthold Reservation).
 
 **Question.** Does a Tribal court have jurisdiction over a tort suit between nonmembers arising from a highway accident on a state right-of-way within the reservation?
 
@@ -843,8 +777,7 @@ Nations: Mandan, Hidatsa and Arikara Nation (Three Affiliated Tribes of the Fort
 
 ### Wilson v. Marchington (1997)
 
-*127 F.3d 805 (9th Cir. 1997)* [@wilson-v-marchington-1997]. United States Court of Appeals for the Ninth Circuit; opinion by Thomas, J. (panel: Wright, Reinhardt and Thomas, JJ.); 3-0 (no separate opinion shown in the text read).
-Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation of Montana).
+*127 F.3d 805 (9th Cir. 1997)* [@wilson-v-marchington-1997]. United States Court of Appeals for the Ninth Circuit; opinion by Thomas, J. (panel: Wright, Reinhardt and Thomas, JJ.); 3-0 (no separate opinion shown in the text read). Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation of Montana).
 
 **Question.** Must a federal court give full faith and credit to a Blackfeet Tribal Court tort judgment, and if not, when should it recognize the judgment under comity?
 
@@ -868,8 +801,7 @@ Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation o
 
 ### Alaska v. Native Village of Venetie Tribal Government (1998)
 
-*522 U.S. 520 (1998)* [@alaska-v-native-village-of-venetie-tribal-government]. Supreme Court of the United States; opinion by Thomas, J.; 9-0.
-Nations: Native Village of Venetie Tribal Government.
+*522 U.S. 520 (1998)* [@alaska-v-native-village-of-venetie-tribal-government]. Supreme Court of the United States; opinion by Thomas, J.; 9-0. Nations: Native Village of Venetie Tribal Government.
 
 **Question.** Are lands conveyed to Alaska Native village corporations under the Alaska Native Claims Settlement Act "Indian country" as a "dependent Indian community" under 18 U.S.C. § 1151(b)?
 
@@ -890,8 +822,7 @@ Nations: Native Village of Venetie Tribal Government.
 
 ### Kiowa Tribe of Oklahoma v. Manufacturing Technologies, Inc. (1998)
 
-*523 U.S. 751 (1998)* [@kiowa-tribe-v-manufacturing-technologies]. Supreme Court of the United States; opinion by Kennedy, J.; 6-3 (Stevens, J., joined by Thomas and Ginsburg, JJ., dissenting).
-Nations: Kiowa Tribe.
+*523 U.S. 751 (1998)* [@kiowa-tribe-v-manufacturing-technologies]. Supreme Court of the United States; opinion by Kennedy, J.; 6-3 (Stevens, J., joined by Thomas and Ginsburg, JJ., dissenting). Nations: Kiowa Tribe.
 
 **Question.** Does Tribal sovereign immunity bar a state-court suit on a promissory note signed for off-reservation commercial activity?
 
@@ -914,8 +845,7 @@ Nations: Kiowa Tribe.
 
 ### Val-U Construction Co. v. Rosebud Sioux Tribe (1998)
 
-*146 F.3d 573 (8th Cir. 1998)* [@val-u-construction-company-v-rosebud-sioux-tribe]. United States Court of Appeals for the Eighth Circuit; opinion by Waters, District Judge, sitting by designation (panel: Beam and Heaney, JJ., and Waters, D.J.); 3-0 (no separate opinion shown).
-Nations: Rosebud Sioux Tribe (Sicangu Lakota Oyate).
+*146 F.3d 573 (8th Cir. 1998)* [@val-u-construction-company-v-rosebud-sioux-tribe]. United States Court of Appeals for the Eighth Circuit; opinion by Waters, District Judge, sitting by designation (panel: Beam and Heaney, JJ., and Waters, D.J.); 3-0 (no separate opinion shown). Nations: Rosebud Sioux Tribe (Sicangu Lakota Oyate).
 
 **Question.** Is an arbitration award entered against a Tribe that refused to participate in the arbitration valid and preclusive, given the Tribe's sovereign-immunity objection?
 
@@ -933,8 +863,7 @@ Nations: Rosebud Sioux Tribe (Sicangu Lakota Oyate).
 
 ### John v. Baker (1999)
 
-*982 P.2d 738 (Alaska 1999)* [@john-v-baker]. Supreme Court of Alaska; opinion by Fabe, J.; 3-2 (Matthews, C.J., joined by Compton, J., dissenting).
-Nations: Northway Village.
+*982 P.2d 738 (Alaska 1999)* [@john-v-baker]. Supreme Court of Alaska; opinion by Fabe, J.; 3-2 (Matthews, C.J., joined by Compton, J., dissenting). Nations: Northway Village.
 
 **Question.** Does an Alaska Native village without Indian country retain inherent authority to adjudicate a custody dispute between its members, and must Alaska courts respect the resulting Tribal decision?
 
@@ -954,8 +883,7 @@ Nations: Northway Village.
 
 ### Rice v. Cayetano (2000)
 
-*528 U.S. 495 (2000)* [@rice-v-cayetano]. Supreme Court of the United States; opinion by Kennedy, J.; 7-2 (Stevens, J., dissenting, joined by Ginsburg, J., as to Part II; Ginsburg, J., dissenting; Breyer, J., joined by Souter, J., concurring in the result).
-Nations: Native Hawaiian people (Kānaka Maoli); no federally recognized Native Hawaiian governing entity exists.
+*528 U.S. 495 (2000)* [@rice-v-cayetano]. Supreme Court of the United States; opinion by Kennedy, J.; 7-2 (Stevens, J., dissenting, joined by Ginsburg, J., as to Part II; Ginsburg, J., dissenting; Breyer, J., joined by Souter, J., concurring in the result). Nations: Native Hawaiian people (Kānaka Maoli); no federally recognized Native Hawaiian governing entity exists.
 
 **Question.** May Hawaiʻi limit voting for trustees of the Office of Hawaiian Affairs to "Hawaiians" defined by ancestry?
 
@@ -971,8 +899,7 @@ Nations: Native Hawaiian people (Kānaka Maoli); no federally recognized Native 
 
 ### Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority (2000)
 
-*207 F.3d 21 (1st Cir. 2000)* [@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]. United States Court of Appeals for the First Circuit; opinion by Selya, J. (panel: Torruella, C.J., Selya and Lipez, JJ.); 3-0 (no separate opinion shown).
-Nations: Narragansett Indian Tribe.
+*207 F.3d 21 (1st Cir. 2000)* [@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]. United States Court of Appeals for the First Circuit; opinion by Selya, J. (panel: Torruella, C.J., Selya and Lipez, JJ.); 3-0 (no separate opinion shown). Nations: Narragansett Indian Tribe.
 
 **Question.** Did a Tribal housing authority waive immunity through a contract clause sending disputes to the Tribal Council and then to a Tribal Court-appointed arbitration board, and must the contractor exhaust Tribal remedies?
 
@@ -990,8 +917,7 @@ Nations: Narragansett Indian Tribe.
 
 ### Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians (2000)
 
-*2000 WI 79, 236 Wis. 2d 384, 612 N.W.2d 709 (2000)* [@teague-v-bad-river-band-2000]. Supreme Court of Wisconsin; opinion by Sykes, J.; No concurring or dissenting opinions listed on the court's caption page.
-Nations: Bad River Band of the Lake Superior Tribe of Chippewa Indians.
+*2000 WI 79, 236 Wis. 2d 384, 612 N.W.2d 709 (2000)* [@teague-v-bad-river-band-2000]. Supreme Court of Wisconsin; opinion by Sykes, J.; No concurring or dissenting opinions listed on the court's caption page. Nations: Bad River Band of the Lake Superior Tribe of Chippewa Indians.
 
 **Question.** May a Wisconsin court deny full faith and credit to a Tribal court judgment under the state "prior action pending" rule because the same dispute was filed first in state court?
 
@@ -1011,8 +937,7 @@ Nations: Bad River Band of the Lake Superior Tribe of Chippewa Indians.
 
 ### C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma (2001)
 
-*532 U.S. 411 (2001)* [@c-and-l-enterprises-v-citizen-band-potawatomi-2001]. Supreme Court of the United States; opinion by Ginsburg, J.; 9-0.
-Nations: Citizen Potawatomi Nation.
+*532 U.S. 411 (2001)* [@c-and-l-enterprises-v-citizen-band-potawatomi-2001]. Supreme Court of the United States; opinion by Ginsburg, J.; 9-0. Nations: Citizen Potawatomi Nation.
 
 **Question.** Did the Nation waive its sovereign immunity from suit to enforce an arbitration award by agreeing to a standard-form construction contract with an arbitration clause and an Oklahoma choice-of-law clause?
 
@@ -1035,8 +960,7 @@ Nations: Citizen Potawatomi Nation.
 
 ### Atkinson Trading Co. v. Shirley (2001)
 
-*532 U.S. 645 (2001)* [@atkinson-trading-company-v-shirley]. Supreme Court of the United States; opinion by Rehnquist, C.J.; 9-0 (Souter, J., joined by Kennedy and Thomas, JJ., concurring).
-Nations: Navajo Nation.
+*532 U.S. 645 (2001)* [@atkinson-trading-company-v-shirley]. Supreme Court of the United States; opinion by Rehnquist, C.J.; 9-0 (Souter, J., joined by Kennedy and Thomas, JJ., concurring). Nations: Navajo Nation.
 
 **Question.** May the Navajo Nation impose a hotel occupancy tax on nonmember guests of a hotel on non-Indian fee land within the reservation?
 
@@ -1054,8 +978,7 @@ Nations: Navajo Nation.
 
 ### Nevada v. Hicks (2001)
 
-*533 U.S. 353 (2001)* [@nevada-v-hicks]. Supreme Court of the United States; opinion by Scalia, J.; 9-0 in judgment (Souter, J., joined by Kennedy and Thomas, JJ., concurring; Ginsburg, J., concurring; O'Connor, J., joined by Stevens and Breyer, JJ., concurring in part and in the judgment; Stevens, J., joined by Breyer, J., concurring in the judgment).
-Nations: Paiute-Shoshone Tribe of the Fallon Reservation and Colony.
+*533 U.S. 353 (2001)* [@nevada-v-hicks]. Supreme Court of the United States; opinion by Scalia, J.; 9-0 in judgment (Souter, J., joined by Kennedy and Thomas, JJ., concurring; Ginsburg, J., concurring; O'Connor, J., joined by Stevens and Breyer, JJ., concurring in part and in the judgment; Stevens, J., joined by Breyer, J., concurring in the judgment). Nations: Paiute-Shoshone Tribe of the Fallon Reservation and Colony.
 
 **Question.** Does a Tribal court have jurisdiction over a member's civil-rights and tort claims against state game wardens for executing a search warrant on his trust land on the reservation?
 
@@ -1076,8 +999,7 @@ Nations: Paiute-Shoshone Tribe of the Fallon Reservation and Colony.
 
 ### Bird v. Glacier Electric Cooperative, Inc. (2001)
 
-*255 F.3d 1136 (9th Cir. 2001)* [@bird-v-glacier-electric-cooperative]. United States Court of Appeals for the Ninth Circuit; opinion by Gould, J. (panel: Reavley, O'Scannlain and Gould, JJ.); 3-0 (no separate opinion shown in the text read).
-Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation of Montana).
+*255 F.3d 1136 (9th Cir. 2001)* [@bird-v-glacier-electric-cooperative]. United States Court of Appeals for the Ninth Circuit; opinion by Gould, J. (panel: Reavley, O'Scannlain and Gould, JJ.); 3-0 (no separate opinion shown in the text read). Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation of Montana).
 
 **Question.** May a federal court recognize a Blackfeet Tribal Court jury verdict against a non-member-owned cooperative when the plaintiff's closing argument appealed to racial and ethnic prejudice?
 
@@ -1093,8 +1015,7 @@ Nations: Blackfeet Nation (Blackfeet Tribe of the Blackfeet Indian Reservation o
 
 ### Smith v. Hopland Band of Pomo Indians (2002)
 
-*95 Cal. App. 4th 1 (2002)* [@smith-v-hopland-band-of-pomo-indians]. California Court of Appeal, First Appellate District, Division One; opinion by Stein, Acting P.J. (Swager and Marchiano, JJ., concurring); 3-0.
-Nations: Hopland Band of Pomo Indians.
+*95 Cal. App. 4th 1 (2002)* [@smith-v-hopland-band-of-pomo-indians]. California Court of Appeal, First Appellate District, Division One; opinion by Stein, Acting P.J. (Swager and Marchiano, JJ., concurring); 3-0. Nations: Hopland Band of Pomo Indians.
 
 **Question.** Did the Tribe waive sovereign immunity from a state-court suit by signing an architect's contract with an arbitration clause and choice of law?
 
@@ -1112,8 +1033,7 @@ Nations: Hopland Band of Pomo Indians.
 
 ### AT&T Corp. v. Coeur d'Alene Tribe (2002)
 
-*295 F.3d 899 (9th Cir. 2002)* [@att-corporation-v-coeur-dalene-tribe]. United States Court of Appeals for the Ninth Circuit; opinion by B. Fletcher, J. (panel: Browning, B. Fletcher and Gould, JJ.); 2-1 in part (Gould, J., concurring in part and dissenting in part).
-Nations: Coeur d'Alene Tribe.
+*295 F.3d 899 (9th Cir. 2002)* [@att-corporation-v-coeur-dalene-tribe]. United States Court of Appeals for the Ninth Circuit; opinion by B. Fletcher, J. (panel: Browning, B. Fletcher and Gould, JJ.); 2-1 in part (Gould, J., concurring in part and dissenting in part). Nations: Coeur d'Alene Tribe.
 
 **Question.** Must a federal court enforce a Coeur d'Alene Tribal Court judgment ordering AT&T to provide toll-free service for the Tribe's national lottery?
 
@@ -1133,8 +1053,7 @@ Nations: Coeur d'Alene Tribe.
 
 ### Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians (2003)
 
-*2003 WI 118, 265 Wis. 2d 64, 665 N.W.2d 899 (2003)* [@teague-v-bad-river-band-2003]. Supreme Court of Wisconsin; opinion by Crooks, J. (lead opinion); Abrahamson, C.J., concurring, joined by Bablitch, Bradley and Sykes, JJ.; 5-2 in the judgment (Wilcox, J., and Prosser, J., dissenting).
-Nations: Bad River Band of the Lake Superior Tribe of Chippewa Indians.
+*2003 WI 118, 265 Wis. 2d 64, 665 N.W.2d 899 (2003)* [@teague-v-bad-river-band-2003]. Supreme Court of Wisconsin; opinion by Crooks, J. (lead opinion); Abrahamson, C.J., concurring, joined by Bablitch, Bradley and Sykes, JJ.; 5-2 in the judgment (Wilcox, J., and Prosser, J., dissenting). Nations: Bad River Band of the Lake Superior Tribe of Chippewa Indians.
 
 **Question.** After the parallel state and Tribal cases both reached judgment, must Wisconsin give full faith and credit to the earlier Tribal-court judgment voiding the employment contracts?
 
@@ -1154,8 +1073,7 @@ Nations: Bad River Band of the Lake Superior Tribe of Chippewa Indians.
 
 ### United States v. Lara (2004)
 
-*541 U.S. 193 (2004)* [@united-states-v-lara]. Supreme Court of the United States; opinion by Breyer, J.; 7-2 (Souter, J., joined by Scalia, J., dissenting; Stevens, J., concurring; Kennedy, J., and Thomas, J., concurring in the judgment).
-Nations: Spirit Lake Tribe; Turtle Mountain Band of Chippewa Indians of North Dakota (Lara's nation).
+*541 U.S. 193 (2004)* [@united-states-v-lara]. Supreme Court of the United States; opinion by Breyer, J.; 7-2 (Souter, J., joined by Scalia, J., dissenting; Stevens, J., concurring; Kennedy, J., and Thomas, J., concurring in the judgment). Nations: Spirit Lake Tribe; Turtle Mountain Band of Chippewa Indians of North Dakota (Lara's nation).
 
 **Question.** After a Tribal prosecution of a nonmember Indian under the 1990 the Indian Civil Rights Act amendment, does the Double Jeopardy Clause bar a federal prosecution for the same conduct?
 
@@ -1171,8 +1089,7 @@ Nations: Spirit Lake Tribe; Turtle Mountain Band of Chippewa Indians of North Da
 
 ### Plains Commerce Bank v. Long Family Land & Cattle Co. (2008)
 
-*554 U.S. 316 (2008)* [@plains-commerce-bank-v-long-family-land-and-cattle-company]. Supreme Court of the United States; opinion by Roberts, C.J.; 5-4 (Ginsburg, J., joined by Stevens, Souter and Breyer, JJ., concurring in part, concurring in the judgment in part, and dissenting in part).
-Nations: Cheyenne River Sioux Tribe.
+*554 U.S. 316 (2008)* [@plains-commerce-bank-v-long-family-land-and-cattle-company]. Supreme Court of the United States; opinion by Roberts, C.J.; 5-4 (Ginsburg, J., joined by Stevens, Souter and Breyer, JJ., concurring in part, concurring in the judgment in part, and dissenting in part). Nations: Cheyenne River Sioux Tribe.
 
 **Question.** Does a Tribal court have jurisdiction over a discrimination claim by Tribal-member-owned company against a non-Indian bank concerning the bank's sale of fee land it owned on the reservation?
 
@@ -1193,8 +1110,7 @@ Nations: Cheyenne River Sioux Tribe.
 
 ### Michigan v. Bay Mills Indian Community (2014)
 
-*572 U.S. 782 (2014)* [@michigan-v-bay-mills-indian-community]. Supreme Court of the United States; opinion by Kagan, J.; 5-4 (Sotomayor, J., concurring; Scalia, J., dissenting; Thomas, J., joined by Scalia, Ginsburg and Alito, JJ., dissenting; Ginsburg, J., dissenting).
-Nations: Bay Mills Indian Community.
+*572 U.S. 782 (2014)* [@michigan-v-bay-mills-indian-community]. Supreme Court of the United States; opinion by Kagan, J.; 5-4 (Sotomayor, J., concurring; Scalia, J., dissenting; Thomas, J., joined by Scalia, Ginsburg and Alito, JJ., dissenting; Ginsburg, J., dissenting). Nations: Bay Mills Indian Community.
 
 **Question.** Does Tribal sovereign immunity bar a State's suit to enjoin a Tribe's operation of a casino outside Indian lands?
 
@@ -1214,8 +1130,7 @@ Nations: Bay Mills Indian Community.
 
 ### United States v. Bryant (2016)
 
-*579 U.S. 140 (2016)* [@united-states-v-bryant]. Supreme Court of the United States; opinion by Ginsburg, J.; 9-0 (Thomas, J., concurring).
-Nations: Northern Cheyenne Tribe.
+*579 U.S. 140 (2016)* [@united-states-v-bryant]. Supreme Court of the United States; opinion by Ginsburg, J.; 9-0 (Thomas, J., concurring). Nations: Northern Cheyenne Tribe.
 
 **Question.** May uncounseled Tribal-court misdemeanor convictions that complied with the Indian Civil Rights Act serve as predicates for the federal habitual domestic-assault offense, 18 U.S.C. § 117(a)?
 
@@ -1231,8 +1146,7 @@ Nations: Northern Cheyenne Tribe.
 
 ### Dollar General Corp. v. Mississippi Band of Choctaw Indians (2016)
 
-*579 U.S. 545 (2016)* [@dollar-general-corporation-v-mississippi-band-of-choctaw-indians]. Supreme Court of the United States; opinion by per curiam; 4-4 (affirmed by an equally divided Court).
-Nations: Mississippi Band of Choctaw Indians.
+*579 U.S. 545 (2016)* [@dollar-general-corporation-v-mississippi-band-of-choctaw-indians]. Supreme Court of the United States; opinion by per curiam; 4-4 (affirmed by an equally divided Court). Nations: Mississippi Band of Choctaw Indians.
 
 **Question.** Does a Tribal court have jurisdiction over tort claims by a member against a nonmember business that entered a consensual relationship with the Tribe (a youth employment program) under Montana's first exception?
 
@@ -1251,8 +1165,7 @@ Nations: Mississippi Band of Choctaw Indians.
 
 ### Lewis v. Clarke (2017)
 
-*581 U.S. 155 (2017)* [@lewis-v-clarke]. Supreme Court of the United States; opinion by Sotomayor, J.; 8-0 (Thomas, J., and Ginsburg, J., concurring in the judgment; Gorsuch, J., not participating).
-Nations: Mohegan Tribe of Indians of Connecticut.
+*581 U.S. 155 (2017)* [@lewis-v-clarke]. Supreme Court of the United States; opinion by Sotomayor, J.; 8-0 (Thomas, J., and Ginsburg, J., concurring in the judgment; Gorsuch, J., not participating). Nations: Mohegan Tribe of Indians of Connecticut.
 
 **Question.** Does Tribal sovereign immunity bar a negligence suit against a Tribal gaming authority employee sued in his individual capacity for driving on the job?
 
@@ -1270,8 +1183,7 @@ Nations: Mohegan Tribe of Indians of Connecticut.
 
 ### McGirt v. Oklahoma (2020)
 
-*591 U.S. 894 (2020)* [@mcgirt-v-oklahoma]. Supreme Court of the United States; opinion by Gorsuch, J.; 5-4 (Roberts, C.J., joined by Alito and Kavanaugh, JJ., and by Thomas, J., except as to n.9, dissenting; Thomas, J., dissenting).
-Nations: The Muscogee (Creek) Nation; The Seminole Nation of Oklahoma (McGirt's nation).
+*591 U.S. 894 (2020)* [@mcgirt-v-oklahoma]. Supreme Court of the United States; opinion by Gorsuch, J.; 5-4 (Roberts, C.J., joined by Alito and Kavanaugh, JJ., and by Thomas, J., except as to n.9, dissenting; Thomas, J., dissenting). Nations: The Muscogee (Creek) Nation; The Seminole Nation of Oklahoma (McGirt's nation).
 
 **Question.** Does land reserved for the Muscogee (Creek) Nation since the 19th century remain "Indian country" for purposes of the Major Crimes Act?
 
@@ -1294,8 +1206,7 @@ Nations: The Muscogee (Creek) Nation; The Seminole Nation of Oklahoma (McGirt's 
 
 ### United States v. Cooley (2021)
 
-*593 U.S. 345 (2021)* [@united-states-v-cooley]. Supreme Court of the United States; opinion by Breyer, J.; 9-0 (Alito, J., concurring).
-Nations: Crow Tribe of Montana (Apsáalooke Nation).
+*593 U.S. 345 (2021)* [@united-states-v-cooley]. Supreme Court of the United States; opinion by Breyer, J.; 9-0 (Alito, J., concurring). Nations: Crow Tribe of Montana (Apsáalooke Nation).
 
 **Question.** May a Tribal police officer temporarily detain and search a non-Indian on a public right-of-way within a reservation for apparent violations of state or federal law?
 
@@ -1311,8 +1222,7 @@ Nations: Crow Tribe of Montana (Apsáalooke Nation).
 
 ### Yellen v. Confederated Tribes of the Chehalis Reservation (2021)
 
-*594 U.S. 338 (2021)* [@yellen-v-confederated-tribes-of-chehalis-reservation]. Supreme Court of the United States; opinion by Sotomayor, J.; 6-3 (Gorsuch, J., joined by Thomas and Kagan, JJ., dissenting).
-Nations: Confederated Tribes of the Chehalis Reservation; Alaska Native regional and village corporations (ANCs) as parties.
+*594 U.S. 338 (2021)* [@yellen-v-confederated-tribes-of-chehalis-reservation]. Supreme Court of the United States; opinion by Sotomayor, J.; 6-3 (Gorsuch, J., joined by Thomas and Kagan, JJ., dissenting). Nations: Confederated Tribes of the Chehalis Reservation; Alaska Native regional and village corporations (ANCs) as parties.
 
 **Question.** Are Alaska Native Corporations "Indian tribes" under ISDA, and so eligible for CARES Act Title V funds?
 
@@ -1328,8 +1238,7 @@ Nations: Confederated Tribes of the Chehalis Reservation; Alaska Native regional
 
 ### Denezpi v. United States (2022)
 
-*596 U.S. 591 (2022)* [@denezpi-v-united-states]. Supreme Court of the United States; opinion by Barrett, J.; 6-3 (Gorsuch, J., dissenting, joined by Sotomayor and Kagan, JJ., as to Parts I and III).
-Nations: Navajo Nation (Denezpi's nation); Ute Mountain Ute Tribe (offense occurred on its reservation).
+*596 U.S. 591 (2022)* [@denezpi-v-united-states]. Supreme Court of the United States; opinion by Barrett, J.; 6-3 (Gorsuch, J., dissenting, joined by Sotomayor and Kagan, JJ., as to Parts I and III). Nations: Navajo Nation (Denezpi's nation); Ute Mountain Ute Tribe (offense occurred on its reservation).
 
 **Question.** Does the Double Jeopardy Clause bar a federal prosecution after a conviction in a Court of Indian Offenses for a Tribal-law offense arising from the same act?
 
@@ -1345,8 +1254,7 @@ Nations: Navajo Nation (Denezpi's nation); Ute Mountain Ute Tribe (offense occur
 
 ### Ysleta del Sur Pueblo v. Texas (2022)
 
-*596 U.S. 685 (2022)* [@ysleta-del-sur-pueblo-v-texas]. Supreme Court of the United States; opinion by Gorsuch, J.; 5-4 (Roberts, C.J., joined by Thomas, Alito and Kavanaugh, JJ., dissenting).
-Nations: Ysleta del Sur Pueblo.
+*596 U.S. 685 (2022)* [@ysleta-del-sur-pueblo-v-texas]. Supreme Court of the United States; opinion by Gorsuch, J.; 5-4 (Roberts, C.J., joined by Thomas, Alito and Kavanaugh, JJ., dissenting). Nations: Ysleta del Sur Pueblo.
 
 **Question.** Does the 1987 Restoration Act subject all of the Pueblo's gaming to Texas gaming regulations, or only bar games that Texas prohibits outright?
 
@@ -1362,8 +1270,7 @@ Nations: Ysleta del Sur Pueblo.
 
 ### Oklahoma v. Castro-Huerta (2022)
 
-*597 U.S. 629 (2022)* [@oklahoma-v-castro-huerta]. Supreme Court of the United States; opinion by Kavanaugh, J.; 5-4 (Gorsuch, J., joined by Breyer, Sotomayor and Kagan, JJ., dissenting).
-Nations: Cherokee Nation (crime occurred within its reservation; victim was a Native child).
+*597 U.S. 629 (2022)* [@oklahoma-v-castro-huerta]. Supreme Court of the United States; opinion by Kavanaugh, J.; 5-4 (Gorsuch, J., joined by Breyer, Sotomayor and Kagan, JJ., dissenting). Nations: Cherokee Nation (crime occurred within its reservation; victim was a Native child).
 
 **Question.** Does the federal government have exclusive jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country?
 
@@ -1381,8 +1288,7 @@ Nations: Cherokee Nation (crime occurred within its reservation; victim was a Na
 
 ### Haaland v. Brackeen (2023)
 
-*599 U.S. 255 (2023)* [@haaland-v-brackeen]. Supreme Court of the United States; opinion by Barrett, J.; 7-2 (Thomas, J., and Alito, J., dissenting; Gorsuch, J., concurring, joined by Sotomayor and Jackson, JJ., as to Parts I and III; Kavanaugh, J., concurring).
-Nations: Cherokee Nation; Oneida Nation; Quinault Indian Nation; Morongo Band of Mission Indians; Navajo Nation.
+*599 U.S. 255 (2023)* [@haaland-v-brackeen]. Supreme Court of the United States; opinion by Barrett, J.; 7-2 (Thomas, J., and Alito, J., dissenting; Gorsuch, J., concurring, joined by Sotomayor and Jackson, JJ., as to Parts I and III; Kavanaugh, J., concurring). Nations: Cherokee Nation; Oneida Nation; Quinault Indian Nation; Morongo Band of Mission Indians; Navajo Nation.
 
 **Question.** Is the Indian Child Welfare Act within Congress's power and consistent with the anticommandeering principle and equal protection?
 
@@ -1400,8 +1306,7 @@ Nations: Cherokee Nation; Oneida Nation; Quinault Indian Nation; Morongo Band of
 
 ### Lac du Flambeau Band of Lake Superior Chippewa Indians v. Coughlin (2023)
 
-*599 U.S. 382 (2023)* [@lac-du-flambeau-band-v-coughlin]. Supreme Court of the United States; opinion by Jackson, J.; 8-1 (Gorsuch, J., dissenting; Thomas, J., concurring in the judgment).
-Nations: Lac du Flambeau Band of Lake Superior Chippewa Indians.
+*599 U.S. 382 (2023)* [@lac-du-flambeau-band-v-coughlin]. Supreme Court of the United States; opinion by Jackson, J.; 8-1 (Gorsuch, J., dissenting; Thomas, J., concurring in the judgment). Nations: Lac du Flambeau Band of Lake Superior Chippewa Indians.
 
 **Question.** Does the Bankruptcy Code abrogate Tribal sovereign immunity?
 
@@ -1419,8 +1324,7 @@ Nations: Lac du Flambeau Band of Lake Superior Chippewa Indians.
 
 ### Arizona v. Navajo Nation (2023)
 
-*599 U.S. 555 (2023)* [@arizona-v-navajo-nation]. Supreme Court of the United States; opinion by Kavanaugh, J.; 5-4 (Gorsuch, J., joined by Sotomayor, Kagan and Jackson, JJ., dissenting; Thomas, J., concurring).
-Nations: Navajo Nation.
+*599 U.S. 555 (2023)* [@arizona-v-navajo-nation]. Supreme Court of the United States; opinion by Kavanaugh, J.; 5-4 (Gorsuch, J., joined by Sotomayor, Kagan and Jackson, JJ., dissenting; Thomas, J., concurring). Nations: Navajo Nation.
 
 **Question.** Does the 1868 Treaty with the Navajos require the United States to take affirmative steps to assess and secure water for the Navajo Nation?
 
@@ -1436,8 +1340,7 @@ Nations: Navajo Nation.
 
 ### Becerra v. San Carlos Apache Tribe (2024)
 
-*602 U.S. 222 (2024)* [@becerra-v-san-carlos-apache-tribe]. Supreme Court of the United States; opinion by Roberts, C.J.; 5-4 (Kavanaugh, J., joined by Thomas, Alito and Barrett, JJ., dissenting).
-Nations: San Carlos Apache Tribe; Northern Arapaho Tribe (companion case).
+*602 U.S. 222 (2024)* [@becerra-v-san-carlos-apache-tribe]. Supreme Court of the United States; opinion by Roberts, C.J.; 5-4 (Kavanaugh, J., joined by Thomas, Alito and Barrett, JJ., dissenting). Nations: San Carlos Apache Tribe; Northern Arapaho Tribe (companion case).
 
 **Question.** Must the Indian Health Service pay contract support costs that a Tribe incurs when it collects and spends third-party "program income" under an the Indian Self-Determination and Education Assistance Act self-determination contract?
 
