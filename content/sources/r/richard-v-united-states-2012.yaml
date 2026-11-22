@@ -24,6 +24,12 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-22'
+citator:
+  service: keycite
+  result: some-negative-treatment
+  detail: >-
+    Yellow flag: declined to extend by Jones v. United States (Fed. Cir. 2017). Read from the header of Trevor's Westlaw print, filed privately (bucket key westlaw/richard-v-united-states-2012.pdf).
+  checked: 2026-11-22
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -36,4 +42,4 @@ topics:
 - bad-men-clause
 found_in:
 - 2026-11-22-foundations-sources
-notes: Citation, court, decision date and docket confirmed from the Harvard Caselaw Access Project metadata (static.case.law) on Nov. 22, 2026; the quoted holding was read in the same file. Also read in the court's own slip opinion at the link. No. 2011-5083; Lourie, J., dissenting. Citator check not yet run.
+notes: Citation, court, decision date and docket confirmed from the Harvard Caselaw Access Project metadata (static.case.law) on Nov. 22, 2026; the quoted holding was read in the same file. Also read in the court's own slip opinion at the link. No. 2011-5083; Lourie, J., dissenting. KeyCite checked Nov. 22, 2026 (see citator).

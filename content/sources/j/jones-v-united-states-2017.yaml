@@ -24,6 +24,12 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-22'
+citator:
+  service: keycite
+  result: no-negative-treatment
+  detail: >-
+    No flag. Read from the header of Trevor's Westlaw print, filed privately (bucket key westlaw/jones-v-united-states-2017.pdf).
+  checked: 2026-11-22
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -36,4 +42,4 @@ topics:
 - bad-men-clause
 found_in:
 - 2026-11-22-foundations-sources
-notes: 'Citation, court, decision date and docket confirmed from the Harvard Caselaw Access Project metadata (static.case.law) on Nov. 22, 2026; the quoted holding was read in the same file. Also read in the court''s own slip opinion at the link. No. 2015-5148; Ute Treaty of 1868, art. 6. Later history: after remand, Jones v. United States, No. 2020-2182 (Fed. Cir. Feb. 16, 2022) (nonprecedential), vacated a spoliation ruling in part. Citator check not yet run.'
+notes: 'Citation, court, decision date and docket confirmed from the Harvard Caselaw Access Project metadata (static.case.law) on Nov. 22, 2026; the quoted holding was read in the same file. Also read in the court''s own slip opinion at the link. No. 2015-5148; Ute Treaty of 1868, art. 6. Later history: after remand, Jones v. United States, No. 2020-2182 (Fed. Cir. Feb. 16, 2022) (nonprecedential), vacated a spoliation ruling in part. KeyCite checked Nov. 22, 2026 (see citator).'
