@@ -98,7 +98,7 @@ function optional(value: string): string | null {
 	return value === '' ? null : value;
 }
 
-async function readFile(
+export async function readFile(
 	form: FormData,
 	name: string,
 	errors: Record<string, string>

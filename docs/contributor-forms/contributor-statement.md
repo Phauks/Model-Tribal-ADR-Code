@@ -50,8 +50,7 @@ If yes or not sure, we won't use it without written approval from the office you
 - ☐ **Quote parts.** We may quote passages, with credit. You see every quote first.
 - ☐ **Publish all of it.**
 
-**Where.** ☐ Website ☐ Printed book ☐ Ebook ☐ Offline copy of the website
-- ☐ The project's public data
+**Where.** ☐ Website ☐ Printed book ☐ Ebook ☐ Offline copy of the website ☐ The project's public data
 
 **When.** Choose one.
 
@@ -107,5 +106,4 @@ Some things can't be undone. Books already sold stay sold; later printings leave
 | Date | |
 | Or agreed aloud on a recording on | |
 
-**Project use.** Received by ______ (role) on ______. Copy sent on ______ by
-- ☐ paper ☐ email.
+**Project use.** Received by ______ (role) on ______. Copy sent on ______ by ☐ paper ☐ email.

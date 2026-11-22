@@ -11,6 +11,7 @@
 	<div class="page-width">
 		<ul class="footer-links">
 			<li><a href="/requests">Request a correction or removal</a></li>
+			<li><a href="/forms">Forms</a></li>
 			<li><a href="/charter">Charter</a></li>
 			<li><a href="/acknowledgments">Acknowledgments</a></li>
 			<li><a href="/changelog">Changelog</a></li>

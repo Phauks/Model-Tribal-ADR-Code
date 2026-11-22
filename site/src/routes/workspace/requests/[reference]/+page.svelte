@@ -86,7 +86,7 @@
 		{/if}
 	{/if}
 	{#if request.details}<div><dt>Details</dt><dd class="preserve">{request.details}</dd></div>{/if}
-	{#if request.kind === 'contribute'}
+	{#if request.kind === 'contribute' && data.submissions.length === 0}
 		<div><dt>Credit</dt><dd>{request.creditPreference ?? 'No credit'}</dd></div>
 		<div>
 			<dt>Permission</dt>
@@ -94,6 +94,57 @@
 		</div>
 	{/if}
 </dl>
+
+{#if data.submissions.length > 0}
+	<h2>Forms</h2>
+	{#each data.submissions as submission (submission.identifier)}
+		<section class="panel">
+			<h3>{submission.title}, version {submission.version}</h3>
+			<dl class="summary-list">
+				<div>
+					<dt>How</dt>
+					<dd>{submission.method === 'online' ? 'Filled in and signed online' : 'Signed paper copy, uploaded (see Files)'}</dd>
+				</div>
+				{#if submission.signedName}<div><dt>Signed as</dt><dd>{submission.signedName}</dd></div>{/if}
+				<div><dt>Received</dt><dd>{date(submission.receivedAt, true)}</dd></div>
+				<div><dt>Filing</dt><dd>{submission.filingIdentifier ?? 'Not filed yet'}</dd></div>
+			</dl>
+			{#if submission.canShow || submission.hasCopy}
+				<p>
+					{#if submission.canShow}
+						<a href="/workspace/requests/{request.reference}/forms/{submission.identifier}">Read the filled form</a>
+					{/if}
+					{#if submission.canShow && submission.hasCopy}<span aria-hidden="true"> · </span>{/if}
+					{#if submission.hasCopy}
+						<a href="/workspace/requests/{request.reference}/forms/{submission.identifier}/copy" download
+							>Download the filled form (Markdown)</a
+						>
+					{/if}
+				</p>
+			{/if}
+		</section>
+	{/each}
+	{#if data.canHandle}
+		<form method="post" action="?/filing" class="panel">
+			<h3>File the forms</h3>
+			<p class="small">
+				Give a new filing number, or the number of an existing filing when this adds to one
+				(docs/contributions.md). Check the signature and the answers before filing.
+			</p>
+			<div class="field">
+				<label for="filing">Filing number</label>
+				<input
+					id="filing"
+					name="filing"
+					type="text"
+					value={data.submissions[0]?.filingIdentifier ?? data.nextFiling ?? ''}
+					pattern="filing-[0-9]{'{4}'}-[0-9]{'{4}'}"
+				/>
+			</div>
+			<button class="button" type="submit">File the forms</button>
+		</form>
+	{/if}
+{/if}
 
 {#if data.sources.length > 0}
 	<h2>{request.kind === 'add-nation' ? 'Proof' : 'Files'}</h2>
