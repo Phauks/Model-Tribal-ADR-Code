@@ -2,8 +2,10 @@ import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { beforeEach, describe, expect, it } from 'vitest';
 import {
 	SaveConflict,
+	boxPages,
 	currentPublication,
 	essayPath,
+	essayRow,
 	identifierFromPath,
 	listEssays,
 	partOf,
@@ -100,5 +102,34 @@ describe('essays in the bucket', () => {
 		expect(essayPath('i-legal-history-timeline', 'foundations')).toBe('/foundations/legal-history-timeline');
 		expect(identifierFromPath('foundations', 'legal-history-timeline')).toBe('i-legal-history-timeline');
 		expect(essayPath('why-consent-matters', 'essays')).toBe('/essays/why-consent-matters');
+	});
+
+	it('puts back matter under its own part', () => {
+		expect(partOf('cases-by-topic', 'title: "Cases by Topic"\npart: back-matter')).toBe('back-matter');
+		expect(essayPath('cases-by-topic', 'back-matter')).toBe('/back-matter/cases-by-topic');
+		expect(identifierFromPath('back-matter', 'cases-by-topic')).toBe('cases-by-topic');
+	});
+
+	it('finds the page that holds each case and law box', () => {
+		const pages = boxPages({
+			'i-legal-history-timeline': '---\npart: i\n---\n\n:::: case worcester-v-georgia\n::::\n\n:::: law indian-reorganization-act\n::::\n',
+			'cases-by-topic': '---\npart: back-matter\n---\n\n[*Worcester*](#case-worcester-v-georgia)\n'
+		});
+		expect(pages).toEqual({
+			'case-worcester-v-georgia': '/foundations/legal-history-timeline',
+			'law-indian-reorganization-act': '/foundations/legal-history-timeline'
+		});
+	});
+
+	it('saves a back matter page under its part', async () => {
+		const saved = await saveVersion(database, bucket, {
+			identifier: 'cases-by-topic',
+			text: '---\ntitle: "Cases by Topic"\npart: back-matter\n---\n\n# Cases by Topic\n',
+			basedOn: null,
+			personIdentifier: 'lead',
+			origin: 'git'
+		});
+		expect(saved.version.number).toBe(1);
+		expect((await essayRow(database, 'cases-by-topic'))?.part).toBe('back-matter');
 	});
 });
