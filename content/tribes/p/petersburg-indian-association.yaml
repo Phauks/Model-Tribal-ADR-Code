@@ -140,11 +140,41 @@ contacts:
   locator: 'record "Petersburg Indian Association" (community: Petersburg, object 160)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  image_link: https://img1.wsimg.com/isteam/ip/418b4142-6a3e-46c1-a2ca-54176490f22d/logo/d3481538-392b-4922-a71e-182acb2e097b.png/:/rs=w:114,h:114,m
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 07499818754b1c7b60b84c33b5de61d121c24d21ecc0b5eae00aa1797cb8a226
+  private_copy: nation-images/petersburg-indian-association/logo-07499818754b.png
+  reuse:
+    status: restricted
+    checked: '2026-11-22'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2023 Petersburg Indian Association PIA - All Rights Reserved.
+      link: https://piatribal.org/
+      source: piatribal-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89003004
+      serial_number: '89003004'
+      note: The nation filed the same design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+  source: piatribal-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 tribal_insignia_database_entries:
 - serial_number: '89003004'
   filed: '2023-06-01'
   record_link: https://tsdr.uspto.gov/#caseNumber=89003004&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: same-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'

@@ -141,12 +141,37 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Choctaw Nation of Oklahoma
+official_images:
+- kind: seal
+  image_link: https://upload.wikimedia.org/wikipedia/commons/5/5c/Choctaw_seal.svg
+  credit: A drawing on Wikimedia Commons by the volunteer Doodledoo (2006), based on the Choctaw Nation's
+    Great Seal.
+  retrieved: '2026-11-22'
+  media_type: image/svg+xml
+  sha256: 37d4a15b114d0aa8ee7b56c60dd4e9058521b38db78132855dddfd0a0a71096c
+  private_copy: nation-images/the-choctaw-nation-of-oklahoma/seal-37d4a15b114d.svg
+  reuse:
+    status: restricted
+    checked: '2026-11-22'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89002386
+      serial_number: '89002386'
+      note: The nation filed the same design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+  source: wikimedia-commons-choctaw-seal
+  confidence: medium
+  as_of: '2026-11-22'
+  verification: read-in-full
 tribal_insignia_database_entries:
 - serial_number: '89002386'
   wordmark: THE GREAT SEAL OF THE CHOCTAW NATION
   filed: '2019-07-24'
   record_link: https://tsdr.uspto.gov/#caseNumber=89002386&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: same-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'
