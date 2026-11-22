@@ -1,344 +1,152 @@
 # Contributions from people
 
-**Status:** draft for review by the lead author and the project's advisors.
-Nothing here is legal advice. The forms it names are drafts in
-[contributor-forms/](contributor-forms/README.md); none may be used with a
-contributor until the lead author approves it. Before any interview, check
-the nation's own research rules ([ethics review](#ethics-review)).
+Draft. Not legal advice. The forms in [contributor-forms/](contributor-forms/README.md) are not in use until the lead author approves them.
 
-Most of the project's evidence is published: codes, court rules, cases,
-articles, web pages. Each of those has a source record that cites it. Some
-material will instead come from a person: a peacemaker's account of how a
-circle works, an interview, a family's written story, a document someone
-lends, a photograph. Nothing published stands behind that material, so the
-project needs its own record of what was given, by whom, on what terms, and
-with whose approval. This page specifies that record, called a **filing**, and
-the forms that go into it. Everything here is project design unless a source
-is cited ([decision record 0020](decisions/0020-file-every-contribution-from-a-person.md)).
+Most of the project's evidence is published: codes, court rules, cases and articles. Each has a source record. Some material will come from people instead: a peacemaker's account, an interview, a family letter, a photograph. Nothing published stands behind it. So the project keeps its own record of what was given, by whom, on what terms and with whose approval. That record is a **filing** ([decision record 0020](decisions/0020-file-every-contribution-from-a-person.md)). Everything on this page is project design unless a source is cited.
 
 ## What needs a filing
 
-| Material | Filing? | Why |
-| --- | --- | --- |
-| A published source the project found (code, case, article, web page, published story) | No | Cited through its source record and `rights` block ([data-model.md](data-model.md#permission-statuses)) |
-| A published source someone points the project to | No | Same; the person may be thanked in the research session |
-| An interview or conversation recorded or noted for the project | Yes | Nothing published records the person's consent |
-| A story, account or reflection written or told for the project | Yes | Same |
-| An unpublished document, photograph or recording someone lends or sends | Yes | The project needs to know who holds rights and what the lender allows |
-| A nation's request to correct, restrict, remove or add | No; a request ([requests.md](requests.md)) | Already handled by the request flow. A nation's office that also *contributes* material gets a filing for it |
-| Review comments from a nation reviewer, advisor or co-author in the workspace | No | Recorded as reviews in the workspace ([site/COLLABORATION.md](../site/COLLABORATION.md)) |
-| Writing by a co-author for the book | Not yet decided | A co-author agreement is a separate document (see [forms not drafted here](#forms-not-drafted-here)) |
+| Material | Filing? |
+| --- | --- |
+| A published source, whoever found it | No. It gets a source record ([data-model.md](data-model.md#permission-statuses)) |
+| An interview or recorded conversation | Yes |
+| A story or account told or written for the project | Yes |
+| An unpublished document, photo or recording someone lends | Yes |
+| A nation's request to correct, restrict, remove or add | No. It is a [request](requests.md). Material the nation also contributes gets a filing |
+| Review comments in the workspace | No. They are reviews ([site/COLLABORATION.md](../site/COLLABORATION.md)) |
+| Chapters by a co-author | Not decided. See [forms not yet drafted](#forms-not-yet-drafted) |
 
-A filing is opened the moment such material arrives or an interview is
-agreed, before anything is used.
+Open the filing when the material arrives or the interview is agreed. Use nothing before then.
 
-## The filing
+## What a filing holds
 
-A filing is one package, kept privately, never in git:
+1. The [contributor statement](contributor-forms/contributor-statement.md), always.
+2. Every other form that applies, with the version signed.
+3. The items, each with a SHA-256 checksum so a copy can be matched later.
+4. A dated log of every step. It names roles, not people, and is never deleted.
 
-1. **The contributor statement**, always. It is the cover sheet: what is
-   provided, who made it, who holds rights, who and what it is about, what the
-   contributor allows, how they want credit, and their signature
-   ([form](contributor-forms/contributor-statement.md)).
-2. **Every other signed form** that applies (table below), each with the
-   version of the wording that was signed.
-3. **The items themselves**: recordings, transcripts, documents, images, each
-   stored with a SHA-256 checksum so a later copy can be shown to match.
-4. **The log**: every step, dated, naming roles not private details, never
-   deleted.
+Each filing has an id such as `filing-2026-0001`. Its shape is set by [contribution-filing.schema.json](../schemas/contribution-filing.schema.json), with a [fictional example](../schemas/examples/contribution-filing.example.yaml). Filings stay private and never go in git.
 
-The shape of a filing is fixed by
-[schemas/contribution-filing.schema.json](../schemas/contribution-filing.schema.json),
-with a fictional example in
-[schemas/examples/](../schemas/examples/contribution-filing.example.yaml).
-Each filing has an id such as `filing-2026-0001`.
+### What the public sees
 
-### What reaches the public record
-
-Only the filing id and five public-safe fields, defined once in
-[common.schema.json](../schemas/common.schema.json) and shared with story
-records:
+Public records carry the filing id and four other fields, defined in [common.schema.json](../schemas/common.schema.json). Story records use the same ones.
 
 | Field | Holds |
 | --- | --- |
-| `filing` | The filing id, so anyone on the project can find the signed forms |
-| `credit` | How the contributor chose to be credited: by name, by name and nation, by role only, by a pseudonym, or not at all |
-| `permitted_uses` | `background-only`, `reference-only`, `quote` or `publish-in-full`, and where: web, print, ebook, offline pack, API |
-| `access` | `public`, `nation-review-first`, `embargoed` (with a date) or `restricted` |
-| `cultural_authority` | Which office or role approved the use of community-held knowledge, for which nation, and when |
+| `filing` | The filing id |
+| `credit` | Name, name and nation, a description, a pseudonym, or none |
+| `permitted_uses` | `background-only`, `reference-only`, `quote` or `publish-in-full`, and where |
+| `access` | `public`, `nation-review-first`, `embargoed` with a date, or `restricted` |
+| `cultural_authority` | Which office approved use of a community's knowledge, and when |
 
-A source record for an interview carries them in its `contribution` block
-([source.schema.json](../schemas/source.schema.json)). Names, contact
-details, recordings and unapproved transcripts never appear in a public
-record.
+A source record for an interview carries these in its `contribution` block ([source.schema.json](../schemas/source.schema.json)). Names, contact details, recordings and unapproved transcripts never appear in public.
 
 ## Which forms apply
 
-| Form | When | Signed by |
+| Form | When | Who signs |
 | --- | --- | --- |
-| [Contributor statement](contributor-forms/contributor-statement.md) | Every filing | The contributor (or guardian) |
-| [Interview consent and release](contributor-forms/interview-consent-and-release.md) | Any interview or recorded conversation: Part A before recording, Part B after the narrator reviews the transcript | The narrator |
-| [Cultural authority permission](contributor-forms/cultural-authority-permission.md) | The material may hold ceremonial, restricted or community-held knowledge, or the contributor says it belongs to a community | The nation's designated office or the authority the nation names |
-| [Rights holder permission](contributor-forms/rights-holder-permission.md) | Someone other than the contributor made the item or holds rights in it, including a person who has died | The rights holder, estate or family representative |
-| [Parent or guardian consent and young person's assent](contributor-forms/young-contributor-consent.md) | The contributor is under the age of majority where they live | A parent or legal guardian, and the young person |
-| [Change, restriction or withdrawal request](contributor-forms/change-or-withdrawal-request.md) | Any time after filing | The contributor, guardian, rights holder or the nation's office |
-| [Interviewer agreement](contributor-forms/interviewer-agreement.md) | Anyone other than the lead author who interviews or collects for the project | The interviewer |
+| [Contributor statement](contributor-forms/contributor-statement.md) | Always | The contributor, or a guardian |
+| [Interview consent](contributor-forms/interview-consent-and-release.md) | Any interview. Part A before recording; Part B after the transcript | The narrator |
+| [Nation approval](contributor-forms/cultural-authority-permission.md) | The material may hold a community's knowledge | The office the nation names |
+| [Owner's permission](contributor-forms/rights-holder-permission.md) | Someone else made or owns the item, including someone who has died | The owner, estate or family |
+| [Consent for minors](contributor-forms/young-contributor-consent.md) | The contributor is not yet an adult | A parent or guardian, and the young person |
+| [Change or withdrawal](contributor-forms/change-or-withdrawal-request.md) | Any time | The contributor, guardian, owner or nation |
+| [Interviewer agreement](contributor-forms/interviewer-agreement.md) | Anyone but the lead author collects material | The interviewer |
 
-## The flow
+## Steps
 
-1. **Offer.** Someone offers material, or the project asks a person for an
-   interview. Contact with a nation's community goes through the nation's own
-   offices first ([charter, commitment 4](charter.md#4-consultation-before-publication)).
-   Open a filing with status `received`.
-2. **Explain.** Before anything is recorded or copied, explain the project, the
-   forms and the choices, in plain language and in the person's preferred
-   language where the project can arrange it. Give them a copy of every form
-   to keep. Status `consent-in-progress`. The Oral History Association asks
-   interviewers to begin by "obtaining and documenting the informed consent of
-   the narrator."[^oha-bp-prep]
-3. **Consent before recording.** Interview consent, Part A, is signed or
-   recorded at the start. Recording also needs the consent of everyone
-   recorded, which this form gets in every case: federal law needs one party's
-   consent, but "about 11 states primarily have all-party consent
-   requirements."[^rcfp]
-4. **Collect.** Record the interview, or receive the items. Store each item in
-   the private bucket with its checksum. Do not copy items to personal
-   devices or cloud drives outside the project's storage (project rule).
-5. **Review by the contributor.** Send the transcript or the project's
-   description of the items to the contributor. The OHA describes giving the
-   narrator "the opportunity to review and approve the interview" and "the
-   right to delete, restrict, and/or redact portions."[^oha-ethics-review]
-   Status `in-review`.
-6. **Release.** The contributor statement and interview release (Part B) are
-   signed after review. The OHA recommends securing the legal release
-   "ideally when the interview is completed."[^oha-bp-release]
-7. **Other permissions.** If the contributor statement flags community-held
-   knowledge, ask for cultural authority permission. If someone else holds
-   rights, ask them. Nothing flagged is used until the answer is yes.
-8. **Accept.** The lead author checks that every required form is present, the
-   permissions agree with each other (the narrowest one wins), and the log is
-   complete. Status `accepted`, or `held` while an embargo or nation review
-   runs.
-9. **Use.** Records cite the filing and copy the five public-safe fields. A
-   quotation never exceeds `permitted_uses.level`; the build already refuses
-   quotations a source's rights do not allow ([data-model.md](data-model.md#permission-statuses)).
-10. **Ongoing.** The contributor keeps the right to change, restrict or
-    withdraw ([below](#change-restriction-and-withdrawal)). The project sends
-    them the published text before release where it quotes them (project
-    choice, following the OHA's call for narrator approval "prior to public
-    release").[^oha-bp-prep]
+1. **Offer.** Someone offers material, or we ask for an interview. Reach a nation's community through its offices first ([charter, commitment 4](charter.md#4-consultation-before-publication)). Status `received`.
+2. **Explain.** Before recording or copying anything, walk through the forms and choices in plain words. Give the person copies. The Oral History Association asks interviewers to start by "obtaining and documenting the informed consent of the narrator."[^oha-bp-prep] Status `consent-in-progress`.
+3. **Consent.** The narrator signs Part A of the interview form, or agrees on the recording. Everyone present must agree to be recorded. Federal law needs only one party's consent, but "about 11 states primarily have all-party consent requirements."[^rcfp]
+4. **Collect.** Record, or receive the items. Store each in the private bucket with its checksum. Keep nothing on personal devices or other cloud drives.
+5. **Review.** Send the contributor the transcript or our description of the items. The OHA gives narrators "the opportunity to review and approve the interview" and "the right to delete, restrict, and/or redact portions."[^oha-ethics-review] Status `in-review`.
+6. **Release.** The contributor signs the statement and Part B after review. The OHA advises getting the release "ideally when the interview is completed."[^oha-bp-release]
+7. **Other permissions.** Ask the nation if the material may hold a community's knowledge. Ask the owner if it isn't the contributor's. Use nothing flagged until the answer is yes.
+8. **Accept.** The lead author checks that every form is present, that the permissions agree, and that the log is complete. Where they differ, the stricter one wins. Status `accepted`, or `held` during an embargo or nation review.
+9. **Use.** Records cite the filing and copy the public fields. The build already refuses quotations the rights don't allow ([data-model.md](data-model.md#permission-statuses)).
+10. **After.** The contributor can still change or withdraw it ([below](#changes-and-withdrawal)). We send them any quotation before release, as the OHA suggests: approval "prior to public release."[^oha-bp-prep]
 
-### Statuses
+**Statuses:** `received`, `consent-in-progress`, `in-review`, then `accepted` or `held`. At any point a filing can become `withdrawn`, `declined` (with reasons sent to the contributor) or `returned` (originals sent back or destroyed).
 
-`received` → `consent-in-progress` → `in-review` → `accepted` or `held`;
-at any point `withdrawn`, `declined` (with reasons given to the contributor) or
-`returned` (originals sent back or destroyed at the contributor's request).
+## The contributor's choices
 
-## Choices the contributor makes
+- **Credit.** Name; name and nation; a description such as "a peacemaker of the nation"; a pseudonym; or none. The form warns that a detailed story can identify its teller anyway, and offers to cut details.
+- **Use.** Background only; describe but don't quote; quote parts; or publish in full. Then where: website, book, ebook, offline copy, public data.
+- **Access.** Public; after the nation reviews it; not before a date; or never. The OHA counts the right "to restrict access to the interview" as part of informed consent.[^oha-bp-restrict]
+- **Copyright.** The contributor keeps it. By default they give the project a nonexclusive permission. They may add an open license (CC BY 4.0 or CC BY-NC 4.0) so others can reuse it too. The Library of Congress Veterans History Project works the same way: its release grants a "perpetual, nonexclusive, transferable, worldwide right to use," and the veteran "retain[s] any copyright."[^vhp] Some oral history programs ask for the copyright itself.[^oha-participants-copyright] We don't.
+- **Originals.** Keep copies, return the originals, or delete copies after publication.
 
-- **Credit.** By name; by name and nation; by role only ("a peacemaker of the
-  nation"); by a pseudonym; or not at all. The form warns that a story with
-  enough detail can identify its teller even without a name, and offers to
-  remove identifying details (project analysis).
-- **Use.** `background-only` (informs the work; never named, described or
-  quoted), `reference-only` (described or paraphrased with credit, never
-  quoted), `quote` (excerpts), or `publish-in-full`; and in which formats.
-- **Access.** Public; held for the nation's review first; embargoed until a
-  date the contributor chooses; or restricted (kept privately, never
-  published). The OHA treats the narrator's right "to restrict access to the
-  interview" as part of informed consent.[^oha-bp-restrict]
-- **License.** The contributor keeps their copyright in every case. They
-  choose either a nonexclusive permission to the project only, or an open
-  license (CC BY 4.0 or CC BY-NC 4.0) so others may reuse it too. The
-  default is permission to the project only. This follows the Library of
-  Congress Veterans History Project, whose release grants a "perpetual,
-  nonexclusive, transferable, worldwide right to use" while the veteran
-  "retain[s] any copyright,"[^vhp] rather than the copyright assignment that
-  some oral history programs ask for.[^oha-participants-copyright] A
-  nonexclusive license is not a "transfer of copyright ownership" under the
-  Copyright Act,[^usc-101] so it does not need the signed writing a transfer
-  requires;[^usc-204] the project gets a signature anyway, as evidence (project
-  analysis, not legal advice).
-- **Originals.** Keep, return, or destroy the project's copies once used.
-- **Contact.** Whether the project may contact them again, and how.
+A nonexclusive license isn't a "transfer of copyright ownership"[^usc-101] and so doesn't need the signed writing a transfer does.[^usc-204] We get a signature anyway, as proof (project analysis, not legal advice).
 
 ## Signatures
 
-Any of three methods is valid for every form, and the filing records which
-was used:
+Any form can be signed three ways. The filing records which.
 
-- **Ink**, on paper, then scanned.
-- **Electronic**: typing one's name and ticking a box on the website. Under
-  federal law a signature "may not be denied legal effect, validity, or
-  enforceability solely because it is in electronic form."[^esign]
-- **Recorded verbal**: the form is read aloud at the start of a recording and
-  the person says they agree. This suits a person who prefers not to sign
-  papers or who does not read English, and the recording is kept as evidence
-  (project choice).
+- **Ink**, scanned afterward.
+- **Electronic.** The person types their name and ticks a box. Federal law says a signature "may not be denied legal effect, validity, or enforceability solely because it is in electronic form."[^esign]
+- **Aloud.** We read the form at the start of a recording, and the person agrees. This suits someone who would rather not sign papers or doesn't read English. The recording is the proof.
 
-The project always gives the signer a copy, in the form they prefer.
+The signer always gets a copy.
 
-## Community-held knowledge
+## A community's knowledge
 
-The charter does not let ceremonial, restricted or community-held knowledge in
-without the community's written approval
-([commitment 5](charter.md#5-cultural-knowledge-and-restricted-material)).
-One person's consent is not enough for knowledge that belongs to a community:
-under research guidance from the National Congress of American Indians,
-"you cannot conduct research with a Tribal Nation without their approval," and
-"you need approval of the Tribal Nation for any use of that data beyond the
-original approval."[^ncai-faq] The Society of American Archivists endorsed the
-*Protocols for Native American Archival Materials* in August 2018 as a guide to
-"culturally responsive care of Native American archival materials."[^saa]
+The charter bars ceremonial, restricted or community-held knowledge without the community's written approval ([commitment 5](charter.md#5-cultural-knowledge-and-restricted-material)). One person can't approve it alone. NCAI's research guidance says "you cannot conduct research with a Tribal Nation without their approval."[^ncai-faq] It adds that "you need approval of the Tribal Nation for any use of that data beyond the original approval."[^ncai-faq] The Society of American Archivists endorsed the *Protocols for Native American Archival Materials* in August 2018.[^saa]
 
-So the contributor statement asks whether the material holds such knowledge,
-and the project asks too. If either says yes or is unsure, the filing waits for
-a [cultural authority permission](contributor-forms/cultural-authority-permission.md)
-from the office the nation designates. If a community applies Local Contexts
-Labels, which are "tools for Indigenous communities and local organizations"
-that "communities can customize and apply,"[^lc-labels] the project displays
-them and follows them; it never applies a Label itself
-([data-model.md](data-model.md#sensitivity-flags)).
+The contributor statement asks about such knowledge, and we ask too. If either answer is yes or unsure, the filing waits for [Nation approval](contributor-forms/cultural-authority-permission.md). Local Contexts Labels are "tools for Indigenous communities and local organizations,"[^lc-labels] and only a community applies them. We show and follow any a community applies ([data-model.md](data-model.md#sensitivity-flags)).
 
-## People named in the material
+## Other people in the story
 
-Stories about disputes name other people: family members, the other party, a
-judge, a peacemaker. The contributor statement asks who is named. Before any
-use, the project removes or generalizes identifying details of living private
-people who have not agreed to be named, unless the detail is already public
-and necessary (project rule). Some nations' laws make peacemaking or
-mediation sessions confidential: 100 of the 2,127 passages in the project's
-reading of tribal codes record a confidentiality term
-([research/tribal-law/provisions.csv](../research/tribal-law/provisions.csv),
-column `confidentiality`; count by the project, not reviewed). A
-contributor who took part in such a session is asked whether its content is
-confidential under the nation's law, and if so it is used only as background.
+Dispute stories name people: relatives, the other side, a judge, a peacemaker. The statement asks who is named. We remove or blur details that identify living private people who haven't agreed, unless the detail is already public and needed.
 
-## Contributors under the age of majority
+Some nations make peacemaking or mediation sessions confidential. In the project's reading of tribal codes, 100 of 2,127 passages record a confidentiality rule ([provisions.csv](../research/tribal-law/provisions.csv), column `confidentiality`; our count, not reviewed). If a contributor took part in such a session, we ask whether it is confidential. If so, we use it only as background.
 
-Young people may be important witnesses to how families and communities settle
-disputes. The project accepts their contributions only with a parent's or legal
-guardian's consent and the young person's own agreement (assent), on the
-[combined form](contributor-forms/young-contributor-consent.md); either can
-withdraw. The age of majority is set by state and, for its citizens, by the
-nation's own law, so the form asks rather than assuming 18 (project
-analysis). The website itself will not take a submission from a child under
-13, the age below which federal rules on collecting children's information
-online apply.[^coppa] Young contributors are credited only by role or
-pseudonym, never by name, until they are adults and choose otherwise (project
-choice).
+## Minors
 
-## Change, restriction and withdrawal
+Young people see how families settle disputes. We take their contributions only with a parent's or guardian's consent and the young person's own agreement ([Consent for minors](contributor-forms/young-contributor-consent.md)). Either can withdraw. State law sets the age of adulthood, and a nation's law may too, so the form asks instead of assuming 18. The website takes nothing from children under 13, the age that federal rules on children's data use.[^coppa] We credit minors only by description or pseudonym.
 
-A contributor may at any time ask the project to correct, redact, restrict,
-extend an embargo on, or withdraw their contribution, using the
-[request form](contributor-forms/change-or-withdrawal-request.md) or by
-telling the project in any way. The OHA tells narrators they "can restrict an
-interview from the public, make changes before it is shared, or withdraw," and
-also that once shared "it may not be possible to fully remove it."[^oha-participants]
-The project's commitments follow the charter's for nations
-([commitment 6](charter.md#6-the-right-to-correct-restrict-or-withdraw)):
+## Changes and withdrawal
 
-- restrict first, review second: the material is hidden within 7 days;
-- withdrawn material leaves the website, downloads and offline packs in the
-  next release, and from the repository's history if it was restricted;
-- printed copies already sold cannot be recalled; the next printing omits it;
-- archive services are asked to remove copies where they allow it.
+A contributor can ask at any time to fix, cut, restrict, delay or withdraw their material ([Change or withdrawal](contributor-forms/change-or-withdrawal-request.md)), or just tell us. The OHA tells narrators they "can restrict an interview from the public, make changes before it is shared, or withdraw." It also warns that once shared "it may not be possible to fully remove it."[^oha-participants] We follow the charter's rules for nations ([commitment 6](charter.md#6-the-right-to-correct-restrict-or-withdraw)):
 
-The forms say all of this before anyone signs, so nobody is promised more than
-the project can do.
+- We hide the material within 7 days, then review.
+- Withdrawn material leaves the website, downloads and offline copies in the next release. Restricted material also leaves the repository's history.
+- Books already sold can't be recalled. The next printing leaves it out.
+- We ask web archives to remove their copies.
 
-## Storage and retention
+The forms say all this before anyone signs.
 
-- **Where.** Filings in the website's private database; items and signed forms
-  in the private file bucket, under `filings/<filing id>/`. Neither is served
-  by any public route or API ([decision record 0009](decisions/0009-private-requests-from-nations.md)).
-  Names and contact details sit in a separate contacts table, linked by an
-  opaque id, so a filing can be shown to an advisor without them.
-- **Who.** The lead author and editors. Advisors and nation reviewers see a
-  filing only when it is sent to them for review, without contact details.
-- **How long.** Unlike request details, which are deleted 12 months after
-  resolution ([requests.md](requests.md#how-it-is-built)), a filing is kept
-  while anything that cites it is published, because it is the proof of
-  permission. When the last citing record is withdrawn, contact details are
-  deleted after 12 months and items are returned or destroyed as the
-  contributor chose (project choice).
-- **Until the website stores filings,** keep them in the private project
-  folder, never in git or a public issue, and log each step in the filing
-  file itself.
+## Storage
+
+- **Where.** Filings go in the website's private database. Items and signed forms go in the private file bucket under `filings/<filing id>/`. No public page or API serves either ([decision record 0009](decisions/0009-private-requests-from-nations.md)). Contact details sit in a separate table, so a filing can be shared without them.
+- **Who.** The lead author and editors. A nation reviewer sees a filing only when it is sent for review, without contact details.
+- **How long.** As long as anything citing it is published, since the filing is the proof of permission. Request details, by contrast, go after 12 months ([requests.md](requests.md#how-it-is-built)). Once nothing cites a filing, its contact details go after 12 months, and the items are returned or destroyed as the contributor chose.
+- **Until the website is built,** keep filings in the private project folder. Never put them in git or a public issue.
 
 ## Ethics review
 
-**The lead author's position (2026-11-21).** The lead author reads UNLV's
-human subjects rules as directed at biomedical and scientific study, not
-cultural or legal scholarship, and does not plan to seek institutional review
-board (IRB) review for this project. Federal rules likewise deem "scholarly
-and journalistic activities (e.g., oral history, journalism, biography,
-literary criticism, legal research, and historical scholarship), that focus
-directly on the specific individuals about whom the information is collected"
-not to be research.[^cfr-46]
+**The lead author's view (Nov. 21, 2026).** UNLV's human subjects rules are aimed at biomedical and scientific study, not cultural or legal work. The project will not seek review by an institutional review board (IRB). Federal rules also exclude "oral history, journalism, biography, literary criticism, legal research, and historical scholarship" that "focus directly on the specific individuals about whom the information is collected."[^cfr-46]
 
-**For the record (project analysis).** UNLV's rules state that research
-"includes, but is not limited to, surveys and interviews," that "researchers
-must contact the ORI-HS for assistance prior to conducting any project
-activities," and that the office "has the authority to determine the need for
-IRB review";[^unlv-rules] its procedure makes it "the responsibility of each
-PI to seek IRB/ORI-HS review and approval/acknowledgment."[^unlv-sop] If an
-advisor, a nation or a publisher asks whether the project was reviewed, a
-short written determination from that office would answer it. That step is
-optional and is the lead author's call.
+**For the record (project analysis).** UNLV's procedure says research "includes, but is not limited to, surveys and interviews."[^unlv-sop] Its rules say "researchers must contact the ORI-HS for assistance prior to conducting any project activities," and that the office decides whether review is needed.[^unlv-rules] The procedure puts the duty to ask on the investigator.[^unlv-sop] If someone later asks whether the project was reviewed, a short letter from that office would settle it. Getting one is optional.
 
-**The nations' own rules still apply.** Some nations regulate research
-themselves, whatever a university decides. NCAI advises that "tribal nations
-can establish their own IRBs, but they all have the right to tribal approval
-of research," and that "many Tribal Nations do not have an exempt
-category."[^ncai-faq] The Navajo Nation, for example, has a Human Research
-Review Board under the Navajo Nation Human Research Code, 13 N.N.C.
-§§ 3251–3271.[^nnhrrb] **Rule:** before interviewing within a nation, or
-about a nation's practices, check whether the nation has a research code or
-review board, and follow it. Record the check in the filing log.
+**Nations' rules still apply.** NCAI says "tribal nations can establish their own IRBs, but they all have the right to tribal approval of research." It adds that "many Tribal Nations do not have an exempt category."[^ncai-faq] The Navajo Nation, for one, has a Human Research Review Board under its Human Research Code, 13 N.N.C. §§ 3251–3271.[^nnhrrb] Before an interview within a nation or about its practices, check for a research code or board and follow it. Note the check in the filing log.
 
-## Forms not drafted here
+## Forms not yet drafted
 
-These came up while drafting and are left for later (project analysis):
+- **Co-author agreement:** credit, license (CC BY 4.0 for commentary and essays, [LICENSE.md](../LICENSE.md)), review and withdrawal.
+- **Artist agreement:** the charter requires one ([commitment 7](charter.md#7-credit-authorship-and-art)).
+- **Research agreement with a nation,** when a nation asks. Its own template wins.
+- **Translations** of each form, once contributors ask for a language.
 
-- **Co-author agreement** for people who write chapters or commentary:
-  credit, license (CC BY 4.0 for commentary and essays, [LICENSE.md](../LICENSE.md)),
-  review and withdrawal.
-- **Artist agreement** for cover and interior art; the charter already
-  requires one ([commitment 7](charter.md#7-credit-authorship-and-art)).
-- **Research agreement with a nation** when a nation asks for one; the nation's
-  own template wins.
-- **Advisor and reviewer acknowledgment**, if advisors want their role
-  described in writing.
-- **Translations** of every form, once the project knows which languages
-  contributors ask for.
+## Website plan
 
-## How it would be built (proposal)
+Not built. It would extend the request system ([site/COLLABORATION.md](../site/COLLABORATION.md)) and needs the lead author's go-ahead.
 
-Not built yet. It fits the website's existing request system
-([site/COLLABORATION.md](../site/COLLABORATION.md)), and needs Trevor's
-go-ahead before work starts:
-
-- **Database migration** adding `filings`, `filing_items`, `filing_forms`
-  and `contacts` tables, following the schema above, and extending the
-  `events` table's `target_kind` to `filing`.
-- **The "Contribute" choice** on the request form opens a contributor
-  statement instead of the short credit step, and creates a filing with status
-  `received`.
-- **Electronic signature:** the form's full text and version are shown,
-  the person types their name and ticks "I agree", and the site stores the
-  exact rendered text, its version, the date and time, and a checksum of the
-  signed copy in the file bucket.
-- **Workspace page** `/workspace/filings` for editors: filings by status, the
-  forms present and missing, the log, and a button to export a filing in the
-  schema's format.
-- **Forms as pages:** each form in `docs/contributor-forms/` rendered to a
-  printable page and a PDF from the same text, so paper and website say the
-  same thing at the same version.
-- **Lint rule:** any source record with `kind: interview` must carry a
-  `contribution` block; any record with `access.level: restricted` is never
-  built into public output.
+- **Tables:** `filings`, `filing_items`, `filing_forms` and `contacts`, following the schema. The `events` table gains a `filing` target.
+- **Contribute:** the request form's "Contribute" choice opens the contributor statement and creates a filing.
+- **Signing:** the page shows the form's full text and version. The person types their name and ticks "I agree." The site stores the text shown, its version, the time and a checksum.
+- **Workspace:** `/workspace/filings` lists filings by status, shows missing forms and the log, and exports a filing.
+- **Printable forms:** each form becomes a web page and a PDF from the same text.
+- **Lint rule:** an `interview` source needs a `contribution` block, and a `restricted` record never reaches public output.
 
 ## References
 

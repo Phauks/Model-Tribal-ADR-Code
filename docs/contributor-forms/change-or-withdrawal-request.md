@@ -1,60 +1,49 @@
-# Change, restriction or withdrawal request
+# Change or withdrawal
 
-Form `change-or-withdrawal-request`, version 0.1.0 (draft).
+Form `change-or-withdrawal-request`, version 0.2.0.
 
-Use this form to change what you allowed for something you gave the project,
-or to take it back. You do not have to use this form: an email, letter or
-phone call is enough, and the project will fill this in for you. Nations
-asking about material *about* them, rather than material they contributed,
-use the [request page](../requests.md).
+Use this to change what you allowed, or to take back what you gave. The form is optional. An email, letter or call works, and we fill in the form for you. A nation asking about material written *about* it uses the [request page](../requests.md) instead.
 
-## 1. Who is asking
+## 1. Who's asking
 
 | | |
 | --- | --- |
 | Name | |
-| How we can reach you | |
-| Filing number, if you have it | |
-| You are | ☐ The contributor ☐ Their parent or guardian ☐ The rights holder or family representative ☐ The nation's designated office ☐ Other: ______ |
+| How to reach you | |
+| Filing number, if known | |
+| You are | ☐ The contributor ☐ A parent or guardian ☐ The owner or family ☐ The nation's office ☐ Other: ______ |
 
 ## 2. Which material
 
-Describe it, or give the page or passage. **Please do not repeat anything
-sensitive**; tell us only where it is.
+Say where it is. **Don't repeat anything sensitive.**
 
 ______
 
-## 3. What you would like
+## 3. What you want
 
-- ☐ **Correct** something: ______
-- ☐ **Remove part** (redact): ______
+- ☐ **Fix** something: ______
+- ☐ **Remove part:** ______
 - ☐ **Change my credit** to: ______
-- ☐ **Narrow the use** to: ☐ Background only ☐ Describe, do not quote
-  ☐ Quote parts
-- ☐ **Delay** publication until: ______
-- ☐ **Hold for my nation's review**
-- ☐ **Restrict**: keep privately, never publish
-- ☐ **Withdraw entirely** and ☐ return my originals ☐ destroy all copies
+- ☐ **Limit use** to ☐ Background only ☐ Describe it ☐ Quote parts
+- ☐ **Delay** until: ______
+- ☐ **Hold** for my nation's review
+- ☐ **Keep it private.** Never publish it.
+- ☐ **Withdraw it all** and ☐ return my originals ☐ delete every copy
 
-Reason (optional; you do not have to give one): ______
+Reason (optional): ______
 
 ## 4. What happens next
 
-- We acknowledge your request within 7 days.
-- If you asked to restrict, delay or withdraw, we hide the material within
-  7 days, before anything else.
-- We make the change in the next release of the website and ebook, and in
-  the next printing of the book.
-- We tell you when it is done.
-- Printed books already sold cannot be recalled, and copies others made under
-  an open license may remain; we will ask archive services to remove theirs.
-- The public changelog says only "changed" or "withdrawn at the
-  contributor's request", without your name or the material.
+- We reply within 7 days.
+- If you asked us to hide, delay or withdraw, we hide the material first, within 7 days.
+- The change reaches the website and ebook in the next release, and the book in its next printing.
+- We tell you when it's done.
+- Books already sold stay sold. Copies made under an open license may remain. We ask web archives to remove theirs.
+- The public changelog says only "changed" or "withdrawn at the contributor's request." It never names you or repeats the material.
 
 | | |
 | --- | --- |
 | Signature, typed name, or "by phone/email on" | |
 | Date | |
 
-**For the project.** Received ______; hidden ______; done ______ in release
-______; contributor told ______.
+**Project use.** Received ______. Hidden ______. Done ______ in release ______. Contributor told ______.
