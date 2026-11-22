@@ -1,4 +1,4 @@
-# 0027. Add a land areas view to the map, from the Census Bureau's boundaries
+# 0028. Add a land areas view to the map, from the Census Bureau's boundaries
 
 - **Status:** Accepted (lead author, Nov. 22, 2026)
 - **Date:** 2026-11-22

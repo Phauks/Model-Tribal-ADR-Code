@@ -255,6 +255,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/swinomishcode/index.html
     source: national-indian-law-library-code-codes-swinomishcode
     confidence: medium
+    verification: title-only
     as_of: '2026-11-21'
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title. No date on the
@@ -265,44 +266,12 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/swinomishcode/index.html
     source: national-indian-law-library-code-codes-swinomishcode
     confidence: medium
+    verification: title-only
     as_of: '2026-11-21'
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
       text was not read, so there is no summary. Kind assigned from words in the title. No date on the
       index; as_of is the access date.
-  - kind: mediation
-    title: 7 - Arbitration of Disputes (4/5/05
-    citation: 7 - Arbitration of Disputes (4/5/05; 6 - Court Hearings, Parties and Mediation (9/7/04
-    link: https://narf.org/nill/codes/swinomishcode/index.html
-    source: national-indian-law-library-code-codes-swinomishcode
-    confidence: medium
-    as_of: '2024'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Most
-      Recent Update Received : April 2024); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   database_listings:
-  - title: Alternative Sentencing for Youth Offenders
-    citation: STC 8-12.060
-    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Post-adjudication
-    form_of_practice: Alternative sentencing; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-youth-offenders/
-  - title: Community Service (Alternative to Incarceration)
-    citation: STC Title 4, Chapter 12, § 4-12.010(A), (C); § 4-12.020
-    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
-    practice_area: Tribal Justice
-    phase: Post-adjudication/Sentencing
-    form_of_practice: Alternative to incarceration
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-alternative-to-incarceration/
   - title: Court-Facilitated Truancy Agreements
     citation: STC 8-14.070(J)-(K)
     link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
@@ -314,59 +283,6 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/court-facilitated-truancy-agreements/
-  - title: Domestic Violence Protection Orders – Treatment/Counseling Requirement
-    citation: STC Title 7, Chapter 11, § 7-11.100(A)(3)
-    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-violence-protection-orders-treatment-counseling-requirement/
-  - title: Interim Orders for Treatment and Services
-    citation: STC 8-07.090
-    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
-    practice_area: Tribal Child Welfare/Family
-    phase: Pre-adjudication
-    form_of_practice: Family services; Rehabilitation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/interim-orders-for-treatment-and-services/
-  - title: Mediation in Juvenile Matters
-    citation: STC 8-06.250 - 8-06.310
-    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
-    practice_area: Tribal Juvenile/Youth Justice
-    phase: Pre-adjudication
-    form_of_practice: Conflict resolution; Mediation
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mediation-in-juvenile-matters/
-  - title: Restitution to Injured Parties
-    citation: STC Title 4, Chapter 12, § 4-12.040
-    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
-    practice_area: Tribal Justice
-    phase: Post-adjudication/Sentencing
-    form_of_practice: Restorative justice
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-to-injured-parties/
-  - title: Therapeutic Justice – Court Philosophy
-    citation: STC Title 4, Chapter 12, § 4-12.070 (Annotation 3)
-    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
-    practice_area: Tribal Justice
-    phase: Post-adjudication
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    verification: bulk-import
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/therapeutic-justice-court-philosophy/
   - title: Truancy Intervention and Family Conferencing
     citation: STC 8-14.060
     link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code

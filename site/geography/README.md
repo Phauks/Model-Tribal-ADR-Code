@@ -19,7 +19,7 @@ nation. The Navajo Region's outline follows the Navajo Nation's land, as the
 Bureau draws it; Trevor chose on 2026-11-21 to draw the official outlines
 anyway, with a note on the map saying so.
 
-The "Land areas" view draws the Census Bureau's areas, which Trevor asked for on 2026-11-22 ([decision record 0027](../../docs/decisions/0027-map-adds-census-land-areas.md), amending [0007](../../docs/decisions/0007-map-shows-state-presence.md)). The other views draw no nation's land.
+The "Land areas" view draws the Census Bureau's areas, which Trevor asked for on 2026-11-22 ([decision record 0028](../../docs/decisions/0028-map-adds-census-land-areas.md), amending [0007](../../docs/decisions/0007-map-shows-state-presence.md)). The other views draw no nation's land.
 
 ## Refreshing the regions
 
