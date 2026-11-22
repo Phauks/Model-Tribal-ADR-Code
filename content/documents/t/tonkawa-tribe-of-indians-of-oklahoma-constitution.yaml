@@ -12,7 +12,7 @@ versions:
 - id: 1938-text
   label: 1938 constitution and bylaws
   event: original
-  status: unknown
+  status: superseded
   dates:
     adopted: '1938-04-21'
   source: university-of-oklahoma-indian-reorganization-act-tonkcons
@@ -23,7 +23,8 @@ versions:
     sha256: bdc5bb82abf7dc57d147182ff6e604ffc51d1b8d02902dc710dcacb9ae179d22
   note: 'The text prints an approval date (1938-03-16) before the adoption date; it may be the approval
     to hold the election, so it is left out of dates. Dates read from another copy of the same text: adopted
-    1938-04-21. Dates read by rule from the certificates on the library page.'
+    1938-04-21. Dates read by rule from the certificates on the library page. Marked superseded on 2026-11-22:
+    the 2020 constitution and bylaws, as amended (2020-text) is newer.'
   clauses:
   - topic: removal-and-recall
     locator: Article VII (VACANCIES)
@@ -33,7 +34,33 @@ versions:
     locator: Article VIII (REMOVAL OF OFFICERS)
     summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
     verification: title-only
+- id: 2020-text
+  label: 2020 constitution and bylaws, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2020-03-09'
+  supersedes:
+  - 1938-text
+  source: constitution-tonkawa-tribe-of-indians-of-oklahoma-2020-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/tonkawa-tribe-of-indians-of-oklahoma/9d9ac47a4cb53f42.pdf
+    sha256: 9d9ac47a4cb53f422ef00e7387e148d7ec67cfa86e1694cb02a90beccbf32423
+    pages: 32
+  note: The cover gives ratification on Apr. 21, 1938 and amendments of 1977, 1994, 2009, 2013, 2014,
+    2019 and Mar. 9, 2020 (updated June 30, 2020). Marked in effect because it is the newest dated text
+    found; a later amendment may not be posted. Version, status and dates read from the copy by the project
+    (Claude), not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

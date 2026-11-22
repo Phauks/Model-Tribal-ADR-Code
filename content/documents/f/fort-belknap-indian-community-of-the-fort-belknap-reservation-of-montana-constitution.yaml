@@ -38,12 +38,13 @@ versions:
   status: superseded
   dates:
     approved: '1935-12-13'
+  supersedes:
+  - 1935-text
+  - 1935-text-3
   approval:
     authority: secretary-of-the-interior
     action: approved
     locator: approval certificate
-  supersedes:
-  - 1935-text
   source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-1935-text-2
   confidence: medium
   verification: read-in-full
@@ -63,6 +64,22 @@ versions:
     change: not-compared
     verification: inferred
     note: The article texts differ (word-run overlap 0.81, by script); not yet read side by side.
+- id: 1935-text-3
+  label: 1935 constitution and bylaws (Government Printing Office print, Wayback copy)
+  event: original
+  status: superseded
+  dates:
+    approved: '1935-12-13'
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-1935-text-3
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana/04ad793e69c9cfb4.pdf
+    sha256: 04ad793e69c9cfb4cfce768bd02f56486d3266c4931ea444a141df42df9f7ec8
+    pages: 10
+  note: The 1936 Government Printing Office print of the constitution approved Dec. 13, 1935. Its words
+    match the 1935-text copy (project comparison of the two text layers). Version, status and dates read
+    from the copy by the project (Claude), not yet checked by the lead author.
 - id: 1993-text
   label: 1993 constitution and bylaws (1993-09-17)
   event: edition
@@ -149,5 +166,6 @@ versions:
     note: The script could not split one of the two texts into articles; compare by hand.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

@@ -9,6 +9,41 @@ jurisdictions:
 summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date.
   Versions are only those found; others may exist.'
 versions:
+- id: 2002-text
+  label: 2002 constitution, as amended
+  event: edition
+  status: superseded
+  dates:
+    listed: '2002-02-23'
+  source: constitution-comanche-nation-2002-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/comanche-nation/011939f28df00014.pdf
+    sha256: 011939f28df000140ab40d9cc7221420b0a55dad41ea0385da888d9906c8fc94
+    pages: 16
+  note: Scanned. The first page gives ratification on Nov. 19, 1966 and amendments through Feb. 23, 2002,
+    with an approval stamp of Feb. 23, 2002. Superseded by the 2018 text. Version, status and dates read
+    from the copy by the project (Claude), not yet checked by the lead author.
+- id: 2018-text
+  label: 2018 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2018-03-21'
+  supersedes:
+  - 2002-text
+  source: constitution-comanche-nation-2018-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/comanche-nation/0c083e26c961a5f5.pdf
+    sha256: 0c083e26c961a5f534c70f3fbd4260e01c84a8184bdfdd270e82741349ae2712
+    pages: 34
+  note: Scanned. The first page gives ratification on Nov. 19, 1966 and amendments through Mar. 21, 2018,
+    with an approval stamp of Mar. 21, 2018. Marked in effect because it is the newest dated text found;
+    a later amendment may not be posted. Version, status and dates read from the copy by the project (Claude),
+    not yet checked by the lead author.
 - id: undated-text
   label: Undated constitution, as amended
   event: original
@@ -29,5 +64,6 @@ versions:
     verification: title-only
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

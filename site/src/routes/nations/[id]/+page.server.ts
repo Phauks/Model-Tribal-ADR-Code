@@ -1,7 +1,8 @@
 import { error } from '@sveltejs/kit';
+import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
-import { contactOffices, contactsHeading, type ContactOffice } from '#lib/contact-card.ts';
+import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
@@ -11,6 +12,7 @@ import {
 } from '#lib/server/content.ts';
 import { layoutPresenceMap } from '#lib/presence-map.ts';
 import { documentHistoriesFor } from '#lib/server/document-history.ts';
+import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
@@ -64,11 +66,11 @@ function cited(sources: SourceUses, section: string, fact: CitedFact, item: Fact
  * named once. Each contact shown ends with the marker of its source, and every
  * contact's source is listed under "Government contacts".
  */
-function contactCard(record: NationRecord, sources: SourceUses): ContactOffice[] {
+function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	const facts = record.contacts ?? [];
 	const describe = (fact: (typeof facts)[number]) => `${humanize(fact.kind)}: ${fact.value}`;
 	for (const fact of facts) sources.use(fact, contactsHeading, describe(fact));
-	return contactOffices(facts, (fact) => {
+	return contactCards(facts, (fact) => {
 		const citations: CitationMark[] = [];
 		sources.citeFact(fact, contactsHeading, describe(fact), citations);
 		return citations;
@@ -140,35 +142,17 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	];
 }
 
-const courtsLabel = 'Courts and justice institutions';
-const forumsLabel = 'Dispute resolution forums';
 const documentsLabel = 'Where the nation publishes its laws';
 
-function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): FactGroup[] {
-	return [
-		...group(
-			'justice_institutions',
-			courtsLabel,
-			(record.justice_institutions ?? []).map((fact) =>
-				cited(sources, courtsLabel, fact, {
-					text: fact.name,
-					link: webLink(fact.link),
-					detail: humanize(fact.kind)
-				})
-			)
-		),
-		...group(
-			'dispute_resolution',
-			forumsLabel,
-			(record.dispute_resolution?.forums ?? []).map((fact) =>
-				cited(sources, forumsLabel, fact, {
-					text: fact.name ?? humanize(fact.kind),
-					link: webLink(fact.link),
-					detail: fact.name ? humanize(fact.kind) : undefined
-				})
-			)
-		)
-	];
+/**
+ * Courts and dispute resolution services, one heading per kind of service,
+ * with the appeal paths between courts (src/lib/nation-services.ts).
+ */
+function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): ServiceCategory[] {
+	return nationServices(
+		[...(record.justice_institutions ?? []), ...(record.dispute_resolution?.forums ?? [])],
+		(fact, section, text, marks) => sources.citeFact(fact, section, text, marks)
+	);
 }
 
 function publishedLaw(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -256,28 +240,34 @@ function recordedFeatures(record: NationRecord, sources: SourceUses): FactItem[]
  * is shown once, with the markers of both.
  */
 function glanceSummary(record: NationRecord, sources: SourceUses): FactGroup[] {
-	const rows = (entries: { fact: CitedFact; text: string; section: string }[]) => {
+	// One row item per name, in the order first seen; each name's facts are
+	// cited into one list of markers, so a source is marked once per name.
+	const rows = (entries: { fact: CitedFact; section: string; text: string }[]) => {
 		const byName = new Map<string, FactItem & { citations: CitationMark[] }>();
-		for (const { fact, text, section } of entries) {
+		for (const { fact, section, text } of entries) {
 			const item = byName.get(text) ?? { text, citations: [] };
 			byName.set(text, item);
 			sources.citeFact(fact, section, text, item.citations);
 		}
 		return [...byName.values()];
 	};
-	const courts = rows([
-		...(record.justice_institutions ?? []).map((fact) => ({ fact, text: fact.name, section: courtsLabel })),
-		...(record.dispute_resolution?.forums ?? []).map((fact) => ({
-			fact,
-			text: fact.name ?? humanize(fact.kind),
-			section: forumsLabel
-		}))
-	]);
+	// The same grouping and names as "Courts and dispute resolution"
+	// (nationServices), cited under the same headings and words, so the
+	// Sources list names each fact once. Appeal facts are left out here: this
+	// row lists names only, and the courts section cites them.
+	const serviceFacts: { fact: CitedFact; section: string; text: string }[] = [];
+	nationServices(
+		[...(record.justice_institutions ?? []), ...(record.dispute_resolution?.forums ?? [])],
+		(fact, section, text) => {
+			if (!('court' in fact)) serviceFacts.push({ fact, section, text });
+		}
+	);
+	const courts = rows(serviceFacts);
 	const documents = rows(
 		(record.governing_documents ?? []).map((fact) => ({
 			fact,
-			text: fact.title ?? humanize(fact.kind),
-			section: documentsLabel
+			section: documentsLabel,
+			text: fact.title ?? humanize(fact.kind)
 		}))
 	);
 	return [
@@ -382,13 +372,17 @@ export const load: PageServerLoad = ({ params }) => {
 			pronunciations: [],
 			features: [],
 			glance: [],
-			contacts: [],
+			contacts: { websites: [], offices: [] },
 			courts: [],
 			law: [],
 			documents: [],
 			neighbors: [],
 			map: undefined,
-			sources: []
+			sources: [],
+			outline: {
+				title: page.officialName,
+				items: [{ label: 'Review status', link: '#review-heading' }]
+			} satisfies PageOutline as PageOutline
 		};
 	}
 
@@ -453,7 +447,7 @@ export const load: PageServerLoad = ({ params }) => {
 	const map = presenceMap(record, sources);
 	const courts = courtsAndDisputeResolution(record, sources);
 	const law = publishedLaw(record, sources);
-	return {
+	const result = {
 		page,
 		image,
 		nameCitations,
@@ -469,4 +463,43 @@ export const load: PageServerLoad = ({ params }) => {
 		neighbors: sameStates(record),
 		sources: sources.list
 	};
+
+	// The page's outline, for the sidebar: one entry per heading the page shows.
+	const items: OutlineItem[] = [
+		{ label: 'Review status', link: '#review-heading' },
+		{ label: 'About this Nation', link: '#about-heading' }
+	];
+	if (result.glance.length > 0 || result.map) items.push({ label: 'At a glance', link: '#glance-heading' });
+	if (result.courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	if (result.law.length > 0) items.push({ label: 'Published law', link: '#law-heading' });
+	if (result.documents.length > 0) {
+		items.push({
+			label: 'Document history',
+			link: '#documents-heading',
+			children: result.documents.map((document) => ({
+				label: shortDocumentTitle(document.title, [page.listedName, page.officialName]),
+				link: `#document-${document.id}`
+			}))
+		});
+	}
+	if (result.neighbors.length > 0) {
+		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
+	}
+	items.push({ label: 'Sources', link: '#sources-heading' });
+
+	return { ...result, outline: { title: page.officialName, items } satisfies PageOutline as PageOutline };
 };
+
+/**
+ * A document's title for the sidebar, without the nation's name that opens it
+ * ("Navajo Nation–State of Arizona Gaming Compact" becomes "State of Arizona
+ * Gaming Compact"), since the sidebar already names the nation above it.
+ */
+function shortDocumentTitle(title: string, names: string[]): string {
+	for (const name of names) {
+		for (const dash of ['–', '-', '—']) {
+			if (title.startsWith(`${name}${dash}`)) return title.slice(name.length + 1);
+		}
+	}
+	return title;
+}
