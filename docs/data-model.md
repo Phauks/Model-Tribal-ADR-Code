@@ -180,6 +180,12 @@ a schema change (project design). Traditional or ceremonial practice is
 recorded only as far as the nation itself has made it public
 ([charter, commitment 5](charter.md#5-cultural-knowledge-and-restricted-material)).
 
+### Courts and the path of appeal
+
+`justice_institutions` lists the nation's courts and justice bodies, each with its kind, name, link and source. A court that several nations share, such as the Southwest Intertribal Court of Appeals, is listed in the profile of each nation it serves, with the kind `intertribal-court` or `intertribal-court-of-appeals`.
+
+A court's `appeals_to` names the court that hears appeals from it, written exactly as that court's `name` is written in the same profile, and carries its own citation: the constitution, court code or court website that says where appeals go. The highest court has no `appeals_to`. The field is filled only from a source that says so and is never worked out from a court's name or kind; when a search finds nothing, the search goes in the nation's search log under the topic `courts` ([decision record 0025](decisions/0025-search-logs.md)). The nation's page uses these facts to show how appeals move, from the court that hears a case first to the highest court, and groups the nation's courts and services under one heading for each kind of service (Courts, Peacemaking, Mediation and so on), so the kind is not repeated after each name.
+
 ### Names and languages
 
 Names in a nation's own language are kept exactly as the nation writes them,

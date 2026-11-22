@@ -4,6 +4,7 @@
 	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
+	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StatePresenceMap from '#lib/components/StatePresenceMap.svelte';
 	import { newTabNoteId, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
@@ -157,7 +158,7 @@
 			<!-- 5. Courts and dispute resolution -->
 			{#if data.courts.length > 0}
 				<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
-					<FactGroups groups={data.courts} />
+					<NationServices categories={data.courts} />
 				</Collapsible>
 			{/if}
 
