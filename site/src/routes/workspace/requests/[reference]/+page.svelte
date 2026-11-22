@@ -90,7 +90,7 @@
 		<div><dt>Credit</dt><dd>{request.creditPreference ?? 'No credit'}</dd></div>
 		<div>
 			<dt>Permission</dt>
-			<dd>{request.publicationPermission === 'publish' ? 'May be published under the project’s licenses' : 'For review only'}</dd>
+			<dd>{request.publicationPermission === 'publish' ? 'May be published under the site’s licenses' : 'For review only'}</dd>
 		</div>
 	{/if}
 </dl>
