@@ -40,6 +40,10 @@ sources_added:
 - southern-ute-title-1-general-provisions-2026
 - washington-tribal-state-court-consortium-tribal-court-directory
 - ogichidaa-storytellers-every-step-a-healing-circle
+- okamura-2019-review-kauanui-paradoxes-of-hawaiian-sovereignty
+- clifton-1998-review-williams-linking-arms-together
+- keller-1996-review-prucha-american-indian-treaties
+- rarick-1983-review-cohen-handbook-1982
 sources_updated:
 - united-states-code-8-1359
 - bc-treaty-commission-what-we-do
@@ -120,3 +124,12 @@ Findings recorded in records:
 - **Navajo Rules of Evidence (1978)**: Rule 10 excludes compromise offers and negotiation statements; Rule 13 lists seven privileges and none for peacemaking or sacred matters (`navajo-rules-of-evidence`).
 - **Southern Ute**: no peacemaking program in Title 1 or the Appendix C court rules; Title 1 provides for advisors on custom and for hearing officers to consult elders (`southern-ute-title-1-general-provisions-2026`).
 - The National Indian Gaming Commission report and H.R. 1502 are U.S. government works, so their records now allow the site to serve the copies.
+
+# Hand-pulled documents, batch 4
+
+The lead author sent 13 files for the Foundations thread: Westlaw prints, with KeyCite flags, of nine cases on the pull list (Tsosie, Elk, Richard, Jones, Downes v. Bidwell, Tuaua, Fitisemanu, Wabol v. Villacrusis and Davis v. Guam) and four book reviews. All were new, filed in the bucket and checked by download and hash (13 of 13). The case prints are filed under `westlaw/` and never served; their records are in the Foundations pull request, which adds the `file` blocks. The reviews got source records of their own. Full list: the pull-results write-up for batch 4 in the project files.
+
+- **KeyCite**: yellow flags on Tsosie, Elk, Richard, Downes and Tuaua (each for later courts declining to extend or follow it); none on Jones, Fitisemanu, Wabol or Davis.
+- **Fitisemanu v. United States**: the words "traditional, racially-based land alienation rules" are not in the reported opinion; the nearest passage is at 1 F.4th at 866, on racial restrictions on land ownership.
+- **Wabol v. Villacrusis**: the current text is 958 F.2d 1450, as amended Mar. 16, 1992, which amends the opinion at 908 F.2d 411.
+- **Reviews, not books**: the pull list asked for pages from Prucha, Williams and Kauanui; reviews of each arrived instead (plus one of the 1982 Cohen's Handbook), so the book requests stay open.
