@@ -2,8 +2,9 @@
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
 	// site's name, Report a problem and Contribute, then the reader's controls:
 	// search, Star, Print and Download as icons (Star only where the page can
-	// be starred, Download only where the page has a file), theme, Settings, and sign-in or the account menu at the far right
-	// (Trevor, Nov. 22, 2026). Star, Print and Download act on the page the reader is on. The
+	// be starred), theme, Settings, and sign-in or the account menu at the far right
+	// (Trevor, Nov. 22, 2026). Star, Print and Download act on the page the reader is on;
+	// Download opens a list of what the page offers (DownloadMenu.svelte). The
 	// site's sections are in the sidebar (SiteSidebar.svelte), so the masthead
 	// has no menu row. The content version shows only on paper; on screen it
 	// is in the footer.
@@ -16,10 +17,9 @@
 	// contents in the row as before, and the More button is hidden.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
-	import Download from '@lucide/svelte/icons/download';
 	import Ellipsis from '@lucide/svelte/icons/ellipsis';
-	import { downloadFor } from '#lib/page-downloads.ts';
 	import AccountLink from './AccountLink.svelte';
+	import DownloadMenu from './DownloadMenu.svelte';
 	import PrintOptions from './PrintOptions.svelte';
 	import ReportProblem from './ReportProblem.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
@@ -56,9 +56,8 @@
 		return record ? `/requests?record=${encodeURIComponent(record).replaceAll('%2F', '/')}` : '/requests';
 	});
 
-	const download = $derived(downloadFor(page.url.pathname));
-
 	let search: SiteSearch | undefined = $state();
+	let printOptions: PrintOptions | undefined = $state();
 
 	/**
 	 * The / key opens the search, as on Wikipedia, Wikiwand and GitHub (Trevor
@@ -91,7 +90,7 @@
 				class="more-button"
 				type="button"
 				popovertarget="masthead-more"
-				aria-label="More: report a problem, contribute, star, print, settings and sign in"
+				aria-label="More: report a problem, contribute, star, print, download, settings and sign in"
 			>
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
@@ -103,18 +102,8 @@
 			</ul>
 			<div class="masthead-tools">
 				<StarButton />
-				<PrintOptions />
-				{#if download}
-					<a
-						class="icon-button download-link"
-						href={download.link}
-						download
-						aria-label="{download.label} ({download.format})"
-						title="{download.label} ({download.format})"
-					>
-						<Download size={24} />
-					</a>
-				{/if}
+				<PrintOptions bind:this={printOptions} />
+				<DownloadMenu onpdf={() => printOptions?.open()} />
 				<ThemeSetting />
 				<SettingsPanel />
 				<AccountLink />
@@ -295,12 +284,6 @@
 		list-style: none;
 		margin: 0 0 0 auto;
 		padding: 0;
-	}
-
-	/* Download is a link styled as an icon button, in the band's text color. */
-	.download-link,
-	.download-link:visited {
-		color: var(--color-band-text);
 	}
 
 	.masthead-actions a:not(.button) {

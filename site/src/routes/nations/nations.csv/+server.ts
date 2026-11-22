@@ -2,7 +2,7 @@ import { entityTypeLabels } from '#lib/nation-labels.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import type { RequestHandler } from './$types';
 
-// The Native nations index as one CSV file, for the masthead's Download link on the
+// The Native nations index as one CSV file, for the masthead's Download menu on the
 // index pages (src/lib/page-downloads.ts). Built with the site.
 export const prerender = true;
 

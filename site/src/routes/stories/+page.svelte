@@ -15,7 +15,7 @@
 <div class="reading">
 	<h1>Stories</h1>
 	<p class="lead">
-		Stories, accounts and teachings about resolving disputes, making peace and restoring relationships, as Native nations and their people tell them. They are never retold or summarized here. Each page quotes short passages in the teller’s own words and links to where the nation or teller published the story, so you can read it there in full.
+		Stories, accounts and teachings about resolving disputes, making peace and restoring relationships, as Native nations and their people tell them. They are never retold or summarized here. Where the telling is in the public domain or is a nation’s own law, the page gives the whole story in the teller’s own words. Otherwise it quotes short passages and links to where the nation or teller published the story, so you can read it there in full.
 	</p>
 
 	{#if data.awaitingReview > 0}
