@@ -151,6 +151,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chippewa Cree Indians of the Rocky Boy's Reservation, Montana
+official_images:
+- kind: seal
+  image_link: https://www.rmtlc.org/wp-content/uploads/2024/02/CCT-Tribe-NW-295x300-1.png
+  credit: A copy published on the Rocky Mountain Tribal Leaders Council's page for the tribe.
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 4b180ff228829923548de7bb3b258c9d406c904aee26f173669b868948f755dc
+  private_copy: nation-images/chippewa-cree-indians-of-the-rocky-boys-reservation/seal-4b180ff22882.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals: []
+  source: rmtlc-chippewa-cree-of-rocky-boy
+  confidence: medium
+  as_of: '2026-11-22'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Rocky Mountain
   bureau_of_indian_affairs_agency: Rocky Boy's Field Office

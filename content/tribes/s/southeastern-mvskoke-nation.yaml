@@ -99,12 +99,35 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+official_images:
+- kind: logo
+  image_link: https://img1.wsimg.com/isteam/ip/8b2ed406-186a-478a-b5c5-42396eac17bf/logotransparent%20copy.png/:/rs=w:600,h:600,cg:true
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: fc06fafbb8a649d70a9ed4f23a2f22c2e17415f8857d50a13b31f461ff1bfa0f
+  private_copy: nation-images/southeastern-mvskoke-nation/logo-fc06fafbb8a6.png
+  reuse:
+    status: restricted
+    checked: '2026-11-22'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89003203
+      serial_number: '89003203'
+      note: The nation filed the same design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+  source: southeasternmvskokenation-home-page
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 tribal_insignia_database_entries:
 - serial_number: '89003203'
   wordmark: SOUTHEASTERN MVSKOKE NATION PEOPLE OF ONE FIRE
   filed: '2024-08-23'
   record_link: https://tsdr.uspto.gov/#caseNumber=89003203&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: same-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'

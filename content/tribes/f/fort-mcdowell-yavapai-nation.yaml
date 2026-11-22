@@ -141,6 +141,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
+official_images:
+- kind: seal
+  image_link: https://fmyn.org/wp-content/uploads/2023/07/FortSeal-logo.png
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 53202a3673e5dbc2ec3398cc8ee4804d19e152b4e4337e3980c599a25576997f
+  private_copy: nation-images/fort-mcdowell-yavapai-nation/seal-53202a3673e5.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-22'
+    signals: []
+  source: fmyn-home
+  confidence: high
+  as_of: '2026-11-22'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Salt River Agency

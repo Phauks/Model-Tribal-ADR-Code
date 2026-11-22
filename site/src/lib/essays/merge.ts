@@ -92,3 +92,32 @@ export function mergeThreeWay(base: string, ours: string, theirs: string): Merge
 	}
 	return conflicts > 0 ? { merged: false, conflicts } : { merged: true, text: result.join('\n') };
 }
+
+export type LineChange = 'same' | 'changed' | 'added';
+
+/**
+ * For each line of `after`, whether it is the same as in `before`, a changed
+ * version of lines there, or new: what a page marks as a draft change or a
+ * new block when it shows unpublished text beside the published version.
+ */
+export function lineChanges(before: string, after: string): LineChange[] {
+	const afterLines = after.split('\n');
+	const beforeLines = before.split('\n');
+	const inBefore = matches(afterLines, beforeLines);
+	const result: LineChange[] = afterLines.map((_, index) => (inBefore[index] >= 0 ? 'same' : 'added'));
+	// A run of unmatched lines replaces whatever lies between the matched lines around it in `before`.
+	let index = 0;
+	while (index < afterLines.length) {
+		if (inBefore[index] >= 0) {
+			index += 1;
+			continue;
+		}
+		const start = index;
+		while (index < afterLines.length && inBefore[index] < 0) index += 1;
+		const beforeStart = start > 0 ? inBefore[start - 1] + 1 : 0;
+		const beforeEnd = index < afterLines.length ? inBefore[index] : beforeLines.length;
+		const replaced = beforeLines.slice(beforeStart, beforeEnd).some((line) => line.trim() !== '');
+		if (replaced) for (let line = start; line < index; line += 1) result[line] = 'changed';
+	}
+	return result;
+}

@@ -3,6 +3,7 @@ import {
 	accessAllowsDisplay,
 	awaitsNationReview,
 	shownExcerpts,
+	shownFullText,
 	shownTellings,
 	storyIsShown,
 	storySourceKeys,
@@ -143,4 +144,37 @@ it('lists every source a story cites', () => {
 		protocols: [{ kind: 'seasonal', statement: 'Told in winter.', source: 'protocol-page' }]
 	});
 	expect(storySourceKeys([record]).sort()).toEqual(['example-nation-history-page', 'language-page', 'protocol-page']);
+});
+
+describe('full text (decision record 0034)', () => {
+	const fullText = {
+		telling: 'nation-page',
+		locator: 'pages 1-3',
+		basis: 'public-domain' as const,
+		basis_note: 'Published in 1901.',
+		transcribed_from: 'The 1901 printing.',
+		paragraphs: ['The two towns made peace.', { omitted: 'A passage is left out.', locator: 'page 2' }],
+		words: 5,
+		sha256: '0'.repeat(64)
+	};
+
+	it('shows the full text of a shown telling', () => {
+		expect(shownFullText(story({ full_text: fullText }), today)).toEqual(fullText);
+	});
+
+	it('shows nothing when the record has no full text', () => {
+		expect(shownFullText(story(), today)).toBeUndefined();
+	});
+
+	it('never shows the full text of a restricted telling', () => {
+		const record = story({ full_text: fullText, tellings: [telling({ access: { level: 'restricted' } })] });
+		expect(shownFullText(record, today)).toBeUndefined();
+	});
+
+	it('shows a full text resting on permission only when the telling may be published in full', () => {
+		const permitted = { ...fullText, basis: 'permission' as const };
+		expect(shownFullText(story({ full_text: permitted }), today)).toBeUndefined();
+		const record = story({ full_text: permitted, tellings: [telling({ permitted_uses: { level: 'publish-in-full' } })] });
+		expect(shownFullText(record, today)).toEqual(permitted);
+	});
 });

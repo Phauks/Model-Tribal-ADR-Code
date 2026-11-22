@@ -51,7 +51,7 @@
 		return document.querySelector(`#main-content ${selector}`) !== null;
 	}
 
-	function open() {
+	export function open() {
 		options = loadPrintOptions();
 		parts = partDescriptions.filter(
 			(description) =>

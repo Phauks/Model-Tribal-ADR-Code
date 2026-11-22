@@ -113,12 +113,45 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
+official_images:
+- kind: logo
+  image_link: https://upload.wikimedia.org/wikipedia/en/3/37/Agua_Caliente_Band_of_Cahuilla_Indians_logo.png
+  credit: A copy on English Wikipedia, which uses it as a non-free logo and gives aguacaliente.org as
+    its source.
+  retrieved: '2026-11-22'
+  media_type: image/png
+  sha256: 63f41131116b595372c0a5bac5b46cf7ec22045962513e03fde8ea1a3744f08e
+  private_copy: nation-images/agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation/logo-63f41131116b.png
+  reuse:
+    status: restricted
+    checked: '2026-11-22'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89001506
+      serial_number: '89001506'
+      note: The nation filed the same design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      locator: Serial number 89001508
+      serial_number: '89001508'
+      note: The nation filed a similar design in the USPTO Native American Tribal Insignia database (compared
+        by eye on 2026-11-22).
+  source: wikipedia-agua-caliente-band-of-cahuilla-indians-logo
+  confidence: medium
+  as_of: '2026-11-22'
+  verification: read-in-full
 tribal_insignia_database_entries:
 - serial_number: '89001506'
   wordmark: AGUA CALIENTE BAND OF CAHUILLA INDIANS
   filed: '2009-09-30'
   record_link: https://tsdr.uspto.gov/#caseNumber=89001506&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: same-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'
@@ -128,7 +161,7 @@ tribal_insignia_database_entries:
   wordmark: AGUA CALIENTE BAND OF CAHUILLA INDIANS
   filed: '2009-09-30'
   record_link: https://tsdr.uspto.gov/#caseNumber=89001508&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: similar-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'
@@ -138,7 +171,7 @@ tribal_insignia_database_entries:
   wordmark: AGUA CALIENTE BAND OF CAHUILLA INDIANS
   filed: '2009-09-30'
   record_link: https://tsdr.uspto.gov/#caseNumber=89001507&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: different-design
   source: uspto-native-american-tribal-insignia-database
   confidence: high
   as_of: '2026-11-21'

@@ -6,9 +6,12 @@ import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-c
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
+	searchSummary,
+	sources as sourceRecords,
 	type CitedFact,
 	type NationRecord
 } from '#lib/server/content.ts';
+import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
@@ -41,15 +44,16 @@ interface FactItem {
 	citations?: CitationMark[];
 }
 
-/**
- * A labeled group of facts. `field` is the record field the group shows.
- * `section` is the id of the heading further down the page that shows the
- * same facts in full; the label then links to it.
- */
+/** What the courts and jurisdiction sections say when they have nothing to show. */
+interface EmptySections {
+	courts?: EmptyNote;
+	jurisdiction?: EmptyNote;
+}
+
+/** A labeled group of facts. `field` is the record field the group shows. */
 interface FactGroup {
 	field: string;
 	label: string;
-	section?: string;
 	items: FactItem[];
 }
 
@@ -151,12 +155,29 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 		...group(
 			'memberships',
 			'Member of',
-			(record.memberships ?? []).map((fact) => cited(sources, 'Member of', fact, { text: fact.organization }))
+			(record.memberships ?? []).map((fact) =>
+				cited(sources, 'Member of', fact, { text: fact.organization, link: organizationHome(fact) })
+			)
 		)
 	];
 }
 
 const documentsLabel = 'Where the nation publishes its laws';
+
+/**
+ * The home page of an organization of nations, for the "Member of" row:
+ * the organization's own site, taken from the source the membership cites
+ * when the organization itself published it (its member list). Left out when
+ * the source is someone else's, so the row never links a third party's page
+ * as the organization's.
+ */
+function organizationHome(fact: CitedFact & { organization: string }): string | undefined {
+	const source = fact.source ? sourceRecords().get(fact.source) : undefined;
+	const publishedByIt = source?.citation.author?.some((author) => author.literal === fact.organization);
+	const address = source?.citation.URL ?? source?.original_link;
+	if (!publishedByIt || !address || !URL.canParse(address)) return undefined;
+	return webLink(`${new URL(address).origin}/`);
+}
 
 /**
  * The nation's recognition, one line for each status: two sources that both
@@ -303,59 +324,29 @@ function publishedLaw(
 }
 
 /**
-/**
- * The rows At a glance adds from the sections below it, so the key facts
- * come first, the way an encyclopedia's fact box does: the names of the
- * nation's courts and forums, and of the documents where it publishes its
- * laws. Each label links to the section that shows them in full. Each
- * name is cited under the same section and words as there, so the Sources
- * list names the fact once and simply links back to both markers. The same
- * name can come from two records (for example two "Tribal code" entries); it
- * is shown once, with the markers of both.
+ * The rows "Laws and agreements" shows when the nation's constitution or its
+ * published laws are not on record, so the section always says whether they
+ * were found. The project keeps no search log for laws yet, so the note says
+ * how far the sources go rather than how far a search went.
  */
-function glanceSummary(record: NationRecord, sources: SourceUses): FactGroup[] {
-	// One row item per name, in the order first seen; each name's facts are
-	// cited into one list of markers, so a source is marked once per name.
-	const rows = (entries: { fact: CitedFact; section: string; text: string }[]) => {
-		const byName = new Map<string, FactItem & { citations: CitationMark[] }>();
-		for (const { fact, section, text } of entries) {
-			const key = text.toLocaleLowerCase('en-US');
-			const item = byName.get(key) ?? { text, citations: [] };
-			byName.set(key, item);
-			sources.citeFact(fact, section, text, item.citations);
-		}
-		return [...byName.values()];
+function missingLaw(record: NationRecord, documents: { kind: string }[]): FactGroup[] {
+	const kinds = new Set((record.governing_documents ?? []).map((fact) => fact.kind));
+	// Articles of association are some nations' governing document in place of
+	// a constitution. A corporate charter governs a business, so it is neither.
+	const governing = ['constitution', 'articles-of-association'];
+	const hasConstitution =
+		governing.some((kind) => kinds.has(kind)) ||
+		documents.some((document) => governing.map(humanize).includes(document.kind));
+	const hasLaws =
+		['law-code', 'court-rules', 'other'].some((kind) => kinds.has(kind)) ||
+		(record.dispute_resolution_law ?? []).length > 0;
+	const row = (field: string, label: string, what: string): FactGroup => {
+		const { text, note } = emptySectionNote(what, '', searchSummary(field, record.id));
+		return { field: `missing-${field}`, label, items: [{ text, note }] };
 	};
-	// The same grouping and names as "Courts and dispute resolution"
-	// (nationServices), cited under the same headings and words, so the
-	// Sources list names each fact once. Appeal facts are left out here: this
-	// row lists names only, and the courts section cites them. The judicial
-	// branch is the court system as a whole, not a court or a forum, so it
-	// is left out of this row too.
-	const serviceFacts: { fact: CitedFact; section: string; text: string }[] = [];
-	nationServices(
-		[...(record.justice_institutions ?? []), ...(record.dispute_resolution?.forums ?? [])],
-		(fact, section, text) => {
-			if (!('court' in fact) && section !== 'Judicial branch') serviceFacts.push({ fact, section, text });
-		}
-	);
-	const courts = rows(serviceFacts);
-	const documents = rows(
-		(record.governing_documents ?? []).map((fact) => ({
-			fact,
-			section: documentsLabel,
-			text: fact.title ?? humanize(fact.kind)
-		}))
-	);
 	return [
-		...group('courts_summary', 'Courts and forums', courts).map((summary) => ({
-			...summary,
-			section: 'courts-heading'
-		})),
-		...group('governing_documents_summary', 'Published law', documents).map((summary) => ({
-			...summary,
-			section: 'law-heading'
-		}))
+		...(hasConstitution ? [] : [row('constitution', 'Constitution', 'a constitution or other governing document')]),
+		...(hasLaws ? [] : [row('laws', 'Published laws', 'a law code or other published law')])
 	];
 }
 
@@ -529,6 +520,7 @@ export const load: PageServerLoad = ({ params }) => {
 			law: [],
 			documents: [],
 			jurisdiction: [],
+			empty: {} as EmptySections,
 			neighbors: [],
 			map: undefined,
 			sources: [],
@@ -552,10 +544,13 @@ export const load: PageServerLoad = ({ params }) => {
 	let image: { src: string; kind: string } | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
+		// A copy from somewhere other than the nation's own website, such as
+		// Wikimedia Commons, names who made it and its license instead.
+		const origin = shownImage.credit ?? 'As the nation’s website publishes it.';
 		sources.use(
 			shownImage,
 			kind,
-			'As the nation’s website publishes it. It belongs to the nation, which does not endorse this site.'
+			`${origin} It belongs to the nation, which does not endorse this site.`
 		);
 		image = { src: imagePath(record.id), kind };
 	}
@@ -604,7 +599,7 @@ export const load: PageServerLoad = ({ params }) => {
 	// Sources are numbered in the order the page first cites them, which is
 	// the order the page shows them: At a glance comes right after the title.
 	const names = [page.listedName, page.officialName];
-	const glance = [...atAGlance(record, sources), ...glanceSummary(record, sources)];
+	const glance = atAGlance(record, sources);
 	const contacts = contactCard(record, sources);
 	const map = nationMap(record, sources);
 	const courts = courtsAndDisputeResolution(record, sources);
@@ -612,8 +607,28 @@ export const load: PageServerLoad = ({ params }) => {
 		...document,
 		heading: documentHeading(document.title, names)
 	}));
-	const law = publishedLaw(record, sources, documents);
+	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
 	const jurisdiction = jurisdictionFacts(record, sources);
+	// The legal sections always show, and say plainly when nothing was found,
+	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
+	const empty: EmptySections = {
+		courts:
+			courts.length > 0
+				? undefined
+				: emptySectionNote(
+						'a court or other forum',
+						'A nation can settle disputes through its council or a court that is not listed online; its government office can say.',
+						searchSummary('courts', record.id) ?? searchSummary('dispute-resolution', record.id)
+					),
+		jurisdiction:
+			jurisdiction.length > 0
+				? undefined
+				: emptySectionNote(
+						'the nation’s Public Law 280 status or an Indian Child Welfare Act agent',
+						'',
+						searchSummary('jurisdiction', record.id)
+					)
+	};
 	const result = {
 		page,
 		image,
@@ -627,6 +642,7 @@ export const load: PageServerLoad = ({ params }) => {
 		law,
 		documents,
 		jurisdiction,
+		empty,
 		neighbors: sameStates(record),
 		sources: sources.list
 	};
@@ -636,15 +652,13 @@ export const load: PageServerLoad = ({ params }) => {
 	const hasContacts = contacts.websites.length > 0 || contacts.offices.length > 0;
 	if (glance.length > 0 || map) items.push({ label: 'At a glance', link: '#glance-heading' });
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
-	if (courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
-	if (law.length > 0 || documents.length > 0) {
-		items.push({
-			label: lawHeading,
-			link: '#law-heading',
-			children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
-		});
-	}
-	if (jurisdiction.length > 0) items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
+	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	items.push({
+		label: lawHeading,
+		link: '#law-heading',
+		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
+	});
+	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
 	}

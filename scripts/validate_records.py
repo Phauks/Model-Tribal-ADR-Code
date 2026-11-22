@@ -247,8 +247,8 @@ STORY_EXCERPT_WORDS = 50  # a short passage, quoted without permission (decision
 
 
 def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, methods: dict,
-                  errors: list[str]) -> None:
-    """Links inside and out of story records (content/stories/, decision record 0019)."""
+                  errors: list[str], source_records: dict | None = None) -> None:
+    """Links inside and out of story records (content/stories/, decision records 0019 and 0034)."""
     for path, record in stories:
         if record.get("id") != path.stem:
             errors.append(f"{path}: id does not match the file name")
@@ -304,6 +304,42 @@ def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, me
                 errors.append(f"{name} is {words} words; without permission to publish in full an excerpt is at most {STORY_EXCERPT_WORDS}")
             if hashlib.sha256(normalized.encode("utf-8")).hexdigest() != excerpt.get("sha256"):
                 errors.append(f"{name}: sha256 does not match its text")
+        full_text = record.get("full_text")
+        if full_text:
+            check_story_full_text(path, record, full_text, levels, source_records or {}, errors)
+
+
+# A nation's own law may be shown in full under decision record 0031.
+NATION_LAW_SOURCE_KINDS = {"tribal-code", "tribal-constitution", "tribal-court-rule"}
+
+
+def check_story_full_text(path, record: dict, full_text: dict, levels: dict, source_records: dict,
+                          errors: list[str]) -> None:
+    """A story's full text: who may be reproduced in full, and its count and fingerprint (decision record 0034)."""
+    name = f"{path}: full_text"
+    telling_id = full_text.get("telling")
+    telling = next((t for t in record.get("tellings", []) if t.get("id") == telling_id), None)
+    if telling is None:
+        errors.append(f"{name} names a telling '{telling_id}' this record does not list")
+        return
+    source = source_records.get(telling.get("source") or "")
+    basis = full_text.get("basis")
+    if basis == "public-domain":
+        if not source or (source.get("rights") or {}).get("basis") != "public-domain":
+            errors.append(f"{name} says public-domain but the telling's source record's rights basis is not public-domain")
+    elif basis == "nation-law":
+        if not source or source.get("kind") not in NATION_LAW_SOURCE_KINDS:
+            errors.append(f"{name} says nation-law but the telling's source record is not a nation's law")
+    elif basis == "permission":
+        if levels.get(telling_id) != "publish-in-full":
+            errors.append(f"{name} says permission but the telling's permitted_uses level is not publish-in-full")
+    texts = [paragraph for paragraph in full_text.get("paragraphs", []) if isinstance(paragraph, str)]
+    normalized = [" ".join(unicodedata.normalize("NFC", text).split()) for text in texts]
+    words = sum(len(text.split()) for text in normalized)
+    if words != full_text.get("words"):
+        errors.append(f"{name} has {words} words but says {full_text.get('words')}")
+    if hashlib.sha256("\n\n".join(normalized).encode("utf-8")).hexdigest() != full_text.get("sha256"):
+        errors.append(f"{name}: sha256 does not match its text")
 
 
 def check_search_logs(logs: list, errors: list[str]) -> None:
@@ -502,7 +538,10 @@ def main() -> int:
         records.get("source.schema.json", []) + records.get("tribe.schema.json", []), errors,
     )
 
-    check_stories(records.get("story.schema.json", []), sources, tribe_ids, sessions, methods, errors)
+    check_stories(
+        records.get("story.schema.json", []), sources, tribe_ids, sessions, methods, errors,
+        {record.get("key"): record for _, record in records.get("source.schema.json", [])},
+    )
 
     unmatched_kinds: dict[str, int] = {}
     for path, record in records.get("tribe.schema.json", []):

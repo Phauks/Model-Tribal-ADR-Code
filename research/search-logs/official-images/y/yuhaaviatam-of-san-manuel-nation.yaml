@@ -1,0 +1,52 @@
+profile: content/tribes/y/yuhaaviatam-of-san-manuel-nation.yaml
+topic: official-images
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.sanmanuel-nsn.gov/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: blocked
+  reason: scripts/tribes/find_official_images.py could not read the site (refused, timed out or failed
+    to connect).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.sanmanuel-nsn.gov/
+  query: the nation's own seal, emblem, logo or flag
+  outcome: not-found
+  reason: 'Rendered in a headless Chromium browser (Playwright); no usable image: the header and logo
+    images were maps, photos, icons or another organization''s mark, or did not download.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikipedia
+  address: https://en.wikipedia.org/wiki/Yuhaaviatam_of_San_Manuel_Nation
+  query: infobox image, seal, logo and flag fields
+  outcome: found
+  reason: The article's infobox names the file now recorded in official_images.
+  records:
+  - content/tribes/y/yuhaaviatam-of-san-manuel-nation.yaml
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: wikimedia-commons
+  address: https://commons.wikimedia.org/wiki/Category:Official_seals_of_Native_American_tribes
+  query: files in the categories of official seals, tribal insignia, logos, coats of arms and flags of
+    Native American tribes (three levels down), matched to the nation's name
+  outcome: found
+  reason: The category tree holds the file now recorded in official_images.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: the nation's own seal, emblem, logo or flag
+  outcome: not-found
+  reason: 'An AI lookup helper using web search and page fetches found nothing usable: Header logo is
+    an inline SVG wordmark (base64, 150x30, white) with no visible seal. Not verified as a seal, so not
+    used.'
