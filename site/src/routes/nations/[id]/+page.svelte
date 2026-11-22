@@ -198,7 +198,12 @@
 		max-width: var(--layout-measure);
 	}
 
-	@media (min-width: 64rem) {
+	/*
+	 * Two columns once the page itself is wide enough. This follows the width
+	 * of the page's own column (the layout makes <main> a size container), so
+	 * it changes when the sidebar is shown or hidden, not only with the window.
+	 */
+	@container page (min-width: 62rem) {
 		.profile {
 			display: grid;
 			grid-template-columns: minmax(0, var(--layout-measure)) minmax(22rem, 1fr);
@@ -229,12 +234,12 @@
 		}
 
 		.profile-glance {
-			container-type: inline-size;
+			container: glance / inline-size;
 		}
 	}
 
 	/* In a narrow fact box, each label sits above its values. */
-	@container (max-width: 30rem) {
+	@container glance (max-width: 30rem) {
 		.profile-glance :global(.summary-list) {
 			grid-template-columns: 1fr;
 		}
@@ -245,7 +250,7 @@
 		}
 	}
 
-	@container (min-width: 30rem) {
+	@container glance (min-width: 30rem) {
 		.profile-glance :global(.summary-list) {
 			grid-template-columns: minmax(7rem, 11rem) 1fr;
 		}

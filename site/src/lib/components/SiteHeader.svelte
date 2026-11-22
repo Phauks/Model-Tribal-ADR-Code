@@ -1,11 +1,12 @@
 <script lang="ts">
-	// The masthead (site/DESIGN.md, section 6, "Masthead"). Two rows: the
-	// site's name, then the reader's controls (search, theme, Settings, then
-	// sign-in or the account menu at the far right); under them, the main menu
-	// and, at its right end, Print, Download (where the page has a file),
-	// Report a problem and Contribute (Trevor, Nov. 22, 2026). Print and
-	// Download act on the page the reader is on. The content version shows
-	// only on paper; on screen it is in the footer.
+	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
+	// site's name, then Print, Download (where the page has a file), Report a
+	// problem and Contribute, then the reader's controls (search, theme,
+	// Settings, and sign-in or the account menu at the far right) (Trevor,
+	// Nov. 22, 2026). Print and Download act on the page the reader is on. The
+	// site's sections are in the sidebar (SiteSidebar.svelte), so the masthead
+	// has no menu row. The content version shows only on paper; on screen it
+	// is in the footer.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import Download from '@lucide/svelte/icons/download';
@@ -17,14 +18,6 @@
 	import ThemeSetting from './ThemeSetting.svelte';
 
 	let { contentVersion }: { contentVersion: string } = $props();
-
-	// Only pages that exist are listed. "The code", "Peacemaking", "Sources"
-	// and "About" join the menu when their pages are built (site/DESIGN.md,
-	// section 4). Downloads and the changelog are linked from the footer.
-	const menu = [
-		{ label: 'Nations', link: '/nations' },
-		{ label: 'Glossary', link: '/glossary' }
-	];
 
 	/**
 	 * "Report a problem" goes to the request form, where the reader picks
@@ -49,11 +42,6 @@
 	});
 
 	const download = $derived(downloadFor(page.url.pathname));
-
-	function isCurrent(link: string): boolean {
-		const path = page.url.pathname;
-		return path === link || path.startsWith(`${link}/`);
-	}
 </script>
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -63,36 +51,25 @@
 			<a href="/">{siteName}</a>
 			<span class="edition print-only">Draft, content {contentVersion}</span>
 		</p>
+		<ul class="masthead-actions no-print">
+			<li><PrintOptions /></li>
+			{#if download}
+				<li>
+					<a class="download-link" href={download.link} download>
+						<Download size={20} strokeWidth={1.75} />
+						<span>{download.label} <span class="format">({download.format})</span></span>
+					</a>
+				</li>
+			{/if}
+			<li><a class="report-link" href={reportLink}>Report a problem</a></li>
+			<li><a class="button" href="/requests?kind=contribute">Contribute</a></li>
+		</ul>
 		<div class="masthead-tools no-print">
 			<SiteSearch />
 			<ThemeSetting />
 			<SettingsPanel />
 			<AccountLink />
 		</div>
-	</div>
-	<div class="masthead-menu no-print">
-		<nav aria-label="Main" class="page-width">
-			<ul>
-				{#each menu as item (item.link)}
-					<li>
-						<a href={item.link} aria-current={isCurrent(item.link) ? 'page' : undefined}>
-							{item.label}
-						</a>
-					</li>
-				{/each}
-				<li class="page-actions"><PrintOptions /></li>
-				{#if download}
-					<li>
-						<a class="download-link" href={download.link} download>
-							<Download size={20} strokeWidth={1.75} />
-							<span>{download.label} <span class="format">({download.format})</span></span>
-						</a>
-					</li>
-				{/if}
-				<li><a href={reportLink}>Report a problem</a></li>
-				<li><a class="button" href="/requests?kind=contribute">Contribute</a></li>
-			</ul>
-		</nav>
 	</div>
 </header>
 
@@ -148,7 +125,7 @@
 	/* The controls keep to the right; an open search box grows to their left. */
 	.masthead-tools {
 		display: flex;
-		flex: 1 1 auto;
+		flex: 0 1 auto;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: flex-end;
@@ -167,35 +144,23 @@
 		}
 	}
 
-	/* The menu row: a thin rule divides it from the row above. */
-	.masthead-menu {
-		border-top: 1px solid color-mix(in srgb, var(--color-band-text) 25%, transparent);
-	}
-
-	nav ul {
+	/* Print, Download, Report a problem and Contribute, before the controls. */
+	.masthead-actions {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: var(--space-1) var(--space-5);
+		justify-content: flex-end;
+		gap: var(--space-2) var(--space-4);
 		list-style: none;
-		margin: 0;
-		padding: var(--space-1) 0;
+		margin: 0 0 0 auto;
+		padding: 0;
 	}
 
-	nav .page-actions {
-		margin-left: auto;
-	}
-
-	nav .download-link {
+	.masthead-actions .download-link {
 		gap: var(--space-2);
 		padding: 0 var(--space-3);
 		border: 1px solid var(--color-band-text);
 		border-radius: var(--radius-control);
-	}
-
-	nav .download-link:hover {
-		border-bottom-color: var(--color-band-text);
-		text-decoration: underline;
 	}
 
 	.format {
@@ -203,22 +168,25 @@
 		font-size: var(--font-size-small);
 	}
 
-	nav a:not(.button) {
+	.masthead-actions a:not(.button) {
 		display: inline-flex;
 		align-items: center;
 		min-height: var(--layout-target-minimum);
 		color: var(--color-band-text);
 		text-decoration: none;
 		font-weight: var(--font-weight-semibold);
-		border-bottom: 3px solid transparent;
 	}
 
-	nav a:not(.button):hover {
-		border-bottom-color: var(--color-band-text);
+	.masthead-actions a:not(.button):hover {
+		text-decoration: underline;
 	}
 
-	nav a[aria-current='page'] {
-		border-bottom-color: var(--color-band-text);
+	/* Phones: the name, then the actions, then the controls, each from the left. */
+	@media (max-width: 40rem) {
+		.masthead-actions {
+			margin-left: 0;
+			justify-content: flex-start;
+		}
 	}
 
 	/* On paper the band is not filled, so the site's name prints in ink. */

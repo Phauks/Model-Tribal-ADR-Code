@@ -113,8 +113,17 @@
 		stroke-linejoin: round;
 	}
 
+	/*
+	 * A code drawn on its shaded state is set in paper with an ink halo, so it
+	 * keeps its contrast against the shading at any size the map is drawn
+	 * (WCAG 1.4.3); codes beside a marker sit on paper and stay in ink.
+	 */
 	.label.centered {
 		text-anchor: middle;
+		/* color too: contrast checkers read it, not fill, for SVG text. */
+		color: var(--color-paper);
+		fill: var(--color-paper);
+		stroke: var(--color-ink);
 	}
 
 	.label.on-left {

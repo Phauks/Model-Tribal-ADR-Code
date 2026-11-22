@@ -29,6 +29,7 @@
 	import { siteName } from '#lib';
 	import SiteHeader from '#lib/components/SiteHeader.svelte';
 	import SiteFooter from '#lib/components/SiteFooter.svelte';
+	import SiteSidebar from '#lib/components/SiteSidebar.svelte';
 	import PrintDetails from '#lib/components/PrintDetails.svelte';
 	import OfflineNotice from '#lib/components/OfflineNotice.svelte';
 	import UpdateNotice from '#lib/components/UpdateNotice.svelte';
@@ -53,9 +54,44 @@
 <PrintDetails />
 <OfflineNotice contentVersion={data.versions.content} />
 <UpdateNotice versions={data.versions} />
-<main id="main-content" class="page-width" tabindex="-1">
-	{@render children()}
-</main>
+<div class="site-body">
+	<SiteSidebar />
+	<main id="main-content" class="page-width" tabindex="-1">
+		{@render children()}
+	</main>
+</div>
 <SiteFooter versions={data.versions} />
 <InlineNotes />
 <GlossaryCards />
+
+<style>
+	/*
+	 * Wide screens: the sidebar and the page side by side. The page is a size
+	 * container, so a page's own two-column layout (such as a nation's "At a
+	 * glance") follows the width it actually has, whether the sidebar is shown
+	 * or hidden.
+	 */
+	main {
+		container: page / inline-size;
+		min-width: 0;
+		padding-top: var(--space-3);
+	}
+
+	@media (min-width: 64rem) {
+		.site-body {
+			display: grid;
+			grid-template-columns: 18rem minmax(0, 1fr);
+			align-items: start;
+		}
+
+		.site-body:has(> :global(.sidebar-wide:not([open]))) {
+			grid-template-columns: 3.5rem minmax(0, 1fr);
+		}
+	}
+
+	@media print {
+		.site-body {
+			display: block;
+		}
+	}
+</style>
