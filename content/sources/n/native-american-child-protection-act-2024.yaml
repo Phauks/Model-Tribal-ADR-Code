@@ -22,7 +22,10 @@ citation:
       - 21
 original_link: https://www.govinfo.gov/content/pkg/PLAW-118publ160/html/PLAW-118publ160.htm
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260721022833/https://www.govinfo.gov/content/pkg/PLAW-118publ160/html/PLAW-118publ160.htm
+  captured: '2026-07-21'
 history:
   status: live
   last_checked: '2026-11-21'

@@ -21,7 +21,10 @@ citation:
       - 21
 original_link: http://www.tribal-institute.org/download/Pubs/NAICJA%2050%20year%20history%20pdf.pdf
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20251128140712/https://www.tribal-institute.org/download/Pubs/NAICJA%2050%20year%20history%20pdf.pdf
+  captured: '2025-11-28'
 history:
   status: live
   last_checked: '2026-11-21'

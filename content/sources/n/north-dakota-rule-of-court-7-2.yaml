@@ -19,7 +19,10 @@ citation:
       - 21
 original_link: https://www.ndcourts.gov/legal-resources/rules/ndrct/7-2
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260128100112/https://www.ndcourts.gov/legal-resources/rules/ndrct/7-2
+  captured: '2026-01-28'
 history:
   status: live
   last_checked: '2026-11-21'

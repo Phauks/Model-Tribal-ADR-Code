@@ -22,7 +22,10 @@ citation:
       - 21
 original_link: https://tile.loc.gov/storage-services/service/ll/llsl/llsl-c48/llsl-c48.pdf
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20251231004623/https://tile.loc.gov/storage-services/service/ll/llsl//llsl-c48/llsl-c48.pdf
+  captured: '2025-12-31'
 history:
   status: live
   last_checked: '2026-11-21'

@@ -24,7 +24,10 @@ citation:
       - 21
 original_link: https://tile.loc.gov/storage-services/service/ll/llsl/llsl-c21/llsl-c21.pdf
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260717035600/https://tile.loc.gov/storage-services/service/ll/llsl//llsl-c21/llsl-c21.pdf
+  captured: '2026-07-17'
 history:
   status: live
   last_checked: '2026-11-21'
