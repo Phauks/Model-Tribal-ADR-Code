@@ -1,0 +1,71 @@
+{
+ "petitions": {
+  "in process: matches the profile": 22,
+  "resolved: matches the profile": 51,
+  "resolved: no profile cites this number": 1
+ },
+ "icwa": {
+  "OCR words nearby": 495,
+  "OCR exact": 70,
+  "listed-under-another-name": 11,
+  "listed": 11
+ },
+ "quotes": {
+  "exact (script)": 38,
+  "exact": 21,
+  "wrong": 2,
+  "not-a-quotation": 3,
+  "minor-difference": 2,
+  "cannot-check": 1
+ },
+ "links": {
+  "reachable": 4510,
+  "refused-automated-request": 49,
+  "no-response": 38,
+  "gone": 16,
+  "http-520": 1,
+  "http-522": 2,
+  "http-503": 1,
+  "reachable but moved to another site": 769
+ },
+ "govdocs": {
+  "links": 1577,
+  "automatic": {
+   "confirmed-by-text": 1220,
+   "needs-review": 95,
+   "not-fetched": 262
+  },
+  "not fetched, by status": {
+   "refused-automated-request": 190,
+   "http-503": 14,
+   "no-response": 41,
+   "reachable": 1,
+   "gone": 13,
+   "http-500": 3
+  },
+  "residual reviewed": {
+   "the-document": 32,
+   "page-linking-to-it": 13,
+   "error-or-empty": 27,
+   "different-document": 19,
+   "wrong-nation": 2,
+   "cannot-tell": 2
+  },
+  "sample of automatic confirmations reviewed": {
+   "page-linking-to-it": 36,
+   "the-document": 23,
+   "different-document": 1
+  }
+ },
+ "structure": {
+  "historical only, current constitution listed": 174,
+  "historical only, no current constitution listed": 7,
+  "has a current fact, no current constitution listed": 1
+ },
+ "outreach": {
+  "does-not-support": 1,
+  "supports": 23,
+  "partly-supports": 3,
+  "page-unavailable": 3
+ }
+}
