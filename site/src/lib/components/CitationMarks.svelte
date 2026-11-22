@@ -13,10 +13,12 @@
 	import { sourceAnchor, type CitationMark } from '#lib/citation-marks.ts';
 
 	let { marks = [] }: { marks?: CitationMark[] } = $props();
+	// In number order, so a line cited by sources 8 and 7 reads [7][8].
+	const ordered = $derived([...marks].sort((first, second) => first.number - second.number));
 </script>
 
-{#if marks.length > 0}<sup class="citation"
-		>{#each marks as mark (mark.anchor)}<a
+{#if ordered.length > 0}<sup class="citation"
+		>{#each ordered as mark (mark.anchor)}<a
 				id={mark.anchor}
 				class="note-marker"
 				href="#{sourceAnchor(mark.number)}"

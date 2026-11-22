@@ -73,6 +73,9 @@ export type Cite = (fact: CitedFact, section: string, text: string, marks: Citat
  * or joins Courts when its name says it is a court.
  */
 const categories: Record<string, { id: string; heading: string }> = {
+	// A nation's judicial branch, or judiciary, is the whole court system, not
+	// one court, so it has its own heading rather than a place among the courts.
+	'judicial-branch': { id: 'judicial-branch', heading: 'Judicial branch' },
 	courts: { id: 'courts', heading: 'Courts' },
 	peacemaking: { id: 'peacemaking', heading: 'Peacemaking' },
 	'healing-to-wellness-court': { id: 'healing-to-wellness-courts', heading: 'Healing to wellness courts' },
@@ -120,6 +123,7 @@ const courtDetails: Record<string, { detail: string; unlessNamed: RegExp }> = {
 };
 
 const order = [
+	'judicial-branch',
 	'courts',
 	'peacemaking',
 	'healing-to-wellness-courts',
@@ -254,15 +258,31 @@ export function nationServices(facts: ServiceFact[], cite: Cite): ServiceCategor
 	const appealNames = new Set(
 		facts.flatMap((fact) => (fact.appeals_to ? [comparableName(fact.appeals_to.court)] : []))
 	);
+	// A directory that lists only "Tribal Court" with the address of the
+	// judicial branch's own site is describing the judicial branch.
+	const judicialLinks = new Set(
+		facts.flatMap((fact) => {
+			const link = comparableLink(fact.link);
+			return fact.kind === 'judicial-branch' && link ? [link] : [];
+		})
+	);
 	const merged: Merged[] = [];
 	for (const fact of facts) {
 		const name = fact.name ?? humanize(fact.kind);
 		const onAppealPath = Boolean(fact.appeals_to) || appealNames.has(comparableName(name));
-		const category = onAppealPath ? categories.courts : categoryOf(fact.kind);
-		const existing = merged.find(
-			(entry) => entry.category.id === category.id && sameService(entry, fact, name)
-		);
 		const link = comparableLink(fact.link);
+		const judicialBranchSite = !onAppealPath && isGeneric(name) && link !== undefined && judicialLinks.has(link);
+		const category = onAppealPath
+			? categories.courts
+			: judicialBranchSite
+				? categories['judicial-branch']
+				: categoryOf(fact.kind);
+		const existing = merged.find(
+			(entry) =>
+				entry.category.id === category.id &&
+				(sameService(entry, fact, name) ||
+					(category.id === 'judicial-branch' && link !== undefined && entry.links.has(link)))
+		);
 		if (existing) {
 			existing.facts.push(fact);
 			if (!existing.names.includes(name)) existing.names.push(name);
