@@ -277,7 +277,7 @@ export const load: PageServerLoad = ({ params }) => {
 			sources: [],
 			outline: {
 				title: page.officialName,
-				items: [{ label: 'Review status', link: '#review-heading' }]
+				items: [{ label: 'Review status', link: '#review-status' }]
 			} satisfies PageOutline as PageOutline
 		};
 	}
@@ -361,11 +361,9 @@ export const load: PageServerLoad = ({ params }) => {
 	};
 
 	// The page's outline, for the sidebar: one entry per heading the page shows.
-	const items: OutlineItem[] = [
-		{ label: 'Review status', link: '#review-heading' },
-		{ label: 'About this Nation', link: '#about-heading' }
-	];
-	if (result.glance.length > 0 || result.map) items.push({ label: 'At a glance', link: '#glance-heading' });
+	// In the page's order: "At a glance" follows the main text (Trevor, Nov. 22, 2026).
+	const items: OutlineItem[] = [];
+	if (result.features.length > 0) items.push({ label: 'About this Nation', link: '#about-heading' });
 	if (result.courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
 	if (result.law.length > 0) items.push({ label: 'Published law', link: '#law-heading' });
 	if (result.documents.length > 0) {
@@ -377,6 +375,10 @@ export const load: PageServerLoad = ({ params }) => {
 				link: `#document-${document.id}`
 			}))
 		});
+	}
+	const contacts = result.contacts.websites.length > 0 || result.contacts.offices.length > 0;
+	if (result.glance.length > 0 || contacts || result.map) {
+		items.push({ label: 'At a glance', link: '#glance-heading' });
 	}
 	items.push({ label: 'Sources', link: '#sources-heading' });
 

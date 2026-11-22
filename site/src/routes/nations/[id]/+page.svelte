@@ -28,8 +28,10 @@
 
 <!--
 	On wide screens the page has two columns: the text, held to a readable
-	line length, and beside it "At a glance" with the map. On narrow screens
-	the parts stack in the order of site/DESIGN.md, "Nation pages".
+	line length, and beside it "At a glance" with the map, set off by a rule.
+	"At a glance" comes after the text in the page's order, so a selection in
+	one column stays in it; on narrow screens it sits after Document history,
+	before Sources.
 -->
 <article class="profile">
 	<div class="profile-introduction">
@@ -85,7 +87,7 @@
 		{/if}
 
 		<!-- 2. Review status: a small badge and one line, not a panel (Trevor, Nov. 22, 2026) -->
-		<p class="review-status small" data-print-part="reviewStatus">
+		<p class="review-status small" id="review-status" data-print-part="reviewStatus">
 			<span class="visually-hidden">Review status:</span>
 			<span class="status-badge">{page.review.label}</span>
 			<span class="muted">
@@ -109,22 +111,6 @@
 	</div>
 
 	{#if !page.withdrawn}
-		<!-- 4. At a glance, with the map of states -->
-		{#if data.glance.length > 0 || data.contacts.websites.length > 0 || data.contacts.offices.length > 0 || data.map}
-			<div class="profile-glance">
-				<Collapsible heading="At a glance" identifier="glance-heading">
-					{#if data.map}
-						<StatePresenceMap map={data.map} nationName={page.officialName} />
-					{/if}
-					<FactGroups groups={data.glance} />
-					{#if data.contacts.websites.length > 0 || data.contacts.offices.length > 0}
-						<h3 id="contacts-heading">{contactsHeading}</h3>
-						<ContactCard cards={data.contacts} headingLevel={4} />
-					{/if}
-				</Collapsible>
-			</div>
-		{/if}
-
 		<div class="profile-details">
 			<!-- 5. Courts and dispute resolution -->
 			{#if data.courts.length > 0}
@@ -148,8 +134,32 @@
 				</Collapsible>
 				</div>
 			{/if}
+		</div>
 
-			<!-- 9. Sources -->
+		<!--
+			4. At a glance, with the map of states. It comes after the main text in
+			the page's order, so selecting text in the main column never takes in
+			the fact box (Trevor, Nov. 22, 2026); on wide pages it sits beside the
+			text, set off by a rule.
+		-->
+		{#if data.glance.length > 0 || data.contacts.websites.length > 0 || data.contacts.offices.length > 0 || data.map}
+			<aside class="profile-glance" aria-labelledby="glance-heading">
+				<Collapsible heading="At a glance" identifier="glance-heading">
+					{#if data.map}
+						<StatePresenceMap map={data.map} nationName={page.officialName} />
+					{/if}
+					<FactGroups groups={data.glance} />
+					{#if data.contacts.websites.length > 0 || data.contacts.offices.length > 0}
+						<h3 id="contacts-heading">{contactsHeading}</h3>
+						<ContactCard cards={data.contacts} headingLevel={4} />
+					{/if}
+				</Collapsible>
+			</aside>
+		{/if}
+
+
+		<!-- 9. Sources -->
+		<div class="profile-sources">
 			<SourceList sources={data.sources} />
 		</div>
 	{/if}
@@ -185,6 +195,7 @@
 
 	.profile-introduction,
 	.profile-details,
+	.profile-sources,
 	.profile-glance {
 		max-width: var(--layout-measure);
 	}
@@ -198,7 +209,7 @@
 		.profile {
 			display: grid;
 			grid-template-columns: minmax(0, var(--layout-measure)) minmax(22rem, 1fr);
-			column-gap: var(--space-7);
+			column-gap: var(--space-6);
 			align-items: start;
 		}
 
@@ -212,12 +223,21 @@
 			grid-row: 2;
 		}
 
+		.profile-sources {
+			grid-column: 1;
+			grid-row: 3;
+		}
+
+		/* A rule between the columns marks the fact box as its own region. */
 		.profile-glance {
 			grid-column: 2;
-			grid-row: 1 / span 2;
+			grid-row: 1 / span 3;
+			align-self: stretch;
 			max-width: var(--layout-side-column);
 			/* Lines up with the page's first heading. */
 			margin-top: var(--space-5);
+			padding-left: var(--space-6);
+			border-left: 1px solid var(--color-line);
 		}
 
 		.profile-glance > :global(.collapsible) {
