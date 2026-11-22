@@ -34,7 +34,7 @@
 	{#if story.awaitsReview}
 		<div class="notice" role="note">
 			<p>
-				<strong>Not yet reviewed by the nation.</strong> {nationNames} {story.nations.length === 1 ? 'has' : 'have'} not reviewed this page. The project shows it while it asks for that review. If this story should not be here, <a href={removal}>ask for it to be removed</a>. It is taken out of public view before the request is reviewed.
+				<strong>Not yet reviewed by the nation.</strong> {nationNames} {story.nations.length === 1 ? 'has' : 'have'} not reviewed this page. It is shown while the nation is asked to review it. If this story should not be here, <a href={removal}>ask for it to be removed</a>. It is taken out of public view before the request is reviewed.
 			</p>
 		</div>
 	{:else}
@@ -92,7 +92,7 @@
 
 	{#if cited.length > 0}
 		<h2>Passages cited, not quoted</h2>
-		<p>The project does not quote these passages here, because the telling is a law, a court opinion or a publication that asks to be asked first. Read them where they were published.</p>
+		<p>These passages are not quoted here, because the telling is a law, a court opinion or a publication that asks to be asked first. Read them where they were published.</p>
 		<ul>
 			{#each cited as excerpt, index (index)}
 				<li>

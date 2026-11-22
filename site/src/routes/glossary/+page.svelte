@@ -20,9 +20,9 @@
 <div class="reading">
 	<h1>Glossary</h1>
 	<p class="lead">
-		The {data.count} words the project defines, how it uses them, and what to write instead where a
+		The words defined here, how they are used, and what to write instead where a
 		word is best avoided. Each entry cites its sources, listed together at the end of the page, or says
-		it is the project’s own choice.
+		it is our own choice.
 	</p>
 </div>
 
