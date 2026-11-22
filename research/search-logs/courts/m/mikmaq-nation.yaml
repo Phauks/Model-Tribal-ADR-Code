@@ -21,3 +21,27 @@ searches:
     directory entry): own-page, https://micmac-nsn.gov/child-family-services/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-157
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://micmac-nsn.gov/child-family-services/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Child & Family Services page describes the Mi'kmaq Nation Tribal Court for ICWA matters (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://micmac-nsn.gov/legal/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Legal page links to 'ICWA & Tribal Court' and names no other court (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Mi''kmaq Nation Mi''kmaq tribal court Restigouche micmac-nsn.gov'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned the nation's Child & Family Services page and Maine statute and non-official pages; no other nation court page surfaced.

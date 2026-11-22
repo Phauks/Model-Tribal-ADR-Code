@@ -244,6 +244,15 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-310.'
+- kind: healing-to-wellness-court
+  name: Path to Wellness Court
+  link: https://pojoaque.org/courts/
+  part_of: Pueblo of Pojoaque Tribal Court
+  source: pueblo-of-pojoaque-pojoaque-org-courts
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Path to Wellness Court Coordinator”. Named through a coordinator position on the Courts page; the page gives no further description. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-pojoaque#2).'
 dispute_resolution: {}
 gaming:
   compacts:

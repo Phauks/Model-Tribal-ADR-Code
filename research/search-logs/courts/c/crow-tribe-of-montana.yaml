@@ -1,0 +1,21 @@
+profile: content/tribes/c/crow-tribe-of-montana.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.crowtribalcourts.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Redirected to https://www.crowtribalcourts.org/ and fetched with fetch.py (200); names the trial, juvenile, appellate and traditional supreme courts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Crow Tribal Court Montana crowtribalcourts"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned Montana Indian Law pages and the Crow Law and Order Code; the court's own site above was confirmed by fetch.

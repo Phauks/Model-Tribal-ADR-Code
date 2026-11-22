@@ -241,6 +241,17 @@ justice_institutions:
   note: 'Link is the entry in the Alaska Court System court directory: 2022 Alaska Tribal Court Directory
     (prepared by Alaska Legal Services Corporation); no page of the court''s own was found (2026-11-22;
     research/reviews/2026-11-22-service-links.json, service-004).'
+- kind: healing-to-wellness-court
+  name: Wellness Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  part_of: Akiachak Tribal Court
+  location:
+    state: AK
+  source: alaska-legal-services-corporation-hosted-at-2022-tribal-cour
+  confidence: medium
+  verification: read-in-full
+  as_of: '2022'
+  note: 'The page names the court: “including a Wellness Court”. The directory says the tribal court includes a Wellness Court; no separate name or entry is given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, akiachak-native-community#2).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

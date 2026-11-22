@@ -266,6 +266,14 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: North Dakota section, entry 'Sisseton Wahpeton Oyate of the Lake Traverse Reservation'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://swo-nsn.gov/departments/justice-department/tribal-court/
+  source: sisseton-wahpeton-oyate-swo-nsn-gov-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Court of Appeals Form”. The page shows a Court of Appeals form, appellate court opinions and a Rules of Appellate Procedure file, but no text describing the court. Where appeals from this court go is not stated. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, sisseton-wahpeton-oyate-of-the-lake-traverse-reservation#2).'
 gaming:
   compacts:
   - state: ND

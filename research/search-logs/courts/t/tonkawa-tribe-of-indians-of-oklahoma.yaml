@@ -158,6 +158,14 @@ searches:
     then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-377
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.tonkawatribe.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'Fetch failed: the proxy closed the connection before a response.'
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-283,
   cannot-tell); Tonkawa Tribal Court (court-284, cannot-tell). A person could open in a browser the pages
   that refused the project''s link checker: https://tonkawatribe.com/. No website of the nation''s own

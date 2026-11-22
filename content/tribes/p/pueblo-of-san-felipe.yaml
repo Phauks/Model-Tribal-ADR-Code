@@ -193,6 +193,77 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
     2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-312.'
+- kind: traditional-forum
+  name: Traditional Tribal Court
+  link: https://sfpueblo.com/tribal-programs/tribal-court/
+  location:
+    place: San Felipe Pueblo
+    state: NM
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “a traditional Tribal Court, in which the Governor of the Pueblo acts as its Chief Judge”. The page describes the Governor as Chief Judge of this traditional court; no address is given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#2).'
+- kind: other
+  name: Civil Court
+  link: https://sfpueblo.com/tribal-programs/tribal-court/
+  part_of: Pueblo of San Felipe Tribal Court
+  location:
+    place: San Felipe Pueblo
+    state: NM
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; the page names the divisions as a list, so the ''Civil Court'' name is the list item with ''Court'' added. Kind ''other'' because no listed kind fits a civil division. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#3).'
+- kind: other
+  name: Criminal Court
+  link: https://sfpueblo.com/tribal-programs/tribal-court/
+  part_of: Pueblo of San Felipe Tribal Court
+  location:
+    place: San Felipe Pueblo
+    state: NM
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; name built from the page''s list. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#4).'
+- kind: other
+  name: Traffic Court
+  link: https://sfpueblo.com/tribal-programs/tribal-court/
+  part_of: Pueblo of San Felipe Tribal Court
+  location:
+    place: San Felipe Pueblo
+    state: NM
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; name built from the page''s list. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#5).'
+- kind: juvenile-court
+  name: Children's Court
+  link: https://sfpueblo.com/tribal-programs/tribal-court/
+  part_of: Pueblo of San Felipe Tribal Court
+  location:
+    place: San Felipe Pueblo
+    state: NM
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#6).'
+- kind: healing-to-wellness-court
+  name: Treatment Court
+  link: https://sfpueblo.com/tribal-programs/tribal-court/
+  part_of: Pueblo of San Felipe Tribal Court
+  location:
+    place: San Felipe Pueblo
+    state: NM
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court, recorded as a treatment court (healing-to-wellness kind). Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#7).'
 gaming:
   compacts:
   - state: NM

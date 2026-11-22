@@ -280,6 +280,41 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-134.'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.lrboi-nsn.gov/government/tribal-judicial/tribal-court
+  location:
+    place: Manistee
+    state: MI
+    address: 2840 Orchard Highway, Suite B
+  source: little-river-band-of-ottawa-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Tribal Court can hear both civil and criminal matters involving Tribal members and entities.”. The Orchard Highway address is the temporary office per the page; hearings are at the Justice Center, 3031 Domres Road, Manistee. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, little-river-band-of-ottawa-indians#1).'
+  appeals_to:
+    court: Court of Appeals
+    source: little-river-band-of-ottawa-indians-tribal-court-2
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Court of Appeals holds the exclusive jurisdiction and sole authority to review decisions made by the Tribal Court”.'
+- kind: court-of-appeals
+  name: Court of Appeals
+  link: https://www.lrboi-nsn.gov/government/tribal-judicial/court-of-appeals
+  source: little-river-band-of-ottawa-indians-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Court of Appeals holds the exclusive jurisdiction and sole authority to review decisions made by the Tribal Court”. Page gives no physical location for the court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, little-river-band-of-ottawa-indians#2).'
+- kind: peacemaking-program
+  name: Peacemaking
+  link: https://www.lrboi-nsn.gov/government/tribal-judicial/peacemaking
+  source: little-river-peacemaking-page
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Peacemaking program is currently on hold as it undergoes a rebuilding phase.”. The page says the Peacemaking program is on hold for rebuilding; the judicial branch page does not call it a court, so a reviewer should decide whether it belongs. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, little-river-band-of-ottawa-indians#3).'
 dispute_resolution:
   forums:
   - kind: peacemaking

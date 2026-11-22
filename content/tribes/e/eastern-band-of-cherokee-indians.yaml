@@ -242,6 +242,29 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
     2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-077.'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.ebci.gov/tribal-court/
+  location:
+    place: Cherokee
+    state: NC
+    address: PO Box 1629, Cherokee NC 28719
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Consisting of a trial court and an appellate court (Supreme Court)”. Mailing address for Cherokee Tribal Courthouse; the trial court is not given a separate name. Page says it hears wellness court cases but names no separate wellness court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, eastern-band-of-cherokee-indians#1).'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://www.ebci.gov/tribal-court/
+  location:
+    place: Cherokee
+    state: NC
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Consisting of a trial court and an appellate court (Supreme Court)”. Page links ''Cherokee Supreme Court Appeal Procedures''. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, eastern-band-of-cherokee-indians#2).'
 dispute_resolution:
   training_programs:
   - name: Two-part peacemaking facilitation training (October 23-25, 2017 and January 9-10, 2018) for

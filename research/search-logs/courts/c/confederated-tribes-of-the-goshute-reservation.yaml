@@ -32,3 +32,19 @@ searches:
     against the lead author''s order (own page, then directory entry): own-page, https://ctgr.us/home/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-064
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctgr.us/home/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Page loads only a 'One moment, please...' placeholder with no text, so the court content is rendered by script and could not be read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web search: Confederated Tribes of the Goshute Reservation tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Results were a narf.org code ordinance and a BIA Western Region page; the BIA court serves the Skull Valley Band of Goshutes, a different tribe.

@@ -191,3 +191,19 @@ searches:
     confirmed, from https://courts.michigan.gov/4ab19d/siteassets/msc-learning-center/justitia_tribalcourts.pdf.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-093
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://lvd-nsn.gov/Content/Tribal_Court.cfm
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page fetched successfully; names LVD Tribal Court with address and a Healing to Wellness Court link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Lac Vieux Desert Band Tribal Court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned nation pages (including Tribal Court Rules PDF) and michiganlegalhelp.org; the nation's Tribal Court page is the one confirmed by fetch.

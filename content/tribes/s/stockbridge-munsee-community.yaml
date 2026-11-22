@@ -298,6 +298,37 @@ justice_institutions:
     HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s website,
     fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-362.'
+- kind: tribal-court
+  name: Stockbridge-Munsee Tribal Court
+  link: https://mohican-nsn.gov/judiciary/
+  location:
+    place: Bowler
+    state: WI
+    address: N8697 MohHeConNuck Rd
+  source: stockbridge-munsee-community-judiciary-band-of-mohican-india
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Stockbridge-Munsee Tribal Court pledges to continue in this endeavor.”. The judiciary page gives the Bowler address in its contact block. It lists Court of Appeals, Family Court and Trial Court as sections. The appeals_to entry comes from the page''s own statement that the Tribal Court''s appellate level is the Stockbridge-Munsee Court of Appeals. The batch''s mohican.com link was not fetched. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, stockbridge-munsee-community#1).'
+  appeals_to:
+    court: Stockbridge-Munsee Court of Appeals
+    source: stockbridge-munsee-community-judiciary-band-of-mohican-india
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The appellate level of the Stockbridge-Munsee Tribal Court shall be referred to as the “Stockbridge-Munsee Court of Appeals.””.'
+- kind: court-of-appeals
+  name: Stockbridge-Munsee Court of Appeals
+  link: https://mohican-nsn.gov/judiciary/
+  location:
+    place: Bowler
+    state: WI
+    address: N8697 MohHeConNuck Rd
+  source: stockbridge-munsee-community-judiciary-band-of-mohican-india
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Stockbridge-Munsee Court of Appeals is the court of final resort for the Stockbridge-Munsee Judicial System.”. The page names the court of appeals as the court of final resort and lists a Court of Appeals section with a Chief Justice and two Justices. The address is the judiciary''s contact block address. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, stockbridge-munsee-community#2).'
 dispute_resolution:
   forums:
   - kind: peacemaking

@@ -183,3 +183,19 @@ searches:
     review brief; verdict confirmed, from https://www.fdlband.org/government/tribal_court/index.php.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-121
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://about.fdlband.org/government/courtmain.htm
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page fetched with fetch.py (200); describes the Fond du Lac Tribal Court and its civil jurisdiction.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Fond du Lac Band of Lake Superior Chippewa tribal court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned fdlband.org court pages and forms; the Tribal Court page above was confirmed by fetch.

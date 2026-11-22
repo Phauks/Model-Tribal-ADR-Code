@@ -24,6 +24,7 @@
 		section,
 		children,
 		actions,
+		fitContent = false,
 		onclose
 	}: {
 		title: string;
@@ -34,6 +35,8 @@
 		children?: Snippet;
 		/** Buttons along the bottom, such as "Done". */
 		actions?: Snippet;
+		/** Sizes the dialog to what it holds, for a short form, instead of a fixed height. */
+		fitContent?: boolean;
 		onclose?: () => void;
 	} = $props();
 
@@ -72,7 +75,7 @@
 	}
 </script>
 
-<dialog bind:this={dialog} class="modal" aria-labelledby="{identifier}-title" {onclose}>
+<dialog bind:this={dialog} class="modal" class:fit-content={fitContent} aria-labelledby="{identifier}-title" {onclose}>
 	<div class="modal-top">
 		<h2 id="{identifier}-title">{title}</h2>
 		<button class="icon-button close-button" type="button" aria-label="Close" title="Close" onclick={close}>
@@ -134,6 +137,13 @@
 		background: var(--color-paper);
 		color: var(--color-ink);
 		overflow: hidden;
+	}
+
+	.modal.fit-content {
+		width: min(36rem, calc(100% - 2 * var(--space-4)));
+		/* "auto" would stretch a dialog to the full window; this follows its content. */
+		height: fit-content;
+		max-height: calc(100% - 2 * var(--space-4));
 	}
 
 	.modal[open] {
@@ -237,6 +247,10 @@
 		.modal {
 			width: calc(100% - 2 * var(--space-2));
 			height: calc(100% - 2 * var(--space-2));
+		}
+
+		.modal.fit-content {
+			height: fit-content;
 		}
 
 		.two-panels {

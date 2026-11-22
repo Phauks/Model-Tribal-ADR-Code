@@ -1,0 +1,21 @@
+profile: content/tribes/p/prairie-band-potawatomi-nation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.pbpindiantribe.com/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Judicial Center page (fetched via pbpindiantribe.com/tribal-court) names the District Court, Court of Appeals, Judicial Council, Employment Disputes Tribunal, Peacemakers Circle and HTWC (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Prairie Band Potawatomi judicial council tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned nation pages and the Kansas code pages; the code was not used as a source.

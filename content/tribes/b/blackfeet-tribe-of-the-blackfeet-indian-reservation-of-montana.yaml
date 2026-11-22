@@ -360,6 +360,40 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Montana section, entry 'Blackfeet Nation'
+- kind: tribal-court
+  name: Blackfeet Tribal Court
+  link: http://blackfeetnation.com/government/court/
+  location:
+    state: MT
+  source: blackfeet-nation-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Blackfeet Tribal Court has jurisdiction over civil and criminal matters occurring on the reservation”. Page gives no address or place. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana#1).'
+  appeals_to:
+    court: Blackfeet Court of Appeals
+    source: blackfeet-nation-courts
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Blackfeet Court of Appeals hears appeals on the decisions of the Blackfeet Tribal Court and the Blackfeet Family Court.”.'
+- kind: family-court
+  name: Blackfeet Family Court
+  link: http://blackfeetnation.com/government/court/
+  location:
+    state: MT
+  source: blackfeet-nation-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Blackfeet Family Court has civil jurisdiction over divorces, custody and child support”. Page gives no address or place. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana#2).'
+  appeals_to:
+    court: Blackfeet Court of Appeals
+    source: blackfeet-nation-courts
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Blackfeet Court of Appeals hears appeals on the decisions of the Blackfeet Tribal Court and the Blackfeet Family Court.”.'
 dispute_resolution:
   database_listings:
   - title: Informal Conference and Disposition in Child Welfare

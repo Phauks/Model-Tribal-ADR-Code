@@ -187,6 +187,22 @@ justice_institutions:
     court''s page on the nation''s website, fetched with status 200 on 2026-11-21 by the court review
     (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-186.'
+- kind: court-of-appeals
+  name: Gakona Court of Appeals
+  link: https://nvgakona.com/justice/
+  source: native-village-of-gakona-tribal-justice-department
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Gakona Court of Appeals”. Named in the same page''s description of the Gakona Tribal Judicial System. The page does not say which courts appeal to it, so no appeals_to is recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, native-village-of-gakona#2).'
+- kind: traditional-forum
+  name: Gakona Justice Circles
+  link: https://nvgakona.com/justice/
+  source: native-village-of-gakona-tribal-justice-department
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Gakona Justice Circles”. Named in the constitution-based list of the Gakona Tribal Judicial System, not described in detail on the page. Kind is inferred from the name. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, native-village-of-gakona#3).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

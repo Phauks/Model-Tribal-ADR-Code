@@ -21,3 +21,27 @@ searches:
     directory entry): own-page, https://nvgakona.com/justice/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-186
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nvgakona.com/justice/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal justice page fetched (200) and names the Gakona Tribal Court, Gakona Court of Appeals and Gakona Justice Circles.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nvgakona.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Homepage fetched (200) and has no court text; the court content is on the justice page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: fetch.py returns no text for the directory PDF, so the entry could not be checked against it.

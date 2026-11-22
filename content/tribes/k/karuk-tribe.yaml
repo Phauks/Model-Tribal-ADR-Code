@@ -301,6 +301,16 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-116.'
+- kind: healing-to-wellness-court
+  name: Youth Wellness Court
+  link: https://www.karuktribalcourt.org/
+  location:
+    state: CA
+  source: karuk-tribe-tribal-court-yreka-california
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Youth Wellness Court”. Listed in the Karuk Tribal Court site navigation as a program with its own page. The ''Peacemaker Mediation Forum'' existing entry was not confirmed by any page read. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, karuk-tribe#2).'
 dispute_resolution:
   forums:
   - kind: mediation

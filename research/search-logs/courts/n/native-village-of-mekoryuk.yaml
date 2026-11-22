@@ -50,3 +50,19 @@ searches:
     page, then directory entry): directory, https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-205
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 'Mekoryuk entry: active court Yes; type ''Tribal Court.'' Text read from the directory PDF as extracted in ak-dir/dir.txt (fetch.py does not extract PDFs).'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.mekoryuktc.org
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: SSL handshake failed through the proxy; not retried.

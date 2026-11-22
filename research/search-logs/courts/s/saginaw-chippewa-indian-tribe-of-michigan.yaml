@@ -1,0 +1,29 @@
+profile: content/tribes/s/saginaw-chippewa-indian-tribe-of-michigan.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.scit-nsn.gov/tribalcourt/aboutus.htm
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribal court about page fetched with fetch.py (200); names the Tribal Court and the Tribal Appellate Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.sagchip.org/tribalcourt/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribal court home page fetched with fetch.py (200); titled 'Saginaw Chippewa Indian Tribal Court Home Page'.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Saginaw Chippewa Indian Tribe tribal court sagchip judicial"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned nation court pages and michiganlegalhelp.org (not official); the nation pages above were confirmed by fetch.

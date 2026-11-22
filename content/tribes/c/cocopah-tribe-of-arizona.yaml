@@ -196,6 +196,18 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
     2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see
     research/reviews/2026-11-22-service-links.json, service-052.'
+- kind: tribal-court
+  name: Cocopah Tribal Court
+  link: https://cocopah.com/departments/cocopah-tribal-court
+  location:
+    place: Somerton
+    state: AZ
+    address: 9761 Veterans Place
+  source: cocopah-indian-tribe-tribal-court-official-website-of-the-tr
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Cocopah Tribal Court”. The batch lists ''Tribal Court'' and ''Cocopah Tribal Court'' with the same link; mapped to the second. The court page gives 9761 Veterans Place, but the site''s Contact Us section gives 14515 Veterans Pl, so the reviewer should check which address is the court''s. The page names no divisions or appellate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cocopah-tribe-of-arizona#1).'
 gaming:
   compacts:
   - state: AZ

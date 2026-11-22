@@ -273,6 +273,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Louisiana section, entry 'Sovereign Nation of the Chitimacha'
+- kind: tribal-court
+  name: Chitimacha Tribal Courts
+  link: https://www.chitimacha.gov/departments-services/tribal-courts
+  location:
+    place: Charenton
+    state: LA
+    address: 343 Navarro Street, P.O. Box 610
+  source: chitimacha-tribe-of-louisiana-tribal-courts
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Chitimacha Tribal Courts”. Checked with fetch.py: the page is the nation''s own Tribal Courts page, but an earlier summary said it was last updated in 2023 and I did not re-confirm that date. The batch''s generic ''Tribal Court'' entry points to the same page. The page does not say where appeals go. The Peacemaker Court (batch entry, link null) has an official PDF on the nation''s domain (CCCJ Title IA), but the fetch tool cannot extract PDF text, so it is unresolved and left out. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, chitimacha-tribe-of-louisiana#1).'
 dispute_resolution:
   forums:
   - kind: peacemaking

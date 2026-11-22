@@ -322,6 +322,14 @@ justice_institutions:
   note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
     2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-171.'
+- kind: healing-to-wellness-court
+  name: Juvenile Healing to Wellness Court
+  link: https://nvb-nsn.gov/tribal-courts/
+  source: native-village-of-barrow-inupiat-traditional-tribal-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Juvenile Healing to Wellness Court”. Described on the same page as a therapeutic program for youth ages 0-21 addressing alcohol and substance abuse, integrating traditional practices with the judicial process. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, native-village-of-barrow-inupiat-traditional-government#2).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

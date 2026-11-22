@@ -158,6 +158,22 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-209
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: 'Napaimute entry: Active Court ''Not currently, but interested in developing.''; type ''Council.'' Text read from the directory PDF as extracted in ak-dir/dir.txt (fetch.py does not extract PDFs).'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.napaimute.org
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: dead-link
+  reason: Host name does not resolve (DNS failure).
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-169,
   not-found-after-search). No page or official directory entry was found on 2026-11-22 for “Tribal Court”
   (research/reviews/2026-11-22-service-links.json).'

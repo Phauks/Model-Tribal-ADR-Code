@@ -84,3 +84,27 @@ searches:
     order (own page, then directory entry): own-page, https://www.lcotribalcourt.org/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-125
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://law.lco-nsn.gov/us/nsn/lco/council/code/TCT.2.3.010
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's official tribal code section 'Creation of the Court' fetched with fetch.py (status 200); it establishes the Lac Courte Oreilles Tribal Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.lcotribalcourt.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: The page returns a 'Please wait while your request is being verified' bot-challenge interstitial; it was not bypassed.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Lac Courte Oreilles" tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search surfaced the nation's code provisions on the tribal court and the Wisconsin DPI profile.

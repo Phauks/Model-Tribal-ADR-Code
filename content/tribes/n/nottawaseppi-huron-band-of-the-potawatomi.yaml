@@ -283,6 +283,14 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-267.'
+- kind: supreme-court
+  name: Supreme Court of the Nottawaseppi Huron Band of the Potawatomi
+  link: https://nhbp-nsn.gov/tribal-court/
+  source: nottawaseppi-huron-band-of-the-potawatomi-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Order of the Supreme Court of the Nottawaseppi Huron Band of the Potawatomi filed 7-3-2024”. Named on the Tribal Court page through posted orders; no separate address is given. Justices named on the page: Leander Bergen (Chief), Leah Sixkiller, Shawn K. Watts, Travis W. Trueblood (Pro Tempore). Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, nottawaseppi-huron-band-of-the-potawatomi#2).'
 dispute_resolution:
   provisions:
   - kind: arbitration

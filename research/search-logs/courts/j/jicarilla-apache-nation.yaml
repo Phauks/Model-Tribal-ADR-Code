@@ -170,3 +170,35 @@ searches:
     order (own page, then directory entry): directory, https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-111
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://jicarillaoga.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Site is the Oil and Gas Administration; it lists no court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://supremecourt.nmcourts.gov/wp-content/uploads/sites/2/2026/02/2026-Public-TSJC-Roster-1.2.26.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: The NM Tribal-State Judicial Consortium roster PDF loads, but its text could not be extracted with the fetch tool.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/?p=478
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Redirected to the consortium contact page, which lists no Jicarilla court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: Jicarilla Apache Tribal Court Dulce New Mexico'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Results were aggregator and code pages (sharenm.org, narf.org) with no official Jicarilla court page.

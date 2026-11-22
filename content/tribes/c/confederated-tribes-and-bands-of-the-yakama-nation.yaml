@@ -237,6 +237,42 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
     see research/reviews/2026-11-22-service-links.json, service-056.'
+- kind: tribal-court
+  name: Civil Court
+  link: https://yakama.com/programs/tribal-court/
+  part_of: Yakama Nation Tribal Court
+  source: confederated-tribes-and-bands-of-the-tribal-court-services-i
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “CIVIL COURT Ext. 4581 and 4151”. Appears as a phone-extension listing of the Tribal Court; may be a division, not a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-tribes-and-bands-of-the-yakama-nation#2).'
+- kind: tribal-court
+  name: Criminal Court (Adult)
+  link: https://yakama.com/programs/tribal-court/
+  part_of: Yakama Nation Tribal Court
+  source: confederated-tribes-and-bands-of-the-tribal-court-services-i
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Criminal Court (Adult) Ext. 6090”. Phone-extension listing; may be a division. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-tribes-and-bands-of-the-yakama-nation#3).'
+- kind: juvenile-court
+  name: Juvenile Delinquency/Truancy
+  link: https://yakama.com/programs/tribal-court/
+  part_of: Yakama Nation Tribal Court
+  source: confederated-tribes-and-bands-of-the-tribal-court-services-i
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Juvenile Delinquency/Truancy Ext. 4583”. Phone-extension listing; may be a division. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-tribes-and-bands-of-the-yakama-nation#4).'
+- kind: juvenile-court
+  name: Dependency Court
+  link: https://yakama.com/programs/tribal-court/
+  part_of: Yakama Nation Tribal Court
+  source: confederated-tribes-and-bands-of-the-tribal-court-services-i
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Dependency Court Ext. 4583”. Phone-extension listing; may be a division. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, confederated-tribes-and-bands-of-the-yakama-nation#5).'
 gaming:
   compacts:
   - state: WA

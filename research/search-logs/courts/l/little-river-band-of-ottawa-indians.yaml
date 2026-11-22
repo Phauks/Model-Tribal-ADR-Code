@@ -32,3 +32,43 @@ searches:
     lead author''s order (own page, then directory entry): own-page, https://www.lrboi-nsn.gov/government/tribal-judicial.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-134
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lrboi-nsn.gov/government/tribal-judicial
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Judicial Branch page fetched successfully; lists Tribal Court, Court of Appeals and Peacemaking.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lrboi-nsn.gov/government/tribal-judicial/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribal Court subpage fetched; gives address, jurisdiction and judges.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lrboi-nsn.gov/government/tribal-judicial/court-of-appeals
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court of Appeals subpage fetched; gives appellate jurisdiction sentence.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lrboi-nsn.gov/government/tribal-judicial/peacemaking
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Peacemaking subpage fetched with fetch.py (200); states the program is on hold for rebuilding.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Little River Band of Ottawa Indians Tribal Court judicial"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned nation pages and michiganlegalhelp.org; nation pages above were confirmed by fetch.

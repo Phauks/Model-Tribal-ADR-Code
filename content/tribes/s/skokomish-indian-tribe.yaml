@@ -259,6 +259,18 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Skokomish Indian Tribe'
+- kind: tribal-court
+  name: Skokomish Tribal Court
+  link: https://skokomish.org/court/
+  location:
+    place: Shelton
+    state: WA
+    address: 861 N Reservation Rd
+  source: skokomish-indian-tribe-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Tribal Court Administrator”. The nation''s court page lists court staff (Tribal Court Administrator, Judge, Court Clerk) but does not name the court in the text fetched; the name comes from the state directory. The directory gives two addresses; the location is recorded. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, skokomish-indian-tribe#1).'
 dispute_resolution:
   forums:
   - kind: peacemaking

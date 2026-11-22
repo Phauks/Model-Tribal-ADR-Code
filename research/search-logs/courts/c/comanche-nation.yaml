@@ -278,6 +278,38 @@ searches:
     verdict cannot-tell.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-047
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://comanchenation.com/departments/family-services/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Fetch failed through the proxy on retry (connection refused or closed).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://comanchenation.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Fetch failed through the proxy.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://comanchenation.com/node/4451
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Search lead titled 'About Tribal Court'; fetch failed through the proxy.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.comanchenation.com/node/414
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: Search lead titled 'Tribal Court'; fetch failed through the proxy.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-045,
   cannot-tell); Comanche Nation Judiciary (court-046, cannot-tell); Comanche Nation Children’s Court (court-047,
   cannot-tell). A person could open in a browser the pages that refused the project''s link checker: http://www.comanchenation.com/.'

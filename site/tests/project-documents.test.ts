@@ -4,7 +4,8 @@ import {
 	projectDocumentPage,
 	resolveDocumentLink,
 	withNumberedBackLinks,
-	withoutRepositoryOnlyText
+	withoutRepositoryOnlyText,
+	withScrollingTables
 } from '#lib/server/project-documents.ts';
 
 const repository = 'https://github.com/Phauks/Model-Tribal-ADR-Code';
@@ -83,5 +84,13 @@ describe('back links of a footnote cited more than once', () => {
 		expect(
 			withNumberedBackLinks('<a href="#footnote-ref-x-2" data-footnote-backref aria-label="Back to reference x">↩<sup>2</sup></a>')
 		).toBe('<a href="#footnote-ref-x-2" data-footnote-backref aria-label="Back to reference x, use 2">↩<sup>2</sup></a>');
+	});
+});
+
+describe('tables in project documents', () => {
+	it('scroll in their own box, so they never widen the page', () => {
+		expect(withScrollingTables('<p>x</p><table><tr><td>a</td></tr></table>')).toBe(
+			'<p>x</p><div class="table-scroll" tabindex="0"><table><tr><td>a</td></tr></table></div>'
+		);
 	});
 });

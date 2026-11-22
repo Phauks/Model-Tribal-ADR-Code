@@ -197,3 +197,19 @@ searches:
     then directory entry): own-page, https://cocopah.com/departments/cocopah-tribal-court.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-052
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch query: "Cocopah Tribe" tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned leads only; used to confirm the nation's court page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://cocopah.com/departments/cocopah-tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: The nation's own Tribal Court page names the Cocopah Tribal Court with a Somerton, AZ address.

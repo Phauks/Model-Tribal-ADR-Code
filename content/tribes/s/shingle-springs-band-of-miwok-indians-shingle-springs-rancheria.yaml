@@ -260,6 +260,14 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Shingle Springs Band of Miwok Indians'
+- kind: other
+  name: Family Wellness Court
+  link: https://shinglespringsrancheria.com/tribal-court/#family-wellness-court
+  source: shingle-springs-band-of-miwok-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Family Wellness Court hears cases involving Tribal youth and adults.”. Joint tribal-state court: a judge of the Shingle Springs Tribal Court and a judge of the Superior Court of El Dorado County (a state court) hear cases together. The page says it was established in 2015. The page gives no court location. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, shingle-springs-band-of-miwok-indians-shingle-springs-rancheria#2).'
 dispute_resolution:
   provisions:
   - kind: other

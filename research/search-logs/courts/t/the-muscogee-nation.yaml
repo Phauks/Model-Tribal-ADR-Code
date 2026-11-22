@@ -19,3 +19,19 @@ searches:
   query: where appeals from each listed court go (path of appeal)
   outcome: found
   reason: 'Code Title 26, § 2-105: all decisions of the District Court are subject to appeal to the Supreme Court.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://creekdistrictcourt.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: District Court site lists judges by docket and links to Supreme Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://creeksupremecourt.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Supreme Court site states appellate jurisdiction.

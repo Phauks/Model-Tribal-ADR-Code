@@ -151,3 +151,11 @@ searches:
     (own page, then directory entry): own-page, https://www.rstcourt.org/law-order-code/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-335
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.rstcourt.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court site names the Tribal Court and Children's Court; appeals section has only a menu link with no text.

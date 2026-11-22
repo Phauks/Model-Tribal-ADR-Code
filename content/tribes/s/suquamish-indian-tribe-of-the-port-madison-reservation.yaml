@@ -235,6 +235,27 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Suquamish Tribe'
+- kind: tribal-court
+  name: Suquamish Tribal Court
+  link: https://suquamish.nsn.us/home/departments/police-courts/courts/
+  location:
+    place: Suquamish
+    state: WA
+    address: 18490 Suquamish Way, Ste 105
+  source: suquamish-tribe-courts-the
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Suquamish Tribal Court is the forum where the people of the Suquamish Tribe”. Nation''s own Courts page. Address from the state directory. The batch''s ''Grace Duggan Justice Center'' entry is a building that hosts this court; the page does not name it as a court, so it was not recorded as one. Quote taken from a summarized fetch. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, suquamish-indian-tribe-of-the-port-madison-reservation#1).'
+- kind: juvenile-court
+  name: Juvenile Court
+  link: https://suquamish.nsn.us/home/departments/police-courts/courts/
+  part_of: Suquamish Tribal Court
+  source: suquamish-tribe-courts-the
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “regularly scheduled court dates set each month for Juvenile Court”. Named as a docket type (monthly dates) within the Suquamish Tribal Court, not as a separate court with its own location. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, suquamish-indian-tribe-of-the-port-madison-reservation#2).'
 dispute_resolution:
   database_listings:
   - title: Truancy Alternative Resolution – Tribal Custom

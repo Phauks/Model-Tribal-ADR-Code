@@ -1,0 +1,21 @@
+profile: content/tribes/e/eastern-shawnee-tribe-of-oklahoma.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.estoo-nsn.gov/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Nation's site returns a 403 bot challenge ('Just a moment...'), so it was not read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts/miami-agency-cfr-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Miami Agency CFR Court page lists the Eastern Shawnee Tribe of Oklahoma as served.

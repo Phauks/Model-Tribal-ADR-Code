@@ -172,3 +172,19 @@ searches:
     order (own page, then directory entry): own-page, https://boisforte.com/departments/judicial/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-029
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://boisforte.com/departments/judicial/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's judicial page fetched with fetch.py (200); names the Bois Forte Tribal Court, the Court of Appeals and the Children's Court rules.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Bois Forte Band of Chippewa Tribal Court judicial district court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned boisforte.com court documents and PDFs; the judicial page above was confirmed by fetch.

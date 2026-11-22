@@ -21,3 +21,19 @@ searches:
     (own page, then directory entry): own-page, https://www.tunicabiloxi.org/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-385
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.tunicabiloxi.org/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names the court and the Marksville location (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Tunica-Biloxi Tribal Court tribal-court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search showed the nation's Tribal Court page and a justice-center news item; no other court was named in the results.

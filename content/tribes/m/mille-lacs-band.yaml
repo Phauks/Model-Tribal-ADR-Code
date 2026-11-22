@@ -162,6 +162,39 @@ justice_institutions:
     Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on 2026-11-22
     by the court review (research/reviews/2026-11-22-court-listings-second-pass.json); see research/reviews/2026-11-22-service-links.json,
     service-158.'
+  appeals_to:
+    court: Mille Lacs Band Court of Appeals
+    source: mille-lacs-band-of-ojibwe-judicial-branch
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-22'
+    note: 'The page says: “The Court of Appeals resolves any appeals from the District Court.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, mille-lacs-band#2).'
+- kind: other
+  name: Mille Lacs Band Court of Central Jurisdiction
+  link: https://millelacsband.com/government/judicial
+  source: mille-lacs-band-of-ojibwe-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Court of Central Jurisdiction is comprised of the Mille Lacs Band District Court and the Mille Lacs Band Court of Appeals.”. Group name the Judicial Branch page gives for the District Court and Court of Appeals together. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, mille-lacs-band#1).'
+- kind: court-of-appeals
+  name: Mille Lacs Band Court of Appeals
+  link: https://millelacsband.com/government/judicial
+  part_of: Mille Lacs Band Court of Central Jurisdiction
+  source: mille-lacs-band-of-ojibwe-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Court of Appeals consists of one Justice from each of the Band’s three districts, one of these being the Chief Justice.”. The court''s own subpage (/government/judicial/court-of-appeals) was not fetched. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, mille-lacs-band#3).'
+- kind: healing-to-wellness-court
+  name: Family Healing to Wellness Court
+  link: https://millelacsband.com/government/judicial/district-court
+  part_of: Mille Lacs Band of Ojibwe Tribal Court
+  source: mille-lacs-band-of-ojibwe-district-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Family Healing to Wellness Court Coordinator”. Named through its coordinator and case manager staff listings; the Judicial Branch page also lists a ''Wellness Court'' link that was not fetched. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, mille-lacs-band#4).'
 dispute_resolution:
   forums:
   - kind: elders-council

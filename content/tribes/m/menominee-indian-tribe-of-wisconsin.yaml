@@ -228,6 +228,26 @@ justice_institutions:
   note: 'Link added 2026-11-22: the page of the same court this profile also lists as “Tribal Court”,
     which the court review confirmed (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-151.'
+- kind: juvenile-court
+  name: Children's Court
+  link: https://courts.menominee-nsn.gov/ChildrensCourt.aspx
+  location:
+    state: WI
+  source: menominee-indian-tribe-of-wisconsin-childrens-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Children''s Court”. The page is the Children''s Court section of the tribal courts site and lists temporary physical custody forms, including delinquency forms, which supports the juvenile kind. The kind is still a classification, so check it before display. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, menominee-indian-tribe-of-wisconsin#2).'
+- kind: supreme-court
+  name: Supreme Court of the Tribe
+  link: https://courts.menominee-nsn.gov/About.aspx
+  location:
+    state: WI
+  source: menominee-indian-tribe-of-wisconsin-about
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Supreme Court of the Tribe”. The About page quotes the tribal constitution: ''The Supreme Court of the Tribe shall be the final and supreme interpreter of this Constitution and Bylaws.'' It is named in the constitutional text, not as a separately described court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, menominee-indian-tribe-of-wisconsin#3).'
 dispute_resolution:
   provisions:
   - kind: arbitration

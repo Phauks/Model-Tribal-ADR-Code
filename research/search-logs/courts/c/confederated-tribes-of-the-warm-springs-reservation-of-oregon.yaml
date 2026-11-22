@@ -1,0 +1,29 @@
+profile: content/tribes/c/confederated-tribes-of-the-warm-springs-reservation-of-oregon.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://warmsprings-nsn.gov/bchapter/courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Courts page names the Warm Springs Reservation Tribal Court and refers to an Appellate Court without naming one.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://warmsprings-nsn.gov/program/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court program page describes the court and gives its contact addresses.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: Warm Springs Tribal Court Confederated Tribes of the Warm Springs judicial branch courts'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search surfaced the nation's own court pages and the Oregon state tribal contact list, which was not fetched.

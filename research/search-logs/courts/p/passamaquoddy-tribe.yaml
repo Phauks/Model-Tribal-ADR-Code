@@ -1,0 +1,21 @@
+profile: content/tribes/p/passamaquoddy-tribe.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.passamaquoddy.com/?page_id=1885
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names a Tribal Court but gives no description (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Passamaquoddy Tribe tribal court Pleasant Point Indian Township'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned Maine statute pages and non-official pages; no further official Passamaquoddy court page surfaced.

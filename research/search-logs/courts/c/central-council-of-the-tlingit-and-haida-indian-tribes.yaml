@@ -40,3 +40,27 @@ searches:
     lead author''s order (own page, then directory entry): own-page, https://tlingitandhaida.gov/governance/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-034
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://tlingitandhaida.gov/governance/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Fetched with fetch.py (200); the Tribal Court page names the Tribal Court, Supreme Court, Wellness and Youth Wellness courts and Family Court Services.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.ccthita.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Fetched with fetch.py (200 after redirect to a staging domain, tlingithaida.kinsta.cloud); it links to a Tribal Court page and a Youth Healing to Wellness Court. The staging domain is not used as a link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: 2022 directory text read; Tlingit & Haida entry lists Supreme Court, Trial Court and Wellness Court.

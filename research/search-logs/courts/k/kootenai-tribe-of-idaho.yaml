@@ -21,3 +21,19 @@ searches:
     order (own page, then directory entry): own-page, https://www.kootenai.org/tribal-court.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-123
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.kootenai.org/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names the Kootenai Tribal Court, gives a Bonners Ferry address, and is the court's own page.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Kootenai Tribe of Idaho tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search surfaced the nation page and an Idaho Supreme Court tribal courts page; no other Kootenai court was named in the results.

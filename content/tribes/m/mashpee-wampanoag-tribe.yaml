@@ -264,6 +264,18 @@ justice_institutions:
   note: 'Link check 2026-11-21: the site did not respond. The listed link (http://www.mwtribejudicial.com/)
     no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
     found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
+- kind: tribal-court
+  name: Tribal Court
+  link: https://mashpeewampanoagtribe-nsn.gov/tribal-court-homepage
+  location:
+    place: Mashpee
+    state: MA
+    address: 483 Great Neck Road South
+  source: mashpee-wampanoag-tribe-judicial-branch-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Purpose of the Tribal Court is to serve all tribal members who have a civil or criminal complaint.”. Checked with fetch.py. The address is the one the judicial branch page gives. The page''s navigation labels ''MWT Courts'', ''Elders Judiciary Committee'' and ''Supreme Court'' are not described on it, so they are not recorded. The page does not say where appeals go. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, mashpee-wampanoag-tribe#1).'
 dispute_resolution:
   forums:
   - kind: peacemaking

@@ -223,6 +223,18 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
     see research/reviews/2026-11-22-service-links.json, service-121.'
+- kind: district-court
+  name: Kickapoo District Court
+  link: https://www.ktik-nsn.gov/district-court
+  location:
+    place: Horton
+    state: KS
+    address: 822 K-20 Highway
+  source: kickapoo-tribe-of-indians-of-the-district-court-ktik-nsn
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Kickapoo District Court”. Checked with fetch.py: the District Court page names the court (with a court administrator and an email) but gives no court address. The address shown is the Judicial Center''s (822 K-20 Highway, Horton, KS 66439), which the court page does not state as its own, so the reviewer should confirm. The batch''s ''Tribal Court'' entry points to the Judicial Center page, which does not call itself a court, so it is not recorded. The page does not say where appeals go. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas#1).'
 gaming:
   compacts:
   - state: KS

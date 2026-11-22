@@ -202,3 +202,19 @@ searches:
     (own page, then directory entry): own-page, https://www.whiteearth.com/divisions/judicial-services.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-421
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.whiteearth.com/divisions/judicial-services
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Judicial Services page fetched with fetch.py (200); names the Tribal Court, District Court, Appellate Court, Peacemaking and two joint drug/DWI courts.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "White Earth Nation tribal court judicial services"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned whiteearth.com judicial pages and an mncourts.gov news item on a joint drug court; the Judicial Services page above was confirmed by fetch.

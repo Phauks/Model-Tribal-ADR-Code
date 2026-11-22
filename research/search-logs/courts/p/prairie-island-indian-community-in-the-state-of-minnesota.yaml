@@ -21,3 +21,19 @@ searches:
     directory entry): own-page, https://prairieisland.org/our-government/tribal-court.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-297
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://prairieisland.org/our-government/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribal Court page fetched with fetch.py (200); names the Tribal Court, its Appellate Court and the mailing address.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Prairie Island Indian Community tribal court"'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned nation court pages and ordinances; the Tribal Court page above was confirmed by fetch.

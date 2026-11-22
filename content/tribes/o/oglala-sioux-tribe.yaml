@@ -250,6 +250,14 @@ justice_institutions:
     checked 2026-11-22), so the link is the official directory entry that lists it, the Oglala Sioux Tribe
     entry under "South Dakota Tribal Court Contact Information" on the South Dakota Unified Judicial System''s
     Tribal Courts page (fetched with status 200 on 2026-11-22).'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://www.oglala.gov/programs/
+  source: oglala-sioux-tribe-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “SUPREME COURT”. Listed as a program heading on the tribe''s own page; no description or link. ''COURT ADMINISTRATION'' also listed but is not itself a court. Tribal Court not confirmed. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, oglala-sioux-tribe#1).'
 dispute_resolution:
   database_listings:
   - title: Restriction on Court Ordering Restorative Justice for Domestic Violence Cases

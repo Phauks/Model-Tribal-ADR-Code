@@ -1,6 +1,6 @@
 profile: content/tribes/w/winnemucca-indian-colony-of-nevada.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-22'
@@ -57,4 +57,52 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-424
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://winnemuccaindiancolony.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Colony homepage has a WIC Court Information section, a court physical address and a tribal court fees link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: CFR Courts list names the Western Region CFR Court as serving Yomba Shoshone Tribe (Nevada) and does not name Winnemucca Indian Colony.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/regional-offices/western/court-indian-offenses
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Western Region court page now lists only Yomba Shoshone Tribe among tribes served.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/regional-offices/western/tribes-served
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Western Region tribes-served list includes a 'Winnemucca Paiute and Shoshone Tribe' that may or may not be this colony; the name does not match, so no CFR court is recorded for this colony.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts/western-region-cfr-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Now returns 403 Access denied to the fetch tool; an earlier fetch listed Winnemucca Indian Colony as served, which could not be re-verified, so no CFR court is recorded for it.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nvcourts.gov/__data/assets/pdf_file/0031/48496/Nevada_Tribal_Jurisdictions_and_Services_Resource_1.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nevada directory lists Winnemucca Indian Colony but names no specific court for it.
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court” (research/reviews/2026-11-22-service-links.json).

@@ -1,6 +1,6 @@
 profile: content/tribes/n/native-village-of-stevens.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-21'
@@ -289,6 +289,22 @@ searches:
     then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-233
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Alaska Court System-hosted 2022 Tribal Court Directory PDF, read in full via text extraction; gives a Tribal Court section for each village.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.tananachiefs.org/about/communities/stevens-village/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tanana Chiefs Conference community page; shows 'Judicial District 4' text and no court name.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-191,
   not-found-after-search); Stevens Tribal Court (court-192, not-found-after-search). No page or official
   directory entry was found on 2026-11-22 for “Tribal Court”; “Stevens Tribal Court” (research/reviews/2026-11-22-service-links.json).'

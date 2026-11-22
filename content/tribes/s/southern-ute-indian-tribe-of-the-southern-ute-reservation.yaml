@@ -287,6 +287,14 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Colorado section, entry 'Southern Ute Indian Tribe'
+- kind: healing-to-wellness-court
+  name: Wellness Court
+  link: https://www.southernute-nsn.gov/government/tribal-court/
+  source: southern-ute-indian-tribe-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Wellness Court”. Named only as a heading and section on the Tribal Court page, with no description; it may be a program of the Tribal Court rather than a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, southern-ute-indian-tribe-of-the-southern-ute-reservation#2).'
 dispute_resolution:
   provisions:
   - kind: other

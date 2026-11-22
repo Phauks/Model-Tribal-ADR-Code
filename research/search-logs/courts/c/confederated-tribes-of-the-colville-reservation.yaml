@@ -35,3 +35,11 @@ searches:
   query: where appeals from each listed court go (path of appeal)
   outcome: found
   reason: An archived 1983 printing of Chapter 1-1, § 1-1-280, has the Appellate Court hear appeals from final judgments of the Trial Court. Not cited because it predates the 2010 revision.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.cct-crt.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court site names trial court and Court of Appeals.

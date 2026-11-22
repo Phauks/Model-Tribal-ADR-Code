@@ -4,7 +4,9 @@
 	// Where sources record it, the courts show how appeals move, from the
 	// court that hears a case first to the highest court. Each service ends
 	// with the markers of its sources (CitationMarks), and "Appeals go to"
-	// with the markers of the sources that set the path of appeal.
+	// with the markers of the sources that set the path of appeal. A group of
+	// courts, such as a nation's district courts, lists each of its courts
+	// under it, with where each one sits.
 	import ArrowDown from '@lucide/svelte/icons/arrow-down';
 	import type { ServiceCategory, ServiceEntry } from '#lib/nation-services.ts';
 	import CitationMarks from './CitationMarks.svelte';
@@ -17,7 +19,16 @@
 			>{entry.text}<span class="visually-hidden">{" "}(opens in a new tab)</span></a
 		>{:else}{entry.text}{/if}{#if entry.detail}{' '}<span
 			class="muted small">({entry.detail})</span
-		>{/if}<CitationMarks marks={entry.citations} />
+		>{/if}<CitationMarks marks={entry.citations} />{#if entry.location}{' '}<span class="muted small location"
+			>{entry.location}</span
+		>{/if}
+	{#if entry.members && entry.members.length > 0}
+		<ul class="members" aria-label={`The ${entry.members.length} courts of ${entry.text}`}>
+			{#each entry.members as member, index (index)}
+				<li>{@render service(member)}</li>
+			{/each}
+		</ul>
+	{/if}
 {/snippet}
 
 <dl class="summary-list services">
@@ -105,6 +116,25 @@
 	.first-courts {
 		margin: 0;
 		padding-left: var(--space-5);
+	}
+
+	.location::before {
+		content: '· ';
+	}
+
+	.members {
+		margin: var(--space-1) 0 0;
+		padding-left: var(--space-5);
+	}
+
+	/* A long list of courts takes two columns where each can be 16rem wide. */
+	.members:has(> li:nth-child(7)) {
+		columns: 16rem 2;
+		column-gap: var(--space-5);
+	}
+
+	.members > li {
+		break-inside: avoid;
 	}
 
 	.other {

@@ -189,3 +189,11 @@ searches:
     from https://www.delawarenation-nsn.gov/delaware-nation-court/.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-057
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.delawarenation-nsn.gov/delaware-nation-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Official Delaware Nation Court page names the court and its judges.

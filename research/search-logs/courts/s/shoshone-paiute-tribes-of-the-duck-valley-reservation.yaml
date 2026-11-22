@@ -21,3 +21,19 @@ searches:
     directory entry): own-page, https://shopaitribes.org/court-home/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-350
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://shopaitribes.org/spcourt
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Earlier read showed the Tribal Court page with the Owyhee address; the fetch.py recheck returned a verification interstitial, so the record is unverified.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Shoshone-Paiute Duck Valley tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned a Nevada tribal jurisdictions resource and law-and-order code pages; none was used as a court source.

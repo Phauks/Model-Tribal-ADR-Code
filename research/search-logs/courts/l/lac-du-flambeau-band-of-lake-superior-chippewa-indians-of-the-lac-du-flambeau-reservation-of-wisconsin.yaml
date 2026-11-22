@@ -86,3 +86,19 @@ searches:
     (own page, then directory entry): own-page, https://ldftribe.com/tribal-operations/tribal-courts/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-127
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ldftribe.com/tribal-operations/tribal-courts/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Courts page fetched with fetch.py (status 200); names the Tribal Court and the Zaagiibagaa Healing to Wellness Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: "Lac du Flambeau" tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search surfaced the nation's Tribal Court Code PDF and the appellate court code PDF; the code PDFs were not fetched, so no court was recorded from them.

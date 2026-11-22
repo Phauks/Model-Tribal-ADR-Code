@@ -5,7 +5,9 @@
 	// links back to the place in the text that cites the source; a source
 	// cited in several places also gets a letter for each, a, b, c
 	// (Trevor, Nov. 22, 2026). The glossary pages use it too, with each entry
-	// in place of a fact.
+	// in place of a fact. After z the letters go on aa, ab; the accessible
+	// name keeps a space before them, so "ab" is a word of it, as WCAG 2.5.3
+	// (label in name) asks.
 	import { backlinkLetter, sourceAnchor } from '#lib/citation-marks.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import Collapsible from './Collapsible.svelte';
@@ -30,7 +32,7 @@
 							>{#if source.backlinks.length > 1}{#each source.backlinks as backlink, index (backlink)}{' '}<a
 										class="source-letter"
 										href="#{backlink}"
-										aria-label="Back to citation {source.number}{backlinkLetter(index)}"
+										aria-label="Back to citation {source.number} {backlinkLetter(index)}"
 										>{backlinkLetter(index)}</a
 									>{/each}{/if}{:else}<span class="source-number">{source.number}.</span>{/if}</span
 					>

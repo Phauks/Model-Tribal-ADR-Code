@@ -267,6 +267,42 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: North Dakota section, entry 'Spirit Lake Tribe'
+- kind: juvenile-court
+  name: Juvenile/Family Court
+  link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/juvenilefamily-court/
+  part_of: Spirit Lake Tribal Court
+  location:
+    place: Fort Totten
+    state: ND
+  source: spirit-lake-nation-spiritlakenation-com-juvenile-family-cour
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Juvenile/Family Court”. Combined juvenile and family court on one page; recorded as juvenile-court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, spirit-lake-tribe#2).'
+- kind: other
+  name: Civil Division
+  link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/civil-division/
+  part_of: Spirit Lake Tribal Court
+  location:
+    place: Fort Totten
+    state: ND
+  source: spirit-lake-nation-spiritlakenation-com-civil-division
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Civil Division”. Division of the Spirit Lake Tribal Court; the page has civil court forms. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, spirit-lake-tribe#3).'
+- kind: other
+  name: Adult Criminal Division
+  link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/adult-criminal-division/
+  part_of: Spirit Lake Tribal Court
+  location:
+    place: Fort Totten
+    state: ND
+  source: spirit-lake-nation-spiritlakenation-com-adult-criminal-divis
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Adult Criminal Division”. Division of the Spirit Lake Tribal Court; the page has criminal court forms. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, spirit-lake-tribe#4).'
 dispute_resolution:
   forums:
   - kind: customary-dispute-resolution

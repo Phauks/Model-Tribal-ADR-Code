@@ -160,6 +160,18 @@ justice_institutions:
   note: 'Link added 2026-11-22: the page of the same court this profile also lists as “Tribal Court”,
     which the court review confirmed (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
     service-273.'
+- kind: tribal-court
+  name: Ohkay Owingeh Tribal Court
+  link: http://ohkay.org/ohkay-owingeh-tribal-court/
+  location:
+    place: Ohkay Owingeh
+    state: NM
+    address: 220 Po'pay Avenue, Ohkay Owingeh, NM 87566
+  source: ohkay-owingeh-ohkay-org-tribal-court
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “Ohkay Owingeh Tribal Court”. Fetched over http because the https certificate for ohkay.org has expired (the https fetch failed with a certificate error). The page is dated 2018 to 2019. The batch''s generic ''Tribal Court'' entry is most likely the same court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, ohkay-owingeh#1).'
 gaming:
   compacts:
   - state: NM

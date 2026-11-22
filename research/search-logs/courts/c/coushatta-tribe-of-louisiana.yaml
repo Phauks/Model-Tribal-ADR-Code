@@ -198,6 +198,30 @@ searches:
     page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-069
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.coushatta.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: blocked
+  reason: Nation's homepage returned a 'One moment, please... Please wait while your request is being verified' interstitial with no court content.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Coushatta Tribe of Louisiana tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Results were the nation's judicial code on NARF pages and case law; no official court page for the Coushatta Tribe was found.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: coushatta.org tribal court judicial Coushatta Tribe Elton Louisiana'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Second search again returned only NARF code pages and Wikipedia; no official court page surfaced.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-052,
   not-found-after-search); Coushatta Tribal Court (court-053, not-found-after-search). No page or official
   directory entry was found on 2026-11-22 for “Tribal Court”; “Coushatta Tribal Court” (research/reviews/2026-11-22-service-links.json).'

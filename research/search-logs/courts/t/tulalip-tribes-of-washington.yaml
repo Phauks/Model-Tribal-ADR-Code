@@ -32,3 +32,27 @@ searches:
     (own page, then directory entry): own-page, https://www.tulaliptribes-nsn.gov/LawAndJustice/TribalCourt.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-383
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.tulaliptribes-nsn.gov/LawAndJustice/TribalCourt
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Tribes page only links to the court's own site.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.tulaliptribalcourt-nsn.gov/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Court site lists services and appellate court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.tulaliptribalcourt-nsn.gov/GeneralCourtInfo/AppellateCourt
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Appellate page states appeals go to NICS-administered court.

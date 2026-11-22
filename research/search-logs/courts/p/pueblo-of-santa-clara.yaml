@@ -32,3 +32,19 @@ searches:
     order (own page, then directory entry): own-page, https://www.santaclarapueblo.org/tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-320
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.santaclarapueblo.org/tribal-court/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal court page names the Tribal Court, Children's Court and the Pueblo Judiciary; no appeal route stated. A 'Tribal Court Location' subpage is linked but not read.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/contact/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: New Mexico tribal-state directory has no Santa Clara Pueblo court entry.

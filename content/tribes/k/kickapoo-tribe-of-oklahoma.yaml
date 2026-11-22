@@ -231,6 +231,22 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
+- kind: family-court
+  name: Family Court Division
+  link: https://www.kickapootribeofoklahoma.com/tribal-court
+  source: kickapoo-tribe-of-oklahoma-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “now includes the Trial Court, Family Court Division, and Supreme Court”. Named in the court history on the page; no separate details given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, kickapoo-tribe-of-oklahoma#2).'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://www.kickapootribeofoklahoma.com/tribal-court
+  source: kickapoo-tribe-of-oklahoma-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “now includes the Trial Court, Family Court Division, and Supreme Court”. Named in the court history on the page; no separate details given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, kickapoo-tribe-of-oklahoma#3).'
 dispute_resolution:
   database_listings:
   - title: General Sentencing Provisions – Restorative Justice Policy

@@ -1,6 +1,6 @@
 profile: content/tribes/a/apache-tribe-of-oklahoma.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-21'
@@ -136,6 +136,22 @@ searches:
     directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-020
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://apachetribe.org/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: not-found
+  reason: Nation's homepage fetched (status 200); it mentions no tribal court or judicial branch in its text or links.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts/southern-plains-cfr-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Southern Plains CFR Court page lists Apache Tribe of Oklahoma among tribes located in the court and names the Court of Indian Appeals.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-021,
   not-found-after-search). No page or official directory entry was found on 2026-11-22 for “Tribal Court”
   (research/reviews/2026-11-22-service-links.json).'

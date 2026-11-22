@@ -152,3 +152,11 @@ searches:
     then directory entry): directory, https://www.nics.ws/tribal-courts.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-395
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://utetribe.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'Not researched: the WebFetch proxy returned HTTP 403 because the session''s fetch budget was exhausted.'

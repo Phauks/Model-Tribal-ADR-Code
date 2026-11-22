@@ -237,6 +237,24 @@ justice_institutions:
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Osage Nation'
+- kind: supreme-court
+  name: Supreme Court
+  link: https://www.osagenation-nsn.gov/who-we-are/judicial-branch/supreme-court
+  part_of: Osage Nation Judicial Branch
+  source: osage-nation-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Supreme Court consists of one Chief Justice and two Associate Justices.”. Named on the Judicial Branch page. The sub-page link was listed by the page but was not itself fetched. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-osage-nation#2).'
+- kind: tribal-court
+  name: Trial Court
+  link: https://www.osagenation-nsn.gov/who-we-are/judicial-branch/trial-court
+  part_of: Osage Nation Judicial Branch
+  source: osage-nation-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Trial Court consists of one Chief Judge and any Associate Judges.”. Named on the Judicial Branch page. The sub-page link was listed by the page but was not itself fetched. Existing ''Tribal Court'' entry links to the same Judicial Branch page; not matched to it. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, the-osage-nation#3).'
 dispute_resolution:
   provisions:
   - kind: arbitration

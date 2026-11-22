@@ -279,3 +279,19 @@ searches:
     page, then directory entry): directory, https://www.courts.wa.gov/court_dir/orgs/134.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-164
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.muckleshoot.nsn.us/services/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's tribal court page names the Muckleshoot Tribal Court and its Healing to Wellness Court.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.wa.gov/court_dir/orgs/134.html
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Washington State Court Directory lists Muckleshoot Tribal Court at 39015 172nd Ave SE, Auburn.

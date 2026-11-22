@@ -1,0 +1,21 @@
+profile: content/tribes/c/colorado-river-indian-tribes-of-the-colorado-river-indian-reservation.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.azahcccs.gov/AmericanIndians/Downloads/Procedures/tribal-court-contact-list.pdf
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: A 2015 Arizona state list names 'Colorado River Tribal Court' in Parker, AZ.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.crit-nsn.gov/critcourt/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'Not fetched: the session''s WebFetch budget was exhausted (proxy 403).'

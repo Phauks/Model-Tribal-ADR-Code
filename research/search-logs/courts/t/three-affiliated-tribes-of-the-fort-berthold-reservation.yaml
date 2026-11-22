@@ -1,6 +1,6 @@
 profile: content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-22'
@@ -69,5 +69,29 @@ searches:
     service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-373
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.mhanation.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's home page names the Fort Berthold District Court and links to its site.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://fbdcourt.com/
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: error
+  reason: 'Court''s own site could not be reached: proxy connection refused, on two tries.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'WebSearch: Fort Berthold District Court New Town North Dakota'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Returned nation documents (job descriptions, codes) that were leads only and not used as evidence.
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court:-”; “Three Affiliated
   Tribes of the Fort Berthold Tribal Court” (research/reviews/2026-11-22-service-links.json).

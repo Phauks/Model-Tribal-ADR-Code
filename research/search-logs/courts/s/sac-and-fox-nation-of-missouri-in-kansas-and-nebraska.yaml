@@ -22,3 +22,19 @@ searches:
     page, then directory entry): own-page, https://www.sacandfoxks.com/entities/tribal-court.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-336
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sacandfoxks.com/entities/tribal-court
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Nation's Tribal Court page names the Tribal Court and the Appellate Court that hears its appeals (checked with fetch.py).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: 'web-search: Sac and Fox Nation Missouri Kansas Nebraska tribal court'
+  query: 'Individual courts review: every court, district, division and appellate court of the nation'
+  outcome: found
+  reason: Search returned the nation page and a second nation domain page, which I did not fetch.

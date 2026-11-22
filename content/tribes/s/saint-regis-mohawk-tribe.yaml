@@ -229,6 +229,42 @@ justice_institutions:
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
     website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-338.'
+- kind: tribal-court
+  name: Traffic Court
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts
+  part_of: Saint Regis Mohawk Tribal Court
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Traffic Court is well established and has adjudicated traffic offenses since December 2000.”. Held every other Thursday at 6:00 p.m. in the courtroom at the Justice Building, per the page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, saint-regis-mohawk-tribe#2).'
+- kind: tribal-court
+  name: Civil Court
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts
+  part_of: Saint Regis Mohawk Tribal Court
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Civil Court hears all non-criminal cases on a scheduled, as needed basis”. Heard by the Chief Judge, in the courtroom of the Justice Building, per the page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, saint-regis-mohawk-tribe#3).'
+- kind: family-court
+  name: Family Court
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts
+  part_of: Saint Regis Mohawk Tribal Court
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “A Family Court system, although not fully operational, is gaining progress on a daily basis”. The page says this court is not fully operational; its first part is a Child Support Enforcement Unit. Recorded because the page names it, but its status is unclear. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, saint-regis-mohawk-tribe#4).'
+- kind: healing-to-wellness-court
+  name: Healing to Wellness/Drug Court
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts
+  part_of: Saint Regis Mohawk Tribal Court
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-22'
+  note: 'The page names the court: “The Healing to Wellness/Drug Court is housed under the Tribal Court”. The page describes it as housed under the Tribal Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, saint-regis-mohawk-tribe#5).'
 gaming:
   compacts:
   - state: NY
