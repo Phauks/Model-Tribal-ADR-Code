@@ -20,7 +20,10 @@ citation:
       - 21
 original_link: https://www.law.cornell.edu/supremecourt/text/498/505
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260930030900/https://www.law.cornell.edu/supremecourt/text/498/505
+  captured: '2026-09-30'
 history:
   status: live
   last_checked: '2026-11-21'
