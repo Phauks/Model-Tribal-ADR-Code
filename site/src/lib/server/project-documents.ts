@@ -173,6 +173,17 @@ export function withNumberedBackLinks(html: string): string {
 	);
 }
 
+/**
+ * Wraps each table in a box that scrolls sideways on its own, as essays do
+ * (src/lib/essays/render.ts), so a wide table never widens the page. The box
+ * can take focus, so keyboard readers can scroll it too.
+ */
+export function withScrollingTables(html: string): string {
+	return html
+		.replace(/<table>/g, '<div class="table-scroll" tabindex="0"><table>')
+		.replace(/<\/table>/g, '</table></div>');
+}
+
 /** A project document as a title and HTML, as the website shows it. */
 export function renderProjectDocument(document: ProjectDocument): RenderedDocument {
 	const text = readFileSync(path.join(repositoryRoot, document.file), 'utf8').normalize('NFC');
@@ -183,7 +194,7 @@ export function renderProjectDocument(document: ProjectDocument): RenderedDocume
 	const heading = /^#\s+(.+)$/m.exec(text);
 	const body = heading ? text.slice(0, heading.index) + text.slice(heading.index + heading[0].length) : text;
 	const html = documentRenderer(document.file).parse(withoutRepositoryOnlyText(body), { async: false }) as string;
-	return { title, html: withNumberedBackLinks(html) };
+	return { title, html: withScrollingTables(withNumberedBackLinks(html)) };
 }
 
 /** What a project document's page needs, for the address it is shown at. */

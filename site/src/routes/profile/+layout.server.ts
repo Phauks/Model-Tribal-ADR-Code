@@ -1,3 +1,4 @@
+import { permissionsOf } from '#lib/permissions.ts';
 import { profileBySubject } from '#lib/server/contributor-profiles.ts';
 import { requireAccount, storage } from '#lib/server/workspace.ts';
 import type { LayoutServerLoad } from './$types';
@@ -11,6 +12,8 @@ export const load: LayoutServerLoad = async (event) => {
 	return {
 		email: account.email,
 		hasWorkspaceAccess: Boolean(event.locals.person),
+		// For the sidebar's Workspace section, as on the workspace's own pages.
+		permissions: event.locals.person ? [...permissionsOf(event.locals.person.role)] : undefined,
 		profile: (await profileBySubject(database, account.subject)) ?? null
 	};
 };

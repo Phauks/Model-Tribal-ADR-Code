@@ -13,6 +13,8 @@ import { activePersonBySubject } from '#lib/server/people.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
+import { permissionsOf } from '#lib/permissions.ts';
+import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
 const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests'];
@@ -57,8 +59,11 @@ export const handle: Handle = async ({ event, resolve }) => {
 				clearSessionCookie(event.cookies);
 			}
 		}
-		// Keep the masthead's "Workspace" or "Sign in" link in step with the session.
-		if (event.locals.person || event.locals.account) markSignedIn(event.cookies);
+		// Keep the masthead's profile button and the sidebar's workspace pages in step with the session.
+		if (event.locals.person) {
+			const pages = workspacePagesFor(permissionsOf(event.locals.person.role));
+			markSignedIn(event.cookies, pages.map((item) => item.name));
+		} else if (event.locals.account) markSignedIn(event.cookies);
 		else clearSignedIn(event.cookies);
 
 		// Each person may make a limited number of changes a minute, so a
