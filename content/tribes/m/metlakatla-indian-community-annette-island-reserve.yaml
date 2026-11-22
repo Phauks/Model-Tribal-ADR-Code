@@ -319,11 +319,15 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Metlakatla Tribal Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Metlakatla Indian Community, Annette Island Reserve'
+  note: 'Link is the entry in the Alaska Court System court directory: 2022 Alaska Tribal Court Directory
+    (prepared by Alaska Legal Services Corporation); no page of the court''s own was found (2026-11-22;
+    research/reviews/2026-11-22-service-links.json, service-154).'
 - kind: tribal-court
   name: Metlakatla Indian Community – Northwest Intertribal Court System
   link: http://www.codepublishing.com/WA/NICS/

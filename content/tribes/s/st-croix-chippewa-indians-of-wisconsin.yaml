@@ -243,6 +243,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://stcroixojibwe-nsn.gov/
   source: national-indian-law-library-st-croix-chippewa
   confidence: medium
   verification: bulk-import
@@ -250,7 +251,9 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (https://stcroixojibwe-nsn.gov/government/judiciary/) returned HTTP 404, so
-    it is not recorded.'
+    it is not recorded. Link added 2026-11-22: the nation''s home page, which the profile already uses
+    for the same court (“St. Croix Chippewa Tribal Court”); no court page of its own was found (fetched
+    with status 200 on 2026-11-22).'
 - kind: tribal-court
   name: St. Croix Chippewa Tribal Court
   link: https://stcroixojibwe-nsn.gov/

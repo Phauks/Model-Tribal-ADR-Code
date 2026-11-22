@@ -143,19 +143,27 @@ federal_administration:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   source: national-indian-law-library-native-port-heiden
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link is the entry in the Alaska
+    Court System court directory: 2022 Alaska Tribal Court Directory (prepared by Alaska Legal Services
+    Corporation); no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
+    service-223).'
 - kind: tribal-court
   name: Port Heiden Tribal Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Native Village of Port Heiden'
+  note: 'Link is the entry in the Alaska Court System court directory: 2022 Alaska Tribal Court Directory
+    (prepared by Alaska Legal Services Corporation); no page of the court''s own was found (2026-11-22;
+    research/reviews/2026-11-22-service-links.json, service-224).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

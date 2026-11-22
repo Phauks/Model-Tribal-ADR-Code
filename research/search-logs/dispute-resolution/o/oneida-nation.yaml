@@ -47,3 +47,103 @@ searches:
   query: 810.12 Former Judge, Mediator or Peacemaker
   outcome: found
   reason: Located and read the third heading in the record's citation (Chapter 810).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://oneida-nsn.gov/judiciary/peacemaking/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Peacemaking and Mediation Division”: Status 200; the page shows the service, and it is now
+    the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://oneida-nsn.gov/judiciary/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/resources/wellness/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/calendar-events/grandparents-as-caregivers-circle-7/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://oneida-nsn.gov/blog/2016/06/27/supreme-court-tie-favors-tribal-court-authority/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://oneida-nsn.gov/blog/2016/09/09/smith-returns-to-the-courtroom/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://oneida-nsn.gov/blog/2016/10/20/zelenski-to-lead-oneida-family-court/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://oneida-nsn.gov/blog/2017/06/21/supreme-court-pushes-redskins-name-fight-back-to-society/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://oneida-nsn.gov/blog/2018/05/17/lay-your-money-down-court-says-states-can-ok-sports-betting/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Peacemaking and Mediation Division”: Home page status 200; 5 linked pages mentioning a court,
+    judiciary, justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Peacemaking and Mediation Division”: Claude weighed the evidence against the lead author''s
+    order (own page, then directory entry): own-page, https://oneida-nsn.gov/judiciary/peacemaking/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-276

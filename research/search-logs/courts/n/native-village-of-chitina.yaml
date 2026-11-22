@@ -122,5 +122,42 @@ searches:
     from https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-140
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: '“Tribal Court”: Read the Nov. 21 court review''s result for this court (verdict not-found);
+    it gives no page of the court''s own fetched with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Tribal Court”: Read the Nov. 22 court review''s result (court-140, verdict not-found-after-search,
+    state-court-directory https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf); it gives
+    no page or directory entry to link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.chitina.org/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Tribal Court”: Home page status 200; read from the Nov. 22 court review''s saved copy, not
+    fetched again; 0 linked pages mentioning a court, judiciary, justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): none-found; the link stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-175
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-140,
-  not-found-after-search).'
+  not-found-after-search). No page or official directory entry was found on 2026-11-22 for “Tribal Court”
+  (research/reviews/2026-11-22-service-links.json).'

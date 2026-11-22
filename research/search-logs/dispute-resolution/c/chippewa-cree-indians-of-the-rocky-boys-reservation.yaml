@@ -1,0 +1,87 @@
+profile: content/tribes/c/chippewa-cree-indians-of-the-rocky-boys-reservation.yaml
+topic: dispute-resolution
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.rmtlc.org/good-health-wellness-in-indian-country-cdc/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Traditional Circle sessions (child support and paternity)”: Status 200; not used as the link:
+    it does not name the service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.rmtlc.org/event/2022-court-safety-and-security-conference/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Traditional Circle sessions (child support and paternity)”: Status 200 (read from the Nov.
+    22 court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.rmtlc.org/tribal-consultation-your-input-needed-in-designing-a-funding-plan-for-a-10-million-appropriation-for-tribal-judicial-systems/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Traditional Circle sessions (child support and paternity)”: Status 200 (read from the Nov.
+    22 court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.rmtlc.org/just-released-new-department-of-justice-missing-or-murdered-indigenous-persons-webpage/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Traditional Circle sessions (child support and paternity)”: Status 200 (read from the Nov.
+    22 court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.rmtlc.org/department-of-justice-announces-70-million-in-grants-to-address-the-opioid-crisis/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Traditional Circle sessions (child support and paternity)”: Status 200 (read from the Nov.
+    22 court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.rmtlc.org/justice-seeks-reimbursement-from-manufacturers-distributors-for-opioid-crisis/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Traditional Circle sessions (child support and paternity)”: Status 200 (read from the Nov.
+    22 court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.rmtlc.org/tribes-we-serve/chippewa-cree-of-rocky-boy/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Traditional Circle sessions (child support and paternity)”: Home page status 200; read from
+    the Nov. 22 court review''s saved copy, not fetched again; 5 linked pages mentioning a court, judiciary,
+    justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: '“Traditional Circle sessions (child support and paternity)”: Claude weighed the evidence against
+    the lead author''s order (own page, then directory entry): none-found; the link stays empty and the
+    service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-046
+next_steps: No page or official directory entry was found on 2026-11-22 for “Traditional Circle sessions
+  (child support and paternity)” (research/reviews/2026-11-22-service-links.json).

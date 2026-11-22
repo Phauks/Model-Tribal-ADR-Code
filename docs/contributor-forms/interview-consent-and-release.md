@@ -1,90 +1,67 @@
-# Interview consent and release
+# Interview consent
 
-Forms `interview-consent` (Part A) and `interview-release` (Part B), version
-0.1.0 (draft). Filing `{{filing.identifier}}`.
+Forms `interview-consent` (Part A) and `interview-release` (Part B), version 0.2.0. Filing `{{filing.identifier}}`.
 
-The project asks for two agreements: one before the interview, so you know
-what you are agreeing to, and one after you have seen the transcript, so you
-can decide what may be used. This follows the Oral History Association's
-practice of documenting informed consent before recording and securing the
-release "ideally when the interview is completed" ([contributions.md](../contributions.md#the-flow)).
-The [contributor statement](contributor-statement.md) records your choices
-about use, credit and copyright; Part B confirms them for this interview.
+You sign twice. Part A comes before we record. Part B comes after you read the transcript. Your choices about use, credit and copyright are on the [contributor statement](contributor-statement.md).
 
-## Part A. Before the interview
+## Part A. Before we record
 
-To be read with the narrator before recording starts. If agreed aloud, the
-interviewer reads this part at the start of the recording.
+The interviewer reads this aloud at the start if you agree by voice.
 
-**What the interview is for.** {{interview.purpose}}, for the Model Tribal
-ADR Code project, which describes how Native nations resolve disputes and
-writes model laws they may choose to use.
+**Purpose.** {{interview.purpose}}, for the Model Tribal ADR Code.
 
-**Who is interviewing.** {{interviewer.name}}, {{interviewer.role}}.
+**Interviewer.** {{interviewer.name}}, {{interviewer.role}}.
 
-**What will happen.**
+**What happens.**
 
-- The interview will take about {{interview.length}}, at {{interview.place}}.
-- It will be recorded by ☐ audio ☐ video ☐ notes only.
-- Everyone present will be asked to agree to the recording. Names of
-  everyone present: ______
-- We will type up what was said and send it to you to check.
-- Nothing will be used until you have checked it and signed Part B.
+- The interview takes about {{interview.length}}, at {{interview.place}}.
+- We record it by ☐ audio ☐ video ☐ notes only.
+- Everyone present must agree to the recording. Present: ______
+- We send you the transcript to check.
+- We use nothing until you sign Part B.
 
 **Your rights.**
 
-- Taking part is your choice. You can stop at any time, take a break, or
-  decline any question, without giving a reason.
-- You can ask us to stop recording for part of the conversation.
-- You can tell us something is not for publication, and we will mark it.
-- If you share knowledge that belongs to a community, such as ceremonial or
-  restricted knowledge, we will not use it without the permission of the
-  office your nation names.
-- You can withdraw the interview later, with the limits explained in the
-  contributor statement.
+- You can stop, take a break or skip a question. You don't have to say why.
+- You can ask us to pause the recording.
+- You can mark anything "not for publication."
+- We won't use a community's knowledge without approval from the office your nation names.
+- You can withdraw later. The contributor statement explains the limits.
 
-**Risks.** Talking about disputes can bring back hard memories or touch on
-family or community relationships. You can stop at any time. Stories can
-sometimes identify the people in them even without names; you will decide what
-is used, and how you are credited, after you see the transcript.
+**Risks.** Talking about disputes can bring back hard memories. It can touch on family or community ties. A story can identify people even without names. You decide what we use after you read the transcript.
 
-**Benefits.** No payment. You will receive a copy of the recording and
-transcript, and credit as you choose.
+**What you get.** No payment. A copy of the recording and transcript, and credit if you want it.
 
-**Questions.** Contact {{project.contact}}. If the project has a review board
-approval, its contact: {{review_board.contact}}.
+**Questions.** {{project.contact}}
 
-☐ I understand what the interview is for and what will happen.
-☐ I agree to be interviewed and recorded as marked above.
+- ☐ I understand the purpose and what will happen.
+- ☐ I agree to be interviewed and recorded as marked.
 
 | | |
 | --- | --- |
-| Narrator signature, or agreed aloud on the recording | |
+| Signature, or agreed aloud on the recording | |
 | Date | |
-| Interviewer signature | |
+| Interviewer's signature | |
 
-## Part B. After you review the transcript
+## Part B. After you read the transcript
 
-☐ I received the transcript of my interview of ______ (date) and had the
-chance to correct it.
+- ☐ I received the transcript of my interview of ______ (date) and could correct it.
 
-☐ I approve the transcript ☐ as it is ☐ with the changes I made.
+- ☐ I approve it ☐ as is ☐ with my changes.
 
-**Parts not to be used.** Leave out or keep private these parts (page and
-lines, or describe them): ______
+**Leave out** (page and line, or describe): ______
 
-**Use, access, credit and copyright** are as I chose in my contributor
-statement of ______ (date), ☐ with these changes: ______
+**Use, credit and copyright** are as in my contributor statement of ______ (date). ☐ Except: ______
 
-**The recording itself.** ☐ The project may publish the audio or video
-within the uses I chose ☐ The project may keep it but not publish it
-☐ The project may keep only the transcript and should delete the recording
-after ______
+**The recording.** Choose one.
+
+- ☐ You may publish the audio or video, within my choices.
+- ☐ Keep it, but don't publish it.
+- ☐ Keep only the transcript. Delete the recording after ______.
 
 | | |
 | --- | --- |
-| Narrator signature, or typed name | |
+| Signature or typed name | |
 | Date | |
 
-**For the project.** Transcript sent on ______; approved on ______; copy of
-this form, the recording and transcript given to the narrator on ______.
+**Project use.** Transcript sent ______. Approved ______. Copies of this form, the recording and the transcript sent ______.

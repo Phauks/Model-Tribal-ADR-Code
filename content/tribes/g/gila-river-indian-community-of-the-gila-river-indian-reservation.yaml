@@ -306,18 +306,26 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Gila River Indian Community Court
+  link: https://www.gilariver.org/index.php/government/judical-branch
   source: national-indian-law-library-gila-river
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-089.'
 - kind: tribal-court
   name: Westend Judicial Center
+  link: https://www.gilariver.org/index.php/government/judical-branch
   source: national-indian-law-library-gila-river
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-090.'
 - kind: tribal-court
   name: Gila River Indian Community Judicial Branch
   link: http://www.gilariver.org/index.php/government/judical-branch

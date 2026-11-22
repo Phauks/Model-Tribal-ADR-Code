@@ -168,18 +168,24 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Upper Skagit Court System
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
   source: national-indian-law-library-upper-skagit
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: 'Link is the entry in the Washington State Court Directory: Tribal Courts; no page of the court''s
+    own was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-392).'
 - kind: tribal-court
   name: Upper Skagit Tribal Court
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Upper Skagit Indian Tribe'
+  note: 'Link is the entry in the Washington State Court Directory: Tribal Courts; no page of the court''s
+    own was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-393).'
 gaming:
   compacts:
   - state: WA

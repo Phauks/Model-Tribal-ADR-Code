@@ -23,3 +23,49 @@ searches:
   reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/sl21.txt) and the section read directly.'
   records:
   - content/tribes/s/spirit-lake-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Wodakota: Traditional Court”: Status 200; the page shows the service, and it is now the service''s
+    link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.spiritlakenation.com/programs/wellness-centers
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Wodakota: Traditional Court”: Status 200; not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Wodakota: Traditional Court”: Status 200; the page shows the service, and it is now the service''s
+    link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.spiritlakenation.com/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Wodakota: Traditional Court”: Home page status 200; 1 linked pages mentioning a court, judiciary,
+    justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Wodakota: Traditional Court”: Claude weighed the evidence against the lead author''s order
+    (own page, then directory entry): own-page, https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-353

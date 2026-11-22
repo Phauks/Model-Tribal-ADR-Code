@@ -1,0 +1,115 @@
+profile: content/tribes/n/navajo-nation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: http://www.courts.navajo-nsn.gov/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Status 200 (read from the Nov. 22
+    court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Status 200 (read from the Nov. 22
+    court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/indexdistct.htm
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Status 200 (read from the Nov. 22
+    court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.navajo-nsn.gov/Portals/0/Public Services/2025/Commission Regular Meeting Agenda
+    Thoreau NM 6-26-2025.pdf
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: error
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: No answer (the connection failed);
+    not read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Status 200 (read from the Nov. 22
+    court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/indexaoc.htm
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Status 200 (read from the Nov. 22
+    court review''s saved copy, not fetched again); not used as the link: it does not name the service
+    or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/indexpeacemaking.htm
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Status 200 (read from the Nov. 22
+    court review''s saved copy, not fetched again); the page shows the service, and it is now the service''s
+    link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/Peacemaking/peacemain.htm
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Status 200; the main frame of the
+    linked page, headed “Peacemaking Program of the Navajo Nation”.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: by-hand
+  place_kind: court-website
+  address: https://courts.navajo-nsn.gov/indexpeacemaking.htm
+  query: curl, six tries with growing pauses
+  outcome: found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Fetched by hand six times with growing
+    pauses: two tries returned status 200 with the title “The Navajo Nation Peacemaking Program” and four
+    were cut off by the proxy (curl exit 35); the page''s main frame, Peacemaking/peacemain.htm, also
+    loaded with status 200'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.navajo-nsn.gov/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Home page status 200; read from
+    the Nov. 22 court review''s saved copy, not fetched again; 5 linked pages mentioning a court, judiciary,
+    justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)”: Claude weighed the evidence against
+    the lead author''s order (own page, then directory entry): own-page, https://courts.navajo-nsn.gov/indexpeacemaking.htm.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-247

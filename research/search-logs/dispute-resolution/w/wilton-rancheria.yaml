@@ -1,0 +1,69 @@
+profile: content/tribes/w/wilton-rancheria.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://wiltonrancheria-nsn.gov/tribal-government/tribal-court/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Wilton Rancheria Traditional Court”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://wiltonrancheria-nsn.gov/tribal-government/tribal-court/traditional-court/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: found
+  reason: '“Wilton Rancheria Traditional Court”: Status 200; the page shows the service, and it is now
+    the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://wiltonrancheria-nsn.gov/tribal-government/tribal-court/appellate-panel/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Wilton Rancheria Traditional Court”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://wiltonrancheria-nsn.gov/tribal-government/tribal-court/file-court-documents/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Wilton Rancheria Traditional Court”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://wiltonrancheria-nsn.gov/tribal-government/tribal-court/self-help-center/
+  query: 'scripts/review/service_links.py: the service''s name and words for a court or peacemaking'
+  outcome: not-found
+  reason: '“Wilton Rancheria Traditional Court”: Status 200; not used as the link: it does not name the
+    service or is not its own page.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://wiltonrancheria-nsn.gov/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: not-found
+  reason: '“Wilton Rancheria Traditional Court”: Home page status 200; 5 linked pages mentioning a court,
+    judiciary, justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Wilton Rancheria Traditional Court”: Claude weighed the evidence against the lead author''s
+    order (own page, then directory entry): own-page, https://wiltonrancheria-nsn.gov/tribal-government/tribal-court/traditional-court/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-423

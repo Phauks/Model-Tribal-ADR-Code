@@ -156,6 +156,16 @@ Population figures measure different things and are never added together:
 self-identification counts, and service-area figures. Each figure keeps its
 date.
 
+### Courts and other services
+
+`justice_institutions` lists the nation's courts, courts of appeals, peacemaking programs, traditional forums and healing to wellness courts, each with a `kind`, its `name` and a `link`; `dispute_resolution.forums` (below) lists its dispute resolution forums, also with a `link`. Every service listed has a link, so a reader can reach it and a reviewer can check it (the lead author's rule, Nov. 22, 2026: "If we list a service, it should have a link"). The link is, in this order:
+
+1. the service's own official page, on the nation's website or the court's or program's own website, fetched and showing the service;
+2. only where no such page exists, the official directory entry that lists the service, such as a state court system's tribal court directory, the Bureau of Indian Affairs list of Courts of Indian Offenses, or an intertribal court's page listing the nations it serves. The fact's `note` says that the link is a directory entry and when no page of the service's own was found;
+3. where neither is found, no link. The service stays in the profile, and the nation's search log (`research/search-logs/courts/` or `research/search-logs/dispute-resolution/`) records every place looked.
+
+`scripts/lint_records.py` reports a service with no link (check `service-link`): an error for a service a pull request adds or changes, a warning for one already on `main`.
+
 ### Dispute resolution
 
 The `dispute_resolution` section records how a nation resolves disputes

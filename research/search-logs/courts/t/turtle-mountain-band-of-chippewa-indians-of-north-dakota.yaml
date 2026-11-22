@@ -124,3 +124,52 @@ searches:
     brief; verdict confirmed, from https://tmchippewa.com/section-13-07-020-qualifications-of-chief-clerk-of-court-30-day-comment/.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-291
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: 'Every service without a link listed for this nation: Read the Nov. 21 court review''s result
+    for this court (verdict cannot-tell, page https://tmchippewa.com/section-13-07-020-qualifications-of-chief-clerk-of-court-30-day-comment/);
+    it gives no page of the court''s own fetched with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Tribal Court”: Read the Nov. 22 court review''s result (court-290, verdict confirmed, nation-website
+    https://tmchippewa.com/section-13-07-020-qualifications-of-chief-clerk-of-court-30-day-comment/);
+    it gives no page or directory entry to link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): none-found; the link stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-386
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: not-found
+  reason: '“Turtle Mountain Chippewa Tribal Court”: Read the Nov. 22 court review''s result (court-291,
+    verdict confirmed, nation-website https://tmchippewa.com/section-13-07-020-qualifications-of-chief-clerk-of-court-30-day-comment/);
+    it gives no page or directory entry to link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: '“Turtle Mountain Chippewa Tribal Court”: Claude weighed the evidence against the lead author''s
+    order (own page, then directory entry): none-found; the link stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-387
+next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court”; “Turtle Mountain
+  Chippewa Tribal Court” (research/reviews/2026-11-22-service-links.json).

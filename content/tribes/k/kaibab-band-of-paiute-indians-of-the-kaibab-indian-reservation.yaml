@@ -182,20 +182,28 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.kaibabpaiute-nsn.gov/services/court.php
   source: national-indian-law-library-kaibab-paiute
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
-    link the source gives (http://kaibabpaiute-nsn.gov/court.html) returned HTTP 404, so it is not recorded.'
+    link the source gives (http://kaibabpaiute-nsn.gov/court.html) returned HTTP 404, so it is not recorded.
+    Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on 2026-11-21
+    by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-112.'
 - kind: tribal-court
   name: Kaibab-Paiute Tribe Court
+  link: https://www.kaibabpaiute-nsn.gov/services/court.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Kaibab Band of Paiute Indians'
+  note: 'Link added 2026-11-22: the court''s page on the nation''s website, fetched with status 200 on
+    2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-113.'
 gaming:
   compacts:
   - state: AZ

@@ -238,13 +238,16 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tolowa Dee-ni’ Nation Tribal Court
+  link: https://www.tolowa.gov/208/Kii-daa-naa-dvn-Tribal-Judicial-System
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Smith River Rancheria – Tolowa Dee-ni’ Nation'
   note: 'Link check 2026-11-21: the link the source gives (http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system/)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
+    website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-22-court-listings-second-pass.json);
+    see research/reviews/2026-11-22-service-links.json, service-375.'
 dispute_resolution:
   provisions:
   - kind: mediation
