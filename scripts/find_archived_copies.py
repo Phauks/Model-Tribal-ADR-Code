@@ -19,7 +19,7 @@ https://web.archive.org/save/ (anonymous Save Page Now is rate limited, so the
 script waits between requests).
 
 Run from the repository root:
-  python3 scripts/find_archived_copies.py [--save] [--limit N] [--minutes M] [--report FILE] [key ...]
+  python3 scripts/find_archived_copies.py [--save] [--reuse-days D] [--state FILE] [--limit N] [--minutes M] [--report FILE] [key ...]
 
 --limit N stops after N records, so a large backlog is worked through over
 several runs instead of one very long one. --reuse-days D first asks the
@@ -27,7 +27,12 @@ availability service for an existing capture and uses it, without a new save,
 when it was taken within D days of the record's 'retrieved' date; a lookup
 takes about a second, a save about a minute, so this clears most records
 quickly. Without --save, a capture further than D days away is reported as
-too far from the retrieval date instead of being offered. --minutes M stops starting new
+too far from the retrieval date instead of being offered. --state FILE keeps,
+between runs, which records were looked up with no recent capture and when a
+save was last tried: records not yet looked up come first, a record looked up
+in the last 7 days goes straight to a save, and a record whose save failed in
+the last day is skipped, so slow or refused saves do not crowd out quick
+lookups. --minutes M stops starting new
 records after M minutes, so a run finishes inside a job's time limit even when
 the service is slow. The report is rewritten after every record, so a run that
 is stopped part way keeps what it captured.
@@ -52,6 +57,9 @@ CAPTURE_LINK = re.compile(r"/web/(\d{14})[a-z_]*/(.*)$")
 HEADERS = {"User-Agent": "source-archiver/1.0"}
 SECONDS_BETWEEN_SAVES = 20
 SECONDS_BEFORE_RETRY = 60
+SAVE_TIMEOUT = 120
+DAYS_BEFORE_LOOKING_AGAIN = 7
+DAYS_BEFORE_SAVING_AGAIN = 1
 
 
 class RedirectedCapture(Exception):
@@ -100,7 +108,7 @@ def save_capture(link: str):
     that capture may be a block page or a signed link that should not be
     published; a person checks those by hand."""
     request = urllib.request.Request(SAVE_SERVICE + link, headers=HEADERS)
-    with urllib.request.urlopen(request, timeout=300) as response:
+    with urllib.request.urlopen(request, timeout=SAVE_TIMEOUT) as response:
         final_link = response.geturl()
         location = response.headers.get("Content-Location", "")
     for candidate in (final_link, location):
@@ -116,10 +124,18 @@ def save_capture(link: str):
 
 
 def save_with_retry(link: str):
-    """Save Page Now often refuses connections when it is busy, so try once more after a pause."""
+    """Save Page Now often refuses connections when it is busy, so try once more after a pause.
+
+    An answer from the service (such as 429 too many requests or a 5xx error)
+    is not retried at once: a 429 pauses before the next record, and the
+    record is tried again on a later run."""
     try:
         return save_capture(link)
     except RedirectedCapture:
+        raise
+    except urllib.error.HTTPError as error:
+        if error.code == 429:
+            time.sleep(SECONDS_BEFORE_RETRY)
         raise
     except OSError:
         time.sleep(SECONDS_BEFORE_RETRY)
@@ -133,8 +149,21 @@ def days_apart(first: str, second: str) -> int:
         return 10**6
 
 
-def write_report(report_path: str, results: list) -> None:
-    """Write the report through a temporary file, so a run stopped mid-write leaves the last whole report."""
+def read_state(state_path):
+    if not state_path:
+        return {}
+    try:
+        return json.loads(pathlib.Path(state_path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def recent(date: str, today: str, days: int) -> bool:
+    return bool(date) and days_apart(date, today) < days
+
+
+def write_report(report_path: str, results) -> None:
+    """Write JSON through a temporary file, so a run stopped mid-write leaves the last whole file."""
     temporary = pathlib.Path(report_path + ".partial")
     temporary.write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
     temporary.replace(report_path)
@@ -152,7 +181,10 @@ def main(arguments: list[str]) -> int:
     reuse_days = None
     if "--reuse-days" in arguments:
         reuse_days = int(arguments[arguments.index("--reuse-days") + 1])
-    option_values = {arguments[index + 1] for index, argument in enumerate(arguments[:-1]) if argument in ("--report", "--limit", "--minutes", "--reuse-days")}
+    state_path = None
+    if "--state" in arguments:
+        state_path = arguments[arguments.index("--state") + 1]
+    option_values = {arguments[index + 1] for index, argument in enumerate(arguments[:-1]) if argument in ("--report", "--limit", "--minutes", "--reuse-days", "--state")}
     started = time.monotonic()
     keys = [argument for argument in arguments if not argument.startswith("--") and argument not in option_values]
 
@@ -160,11 +192,21 @@ def main(arguments: list[str]) -> int:
     if keys:
         paths = [path for path in paths if path.stem in keys]
     today = datetime.date.today().isoformat()
-    results = []
+    state = read_state(state_path)
+    candidates = []
     for path in paths:
         record = yaml.safe_load(path.read_text(encoding="utf-8"))
         if record.get("archives") or not record.get("original_link"):
             continue
+        seen = state.get(path.stem, {})
+        if save and reuse_days is not None and recent(seen.get("save_failed", ""), today, DAYS_BEFORE_SAVING_AGAIN):
+            continue
+        candidates.append((path, record, seen))
+    # Records not yet looked up first (each takes about a second), then the
+    # ones that need a save, least recently tried first.
+    candidates.sort(key=lambda item: (bool(item[2].get("looked_up")), item[2].get("save_failed", "")))
+    results = []
+    for path, record, seen in candidates:
         if limit is not None and len(results) >= limit:
             print(f"Stopped at --limit {limit}; run again for the rest.")
             break
@@ -174,7 +216,7 @@ def main(arguments: list[str]) -> int:
         link = record["original_link"]
         retrieved = str(record.get("retrieved") or today)[:10]
         capture, problem = None, None
-        if reuse_days is not None:
+        if reuse_days is not None and not recent(seen.get("looked_up", ""), today, DAYS_BEFORE_LOOKING_AGAIN):
             try:
                 existing = closest_capture(link, retrieved)
             except OSError as error:
@@ -182,8 +224,11 @@ def main(arguments: list[str]) -> int:
             time.sleep(1)
             if existing and days_apart(existing["captured"], retrieved) <= reuse_days:
                 capture = existing
-            elif existing and not save:
-                problem = f"closest capture ({existing['captured']}) is more than {reuse_days} days from the retrieval date"
+            else:
+                if problem is None:
+                    state.setdefault(path.stem, {})["looked_up"] = today
+                if existing and not save:
+                    problem = f"closest capture ({existing['captured']}) is more than {reuse_days} days from the retrieval date"
         if save and capture is None:
             try:
                 capture = save_with_retry(link)
@@ -191,6 +236,8 @@ def main(arguments: list[str]) -> int:
                 problem = str(error)
             except OSError as error:
                 problem = f"save failed ({error})"
+            if capture is None:
+                state.setdefault(path.stem, {})["save_failed"] = today
             time.sleep(SECONDS_BETWEEN_SAVES)
         if capture is None and (save or reuse_days is None):
             try:
@@ -206,10 +253,16 @@ def main(arguments: list[str]) -> int:
             print(f"# {path.stem}\narchives:\n  - service: wayback\n    link: {capture['link']}\n    captured: {capture['captured']}", flush=True)
         else:
             print(f"# {path.stem}: no capture ({problem or 'none found'})", flush=True)
+        if capture:
+            state.pop(path.stem, None)
         if report_path:
             write_report(report_path, results)
+        if state_path:
+            write_report(state_path, state)
     if report_path:
         write_report(report_path, results)
+    if state_path:
+        write_report(state_path, state)
     found = sum(1 for result in results if result["capture"])
     print(f"\n{found} of {len(results)} records have a capture.")
     return 0
