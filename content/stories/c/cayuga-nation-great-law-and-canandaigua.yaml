@@ -1,0 +1,51 @@
+id: cayuga-nation-great-law-and-canandaigua
+title: '[Account of the Great Law of Peace and the Treaty of Canandaigua]'
+nations:
+- cayuga-nation
+kind: historical-account
+length: short
+excerpts:
+- telling: cayuga-history-page
+  locator: paragraph beginning "Together with the Onondaga"
+  text: Together with the Onondaga, Seneca, Oneida, and Mohawk, we formed a powerful alliance guided by the Great
+    Law of Peace, a system of governance and diplomacy admired by many of America’s founding fathers.
+  words: 33
+  sha256: 6f5c57f5f4273b306857cb802b73795b5dd85f53dfb9d218be034ff1c6fe3921
+- telling: cayuga-history-page
+  locator: paragraph beginning "That effort led to the Treaty of Canandaigua"
+  text: This historic agreement, still in effect today, secured peace between the United States and the Haudenosaunee,
+    and affirmed the sovereignty of each Nation over its territory.
+  words: 26
+  sha256: 840b3318b58967fb3d37c82ddd8f15259e84f519f9899127a4c09808eecb6ac8
+methods:
+- negotiation
+topics:
+- peace-between-nations
+- treaties
+- confederacy
+tellings:
+- id: cayuga-history-page
+  source: cayuganation-nsn-history-culture
+  published_by: Cayuga Nation
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+access:
+  level: nation-review-first
+anthology:
+  candidate: false
+  reason: A short history in the Nation's voice; the Onondaga Nation's own account of the Great Peace is already
+    on the shortlist (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories-second-sweep

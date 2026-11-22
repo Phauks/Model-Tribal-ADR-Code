@@ -1,0 +1,48 @@
+id: taos-pueblo-abeyta-water-negotiations
+title: '[Account of the Abeyta water rights negotiations]'
+nations:
+- pueblo-of-taos
+kind: historical-account
+length: paragraph
+excerpts:
+- telling: taos-water-rights-page
+  locator: 2006 announcement, words beginning "Taos Pueblo and the non-Indian parties"
+  text: Taos Pueblo and the non-Indian parties, the State of New Mexico, Town of Taos, El Prado Water and Sanitation
+    District, Taos Valley Acequia Association and the Mutual Domestic Water Consumers Association, finished the
+    local phase of the Abeyta water negotiations
+  words: 40
+  sha256: 79b0c521798578905b10813667f7421fa0fa71236d23b77e076298b375102253
+methods:
+- negotiation
+topics:
+- water-rights
+- negotiated-settlement
+- present-day
+tellings:
+- id: taos-water-rights-page
+  source: pueblo-of-taos-water-rights-page
+  as_of: '2008'
+  published_by: Taos Pueblo
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: Announcements credited on the page to Governor James Lujan Sr. and War Chief Robert Espinosa (2006) and
+    Governor Paul Martinez and War Chief Luis Romero (2008).
+access:
+  level: nation-review-first
+anthology:
+  candidate: false
+  reason: A short notice, not a narrative; the settlement documents would need to be read first (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories-second-sweep

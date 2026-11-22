@@ -22,6 +22,7 @@ not repeat it.
 5. What the stories say about protocols
 6. Leads that are not stories yet
 7. Gaps and next steps
+8. Second search: more nations
 
 ## 1. Ground rules for collecting stories
 
@@ -209,17 +210,66 @@ story the nation chooses to share. Others to follow:
 
 ## 7. Gaps and next steps
 
-- **Not reached or blocked** (see the session log): Mohegan, Penobscot,
+- **Not reached or blocked** (see both session logs): Mohegan, Penobscot,
   Oneida Nation of Wisconsin, Seneca, Tuscarora, Siletz, Swinomish, Zuni,
-  the Eastern Band's own sites, the Yurok code site and others. Not searched:
-  Tonawanda, Cayuga, Passamaquoddy, several Anishinaabe nations, Pomo nations,
-  Coos and most Pueblos.
+  the Eastern Band's own sites, the Yurok code site, the Sault Ste. Marie
+  Tribe, the Mille Lacs Band, Nambé Pueblo and others. The lead author
+  offered on Nov. 21, 2026 to check blocked pages by hand.
 - **Ask, do not search.** The richest stories are likely to come from asking
   the nations' cultural offices and peacemaking programs, through the
-  contributor intake forms, rather than from the web (project analysis).
-- **Decide the format.** Decision record 0019 is proposed, not accepted.
+  contributor intake forms, rather than from the web (project analysis). The
+  second search, which found program pages far more often than stories,
+  supports this.
 - **Pulls.** Nine items are in section 10 of the project's single Westlaw
   list.
+
+## 8. Second search: more nations
+
+The lead author approved a second search on Nov. 21, 2026, for Haudenosaunee
+and Wabanaki nations, Anishinaabe nations in Michigan, Minnesota and
+Wisconsin, Pomo and Oregon coast nations, and the Pueblos. Method and limits
+are in the session log,
+[2026-11-21-peacemaking-stories-second-sweep](../sessions/2026/2026-11-21-peacemaking-stories-second-sweep.md).
+It added seven stories, each quoted in the teller's own words:
+
+| Record | Nation | Kind | Teller's voice | Anthology |
+| --- | --- | --- | --- | --- |
+| `red-lake-nation-dakota-seek-peace`[^red-lake] | Red Lake Nation | historical account, two sentences | nation government | no |
+| `cayuga-nation-great-law-and-canandaigua`[^cayuga] | Cayuga Nation | historical account, short | nation government | no |
+| `saint-regis-mohawk-rekindled-fire-1888`[^srmt] | Saint Regis Mohawk Tribe | historical account, a paragraph | nation government | no |
+| `ctclusi-peacegiving-court-second-restoration`[^clusi] | Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians | program story, short | nation newspaper | yes |
+| `cow-creek-xaawiisaa-go-between`[^cow-creek] | Cow Creek Band of Umpqua Tribe of Indians | teaching, two sentences | nation government | no |
+| `jemez-pecos-welcome-1838`[^jemez-pecos][^jemez-history] | Pueblo of Jemez | historical account, short | nation cultural office | yes (the 1838 section only) |
+| `taos-pueblo-abeyta-water-negotiations`[^taos] | Pueblo of Taos | historical account, a paragraph | nation government | no |
+
+**What the second search shows (project analysis).**
+
+- **A court's founding can be its own story.** The Coos, Lower Umpqua and
+  Siuslaw newspaper calls the Peacegiving Court's founding "a second
+  restoration," after federal restoration in 1984, and Judge Don Costello
+  says it "was a joint effort of our Tribe and members of the Coquille Indian
+  Tribe."[^clusi] This is the clearest account found so far of a community
+  telling how it built its own peacemaking forum.
+- **Old roles come back under their own names.** Cow Creek writes that in
+  historical accounts its peacemakers "are referenced as ' xaawiisaa ,' or
+  'go-between.'"[^cow-creek] (Spacing as on the page.)
+- **Welcome after consultation.** The Pueblo of Jemez's cultural office
+  writes that "[a]fter a long consultation with the Jemez leaders the P`ǽ
+  kish were welcomed and accepted by their kin."[^jemez-pecos] The same
+  page goes on to ceremonial matters, which the project does not describe.
+- **Pueblo sites say little about resolving disputes.** None of the Pueblo
+  pages reached described peacemaking or a traditional dispute process; the
+  courts' pages describe procedure. That is a fact about the pages, not
+  about the Pueblos.
+
+**Leads from the second search.** Program pages with no story: the Little
+River Band's Peacemaking program (on hold, per the page), the Leech Lake
+Band's Bamenim Anishinaabeg program, the Klamath Tribes' Peacemaker Court,
+the Coos, Lower Umpqua and Siuslaw Peacegiving Court page, and the Northern
+California Intertribal Court. The Ogichidaa Storytellers' education materials
+on the Healing Circle Run, among Ojibwe nations after the treaty-rights
+conflicts, need a confirmed publisher before a record is made. The Mi'kmaq
+Nation's StoryMap journals ask for permission before any use.
 
 [^charter-4]: [Charter, commitment 4](../../docs/charter.md#4-consultation-before-publication).
 [^charter-5]: [Charter, commitment 5](../../docs/charter.md#5-cultural-knowledge-and-restricted-material).
@@ -261,3 +311,11 @@ story the nation chooses to share. Others to follow:
 [^ho-chunk]: *Traditional Court*, Ho-Chunk Nation, [ho-chunknation.com](https://ho-chunknation.com/government/judicial-branch/courts/traditional-court-2/) (last visited Nov. 21, 2026). Source record: `ho-chunk-traditional-court-page`.
 [^yurok]: *Tribal Court*, Yurok Tribe, [yuroktribe.org](https://www.yuroktribe.org/tribal-court) (last visited Nov. 21, 2026). Source record: `yurok-tribe-tribal-court-page`.
 [^fletcher]: Matthew L.M. Fletcher, *Anishinaabe Law and the Round House*, Alb. Gov't L. Rev. (volume and page to confirm), [albanygovernmentlawreview.org](https://www.albanygovernmentlawreview.org/api/v1/articles/23983-anishinaabe-law-and-the-round-house.pdf). Source record: `fletcher-anishinaabe-law-and-the-round-house`.
+[^red-lake]: *Tribal History & Historical Photos*, Red Lake Nation, [redlakenation.org](https://www.redlakenation.org/tribal-history-historical-photos/) (last visited Nov. 22, 2026). Source record: `red-lake-nation-tribal-history-page`.
+[^cayuga]: *History & Culture*, Cayuga Nation, [cayuganation-nsn.gov](https://cayuganation-nsn.gov/history-culture/) (last visited Nov. 22, 2026). Source record: `cayuganation-nsn-history-culture`.
+[^srmt]: *Culture and History*, Saint Regis Mohawk Tribe, [srmt-nsn.gov](https://www.srmt-nsn.gov/culture-and-history) (last visited Nov. 22, 2026). Source record: `saint-regis-mohawk-tribe-culture-and-history-page`.
+[^clusi]: *41st Restoration Celebration Puts Spotlight on 20th Anniversary of Peacegiving Court*, The Voice of CLUSI (Confederated Tribes of Coos, Lower Umpqua & Siuslaw Indians), Nov. 2025, at 1, [ctclusi.org](https://ctclusi.org/wp-content/uploads/2025/10/FINAL-November-2025-for-web.pdf). Source record: `ctclusi-2025-voice-peacegiving-court-anniversary`.
+[^cow-creek]: *Mark Your Calendars: Peacemaker Training Session*, Cow Creek Band of Umpqua Tribe of Indians, [cowcreek-nsn.gov](https://www.cowcreek-nsn.gov/mark-your-calendars-peacemaker-training-session/) (last visited Nov. 22, 2026). Source record: `cow-creek-peacemaker-training-2024`.
+[^jemez-pecos]: Christopher Toya, *Pecos Pueblo History*, Pueblo of Jemez, [jemezpueblo.org](https://www.jemezpueblo.org/about/pecos-pueblo/) (last visited Nov. 22, 2026). Source record: `pueblo-of-jemez-about-pecos-pueblo`.
+[^jemez-history]: *History and Culture*, Pueblo of Jemez, [jemezpueblo.org](https://www.jemezpueblo.org/about/history-and-culture/) (last visited Nov. 22, 2026) (text credited to William Whatley, 1993, edited by the Pueblo of Jemez Administration). Source record: `jemez-history-and-culture`.
+[^taos]: *Water Rights*, Taos Pueblo, [taospueblo.com](https://taospueblo.com/community/water-rights/) (last visited Nov. 22, 2026). Source record: `pueblo-of-taos-water-rights-page`.
