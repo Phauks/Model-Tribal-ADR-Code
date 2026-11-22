@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { repositoryLink } from '#lib';
 	import RequestForm from '#lib/components/RequestForm.svelte';
 	import RequestSent from '#lib/components/RequestSent.svelte';
 	import { requestKindHints, requestKindLabels, requestKinds, type RequestKind } from '#lib/requests.ts';
@@ -51,9 +50,7 @@
 				<p><button class="button" type="submit">Continue</button></p>
 			</form>
 			<p class="small muted">
-				How requests are handled: <a href="{repositoryLink}/blob/main/docs/requests.md"
-					>Requests from Native nations and contributors</a
-				>. Please do not use public GitHub issues for a request about a nation.
+				Please do not use public GitHub issues for a request about a nation.
 			</p>
 		{:else}
 			<p>

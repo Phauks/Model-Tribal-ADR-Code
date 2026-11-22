@@ -278,12 +278,14 @@ governing_documents:
 justice_institutions:
 - kind: peacemaking-program
   name: Peacemaking and Mediation Division
+  link: https://oneida-nsn.gov/judiciary/peacemaking/
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
   verification: title-only
   as_of: '2025-09-29'
-  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
-    whether it currently operates was not checked.
+  note: 'Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked. Link added 2026-11-22: the Peacemaking and Mediation
+    page of the Oneida Nation Judiciary (fetched with status 200 on 2026-11-22).'
 - kind: tribal-court
   name: Tribal Court
   link: https://oneida-nsn.gov/government/judiciary/

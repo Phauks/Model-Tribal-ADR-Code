@@ -226,13 +226,16 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Coeur d’Alene Tribal Court
+  link: https://www.cdatribe-nsn.gov/justice/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Idaho section, entry 'Coeur d’Alene Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.cdatribe-nsn.gov/tribaldepts/justice.aspx)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the page of the same court this profile
+    also lists as “Tribal Court”, which the court review confirmed (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-053.'
 dispute_resolution:
   provisions:
   - kind: arbitration

@@ -140,7 +140,7 @@ Trevor set these rules on Nov. 22, 2026, after reading the first print draft of 
 | Numbers | Words for one to nine, numerals for 10 and above, numerals always for sections, dates, money and percentages | Project choice |
 | People | "They" for a person whose pronouns are unknown or for an unspecified person | Project choice |
 | Capitalization | As set in each glossary entry (for example Native, Indigenous, Tribal; lowercase sovereignty) | [terminology.md](terminology.md) |
-| Links | Descriptive link text, never "click here" | Project choice |
+| Links | Descriptive link text, never "click here". On the website, link to the site's page (`/charter`, `/licenses`), never to GitHub unless the link's words say it goes to GitHub, and never name internal project documents such as decision records or `docs/` files | Project choice; Trevor, Nov. 22, 2026; [site/DESIGN.md](../site/DESIGN.md), section 6, "Links stay on the site" |
 | Acronyms | Allowed for named things (NARF, ISBN); link the first use in each piece to its glossary entry so the build writes it out, with the words it stands for capitalized: "Alternative Dispute Resolution (ADR)" | [terminology.md](terminology.md); Trevor, Nov. 22, 2026 |
 
 ## 7. Files, encoding and code

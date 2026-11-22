@@ -125,7 +125,9 @@ Findings recorded in records:
 - **Southern Ute**: no peacemaking program in Title 1 or the Appendix C court rules; Title 1 provides for advisors on custom and for hearing officers to consult elders (`southern-ute-title-1-general-provisions-2026`).
 - The National Indian Gaming Commission report and H.R. 1502 are U.S. government works, so their records now allow the site to serve the copies.
 
-# Hand-pulled documents, batch 4
+Batch 3 (same day): Trevor sent six Part 1 files (the NMAI floor plan, three Navajo Peacemaking Program items, the Navajo Judicial Branch FY 2026 fourth quarter report and R. v. Powley) and said the other Part 1 links failed. He then sent 16 constitution files for Part 2e (14 new, 2 repeats) and the contents page of the Navajo Rules for Declaratory Rulings. All are indexed in `research/capture-index.csv` and wait for the next upload run. The brochure record was checked against the October 2025 PDF. The write-up is `research/pull-results/2026-11-22-hand-pulled-batch-3.md` in the project files.
+
+## Hand-pulled documents, batch 4
 
 The lead author sent 13 files for the Foundations thread: Westlaw prints, with KeyCite flags, of nine cases on the pull list (Tsosie, Elk, Richard, Jones, Downes v. Bidwell, Tuaua, Fitisemanu, Wabol v. Villacrusis and Davis v. Guam) and four book reviews. All were new, filed in the bucket and checked by download and hash (13 of 13). The case prints are filed under `westlaw/` and never served; their records are in the Foundations pull request, which adds the `file` blocks. The reviews got source records of their own. Full list: the pull-results write-up for batch 4 in the project files.
 
@@ -133,3 +135,5 @@ The lead author sent 13 files for the Foundations thread: Westlaw prints, with K
 - **Fitisemanu v. United States**: the words "traditional, racially-based land alienation rules" are not in the reported opinion; the nearest passage is at 1 F.4th at 866, on racial restrictions on land ownership.
 - **Wabol v. Villacrusis**: the current text is 958 F.2d 1450, as amended Mar. 16, 1992, which amends the opinion at 908 F.2d 411.
 - **Reviews, not books**: the pull list asked for pages from Prucha, Williams and Kauanui; reviews of each arrived instead (plus one of the 1982 Cohen's Handbook), so the book requests stay open.
+
+Batch 5 (same day): Trevor sent three files for the ★ searches. His V.I. Rules of Civil Procedure text matches the court's 2019 PDF; Promulgation No. 2023-003 (found on the Supreme Court's site) supplies the 2023 amendments, so `vi-r-civ-p-90-civil-mediation` now has the current Rule 90. His "Rule40.pdf" is the Supreme Court's e-filing rule, but Promulgation No. 2017-001 settles that Superior Court Rule 40 was repealed as inconsistent with the 2017 civil rules. His LexJuris print of Ley 147-2024 has no L.P.R.A. cites; a March 27, 2026 Court of Appeals resolution gives 32 L.P.R.A. sec. 3230 et seq. The write-up is `research/pull-results/2026-11-22-hand-pulled-batch-5.md` in the project files.

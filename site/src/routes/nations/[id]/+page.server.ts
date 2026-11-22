@@ -1,11 +1,11 @@
 import { error } from '@sveltejs/kit';
+import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
 import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
-	sources as sourceRecords,
 	type CitedFact,
 	type NationRecord
 } from '#lib/server/content.ts';
@@ -274,7 +274,11 @@ export const load: PageServerLoad = ({ params }) => {
 			law: [],
 			documents: [],
 			map: undefined,
-			sources: []
+			sources: [],
+			outline: {
+				title: page.officialName,
+				items: [{ label: 'Review status', link: '#review-status' }]
+			} satisfies PageOutline as PageOutline
 		};
 	}
 
@@ -285,22 +289,31 @@ export const load: PageServerLoad = ({ params }) => {
 	const shownImage = (record.official_images ?? []).find(
 		(image) => image.private_copy && imageMayBeShown(image)
 	);
-	let image: { src: string; kind: string; foundOn?: string; citations: CitationMark[] } | undefined;
+	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
+	// that the nation does not endorse the site, go in its Sources entry,
+	// and a removal request goes through Report a problem.
+	let image: { src: string; kind: string } | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
-		const citations: CitationMark[] = [];
-		sources.citeFact(shownImage, kind, 'As the nation’s website publishes it', citations);
-		const foundOn = shownImage.source ? sourceRecords().get(shownImage.source) : undefined;
-		image = { src: imagePath(record.id), kind, foundOn: webLink(foundOn?.original_link), citations };
+		sources.use(
+			shownImage,
+			kind,
+			'As the nation’s website publishes it. It belongs to the nation, which does not endorse this site.'
+		);
+		image = { src: imagePath(record.id), kind };
 	}
 
 	const nameCitations: CitationMark[] = [];
+	// The name gets a marker only where the page shows the listed name on a
+	// line of its own; otherwise its source is in the Sources list alone
+	// (Trevor, Nov. 22, 2026, asked to remove "Name as the recognizing list gives it").
 	if (record.names.official_source) {
-		sources.cite(
-			record.names.official_source,
-			{ section: 'Name as the recognizing list gives it', text: record.names.official },
-			nameCitations
-		);
+		const nameUse = { section: 'Name as the recognizing list gives it', text: record.names.official };
+		if (displayName(record.names.official) !== record.names.official) {
+			sources.cite(record.names.official_source, nameUse, nameCitations);
+		} else {
+			sources.add(record.names.official_source, nameUse);
+		}
 	}
 	const selfDesignations = (record.names.self_designation ?? []).map((fact) => {
 		const citations: CitationMark[] = [];
@@ -331,7 +344,7 @@ export const load: PageServerLoad = ({ params }) => {
 		};
 	});
 
-	return {
+	const result = {
 		page,
 		image,
 		nameCitations,
@@ -346,4 +359,42 @@ export const load: PageServerLoad = ({ params }) => {
 		documents: documentHistoriesFor(record.id, sources),
 		sources: sources.list
 	};
+
+	// The page's outline, for the sidebar: one entry per heading the page shows.
+	// In the page's order: "At a glance" follows the main text (Trevor, Nov. 22, 2026).
+	const items: OutlineItem[] = [];
+	if (result.features.length > 0) items.push({ label: 'About this Nation', link: '#about-heading' });
+	if (result.courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	if (result.law.length > 0) items.push({ label: 'Published law', link: '#law-heading' });
+	if (result.documents.length > 0) {
+		items.push({
+			label: 'Document history',
+			link: '#documents-heading',
+			children: result.documents.map((document) => ({
+				label: shortDocumentTitle(document.title, [page.listedName, page.officialName]),
+				link: `#document-${document.id}`
+			}))
+		});
+	}
+	const contacts = result.contacts.websites.length > 0 || result.contacts.offices.length > 0;
+	if (result.glance.length > 0 || contacts || result.map) {
+		items.push({ label: 'At a glance', link: '#glance-heading' });
+	}
+	items.push({ label: 'Sources', link: '#sources-heading' });
+
+	return { ...result, outline: { title: page.officialName, items } satisfies PageOutline as PageOutline };
 };
+
+/**
+ * A document's title for the sidebar, without the nation's name that opens it
+ * ("Navajo Nation–State of Arizona Gaming Compact" becomes "State of Arizona
+ * Gaming Compact"), since the sidebar already names the nation above it.
+ */
+function shortDocumentTitle(title: string, names: string[]): string {
+	for (const name of names) {
+		for (const dash of ['–', '-', '—']) {
+			if (title.startsWith(`${name}${dash}`)) return title.slice(name.length + 1);
+		}
+	}
+	return title;
+}

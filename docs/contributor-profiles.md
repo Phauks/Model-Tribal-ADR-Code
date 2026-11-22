@@ -60,7 +60,7 @@ choice too.
 | --- | --- | --- | --- |
 | About you | Given name or names | Yes | To address the person and print a credit |
 | About you | Family name | No | Only to sort the list of credits. "Not everyone’s name fits the first-name, last-name format,"[^govuk-names] and the W3C advises "don't require that people supply a family name."[^w3c-names] A person with one name writes it in the first box |
-| About you | Adult where they live | Yes | Registration on the website is for adults; young people help with a parent or guardian through the request form and the young contributor consent form, and the website takes nothing from a child under 13 ([docs/contributions.md](contributions.md#contributors-under-the-age-of-majority)) |
+| About you | Adult where they live | Yes | Registration on the website is for adults; young people help with a parent or guardian through the request form and the consent for minors form, and the website takes nothing from a child under 13 ([docs/contributions.md](contributions.md#contributors-under-the-age-of-majority)) |
 | Contact | Email address | Comes from sign-in | Proved by the sign-in code, so it cannot be mistyped or claimed by someone else |
 | Contact | Phone number | Only if the person asks to be called or texted | "Only collect phone numbers from people if you genuinely need them,"[^govuk-phone] in any format, with country or area code[^govuk-phone] |
 | Contact | Best way to reach you | No (email by default) | GOV.UK: "Not everyone has or can use a phone, so make sure you give users a choice about how they can be contacted."[^govuk-phone] |
@@ -83,7 +83,7 @@ authority to control, [decision record 0001](decisions/0001-adopt-care-principle
 
 | Choice | Next |
 | --- | --- |
-| Write an essay or commentary | A short biography for the list of contributors, and a co-author agreement before the writing is used ([contributions.md](contributions.md#forms-not-drafted-here)). Drafts are edited in the workspace once the lead author gives access |
+| Write an essay or commentary | A short biography for the list of contributors, and a co-author agreement before the writing is used ([contributions.md](contributions.md#forms-not-yet-drafted)). Drafts are edited in the workspace once the lead author gives access |
 | Review drafts | Workspace access, given by the lead author |
 | Share knowledge or experience | A filing with its own contributor statement for anything shared ([contributions.md](contributions.md)). Registering never counts as permission to use material |
 | Find and check sources | Access to sources and research notes |
@@ -133,15 +133,21 @@ standard in 2022,[^credit] because the book credits people by section rather
 than by task. If the project later lists who did what for each essay, CRediT's
 roles are the ones to use (project analysis).
 
+### Credits in the book
+
+The lead author downloads the book's Credits page from the workspace Contributors page (`/workspace/contributors/credits.md`, lead author only). The file holds only credits that people chose to have in the book, grouped as Advisors, Contributors, Reviewers and Thanks, each sorted by family name. Every name and biography is escaped so it prints as written and cannot become a citation, link or heading. Before each edition, the lead author asks everyone credited to check their credit, then saves the file as `content/front-matter/credits.md`. The print pipeline prints it after the Acknowledgments (`FRONT_MATTER_ORDER` in `pdf/pipeline/book.mjs`). The code is in `site/src/lib/credits-export.ts`.
+
+### Credits on the website
+
+The public `/contributors` page lists credits that people chose to have on the website, read live from the last confirmed versions, so the book and the website can differ by each person's choice. It is not built ahead of time and is cached for five minutes. The Acknowledgments page links to it.
+
+## Keeping and deleting
+
+A declined registration is deleted, with its answers and every confirmed version, 12 months after the decision (`deleteExpiredDeclinedProfiles` in `site/src/lib/server/contributor-profiles.ts`). The check runs each time the workspace Contributors page opens, like the request purge, so no scheduled job is needed. The history keeps only that a profile was deleted and why.
+
 ## Leaving
 
-The person can delete their profile from the profile page at any time. That
-deletes their answers and every confirmed version at once; the history keeps
-only that a profile was deleted. A credit already printed cannot be recalled,
-and the next edition leaves it out (the same rule as
-[contributions.md](contributions.md#change-restriction-and-withdrawal)).
-Workspace access is separate and is ended by the lead author on the People
-page.
+The person can delete their profile from the profile page at any time. That deletes their answers and every confirmed version at once; the history keeps only that a profile was deleted. A credit already printed cannot be recalled, and the next edition leaves it out (the same rule as [contributions.md](contributions.md#changes-and-withdrawal)). Workspace access is separate and is ended by the lead author on the People page.
 
 ## How it is built
 
@@ -153,29 +159,17 @@ page.
   of the answers and the previewed credit line). History goes to the shared
   `events` table with target `profile`, which migration 0002 (permission
   tiers) allows.
-- **Pages:** `/join` (public, built ahead of time), `/profile`,
-  `/profile/edit`, `/profile/review`, `/workspace/contributors` and
-  `/workspace/contributors/<identifier>`. All work without JavaScript. The
-  profile pages are never cached or framed, like the workspace.
+- **Pages:** `/join` (public, built ahead of time), `/contributors` (public, live), `/profile`, `/profile/edit`, `/profile/review`, `/workspace/contributors` and `/workspace/contributors/<identifier>`. All work without JavaScript. The profile pages are never cached or framed, like the workspace.
 - **Sign-in:** `src/routes/sign-in/callback/+server.ts` sends a verified
   account that is not on the People list to `/profile` instead of refusing
   it. `src/hooks.server.ts` sets `locals.account` on profile and workspace
   pages; `requirePerson` sends an account without workspace access to its
   profile.
-- **Tests:** `tests/contributors.test.ts` (credit lines, required answers, the
-  form) and `tests/contributor-profiles.test.ts` (drafts stay private,
-  versions, credits only from confirmed versions, workspace access, deletion).
+- **Tests:** `tests/contributors.test.ts` (credit lines, required answers, the form), `tests/contributor-profiles.test.ts` (drafts stay private, versions, credits only from confirmed versions, workspace access, deletion, the 12-month cleanup) and `tests/credits-export.test.ts` (the book's Credits page).
 
 ## Not built yet
 
-- Email to the lead author when a registration arrives, and to contributors
-  before each edition goes to print. Until then, the Contributors page shows
-  how many registrations are waiting.
-- Deleting personal details of declined registrations after a set time.
-  Proposal: 12 months after the decision, as for requests.
-- Exporting the credits to the print pipeline. The workspace list is the
-  source; the export is a later step of the print track.
-- A public list of contributors on the website.
+- Email to the lead author when a registration arrives, and to contributors before each edition goes to print. This waits on a domain for sending email. Until then, the Contributors page shows how many registrations are waiting.
 
 ## References
 
