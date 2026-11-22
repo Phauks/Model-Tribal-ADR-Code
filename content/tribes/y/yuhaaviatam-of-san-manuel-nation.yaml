@@ -280,19 +280,23 @@ gaming:
   - state: CA
     status: deemed-approved
     dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
-      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
-      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
-      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
-      or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
-      Community compact, which follows the form California has used in its recent compacts; many California
-      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      and must meet and confer within 30 days; if unresolved either party may seek arbitration before
+      a JAMS arbitrator under JAMS Comprehensive Arbitration, with an optional JAMS appeal, though neither
+      is required to agree to arbitrate, and disputes not resolved by arbitration or other agreed means
+      may go to the United States District Court (or a state court if the federal court lacks jurisdiction)
+      for injunctive, declaratory or specific-performance relief only, under a limited waiver of sovereign
+      immunity.
+    dispute_resolution_locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS., Sec. 13.1(d) and Sec. 13.2.
+      Arbitration Rules for the Tribe and the State.
+    source: compact-ca-yuhaaviatam-of-san-manuel-nation-2017-04-10
+    confidence: high
+    verification: read-in-full
+    as_of: '2017-04-10'
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS., Sec. 13.1(d) and Sec. 13.2. Arbitration Rules
+      for the Tribe and the State.
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 253, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-ca-cher-ae-heights-indian-community-of-the-2026 without
+      reading, and it left out the optional arbitration step that comes before court. Status copied from
       this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
       Gaming list (2018-01-22).
   ordinances:

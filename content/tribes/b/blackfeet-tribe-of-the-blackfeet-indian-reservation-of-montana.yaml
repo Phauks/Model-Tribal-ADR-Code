@@ -377,19 +377,21 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: MT
     status: approved
-    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
-      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
-      either party may terminate after giving 90 days' written notice and an opportunity to cure.
-    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
-    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
-    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
-      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
-      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
-      (1996-10-25).
+    dispute_resolution_summary: The interim agreement has no arbitration, mediation or other dispute resolution
+      procedure; for substantial failure either party may terminate after giving 30 days' written notice
+      and an opportunity to cure.
+    dispute_resolution_locator: IX. DEFAULT AND TERMINATION (heading garbled by OCR), B. Default by State.
+    source: compact-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1996-10-25
+    confidence: high
+    verification: read-in-full
+    as_of: '1996-10-25'
+    locator: IX. DEFAULT AND TERMINATION (heading garbled by OCR), B. Default by State.
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 14, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-mt-confederated-salish-and-kootenai-tribes-2026 without
+      reading, and it gave 90 days' notice for a substantial and continuing default and a clause on jurisdictional
+      disputes by mutual consent, where this agreement has 30 days and no such clause. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (1996-10-25).
   ordinances:
   - approved: '1997-12-01'
     link: https://www.nigc.gov?wpdmdl=3422&ind=3425

@@ -506,19 +506,20 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: MT
     status: approved
-    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
-      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
-      either party may terminate after giving 90 days' written notice and an opportunity to cure.
-    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
-    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
-    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
-      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
-      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
-      (2014-02-07).
+    dispute_resolution_summary: The agreement has no arbitration, mediation or other dispute resolution
+      procedure; either party may terminate it for the other's substantial and continuing failure to perform
+      if it gave 90 days' written notice and the default was not cured within 90 days.
+    dispute_resolution_locator: X. DEFAULT AND TERMINATION, A. Default - Tribe (and B. Default - State)
+    source: compact-mt-crow-tribe-of-montana-1998-06-12
+    confidence: high
+    verification: read-in-full
+    as_of: '1998-06-12'
+    locator: X. DEFAULT AND TERMINATION, A. Default - Tribe (and B. Default - State)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 47, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-mt-confederated-salish-and-kootenai-tribes-2026 without
+      reading, and it included a clause on resolving jurisdictional disputes by mutual consent that this
+      compact does not have. Status copied from this nation's most recent approved or deemed-approved
+      entry for this state in the Office of Indian Gaming list (2014-02-07).
   ordinances:
   - approved: '1994-02-08'
     link: https://www.nigc.gov?wpdmdl=9699&ind=9717

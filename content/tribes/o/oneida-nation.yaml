@@ -641,20 +641,24 @@ gaming:
       citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
   - state: WI
     status: deemed-approved
-    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
-      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
-      mediation or arbitration only by mutual agreement.
-    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
-    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
-    confidence: medium
-    verification: inferred
-    as_of: '1992-08-10'
-    locator: Section XXIII (Dispute Resolution) of the 1992 compact
-    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
-      compact; later amendments renumbered this section XXIV and revised it for at least some nations
-      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
-      from this nation's most recent approved or deemed-approved entry for this state in the Office of
-      Indian Gaming list (2025-06-30).
+    dispute_resolution_summary: After written notice, representatives designated by the Governor of Wisconsin
+      and the Nation meet within 20 days, and if the dispute is not resolved within 30 days of the notice
+      either party may serve a written demand for arbitration before a panel of three arbitrators (each
+      side names one and those two name a third), with mediation only by written agreement and no arbitration
+      of disputes under certain listed articles.
+    dispute_resolution_locator: 'XXII. DISPUTE RESOLUTION. (Second Amendment item 23: XXIII. Negotiation;
+      XXIV. Mediation; XXV. Arbitration; renumbered Article XXIII by the 2021 Third Amendment)'
+    source: compact-wi-oneida-nation-2003-07-22
+    confidence: high
+    verification: read-in-full
+    as_of: '2003-07-22'
+    locator: 'XXII. DISPUTE RESOLUTION. (Second Amendment item 23: XXIII. Negotiation; XXIV. Mediation;
+      XXV. Arbitration; renumbered Article XXIII by the 2021 Third Amendment)'
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 132, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-wi-menominee-indian-tribe-of-wisconsin-1992 without reading,
+      and it described the 1992 compact's clause, which a later amendment replaced. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2025-06-30).
   ordinances:
   - approved: '1994-05-11'
     link: https://www.nigc.gov?wpdmdl=10499&ind=10515

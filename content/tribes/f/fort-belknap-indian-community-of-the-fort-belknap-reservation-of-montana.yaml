@@ -344,17 +344,20 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: MT
     status: deemed-approved
-    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
-      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
-      either party may terminate after giving 90 days' written notice and an opportunity to cure.
-    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
-    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
-    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
-      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
+    dispute_resolution_summary: The agreement has no arbitration, mediation or court dispute procedure;
+      a party may terminate for the other's failure to perform if it gave 90 days' written notice and
+      the default was not agreed to be remedied or actually remedied within those 90 days, and either
+      party may also terminate on 120 days' notice or by mutual consent.
+    dispute_resolution_locator: XII. DEFAULT AND TERMINATION, A. Default by Tribe (and B. Default by State)
+    source: compact-mt-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2007-12-10
+    confidence: high
+    verification: read-in-full
+    as_of: '2007-12-10'
+    locator: XII. DEFAULT AND TERMINATION, A. Default by Tribe (and B. Default by State)
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 58, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-mt-confederated-salish-and-kootenai-tribes-2026 without
+      reading, and it included a clause on jurisdictional disputes by mutual consent that this agreement
+      does not have and required a substantial and continuing default. Status copied from this nation's
       most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
       (2007-12-10).
   ordinances:

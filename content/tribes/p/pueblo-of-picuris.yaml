@@ -182,20 +182,22 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: NM
     status: approved
-    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
-      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
-      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
-      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2007-07-05).
+    dispute_resolution_summary: After written notice, if the allegation is not resolved within twenty
+      days the complaining party may serve a notice to cease the challenged activity, and the responding
+      party may stop it or invoke binding arbitration before attorney arbitrators (one picked by each
+      side and a third picked by those two, or by the American Arbitration Association if they do not
+      agree), with results enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-nm-pueblo-of-picuris-2007-07-05
+    confidence: high
+    verification: read-in-full
+    as_of: '2007-07-05'
+    locator: SECTION 7. Dispute Resolution.
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 154, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-nm-pueblo-of-santa-ana-2016 without reading, and it limited
+      the procedure to violations found within two years, a limit this clause does not have. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2007-07-05).
   ordinances:
   - approved: '2009-02-12'
     link: https://www.nigc.gov?wpdmdl=10754&ind=10774

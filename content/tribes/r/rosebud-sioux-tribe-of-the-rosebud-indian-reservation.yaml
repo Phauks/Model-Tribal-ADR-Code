@@ -788,21 +788,20 @@ gaming:
       number through the Federal Register API (source federal-register-api-gaming-notices).'
   - state: SD
     status: deemed-approved
-    dispute_resolution_summary: Either party may bring a dispute over interpretation of the compact in
-      federal district court, while a separate three-person binding Arbitration Board that includes the
-      chairs of the state and tribal gaming commissions decides contested license-suitability and slot
-      machine compliance findings.
-    dispute_resolution_locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration
-      procedure
-    source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
-    confidence: medium
-    verification: inferred
-    as_of: '2019-04-01'
-    locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
-    note: state model compact; nation-specific text not checked. The same federal-court clause appears
-      in the 2019 Sisseton-Wahpeton Oyate compact (Section 13.1) and the 2016 Yankton Sioux Tribe compact
-      (Section 14.1); other South Dakota compacts were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-03-15).
+    dispute_resolution_summary: The compact has no dispute resolution procedure or arbitration board;
+      either party may terminate it for a substantial breach after written notice and at least 30 days,
+      and nothing in it limits the parties' remedies under the Indian Gaming Regulatory Act.
+    dispute_resolution_locator: 10.5 Termination for Cause.
+    source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2024-03-15
+    confidence: high
+    verification: read-in-full
+    as_of: '2024-03-15'
+    locator: 10.5 Termination for Cause.
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 177, research/reviews/2026-11-22-compact-clauses-recheck.json);
+      the summary had been copied from compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019 without
+      reading, and it described a federal court action and an arbitration board that this 2024 compact
+      does not have. Status copied from this nation's most recent approved or deemed-approved entry for
+      this state in the Office of Indian Gaming list (2024-03-15).
   ordinances:
   - approved: '1994-04-11'
     link: https://www.nigc.gov?wpdmdl=10918&ind=10936

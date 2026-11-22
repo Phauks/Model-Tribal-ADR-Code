@@ -252,20 +252,23 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: NM
     status: approved
-    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
-      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
-      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
-      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (1995-06-12).
+    dispute_resolution_summary: After written notice, State and Pueblo representatives meet within thirty
+      days, and if the allegation is not resolved within ninety days the complaining party may serve a
+      notice to cease the challenged activity, after which the responding party must within thirty days
+      stop it or invoke arbitration under American Arbitration Association Commercial Arbitration Rules
+      before three attorney arbitrators (the third chosen by the American Arbitration Association if needed),
+      and arbitration results are enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: SECTION 7. Dispute Reso1ution.
+    source: compact-nm-pueblo-of-san-ildefonso-1995-06-12
+    confidence: high
+    verification: read-in-full
+    as_of: '1995-06-12'
+    locator: SECTION 7. Dispute Reso1ution.
+    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 157, research/reviews/2026-11-21-compact-clauses.json);
+      the summary had been copied from compact-nm-pueblo-of-santa-ana-2016 without reading, and it gave
+      a two-year limit and a 20-day notice period, where this clause has no time limit, a 30-day meeting
+      and 90 days before a notice to cease. Status copied from this nation's most recent approved or deemed-approved
+      entry for this state in the Office of Indian Gaming list (1995-06-12).
   ordinances:
   - approved: '1995-07-14'
     link: https://www.nigc.gov?wpdmdl=10786&ind=10802
