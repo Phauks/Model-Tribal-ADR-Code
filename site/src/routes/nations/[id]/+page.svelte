@@ -183,7 +183,7 @@
 				</div>
 			{/if}
 
-			<!-- 8. Other nations in the same states: plain lists, never a ranking -->
+			<!-- 9. Other nations in the same states: plain lists, never a ranking -->
 			{#if data.neighbors.length > 0}
 				<div class="no-print">
 					<Collapsible heading="Other nations in the same states" identifier="neighbors-heading">
@@ -205,7 +205,7 @@
 				</div>
 			{/if}
 
-			<!-- 9. Sources -->
+			<!-- 10. Sources -->
 			<p class="no-print">
 				Know of a published source we have missed?
 				<a href="/requests?kind=contribute&record={record}">Add it</a>.
