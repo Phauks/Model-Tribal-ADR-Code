@@ -1,0 +1,68 @@
+profile: content/tribes/s/samish-indian-nation.yaml
+topic: dispute-resolution
+status: partly-searched
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/tribal-law/documents.json
+  query: nation samish-indian-nation
+  outcome: not-found
+  reason: The tribal law text collection fetched 1 document(s) linked from this nation's profile (1 with
+    text) and found no dispute resolution provision in them.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: constitutions catalog (private article readings)
+  outcome: not-found
+  reason: The constitutions catalog holds no constitution text for this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/samish.html
+  query: dispute resolution words
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.samishtribe.nsn.us/
+  query: code, ordinance, law, court, judicial, justice, peacemaking, mediation, dispute (links, sitemap,
+    site search)
+  outcome: blocked
+  reason: 'The address could not be read: robots.txt asks automated clients not to fetch this address.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: https://samish.tribal.codes/
+  query: dispute resolution words
+  outcome: blocked
+  reason: 'The address could not be read: the site returned HTTP 403 to the project''s link checker.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.json
+  query: reading (Claude Opus 5.5) of the gathered passages and leads
+  outcome: not-found
+  reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
+    held no lead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.md
+  query: second reading of a fixed 10 percent sample of nations with nothing found (seed 20261122)
+  outcome: not-found
+  reason: 'Second reading: confirm. Re-read every cached page for this nation with wider words (peace,
+    circle, conflict, dispute, grievance, elders'' panel, Tribal court) and found no dispute resolution
+    forum, program or provision of this nation.'
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://samish.tribal.codes/;
+  https://www.samishtribe.nsn.us/.'

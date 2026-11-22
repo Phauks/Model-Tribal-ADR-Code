@@ -1,0 +1,54 @@
+profile: content/tribes/k/kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation.yaml
+topic: dispute-resolution
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/tribal-law/documents.json
+  query: nation kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation
+  outcome: not-found
+  reason: The tribal law text collection fetched 5 document(s) linked from this nation's profile (4 with
+    text) and found no dispute resolution provision in them; 1 could not be read (no text layer, blocked
+    or failed).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: constitutions catalog (private article readings)
+  query: topics dispute-resolution, peacemaking
+  outcome: not-found
+  reason: The constitutions catalog read 3 constitution text(s) for this nation and marked no article
+    as concerning dispute resolution or peacemaking (election disputes and judicial power not counted).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/kaibab_paiute.html
+  query: dispute resolution words
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.kaibabpaiute-nsn.gov/index.php
+  query: code, ordinance, law, court, judicial, justice, peacemaking, mediation, dispute (links, sitemap,
+    site search)
+  outcome: not-found
+  reason: Read 3 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.json
+  query: reading (Claude Opus 5.5) of the gathered passages and leads
+  outcome: not-found
+  reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
+    held no lead.
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

@@ -1,0 +1,71 @@
+profile: content/tribes/s/seneca-nation-of-indians.yaml
+topic: dispute-resolution
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/tribal-law/documents.json
+  query: nation seneca-nation-of-indians
+  outcome: not-found
+  reason: The tribal law text collection holds no document for this nation, because its profile cites
+    no law code, court rules or dispute resolution link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: constitutions catalog (private article readings)
+  query: topics dispute-resolution, peacemaking
+  outcome: not-found
+  reason: The constitutions catalog read 2 constitution text(s) for this nation and marked no article
+    as concerning dispute resolution or peacemaking (election disputes and judicial power not counted).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: content/tribes/s/seneca-nation-of-indians.yaml
+  query: justice_institutions
+  outcome: not-found
+  reason: The profile lists 2 peacemaking or traditional program(s) under justice_institutions but nothing
+    under dispute_resolution. On review none is a dispute resolution forum or provision of this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: content/sources/ (peacemaking and stories research)
+  outcome: not-found
+  reason: 'Source records from the peacemaking and stories research name this nation: seneca-nation-judicial-page.
+    On review none is a dispute resolution forum or provision of this nation (Source for the same court).'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/seneca_nation.html
+  query: dispute resolution words
+  outcome: not-found
+  reason: Pages mention dispute resolution words, but on reading none describes a dispute resolution forum,
+    program or provision of this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sni.org/
+  query: code, ordinance, law, court, judicial, justice, peacemaking, mediation, dispute (links, sitemap,
+    site search)
+  outcome: not-found
+  reason: Pages mention dispute resolution words, but on reading none describes a dispute resolution forum,
+    program or provision of this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.json
+  query: reading (Claude Opus 5.5) of the gathered passages and leads
+  outcome: not-found
+  reason: '2 lead(s) kept on the first reading were set aside on the second: The Nation''s page describes
+    the Peacemakers Court as its court of general jurisdiction with elected Peacemakers; per the brief,
+    a ''peacemaker'' who is a judge is not counted.'
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

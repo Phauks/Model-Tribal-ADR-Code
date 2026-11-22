@@ -1,0 +1,69 @@
+profile: content/tribes/a/anvik-village.yaml
+topic: dispute-resolution
+status: none-found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/tribal-law/documents.json
+  query: nation anvik-village
+  outcome: not-found
+  reason: The tribal law text collection holds no document for this nation, because its profile cites
+    no law code, court rules or dispute resolution link.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: constitutions catalog (private article readings)
+  outcome: not-found
+  reason: The constitutions catalog holds no constitution text for this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/trialcourts/rjp.htm
+  query: restorative justice plans
+  outcome: not-found
+  reason: The Alaska Court System's list of restorative justice referral plans has no plan for this nation.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/anvik.html
+  query: dispute resolution words
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://anviktribalcouncil.com/
+  query: code, ordinance, law, court, judicial, justice, peacemaking, mediation, dispute (links, sitemap,
+    site search)
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.json
+  query: reading (Claude Opus 5.5) of the gathered passages and leads
+  outcome: not-found
+  reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
+    held no lead.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.md
+  query: second reading of a fixed 10 percent sample of nations with nothing found (seed 20261122)
+  outcome: not-found
+  reason: 'Second reading: confirm. Re-read every cached page for this nation with wider words (peace,
+    circle, conflict, dispute, grievance, elders'' panel, Tribal court) and found no dispute resolution
+    forum, program or provision of this nation.'
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

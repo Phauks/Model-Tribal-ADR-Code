@@ -1,0 +1,84 @@
+profile: content/tribes/q/qagan-tayagungin-tribe-of-sand-point.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/tribal-law/documents.json
+  query: nation qagan-tayagungin-tribe-of-sand-point
+  outcome: not-found
+  reason: The tribal law text collection fetched 20 document(s) linked from this nation's profile (19
+    with text) and found no dispute resolution provision in them; 3 passage(s) with dispute resolution
+    words were judged not to be provisions; 1 could not be read (no text layer, blocked or failed).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: constitutions catalog (private article readings)
+  query: topics dispute-resolution, peacemaking
+  outcome: not-found
+  reason: The constitutions catalog's readings mark 1 article(s) of this nation's constitution as concerning
+    dispute resolution or peacemaking. On review none is a dispute resolution forum or provision of this
+    nation (Removal of members or officials for misconduct).
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/trialcourts/rjp.htm
+  query: restorative justice plans
+  outcome: found
+  reason: The Alaska Court System lists a restorative justice referral plan for 'Qagan Tayagungin Tribe
+    of Sand Point'.
+  records:
+  - research/reviews/2026-11-22-dispute-resolution-coverage.json#qagan-tayagungin-tribe-of-sand-point-1
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/qagan_tayagungin.html
+  query: dispute resolution words
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.qttribe.org/
+  query: code, ordinance, law, court, judicial, justice, peacemaking, mediation, dispute (links, sitemap,
+    site search)
+  outcome: not-found
+  reason: Read 12 page(s) (home page, sitemap and linked law, court and justice pages); none mentions
+    mediation, arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: http://www.qttribe.org/index.asp?Type=B_BASIC&SEC={4AAD77D9-6F8E-4B6D-BDF1-FB858C7BCE35}
+  query: dispute resolution words
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: http://www.qttribe.org/index.asp?Type=B_BASIC&SEC={5BE49282-796D-4699-A4F6-E82B7C2AF8D1}
+  query: dispute resolution words
+  outcome: not-found
+  reason: Read 1 page(s) (home page, sitemap and linked law, court and justice pages); none mentions mediation,
+    arbitration, peacemaking, circles, elders' panels or dispute resolution.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/reviews/2026-11-22-dispute-resolution-coverage.json
+  query: first and second reading (Claude Opus 5.5) of the gathered passages and leads
+  outcome: found
+  reason: 1 candidate(s) kept for the lead author's review (Gate 1); none is in the profile yet.
+  records:
+  - research/reviews/2026-11-22-dispute-resolution-coverage.json#qagan-tayagungin-tribe-of-sand-point-1
+next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile.

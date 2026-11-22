@@ -56,3 +56,8 @@ after the lead author's review.
 dispute resolution searches by Bureau of Indian Affairs region, and failed
 searches by kind of place and outcome.
 
+## Logs so far
+
+| Topic | Nations | Made by | Review |
+| --- | --- | --- | --- |
+| `dispute-resolution` | The 395 federally recognized nations with no dispute resolution record on Nov. 22, 2026; the other 373 profiles without one are marked `not-searched` | [`scripts/review/coverage_search.py`](../../scripts/review/coverage_search.py) | [Dispute resolution coverage, Nov. 22, 2026](../reviews/2026-11-22-dispute-resolution-coverage.md) |

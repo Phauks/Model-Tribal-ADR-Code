@@ -69,6 +69,17 @@ and fill in the `verification` level from [decision record 0014](../docs/decisio
 | `review/court_listings.py` | `gather` fetches the listed link, the nation's website and its court pages for every court listed from a directory, and keeps the passages that mention a court; it never changes a profile | `pip install -r scripts/requirements.txt requests beautifulsoup4` |
 | `review/gap_review.py` | `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md); `levels` sets `verification` on every profile fact that has none (except provisions) from the fact's note or its group's level in `research/reviews/2026-11-21-verification-levels.json`, adding only that key; `apply` makes the review's clear fixes (copied compact clauses both reviewers found the same, cited to the nation's own compact; dead court links replaced with the court page the review fetched); `rewrite-compacts` rewrites copied compact clauses from the nation's own compact (both Nov. 21 reviewers found them different, or the Nov. 22 re-check in `research/reviews/2026-11-22-compact-clauses-recheck.json` came out clear) and cites that compact | `pip install -r scripts/requirements.txt` |
 
+## Dispute resolution coverage search
+
+Run by hand, never in continuous integration. It follows up row 2 of the
+[dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and
+writes the [search logs](../research/search-logs/README.md) of decision record
+0025. It never changes a profile.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/coverage_search.py` | `gather` reads what the project already holds for every federally recognized nation with no dispute resolution record (tribal law texts, constitution readings, justice institutions, raw facts, peacemaking sources, the Alaska Court System's restorative justice plans), then fetches its National Indian Law Library page, its website (home page, sitemap, site search and linked law and court pages), court pages and code links with an honestly named link checker that obeys robots.txt and logs a refusal as `blocked`, keeping passages around dispute resolution words in a private work folder; `batches` writes review batches and a fixed 10 percent sample of nations with nothing found; `second` re-fetches the evidence page of every first-pass candidate for the second reader; `merge` drops candidates the second reader set aside and writes `research/reviews/2026-11-22-dispute-resolution-coverage.{json,csv}` (empty decision column), a counts file and one search log per profile | `pip install -r scripts/requirements.txt requests beautifulsoup4`, plus `pdftotext` |
+
 ## Gaming compacts and ordinances
 
 Run by hand, never in continuous integration. They build the catalog in
