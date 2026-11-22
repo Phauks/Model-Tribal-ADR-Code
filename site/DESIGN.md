@@ -189,11 +189,9 @@ its fixed sections on each nation's page:
    oldest first, its dates, what it did to earlier versions (amended,
    replaced), whether it is in effect, and how its key clauses changed
    ([decision record 0018](../docs/decisions/0018-document-version-history.md)).
-   A line under each title names the versions in effect. Each version's
-   source is listed under the document's title in Sources.
+   A line under each title names the versions in effect. Each version ends with the markers of its sources, which are also listed under the document's title in Sources.
 8. Notices and Labels from Local Contexts.
-9. Sources, each followed by the facts on the page that come from it, and
-   the date the page was last checked.
+9. Sources, each with links back to the markers that cite it, followed by the facts on the page that come from it, and the date the page was last checked.
 
 **What is distinctive here** has two parts:
 
@@ -201,7 +199,7 @@ its fixed sections on each nation's page:
   approves. Until then the space says so and offers a link to contribute;
   the project never writes it for the nation.
 - **Recorded features.** Short sentences generated from the record's cited
-  facts, each listed under its sources in the Sources section, for example: a peacemaking program beside the
+  facts, each followed by the markers of its sources, for example: a peacemaking program beside the
   Tribal court (`justice_institutions`, `dispute_resolution.forums`); a
   published peacemaking or mediation law (`dispute_resolution_law`); a court
   of appeals; presence in more than one state (`states`); a heritage language
@@ -234,13 +232,7 @@ filled in, for example `/requests?kind=correct&record=tribes/<id>`. Trevor
 asked on 2026-11-21 for one link per page instead of one beside every fact,
 which repeated the same link down the page.
 
-**Sources.** The sources of a nation page's facts are listed together in a
-"Sources" section at the end of the page, not beside each fact (Trevor,
-2026-11-21). Each source appears once, numbered, followed by every fact on
-the page that comes from it, grouped by the heading the fact appears under,
-with the place in the source and the date the value was true. Every fact
-stays traceable to its source; the reader finds it by source rather than by
-a mark beside the fact.
+**Sources.** Each fact on a nation page ends with a numbered marker for each of its sources, as Wikipedia cites, and the sources are listed together in a "Sources" section at the end of the page (Trevor, Nov. 22, 2026; this replaced the rule of Nov. 21, 2026, that kept citations out of the text and listed them only at the end). Each source appears once, numbered in the order the page first cites it, with links back to the markers that cite it, followed by every fact on the page that comes from it, grouped by the heading the fact appears under, with the place in the source and the date the value was true. A fact with several facts from one source behind it, such as a state with both reservation and trust land, gets one marker for that source. See [Citations](#6-components) for how markers behave.
 
 **Contacts.** An address links to a Google Maps search for it; a phone number
 is a `tel:` link that opens the device's dialer; an email address is a
@@ -297,7 +289,7 @@ exactly. Rules:
 - **Text alignment:** Left aligned (the default) or Justified, asked for by Trevor on Nov. 21, 2026, shown as Lucide's `text-align-start` and `text-align-justify` symbols in one bordered strip (see Icons above). The picked symbol is filled and has a bar under it, so color is not the only cue. Justified applies to reading text in the page's main area (paragraphs, list items, definitions and quotations), not to headings, tables, forms or the masthead, and turns on automatic hyphenation (`hyphens: auto`), which uses each element's `lang` attribute to pick the hyphenation rules.[^mdn-hyphens] Links are never hyphenated, so nation names, citations and addresses stay whole. Left stays the default because WCAG's enhanced visual presentation criterion asks that text not be justified, since uneven word spacing makes reading harder for some readers.[^wcag-148]
 - **Theme:** Match this device, Light or Dark (see [section 8](#8-themes)).
 - **Contrast:** Standard or More. More turns gray text to ink and light dividing lines to the control border color; no new colors are added.
-- **When you select a note number** (Citations): go to the notes at the end of the page (the default), or show the note under the paragraph. The number stays a link to the note, so without scripts it always jumps.
+- **When you select a note number** (Citations): show the source beside the number (the default; on a phone it opens at the bottom of the screen), go to the Sources list at the end of the page, or show the note under the paragraph. The number stays a link to the source's entry in the Sources list, so without scripts it goes there.
 - **Links to sources** (Citations): the original page and the archived copy (the default), the original only, or the archived copy where there is one. An archived copy still opens when the original has moved or gone, which matters for tribal codes whose addresses change ([citation style](../docs/citation-style.md)).
 - **Glossary cards** (Glossary): on (the default) or off. See [Glossary link and hover card](#6-components) below.
 
@@ -313,6 +305,8 @@ Each change applies at once and is kept in the browser's local storage on that d
 - **Layout:** where citations go (note numbers with the Sources list, each note under its paragraph, or no note numbers), whether each outside link prints its web address, and whether defined terms keep their dotted underline. Each choice is offered only when the page has notes, outside links or defined terms.
 
 "Print" at the bottom closes the dialog and opens the browser's print window, where the reader can also save a PDF and set paper size, margins and scale. Text size, font and spacing follow the reading settings. Choices are kept on the device in local storage (`print-options`, non-default values only) and become `data-print-*` attributes on the root element, set before paint by the same inline script as the reading settings; `global.css` reacts to them only inside `@media print`, so the screen never changes and the browser's own Print command follows the same choices. Notes under their paragraphs are copied in on the window's `beforeprint` event and removed on `afterprint`.[^mdn-beforeprint] Without scripts the button is hidden and pages print with every part.
+
+Each section added at the end of a page, now Document history and Sources, starts on a new sheet of paper (`break-before: page`; Trevor, Nov. 22, 2026). A section the reader leaves out is not drawn, so it leaves no blank page, and the main text never starts with a break. New sections of that kind join the rule in `global.css`.
 
 When the model code's provision pages are built, their parts join the list in `src/lib/print-options.ts` the same way: commentary, drafting notes, alternatives and version history are the expected ones. Leaving a part out of a print is a reader's choice; a page's notices (such as "This is a fictitious example") are never optional.
 
@@ -341,26 +335,17 @@ mouse pointer or keyboard focus, not a touch, since a tap follows the link.
 Summaries come from `/glossary/terms.json`, which the glossary pages are built
 with, fetched once when first needed. The Glossary setting turns cards off.
 
-**Glossary pages.** The glossary page and each entry's page are built from
-one module, `src/lib/server/glossary-entries.ts`, and one component,
-`GlossaryEntry.svelte`. An entry's citation is a numbered marker in its text
-that leads to the page's Sources section, where each source is listed once,
-in the project's Indigo Book style (formatted at build time by citeproc-js
-with `pdf/styles/project-law-review.csl`, as the print edition is), followed
-by every entry that cites it, as on nation pages. `/glossary/terms.json`
+**Glossary pages.** The glossary page and each entry's page are built from one module, `src/lib/server/glossary-entries.ts`, and one component, `GlossaryEntry.svelte`. An entry's citation is a numbered marker in its text (see Citations below) for a source in the page's Sources section, where each source is listed once, in the project's Indigo Book style (formatted at build time by citeproc-js with `pdf/styles/project-law-review.csl`, as the print edition is), with links back to its markers and followed by every entry that cites it, as on nation pages. `/glossary/terms.json`
 lists every entry's term, usage and a one or two sentence summary with no
 citations, for the hover cards and for saving offline.
 
-**Citations.** In prose, such as a section's commentary or a glossary entry,
-a numbered marker in the text; on wide screens the note sits in the margin
-beside the line, and on narrow screens it opens inline under the paragraph.
-Until the margin layout is built, the marker links to the notes at the end,
-and the Citations setting can open the note under the paragraph instead.
-Each note links to the original page and, where the source record has one,
-its archived copy with the capture date, for example "archived copy, Nov. 21,
-2026"; the Citations setting can hide either link. Data pages, such as
-a nation's facts, put no marker beside a fact; their sources are listed in a
-Sources section at the end (see [Nation pages](#nation-pages)).
+**Citations.** Every page cites the way Wikipedia does (Trevor asked on Nov. 22, 2026, because a marker that jumps to the end of the page loses the reader's place). A claim, a fact or a sentence ends with a small number in square brackets, such as [3], one for each source; the number is the source's place in the page's Sources section, numbered in the order the page first cites it. Prose (commentary, glossary entries, stories and essays) gets its markers from `[@key]` citations in Markdown (`src/lib/server/markdown.ts`); data pages, such as a nation's facts, get them from the facts' sources (`src/lib/server/source-uses.ts`, `CitationMarks.svelte`). Both write the same HTML (`src/lib/citation-marks.ts`).
+
+- **Beside the marker.** On wide screens, pointing at a marker or moving to it with the keyboard shows the citation in a small window under it, as Wikipedia's Reference Previews do;[^reference-previews] the window stays while the pointer is over it, so its links can be used. Selecting the marker (click or Enter) keeps the window open; from the keyboard, focus moves into it, Tab moves through its links and out of it back to the marker, and Escape closes it and returns focus to the marker. On phones and other screens without hover, selecting a marker opens the citation in a drawer from the bottom of the screen, following Wikipedia's design for its mobile site;[^mobile-references] it is a modal dialog with a Close button, and Escape or a tap on the page behind closes it. Either shows the source's number, the citation (each outside link opens in a new tab and says so to screen readers), the place in the source the marker cites, and a link to the entry in the Sources list. Nothing jumps (`CitationPopup.svelte`).
+- **In the Sources list.** Each entry's number links back to the place in the text that cites the source. A source cited in several places also gets a letter for each, a, b, c (after z come aa, ab), each linking back to one marker, as Wikipedia's backlinks do (Trevor, Nov. 22, 2026). The marker or entry a link goes to is highlighted. On paper the letters are left out and the number stays.
+- **Without scripts,** with the Citations setting "Go to the Sources list," and on paper, a marker is a link to its entry in the Sources list, and the entry's number links back. The Citations setting can instead open the note under the paragraph.
+
+Each note links to the original page and, where the source record has one, its archived copy with the capture date, for example "archived copy, Nov. 21, 2026"; the Citations setting can hide either link. The margin layout planned for wide screens (the note beside the line) is not built; the window beside the marker does its work.
 
 **Panels.** Outlined (`line`) or filled (`surface`). One panel per purpose;
 the design does not chop pages into rows of identical cards (project choice).
@@ -370,7 +355,7 @@ the design does not chop pages into rows of identical cards (project choice).
 
 **Tables.** For data a reader compares across rows. Wide tables scroll inside their own box, so the page never scrolls sideways. Data tables use the `DataTable` component, the project's own, not a data grid library (`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is built with every row in order, as a plain table that reads the same without scripts. Once scripts run, sortable column headers become buttons, following the WAI-ARIA Authoring Practices sortable table example (the sorted header carries `aria-sort`), and a table can get a search box with a live count, though public lists now leave finding to the site search. Sorting and search follow one set of rules in `src/lib/tables/table-definition.ts`: case and accents are ignored, numbers inside text sort as numbers, and empty cells stay last. A long list is split into short pages rather than drawn as one long table or a virtual-scrolling one: the table spike measured that a virtual-scrolling grid left most rows out of the page, so find-in-page, printing and reading without scripts could not reach them (`spikes/tables/REPORT.md`, "SVAR Svelte DataGrid: rejected").
 
-**Recognition.** Wherever a nation's recognition status is shown, its legal basis follows it in parentheses, and each citation in it links to the official text (Trevor asked on Nov. 22, 2026): Code of Federal Regulations parts and sections to the eCFR, United States Code sections to the Legal Information Institute, and the Statutes at Large (from 1951), Public Laws (from 1995) and the Federal Register to GovInfo's link service (`src/lib/legal-citations.ts`). Those are the address forms the project's source records already use. A legal basis with no such citation, such as a state executive order, links to the source the fact came from. Lists show a short form, such as "(25 C.F.R. Part 83)"; the nation's page shows the whole legal basis. This is a link on the authority itself, not a citation marker, so the facts' sources stay in the Sources section.
+**Recognition.** Wherever a nation's recognition status is shown, its legal basis follows it in parentheses, and each citation in it links to the official text (Trevor asked on Nov. 22, 2026): Code of Federal Regulations parts and sections to the eCFR, United States Code sections to the Legal Information Institute, and the Statutes at Large (from 1951), Public Laws (from 1995) and the Federal Register to GovInfo's link service (`src/lib/legal-citations.ts`). Those are the address forms the project's source records already use. A legal basis with no such citation, such as a state executive order, links to the source the fact came from. Lists show a short form, such as "(25 C.F.R. Part 83)"; the nation's page shows the whole legal basis. This is a link on the authority itself, not a citation marker; the fact's own source keeps its marker and its entry in the Sources section.
 
 **Forms.** Labels above fields; hints under labels; "(optional)" in the label;
 large choice buttons for single choices; errors stated in words beside the
@@ -756,3 +741,5 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^lucide-license]: Lucide, *License*, [lucide.dev/license](https://lucide.dev/license) (accessed Nov. 21, 2026). ISC License, with the MIT License for icons drawn from Feather; full text in [`LICENSES/Lucide.txt`](../LICENSES/Lucide.txt).
 [^lucide-svelte]: Lucide, *Lucide for Svelte*, [lucide.dev/guide/svelte](https://lucide.dev/guide/svelte) (accessed Nov. 21, 2026).
 [^lucide-a11y]: Lucide, *Accessibility* (Svelte), [lucide.dev/guide/svelte/advanced/accessibility](https://lucide.dev/guide/svelte/advanced/accessibility) (accessed Nov. 21, 2026).
+[^reference-previews]: MediaWiki, *Help:Reference Previews*, [mediawiki.org/wiki/Help:Reference_Previews](https://www.mediawiki.org/wiki/Help:Reference_Previews) (accessed Nov. 22, 2026) ("shows a preview of a footnote when you hover over its footnote marker").
+[^mobile-references]: MediaWiki, *Mobile design/Reference reveal*, [mediawiki.org/wiki/Mobile_design/Reference_reveal](https://www.mediawiki.org/wiki/Mobile_design/Reference_reveal) (accessed Nov. 22, 2026). A historical design page for Wikipedia's mobile site, whose goal was "to surface a reference when the footnote number is clicked in an article, in a small window that overlays the bottom of the" screen, because the old references "take you away from the page you are reading."

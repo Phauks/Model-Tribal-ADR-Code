@@ -3,11 +3,12 @@
  * nation that has recorded versions (content/documents/, decision record
  * 0018), oldest version first, with what each version did to the ones before
  * it and how its key clauses changed. Like every fact on the page, each
- * version's source is listed in the Sources section, not beside it.
+ * version carries the markers of its sources, which link to the page's
+ * Sources section.
  */
 import { humanize } from '../nation-labels.ts';
 import { documentHistories, type DocumentHistoryRecord, type DocumentVersion } from './content.ts';
-import type { SourceUses } from './source-uses.ts';
+import type { CitationMark, SourceUses } from './source-uses.ts';
 
 export interface VersionChangeView {
 	topic: string;
@@ -26,6 +27,8 @@ export interface VersionView {
 	/** What the version did to earlier ones, e.g. "Replaced the 1993 compact". */
 	relation?: string;
 	changes: VersionChangeView[];
+	/** The markers of the version's source and of its approval notice. */
+	citations: CitationMark[];
 }
 
 export interface DocumentHistoryView {
@@ -109,7 +112,7 @@ function inEffectPhrase(versions: DocumentVersion[]): string | undefined {
 }
 
 /** The part of SourceUses this section needs, so tests can pass a stand-in. */
-type SourceRecorder = Pick<SourceUses, 'add' | 'use'>;
+type SourceRecorder = Pick<SourceUses, 'cite' | 'citeFact'>;
 
 export function documentHistoryView(
 	record: DocumentHistoryRecord,
@@ -118,13 +121,18 @@ export function documentHistoryView(
 	const byId = new Map(record.versions.map((version) => [version.id, version]));
 	const versions = record.versions.map((version): VersionView => {
 		const label = labelOf(version, version.id);
-		sources.use(version, record.title, label);
+		const citations: CitationMark[] = [];
+		sources.citeFact(version, record.title, label, citations);
 		if (version.approval?.source) {
-			sources.add(version.approval.source, {
-				section: record.title,
-				text: `${label}: ${humanize(version.approval.action).toLocaleLowerCase('en-US')}`,
-				where: version.approval.locator
-			});
+			sources.cite(
+				version.approval.source,
+				{
+					section: record.title,
+					text: `${label}: ${humanize(version.approval.action).toLocaleLowerCase('en-US')}`,
+					where: version.approval.locator
+				},
+				citations
+			);
 		}
 		return {
 			id: version.id,
@@ -138,7 +146,8 @@ export function documentHistoryView(
 				topic: humanize(change.topic),
 				change: CHANGE_LABELS[change.change] ?? change.change,
 				summary: change.summary
-			}))
+			})),
+			citations
 		};
 	});
 	return {

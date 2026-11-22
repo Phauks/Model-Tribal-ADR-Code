@@ -1,8 +1,9 @@
 <script lang="ts">
 	// A nation's documents that have recorded versions (decision record 0018),
 	// oldest version first, with how each version changed its key clauses.
-	// Each version's source is listed in the page's Sources section, not beside it.
+	// Each version's label ends with the markers of its sources.
 	import type { DocumentHistoryView } from '#lib/server/document-history.ts';
+	import CitationMarks from './CitationMarks.svelte';
 
 	let { documents }: { documents: DocumentHistoryView[] } = $props();
 </script>
@@ -21,7 +22,8 @@
 				<li>
 					<p class="version-heading">
 						<strong>{version.label}</strong>
-						<span class="muted">({version.event}; {version.inEffect ? 'in effect' : version.status.toLocaleLowerCase('en-US')})</span>
+						<span class="muted">({version.event}; {version.inEffect ? 'in effect' : version.status.toLocaleLowerCase('en-US')})</span
+						><CitationMarks marks={version.citations} />
 					</p>
 					{#if version.dates}<p class="small">{version.dates}.</p>{/if}
 					{#if version.relation}<p class="small">{version.relation}.</p>{/if}

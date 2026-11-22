@@ -1,6 +1,9 @@
 <script lang="ts">
 	// Label and value pairs for a nation's facts (site/DESIGN.md, "Summary list").
-	// Each fact's source is listed in the page's Sources section, not beside it.
+	// Each fact ends with the markers of its sources (CitationMarks).
+	import type { CitationMark } from '#lib/citation-marks.ts';
+	import CitationMarks from './CitationMarks.svelte';
+
 	interface FactGroup {
 		field: string;
 		label: string;
@@ -12,6 +15,7 @@
 			detail?: string;
 			/** A detail with linked citations, such as a recognition status's legal basis. */
 			detailParts?: { text: string; link?: string }[];
+			citations?: CitationMark[];
 		}[];
 	}
 
@@ -35,7 +39,8 @@
 									>({#each item.detailParts as part, partIndex (partIndex)}{#if part.link}<a
 												href={part.link}>{part.text}</a
 											>{:else}{part.text}{/if}{/each})</span
-								>{:else if item.detail}{' '}<span class="muted small">({item.detail})</span>{/if}
+								>{:else if item.detail}{' '}<span class="muted small">({item.detail})</span
+								>{/if}<CitationMarks marks={item.citations} />
 						</li>
 					{/each}
 				</ul>
