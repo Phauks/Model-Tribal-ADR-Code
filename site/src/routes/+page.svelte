@@ -26,6 +26,7 @@
 	</div>
 </div>
 
+<!-- The cards give no counts of what the pages hold, since those change with every update (Trevor, Nov. 22, 2026). -->
 <h2>Contents</h2>
 <div class="contents-band">
 	<section class="panel" aria-labelledby="code-heading">
@@ -39,8 +40,7 @@
 		<h3 id="nations-heading"><a href="/nations">Native nations</a></h3>
 		<p>
 			{#if data.nationCount > 0}
-				A page for each of {data.nationCount.toLocaleString('en-US')} nations and communities, drafted
-				from public sources.
+				A page for each nation and community, drafted from public sources.
 			{:else}
 				One page for every nation and community, drafted from public sources. A sample page shows the
 				layout until the records are published.
@@ -50,12 +50,12 @@
 	{#if data.storyCount > 0}
 		<section class="panel" aria-labelledby="stories-heading">
 			<h3 id="stories-heading"><a href="/stories">Stories</a></h3>
-			<p>{data.storyCount} stories, accounts and teachings about making peace, quoted in the words of the nations and people who tell them.</p>
+			<p>Stories, accounts and teachings about making peace, quoted in the words of the nations and people who tell them.</p>
 		</section>
 	{/if}
 	<section class="panel" aria-labelledby="glossary-heading">
 		<h3 id="glossary-heading"><a href="/glossary">Glossary</a></h3>
-		<p>{data.glossaryCount} terms the project defines, with how and when to use them.</p>
+		<p>The terms the model code defines, with how and when to use them.</p>
 	</section>
 	<section class="panel" aria-labelledby="changelog-heading">
 		<h3 id="changelog-heading"><a href="/changelog">Changelog</a></h3>
