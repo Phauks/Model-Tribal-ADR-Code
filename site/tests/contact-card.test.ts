@@ -1,77 +1,60 @@
 import { describe, expect, it } from 'vitest';
 import {
 	addressLines,
-	contactOffices,
+	contactCards,
+	defaultOfficeName,
 	displayWebAddress,
-	officeAndNote
+	officeAndNote,
+	titleCase
 } from '#lib/contact-card.ts';
 
-const office = 'Tribal government office';
+const label = 'Tribal government office';
 
 describe('contact card', () => {
-	it('names the office once and orders the rows', () => {
-		const offices = contactOffices([
-			{ kind: 'fax', value: '(928) 871-4025', label: office },
-			{ kind: 'phone', value: '(928) 871-7000', label: office },
-			{
-				kind: 'mailing-address',
-				value: 'P.O. Box 7440, Window Rock, AZ 86515',
-				label: office
-			},
-			{
-				kind: 'physical-address',
-				value: '100 Parkway, Window Rock, AZ 86515',
-				label: office
-			},
-			{ kind: 'website', value: 'https://www.navajo-nsn.gov/', label: office }
+	it('keeps the website apart and names the office once', () => {
+		const { websites, offices } = contactCards([
+			{ kind: 'fax', value: '(928) 871-4025', label },
+			{ kind: 'phone', value: '(928) 871-7000', label },
+			{ kind: 'mailing-address', value: 'P.O. Box 7440, Window Rock, AZ 86515', label },
+			{ kind: 'physical-address', value: '100 Parkway, Window Rock, AZ 86515', label },
+			{ kind: 'website', value: 'https://www.navajo-nsn.gov/', label }
 		]);
+		expect(websites).toHaveLength(1);
+		expect(websites[0]).toMatchObject({ lines: ['navajo-nsn.gov'], external: true });
 		expect(offices).toHaveLength(1);
-		expect(offices[0].name).toBe(office);
+		expect(offices[0].name).toBe('Tribal Government Office');
 		expect(offices[0].rows.map((row) => row.label)).toEqual([
-			'Website',
 			'Physical address',
 			'Mailing address',
 			'Phone',
 			'Fax'
 		]);
-		const [website, physical, mailing, phone, fax] = offices[0].rows;
-		expect(website).toMatchObject({
-			lines: ['navajo-nsn.gov'],
-			external: true
-		});
+		const [physical, mailing, phone, fax] = offices[0].rows;
 		expect(physical.lines).toEqual(['100 Parkway', 'Window Rock, AZ 86515']);
-		expect(physical.mapLink).toContain('google.com/maps/search');
-		expect(mailing.mapLink).toBeUndefined();
+		expect(physical.link).toContain('google.com/maps/search');
+		expect(physical).toMatchObject({
+			external: true,
+			linkHint: 'opens in Google Maps in a new tab'
+		});
+		expect(mailing.link).toBeUndefined();
 		expect(phone.link).toBe('tel:+1-928-871-7000');
 		expect(fax.link).toBeUndefined();
 	});
 
 	it('says when the mailing address repeats the physical address', () => {
-		const [card] = contactOffices([
-			{
-				kind: 'physical-address',
-				value: '50 Tu Su Lane, Bishop, CA 93514',
-				label: office
-			},
-			{
-				kind: 'mailing-address',
-				value: '50 Tu Su Lane, Bishop, CA 93514',
-				label: office
-			}
+		const { offices } = contactCards([
+			{ kind: 'physical-address', value: '50 Tu Su Lane, Bishop, CA 93514', label },
+			{ kind: 'mailing-address', value: '50 Tu Su Lane, Bishop, CA 93514', label }
 		]);
-		expect(card.rows[1]).toMatchObject({
+		expect(offices[0].rows[1]).toMatchObject({
 			lines: ['Same as physical address'],
-			mapLink: undefined
+			link: undefined
 		});
 	});
 
 	it('folds a directory address that leads to the official site into a note', () => {
-		const [card] = contactOffices([
-			{
-				kind: 'website',
-				value: 'https://www.bishoppaiutetribe.com/',
-				label: office
-			},
+		const { websites } = contactCards([
+			{ kind: 'website', value: 'https://www.bishoppaiutetribe.com/', label },
 			{
 				kind: 'website',
 				value: 'https://bishoppaiute.net/',
@@ -79,14 +62,33 @@ describe('contact card', () => {
 					'Official website (the directory address https://www.bishoppaiutetribe.com/ redirects here)'
 			}
 		]);
-		expect(card.rows).toHaveLength(1);
-		expect(card.rows[0].lines).toEqual(['bishoppaiute.net']);
-		expect(card.rows[0].note).toContain('bishoppaiutetribe.com');
+		expect(websites).toHaveLength(1);
+		expect(websites[0].lines).toEqual(['bishoppaiute.net']);
+		expect(websites[0].note).toContain('bishoppaiutetribe.com');
+	});
+
+	it('names the office of a website that is not the nation’s own', () => {
+		const { websites, offices } = contactCards([
+			{
+				kind: 'website',
+				value: 'https://www.oha.org/',
+				label: 'Office of Hawaiian Affairs (state agency)'
+			},
+			{
+				kind: 'phone',
+				value: '(808) 594-1835',
+				label: 'Office of Hawaiian Affairs (state agency), contact number'
+			}
+		]);
+		expect(websites[0].note).toBe('Office of Hawaiian Affairs (state agency)');
+		expect(offices.map((office) => office.name)).toEqual([
+			'Office of Hawaiian Affairs (state agency)'
+		]);
 	});
 
 	it('gives named offices and agencies their own cards', () => {
 		expect(officeAndNote('Arctic Village council office: Tribal office main phone')).toEqual({
-			office: 'Arctic Village council office',
+			office: 'Arctic Village Council Office',
 			note: undefined
 		});
 		expect(
@@ -96,23 +98,21 @@ describe('contact card', () => {
 			note: 'Honolulu'
 		});
 		expect(officeAndNote('Tribal office email listed by the State of Alaska')).toEqual({
-			office,
+			office: defaultOfficeName,
 			note: undefined
 		});
 		expect(officeAndNote('Tribal office alternate phone').note).toBe('Alternate number');
+		expect(titleCase('Village of Venetie council office')).toBe(
+			'Village of Venetie Council Office'
+		);
 	});
 
 	it('never links a lapsed website', () => {
-		const [card] = contactOffices([
-			{
-				kind: 'website',
-				value: 'https://old.example/',
-				label: office,
-				link_status: 'lapsed'
-			}
+		const { websites } = contactCards([
+			{ kind: 'website', value: 'https://old.example/', label, link_status: 'lapsed' }
 		]);
-		expect(card.rows[0].link).toBeUndefined();
-		expect(card.rows[0].note).toContain('No longer');
+		expect(websites[0].link).toBeUndefined();
+		expect(websites[0].note).toContain('No longer');
 	});
 
 	it('formats addresses and web addresses', () => {
