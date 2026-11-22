@@ -13,6 +13,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
+import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
 
@@ -326,4 +327,71 @@ export function servableImages(): ServableImage[] {
 				sha256: image.sha256
 			}))
 	);
+}
+
+/* Copies of public documents --------------------------------------------- */
+
+/** A row of research/capture-index.json, with the fields read here (decision record 0027). */
+interface CaptureIndexRow {
+	key: string;
+	bytes: number | string;
+	sha256: string;
+	media_type?: string;
+	title?: string;
+	link?: string;
+	captured?: string;
+	derived_from?: string;
+	rights?: string;
+	redistribution?: string;
+}
+
+let publicCopyCache: PublicCopy[] | undefined;
+
+/**
+ * The files in the bucket the website may serve itself: rows of the capture
+ * index whose redistribution column says "yes", that are PDF files and that
+ * are originals rather than text extracts (src/lib/public-copies.ts). Empty
+ * when the index is missing.
+ */
+export function publicCopies(): PublicCopy[] {
+	if (!publicCopyCache) {
+		const indexPath = 'research/capture-index.json';
+		const rows = existsSync(path.join(repositoryRoot, indexPath))
+			? (JSON.parse(readText(indexPath)) as { files?: CaptureIndexRow[] }).files ?? []
+			: [];
+		publicCopyCache = rows
+			.filter(
+				(row) =>
+					row.redistribution === 'yes' &&
+					!row.derived_from &&
+					servedMediaTypes.has(row.media_type ?? '') &&
+					/^[0-9a-f]{64}$/.test(row.sha256) &&
+					/^[a-z0-9][a-z0-9._/-]*$/i.test(row.key) &&
+					!row.key.split('/').includes('..')
+			)
+			.map((row) => ({
+				key: row.key,
+				mediaType: row.media_type as string,
+				sha256: row.sha256,
+				bytes: Number(row.bytes),
+				links: (row.link ?? '').split(/\s+/).filter((link) => linkForMatching(link)),
+				captured: (row.captured ?? '').slice(0, 10),
+				title: row.title ?? row.key,
+				rights: row.rights ?? ''
+			}))
+			.filter((copy) => copy.links.length > 0)
+			.sort((first, second) => first.title.localeCompare(second.title));
+	}
+	return publicCopyCache;
+}
+
+let publicCopyLinks: Map<string, PublicCopy> | undefined;
+
+/** The copy the website serves of the document at this address, if it keeps one. */
+export function publicCopyFor(link: string | undefined): PublicCopy | undefined {
+	if (!link) return undefined;
+	const matching = linkForMatching(link);
+	if (!matching) return undefined;
+	publicCopyLinks ??= copiesByLink(publicCopies());
+	return publicCopyLinks.get(matching);
 }
