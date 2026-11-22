@@ -85,6 +85,23 @@ versions:
     change: not-compared
     verification: inferred
     note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
+- id: 1999-text-2
+  label: 1939 constitution and bylaws, with Amendment 1 (1999)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1999-03-02'
+  source: constitution-eastern-shawnee-tribe-of-oklahoma-1999-text-2
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/eastern-shawnee-tribe-of-oklahoma/599654dc757933d6.pdf
+    sha256: 599654dc757933d645a94765b7e411db7ea33967c4ca6379e88dd4646ec0e908
+    pages: 17
+  note: Scanned. The 1939 constitution and bylaws, with a certificate of approval of Amendment 1 (Resolution
+    021999-R-01) signed by the Muskogee Area Office on Mar. 2, 1999, recorded as listed. Older than the
+    1999-text dated June 17, 1999; its status is left unknown, like that version's. Version, status and
+    dates read from the copy by the project (Claude), not yet checked by the lead author.
 - id: 1999-text
   label: 1999 constitution, as amended
   event: revision
@@ -149,5 +166,6 @@ versions:
     note: The article texts differ (word-run overlap 0.40, by script); not yet read side by side.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

@@ -1,7 +1,8 @@
 import { error } from '@sveltejs/kit';
+import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
-import { contactOffices, contactsHeading, type ContactOffice } from '#lib/contact-card.ts';
+import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
@@ -59,11 +60,11 @@ function cited(sources: SourceUses, section: string, fact: CitedFact, item: Fact
  * named once. Each contact shown ends with the marker of its source, and every
  * contact's source is listed under "Government contacts".
  */
-function contactCard(record: NationRecord, sources: SourceUses): ContactOffice[] {
+function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	const facts = record.contacts ?? [];
 	const describe = (fact: (typeof facts)[number]) => `${humanize(fact.kind)}: ${fact.value}`;
 	for (const fact of facts) sources.use(fact, contactsHeading, describe(fact));
-	return contactOffices(facts, (fact) => {
+	return contactCards(facts, (fact) => {
 		const citations: CitationMark[] = [];
 		sources.citeFact(fact, contactsHeading, describe(fact), citations);
 		return citations;
@@ -269,12 +270,16 @@ export const load: PageServerLoad = ({ params }) => {
 			pronunciations: [],
 			features: [],
 			glance: [],
-			contacts: [],
+			contacts: { websites: [], offices: [] },
 			courts: [],
 			law: [],
 			documents: [],
 			map: undefined,
-			sources: []
+			sources: [],
+			outline: {
+				title: page.officialName,
+				items: [{ label: 'Review status', link: '#review-heading' }]
+			} satisfies PageOutline as PageOutline
 		};
 	}
 
@@ -331,7 +336,7 @@ export const load: PageServerLoad = ({ params }) => {
 		};
 	});
 
-	return {
+	const result = {
 		page,
 		image,
 		nameCitations,
@@ -346,4 +351,40 @@ export const load: PageServerLoad = ({ params }) => {
 		documents: documentHistoriesFor(record.id, sources),
 		sources: sources.list
 	};
+
+	// The page's outline, for the sidebar: one entry per heading the page shows.
+	const items: OutlineItem[] = [
+		{ label: 'Review status', link: '#review-heading' },
+		{ label: 'About this Nation', link: '#about-heading' }
+	];
+	if (result.glance.length > 0 || result.map) items.push({ label: 'At a glance', link: '#glance-heading' });
+	if (result.courts.length > 0) items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	if (result.law.length > 0) items.push({ label: 'Published law', link: '#law-heading' });
+	if (result.documents.length > 0) {
+		items.push({
+			label: 'Document history',
+			link: '#documents-heading',
+			children: result.documents.map((document) => ({
+				label: shortDocumentTitle(document.title, [page.listedName, page.officialName]),
+				link: `#document-${document.id}`
+			}))
+		});
+	}
+	items.push({ label: 'Sources', link: '#sources-heading' });
+
+	return { ...result, outline: { title: page.officialName, items } satisfies PageOutline as PageOutline };
 };
+
+/**
+ * A document's title for the sidebar, without the nation's name that opens it
+ * ("Navajo Nation–State of Arizona Gaming Compact" becomes "State of Arizona
+ * Gaming Compact"), since the sidebar already names the nation above it.
+ */
+function shortDocumentTitle(title: string, names: string[]): string {
+	for (const name of names) {
+		for (const dash of ['–', '-', '—']) {
+			if (title.startsWith(`${name}${dash}`)) return title.slice(name.length + 1);
+		}
+	}
+	return title;
+}

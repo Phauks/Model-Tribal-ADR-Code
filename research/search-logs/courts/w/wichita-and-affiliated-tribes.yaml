@@ -85,3 +85,38 @@ searches:
     served-by-court-of-indian-offenses, from https://bia.gov/CFRCourts.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-321
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: '“Wichita Tribal Court”: Read the Nov. 21 court review''s result for this court (verdict cannot-tell);
+    it gives no page of the court''s own fetched with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Wichita Tribal Court”: Read the Nov. 22 court review''s result (court-321, verdict served-by-court-of-indian-offenses,
+    bureau-of-indian-affairs-list https://bia.gov/CFRCourts); it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://wichitatribe.com/
+  query: 'scripts/review/service_links.py: words for a court, judiciary, justice or peacemaking'
+  outcome: blocked
+  reason: '“Wichita Tribal Court”: Home page status 403; read from the Nov. 22 court review''s saved copy,
+    not fetched again; 0 linked pages mentioning a court, judiciary, justice or peacemaking were read.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Wichita Tribal Court”: Claude weighed the evidence against the lead author''s order (own page,
+    then directory entry): directory, https://bia.gov/CFRCourts.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-422

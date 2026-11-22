@@ -199,21 +199,25 @@ federal_administration:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
   source: national-indian-law-library-pueblo-santa-ana
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link added 2026-11-22: the
+    Tribal Court front page on the nation''s website (fetched with status 200 on 2026-11-22).'
 - kind: tribal-court
   name: Pueblo of Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Santa Ana'
   note: 'Link check 2026-11-21: the link the source gives (http://www.santaana-nsn.gov/tribalcourt/index.html)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Tribal Court front page on the
+    nation''s website (fetched with status 200 on 2026-11-22).'
 gaming:
   compacts:
   - state: NM

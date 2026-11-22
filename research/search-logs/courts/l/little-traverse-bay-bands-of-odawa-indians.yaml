@@ -1,0 +1,24 @@
+profile: content/tribes/l/little-traverse-bay-bands-of-odawa-indians.yaml
+topic: courts
+status: found
+last_searched: '2026-11-22'
+searches:
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: found
+  reason: '“Little Traverse Bay Band of Odawa Indians Tribal Court”: Read the Nov. 21 court review''s
+    result for this court (verdict confirmed-other-name, page https://ltbbodawa-nsn.gov/judicial-branch/);
+    its page is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Little Traverse Bay Band of Odawa Indians Tribal Court”: Claude weighed the evidence against
+    the lead author''s order (own page, then directory entry): own-page, https://ltbbodawa-nsn.gov/judicial-branch/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-135

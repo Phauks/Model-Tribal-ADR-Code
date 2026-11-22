@@ -211,11 +211,15 @@ justice_institutions:
   locator: Wisconsin section, entry 'Menominee Indian Tribe of Wisconsin'
 - kind: tribal-court
   name: Wilmer M Peters Judicial Center
+  link: http://courts.menominee-nsn.gov/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Menominee Indian Tribe of Wisconsin'
+  note: 'Link added 2026-11-22: the page of the same court this profile also lists as “Tribal Court”,
+    which the court review confirmed (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-151.'
 dispute_resolution:
   provisions:
   - kind: arbitration

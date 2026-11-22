@@ -1,6 +1,6 @@
 profile: content/tribes/g/gila-river-indian-community-of-the-gila-river-indian-reservation.yaml
 topic: courts
-status: partly-searched
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-22'
@@ -19,4 +19,29 @@ searches:
   query: where appeals from each listed court go (path of appeal)
   outcome: not-found
   reason: The 1960 constitution mentions appeals only from the Community Court to the Council in enrollment matters.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: found
+  reason: 'Every service without a link listed for this nation: Read the Nov. 21 court review''s result for this court (verdict confirmed-other-name, page https://www.gilariver.org/index.php/government/judical-branch); its page is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Gila River Indian Community Court”: Claude weighed the evidence against the lead author''s order (own page, then directory entry): own-page, https://www.gilariver.org/index.php/government/judical-branch.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-089
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Westend Judicial Center”: Claude weighed the evidence against the lead author''s order (own page, then directory entry): own-page, https://www.gilariver.org/index.php/government/judical-branch.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-090
 next_steps: Read the Gila River Indian Community Code and the Community Court's own pages for a court of appeals; the court site was not fetched in this search.

@@ -234,6 +234,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://tlingitandhaida.gov/governance/tribal-court/
   source: national-indian-law-library-ccthita
   confidence: medium
   verification: bulk-import
@@ -241,16 +242,21 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (http://www.ccthita.org/government/court/index.html) returned HTTP 404, so it
-    is not recorded.'
+    is not recorded. Link added 2026-11-22: the court''s page on the nation''s website, fetched with status
+    200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-033.'
 - kind: tribal-court
   name: Central Council Tlingit and Haida Judicial Branch
+  link: https://tlingitandhaida.gov/governance/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Central Council Tlingit & Haida Indian Tribes of Alaska'
   note: 'Link check 2026-11-21: the link the source gives (http://www.ccthita.org/government/judicial/index.html)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the nation''s
+    website, fetched with status 200 on 2026-11-21 by the court review (research/reviews/2026-11-21-court-listings.json);
+    see research/reviews/2026-11-22-service-links.json, service-034.'
 dispute_resolution:
   forums:
   - kind: restorative-justice

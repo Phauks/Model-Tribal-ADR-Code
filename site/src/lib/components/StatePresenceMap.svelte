@@ -49,7 +49,7 @@
 					<line class="marker-line" x1={marker.fromX} y1={marker.fromY} x2={marker.x} y2={marker.y} />
 					<circle class="state present" cx={marker.x} cy={marker.y} r="10" />
 				{/if}
-				<text class="label" text-anchor={label.align} x={label.x} y={label.y}>{label.code}</text>
+				<text class="label" class:on-state={!label.marker} text-anchor={label.align} x={label.x} y={label.y}>{label.code}</text>
 			{/each}
 		</g>
 	</svg>
@@ -115,6 +115,18 @@
 		stroke: var(--color-paper);
 		stroke-width: 5px;
 		stroke-linejoin: round;
+	}
+
+	/*
+	 * A code drawn on its shaded state is set in paper with an ink halo, so it
+	 * keeps its contrast against the shading at any size the map is drawn
+	 * (WCAG 1.4.3); codes beside a marker sit on paper and stay in ink.
+	 */
+	.label.on-state {
+		/* color too: contrast checkers read it, not fill, for SVG text. */
+		color: var(--color-paper);
+		fill: var(--color-paper);
+		stroke: var(--color-ink);
 	}
 
 	figcaption {

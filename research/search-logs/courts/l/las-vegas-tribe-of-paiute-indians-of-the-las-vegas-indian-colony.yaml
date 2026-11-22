@@ -122,3 +122,29 @@ searches:
     from https://www.lvpaiute.gov/tribal-court.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-094
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-21-court-listings.json
+  outcome: not-found
+  reason: '“Tribal Court”: Read the Nov. 21 court review''s result for this court (verdict not-found);
+    it gives no page of the court''s own fetched with status 200.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-court-listings-second-pass.json
+  outcome: found
+  reason: '“Tribal Court”: Read the Nov. 22 court review''s result (court-094, verdict confirmed, nation-website
+    https://www.lvpaiute.gov/tribal-court); it is now the service''s link.'
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: '“Tribal Court”: Claude weighed the evidence against the lead author''s order (own page, then
+    directory entry): own-page, https://www.lvpaiute.gov/tribal-court.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-128

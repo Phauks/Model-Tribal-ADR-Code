@@ -38,7 +38,22 @@ versions:
     summary: Article headed "CERTIFICATION OF RESULTS OF ELECTIONS"; found by its heading and not yet
       read.
     verification: title-only
+- id: revision-draft
+  label: Proposed constitutional revision (article-by-article ballot)
+  event: revision
+  status: proposed
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-revision-draft
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation/41d112d2559bf044.pdf
+    sha256: 41d112d2559bf044978625ec02dcd21c130e68485aeb587fbc49bf6a3996c9a6
+    pages: 23
+  note: A ballot that sets each article of the current constitution (ratified Mar. 10, 1971, amended 1975
+    and 1978) beside the proposed change. It gives no date; the Wayback capture is of Oct. 6, 2022. Version,
+    status and dates read from the copy by the project (Claude), not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
+- 2026-11-22-hand-pulled-documents
 notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
   events and changes are project inferences from the texts found; see the catalog README.

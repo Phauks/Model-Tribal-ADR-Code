@@ -232,12 +232,16 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Aleut Community of St. Paul Island Tribal Court
+  link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Saint Paul Island (Pribilof Islands Aleut Communities of St. Paul &
     St. George Islands)'
+  note: 'Link is the entry in the Alaska Court System court directory: 2022 Alaska Tribal Court Directory
+    (prepared by Alaska Legal Services Corporation); no page of the court''s own was found (2026-11-22;
+    research/reviews/2026-11-22-service-links.json, service-298).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -271,11 +271,15 @@ justice_institutions:
   locator: Contact Info, Tribal Court
 - kind: tribal-court
   name: Ho-Chunk Nation Judiciary
+  link: https://ho-chunknation.com/government/judicial-branch/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Ho-Chunk Nation'
+  note: 'Link added 2026-11-22: the page of the same court this profile also lists as “Tribal Courts”,
+    which the court review confirmed (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
+    service-097.'
 dispute_resolution:
   forums:
   - kind: elders-council

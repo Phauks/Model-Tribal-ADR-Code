@@ -11,6 +11,8 @@
 //   the site"). The project's own documents are pages on the site instead.
 // - No page names the project's internal documents, such as "decision record
 //   0007" or "requests.md" (same section; Trevor, Nov. 22, 2026).
+// - The offline fingerprints belong to this build and list every page, so an
+//   update downloads only what changed (section 10, "Updates").
 
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
@@ -27,7 +29,8 @@ const required = [
 	'downloads.html',
 	'manifest.webmanifest',
 	'icon.svg',
-	'service-worker.js'
+	'service-worker.js',
+	'offline-fingerprints.json'
 ];
 
 const problems = [];
@@ -56,6 +59,17 @@ function htmlFiles(folder) {
 }
 
 const pages = htmlFiles(output);
+
+if (existsSync(path.join(output, 'offline-fingerprints.json'))) {
+	const fingerprints = JSON.parse(readFileSync(path.join(output, 'offline-fingerprints.json'), 'utf8'));
+	const { version } = JSON.parse(readFileSync(path.join(output, '_app', 'version.json'), 'utf8'));
+	if (fingerprints.version !== version) problem('offline-fingerprints.json is not from this build');
+	// /copies is read from the network only, so it has no fingerprint.
+	for (const file of pages) {
+		const address = `/${path.relative(output, file).split(path.sep).join('/')}`.replace(/(\/index)?\.html$/, '') || '/';
+		if (!(address in (fingerprints.pages ?? {})) && address !== '/copies') problem(`offline-fingerprints.json does not list ${address}`);
+	}
+}
 for (const file of pages) {
 	const html = readFileSync(file, 'utf8');
 	const name = path.relative(output, file);

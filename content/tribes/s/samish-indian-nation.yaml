@@ -196,12 +196,15 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.courts.wa.gov/subsite/tscc/docs/TSCC%20WA%20State%20Tribal%20Court%20Directory.pdf
   source: national-indian-law-library-samish
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. Link is the entry in the Washington
+    Tribal State Court Consortium, Washington State Tribal Court Directory; no page of the court's own
+    was found (2026-11-22; research/reviews/2026-11-22-service-links.json, service-339).
 gaming:
   compacts:
   - state: WA
