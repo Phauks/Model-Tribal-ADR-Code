@@ -66,6 +66,19 @@ describe('nationServices', () => {
 		]);
 	});
 
+	it('gives the judicial branch its own heading, not a place among the courts', () => {
+		const { categories } = run([
+			{ kind: 'tribal-court', name: 'Tribal Court', link: 'https://courts.example.org/', source: 'a', confidence: 'medium' },
+			{ kind: 'judicial-branch', name: 'Example Nation Judicial Branch', link: 'https://courts.example.org', source: 'b', confidence: 'medium' },
+			{ kind: 'tribal-court', name: 'Example Nation District Court', link: 'https://courts.example.org/district', source: 'b', confidence: 'medium' }
+		]);
+		expect(categories.map((category) => category.heading)).toEqual(['Judicial branch', 'Courts']);
+		// The directory entry that names only "Tribal Court" at the branch's own address is the branch.
+		expect(categories[0].entries).toMatchObject([{ text: 'Example Nation Judicial Branch' }]);
+		expect(categories[0].entries[0].citations).toHaveLength(2);
+		expect(categories[1].entries.map((entry) => entry.text)).toEqual(['Example Nation District Court']);
+	});
+
 	it('lays out the appeal path from the first court to the highest court', () => {
 		const { categories, cited } = run([
 			{

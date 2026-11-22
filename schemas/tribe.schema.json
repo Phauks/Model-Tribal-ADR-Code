@@ -344,7 +344,7 @@
         "properties": {
           "kind": {
             "$ref": "common.schema.json#/$defs/slug",
-            "description": "Open vocabulary (any lowercase hyphenated term). Suggested: tribal-court, court-of-appeals, supreme-court, intertribal-court, intertribal-court-of-appeals (a court several nations share, such as the Southwest Intertribal Court of Appeals), peacemaking-program, traditional-forum, healing-to-wellness-court, court-of-indian-offenses (a court operated under 25 C.F.R. Part 11, often called a CFR court), elders-council, other."
+            "description": "Open vocabulary (any lowercase hyphenated term). Suggested: judicial-branch (the nation's court system as a whole, such as a \"Judicial Branch\" or \"Judiciary\", not one court), tribal-court, court-of-appeals, supreme-court, intertribal-court, intertribal-court-of-appeals (a court several nations share, such as the Southwest Intertribal Court of Appeals), peacemaking-program, traditional-forum, healing-to-wellness-court, court-of-indian-offenses (a court operated under 25 C.F.R. Part 11, often called a CFR court), elders-council, other."
           },
           "name": { "type": "string" },
           "link": { "$ref": "common.schema.json#/$defs/link" },

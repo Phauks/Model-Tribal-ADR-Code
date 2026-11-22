@@ -225,8 +225,9 @@ const lawHeading = 'Laws and agreements';
 
 /**
  * Where the nation publishes its laws, and any published dispute resolution
- * law: linked, not reproduced. Two entries with the same title, such as two
- * "Tribal code" links, are told apart by the site each one is on. A
+ * law: linked, not reproduced. Two sources listing the same document make one
+ * line; two different links with the same title, such as two "Tribal code"
+ * links, are told apart by the site each one is on. A
  * document that has its own history below, such as a constitution, is not
  * listed again; its source stays in the Sources list.
  */
@@ -247,6 +248,29 @@ function publishedLaw(
 		const url = link && URL.canParse(link) ? new URL(link) : undefined;
 		return url?.hostname.replace(/^www\./, '');
 	};
+	// One line per document: entries from several sources with the same
+	// title and the same address, or the same title where one gives no
+	// address, are one document shown once with the markers of every source.
+	// Titles are compared without case, so "Corporate Charter" and "Corporate
+	// charter" are one title.
+	const lines: { title: string; link?: string; facts: typeof entries }[] = [];
+	const sameTitle = (first: string, second: string) =>
+		first.toLocaleLowerCase('en-US') === second.toLocaleLowerCase('en-US');
+	const comparable = (link: string | undefined) => link?.replace(/^https?:\/\/(www\.)?/, '').replace(/\/+$/, '');
+	for (const fact of entries) {
+		const title = titleOf(fact);
+		const link = webLink(fact.link);
+		const line =
+			lines.find((other) => sameTitle(other.title, title) && comparable(other.link) === comparable(link)) ??
+			(link ? lines.find((other) => sameTitle(other.title, title) && !other.link) : undefined) ??
+			(link ? undefined : lines.find((other) => sameTitle(other.title, title)));
+		if (line) {
+			line.facts.push(fact);
+			line.link ??= link;
+		} else {
+			lines.push({ title, link, facts: [fact] });
+		}
+	}
 	return [
 		...group(
 			'dispute_resolution_law',
@@ -259,18 +283,18 @@ function publishedLaw(
 		...group(
 			'governing_documents',
 			documentsLabel,
-			entries.map((fact) => {
-				const title = titleOf(fact);
-				const shared = entries.filter((other) => titleOf(other) === title).length > 1;
-				const site = shared ? host(webLink(fact.link)) : undefined;
+			lines.map((line) => {
+				const shared = lines.filter((other) => sameTitle(other.title, line.title)).length > 1;
+				const site = shared ? host(line.link) : undefined;
 				// Cited under the plain title, the words At a glance uses, so the
 				// Sources list names the fact once and links back to both markers.
 				const citations: CitationMark[] = [];
-				sources.citeFact(fact, documentsLabel, title, citations);
+				for (const fact of line.facts) sources.citeFact(fact, documentsLabel, line.title, citations);
+				const kind = line.facts.find((fact) => fact.title && fact.kind !== 'other')?.kind;
 				return {
-					text: site ? `${title} (${site})` : title,
-					link: webLink(fact.link),
-					detail: fact.title ? humanize(fact.kind) : undefined,
+					text: site ? `${line.title} (${site})` : line.title,
+					link: line.link,
+					detail: kind ? humanize(kind) : undefined,
 					citations
 				};
 			})
@@ -295,8 +319,9 @@ function glanceSummary(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const rows = (entries: { fact: CitedFact; section: string; text: string }[]) => {
 		const byName = new Map<string, FactItem & { citations: CitationMark[] }>();
 		for (const { fact, section, text } of entries) {
-			const item = byName.get(text) ?? { text, citations: [] };
-			byName.set(text, item);
+			const key = text.toLocaleLowerCase('en-US');
+			const item = byName.get(key) ?? { text, citations: [] };
+			byName.set(key, item);
 			sources.citeFact(fact, section, text, item.citations);
 		}
 		return [...byName.values()];
@@ -304,12 +329,14 @@ function glanceSummary(record: NationRecord, sources: SourceUses): FactGroup[] {
 	// The same grouping and names as "Courts and dispute resolution"
 	// (nationServices), cited under the same headings and words, so the
 	// Sources list names each fact once. Appeal facts are left out here: this
-	// row lists names only, and the courts section cites them.
+	// row lists names only, and the courts section cites them. The judicial
+	// branch is the court system as a whole, not a court or a forum, so it
+	// is left out of this row too.
 	const serviceFacts: { fact: CitedFact; section: string; text: string }[] = [];
 	nationServices(
 		[...(record.justice_institutions ?? []), ...(record.dispute_resolution?.forums ?? [])],
 		(fact, section, text) => {
-			if (!('court' in fact)) serviceFacts.push({ fact, section, text });
+			if (!('court' in fact) && section !== 'Judicial branch') serviceFacts.push({ fact, section, text });
 		}
 	);
 	const courts = rows(serviceFacts);
