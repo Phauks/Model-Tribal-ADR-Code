@@ -31,6 +31,6 @@ On Nov. 22, 2026 the lead author made two choices.
 
 ## Sources
 
-- Lead author's decision in the provision review thread, Nov. 22, 2026: "yes for diversion and resotrative justice", and he will "trust you for now in your recommendations".
+- Lead author's decision in the provision review thread, Nov. 22, 2026: "i think that i will trust you for now in your recommendations" and "yes for diversion and resotrative justice".
 - Pre-review report and verdicts: `research/reviews/2026-11-21-provision-pre-review.md` and `.json` (PR #19).
 - Database listings: decision record 0015. Verification levels: decision record 0014.
