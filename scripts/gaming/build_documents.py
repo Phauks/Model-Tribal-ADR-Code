@@ -363,9 +363,13 @@ def main(captures, work):
                 related.append({"document": ids["secretarial-procedures"], "relation": "replaced-by",
                                 "note": "Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the "
                                         "place of the compact (research/gaming/secretarial-procedures.csv)."})
+                # Not every compact here was superseded: many expired at the end of their last extension
+                # before the procedures issued, and some procedures have no clause ending prior compacts. Whether
+                # each ended by expiring or by the procedures' "null and void" clause is read from the texts
+                # (thread "Fix gaming compact status labels", Nov. 23, 2026), so a new record starts unknown.
                 for version in built:
                     if version["status"] == "in-effect":
-                        version["status"] = "superseded"
+                        version["status"] = "unknown"
             if kind == "secretarial-procedures" and compact:
                 related.append({"document": ids["gaming-compact"], "relation": "replaces"})
             if write_record(document_id, kind, nation, state, names, built, related, history["track"]):

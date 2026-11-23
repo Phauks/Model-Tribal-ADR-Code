@@ -18,10 +18,11 @@ versions:
 - id: 2000-original
   label: 2000 compact
   event: original
-  status: superseded
+  status: expired
   dates:
     listed: '2000-10-19'
     published: '2000-10-19'
+    ended: '2024-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
@@ -57,12 +58,13 @@ versions:
 - id: 2004-amendment
   label: 2004 amendment
   event: amendment
-  status: superseded
+  status: expired
   amends:
   - 2000-original
   dates:
     listed: '2004-09-02'
     published: '2004-09-02'
+    ended: '2024-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
@@ -87,12 +89,13 @@ versions:
 - id: 2022-extension
   label: 2022 extension
   event: extension
-  status: superseded
+  status: expired
   amends:
   - 2000-original
   dates:
     listed: '2022-06-30'
     published: '2022-06-30'
+    ended: '2024-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
@@ -117,12 +120,13 @@ versions:
 - id: 2023-extension
   label: 2023 extension
   event: extension
-  status: superseded
+  status: expired
   amends:
   - 2000-original
   dates:
     listed: '2023-12-22'
     published: '2023-12-22'
+    ended: '2024-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
@@ -144,9 +148,12 @@ versions:
     compared_with: 2000-original
     change: not-compared
     verification: inferred
+  note: The compact's term ran to Dec. 31, 2024, the date this extension set (88 Fed. Reg. 88640 (Dec. 22, 2023));
+    no later extension was found on the Office of Indian Gaming list or in the Federal Register.
 related:
 - document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-california-secretarial-procedures
   relation: replaced-by
-  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+  note: Secretarial Procedures prescribed under 25 U.S.C. § 2710(d)(7)(B)(vii) on July 8, 2025 authorize the nation's
+    Class III gaming in place of the compact (Sec. 15.2 of the procedures makes any prior compact null and void).
 found_in:
 - 2026-11-21-gaming-compact-histories

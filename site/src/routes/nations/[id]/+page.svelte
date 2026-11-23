@@ -1,5 +1,8 @@
 <script lang="ts">
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import { readableDate } from '#lib/readable-date.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
@@ -25,6 +28,31 @@
 	let { data }: PageProps = $props();
 	const page = $derived(data.page);
 	const record = $derived(`tribes/${data.page.id}`);
+
+	// The Gaming Commission's enforcement actions table: Date, Type, Number,
+	// Document and Source (Trevor, Nov. 23, 2026). The Source column shows
+	// each action's citation markers; its text, for search and the .csv file,
+	// is the source numbers.
+	const enforcementColumns: TableColumn[] = [
+		{ key: 'date', header: 'Date', type: 'date', sortable: true },
+		{ key: 'kind', header: 'Type', isRowHeader: true, sortable: true, searchable: true, filterable: true },
+		{ key: 'number', header: 'Number', sortable: true, searchable: true },
+		{ key: 'document', header: 'Document', custom: true },
+		{ key: 'source', header: 'Source', custom: true }
+	];
+	const enforcementRows: TableRow[] = $derived(
+		data.enforcement.map((action) => ({
+			key: action.key,
+			cells: {
+				date: { text: readableDate(action.date), sortValue: action.date },
+				kind: { text: action.kind },
+				number: { text: action.number },
+				document: { text: action.link ? 'Read it' : '', href: action.link },
+				source: { text: action.citations.map((mark) => mark.number).join(', ') }
+			}
+		}))
+	);
+	const enforcementMarks = $derived(new Map(data.enforcement.map((action) => [action.key, action.citations])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -204,9 +232,31 @@
 		</Collapsible>
 
 		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
-		{#if data.ties.length > 0}
+		{#if data.ties.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
-				<FactGroups groups={data.ties} />
+				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
+				{#if data.enforcement.length > 0}
+					<!-- The Gaming Commission's enforcement actions, as a table (Trevor, Nov. 23, 2026). -->
+					<h3 id="enforcement-heading">Gaming Commission enforcement actions</h3>
+					<DataTable
+						identifier="enforcement-actions"
+						label="Table: Gaming Commission enforcement actions"
+						columns={enforcementColumns}
+						rows={enforcementRows}
+						defaultSort={{ key: 'date', direction: 'ascending' }}
+						rowName={['action', 'actions']}
+						filters
+						download="{data.page.id}-enforcement-actions"
+					>
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{#if column.key === 'document'}
+								{#if row.cells.document.href}<a href={row.cells.document.href}>{row.cells.document.text}</a>{/if}
+							{:else if column.key === 'source'}
+								<CitationMarks marks={enforcementMarks.get(row.key)} />
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
 			</Collapsible>
 		{/if}
 

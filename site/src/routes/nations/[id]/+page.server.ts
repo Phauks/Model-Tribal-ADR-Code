@@ -556,7 +556,8 @@ const establishmentWords: Record<string, string> = {
  * The nation's relationship with the United States: its treaties, each linked
  * to its text in Kappler's Indian Affairs: Laws and Treaties; how its land was
  * set aside; and the Indian Health Service Area and service unit that serve it.
- * The Bureau of Indian Affairs region stays in At a glance.
+ * The Bureau of Indian Affairs region stays in At a glance. The Gaming
+ * Commission's enforcement actions follow as a table (enforcementActions).
  */
 function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Treaties and federal ties';
@@ -607,21 +608,44 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 							.join(', ')
 					})
 				)
-		),
-		...group(
-			'gaming-enforcement-actions',
-			'Gaming Commission enforcement actions',
-			[...(record.gaming?.enforcement_actions ?? [])]
-				.sort((first, second) => first.date.localeCompare(second.date))
-				.map((fact) =>
-					cited(sources, section, fact, {
-						text: sentenceCase(fact.kinds.map(humanize).join(' and ')),
-						link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
-						detail: `${fact.tracking_number}, ${readableDate(fact.date)}`
-					})
-				)
 		)
 	];
+}
+
+/** One National Indian Gaming Commission enforcement action, a row of its table on the nation page. */
+interface EnforcementAction {
+	key: string;
+	/** YYYY-MM-DD, which sorts the table. */
+	date: string;
+	kind: string;
+	number: string;
+	link?: string;
+	citations: CitationMark[];
+}
+
+/**
+ * The Gaming Commission's enforcement actions against the nation's gaming,
+ * oldest first, as rows of a table with Date, Type, Number, Document and
+ * Source columns (Trevor, Nov. 23, 2026), after the section's other facts so
+ * their markers keep the page's order.
+ */
+function enforcementActions(record: NationRecord, sources: SourceUses): EnforcementAction[] {
+	const section = 'Treaties and federal ties';
+	return [...(record.gaming?.enforcement_actions ?? [])]
+		.sort((first, second) => first.date.localeCompare(second.date))
+		.map((fact, index) => {
+			const kind = sentenceCase(fact.kinds.map(humanize).join(' and '));
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, section, `Gaming Commission enforcement action: ${kind}, ${fact.tracking_number}`, citations);
+			return {
+				key: `${fact.tracking_number}-${index}`,
+				date: fact.date,
+				kind,
+				number: fact.tracking_number,
+				link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+				citations
+			};
+		});
 }
 
 /** The first letter in capitals, the rest as given. */
@@ -1012,6 +1036,7 @@ export const load: PageServerLoad = ({ params }) => {
 			documents: [],
 			jurisdiction: [],
 			ties: [],
+			enforcement: [],
 			stories: [],
 			timeline: undefined,
 			empty: {} as EmptySections,
@@ -1131,7 +1156,7 @@ export const load: PageServerLoad = ({ params }) => {
 	const documents = histories.map((history) => {
 		const heading = documentHeading(history.title, names);
 		sources.part(lawHeading, heading);
-		return { ...documentHistoryView(history, sources), heading };
+		return { ...documentHistoryView(history, sources, names), heading };
 	});
 	sources.part(lawHeading, documentsLabel);
 	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
@@ -1139,6 +1164,7 @@ export const load: PageServerLoad = ({ params }) => {
 	const jurisdiction = jurisdictionFacts(record, sources);
 	sources.part('Treaties and federal ties');
 	const ties = federalTies(record, sources);
+	const enforcement = enforcementActions(record, sources);
 	// Every dated record on the page on one line, after the sections it
 	// repeats, so its markers reuse their sources' numbers.
 	const timeline = nationTimeline(record, sources, documents);
@@ -1191,6 +1217,7 @@ export const load: PageServerLoad = ({ params }) => {
 		documents,
 		jurisdiction,
 		ties,
+		enforcement,
 		timeline: hasTimeline ? timeline : undefined,
 		stories,
 		empty,
@@ -1212,7 +1239,7 @@ export const load: PageServerLoad = ({ params }) => {
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
-	if (ties.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {
