@@ -67,6 +67,16 @@ These were not reversed. Each is marked in `flags` or in the second look's reaso
 5. **Dispute chapter not in the passages.** In the Colorado River Indian Tribes amendment of 2009 and the Confederated Tribes of the Chehalis Reservation amendment of 2017, the passages held only the table of contents. The whole document needs reading; both are flagged `needs-full-document-read`. The same applies to items that rest only on a heading (Nottawaseppi Huron Band, 2011), on appendices not in the passages (Seneca Nation, 2009), or on a passage that cannot be read (Kickapoo Tribe in Kansas, 2007).
 6. **Other kinds.** Decide whether management contract dispute requirements, per capita dispute forums and a commission's power to arbitrate its own disputes belong in the dispute resolution data at all.
 
+## Lead author's answer, Nov. 23, 2026
+
+On calls 1 and 3 the lead author wrote: "I don't know for those questions .too unclear. Just grab it and we can deal with the info later?" `scripts/review/ordinance_disputes.py grab` applied that answer:
+
+- The 21 compact passages that first readers set aside are now items of kind `other`, flagged `compact-terms`, at low confidence. Their summary is the first reader's note; the passages were not read further and carry no snippet.
+- 100 items that set out no steps of their own are flagged `no-steps`. Most are a commission's bare power to hear complaints or disputes; a few only point to a compact or management agreement. The flag was set by a word search of the summaries and second-look reasons, so it may miss or over-include a few.
+- Every item, 533 in all, is marked `keep` in `lead_author_decision`. Filter on the `flags` column to set these groups aside later.
+
+Calls 2, 4, 5 and 6 are unchanged. The skipped general Tribal court appeal clauses (call 2) were not added.
+
 ## Documents with nothing recorded
 
 12 selected documents had no item, each with the reviewer's reason in `documents_without_items`. 2 are the passage gaps above. The others hold only licensing hearings, enforcement or commission membership rules with no dispute framing (Crow Creek Sioux 1994, Crow Tribe 2015, Forest County Potawatomi 1997, Morongo 1995, Nooksack 1993, Ottawa Tribe of Oklahoma 1998, Pueblo of Acoma 1998, Puyallup 2000, Shakopee Mdewakanton 2013). Santa Ynez 2008 names a dispute procedure in a list without its text. For 6 of these nations, older documents where the script found candidate sections were not given to reviewers; their search logs say so.
