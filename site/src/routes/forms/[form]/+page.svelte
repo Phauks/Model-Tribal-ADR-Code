@@ -1,5 +1,7 @@
 <script lang="ts">
+	import FileVerifier from '#lib/components/FileVerifier.svelte';
 	import FormDocument from '#lib/components/FormDocument.svelte';
+	import { verifyLink } from '#lib/checksums.ts';
 	import { formHtml } from '#lib/forms.ts';
 	import type { PageProps } from './$types';
 
@@ -138,15 +140,22 @@
 							<a href={download.href} download>{download.kind}</a>
 							<span class="small muted">({Math.max(1, Math.round(download.bytes / 1024))} KB)</span>
 							<br />
-							<span class="small">SHA-256: <code class="form-hash">{download.sha256}</code></span>
+							<span class="small"
+								>SHA-256: <code class="form-hash">{download.sha256}</code> ·
+								<a href={verifyLink(download.sha256, download.href.split('/').pop())}>Check this file</a></span
+							>
 						</li>
 					{/each}
 				</ul>
-				<p class="small">
-					To check that a file is the one published here, compare its SHA-256 hash with the one above. All the
-					hashes are in <a href="/help/forms/SHA256SUMS.txt">one list</a>; on a computer, put the files in one
-					folder with the list and run <code>sha256sum -c SHA256SUMS.txt</code>.
-				</p>
+				<details class="form-check">
+					<summary>Check a file you downloaded</summary>
+					<FileVerifier identifier="form-verify" />
+					<p class="small">
+						The file is checked on your device and never sent to us. On a computer you can also put the files in
+						one folder with <a href="/help/forms/SHA256SUMS.txt">this list of hashes</a> and run
+						<code>sha256sum -c SHA256SUMS.txt</code>.
+					</p>
+				</details>
 			</section>
 		{/if}
 
