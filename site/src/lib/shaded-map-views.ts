@@ -14,6 +14,8 @@ export type ShadedMapView =
 	| 'other-jurisdiction-laws'
 	| 'agreements-with-states'
 	| 'gaming'
+	| 'treaties'
+	| 'land-set-aside'
 	| 'indian-health-service';
 
 export const shadedMapViews: ShadedMapView[] = [
@@ -24,6 +26,8 @@ export const shadedMapViews: ShadedMapView[] = [
 	'other-jurisdiction-laws',
 	'agreements-with-states',
 	'gaming',
+	'treaties',
+	'land-set-aside',
 	'indian-health-service'
 ];
 
@@ -78,6 +82,22 @@ export const recognitionCategories: ShadeCategory[] = [
 	{ key: 'state', label: 'State recognized', shade: 3 },
 	{ key: 'petitioning', label: 'Petitioning for federal acknowledgment', shade: 2 },
 	{ key: 'other', label: 'Special relationship recognized by Congress, or status under territorial law', shade: 1 }
+];
+
+/** How many ratified treaties with the United States each nation's entry lists (`treaties`), counting each treaty once. A nation is linked to a treaty signed by the tribes and bands it descends from, as Kappler names them. */
+export const treatyCategories: ShadeCategory[] = [
+	{ key: 'ten-or-more', label: 'Ten or more treaties', shade: 4 },
+	{ key: 'five-to-nine', label: 'Five to nine treaties', shade: 3 },
+	{ key: 'two-to-four', label: 'Two to four treaties', shade: 2 },
+	{ key: 'one', label: 'One treaty', shade: 1 }
+];
+
+/** How a nation's reservation or other land base was set aside (each record's `land_establishment` facts, by `method`), in order of precedence. The table shows every way each nation's land was set aside, since a nation's lands can have been set aside at different times by different means. */
+export const landSetAsideCategories: ShadeCategory[] = [
+	{ key: 'treaty', label: 'By treaty', shade: 4 },
+	{ key: 'executive-order', label: 'By executive order', shade: 3 },
+	{ key: 'statute', label: 'By act of Congress', shade: 2 },
+	{ key: 'other', label: 'By agreement or another means', shade: 1 }
 ];
 
 /**
@@ -229,6 +249,26 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 		kindHeaders: { compact: 'Class III compact', procedures: 'Secretarial Procedures', ordinance: 'Gaming ordinance', operates: 'Operates gaming' },
 		section: 'law-heading',
 		sources: { section: 'Gaming', text: 'each nation’s gaming compacts, gaming ordinances and whether it operates gaming' }
+	},
+	treaties: {
+		categories: treatyCategories,
+		unrecorded: 'No treaty recorded yet',
+		note: 'Each nation’s land areas are shaded by how many ratified treaties with the United States its entry lists, counting treaties signed by the tribes and bands it descends from. Today’s lands are often far from the lands a treaty named, and many treaties ceded land rather than set it aside. A nation missing here may still have treaties: the record is only as complete as its sources. Each nation’s page lists its treaties, each linked to its text in Kappler’s Indian Affairs: Laws and Treaties. Select an area to go to its nation’s row.',
+		caption: 'Nations with a ratified treaty recorded, and how many',
+		rows: 'nations',
+		categoryHeader: 'Treaties',
+		section: 'ties-heading',
+		sources: { section: 'Treaties', text: 'the ratified treaties each nation’s entry lists' }
+	},
+	'land-set-aside': {
+		categories: landSetAsideCategories,
+		unrecorded: 'Not recorded yet',
+		note: 'Each nation’s land areas are shaded by the first of these ways its reservation or other land base was set aside: by treaty, by executive order, by act of Congress, or by an agreement, purchase or other means. The table shows every way each nation’s land was set aside. Few entries record this yet, so most areas are unshaded. Each nation’s page names the instrument and its date, with their sources. Select an area to go to its nation’s row.',
+		caption: 'Nations whose entry records how their land was set aside, and how',
+		rows: 'nations',
+		kindHeaders: { treaty: 'Treaty', 'executive-order': 'Executive order', statute: 'Act of Congress', other: 'Agreement or other' },
+		section: 'ties-heading',
+		sources: { section: 'How land was set aside', text: 'how each nation’s reservation or other land base was set aside' }
 	},
 	'indian-health-service': {
 		unrecorded: 'No Area recorded yet',

@@ -447,6 +447,21 @@ const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
 		},
 		facts: (record) => [...(record.gaming?.compacts ?? []), ...(record.gaming?.ordinances ?? []), ...(record.gaming?.operates_gaming ? [record.gaming.operates_gaming] : [])]
 	},
+	treaties: {
+		categoryOf: (record) => {
+			const count = new Set((record.treaties ?? []).map((treaty) => `${treaty.title}|${treaty.signed}`)).size;
+			if (count === 0) return undefined;
+			return count >= 10 ? 'ten-or-more' : count >= 5 ? 'five-to-nine' : count >= 2 ? 'two-to-four' : 'one';
+		},
+		facts: (record) => record.treaties ?? []
+	},
+	'land-set-aside': {
+		has: (record) => {
+			const methods = new Set((record.land_establishment ?? []).map((fact) => fact.method));
+			return { treaty: methods.has('treaty'), 'executive-order': methods.has('executive-order'), statute: methods.has('statute'), other: [...methods].some((method) => !['treaty', 'executive-order', 'statute'].includes(method)) };
+		},
+		facts: (record) => record.land_establishment ?? []
+	},
 	'indian-health-service': {
 		categoryOf: healthServiceArea,
 		// One category per Area named in the entries, each with the shade that sets it apart from its neighbors.
