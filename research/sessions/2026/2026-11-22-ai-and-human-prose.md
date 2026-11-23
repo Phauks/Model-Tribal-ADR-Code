@@ -58,37 +58,14 @@ limits: >-
   column refused automated access. Two pages had no Wayback capture.
 ---
 
-Trevor asked for research into what makes AI-written prose recognizable, so
-that the project's AI-assisted drafts read well. The findings went into
-section 8 of the [style guide](../../../docs/style-guide.md#8-sound-and-rhythm).
+Trevor asked for research into what makes AI-written prose recognizable, so that the project's AI-assisted drafts read well. The findings went into section 8 of the [style guide](../../../docs/style-guide.md#8-sound-and-rhythm).
 
 Findings that shaped the rules:
 
-- Corpus studies find chat models overuse a small, shifting set of words
-  (*delve*, *pivotal*, *underscore*), write in a noun-heavy style whatever the
-  genre, and use fewer hedges, boosters and attitude markers than human
-  writers. Sources: `kobak-2025-excess-vocabulary`,
-  `reinhart-2025-do-llms-write-like-humans`, `johndrow-2025-is-it-human-or-ai`,
-  `jiang-hyland-2025-rhetorical-distinctions`.
-- Wikipedia's field guide lists recurring patterns with examples: avoiding
-  "is" and "has," claims of significance in trailing "-ing" phrases,
-  "not X but Y" frames, lists of three and vague attributions. It also warns
-  that detectors and untrained readers err, and that perfect grammar and
-  formal prose are not tells. Source: `wikipedia-signs-of-ai-writing`.
-- Em dashes are no longer a reliable sign. The Economist's 2026 study found
-  that current models write longer sentences with less punctuation overall.
-  Sources: `economist-2026-how-to-spot-ai-writing` as quoted in
-  `gruber-2026-economist-how-to-spot-ai-writing`.
-- The "sentence weight" idea is best grounded in two older sources: Provost's
-  passage on varying sentence length, and the linguistic principles of
-  end-focus and end-weight. Sources:
-  `provost-1985-100-ways-to-improve-your-writing`,
-  `haisley-concise-guide-english-grammar`.
-- For legal writing, Garner argues that AI will remove visible defects, so
-  polish will no longer signal careful thought, and that fabricated authority
-  is the failure to guard against. Source: `garner-2026-ai-bad-legal-writing`.
+- Corpus studies find chat models overuse a small, shifting set of words (*delve*, *pivotal*, *underscore*), write in a noun-heavy style whatever the genre, and use fewer hedges, boosters and attitude markers than human writers. Sources: `kobak-2025-excess-vocabulary`, `reinhart-2025-do-llms-write-like-humans`, `johndrow-2025-is-it-human-or-ai`, `jiang-hyland-2025-rhetorical-distinctions`.
+- Wikipedia's field guide lists recurring patterns with examples: avoiding "is" and "has," claims of significance in trailing "-ing" phrases, "not X but Y" frames, lists of three and vague attributions. It also warns that detectors and untrained readers err, and that perfect grammar and formal prose are not tells. Source: `wikipedia-signs-of-ai-writing`.
+- Em dashes are no longer a reliable sign. The Economist's 2026 study found that current models write longer sentences with less punctuation overall. Sources: `economist-2026-how-to-spot-ai-writing` as quoted in `gruber-2026-economist-how-to-spot-ai-writing`.
+- The "sentence weight" idea is best grounded in two older sources: Provost's passage on varying sentence length, and the linguistic principles of end-focus and end-weight. Sources: `provost-1985-100-ways-to-improve-your-writing`, `haisley-concise-guide-english-grammar`.
+- For legal writing, Garner argues that AI will remove visible defects, so polish will no longer signal careful thought, and that fabricated authority is the failure to guard against. Source: `garner-2026-ai-bad-legal-writing`.
 
-Project analysis: most of the existing style guide (plain words, active voice,
-naming the actor, no dashes) already works against these habits. The new
-section adds rhythm, emphasis, stock phrases and committing to claims, and
-frames the rules as editing for clarity, not as evading detection.
+Project analysis: most of the existing style guide (plain words, active voice, naming the actor, no dashes) already works against these habits. The new section adds rhythm, emphasis, stock phrases and committing to claims, and frames the rules as editing for clarity, not as evading detection.

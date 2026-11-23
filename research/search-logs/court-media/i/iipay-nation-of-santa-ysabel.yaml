@@ -1,0 +1,30 @@
+profile: content/tribes/i/iipay-nation-of-santa-ysabel.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Iipay Nation of Santa Ysabel tribal court video
+  outcome: not-found
+  reason: Results were government and news pages and an intertribal court reference; no video, podcast or photo of the Tribe's court appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Iipay Nation Santa Ysabel youtube video government
+  outcome: not-found
+  reason: Results were the Tribe's general council, news, history and youth program pages; no video or photo gallery was shown.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.iipaynationofsantaysabel-nsn.gov/
+  query: court, video, gallery
+  outcome: not-found
+  reason: Fetched with curl. Home page is a Wix site with departments (Tribal Police, Tribal Youth, Indian Child Welfare) but no court page, video or gallery link found.
+next_steps: No tribal court page is on the site. Check the Intertribal Court of Southern California, which serves the region, for court media.

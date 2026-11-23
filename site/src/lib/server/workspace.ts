@@ -30,6 +30,19 @@ export function requirePerson(event: WorkspaceEvent): SignedInPerson {
 	return event.locals.person;
 }
 
+/**
+ * The signed-in person, for an address the editor reads or writes with
+ * fetch. A redirect there would be followed quietly and answered with the
+ * sign-in page, which the editor could take for a save, so a signed-out
+ * request gets "401 Unauthorized" with a message instead.
+ */
+export function requirePersonForData(event: WorkspaceEvent): SignedInPerson {
+	if (!event.locals.person) {
+		error(401, event.locals.account ? 'This account has no workspace access.' : 'You are signed out. Sign in again in another tab, then try once more.');
+	}
+	return event.locals.person;
+}
+
 /** Whoever is signed in, or a redirect to sign in and come back. */
 export function requireAccount(event: WorkspaceEvent): SignedInAccount {
 	if (!event.locals.account) {

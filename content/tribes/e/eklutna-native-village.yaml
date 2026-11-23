@@ -207,6 +207,152 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Eklutna Native Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Eklutna Native Village". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Eklutna Native Village".'
+governance:
+- aspect: governing-body
+  value: Traditional Tribal Council
+  quote: The governing body of Eklutna shall be the Native
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section I
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: Section II Composition The Council shall consist of seven (7)
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section II
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: governing-body-selection
+  value: Elected by majority of qualified members
+  quote: by a majority of qualified members.
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section II
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: terms to be staggered so that no more than
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section IV
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: head-of-government
+  value: President
+  quote: Section III Officers The council shall include a President,
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section III
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Eklutna Native Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer, three Trustees
+  quote: Vice-President, Secretary, Treasurer, and three (3) Trustees.
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section III
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older shall be
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section II
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: election-authority
+  value: Election committee appointed by the council
+  quote: committee appointed by the council whose duties shall be to
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section V
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: amendment
+  value: Majority of qualified voters in an election, 15% must vote
+  quote: This constitution may be amended by a
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIV, Section I
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: recall-and-removal
+  value: Removal by vote of at least 4 council members
+  quote: at least four (4) members of the council vote in favor of such
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section I
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: at least thirty percent (30%) of the eligible voters, and
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section II
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
 justice_institutions:
 - kind: tribal-court
   name: Eklutna Tribal Court

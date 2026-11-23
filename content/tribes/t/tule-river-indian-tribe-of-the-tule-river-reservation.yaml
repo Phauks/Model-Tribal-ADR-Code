@@ -178,6 +178,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tule River Indian Tribe of the Tule River Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Tule River Indian Tribe of the Tule River Reservation, California".
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Tule River Indian Tribe) (approved 1936) states it was adopted under Act of June
@@ -188,6 +196,183 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Tule River Tribal Council
+  quote: The governing body of the Tule River Tribe shall con-
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article III, Section 1
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: councilmen elected by secret ballot,
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article III, Section 2
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Councilmen shall hold office for a term of two years, or
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article III, Section 4
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: head-of-government
+  value: Chairman
+  quote: its own membership, a council chairman and vice-chairman;
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article III, Section 3
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tule River Indian Tribe of the Tule River Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own membership
+  quote: its own membership, a council chairman and vice-chairman;
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article III, Section 3
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Councilmen shall hold office for a term of two years, or
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article III, Section 4
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: other-officers
+  value: Vice-chairman, secretary, treasurer
+  quote: and from within or without its own membership, a secretary, a treas-
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article III, Section 3
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: elections
+  value: Every 2 years on the third Saturday in January
+  quote: and thereafter elections shall be held every two
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: voting-age
+  value: '21'
+  quote: twenty-one years of age or over, on the date of election,
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article IV, Section 4
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: election-authority
+  value: Tribal council, or a board it appoints
+  quote: council, shall determine rules and regulations governing elections
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article IV, Section 3
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: judiciary
+  value: Tribal court, to be established by bylaws or ordinance
+  quote: a tribal court upon the reservation.
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Bylaws, Article V, Section 1(a)
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary
+  quote: majority vote of the qualified voters of the tribe voting at an elec-
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article VIII, Section 1
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall have been approved by the Secretary of the Interior. It shall
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article VIII, Section 1
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of the council
+  quote: council by a two- thirds vote of the council members, provided that
+  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-03-04'
+  locator: Article V, Section 2
+  document_version:
+    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
 governing_documents:
 - kind: constitution
   title: Constitution and By-laws of the Tule River Indian Tribe of California

@@ -141,6 +141,32 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kipnuk
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: Listed as "Native Village of Kipnuk". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Native Village of Kipnuk".'
+  operator: tribal
+governance:
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Kipnuk
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

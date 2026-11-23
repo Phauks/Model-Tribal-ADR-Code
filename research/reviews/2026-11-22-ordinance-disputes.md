@@ -91,13 +91,97 @@ Calls 2, 4, 5 and 6 are unchanged. The skipped general Tribal court appeal claus
 | `partly-searched` (a scanned or missing document, or a passage gap) | 32 |
 | `none-found` | 13 |
 
-264 of the found nations have a procedure the reviewers recorded. In the other 6, only the script's leads in older documents found something.
+264 of the found nations have a procedure the reviewers recorded. In the other 6, only the script's leads in older documents found something. The table shows the logs as of Nov. 22; the next section gives the statuses after the scanned documents were read.
+
+## Scanned ordinances read from page images, Nov. 23, 2026
+
+32 nations were `partly-searched` on Nov. 22, 31 of them because their documents are scans with no text layer. The script [`scripts/review/ordinance_scans.py`](../../scripts/review/ordinance_scans.py) picked, for each of those nations, the newest full ordinance on the list (if it is scanned) plus the scanned amendments listed on or after it, at most 3. It downloaded each PDF again from the Commission's public link, one at a time with a pause. All 53 downloads succeeded, and each file matched the gaming thread's earlier capture (sha256). Small-model reviewers (Claude, AI assistant) then read the page images, following the [scan brief](briefs/2026-11-23-ordinance-scans.md). No OCR was run. The page images of three documents (Metlakatla Indian Community 1997, Miccosukee Tribe 1994, Organized Village of Kake 2000) dropped out of the first batch, and those documents were read again in a later batch.
+
+| | Count |
+| --- | ---: |
+| Nations with a document read | 31 |
+| Documents read | 53 |
+| Pages in those documents | 1,791 |
+| Pages read as images | 1,322 |
+| Documents read in full | 44 |
+| Documents partly read | 9 |
+| Documents with no item | 15 |
+
+The 9 partly read documents are flagged `partly-read` on each of their items, with `verification: title-only`:
+
+- **Pages that dropped out:** Wilton Rancheria 2019 (pages 1–12, 21–22, 25–34, 38–42 and 45–49 were not seen) and Navajo Nation 2019 (pages 1–6 could not be read).
+- **The 40-page budget for long documents:** Pueblo of Nambé 2016, Pueblo of Isleta 2000 and 2024, Seneca-Cayuga 2013, Shinnecock 2020 (pages 41–44), Navajo Nation 2003 and 2019, and Shoalwater Bay 2019 (page 41).
+
+Readers recorded 75 procedures in 38 documents.
+
+| Kind | High | Medium | Low | Total |
+| --- | ---: | ---: | ---: | ---: |
+| `patron-dispute` | 30 | 4 | 7 | 41 |
+| `employee-grievance` | 5 | 2 | 5 | 12 |
+| `licensing-hearing` | 4 | 3 | 0 | 7 |
+| `other` | 3 | 5 | 7 | 15 |
+| **Total** | **42** | **14** | **19** | **75** |
+
+The items join the review files with ids ending `#p<n>` and the lead author's grab-now decision. They have no text layer, so the snippets could not be checked against the document. Each item's `quote_check` says "copied from the page image; no text layer to check", and the snippets are in the private copy only. The `grab` flags apply: 12 items refer to the Tribal-State compact (`compact-terms`, set from the `refers_to` wording) and 11 set out no steps (`no-steps`).
+
+**Spot check.** Claude (AI assistant) checked 10 items against the page images. Six were chosen because the lead session asked for them, and four were drawn at random (seed 20261123). The result is in each item's `second_look`; the reader's own fields are unchanged.
+
+- 5 were kept as recorded: Seneca-Cayuga 2013 (Office of Gaming Appeals), Torres-Martinez 2020, Pueblo of Jemez 2005, Pueblo of Nambé 2016 and Pinoleville 2004.
+- 2 are `not-in-force`: the low-confidence Navajo Nation 2019 items quote sections that the amendment strikes through, so the amendment deletes them. One of their snippets also corrects the document's "patrol" to "patron", so it is not word for word.
+- 3 are `not-a-dispute-procedure`: Shoalwater Bay 2012 and 2019 (12-14.01) and Coquille 2020 (section 12 of chapter 198) are ordinary licensing hearings. Their only framing is the word "disagree(s)", which the brief does not count as dispute framing.
+
+So 5 of the 10 would change. Page numbers were right in all 10, and 9 of the 10 snippets matched the page word for word. The other 16 low-confidence items were not checked again.
+
+**Search logs.** Each of the 31 nations' logs gained one entry per document read, and their statuses changed as follows:
+
+- 25 moved to `found`. For Wilton Rancheria and Navajo Nation, the pages that dropped out are listed in `next_steps`. Those logs are `found` rather than `partly-searched`, because the search-log schema calls a log `found` once any search found something.
+- 6 moved to `none-found`: Confederated Tribes of Siletz Indians, Confederated Tribes of the Warm Springs Reservation, Metlakatla Indian Community, Morongo Band of Mission Indians, Pueblo of Sandia and Quileute Tribe. Some of their files are only an approval letter or a resolution: the Morongo 2010 amendment and the ordinance attached to Sandia's 1995 resolution are not in the list's copies.
+
+The Confederated Tribes of the Chehalis Reservation stays `partly-searched`: it has no scanned document, but its 2017 text amendment still needs a full reading. In all, the 315 logs now stand at 295 `found`, 19 `none-found` and 1 `partly-searched`.
+
+**Second tier.** 137 other nations had 271 scanned documents (7,203 pages) that are older or sit beside text documents the first review already read. 219 of them were read on Nov. 23 (next section).
+
+**Approval letter pages.** The batch builder marks a page as the Commission's approval letter only when the page has a text layer. The first run marked pages with the Commission's name and "chair", which also caught ordinance text (Siletz 2024, pages 25–26; Isleta 2024, pages 170–171) and a Tribal resolution (Kake 2000, page 3). The check now also needs "Dear" or "Sincerely". A letter scanned as an image cannot be recognized without OCR, so readers read those pages too.
+
+## Second tier of scanned ordinances, Nov. 23, 2026
+
+The same `select` rule, run for the other nations with scanned documents (`ordinance_scans.py second-tier`), picked 219 documents (5,956 pages) for 136 nations. All 219 downloads succeeded, and each file matched the gaming thread's capture (sha256). Small-model reviewers (Claude, AI assistant) read the page images in 43 batches, under the same [scan brief](briefs/2026-11-23-ordinance-scans.md) and 40-page budget. One batch ended before it had recorded three documents (Mooretown Rancheria, Muckleshoot and Nez Perce), and a later batch read them again.
+
+| | Count |
+| --- | ---: |
+| Nations with a document read | 136 |
+| Documents read | 219 |
+| Pages in those documents | 5,956 |
+| Pages read as images | 4,654 |
+| Documents read in full | 171 |
+| Documents partly read | 48 |
+| Documents with no item | 65 |
+
+Readers recorded 339 procedures in 154 documents, for 113 of the 136 nations.
+
+| Kind | High | Medium | Low | Total |
+| --- | ---: | ---: | ---: | ---: |
+| `patron-dispute` | 126 | 34 | 34 | 194 |
+| `employee-grievance` | 15 | 9 | 19 | 43 |
+| `licensing-hearing` | 3 | 7 | 1 | 11 |
+| `other` | 17 | 25 | 49 | 91 |
+| **Total** | **161** | **75** | **103** | **339** |
+
+The items carry the same fields, flags and grab-now decision as the first tier. 56 refer to the Tribal-State compact (`compact-terms`) and 49 set out no steps (`no-steps`). The 48 partly read documents are flagged `partly-read` on each item, with the pages not read. Most of them stopped at the 40-page budget or skipped pages the reading plan judged to be forms or licensing rules. Two lost pages in reading: Caddo Nation 2026 and Central Council of the Tlingit and Haida Indian Tribes 2025 (page 42, where its patron dispute section continues).
+
+**Wrong file.** The Commission's link for the Kialegee Tribal Town amendment listed 2022-06-02 serves the same file (same sha256) as the Kalispel Tribe's amendment of the same date; it leads to `20220602_Kalispel_Ord_Amend_Apprl-1.pdf`. Nothing was recorded for Kialegee from it; the entry is flagged `wrong-file`. Kialegee's own amendment still needs to be found.
+
+**Spot check.** Claude (AI assistant) checked 10 items against the page images: the Pueblo of Acoma 2011 mediation item and the Pascua Yaqui 2021 licensing item, plus 8 drawn at random (seed 20261123). All 10 were kept as recorded, and their page numbers were right. Two notes: the Acoma summary leaves out the rehearing motion and the exception for license denials, and the Pascua Yaqui item is kept only because its informal meeting is a meeting "to discuss the grievance". The 100 other low-confidence items were not checked again.
+
+**Search logs.** Each of the 136 nations' logs gained one entry per document read. All 136 were already `found` from their text documents, so no status changed; the logs still stand at 295 `found`, 19 `none-found` and 1 `partly-searched`.
+
+**Not read.** 52 scanned documents of these nations were not picked by the rule, because they are older than the newest full ordinance or beyond the 3-document limit; they are listed in the counts file under `second_tier_not_read`. Two scanned documents belong to list rows with no profile (Mississippi Band of Choctaw Indians 2010 and Seminole Nation of Oklahoma 2009). Of the 330 scanned documents, 272 have now been read from page images.
 
 ## Limits
 
 - **Readers.** Small models made the first reading from extracted passages, not whole documents. The second look covered low-confidence and garbled items only. Medium and high items were checked by the quote check, and Claude (AI assistant) spot-checked six at random, but they were not re-read one by one.
 - **Newest document only.** Older ordinances were scanned, not reviewed, so a procedure that changed over time shows only its latest listed form. The list's copy may not be the nation's current law.
-- **Scanned documents.** 330 documents (10,118 pages) have no text layer and were not read. Some text came from an earlier scanner's character recognition and is garbled; snippets kept its misspellings.
+- **Scanned documents.** 330 documents (10,118 pages) have no text layer. 272 of them were read from page images on Nov. 23 (see above); the other 58 were not read, and pages over the 40-page budget were not read either. Page-image snippets could not be checked against a text layer. Some text came from an earlier scanner's character recognition and is garbled; snippets kept its misspellings.
 - **Regulations not on the list.** Many ordinances leave the procedure to commission regulations or a compact. Those texts were not searched here.
 - **Absence.** "None found" means only that the listed documents had no procedure in the text read on this date (project analysis).
 
@@ -105,7 +189,7 @@ Calls 2, 4, 5 and 6 are unchanged. The skipped general Tribal court appeal claus
 
 - Procedures: [JSON](2026-11-22-ordinance-disputes.json), [CSV](2026-11-22-ordinance-disputes.csv), [counts](2026-11-22-ordinance-disputes-counts.json).
 - Search logs: [`research/search-logs/gaming-dispute-procedures/`](../search-logs/gaming-dispute-procedures/).
-- Brief: [`briefs/2026-11-22-ordinance-disputes.md`](briefs/2026-11-22-ordinance-disputes.md).
-- Script: [`scripts/review/ordinance_disputes.py`](../../scripts/review/ordinance_disputes.py).
-- Session log: [`research/sessions/2026/2026-11-22-ordinance-disputes.md`](../sessions/2026/2026-11-22-ordinance-disputes.md).
+- Briefs: [`briefs/2026-11-22-ordinance-disputes.md`](briefs/2026-11-22-ordinance-disputes.md) and, for the scans, [`briefs/2026-11-23-ordinance-scans.md`](briefs/2026-11-23-ordinance-scans.md).
+- Scripts: [`scripts/review/ordinance_disputes.py`](../../scripts/review/ordinance_disputes.py) and [`scripts/review/ordinance_scans.py`](../../scripts/review/ordinance_scans.py).
+- Session logs: [`research/sessions/2026/2026-11-22-ordinance-disputes.md`](../sessions/2026/2026-11-22-ordinance-disputes.md) and [`research/sessions/2026/2026-11-23-ordinance-scans.md`](../sessions/2026/2026-11-23-ordinance-scans.md) and [`research/sessions/2026/2026-11-23-ordinance-scans-second-tier.md`](../sessions/2026/2026-11-23-ordinance-scans-second-tier.md).
 - The batches, verdicts, second-look file and snippets are kept privately outside the repository, because they hold text of Tribal laws.

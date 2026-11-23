@@ -44,6 +44,13 @@ supreme_court:
   - {name: "John Paul Stevens", vote: majority}
   source: https://api.oyez.org/cases/1977/76-682
   checked: '2026-11-22'
+courtlistener:
+  cluster: 109857
+  citation: "436 U.S. 49"
+  case_name: "Santa Clara Pueblo v. Martinez"
+  link: https://www.courtlistener.com/opinion/109857/santa-clara-pueblo-v-martinez/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

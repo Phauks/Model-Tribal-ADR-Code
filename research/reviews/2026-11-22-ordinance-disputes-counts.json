@@ -78,5 +78,281 @@
    "compact-terms-recorded": 3
   },
   "decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
+ },
+ "scans_2026_11_23": {
+  "first_tier_nations": 32,
+  "nations_with_a_document_read": 31,
+  "documents_read": 53,
+  "pages_in_documents": 1791,
+  "pages_read": 1322,
+  "documents_read_in_full": 44,
+  "documents_partly_read": [
+   "navajo-nation-amendment-2019-06-24",
+   "navajo-nation-ordinance-2003-12-09",
+   "pueblo-of-isleta-amendment-2000-04-18",
+   "pueblo-of-isleta-amendment-2024-11-26",
+   "pueblo-of-nambe-amendment-2016-09-23",
+   "seneca-cayuga-tribe-of-oklahoma-amendment-2013-12-18",
+   "shinnecock-indian-nation-ordinance-2020-07-17",
+   "shoalwater-bay-tribe-amendment-2019-08-30",
+   "wilton-rancheria-amendment-2019-08-30"
+  ],
+  "documents_with_pages_dropped": [
+   "navajo-nation-amendment-2019-06-24",
+   "wilton-rancheria-amendment-2019-08-30"
+  ],
+  "documents_without_items": 15,
+  "items": 75,
+  "items_by_kind": {
+   "patron-dispute": 41,
+   "employee-grievance": 12,
+   "other": 15,
+   "licensing-hearing": 7
+  },
+  "items_by_confidence": {
+   "high": 42,
+   "low": 19,
+   "medium": 14
+  },
+  "items_by_kind_and_confidence": {
+   "employee-grievance high": 5,
+   "employee-grievance low": 5,
+   "employee-grievance medium": 2,
+   "licensing-hearing high": 4,
+   "licensing-hearing medium": 3,
+   "other high": 3,
+   "other low": 7,
+   "other medium": 5,
+   "patron-dispute high": 30,
+   "patron-dispute low": 7,
+   "patron-dispute medium": 4
+  },
+  "items_by_current_kind": {
+   "patron-dispute": 41,
+   "employee-grievance": 12,
+   "other": 15,
+   "not-a-dispute-procedure": 3,
+   "licensing-hearing": 4
+  },
+  "flags": {
+   "partly-read": 21,
+   "compact-terms": 12,
+   "no-steps": 11,
+   "not-in-force": 2
+  },
+  "nations_with_kept_items": 25,
+  "spot_check": {
+   "seed": 20261123,
+   "checked": 10,
+   "verdicts": {
+    "keep": 5,
+    "not-in-force": 2,
+    "not-a-dispute-procedure": 3
+   }
+  },
+  "second_look": {
+   "not-queued": 49,
+   "not-rechecked": 16,
+   "keep": 5,
+   "not-in-force": 2,
+   "not-a-dispute-procedure": 3
+  },
+  "search_logs_changed": {
+   "partly-searched -> none-found": 6,
+   "partly-searched -> found": 25
+  },
+  "search_logs_after": {
+   "found": 295,
+   "none-found": 19,
+   "partly-searched": 1
+  },
+  "items_after": 608,
+  "second_tier_not_read": {
+   "nations_with_scanned_documents": 137,
+   "scanned_documents": 271,
+   "scanned_pages": 7203,
+   "selected_documents": 219,
+   "selected_pages": 5956,
+   "nations_with_a_selected_document": 136,
+   "scanned_documents_without_a_profile": 2
+  }
+ },
+ "scans_2026_11_23_second_tier": {
+  "first_tier_nations": 136,
+  "nations_with_a_document_read": 136,
+  "documents_read": 219,
+  "pages_in_documents": 5956,
+  "pages_read": 4654,
+  "documents_read_in_full": 171,
+  "documents_partly_read": [
+   "assiniboine-sioux-tribes-of-the-fort-peck-indian-reservation-ordinance-1994-02-07",
+   "caddo-nation-of-oklahoma-amendment-2026-10-02",
+   "central-council-of-tlingit-and-haida-indian-tribes-of-alaska-amendment-2025-01-17",
+   "comanche-nation-amendment-2024-12-10",
+   "eastern-shawnee-tribe-of-oklahoma-amendment-2015-06-09",
+   "jamul-indian-village-of-california-amendment-2019-05-08",
+   "jicarilla-apache-tribe-amendment-2020-04-03",
+   "keweenaw-bay-indian-community-amendment-2010-11-29",
+   "kialegee-tribal-town-amendment-2022-06-02",
+   "nottawaseppi-huron-band-of-potawatomi-amendment-2025-10-29",
+   "osage-tribe-amendment-2005-05-27",
+   "osage-tribe-amendment-2011-01-18",
+   "pascua-yaqui-tribe-of-arizona-amendment-2012-01-13",
+   "pascua-yaqui-tribe-of-arizona-amendment-2021-08-27",
+   "pawnee-nation-of-oklahoma-amendment-2006-05-09",
+   "pawnee-nation-of-oklahoma-amendment-2008-02-25",
+   "picayune-rancheria-of-the-chukchansi-indians-amendment-2010-04-16",
+   "pokagon-band-of-potawatomi-indians-of-michigan-amendment-2007-06-01",
+   "pueblo-of-acoma-amendment-2008-12-18",
+   "pueblo-of-acoma-amendment-2011-01-31",
+   "pueblo-of-san-felipe-amendment-2009-10-09",
+   "pueblo-of-tesuque-amendment-2007-12-28",
+   "pueblo-of-tesuque-amendment-2019-03-29",
+   "quapaw-tribe-of-indians-amendment-2009-09-30",
+   "quechan-tribe-of-the-fort-yuma-indian-reservation-amendment-2008-01-22",
+   "rincon-band-of-luiseno-mission-indians-amendment-2011-09-28",
+   "sac-fox-nation-of-oklahoma-amendment-2018-09-26",
+   "sac-fox-tribe-of-mississippi-in-iowa-ordinance-2008-12-08",
+   "saginaw-chippewa-indian-tribe-amendment-1997-01-28",
+   "san-carlos-apache-tribe-amendment-2004-11-19",
+   "san-pasqual-band-of-diegueno-mission-indians-amendment-2015-06-09",
+   "santa-rosa-indian-community-amendment-2006-02-01",
+   "sault-ste-marie-tribe-of-chippewa-indians-amendment-2017-02-16",
+   "seminole-nation-of-oklahoma-amendment-2009-07-10-2",
+   "skokomish-indian-tribe-amendment-2008-02-26",
+   "skokomish-indian-tribe-amendment-2009-09-25",
+   "southern-ute-indian-tribe-amendment-2018-10-22",
+   "st-croix-chippewa-indians-of-wisconsin-amendment-2006-10-27",
+   "stockbridge-munsee-community-amendment-2009-06-12",
+   "suquamish-indian-tribe-amendment-2009-05-14",
+   "susanville-indian-rancheria-amendment-2005-03-23",
+   "susanville-indian-rancheria-amendment-2008-12-08",
+   "sycuan-band-of-the-kumeyaay-nation-amendment-2017-02-16",
+   "tohono-o-odham-nation-amendment-2007-08-17",
+   "viejas-band-of-kumeyaay-indians-amendment-2008-03-11",
+   "viejas-band-of-kumeyaay-indians-amendment-2018-08-17",
+   "yavapai-apache-nation-amendment-2006-07-21",
+   "ysleta-del-sur-pueblo-of-texas-amendment-2026-09-04"
+  ],
+  "documents_with_pages_dropped": [
+   "caddo-nation-of-oklahoma-amendment-2026-10-02",
+   "central-council-of-tlingit-and-haida-indian-tribes-of-alaska-amendment-2025-01-17"
+  ],
+  "documents_without_items": 65,
+  "items": 339,
+  "items_by_kind": {
+   "patron-dispute": 194,
+   "other": 91,
+   "licensing-hearing": 11,
+   "employee-grievance": 43
+  },
+  "items_by_confidence": {
+   "high": 161,
+   "medium": 75,
+   "low": 103
+  },
+  "items_by_kind_and_confidence": {
+   "employee-grievance high": 15,
+   "employee-grievance low": 19,
+   "employee-grievance medium": 9,
+   "licensing-hearing high": 3,
+   "licensing-hearing low": 1,
+   "licensing-hearing medium": 7,
+   "other high": 17,
+   "other low": 49,
+   "other medium": 25,
+   "patron-dispute high": 126,
+   "patron-dispute low": 34,
+   "patron-dispute medium": 34
+  },
+  "items_by_current_kind": {
+   "patron-dispute": 194,
+   "other": 91,
+   "licensing-hearing": 11,
+   "employee-grievance": 43
+  },
+  "flags": {
+   "partly-read": 130,
+   "compact-terms": 56,
+   "no-steps": 49
+  },
+  "nations_with_kept_items": 113,
+  "spot_check": {
+   "seed": 20261123,
+   "checked": 10,
+   "verdicts": {
+    "keep": 10
+   }
+  },
+  "second_look": {
+   "not-queued": 229,
+   "not-rechecked": 100,
+   "keep": 10
+  },
+  "search_logs_changed": {
+   "found -> found": 136
+  },
+  "search_logs_after": {
+   "found": 295,
+   "none-found": 19,
+   "partly-searched": 1
+  },
+  "items_after": 947,
+  "second_tier_not_read": {
+   "not_selected": [
+    "comanche-nation-amendment-2007-07-30",
+    "comanche-nation-amendment-2009-09-21",
+    "comanche-nation-amendment-2017-10-05",
+    "comanche-nation-amendment-2018-10-19",
+    "muscogee-creek-nation-amendment-1998-10-09",
+    "muscogee-creek-nation-amendment-2004-10-25",
+    "muscogee-creek-nation-amendment-2005-07-06",
+    "nez-perce-tribe-amendment-1996-08-23",
+    "nez-perce-tribe-amendment-1999-10-22",
+    "osage-tribe-amendment-2003-07-07",
+    "pascua-yaqui-tribe-of-arizona-amendment-1994-06-13",
+    "pascua-yaqui-tribe-of-arizona-amendment-2000-07-18",
+    "pascua-yaqui-tribe-of-arizona-amendment-2004-01-14",
+    "pascua-yaqui-tribe-of-arizona-amendment-2004-09-20",
+    "pascua-yaqui-tribe-of-arizona-ordinance-1993-10-12",
+    "pauma-band-of-luiseno-mission-indians-of-the-pauma-yuima-reservation-amendment-2005-04-15",
+    "picayune-rancheria-of-the-chukchansi-indians-amendment-2003-12-09",
+    "picayune-rancheria-of-the-chukchansi-indians-amendment-2008-01-11",
+    "picayune-rancheria-of-the-chukchansi-indians-amendment-2009-03-27",
+    "picayune-rancheria-of-the-chukchansi-indians-ordinance-1996-06-27",
+    "prairie-band-of-potawatomi-nation-amendment-2000-06-02",
+    "prairie-island-indian-community-amendment-1996-10-08",
+    "prairie-island-indian-community-amendment-1998-06-12",
+    "prairie-island-indian-community-ordinance-1994-01-21",
+    "pueblo-of-santa-clara-amendment-2005-04-27",
+    "pueblo-of-santa-clara-amendment-2008-01-09",
+    "sac-fox-nation-of-oklahoma-amendment-2008-11-20",
+    "santa-ysabel-band-of-diegueno-mission-indians-ordinance-1996-04-30",
+    "sault-ste-marie-tribe-of-chippewa-indians-amendment-1999-07-29",
+    "sault-ste-marie-tribe-of-chippewa-indians-amendment-2005-03-24",
+    "seminole-nation-of-oklahoma-amendment-2003-10-17",
+    "seminole-nation-of-oklahoma-amendment-2003-12-17",
+    "seminole-nation-of-oklahoma-amendment-2004-03-10",
+    "seminole-nation-of-oklahoma-amendment-2004-04-13",
+    "seminole-nation-of-oklahoma-ordinance-1994-05-31",
+    "seneca-nation-of-new-york-amendment-1995-06-21",
+    "seneca-nation-of-new-york-amendment-2002-11-26",
+    "shoshone-tribe-of-the-wind-river-reservation-ordinance-2004-03-10",
+    "skokomish-indian-tribe-amendment-2001-07-03",
+    "skokomish-indian-tribe-amendment-2004-10-26",
+    "skokomish-indian-tribe-ordinance-1996-04-30",
+    "tulalip-tribes-of-the-tulalip-reservation-amendment-1995-10-24",
+    "tulalip-tribes-of-the-tulalip-reservation-amendment-1999-05-12",
+    "tulalip-tribes-of-the-tulalip-reservation-amendment-1999-09-13",
+    "tulalip-tribes-of-the-tulalip-reservation-amendment-2005-11-17",
+    "tulalip-tribes-of-the-tulalip-reservation-amendment-2006-04-03",
+    "tulalip-tribes-of-the-tulalip-reservation-amendment-2007-06-28",
+    "tulalip-tribes-of-the-tulalip-reservation-amendment-2007-12-17",
+    "tulalip-tribes-of-the-tulalip-reservation-ordinance-1995-03-13",
+    "yuhaaviatam-of-san-manuel-nation-formally-san-manuel-band-of-mission-indians-amendment-2000-03-10",
+    "yuhaaviatam-of-san-manuel-nation-formally-san-manuel-band-of-mission-indians-amendment-2004-10-26",
+    "yuhaaviatam-of-san-manuel-nation-formally-san-manuel-band-of-mission-indians-amendment-2010-08-30"
+   ]
+  }
  }
 }

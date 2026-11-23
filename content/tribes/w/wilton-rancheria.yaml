@@ -164,6 +164,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Wilton Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Wilton Rancheria, California".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Me-wuk Indian Community of the Wilton Rancheria, California" among organizations
@@ -189,6 +197,279 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under inherent sovereignty
+  quote: We, the people of Wilton Rancheria, pursuant to our inherent sovereignty, in order to
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Preamble
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Section 2. Powers of the Tribal Council. The Tribal Council shall make the Tribe’s
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VI, Section 2
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: Section 1. Composition of the Tribal Council. The Tribal Council shall consist of
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VI, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: be elected at-large by the Tribe’s eligible voters.
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VI, Section 8
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Section 5. Terms of Office. Members of the Tribal Council shall serve four year terms
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VI, Section 5
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: general-council
+  value: All eligible voters
+  quote: Rancheria are entitled to participate in the General Council.
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VII, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: Section 1. Powers of the Chairperson. The Chairperson shall lead the Tribe based
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article V, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Wilton Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Selected at the General Election
+  quote: Chairperson, and members of the Tribal Council shall be selected at the General
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article IX, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: head-of-government-term
+  value: 4 years, staggered
+  quote: Section 3. Terms of Office. The Chairperson and Vice-Chairperson shall serve
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article V, Section 3
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: other-officers
+  value: Vice-Chairperson
+  quote: 'Section 2. Vice- Chairperson. The Vice-Chairperson shall have the power:'
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article V, Section 2
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: elections
+  value: Every 2 years on the second weekend in June
+  quote: weekend in June of even-numbered years beginning in 2014. General Elections shall be
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article IX, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: voting-age
+  value: '18'
+  quote: Section 3. Eligible Voters. Any member of Wilton Rancheria who is at least eighteen
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article IX, Section 3
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: election-authority
+  value: Election Commission
+  quote: The Wilton Rancheria Election Commission shall be
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article IX, Section 4
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: branches
+  value: Chairperson, Tribal Council, General Council and Tribal Court
+  quote: be composed of a Chairperson, a Vice-Chairperson, a Tribal Council, a General Council,
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article IV, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: be separate and distinct and shall not exercise the powers and functions delegated to any
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article IV, Section 2
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: Section 1. Composition of the Tribal Court. There shall be one Chief Judge of the
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VIII, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: Tribal Court judges shall be appointed by the Tribal Council and shall be admitted to
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VIII, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: judicial-term
+  value: 4 years
+  quote: Section 2. Terms of Office. Tribal Court judges shall serve four- year terms.
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VIII, Section 2
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: judicial-independence
+  value: Judges removable for good cause
+  quote: Judges, and Traditional Court members may be removed for good cause through the
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article X, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: amendment
+  value: Two-thirds vote of General Council at Special Meeting
+  quote: Section 1. Requirements. This Constitution may be amended by a two-thirds vote at a
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article XIV, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of General Council, on Tribal Council referral
+  quote: the General Council may vote to remove the official through a
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article X, Section 1
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+- aspect: other
+  value: Traditional Court of elders advising the Tribal Court
+  quote: Section 6. Purpose of Traditional Court. The Traditional Court shall exist to assist the
+  source: constitution-wilton-rancheria-2011-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2011-11-12'
+  locator: Article VIII, Section 6
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 2011-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
 governing_documents:
 - kind: law-code
   title: Tribal code

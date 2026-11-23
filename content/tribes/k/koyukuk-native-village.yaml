@@ -143,6 +143,223 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Koyukuk Native Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: Listed as "Koyukuk Native Village". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Interior Alaska Service Area
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: 'The source''s words: "Koyukuk Native Village".'
+governance:
+- aspect: governing-body
+  value: Koyukuk Tribal Council
+  quote: shall be the Koyukuk Tribal Council, also referred to as the Council or Tribal
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 4, Section 1
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Council shall consist of seven members who
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 4, Section 2
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified voters
+  quote: shall be elected by a majority vote of the qualified voters of the tribe.
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 4, Section 2
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The officers shall hold office for a
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 4, Section 6
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: general-council
+  value: Tribal membership meeting once a year in October
+  quote: membership of the Native Tribe of Koyukuk shall be held once a year in
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 6, Section 5
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: head-of-government
+  value: First Chief
+  quote: The First Chief shall preside at all meetings
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 5, Section 2
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Koyukuk Native Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “1st Chief”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Appointed by the Council after general election
+  quote: shall be appointed directly by the Council after a general election for the
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 4, Section 4
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: The officers shall hold office for a
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 4, Section 6
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: other-officers
+  value: Second Chief, Secretary/Treasurer, four Council members
+  quote: The Council shall include a First Chief,
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 4, Section 4
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: elections
+  value: Every year in October
+  quote: date every year for regular elections to be held in October in Koyukuk, and
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 8, Section 3
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older who has resided
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 8, Section 1
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: election-authority
+  value: Election committee of 3 appointed by Council
+  quote: committee of three adult tribal members each year prior to the election to
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 8, Section 5
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: judiciary
+  value: Council may establish tribal courts
+  quote: justice, including the establishment of appropriate tribal courts and other
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 9, Section 1(j)
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election called by Council
+  quote: amended by a majority vote of the qualified voters of the Native Tribe of
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 14, Section 1
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: recall-and-removal
+  value: Recall by petition of 60% of qualified voters
+  quote: the tribal voters if a petition requesting such recall signed by at least
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 7, Section 2
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
+- aspect: recall-and-removal
+  value: Removal by vote of 4 Council members
+  quote: (4) Tribal Council members must vote in favor of the removal.
+  source: constitution-koyukuk-native-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-10-11'
+  locator: Article 7, Section 1
+  document_version:
+    document: koyukuk-native-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1992 constitution with a 1994 amendment to Article 4, Section 6 (officers'' terms); the amended term is used.'
 governing_documents:
 - kind: constitution
   title: At University of Oklahoma website . (Amended

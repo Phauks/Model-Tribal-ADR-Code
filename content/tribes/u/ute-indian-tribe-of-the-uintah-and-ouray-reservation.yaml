@@ -169,6 +169,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Ute (Northern) Indian Tribe of the Uintah and Ouray Reservation". Operator from the Direct Service Tribes list (Phoenix Area).
+- area: Phoenix
+  service_unit: Uintah-Ouray Service Unit
+  source: indian-health-service-phoenix-uintah-ouray-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "primarily provides health care to the Ute Indians of the Uintah and Ouray (U & O) Reservation".'
+- area: Phoenix
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Ute Indian Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Ute Indian Tribe of the Uintah and Ouray Reservation, Utah" among organizations
@@ -194,6 +218,231 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws under the Act of June 18, 1934
+  quote: as provided in the Act of June 18,1934, as amended
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article VII
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Business Committee
+  quote: shall be a business committee known as the Uintah
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 1
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 6 members
+  quote: The Tribal Business Committee shall consist or six members,
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 2
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected, two from each of three bands
+  quote: two (2) members duly elected from each or the three (3) bands
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 2
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: elected for a term of four(4) years
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 3
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: Annual meeting open to all members
+  quote: be an annual meeting open to all members
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article VI, Section 2
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: from within its own number (1) a chairman, (2) a vice chairman; and
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 4
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Committee from its members
+  quote: The Tribal Business Committee, so organized, shall elect
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 4
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice Chairman, Secretary, Treasurer
+  quote: from within or without. (3) a secretary, and (4) a treasurer, and such
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 4
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years, one from each band
+  quote: thereafter, every two (2) years a Tribal Business Committeeman
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 5
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: twenty-one (21) years of age or over, who has maintained
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election board appointed by the Tribal Business Committee
+  quote: or by an election board appointed by the Tribal Business
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article IV, Section 3
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Reservation Indian Court
+  quote: administration of justice by establishing a Reservation Indian Court
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Four or more Committee votes, then majority of voters at an election with 30% turnout
+  quote: Business Committee shall, by an affirmative vote, of four or more members,
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article X
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: to the Secretary of the Interior and if approved by him, shall thereupon
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article X
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of voters in the band
+  quote: Upon receipt of a petition signed by one-third of the
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article V, Section 3
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by 4 Committee votes
+  quote: affirmative votes, expel any member for neglect of duty or gross
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article V, Section 2
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Referendum on petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third (1/3) of the eligible voters of
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article IX
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: The Law and Order Code of the Ute Indian Tribe of the Uintah and Ouray Reservation Utah
@@ -275,6 +524,46 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+treaties:
+- title: Treaty with the Utah, 1849
+  signed: '1849-12-30'
+  statutes_at_large: 9 Stat. 984
+  kappler:
+    volume: 2
+    page: 585
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-utah-1849.-(0585)
+  signatory: Utah
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 585 (Treaty with the Utah, 1849; Kappler header "Dec. 30, 1849. | 9 Stats., 984. | Ratified, Sept. 9, 1850. | Proclaimed, Sept. 9, 1850.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. 1849 Abiquiu treaty with the Utah (Ute) bands of New Mexico/Colorado; band attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Utah-Tabeguache Band, 1863
+  signed: '1863-10-07'
+  statutes_at_large: 13 Stat. 673
+  kappler:
+    volume: 2
+    page: 856
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-utah-tabeguache-band-1863-0856
+  signatory: Tabeguache
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 856 (Treaty with the Utah-Tabeguache Band, 1863; Kappler header "Oct. 7, 1863. | 13 Stat., 673. | Ratified Mar. 25, 1864. | Proclaimed Dec. 14, 1864.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Tabeguache (Uncompahgre) Ute to Ute Indian Tribe of Uintah and Ouray. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Ute, 1868
+  signed: '1868-03-02'
+  statutes_at_large: 15 Stat. 619
+  kappler:
+    volume: 2
+    page: 990
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ute-1868-0990
+  signatory: Uintah, Yampa, Grand River, Tabeguache
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 990 (Treaty with the Ute, 1868; Kappler header "Mar. 2, 1868. | 15 Stats., 619. | Ratified, July 25, 1868. | Proclaimed, Nov. 6, 1868.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Uintah, Yampa, Grand River (White River) and Uncompahgre bands -> Ute Indian Tribe of the Uintah and Ouray Reservation The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home

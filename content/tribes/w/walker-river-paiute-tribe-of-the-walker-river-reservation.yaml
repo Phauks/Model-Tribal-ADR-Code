@@ -174,6 +174,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Walker River Paiute Tribe".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Walker River Paiute Tribe, Nevada" among organizations under constitutions approved
@@ -198,6 +206,231 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws adopted under Indian Reorganization Act of June 18, 1934
+  quote: with section 16 of the Indian Reorganization Act of June 18, 1934, (48
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Certification of Adoption
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: governing-body
+  value: Walker River Paiute Tribal Council
+  quote: Paiute Tribe shall consist of a council known as the "Walker River Paiute
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article III, Section 1
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: SEC. 2. This Tribal Council shall consist of seven
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article III, Section 2
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: governing-body-selection
+  value: Elected by enrolled members
+  quote: SECTION 1. All enrolled members of the Walker River
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: (7) members duly elected to serve three years.
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article III, Section 2
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: head-of-government
+  value: Chairman
+  quote: members of the Council, (1) a Chairman; (2) a Vice Chairman; and from within
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article III, Section 3
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Selected by the Tribal Council
+  quote: SEC. 3. The Tribal Council shall select from the
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article III, Section 3
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: Officers shall be elected annually at the first meeting of the Council,
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article III, Section 3
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: other-officers
+  value: Vice Chairman, Secretary, Treasurer
+  quote: or without, (3) a Secretary; and (4) a Treasurer. The Tribal Council may
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article III, Section 3
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: elections
+  value: Every year on the third Tuesday of November
+  quote: be held every year on the third Tuesday of November and newly elected officers
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article IV, Section 3
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: voting-age
+  value: '21'
+  quote: twenty-one (21) years of age or over who have maintained legal
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: election-authority
+  value: Election board appointed by the Tribal Council
+  quote: board appointed by the Tribal Council.
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article IV, Section 5
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: judiciary
+  value: Reservation court
+  quote: and the administration of justice by establishing a reservation court and
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Amendment I (Article VI, Section 1(q))
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: majority vote of the qualIfied voters of the Walker River Paiute Tribe
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article IX
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: until it shall have been approved by the Secretary of the Interior. It
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article IX
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: a petition signed by one-third (1/3) of the eligible voters calling for
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article V, Section 3
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: recall-and-removal
+  value: Expulsion by four Council members
+  quote: vote of four (4) members expel any member for neglect of duty or gross
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article V, Section 2
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
+- aspect: other
+  value: Referendum on Council powers, on petition of 25 percent of voters
+  quote: a written petition signed by not less than 25 per cent of the total number
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-04-05'
+  locator: Article VII
+  document_version:
+    document: walker-river-paiute-tribe-of-the-walker-river-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1937 constitution and by-laws with the 1945 Amendment I attached, not a separate 1945 constitution.'
 governing_documents:
 - kind: constitution
   title: Walker River Paiute Tribe of the Walker River Reservation, Nevada - Tribal Constitution
@@ -344,6 +577,14 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: The 1975 retrocession notice lists only the areas over which Nevada had acquired jurisdiction; Fallon, Walker River, Duck Valley, Fort McDermitt, Moapa, Las Vegas, Summit Lake, Yerington, Fort Mojave and Timbisha lands are not on it, and the notice does not say why. (40 Fed. Reg. 27,501.)
+  source: federal-register-1975-nevada-retrocession
+  confidence: low
+  verification: inferred
+  locator: 40 Fed. Reg. at 27,501
+  note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

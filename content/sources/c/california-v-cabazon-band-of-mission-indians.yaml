@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Antonin Scalia", vote: minority}
   source: https://api.oyez.org/cases/1986/85-1708
   checked: '2026-11-22'
+courtlistener:
+  cluster: 111828
+  citation: "480 U.S. 202"
+  case_name: "California v. Cabazon Band of Mission Indians"
+  link: https://www.courtlistener.com/opinion/111828/california-v-cabazon-band-of-mission-indians/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

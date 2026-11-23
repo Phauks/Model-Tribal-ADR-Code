@@ -156,6 +156,227 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Self-Governance Tribes list by Area
+  note: Listed as "Little Shell Tribe of Chippewa Indians of Montana". Also on the Indian Health Service Self-Governance Tribes list (Little Shell Tribe of Chippewa Indians of Montana (2025)); the list does not say which service unit or programs the compact covers.
+governance:
+- aspect: form
+  value: Constitution under the Act of Congress of June 18, 1934
+  quote: the provisions of the enabling act of Congress approved on the 18th day of June, 1934 A.D. the
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Preamble
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: the Tribal Council. The membership of the Tribal Council shall consist of the Chairman, First
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article I, Section II
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: Vice Chairman, Second Vice Chairman, Secretary-Treasurer, and three Council Members.
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article I, Section II
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of Tribe members
+  quote: elected by majority vote of the members of the Tribe voting at elections called for that purpose.
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article VII, Section I(A)
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: governing-body-term
+  value: 2 years for council members
+  quote: Elections shall be held every two years for each Council Member and every four years for the
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article I, Section IV
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman shall preside over all meetings of the
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article VII, Section I(B)
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Little Shell Tribe of Chippewa Indians of Montana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of Tribe members
+  quote: elected by majority vote of the members of the Tribe voting at elections called for that purpose.
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article VII, Section I(A)
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Elections shall be held every two years for each Council Member and every four years for the
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article I, Section IV
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: other-officers
+  value: First Vice Chairman, Second Vice Chairman, Secretary-Treasurer
+  quote: The Executive Board shall consist of the Chairman, First Vice Chairman, Second Vice
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article I, Section III(A)
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: elections
+  value: Council every 2 years; executive officers every 4 years
+  quote: Elections shall be held every two years for each Council Member and every four years for the
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article I, Section IV
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: judiciary
+  value: Little Shell Justice Center (tribal court)
+  quote: the Little Shell Justice Center, a tribal court convened from time to time to resolve internal
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article VIII, Section I
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: Judges shall be appointed by the Tribal Council under procedures it sets forth as prudent and
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article VIII, Section II
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: judicial-term
+  value: Term set at appointment
+  quote: Judges shall preside for the term dictated at the time of their appointment, whether for a set
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article VIII, Section II
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: judicial-independence
+  value: Judges hold office during good behavior
+  quote: shall hold their offices during good behavior.
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article VIII, Section II
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: amendment
+  value: Majority vote of qualified voters at elections called for that purpose
+  quote: This Constitution and By-Laws may be amended by a majority vote of the qualified voters of the
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article VI, Section I
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: recall-and-removal
+  value: Replaced by Executive Committee vote for missing 3 meetings
+  quote: Any Officer of the Executive Board who misses three meetings in a row without reasonable
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article I, Section VI
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
+- aspect: other
+  value: Executive Committee of any 5 council members
+  quote: The Executive Committee shall consist of any five council members.
+  source: constitution-little-shell-tribe-of-chippewa-indians-of-montana-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-11-11'
+  locator: Article I, Section III(B)
+  document_version:
+    document: little-shell-tribe-of-chippewa-indians-of-montana-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract ends at Article VIII, Section II, so any later articles are not in the text.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -181,6 +402,22 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Montana's 2024 legislative staff summary states that the Flathead Reservation is the only reservation in Montana under Public Law 280; no other Montana reservation is under state jurisdiction by the 1963 act. (Mont. Legis. Servs. Div., Montana & Public Law 280, at 1 (Apr. 2024).)
+  source: montana-legislative-services-division-public-law-280-2024
+  confidence: medium
+  verification: read-in-full
+  locator: Mont. Legis. Servs. Div. memo p. 1; Mont. Code Ann. § 2-1-301
+  note: 'Secondary source (legislative staff). Statutory text names only Flathead in § 2-1-301. Little Shell has no reservation in the roster data. Turtle Mountain (ND-based) has MT presence only. Fort Peck: a state court allowed divorce under a 1938 tribal enactment (State ex rel. Iron Bear v. Dist. Ct., 162 Mont. 335, 512 P.2d 1292 (1973)); that is tribal consent in a domestic-relations setting, not Public Law 280; the research read only the opening. Also cites: montana-code-annotated-2-1-301.'
+- topic: public-law-280
+  value: optional-state
+  detail: Montana law lets any other tribe request state jurisdiction by resolution to the governor, who must proclaim it within 60 days, but only after the tribe's own approval and the consent of each affected county commission. (Mont. Code Ann. § 2-1-302.)
+  source: montana-code-annotated-2-1-301
+  confidence: high
+  verification: read-in-full
+  locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
+  note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

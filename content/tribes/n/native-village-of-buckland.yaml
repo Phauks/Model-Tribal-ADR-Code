@@ -152,6 +152,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Buckland
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: Listed as "Native Village of Buckland". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Kotzebue Service Area
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: 'The source''s words: "Native Village of Buckland".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and By-Laws of the Native Village of Buckland Alaska (approved 1950) states it
@@ -165,6 +182,111 @@ government_structure:
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the Act of June 18, 1934
+  quote: by authority of the Act of Congress of June 18, 1984 (48 Stat..
+  source: constitution-native-village-of-buckland-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-30'
+  locator: Preamble
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Lumbee folder, but the text is the Native Village of Buckland 1950 constitution.'
+- aspect: governing-body
+  value: Governing body chosen by village membership
+  quote: shall decide what kind of governing body it wishes to set up to speak
+  source: constitution-native-village-of-buckland-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-30'
+  locator: Article 3, Section 1
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Lumbee folder, but the text is the Native Village of Buckland 1950 constitution.'
+- aspect: governing-body-selection
+  value: Chosen by the village membership
+  quote: The village shall then choose the members
+  source: constitution-native-village-of-buckland-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-30'
+  locator: Article 3, Section 2
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Lumbee folder, but the text is the Native Village of Buckland 1950 constitution.'
+- aspect: general-council
+  value: General meeting of whole membership, yearly
+  quote: general meeting of the
+  source: constitution-native-village-of-buckland-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-30'
+  locator: Article 3, Section 3
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Lumbee folder, but the text is the Native Village of Buckland 1950 constitution.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Buckland
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: village 21 years of
+  source: constitution-native-village-of-buckland-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-30'
+  locator: Article 5, Section 1
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Lumbee folder, but the text is the Native Village of Buckland 1950 constitution.'
+- aspect: election-authority
+  value: Secretary of the Interior
+  quote: 'called for the purpose by the Secretary of the Interior:'
+  source: constitution-native-village-of-buckland-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-30'
+  locator: Article 2
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Lumbee folder, but the text is the Native Village of Buckland 1950 constitution.'
+- aspect: amendment
+  value: Majority vote of village members, approved by Secretary
+  quote: approved by the Secretary of the Interior
+  source: constitution-native-village-of-buckland-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-30'
+  locator: Article 6
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Lumbee folder, but the text is the Native Village of Buckland 1950 constitution.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior
+  source: constitution-native-village-of-buckland-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-30'
+  locator: Article 6
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Lumbee folder, but the text is the Native Village of Buckland 1950 constitution.'
 governing_documents:
 - kind: constitution
   title: Constitution

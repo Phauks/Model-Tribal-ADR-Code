@@ -1,7 +1,7 @@
 profile: content/tribes/c/caddo-nation-of-oklahoma.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -69,5 +69,28 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2026-10-02 has no text layer on most pages (54 of 55 pages have no text
     layer (only the approval letter has text); no OCR available).
-next_steps: Read the scanned amendment listed 2026-10-02 (https://www.nigc.gov/?wpdmdl=14651&ind=1791383933277)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/?wpdmdl=14651&ind=1791383933277
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-7, 16-18, 20-23, 30-55 of 55 of this amendment listed
+    2026-10-02 as page images (it has no text layer) and recorded 6 procedure(s): employee-grievance,
+    licensing-hearing, patron-dispute. Not seen: page 8-15, 19 and 24-29 not read (the 40-page budget
+    for this document was used up); these hold sections about licensing, the TGA and the Commission, so
+    they may add items (dropped out of the reading or unreadable).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#caddo-nation-of-oklahoma-amendment-2026-10-02#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#caddo-nation-of-oklahoma-amendment-2026-10-02#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#caddo-nation-of-oklahoma-amendment-2026-10-02#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#caddo-nation-of-oklahoma-amendment-2026-10-02#p4
+  - research/reviews/2026-11-22-ordinance-disputes.json#caddo-nation-of-oklahoma-amendment-2026-10-02#p5
+  - research/reviews/2026-11-22-ordinance-disputes.json#caddo-nation-of-oklahoma-amendment-2026-10-02#p6
+next_steps: Read page 8-15, 19 and 24-29 not read (the 40-page budget for this document was used up);
+  these hold sections about licensing, the TGA and the Commission, so they may add items of the amendment
+  listed 2026-10-02 (https://www.nigc.gov/?wpdmdl=14651&ind=1791383933277), which dropped out of the page-image
+  reading. The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

@@ -44,6 +44,13 @@ supreme_court:
   - {name: "John Paul Stevens", vote: majority}
   source: https://api.oyez.org/cases/1977/76-5729
   checked: '2026-11-22'
+courtlistener:
+  cluster: 109812
+  citation: "435 U.S. 191"
+  case_name: "Oliphant v. Suquamish Indian Tribe"
+  link: https://www.courtlistener.com/opinion/109812/oliphant-v-suquamish-indian-tribe/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

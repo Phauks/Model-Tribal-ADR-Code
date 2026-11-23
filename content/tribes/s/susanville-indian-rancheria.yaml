@@ -177,6 +177,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Susanville Indian Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: 'Listed as "Susanville Indian Rancheria, California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Susanville Indian Rancheria (2007)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Susanville Indian Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Susanville Indian Rancheria [Ordinances]

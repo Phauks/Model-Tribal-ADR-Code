@@ -83,6 +83,14 @@
         "$value": "#E6F3F4",
         "$description": "Status notices."
       },
+      "added-background": {
+        "$value": "#DCEFDF",
+        "$description": "Words added, on Recent changes and when comparing versions. Ink is 13.5:1 on it."
+      },
+      "removed-background": {
+        "$value": "#FBE1DC",
+        "$description": "Words taken out, on Recent changes and when comparing versions. Ink is 13.1:1 on it."
+      },
       "art-reserved": {
         "$value": "#F1E6DC",
         "$description": "Empty space reserved for commissioned art."
@@ -196,6 +204,14 @@
       "notice-background": {
         "$value": "#173B40",
         "$description": "Status notices."
+      },
+      "added-background": {
+        "$value": "#1F3A25",
+        "$description": "Words added, on Recent changes and when comparing versions. Ink is 10.9:1 on it."
+      },
+      "removed-background": {
+        "$value": "#3F231C",
+        "$description": "Words taken out, on Recent changes and when comparing versions. Ink is 12.5:1 on it."
       },
       "art-reserved": {
         "$value": "#1A2F33",

@@ -150,6 +150,163 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Akutan
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Native Village of Akutan". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Native Village of Akutan".'
+governance:
+- aspect: form
+  value: Constitution and bylaws
+  quote: establish this constitution and bylaws,
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Preamble
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Akutan Traditional Tribal Council
+  quote: 'Inherent Powers: The Akutan Traditional Tribal Council shall'
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article V
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: 'Secret Balloting: All elections of officials and on issues'
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article IV
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: 'President : The President shall preside at all meetings of the'
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article IX
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Akutan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary, Treasurer
+  quote: 'Vice President: The Vice President shall assist the President'
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article IX
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually, at the membership meeting
+  quote: requiring voter approval shall be held at the annual membership
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article IV
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: who has reached the age of eighteen (18) or older prior to the
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article IV
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election committee appointed by the council
+  quote: 'Election Committee: Prior to any tribal election the council'
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article IV
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election
+  quote: This constitution and bylaws may be amended by a majority vote
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article XIII
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by vote of 3 council members
+  quote: of at least three (3) members of the council by secret ballot.
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article VI
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Voter initiative and council referendum
+  quote: 'Referendum : The Akutan Traditional Tribal Council may call an'
+  source: constitution-native-village-of-akutan-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991'
+  locator: Article VII
+  document_version:
+    document: native-village-of-akutan-constitution
+    version: 1991-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

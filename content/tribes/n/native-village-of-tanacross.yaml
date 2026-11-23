@@ -159,6 +159,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Tanacross
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: Listed as "Native Village of Tanacross". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Interior Alaska Service Area
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: 'The source''s words: "Native Village of Tanacross".'
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Tanacross" among organizations under constitutions approved
@@ -186,6 +202,75 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the act of Congress of June 18, 1934
+  quote: by authority 6f the act of Congress of Jiiile 18, 1934, as
+  source: constitution-native-village-of-tanacross-1942-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-01-05'
+  locator: Preamble
+  document_version:
+    document: native-village-of-tanacross-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in places; the voting-age line is unreadable, so it is omitted.'
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: decide wh^t kinct of governing body it wishes to set up to speak and
+  source: constitution-native-village-of-tanacross-1942-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: native-village-of-tanacross-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in places; the voting-age line is unreadable, so it is omitted.'
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: how long they shall serve. The Village shall then choose the members
+  source: constitution-native-village-of-tanacross-1942-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-tanacross-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in places; the voting-age line is unreadable, so it is omitted.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Tanacross
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members
+  quote: changes are approved by the Secretary of the Interior and by a ma-
+  source: constitution-native-village-of-tanacross-1942-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-01-05'
+  locator: Article VI
+  document_version:
+    document: native-village-of-tanacross-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in places; the voting-age line is unreadable, so it is omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by a ma-
+  source: constitution-native-village-of-tanacross-1942-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-01-05'
+  locator: Article VI
+  document_version:
+    document: native-village-of-tanacross-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in places; the voting-age line is unreadable, so it is omitted.'
 governing_documents:
 - kind: constitution
   title: Constitution

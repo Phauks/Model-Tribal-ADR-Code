@@ -160,6 +160,223 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Eagle
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: Listed as "Native Village of Eagle". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Interior Alaska Service Area
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: 'The source''s words: "Native Village of Eagle".'
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934
+  quote: in accordance with and by authority of the Indian {^organization Act of
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Preamble
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: governing-body
+  value: Eagle Village Council
+  quote: Ihe governing body of the Native Village of Eagle
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: ihe council shall consist of five (5)
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified members
+  quote: elected by a majority vote of the qualified members of the
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: all terms of office shall be far two (2) years.
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article V, Section 2
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: general-council
+  value: General membership of village members
+  quote: Village of Eagle shall be held at least once annually.
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article XII, Section 6
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: head-of-government
+  value: First Chief
+  quote: The First Chief shall preside at all meetings of the
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article XI, Section 2
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Eagle
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Second Chief, Secretary/Treasurer
+  quote: Chief, Secretary/Treasurer, and two (2) council members.
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older and who has r esided
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: election-authority
+  value: Election board appointed by the council
+  quote: The council shall appoint an election board
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article V, Section 5
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: judiciary
+  value: Village Court
+  quote: To administer justice by establishing a Village Court, and
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article VIII, Section 1(l)
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretarial election
+  quote: may be amended by a majority vote of the
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article XIV, Section 1
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until approved by the Secretary of the Interior or
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article XIV, Section 1
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: least thirty percent (30%) of the eligible voters, and setting forth the
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article VI, Section 2
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: recall-and-removal
+  value: Removal by 3 council votes
+  quote: members of the council vote in favor of such removal.
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
+- aspect: other
+  value: Voter initiative and council referendum
+  quote: The eligible voters of the village shall have
+  source: constitution-native-village-of-eagle-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IX, Section 1
+  document_version:
+    document: native-village-of-eagle-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of Article IV and the certificates are OCR-garbled; quotes are taken from legible lines.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

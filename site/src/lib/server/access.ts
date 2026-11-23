@@ -18,6 +18,7 @@ import {
 	type Subject,
 	type SubjectKind
 } from '#lib/permissions.ts';
+import { placeAsGrant, type TeamLevel } from '#lib/nation-teams.ts';
 import { eventStatement } from './events.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
@@ -37,17 +38,33 @@ const grantColumns = `access_grants.identifier, access_grants.person_identifier 
 	access_grants.level, access_grants.expires_at AS expiresAt, access_grants.note,
 	access_grants.granted_at AS grantedAt`;
 
-/** A person's current grants (not ended; expired ones are filtered when checked). */
+/**
+ * A person's current grants (not ended; expired ones are filtered when
+ * checked), and their places on nations' teams, which count as grants on
+ * those nations' records (src/lib/nation-teams.ts).
+ */
 export async function grantsOf(database: D1Database, personIdentifier: string): Promise<AccessGrant[]> {
-	const result = await database
-		.prepare(
-			`SELECT subject_kind AS subjectKind, subject_identifier AS subjectIdentifier, level,
-			        expires_at AS expiresAt
-			 FROM access_grants WHERE person_identifier = ? AND ended_at IS NULL`
-		)
-		.bind(personIdentifier)
-		.all<AccessGrant>();
-	return result.results;
+	const [grants, places] = await Promise.all([
+		database
+			.prepare(
+				`SELECT subject_kind AS subjectKind, subject_identifier AS subjectIdentifier, level,
+				        expires_at AS expiresAt
+				 FROM access_grants WHERE person_identifier = ? AND ended_at IS NULL`
+			)
+			.bind(personIdentifier)
+			.all<AccessGrant>(),
+		database
+			.prepare(
+				`SELECT nation_identifier AS nationIdentifier, level, expires_at AS expiresAt
+				 FROM nation_team_members WHERE person_identifier = ? AND ended_at IS NULL`
+			)
+			.bind(personIdentifier)
+			.all<{ nationIdentifier: string; level: TeamLevel; expiresAt: string }>()
+	]);
+	return [
+		...grants.results,
+		...places.results.map((place) => placeAsGrant(place.nationIdentifier, place.level, place.expiresAt))
+	];
 }
 
 /** A person's level on one document, read fresh from the database. */

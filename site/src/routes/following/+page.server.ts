@@ -1,15 +1,12 @@
 import { fail } from '@sveltejs/kit';
-import { followKindOf, historyAddress, isEmailChoice, type FollowKind } from '#lib/following.ts';
-import { workerEnvironment } from '#lib/server/environment.ts';
+import { emailChoiceLabels, followKindOf, historyAddress, type FollowKind } from '#lib/following.ts';
 import {
 	followedPages,
 	markNoticesRead,
 	noticesFor,
-	setEmailChoice,
 	settingsFor,
 	unfollow
 } from '#lib/server/following.ts';
-import { updateEmailDelivery } from '#lib/server/following-email.ts';
 import { checkThisBuildOnce, currentDirectory } from '#lib/server/following-run.ts';
 import { requireAccount, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
@@ -59,8 +56,7 @@ export const load: PageServerLoad = async (event) => {
 		email: account.email,
 		pages,
 		notices: shown,
-		emailChoice: settings.email,
-		emailReady: updateEmailDelivery(workerEnvironment()).kind === 'email'
+		emailLine: `${emailChoiceLabels[settings.email]}.`
 	};
 };
 
@@ -72,14 +68,5 @@ export const actions: Actions = {
 		if (!followKindOf(address)) return fail(400, { problem: 'Choose a page to stop following.' });
 		await unfollow(database, account.subject, address);
 		return { done: 'You no longer follow that page.' };
-	},
-
-	email: async (event) => {
-		const account = requireAccount(event);
-		const { database } = storage(event);
-		const choice = (await event.request.formData()).get('email');
-		if (!isEmailChoice(choice)) return fail(400, { problem: 'Choose how often to get an email.' });
-		await setEmailChoice(database, account.subject, choice);
-		return { done: 'Email setting saved.' };
 	}
 };

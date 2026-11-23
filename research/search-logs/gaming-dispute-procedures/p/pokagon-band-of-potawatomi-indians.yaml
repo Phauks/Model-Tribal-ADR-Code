@@ -1,7 +1,7 @@
 profile: content/tribes/p/pokagon-band-of-potawatomi-indians.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -56,6 +56,32 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#pokagon-band-of-potawatomi-indians-of-michigan-amendment-2025-10-21#i1
-next_steps: Read the scanned amendment listed 2007-06-01 (https://www.nigc.gov/wp-content/uploads/2025/03/2007.06.01_Pokagon_Band_of_Potawatomi_Indians_Ord_Approval.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2019-06-03 (https://www.nigc.gov/wp-content/uploads/2025/03/20190603OrdAmendApproval.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20190603OrdAmendApproval.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-6 of 6 of this amendment listed 2019-06-03 as page images
+    (it has no text layer) and found no dispute procedure (the amendments concern only unclaimed winnings
+    (Section 10.12) and their enactment; no dispute procedure).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/2007.06.01_Pokagon_Band_of_Potawatomi_Indians_Ord_Approval.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-8, 25-28, 34-35, 53-57, 64, 69-72 of 80 of this amendment
+    listed 2007-06-01 as page images (it has no text layer) and recorded 2 procedure(s): employee-grievance,
+    patron-dispute. Not read: pages 9-24, 29-33, 36-52, 58-63, 65-68, 73-80 (40-page budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#pokagon-band-of-potawatomi-indians-of-michigan-amendment-2007-06-01#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#pokagon-band-of-potawatomi-indians-of-michigan-amendment-2007-06-01#p2
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 9-24, 29-33, 36-52,
+  58-63, 65-68, 73-80 of the amendment listed 2007-06-01 (https://www.nigc.gov/wp-content/uploads/2025/03/2007.06.01_Pokagon_Band_of_Potawatomi_Indians_Ord_Approval.pdf),
+  left by the 40-page budget for long documents.'

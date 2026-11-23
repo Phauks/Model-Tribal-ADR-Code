@@ -1,0 +1,38 @@
+profile: content/tribes/s/skokomish-indian-tribe.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Skokomish tribal court peacemaking video
+  outcome: not-found
+  reason: Results were general NARF and NCORJ peacemaking videos and resource pages, none specific to this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.skokomish.org/court/
+  query: court page media
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this page was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://skokomish.org/court/
+  query: court page media
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this page was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://skokomish.org/court/
+  query: video, photos
+  outcome: not-found
+  reason: Fetched with curl. Court page has no video or photos; footer 'Copyright © 2022 Skokomish Indian Tribe. All rights reserved.'
+next_steps: Check the Tribe's news pages by hand.

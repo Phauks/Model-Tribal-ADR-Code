@@ -230,6 +230,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Gila River Indian Community". Also listed under the same Area in: indian-health-service-self-governance-tribes. Phoenix Area page tags tribal programs with (*). Also on the Indian Health Service Self-Governance Tribes list (Gila River Indian Community (2003)); the list does not say which service unit or programs the compact covers.'
+- area: Phoenix
+  service_unit: Gila River Health Care Corporation
+  source: indian-health-service-phoenix-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Gila River Health Care Corporation".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Gila River Indian Community, Arizona) (approved 1960) states it was adopted under
@@ -255,6 +272,267 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934
+  quote: Section 10 of the Indian Reorganization Act of June 18, 1034 (48
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Certification of Adoption
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: governing-body
+  value: Gila River Indian Community Council
+  quote: The governing body of the Community shall be known
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article V, Section 1
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: governing-body-size
+  value: 17 members
+  quote: seventeen (17) members, who shall be elected by the qualified voters of
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article V, Section 1
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: governing-body-selection
+  value: Elected by district
+  quote: who shall be elected by the qualified voters of
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article V, Section 1
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: fur a term of three (3) years.
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article VIII, Section 1
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: head-of-government
+  value: Governor
+  quote: The Governor shall be the chief executive officer of the
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Bylaws, Sec. 2
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large
+  quote: elected from the Community at largo
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article VIII, Section 2
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: for a term of three (3) years. They shall take office the first day of
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article VIII, Section 2
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: other-officers
+  value: Lieutenant Governor, Chief Judge, Associate Judges, Secretary, Treasurer
+  quote: The Governor, the Lieutenant Governor, the Chief Judge
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article VIII, Section 2
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: elections
+  value: Every 3 years on the first Tuesday after the first Monday in November
+  quote: the first Tuesday after the first Monday in November, beginning No-
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article X, Section 1
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: elections
+  value: Every year on the first Tuesday in May (Councilmen)
+  quote: The election of Councilmcn shall be held annually on the
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article X, Section 2
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: voting-age
+  value: '18'
+  quote: the age of eighteen (IS) years shall, unless non compos
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Amendment II, Section 3 of Article X
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: election-authority
+  value: Council
+  quote: The Council shall be the final judge of all elections.
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article X, Sec. o.
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: judiciary
+  value: Community Court
+  quote: by establishing a Community Court
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article XV, Sec. 1(a)(17)
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: judicial-selection
+  value: Elected at large
+  quote: elected from the Community at largo
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article VIII, Section 2
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: judicial-term
+  value: 3 years
+  quote: for a term of three (3) years. They shall take office the first day of
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article VIII, Section 2
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: amendment
+  value: Majority vote in a Secretarial election
+  quote: This Constitution and Bylaws may be amended by a majority vote
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article XVII
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: it shall ha'e been approved by the Secretary of the Interior.
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article XVII
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: recall-and-removal
+  value: Removal by expulsion vote of not less than 12 Council members
+  quote: pelled by the affirmative vote of net less than twelve (12) of Hie Coun-
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article XII, Sec. 2
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: recall-and-removal
+  value: Recall by petition exceeding 20% of last vote
+  quote: of qualified voters exceeding twenty percent (20%) of the vote
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article XII, Sec. 4(a)
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+- aspect: other
+  value: Referendum on petition of 10% of voters or Council action
+  quote: shall be called by a petition of ten
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-01-28'
+  locator: Article XIII
+  document_version:
+    document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
 governing_documents:
 - kind: constitution
   title: Gila River Indian Community of Arizona - Tribal Constitution - Table of Contents
@@ -510,6 +788,30 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Gila River Indian Community". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

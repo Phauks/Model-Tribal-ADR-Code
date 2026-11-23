@@ -192,6 +192,299 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Little River Band of Ottawa Indians, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Little River Band of Ottawa Indians (2009)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution adopted in accordance with the Indian Reorganization Act of June 18, 1934
+  quote: constitution, in accordance with the Indian Reorganization Act of June 18, 1934, as
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Preamble
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Section 1, The legislative powers of the Little River Band shall be invested in the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 1
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: The Tribal Council shall consist of nine (9) persons, elected by popular vote of the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: governing-body-selection
+  value: Elected by district and at large
+  quote: Tribal Council positions shall be elected by the membership from the following
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 2(b)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Council member's term of office shall be four (4) years.
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 4(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: general-council
+  value: Adult members of the Tribe; meets twice a year
+  quote: (a) Meetings of the General Membership of the Little River Band shall be held twice a
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VII, Section 1(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: head-of-government
+  value: Tribal Ogema
+  quote: Section 4. Election of the Tribal Ogema. The Tribal Ogema shall be the candidate
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article V, Section 4
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: head-of-government
+  value: Ogema
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Little River Band of Ottawa Indians, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority of tribal vote
+  quote: seeking the office who receives a majority of the tribal vote cast for that position. If no one
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article V, Section 4
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Tribal Ogema’s term of office shall be four (4) years.
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: other-officers
+  value: Speaker, Recorder
+  quote: 'to serve as Council Officers: Speaker and Recorder, Officers terms shall be two'
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 2(c)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: elections
+  value: Regular elections in April, date set by Election Board
+  quote: (a) Regular Elections. After the first election, members of the Tribal Council and the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IX, Section 2(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years old, and is registered to vote on the date of any given tribal
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IX, Section 3(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: election-authority
+  value: Election Board
+  quote: Special elections shall be called by the Election Board, when
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IX, Section 2(b)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: legislative and executive functions of the tribal government and no person exercising
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 9
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: judiciary
+  value: Tribal Court, Court of Appeals, and inferior courts
+  quote: judiciary, which shall consist of the Tribal Court, a Court of Appeals, and such inferior
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 1
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Ogema, confirmed by the Tribal Council
+  quote: the Tribal Ogema, provided such appointment must be confirmed by the Tribal
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 4(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: judicial-term
+  value: 6 years
+  quote: term of office for any Tribal Judge appointed under this Section 6 shall be six (6) years
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 7
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: judicial-independence
+  value: Judiciary independent of legislative and executive functions
+  quote: Section 9. Judicial Independence. The Tribal Judiciary shall be independent from the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 9
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: individual judge shall not be diminished during the term of his/her appointment.
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 4(b)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of registered voters
+  quote: The petition must be signed by at least twenty-five percent (25%) of the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article X, Section 2
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: recall-and-removal
+  value: Removal by 7 of 9 Council votes
+  quote: subject to removal by a resolution in favor of removal supported by seven (7) of the nine
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article X, Section 3
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: recall-and-removal
+  value: Judge removed by 7 of 9 Council votes
+  quote: A Tribal Judge may only be removed by a vote of seven (7) of the nine (9)
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 6(b)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: other
+  value: Ogema veto over Council budget actions
+  quote: To have veto power over actions of the Tribal Council modifying the Tribal
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article V, Section 5(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
 governing_documents:
 - kind: law-code
   title: Little River Band of Ottawa Indians - Ordinances / Tribal Code
@@ -671,6 +964,42 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+treaties:
+- title: Treaty with the Ottawa, etc., 1836
+  signed: '1836-03-28'
+  statutes_at_large: 7 Stat. 491
+  kappler:
+    volume: 2
+    page: 450
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1836-0450
+  signatory: Ottawa, Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 450 (Treaty with the Ottawa, etc., 1836; Kappler header "Mar. 28, 1836. | 7 Stat., 491. | Proclamation, May 27, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Treaties of Washington (1836) and Detroit (1855) with the Ottawa and Chippewa of Michigan; Grand Traverse, Little River and Little Traverse Bay are the Ottawa/Odawa successors. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Ottawa and Chippewa, 1855
+  signed: '1855-07-31'
+  statutes_at_large: 11 Stat. 621
+  kappler:
+    volume: 2
+    page: 725
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-and-chippewa-1855-0725
+  signatory: Ottawa, Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 725 (Treaty with the Ottawa and Chippewa, 1855; Kappler header "July 31, 1855. | 11 Stat., 621. | Ratified April 15, 1856. | Proclaimed Sept. 10, 1856.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaties of Washington (1836) and Detroit (1855) with the Ottawa and Chippewa of Michigan; Grand Traverse, Little River and Little Traverse Bay are the Ottawa/Odawa successors The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

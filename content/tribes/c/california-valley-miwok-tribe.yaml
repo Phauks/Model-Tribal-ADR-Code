@@ -135,6 +135,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: California Valley Miwok Tribe, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "California Valley Miwok Tribe, California".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: California Valley Miwok Tribe, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Interim Chairwoman”; recorded without the holder's own form of the title.
 gaming:
   ordinances:
   - approved: '2000-05-03'

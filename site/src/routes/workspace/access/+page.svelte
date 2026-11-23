@@ -21,6 +21,7 @@
 	const sourceLabels: Record<AccessSource, string> = {
 		administrator: 'lead author',
 		'document-grant': 'grant for one document',
+		'nation-team': 'place on the nation’s team',
 		'kind-grant': 'grant for every document of this kind',
 		role: 'role default'
 	};

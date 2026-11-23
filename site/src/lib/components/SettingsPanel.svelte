@@ -1,14 +1,21 @@
 <script lang="ts">
 	// Settings button and dialog (site/DESIGN.md, section 6, "Settings"). The
 	// dialog is the shared two-panel Modal: sections on the left (Text,
-	// Colors, Motion, Citations, Glossary, Data) and the chosen section on the right.
+	// Colors, Motion, Citations, Glossary, Editing for people with workspace
+	// access, This device) and the chosen section on the right.
 	// It has no buttons along the bottom; Close at the top closes it, and
-	// Reset sits in Data. Reading settings apply at once and are kept on this
-	// device only, through src/lib/reading-settings.ts, so they work offline.
+	// Reset sits in This device. Settings change how the site looks on this
+	// screen: they apply at once and are kept on this device, through
+	// src/lib/reading-settings.ts, so they work offline. Who someone is to the
+	// project, and what it keeps about them, is in Account settings instead
+	// (site/DESIGN.md, section 6, "Settings and Account"). A signed-in person
+	// can choose to use these settings on every device they sign in on
+	// (src/lib/settings-everywhere.ts).
 	// Without scripts the button is hidden (the needs-scripts class in
 	// global.css).
 	import BookA from '@lucide/svelte/icons/book-a';
-	import Database from '@lucide/svelte/icons/database';
+	import MonitorSmartphone from '@lucide/svelte/icons/monitor-smartphone';
+	import PencilLine from '@lucide/svelte/icons/pencil-line';
 	import Palette from '@lucide/svelte/icons/palette';
 	import Quote from '@lucide/svelte/icons/quote';
 	import Settings from '@lucide/svelte/icons/settings';
@@ -20,6 +27,8 @@
 	import LocalData from './LocalData.svelte';
 	import Modal from './Modal.svelte';
 	import OfflineSaving from './OfflineSaving.svelte';
+	import { readSignedInHint } from '#lib/signed-in-hint.ts';
+	import { readEverywhere, turnEverywhereOff, turnEverywhereOn } from '#lib/settings-everywhere.ts';
 	import {
 		contrastChoices,
 		defaultSettings,
@@ -36,6 +45,8 @@
 		textAlignmentChoices,
 		lineWidthChoices,
 		motionChoices,
+		otherCursorOptions,
+		sourceGroupOptions,
 		textSizeChoices,
 		textSizes,
 		textSpacingChoices,
@@ -47,28 +58,54 @@
 		type Theme
 	} from '#lib/reading-settings.ts';
 
-	type SectionIdentifier = 'text' | 'colors' | 'motion' | 'citations' | 'glossary' | 'data';
+	type SectionIdentifier = 'text' | 'colors' | 'motion' | 'citations' | 'glossary' | 'editing' | 'device';
 
-	const sections = [
+	const allSections = [
 		{ id: 'text', label: 'Text', icon: Type },
 		{ id: 'colors', label: 'Colors', icon: Palette },
 		{ id: 'motion', label: 'Motion', icon: Wind },
 		{ id: 'citations', label: 'Citations', icon: Quote },
 		{ id: 'glossary', label: 'Glossary', icon: BookA },
-		{ id: 'data', label: 'Data', icon: Database }
+		{ id: 'editing', label: 'Editing', icon: PencilLine },
+		// "Data" until Nov. 23, 2026, renamed so it is not taken for "Your data" in Account settings.
+		{ id: 'device', label: 'This device', icon: MonitorSmartphone }
 	] satisfies { id: SectionIdentifier; label: string; icon: unknown }[];
+
+	// Who is signed in, from the signed-in hint (src/lib/signed-in-hint.ts), read when the dialog opens.
+	let signedIn = $state(false);
+	let hasWorkspace = $state(false);
+	// Editing is only for people who can edit in the workspace.
+	const sections = $derived(allSections.filter((section) => section.id !== 'editing' || hasWorkspace));
+
+	let everywhere = $state(false);
+	let everywhereBusy = $state(false);
+	let everywhereProblem = $state('');
+
+	async function changeEverywhere(on: boolean) {
+		everywhereBusy = true;
+		everywhereProblem = '';
+		const done = on ? await turnEverywhereOn() : await turnEverywhereOff();
+		everywhereBusy = false;
+		if (done) everywhere = on;
+		else everywhereProblem = 'That could not be saved. Check your connection and that you are still signed in, then try again.';
+	}
 
 	let modal: Modal<SectionIdentifier> | undefined = $state();
 	let opener: HTMLButtonElement | undefined = $state();
 	let selected = $state<SectionIdentifier>('text');
 	let settings = $state<ReadingSettings>({ ...defaultSettings });
 	let theme = $state<Theme>('device');
-	/** Changes after a delete in Data, so the saved pages list reads the device again. */
+	/** Changes after a delete in This device, so the saved pages list reads the device again. */
 	let dataRead = $state(0);
 
 	function open() {
 		settings = loadSettings();
 		theme = loadTheme();
+		const hint = readSignedInHint(document.cookie);
+		signedIn = hint.signedIn;
+		hasWorkspace = hint.workspacePageNames.length > 0;
+		everywhere = signedIn && readEverywhere().on;
+		everywhereProblem = '';
 		modal?.open();
 	}
 
@@ -271,6 +308,13 @@
 				settings.sourceLinks,
 				(value) => change('sourceLinks', value)
 			)}
+			{@render choiceGroup(
+				'Groups in long Sources lists',
+				'source-groups',
+				sourceGroupOptions,
+				settings.sourceGroups,
+				(value) => change('sourceGroups', value)
+			)}
 		{:else if id === 'glossary'}
 			<p class="hint">
 				Terms defined in the glossary are marked with a dotted underline and link to their glossary
@@ -284,7 +328,43 @@
 				(value) => change('glossaryCards', value)
 			)}
 			<p><a href="/glossary" onclick={close}>Open the glossary</a></p>
-		{:else if id === 'data'}
+		{:else if id === 'editing'}
+			<p class="hint">
+				When people edit an essay together, each person’s cursor shows in their color. This changes only what
+				you see. The color others see for you is in <a href="/account" onclick={close}>Account settings</a>.
+			</p>
+			{@render choiceGroup(
+				'Other people’s cursors',
+				'other-cursors',
+				otherCursorOptions,
+				settings.otherCursors,
+				(value) => change('otherCursors', value)
+			)}
+		{:else if id === 'device'}
+			<p class="hint">Everything in Settings is kept in this browser, on this device.</p>
+			{#if signedIn}
+				<div class="setting everywhere">
+					<div class="choice">
+						<input
+							type="checkbox"
+							role="switch"
+							id="setting-everywhere"
+							checked={everywhere}
+							disabled={everywhereBusy}
+							aria-describedby="setting-everywhere-hint"
+							onchange={(event) => changeEverywhere(event.currentTarget.checked)}
+						/>
+						<div>
+							<label for="setting-everywhere">Use these settings on every device I sign in on</label>
+							<p class="hint" id="setting-everywhere-hint">
+								A copy is kept with your account. On another device, it replaces that device’s settings after you
+								sign in. Starred pages, print choices and pages saved for offline stay on each device.
+							</p>
+						</div>
+					</div>
+					{#if everywhereProblem}<p class="hint everywhere-problem" role="alert">{everywhereProblem}</p>{/if}
+				</div>
+			{/if}
 			{#key dataRead}
 				<OfflineSaving headingLevel={4} />
 			{/key}
@@ -341,6 +421,15 @@
 
 	.choice .hint {
 		margin: 0;
+	}
+
+	/* The every-device switch is a choice with real weight, so its label is bold like a legend. */
+	.everywhere label {
+		font-weight: var(--font-weight-bold);
+	}
+
+	.everywhere-problem {
+		color: var(--color-danger);
 	}
 
 	.slider-label {

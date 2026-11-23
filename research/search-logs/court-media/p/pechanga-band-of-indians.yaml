@@ -1,0 +1,30 @@
+profile: content/tribes/p/pechanga-band-of-indians.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Pechanga Band tribal court video youtube
+  outcome: not-found
+  reason: Results included a Pechanga Band documentary-video page on the Tribe's site, but I could not open it, so its subject is unknown.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Pechanga peacemaking wellness court video
+  outcome: not-found
+  reason: Results were NARF, NAICJA and other nations' peacemaking videos; none was Pechanga-specific.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pechanga-nsn.gov/index.php/documentary-video
+  query: documentary video page
+  outcome: error
+  reason: Fetched with curl. Connection was reset (curl code 000) twice, including on https://www.pechanga-nsn.gov/; nothing was read.
+next_steps: A person should open https://pechanga-nsn.gov/index.php/documentary-video and the Pechanga home page by hand to see whether any media covers the court or justice system.

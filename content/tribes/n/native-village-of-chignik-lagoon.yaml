@@ -178,6 +178,272 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Chignik Lagoon
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: Listed as "Native Village of Chignik Lagoon". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Bristol Bay Service Area
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'The source''s words: "Native Village of Chignik Lagoon".'
+  operator: tribal
+governance:
+- aspect: form
+  value: Adopted pursuant to inherent sovereignty
+  quote: This Constitution is adopted pursuant to the inherent sovereignty of the Native Village of
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article I, Section 2
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: governing-body
+  value: Chignik Lagoon Village Council
+  quote: The governing body of the Native Village of Chignik Lagoon shall be called the Chignik Lagoon
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article VII, Section 1
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Council shall consist of five members elected to Seats A, B, C, D, and E.
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article VII, Section 2
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot, by seat
+  quote: All elections shall be conducted by secret ballot.
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XIII, Section 4
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: 'Council members shall serve two-year terms. Terms are staggered: Seats A, B, and C are elected'
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article VII, Section 4
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: general-council
+  value: Annual Membership Meeting of eligible voters
+  quote: The Annual Membership Meeting is the general
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XII, Section 1
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all meetings of the tribal community and of the Council and shall
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article IX, Section 2
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Chignik Lagoon
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Selected by the Council from its members
+  quote: the Council shall select from among its five
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article IX, Section 1
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: head-of-government-term
+  value: 1 year, or until next Annual Membership Meeting
+  quote: Officers shall serve in their roles for one year or until the next Annual Membership Meeting,
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article IX, Section 1
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: other-officers
+  value: Vice President, Secretary, Treasurer, Member-at-Large
+  quote: members a President, Vice President, Secretary, Treasurer, and Member-at-Large.
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article IX, Section 1
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: elections
+  value: Annually, first Tuesday of November
+  quote: first Tuesday of November of each year.
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XII, Section 1
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: voting-age
+  value: '18'
+  quote: who has reached the age of 18
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XIII, Section 1
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: election-authority
+  value: Election Committee of three members, appointed by the Council
+  quote: the Council may appoint an Election Committee of
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XIII, Section 6
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: judiciary
+  value: Tribal Court, if approved by election
+  quote: The Village Council may propose the establishment of a Tribal Court by ordinance or resolution.
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XV, Section 4
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: judicial-selection
+  value: Elected by the eligible tribal membership
+  quote: all judges must be elected by the eligible tribal membership.
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XV, Section 5
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: amendment
+  value: Majority of votes cast, with 10% of eligible voters voting
+  quote: Proposed amendments shall be adopted upon a majority of the
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XVII, Section 2
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of eligible voters
+  quote: be initiated by a petition signed by at least 25 percent of the eligible voters residing in the Village
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XIV, Section 5
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: recall-and-removal
+  value: Removal by majority of Council for cause
+  quote: The Council may remove any Council member from office for cause, upon an affirmative vote of
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XIV, Section 3
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: other
+  value: Council may exercise judicial authority directly
+  quote: In the absence of an established Tribal Court, the Village Council may exercise the Tribe's
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article XV, Section 3
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
+- aspect: other
+  value: Taxes require referendum of eligible voters
+  quote: No taxes or assessments may be levied without a referendum of the eligible voters of the Village.
+  source: constitution-native-village-of-chignik-lagoon-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-04-29'
+  locator: Article VIII, Section 2
+  document_version:
+    document: native-village-of-chignik-lagoon-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is truncated: page 19 of 20 ends mid-sentence in Article XX, Section 3, and page 20 is missing.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

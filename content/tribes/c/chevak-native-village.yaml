@@ -158,6 +158,142 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chevak Native Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: Listed as "Chevak Native Village". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Chevak Native Village".'
+  operator: tribal
+governance:
+- aspect: form
+  value: Constitution and Bylaws
+  quote: do establish this Constitution and Bylaws.
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Preamble
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council composed of a President and four members
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: governing-body-size
+  value: President and 4 members
+  quote: composed of a President and four members
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: governing-body-selection
+  value: Elected by the adult members of the Community
+  quote: by the adult members of the Community.
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: governing-body-term
+  value: 2 years for two members, 1 year for three
+  quote: and three m embers for one year.
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Council shall preside over
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Chevak Native Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary-Treasurer
+  quote: Section 3 - The Secretary-Treasurer. The Secretary-Treasurer shall act as
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article I, Section 3
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the village 18 yearB of age or over shall have the
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article IV, Section 1
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: amendment
+  value: Majority vote of adult members, with 30% participation
+  quote: majority vote of adult members, provided that at least 30 per
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
+- aspect: recall-and-removal
+  value: Forfeiture of office on felony or dishonesty conviction
+  quote: shall forfeit his office.
+  source: constitution-chevak-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: chevak-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with OCR garbles in Article IV, Section 3 and the adoption block.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

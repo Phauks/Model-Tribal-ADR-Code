@@ -1,7 +1,7 @@
 profile: content/tribes/y/ysleta-del-sur-pueblo.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -35,6 +35,35 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2026-09-04 has no text layer on most pages (45 of 46 pages have no text
     layer (only the approval letter has text); no OCR available).
-next_steps: Read the scanned ordinance listed 1993-10-19 (https://www.nigc.gov/wp-content/uploads/2025/03/ysletadelsurpueblotrbe-ordappr101993.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2026-09-04 (https://www.nigc.gov/wp-content/uploads/2026/09/2026.09.04-Ysleta-del-Sur-Pueblo-Gam-Ord-Amend.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2026/09/2026.09.04-Ysleta-del-Sur-Pueblo-Gam-Ord-Amend.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-30 of 46 of this amendment listed 2026-09-04 as page
+    images (it has no text layer) and recorded 3 procedure(s): employee-grievance, other, patron-dispute.
+    Not read: pages 31-46 (40-page budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#ysleta-del-sur-pueblo-of-texas-amendment-2026-09-04#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#ysleta-del-sur-pueblo-of-texas-amendment-2026-09-04#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#ysleta-del-sur-pueblo-of-texas-amendment-2026-09-04#p3
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/ysletadelsurpueblotrbe-ordappr101993.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-32 of 32 of this ordinance listed 1993-10-19 as page
+    images (it has no text layer) and recorded 2 procedure(s): employee-grievance, other.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#ysleta-del-sur-pueblo-of-texas-ordinance-1993-10-19#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#ysleta-del-sur-pueblo-of-texas-ordinance-1993-10-19#p2
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 31-46 of the amendment
+  listed 2026-09-04 (https://www.nigc.gov/wp-content/uploads/2026/09/2026.09.04-Ysleta-del-Sur-Pueblo-Gam-Ord-Amend.pdf),
+  left by the 40-page budget for long documents.'

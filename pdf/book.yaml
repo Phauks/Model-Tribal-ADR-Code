@@ -49,3 +49,12 @@ parts:
     number: Part III
     title: Methods and Manners
 chapters: {}
+
+# The printed cover (pipeline/cover.mjs, typst/cover.typ). The front shows
+# the title, subtitle, author and edition from metadata above; the spine
+# shows the title and author once the book has enough pages. Cover text uses
+# Latin characters only (Retail Distribution Guide, p. 14).
+cover:
+  back_text: >-
+    Model provisions, commentary, and a collection of methods and manners of dispute resolution for Native nations in the United States. The project offers an optional framework that a nation may adapt through its own processes; it does not speak for any nation.
+  back_note: Everything in this book is free to read on the project's website.

@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Sandra Day O'Connor", vote: majority}
   source: https://api.oyez.org/cases/1980/80-11
   checked: '2026-11-22'
+courtlistener:
+  cluster: 110643
+  citation: "455 U.S. 130"
+  case_name: "Merrion v. Jicarilla Apache Tribe"
+  link: https://www.courtlistener.com/opinion/110643/merrion-v-jicarilla-apache-tribe/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

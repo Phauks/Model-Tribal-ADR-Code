@@ -168,6 +168,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Isleta Pueblo". Also listed under the same Area in: indian-health-service-direct-service-tribes. The Direct Service Tribes list also names Pueblo of Isleta (mixed arrangement).'
+- area: Albuquerque
+  service_unit: Isleta Health Center
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Isleta Health Center – Tribal".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Isleta Pueblo New Mexico) (approved 1947) states it was adopted under Act of June
@@ -178,6 +195,15 @@ government_structure:
   as_of: '1947'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Isleta, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -533,6 +559,15 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

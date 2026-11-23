@@ -188,6 +188,10 @@ export interface NationRecord {
 		bureau_of_indian_affairs_region?: string;
 		bureau_of_indian_affairs_agency?: string;
 	};
+	indian_health_service?: (CitedFact & { area: string; service_unit?: string; operator?: string })[];
+	government_structure?: (CitedFact & { kind: string; detail?: string })[];
+	/** How the government is set up, one plain fact per item (decision record 0042). */
+	governance?: (CitedFact & { aspect: string; value: string; quote?: string })[];
 	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string; year?: string | number })[];
 	justice_institutions?: (CitedFact & {
 		kind: string;
@@ -198,6 +202,20 @@ export interface NationRecord {
 	})[];
 	dispute_resolution_law?: string[];
 	jurisdiction?: (CitedFact & { topic: string; value?: string; detail?: string })[];
+	treaties?: (CitedFact & {
+		title: string;
+		signed: string;
+		statutes_at_large?: string;
+		kappler?: { volume?: number; page?: number; link?: string };
+		signatory?: string;
+	})[];
+	land_establishment?: (CitedFact & {
+		land_area: string;
+		method: string;
+		instrument?: string;
+		date?: string;
+		detail?: string;
+	})[];
 	memberships?: (CitedFact & { organization: string })[];
 	dispute_resolution?: {
 		forums?: (CitedFact & { kind: string; name?: string; link?: string })[];
@@ -378,6 +396,17 @@ export function nationNamesAndKinds(): Map<string, { name: string; entityType: s
 		found.set(record.id, { name: record.names.official, entityType: record.entity_type });
 	}
 	return found;
+}
+
+/** Every name of every listed nation: official, self-designations and former names. */
+export function nationNameVariants(): string[] {
+	const names: string[] = [];
+	for (const file of yamlFilesUnder('content/tribes')) {
+		const record = readYaml<NationRecord>(file);
+		if (record.sensitivity?.restricted) continue;
+		names.push(record.names.official, ...(record.names.self_designation ?? []).map((entry) => entry.name), ...(record.names.former ?? []).map((entry) => entry.name));
+	}
+	return names;
 }
 
 /** Glossary records with the file each comes from. Used by vite.config.ts. */

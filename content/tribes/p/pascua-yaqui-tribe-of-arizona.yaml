@@ -161,6 +161,287 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
+indian_health_service:
+- area: Tucson
+  source: indian-health-service-tucson-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: Listed as "Pascua Yaqui Tribe". Also on the Indian Health Service Self-Governance Tribes list (Pascua Yaqui Tribe (2018)); the list does not say which service unit or programs the compact covers.
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934, as amended
+  quote: do hereby adopt this constitution, under Divine Guidance and pursuant to the Indian Reorganization
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Preamble
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: governing-body
+  value: Pascua Yaqui Tribal Council
+  quote: The legislative powers of the Pascua Yaqui Tribe shall rest in the Pascua Yaqui Tribal
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 1
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: governing-body-size
+  value: 11 members
+  quote: The tribal council shall consist of eleven (11) members elected at large from the
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 2
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: The tribal council shall consist of eleven (11) members elected at large from the
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 2
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: council members elected to the tribal council shall serve for a term of four (4) years.
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 2
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Within thirty (30) days of the date of the election of tribal council members, a chairman
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 3
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pascua Yaqui Tribe of Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by Tribal Council vote, the most-voted member becomes chairman
+  quote: and vice-chairman shall be chosen from among the tribal council members by vote of the
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 3
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The chairman and vice-chairman shall serve to that capacity for a term of four (4) years
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 3
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: other-officers
+  value: Vice-chairman, secretary, treasurer, and other tribal officers
+  quote: chairman referred to in Article V, a secretary and treasurer and such other officers as the
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VII, Section 1
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: voting-age
+  value: '18'
+  quote: who have reached the age of eighteen (18) years and have complied with the
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article IX, Section 2
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: election-authority
+  value: Election Board (supervises amendment elections)
+  quote: under the supervision of the Election Board.
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XX
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: 'The powers of the Government of the Pascua Yaqui Tribe shall be divided into three separate branches:'
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article IV
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: exercise of powers properly belonging to one of these branches, shall exercise any powers properly
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article IV
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: judiciary
+  value: Tribal courts, including a trial and an appellate court
+  quote: The judicial powers of the Pascua Yaqui Tribe shall be vested in such tribal courts as the
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VIII, Section 1
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: judiciary
+  value: Court of Appeals, created by the Tribal Council
+  quote: The Court of Appeals of the Pascua Yaqui Tribe shall be created by the tribal council
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VIII, Section 5
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: judicial-selection
+  value: Nominated by chairman, approved by two-thirds of Tribal Council
+  quote: The judges of the Pascua Yaqui Tribe shall be nominated by the chairman subject to the
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VIII, Section 4
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: judicial-term
+  value: 3 years, staggered
+  quote: qualifications of tribal judges and a system of staggered three-year terms shall be fixed by
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VIII, Section 4
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: amendment
+  value: Two-thirds Council vote or 30% voter petition, then majority referendum vote
+  quote: Amendments to this constitution may be proposed to the Election Board by a two-thirds vote of the
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XX
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: secretarial-approval
+  value: Requirement removed
+  quote: removed the BIA from the Constitutional Election process in Article XX.
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Certificate of Approval (2015)
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the Tribal Council
+  quote: may be removed from office by a two-thirds
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article X, Section 1
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters
+  quote: by filing a petition with the secretary of the tribe signed
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article X, Section 2
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
+- aspect: other
+  value: Initiative and referendum reserved to members
+  quote: The members of the Pascua Yaqui Tribe reserve to themselves the power of initiative and
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XII, Section 1
+  document_version:
+    document: pascua-yaqui-tribe-of-arizona-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1988 constitution with the July 2015 amendments (Amendments I to III) appended; facts reflect the 2015 version.'
 governing_documents:
 - kind: law-code
   title: Pascua Yaqui Tribe of Arizona
@@ -599,6 +880,39 @@ jurisdiction:
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Pascua Yaqui".
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.53)
+  note: Listed as "PASCUA YAQUI TRIBE" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

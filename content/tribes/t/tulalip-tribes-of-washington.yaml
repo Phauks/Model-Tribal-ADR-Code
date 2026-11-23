@@ -179,6 +179,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tulalip Tribes of Washington
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Tulalip Tribes". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Tulalip Tribes of Washington (2002)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Tulalip Tribes, Washington" among organizations under constitutions approved
@@ -203,6 +211,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Tulalip Board of Directors
+  quote: as the Tulalip Board of J)i rectors.
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 1
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: consist of seven (?) members duly elected to serve
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 2
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: governing-body-selection
+  value: Elected in board elections
+  quote: arc duly elected and qualified# After the first election, elections for the
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 4
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: three (3) board members who shall hold office for three (3) yeai-s
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 4
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: general-council
+  value: Voters meeting annually on election day
+  quote: of directors shall call a general council annually on election day
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article VI
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'the members of the board: (l) a chairman, (2) a vice chairman, (3) a secretary,'
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 3
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Selected by the General Council from board members
+  quote: The General Council shall after each regular election select from
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 3
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: other-officers
+  value: Vice chairman, Secretary, Treasurer
+  quote: 'the members of the board: (l) a chairman, (2) a vice chairman, (3) a secretary,'
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 3
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: elections
+  value: Called not more than 60 days before terms expire
+  quote: board of directors shall be called not- more than sixty (60) days prior to,
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 4
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: voting-age
+  value: '21'
+  quote: wenty^ono (21) years
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: election-authority
+  value: Board of directors
+  quote: The time and places of voting shall be designated, by the board of
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article IV, Section 2
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: judiciary
+  value: Reservation court, established by ordinance
+  quote: of justice by establishing a reservation court and defining its duties and
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: amendment
+  value: Approval by five board members, then majority vote of qualified voters
+  quote: amendment shall be duly approved by five or more members
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article IX
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by him, shall thereupon take effect.
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article IX
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the board for neglect of duty or gross misconduct
+  quote: member for neglect of duty or gross misconduct.
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article V, Section 2
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: other
+  value: General council may direct the board by resolution or ordinance
+  quote: expressed by resolution or ordinance which shall govern tie future action of th
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article VI
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
 governing_documents:
 - kind: law-code
   title: Tulalip Tribes of Washington Tribal Codes
@@ -852,6 +1061,29 @@ jurisdiction:
   verification: read-in-full
   as_of: '2013'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.54)
+  note: Listed as "TULALIP TRIBES OF WASHINGTON" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Sk-tahlmish; Skopeáhmish; Sktahlejum; Shohomish; Sha-ho-mish / Snohomish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Sk-tahlmish: Point Elliott bands; Tulalip Tribes include Snohomish, Skykomish, Snoqualmie descendants. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

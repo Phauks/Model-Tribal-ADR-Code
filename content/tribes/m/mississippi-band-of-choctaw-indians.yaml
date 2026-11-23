@@ -202,6 +202,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mississippi Band of Choctaw Indians
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Mississippi Band of Choctaw Indians". Also listed under the same Area in: indian-health-service-nashville-careers-brochure, indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Mississippi Band of Choctaw Indians (1995)); the list does not say which service unit or programs the compact covers.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Mississippi Band of Choctaw Indians".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Mississippi Band of Choctaw Indians" among organizations under constitutions
@@ -226,6 +242,242 @@ government_structure:
   as_of: '1945'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Revised Constitution and Bylaws
+  quote: REVISED CONSTITUTION AND BYLAWS
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: Indians is vested in the tribal council and shall be exercised in
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article VIII, Section 1
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 16 members, seats by community population (3, 3, 3, 2, 2, 2, 1)
+  quote: The tribal council shall consist of elected representatives
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IV, Section 2
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected from seven Choctaw communities
+  quote: The tribal council shall consist of elected representatives
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IV, Section 2
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: be four (4) years and until their successors are duly elected and seated,
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 6
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Tribal Chief
+  quote: Sec. 1. The tribal chief of the Mississippi Band of Choctaw Indians
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IX, Section 1
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by the Choctaw people
+  quote: Sec. 3. The tribal chief shall be elected by the Choctaw people
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IV, Section 3
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Sec. 9. The term of office for the tribal chief shall be four
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 9
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chief, Secretary-Treasurer
+  quote: a vice-chief and a secretary-treasurer with such powers and duties as
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 10
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every odd-numbered year in June
+  quote: elections shall be held in June of odd-numbered years.
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 3
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: who is eighteen (18) years of age or more and
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 1
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Tribal Council
+  quote: The tribal council shall prescribe rules and regulations
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 2
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: branches
+  value: Legislative (tribal council) and executive (tribal chief)
+  quote: as head of the executive branch of the tribal government.
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IX, Section 1(a)
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal court
+  quote: establishing a tribal court; and defining the powers and
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article VIII, Section 1(m)
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote at Secretary-called election (40% turnout), then Secretary approval
+  quote: the qualified voters of the tribe voting at an election called for that
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article XIII
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: effective until it shall have been approved by
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article XIII
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal of council officers by two-thirds Council vote for cause
+  quote: for cause by two-thirds vote of the council members at a meeting at which
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article VI, Section 8
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of community's eligible voters
+  quote: a petition signed by at least forty per-
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article VI, Section 7
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Initiative and referendum by 30% of registered voters
+  quote: the initiative. Thirty percent (30%) of the registered voters shall
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article XI, Section 2
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Mississippi Band of Choctaw Indians Tribal Code
@@ -604,6 +856,159 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Mississippi is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Mississippi. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Mississippi by the Census Bureau's land areas.
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Tennessee is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Tennessee. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Tennessee by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Listed by the Tribal Law and Policy Institute among the Tribes that have implemented special Tribal criminal jurisdiction under the Violence Against Women Act Reauthorization Act of 2022 (25 U.S.C. § 1304).
+  source: tribal-law-and-policy-institute-special-tribal-criminal-jurisdiction-chart
+  confidence: medium
+  verification: inferred
+  as_of: '2026-08-11'
+  locator: Chart row 37, "Implemented VAWA STCJ" column
+  note: Listed as "Mississippi Band of Choctaw". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+- topic: state-jurisdiction-statute
+  value: not-assumed
+  detail: Mississippi has no Public Law 280 or special-act jurisdiction over Choctaw trust lands that the research found; the Supreme Court held that where the Major Crimes Act applies the State has no similar jurisdiction. (United States v. John, 437 U.S. 634, 653 (1978).)
+  source: united-states-v-john-1978
+  confidence: medium
+  verification: read-in-full
+  locator: 437 U.S. at 653
+  note: 'Narrow: John concerns a Major Crimes Act offense (assault with intent to kill) on Choctaw trust land. "Not assumed" for broader civil or criminal matters rests on not finding any grant; the research did not find a Mississippi statute assuming jurisdiction. Quote begins mid-sentence in the opinion.'
+treaties:
+- title: Treaty with the Choctaw, 1786
+  signed: '1786-01-03'
+  statutes_at_large: 7 Stat. 21
+  kappler:
+    volume: 2
+    page: 11
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1786-0011
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 11 (Treaty with the Choctaw, 1786; Kappler header "Jan. 3, 1786. | 7 Stat., 21.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Choctaw, 1801
+  signed: '1801-12-17'
+  statutes_at_large: 7 Stat. 66
+  kappler:
+    volume: 2
+    page: 56
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1801-0056
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 56 (Treaty with the Choctaw, 1801; Kappler header "Dec. 17, 1801. | 7 Stat. 66. | Ratified April 30, 1802. | Proclaimed May 4, 1802.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Choctaw, 1802
+  signed: '1802-10-17'
+  statutes_at_large: 7 Stat. 73
+  kappler:
+    volume: 2
+    page: 63
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1802-0063
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 63 (Treaty with the Choctaw, 1802; Kappler header "Oct. 17, 1802. | 7 Stat., 73. | Ratified June 20, 1803. | Proclaimed Jan. 20, 1803.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Choctaw, 1803
+  signed: '1803-08-31'
+  statutes_at_large: 7 Stat. 80
+  kappler:
+    volume: 2
+    page: 69
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1803-0069
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 69 (Treaty with the Choctaw, 1803; Kappler header "Aug. 31, 1803. | 7 Stat., 80. | Proclamation, Dec. 26, 1803.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Choctaw, 1805
+  signed: '1805-11-16'
+  statutes_at_large: 7 Stat. 98
+  kappler:
+    volume: 2
+    page: 87
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1805-0087
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 87 (Treaty with the Choctaw, 1805; Kappler header "Nov. 16, 1805. | 7 Stat., 98. | Proclamation, Feb. 25, 1808.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Choctaw, 1816
+  signed: '1816-10-24'
+  statutes_at_large: 7 Stat. 152
+  kappler:
+    volume: 2
+    page: 137
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 137 (Treaty with the Choctaw, 1816; Kappler header "Oct. 24, 1816. | 7 Stat., 152. | Proclamation, Dec. 30, 1816.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Choctaw, 1820
+  signed: '1820-10-18'
+  statutes_at_large: 7 Stat. 210
+  kappler:
+    volume: 2
+    page: 191
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1820-0191
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 191 (Treaty with the Choctaw, 1820; Kappler header "Oct. 18, 1820. | 7 Stat., 210. | Proclamation, Jan. 8, 1821.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Choctaw, 1825
+  signed: '1825-01-20'
+  statutes_at_large: 7 Stat. 234
+  kappler:
+    volume: 2
+    page: 211
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1825-0211
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 211 (Treaty with the Choctaw, 1825; Kappler header "Jan. 20, 1825. | 7 Stat., 234. | Proclamation, Feb. 19, 1825.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Choctaw, 1830
+  signed: '1830-09-27'
+  statutes_at_large: 7 Stat. 333
+  kappler:
+    volume: 2
+    page: 310
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1830-0310
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 310 (Treaty with the Choctaw, 1830; Kappler header "Sept. 27, 1830. | 7 Stat., 333. | Proclamation, Feb. 24, 1831.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Mississippi Band descends from Choctaw who stayed in Mississippi under Art. 14 of the 1830 treaty; link to pre-removal Choctaw treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

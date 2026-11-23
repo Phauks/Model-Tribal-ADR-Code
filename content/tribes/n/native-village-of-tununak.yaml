@@ -152,6 +152,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Tununak
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: Listed as "Native Village of Tununak". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Native Village of Tununak".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution (Native Village of Tununak, Alaska) (approved 1939) states it was adopted under
@@ -167,6 +184,87 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the act of Congress of June 18, 1934
+  quote: By-laws, by authority of the act of Congress of June 18, 1984, as
+  source: constitution-native-village-of-tununak-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-01-29'
+  locator: Preamble
+  document_version:
+    document: native-village-of-tununak-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Preamble prints the 1934 act as ''1984'' (OCR); the rest is legible.'
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: shall decide what kind of governing body it wishes to set up to speak
+  source: constitution-native-village-of-tununak-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-01-29'
+  locator: Article 3, Section 1
+  document_version:
+    document: native-village-of-tununak-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Preamble prints the 1934 act as ''1984'' (OCR); the rest is legible.'
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: and how long they shall serve. The Village shall then choose the
+  source: constitution-native-village-of-tununak-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-01-29'
+  locator: Article 3, Section 2
+  document_version:
+    document: native-village-of-tununak-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Preamble prints the 1934 act as ''1984'' (OCR); the rest is legible.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Tununak
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: All members of the Village 21 years
+  source: constitution-native-village-of-tununak-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-01-29'
+  locator: Article 5, Section 1
+  document_version:
+    document: native-village-of-tununak-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Preamble prints the 1934 act as ''1984'' (OCR); the rest is legible.'
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members in election called by the Secretary
+  quote: changes are approved by the Secretary of the Interior and by a
+  source: constitution-native-village-of-tununak-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-01-29'
+  locator: Article 6
+  document_version:
+    document: native-village-of-tununak-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Preamble prints the 1934 act as ''1984'' (OCR); the rest is legible.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by a
+  source: constitution-native-village-of-tununak-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-01-29'
+  locator: Article 6
+  document_version:
+    document: native-village-of-tununak-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Preamble prints the 1934 act as ''1984'' (OCR); the rest is legible.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

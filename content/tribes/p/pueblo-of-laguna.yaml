@@ -163,6 +163,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: Listed as "Laguna Pueblo". Service unit named for Acoma, Canoncito and Laguna; no page found that lists the nations by full name. Operator from the "– Indian Health Service" tag in the Albuquerque Area PRC program list.
+- area: Albuquerque
+  service_unit: Acoma-Canoncito-Laguna Service Unit
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Acoma-Canoncito-Laguna SU – IHS".'
+  operator: indian-health-service
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution and Bylaws of the Pueblo of Laguna (approved 1958) states it was adopted under
@@ -188,6 +205,231 @@ government_structure:
   as_of: '1949'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under Section 16 of Act of June 18, 1934
+  quote: Pursuant to Section 16 of the Act of June 18, 1934
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Certification of Ratification
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Pueblo Council
+  quote: the Pueblo of Laguna shall be vested in the Pueblo Council. The Council
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article III, Section 1
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elections held by Pueblo custom and ordinance; village representatives selected by villages
+  quote: of all officials of the Pueblo of Laguna shall be held in accordance with
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article III, Section 7
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 1 year (until next annual election)
+  quote: shall serve until the next annual election or until their successors have
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article III, Section 9
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Governor
+  quote: be the executive head of the Pueblo,and his lawful orders must be obeyed
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article VI, Section 1
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Laguna, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected under Pueblo custom and ordinances
+  quote: of all officials of the Pueblo of Laguna shall be held in accordance with
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article III, Section 7
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 1 year; no more than 3 successive terms
+  quote: The Governor shall not serve more than three successive terms
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article III, Section 9
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Lieutenant Governors, Fiscales, Secretary, Treasurer, Interpreter, War officers
+  quote: (a) One Captain of War.
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article III, Section 2
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annual election
+  quote: shall serve until the next annual election or until their successors have
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article III, Section 9
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Pueblo 18 years or more of age who understand the nature of the proceedings
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article III, Section 8
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Pueblo Council regulates nominations and elections
+  quote: (g) To regulate the nomination and election of officers, and to prescribe
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article IV, Section 1(g)
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: branches
+  value: Legislative (Council), judicial (Pueblo Court), executive (Governor)
+  quote: shall be vested in a Pueblo Court. The Court shall consist of such number
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article V, Section 1
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Pueblo Court
+  quote: shall be vested in a Pueblo Court. The Court shall consist of such number
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article V, Section 1
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Appointed by the Council
+  quote: appointed by the Council.
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article V, Section 1
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judges removable only for cause
+  quote: shall not be removed from office except for cause.
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article V, Section 4
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of members 21 or older in election called by Secretary of the Interior
+  quote: majority vote of the members of the Pueblo 21 years of age or over voting
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article X
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: in such election; but no amendment shall become effective until it shall
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article X
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by majority vote of Council for gross neglect or misconduct
+  quote: by a majority vote remove any officer or any member of the Council for
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: read-in-full
+  as_of: '1958-05-29'
+  locator: Article IX, Section 1
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1958-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Pueblo of Laguna, New Mexico
@@ -479,6 +721,15 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

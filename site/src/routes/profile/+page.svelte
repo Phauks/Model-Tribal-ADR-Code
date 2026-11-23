@@ -1,9 +1,13 @@
 <script lang="ts">
+	import { page } from '$app/state';
+	import ProfilePicturePicker from '#lib/components/ProfilePicturePicker.svelte';
 	import ProfileSummary from '#lib/components/ProfileSummary.svelte';
 	import { profileStatusLabels } from '#lib/contributors.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
+
+	const pictureNotice = $derived(page.url.searchParams.get('picture'));
 
 	const profile = $derived(data.profile);
 
@@ -15,12 +19,6 @@
 <svelte:head>
 	<title>Your profile · Model Tribal ADR Code</title>
 </svelte:head>
-
-{#if data.deleted}
-	<div class="notice" role="status">
-		<p>Your profile and everything in it are deleted. Thank you for your interest.</p>
-	</div>
-{/if}
 
 {#if !profile}
 	<h1>Help write the code</h1>
@@ -47,7 +45,9 @@
 	<h2>Who sees it</h2>
 	<p>
 		Only the lead author and editors see what you write here. Nothing is published except the credit
-		you choose, and only after you confirm it on a review page. Your email address and phone number
+		you choose, and only after you confirm it on a review page. If you are credited on the website by
+		name or by a name you choose, you also get a contributor page that shows that credit, your picture if
+		you add one, and the published work you helped with. Your email address and phone number
 		are never printed or published. You can change your answers or delete your profile at any time.
 	</p>
 	<p><a class="button" href="/profile/edit">Start</a></p>
@@ -111,54 +111,71 @@
 
 	<p><a class="button button-quiet" href="/profile/edit">Edit your profile</a></p>
 
+	{#if profile.status === 'welcomed' && profile.publicSlug && !profile.hasUnconfirmedChanges}
+		<p>Your contributor page: <a href="/contributors/{profile.publicSlug}">/contributors/{profile.publicSlug}</a></p>
+	{/if}
+
 	<ProfileSummary answers={profile.answers} email={profile.email} />
 
-	<details class="leave">
-		<summary>Delete your profile</summary>
-		<p>
-			This deletes your profile, your answers and every confirmed version, at once. A credit already
-			printed in a book cannot be recalled, but the next edition leaves it out.
-			{#if data.hasWorkspaceAccess}
-				Your workspace access is not changed; ask the lead author to end it.
-			{/if}
-		</p>
-		{#if form?.problem}
-			<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
+	<section aria-labelledby="picture-heading">
+		<h2 id="picture-heading">Picture</h2>
+		{#if pictureNotice === 'saved'}
+			<div class="notice" role="status"><p>Your picture is saved.</p></div>
+		{:else if pictureNotice === 'removed'}
+			<div class="notice" role="status"><p>Your picture is removed.</p></div>
 		{/if}
-		<form method="post" action="?/delete">
-			<div class="choice">
-				<input type="checkbox" id="sure" name="sure" value="yes" />
-				<label for="sure">I want to delete my profile</label>
-			</div>
-			<p><button class="button button-quiet" type="submit">Delete my profile</button></p>
-		</form>
-	</details>
+		{#if profile.answers.ageGroup === '18-or-older'}
+			{#if profile.pictureKey}
+				<img class="own-picture" src="/profile/picture?v={encodeURIComponent(profile.pictureUpdatedAt ?? '')}" alt="Now on your profile" width="128" height="128" />
+			{/if}
+			<p id="picture-hint" class="small muted">
+				Shown on your contributor page while you have one. It is never printed in the book. We crop it to a
+				square from the middle and remove the camera details and location from it.
+			</p>
+			{#if form?.pictureProblem}
+				<p class="field-error" role="alert"><span class="visually-hidden">Error:</span> {form.pictureProblem}</p>
+			{/if}
+			<form method="post" action="?/picture" enctype="multipart/form-data" class="picture-form">
+				<label for="picture">{profile.pictureKey ? 'Choose a new picture' : 'Choose a picture'}</label>
+				<ProfilePicturePicker side={data.pictureSide} describedBy="picture-hint" />
+				<p><button class="button" type="submit">Save picture</button></p>
+			</form>
+			{#if profile.pictureKey}
+				<form method="post" action="?/removePicture">
+					<button class="button button-quiet" type="submit">Remove picture</button>
+				</form>
+			{/if}
+		{:else if profile.answers.ageGroup === '13-to-17'}
+			<p>Pictures are for people 18 or older, so nothing on the website can identify you.</p>
+		{:else}
+			<p>To add a picture, <a href="/profile/edit#about">answer the question about your age</a> first.</p>
+		{/if}
+	</section>
 {/if}
 
+<section class="nation-team" aria-labelledby="nation-team-heading">
+	<h2 id="nation-team-heading">Your nation’s page</h2>
+	<p>
+		If your nation chooses you to keep its page up to date, you can ask for a place on its team. Once your
+		nation’s office confirms you, your changes go live on the page, labeled as coming from the nation.
+	</p>
+	<p><a class="button button-quiet" href="/profile/nation-team">Ask to edit your nation’s page</a></p>
+</section>
+
+<p class="small muted">To download what the project keeps about you or delete your account, go to <a href="/account/data">Your data</a>.</p>
+
 <style>
-	.leave {
+	.nation-team {
 		margin-top: var(--space-6);
 		border-top: 1px solid var(--color-line);
 		padding-top: var(--space-4);
 	}
 
-	.leave summary {
-		cursor: pointer;
-		font-weight: var(--font-weight-semibold);
-		min-height: var(--layout-target-minimum);
+	.own-picture {
+		width: 8rem;
+		height: 8rem;
+		border-radius: 50%;
+		object-fit: cover;
 	}
 
-	.choice {
-		display: flex;
-		gap: var(--space-3);
-		align-items: flex-start;
-		margin: var(--space-3) 0;
-	}
-
-	.choice input {
-		margin-top: 0.3em;
-		width: 1.25rem;
-		height: 1.25rem;
-		flex: none;
-	}
 </style>
