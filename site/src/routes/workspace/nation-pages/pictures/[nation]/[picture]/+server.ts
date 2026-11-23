@@ -1,8 +1,8 @@
 /**
  * Shows the project any picture a nation's changes have named, so it can
  * review pictures before or after they go live. Readers see only the live
- * pictures, at /nations/<id>/pictures/<picture>. A picture shows only once
- * the virus check passes (site/SCANNING.md).
+ * pictures, at /nations/<id>/pictures/<picture>. Like every file sent from
+ * outside, a picture is held until the virus check passes (site/SCANNING.md).
  */
 import { error } from '@sveltejs/kit';
 import { pictureKey } from '#lib/nation-page-changes.ts';

@@ -76,7 +76,7 @@ function viewCondition(view: InboxView, person: string, at: string): { sql: stri
 		case 'reminders':
 			return { sql: `t.folder NOT IN ('spam', 'trash') AND t.remind_at > ?`, values: [at] };
 		case 'scheduled':
-			return { sql: `EXISTS (SELECT 1 FROM mail_messages s WHERE s.thread_identifier = t.identifier AND s.status = 'scheduled')`, values: [] };
+			return { sql: `EXISTS (SELECT 1 FROM mail_messages s WHERE s.thread_identifier = t.identifier AND s.status = 'scheduled' AND s.held_for_undo = 0)`, values: [] };
 		case 'sent':
 			return { sql: `t.folder <> 'trash' AND t.last_outbound_at IS NOT NULL`, values: [] };
 		default:
@@ -150,7 +150,7 @@ export async function listThreads(
 			  ORDER BY m.created_at DESC LIMIT 1) AS snippet,
 			 EXISTS (SELECT 1 FROM mail_attachments a JOIN mail_messages m ON m.identifier = a.message_identifier
 			  WHERE m.thread_identifier = t.identifier AND a.inline = 0) AS has_attachments,
-			 (SELECT MIN(s.scheduled_for) FROM mail_messages s WHERE s.thread_identifier = t.identifier AND s.status = 'scheduled') AS scheduled_for
+			 (SELECT MIN(s.scheduled_for) FROM mail_messages s WHERE s.thread_identifier = t.identifier AND s.status = 'scheduled' AND s.held_for_undo = 0) AS scheduled_for
 			 FROM mail_threads t LEFT JOIN people p ON p.identifier = t.assignee_identifier
 			 WHERE ${conditions.join(' AND ')}
 			 ORDER BY ${order} DESC LIMIT ${pageSize + 1} OFFSET ${page * pageSize}`
@@ -221,7 +221,7 @@ export async function viewCounts(context: MailContext, personIdentifier: string)
 		.bind(personIdentifier, at)
 		.first<{ inbox: number | null; mine: number | null; reminders: number | null; spam: number | null }>();
 	const scheduled = await context.database
-		.prepare(`SELECT COUNT(DISTINCT thread_identifier) AS count FROM mail_messages WHERE status = 'scheduled'`)
+		.prepare(`SELECT COUNT(DISTINCT thread_identifier) AS count FROM mail_messages WHERE status = 'scheduled' AND held_for_undo = 0`)
 		.first<{ count: number }>();
 	return {
 		inbox: row?.inbox ?? 0,
@@ -282,6 +282,8 @@ export interface MessageDetail {
 	carrier: string | null;
 	sentByName: string | null;
 	scheduledFor: string | null;
+	/** While a message waits out the pause before it goes (undo send), when the pause ends. */
+	undoUntil: string | null;
 	sentAt: string | null;
 	receivedAt: string | null;
 	deliveryStatus: string | null;
@@ -384,6 +386,7 @@ export async function getThread(context: MailContext, identifier: string, person
 			carrier: (row.carrier as string | null) ?? null,
 			sentByName: (row.sent_by_name as string | null) ?? null,
 			scheduledFor: (row.scheduled_for as string | null) ?? null,
+			undoUntil: row.status === 'scheduled' && row.held_for_undo === 1 ? ((row.scheduled_for as string | null) ?? null) : null,
 			sentAt: (row.sent_at as string | null) ?? null,
 			receivedAt: (row.received_at as string | null) ?? null,
 			deliveryStatus: (row.delivery_status as string | null) ?? null,
