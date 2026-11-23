@@ -29,7 +29,7 @@ export interface PageDownloads {
 
 export function pageDownloads(path: string): PageDownloads {
 	const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
-	if (nation && nation !== 'map') {
+	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data') {
 		return {
 			citable: true,
 			files: [
@@ -60,6 +60,27 @@ export function pageDownloads(path: string): PageDownloads {
 					description: 'Every nation and community with its recognition and states, for a spreadsheet',
 					kind: 'table',
 					link: '/nations/nations.csv'
+				}
+			]
+		};
+	}
+	if (path === '/nations/recourse') {
+		return {
+			citable: false,
+			files: [
+				{
+					label: 'Dispute resolution provisions',
+					format: 'CSV',
+					description: 'Every provision on this page, with its citation, for a spreadsheet',
+					kind: 'table',
+					link: '/nations/recourse/provisions.csv'
+				},
+				{
+					label: 'Dispute resolution provisions',
+					format: 'JSON',
+					description: 'The same list, for programs and research',
+					kind: 'data',
+					link: '/nations/recourse/provisions.json'
 				}
 			]
 		};

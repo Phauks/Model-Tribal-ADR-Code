@@ -147,7 +147,7 @@
 
 	const landAreaColumns: TableColumn[] = [
 		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true, custom: true },
-		{ key: 'kind', header: 'Kind', sortable: true },
+		{ key: 'kind', header: 'Kind', sortable: true, filterable: true },
 		{ key: 'count', header: 'Nations linked', type: 'number', sortable: true }
 	];
 	const landAreaRows: TableRow[] = $derived(
@@ -289,6 +289,7 @@
 				</p>
 				<DataTable
 					identifier="nations-by-state"
+					download="nations-by-state"
 					label="Table: nations by state"
 					caption="Nations with a recorded presence, by state and territory"
 					columns={stateColumns}
@@ -303,6 +304,8 @@
 				{#if lands}
 					<DataTable
 						identifier="land-areas"
+						download="land-areas"
+						filters
 						label="Table: land areas"
 						caption="American Indian and Alaska Native areas in the 2020 census, and the nations whose entries name them"
 						columns={landAreaColumns}
@@ -317,6 +320,7 @@
 				</p>
 				<DataTable
 					identifier="regions"
+					download="regions"
 					label="Table: regions"
 					caption="Nations each region serves, as the Bureau’s Tribal Leaders Directory lists them"
 					columns={regionColumns}
