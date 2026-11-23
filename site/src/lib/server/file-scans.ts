@@ -27,7 +27,8 @@ export type ScanPurpose =
 	| 'request-file'
 	| 'nation-picture'
 	| 'nation-team-proof'
-	| 'profile-picture';
+	| 'profile-picture'
+	| 'event-recording';
 
 export interface FileScan {
 	objectKey: string;

@@ -108,6 +108,16 @@ declare global {
 		LULU_CLIENT_SECRET?: string;
 		STRIPE_SECRET_KEY?: string;
 		STRIPE_WEBHOOK_SECRET?: string;
+		/**
+		 * The events video room on Cloudflare RealtimeKit (site/COLLABORATION.md,
+		 * "The video room"). The room stays off until all three are set, as
+		 * Secrets in the dashboard so a deploy never clears them: the Cloudflare
+		 * account's id, the RealtimeKit app's id, and an API token with the
+		 * Realtime permission.
+		 */
+		VIDEO_ROOM_ACCOUNT?: string;
+		VIDEO_ROOM_APPLICATION?: string;
+		VIDEO_ROOM_TOKEN?: string;
 	}
 }
 
