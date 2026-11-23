@@ -34,6 +34,9 @@
 	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
 	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
+	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
+	import { figurePartOrder, figureParts, type FigurePart, type NewFigure } from '#lib/essays/figures.ts';
+	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
 
 	let {
@@ -88,6 +91,7 @@
 		boxSource: string | null;
 		boxParts: Set<string>;
 		analysisTitle: string | null;
+		figureParts: Set<string>;
 	}>({
 		marks: new Set(),
 		block: 'paragraph',
@@ -95,14 +99,20 @@
 		box: null,
 		boxSource: null,
 		boxParts: new Set(),
-		analysisTitle: null
+		analysisTitle: null,
+		figureParts: new Set()
 	});
 	/** The parts the box around the cursor can take and does not have yet. */
 	const missingParts = $derived(
 		active.box ? (active.box === 'law_block' ? lawPartOrder : casePartOrder).filter((kind) => !active.boxParts.has(kind)) : []
 	);
 
+	/** The parts the figure around the cursor does not have yet. */
+	const missingFigureParts = $derived(active.inside.has('figure_block') ? figurePartOrder.filter((kind) => !active.figureParts.has(kind)) : []);
+
 	/* Dialogs --------------------------------------------------------------- */
+
+	let figureDialog: ReturnType<typeof EssayFigureDialog> | undefined = $state();
 
 	type Picker = 'citation' | 'case' | 'law' | 'term' | 'link' | 'analysis-title';
 	let picker = $state<Picker | null>(null);
@@ -279,6 +289,66 @@
 		};
 	}
 
+	/** Blocks from a few lines of Markdown typed in the figure dialog, so *italics* and citations work there too. */
+	function blocksOf(text: string): EditorNode[] {
+		const blocks: EditorNode[] = [];
+		parseEssay(text).forEach((node) => blocks.push(node));
+		return blocks;
+	}
+
+	function newFigurePart(kind: FigurePart, text?: string): EditorNode {
+		return schema.node('figure_part', { kind }, text ? blocksOf(text) : [schema.node('paragraph')]);
+	}
+
+	/**
+	 * Adds a figure after the block the cursor is in, at the top level of the
+	 * essay, so a figure never lands inside a paragraph, a list or a box.
+	 */
+	function addFigure(figure: NewFigure): void {
+		const parts = [
+			...blocksOf(figure.caption),
+			...(figure.description ? [newFigurePart('description', figure.description)] : []),
+			...(figure.credit ? [newFigurePart('credit', figure.credit)] : []),
+			...(figure.transcript ? [newFigurePart('transcript', figure.transcript)] : [])
+		];
+		const node = schema.node('figure_block', { kind: figure.kind, address: figure.address }, parts.length ? parts : [schema.node('paragraph')]);
+		run((state, dispatch) => {
+			const start = state.selection.$from;
+			const at = start.depth > 0 ? start.after(1) : state.selection.from;
+			if (dispatch) {
+				const transaction = state.tr.insert(at, node);
+				const inside = TextSelection.findFrom(transaction.doc.resolve(at + 1), 1, true);
+				if (inside) transaction.setSelection(inside);
+				dispatch(transaction.scrollIntoView());
+			}
+			return true;
+		});
+	}
+
+	/** Adds a part to the figure around the cursor, in its place in the order of parts. */
+	function addFigurePart(kind: FigurePart): Command {
+		return (state, dispatch) => {
+			const found = enclosing(state, 'figure_block');
+			if (!found) return false;
+			let at = found.position + found.node.nodeSize - 1;
+			let offset = found.position + 1;
+			for (let index = 0; index < found.node.childCount; index += 1) {
+				const child = found.node.child(index);
+				if (child.type.name === 'figure_part' && figurePartOrder.indexOf(child.attrs.kind) > figurePartOrder.indexOf(kind)) {
+					at = offset;
+					break;
+				}
+				offset += child.nodeSize;
+			}
+			if (dispatch) {
+				const transaction = state.tr.insert(at, newFigurePart(kind));
+				transaction.setSelection(TextSelection.near(transaction.doc.resolve(at + 2)));
+				dispatch(transaction.scrollIntoView());
+			}
+			return true;
+		};
+	}
+
 	function setAttributes(name: string, attrs: Record<string, unknown>): Command {
 		return (state, dispatch) => {
 			const found = enclosing(state, name);
@@ -356,10 +426,10 @@
 
 	/* The editor -------------------------------------------------------------- */
 
-	function partsOf(node: EditorNode | undefined): Set<string> {
+	function partsOf(node: EditorNode | undefined, part = 'case_part'): Set<string> {
 		const kinds = new Set<string>();
 		node?.forEach((child) => {
-			if (child.type.name === 'case_part') kinds.add(child.attrs.kind);
+			if (child.type.name === part) kinds.add(child.attrs.kind);
 		});
 		return kinds;
 	}
@@ -382,7 +452,8 @@
 			box: boxFound ? (boxFound.node.type.name as Box) : null,
 			boxSource: boxFound?.node.attrs.source ?? null,
 			boxParts: partsOf(boxFound?.node),
-			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null
+			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null,
+			figureParts: partsOf(enclosing(state, 'figure_block')?.node, 'figure_part')
 		};
 	}
 
@@ -914,6 +985,12 @@
 				{/if}
 				<button type="button" class="tool" onclick={() => run(lift)} title="Take the paragraph out of its box or list">Out of box</button>
 			</div>
+			<div role="group" aria-label="Figures">
+				<button type="button" class="tool" onclick={() => figureDialog?.show()} title="A picture, video or sound recording, added after this paragraph">Picture, video or recording</button>
+				{#each missingFigureParts as kind (kind)}
+					<button type="button" class="tool" onclick={() => run(addFigurePart(kind))}>Add {figureParts[kind]}</button>
+				{/each}
+			</div>
 			<div role="group" aria-label="References">
 				<button type="button" class="tool" onclick={() => openPicker('citation')}>Cite a source</button>
 				<button type="button" class="tool" onclick={() => openPicker('term')}>Glossary term</button>
@@ -990,7 +1067,7 @@
 			{/if}
 			<article class="reading essay">
 				<h1>{preview.title}</h1>
-				<div class="essay-text">{@html preview.html}</div>
+				<div class="essay-text" use:figurePlayers>{@html preview.html}</div>
 				<SourceList sources={preview.sources} />
 			</article>
 		{/if}
@@ -1038,6 +1115,8 @@
 		<p class="small muted">You can read this essay. Ask the lead author for contribute access to edit it.</p>
 	{/if}
 </div>
+
+<EssayFigureDialog bind:this={figureDialog} essay={identifier} onadd={addFigure} />
 
 <dialog bind:this={pickerDialog} class="picker" onclose={() => (picker = null)} aria-labelledby="picker-heading">
 	{#if picker}

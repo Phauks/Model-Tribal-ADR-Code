@@ -29,6 +29,16 @@
  *                                such as "(Gorsuch, J., dissenting)", is its
  *                                attribution
  *   ::: analysis [title] ... ::: analysis, set apart from what sources say
+ *   :::: figure <kind> <address> a picture, video or sound recording
+ *                                (figures.ts): kind is picture, video or
+ *                                sound; the address is /files/<reference>/
+ *                                <name>, or a YouTube link for a video
+ *   caption paragraphs           what the figure shows
+ *   ::: description ... :::      what a picture or video shows, read aloud
+ *                                in its place
+ *   ::: credit ... :::           who made it
+ *   ::: transcript ... :::       what is said in a video or recording
+ *   ::::
  *
  * A block that holds another block opens with more colons than the block
  * inside it, because markdown-it-container closes a block at the first bare
@@ -96,7 +106,11 @@ export const essayBlocks = {
 	treatment: /^treatment$/,
 	topics: /^topics$/,
 	quote: /^quote$/,
-	analysis: /^analysis(?:\s+(.+))?$/
+	analysis: /^analysis(?:\s+(.+))?$/,
+	figure: /^figure\s+(picture|video|sound)\s+(\S+)$/,
+	description: /^description$/,
+	credit: /^credit$/,
+	transcript: /^transcript$/
 } as const;
 export type EssayBlock = keyof typeof essayBlocks;
 
