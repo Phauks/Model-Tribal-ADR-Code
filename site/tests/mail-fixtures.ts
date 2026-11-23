@@ -54,8 +54,6 @@ export function recordingCarrier(name: 'cloudflare' | 'smtp' = 'cloudflare'): Ma
 export function testSettings(overrides: Partial<MailSettings> = {}): MailSettings {
 	return {
 		domain: 'example.org',
-		addresses: ['contact@example.org', 'requests@example.org'],
-		defaultAddress: 'contact@example.org',
 		noticeAddress: 'lead@personal.example',
 		siteAddress: 'https://example.org',
 		senderName: 'Model Tribal ADR Code',
@@ -123,6 +121,13 @@ export async function testContext(at: { now: Date }, settings: MailSettings = te
 	await database
 		.prepare(`INSERT INTO people (identifier, email, display_name, role, status, added_at) VALUES ('lead', 'lead@example.org', 'Lead Author', 'lead-author', 'active', '2026-11-20T00:00:00Z')`)
 		.run();
+	// Two shared inboxes, contact@ (the catch-all, made by the migration) and requests@, both read by the lead author.
+	await database.batch([
+		database.prepare(
+			`INSERT INTO mail_inboxes (identifier, local_part, name, kind, catch_all, created_at, updated_at) VALUES ('requests', 'requests', 'Requests', 'shared', 0, '2026-11-20T00:00:00Z', '2026-11-20T00:00:00Z')`
+		),
+		database.prepare(`INSERT INTO mail_inbox_members (inbox_identifier, person_identifier, added_at) VALUES ('contact', 'lead', '2026-11-20T00:00:00Z'), ('requests', 'lead', '2026-11-20T00:00:00Z')`)
+	]);
 	return { database, bucket: memoryBucket(), settings, now: () => at.now };
 }
 

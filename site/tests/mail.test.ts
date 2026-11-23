@@ -84,13 +84,12 @@ describe('settings', () => {
 		expect(mailSettings({ MAIL_DOMAIN: '' } as WorkerEnvironment).domain).toBeNull();
 		const settings = mailSettings({
 			MAIL_DOMAIN: 'Example.org',
-			MAIL_ADDRESSES: 'contact, requests, bad address',
 			OUTREACH_CARRIER: 'smtp',
 			OUTREACH_FROM: 'outreach@outreach.example.org',
 			OUTREACH_SMTP_HOST: 'smtppro.zoho.com',
 			OUTREACH_SMTP_PORT: '587'
 		} as WorkerEnvironment);
-		expect(settings.addresses).toEqual(['contact@example.org', 'requests@example.org']);
+		expect(settings.domain).toBe('example.org');
 		expect(settings.outreach).toBeNull();
 		const withPassword = mailSettings({
 			MAIL_DOMAIN: 'example.org',

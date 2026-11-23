@@ -41,10 +41,10 @@ export const actions: Actions = {
 		redirect(303, `/workspace/inbox/rules?made=${sorted}`);
 	},
 	test: async (event) => {
-		requirePermission(event, 'manage-mail');
+		const person = requirePermission(event, 'manage-mail');
 		const values = ruleFromForm(await event.request.formData());
 		try {
-			return { preview: await previewRule(mailContext(), values), values };
+			return { preview: await previewRule(mailContext(), values, person.identifier), values };
 		} catch (problem) {
 			if (problem instanceof RuleError) return fail(400, { problem: problem.message, values });
 			throw problem;

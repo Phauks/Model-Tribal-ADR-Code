@@ -74,8 +74,6 @@ declare global {
 		projectEmail?: EmailSendBinding;
 		/** The project's mail domain, such as example.org; empty while email is off (site/MAIL.md, "Switching email on"). */
 		MAIL_DOMAIN?: string;
-		/** The inbox's own addresses, as local parts separated by commas, such as "contact,requests". The first is the default. */
-		MAIL_ADDRESSES?: string;
 		/** Where the "new mail" notice goes, if anywhere. Not one of the project's own addresses. */
 		MAIL_NOTICE_ADDRESS?: string;
 		/** The sender's name on mail from the project. */

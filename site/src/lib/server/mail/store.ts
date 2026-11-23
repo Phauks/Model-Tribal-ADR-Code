@@ -7,6 +7,7 @@
 import { folderDepthLimit, folders, type Folder, type InboxView, type MailAddress, type TagColor, type ThreadFolder } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailContext } from './context.ts';
 import { attachmentChecks, forgetAttachmentScans, type AttachmentCheck } from './scans.ts';
+import { reachableCondition } from './inboxes.ts';
 
 export interface ThreadSummary {
 	identifier: string;
@@ -107,7 +108,8 @@ interface ThreadRow {
 /**
  * One page of conversations, newest first: a made folder's, a tag's (in any
  * folder but Spam and Deleted), or else a view's, optionally narrowed by
- * search words.
+ * search words and to one inbox. Only conversations in the person's own
+ * inboxes are ever listed (src/lib/server/mail/inboxes.ts).
  */
 export async function listThreads(
 	context: MailContext,
@@ -117,12 +119,18 @@ export async function listThreads(
 		folder?: string | null;
 		tag?: string | null;
 		search?: string | null;
+		/** One inbox's conversations only; null for all of the person's inboxes. */
+		inbox?: string | null;
 		page?: number;
 	}
 ): Promise<{ threads: ThreadSummary[]; more: boolean }> {
 	const at = currentTime(context).toISOString();
-	const conditions: string[] = [];
-	const values: (string | number)[] = [];
+	const conditions: string[] = [reachableCondition];
+	const values: (string | number)[] = [options.personIdentifier];
+	if (options.inbox) {
+		conditions.push('t.inbox_identifier = ?');
+		values.push(options.inbox);
+	}
 	if (options.folder) {
 		conditions.push(`t.folder = 'folder' AND t.folder_identifier = ?`);
 		values.push(options.folder);
@@ -206,22 +214,32 @@ async function tagsFor(context: MailContext, threads: string[]): Promise<Map<str
 	return found;
 }
 
-/** How many unread conversations each view has, for the counts in the left column. */
-export async function viewCounts(context: MailContext, personIdentifier: string): Promise<Partial<Record<InboxView, number>>> {
+/**
+ * How many unread conversations each view has, for the counts in the left
+ * column: in the person's inboxes, or in one of them.
+ */
+export async function viewCounts(context: MailContext, personIdentifier: string, inbox: string | null = null): Promise<Partial<Record<InboxView, number>>> {
 	const at = currentTime(context).toISOString();
+	const onlyInbox = inbox ? 'AND t.inbox_identifier = ?3' : '';
 	const row = await context.database
 		.prepare(
 			`SELECT
-			 SUM(folder = 'inbox' AND unread = 1 AND (remind_at IS NULL OR remind_at <= ?2)) AS inbox,
-			 SUM(folder = 'inbox' AND unread = 1 AND assignee_identifier = ?1 AND (remind_at IS NULL OR remind_at <= ?2)) AS mine,
-			 SUM(folder NOT IN ('spam', 'trash') AND remind_at > ?2) AS reminders,
-			 SUM(folder = 'spam' AND unread = 1) AS spam
-			 FROM mail_threads`
+			 SUM(t.folder = 'inbox' AND t.unread = 1 AND (t.remind_at IS NULL OR t.remind_at <= ?2)) AS inbox,
+			 SUM(t.folder = 'inbox' AND t.unread = 1 AND t.assignee_identifier = ?1 AND (t.remind_at IS NULL OR t.remind_at <= ?2)) AS mine,
+			 SUM(t.folder NOT IN ('spam', 'trash') AND t.remind_at > ?2) AS reminders,
+			 SUM(t.folder = 'spam' AND t.unread = 1) AS spam
+			 FROM mail_threads t
+			 WHERE t.inbox_identifier IN (SELECT inbox_identifier FROM mail_inbox_members WHERE person_identifier = ?1) ${onlyInbox}`
 		)
-		.bind(personIdentifier, at)
+		.bind(...[personIdentifier, at, ...(inbox ? [inbox] : [])])
 		.first<{ inbox: number | null; mine: number | null; reminders: number | null; spam: number | null }>();
 	const scheduled = await context.database
-		.prepare(`SELECT COUNT(DISTINCT thread_identifier) AS count FROM mail_messages WHERE status = 'scheduled' AND held_for_undo = 0`)
+		.prepare(
+			`SELECT COUNT(DISTINCT m.thread_identifier) AS count FROM mail_messages m JOIN mail_threads t ON t.identifier = m.thread_identifier
+			 WHERE m.status = 'scheduled' AND m.held_for_undo = 0
+			 AND t.inbox_identifier IN (SELECT inbox_identifier FROM mail_inbox_members WHERE person_identifier = ?1) ${onlyInbox.replace('?3', '?2')}`
+		)
+		.bind(...[personIdentifier, ...(inbox ? [inbox] : [])])
 		.first<{ count: number }>();
 	return {
 		inbox: row?.inbox ?? 0,
@@ -237,14 +255,19 @@ export async function listTags(context: MailContext): Promise<MailTag[]> {
 	return results;
 }
 
-/** The made folders as a tree, in the order the left column shows them, with unread counts. */
-export async function listFolders(context: MailContext): Promise<MailFolder[]> {
+/**
+ * The made folders as a tree, in the order the left column shows them, with
+ * unread counts: of the person's inboxes, when a person is named.
+ */
+export async function listFolders(context: MailContext, personIdentifier: string | null = null): Promise<MailFolder[]> {
 	const { results } = await context.database
 		.prepare(
 			`SELECT f.identifier, f.name, f.parent_identifier AS parentIdentifier,
-			 (SELECT COUNT(*) FROM mail_threads t WHERE t.folder = 'folder' AND t.folder_identifier = f.identifier AND t.unread = 1) AS unread
+			 (SELECT COUNT(*) FROM mail_threads t WHERE t.folder = 'folder' AND t.folder_identifier = f.identifier AND t.unread = 1
+			  AND (?1 IS NULL OR ${reachableCondition.replace('?', '?1')})) AS unread
 			 FROM mail_folders f`
 		)
+		.bind(personIdentifier)
 		.all<{ identifier: string; name: string; parentIdentifier: string | null; unread: number }>();
 	const children = new Map<string | null, typeof results>();
 	for (const row of results) {
@@ -303,6 +326,8 @@ export interface MessageDetail {
 
 export interface ThreadDetail extends ThreadSummary {
 	projectAddress: string | null;
+	/** The inbox the conversation is in (src/lib/server/mail/inboxes.ts). */
+	inboxIdentifier: string | null;
 	messages: MessageDetail[];
 	notes: { identifier: string; body: string; personName: string | null; createdAt: string }[];
 	actions: { action: string; personName: string | null; note: string | null; createdAt: string }[];
@@ -318,15 +343,16 @@ function parseList(value: string | null): MailAddress[] {
 	}
 }
 
+/** A conversation with its messages, or null when it is gone or in an inbox the person is not on. */
 export async function getThread(context: MailContext, identifier: string, personIdentifier: string): Promise<ThreadDetail | null> {
 	const database = context.database;
 	const thread = await database
 		.prepare(
 			`SELECT t.*, p.display_name AS assignee_name FROM mail_threads t LEFT JOIN people p ON p.identifier = t.assignee_identifier
-			 WHERE t.identifier = ?`
+			 WHERE t.identifier = ? AND ${reachableCondition}`
 		)
-		.bind(identifier)
-		.first<ThreadRow & { project_address: string | null }>();
+		.bind(identifier, personIdentifier)
+		.first<ThreadRow & { project_address: string | null; inbox_identifier: string | null }>();
 	if (!thread) return null;
 	const { results: messages } = await database
 		.prepare(
@@ -373,6 +399,7 @@ export async function getThread(context: MailContext, identifier: string, person
 	return {
 		...summary,
 		projectAddress: thread.project_address,
+		inboxIdentifier: thread.inbox_identifier,
 		messages: messages.map((row) => ({
 			identifier: String(row.identifier),
 			direction: row.direction as 'in' | 'out',
@@ -532,7 +559,10 @@ export async function changeMany(context: MailContext, personIdentifier: string,
 	const chosen = [...new Set(threads)].slice(0, 100);
 	let changed = 0;
 	for (const thread of chosen) {
-		const exists = await context.database.prepare('SELECT 1 AS found FROM mail_threads WHERE identifier = ?').bind(thread).first();
+		const exists = await context.database
+			.prepare(`SELECT 1 AS found FROM mail_threads t WHERE t.identifier = ? AND ${reachableCondition}`)
+			.bind(thread, personIdentifier)
+			.first();
 		if (!exists) continue;
 		if (operation.kind === 'move') {
 			if (!(await moveToFolder(context, personIdentifier, thread, operation.place))) return changed;
@@ -745,13 +775,14 @@ export async function bringBackReminders(context: MailContext): Promise<number> 
 }
 
 /**
- * Deletes conversations that have been in Deleted for 30 days, with their
- * files in the bucket. Run by the mail tick, a few at a time.
+ * Deletes conversations that have been in Deleted for 30 days, and those
+ * whose inbox is gone (a personal inbox goes with its owner's account), with
+ * their files in the bucket. Run by the mail tick, a few at a time.
  */
 export async function purgeDeleted(context: MailContext): Promise<number> {
 	const before = new Date(currentTime(context).getTime() - 30 * 86_400_000).toISOString();
 	const { results: threads } = await context.database
-		.prepare(`SELECT identifier FROM mail_threads WHERE folder = 'trash' AND updated_at < ? LIMIT 20`)
+		.prepare(`SELECT identifier FROM mail_threads WHERE (folder = 'trash' AND updated_at < ?) OR inbox_identifier IS NULL LIMIT 20`)
 		.bind(before)
 		.all<{ identifier: string }>();
 	for (const { identifier } of threads) {
@@ -775,20 +806,26 @@ export async function purgeDeleted(context: MailContext): Promise<number> {
 	return threads.length;
 }
 
-/** One attachment's row, for the download route. */
-export async function getAttachment(context: MailContext, identifier: string) {
+/** One attachment's row, for the download route, if it is in one of the person's inboxes. */
+export async function getAttachment(context: MailContext, identifier: string, personIdentifier: string) {
 	return context.database
 		.prepare(
 			`SELECT a.filename, a.media_type AS mediaType, a.size, a.bucket_key AS bucketKey, m.direction = 'in' AS received FROM mail_attachments a
-			 JOIN mail_messages m ON m.identifier = a.message_identifier WHERE a.identifier = ?`
+			 JOIN mail_messages m ON m.identifier = a.message_identifier JOIN mail_threads t ON t.identifier = m.thread_identifier
+			 WHERE a.identifier = ? AND ${reachableCondition}`
 		)
-		.bind(identifier)
+		.bind(identifier, personIdentifier)
 		.first<{ filename: string; mediaType: string; size: number; bucketKey: string; received: number }>();
 }
 
-/** The bucket key of a message's HTML, for the sandboxed view. */
-export async function getMessageHtmlKey(context: MailContext, identifier: string): Promise<string | null> {
-	const row = await context.database.prepare('SELECT html_key AS key FROM mail_messages WHERE identifier = ?').bind(identifier).first<{ key: string | null }>();
+/** The bucket key of a message's HTML, for the sandboxed view, if it is in one of the person's inboxes. */
+export async function getMessageHtmlKey(context: MailContext, identifier: string, personIdentifier: string): Promise<string | null> {
+	const row = await context.database
+		.prepare(
+			`SELECT m.html_key AS key FROM mail_messages m JOIN mail_threads t ON t.identifier = m.thread_identifier WHERE m.identifier = ? AND ${reachableCondition}`
+		)
+		.bind(identifier, personIdentifier)
+		.first<{ key: string | null }>();
 	return row?.key ?? null;
 }
 

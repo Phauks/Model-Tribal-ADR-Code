@@ -10,6 +10,7 @@
  */
 import type { MailAddress } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailCarriers, type MailContext } from './context.ts';
+import { reachableCondition, threadInboxAddress } from './inboxes.ts';
 import { newMessageId } from './mime.ts';
 
 export class SenderError extends Error {}
@@ -42,14 +43,25 @@ export interface SenderCard {
 }
 
 /**
- * The card for the other side of a conversation. The address book may not be
- * in the database yet (migration 0012), so a missing table means no entry.
+ * The card for the other side of a conversation, as one person sees it: the
+ * address book entry only for someone who may read the private address book,
+ * and earlier conversations only from inboxes they are on. The address book
+ * may not be in the database yet (migration 0012), so a missing table means
+ * no entry.
  */
-export async function senderCard(context: MailContext, address: string, thisThread: string): Promise<SenderCard> {
+export async function senderCard(
+	context: MailContext,
+	address: string,
+	thisThread: string,
+	viewer: { personIdentifier: string; seesAddressBook: boolean }
+): Promise<SenderCard> {
 	const email = address.toLowerCase();
 	let contact: SenderCard['contact'] = null;
 	try {
-		const row = await context.database
+		// The address book is the lead author's alone (src/lib/permissions.ts, manage-address-book).
+		const row = !viewer.seesAddressBook
+			? null
+			: await context.database
 			.prepare(
 				`SELECT c.identifier, c.kind, c.name, c.role, COALESCE(c.nation_identifier, o.nation_identifier) AS nation_identifier,
 				 o.name AS organization, m.source_label, m.verified_on FROM contact_methods m
@@ -92,14 +104,17 @@ export async function senderCard(context: MailContext, address: string, thisThre
 	}
 	const { results: conversations } = await context.database
 		.prepare(
-			`SELECT identifier, subject, last_message_at AS lastMessageAt, folder FROM mail_threads
-			 WHERE counterpart_address = ? AND identifier <> ? AND folder <> 'trash' ORDER BY last_message_at DESC LIMIT 6`
+			`SELECT t.identifier, t.subject, t.last_message_at AS lastMessageAt, t.folder FROM mail_threads t
+			 WHERE t.counterpart_address = ? AND t.identifier <> ? AND t.folder <> 'trash' AND ${reachableCondition}
+			 ORDER BY t.last_message_at DESC LIMIT 6`
 		)
-		.bind(email, thisThread)
+		.bind(email, thisThread, viewer.personIdentifier)
 		.all<{ identifier: string; subject: string; lastMessageAt: string; folder: string }>();
 	const count = await context.database
-		.prepare(`SELECT COUNT(*) AS count FROM mail_threads WHERE counterpart_address = ? AND identifier <> ? AND folder <> 'trash'`)
-		.bind(email, thisThread)
+		.prepare(
+			`SELECT COUNT(*) AS count FROM mail_threads t WHERE t.counterpart_address = ? AND t.identifier <> ? AND t.folder <> 'trash' AND ${reachableCondition}`
+		)
+		.bind(email, thisThread, viewer.personIdentifier)
 		.first<{ count: number }>();
 	return { address: email, contact, conversations, conversationCount: count?.count ?? 0, blockedBy: await blockedPattern(context, email) };
 }
@@ -155,7 +170,7 @@ export async function blockSender(
 	const valid = /^@[a-z0-9.-]+\.[a-z]{2,}$/.test(clean) || /^[^\s@]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(clean);
 	if (!valid) throw new SenderError('Write an address, such as someone@example.com, or a domain with an @ in front, such as @example.com.');
 	const domain = context.settings.domain;
-	if (domain && (clean === `@${domain}` || clean.endsWith(`@${domain}`) || context.settings.addresses.includes(clean))) {
+	if (domain && (clean === `@${domain}` || clean.endsWith(`@${domain}`))) {
 		throw new SenderError('The project’s own addresses cannot be blocked.');
 	}
 	const at = currentTime(context).toISOString();
@@ -268,7 +283,8 @@ export async function unsubscribe(
 		if (response.status >= 400) throw new SenderError(`The list’s unsubscribe address refused (status ${response.status}). Try its web page instead.`);
 		how = 'one-click';
 	} else if (ways.mail) {
-		const from = row.project_address && context.settings.addresses.includes(row.project_address) ? row.project_address : context.settings.defaultAddress;
+		// From the address of the inbox the list wrote to.
+		const from = (await threadInboxAddress(context, row.thread_identifier))?.address;
 		if (!carriers.replies || !from || !context.settings.domain) throw new SenderError('Sending is not switched on yet, so the unsubscribe message cannot go.');
 		const to: MailAddress = { email: ways.mail.to };
 		await carriers.replies.send({

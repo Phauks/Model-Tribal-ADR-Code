@@ -13,6 +13,7 @@
  */
 import { fillTemplate, missingFields, normalizeSubject, snippetOf, unknownFields, type MergeValues } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailCarriers, type MailContext } from './context.ts';
+import { inboxForArrival } from './inboxes.ts';
 import { sendMessage } from './outbound.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
 import { makeToken, readToken } from './tokens.ts';
@@ -521,6 +522,8 @@ export async function runOutreach(context: MailContext, carriers: MailCarriers, 
 	const stamp = at.toISOString();
 	const dayAgo = new Date(at.getTime() - 86_400_000).toISOString();
 	const { results: batches } = await context.database.prepare(`SELECT * FROM outreach_batches WHERE status = 'running'`).all<BatchRow>();
+	// Outreach conversations are kept in the inbox its replies come to.
+	const outreachInbox = batches.length ? await inboxForArrival(context, outreach.replyTo) : null;
 	for (const batch of batches) {
 		const sentToday = await context.database
 			.prepare(`SELECT COUNT(*) AS count FROM outreach_recipients WHERE batch_identifier = ? AND sent_at >= ?`)
@@ -568,10 +571,21 @@ export async function runOutreach(context: MailContext, carriers: MailCarriers, 
 				context.database
 					.prepare(
 						`INSERT INTO mail_threads (identifier, subject, normalized_subject, folder, unread, project_address, counterpart_address, counterpart_name,
-						 nation_identifier, message_count, last_message_at, remind_at, remind_set_at, created_at, updated_at)
-						 VALUES (?1, ?2, ?3, 'archive', 0, ?4, ?5, ?6, ?7, 0, ?8, ?9, CASE WHEN ?9 IS NULL THEN NULL ELSE ?8 END, ?8, ?8)`
+						 nation_identifier, message_count, last_message_at, remind_at, remind_set_at, created_at, updated_at, inbox_identifier)
+						 VALUES (?1, ?2, ?3, 'archive', 0, ?4, ?5, ?6, ?7, 0, ?8, ?9, CASE WHEN ?9 IS NULL THEN NULL ELSE ?8 END, ?8, ?8, ?10)`
 					)
-					.bind(threadIdentifier, subject, normalizeSubject(subject), outreach.replyTo ?? outreach.from, recipient.email, recipient.name, recipient.nation_identifier, stamp, followUp),
+					.bind(
+						threadIdentifier,
+						subject,
+						normalizeSubject(subject),
+						outreach.replyTo ?? outreach.from,
+						recipient.email,
+						recipient.name,
+						recipient.nation_identifier,
+						stamp,
+						followUp,
+						outreachInbox?.identifier ?? null
+					),
 				context.database
 					.prepare(
 						`INSERT INTO mail_messages (identifier, thread_identifier, direction, status, from_address, to_list, subject, text_body, snippet, sent_by,

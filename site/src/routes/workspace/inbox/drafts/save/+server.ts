@@ -1,8 +1,8 @@
 import { error, json } from '@sveltejs/kit';
 import { mailContext } from '#lib/server/mail/runtime.ts';
 import { deleteDraft, draftFieldsFrom, saveDraft, WritingError } from '#lib/server/mail/writing.ts';
-import { requirePermission } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
+import { requireMail } from '#lib/server/mail/inbox-access.ts';
 
 // Where the box for writing mail saves its draft a moment after each change,
 // and throws it away on Discard (src/routes/workspace/inbox/Composer.svelte).
@@ -10,7 +10,7 @@ import type { RequestHandler } from './$types';
 export const prerender = false;
 
 export const POST: RequestHandler = async (event) => {
-	const person = requirePermission(event, 'read-mail');
+	const person = await requireMail(event);
 	const body = (await event.request.json().catch(() => null)) as { identifier?: unknown; thread?: unknown; fields?: unknown } | null;
 	if (!body || typeof body !== 'object') error(400, 'Send the draft to save.');
 	try {
@@ -27,7 +27,7 @@ export const POST: RequestHandler = async (event) => {
 };
 
 export const DELETE: RequestHandler = async (event) => {
-	const person = requirePermission(event, 'read-mail');
+	const person = await requireMail(event);
 	const identifier = event.url.searchParams.get('identifier');
 	if (!identifier) error(400, 'Name the draft to throw away.');
 	await deleteDraft(mailContext(), person.identifier, { identifier: identifier.slice(0, 100) });
