@@ -59,7 +59,7 @@
 	{#if data.sources.length > 0}
 		<section aria-labelledby="sources">
 			<h2 id="sources">Sources</h2>
-			<ol class="small">
+			<ol class="small sources">
 				{#each data.sources as source (source.title)}
 					<li>{#if source.link}<a href={source.link}>{source.title}</a>{:else}{source.title}{/if}</li>
 				{/each}
@@ -67,3 +67,10 @@
 		</section>
 	{/if}
 </div>
+
+<style>
+	/* Each source is a link on its own line in small type; the space between them keeps each a 24 pixel target (WCAG 2.2, 2.5.8) however its title wraps. */
+	.sources > li + li {
+		margin-top: var(--space-2);
+	}
+</style>
