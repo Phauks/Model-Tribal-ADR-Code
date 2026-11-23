@@ -141,6 +141,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+- kind: email-general
+  value: tribalcouncil@hualapai-nsn.gov
+  label: General office email shown on the nation's website
+  source: hualapai-nsn-government-tribal-council-index-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: seal
   alternative_text: Hualapai Tribe, AZ Logo
