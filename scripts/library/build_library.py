@@ -62,6 +62,7 @@ import shutil
 import sqlite3
 import subprocess
 import sys
+import unicodedata
 import urllib.parse
 import zipfile
 from pathlib import Path
@@ -190,6 +191,12 @@ def command_sync(arguments) -> None:
 
 
 def clean(text: str) -> str:
+    # A soft hyphen at a line end splits a word across lines (the Supreme
+    # Court's own PDFs): join the word, then drop any other soft hyphen.
+    text = re.sub("\u00ad[ \t]*\n[ \t]*", "", text)
+    # Ligature characters (U+FB00 to U+FB06) as the letters they join, so
+    # "afﬁrmed" is found by a search for "affirmed".
+    text = re.sub("[\ufb00-\ufb06]", lambda found: unicodedata.normalize("NFKC", found.group()), text)
     text = text.replace("­", "").replace("\x00", "")
     text = re.sub(r"[ \t ]+", " ", text)
     text = re.sub(r"\n[ \t]+", "\n", text)
@@ -238,6 +245,53 @@ def ocr_page(page) -> str:
     return result.stdout.decode("utf-8", "replace")
 
 
+LIGATURE_LETTERS = {"fi": "00660069", "fl": "0066006C", "ff": "00660066", "ffi": "006600660069", "ffl": "00660066006C"}
+
+
+def repair_ligatures(document) -> None:
+    """Some PDFs, the Supreme Court's own among them, map the fi and fl
+    ligatures to a lone "f" in a font's table of characters, so "field" reads
+    "feld" and cannot be found. Where the font's encoding names a ligature
+    glyph at a code that table maps to "f", map the code to the letters the
+    ligature stands for, in the open copy only."""
+    seen = set()
+    for page in document:
+        for font in page.get_fonts():
+            xref = font[0]
+            if xref in seen or xref <= 0:
+                continue
+            seen.add(xref)
+            encoding = document.xref_get_key(xref, "Encoding")
+            to_unicode = document.xref_get_key(xref, "ToUnicode")
+            if to_unicode[0] != "xref":
+                continue
+            if encoding[0] == "xref":
+                differences = document.xref_get_key(int(encoding[1].split()[0]), "Differences")[1]
+            elif encoding[0] == "dict":
+                found = re.search(r"/Differences\s*\[(.*?)\]", encoding[1], re.S)
+                differences = found.group(1) if found else ""
+            else:
+                continue
+            codes, code = {}, None
+            for item in re.findall(r"/[^\s/\[\]<>()]+|\d+", differences or ""):
+                if item.startswith("/"):
+                    if code is not None:
+                        if item[1:] in LIGATURE_LETTERS:
+                            codes[code] = LIGATURE_LETTERS[item[1:]]
+                        code += 1
+                else:
+                    code = int(item)
+            if not codes:
+                continue
+            stream = int(to_unicode[1].split()[0])
+            table = document.xref_stream(stream).decode("latin-1")
+            repaired = table
+            for number, letters in codes.items():
+                repaired = re.sub(rf"<{number:02X}>\s*<0066>", f"<{number:02X}> <{letters}>", repaired, flags=re.I)
+            if repaired != table:
+                document.update_stream(stream, repaired.encode("latin-1"))
+
+
 def extract_pdf(path: Path, use_ocr: bool) -> dict:
     import pymupdf
 
@@ -246,6 +300,7 @@ def extract_pdf(path: Path, use_ocr: bool) -> dict:
         pdf_title = ((document.metadata or {}).get("title") or "").strip() or None
         if pdf_title and (len(pdf_title) < 4 or re.match(r"(?i)^(untitled|microsoft word|document\d*|\S+\.(docx?|pdf))", pdf_title)):
             pdf_title = None
+        repair_ligatures(document)
         for number, page in enumerate(document, 1):
             text = clean(page.get_text("text", sort=True))
             method = "text-layer"
