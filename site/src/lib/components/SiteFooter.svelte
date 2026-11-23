@@ -37,7 +37,7 @@
 
 <style>
 	.site-footer {
-		margin-top: var(--space-8);
+		margin-top: 0;
 		padding: var(--space-5) 0;
 		background: var(--color-surface);
 		border-top: 1px solid var(--color-line);
