@@ -120,6 +120,7 @@ export interface UploadRow {
 	caption: string | null;
 	credit: string | null;
 	alternative_text: string | null;
+	transcript: string | null;
 	access_level: FiledAccessLevel | null;
 	embargoed_until: string | null;
 	filing_identifier: string | null;
@@ -509,8 +510,8 @@ export async function receivePiece(
 			await refuseFile(database, bucket, upload, reason);
 			return { accepted: false, reason };
 		}
-		if (upload.way_in === 'essay-figure' && type.kind !== 'picture' && type.kind !== 'video') {
-			const reason = 'An essay figure must be a picture or a video.';
+		if (upload.way_in === 'essay-figure' && type.kind === 'document') {
+			const reason = 'An essay figure must be a picture, a sound recording or a video.';
 			await refuseFile(database, bucket, upload, reason);
 			return { accepted: false, reason };
 		}
@@ -1012,6 +1013,7 @@ export interface Filing {
 	caption: string | null;
 	credit: string | null;
 	alternativeText: string | null;
+	transcript: string | null;
 	accessLevel: FiledAccessLevel;
 	embargoedUntil: string | null;
 	filingIdentifier: string | null;
@@ -1067,6 +1069,7 @@ export function readFiling(
 			caption: text('caption'),
 			credit: text('credit', 500),
 			alternativeText,
+			transcript: text('transcript', 100_000),
 			accessLevel: accessLevel as FiledAccessLevel,
 			embargoedUntil: accessLevel === 'embargoed' ? embargoedUntil : null,
 			filingIdentifier,
@@ -1094,7 +1097,7 @@ export async function fileUpload(
 		database
 			.prepare(
 				`UPDATE uploads SET status = 'filed', reviewer_identifier = ?, destination = ?, filed_page = ?, caption = ?,
-				 credit = ?, alternative_text = ?, access_level = ?, embargoed_until = ?, filing_identifier = ?,
+				 credit = ?, alternative_text = ?, transcript = ?, access_level = ?, embargoed_until = ?, filing_identifier = ?,
 				 filed_key = COALESCE(preview_key, original_key), decided_at = ?
 				 WHERE identifier = ?`
 			)
@@ -1105,6 +1108,7 @@ export async function fileUpload(
 				filing.caption,
 				filing.credit,
 				filing.alternativeText,
+				filing.transcript,
 				filing.accessLevel,
 				filing.embargoedUntil,
 				filing.filingIdentifier,
@@ -1120,6 +1124,23 @@ export async function fileUpload(
 				.bind(upload.identifier, nation, at)
 		),
 		uploadEvent(database, upload, 'Upload filed', person.identifier, `${filing.destination}, ${filing.accessLevel}`)
+	]);
+}
+
+/**
+ * Sets the words spoken in a recording or video, for an essay figure from the
+ * essay editor or a filed upload. The caller checks the person may change it.
+ */
+export async function setTranscript(
+	database: D1Database,
+	person: SignedInPerson,
+	upload: UploadRow,
+	transcript: string | null
+): Promise<void> {
+	if (upload.kind !== 'sound' && upload.kind !== 'video') throw new UploadProblem('Only recordings and videos have a transcript.');
+	await database.batch([
+		database.prepare('UPDATE uploads SET transcript = ? WHERE identifier = ?').bind(transcript, upload.identifier),
+		uploadEvent(database, upload, transcript ? 'Transcript saved' : 'Transcript removed', person.identifier)
 	]);
 }
 

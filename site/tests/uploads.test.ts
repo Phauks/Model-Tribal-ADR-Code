@@ -95,6 +95,7 @@ const filing: Filing = {
 	caption: 'The chapter house',
 	credit: 'Sent by a contributor',
 	alternativeText: 'A low stone building',
+	transcript: null,
 	accessLevel: 'public',
 	embargoedUntil: null,
 	filingIdentifier: null,
@@ -323,5 +324,26 @@ describe('when the sender deletes their account', () => {
 		expect(await uploadByReference(database, filedOne.reference)).toMatchObject({ status: 'filed', account_identifier: null });
 		await database.prepare('DELETE FROM accounts WHERE identifier = ?').bind(sender).run();
 		expect((await uploadQueue(database, 'decided'))[0]).toMatchObject({ reference: filedOne.reference, senderEmail: null });
+	});
+});
+
+describe('essay figures', () => {
+	it('take a sound recording, skip the queue, and are shown once the essay is published', async () => {
+		await database
+			.prepare(`INSERT INTO essays (identifier, part, created_at) VALUES ('why-peacemaking', 'essays', '2026-11-23T00:00:00Z')`)
+			.run();
+		const bytes = new TextEncoder().encode('ID3\u0004\u0000 some sound');
+		const started = await startUpload(
+			database,
+			fake.bucket,
+			{ accountIdentifier: sender, groupIdentifier: crypto.randomUUID(), fileName: 'elder.mp3', sizeBytes: bytes.length, wayIn: 'essay-figure', essayIdentifier: 'why-peacemaking' },
+			allowances.unlimited
+		);
+		await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 1, bytes);
+		await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
+		const figure = (await uploadByReference(database, started.reference))!;
+		expect(figure).toMatchObject({ status: 'filed', kind: 'sound', destination: 'essay-figure' });
+		expect(await isPublicFile(database, figure)).toBe(false);
+		expect(await uploadQueue(database, 'all')).toEqual([]);
 	});
 });

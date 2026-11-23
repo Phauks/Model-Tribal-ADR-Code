@@ -86,6 +86,8 @@ CREATE TABLE uploads (
 	caption TEXT,
 	credit TEXT,
 	alternative_text TEXT,
+	-- The words spoken in a recording or video, for people who cannot hear it.
+	transcript TEXT,
 	-- The accessLevel values of schemas/common.schema.json.
 	access_level TEXT CHECK (access_level IN ('public', 'nation-review-first', 'embargoed', 'restricted')),
 	embargoed_until TEXT,

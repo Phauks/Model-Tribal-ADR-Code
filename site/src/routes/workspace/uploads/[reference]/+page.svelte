@@ -260,6 +260,13 @@
 							<textarea id="alternative-text" name="alternativeText" rows="2">{upload.alternative_text ?? ''}</textarea>
 						</div>
 					{/if}
+					{#if upload.kind === 'sound' || upload.kind === 'video'}
+						<div class="field">
+							<label for="transcript">Transcript</label>
+							<p class="hint">The words spoken, for people who cannot hear it. Optional.</p>
+							<textarea id="transcript" name="transcript" rows="4">{upload.transcript ?? ''}</textarea>
+						</div>
+					{/if}
 					<div class="field">
 						<label for="credit">Credit</label>
 						<p class="hint">As the sender wants it, from their answers or their profile.</p>

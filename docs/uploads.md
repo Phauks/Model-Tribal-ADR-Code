@@ -49,13 +49,13 @@ A YouTube link (`POST /uploads/links`) stores nothing but the video's 11-charact
 
 ## Filing and showing
 
-Filing sets where the file goes: a nation page source, picture or video, a story, an essay figure, or the private research library. The reviewer also gives the page, a caption, the credit, a description for people who cannot see a picture, and who can see it. A file a person gave also gets its contribution filing number. A file the sender marked "background only" cannot be filed for everyone. The file stays where it is in the bucket; nothing is copied.
+Filing sets where the file goes: a nation page source, picture or video, a story, an essay figure, or the private research library. The reviewer also gives the page, a caption, the credit, a description for people who cannot see a picture, a transcript for a recording or video, and who can see it. A file a person gave also gets its contribution filing number. A file the sender marked "background only" cannot be filed for everyone. The file stays where it is in the bucket; nothing is copied.
 
 A filed file is served at `/files/<reference>/<name>` with byte ranges, so the browser's own player can play and seek a video or recording stored in the bucket. Everyone can open it once it is filed for everyone, once its embargo date has passed, or, for an essay figure, once its essay is published. Reviewers can always open it. Pictures, sound and video are shown in the browser with a Content-Security-Policy that blocks scripts and with `nosniff`; documents are always downloaded (OWASP File Upload Cheat Sheet, "File Storage Location").
 
 ## Essay figures
 
-The essay editor sends a picture or video the same way, with `wayIn: "essay-figure"` and the essay's identifier on `POST /uploads/pieces` or `POST /uploads/links`. The writer needs "contribute" access to that essay. Figures skip the queue, because publishing the essay is the review, and are filed with the essay as soon as they arrive.
+The essay editor sends a picture, sound recording or video the same way, with `wayIn: "essay-figure"` and the essay's identifier on `POST /uploads/pieces` or `POST /uploads/links`. The writer needs "contribute" access to that essay. Figures skip the queue, because publishing the essay is the review, and are filed with the essay as soon as they arrive.
 
 ## Deleting
 
