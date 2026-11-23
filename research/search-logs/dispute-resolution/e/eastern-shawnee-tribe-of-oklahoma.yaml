@@ -1,6 +1,6 @@
 profile: content/tribes/e/eastern-shawnee-tribe-of-oklahoma.yaml
 topic: dispute-resolution
-status: partly-searched
+status: found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -127,4 +127,21 @@ searches:
     peacemaking, circles, elders' courts and restorative justice
   outcome: blocked
   reason: The Wayback Machine refused this capture (403); the project does not try to get past it.
-next_steps: 'Try again later, or open by hand in a browser: https://web.archive.org/web/2026id_/https://estoo-nsn.gov/government/business-committee/ordinances/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261014162540/https://www.estoo-nsn.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-14 ("Home Page | Eastern Shawnee Tribe of Oklahoma") shows
+    codes or ordinances.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20250218124431/http://www.estoo-nsn.gov/ordinances-and-resolutions
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2025-02-18 ("Ordinances and Resolutions | Eastern Shawnee Tribe
+    of Oklahoma") shows codes or ordinances.

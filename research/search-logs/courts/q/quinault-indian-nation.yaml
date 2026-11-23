@@ -1,7 +1,7 @@
 profile: content/tribes/q/quinault-indian-nation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -216,3 +216,21 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Washington State Court Directory lists this nation's court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://wa-quinaultindiannation.civicplus.com/157/Tribal-Courts
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: 'The page answered on 2026-11-23: the Quinault Tribal Courts page describes the court and mentions
+    dispute resolution, mediation, restorative justice and a Healing to Wellness Court.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240710012054/https://wa-quinaultindiannation.civicplus.com/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of the sitemap (2024-07-10) lists https://wa-quinaultindiannation.civicplus.com/234/Tribal-Employment-Rights-Ordinance-TERO
+    and 5 more court or code pages.

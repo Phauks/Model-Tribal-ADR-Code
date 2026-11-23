@@ -1,7 +1,7 @@
 profile: content/tribes/k/kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -61,4 +61,12 @@ searches:
   reason: 1 candidate(s) kept for the lead author's review (Gate 1); none is in the profile yet.
   records:
   - research/reviews/2026-11-22-dispute-resolution-coverage.json#kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1
-next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260202023906/http://stewartspoint.org/wp/tribal-codes/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-02-02 ("Tribal Codes |  | Stewarts Point Rancheria") shows
+    codes or ordinances.

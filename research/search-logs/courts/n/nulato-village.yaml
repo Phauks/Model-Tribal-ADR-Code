@@ -1,7 +1,7 @@
 profile: content/tribes/n/nulato-village.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -204,3 +204,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Nation website read; names no tribal court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.nulatotribe.net/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The site has no sitemap at this address (404 on 2026-11-23); the sitemap was only a way to find
+    pages, so nothing on the topic is missing because of it.
