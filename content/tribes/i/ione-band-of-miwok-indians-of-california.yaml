@@ -452,6 +452,17 @@ governance:
     document: ione-band-of-miwok-indians-of-california-constitution
     version: 2002-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Ione Band of Miwok Indians of California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ione Band of Miwok Indians of California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairwoman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: constitution
   title: Ione Band of Miwok Indians of California - California

@@ -317,6 +317,17 @@ governance:
     document: dry-creek-rancheria-band-of-pomo-indians-constitution
     version: 1977-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Dry Creek Rancheria Band of Pomo Indians, California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Dry Creek Rancheria Band of Pomo Indians, California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: law-code
   title: Dry Creek Rancheria Band of Pomo Indians, California

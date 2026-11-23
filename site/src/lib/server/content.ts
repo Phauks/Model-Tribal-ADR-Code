@@ -192,6 +192,8 @@ export interface NationRecord {
 	government_structure?: (CitedFact & { kind: string; detail?: string })[];
 	/** How the government is set up, one plain fact per item (decision record 0042). */
 	governance?: (CitedFact & { aspect: string; value: string; quote?: string })[];
+	/** The offices official lists name as the nation's leader, never the person (decision record 0050). */
+	representatives?: (CitedFact & { office: string; listed_by: string; link: string; listed_as?: string })[];
 	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string; year?: string | number })[];
 	justice_institutions?: (CitedFact & {
 		kind: string;

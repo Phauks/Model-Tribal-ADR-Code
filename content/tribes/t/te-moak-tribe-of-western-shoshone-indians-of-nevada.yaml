@@ -553,6 +553,17 @@ governance:
     document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
     version: 1982-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: 'Te-Moak Tribe of Western Shoshone Indians of Nevada (Four constituent bands: Battle Mountain Band; Elko Band; South Fork Band; and Wells Band)'
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: 'Te-Moak Tribe of Western Shoshone Indians of Nevada (Four constituent bands: Battle Mountain Band; Elko Band; South Fork Band; and Wells Band)'
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: law-code
   title: Approved Ordinances for the Te-Moak Tribe of Western Shoshone

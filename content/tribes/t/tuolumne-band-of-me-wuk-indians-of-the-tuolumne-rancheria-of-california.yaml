@@ -363,6 +363,17 @@ governance:
     document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
     version: 2001-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: law-code
   title: 'From GPO: Federal Register : Alcoholic Beverage Control Ordinance'

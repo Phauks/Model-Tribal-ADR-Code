@@ -448,6 +448,17 @@ governance:
     document: iowa-tribe-of-kansas-and-nebraska-constitution
     version: 1980-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Iowa Tribe of Kansas and Nebraska
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Kansas and Nebraska
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairwoman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: constitution
   title: Constitution

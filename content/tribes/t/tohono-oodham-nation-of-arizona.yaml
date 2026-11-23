@@ -462,6 +462,17 @@ governance:
     document: tohono-oodham-nation-of-arizona-constitution
     version: 1986-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Tohono O'odham Nation of Arizona
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: law-code
   title: Tohono O'odham

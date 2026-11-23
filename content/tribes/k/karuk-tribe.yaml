@@ -392,6 +392,17 @@ governance:
     document: karuk-tribe-constitution
     version: 2008-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Karuk Tribe
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: law-code
   title: Karuk Tribe

@@ -214,6 +214,27 @@ governance:
   as_of: '2026-11-20'
   locator: Lumbee Tribe of North Carolina
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Lumbee Tribe of North Carolina
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
+- office: Tribal Chairperson
+  listed_by: North Carolina Commission of Indian Affairs, NC Tribal Communities
+  link: https://www.doa.nc.gov/divisions/american-indian-affairs/tribes
+  listed_as: Lumbee Tribe of North Carolina
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Entry for Lumbee Tribe of North Carolina
+  note: The title of the office as the state's list gives it; the holder's name is not recorded. Listed as “Tribal Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Tribal code

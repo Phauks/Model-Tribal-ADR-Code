@@ -1,4 +1,5 @@
 import { error, fail } from '@sveltejs/kit';
+import { publicNationContacts } from 'virtual:public-contacts';
 import { reviewSubjects } from 'virtual:review-subjects';
 import {
 	dateAsTermEnd,
@@ -34,8 +35,14 @@ export const load: PageServerLoad = async (event) => {
 	const nation = reviewSubjects.find(
 		(subject) => subject.kind === 'nation' && subject.identifier === found.nationIdentifier
 	);
+	// The offices official lists name for the nation, and the office emails and
+	// phones its page shows: the contacts the project already had (decision
+	// records 0041 and 0050).
+	const listed = publicNationContacts.find((entry) => entry.identifier === found.nationIdentifier);
 	return {
 		application: found,
+		representatives: listed?.representatives ?? [],
+		officeContacts: listed?.contacts ?? [],
 		nationTitle: nation?.title ?? found.nationIdentifier,
 		nationPage: nation?.page ?? null,
 		team: await teamOf(database, found.nationIdentifier),

@@ -329,6 +329,17 @@ governance:
     document: native-village-of-kluti-kaah-constitution
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+representatives:
+- office: President
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Native Village of Kluti Kaah (aka Copper Center)
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Kluti Kaah (aka Copper Center)
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: law-code
   title: Native Village of Kluti Kaah - Tax Code Table of Contents

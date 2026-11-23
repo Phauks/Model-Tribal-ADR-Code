@@ -519,6 +519,17 @@ governance:
     document: alabama-coushatta-tribe-of-texas-constitution
     version: 2023-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Alabama-Coushatta Tribe of Texas
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Alabama-Coushatta Tribe of Texas
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: constitution
   title: Alabama-Coushatta Tribe of Texas Constitution and By Laws

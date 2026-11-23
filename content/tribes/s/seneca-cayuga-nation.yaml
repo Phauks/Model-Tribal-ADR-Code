@@ -401,6 +401,17 @@ governance:
     document: seneca-cayuga-nation-constitution
     version: 1990-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+representatives:
+- office: Chief
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Seneca-Cayuga Nation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Seneca-Cayuga Nation
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: constitution
   title: Seneca-Cayuga Nation - Tribal Constitution

@@ -1,0 +1,14 @@
+profile: content/tribes/l/little-shell-pembina-band-of-north-dakota.yaml
+topic: representatives
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: not-found
+  reason: The directory lists federally recognized nations only.
+next_steps: Ask the nation's office which office speaks for it; a state's list that names Tribes' leaders, where one is published later.

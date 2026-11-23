@@ -368,6 +368,17 @@ governance:
     document: mechoopda-indian-tribe-of-chico-rancheria-constitution
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Mechoopda Indian Tribe of Chico Rancheria, California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mechoopda Indian Tribe of Chico Rancheria, California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 gaming:
   compacts:
   - state: CA

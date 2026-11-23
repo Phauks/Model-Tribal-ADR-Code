@@ -25,7 +25,7 @@ beforeEach(() => {
 });
 
 const page = (contacts: PublicNationContacts['contacts']): PublicNationContacts[] => [
-	{ identifier: 'sample-nation', name: 'Sample Nation', contacts }
+	{ identifier: 'sample-nation', name: 'Sample Nation', contacts, representatives: [] }
 ];
 const fromSite = {
 	source: 'sample-site',

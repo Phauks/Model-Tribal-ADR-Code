@@ -348,6 +348,17 @@ governance:
     document: la-jolla-band-of-luiseno-indians-constitution
     version: 1962-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: La Jolla Band of Luiseno Indians, California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: La Jolla Band of Luiseno Indians, California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: law-code
   title: La Jolla Band of Luiseno Indians - Enrollment Ordinance (#1)

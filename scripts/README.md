@@ -174,6 +174,14 @@ Run by hand, in this order, never in continuous integration. They write the `gov
 | `governance/prepare_batches.py` | Picks each nation's constitution version to read and splits the texts into batches for AI readers, who follow `governance/reader-brief.md` | `scripts/requirements.txt` |
 | `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |
 
+## Official representatives
+
+Run by hand after `governance/apply.py directory` or after re-reading a state list into `research/representatives/state-listings.json`. Records only the office each list names, never the person ([decision record 0050](../docs/decisions/0050-show-the-offices-official-lists-name-as-representatives.md)).
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `representatives/apply.py` | Writes `representatives` in each profile from the Tribal Leaders Directory titles (`research/governance/directory-titles.json`) and the state lists, and writes one search log per profile in `research/search-logs/representatives/` | `scripts/requirements.txt` |
+
 ## Printed book
 
 | Script | Does | Needs |

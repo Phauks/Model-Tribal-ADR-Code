@@ -433,6 +433,17 @@ governance:
     document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
     version: 1992-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: law-code
   title: Yavapai-Apache Nation - Criminal Code and Code of Criminal Procedure

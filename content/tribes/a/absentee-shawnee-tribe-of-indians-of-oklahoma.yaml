@@ -477,6 +477,17 @@ governance:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
     version: 1988-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+representatives:
+- office: Governor
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Absentee-Shawnee Tribe of Indians of Oklahoma
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: law-code
   title: AST Code of Laws

@@ -408,6 +408,27 @@ governance:
     document: poarch-band-of-creek-indians-constitution
     version: 1985-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution adopted by tribal election on June 1, 1985, bundled with 1985 BIA and Solicitor letters stating the Secretary had not approved it.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Poarch Band of Creek Indians
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Poarch Band of Creek Indians
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairwoman”; recorded without the holder''s own form of the title.'
+- office: Chairperson
+  listed_by: Alabama Indian Affairs Commission, Tribes Recognized by the State of Alabama
+  link: https://aiac.alabama.gov/wp-content/uploads/2026/10/AIAC-Tribes-List.pdf
+  listed_as: Poarch Band of Creek Indians
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  verification: read-in-full
+  as_of: 2026-10
+  locator: Entry for Poarch Band of Creek Indians
+  note: The title of the office as the state's list gives it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Poarch Band of Creek Indians

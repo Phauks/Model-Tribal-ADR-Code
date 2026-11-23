@@ -19,7 +19,7 @@ declare module 'virtual:review-subjects' {
 }
 
 declare module 'virtual:public-contacts' {
-	/** The office emails and phones each published nation page shows, with their sources, listed at build time. */
+	/** The office emails and phones and the listed offices each published nation page shows, with their sources, listed at build time. */
 	export const publicNationContacts: import('#lib/address-book-sync.ts').PublicNationContacts[];
 }
 

@@ -437,6 +437,17 @@ governance:
     document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
     version: 2001-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+representatives:
+- office: President
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: law-code
   title: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana

@@ -432,6 +432,17 @@ governance:
     document: the-muscogee-nation-constitution
     version: 1979-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+representatives:
+- office: Principal Chief
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: The Muscogee (Creek) Nation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: law-code
   title: The Muscogee (Creek) Nation

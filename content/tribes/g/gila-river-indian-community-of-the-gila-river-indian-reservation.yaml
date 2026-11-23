@@ -533,6 +533,17 @@ governance:
     document: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
     version: 1974-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the amended 1960 constitution (certificate dated January 22, 1960) with Amendment II (approved January 28, 1974) changing the voting age to 18; OCR errors throughout, and the version label says 1974.'
+representatives:
+- office: Governor
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: constitution
   title: Gila River Indian Community of Arizona - Tribal Constitution - Table of Contents

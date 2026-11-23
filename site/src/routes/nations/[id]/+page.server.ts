@@ -309,6 +309,34 @@ const governanceGroups: { field: string; label: string; aspects: Record<string, 
 	{ field: 'governance-other', label: 'Other', aspects: { other: undefined } }
 ];
 
+/** The group of the Government section that names the offices official lists give as the nation's leader. */
+const representativesLabel = 'Official representatives';
+
+/**
+ * Official representatives: the office each official list (the Bureau of
+ * Indian Affairs Tribal Leaders Directory, or a state's list of the Tribes it
+ * recognizes) names as the nation's leader, with a link to the list and the
+ * name to look up there. Never the person: the list names who holds the
+ * office now (decision record 0050).
+ */
+function representativeItems(record: NationRecord, sources: SourceUses): FactItem[] {
+	const facts = record.representatives ?? [];
+	return facts.map((fact, index) =>
+		cited(sources, representativesLabel, fact, {
+			text: fact.office,
+			detailParts: [
+				{ text: 'Listed by ' },
+				{ text: fact.listed_by, link: fact.link },
+				...(fact.listed_as ? [{ text: `, under “${fact.listed_as}”` }] : [])
+			],
+			note:
+				index === facts.length - 1
+					? 'Each list names the person who holds the office now. This page shows only the office.'
+					: undefined
+		})
+	);
+}
+
 /** The legal form a federal source records, in the page's words. */
 const governmentStructureKinds: Record<string, string> = {
 	'indian-reorganization-act': 'Organized under the Indian Reorganization Act',
@@ -322,7 +350,8 @@ const governmentStructureKinds: Record<string, string> = {
  * Government: how the nation's government is set up, as its own governing
  * document, its website or an official directory states it. Each line is one
  * plain fact with its source; the words of the source that state it go in the
- * Sources list beside the fact, so a reader can check it. Never a summary of
+ * Sources list beside the fact, so a reader can check it. The section opens
+ * with the offices official lists name as the nation's leader. Never a summary of
  * a constitution (decision record 0042). The last line names the version of
  * each governing document the facts were read from, linked to its history in
  * "Laws and agreements".
@@ -332,8 +361,14 @@ function governmentFacts(
 	sources: SourceUses,
 	documents: { id: string; heading: string; versions?: { id: string; label?: string }[] }[]
 ): FactGroup[] {
-	const facts = record.governance ?? [];
-	const groups: FactGroup[] = [];
+	// A head of government's title copied from a list that Official
+	// representatives already shows, under the same title, is not repeated.
+	const listed = new Set((record.representatives ?? []).map((fact) => `${fact.source}|${fact.office}`));
+	const facts = (record.governance ?? []).filter(
+		(fact) =>
+			!(fact.aspect === 'head-of-government' && !fact.document_version && listed.has(`${fact.source}|${fact.value}`))
+	);
+	const groups: FactGroup[] = [...group('governance-representatives', representativesLabel, representativeItems(record, sources))];
 	const read = new Map<string, FactItem>();
 	for (const definition of governanceGroups) {
 		const items: FactItem[] = [];

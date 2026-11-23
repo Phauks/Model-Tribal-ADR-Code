@@ -103,6 +103,17 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – Cheroenhaka Nottoway". Found by scripts/tribes/find_contacts.py.
+representatives:
+- office: Chief
+  listed_by: Virginia Secretary of the Commonwealth, State Recognized Tribes
+  link: https://www.commonwealth.virginia.gov/virginia-indians/state-recognized-tribes/
+  listed_as: Cheroenhaka (Nottoway)
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Entry for Cheroenhaka (Nottoway)
+  note: The title of the office as the state's list gives it; the holder's name is not recorded.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
