@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import FileVerifier from '#lib/components/FileVerifier.svelte';
 	import FormDocument from '#lib/components/FormDocument.svelte';
 	import { verifyLink } from '#lib/checksums.ts';
@@ -90,10 +91,9 @@
 {/snippet}
 
 <div class="reading">
-	<p class="small no-print">
-		<a href="/forms">All forms</a> · <a href="/forms/{template.slug}/print">Print a blank copy</a>
-	</p>
+	<Breadcrumbs trail={[{ label: 'Forms', href: '/forms' }]} />
 	<h1>{template.title}</h1>
+	<p class="small no-print"><a href="/forms/{template.slug}/print">Print a blank copy</a></p>
 
 	{#if sent}
 		<div class="panel panel-filled" role="status" tabindex="-1" {@attach focusOnArrival}>

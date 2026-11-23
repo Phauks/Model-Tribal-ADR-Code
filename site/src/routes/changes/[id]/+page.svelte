@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
@@ -31,9 +32,12 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/changes">Recent changes</a> › <a href={historyLink}>History of {pageName}</a> › Change
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Recent changes', href: '/changes' },
+		{ label: `History of ${pageName}`, href: historyLink }
+	]}
+/>
 
 <h1>
 	{#if change.change === 'new'}New page:{:else if change.change === 'removed'}Page removed:{:else if change.change === 'published'}Published:{:else}Change to{/if}

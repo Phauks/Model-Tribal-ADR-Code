@@ -8,6 +8,7 @@
 	sources those records cite.
 -->
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import NationTable from '#lib/components/NationTable.svelte';
 	import type { PageProps } from './$types';
 
@@ -19,9 +20,12 @@
 	<title>{name} · Indian Health Service · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/nations">Nations</a> › <a href="/nations/federal-offices">Federal offices</a> › {name}
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Nations', href: '/nations' },
+		{ label: 'Federal offices', href: '/nations/federal-offices' }
+	]}
+/>
 
 <div class="reading">
 	<h1>Indian Health Service {name}</h1>

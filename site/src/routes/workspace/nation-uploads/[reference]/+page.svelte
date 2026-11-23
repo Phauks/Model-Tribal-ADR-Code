@@ -2,6 +2,7 @@
 	// One file sent about the nation, for its nation reviewer: see it, read
 	// what the sender said about it, and comment for the nation. The sender's
 	// name and the reviewers' own notes are not shown here.
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Download from '@lucide/svelte/icons/download';
 	import { onMount } from 'svelte';
 	import { nationNames } from '#lib/nation-names.ts';
@@ -36,7 +37,7 @@
 </svelte:head>
 
 <div class="wide">
-	<p class="small"><a href="/workspace/nation-uploads">All files about {nationName}</a></p>
+	<Breadcrumbs trail={[{ label: `Files about ${nationName}`, href: '/workspace/nation-uploads' }]} />
 	<h1>{name}</h1>
 	<p class="muted">{upload.reference} · sent {when(upload.received_at)}</p>
 	<p><span class="chip">{nationStatusLabels[upload.status]}</span></p>

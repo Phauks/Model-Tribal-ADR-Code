@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { dateTime } from '#lib/change-dates.ts';
 	import type { PageProps } from './$types';
 
@@ -12,10 +13,12 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/changes">Recent changes</a> ›
-	<a href="/changes?page={encodeURIComponent(change.address)}">History of {pageName}</a> › Old version
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Recent changes', href: '/changes' },
+		{ label: `History of ${pageName}`, href: `/changes?page=${encodeURIComponent(change.address)}` }
+	]}
+/>
 
 <p class="notice">
 	This is an old version of <a href={change.address}>{pageName}</a>, as it stood after the change of

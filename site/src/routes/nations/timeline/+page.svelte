@@ -3,6 +3,7 @@
 	// record on one line, filtered by nation, state, kind and era. The filters
 	// are kept in the address (?nation=, ?state=, ?kind=, ?from=, ?to=), so a
 	// view can be shared, and a nation's page opens it with ?nation=.
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { onMount } from 'svelte';
 	import { replaceState } from '$app/navigation';
 	import SlidersHorizontal from '@lucide/svelte/icons/sliders-horizontal';
@@ -128,7 +129,7 @@
 	/>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small breadcrumb"><a href="/nations">Nations</a> › Timeline</nav>
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 <h1>Timeline</h1>
 
 <div class="layout">
@@ -211,10 +212,6 @@
 </div>
 
 <style>
-	.breadcrumb {
-		margin-bottom: var(--space-2);
-	}
-
 	.layout {
 		display: grid;
 		grid-template-columns: 15rem minmax(0, 1fr);
