@@ -1039,6 +1039,9 @@ export async function settlePulledFiles(database: D1Database, bucket: R2Bucket):
 }
 
 /** A file one account sent on Intake, for the table there. */
+/** Where a file stands with the virus check, for the badge in the upload table. Null: it never reached the check. */
+export type ScanBadge = 'checking' | 'clean' | 'flagged' | null;
+
 export interface IntakeFile {
 	reference: string;
 	name: string;
@@ -1047,6 +1050,19 @@ export interface IntakeFile {
 	problem: boolean;
 	done: boolean;
 	filedAs: string | null;
+	scan: ScanBadge;
+}
+
+/** The badge for one upload: its own status says most of it, and the scan row says the rest while it is being checked. */
+export function scanBadgeFor(status: UploadStatus, scanStatus: string | null, decisionReason: string | null): ScanBadge {
+	if (status === 'checking') {
+		if (scanStatus === 'flagged') return 'flagged';
+		if (scanStatus === 'clean' || scanStatus === 'released-by-hand') return 'clean';
+		return 'checking';
+	}
+	if (status === 'not-accepted') return decisionReason?.startsWith('The virus check found') ? 'flagged' : null;
+	if (status === 'sending' || status === 'withdrawn') return null;
+	return 'clean';
 }
 
 /** What the account sent on Intake in the last 30 days, newest first. */
@@ -1054,11 +1070,13 @@ export async function intakeFilesOf(database: D1Database, accountIdentifier: str
 	const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
 	const rows = await database
 		.prepare(
-			`SELECT * FROM uploads WHERE account_identifier = ? AND from_pull_list = 1 AND status <> 'withdrawn' AND received_at > ?
-			 ORDER BY received_at DESC LIMIT 2000`
+			`SELECT uploads.*, file_scans.status AS scan_status FROM uploads
+			 LEFT JOIN file_scans ON file_scans.object_key = uploads.original_key
+			 WHERE uploads.account_identifier = ? AND uploads.from_pull_list = 1 AND uploads.status <> 'withdrawn' AND uploads.received_at > ?
+			 ORDER BY uploads.received_at DESC LIMIT 2000`
 		)
 		.bind(accountIdentifier, since)
-		.all<UploadRow>();
+		.all<UploadRow & { scan_status: string | null }>();
 	return rows.results.map((row) => {
 		const problem = row.status === 'not-accepted' || row.status === 'not-used' || row.status === 'sending';
 		const statusText =
@@ -1078,7 +1096,8 @@ export async function intakeFilesOf(database: D1Database, accountIdentifier: str
 			statusText,
 			problem,
 			done: row.status === 'filed',
-			filedAs: row.status === 'filed' ? row.filed_key : null
+			filedAs: row.status === 'filed' ? row.filed_key : null,
+			scan: scanBadgeFor(row.status, row.scan_status, row.decision_reason)
 		};
 	});
 }

@@ -28,6 +28,11 @@ declare module 'virtual:mail-nations' {
 	export const mailNations: { identifier: string; name: string; states: string[]; page: string | null }[];
 }
 
+declare module 'virtual:section-lists' {
+	/** Every nation's name and page id, A to Z, for the sidebar (src/lib/section-lists.ts). */
+	export const nationNames: [name: string, id: string][];
+}
+
 declare module 'virtual:nation-images' {
 	/** The nations' official images the Worker may serve, listed at build time. */
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];

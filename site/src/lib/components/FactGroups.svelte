@@ -72,10 +72,23 @@
 	 * and keeps the marker inline, so it never wraps away from the fact's last
 	 * word; the room is after the number, which stays against the words. The
 	 * padding is in pixels and sized for the 16 px standard text, so the box
-	 * reaches 24 by 24 pixels without growing the line.
+	 * reaches 24 by 24 pixels without growing the line. It leaves a pixel or
+	 * two to spare, because a fallback font draws the number smaller than the
+	 * site's own font does (23.5 by 23 pixels in Liberation Sans with 4 and 8
+	 * pixels; measured Nov. 23, 2026).
+	 *
+	 * A link that is the whole fact gets the same treatment: two pixels above
+	 * and below take a line of it from 21 to 25 pixels, so it is a full target
+	 * on its own and does not depend on its distance from the marker after it,
+	 * which changes wherever the link wraps.
 	 */
 	.summary-list :global(.note-marker) {
-		padding: 4px 8px 4px 0.05em;
+		padding: 5px 9px 5px 0.05em;
+	}
+
+	.summary-list dd > a,
+	.summary-list li > a {
+		padding-block: 2px;
 	}
 
 	.fact-detail {

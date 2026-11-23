@@ -1818,6 +1818,87 @@ sup.citation {
 	color: var(--color-link);
 }
 
+/*
+ * A status badge that opens a small panel (src/lib/components/ReviewStatus.svelte):
+ * who keeps the page and what a reader can do, such as claim it.
+ */
+.badge-line {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--space-1) var(--space-2);
+	margin: 0 0 var(--space-3);
+	font-size: var(--font-size-small);
+}
+
+.badge-line .review-badge {
+	margin-right: 0;
+}
+
+.status-popover {
+	position: relative;
+	display: inline-block;
+}
+
+.status-popover > summary {
+	list-style: none;
+	cursor: pointer;
+}
+
+.status-popover > summary::-webkit-details-marker {
+	display: none;
+}
+
+.status-popover > summary:hover {
+	border-color: currentColor;
+}
+
+.status-popover-mark {
+	transition: transform var(--motion-duration-short) var(--motion-easing-standard);
+}
+
+.status-popover[open] .status-popover-mark {
+	transform: rotate(180deg);
+}
+
+.status-panel {
+	position: absolute;
+	z-index: 30;
+	top: calc(100% + var(--space-1));
+	left: 0;
+	width: max-content;
+	max-width: min(22rem, calc(100vw - 2 * var(--space-4)));
+	padding: var(--space-3);
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius-panel);
+	background: var(--color-surface-raised);
+	box-shadow: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-ink) 20%, transparent);
+	color: var(--color-ink);
+	font-size: var(--font-size-small);
+	font-weight: normal;
+}
+
+.status-panel p {
+	margin: 0 0 var(--space-2);
+}
+
+.status-panel p:last-child,
+.status-panel ul:last-child {
+	margin-bottom: 0;
+}
+
+.status-panel ul {
+	margin: 0 0 var(--space-2);
+	padding-left: var(--space-4);
+}
+
+@media print {
+	.status-panel,
+	.status-popover-mark {
+		display: none !important;
+	}
+}
+
 /* Topics, methods and other short tags as badges (src/lib/components/TopicBadges.svelte; Trevor, Nov. 23, 2026). */
 .topic-badges,
 .summary-list dd > ul.topic-badges {

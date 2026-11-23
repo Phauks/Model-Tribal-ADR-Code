@@ -70,9 +70,19 @@
 		{/each}
 
 		<!-- Where the story stands with the nation: the same status line as a nation's page (src/lib/review-status.ts). -->
-		<ReviewStatus status={story.review} description="Review by the nation:" data-print-part="reviewStatus">
-			<a class="no-print" href={removal}>Request removal</a>
-		</ReviewStatus>
+		<div class="badge-line">
+			<ReviewStatus status={story.review} description="Review by the nation:" data-print-part="reviewStatus">
+				{#if story.review.verified}
+					<p><strong>{story.review.label}.</strong></p>
+				{:else}
+					<p><strong>Unreviewed.</strong> {nationNames} {story.nations.length === 1 ? 'has' : 'have'} not reviewed this story yet.</p>
+					{#each story.nations as nation (nation.id)}
+						<p class="no-print"><a href="/profile/nation-team?nation={nation.id}">Work for {nation.name}? Claim its page</a></p>
+					{/each}
+				{/if}
+				<p class="no-print"><a href={removal}>Request removal</a></p>
+			</ReviewStatus>
+		</div>
 	{/snippet}
 
 	{#if story.fullText}
