@@ -701,6 +701,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: First recital
   note: 'The source reads: “issue commissions as New Mexico Peace Officers to members of the police or sheriff’s department of any New Mexico Indian tribe or pueblo”. The copy has a blank effective date. The recital cites a New Mexico statute that authorizes the State Police chief to issue such commissions. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: NM
+  county: Rio Arriba County
+  court: District Court for Rio Arriba County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Rio Arriba County holds 85% of the land of Jicarilla Apache Nation Reservation (Census GEOID 1700), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Sandoval County
+  court: District Court for Sandoval County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Sandoval County holds 15% of the land of Jicarilla Apache Nation Reservation (Census GEOID 1700), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Jicarilla Apache Reserve (Colorado line to the Navajo reservation), New Mexico
   method: executive-order

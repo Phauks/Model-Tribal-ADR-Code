@@ -789,6 +789,25 @@ jurisdiction:
     images, so nation names were read from images and matched to the roster. Row re-read on 2026-11-22
     from the page image (the govinfo PDF has no text layer for the table); verification level unchanged
     because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: WI
+  county: Vilas County
+  court: Circuit Court for Vilas County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Vilas County holds 78% of the land of Lac du Flambeau Reservation (Census GEOID 1825), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WI
+  county: Iron County
+  court: Circuit Court for Iron County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Iron County holds 21% of the land of Lac du Flambeau Reservation (Census GEOID 1825), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1826
   signed: '1826-08-05'

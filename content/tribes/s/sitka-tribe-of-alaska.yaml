@@ -595,6 +595,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.A, Alaska
   note: 'The source reads: “Sitka Tribe of Alaska is a federally recognized tribe with an agreement executed on April”. Part of the eleven identical Alaska form agreements. The state agency is inferred. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: AK
+  county: Sitka City and Borough
+  court: Superior Court for Sitka City and Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Sitka City and Borough holds 100% of the land of Sitka ANVSA (Census GEOID 7475), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

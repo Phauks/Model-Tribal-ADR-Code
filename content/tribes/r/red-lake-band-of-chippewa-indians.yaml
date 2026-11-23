@@ -551,6 +551,52 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Red Lake Red Lakes, Thief River Falls, and Warroad”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Red Lake", matched to the roster by name and state.'
+nearby_state_courts:
+- state: MN
+  county: Beltrami County
+  court: District Court for Beltrami County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Beltrami County holds 54% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Clearwater County
+  court: District Court for Clearwater County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Clearwater County holds 21% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Lake of the Woods County
+  court: District Court for Lake of the Woods County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Lake of the Woods County holds 19% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Koochiching County
+  court: District Court for Koochiching County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Koochiching County holds 4% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Roseau County
+  court: District Court for Roseau County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Roseau County holds 1% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa-Red Lake and Pembina Bands, 1863
   signed: '1863-10-02'

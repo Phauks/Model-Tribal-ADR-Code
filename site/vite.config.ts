@@ -454,7 +454,12 @@ export default defineConfig({
 			adapter: adapter(),
 			prerender: {
 				// Every page is built ahead of time from the files in content/.
-				handleHttpError: 'fail',
+				// The lists of checksums are written after the build (tools/write-checksums.mjs), so a
+				// link to one is not followed.
+				handleHttpError: ({ path, message }) => {
+					if (path === '/checksums.txt' || path === '/checksums.json') return;
+					throw new Error(message);
+				},
 				handleMissingId: 'fail'
 			},
 			version: {

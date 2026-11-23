@@ -726,6 +726,16 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Limited Tax Collection Agreement"
   note: 'The source reads: “The two Indian tribes with limited tax collection agreements are the Sisseton Wahpeton Oyate and the Yankton Sioux Tribe.”. Covers use tax and contractor''s excise tax, not sales tax, at specific listed businesses. The page gives no signing date.'
+nearby_state_courts:
+- state: SD
+  county: Charles Mix County
+  court: Circuit Court for Charles Mix County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Charles Mix County holds 100% of the land of Yankton Reservation (Census GEOID 4700), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Yankton Sioux, 1815
   signed: '1815-07-19'
