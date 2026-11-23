@@ -273,6 +273,36 @@ export function byPage<Item extends { address: string }>(items: Item[]): PageGro
 }
 
 /** The page a file in the repository is built into, for files named after the page. */
+/** The words on a page's history badge: "2 changes", "1 change" or "No changes yet". */
+export function historyBadgeLabel(count: number): string {
+	if (count === 0) return 'No changes yet';
+	return count === 1 ? '1 change' : `${count.toLocaleString('en-US')} changes`;
+}
+
+/** "Courts", "Courts and Contacts", "Courts, Contacts, and Gaming". */
+function listOf(names: string[]): string {
+	if (names.length <= 2) return names.join(' and ');
+	return `${names.slice(0, -1).join(', ')}, and ${names[names.length - 1]}`;
+}
+
+/**
+ * What the newest change did, in a sentence, for the history badge's panel:
+ * "Dispute resolution was updated in a site release." Never earlier wording.
+ */
+export function lastChangeSentence(change: Pick<ChangeView, 'change' | 'parts' | 'who' | 'textHidden'>): string {
+	const parts = change.textHidden ? [] : (change.parts ?? []);
+	const what =
+		change.change === 'new'
+			? 'The page was added'
+			: change.change === 'removed'
+				? 'The page was taken off the site'
+				: parts.length > 0
+					? `${listOf(parts)} ${parts.length === 1 ? 'was' : 'were'} updated`
+					: 'The page was updated';
+	if (!change.who) return `${what}.`;
+	return change.who === siteReleaseName ? `${what} in a site release.` : `${what} by ${change.who}.`;
+}
+
 /** Pages under /nations/ that list nations rather than being one nation's page. */
 const nationListings = new Set(['data', 'map', 'recourse', 'timeline', 'federal-offices']);
 

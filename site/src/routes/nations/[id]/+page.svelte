@@ -17,7 +17,9 @@
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import Clock from '@lucide/svelte/icons/clock';
+	import History from '@lucide/svelte/icons/history';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { unclaimedPage } from '#lib/review-status.ts';
@@ -104,10 +106,30 @@
 					<ReviewStatus status={unclaimedPage} description="Who keeps this page:">
 						<p><strong>Unclaimed.</strong> No one from the nation keeps this page yet.</p>
 						<p class="no-print"><a href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a></p>
-						<p class="no-print"><a href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a></p>
 					</ReviewStatus>
 				</span>
 				<span class="nation-slot-status" data-nation-slot="status"></span>
+				<!-- The page's history, its own badge apart from who keeps the page (Trevor, Nov. 23, 2026,
+				     option A of design/page-history-badge/). The build cannot know how many changes there
+				     are, so it says "History"; the Worker puts the count and the newest change in its place
+				     (historyBadge in src/lib/server/nation-page-overlay.ts). Same markup as ReviewStatus. -->
+				<span class="no-print" data-build-history>
+					<details class="status-popover">
+						<summary class="review-badge"
+							><span class="visually-hidden">Page history:</span><History size={16} strokeWidth={2} aria-hidden="true" />History<ChevronDown
+								class="status-popover-mark"
+								size={14}
+								strokeWidth={2}
+								aria-hidden="true"
+							/></summary
+						>
+						<div class="status-panel">
+							<p class="muted">Nation pages show when they changed and which parts, never earlier wording.</p>
+							<p><a href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">See all changes to this page</a></p>
+						</div>
+					</details>
+				</span>
+				<span data-nation-slot="history"></span>
 			</div>
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">

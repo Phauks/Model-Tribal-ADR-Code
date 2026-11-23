@@ -530,6 +530,28 @@ export async function pageRecordedSince(database: D1Database, address: string): 
 	return row?.seen_at ?? undefined;
 }
 
+/** What a page's history badge shows: how many changes, the newest, and when recording began. */
+export interface PageHistorySummary {
+	count: number;
+	/** The newest change, as readers may see it. */
+	latest: ChangeView | undefined;
+	/** For a page with no changes yet: when its history began. */
+	recordedSince: string | undefined;
+}
+
+export async function pageHistorySummary(database: D1Database, address: string): Promise<PageHistorySummary> {
+	const [counted, newest] = await Promise.all([
+		database.prepare(`SELECT COUNT(*) AS count FROM (${everyChange} WHERE c.address = ?)`).bind(address).first<{ count: number }>(),
+		database.prepare(`${everyChange} WHERE c.address = ? ORDER BY c.made_at DESC, c.sort_key DESC LIMIT 1`).bind(address).first<ChangeRow>()
+	]);
+	const count = counted?.count ?? 0;
+	return {
+		count,
+		latest: newest ? changeView(newest, new Map()) : undefined,
+		recordedSince: count === 0 ? await pageRecordedSince(database, address) : undefined
+	};
+}
+
 /** Every change to one page, oldest first, as stored. */
 async function pageRows(database: D1Database, address: string): Promise<ChangeRow[]> {
 	const { results } = await database
