@@ -64,8 +64,8 @@
 		<div class="notice" role="status">
 			<p>
 				<strong>Thank you. Your profile is confirmed.</strong>
-				{profile.status === 'submitted'
-					? 'The lead author will be in touch, using the way to reach you that you chose.'
+				{profile.confirmedVersion === 1
+					? 'You are signed up. The lead author will be in touch, using the way to reach you that you chose.'
 					: 'Your credit now uses this version.'}
 			</p>
 		</div>

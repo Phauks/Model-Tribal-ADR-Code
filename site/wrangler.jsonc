@@ -40,6 +40,19 @@
 			"bucket_name": "model-tribal-adr-code-sources"
 		}
 	],
+	// Live editing rooms, one per essay. They run in their own Worker,
+	// model-tribal-adr-code-live (live/wrangler.jsonc), so that this site's
+	// deploys do not close people's live connections (COLLABORATION.md,
+	// "Essays").
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "essayRooms",
+				"class_name": "EssayRoom",
+				"script_name": "model-tribal-adr-code-live"
+			}
+		]
+	},
 	// Limits how often one address can send the request form: five a minute
 	// is plenty for a person and slows down automated spam, without asking
 	// anyone to make an account or solve a puzzle (docs/requests.md).

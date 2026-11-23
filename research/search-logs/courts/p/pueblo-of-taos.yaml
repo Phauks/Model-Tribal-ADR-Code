@@ -1,7 +1,7 @@
 profile: content/tribes/p/pueblo-of-taos.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -164,3 +164,11 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: New Mexico tribal-state directory lists 'Pueblo of Taos – Tribal Court' with a P.O. Box 1846 address (no street address recorded).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://www.naicja.org/wp-content/uploads/2020/04/Roundtable_FINAL-copy.pdf
+  query: 'Indian law journals sweep: articles and reports on Tribal courts, wellness courts and peacemaking'
+  outcome: found
+  reason: Read in full; named a wellness court now in the profile (source naicja-2016-holistic-traditional-justice-roundtable).
