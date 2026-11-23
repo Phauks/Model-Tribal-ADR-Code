@@ -35,8 +35,16 @@ export interface Composition {
 	attachments?: { filename: string; mediaType: string; content: Uint8Array }[];
 	/** Send at this time instead of now. */
 	sendAt?: string | null;
-	/** Remind the team if no reply has come by this time. */
-	followUpAt?: string | null;
+	/** In a conversation, the message this answers; the latest one when not given. */
+	answering?: string | null;
+	/**
+	 * Forwarding a message of this conversation: it does not thread as a
+	 * reply, the do-not-email list is checked as for a new message, and the
+	 * chosen attachments of the forwarded message go with it.
+	 */
+	forward?: { message: string; attachments: string[] } | null;
+	/** "Remind me": the conversation comes back to the inbox at this time unless a reply comes first. */
+	remindAt?: string | null;
 }
 
 export class CompositionError extends Error {}
@@ -54,23 +62,25 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	if (composition.to.length === 0) throw new CompositionError('Add at least one address in To.');
 	if (recipients.length > recipientLimit) throw new CompositionError(`A message can go to at most ${recipientLimit} addresses.`);
 	if (!context.settings.addresses.includes(composition.from.toLowerCase())) throw new CompositionError('Choose one of the project’s addresses to send from.');
-	const size = (composition.attachments ?? []).reduce((total, item) => total + item.content.byteLength, 0);
+	const forward = composition.threadIdentifier ? (composition.forward ?? null) : null;
+	const attachments = [...(composition.attachments ?? []), ...(forward ? await forwardedAttachments(context, composition.threadIdentifier!, forward) : [])];
+	const size = attachments.reduce((total, item) => total + item.content.byteLength, 0);
 	if (size > attachmentLimitBytes) throw new CompositionError('The attachments are too large together; the limit is 18 MB.');
 
 	let threadIdentifier = composition.threadIdentifier;
 	let inReplyTo: string | null = null;
 	let references: string | null = null;
-	if (threadIdentifier) {
-		const last = await database
+	if (threadIdentifier && !forward) {
+		const answered = await database
 			.prepare(
-				`SELECT message_id, reference_ids FROM mail_messages WHERE thread_identifier = ? AND message_id IS NOT NULL
-				 AND status IN ('received', 'sent') ORDER BY COALESCE(received_at, sent_at) DESC LIMIT 1`
+				`SELECT message_id, reference_ids FROM mail_messages WHERE thread_identifier = ?1 AND message_id IS NOT NULL
+				 AND status IN ('received', 'sent') ORDER BY identifier = ?2 DESC, COALESCE(received_at, sent_at) DESC LIMIT 1`
 			)
-			.bind(threadIdentifier)
+			.bind(threadIdentifier, composition.answering ?? '')
 			.first<{ message_id: string; reference_ids: string | null }>();
-		if (last) {
-			inReplyTo = last.message_id;
-			references = [...(last.reference_ids ?? '').split(/\s+/).filter(Boolean).slice(-10), last.message_id].join(' ');
+		if (answered) {
+			inReplyTo = answered.message_id;
+			references = [...(answered.reference_ids ?? '').split(/\s+/).filter(Boolean).slice(-10), answered.message_id].join(' ');
 		}
 	} else {
 		const suppressed = await suppressedAmong(context, recipients.map((item) => item.email));
@@ -120,7 +130,7 @@ export async function queueMessage(context: MailContext, composition: Compositio
 				stamp
 			)
 	);
-	for (const attachment of composition.attachments ?? []) {
+	for (const attachment of attachments) {
 		const id = crypto.randomUUID();
 		const key = bucketKeys.attachment(messageIdentifier, id);
 		await context.bucket.put(key, attachment.content, { httpMetadata: { contentType: attachment.mediaType } });
@@ -132,23 +142,47 @@ export async function queueMessage(context: MailContext, composition: Compositio
 				.bind(id, messageIdentifier, attachment.filename, attachment.mediaType, attachment.content.byteLength, key)
 		);
 	}
-	if (composition.followUpAt) {
+	if (composition.remindAt) {
 		statements.push(
 			database
-				.prepare('UPDATE mail_threads SET follow_up_at = ?, follow_up_set_at = ? WHERE identifier = ?')
-				.bind(new Date(composition.followUpAt).toISOString(), sendAt ?? stamp, threadIdentifier)
+				.prepare('UPDATE mail_threads SET remind_at = ?, remind_set_at = ? WHERE identifier = ?')
+				.bind(new Date(composition.remindAt).toISOString(), sendAt ?? stamp, threadIdentifier)
 		);
 	}
 	statements.push(
 		actionStatement(context, {
 			personIdentifier: composition.personIdentifier,
-			action: sendAt ? 'Scheduled a message' : composition.threadIdentifier ? 'Replied' : 'Wrote a new message',
+			action: sendAt ? 'Scheduled a message' : forward ? 'Forwarded' : composition.threadIdentifier ? 'Replied' : 'Wrote a new message',
 			threadIdentifier,
 			note: sendAt
 		})
 	);
 	await database.batch(statements);
 	return { messageIdentifier, threadIdentifier, scheduled: sendAt !== null };
+}
+
+/** The chosen attachments of a message in this conversation, read back from the bucket to forward. */
+async function forwardedAttachments(
+	context: MailContext,
+	threadIdentifier: string,
+	forward: { message: string; attachments: string[] }
+): Promise<{ filename: string; mediaType: string; content: Uint8Array }[]> {
+	const chosen = [...new Set(forward.attachments)].slice(0, 50);
+	if (chosen.length === 0) return [];
+	const { results } = await context.database
+		.prepare(
+			`SELECT a.filename, a.media_type, a.bucket_key FROM mail_attachments a JOIN mail_messages m ON m.identifier = a.message_identifier
+			 WHERE m.thread_identifier = ? AND a.message_identifier = ? AND a.identifier IN (${chosen.map(() => '?').join(', ')})`
+		)
+		.bind(threadIdentifier, forward.message, ...chosen)
+		.all<{ filename: string; media_type: string; bucket_key: string }>();
+	const found = [];
+	for (const row of results) {
+		const object = await context.bucket.get(row.bucket_key);
+		if (!object) throw new CompositionError(`The attachment ${row.filename} is no longer stored, so it cannot be forwarded.`);
+		found.push({ filename: row.filename, mediaType: row.media_type, content: new Uint8Array(await object.arrayBuffer()) });
+	}
+	return found;
 }
 
 interface MessageRow {
@@ -411,7 +445,7 @@ export async function acknowledge(context: MailContext, messageIdentifier: strin
 	await context.database.batch([
 		context.database.prepare('UPDATE mail_messages SET acknowledged_at = COALESCE(acknowledged_at, ?) WHERE identifier = ?').bind(at, messageIdentifier),
 		context.database
-			.prepare(`UPDATE mail_threads SET follow_up_at = NULL, follow_up_set_at = NULL, unread = 1, updated_at = ? WHERE identifier = ?`)
+			.prepare(`UPDATE mail_threads SET remind_at = NULL, remind_set_at = NULL, unread = 1, updated_at = ? WHERE identifier = ?`)
 			.bind(at, row.thread_identifier),
 		actionStatement(context, { personIdentifier: null, action: 'The recipient said they got the message', threadIdentifier: row.thread_identifier })
 	]);

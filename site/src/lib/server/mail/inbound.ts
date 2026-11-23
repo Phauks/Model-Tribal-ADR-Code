@@ -153,7 +153,7 @@ export function deliveryReport(email: Email, envelopeFrom: string): DeliveryRepo
 interface ThreadRow {
 	identifier: string;
 	folder: string;
-	follow_up_set_at: string | null;
+	remind_set_at: string | null;
 	nation_identifier: string | null;
 }
 
@@ -168,7 +168,7 @@ export async function findConversation(
 	for (const id of [...references].reverse().slice(0, 20)) {
 		const row = await context.database
 			.prepare(
-				`SELECT t.identifier, t.folder, t.follow_up_set_at, t.nation_identifier FROM mail_messages m
+				`SELECT t.identifier, t.folder, t.remind_set_at, t.nation_identifier FROM mail_messages m
 				 JOIN mail_threads t ON t.identifier = m.thread_identifier
 				 WHERE m.message_id = ?1 OR m.provider_message_id = ?1 LIMIT 1`
 			)
@@ -180,7 +180,7 @@ export async function findConversation(
 	const since = new Date(at.getTime() - 60 * 86_400_000).toISOString();
 	return context.database
 		.prepare(
-			`SELECT identifier, folder, follow_up_set_at, nation_identifier FROM mail_threads
+			`SELECT identifier, folder, remind_set_at, nation_identifier FROM mail_threads
 			 WHERE normalized_subject = ? AND counterpart_address = ? AND last_message_at >= ?
 			 ORDER BY last_message_at DESC LIMIT 1`
 		)
@@ -298,15 +298,16 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	const database = context.database;
 	const statements = [];
 	if (existing) {
-		const comesBack = !spam && (existing.folder === 'archive' || existing.folder === 'trash');
-		const answers = !automatic && existing.follow_up_set_at !== null && existing.follow_up_set_at <= stamp;
+		const answers = !automatic && existing.remind_set_at !== null && existing.remind_set_at <= stamp;
+		// A reply brings an archived or deleted conversation back, and one waiting on a reminder from wherever it was filed.
+		const comesBack = !spam && (existing.folder === 'archive' || existing.folder === 'trash' || (answers && existing.folder === 'folder'));
 		statements.push(
 			database
 				.prepare(
 					`UPDATE mail_threads SET unread = 1, message_count = message_count + 1, last_message_at = ?1, last_inbound_at = ?1,
-					 folder = CASE WHEN ?2 THEN 'inbox' ELSE folder END, snoozed_until = NULL,
-					 follow_up_at = CASE WHEN ?3 THEN NULL ELSE follow_up_at END,
-					 follow_up_set_at = CASE WHEN ?3 THEN NULL ELSE follow_up_set_at END,
+					 folder = CASE WHEN ?2 THEN 'inbox' ELSE folder END, folder_identifier = CASE WHEN ?2 THEN NULL ELSE folder_identifier END,
+					 remind_at = CASE WHEN ?3 THEN NULL ELSE remind_at END,
+					 remind_set_at = CASE WHEN ?3 THEN NULL ELSE remind_set_at END,
 					 stop_requested = CASE WHEN ?4 THEN 1 ELSE stop_requested END,
 					 nation_identifier = COALESCE(nation_identifier, ?5), updated_at = ?1
 					 WHERE identifier = ?6`

@@ -1,6 +1,6 @@
 # The project inbox
 
-The website has its own email: a shared inbox in the workspace where the lead author reads, answers, assigns, tags, files, snoozes and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in the private bucket (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0040](../docs/decisions/0040-project-inbox-on-cloudflare.md).
+The website has its own email: a shared inbox in the workspace where the lead author reads, replies to, forwards, assigns, tags, files, sets reminders on and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in the private bucket (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0040](../docs/decisions/0040-project-inbox-on-cloudflare.md).
 
 Email is off until the project has a domain. While `MAIL_DOMAIN` is empty, the Inbox and Outreach pages open, but nothing is received or sent.
 
@@ -28,7 +28,9 @@ Every message the inbox sends is written to the database first, then handed to a
 - **Replies and other mail people started** go through Cloudflare Email Service, through the `projectEmail` binding. Its terms allow only that kind of mail.[^terms]
 - **Outreach** goes through the outreach mailbox's SMTP server, from the Worker over an encrypted TCP connection.[^sockets] See "Outreach" below.
 
-A copy of each sent message is kept in the bucket like received mail. Replies carry `In-Reply-To` and `References`, so they thread in the other side's mail program. A message can wait for a time ("Send later"); the run every five minutes sends it, and it can be sent now or cancelled until then. A reminder can be set for when no reply has come; a real reply clears it, an automatic one does not.
+A copy of each sent message is kept in the bucket like received mail. Replies carry `In-Reply-To` and `References`, so they thread in the other side's mail program. A message can wait for a time ("Send later"); the run every five minutes sends it, and it can be sent now or cancelled until then. Every received or sent message has Reply, Reply all and Forward buttons, which fill in the box at the bottom of the conversation for that message. Reply all leaves out the project's own addresses; it is offered only when the message reached more than one other person. A forward stays in the same conversation but does not carry `In-Reply-To`, so it starts a new thread for whoever receives it; it is checked against the do-not-email list like a new message, and the forwarded message's attachments go with it unless unticked.
+
+"Remind me" is the one way to put a conversation off (there is no separate snooze): it leaves the Inbox list, is listed under Reminders, and comes back to the inbox as unread at the chosen time, from wherever it was filed. If a real reply arrives first, the conversation comes back at once and the reminder ends; an automatic reply does neither. A reminder can be set from the conversation, or with "Remind me" when sending, and the outreach batch's "remind me if no reply after this many days" sets the same thing. Moving the conversation to the inbox, Spam or Deleted ends the reminder; archiving or filing it keeps it.
 
 ### Delivery reports and "read receipts"
 

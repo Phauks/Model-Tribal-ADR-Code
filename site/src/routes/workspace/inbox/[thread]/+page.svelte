@@ -3,7 +3,6 @@
 	import Archive from '@lucide/svelte/icons/archive';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import BellRing from '@lucide/svelte/icons/bell-ring';
-	import Clock from '@lucide/svelte/icons/clock';
 	import FolderInput from '@lucide/svelte/icons/folder-input';
 	import InboxIcon from '@lucide/svelte/icons/inbox';
 	import ListFilter from '@lucide/svelte/icons/list-filter';
@@ -11,10 +10,13 @@
 	import OctagonAlert from '@lucide/svelte/icons/octagon-alert';
 	import Paperclip from '@lucide/svelte/icons/paperclip';
 	import Plus from '@lucide/svelte/icons/plus';
+	import ForwardIcon from '@lucide/svelte/icons/forward';
+	import ReplyIcon from '@lucide/svelte/icons/reply';
+	import ReplyAll from '@lucide/svelte/icons/reply-all';
 	import StickyNote from '@lucide/svelte/icons/sticky-note';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import X from '@lucide/svelte/icons/x';
-	import { deliveryLabels, formatAddress, messageStatusLabels } from '#lib/mail.ts';
+	import { deliveryLabels, formatAddress, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
 	import Avatar from '../Avatar.svelte';
 	import Composer from '../Composer.svelte';
 	import TagChip from '../TagChip.svelte';
@@ -32,9 +34,36 @@
 	);
 	// The browser's time zone, so times typed in the forms mean the reader's own time.
 	let zone = $state('America/Denver');
+	let ready = $state(false);
 	onMount(() => {
 		zone = Intl.DateTimeFormat().resolvedOptions().timeZone || zone;
+		ready = true;
+		remindAt = morning(1);
 	});
+
+	/** Tomorrow, or next Monday, at 8 in the morning, for the reminder's quick picks. */
+	function morning(daysAhead: number | 'monday'): string {
+		const now = new Date();
+		const days = daysAhead === 'monday' ? ((8 - now.getDay()) % 7 || 7) : daysAhead;
+		const at = new Date(now.getFullYear(), now.getMonth(), now.getDate() + days, 8, 0);
+		return localInputValue((at.getTime() - now.getTime()) / 3_600_000, now);
+	}
+	let remindAt = $state(localInputValue(24 * 3));
+
+	/** Where a Reply, Reply all or Forward button takes the reader: the box at the bottom, filled in for that message. */
+	function composeLink(mode: 'reply' | 'all' | 'forward', message: string): string {
+		return `?compose=${mode}&message=${encodeURIComponent(message)}#reply`;
+	}
+	const modeNames = { reply: 'Reply', all: 'Reply all', forward: 'Forward' } as const;
+	const answering = $derived(thread.messages.find((message) => message.identifier === data.compose.message));
+	const canReplyAll = $derived(
+		answering
+			? replyAllReach(
+					{ ...answering, at: answering.receivedAt ?? answering.sentAt ?? answering.createdAt },
+					data.addresses
+				) > 1
+			: false
+	);
 
 	function size(bytes: number): string {
 		return bytes > 1024 * 1024 ? `${(bytes / 1024 / 1024).toFixed(1)} MB` : `${Math.max(1, Math.ceil(bytes / 1024))} KB`;
@@ -163,7 +192,7 @@
 				<div class="message-body">
 					{#if message.direction === 'out' && message.status === 'sent'}
 						<p class="small status-line">
-							Sent {fullDate(message.sentAt)}{#if message.sentByName} by {message.sentByName}{/if}{#if message.carrier === 'smtp'} through the outreach mailbox{/if}.
+							Sent {fullDate(message.sentAt)}{#if message.sentByName}{' '}by {message.sentByName}{/if}{#if message.carrier === 'smtp'}{' '}through the outreach mailbox{/if}.
 							{message.deliveryStatus ? deliveryLabels[message.deliveryStatus] : 'No delivery report yet'}{#if message.deliveryDetail}: {message.deliveryDetail}{/if}.
 							{#if message.acknowledgedAt}They said they got it on {fullDate(message.acknowledgedAt)}.{/if}
 						</p>
@@ -198,6 +227,14 @@
 							{/each}
 						</ul>
 					{/if}
+					{#if message.status === 'received' || message.status === 'sent'}
+						{@const many = replyAllReach({ ...message, at: message.receivedAt ?? message.sentAt ?? message.createdAt }, data.addresses) > 1}
+						<nav class="answer" aria-label="Answer this message">
+							<a class="answer-link small" href={composeLink('reply', message.identifier)}><ReplyIcon size={16} aria-hidden="true" />Reply</a>
+							{#if many}<a class="answer-link small" href={composeLink('all', message.identifier)}><ReplyAll size={16} aria-hidden="true" />Reply all</a>{/if}
+							<a class="answer-link small" href={composeLink('forward', message.identifier)}><ForwardIcon size={16} aria-hidden="true" />Forward</a>
+						</nav>
+					{/if}
 					{#if message.status === 'scheduled' || message.status === 'failed'}
 						<form method="post" class="actions">
 							<input type="hidden" name="message" value={message.identifier} />
@@ -218,17 +255,34 @@
 			</aside>
 		{/each}
 
-		<section class="reply" aria-labelledby="reply-heading">
-			<h2 id="reply-heading" class="visually-hidden">Reply</h2>
-			<Composer
-				action="?/reply"
-				idPrefix="reply"
-				addresses={data.addresses}
-				from={data.reply.from}
-				to={data.reply.to}
-				subject={data.reply.subject}
-				quote={data.reply.quote}
-			/>
+		<section class="reply" id="reply" aria-labelledby="reply-heading">
+			<h2 id="reply-heading" class="visually-hidden">{modeNames[data.compose.mode]}</h2>
+			{#if data.compose.message}
+				<nav class="modes" aria-label="How to answer">
+					<a href={composeLink('reply', data.compose.message)} aria-current={data.compose.mode === 'reply' ? 'true' : undefined}><ReplyIcon size={16} aria-hidden="true" />Reply</a>
+					{#if canReplyAll || data.compose.mode === 'all'}
+						<a href={composeLink('all', data.compose.message)} aria-current={data.compose.mode === 'all' ? 'true' : undefined}><ReplyAll size={16} aria-hidden="true" />Reply all</a>
+					{/if}
+					<a href={composeLink('forward', data.compose.message)} aria-current={data.compose.mode === 'forward' ? 'true' : undefined}><ForwardIcon size={16} aria-hidden="true" />Forward</a>
+					{#if answering}<span class="small muted answering">{data.compose.mode === 'forward' ? 'Forwarding' : 'Answering'} {answering.from.name ?? answering.from.email}, {listDate(answering.receivedAt ?? answering.sentAt ?? answering.createdAt)}</span>{/if}
+				</nav>
+			{/if}
+			{#key `${data.compose.mode}:${data.compose.message}`}
+				<Composer
+					action="?/reply"
+					idPrefix="reply"
+					addresses={data.addresses}
+					from={data.compose.from}
+					to={data.compose.to}
+					cc={data.compose.cc}
+					subject={data.compose.subject}
+					quote={data.compose.quote}
+					mode={data.compose.mode}
+					message={data.compose.message}
+					forwarded={data.compose.attachments}
+					focus={data.compose.asked}
+				/>
+			{/key}
 		</section>
 	</div>
 
@@ -248,31 +302,24 @@
 		</section>
 
 		<section class="card">
-			<h2><Clock size={16} aria-hidden="true" />Snooze</h2>
-			{#if thread.snoozedUntil}
-				<p class="small">Hidden until {fullDate(thread.snoozedUntil)}.</p>
-				<form method="post" action="?/snooze"><button class="button button-quiet small" type="submit" name="clear" value="yes">Bring it back now</button></form>
+			<h2><BellRing size={16} aria-hidden="true" />Remind me</h2>
+			{#if thread.remindAt}
+				<p class="small">Out of the inbox until {fullDate(thread.remindAt)}. It comes back sooner if they reply.</p>
+				<form method="post" action="?/remind"><button class="button button-quiet small" type="submit" name="clear" value="yes">Cancel the reminder</button></form>
 			{:else}
-				<form method="post" action="?/snooze" class="stack">
+				<form method="post" action="?/remind" class="stack">
 					<input type="hidden" name="zone" value={zone} />
-					<label for="snooze-until" class="small">Hide from the inbox until</label>
-					<input id="snooze-until" type="datetime-local" name="until" value={localInputValue(24)} />
-					<button class="button button-quiet small" type="submit">Snooze</button>
-				</form>
-			{/if}
-		</section>
-
-		<section class="card">
-			<h2><BellRing size={16} aria-hidden="true" />Reminder if no reply</h2>
-			{#if thread.followUpAt}
-				<p class="small">On {fullDate(thread.followUpAt)}, unless they reply first.</p>
-				<form method="post" action="?/followUp"><button class="button button-quiet small" type="submit" name="clear" value="yes">Clear the reminder</button></form>
-			{:else}
-				<form method="post" action="?/followUp" class="stack">
-					<input type="hidden" name="zone" value={zone} />
-					<label for="follow-at" class="small">Remind me on</label>
-					<input id="follow-at" type="datetime-local" name="at" value={localInputValue(24 * 7)} />
-					<button class="button button-quiet small" type="submit">Set the reminder</button>
+					<p class="small muted explain">The conversation leaves the inbox and comes back at this time, or as soon as they reply.</p>
+					<label for="remind-at" class="small">Bring it back</label>
+					<input id="remind-at" type="datetime-local" name="at" bind:value={remindAt} />
+					{#if ready}
+						<span class="quick">
+							<button type="button" class="link-button" onclick={() => (remindAt = morning(1))}>Tomorrow</button>
+							<button type="button" class="link-button" onclick={() => (remindAt = morning('monday'))}>Monday</button>
+							<button type="button" class="link-button" onclick={() => (remindAt = morning(7))}>In a week</button>
+						</span>
+					{/if}
+					<button class="button button-quiet small" type="submit">Remind me</button>
 				</form>
 			{/if}
 		</section>
@@ -436,6 +483,7 @@
 	}
 	.conversation {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: var(--space-5);
 		align-items: start;
 	}
@@ -446,6 +494,7 @@
 	}
 	.messages {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		gap: var(--space-3);
 	}
 	.message {
@@ -558,6 +607,74 @@
 		flex-wrap: wrap;
 		gap: var(--space-2);
 		margin-top: var(--space-3);
+	}
+	.answer {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-top: var(--space-4);
+	}
+	.answer-link {
+		min-height: 2.25rem;
+		padding: 0 var(--space-3);
+		border: 1px solid var(--color-line);
+		border-radius: 999px;
+		color: var(--color-ink);
+	}
+	.answer-link:hover {
+		background: var(--color-surface);
+		border-color: var(--color-control-border);
+	}
+	.answer a,
+	.modes a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		text-decoration: none;
+	}
+	.modes {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1);
+		margin-bottom: var(--space-2);
+	}
+	.modes a {
+		min-height: 2.25rem;
+		padding: 0 var(--space-3);
+		border-radius: 999px;
+		color: var(--color-ink);
+		font-size: var(--font-size-small);
+	}
+	.modes a:hover {
+		background: var(--color-surface);
+	}
+	.modes a[aria-current='true'] {
+		background: var(--color-surface);
+		box-shadow: inset 0 0 0 1px var(--color-control-border);
+		font-weight: var(--font-weight-semibold);
+	}
+	.answering {
+		margin-left: var(--space-2);
+	}
+	.explain {
+		margin: 0;
+	}
+	.quick {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1);
+	}
+	.link-button {
+		border: 0;
+		background: none;
+		color: var(--color-link);
+		font: inherit;
+		font-size: var(--font-size-small);
+		cursor: pointer;
+		padding: var(--space-1);
+		min-height: 2rem;
+		text-decoration: underline;
 	}
 	.note {
 		padding: var(--space-3) var(--space-4);

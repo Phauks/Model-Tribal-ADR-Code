@@ -15,8 +15,7 @@ export const folderDepthLimit = 3;
 export const inboxViews = [
 	{ key: 'inbox', label: 'Inbox' },
 	{ key: 'mine', label: 'Assigned to me' },
-	{ key: 'follow-up', label: 'Follow up due' },
-	{ key: 'snoozed', label: 'Snoozed' },
+	{ key: 'reminders', label: 'Reminders' },
 	{ key: 'scheduled', label: 'Scheduled' },
 	{ key: 'sent', label: 'Sent' },
 	{ key: 'archive', label: 'Archive' },
@@ -233,6 +232,84 @@ export function normalizeSubject(subject: string): string {
 /** The subject for a reply: "Re: " once, never "Re: Re: ". */
 export function replySubject(subject: string): string {
 	return /^re\s*:/i.test(subject.trim()) ? subject.trim() : `Re: ${subject.trim()}`;
+}
+
+/** The subject for a forward: "Fwd: " once. */
+export function forwardSubject(subject: string): string {
+	return /^(fwd?|fw)\s*:/i.test(subject.trim()) ? subject.trim() : `Fwd: ${subject.trim()}`;
+}
+
+/** The three ways to answer a message in a conversation. */
+export const composeModes = ['reply', 'all', 'forward'] as const;
+export type ComposeMode = (typeof composeModes)[number];
+
+export function isComposeMode(value: string | null): value is ComposeMode {
+	return composeModes.includes(value as ComposeMode);
+}
+
+/** What a composer needs to know about the message being answered. */
+export interface AnsweredMessage {
+	direction: 'in' | 'out';
+	from: MailAddress;
+	to: MailAddress[];
+	cc: MailAddress[];
+	replyTo: string | null;
+	subject: string;
+	text: string;
+	/** When it was received or sent. */
+	at: string;
+}
+
+/**
+ * The To, Cc, subject and starting text for a reply, a reply to all, or a
+ * forward of one message. A reply to a message the project sent goes to the
+ * same people again. Reply all leaves out the project's own addresses and
+ * anyone already in To.
+ */
+export function composeDefaults(
+	mode: ComposeMode,
+	message: AnsweredMessage,
+	projectAddresses: readonly string[]
+): { to: string; cc: string; subject: string; quote: string } {
+	const sender = message.from.name ?? message.from.email;
+	if (mode === 'forward') {
+		const header = [
+			'---------- Forwarded message ----------',
+			`From: ${formatAddress(message.from)}`,
+			`Date: ${new Date(message.at).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' })} UTC`,
+			`Subject: ${message.subject}`,
+			`To: ${message.to.map(formatAddress).join(', ')}`,
+			...(message.cc.length ? [`Cc: ${message.cc.map(formatAddress).join(', ')}`] : [])
+		];
+		return { to: '', cc: '', subject: forwardSubject(message.subject), quote: `\n\n${header.join('\n')}\n\n${message.text.trimEnd()}\n` };
+	}
+	const own = new Set(projectAddresses.map((address) => address.toLowerCase()));
+	const notOwn = (address: MailAddress) => !own.has(address.email.toLowerCase());
+	const replyTo = message.replyTo ? parseAddressList(message.replyTo).addresses : [];
+	const to: MailAddress[] = message.direction === 'in' ? (replyTo.length ? replyTo : [message.from]) : message.to.filter(notOwn);
+	const taken = new Set(to.map((address) => address.email.toLowerCase()));
+	const others = message.direction === 'in' ? [...message.to, ...message.cc] : message.cc;
+	const cc: MailAddress[] = [];
+	if (mode === 'all') {
+		for (const address of others) {
+			const email = address.email.toLowerCase();
+			if (own.has(email) || taken.has(email)) continue;
+			taken.add(email);
+			cc.push(address);
+		}
+	}
+	return {
+		to: to.map(formatAddress).join(', '),
+		cc: cc.map(formatAddress).join(', '),
+		subject: replySubject(message.subject),
+		quote: quoteForReply(message.text, sender, message.at)
+	};
+}
+
+/** How many people besides the project a reply to all would reach, to decide whether to offer it. */
+export function replyAllReach(message: AnsweredMessage, projectAddresses: readonly string[]): number {
+	const defaults = composeDefaults('all', message, projectAddresses);
+	return parseAddressList(`${defaults.to}, ${defaults.cc}`).addresses.length;
 }
 
 /** The first words of a message, for the list's preview line. */

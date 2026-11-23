@@ -22,8 +22,8 @@ CREATE UNIQUE INDEX mail_folders_by_name ON mail_folders (COALESCE(parent_identi
 
 -- One conversation. A thread lives in one place: one of the four built-in
 -- folders, or ('folder') one the lead author made, named by
--- folder_identifier. "Assigned to me", "snoozed", "follow up due" and
--- "scheduled" are views over these columns.
+-- folder_identifier. "Assigned to me", "Reminders" and "Scheduled" are
+-- views over these columns.
 CREATE TABLE mail_threads (
 	identifier TEXT PRIMARY KEY,
 	subject TEXT NOT NULL,
@@ -44,13 +44,12 @@ CREATE TABLE mail_threads (
 	last_message_at TEXT NOT NULL,
 	last_inbound_at TEXT,
 	last_outbound_at TEXT,
-	-- Hidden from the inbox until this time, then shown again as unread.
-	snoozed_until TEXT,
-	-- "Remind me if no reply": when the reminder comes due, and when it was set.
-	-- A reply that arrives after it was set (other than an automatic reply)
-	-- clears it.
-	follow_up_at TEXT,
-	follow_up_set_at TEXT,
+	-- "Remind me": the conversation stays out of the Inbox list until
+	-- remind_at, then comes back to the inbox as unread. A reply that arrives
+	-- after remind_set_at (other than an automatic reply) brings it back at
+	-- once and ends the reminder.
+	remind_at TEXT,
+	remind_set_at TEXT,
 	-- The sender asked not to be written to again; shown until confirmed.
 	stop_requested INTEGER NOT NULL DEFAULT 0 CHECK (stop_requested IN (0, 1)),
 	created_at TEXT NOT NULL,
@@ -61,6 +60,7 @@ CREATE INDEX mail_threads_by_own_folder ON mail_threads (folder_identifier, last
 CREATE INDEX mail_threads_by_subject ON mail_threads (normalized_subject, counterpart_address);
 CREATE INDEX mail_threads_by_assignee ON mail_threads (assignee_identifier, last_message_at);
 CREATE INDEX mail_threads_by_nation ON mail_threads (nation_identifier, last_message_at);
+CREATE INDEX mail_threads_by_reminder ON mail_threads (remind_at) WHERE remind_at IS NOT NULL;
 
 -- One message, received or sent. Sent messages also cover drafts and
 -- scheduled sends, which wait in the same table until they go.
@@ -96,7 +96,7 @@ CREATE TABLE mail_messages (
 	-- Why the message went to Spam, or null.
 	spam_reason TEXT,
 	-- An out-of-office or other automatic reply: shown, but it does not
-	-- count as an answer for follow-up reminders.
+	-- count as an answer for reminders.
 	automatic INTEGER NOT NULL DEFAULT 0 CHECK (automatic IN (0, 1)),
 	-- Which service sent it: 'cloudflare' or 'smtp' (src/lib/server/mail/carriers.ts).
 	carrier TEXT,

@@ -17,7 +17,8 @@ import {
 	timeZoneForStates,
 	unsubscribeWithToken
 } from '#lib/server/mail/outreach.ts';
-import { getThread, listThreads, purgeDeleted, setFollowUp, snooze, wakeSnoozed, moveToFolder } from '#lib/server/mail/store.ts';
+import { bringBackReminders, getThread, listThreads, moveToFolder, purgeDeleted, setReminder } from '#lib/server/mail/store.ts';
+import { composeDefaults, replyAllReach, type AnsweredMessage } from '#lib/mail.ts';
 import { isSuppressed, suppress } from '#lib/server/mail/suppressions.ts';
 import { makeToken } from '#lib/server/mail/tokens.ts';
 import { addAddressBook, addContact, rawMessage, recordingCarrier, testContext, testSettings } from './mail-fixtures.ts';
@@ -134,7 +135,7 @@ describe('mail going out', () => {
 			to: [{ email: 'office@nation.example' }],
 			subject: 'Re: A question about the model code',
 			text: 'Thank you for asking.',
-			followUpAt: '2026-12-01T17:00:00Z'
+			remindAt: '2026-12-01T17:00:00Z'
 		});
 		const sent = await sendMessage(context, { replies: carrier, outreach: null }, queued.messageIdentifier);
 		expect(sent).toEqual({ sent: true });
@@ -142,15 +143,20 @@ describe('mail going out', () => {
 		expect(carrier.sent[0].html).toContain('<p>Thank you for asking.</p>');
 		const thread = await getThread(context, first.threadIdentifier, 'lead');
 		expect(thread!.messages[1]).toMatchObject({ status: 'sent', carrier: 'cloudflare', messageId: 'provider-1@cloudflare.example' });
-		expect(thread!.followUpAt).toBe('2026-12-01T17:00:00.000Z');
+		expect(thread!.remindAt).toBe('2026-12-01T17:00:00.000Z');
+		// Waiting on the reminder, it is out of the Inbox list and in Reminders.
+		expect((await listThreads(context, { view: 'inbox', personIdentifier: 'lead' })).threads).toHaveLength(0);
+		expect((await listThreads(context, { view: 'reminders', personIdentifier: 'lead' })).threads).toHaveLength(1);
 		// Sending the same message again does nothing.
 		expect((await sendMessage(context, { replies: carrier, outreach: null }, queued.messageIdentifier)).sent).toBe(false);
-		// Their answer clears the reminder; an automatic reply would not.
+		// Their answer ends the reminder and brings the conversation back; an automatic reply does neither.
 		clock.now = new Date('2026-11-25T17:00:00Z');
 		await receiveMail(context, arriving(rawMessage({ From: 'office@nation.example', To: 'contact@example.org', Subject: 'Automatic reply: Re: A question', 'Auto-Submitted': 'auto-replied', 'In-Reply-To': '<provider-1@cloudflare.example>' }, 'Away')));
-		expect((await getThread(context, first.threadIdentifier, 'lead'))!.followUpAt).not.toBeNull();
+		expect((await getThread(context, first.threadIdentifier, 'lead'))!.remindAt).not.toBeNull();
+		expect((await listThreads(context, { view: 'inbox', personIdentifier: 'lead' })).threads).toHaveLength(0);
 		await receiveMail(context, arriving(rawMessage({ From: 'office@nation.example', To: 'contact@example.org', Subject: 'Re: A question', 'In-Reply-To': '<provider-1@cloudflare.example>' }, 'Thanks!')));
-		expect((await getThread(context, first.threadIdentifier, 'lead'))!.followUpAt).toBeNull();
+		expect((await getThread(context, first.threadIdentifier, 'lead'))!.remindAt).toBeNull();
+		expect((await listThreads(context, { view: 'inbox', personIdentifier: 'lead' })).threads).toHaveLength(1);
 		clock.now = new Date('2026-11-24T17:00:00Z');
 	});
 
@@ -258,8 +264,112 @@ describe('mail going out', () => {
 	});
 });
 
+describe('reply, reply all and forward', () => {
+	const letter: AnsweredMessage = {
+		direction: 'in',
+		from: { email: 'office@nation.example', name: 'Tribal Office' },
+		to: [{ email: 'contact@example.org' }, { email: 'judge@nation.example', name: 'Judge' }],
+		cc: [{ email: 'clerk@nation.example' }, { email: 'office@nation.example' }],
+		replyTo: null,
+		subject: 'Re: Our ordinance',
+		text: 'See the ordinance.',
+		at: '2026-11-24T17:00:00Z'
+	};
+	const own = ['contact@example.org', 'requests@example.org'];
+
+	it('answers the sender, or everyone but the project, or forwards with the message below', () => {
+		expect(composeDefaults('reply', letter, own)).toMatchObject({ to: 'Tribal Office <office@nation.example>', cc: '', subject: 'Re: Our ordinance' });
+		expect(composeDefaults('reply', letter, own).quote).toContain('> See the ordinance.');
+		expect(composeDefaults('all', letter, own)).toMatchObject({ to: 'Tribal Office <office@nation.example>', cc: 'Judge <judge@nation.example>, clerk@nation.example' });
+		expect(replyAllReach(letter, own)).toBe(3);
+		expect(composeDefaults('reply', { ...letter, replyTo: 'Desk <desk@nation.example>' }, own).to).toBe('Desk <desk@nation.example>');
+		const forward = composeDefaults('forward', letter, own);
+		expect(forward).toMatchObject({ to: '', cc: '', subject: 'Fwd: Re: Our ordinance' });
+		expect(forward.quote).toContain('---------- Forwarded message ----------\nFrom: Tribal Office <office@nation.example>');
+		expect(forward.quote).toContain('Cc: clerk@nation.example, office@nation.example\n\nSee the ordinance.');
+		expect(composeDefaults('forward', { ...letter, subject: 'Fwd: x' }, own).subject).toBe('Fwd: x');
+		// A message the project sent is answered to the same people again.
+		const sent: AnsweredMessage = { ...letter, direction: 'out', from: { email: 'contact@example.org' }, to: [{ email: 'office@nation.example' }], cc: [{ email: 'clerk@nation.example' }] };
+		expect(composeDefaults('reply', sent, own)).toMatchObject({ to: 'office@nation.example', cc: '' });
+		expect(composeDefaults('all', sent, own)).toMatchObject({ to: 'office@nation.example', cc: 'clerk@nation.example' });
+		expect(replyAllReach({ ...letter, to: [{ email: 'contact@example.org' }], cc: [] }, own)).toBe(1);
+	});
+
+	it('answers the chosen message, and forwards with its attachments without threading or past the do-not-email list', async () => {
+		const context = await testContext(clock);
+		const carrier = recordingCarrier();
+		const first = await receiveMail(context, arriving(firstLetter));
+		if (first.outcome !== 'filed') throw new Error('not filed');
+		const withFile = [
+			'From: office@nation.example',
+			'To: contact@example.org',
+			'Subject: Re: A question about the model code',
+			'Message-ID: <second@nation.example>',
+			'In-Reply-To: <first@nation.example>',
+			'MIME-Version: 1.0',
+			'Content-Type: multipart/mixed; boundary="b"',
+			'',
+			'--b',
+			'Content-Type: text/plain',
+			'',
+			'Attached.',
+			'--b',
+			'Content-Type: application/pdf; name="ordinance.pdf"',
+			'Content-Disposition: attachment; filename="ordinance.pdf"',
+			'Content-Transfer-Encoding: base64',
+			'',
+			btoa('%PDF-1.7 pretend'),
+			'--b--',
+			''
+		].join('\r\n');
+		await receiveMail(context, arriving(withFile));
+		const thread = await getThread(context, first.threadIdentifier, 'lead');
+		const [older, newer] = thread!.messages;
+
+		const reply = await queueMessage(context, {
+			personIdentifier: 'lead',
+			threadIdentifier: first.threadIdentifier,
+			from: 'contact@example.org',
+			to: [{ email: 'office@nation.example' }],
+			subject: 'Re: A question about the model code',
+			text: 'On your first message: yes.',
+			answering: older.identifier
+		});
+		await sendMessage(context, { replies: carrier, outreach: null }, reply.messageIdentifier);
+		expect(carrier.sent[0].headers).toMatchObject({ 'In-Reply-To': '<first@nation.example>' });
+
+		const forward = await queueMessage(context, {
+			personIdentifier: 'lead',
+			threadIdentifier: first.threadIdentifier,
+			from: 'contact@example.org',
+			to: [{ email: 'advisor@law.example' }],
+			subject: 'Fwd: Re: A question about the model code',
+			text: 'For your review.',
+			forward: { message: newer.identifier, attachments: newer.attachments.map((item) => item.identifier) }
+		});
+		expect(forward.threadIdentifier).toBe(first.threadIdentifier);
+		await sendMessage(context, { replies: carrier, outreach: null }, forward.messageIdentifier);
+		expect(carrier.sent[1].headers?.['In-Reply-To']).toBeUndefined();
+		expect(carrier.sent[1].attachments?.map((item) => [item.filename, new TextDecoder().decode(item.content)])).toEqual([['ordinance.pdf', '%PDF-1.7 pretend']]);
+		expect((await getThread(context, first.threadIdentifier, 'lead'))!.actions.map((item) => item.action)).toContain('Forwarded');
+
+		await suppress(context, 'gone@law.example', 'asked');
+		await expect(
+			queueMessage(context, {
+				personIdentifier: 'lead',
+				threadIdentifier: first.threadIdentifier,
+				from: 'contact@example.org',
+				to: [{ email: 'gone@law.example' }],
+				subject: 'Fwd: x',
+				text: '',
+				forward: { message: newer.identifier, attachments: [] }
+			})
+		).rejects.toThrow(CompositionError);
+	});
+});
+
 describe('the inbox’s views', () => {
-	it('finds conversations by words, hides snoozed ones until their time, and empties Deleted after 30 days', async () => {
+	it('finds conversations by words, keeps reminded ones out of the inbox until their time, and empties Deleted after 30 days', async () => {
 		const context = await testContext(clock);
 		const first = await receiveMail(context, arriving(firstLetter));
 		await receiveMail(context, arriving(rawMessage({ From: 'b@else.example', To: 'contact@example.org', Subject: 'Gaming compact' }, 'About the compact')));
@@ -267,17 +377,24 @@ describe('the inbox’s views', () => {
 		expect((await listThreads(context, { view: 'inbox', personIdentifier: 'lead', search: 'peacemak' })).threads.map((item) => item.identifier)).toEqual([first.threadIdentifier]);
 		expect((await listThreads(context, { view: 'inbox', personIdentifier: 'lead', search: 'office@nation.example "' })).threads).toHaveLength(1);
 
-		await snooze(context, 'lead', first.threadIdentifier, '2026-11-25T00:00:00Z');
+		await setReminder(context, 'lead', first.threadIdentifier, '2026-11-25T00:00:00Z');
 		expect((await listThreads(context, { view: 'inbox', personIdentifier: 'lead' })).threads).toHaveLength(1);
-		expect((await listThreads(context, { view: 'snoozed', personIdentifier: 'lead' })).threads).toHaveLength(1);
+		expect((await listThreads(context, { view: 'reminders', personIdentifier: 'lead' })).threads).toHaveLength(1);
 		const later = { ...context, now: () => new Date('2026-11-25T00:05:00Z') };
-		expect(await wakeSnoozed(later)).toBe(1);
+		expect(await bringBackReminders(later)).toBe(1);
 		expect((await listThreads(later, { view: 'inbox', personIdentifier: 'lead' })).threads).toHaveLength(2);
+		expect((await getThread(later, first.threadIdentifier, 'lead'))!.actions.map((item) => item.action)).toContain('Back in the inbox: the reminder came due');
 
-		await setFollowUp(context, 'lead', first.threadIdentifier, '2026-11-24T16:00:00Z');
-		expect((await listThreads(context, { view: 'follow-up', personIdentifier: 'lead' })).threads).toHaveLength(1);
+		// An archived conversation with a reminder comes back to the inbox too; moving it to Deleted ends the reminder.
+		await setReminder(context, 'lead', first.threadIdentifier, '2026-11-26T00:00:00Z');
+		await moveToFolder(context, 'lead', first.threadIdentifier, 'archive');
+		const after = { ...context, now: () => new Date('2026-11-26T00:05:00Z') };
+		expect(await bringBackReminders(after)).toBe(1);
+		expect((await getThread(after, first.threadIdentifier, 'lead'))!.folder).toBe('inbox');
+		await setReminder(context, 'lead', first.threadIdentifier, '2026-11-27T00:00:00Z');
 
 		await moveToFolder(context, 'lead', first.threadIdentifier, 'trash');
+		expect((await getThread(context, first.threadIdentifier, 'lead'))!.remindAt).toBeNull();
 		const keys = context.bucket.files.size;
 		expect(await purgeDeleted({ ...context, now: () => new Date('2026-12-30T00:00:00Z') })).toBe(1);
 		expect(context.bucket.files.size).toBeLessThan(keys);
@@ -373,7 +490,7 @@ describe('outreach', () => {
 		expect(thread!.folder).toBe('inbox');
 		expect(thread!.tags.map((tag) => tag.name)).toContain('Outreach reply');
 		expect(thread!.outreach).toMatchObject({ status: 'replied' });
-		expect(thread!.followUpAt).toBeNull();
+		expect(thread!.remindAt).toBeNull();
 
 		// The other recipient unsubscribes by address before their turn comes.
 		const waiting = await context.database.prepare(`SELECT identifier, email FROM outreach_recipients WHERE status = 'queued'`).first<{ identifier: string; email: string }>();

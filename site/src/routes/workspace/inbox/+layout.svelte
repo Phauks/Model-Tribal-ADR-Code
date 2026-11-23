@@ -8,7 +8,6 @@
 	import BellRing from '@lucide/svelte/icons/bell-ring';
 	import CalendarClock from '@lucide/svelte/icons/calendar-clock';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
-	import Clock from '@lucide/svelte/icons/clock';
 	import FolderIcon from '@lucide/svelte/icons/folder';
 	import FolderCog from '@lucide/svelte/icons/folder-cog';
 	import InboxIcon from '@lucide/svelte/icons/inbox';
@@ -27,8 +26,7 @@
 	const icons: Record<string, Component> = {
 		inbox: InboxIcon,
 		mine: UserCheck,
-		'follow-up': BellRing,
-		snoozed: Clock,
+		reminders: BellRing,
 		scheduled: CalendarClock,
 		sent: Send,
 		archive: Archive,
@@ -53,7 +51,7 @@
 	<details class="mail-nav" bind:open>
 		<summary><ChevronDown size={18} aria-hidden="true" class="fold" />Mailboxes</summary>
 		<nav aria-label="Mailboxes">
-			<a class="button compose" href="{base}/new"><SquarePen size={18} aria-hidden="true" /> Write a message</a>
+			<a class="button compose" href="{base}/new"><SquarePen size={18} aria-hidden="true" /> Compose</a>
 			<ul class="nav-list">
 				{#each data.views as view (view.key)}
 					{@const Icon = icons[view.key]}
@@ -61,7 +59,7 @@
 						<a href={view.key === 'inbox' ? base : `${base}?view=${view.key}`} aria-current={currentView === view.key ? 'page' : undefined}>
 							<Icon size={18} aria-hidden="true" />
 							<span class="name">{view.label}</span>
-							{#if data.counts[view.key]}<span class="count" aria-label="{data.counts[view.key]} unread">{data.counts[view.key]}</span>{/if}
+							{#if data.counts[view.key]}<span class="count" aria-label="{data.counts[view.key]} {view.key === 'reminders' || view.key === 'scheduled' ? 'waiting' : 'unread'}">{data.counts[view.key]}</span>{/if}
 						</a>
 					</li>
 				{/each}

@@ -1,8 +1,8 @@
 <script lang="ts">
-	// The box for writing mail, shared by a new message and a reply
-	// (site/MAIL.md): address rows, the message, and a bar with Send, attach,
-	// and "send later" or "remind me if no reply". It works without scripts;
-	// with them, Cc and Bcc fold away and chosen files are listed.
+	// The box for writing mail, shared by a new message, a reply, a reply to
+	// all and a forward (site/MAIL.md): address rows, the message, and a bar
+	// with Send, attach, and "send later" or "remind me". It works without
+	// scripts; with them, Cc and Bcc fold away and chosen files are listed.
 	import { onMount } from 'svelte';
 	import Clock from '@lucide/svelte/icons/clock';
 	import Paperclip from '@lucide/svelte/icons/paperclip';
@@ -15,30 +15,45 @@
 		addresses,
 		from,
 		to = '',
+		cc: startingCc = '',
 		subject = '',
 		text = '',
 		quote = '',
 		suggestions = [],
 		discard = null,
-		idPrefix
+		idPrefix,
+		mode = null,
+		message: answering = null,
+		forwarded = [],
+		focus = false
 	}: {
 		action: string;
 		addresses: readonly string[];
 		from: string;
 		to?: string;
+		cc?: string;
 		subject?: string;
 		text?: string;
-		/** The last message, quoted, which the writer can leave out. */
+		/** The message being answered, quoted, which the writer can leave out. */
 		quote?: string;
 		suggestions?: { email: string; label: string }[];
 		/** Where "Discard" goes, or null for no Discard. */
 		discard?: string | null;
 		idPrefix: string;
+		/** In a conversation: reply, reply to all, or forward, and the message it answers. */
+		mode?: 'reply' | 'all' | 'forward' | null;
+		message?: string | null;
+		/** A forwarded message's attachments, each sent along unless unticked. */
+		forwarded?: { identifier: string; filename: string; size: number }[];
+		/** Put the cursor in the box when the page opens, after a Reply, Reply all or Forward button. */
+		focus?: boolean;
 	} = $props();
 
 	let ready = $state(false);
 	let zone = $state('America/Denver');
-	let showCopies = $state(false);
+	// The page keys the box on what it answers, so these start values are meant to be read once.
+	const startingCopies = () => startingCc;
+	let showCopies = $state(startingCopies() !== '');
 	let quoted = $state(true);
 	// The text starts as what the page passed (a draft kept after a problem, plus the quote) and is the writer's from then on.
 	const startingText = () => `${text}${quote}`;
@@ -46,15 +61,25 @@
 	// Every box keeps what was typed in it as state: a box written as value={…} would be reset whenever another part of the form changes.
 	const startingFields = () => ({ to, subject, from: from || addresses[0] || '' });
 	let fields = $state(startingFields());
-	let cc = $state('');
+	let cc = $state(startingCopies());
 	let bcc = $state('');
 	let files = $state<string[]>([]);
 	let sendAt = $state('');
-	let followUpAt = $state('');
+	let remindAt = $state('');
+	let toBox: HTMLInputElement | undefined = $state();
+	let textBox: HTMLTextAreaElement | undefined = $state();
 	onMount(() => {
 		zone = Intl.DateTimeFormat().resolvedOptions().timeZone || zone;
 		ready = true;
+		if (!focus) return;
+		// A forward starts with whom to send it to; a reply starts above the quote.
+		if (mode === 'forward') toBox?.focus();
+		else if (textBox) {
+			textBox.focus();
+			textBox.setSelectionRange(0, 0);
+		}
 	});
+	const forwarding = $derived(mode === 'forward');
 
 	function chose(event: Event): void {
 		files = [...((event.currentTarget as HTMLInputElement).files ?? [])].map((file) => file.name);
@@ -76,6 +101,8 @@
 
 <form method="post" {action} enctype="multipart/form-data" class="composer">
 	<input type="hidden" name="zone" value={zone} />
+	{#if mode}<input type="hidden" name="mode" value={mode} />{/if}
+	{#if answering}<input type="hidden" name="message" value={answering} />{/if}
 	<div class="rows">
 		<div class="row">
 			<label for="{idPrefix}-from">From</label>
@@ -89,7 +116,7 @@
 		</div>
 		<div class="row">
 			<label for="{idPrefix}-to">To</label>
-			<input type="text" id="{idPrefix}-to" name="to" bind:value={fields.to} list="{idPrefix}-book" required autocomplete="off" placeholder="Name or address; commas between several" />
+			<input type="text" id="{idPrefix}-to" name="to" bind:this={toBox} bind:value={fields.to} list="{idPrefix}-book" required autocomplete="off" placeholder="Name or address; commas between several" />
 			{#if ready && !showCopies}
 				<button type="button" class="link-button" onclick={() => (showCopies = true)}>Cc Bcc</button>
 			{/if}
@@ -116,32 +143,48 @@
 	{/if}
 
 	<label for="{idPrefix}-text" class="visually-hidden">Message</label>
-	<textarea id="{idPrefix}-text" name="text" rows="12" required placeholder="Write your message" bind:value={message}></textarea>
+	<textarea
+		id="{idPrefix}-text"
+		name="text"
+		rows="12"
+		required={!forwarding}
+		placeholder={forwarding ? 'Add a note above the forwarded message (optional)' : 'Write your message'}
+		bind:this={textBox}
+		bind:value={message}
+	></textarea>
 
-	{#if quote}
-		<label class="option small"><input type="checkbox" bind:checked={quoted} onchange={toggleQuote} /> Quote the last message</label>
+	{#if forwarded.length}
+		<fieldset class="forwarded small">
+			<legend>Attachments of the forwarded message</legend>
+			{#each forwarded as file (file.identifier)}
+				<label><input type="checkbox" name="forwardAttachment" value={file.identifier} checked /><Paperclip size={14} aria-hidden="true" />{file.filename}</label>
+			{/each}
+		</fieldset>
+	{/if}
+	{#if quote && !forwarding}
+		<label class="option small"><input type="checkbox" bind:checked={quoted} onchange={toggleQuote} /> Quote the message</label>
 	{/if}
 	{#if files.length}
 		<ul class="files small" aria-label="Attached files">
 			{#each files as file (file)}<li><Paperclip size={14} aria-hidden="true" />{file}</li>{/each}
 		</ul>
 	{/if}
-	{#if sendAt || followUpAt}
+	{#if sendAt || remindAt}
 		<p class="small timing">
 			{#if sendAt}Goes {new Date(sendAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}.{/if}
-			{#if followUpAt}Reminder {new Date(followUpAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })} if no reply.{/if}
+			{#if remindAt}Back in your inbox {new Date(remindAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })} unless they reply first.{/if}
 		</p>
 	{/if}
 
 	<div class="bar">
-		<button class="button send" type="submit"><SendIcon size={18} aria-hidden="true" />{sendAt ? 'Schedule' : 'Send'}</button>
+		<button class="button send" type="submit"><SendIcon size={18} aria-hidden="true" />{sendAt ? 'Schedule' : forwarding ? 'Forward' : 'Send'}</button>
 		<label class="icon-button attach" title="Attach files">
 			<Paperclip size={20} aria-hidden="true" />
 			<span class="visually-hidden">Attach files</span>
 			<input type="file" name="attachments" multiple onchange={chose} />
 		</label>
 		<details class="timing-menu">
-			<summary class="icon-button" title="Send later, or be reminded if no reply" aria-label="Send later, or be reminded if no reply">
+			<summary class="icon-button" title="Send later, or remind me" aria-label="Send later, or remind me">
 				<Clock size={20} aria-hidden="true" />
 			</summary>
 			<div class="popover">
@@ -157,13 +200,13 @@
 					{/if}
 				</div>
 				<div class="field">
-					<label for="{idPrefix}-follow">Remind me if no reply by</label>
-					<input id="{idPrefix}-follow" type="datetime-local" name="followUpAt" bind:value={followUpAt} />
+					<label for="{idPrefix}-remind">Remind me <span class="hint">unless they reply first</span></label>
+					<input id="{idPrefix}-remind" type="datetime-local" name="remindAt" bind:value={remindAt} />
 					{#if ready}
 						<span class="quick">
-							<button type="button" class="link-button" onclick={() => (followUpAt = morning(3))}>In 3 days</button>
-							<button type="button" class="link-button" onclick={() => (followUpAt = morning(7))}>In a week</button>
-							{#if followUpAt}<button type="button" class="link-button" onclick={() => (followUpAt = '')}>No reminder</button>{/if}
+							<button type="button" class="link-button" onclick={() => (remindAt = morning(3))}>In 3 days</button>
+							<button type="button" class="link-button" onclick={() => (remindAt = morning(7))}>In a week</button>
+							{#if remindAt}<button type="button" class="link-button" onclick={() => (remindAt = '')}>No reminder</button>{/if}
 						</span>
 					{/if}
 				</div>
@@ -248,6 +291,24 @@
 		gap: var(--space-2);
 		padding: 0 var(--space-4);
 	}
+	.forwarded {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-3);
+		margin: var(--space-2) var(--space-4) 0;
+		padding: var(--space-2) var(--space-3);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+	}
+	.forwarded legend {
+		padding: 0 var(--space-1);
+		color: var(--color-ink-muted);
+	}
+	.forwarded label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
 	.files {
 		list-style: none;
 		display: flex;
@@ -269,6 +330,8 @@
 		color: var(--color-link);
 	}
 	.bar {
+		/* The send-later box opens above the bar, from its left edge, so it stays on a phone's screen. */
+		position: relative;
 		display: flex;
 		align-items: center;
 		gap: var(--space-2);
@@ -293,9 +356,7 @@
 		cursor: pointer;
 		width: 100%;
 	}
-	.timing-menu {
-		position: relative;
-	}
+
 	.timing-menu > summary {
 		list-style: none;
 	}
@@ -307,8 +368,8 @@
 	}
 	.popover {
 		position: absolute;
-		bottom: calc(100% + var(--space-2));
-		left: 0;
+		bottom: calc(100% - var(--space-2));
+		left: var(--space-4);
 		z-index: 5;
 		width: min(22rem, 80vw);
 		padding: var(--space-4);

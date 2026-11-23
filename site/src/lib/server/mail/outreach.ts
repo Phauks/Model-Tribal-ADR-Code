@@ -568,7 +568,7 @@ export async function runOutreach(context: MailContext, carriers: MailCarriers, 
 				context.database
 					.prepare(
 						`INSERT INTO mail_threads (identifier, subject, normalized_subject, folder, unread, project_address, counterpart_address, counterpart_name,
-						 nation_identifier, message_count, last_message_at, follow_up_at, follow_up_set_at, created_at, updated_at)
+						 nation_identifier, message_count, last_message_at, remind_at, remind_set_at, created_at, updated_at)
 						 VALUES (?1, ?2, ?3, 'archive', 0, ?4, ?5, ?6, ?7, 0, ?8, ?9, CASE WHEN ?9 IS NULL THEN NULL ELSE ?8 END, ?8, ?8)`
 					)
 					.bind(threadIdentifier, subject, normalizeSubject(subject), outreach.replyTo ?? outreach.from, recipient.email, recipient.name, recipient.nation_identifier, stamp, followUp),

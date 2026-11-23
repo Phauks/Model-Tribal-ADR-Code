@@ -2,7 +2,7 @@
  * Reading and changing conversations in the project inbox: the lists in the
  * left column, one conversation with its messages and notes, and the
  * actions on it (read, archive, delete, file in a folder, assign, tag,
- * snooze, follow up). Every change is recorded in mail_actions.
+ * remind). Every change is recorded in mail_actions.
  */
 import { folderDepthLimit, folders, type Folder, type InboxView, type MailAddress, type TagColor, type ThreadFolder } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailContext } from './context.ts';
@@ -21,8 +21,8 @@ export interface ThreadSummary {
 	assigneeName: string | null;
 	messageCount: number;
 	lastMessageAt: string;
-	snoozedUntil: string | null;
-	followUpAt: string | null;
+	/** "Remind me": out of the Inbox list until then, or until a reply comes. */
+	remindAt: string | null;
 	stopRequested: boolean;
 	snippet: string;
 	hasAttachments: boolean;
@@ -69,13 +69,11 @@ export function searchQuery(text: string): string | null {
 function viewCondition(view: InboxView, person: string, at: string): { sql: string; values: string[] } {
 	switch (view) {
 		case 'inbox':
-			return { sql: `t.folder = 'inbox' AND (t.snoozed_until IS NULL OR t.snoozed_until <= ?)`, values: [at] };
+			return { sql: `t.folder = 'inbox' AND (t.remind_at IS NULL OR t.remind_at <= ?)`, values: [at] };
 		case 'mine':
-			return { sql: `t.folder = 'inbox' AND t.assignee_identifier = ?`, values: [person] };
-		case 'follow-up':
-			return { sql: `t.folder <> 'trash' AND t.follow_up_at IS NOT NULL AND t.follow_up_at <= ?`, values: [at] };
-		case 'snoozed':
-			return { sql: `t.folder = 'inbox' AND t.snoozed_until > ?`, values: [at] };
+			return { sql: `t.folder = 'inbox' AND t.assignee_identifier = ? AND (t.remind_at IS NULL OR t.remind_at <= ?)`, values: [person, at] };
+		case 'reminders':
+			return { sql: `t.folder NOT IN ('spam', 'trash') AND t.remind_at > ?`, values: [at] };
 		case 'scheduled':
 			return { sql: `EXISTS (SELECT 1 FROM mail_messages s WHERE s.thread_identifier = t.identifier AND s.status = 'scheduled')`, values: [] };
 		case 'sent':
@@ -98,8 +96,7 @@ interface ThreadRow {
 	assignee_name: string | null;
 	message_count: number;
 	last_message_at: string;
-	snoozed_until: string | null;
-	follow_up_at: string | null;
+	remind_at: string | null;
 	stop_requested: number;
 	snippet: string | null;
 	has_attachments: number;
@@ -146,8 +143,8 @@ export async function listThreads(
 	const { results } = await context.database
 		.prepare(
 			`SELECT t.identifier, t.subject, t.folder, t.folder_identifier, t.unread, t.counterpart_address, t.counterpart_name, t.nation_identifier,
-			 t.assignee_identifier, p.display_name AS assignee_name, t.message_count, t.last_message_at, t.snoozed_until,
-			 t.follow_up_at, t.stop_requested,
+			 t.assignee_identifier, p.display_name AS assignee_name, t.message_count, t.last_message_at, t.remind_at,
+			 t.stop_requested,
 			 (SELECT m.snippet FROM mail_messages m WHERE m.thread_identifier = t.identifier AND m.status NOT IN ('draft', 'cancelled')
 			  ORDER BY m.created_at DESC LIMIT 1) AS snippet,
 			 EXISTS (SELECT 1 FROM mail_attachments a JOIN mail_messages m ON m.identifier = a.message_identifier
@@ -178,8 +175,7 @@ export async function listThreads(
 			assigneeName: row.assignee_name,
 			messageCount: row.message_count,
 			lastMessageAt: row.last_message_at,
-			snoozedUntil: row.snoozed_until,
-			followUpAt: row.follow_up_at,
+			remindAt: row.remind_at,
 			stopRequested: row.stop_requested === 1,
 			snippet: row.snippet ?? '',
 			hasAttachments: row.has_attachments === 1,
@@ -215,23 +211,21 @@ export async function viewCounts(context: MailContext, personIdentifier: string)
 	const row = await context.database
 		.prepare(
 			`SELECT
-			 SUM(folder = 'inbox' AND unread = 1 AND (snoozed_until IS NULL OR snoozed_until <= ?2)) AS inbox,
-			 SUM(folder = 'inbox' AND unread = 1 AND assignee_identifier = ?1) AS mine,
-			 SUM(folder <> 'trash' AND follow_up_at IS NOT NULL AND follow_up_at <= ?2) AS followUp,
-			 SUM(folder = 'inbox' AND snoozed_until > ?2) AS snoozed,
+			 SUM(folder = 'inbox' AND unread = 1 AND (remind_at IS NULL OR remind_at <= ?2)) AS inbox,
+			 SUM(folder = 'inbox' AND unread = 1 AND assignee_identifier = ?1 AND (remind_at IS NULL OR remind_at <= ?2)) AS mine,
+			 SUM(folder NOT IN ('spam', 'trash') AND remind_at > ?2) AS reminders,
 			 SUM(folder = 'spam' AND unread = 1) AS spam
 			 FROM mail_threads`
 		)
 		.bind(personIdentifier, at)
-		.first<{ inbox: number | null; mine: number | null; followUp: number | null; snoozed: number | null; spam: number | null }>();
+		.first<{ inbox: number | null; mine: number | null; reminders: number | null; spam: number | null }>();
 	const scheduled = await context.database
 		.prepare(`SELECT COUNT(DISTINCT thread_identifier) AS count FROM mail_messages WHERE status = 'scheduled'`)
 		.first<{ count: number }>();
 	return {
 		inbox: row?.inbox ?? 0,
 		mine: row?.mine ?? 0,
-		'follow-up': row?.followUp ?? 0,
-		snoozed: row?.snoozed ?? 0,
+		reminders: row?.reminders ?? 0,
 		spam: row?.spam ?? 0,
 		scheduled: scheduled?.count ?? 0
 	};
@@ -417,8 +411,7 @@ function listThreadSummary(row: ThreadRow, tags: MailTag[]): ThreadSummary {
 		assigneeName: row.assignee_name,
 		messageCount: row.message_count,
 		lastMessageAt: row.last_message_at,
-		snoozedUntil: row.snoozed_until,
-		followUpAt: row.follow_up_at,
+		remindAt: row.remind_at,
 		stopRequested: row.stop_requested === 1,
 		snippet: '',
 		hasAttachments: false,
@@ -464,12 +457,14 @@ export function isBuiltInFolder(value: string | null | undefined): value is Fold
  */
 export async function moveToFolder(context: MailContext, personIdentifier: string, threadIdentifier: string, place: string): Promise<boolean> {
 	if (isBuiltInFolder(place)) {
-		await change(context, personIdentifier, threadIdentifier, 'folder = ?, folder_identifier = NULL, snoozed_until = NULL', [place], folderActions[place]);
+		// Archiving keeps a reminder; moving to the inbox, Spam or Deleted ends it, since the conversation is then where it belongs.
+		const ends = place === 'archive' ? '' : ', remind_at = NULL, remind_set_at = NULL';
+		await change(context, personIdentifier, threadIdentifier, `folder = ?, folder_identifier = NULL${ends}`, [place], folderActions[place]);
 		return true;
 	}
 	const folder = await context.database.prepare('SELECT name FROM mail_folders WHERE identifier = ?').bind(place).first<{ name: string }>();
 	if (!folder) return false;
-	await change(context, personIdentifier, threadIdentifier, `folder = 'folder', folder_identifier = ?, snoozed_until = NULL`, [place], 'Filed', folder.name);
+	await change(context, personIdentifier, threadIdentifier, `folder = 'folder', folder_identifier = ?`, [place], 'Filed', folder.name);
 	return true;
 }
 
@@ -529,28 +524,21 @@ export async function changeMany(context: MailContext, personIdentifier: string,
 	return changed;
 }
 
-export async function snooze(context: MailContext, personIdentifier: string, threadIdentifier: string, until: string | null): Promise<void> {
-	await change(
-		context,
-		personIdentifier,
-		threadIdentifier,
-		`snoozed_until = ?, folder = 'inbox', folder_identifier = NULL`,
-		[until],
-		until ? 'Snoozed' : 'Snooze ended',
-		until
-	);
-}
-
-/** "Remind me if no reply by": a reply that arrives after now clears it (src/lib/server/mail/inbound.ts). */
-export async function setFollowUp(context: MailContext, personIdentifier: string, threadIdentifier: string, at: string | null): Promise<void> {
+/**
+ * "Remind me": the conversation leaves the Inbox list until the time, then
+ * comes back to the inbox as unread (bringBackReminders). A reply that
+ * arrives before then brings it back at once and ends the reminder
+ * (src/lib/server/mail/inbound.ts). Null ends the reminder now.
+ */
+export async function setReminder(context: MailContext, personIdentifier: string, threadIdentifier: string, at: string | null): Promise<void> {
 	const stamp = currentTime(context).toISOString();
 	await change(
 		context,
 		personIdentifier,
 		threadIdentifier,
-		'follow_up_at = ?, follow_up_set_at = ?',
+		'remind_at = ?, remind_set_at = ?',
 		[at, at ? stamp : null],
-		at ? 'Reminder set' : 'Reminder cleared',
+		at ? 'Reminder set' : 'Reminder ended',
 		at
 	);
 }
@@ -709,14 +697,29 @@ export async function deleteFolder(context: MailContext, personIdentifier: strin
 	return moved.meta.changes ?? 0;
 }
 
-/** Shows snoozed conversations again once their time comes, as unread. Run by the mail tick. */
-export async function wakeSnoozed(context: MailContext): Promise<number> {
+/**
+ * Brings conversations whose reminder has come back to the inbox, as
+ * unread, wherever they were filed (but not out of Spam or Deleted). Run by
+ * the mail tick.
+ */
+export async function bringBackReminders(context: MailContext): Promise<number> {
 	const at = currentTime(context).toISOString();
-	const result = await context.database
-		.prepare(`UPDATE mail_threads SET snoozed_until = NULL, unread = 1, updated_at = ?1 WHERE snoozed_until IS NOT NULL AND snoozed_until <= ?1`)
+	const { results } = await context.database
+		.prepare(`SELECT identifier FROM mail_threads WHERE remind_at IS NOT NULL AND remind_at <= ? AND folder NOT IN ('spam', 'trash') LIMIT 100`)
 		.bind(at)
-		.run();
-	return result.meta.changes ?? 0;
+		.all<{ identifier: string }>();
+	if (results.length === 0) return 0;
+	await context.database.batch(
+		results.flatMap((row) => [
+			context.database
+				.prepare(
+					`UPDATE mail_threads SET remind_at = NULL, remind_set_at = NULL, unread = 1, folder = 'inbox', folder_identifier = NULL, updated_at = ? WHERE identifier = ?`
+				)
+				.bind(at, row.identifier),
+			actionStatement(context, { personIdentifier: null, action: 'Back in the inbox: the reminder came due', threadIdentifier: row.identifier })
+		])
+	);
+	return results.length;
 }
 
 /**

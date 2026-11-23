@@ -54,7 +54,7 @@ export const actions: Actions = {
 				text: values.text,
 				attachments: await readAttachments(form),
 				sendAt: whenFromForm(form, 'sendAt'),
-				followUpAt: whenFromForm(form, 'followUpAt')
+				remindAt: whenFromForm(form, 'remindAt')
 			});
 			thread = queued.threadIdentifier;
 			if (!queued.scheduled) await sendMessage(context, mailCarriers(context), queued.messageIdentifier);

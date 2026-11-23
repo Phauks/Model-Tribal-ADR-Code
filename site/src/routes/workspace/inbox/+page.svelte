@@ -170,9 +170,9 @@
 						</span>
 						<span class="when">
 							{#if thread.hasAttachments}<span title="Has an attachment"><Paperclip size={16} aria-label="Has an attachment" /></span>{/if}
-							{#if thread.followUpAt}<span title="Reminder {listDate(thread.followUpAt)}"><BellRing size={16} aria-label="Reminder {listDate(thread.followUpAt)}" /></span>{/if}
+							{#if thread.remindAt && data.view !== 'reminders'}<span title="Reminder {listDate(thread.remindAt)}"><BellRing size={16} aria-label="Reminder {listDate(thread.remindAt)}" /></span>{/if}
 							{#if data.view === 'scheduled' && thread.scheduledFor}Goes {listDate(thread.scheduledFor)}
-							{:else if data.view === 'snoozed' && thread.snoozedUntil}Back {listDate(thread.snoozedUntil)}
+							{:else if data.view === 'reminders' && thread.remindAt}Back {listDate(thread.remindAt)}
 							{:else}{listDate(thread.lastMessageAt)}{/if}
 						</span>
 						{#if thread.tags.length || thread.stopRequested || thread.assigneeName || (thread.folder === 'folder' && !data.folder)}

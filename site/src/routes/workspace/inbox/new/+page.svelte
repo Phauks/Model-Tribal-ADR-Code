@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Write a message · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>Compose · Inbox · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
 <div class="head">

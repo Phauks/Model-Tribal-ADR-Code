@@ -3,11 +3,11 @@ import { isMailRun } from '#lib/server/mail/internal-run.ts';
 import { sendDueMessages } from '#lib/server/mail/outbound.ts';
 import { runOutreach } from '#lib/server/mail/outreach.ts';
 import { mailCarriers, mailContext } from '#lib/server/mail/runtime.ts';
-import { purgeDeleted, wakeSnoozed } from '#lib/server/mail/store.ts';
+import { bringBackReminders, purgeDeleted } from '#lib/server/mail/store.ts';
 import type { RequestHandler } from './$types';
 
 // The mail run every five minutes (wrangler.jsonc, "triggers"): scheduled
-// messages whose time has come, snoozed conversations whose time has come,
+// messages whose time has come, conversations whose reminder has come due,
 // the next outreach messages, and conversations deleted 30 days ago. Does
 // nothing while email is off.
 export const prerender = false;
@@ -19,7 +19,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	const carriers = mailCarriers(context);
 	const result = {
 		scheduled: await sendDueMessages(context, carriers),
-		woken: await wakeSnoozed(context),
+		reminders: await bringBackReminders(context),
 		outreach: await runOutreach(context, carriers),
 		purged: await purgeDeleted(context)
 	};
