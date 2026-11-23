@@ -41,6 +41,7 @@
 	import { onNavigate } from '$app/navigation';
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
 	import { resizableTables } from '#lib/tables/resizable-columns.ts';
+	import { markPageStarted } from '#lib/page-started.ts';
 	import type { LayoutProps } from './$types';
 
 	let { children, data }: LayoutProps = $props();
@@ -48,6 +49,8 @@
 	// Pages cross-fade, and printing finishes any movement first (src/lib/motion.ts).
 	onNavigate(crossFadePages);
 	onMount(startMotion);
+	// The layout's own start comes after every part inside it has started (src/lib/page-started.ts).
+	onMount(markPageStarted);
 
 </script>
 
