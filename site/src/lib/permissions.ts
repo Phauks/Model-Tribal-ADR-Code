@@ -61,7 +61,9 @@ export type Permission =
 	| 'sign-off'
 	| 'review-for-nation'
 	// The private address book (migrations/0012_address_book.sql): the lead author only.
-	| 'manage-address-book';
+	| 'manage-address-book'
+	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
+	| 'hide-changes';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -74,7 +76,8 @@ const grants: Record<Role, readonly Permission[]> = {
 		'read-reviews',
 		'comment',
 		'sign-off',
-		'manage-address-book'
+		'manage-address-book',
+		'hide-changes'
 	],
 	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off'],
 	'co-author': ['read-reviews', 'comment'],
