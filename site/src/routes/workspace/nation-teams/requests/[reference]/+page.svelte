@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import {
 		applicationStatusLabels,
 		describeParts,
@@ -26,7 +27,12 @@
 	<title>Request {application.reference} · Nation teams · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/nation-teams">Nation teams</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Nation teams', href: '/workspace/nation-teams' }
+	]}
+/>
 <h1>Request {application.reference}</h1>
 
 {#if form && 'problem' in form}

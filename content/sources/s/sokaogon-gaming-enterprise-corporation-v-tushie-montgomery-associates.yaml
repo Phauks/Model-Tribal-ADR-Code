@@ -26,6 +26,11 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1996-04-02']
+  printed: "Argued April 2, 1996. Decided June 5, 1996."
+  source: https://static.case.law/f3d/86/cases/0656-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 719766
   citation: "86 F.3d 656"

@@ -4,6 +4,7 @@
 	// panel (the same one as the advanced search). The page is built with the
 	// first rows; in the browser it loads every row and reads the words and
 	// filters from the address.
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { onMount } from 'svelte';
 	import Download from '@lucide/svelte/icons/download';
 	import Check from '@lucide/svelte/icons/check';
@@ -144,7 +145,7 @@
 <span id={newTabNoteId} hidden>Opens in a new tab</span>
 
 <div class="recourse" {@attach outsideLinksOpenInNewTab}>
-	<nav aria-label="Breadcrumb" class="small breadcrumb"><a href="/nations">Nations</a> › Find recourse</nav>
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 	<h1>Find recourse</h1>
 	<p class="lead">
 		The dispute resolution provisions in Native nations’ own law codes, court rules and ordinances: {data.total.toLocaleString(
@@ -268,10 +269,6 @@
 </div>
 
 <style>
-	.breadcrumb {
-		margin-bottom: var(--space-2);
-	}
-
 	.layout.interactive {
 		display: grid;
 		grid-template-columns: minmax(13rem, 16rem) minmax(0, 1fr);

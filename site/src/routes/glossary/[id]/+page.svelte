@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import GlossaryEntry from '#lib/components/GlossaryEntry.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { basisLabels, statusLabels } from '#lib/glossary-labels.ts';
@@ -12,9 +13,7 @@
 	<title>{entry.term} · Glossary · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/glossary">Glossary</a> › {entry.term}
-</nav>
+<Breadcrumbs trail={[{ label: 'Glossary', href: '/glossary' }]} />
 
 <div class="reading">
 	<GlossaryEntry {entry} headingLevel={1} />

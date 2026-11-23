@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { onMount, tick } from 'svelte';
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import type { RecognitionBadge } from '#lib/recognition-badges.ts';
@@ -352,9 +353,7 @@
 	</noscript>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/nations">Nations</a> › Map
-</nav>
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
 <div class="reading">
 	<h1>Map of Native Nations</h1>

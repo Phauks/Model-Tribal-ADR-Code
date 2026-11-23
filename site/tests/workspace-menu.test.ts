@@ -15,6 +15,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'overview',
 			'essays',
 			'review-requests',
+			'comments',
 			'requests',
 			'inbox',
 			'outreach',
@@ -34,7 +35,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'nonprofit',
 			'service-checks',
 			'sponsors',
-			'book-orders',
+			'orders',
 			'activity'
 		]);
 	});
@@ -44,6 +45,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'overview',
 			'essays',
 			'review-requests',
+			'comments',
 			'requests',
 			'uploads',
 			'intake',
@@ -54,7 +56,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'rooms',
 			'nation-pages'
 		]);
-		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'review-requests', 'reviews', 'library', 'rooms']);
+		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'review-requests', 'comments', 'reviews', 'library', 'rooms']);
 		expect(names(workspacePagesFor(permissionsOf('nation-reviewer')))).toEqual(['overview', 'essays', 'nation-uploads', 'reviews']);
 	});
 
@@ -86,7 +88,7 @@ describe('the signed-in hint', () => {
 	});
 
 	it('keeps page names with hyphens, such as review-requests', () => {
-		const names = ['overview', 'review-requests', 'nation-uploads', 'address-book', 'book-orders'];
+		const names = ['overview', 'review-requests', 'nation-uploads', 'address-book', 'orders'];
 		expect(readSignedInHint(`signed-in-hint=${signedInHintValue(names)}`).workspacePageNames).toEqual(names);
 		expect(readSignedInHint('signed-in-hint=overview.-bad.bad-.a--b').workspacePageNames).toEqual(['overview']);
 	});

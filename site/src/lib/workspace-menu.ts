@@ -9,6 +9,7 @@ export type WorkspacePageName =
 	| 'overview'
 	| 'essays'
 	| 'review-requests'
+	| 'comments'
 	| 'requests'
 	| 'inbox'
 	| 'outreach'
@@ -29,7 +30,7 @@ export type WorkspacePageName =
 	| 'nonprofit'
 	| 'service-checks'
 	| 'sponsors'
-	| 'book-orders'
+	| 'orders'
 	| 'activity';
 
 export interface WorkspacePage {
@@ -46,6 +47,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'essays', label: 'Essays', link: '/workspace/essays' },
 	// Drafts and sections people asked this person to review (src/lib/server/essay-review-requests.ts).
 	{ name: 'review-requests', label: 'Review requests', link: '/workspace/review-requests', needs: 'comment' },
+	// Comments that mention this person or answer them (src/lib/server/essay-comments.ts).
+	{ name: 'comments', label: 'Comments for you', link: '/workspace/comments', needs: 'comment' },
 	{ name: 'requests', label: 'Requests', link: '/workspace/requests', needs: 'read-requests' },
 	{ name: 'inbox', label: 'Inbox', link: '/workspace/inbox', needs: 'read-mail' },
 	{ name: 'outreach', label: 'Outreach', link: '/workspace/outreach', needs: 'send-outreach' },
@@ -71,8 +74,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', needs: 'manage-nonprofit' },
 	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', needs: 'check-services' },
 	{ name: 'sponsors', label: 'Sponsors', link: '/workspace/sponsors', needs: 'manage-sponsors' },
-	// Printed-copy orders, problems buyers report, and refunds (docs/book-orders.md).
-	{ name: 'book-orders', label: 'Book orders', link: '/workspace/book-orders', needs: 'manage-book-orders' },
+	// Orders from the Store, problems buyers report, and refunds (docs/store.md, docs/book-orders.md).
+	{ name: 'orders', label: 'Orders', link: '/workspace/orders', needs: 'manage-orders' },
 	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
 ];
 

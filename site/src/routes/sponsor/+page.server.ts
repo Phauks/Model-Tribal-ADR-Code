@@ -13,7 +13,8 @@ export const prerender = false;
 
 const nothingGiven: GivenToward = {
 	total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, hosting: 0 },
-	siteLastYear: 0
+	siteLastYear: 0,
+	monthly: { cents: 0, sponsors: 0 }
 };
 
 export const load: PageServerLoad = async () => {
@@ -49,6 +50,7 @@ export const load: PageServerLoad = async () => {
 		giftsOpen: state.open,
 		receiver: state.open ? state.receiver : null,
 		counts: sponsorshipCounts,
-		goals: sponsorshipGoals(sponsorshipCounts, costs, given)
+		goals: sponsorshipGoals(sponsorshipCounts, costs, given),
+		monthly: given.monthly
 	};
 };

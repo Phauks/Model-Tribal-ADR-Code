@@ -1,6 +1,6 @@
 # Printed copies
 
-Readers can order a printed copy of the book on the website at `/book`. Lulu's Print API prints each copy on demand and mails it; Stripe Checkout takes the payment. Ordering is **off** until the lead author decides who receives the money (see "Before ordering goes live" below). Decision record [0044](decisions/0044-order-printed-copies-through-the-lulu-print-api.md) explains why.
+Readers can order a printed copy of the book on the website: the standard formats in one step from the Store ([store.md](store.md)), and any other choice as a special order at `/book`. Lulu's Print API prints each copy on demand and mails it; Stripe Checkout takes the payment. Ordering is **off** until the lead author decides who receives the money (see "Before ordering goes live" below). Decision record [0044](decisions/0044-order-printed-copies-through-the-lulu-print-api.md) explains why.
 
 ## How an order flows
 
@@ -9,7 +9,7 @@ Readers can order a printed copy of the book on the website at `/book`. Lulu's P
 3. The reader then enters the name, street, city, telephone and email the copy goes to, and may add a gift (see "Adding a gift" below). `/book/order` prices the order again with the full address and records it in the `book_orders` table. It then opens a Stripe Checkout page for the reader's price: Lulu's total, plus `BOOK_MARGIN_CENTS`, plus Stripe's card fee (`readerPriceCents`). A gift is a second line on that page.
 4. When Stripe reports the payment at `/book/payment-webhook`, the order is marked paid once and sent to Lulu as a print job, with a 120-minute delay before printing so a mistake can still be canceled. Lulu charges the card on file in the project's Lulu API account.
 5. Lulu downloads the interior and cover from `/book/files/...`, with a link key made from `BOOK_FILE_LINK_SECRET` for that one file.
-6. Lulu reports status changes at `/book/printer-webhook` (topic `PRINT_JOB_STATUS_CHANGED`, signed with the API secret). The reader's page `/book/orders/<order>` shows the status and tracking link.
+6. Lulu reports status changes at `/book/printer-webhook` (topic `PRINT_JOB_STATUS_CHANGED`, signed with the API secret). The reader's page `/orders/<order>` shows the status and tracking link (the old address, `/book/orders/<order>`, is sent on to it).
 7. Name, address, telephone and email are cleared 90 days after an order ships, is canceled or expires.
 
 Lulu's cost calculation asks for a city. Prices by postal code send the placeholder city "City for price" (`addressForQuote`), and `/book/order` prices again with the real city before anything is charged. Whether Lulu's sandbox accepts the placeholder has not been tried yet, because there are no sandbox keys; check it on the first test order.
@@ -28,7 +28,7 @@ Paid event tickets can reuse the same component when they come.
 
 ## Your orders and problems
 
-An order placed while signed in is linked to that account (`book_orders.account_identifier`) and listed under Account, **Your orders** (`/account/orders`), with where it stands, what was paid and refunded, and the tracking link. An order placed while signed out keeps only its private link, `/book/orders/<order>`, which Stripe's receipt page returns to. It is never matched to an account by email, because the email on an order is not checked. Deleting the account unlinks its orders; the "Your data" download includes them.
+An order placed while signed in is linked to that account (`book_orders.account_identifier`) and listed under Account, **Your orders** (`/account/orders`), with where it stands, what was paid and refunded, and the tracking link. An order placed while signed out keeps only its private link, `/orders/<order>`, which Stripe's receipt page returns to. It is never matched to an account by email, because the email on an order is not checked. Deleting the account unlinks its orders; the "Your data" download includes them.
 
 Each paid order's page has a **Problem with this order?** form (`site/src/lib/book-order-problems.ts`). The buyer picks what went wrong and says what happened:
 
@@ -41,9 +41,9 @@ Each paid order's page has a **Problem with this order?** form (`site/src/lib/bo
 
 A photo is stored in the private bucket under `book-orders/<order>/<problem>` with `storeSentFile` and opened only with `openScannedFile` (site/SCANNING.md). An order may have at most five open problems at once, and the form shares the request form's rate limit, so a leaked link cannot flood the project.
 
-Problems land on the workspace's **Book orders** page (`/workspace/book-orders`, permission `manage-book-orders`, the lead author only). It lists every order with the buyer's name and email, Lulu's job and status, a link to the payment in Stripe's dashboard, and the problems still open. The lead author writes an answer, which shows on the buyer's order page, or closes the problem. Claims for a reprint go to Lulu through Lulu's support form, with the buyer's photo.
+Problems land on the workspace's **Orders** page (`/workspace/orders`, permission `manage-orders`, the lead author only), which lists every purchase from the Store ([store.md](store.md), "Orders for any purchase"). It lists every order with the buyer's name and email, Lulu's job and status, a link to the payment in Stripe's dashboard, and the problems still open. The lead author writes an answer, which shows on the buyer's order page, or closes the problem. Claims for a reprint go to Lulu through Lulu's support form, with the buyer's photo.
 
-Refunds are made in Stripe's dashboard, then recorded on the Book orders page as the total refunded so far, up to the price and gift together. The buyer's order page and Your orders then show "Refunded" with the amount and date.
+Refunds are made in Stripe's dashboard, then recorded on the Orders page as the total refunded so far, up to the price and gift together. The buyer's order page and Your orders then show "Refunded" with the amount and date.
 
 Not built yet: emailing the buyer when the project answers, since outgoing email waits on the project's domain. Canceling or changing a print job through Lulu's API, and refunding through Stripe's API, are also left for later; Stripe's would need the restricted key to have write access to refunds.
 
@@ -103,6 +103,6 @@ The project becomes the seller of each copy. These are the lead author's decisio
 
 - **Who receives the money.** Payments land in the Stripe account that holds `STRIPE_SECRET_KEY`. Book sales count toward the 1023-EZ limit of $50,000 a year in gross receipts if the project incorporates as a nonprofit, so book receipts are tracked apart from gifts.
 - **Sales tax.** Lulu charges tax on each print job to the project's card. Whether the project must also collect and remit sales tax on its own sale to the reader, register in Nevada or other states, or give Lulu a resale certificate, needs checking before `live`.
-- **Refunds and misprints.** A paid order that Lulu refuses is marked `printer-refused`; the lead author fixes the file or refunds the reader from Stripe's dashboard and records it on the Book orders page. Lulu's own reprint policy for damaged copies applies to the project as Lulu's customer. Whether to accept returns of copies that arrived as ordered is the lead author's decision; the order page says the project decides each request.
+- **Refunds and misprints.** A paid order that Lulu refuses is marked `printer-refused`; the lead author fixes the file or refunds the reader from Stripe's dashboard and records it on the Orders page. Lulu's own reprint policy for damaged copies applies to the project as Lulu's customer. Whether to accept returns of copies that arrived as ordered is the lead author's decision; the order page says the project decides each request.
 - **Privacy.** Addresses go to Lulu and are cleared here 90 days after shipping. The book page says so.
 - **A webhook outage.** If Stripe's event never arrives, the order stays `awaiting-payment` while the reader has paid; check Stripe's dashboard against the table before refunding.

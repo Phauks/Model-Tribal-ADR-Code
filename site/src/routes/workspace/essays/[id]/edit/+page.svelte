@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import EssayEditor from '#lib/components/essays/EssayEditor.svelte';
 	import type { PageProps } from './$types';
 
@@ -9,9 +10,13 @@
 	<title>{data.canEdit ? 'Edit' : 'Read'}: {data.title} · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/workspace/essays">Essays</a> › <a href="/workspace/essays/{data.identifier}">{data.title}</a> › {data.canEdit ? 'Edit' : 'Read'}
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Essays', href: '/workspace/essays' },
+		{ label: data.title, href: `/workspace/essays/${data.identifier}` }
+	]}
+/>
 
 <h1 class="visually-hidden">{data.canEdit ? 'Edit' : 'Read'} {data.title}</h1>
 {#if data.gitConflict > 0}

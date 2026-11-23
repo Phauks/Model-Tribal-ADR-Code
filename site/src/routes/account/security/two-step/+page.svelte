@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CodeInput from '#lib/components/CodeInput.svelte';
 	import ErrorSummary from '#lib/components/ErrorSummary.svelte';
 	import type { PageProps } from './$types';
@@ -24,7 +25,7 @@
 	<title>{problem ? 'Error: ' : ''}Two-step sign-in · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/account/security">Sign-in and security</a></p>
+<Breadcrumbs trail={[{ label: 'Sign-in and security', href: '/account/security' }]} />
 <h1>Two-step sign-in</h1>
 
 <ErrorSummary {problems} />

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import ProfileSummary from '#lib/components/ProfileSummary.svelte';
 	import { creditSectionLabels, creditSections, fullName, profileStatusLabels } from '#lib/contributors.ts';
 	import { roleLabels, roles } from '#lib/permissions.ts';
@@ -18,7 +19,12 @@
 	<title>{fullName(profile.answers) || 'Contributor'} · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p><a href="/workspace/contributors">All contributors</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Contributors', href: '/workspace/contributors' }
+	]}
+/>
 <h1>{fullName(profile.answers) || '(no name given)'}</h1>
 
 {#if form && 'done' in form}

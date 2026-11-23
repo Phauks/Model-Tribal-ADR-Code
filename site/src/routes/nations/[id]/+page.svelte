@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
@@ -95,9 +96,7 @@
 	<title>{page.officialName} · Nations · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/nations">Nations</a> › {page.officialName}
-</nav>
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
 <!--
 	A record page (site/DESIGN.md, "Record pages", "Nation pages"): the text on

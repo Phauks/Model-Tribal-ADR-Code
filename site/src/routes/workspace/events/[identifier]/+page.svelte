@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Download from '@lucide/svelte/icons/download';
 	import EventFields from '#lib/components/EventFields.svelte';
 	import { attendanceKinds, attendanceLabels } from '#lib/event-calendar.ts';
@@ -18,7 +19,12 @@
 	<title>{data.event.title} · Events · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/events">Events</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Events', href: '/workspace/events' }
+	]}
+/>
 <h1>{data.event.title}</h1>
 <p>
 	<span class="chip">{data.event.status === 'draft' ? 'Draft' : data.event.status === 'published' ? 'Published' : 'Cancelled'}</span>

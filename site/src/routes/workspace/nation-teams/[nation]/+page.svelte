@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import {
 		atLeastTeamLevel,
 		describeParts,
@@ -36,7 +37,14 @@
 	<title>Team for {data.nation.title} · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-{#if data.isAdministrator}<p class="small"><a href="/workspace/nation-teams">Nation teams</a></p>{/if}
+{#if data.isAdministrator}
+	<Breadcrumbs
+		trail={[
+			{ label: 'Workspace', href: '/workspace' },
+			{ label: 'Nation teams', href: '/workspace/nation-teams' }
+		]}
+	/>
+{/if}
 <h1>Team for {data.nation.title}</h1>
 <p>
 	{#if data.isAdministrator}

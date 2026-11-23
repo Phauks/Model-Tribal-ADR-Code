@@ -2,6 +2,7 @@
 	// Review and file one upload (docs/uploads.md): look at the file and what
 	// the checks found, read what the sender said, ask them a question, and
 	// file it, keep it for reference, or say why it was not used.
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { onMount } from 'svelte';
 	import Download from '@lucide/svelte/icons/download';
 	import ShieldAlert from '@lucide/svelte/icons/shield-alert';
@@ -67,7 +68,12 @@
 </svelte:head>
 
 <div class="wide">
-	<p class="small"><a href="/workspace/uploads">All uploads</a></p>
+	<Breadcrumbs
+		trail={[
+			{ label: 'Workspace', href: '/workspace' },
+			{ label: 'Uploads', href: '/workspace/uploads' }
+		]}
+	/>
 	<h1>{name}</h1>
 	<p class="muted">
 		{upload.reference} · sent {when(upload.received_at)}{data.group.length > 0

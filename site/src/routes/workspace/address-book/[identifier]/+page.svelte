@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import {
 		contactKindLabels,
 		contactMethods,
@@ -24,7 +25,12 @@
 	<title>{contact.name} · Address book · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/address-book">Address book</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Address book', href: '/workspace/address-book' }
+	]}
+/>
 <h1>{contact.name}</h1>
 <p class="muted">
 	{contactKindLabels[contact.kind]}{#if contact.role}, {contact.role}{/if}{#if data.organization}, for

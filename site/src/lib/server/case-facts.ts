@@ -1,7 +1,9 @@
 /**
  * The lines under a case or law box's heading on the website, the same as
  * caseFacts() and lawFacts() in pdf/pipeline/typst-writer.mjs give the book
- * (docs/style-guide.md, section 5.1): when the case was decided, the nations
+ * (docs/style-guide.md, section 5.1): the case's dates in order (argued,
+ * reargued, decided, amended and the like, from the record's court_dates
+ * block and its decision date), the nations
  * or peoples it concerns, and for the Supreme Court of the United States the
  * Court, the vote and who wrote and joined what, each opinion's writer in
  * bold with the opinion named. Each line is a label and a value in HTML.
@@ -10,6 +12,7 @@
  */
 import { displayName } from '../nation-labels.ts';
 import { escapeHtml } from './markdown.ts';
+import { courtPath } from './supreme-courts.ts';
 
 export type FactLine = [label: string, html: string];
 
@@ -19,8 +22,14 @@ interface Justice {
 	opinion?: string;
 }
 
+/** A record's court_dates block: each kind of date as days, YYYY-MM-DD (schemas/source.schema.json). */
+export type CourtDates = Partial<Record<CourtDateKind, string[]>>;
+
+type CourtDateKind = (typeof courtDateLabels)[number][0];
+
 export interface CaseRecord {
 	citation?: { type?: string; issued?: { 'date-parts'?: number[][] } };
+	court_dates?: CourtDates;
 	tribes?: string[];
 	supreme_court?: {
 		court: string;
@@ -47,6 +56,20 @@ const decisionLabels: Record<string, string> = {
 	'judgment of the Court': 'No opinion for a majority'
 };
 
+// Each kind of date and its label, in the order used when two fall on the same day.
+const courtDateLabels = [
+	['argued', 'Argued'],
+	['argued_and_submitted', 'Argued and submitted'],
+	['heard', 'Heard'],
+	['submitted', 'Submitted'],
+	['reargued', 'Reargued'],
+	['decided', 'Decided'],
+	['filed', 'Filed'],
+	['rehearing_denied', 'Rehearing denied'],
+	['rehearing_en_banc_denied', 'Rehearing en banc denied'],
+	['amended', 'Amended']
+] as const;
+
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function surname(name: string): string {
@@ -63,11 +86,43 @@ function justiceList(justices: Justice[]): string {
 		.join(', ');
 }
 
-/** The full decision date of a case record, such as "March 18, 1831", or null. */
-export function decisionDate(record: CaseRecord): string | null {
+/**
+ * Days as one date: "May 11, 1988", "February 17–19, 1823", "April 15 and
+ * 17, 1823", or for days in different months "December 30, 1831, and
+ * January 2, 1832".
+ */
+export function courtDays(days: string[]): string {
+	const groups: { year: number; month: number; days: number[] }[] = [];
+	for (const day of [...days].sort()) {
+		const [year, month, date] = day.split('-').map(Number);
+		const last = groups.at(-1);
+		if (last && last.year === year && last.month === month) last.days.push(date);
+		else groups.push({ year, month, days: [date] });
+	}
+	const parts = groups.map(({ year, month, days: dates }) => {
+		const runs: string[] = [];
+		for (let index = 0; index < dates.length; ) {
+			let end = index;
+			while (end + 1 < dates.length && dates[end + 1] === dates[end] + 1) end++;
+			runs.push(end > index ? `${dates[index]}–${dates[end]}` : String(dates[index]));
+			index = end + 1;
+		}
+		const joined = runs.length > 1 ? `${runs.slice(0, -1).join(', ')} and ${runs.at(-1)}` : runs[0];
+		return `${months[month - 1]} ${joined}, ${year}`;
+	});
+	return parts.length > 1 ? `${parts.slice(0, -1).join(', ')}, and ${parts.at(-1)}` : parts[0];
+}
+
+/** The case's dates, each its own line, in the order they happened. */
+export function dateLines(record: CaseRecord): FactLine[] {
 	const parts = record.citation?.issued?.['date-parts']?.[0] ?? [];
-	if (parts.length < 3) return null;
-	return `${months[parts[1] - 1]} ${parts[2]}, ${parts[0]}`;
+	const decided = parts.length >= 3 ? [`${parts[0]}-${String(parts[1]).padStart(2, '0')}-${String(parts[2]).padStart(2, '0')}`] : [];
+	const dates: Record<string, string[] | undefined> = { ...record.court_dates, decided };
+	return courtDateLabels
+		.map(([kind, label], order) => ({ label, order, days: dates[kind] ?? [] }))
+		.filter((line) => line.days.length > 0)
+		.sort((first, second) => [...first.days].sort()[0].localeCompare([...second.days].sort()[0]) || first.order - second.order)
+		.map((line): FactLine => [line.label, escapeHtml(courtDays(line.days))]);
 }
 
 function nationLine(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine | null {
@@ -88,14 +143,14 @@ function nationLine(record: CaseRecord, nations: Map<string, { name: string; ent
 
 /** The lines under a case box's heading. */
 export function caseFacts(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine[] {
-	const facts: FactLine[] = [];
-	const decided = decisionDate(record);
-	if (decided) facts.push(['Decided', escapeHtml(decided)]);
+	const facts: FactLine[] = dateLines(record);
 	const nationFact = nationLine(record, nations);
 	if (nationFact) facts.push(nationFact);
 	const bench = record.supreme_court;
 	if (bench) {
-		facts.push(['Court', escapeHtml(bench.court)]);
+		// The Court's name links to its page (src/routes/supreme-court/[court]) when it has one.
+		const path = courtPath(bench.court);
+		facts.push(['Court', path ? `<a href="${path}">${escapeHtml(bench.court)}</a>` : escapeHtml(bench.court)]);
 		const { majority, minority } = bench.vote ?? {};
 		if (Number.isInteger(majority) && Number.isInteger(minority)) facts.push(['Vote', `${majority}–${minority}`]);
 		const decision = bench.decision_type ? decisionLabels[bench.decision_type] : undefined;

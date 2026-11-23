@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Download from '@lucide/svelte/icons/download';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -14,11 +15,12 @@
 </svelte:head>
 
 <div class="reading">
-	<p class="small trail">
-		<a href="/copies">Source documents</a>{#if details}<span class="separator" aria-hidden="true">›</span><a href="/copies/list/{details.list.slug}"
-				>{details.list.title}</a
-			>{/if}
-	</p>
+	<Breadcrumbs
+		trail={[
+			{ label: 'Source documents', href: '/copies' },
+			...(details ? [{ label: details.list.title, href: `/copies/list/${details.list.slug}` }] : [])
+		]}
+	/>
 	<h1>
 		{#if opinion}<i>{opinion.name}</i>{:else}{data.title}{/if}
 	</h1>
@@ -71,10 +73,6 @@
 </section>
 
 <style>
-	.trail {
-		margin-bottom: var(--space-2);
-	}
-
 	h1 {
 		overflow-wrap: anywhere;
 	}
@@ -108,10 +106,6 @@
 
 	.hash {
 		word-break: break-all;
-	}
-
-	.separator {
-		margin: 0 var(--space-1);
 	}
 
 	.frame {
