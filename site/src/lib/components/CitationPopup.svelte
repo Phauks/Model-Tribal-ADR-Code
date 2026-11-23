@@ -3,7 +3,7 @@
 	// it (site/DESIGN.md, section 6, "Citations"). On wide screens, pointing at
 	// a marker or moving to it with the keyboard shows the citation in a small
 	// window beside it; the window stays while the pointer is over it, so its
-	// links and its Copy button can be used. Selecting the marker (click, tap
+	// links and its copy button can be used. Selecting the marker (click, tap
 	// or Enter) goes to the source in the Sources list, where the source is
 	// highlighted and its number links back (Trevor, Nov. 23, 2026: "clicking
 	// the number for source should jump to the bottom"). There is no second
@@ -303,16 +303,18 @@
 	>
 		<div class="citation-top">
 			<p class="citation-title" id="citation-popup-title">Source {shown.number}</p>
+			<!-- Icon only (Trevor, Nov. 23, 2026); the icon turns to a check once copied. -->
 			<button
-				class="button button-quiet citation-copy"
+				class="icon-button citation-copy"
 				type="button"
 				onclick={copyCitation}
 				aria-label={copyState === 'copied' ? 'Citation copied' : `Copy citation ${shown.number}`}
+				title={copyState === 'copied' ? 'Copied' : 'Copy the citation'}
 			>
 				{#if copyState === 'copied'}
-					<Check size={18} strokeWidth={1.75} /> Copied
+					<Check size={18} strokeWidth={1.75} aria-hidden="true" />
 				{:else}
-					<Copy size={18} strokeWidth={1.75} /> Copy
+					<Copy size={18} strokeWidth={1.75} aria-hidden="true" />
 				{/if}
 			</button>
 			<span class="visually-hidden" role="status"
@@ -376,9 +378,7 @@
 	}
 
 	.citation-copy {
-		gap: var(--space-1);
 		margin: calc(-1 * var(--space-2)) calc(-1 * var(--space-2)) calc(-1 * var(--space-2)) 0;
-		font-size: var(--font-size-small);
 	}
 
 	/* Long web addresses in citations break anywhere rather than widen the window. */
