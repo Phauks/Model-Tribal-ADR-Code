@@ -36,40 +36,16 @@ limits: >-
 
 ## What was done
 
-The Federal Register API returned the list published Jan. 30, 2026
-(91 Fed. Reg. 4102, FR Doc. 2026-01899) as the newest "Indian Entities
-Recognized" notice. The notice counts 575 Tribal entities and adds the Lumbee
-Tribe of North Carolina after Pub. L. No. 119-60, § 8803.
+The Federal Register API returned the list published Jan. 30, 2026 (91 Fed. Reg. 4102, FR Doc. 2026-01899) as the newest "Indian Entities Recognized" notice. The notice counts 575 Tribal entities and adds the Lumbee Tribe of North Carolina after Pub. L. No. 119-60, § 8803.
 
-The govinfo.gov text edition was parsed into entries. Lines ending in a space
-continue onto the next line; page markers gave each entry's page. Entries of
-the form "X (See Y)" are cross-references to another entry and were skipped,
-except Lumbee's, whose "(See Supplementary Information supra ...)" is a note.
-That leaves 573 entries. The Capitan Grande Band entry names two groups, the
-Barona Group and the Viejas (Baron Long) Group, which the Tribal Leaders
-Directory lists as separate affiliates with their own offices, so each got its
-own profile as well, for 575 profiles. Whether the notice's count of 575 is
-reached the same way is not stated in the notice (project analysis).
+The govinfo.gov text edition was parsed into entries. Lines ending in a space continue onto the next line; page markers gave each entry's page. Entries of the form "X (See Y)" are cross-references to another entry and were skipped, except Lumbee's, whose "(See Supplementary Information supra ...)" is a note. That leaves 573 entries. The Capitan Grande Band entry names two groups, the Barona Group and the Viejas (Baron Long) Group, which the Tribal Leaders Directory lists as separate affiliates with their own offices, so each got its own profile as well, for 575 profiles. Whether the notice's count of 575 is reached the same way is not stated in the notice (project analysis).
 
-"Previously listed as" names became former names and "aka" names became
-alternate names. Other parenthetical text (component bands, villages, places)
-was kept verbatim in the recognition note rather than guessed to be a name.
-The text edition prints "PuliklaTribe of Yurok People" without a space; it was
-treated as a typesetting artifact.
+"Previously listed as" names became former names and "aka" names became alternate names. Other parenthetical text (component bands, villages, places) was kept verbatim in the recognition note rather than guessed to be a name. The text edition prints "PuliklaTribe of Yurok People" without a space; it was treated as a typesetting artifact.
 
-Each entry was matched to the directory (602 rows, including component bands
-and villages; data last edited Nov. 20, 2026). Office website, street and
-mailing addresses, phone and fax, Bureau of Indian Affairs region and agency,
-and, for Alaska, the regional corporation were recorded. Placeholder values
-("Please refer to affiliates") were dropped. Where several entities share one
-website, the fact is labeled as a shared, likely regional, site.
+Each entry was matched to the directory (602 rows, including component bands and villages; data last edited Nov. 20, 2026). Office website, street and mailing addresses, phone and fax, Bureau of Indian Affairs region and agency, and, for Alaska, the regional corporation were recorded. Placeholder values ("Please refer to affiliates") were dropped. Where several entities share one website, the fact is labeled as a shared, likely regional, site.
 
-Identifiers are slugs of the official name with parentheticals and a trailing
-", State" removed. Some are long; they are not yet published, so they can be
-shortened before the first release if preferred.
+Identifiers are slugs of the official name with parentheticals and a trailing ", State" removed. Some are long; they are not yet published, so they can be shortened before the first release if preferred.
 
 ## Output
 
-`research/raw/2026-11-21/federal-list-and-directory.json`: 575 entities and
-about 5,000 cited facts, all high confidence. Profiles are built from it by
-`scripts/tribes/build_profiles.py`.
+`research/raw/2026-11-21/federal-list-and-directory.json`: 575 entities and about 5,000 cited facts, all high confidence. Profiles are built from it by `scripts/tribes/build_profiles.py`.

@@ -18,6 +18,11 @@ declare module 'virtual:review-subjects' {
 	}[];
 }
 
+declare module 'virtual:public-contacts' {
+	/** The office emails and phones each published nation page shows, with their sources, listed at build time. */
+	export const publicNationContacts: import('#lib/address-book-sync.ts').PublicNationContacts[];
+}
+
 declare module 'virtual:nation-images' {
 	/** The nations' official images the Worker may serve, listed at build time. */
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];

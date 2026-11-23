@@ -1,22 +1,10 @@
 # Native nation constitutions and their versions
 
-A catalog of the constitutions, articles of association, amendments and
-federal corporate charters of the 581 federally recognized nations in
-`content/tribes/`, with every dated version found, the judicial, dispute
-resolution, peacemaking, election dispute, removal and sovereign immunity
-articles in each, and how those articles changed between versions. Gathered
-Nov. 21, 2026; how is recorded in
-[the research session](../sessions/2026/2026-11-21-constitutions.md).
+A catalog of the constitutions, articles of association, amendments and federal corporate charters of the 581 federally recognized nations in `content/tribes/`, with every dated version found, the judicial, dispute resolution, peacemaking, election dispute, removal and sovereign immunity articles in each, and how those articles changed between versions. Gathered Nov. 21, 2026; how is recorded in [the research session](../sessions/2026/2026-11-21-constitutions.md).
 
-Lead author's request (Nov. 21, 2026): "Noting this difference between
-different versions is important ... Try to get every constitution for the
-tribes?" The versions are recorded in the document history records of
-[decision record 0018](../../docs/decisions/0018-document-version-history.md).
+Lead author's request (Nov. 21, 2026): "Noting this difference between different versions is important ... Try to get every constitution for the tribes?" The versions are recorded in the document history records of [decision record 0018](../../docs/decisions/0018-document-version-history.md).
 
-These files are research material. They are not findings about any nation's
-law, and they do not change what a profile says: the only profile edit is a
-`document_version` beside facts that already cite an older text, naming the
-version they describe.
+These files are research material. They are not findings about any nation's law, and they do not change what a profile says: the only profile edit is a `document_version` beside facts that already cite an older text, naming the version they describe.
 
 ## What was found
 
@@ -30,15 +18,9 @@ version they describe.
 | `nation-says-no-written-constitution` | 1 | A document from the nation says so (Native Village of Eek, 2013 letter) |
 | `none-found` | 160 | Nothing found by these methods (90 in Alaska, 29 in California) |
 
-`none-found` does not mean a nation has no written constitution. Many Alaska
-villages and California rancherias have constitutions that are not online,
-and some nations keep theirs to citizens; the project records what it found
-and does not guess.
+`none-found` does not mean a nation has no written constitution. Many Alaska villages and California rancherias have constitutions that are not online, and some nations keep theirs to citizens; the project records what it found and does not guess.
 
-Totals: 1,279 documents (11,374 pages) for 396 nations, of which 1,130 are
-distinct texts; 391 version histories (one for every nation with a text
-found, 225 of them with two or more versions) holding 808 versions; 617 new
-source records; 2,212 article rows.
+Totals: 1,279 documents (11,374 pages) for 396 nations, of which 1,130 are distinct texts; 391 version histories (one for every nation with a text found, 225 of them with two or more versions) holding 808 versions; 617 new source records; 2,212 article rows.
 
 ## Files
 
@@ -49,27 +31,11 @@ source records; 2,212 article rows.
 | [`articles`](articles.csv) | Article of a captured text that a word match tied to a tracked topic, with the AI reviewer's confirmation where one was asked for | `build_catalog.py`, [`summarize_articles.py`](../../scripts/constitutions/summarize_articles.py) |
 | [`briefs/`](briefs/) | The instructions the AI reviewers followed | |
 
-The version histories are `content/documents/<letter>/<nation>-constitution.yaml`
-(schema [`document-history`](../../schemas/document-history.schema.json)).
-Each version's text has a source record
-`content/sources/c/constitution-<nation>-<version>.yaml` (kind
-`tribal-constitution`), unless a record for the same link already existed.
-Every nation with a constitution text found has a history record, even with
-one version, so its page on the website lists its constitution with a link to
-the public copy (lead author, Nov. 22, 2026; an exception to decision record
-0018, which needs no record for a single version). A nation whose texts carry
-no legible date gets undated versions, in no order, with no `dates`.
+The version histories are `content/documents/<letter>/<nation>-constitution.yaml` (schema [`document-history`](../../schemas/document-history.schema.json)). Each version's text has a source record `content/sources/c/constitution-<nation>-<version>.yaml` (kind `tribal-constitution`), unless a record for the same link already existed. Every nation with a constitution text found has a history record, even with one version, so its page on the website lists its constitution with a link to the public copy (lead author, Nov. 22, 2026; an exception to decision record 0018, which needs no record for a single version). A nation whose texts carry no legible date gets undated versions, in no order, with no `dates`.
 
-Versions are named plainly by year and kind, for example "1969 constitution
-and bylaws, as amended" or "Undated constitution"; two versions that would
-share a name are told apart by date, then by where the copy came from, then
-by number. The printed title, in title case with scan breaks joined, stays in
-the source record's citation; a title the scan garbled is replaced by a
-supplied one in brackets.
+Versions are named plainly by year and kind, for example "1969 constitution and bylaws, as amended" or "Undated constitution"; two versions that would share a name are told apart by date, then by where the copy came from, then by number. The printed title, in title case with scan breaks joined, stays in the source record's citation; a title the scan garbled is replaced by a supplied one in brackets.
 
-No AI summaries of constitutions are kept in these files or shown on the
-website (lead author, Nov. 22, 2026: "No reason for it"). The reviewers'
-summaries stay with the private work files.
+No AI summaries of constitutions are kept in these files or shown on the website (lead author, Nov. 22, 2026: "No reason for it"). The reviewers' summaries stay with the private work files.
 
 ## Where the texts came from
 
@@ -82,112 +48,38 @@ summaries stay with the private work files.
 | National Indian Law Library Tribal Law Gateway (Native American Rights Fund) | 51 | |
 | Tribal Law and Policy Institute constitutions list | 1 | The list was matched to nations; most of its links point to the sites above. |
 
-The Wayback Machine (web.archive.org) resets connections from the research
-environment during the secure handshake (the environment's own network access
-is unrestricted), so dead links were not opened there; they are on the pull
-list.
+The Wayback Machine (web.archive.org) resets connections from the research environment during the secure handshake (the environment's own network access is unrestricted), so dead links were not opened there; they are on the pull list.
 
 ## How rows were classified
 
-- **University of Oklahoma pages:** by rule. The file name says constitution
-  (`cons`) or charter (`chrt`); adoption and approval dates come from the
-  last certificates on the page, skipping the dates of the acts the nation
-  organized under (June 18, 1934; May 1, 1936; June 26, 1936).
-- **Everything else:** an AI reviewer (Claude Haiku, 33 batches) read the
-  title, opening, closing and article headings of each document and gave its
-  type, whether it belongs to the nation searched for, printed title,
-  completeness, dates, amendments named, whether the text requires the
-  Secretary of the Interior's approval, and evidence copied word for word.
-  Rows say `classified_by: ai-reviewer`; none has been checked by the lead
-  author yet.
-- **Wrong nation:** a document the reviewer said belongs to another nation is
-  moved to that nation only when the name matches one federally recognized
-  nation closely (83 documents); otherwise it is left out.
-- **Copies:** texts of the same year and kind that share at least 90% of
-  their three-word runs are one version; a date one copy prints and another
-  lacks is taken from the copy that has it, and the note says so. The
-  primary copy is the live one, preferring the nation's own site, then the
-  National Indian Law Library, a code publisher, the University of Oklahoma,
-  the Library of Congress and the Bureau's files, and a text layer over
-  scanned text. On the same date, archival copies are ordered before a live
-  one.
+- **University of Oklahoma pages:** by rule. The file name says constitution (`cons`) or charter (`chrt`); adoption and approval dates come from the last certificates on the page, skipping the dates of the acts the nation organized under (June 18, 1934; May 1, 1936; June 26, 1936).
+- **Everything else:** an AI reviewer (Claude Haiku, 33 batches) read the title, opening, closing and article headings of each document and gave its type, whether it belongs to the nation searched for, printed title, completeness, dates, amendments named, whether the text requires the Secretary of the Interior's approval, and evidence copied word for word. Rows say `classified_by: ai-reviewer`; none has been checked by the lead author yet.
+- **Wrong nation:** a document the reviewer said belongs to another nation is moved to that nation only when the name matches one federally recognized nation closely (83 documents); otherwise it is left out.
+- **Copies:** texts of the same year and kind that share at least 90% of their three-word runs are one version; a date one copy prints and another lacks is taken from the copy that has it, and the note says so. The primary copy is the live one, preferring the nation's own site, then the National Indian Law Library, a code publisher, the University of Oklahoma, the Library of Congress and the Bureau's files, and a text layer over scanned text. On the same date, archival copies are ordered before a live one.
 
 ## Versions, statuses and changes
 
-- **Events:** the first full text is `original` (or `edition` when it says it
-  includes amendments); a full text with a new adoption year is `revision`;
-  other later full texts are `edition`; amendment-only files are `amendment`;
-  drafts are `revision` with status `proposed`.
-- **Status:** `in-effect` only for the newest full text found live on the
-  nation's own site; earlier full texts are `superseded`; amendments and
-  newest texts from libraries are `unknown`. These are project inferences:
-  a later amendment may not be posted.
-- **Dates:** compiled texts print their original adoption and approval dates;
-  those are moved to the note, and the version is dated by the latest
-  amendment it says it includes (`listed`). An approval date printed before
-  the adoption date (often the approval to hold the election) is left out.
-  When a Bureau scan has no legible date, its file name's date is used and
-  flagged.
-- **Clauses:** an article is listed as a clause, by its number and heading,
-  when an AI reviewer read it and confirmed the topic (`read-in-full`), or
-  when its heading names the topic (`title-only`, "not yet read"). Articles matched only by words in the body
-  stay in `articles` as leads. Reviewers saw at most 3,500 characters of each
-  article, so a provision later in a long article can be missed.
-- **Changes:** for each version that supersedes another, each topic is
-  `added` or `removed` when only one text has an article on it (a word-match
-  inference), `unchanged` when the article texts share at least 97% of their
-  three-word runs, and `not-compared` otherwise, or when an amendment or a
-  text that could not be split into articles is involved. Every change is
-  `inferred`; none was read side by side yet.
+- **Events:** the first full text is `original` (or `edition` when it says it includes amendments); a full text with a new adoption year is `revision`; other later full texts are `edition`; amendment-only files are `amendment`; drafts are `revision` with status `proposed`.
+- **Status:** `in-effect` only for the newest full text found live on the nation's own site; earlier full texts are `superseded`; amendments and newest texts from libraries are `unknown`. These are project inferences: a later amendment may not be posted.
+- **Dates:** compiled texts print their original adoption and approval dates; those are moved to the note, and the version is dated by the latest amendment it says it includes (`listed`). An approval date printed before the adoption date (often the approval to hold the election) is left out. When a Bureau scan has no legible date, its file name's date is used and flagged.
+- **Clauses:** an article is listed as a clause, by its number and heading, when an AI reviewer read it and confirmed the topic (`read-in-full`), or when its heading names the topic (`title-only`, "not yet read"). Articles matched only by words in the body stay in `articles` as leads. Reviewers saw at most 3,500 characters of each article, so a provision later in a long article can be missed.
+- **Changes:** for each version that supersedes another, each topic is `added` or `removed` when only one text has an article on it (a word-match inference), `unchanged` when the article texts share at least 97% of their three-word runs, and `not-compared` otherwise, or when an amendment or a text that could not be split into articles is involved. Every change is `inferred`; none was read side by side yet.
 
 ## The documents themselves
 
-The PDFs and pages (2,688 files, about 2.0 GB with their text) are kept
-privately with the project's working files under
-`research/captures/constitutions/`, not in this repository. Constitutions are
-the nations' own law: the project cites and links them and records facts from
-them, but does not republish them (charter, CARE principles; tribal legal
-texts are link-only, see [the data model](../../docs/data-model.md)). Each row
-gives the capture path and SHA-256, so a copy can be checked against its link.
-Copying them to the R2 bucket is still to do.
+The PDFs and pages (2,688 files, about 2.0 GB with their text) are kept privately with the project's working files under `research/captures/constitutions/`, not in this repository. Constitutions are the nations' own law: the project cites and links them and records facts from them, but does not republish them (charter, CARE principles; tribal legal texts are link-only, see [the data model](../../docs/data-model.md)). Each row gives the capture path and SHA-256, so a copy can be checked against its link. Copying them to the R2 bucket is still to do.
 
-A nation may ask for any row, version or summary to be corrected, restricted
-or removed ([charter, commitment 6](../../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw);
-[requests](../../docs/requests.md)). A constitution a nation keeps to its
-citizens should not be added from another source.
+A nation may ask for any row, version or summary to be corrected, restricted or removed ([charter, commitment 6](../../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw); [requests](../../docs/requests.md)). A constitution a nation keeps to its citizens should not be added from another source.
 
 ## Federal context
 
-Under section 16 of the Indian Reorganization Act, 25 U.S.C. § 5123
-([source](../../content/sources/i/indian-reorganization-act-1934.yaml)), a
-nation organizing under the Act adopts its constitution, and amendments, in an
-election called by the Secretary of the Interior, and the Secretary approves
-them; many of the approval certificates in these texts are that approval.
-Some nations have since amended their constitutions to remove the
-Secretarial approval requirement; 212 of the distinct texts here say
-amendments need the Secretary's approval, and 3 say the requirement was
-removed (reviewer readings, not checked). The election rules are in 25 C.F.R.
-part 81 (Secretarial Elections), and Oklahoma and Alaska nations organized
-under their own acts (the Oklahoma Indian Welfare Act and the 1936 Alaska
-amendment to the Indian Reorganization Act). Those three have no source
-record yet; they are on the project's pull list
-(`research/documents-to-get.md` in the project files).
+Under section 16 of the Indian Reorganization Act, 25 U.S.C. § 5123 ([source](../../content/sources/i/indian-reorganization-act-1934.yaml)), a nation organizing under the Act adopts its constitution, and amendments, in an election called by the Secretary of the Interior, and the Secretary approves them; many of the approval certificates in these texts are that approval. Some nations have since amended their constitutions to remove the Secretarial approval requirement; 212 of the distinct texts here say amendments need the Secretary's approval, and 3 say the requirement was removed (reviewer readings, not checked). The election rules are in 25 C.F.R. part 81 (Secretarial Elections), and Oklahoma and Alaska nations organized under their own acts (the Oklahoma Indian Welfare Act and the 1936 Alaska amendment to the Indian Reorganization Act). Those three have no source record yet; they are on the project's pull list (`research/documents-to-get.md` in the project files).
 
 ## Limits
 
-- Scanned text (549 documents) has reading errors; dates and quotations need
-  checking against the scan. 154 documents have no legible date.
-- AI reviewers made judgment calls the lead author has not reviewed: document
-  types, mixed files (a constitution with a charter or a Bureau letter in
-  one scan), outcomes of elections when the certificate is garbled, and the
-  dispute resolution methods named. Their notes say where they were unsure.
-- Some Alaska scans saved under one village are another village's, and some
-  Bureau files in one region's folder were matched to the wrong nation by
-  name and moved back only when the reviewer named the right one.
-- `added` and `removed` changes rest on word matches and are the weakest
-  rows here.
-- Wayback Machine copies of dead links, 2 Library of Congress items, and
-  constitutions not online were not reached.
-- Citation form: The Bluebook's 22nd edition adds a rule for Tribal Nations
-  (Rule 22, constitutions at 22.2); the source records use the project's
-  Indigo Book style and have not been checked against Rule 22.
+- Scanned text (549 documents) has reading errors; dates and quotations need checking against the scan. 154 documents have no legible date.
+- AI reviewers made judgment calls the lead author has not reviewed: document types, mixed files (a constitution with a charter or a Bureau letter in one scan), outcomes of elections when the certificate is garbled, and the dispute resolution methods named. Their notes say where they were unsure.
+- Some Alaska scans saved under one village are another village's, and some Bureau files in one region's folder were matched to the wrong nation by name and moved back only when the reviewer named the right one.
+- `added` and `removed` changes rest on word matches and are the weakest rows here.
+- Wayback Machine copies of dead links, 2 Library of Congress items, and constitutions not online were not reached.
+- Citation form: The Bluebook's 22nd edition adds a rule for Tribal Nations (Rule 22, constitutions at 22.2); the source records use the project's Indigo Book style and have not been checked against Rule 22.

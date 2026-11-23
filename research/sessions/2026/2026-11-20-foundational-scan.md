@@ -41,7 +41,4 @@ limits: >-
   map"). No legal databases were used. No source records were created yet.
 ---
 
-Results went into the planning analysis (a private working document), which
-recorded the decisions now captured in `docs/decisions/`. A starter list of
-research search terms from the extended searches is held for later, when
-outreach and research resume.
+Results went into the planning analysis (a private working document), which recorded the decisions now captured in `docs/decisions/`. A starter list of research search terms from the extended searches is held for later, when outreach and research resume.

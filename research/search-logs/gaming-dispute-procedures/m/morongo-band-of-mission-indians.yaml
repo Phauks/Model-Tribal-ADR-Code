@@ -1,7 +1,7 @@
 profile: content/tribes/m/morongo-band-of-mission-indians.yaml
 topic: gaming-dispute-procedures
-status: partly-searched
-last_searched: '2026-11-22'
+status: none-found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -23,5 +23,16 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2010-05-03 has no text layer on most pages (1 of 1 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned amendment listed 2010-05-03 (https://www.nigc.gov/wp-content/uploads/2025/03/morongoband-05032010GamingOrdAmd.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/morongoband-05032010GamingOrdAmd.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF page 1 of 1 of this amendment listed 2010-05-03 as page images
+    (it has no text layer) and found no dispute procedure (the only page is the Commission's approval
+    letter, so the file holds no amendment text).
+next_steps: Every chosen ordinance document on the Commission's list was read from page images; look for
+  gaming regulations or a patron dispute policy on the nation's or its gaming commission's website.

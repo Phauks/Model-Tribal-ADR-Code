@@ -32,25 +32,10 @@ limits: >-
   no source records or archived copies were made.
 ---
 
-Findings are summarized, with citations, in
-[site/DESIGN.md, "Color and Native design"](../../../site/DESIGN.md#color-and-native-design).
+Findings are summarized, with citations, in [site/DESIGN.md, "Color and Native design"](../../../site/DESIGN.md#color-and-native-design).
 
-- There is no single Native American color theory. Color meanings belong to
-  each nation, and the same color carries different meanings across nations
-  (Arizona Department of Education, *Tribal Seals and Flags*, Fall 2022).
-- Some color sets are sacred: the White Mountain Apache Tribe's four sacred
-  colors, the Navajo Nation's flag colors of the four sacred mountains, and
-  the colors of medicine wheels, which "different tribes interpret
-  differently" (National Library of Medicine, *Native Voices*). The project
-  does not use them as decoration.
-- Indigenous design guidance (International Indigenous Design Charter; Sadie
-  Red Wing; IllumiNative; Reclaiming Native Truth) points to working with
-  Native designers and artists from the start, being specific rather than
-  pan-Indian, and showing contemporary Native life.
-- Native-led organizations' sites use saturated color, often deep teals with
-  warm reds, clay or marigold, and contemporary Native artists such as
-  Jeffrey Gibson use bold color. This supports a more vivid palette.
-- Trevor chose teal and burnt orange on Nov. 20, 2026 (Pacific time). The
-  project uses them as plain color fields without motifs, says the palette
-  carries no tribal symbolism, and plans to set the final palette with the
-  commissioned Native artist.
+- There is no single Native American color theory. Color meanings belong to each nation, and the same color carries different meanings across nations (Arizona Department of Education, *Tribal Seals and Flags*, Fall 2022).
+- Some color sets are sacred: the White Mountain Apache Tribe's four sacred colors, the Navajo Nation's flag colors of the four sacred mountains, and the colors of medicine wheels, which "different tribes interpret differently" (National Library of Medicine, *Native Voices*). The project does not use them as decoration.
+- Indigenous design guidance (International Indigenous Design Charter; Sadie Red Wing; IllumiNative; Reclaiming Native Truth) points to working with Native designers and artists from the start, being specific rather than pan-Indian, and showing contemporary Native life.
+- Native-led organizations' sites use saturated color, often deep teals with warm reds, clay or marigold, and contemporary Native artists such as Jeffrey Gibson use bold color. This supports a more vivid palette.
+- Trevor chose teal and burnt orange on Nov. 20, 2026 (Pacific time). The project uses them as plain color fields without motifs, says the palette carries no tribal symbolism, and plans to set the final palette with the commissioned Native artist.
