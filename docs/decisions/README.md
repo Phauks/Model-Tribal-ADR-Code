@@ -53,5 +53,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0043](0043-link-to-the-national-indian-law-library-for-its-copies.md) | Link to the National Indian Law Library for copies taken from it | Accepted |
 | [0044](0044-order-printed-copies-through-the-lulu-print-api.md) | Order printed copies on the website through the Lulu Print API | Proposed |
 | [0045](0045-separate-settings-from-account-settings.md) | Keep display settings on the device and account settings on Account pages | Accepted |
+| [0046](0046-scan-files-with-clamav-in-a-cloudflare-container.md) | Scan files for malware with ClamAV in a Cloudflare Container, and hold them until clean | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

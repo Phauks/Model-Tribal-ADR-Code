@@ -10,7 +10,8 @@
 	import TileMap, { type TileMapCamera } from '#lib/components/TileMap.svelte';
 	import ZoomableMap from '#lib/components/ZoomableMap.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
-	import type { LandAreaRow } from '#lib/server/nations-map.ts';
+	import type { LandAreaRow, ShadedViewData } from '#lib/server/nations-map.ts';
+	import { isShadedMapView, shadedMapViews, type ShadedMapView } from '#lib/shaded-map-views.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
@@ -53,8 +54,38 @@
 		return landsLoading;
 	}
 
+	/**
+	 * The views that shade the land areas by a fact about their nations, such as Public Law 280 (src/lib/shaded-map-views.ts), are fetched the same way, each the first time it is shown.
+	 */
+	type ShadedBody = Omit<ShadedViewData, 'drawn' | 'labels'> & { drawing: string };
+	let shaded = $state<Partial<Record<ShadedMapView, ShadedBody>>>({});
+	let shadedFailed = $state<Partial<Record<ShadedMapView, boolean>>>({});
+	const shadedLoading = new Map<ShadedMapView, Promise<void>>();
+
+	function loadShaded(view: ShadedMapView): Promise<void> {
+		let loading = shadedLoading.get(view);
+		if (!loading) {
+			shadedFailed[view] = false;
+			loading = fetch(`/nations/map/views/${view}.json`)
+				.then((response) => {
+					if (!response.ok) throw new Error(String(response.status));
+					return response.json();
+				})
+				.then((body: ShadedBody) => {
+					shaded[view] = body;
+				})
+				.catch(() => {
+					shadedFailed[view] = true;
+					shadedLoading.delete(view);
+				});
+			shadedLoading.set(view, loading);
+		}
+		return loading;
+	}
+
 	$effect(() => {
 		if (current === 'lands' && !lands) void loadLands();
+		if (isShadedMapView(current) && !shaded[current]) void loadShaded(current);
 	});
 	function choose(key: NationsMapView): void {
 		current = key;
@@ -71,11 +102,13 @@
 		let target = anchor ? document.getElementById(anchor) : null;
 		const panel = target?.closest<HTMLElement>('[data-map-view]');
 		const named = new URLSearchParams(location.search).get('view');
-		// A land area's row exists only once the view has been fetched.
-		const view = anchor.startsWith('land-area-') ? 'lands' : (panel?.dataset.mapView ?? named);
+		// A land area's row, and a shaded view's row, exist only once the view has been fetched; their ids start with the view's key.
+		const shadedView = shadedMapViews.find((key) => anchor.startsWith(`${key}-`));
+		const view = anchor.startsWith('land-area-') ? 'lands' : (shadedView ?? panel?.dataset.mapView ?? named);
 		if (!view || !views.some((entry) => entry.key === view)) return;
 		current = view as NationsMapView;
 		if (view === 'lands') await loadLands();
+		if (isShadedMapView(view)) await loadShaded(view);
 		await tick();
 		target ??= anchor ? document.getElementById(anchor) : null;
 		// A row reached from the map opens to show its nations.
@@ -95,7 +128,8 @@
 		new Map<string, ListedNation[]>([
 			...data.stateRows.map((row) => [`state-${row.code}`, row.nations] as const),
 			...data.regionRows.map((row) => [row.anchor, row.nations] as const),
-			...(lands?.rows ?? []).map((row) => [row.anchor, row.nations] as const)
+			...(lands?.rows ?? []).map((row) => [row.anchor, row.nations] as const),
+			...Object.values(shaded).flatMap((body) => body.areaRows.map((row) => [row.anchor, row.nations] as const))
 		])
 	);
 
@@ -130,6 +164,45 @@
 			}
 		}))
 	);
+
+	/** The Public Law 280 and Violence Against Women Act tables list nations; each name goes to the nation's Jurisdiction section, which has the facts and their sources. */
+	function nationColumns(view: ShadedMapView): TableColumn[] {
+		return [
+			{ key: 'nation', header: 'Nation', isRowHeader: true, sortable: true },
+			{ key: 'states', header: 'States', sortable: true, filterable: true },
+			{ key: 'category', header: view === 'public-law-280' ? 'Summary' : 'Status', sortable: true, filterable: true }
+		];
+	}
+
+	function nationRows(body: ShadedBody): TableRow[] {
+		return body.nationRows.map((row) => ({
+			key: row.anchor,
+			anchor: row.anchor,
+			cells: {
+				nation: { text: row.name, href: `/nations/${row.id}#jurisdiction-heading` },
+				states: { text: row.states.join(', '), values: row.states },
+				category: { text: row.category }
+			}
+		}));
+	}
+
+	const healthServiceColumns: TableColumn[] = [
+		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true, custom: true },
+		{ key: 'count', header: 'Nations', type: 'number', sortable: true }
+	];
+
+	function healthServiceRows(body: ShadedBody): TableRow[] {
+		return body.areaRows.map((row) => ({
+			key: row.anchor,
+			anchor: row.anchor,
+			cells: {
+				area: { text: row.name },
+				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
+				// Not a column: shown when the Area's row is opened.
+				states: { text: row.states.join(', ') }
+			}
+		}));
+	}
 
 	const landAreaColumns: TableColumn[] = [
 		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true, custom: true },
@@ -234,7 +307,17 @@
 				{/if}
 				<div class="drawn-map">
 				<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
-					{#if view.key === 'lands'}
+					{#if isShadedMapView(view.key)}
+						{@const body = shaded[view.key]}
+						{#if body}
+							{@html body.drawing}
+						{:else if shadedFailed[view.key]}
+							<p class="map-status">This view could not be loaded. Check your connection and choose the view again.</p>
+						{:else}
+							<p class="map-status">Loading the view…</p>
+							<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
+						{/if}
+					{:else if view.key === 'lands'}
 						{#if lands}
 							{@html lands.drawing}
 						{:else if landsFailed}
@@ -255,6 +338,14 @@
 					<ul class="legend" aria-label="Key">
 						{#each data.countClasses as entry (entry.key)}
 							<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
+						{/each}
+					</ul>
+				</figcaption>
+			{:else if isShadedMapView(view.key) && shaded[view.key]}
+				<figcaption>
+					<ul class="legend" aria-label="Key">
+						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
+							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
 					</ul>
 				</figcaption>
@@ -301,6 +392,36 @@
 						{cell}
 					/>
 				{/if}
+			{:else if isShadedMapView(view.key)}
+				{@const body = shaded[view.key]}
+				<p class="small muted map-note">
+					{@render shadedNote(view.key)} {@render insetNote()}
+				</p>
+				{#if body && view.key === 'indian-health-service'}
+					<DataTable
+						identifier="indian-health-service-areas"
+						download="indian-health-service-areas"
+						label="Table: Indian Health Service Areas"
+						caption="Nations each Indian Health Service Area serves, as each nation’s entry records it"
+						columns={healthServiceColumns}
+						rows={healthServiceRows(body)}
+						defaultSort={{ key: 'area', direction: 'ascending' }}
+						{cell}
+					/>
+				{:else if body}
+					<DataTable
+						identifier={view.key}
+						download={view.key}
+						filters
+						label="Table: {view.label}"
+						caption={view.key === 'public-law-280'
+							? 'Nations with a Public Law 280 fact recorded, and a summary of what the facts say'
+							: 'Nations recorded as exercising special Tribal criminal jurisdiction, or holding a grant to prepare for it'}
+						columns={nationColumns(view.key)}
+						rows={nationRows(body)}
+						defaultSort={{ key: 'nation', direction: 'ascending' }}
+					/>
+				{/if}
 			{:else if view.key === 'regions'}
 				<p class="small muted map-note">
 					Select a region to go to its row in the table. Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in no region. Lines are simplified for a national map. {@render insetNote()}
@@ -319,6 +440,16 @@
 		</div>
 	</div>
 {/each}
+
+{#snippet shadedNote(key: ShadedMapView)}
+	{#if key === 'public-law-280'}
+		Each nation’s land areas are shaded by one summary of its Public Law 280 facts. The summary is only a guide: what the state may do differs by subject, by state and over time, and some nations are in more than one state. Each nation’s page has the facts, the state each applies in and their sources. Nations with no land area on the map are still in the table. Select an area to go to its nation’s row.
+	{:else if key === 'violence-against-women-act'}
+		Shaded areas belong to nations that sources record as exercising special Tribal criminal jurisdiction over non-Indians under the Violence Against Women Act (25 U.S.C. § 1304), or as holding a federal grant to prepare for it. A grant can pay for planning, so it is never counted as exercising. A nation missing here may still exercise it: the record is only as complete as its sources. Select an area to go to its nation’s row.
+	{:else}
+		Each nation’s land areas are shaded by the Indian Health Service Area its entry names, and each Area’s name is written on the map. Neighboring Areas are given different shades. Select an area to go to its Area’s row, which lists its nations.
+	{/if}
+{/snippet}
 
 {#snippet insetNote()}
 	{#if tileMapReady}

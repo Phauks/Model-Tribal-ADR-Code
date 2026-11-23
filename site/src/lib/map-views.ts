@@ -23,7 +23,7 @@ export interface MapViewEntry {
 }
 
 /** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Federal administration'] as const;
+export const mapViewGroups = ['Where nations are', 'Jurisdiction', 'Federal administration'] as const;
 
 export const mapViews: MapViewEntry[] = [
 	{
@@ -45,6 +45,22 @@ export const mapViews: MapViewEntry[] = [
 		nationPage: { key: 'lands', label: 'Land Areas', description: 'The census areas the nation’s entry names' }
 	},
 	{
+		key: 'public-law-280',
+		label: 'Public Law 280',
+		heading: 'public-law-280-heading',
+		group: 'Jurisdiction',
+		description: 'Where states hold criminal and civil jurisdiction in Indian country under Public Law 280',
+		keywords: ['pl 280', 'pl280', 'state jurisdiction', 'criminal', 'civil', 'retrocession', 'mandatory', 'optional', '1953']
+	},
+	{
+		key: 'violence-against-women-act',
+		label: 'Violence Against Women Act Jurisdiction',
+		heading: 'violence-against-women-act-heading',
+		group: 'Jurisdiction',
+		description: 'Nations exercising special Tribal criminal jurisdiction over non-Indians',
+		keywords: ['vawa', 'stcj', 'special tribal criminal jurisdiction', 'domestic violence', 'dating violence', 'non-indian', 'criminal']
+	},
+	{
 		key: 'regions',
 		label: 'Bureau of Indian Affairs Regions',
 		heading: 'bureau-of-indian-affairs-regions',
@@ -52,6 +68,14 @@ export const mapViews: MapViewEntry[] = [
 		description: 'The twelve regions the Bureau of Indian Affairs serves nations through',
 		keywords: ['bia', 'region', 'agency', 'federal', 'administration'],
 		nationPage: { key: 'region', label: 'Region', description: 'The Bureau of Indian Affairs region that serves the nation' }
+	},
+	{
+		key: 'indian-health-service',
+		label: 'Indian Health Service Areas',
+		heading: 'indian-health-service-heading',
+		group: 'Federal administration',
+		description: 'The twelve Areas the Indian Health Service serves nations through',
+		keywords: ['ihs', 'health', 'clinic', 'hospital', 'service unit', 'federal', 'administration']
 	}
 ];
 

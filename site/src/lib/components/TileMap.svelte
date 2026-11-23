@@ -1,6 +1,8 @@
 <script lang="ts" module>
-	/** The views of the map on /nations/map; each is a set of layers over the same basemap. */
-	export type TileMapView = 'states' | 'regions' | 'lands';
+	import type { ShadedMapView } from '#lib/shaded-map-views.ts';
+
+	/** The views of the map on /nations/map; each is a set of layers over the same basemap. The shaded views color the land areas by a fact about their nations (src/lib/shaded-map-views.ts). */
+	export type TileMapView = 'states' | 'regions' | 'lands' | ShadedMapView;
 
 	/** Where the map is looking, kept by the page so that changing views keeps the reader's place. */
 	export interface TileMapCamera {
@@ -162,6 +164,57 @@
 				layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 13, 'text-max-width': 8 },
 				paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 }
 			});
+		} else if (view !== 'lands') {
+			// A shaded view: each area takes its category's shade, and areas with no fact stay the lightest. Only areas with a fact get a dot, so the dots show where the facts are.
+			const shading = data.shading?.[view];
+			const entries = Object.entries(shading?.areas ?? {});
+			const areaShade = (entries.length > 0
+				? ['match', ['to-string', ['get', 'code']], ...entries.flatMap(([code, area]) => [code, colors.classes[area.shade]]), colors.classes[0]]
+				: colors.classes[0]) as unknown as ExpressionSpecification;
+			const dotShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], colors.classes[4]] as unknown as ExpressionSpecification;
+			fills.push({ id: 'land-areas', type: 'fill', source: 'places', 'source-layer': 'land-areas', paint: { 'fill-color': hovered(areaShade), 'fill-opacity': 0.85 } });
+			tops.push(
+				{ id: 'land-areas-lines', type: 'line', source: 'places', 'source-layer': 'land-areas', paint: { 'line-color': colors.line, 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.4] } },
+				{
+					id: 'area-dots',
+					type: 'circle',
+					source: 'area-points',
+					filter: ['>', ['get', 'shade'], 0],
+					paint: {
+						'circle-color': hovered(dotShade),
+						'circle-radius': 5,
+						'circle-stroke-color': colors.ink,
+						'circle-stroke-width': 1,
+						'circle-opacity': dotOpacity,
+						'circle-stroke-opacity': dotOpacity
+					}
+				},
+				{
+					id: 'area-names',
+					type: 'symbol',
+					source: 'area-points',
+					minzoom: 6,
+					filter: ['>', ['get', 'shade'], 0],
+					layout: {
+						'text-field': ['get', 'label'],
+						'text-font': ['Noto Sans Medium'],
+						'text-size': 12,
+						'text-max-width': 9,
+						'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+						'text-radial-offset': 0.8,
+						'symbol-sort-key': ['-', 0, ['get', 'squareKilometers']]
+					},
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 }
+				},
+				{
+					id: 'shaded-labels',
+					type: 'symbol',
+					source: 'shaded-labels',
+					maxzoom: 7,
+					layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 14, 'text-max-width': 8, 'text-padding': 4 },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2.5 }
+				}
+			);
 		} else {
 			// On a nation's page, only the nation's own areas are drawn.
 			const onlyTheseAreas: { filter?: FilterSpecification } = oneNation
@@ -245,6 +298,13 @@
 					attribution: 'U.S. Census Bureau'
 				},
 				regions: { type: 'geojson', data: data.regions, promoteId: 'name', attribution: 'Bureau of Indian Affairs' },
+				'shaded-labels': {
+					type: 'geojson',
+					data: {
+						type: 'FeatureCollection',
+						features: (view === 'states' || view === 'regions' || view === 'lands' ? [] : (data.shading?.[view]?.labels ?? [])).map((label) => ({ type: 'Feature', properties: { name: label.name }, geometry: { type: 'Point', coordinates: label.point } }))
+					}
+				},
 				'region-names': {
 					type: 'geojson',
 					data: {
@@ -256,15 +316,23 @@
 					type: 'geojson',
 					data: {
 						type: 'FeatureCollection',
-						features: data.areas.map((area) => ({ type: 'Feature', id: Number(area.code), properties: area, geometry: { type: 'Point', coordinates: area.point } }))
+						features: data.areas.map((area) => ({ type: 'Feature', id: Number(area.code), properties: propertiesOf(area, data), geometry: { type: 'Point', coordinates: area.point } }))
 					},
-					cluster: !oneNation,
+					// Numbered circles would hide the shades, so only the "Land areas" view groups its dots.
+					cluster: !oneNation && view === 'lands',
 					clusterMaxZoom: 5,
 					clusterRadius: 40
 				}
 			},
 			layers: [...under, ...fills, ...over, ...tops]
 		};
+	}
+
+	/** An area's dot's properties: on a shaded view, its shade and the row it goes to in that view's table. */
+	function propertiesOf(area: TileMapData['areas'][number], data: TileMapData): Record<string, unknown> {
+		if (view === 'states' || view === 'regions' || view === 'lands') return area;
+		const shaded = data.shading?.[view]?.areas[area.code];
+		return { ...area, shade: shaded?.shade ?? 0, anchor: shaded?.anchor ?? '' };
 	}
 
 	/** A point for a region's name: the middle of its largest piece's bounding box (regions are large and mostly compact). */
@@ -369,7 +437,15 @@
 					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => data.states[String(properties.code)]?.anchor },
 					{ layer: 'regions', source: 'regions', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'area-dots', source: 'area-points', anchor: (properties) => String(properties.anchor) },
-					{ layer: 'land-areas', source: 'places', sourceLayer: 'land-areas', anchor: (properties) => `land-area-${String(properties.code).toLowerCase()}` }
+					{
+						layer: 'land-areas',
+						source: 'places',
+						sourceLayer: 'land-areas',
+						anchor: (properties) =>
+							view === 'states' || view === 'regions' || view === 'lands'
+								? `land-area-${String(properties.code).toLowerCase()}`
+								: data.shading?.[view]?.areas[String(properties.code)]?.anchor
+					}
 				];
 				let hover: { source: string; sourceLayer?: string; id: string | number } | undefined;
 				const clearHover = () => {
