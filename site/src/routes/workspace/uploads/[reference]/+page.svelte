@@ -195,10 +195,10 @@
 				<p class="small muted">No messages yet.</p>
 			{/if}
 			{#each data.messages as message (message.identifier)}
-				<div class="message" class:note={message.kind === 'note'}>
+				<div class="message" class:note={message.kind === 'note'} class:nation={message.kind === 'nation-comment'}>
 					<p class="small">
 						<strong>
-							{message.kind === 'question' ? `${message.person_name ?? 'A reviewer'} asked the sender` : message.kind === 'answer' ? 'The sender answered' : `${message.person_name ?? 'A reviewer'} noted (reviewers only)`}
+							{message.kind === 'question' ? `${message.person_name ?? 'A reviewer'} asked the sender` : message.kind === 'answer' ? 'The sender answered' : message.kind === 'nation-comment' ? `${message.person_name ?? 'A nation reviewer'} commented for the nation` : `${message.person_name ?? 'A reviewer'} noted (reviewers only)`}
 						</strong>
 						· {when(message.created_at)}
 					</p>
@@ -418,6 +418,9 @@
 	}
 	.message.note {
 		border-left-style: dashed;
+	}
+	.message.nation {
+		border-left-color: var(--color-action);
 	}
 	.message p {
 		margin: 0 0 var(--space-1);

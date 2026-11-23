@@ -46,7 +46,7 @@ export const roleDescriptions: Record<Role, string> = {
 	contributor:
 		'Sees only the documents the lead author grants them, at the level granted: for example, writes and edits an assigned essay draft. Cannot sign off or publish.',
 	'nation-reviewer':
-		'Reviews the record of one nation, for that nation: approves it, asks for changes or comments. Sees nothing else.'
+		'Reviews the record of one nation, for that nation: approves it, asks for changes or comments, and comments on files people sent about that nation. Sees nothing else.'
 };
 
 export type Permission =
@@ -60,6 +60,8 @@ export type Permission =
 	| 'comment'
 	| 'sign-off'
 	| 'review-for-nation'
+	// Reading and commenting on files people sent about one's own nation (docs/uploads.md).
+	| 'comment-on-nation-uploads'
 	// The private address book (migrations/0012_address_book.sql): the lead author only.
 	| 'manage-address-book'
 	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
@@ -83,7 +85,7 @@ const grants: Record<Role, readonly Permission[]> = {
 	'co-author': ['read-reviews', 'comment'],
 	advisor: ['read-reviews', 'comment', 'sign-off'],
 	contributor: ['comment'],
-	'nation-reviewer': ['review-for-nation']
+	'nation-reviewer': ['review-for-nation', 'comment-on-nation-uploads']
 };
 
 export interface Grantee {
