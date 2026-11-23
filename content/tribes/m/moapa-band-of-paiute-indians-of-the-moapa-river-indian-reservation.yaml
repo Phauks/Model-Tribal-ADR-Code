@@ -203,29 +203,21 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under Section 16 of the Indian Reorganization Act
-  quote: Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by
-  source: university-of-oklahoma-indian-reorganization-act-moapacons
-  confidence: medium
+  value: Constitution and bylaws established 1941
+  quote: In 1941, a Constitution and bylaws were established, creating the Business Council as the tribe's governing.
+  source: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '1942-02-13'
-  locator: Certification of Adoption
-  document_version:
-    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
-    version: 1942-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats and officers appear only in a name list, and the pages call the governing body Tribal Council on one page and Business Council on another.'
 - aspect: governing-body
   value: Business Council
-  quote: Paiute Indians shall consist of a council, known as the Business Council.
-  source: university-of-oklahoma-indian-reorganization-act-moapacons
-  confidence: medium
+  quote: In 1941, a Constitution and bylaws were established, creating the Business Council as the tribe's governing.
+  source: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '1942-02-13'
-  locator: Article III, Section 1
-  document_version:
-    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
-    version: 1942-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats and officers appear only in a name list, and the pages call the governing body Tribal Council on one page and Business Council on another.'
 - aspect: governing-body-size
   value: 6 members
   quote: The Business Council shall consist of six
@@ -264,16 +256,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
   value: Chairman
-  quote: from within its own number, (1) a chairman, (2) a vice-chairman; and from
-  source: university-of-oklahoma-indian-reorganization-act-moapacons
-  confidence: medium
+  quote: The elected leader of the Moapa Band of Paiutes, responsible for representing the tribe, overseeing government operations, and ensuring the well-being of the community.
+  source: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-website-tribal-administration
+  confidence: high
   verification: read-in-full
-  as_of: '1942-02-13'
-  locator: Article III, Section 3
-  document_version:
-    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
-    version: 1942-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats and officers appear only in a name list, and the pages call the governing body Tribal Council on one page and Business Council on another.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -355,17 +343,13 @@ governance:
     version: 1942-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: judiciary
-  value: Reservation court
-  quote: of justice by establishing a reservation court and defining its duties
-  source: university-of-oklahoma-indian-reorganization-act-moapacons
-  confidence: medium
+  value: Moapa Tribal Court
+  quote: Moapa Tribal Court
+  source: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-website-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1942-02-13'
-  locator: Article V, Section 1(f)
-  document_version:
-    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
-    version: 1942-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats and officers appear only in a name list, and the pages call the governing body Tribal Council on one page and Business Council on another.'
 - aspect: amendment
   value: Majority vote at Secretary-called election (30% turnout), then Secretary approval
   quote: voting at an election called for that purpose by the Secretary of the Interior;

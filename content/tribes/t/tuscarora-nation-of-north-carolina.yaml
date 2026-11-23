@@ -51,6 +51,15 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-23'
   note: General office address, shown as text on the page. Found by scripts/tribes/find_emails_deep.mjs.
+governance:
+- aspect: other
+  value: 'Three constituent bands: Prospect, Saddletree, Maxton'
+  quote: 'The Tuscarora Nation of North Carolina consists of three historic constituent bands located in Robeson County, North Carolina: Prospect, Saddletree and Maxton.'
+  source: tuscaroranationnc-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The government page names chiefs and representatives only by name, so council size, selection and term are not stated.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

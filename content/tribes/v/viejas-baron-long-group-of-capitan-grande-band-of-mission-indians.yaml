@@ -183,6 +183,54 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas Reservation".
 governance:
+- aspect: governing-body
+  value: Tribal council
+  quote: The general council elects the tribal council, which includes the chairman, vice chairman, secretary, treasurer, and three council members at large.
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government-viejas-government-officers
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The general council elects the tribal council, which includes the chairman, vice chairman, secretary, treasurer, and three council members at large.
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government-viejas-government-officers
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
+- aspect: governing-body-selection
+  value: Elected by the general council
+  quote: Tribal government officials are elected to four-year terms of office by the general council
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Tribal government officials are elected to four-year terms of office
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
+- aspect: general-council
+  value: All voting members of the band
+  quote: general council, which includes all of the band’s voting members
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The general council elects the tribal council, which includes the chairman, vice chairman, secretary, treasurer, and three council members at large.
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government-viejas-government-officers
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -191,6 +239,30 @@ governance:
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice Chairman, Secretary, Treasurer
+  quote: The general council elects the tribal council, which includes the chairman, vice chairman, secretary, treasurer, and three council members at large.
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government-viejas-government-officers
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
+- aspect: branches
+  value: Executive and legislative
+  quote: Like local governmental entities, the tribal council serves as the executive and legislative branches, but it has quasi-judicial powers as well.
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government-viejas-government-officers
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
+- aspect: judiciary
+  value: Judicial System
+  quote: General jurisdiction to preside legal issues and to resolve issues on tribal lands.
+  source: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians-website-modern-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution text is among the saved pages; facts come from the band''s government pages.'
 governing_documents:
 - kind: law-code
   title: Viejas Band of Kumeyaay Indians Ordinances

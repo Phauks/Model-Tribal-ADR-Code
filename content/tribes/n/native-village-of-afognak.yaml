@@ -164,65 +164,45 @@ indian_health_service:
   note: 'The source''s words: "Village of Afognak".'
 governance:
 - aspect: form
-  value: Organized under the Indian Reorganization Act of June 18, 1934
-  quote: organized under this Constitution and according to the Indian Reorganization Act of June
-  source: constitution-native-village-of-afognak-2002-text
-  confidence: medium
+  value: Constitution under the Indian Reorganization Act
+  quote: In 2002, our tribal council adopted a new constitution and reorganized itself under the Indian Reorganization Act of 1934.
+  source: native-village-of-afognak-website-about-nva-governance
+  confidence: high
   verification: read-in-full
-  as_of: '2002-08-12'
-  locator: Preamble
-  document_version:
-    document: native-village-of-afognak-constitution
-    version: 2002-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Akiachak folder, but the text is the Native Village of Afognak 2002 constitution.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
-  value: Native Village of Afognak Tribal Council
-  quote: The governing body of the Native Village of Afognak shall be the
-  source: constitution-native-village-of-afognak-2002-text
-  confidence: medium
+  value: Tribal council
+  quote: A tribal council of seven members, elected by our membership, is our official governing body.
+  source: native-village-of-afognak-website-about-nva-governance
+  confidence: high
   verification: read-in-full
-  as_of: '2002-08-12'
-  locator: Article IV, Section 1
-  document_version:
-    document: native-village-of-afognak-constitution
-    version: 2002-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Akiachak folder, but the text is the Native Village of Afognak 2002 constitution.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 7 members
-  quote: The Council shall consist of seven (7) members who shall
-  source: constitution-native-village-of-afognak-2002-text
-  confidence: medium
+  quote: The Tribal Council has seven seats, each with three-year terms.
+  source: native-village-of-afognak-website-about-nva-governance
+  confidence: high
   verification: read-in-full
-  as_of: '2002-08-12'
-  locator: Article IV, Section 2
-  document_version:
-    document: native-village-of-afognak-constitution
-    version: 2002-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Akiachak folder, but the text is the Native Village of Afognak 2002 constitution.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
-  value: Elected by majority vote of qualified members
-  quote: be elected by a majority vote of qualified members of the Tribe at an annual election or
-  source: constitution-native-village-of-afognak-2002-text
-  confidence: medium
+  value: Elected by membership
+  quote: A tribal council of seven members, elected by our membership, is our official governing body.
+  source: native-village-of-afognak-website-about-nva-governance
+  confidence: high
   verification: read-in-full
-  as_of: '2002-08-12'
-  locator: Article IV, Section 2
-  document_version:
-    document: native-village-of-afognak-constitution
-    version: 2002-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Akiachak folder, but the text is the Native Village of Afognak 2002 constitution.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
   value: 3 years, staggered
-  quote: staggered terms of the Council, all Council members shall serve three (3) year terms.
-  source: constitution-native-village-of-afognak-2002-text
-  confidence: medium
+  quote: The Tribal Council has seven seats, each with three-year terms. Terms are staggered so that two seats (three seats every third year) are up for election each year at our Annual Meeting and Election.
+  source: native-village-of-afognak-website-about-nva-governance
+  confidence: high
   verification: read-in-full
-  as_of: '2002-08-12'
-  locator: Article IV, Section 4
-  document_version:
-    document: native-village-of-afognak-constitution
-    version: 2002-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Akiachak folder, but the text is the Native Village of Afognak 2002 constitution.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairman
   quote: The Chairman shall preside at all meetings of the Tribe and
@@ -280,17 +260,13 @@ governance:
     version: 2002-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Akiachak folder, but the text is the Native Village of Afognak 2002 constitution.'
 - aspect: elections
-  value: Annually
-  quote: meeting or election of the Native Village of Afognak shall be held annually.
-  source: constitution-native-village-of-afognak-2002-text
-  confidence: medium
+  value: Each year at the Annual Meeting
+  quote: are up for election each year at our Annual Meeting and Election
+  source: native-village-of-afognak-website-about-nva-governance
+  confidence: high
   verification: read-in-full
-  as_of: '2002-08-12'
-  locator: Article V, Section 3
-  document_version:
-    document: native-village-of-afognak-constitution
-    version: 2002-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The file sits in the Akiachak folder, but the text is the Native Village of Afognak 2002 constitution.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: voting-age
   value: '18'
   quote: eighteen (18) years of age or older shall be eligible to vote in all Tribal elections,

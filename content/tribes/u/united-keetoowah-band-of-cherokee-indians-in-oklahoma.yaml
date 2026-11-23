@@ -228,65 +228,45 @@ governance:
     version: 1950-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
 - aspect: governing-body
-  value: Council of the United Keetoowah Band of Cherokee Indians in Oklahoma
-  quote: governing body of the
-  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
-  confidence: medium
+  value: Tribal Council
+  quote: The United Keetoowah Band is governed by the UKB Tribal Council, the supreme governing body.
+  source: united-keetoowah-band-of-cherokee-indians-in-oklahoma-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1950-10-03'
-  locator: Article V, Section 1
-  document_version:
-    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: governing-body-size
-  value: 9 members
-  quote: (9) members, male
-  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
-  confidence: medium
+  value: 4 officers and 9 district representatives
+  quote: The UKB Tribal Council is comprised of four officers and nine district representatives.
+  source: ukb-nsn-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1950-10-03'
-  locator: Article V, Section 2
-  document_version:
-    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: governing-body-selection
-  value: Elected by district
-  quote: ing in, or affiliated with, the district to be represented
-  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
-  confidence: medium
+  value: Elected
+  quote: Officers are elected every four years, while representatives are elected every two.
+  source: united-keetoowah-band-of-cherokee-indians-in-oklahoma-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1950-10-03'
-  locator: Article VII, Section 2
-  document_version:
-    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: governing-body-term
-  value: 2 years
-  quote: two years, or until
-  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
-  confidence: medium
+  value: Officers 4 years, representatives 2 years
+  quote: Officers are elected every four years, while representatives are elected every two.
+  source: united-keetoowah-band-of-cherokee-indians-in-oklahoma-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1950-10-03'
-  locator: Article V, Section 3
-  document_version:
-    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: head-of-government
   value: Chief
-  quote: The chief shall preside at all meetings of the
-  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
-  confidence: medium
+  quote: On the council sits four officers including the chief, assistant chief, treasurer and secretary, as well as nine district representatives.
+  source: united-keetoowah-band-of-cherokee-indians-in-oklahoma-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1950-10-03'
-  locator: By-laws, Article I, Section 1
-  document_version:
-    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -296,41 +276,29 @@ governance:
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 - aspect: head-of-government-selection
-  value: Elected at large by the eligible voters
-  quote: officers shall be elected at large by the eligible voters
-  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
-  confidence: medium
+  value: Elected
+  quote: Officers are elected every four years, while representatives are elected every two.
+  source: united-keetoowah-band-of-cherokee-indians-in-oklahoma-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1950-10-03'
-  locator: Article VI
-  document_version:
-    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: head-of-government-term
   value: 4 years
-  quote: The officers shall serve for a period of four
-  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
-  confidence: medium
+  quote: Officers are elected every four years
+  source: united-keetoowah-band-of-cherokee-indians-in-oklahoma-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1950-10-03'
-  locator: Article VI
-  document_version:
-    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: other-officers
-  value: Assistant Chief, Secretary, Treasurer
-  quote: officers of the Band shall be a chief, assistant chief, a secretary
-  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
-  confidence: medium
+  value: Assistant Chief, Treasurer, Secretary
+  quote: four officers including the chief, assistant chief, treasurer and secretary
+  source: united-keetoowah-band-of-cherokee-indians-in-oklahoma-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1950-10-03'
-  locator: Article VI
-  document_version:
-    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: elections
   value: Regular elections on the first Monday of the same month
   quote: thereafter on the first Monday of the same
@@ -355,6 +323,22 @@ governance:
     document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
     version: 1950-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: election-authority
+  value: Election Board
+  quote: shall conduct all elections in compliance with the 2024 Election Ordinance
+  source: united-keetoowah-band-of-cherokee-indians-in-oklahoma-website-electionboard
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
+- aspect: judiciary
+  value: District Court and Supreme Court
+  quote: The District Court hears civil, criminal, and juvenile matters, while the Supreme Court hears cases of appeals and other matters as may be conferred by statute.
+  source: united-keetoowah-band-of-cherokee-indians-tribal-court-ukb
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws are linked from the Government page but their text is not among the saved pages.'
 - aspect: amendment
   value: Majority vote of the Council or 30% petition, then referendum by majority of eligible voters
   quote: proposed by a majority vote of the Council or by a petition of thirty

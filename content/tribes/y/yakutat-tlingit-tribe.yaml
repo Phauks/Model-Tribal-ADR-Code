@@ -217,6 +217,22 @@ indian_health_service:
   note: 'The source''s words: "Yakutat Tlingit Tribe".'
   operator: tribal
 governance:
+- aspect: form
+  value: Tribal government under the Indian Reorganization Act
+  quote: In the early 1990s, the Yakutat Native Association began to draft a constitution that would allow it to reorganize and become recognized as a tribal government under the authority of the Indian Reorganization Act.
+  source: yakutat-tlingit-tribe-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution the Nation drafted is mentioned on the About Us page but its text is not among the saved pages.'
+- aspect: governing-body
+  value: Yakutat Tlingit Tribe
+  quote: the Yakutat Tlingit Tribe, as the self-governing body duly formed to oversee the affairs of the Tlingit people and its native land
+  source: yakutat-tlingit-tribe-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution the Nation drafted is mentioned on the About Us page but its text is not among the saved pages.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -225,6 +241,14 @@ governance:
   as_of: '2026-11-20'
   locator: Yakutat Tlingit Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Yakutat Tlingit Tribal Court
+  quote: The Yakutat Tlingit Tribal Court was established in 2019 and has grown to encompass three full time staff members.
+  source: yakutat-tlingit-tribe-website-tribalcourt
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution the Nation drafted is mentioned on the About Us page but its text is not among the saved pages.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

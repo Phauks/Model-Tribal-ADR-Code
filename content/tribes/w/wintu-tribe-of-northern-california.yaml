@@ -66,6 +66,23 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-23'
   note: General office address, shown as text on the page. Found by scripts/tribes/find_emails_deep.mjs.
+governance:
+- aspect: governing-body
+  value: Council
+  quote: Our tribe has a council which holds monthly council meetings, biennial elections and we remain involved with community events throughout the year.
+  source: wintu-tribe-of-northern-california-website-what-we-do
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officers appear only beside names, so no officer facts are given.'
+- aspect: elections
+  value: Every 2 years (biennial)
+  quote: Our tribe has a council which holds monthly council meetings, biennial elections and we remain involved with community events throughout the year.
+  source: wintu-tribe-of-northern-california-website-what-we-do
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officers appear only beside names, so no officer facts are given.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

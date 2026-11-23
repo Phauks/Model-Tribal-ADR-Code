@@ -173,65 +173,45 @@ indian_health_service:
   note: Listed as "St. Regis Mohawk Tribe".
 governance:
 - aspect: governing-body
-  value: Tribal Council
-  quote: Tribal Council of the Saint Regis Mohawk Tribe shall be vested with all powers of its
-  source: constitution-saint-regis-mohawk-tribe-1995-text
-  confidence: medium
+  value: Saint Regis Mohawk Tribal Council
+  quote: governed by the duly elected Saint Regis Mohawk Tribal Council
+  source: saint-regis-mohawk-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-03'
-  locator: Article VIII, Section 1
-  document_version:
-    document: saint-regis-mohawk-tribe-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
-  value: 5 members, may be enlarged to 7
-  quote: The Tribal Council may enlarge its membership from five (5) to as many as seven (7)
-  source: constitution-saint-regis-mohawk-tribe-1995-text
-  confidence: medium
+  value: 6 members
+  quote: The Tribal Council is comprised of three Chiefs and three Sub-Chiefs.
+  source: saint-regis-mohawk-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-03'
-  locator: Article V, Section 7
-  document_version:
-    document: saint-regis-mohawk-tribe-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
-  value: Elected by voters
-  quote: The members of the Tribal Council shall be elected to staggered terms.
-  source: constitution-saint-regis-mohawk-tribe-1995-text
-  confidence: medium
+  value: Elected
+  quote: governed by the duly elected Saint Regis Mohawk Tribal Council
+  source: saint-regis-mohawk-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-03'
-  locator: Article V, Section 6
-  document_version:
-    document: saint-regis-mohawk-tribe-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
   value: 3 years
-  quote: shall be elected for three year terms.
-  source: constitution-saint-regis-mohawk-tribe-1995-text
-  confidence: medium
+  quote: joins the Saint Regis Mohawk Tribal Council for the first time as an elected chief for a 3-year term.
+  source: saint-regis-mohawk-tribe-website-tribal-council-tribal-chief-donald-thompson-jr
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-03'
-  locator: Article VIII, Section 3
-  document_version:
-    document: saint-regis-mohawk-tribe-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
-  value: Chief
-  quote: the Chief Executive Officer of the tribe and shall exercise the following powers, subject
-  source: constitution-saint-regis-mohawk-tribe-1995-text
-  confidence: medium
+  value: Tribal Chiefs
+  quote: The Saint Regis Mohawk Tribal Council Chiefs are responsible for setting policy and making major decisions on behalf of the tribe.
+  source: saint-regis-mohawk-tribe-website-about-history-of-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-03'
-  locator: Article VII, Section 2
-  document_version:
-    document: saint-regis-mohawk-tribe-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chiefs (3)
   source: bia-tribal-leaders-directory-2026
@@ -265,29 +245,21 @@ governance:
     version: 1995-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
 - aspect: other-officers
-  value: Vice Chief, Tribal Clerk
-  quote: Constitutional office of Tribal Clerk. The Tribal Clerk shall be elected
-  source: constitution-saint-regis-mohawk-tribe-1995-text
-  confidence: medium
+  value: Ethics Officer, Tribal Clerk
+  quote: Independent Officials of the Saint Regis Mohawk Tribe include our Ethics Officer, Tribal Clerk and Tribal Courts.
+  source: saint-regis-mohawk-tribe-website-independent-officials-2
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-03'
-  locator: Article IX, Section 1
-  document_version:
-    document: saint-regis-mohawk-tribe-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: elections
-  value: Annually on the first Saturday in June
-  quote: the Saint Regis Mohawk Tribe shall be held annually on the first Saturday in June.
-  source: constitution-saint-regis-mohawk-tribe-1995-text
-  confidence: medium
+  value: Annually
+  quote: formalized elections are now scheduled each year and definite terms of office were established.
+  source: saint-regis-mohawk-tribe-website-about-history-of-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-03'
-  locator: Article V, Section 6
-  document_version:
-    document: saint-regis-mohawk-tribe-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: voting-age
   value: '18'
   quote: members of the Saint Regis Mohawk Tribe and be at least eighteen (18) years of age.
@@ -337,17 +309,13 @@ governance:
     version: 1995-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
 - aspect: judiciary
-  value: Tribal Court and Court of Appeals
-  quote: government which shall consist of a Tribal Court, a Court of Appeals and such other lower
-  source: constitution-saint-regis-mohawk-tribe-1995-text
-  confidence: medium
+  value: Traffic and Civil Court
+  quote: The Saint Regis Mohawk Tribal Court currently consists of a Traffic and Civil Court.
+  source: saint-regis-mohawk-tribe-website-independent-officials-2
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-03'
-  locator: Article X, Section 1
-  document_version:
-    document: saint-regis-mohawk-tribe-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: judicial-selection
   value: Elected by the eligible voters
   quote: Tribal Court shall consist of a Chief Judge and two Associate Judges elected by the

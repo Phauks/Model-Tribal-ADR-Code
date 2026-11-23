@@ -228,17 +228,13 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: governing-body
-  value: Pueblo council
-  quote: Clara shall be vested in the pueblo council which shall consist of the
-  source: constitution-pueblo-of-santa-clara-1939-text-2
-  confidence: medium
+  value: Tribal Council
+  quote: The Tribal Council is generally responsible for adopting, amending, and repealing tribal ordinances/codes.
+  source: pueblo-of-santa-clara-website-programs-tribal-government-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-19'
-  locator: Article III, Section 1
-  document_version:
-    document: pueblo-of-santa-clara-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
 - aspect: governing-body-size
   value: 8 representatives, plus officers
   quote: elections eight representatives shall be
@@ -252,41 +248,29 @@ governance:
     version: 1939-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
 - aspect: governing-body-selection
-  value: Officers elected by secret ballot; representatives chosen by the council
-  quote: and sheriff shall be elected by secret ballot to serve
-  source: constitution-pueblo-of-santa-clara-1939-text-2
-  confidence: medium
+  value: Appointed
+  quote: Santa Clara Pueblo’s Tribal Council members are appointed for a one-year term.
+  source: pueblo-of-santa-clara-website-programs-tribal-government-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-19'
-  locator: Article III, Section 2
-  document_version:
-    document: pueblo-of-santa-clara-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
 - aspect: governing-body-term
   value: 1 year
-  quote: by secret ballot to serve for the ensuing year.
-  source: constitution-pueblo-of-santa-clara-1939-text-2
-  confidence: medium
+  quote: Santa Clara Pueblo’s Tribal Council members are appointed for a one-year term.
+  source: pueblo-of-santa-clara-website-programs-tribal-government-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-19'
-  locator: Amendment I
-  document_version:
-    document: pueblo-of-santa-clara-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
 - aspect: head-of-government
   value: Governor
-  quote: shall be the executive
-  source: constitution-pueblo-of-santa-clara-1939-text-2
-  confidence: medium
+  quote: Accomplish project assignments from Governor or Lt. Governor in behalf of the Pueblo.
+  source: pueblo-of-santa-clara-website-programs-support-services-intergovernmental-pr
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-19'
-  locator: Article V
-  document_version:
-    document: pueblo-of-santa-clara-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -320,17 +304,13 @@ governance:
     version: 1939-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
 - aspect: other-officers
-  value: Lieutenant Governor, secretary, treasurer, interpreter, sheriff
-  quote: Governor, secretary, treasurer, interpreter, and sheriff shall be elected
-  source: constitution-pueblo-of-santa-clara-1939-text-2
-  confidence: medium
+  value: Lt. Governor
+  quote: Accomplish project assignments from Governor or Lt. Governor in behalf of the Pueblo.
+  source: pueblo-of-santa-clara-website-programs-support-services-intergovernmental-pr
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-19'
-  locator: Amendment I
-  document_version:
-    document: pueblo-of-santa-clara-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
 - aspect: elections
   value: Within the first five days of each year
   quote: the first five days of each year an election
@@ -368,17 +348,13 @@ governance:
     version: 1939-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
 - aspect: judiciary
-  value: Pueblo council itself adjudicates matters
-  quote: The pueblo council shall also adjudicate
-  source: constitution-pueblo-of-santa-clara-1939-text-2
-  confidence: medium
+  value: Tribal Court
+  quote: The Santa Clara Pueblo Tribal Court is a court of general jurisdiction that handles a variety of cases including traffic, civil, and criminal matters.
+  source: santa-clara-pueblo-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-19'
-  locator: Article IV, Section 2
-  document_version:
-    document: pueblo-of-santa-clara-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
 - aspect: amendment
   value: Decision of the general pueblo, then majority vote of voters 21 or older
   quote: except by a decision of the general pueblo.

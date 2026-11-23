@@ -186,27 +186,13 @@ governance:
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
 - aspect: governing-body
-  value: Governor and Council
-  quote: the direction and control of a Governor and Council, having the following
-  source: constitution-passamaquoddy-tribe-undated-text
-  confidence: medium
+  value: Tribal Council
+  quote: The Tribal Council, representing the tribal community, is the governing body for the Passamaquoddy Tribe at Indian Township.
+  source: passamaquoddy-tribe-website-page-id-9
+  confidence: high
   verification: read-in-full
-  locator: Article V, Section 1
-  document_version:
-    document: passamaquoddy-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
-- aspect: governing-body
-  value: Joint Tribal Council
-  quote: and ordinances adopted by the Joint Tribal Council, and provided further
-  source: constitution-passamaquoddy-tribe-undated-text
-  confidence: medium
-  verification: read-in-full
-  locator: Article V, Section 1
-  document_version:
-    document: passamaquoddy-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution page offers only a download and its text is not in the saved pages, so facts come from the Government, Tribal Council and Chief pages.'
 - aspect: governing-body-size
   value: 8 members (Governor, Lt. Governor and six Council members)
   quote: of the Governor, Lt. Governor and six Council members.
@@ -241,16 +227,13 @@ governance:
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
 - aspect: head-of-government
-  value: Governor
-  quote: of the Pleasant Point Reservation shall chair all meetings of the Council
-  source: constitution-passamaquoddy-tribe-undated-text
-  confidence: medium
+  value: Sakom (Tribal Governor)
+  quote: The “Sakom”, or Tribal Governor, is the Chief executive and official spokesperson for the Tribe.
+  source: passamaquoddy-tribe-website-page-id-9
+  confidence: high
   verification: read-in-full
-  locator: Article V, Section 2
-  document_version:
-    document: passamaquoddy-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution page offers only a download and its text is not in the saved pages, so facts come from the Government, Tribal Council and Chief pages.'
 - aspect: head-of-government-selection
   value: Elected at General Election
   quote: shall be elected to 4 year terms, with those of the Council members
@@ -264,26 +247,20 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
 - aspect: head-of-government-term
   value: 4 years
-  quote: shall be elected to 4 year terms, with those of the Council members
-  source: constitution-passamaquoddy-tribe-undated-text
-  confidence: medium
+  quote: Tribal Chief- Passamaquoddy Tribe of Indian Township (4-year Term)
+  source: passamaquoddy-tribe-website-page-id-270
+  confidence: high
   verification: read-in-full
-  locator: Article VI, Section 2
-  document_version:
-    document: passamaquoddy-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution page offers only a download and its text is not in the saved pages, so facts come from the Government, Tribal Council and Chief pages.'
 - aspect: other-officers
-  value: Lt. Governor
-  quote: of Lt. Governor shall have no authority except to act for the Governor
-  source: constitution-passamaquoddy-tribe-undated-text
-  confidence: medium
+  value: Lieutenant Governor (Leptanet)
+  quote: The Lieutenant Governor, or “Leptanet”, shall perform the duties and exercise the powers that may be delegated to him by the Chief.
+  source: passamaquoddy-tribe-website-page-id-9
+  confidence: high
   verification: read-in-full
-  locator: Article V, Section 3
-  document_version:
-    document: passamaquoddy-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution page offers only a download and its text is not in the saved pages, so facts come from the Government, Tribal Council and Chief pages.'
 - aspect: elections
   value: First Tuesday after Labor Day in September of each even-numbered year
   quote: General Elections shall be held on the

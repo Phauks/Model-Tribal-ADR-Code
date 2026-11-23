@@ -194,16 +194,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
 - aspect: governing-body
   value: Tribal Council
-  quote: The governing body of the Tribe shall be a council known as
-  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
-  confidence: medium
+  quote: The Ione Band of Miwok Indians Tribal Council understands and responds to the needs of the community
+  source: ione-band-of-miwok-indians-of-california-website-about-ibmi
+  confidence: high
   verification: read-in-full
-  as_of: '2002-09-06'
-  locator: Article V, Section 1
-  document_version:
-    document: ione-band-of-miwok-indians-of-california-constitution
-    version: 2002-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages do not state the council''s size, how its members are chosen or their terms.'
 - aspect: governing-body-size
   value: 5 members
   quote: shall consist of a Chairperson, a Vice-
@@ -253,17 +249,13 @@ governance:
     version: 2002-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
 - aspect: head-of-government
-  value: Chairperson
-  quote: The Chairperson shall be the chief executive officer of
-  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
-  confidence: medium
+  value: Tribal Chairperson
+  quote: I am serving my first term as Tribal Chairwoman.
+  source: ione-band-of-miwok-indians-of-california-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '2002-09-06'
-  locator: Article VI, Section 1
-  document_version:
-    document: ione-band-of-miwok-indians-of-california-constitution
-    version: 2002-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages do not state the council''s size, how its members are chosen or their terms.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026

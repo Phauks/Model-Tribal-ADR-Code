@@ -189,6 +189,46 @@ indian_health_service:
   note: 'The source''s words: "Lovelock Pauite Tribe".'
   operator: tribal
 governance:
+- aspect: form
+  value: Indian Reorganization Act of June 18, 1934
+  quote: The tribe operates under the Indian Reorganization Act of June 18, 1934
+  source: paiutetribelovelock-tribal-council-administration-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members, 3 resident on the colony
+  quote: The Lovelock Paiute Tribe is governed by 5 members, 3 of which must reside on the Lovelock Indian Colony
+  source: paiutetribelovelock-tribal-council-administration-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: Council members are elected every two years in June and on Staggered four year terms.
+  source: paiutetribelovelock-tribal-council-administration-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Council members are elected every two years in June and on Staggered four year terms.
+  source: paiutetribelovelock-tribal-council-administration-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman of the Council presides over all Council meetings.
+  source: paiutetribelovelock-tribal-council-administration-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -197,6 +237,22 @@ governance:
   as_of: '2026-11-20'
   locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary
+  quote: The Vice-Chairman of the Council assists the Chairman when called upon to do so.
+  source: paiutetribelovelock-tribal-council-administration-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 2 years in June
+  quote: Council members are elected every two years in June and on Staggered four year terms.
+  source: paiutetribelovelock-tribal-council-administration-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: constitution
   title: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada - Tribal Constitution

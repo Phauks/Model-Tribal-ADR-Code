@@ -244,17 +244,13 @@ governance:
     version: 1939-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
 - aspect: governing-body
-  value: Board of Directors
-  quote: shall be a Board
-  source: constitution-hoonah-indian-association-1939-text-2
-  confidence: medium
+  value: The Board
+  quote: '"The Board," as this group is known, is the governing body of HIA by which Tribal decisions are made, ideas vetted, and resolutions are passed.'
+  source: hoonah-indian-association-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1939-10-23'
-  locator: Article III, Sec. 1
-  document_version:
-    document: hoonah-indian-association-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages are a home page, a short tribal government page and a placeholder tribal courts page; no governing document is saved, so only one fact is stated.'
 - aspect: governing-body-size
   value: 7 members
   quote: posed of seven members

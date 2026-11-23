@@ -6,11 +6,11 @@
 //   paperback   perfect bound. The spread is both covers plus the spine, with
 //               0.125 in bleed on every side; the spine is pages / 444 + 0.06 in
 //               (Book Creation Guide, pp. 10 and 13).
-//   hardcover   casewrap. Each board overhangs the pages by 0.125 in at the
-//               top, bottom and fore edge, and the artwork wraps 0.75 in
-//               around every edge of the boards; the spine comes from Lulu's
-//               table (Lulu, "Casewrap Books: The Basics"; Book Creation
-//               Guide, p. 15). Linen wrap books use the same file.
+//   hardcover   casewrap. Each board is larger than the pages (a US Trade
+//               board is 6.25 x 9.5 in) and the artwork wraps 0.625 in around
+//               every edge of the boards; the spine comes from Lulu's table
+//               (Lulu's cover templates; Book Creation Guide, p. 15). Linen
+//               wrap books use the same file.
 //
 // Lulu's cover-dimensions call gives the exact spread size for a product and
 // page count; pipeline/build-editions.mjs compares it with these numbers
@@ -43,35 +43,31 @@ export function coverGeometry(sizes, trimKey, pageCount, binding) {
   if (!trim) throw new Error(`Unknown trim "${trimKey}"`);
   if (!BINDINGS.includes(binding)) throw new Error(`Unknown binding "${binding}"`);
   const rules = sizes.cover;
-  let edge, overhang, spine, hinge;
+  let edge, panel, spine, safety;
   if (binding === "paperback") {
     edge = sizes.bleed;
-    overhang = 0;
-    hinge = 0;
+    panel = { width: trim.width, height: trim.height };
     spine = spineWidth(pageCount, sizes.spine);
+    safety = rules.safety_margin;
   } else {
     const hardcover = rules.hardcover;
     if (pageCount < hardcover.minimum_pages) throw new Error(`A hardcover needs at least ${hardcover.minimum_pages} pages`);
     edge = hardcover.wrap;
-    overhang = hardcover.overhang;
-    hinge = hardcover.hinge;
+    panel = { width: round(trim.width + hardcover.board_extra_width), height: round(trim.height + hardcover.board_extra_height) };
     spine = hardcoverSpineWidth(pageCount, hardcover.spine_by_page_count);
+    safety = hardcover.safety_margin;
   }
-  // One cover as the reader sees it: the trim (paperback) or the board.
-  const panel = { width: round(trim.width + overhang), height: round(trim.height + 2 * overhang) };
+  // `panel` is one cover as the reader sees it: the trim (paperback) or the board.
   const width = round(2 * (edge + panel.width) + spine);
   const height = round(panel.height + 2 * edge);
   const back = { x: edge, y: edge, ...panel };
   const spineArea = { x: round(edge + panel.width), y: edge, width: spine, height: panel.height };
   const front = { x: round(edge + panel.width + spine), y: edge, ...panel };
-  const safety = rules.safety_margin;
-  // Text on each cover keeps the safety margin from every edge, and on the
-  // spine side also clears the hinge.
-  const spineSide = Math.max(safety, hinge + safety / 2);
-  const inset = (area, leftInset, rightInset) => ({
-    x: round(area.x + leftInset),
+  // Text keeps the safety margin from every edge of its cover, the spine side included.
+  const inset = (area, side) => ({
+    x: round(area.x + side),
     y: round(area.y + safety),
-    width: round(area.width - leftInset - rightInset),
+    width: round(area.width - 2 * side),
     height: round(area.height - 2 * safety),
   });
   return {
@@ -84,9 +80,10 @@ export function coverGeometry(sizes, trimKey, pageCount, binding) {
     back,
     spine: spineArea,
     front,
-    safe_back: inset(back, safety, spineSide),
-    safe_front: inset(front, spineSide, safety),
-    safe_spine: inset(spineArea, rules.spine_safety, rules.spine_safety),
+    safety_margin: safety,
+    safe_back: inset(back, safety),
+    safe_front: inset(front, safety),
+    safe_spine: inset(spineArea, rules.spine_safety),
     spine_safety: rules.spine_safety,
     spine_text_allowed: pageCount >= sizes.spine.text_minimum_pages,
   };

@@ -181,6 +181,22 @@ indian_health_service:
   locator: Tribally Administered Programs table
   note: Listed as "Narragansett Indian Tribe".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council
+  source: narragansett-indian-tribe-website-history-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and election notices but quote no governing document; the election rules are referred to, not reproduced.'
+- aspect: head-of-government
+  value: Chief Sachem
+  quote: Chief Sachem
+  source: narragansett-indian-tribe-website-history-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and election notices but quote no governing document; the election rules are referred to, not reproduced.'
 - aspect: head-of-government
   value: Chief Sachem
   source: bia-tribal-leaders-directory-2026
@@ -189,6 +205,22 @@ governance:
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Tribal Secretary, Assistant Tribal Secretary, Tribal Treasurer, Assistant Tribal Treasurer, War Chief, Medicine Man, Medicine Woman
+  quote: Tribal Secretary
+  source: narragansett-indian-tribe-website-history-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and election notices but quote no governing document; the election rules are referred to, not reproduced.'
+- aspect: election-authority
+  value: Tribal Election Committee
+  quote: Tribal Election Committee
+  source: narragansett-indian-tribe-website-history-tribal-election-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and election notices but quote no governing document; the election rules are referred to, not reproduced.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

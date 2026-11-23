@@ -32,9 +32,9 @@ To make and publish the file sets:
 | Binding | Spread | Spine | Source |
 | --- | --- | --- | --- |
 | Paperback | Both covers plus the spine, with 0.125 in bleed on every side | Pages / 444 + 0.06 in | Lulu, *Book Creation Guide*, pp. 10 and 13 |
-| Hardcover (case wrap) | Each board is 0.125 in larger than the page at the top, bottom and fore edge, and the artwork wraps 0.75 in around every edge | Lulu's table by page count, 0.25 in to 2.125 in | Lulu, "Casewrap Books: The Basics"; *Book Creation Guide*, p. 15 |
+| Hardcover (case wrap) | Each board is 0.25 in wider and 0.5 in taller than the pages (6.25 x 9.5 in for US Trade), and the artwork wraps 0.625 in around every edge | Lulu's table by page count, 0.25 in to 2.125 in | Lulu's cover templates from its pricing calculator; *Book Creation Guide*, p. 15 |
 
-Text stays 0.5 in inside each cover's edge and 0.125 in inside the spine, and the spine has text only from 100 pages (`pdf/book-sizes.yaml`). Lulu does not publish a formula for the whole hardcover spread, so the hardcover size is the project's reading of those rules. When `LULU_CLIENT_KEY`, `LULU_CLIENT_SECRET` and `LULU_ENVIRONMENT` are set in the shell, `build:editions` asks Lulu's cover-dimensions call for each cover and stops if the sizes differ by more than 0.02 in. Run it once with the sandbox keys before the first upload.
+Text stays 0.5 in inside a paperback cover's edges and 0.625 in inside a hardcover board's edges, the spine side included, and 0.125 in inside the spine. The spine has text only from 100 pages (`pdf/book-sizes.yaml`). The sizes match the cover templates Lulu's pricing calculator gave on Nov. 23, 2026 for five sizes and page counts, and `pdf/tests/cover.test.mjs` checks them. When `LULU_CLIENT_KEY`, `LULU_CLIENT_SECRET` and `LULU_ENVIRONMENT` are set in the shell, `build:editions` also asks Lulu's cover-dimensions call for each cover and stops if the sizes differ by more than 0.02 in.
 
 The cover text (title, author, edition, back cover paragraph) comes from `pdf/book.yaml`.
 

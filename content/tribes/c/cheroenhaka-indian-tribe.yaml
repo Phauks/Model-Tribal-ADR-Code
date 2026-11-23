@@ -103,6 +103,196 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact Us". Its title is "Contact Us – Cheroenhaka Nottoway". Found by scripts/tribes/find_contacts.py.
+governance:
+- aspect: form
+  value: Constitution as the governing document
+  quote: do ordain and establish this Constitution as the governing document of the Cheroenhaka (Nottoway) Indian Nation of Virginia.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Preamble
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Cheroenhaka (Nottoway) Indian Nation is the Tribal Council.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 2a
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: shall consist of eight (8) Council Members having been elected by the “General Body” in the “General Election” for a term of four (4) years.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: governing-body-selection
+  value: Elected by General Body in General Election
+  quote: having been elected by the “General Body” in the “General Election”
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: for a term of four (4) years.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: general-council
+  value: General tribal membership business meeting
+  quote: The general tribal membership business meeting shall be held quarterly with election of officers on the first business meeting of the calendar year.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XI, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: head-of-government
+  value: Principal Chief
+  quote: The Executive Power shall be vested in a Principal Chief and the Vice Chief, who shall be styled as Chief and as Vice Chief of the Cheroenhaka (Nottoway) Indian Nation.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: head-of-government-selection
+  value: Heredity line, elected for life
+  quote: The Principal Chief and Vice Chief shall, follow a heredity line and shall be elected for life.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: head-of-government-term
+  value: For life
+  quote: The Principal Chief and Vice Chief shall, follow a heredity line and shall be elected for life.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: other-officers
+  value: Secretary/roll keeper, Treasurer
+  quote: Article VIII – The Powers and Duties of the Secretary and Treasurer
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VIII
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: elections
+  value: First annual business meeting of the calendar year
+  quote: Elections shall be held on the first annual business meeting of the calendar year.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IX, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: voting-age
+  value: '18'
+  quote: All citizens 18 years and over shall have the right to vote in all tribal elections either in person or by absentee ballot.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: election-authority
+  value: Election committee
+  quote: An election committee shall be appointed by the chief to govern the conduct of tribal elections.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IX, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: branches
+  value: Executive, Legislative, Judicial
+  quote: The powers of the governing body of the Cheroenhaka (Nottoway) Indian Nation shall be divided into three (3) separate branches of government, Executive, Legislative, and Judicial.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: shall be divided into three (3) separate branches of government
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: judiciary
+  value: Judicial Branch
+  quote: The Judicial Branch shall be composed of three (3) tribal members of the Cheroenhaka (Nottoway) Indian Nation, all of whom must be admitted to practice law before the highest court of the State of Virginia.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: judicial-selection
+  value: Appointed by Principal Chief, approved by Tribal Council
+  quote: Members of the Judicial Branch shall be appointed by the Principal Chief and approved by the Tribal Council for such terms as the Tribal Council may provide.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election
+  quote: The Constitution and Bylaws may be amended by a majority vote of the qualified voters of the tribe voting at an election called for that purpose
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XV
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of eligible voters
+  quote: Tribal members may petition the Tribal Council for a recall of a member of the Council by presenting a petition signed by a least forty percent of the eligible voters
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article X, Section 6
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: recall-and-removal
+  value: Removal by Tribal Council with general body approval
+  quote: shall be subject to removal from their position by action of the Tribal Council with the approval of the general body.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article X, Section 5
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
+- aspect: other
+  value: Each clan elects a Clan Mother
+  quote: Each clan will elect a Clan Mother.
+  source: cheroenhaka-indian-tribe-website-about-us-constitution-bylaws-of-the-cheroenhaka-nottoway-ind
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XVI
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 2 and 7 both hold the same constitution and bylaws; facts are taken from page 7.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

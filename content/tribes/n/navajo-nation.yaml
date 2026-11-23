@@ -199,6 +199,22 @@ indian_health_service:
   locator: Direct Service Tribes by IHS Area > Navajo Area
   note: Listed as "Navajo Nation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
+- aspect: governing-body
+  value: Navajo Nation Council
+  quote: 25TH NAVAJO NATION COUNCIL
+  source: navajo-nation-website-portals-0-press-20releases-2026-may-ohnir-nhlc-pdf
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only a Navajo Nation Council press release and the Office of the President page were read, and they state little about the structure of government.'
+- aspect: head-of-government
+  value: President
+  quote: President of the Navajo Nation
+  source: navajo-nation-website-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only a Navajo Nation Council press release and the Office of the President page were read, and they state little about the structure of government.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -207,6 +223,14 @@ governance:
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President
+  quote: Vice President, Navajo Nation
+  source: navajo-nation-website-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only a Navajo Nation Council press release and the Office of the President page were read, and they state little about the structure of government.'
 governing_documents:
 - kind: law-code
   title: Navajo Nation Code

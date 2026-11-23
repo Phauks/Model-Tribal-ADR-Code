@@ -202,16 +202,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Signature and date block is partly illegible in the scan.'
 - aspect: governing-body
   value: Tribal Council
-  quote: The governing body of the Mooretown Rancheria shall be the Tribal
-  source: constitution-mooretown-rancheria-of-maidu-indians-of-california-1999-text
-  confidence: medium
+  quote: Under the general guidance of the Tribal Council, this department conducts the business and administrative functions for the Rancheria
+  source: mooretown-rancheria-of-maidu-indians-of-california-website-departments-tribal-administration-index-html
+  confidence: high
   verification: read-in-full
-  as_of: '1999-01-02'
-  locator: Article III, Section 2
-  document_version:
-    document: mooretown-rancheria-of-maidu-indians-of-california-constitution
-    version: 1999-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Signature and date block is partly illegible in the scan.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Council page is only a heading; the one council fact is a sentence about the administration department.'
 - aspect: governing-body-size
   value: 7 members
   quote: The Tribal Council shall consist of seven (7) lineal voting members

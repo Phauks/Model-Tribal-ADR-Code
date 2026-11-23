@@ -187,6 +187,38 @@ indian_health_service:
   locator: Tribally Administered Programs table
   note: Listed as "Penobscot Indian Nation".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Penobscot Nation has a twelve (12) member tribal council.
+  source: penobscot-nation-website-government-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 12 members
+  quote: The Penobscot Nation has a twelve (12) member tribal council.
+  source: penobscot-nation-website-government-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: The term for council members are four (4) years.
+  source: penobscot-nation-website-government-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  quote: continuing to support me as Chief of our great Nation
+  source: penobscotnation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -195,6 +227,30 @@ governance:
   as_of: '2026-11-20'
   locator: Penobscot Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: elections
+  value: Every 2 years, half the seats
+  quote: However, elections for council are held every two years. Half the council seats are up for re-election every two (2) years.
+  source: penobscot-nation-website-government-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Tribal Court is a court of general jurisdiction with authority to hear a wide range of criminal, civil, juvenile and probate matters.
+  source: penobscot-nation-me
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Court of Appeals
+  quote: 'The Penobscot Nation Court of Appeals judicial opinions are posted here: Appellate Court Decisions.'
+  source: penobscot-nation-website-government-tribal-court-tribal-court-judicial-decisions-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Penobscot Nation - Laws and Ordinances

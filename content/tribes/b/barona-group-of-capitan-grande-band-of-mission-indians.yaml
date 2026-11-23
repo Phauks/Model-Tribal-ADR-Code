@@ -166,6 +166,46 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation, California)". Indian Health Service line is "Capitan Grande Band ... (Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation, California)".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: there is a Tribal Council comprised of six elected Tribal officials.
+  source: barona-group-of-capitan-grande-band-of-mission-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 6 members
+  quote: there is a Tribal Council comprised of six elected Tribal officials.
+  source: barona-group-of-capitan-grande-band-of-mission-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: there is a Tribal Council comprised of six elected Tribal officials.
+  source: barona-group-of-capitan-grande-band-of-mission-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: Approximately 240 voting members
+  quote: Barona is governed by a General Council, which is comprised of approximately 240 voting members of the tribe.
+  source: barona-group-of-capitan-grande-band-of-mission-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman
+  source: barona-group-of-capitan-grande-band-of-mission-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Spokesman
   source: bia-tribal-leaders-directory-2026
@@ -174,6 +214,14 @@ governance:
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation, California'
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other
+  value: Gaming Commission, regulatory branch
+  quote: The Barona Gaming Commission is the regulatory branch of the tribal government.
+  source: barona-group-of-capitan-grande-band-of-mission-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 gaming:
   compacts:
   - state: CA

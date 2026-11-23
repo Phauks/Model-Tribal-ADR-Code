@@ -190,29 +190,13 @@ governance:
     version: 1963-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
 - aspect: governing-body
-  value: General Council
-  quote: The governing body of the Community shall be
-  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
-  confidence: medium
+  value: Tachi Yokut Tribal Council
+  quote: Meet the governing body of our mighty sovereign nation, the Tachi Yokut Tribal Council.
+  source: tachi-yokut-nsn-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1963-05-08'
-  locator: Article IV, Section 1
-  document_version:
-    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
-    version: 1963-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
-- aspect: governing-body
-  value: Business Committee
-  quote: The General Council shall elect from its member-
-  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '1963-05-08'
-  locator: Article IV, Section 2
-  document_version:
-    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
-    version: 1963-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council membership is listed by title with names, so no seat count is given; the Tribal Council page is the tribe''s own site.'
 - aspect: governing-body-selection
   value: Chosen by the General Council from its membership by secret ballot
   quote: The General Council shall elect from its member-
@@ -238,17 +222,13 @@ governance:
     version: 1963-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
 - aspect: head-of-government
-  value: Chairman
-  quote: The Chairman shall preside at all meetings of
-  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
-  confidence: medium
+  value: Tribal Council Chairman
+  quote: Tribal Council Chairman
+  source: santa-rosa-indian-community-of-the-santa-rosa-rancheria-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1963-05-08'
-  locator: Bylaws, Article I, Section 1
-  document_version:
-    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
-    version: 1963-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council membership is listed by title with names, so no seat count is given; the Tribal Council page is the tribe''s own site.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -282,17 +262,13 @@ governance:
     version: 1963-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
 - aspect: other-officers
-  value: Vice-Chairman, Secretary, Treasurer, two delegates
-  quote: The Vice-Chairman in the absence of the
-  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
-  confidence: medium
+  value: Vice-Chairman
+  quote: Our Vice- Chairman provides leadership and direction for the tribe, overseeing the implementation of tribal policies, programs, and initiatives
+  source: santa-rosa-indian-community-of-the-santa-rosa-rancheria-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1963-05-08'
-  locator: Bylaws, Article I, Section 2
-  document_version:
-    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
-    version: 1963-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council membership is listed by title with names, so no seat count is given; the Tribal Council page is the tribe''s own site.'
 - aspect: elections
   value: April meeting of each odd-numbered year
   quote: meeting of each odd-numbered year. Any mem-

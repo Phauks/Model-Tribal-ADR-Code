@@ -183,6 +183,46 @@ indian_health_service:
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "The Quapaw Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Quapaw Tribe of Oklahoma (2017)); the list does not say which service unit or programs the compact covers.'
 governance:
+- aspect: governing-body
+  value: Business Committee
+  quote: The Quapaw Nation is governed by the Business Committee, which was established in 1956 through the Governing Resolutions.
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Committee consists of seven elected members who serve staggered two-year terms.
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
+- aspect: governing-body-selection
+  value: Elected by registered voters
+  quote: Members are elected or reelected by registered Quapaw Nation voters.
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: The Committee consists of seven elected members who serve staggered two-year terms.
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -191,6 +231,14 @@ governance:
   as_of: '2026-11-20'
   locator: Quapaw Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chair”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary Treasurer
+  quote: Secretary Treasurer
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
 governing_documents:
 - kind: law-code
   title: Tribal code

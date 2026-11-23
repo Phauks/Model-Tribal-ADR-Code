@@ -260,16 +260,36 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
 - aspect: governing-body
   value: Tribal Council
-  quote: The Tribal Council shall have all of the legislative powers vested
-  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
-  confidence: medium
+  quote: Tribal Council
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
   verification: read-in-full
-  as_of: '1991-02-14'
-  locator: Article V
-  document_version:
-    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: The executive branch is composed of a nine-member
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
+- aspect: governing-body-selection
+  value: Elected by Tribal members
+  quote: Council members are elected to office by Tribal members and serve 4-year terms.
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Council members are elected to office by Tribal members and serve 4-year terms.
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
 - aspect: general-council
   value: All voters of the Tribe (general meetings)
   quote: The Tribal Council may from time to time call general meetings of all Vojtt
@@ -284,16 +304,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
 - aspect: head-of-government
   value: Chairperson
-  quote: Chairperson, Vice Chairperson, Secretary and Treasurer of the Tribal
-  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
-  confidence: medium
+  quote: which includes a chairperson and vice-chairperson.
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
   verification: read-in-full
-  as_of: '1991-02-14'
-  locator: Article VII, Section 1
-  document_version:
-    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -362,42 +378,38 @@ governance:
     document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: branches
+  value: Executive and judicial branches
+  quote: the Tribe is governed by an executive and judicial branch.
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
 - aspect: judiciary
   value: Tribal Court and Court of Appeals
-  quote: and a Court of Appeals and such other lower courts as deemed necessary by the
-  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
-  confidence: medium
+  quote: and a Court of Appeals. Judges are appointed by the Tribal Council for two-year terms.
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
   verification: read-in-full
-  as_of: '1991-02-14'
-  locator: Article VI, Section 1
-  document_version:
-    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
 - aspect: judicial-selection
   value: Appointed by the Tribal Council
-  quote: shall be appointed by the Tribal Council.
-  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
-  confidence: medium
+  quote: Judges are appointed by the Tribal Council for two-year terms.
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
   verification: read-in-full
-  as_of: '1991-02-14'
-  locator: Article VI, Section 5
-  document_version:
-    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
 - aspect: judicial-term
   value: 2 years
-  quote: Each Judge shall hold office for a period of
-  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
-  confidence: medium
+  quote: Judges are appointed by the Tribal Council for two-year terms.
+  source: hualapai-indian-tribe-of-the-hualapai-indian-reservation-website-government-index-php
+  confidence: high
   verification: read-in-full
-  as_of: '1991-02-14'
-  locator: Article VI, Section 6
-  document_version:
-    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages 8 and 9 are 404 error pages, and the Government page (5) is the only page stating how the government is set up.'
 - aspect: judicial-independence
   value: Pay may not be reduced during term
   quote: The Tribal Council shall not diminish

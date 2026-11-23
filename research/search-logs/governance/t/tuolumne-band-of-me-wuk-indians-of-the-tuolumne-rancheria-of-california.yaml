@@ -10,7 +10,7 @@ searches:
   address: research/captures/constitutions/tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california/067feabeaa473329.txt
   query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
   outcome: found
-  reason: Read the 2001 constitution and bylaws, as amended (constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text); kept 12 facts whose quoted words were found in the text.
+  reason: Read the 2001 constitution and bylaws, as amended (constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text); kept 7 facts whose quoted words were found in the text.
   records:
   - constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
 - date: '2026-11-23'
@@ -23,4 +23,16 @@ searches:
   reason: The directory lists the title of the leader's office.
   records:
   - bia-tribal-leaders-directory-2026
-next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://mewuk.com//
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 7 pages (home, government, council, election, court and constitution pages); kept 6 facts whose quoted words were found on the page.
+  records:
+  - tuolumne-band-of-me-wuk-indians-of-the-t-cultural-history
+  - tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-californi-website-tribal-government-committees
+  - tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-californi-website-tribal-government-governmental-structure
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

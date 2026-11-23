@@ -214,6 +214,22 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Qawalingin Tribe of Unalaska".'
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The heart of local governance lies in its regular council meetings.
+  source: qawalangin-tribe-of-unalaska-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officers appear on page 3 only with personal names; only the titles are recorded and no seat count is stated.'
+- aspect: head-of-government
+  value: President
+  quote: President
+  source: qawalangin-tribe-of-unalaska-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officers appear on page 3 only with personal names; only the titles are recorded and no seat count is stated.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -222,6 +238,14 @@ governance:
   as_of: '2026-11-20'
   locator: Qawalangin Tribe of Unalaska
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary / Treasurer, Council Member
+  quote: Vice President
+  source: qawalangin-tribe-of-unalaska-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officers appear on page 3 only with personal names; only the titles are recorded and no seat count is stated.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

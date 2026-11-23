@@ -159,29 +159,21 @@ indian_health_service:
   note: Listed as "Winnemucca Indian Colony".
 governance:
 - aspect: form
-  value: Constitution and bylaws under Section 16 of the Indian Reorganization Act of 1934
-  quote: pursuant to Section 16 of that act and do affirm it as the foundation
-  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
-  confidence: medium
+  value: Sovereign government
+  quote: The Winnemucca Indian Colony is a sovereign government proudly preserving its traditions as a part of the Western Shoshone nation.
+  source: winnemuccaindiancolony-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1971-03-05'
-  locator: Preamble
-  document_version:
-    document: winnemucca-indian-colony-of-nevada-constitution
-    version: 1971-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 1 names council members only beside their titles, so no officer facts are given; page 4 is the Inter-Tribal Court of Appeals rules from the Law & Order Code, not the constitution.'
 - aspect: governing-body
-  value: Winnemucca Colony Council
-  quote: consist of a council known as the Winnemucca Colony Council, here-
-  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
-  confidence: medium
+  value: Council
+  quote: 'Council:'
+  source: winnemuccaindiancolony-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1971-03-05'
-  locator: Article III, Section 1
-  document_version:
-    document: winnemucca-indian-colony-of-nevada-constitution
-    version: 1971-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 1 names council members only beside their titles, so no officer facts are given; page 4 is the Inter-Tribal Court of Appeals rules from the Law & Order Code, not the constitution.'
 - aspect: governing-body-size
   value: 5 members
   quote: of five (5) members including a chairman and a vice chairman selected
@@ -310,6 +302,14 @@ governance:
     document: winnemucca-indian-colony-of-nevada-constitution
     version: 1971-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: judiciary
+  value: Inter-Tribal Court of Appeals of Nevada
+  quote: The Inter-Tribal Court of Appeals of Nevada shall consist of a panel of three
+  source: winnemucca-indian-colony-of-nevada-website-wp-content-uploads-2022-08-wic-law-order-code-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Page 1 names council members only beside their titles, so no officer facts are given; page 4 is the Inter-Tribal Court of Appeals rules from the Law & Order Code, not the constitution.'
 - aspect: amendment
   value: Same manner as original ratification
   quote: and approved in the same manner as the constitution was originally

@@ -183,53 +183,37 @@ governance:
     version: 1948-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
-  value: Business Council
-  quote: shall be a Business Council of eleven members elected by popular vote of
-  source: university-of-oklahoma-indian-reorganization-act-lummicons
-  confidence: medium
+  value: Lummi Indian Business Council
+  quote: Lummi Indian Business Council (LIBC) is the elected governing body of the Lummi Nation
+  source: lummi-tribe-of-the-lummi-reservation-website-node-website-php-pageid-763
+  confidence: high
   verification: read-in-full
-  as_of: '1948-01-02'
-  locator: Article III, Section 1
-  document_version:
-    document: lummi-tribe-of-the-lummi-reservation-constitution
-    version: 1948-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
 - aspect: governing-body-size
   value: 11 members
-  quote: shall be a Business Council of eleven members elected by popular vote of
-  source: university-of-oklahoma-indian-reorganization-act-lummicons
-  confidence: medium
+  quote: 'LIBC consists of eleven members duly elected to serve for a three-year term and held by the following:'
+  source: lummi-tribe-of-the-lummi-reservation-website-node-website-php-pageid-763
+  confidence: high
   verification: read-in-full
-  as_of: '1948-01-02'
-  locator: Article III, Section 1
-  document_version:
-    document: lummi-tribe-of-the-lummi-reservation-constitution
-    version: 1948-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
 - aspect: governing-body-selection
-  value: Elected by popular vote of adult members
-  quote: shall be a Business Council of eleven members elected by popular vote of
-  source: university-of-oklahoma-indian-reorganization-act-lummicons
-  confidence: medium
+  value: Elected
+  quote: 'LIBC consists of eleven members duly elected to serve for a three-year term and held by the following:'
+  source: lummi-tribe-of-the-lummi-reservation-website-node-website-php-pageid-763
+  confidence: high
   verification: read-in-full
-  as_of: '1948-01-02'
-  locator: Article III, Section 1
-  document_version:
-    document: lummi-tribe-of-the-lummi-reservation-constitution
-    version: 1948-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
 - aspect: governing-body-term
-  value: 3 years, staggered
-  quote: be three years unless otherwise provided herein.
-  source: university-of-oklahoma-indian-reorganization-act-lummicons
-  confidence: medium
+  value: 3 years
+  quote: 'LIBC consists of eleven members duly elected to serve for a three-year term and held by the following:'
+  source: lummi-tribe-of-the-lummi-reservation-website-node-website-php-pageid-763
+  confidence: high
   verification: read-in-full
-  as_of: '1948-01-02'
-  locator: Article III, Section 2
-  document_version:
-    document: lummi-tribe-of-the-lummi-reservation-constitution
-    version: 1948-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
 - aspect: general-council
   value: General council called annually on election day
   quote: The Chairman of the Lummi Business Council shall call a general council
@@ -311,17 +295,13 @@ governance:
     version: 1948-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: judiciary
-  value: Council may establish a reservation court by ordinance
-  quote: and order and the administration of justice by establishing a reservation
-  source: university-of-oklahoma-indian-reorganization-act-lummicons
-  confidence: medium
+  value: Lummi Tribal Court
+  quote: Welcome to the Lummi Tribal Court
+  source: lummi-nation-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1948-01-02'
-  locator: Article V, Section 1(k)
-  document_version:
-    document: lummi-tribe-of-the-lummi-reservation-constitution
-    version: 1948-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
 - aspect: amendment
   value: Majority vote of qualified voters at election called for that purpose
   quote: majority vote of the qualified voters of the Lummi Tribe voting at an election

@@ -202,16 +202,13 @@ governance:
     version: 1938-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
 - aspect: governing-body
-  value: Shoshone and Arapahoe Business Council
-  quote: known fit the Shoshone and Arapahoe Business Council.
-  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
-  confidence: medium
+  value: Business Council
+  quote: Business-Council - Eastern Shoshone
+  source: eastern-shoshone-tribe-of-the-wind-river-reservation-website-business-council
+  confidence: high
   verification: read-in-full
-  as_of: '1938-09-27'
-  document_version:
-    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
-    version: 1938-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site has little governance text; the council is listed only with names, so only the body name is given.'
 - aspect: governing-body-size
   value: 6 members from each tribe
   quote: Council is to consist of six members duly

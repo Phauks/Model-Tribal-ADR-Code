@@ -104,6 +104,15 @@ official_images:
   as_of: '2026-11-21'
   verification: read-in-full
   note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council
+  source: patawomeck-indian-tribe-of-virginia-website-about-the-tribe
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and officers appear only as names with titles, so the page gives no council size, selection or term.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

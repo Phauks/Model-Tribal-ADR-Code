@@ -187,6 +187,46 @@ indian_health_service:
   locator: '"Direct Service Tribes by IHS Area" list'
   note: Listed as "Onondaga Nation of New York".
 governance:
+- aspect: governing-body
+  value: Council of Chiefs
+  quote: Council of Chiefs
+  source: onondaga-nation-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No written constitution is among the pages; the facts describe the traditional Council of Chiefs as the site states it.'
+- aspect: governing-body-size
+  value: 14 chiefs (Hoyane)
+  quote: the Onondaga have 14 Hoyane
+  source: onondaga-nation-website-government-chiefs
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No written constitution is among the pages; the facts describe the traditional Council of Chiefs as the site states it.'
+- aspect: governing-body-selection
+  value: Selected by the Clan Mother
+  quote: These leaders would be selected by the Clan Mother
+  source: onondaga-nation-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No written constitution is among the pages; the facts describe the traditional Council of Chiefs as the site states it.'
+- aspect: governing-body-term
+  value: For life
+  quote: Once a man is selected to be a Hoyane, he holds that position for life.
+  source: onondaga-nation-website-government-chiefs
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No written constitution is among the pages; the facts describe the traditional Council of Chiefs as the site states it.'
+- aspect: head-of-government
+  value: Tadodaho
+  quote: Of the 14 leaders, sits Tadodaho, who presides over the council of the Haudenosaunee.
+  source: onondaga-nation-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No written constitution is among the pages; the facts describe the traditional Council of Chiefs as the site states it.'
 - aspect: head-of-government
   value: Chiefs (3)
   source: bia-tribal-leaders-directory-2026
@@ -195,6 +235,30 @@ governance:
   as_of: '2026-11-20'
   locator: Onondaga Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Own method of deciding matters
+  quote: The Onondaga Nation has their own method of deciding matters.
+  source: onondaga-nation-website-government-court-cases
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No written constitution is among the pages; the facts describe the traditional Council of Chiefs as the site states it.'
+- aspect: recall-and-removal
+  value: Removal by the clan in council
+  quote: the clan removes him as their leader in council
+  source: onondaga-nation-website-government-chiefs
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No written constitution is among the pages; the facts describe the traditional Council of Chiefs as the site states it.'
+- aspect: other
+  value: Three benches must agree on laws
+  quote: Each of the three branches must be in agreement for laws to be passed.
+  source: onondaga-nation-website-government-symbolism
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No written constitution is among the pages; the facts describe the traditional Council of Chiefs as the site states it.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

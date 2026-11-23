@@ -66,6 +66,39 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-23'
   note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is the Community’s legislative body responsible for running the day-to-day operations of the
+  source: mendota-mdewakanton-dakota-community-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The government page cites the community constitution, but its text is not among the pages.'
+- aspect: governing-body-selection
+  value: Elected by General Council
+  quote: The General Council shall elect a sitting Tribal Council who administers to the daily needs of the Community.
+  source: mendota-mdewakanton-dakota-community-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The government page cites the community constitution, but its text is not among the pages.'
+- aspect: general-council
+  value: All enrolled members aged 18 and older
+  quote: The General Council is the highest governing body of the Community and shall be composed of all enrolled members of the Community aged 18 and older.
+  source: mendota-mdewakanton-dakota-community-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The government page cites the community constitution, but its text is not among the pages.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: As the MMDTC Chairperson, he strives to strengthen cultural education, build stronger communication within the tribe, and improve access to culture and community.
+  source: mendota-mdewakanton-dakota-community-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The government page cites the community constitution, but its text is not among the pages.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
