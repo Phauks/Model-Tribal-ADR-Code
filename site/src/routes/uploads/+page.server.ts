@@ -1,7 +1,9 @@
 import { fail } from '@sveltejs/kit';
+import { can } from '#lib/permissions.ts';
 import { isUploadReference } from '#lib/uploads.ts';
 import {
 	advanceCheckedUploads,
+	settlePulledFiles,
 	answerQuestion,
 	ownUpload,
 	UploadProblem,
@@ -16,9 +18,14 @@ export const load: PageServerLoad = async (event) => {
 	const { database, bucket } = storage(event);
 	// Files whose virus check finished since the last visit move on now.
 	await advanceCheckedUploads(database, bucket, { accountIdentifier: account.subject });
+	const mayPull = !!event.locals.person && can(event.locals.person, 'review-uploads');
+	// Pulled files the intake has answered for show as filed (docs/uploads.md, "Intake").
+	if (mayPull) await settlePulledFiles(database, bucket);
 	return {
 		uploads: await uploadsOfAccount(database, account.subject),
-		sent: event.url.searchParams.get('sent')
+		sent: event.url.searchParams.get('sent'),
+		pulled: event.url.searchParams.has('pulled'),
+		mayPull
 	};
 };
 

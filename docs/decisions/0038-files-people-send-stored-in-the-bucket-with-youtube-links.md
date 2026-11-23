@@ -16,9 +16,13 @@ On Nov. 23, 2026 the lead author asked for a way for people, contributors for ex
 - **The proposal's other defaults stand.**
   - Sound recordings are included.
   - Size limits: documents 100 MB, pictures 50 MB, sound 1 GB, video 5 GB.
-  - Per-account limits: 20 files a day and 5 GB waiting for review, or 50 files and 20 GB for confirmed contributors. Reviewers have no limit.
+  - Per-account limits: none (changed on Nov. 23, 2026; see "Limits" below). The first version allowed 20 files a day and 5 GB waiting for review, or 50 files and 20 GB for confirmed contributors.
   - Files are checked by type and for hidden content, and pictures get a copy without location details.
   - Nation reviewers may comment on uploads about their nation, but not file them.
+
+### Limits (Nov. 23, 2026)
+
+Trevor Goldsmith, Nov. 23, 2026: "the 20 a day is a crazy stupid thing to have. Assume if they have access to this page they have been vetted." Send files and Intake no longer limit how many files a batch holds, how many an account sends in a day, or how much waits for review. Cloudflare's per-minute limit on starting files stays, raised to 600 a minute, only as a guard against a runaway script; the upload page waits and carries on when it is reached. The size limit for each kind of file is unchanged.
 
 ## Consequences
 

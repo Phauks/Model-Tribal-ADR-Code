@@ -461,9 +461,9 @@
 			position: fixed;
 			left: var(--space-2);
 			right: var(--space-2);
-			top: 4.5rem;
+			top: 3.5rem;
 			width: auto;
-			max-height: calc(100dvh - 5rem);
+			max-height: calc(100dvh - 4rem);
 			overflow-y: auto;
 		}
 	}

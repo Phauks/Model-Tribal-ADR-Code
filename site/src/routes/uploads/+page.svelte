@@ -9,6 +9,7 @@
 	import {
 		readableSize,
 		uploadKindLabels,
+		pulledStatusExplanations,
 		uploadStatusExplanations,
 		uploadStatusLabels,
 		withdrawableStatuses,
@@ -38,9 +39,16 @@
 <div class="uploads-page">
 	<h1>Your uploads</h1>
 	<p class="lead">Everything you have sent, and where each file is now.</p>
-	<p><a class="button" href="/uploads/send">Send files</a></p>
+	<p class="actions">
+		<a class="button" href="/uploads/send">Send files</a>
+		{#if data.mayPull}<a class="button button-quiet" href="/workspace/intake">Intake</a>{/if}
+	</p>
 
-	{#if data.sent}
+	{#if data.sent && data.pulled}
+		<div class="notice" role="status">
+			<p>{data.sent === '1' ? 'Your file is' : 'Your files are'} waiting to be filed.</p>
+		</div>
+	{:else if data.sent}
 		<div class="notice" role="status">
 			<p>Thank you. {data.sent === '1' ? 'Your file is' : 'Your files are'} in line for review. We will show each decision here.</p>
 		</div>
@@ -82,7 +90,9 @@
 						>
 							{uploadStatusLabels[upload.status]}
 						</span>
-						<span class="small">{uploadStatusExplanations[upload.status]}</span>
+						<span class="small">
+							{(upload.pulled && pulledStatusExplanations[upload.status]) || uploadStatusExplanations[upload.status]}
+						</span>
 						{#if upload.reason}
 							<span class="small">Reason given: {upload.reason}</span>
 						{/if}
@@ -131,6 +141,11 @@
 </div>
 
 <style>
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
 	.uploads-page {
 		max-width: var(--layout-measure);
 	}

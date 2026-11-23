@@ -4,6 +4,7 @@
  * /uploads/pieces/<reference>/<number>.
  */
 import { error, json } from '@sveltejs/kit';
+import { can } from '#lib/permissions.ts';
 import { requireDocumentLevel } from '#lib/server/access.ts';
 import { essayRow } from '#lib/server/essays.ts';
 import { answering, looksLikeNation, senderOf, withinStartLimit } from '#lib/server/upload-requests.ts';
@@ -19,7 +20,12 @@ export const POST: RequestHandler = (event) =>
 		const { database, bucket } = storage(event);
 		const body = (await event.request.json().catch(() => null)) as Record<string, unknown> | null;
 		if (!body || typeof body !== 'object') error(400, 'Send the file’s name and size.');
-		if (!(await withinStartLimit(account.subject))) {
+		// A file from the pull list, sent by a workspace editor: no questions, no per-minute limit (docs/uploads.md, "Intake").
+		const pulled = body.pulled === true;
+		if (pulled && !(event.locals.person && can(event.locals.person, 'review-uploads'))) {
+			error(403, 'Only workspace editors can send pulled files.');
+		}
+		if (!pulled && !(await withinStartLimit(account.subject))) {
 			throw new UploadProblem('Too many files in a minute. Wait a minute and try again.', 429);
 		}
 		const fileName = typeof body.fileName === 'string' ? body.fileName : '';
@@ -45,6 +51,25 @@ export const POST: RequestHandler = (event) =>
 					sizeBytes,
 					wayIn: 'essay-figure',
 					essayIdentifier: essay
+				},
+				await allowanceFor(database, account.subject, event.locals.person)
+			);
+			return json(started, { headers: { 'cache-control': 'no-store' } });
+		}
+
+		if (pulled) {
+			const started = await startUpload(
+				database,
+				bucket,
+				{
+					accountIdentifier: account.subject,
+					personIdentifier: event.locals.person?.identifier ?? null,
+					groupIdentifier,
+					fileName,
+					sizeBytes,
+					wayIn: 'send-files',
+					fromPullList: true,
+					note: typeof body.note === 'string' ? body.note : null
 				},
 				await allowanceFor(database, account.subject, event.locals.person)
 			);

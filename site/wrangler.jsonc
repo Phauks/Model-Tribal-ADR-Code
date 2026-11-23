@@ -106,13 +106,15 @@
 			"namespace_id": "1004",
 			"simple": { "limit": 30, "period": 60 }
 		},
-		// Limits how many files one account can start sending, or YouTube
-		// links it can add, in a minute (docs/uploads.md). The pieces of a
-		// file are not counted; the daily allowance limits the rest.
+		// Guards against a runaway script: how many files one account can
+		// start sending, or YouTube links it can add, in a minute
+		// (docs/uploads.md). The pieces of a file are not counted, and the
+		// upload page waits and carries on when it is reached, so people
+		// never see it as a limit (decision record 0038, "Limits").
 		{
 			"name": "uploadLimit",
 			"namespace_id": "1005",
-			"simple": { "limit": 30, "period": 60 }
+			"simple": { "limit": 600, "period": 60 }
 		}
 	],
 	// Cloudflare Email Service, for sign-in codes. It sends only from a domain

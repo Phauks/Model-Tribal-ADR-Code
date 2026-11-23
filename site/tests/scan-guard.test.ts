@@ -64,6 +64,16 @@ const bucketCalls: Record<string, BucketUse> = {
   "src/lib/server/uploads.ts finishUpload put(previewKey)": {
     kind: "sent-file-store",
   },
+  // Intake (docs/uploads.md, "Intake"): small notes the Worker and the
+  // intake script pass through the bucket. They name files; they are not files.
+  "src/lib/server/uploads.ts offerForIntake put(`intake/waiting/${upload.reference}.json`)": {
+    kind: "project-file",
+    why: "A note the Worker writes itself about a pulled file that passed its scan: the file's key, name, size and type.",
+  },
+  "src/lib/server/uploads.ts readNote get(key)": {
+    kind: "project-file",
+    why: "Reads an intake note the project's own script wrote (intake/filed or intake/declined); only its fields are used, never served.",
+  },
   "src/lib/server/uploads.ts finishUpload get(upload.original_key)": {
     kind: "kept-not-served",
     why: "Reads a sent picture to make its copy without location details; both are put in line for the scan, and neither is served until it passes.",
