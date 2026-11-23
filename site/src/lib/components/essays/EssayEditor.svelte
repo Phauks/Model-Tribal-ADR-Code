@@ -37,6 +37,10 @@
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
 	import EssayAttestDialog from '#lib/components/essays/EssayAttestDialog.svelte';
+	import EssayComments from '#lib/components/essays/EssayComments.svelte';
+	import { commentAt, commentMarks, showCommentMarks, type CommentMark } from '#lib/essays/comment-marks.ts';
+	import { findQuote, quoteAt, type TextQuote } from '#lib/essays/comment-anchors.ts';
+	import type { EssayComment } from '#lib/essays/comments.ts';
 	import { attestationLines, setAttestationLines } from '#lib/essays/attestation-lines.ts';
 	import { essaySections, sectionText, sha256Hex, type Attestation } from '#lib/essays/attestations.ts';
 	import EssaySources from '#lib/components/essays/EssaySources.svelte';
@@ -102,6 +106,8 @@
 		figureParts: Set<string>;
 		figureKind: FigureKind | null;
 		citationKeys: string[];
+		/** Whether words are selected, which a comment needs. */
+		hasSelection: boolean;
 	}>({
 		marks: new Set(),
 		block: 'paragraph',
@@ -112,7 +118,8 @@
 		analysisTitle: null,
 		figureParts: new Set(),
 		figureKind: null,
-		citationKeys: []
+		citationKeys: [],
+		hasSelection: false
 	});
 	/** The parts the box around the cursor can take and does not have yet. */
 	const missingParts = $derived(
@@ -209,6 +216,90 @@
 			if (view && view.state.doc === doc) setAttestationLines(view, { hashes });
 		}, 600);
 	}
+
+	/* Comments (comments.ts) ------------------------------------------------ */
+
+	let showComments = $state(false);
+	let comments = $state<EssayComment[]>([]);
+	let commentsLoaded = false;
+	let commentingPerson = $state<string | null>(null);
+	let mayResolveAny = $state(false);
+	let pendingComment = $state<TextQuote | null>(null);
+	let currentThread = $state<string | null>(null);
+	let threadPositions = $state<Map<string, number | null>>(new Map());
+	let commentTimer: ReturnType<typeof setTimeout> | undefined;
+	let commentPoll: ReturnType<typeof setInterval> | undefined;
+
+	async function loadComments(): Promise<void> {
+		const response = await fetch(`/workspace/essays/${identifier}/comments`).catch(() => null);
+		if (!response?.ok) return;
+		const body = (await response.json()) as { comments: EssayComment[]; you: string; mayResolveAny: boolean };
+		commentingPerson = body.you;
+		mayResolveAny = body.mayResolveAny;
+		commentsChanged(body.comments);
+	}
+
+	function commentsChanged(updated: EssayComment[]): void {
+		comments = updated;
+		commentsLoaded = true;
+		placeComments();
+	}
+
+	/** Finds each thread's words in the text as it stands, and highlights the open ones. */
+	function placeComments(): void {
+		if (!view || !commentsLoaded) return;
+		const doc = view.state.doc;
+		const positions = new Map<string, number | null>();
+		const marks: CommentMark[] = [];
+		for (const comment of comments) {
+			if (comment.threadIdentifier !== null || !comment.quote) continue;
+			const found = findQuote(doc, { quote: comment.quote, prefix: comment.quotePrefix ?? '', suffix: comment.quoteSuffix ?? '' });
+			positions.set(comment.identifier, found?.from ?? null);
+			if (found && !comment.resolvedAt) marks.push({ thread: comment.identifier, ...found });
+		}
+		threadPositions = positions;
+		showCommentMarks(view, marks, currentThread);
+	}
+
+	function placeCommentsSoon(): void {
+		clearTimeout(commentTimer);
+		commentTimer = setTimeout(placeComments, 400);
+	}
+
+	function startComment(): boolean {
+		if (!view || view.state.selection.empty) return false;
+		const quote = quoteAt(view.state.doc, view.state.selection.from, view.state.selection.to);
+		if (!quote) return false;
+		pendingComment = quote;
+		showComments = true;
+		if (!commentsLoaded) void loadComments();
+		return true;
+	}
+
+	function toggleComments(): void {
+		showComments = !showComments;
+		if (showComments) void loadComments();
+	}
+
+	/** Selects a thread's words in the editor. */
+	function goToThread(thread: string): void {
+		currentThread = thread;
+		placeComments();
+		if (!view) return;
+		const comment = comments.find((candidate) => candidate.identifier === thread);
+		if (!comment?.quote) return;
+		const found = findQuote(view.state.doc, { quote: comment.quote, prefix: comment.quotePrefix ?? '', suffix: comment.quoteSuffix ?? '' });
+		if (!found) return;
+		view.dispatch(view.state.tr.setSelection(TextSelection.create(view.state.doc, found.from, found.to)).scrollIntoView());
+		view.focus();
+	}
+
+	$effect(() => {
+		clearInterval(commentPoll);
+		// While the comments are open, others' new comments arrive within a minute.
+		if (showComments) commentPoll = setInterval(() => void loadComments(), 60_000);
+		return () => clearInterval(commentPoll);
+	});
 
 	async function openAttest(slug: string): Promise<void> {
 		if (!view) return;
@@ -596,7 +687,8 @@
 			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null,
 			figureParts: partsOf(enclosing(state, 'figure_block')?.node, 'figure_part'),
 			figureKind: (enclosing(state, 'figure_block')?.node.attrs.kind as FigureKind | undefined) ?? null,
-			citationKeys: citationAt(state)
+			citationKeys: citationAt(state),
+			hasSelection: !state.selection.empty
 		};
 		if (active.citationKeys.length > 0 || active.boxSource) {
 			void loadLibrary();
@@ -620,6 +712,7 @@
 						markChanged();
 						revision += 1;
 						refreshHashesSoon();
+						placeCommentsSoon();
 					}
 					describe(editorView.state);
 				}
@@ -654,6 +747,7 @@
 						void save();
 						return true;
 					},
+					'Mod-Alt-m': () => startComment(),
 					'Mod-g': () => {
 						showGoTo = true;
 						return true;
@@ -664,6 +758,7 @@
 					? [ySyncPlugin(room.fragment, { mapping: shared.mapping }), yCursorPlugin(room.awareness), yUndoPlugin()]
 					: [history()]),
 				checkMarks(),
+				commentMarks(),
 				componentFrames(),
 				attestationLines((slug) => void openAttest(slug)),
 				tracker
@@ -681,6 +776,12 @@
 			handleClick: (editorView, position) => {
 				const issue = issueAt(editorView, position);
 				if (issue) chosenIssue = issue;
+				const thread = commentAt(editorView, position);
+				if (thread) {
+					currentThread = thread;
+					showComments = true;
+					placeComments();
+				}
 				return false;
 			},
 			handleDoubleClickOn: (_view, _position, node, nodePosition) =>
@@ -693,6 +794,7 @@
 		describe(view.state);
 		if (attestationsLoaded) setAttestationLines(view, { attestations, loaded: true });
 		refreshHashesSoon();
+		placeComments();
 	}
 
 	/** The body as Markdown, written so untouched paragraphs keep their exact text. */
@@ -1040,6 +1142,7 @@
 		mountEditor(initial.body);
 		dirty = false;
 		void loadAttestations();
+		void loadComments();
 		if (untrack(() => live)) void joinRoom();
 		const kept = canEdit ? localDraft(identifier) : null;
 		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
@@ -1056,6 +1159,7 @@
 		clearTimeout(autoSaveTimer);
 		clearTimeout(joinTimer);
 		clearTimeout(hashTimer);
+		clearTimeout(commentTimer);
 		if (room) {
 			// The room saves 5 seconds after the last person leaves; only text it never received needs a copy.
 			if (inRoom && liveStatus?.state !== 'live' && unsaved()) keepLocalDraft(identifier, currentFile(), basedOn);
@@ -1188,6 +1292,12 @@
 			</div>
 		{/if}
 		{#if mode === 'rich'}
+			<div role="group" aria-label="Comments">
+				<button type="button" class="tool" disabled={!active.hasSelection} title="Comment on the selected words (Ctrl+Alt+M)" onclick={startComment}>Comment</button>
+				<button type="button" class="tool" aria-pressed={showComments} onclick={toggleComments}
+					>Comments{#if comments.some((comment) => comment.threadIdentifier === null && !comment.resolvedAt)}{' '}({comments.filter((comment) => comment.threadIdentifier === null && !comment.resolvedAt).length}){/if}</button
+				>
+			</div>
 			<div role="group" aria-label="Checks and Go to">
 				{#if canEdit}
 					<button type="button" class="tool" aria-pressed={showChecks} onclick={toggleChecks}>Checks</button>
@@ -1212,6 +1322,21 @@
 	{/if}
 	{#if showChecks && mode === 'rich'}
 		<EssayChecks view={() => view} {revision} {identifier} file={currentFile} {library} {canEdit} bind:selected={chosenIssue} />
+	{/if}
+
+	{#if showComments && mode === 'rich'}
+		<EssayComments
+			essay={identifier}
+			{version}
+			{comments}
+			you={commentingPerson}
+			{mayResolveAny}
+			positions={threadPositions}
+			bind:pending={pendingComment}
+			bind:current={currentThread}
+			onchange={commentsChanged}
+			ongo={goToThread}
+		/>
 	{/if}
 
 	{#if showSources && mode === 'rich'}
@@ -1335,7 +1460,7 @@
 			<span class="small" role="status" aria-live="polite">{status || (liveStatus && inRoomShown ? liveText(liveStatus) : joining ? 'Joining the live room…' : dirty ? 'Unsaved changes' : `Version ${basedOn}`)}</span>
 		</div>
 	{:else}
-		<p class="small muted">You can read this essay. Ask the lead author for contribute access to edit it.</p>
+		<p class="small muted">The text stays as the authors wrote it here. Select words and choose Comment to comment on them.</p>
 	{/if}
 </div>
 
@@ -1601,6 +1726,17 @@
 	.editor-area :global(.essay-attest-button) {
 		font-size: var(--font-size-small);
 		padding: 0 var(--space-2);
+	}
+
+	/* Words someone commented on (comment-marks.ts). */
+	.editor-area :global(.comment-mark) {
+		background: var(--color-notice-background);
+		border-bottom: 2px solid var(--color-action);
+		cursor: pointer;
+	}
+
+	.editor-area :global(.comment-mark.is-current) {
+		outline: 2px solid var(--color-action);
 	}
 
 	.editor-area :global(.ProseMirror-selectednode) {
