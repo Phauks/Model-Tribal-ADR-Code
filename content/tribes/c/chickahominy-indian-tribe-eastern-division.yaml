@@ -191,6 +191,38 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Chickahominy Indian Tribe—Eastern Division
 governance:
+- aspect: governing-body
+  value: Tribal council
+  quote: CIT-ED is governed by a Tribal council, which consists of a Chief, Assistant Chief, Secretary, Treasurer, and at least two Councilmen.
+  source: chickahominy-indian-tribe-eastern-division-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is run by CIED, a 501(c)3 separate from the Tribal Government (CIT-ED); facts come from the site''s Government and Tribal Council pages.'
+- aspect: governing-body-size
+  value: Chief, Assistant Chief, Secretary, Treasurer, at least 2 Councilmen
+  quote: CIT-ED is governed by a Tribal council, which consists of a Chief, Assistant Chief, Secretary, Treasurer, and at least two Councilmen.
+  source: chickahominy-indian-tribe-eastern-division-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is run by CIED, a 501(c)3 separate from the Tribal Government (CIT-ED); facts come from the site''s Government and Tribal Council pages.'
+- aspect: governing-body-term
+  value: 4 years, no term limits
+  quote: Office positions are held for four years without term limits.
+  source: chickahominy-indian-tribe-eastern-division-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is run by CIED, a 501(c)3 separate from the Tribal Government (CIT-ED); facts come from the site''s Government and Tribal Council pages.'
+- aspect: head-of-government
+  value: Chief
+  quote: CIT-ED is governed by a Tribal council, which consists of a Chief, Assistant Chief, Secretary, Treasurer, and at least two Councilmen.
+  source: chickahominy-indian-tribe-eastern-division-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is run by CIED, a 501(c)3 separate from the Tribal Government (CIT-ED); facts come from the site''s Government and Tribal Council pages.'
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -199,6 +231,30 @@ governance:
   as_of: '2026-11-20'
   locator: Chickahominy Indian Tribe—Eastern Division
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Assistant Chief, Secretary, Treasurer, Councilmen
+  quote: CIT-ED is governed by a Tribal council, which consists of a Chief, Assistant Chief, Secretary, Treasurer, and at least two Councilmen.
+  source: chickahominy-indian-tribe-eastern-division-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is run by CIED, a 501(c)3 separate from the Tribal Government (CIT-ED); facts come from the site''s Government and Tribal Council pages.'
+- aspect: elections
+  value: Second Saturday of every 4th April
+  quote: Elections are held the second Saturday of every 4th April.
+  source: chickahominy-indian-tribe-eastern-division-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is run by CIED, a 501(c)3 separate from the Tribal Government (CIT-ED); facts come from the site''s Government and Tribal Council pages.'
+- aspect: judiciary
+  value: Judicial Board/Branch
+  quote: Judicial Board/Branch
+  source: chickahominy-indian-tribe-eastern-division-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is run by CIED, a 501(c)3 separate from the Tribal Government (CIT-ED); facts come from the site''s Government and Tribal Council pages.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

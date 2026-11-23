@@ -151,6 +151,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Iipay Nation of Santa Ysabel, California
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: They are governed by a democratically elected tribal council.
+  source: iipay-nation-of-santa-ysabel-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Constitution and codes are listed by title only; their text is not on the saved pages.'
+- aspect: governing-body-selection
+  value: Democratically elected
+  quote: They are governed by a democratically elected tribal council.
+  source: iipay-nation-of-santa-ysabel-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Constitution and codes are listed by title only; their text is not on the saved pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -159,6 +175,22 @@ governance:
   as_of: '2026-11-20'
   locator: Iipay Nation of Santa Ysabel, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Intertribal Court of Southern California
+  quote: The Iipay Nation of Santa Ysabel is a member tribe of the Intertribal Court of Southern California.
+  source: iipay-nation-of-santa-ysabel-website-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Constitution and codes are listed by title only; their text is not on the saved pages.'
+- aspect: other
+  value: Constitution established 2007
+  quote: In 2007, the Iipay Nation of Santa Ysabel established their Constitution in order to preserve and protect their culture, lands, and rights and to promote equality and justice.
+  source: iipay-nation-of-santa-ysabel-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Constitution and codes are listed by title only; their text is not on the saved pages.'
 dispute_resolution:
   database_listings:
   - title: Peacemaking and Family Conference Preference in Child Welfare

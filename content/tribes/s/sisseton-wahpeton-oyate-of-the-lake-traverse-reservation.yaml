@@ -200,40 +200,28 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
   value: Council
-  quote: by a Council consisting of seven (7) Councilmen and three (3) Officers. Except for the Officers,
-  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2006-text
-  confidence: medium
+  quote: shall be governed by a Council consisting of seven (7) Councilmen and three (3) Officers.
+  source: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '2006-11-15'
-  locator: Article III, Section 1
-  document_version:
-    document: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-constitution
-    version: 2006-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the Government web pages; the Revised Constitution text itself is not among the saved pages.'
 - aspect: governing-body-size
-  value: 7 councilmen and 3 officers
-  quote: by a Council consisting of seven (7) Councilmen and three (3) Officers. Except for the Officers,
-  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2006-text
-  confidence: medium
+  value: 7 councilmen, 3 officers
+  quote: shall be governed by a Council consisting of seven (7) Councilmen and three (3) Officers.
+  source: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '2006-11-15'
-  locator: Article III, Section 1
-  document_version:
-    document: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-constitution
-    version: 2006-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the Government web pages; the Revised Constitution text itself is not among the saved pages.'
 - aspect: governing-body-selection
-  value: Councilmen elected by district; officers elected at large
-  quote: one Councilman shall be elected from each of the
-  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2006-text
-  confidence: medium
+  value: Elected by district
+  quote: Except for the Officers, one Councilman shall be elected from each of the seven districts and shall possess the voting strength according to population.
+  source: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '2006-11-15'
-  locator: Article III, Section 1
-  document_version:
-    document: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-constitution
-    version: 2006-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the Government web pages; the Revised Constitution text itself is not among the saved pages.'
 - aspect: governing-body-term
   value: 2 years
   quote: two (2) years commencing on the date of the first
@@ -260,16 +248,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
   value: Chairman
-  quote: the Chairman shall vote in case of a tie.
-  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2006-text
-  confidence: medium
+  quote: It shall be the duty of the Chairman to call a special meeting upon request of a majority of the Council.
+  source: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-website-government-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '2006-11-15'
-  locator: Article III, Section 1
-  document_version:
-    document: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-constitution
-    version: 2006-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the Government web pages; the Revised Constitution text itself is not among the saved pages.'
 - aspect: head-of-government
   value: Tribal Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -303,17 +287,13 @@ governance:
     version: 2006-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: other-officers
-  value: Vice-Chairman, Secretary
-  quote: In the absence of the Chairman, the Vice-Chairman
-  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2006-text
-  confidence: medium
+  value: Chairman, Vice-Chairman, Secretary
+  quote: The Chairman, Vice-Chairman, and the Secretary shall each have one vote in Council Meetings.
+  source: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '2006-11-15'
-  locator: Bylaws, Article I, Section 3
-  document_version:
-    document: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-constitution
-    version: 2006-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the Government web pages; the Revised Constitution text itself is not among the saved pages.'
 - aspect: elections
   value: Every 2 years, in January of odd-numbered years
   quote: in January of odd numbered years and until their
@@ -363,17 +343,13 @@ governance:
     version: 2006-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: judiciary
-  value: Tribal Court and appellate court
-  quote: supportive staff; and an appellate court.
-  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2006-text
-  confidence: medium
+  value: Tribal Court
+  quote: The Sisseton Wahpeton Oyate court was created by the Oyate’s Constitution to resolve disputes involving Tribal members and non-members
+  source: sisseton-wahpeton-oyate-swo-nsn-gov-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '2006-11-15'
-  locator: Article III, Section 5(a)
-  document_version:
-    document: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-constitution
-    version: 2006-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the Government web pages; the Revised Constitution text itself is not among the saved pages.'
 - aspect: judicial-selection
   value: Appointed by two-thirds vote of the Council
   quote: (b) Judges shall be appointed by a two-thirds
@@ -447,17 +423,13 @@ governance:
     version: 2006-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: other
-  value: Seven district councils
-  quote: There shall be seven (7) deliberate district councils,
-  source: constitution-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2006-text
-  confidence: medium
+  value: Executive Committee
+  quote: The Executive Committee, in formal session, shall have the powers to speak and act for the Tribe when Council is not in session
+  source: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-website-government-tribal-executives
+  confidence: high
   verification: read-in-full
-  as_of: '2006-11-15'
-  locator: Article IV, Section 1
-  document_version:
-    document: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-constitution
-    version: 2006-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the Government web pages; the Revised Constitution text itself is not among the saved pages.'
 governing_documents:
 - kind: law-code
   title: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota

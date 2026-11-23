@@ -177,17 +177,13 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution under the Indian Reorganization Act of June 18, 1934
-  quote: of the Indian Reorganization Act of June 18, 1934, and
-  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
-  confidence: medium
+  value: Constitution and By-Laws
+  quote: CONSTITUTION AND BY-LAWS OF THE KICKAPOO TRIBE OF INDIANS OF THE KICKAPOO RESERVATION IN KANSAS
+  source: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-website-constituion-and-bylaws
+  confidence: high
   verification: read-in-full
-  as_of: '1937-06-19'
-  locator: Preamble
-  document_version:
-    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
-    version: 1937-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution page gives only its title, not the text, and officer names on the government page are left out.'
 - aspect: governing-body
   value: Tribal Council
   quote: shall be the Tribal Council which shall be composed of

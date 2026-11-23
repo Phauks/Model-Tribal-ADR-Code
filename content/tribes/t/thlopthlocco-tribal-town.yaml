@@ -154,77 +154,53 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under Act of June 26, 1936
-  quote: by the Act of June 26, 1936 (49 Stat. 1967), do hereby approve the
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  value: Constitution and By-laws
+  quote: carry out the provisions and purposes of the Constitution and By-laws of the Thlopthlocco Tribal Town
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: Article VI
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: governing-body
   value: Business Committee
-  quote: The governing body shall be known
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  quote: The governing body is known as the Business Committee, which consists of five elected officials and five appointed advisory councils.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: Article V, Section 4
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: governing-body-size
-  value: Town officers plus 5-member advisory council
-  quote: There shall be an advisory council
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  value: 5 elected officials
+  quote: The five elected officials include Town King, two Warriors, a Secretary, and a Treasurer.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: Article V, Section 3
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: governing-body-selection
-  value: Officers elected by town membership; advisory council appointed by officers
-  quote: who shall be appointed by the officers.
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  value: Elected by the town membership
+  quote: These officials are elected by the town membership and hold the term for four years or until their successors are elected and installed.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: Article V, Section 3
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: governing-body-term
   value: 4 years
-  quote: office shall be for a period of four years, or until
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  quote: These officials are elected by the town membership and hold the term for four years or until their successors are elected and installed.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: Article V, Section 1
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: head-of-government
   value: Town King
-  quote: It shall be the duty of the Town King to preside over all
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  quote: The Town King must preside over the meetings and carry out the orders of the Business Committee.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: By-laws, Article II, Section 2
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: head-of-government
   value: Town King
   source: bia-tribal-leaders-directory-2026
@@ -234,41 +210,29 @@ governance:
   locator: Thlopthlocco Tribal Town
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “*Town King (Subject to Tribal Leadership Dispute)”; recorded without the holder's own form of the title.
 - aspect: head-of-government-selection
-  value: Elected by town membership
-  quote: At any election held by the membership of this town, both
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  value: Elected by the town membership
+  quote: These officials are elected by the town membership and hold the term for four years or until their successors are elected and installed.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: Article V, Section 5
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: head-of-government-term
   value: 4 years
-  quote: office shall be for a period of four years, or until
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  quote: These officials are elected by the town membership and hold the term for four years or until their successors are elected and installed.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: Article V, Section 1
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: other-officers
   value: Two Warriors, Secretary, Treasurer
-  quote: The Secretary shall keep a full report of all proceedings
-  source: constitution-thlopthlocco-tribal-town-1938-text
-  confidence: medium
+  quote: The five elected officials include Town King, two Warriors, a Secretary, and a Treasurer.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1938-12-27'
-  locator: By-laws, Article II, Section 3
-  document_version:
-    document: thlopthlocco-tribal-town-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 - aspect: voting-age
   value: '21'
   quote: males and females 21 years of age and over
@@ -317,6 +281,14 @@ governance:
     document: thlopthlocco-tribal-town-constitution
     version: 1938-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: other
+  value: Advisory Council of 5 members appointed by elected officials
+  quote: The Advisory Council consists of five members of the town who are appointed by elected officials.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 governing_documents:
 - kind: constitution
   title: Constitution

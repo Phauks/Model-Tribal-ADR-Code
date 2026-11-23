@@ -301,6 +301,46 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
 governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of 1934
+  quote: It was originally adopted under the Indian Reorganization Act of 1934 and has been amended over time.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Confederated Salish and Kootenai Tribes are governed by a Tribal Council consisting of ten elected members representing different districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-size
+  value: 10 members, elected from districts
+  quote: The Confederated Salish and Kootenai Tribes are governed by a Tribal Council consisting of ten elected members representing different districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-selection
+  value: Elected by enrolled members residing in districts
+  quote: Tribal Council members are elected by enrolled tribal members residing within the Reservation’s districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-term
+  value: Staggered terms
+  quote: Elections are held periodically, and members serve staggered terms to ensure continuity in governance.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -309,6 +349,30 @@ governance:
   as_of: '2026-11-20'
   locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Tribal Court and Tribal Appellate Court
+  quote: Tribal law places the judicial power of CSKT in the Tribal Court and Tribal Appellate Court.
+  source: confederated-salish-and-kootenai-tribes-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: judicial-selection
+  value: Appointed
+  quote: The Chief Justice is appointed to serve a four-year term, and the Associate Justices are appointed to serve a three-year term.
+  source: confederated-salish-and-kootenai-tribes-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: judicial-term
+  value: Chief Justice 4 years; associate justices 3 years
+  quote: The Chief Justice is appointed to serve a four-year term, and the Associate Justices are appointed to serve a three-year term.
+  source: confederated-salish-and-kootenai-tribes-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
 governing_documents:
 - kind: law-code
   title: Confederated Salish and Kootenai Tribes of the Flathead Reservation

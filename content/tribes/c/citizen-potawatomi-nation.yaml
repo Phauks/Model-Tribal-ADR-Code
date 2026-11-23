@@ -210,41 +210,32 @@ governance:
     version: 1987-text
   note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
 - aspect: governing-body
-  value: Business Committee
-  quote: empowered to enact legislation, transact business, and otherwise speak or act on behalf of the Citizen Band Potawatomi Indian Tribe of Oklahoma in all matters
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Business Committee (Tribal Legislature)
+  quote: There shall be a Business Committee, hereinafter
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 7, Section 2
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 7, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: governing-body-size
-  value: 3 Executive Officers and 2 Councilmen
-  quote: There shall be a Business Committee which shall consist of the Executive Officers as provided in Article 6, and two Councilmen
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Executive Officers plus 13 Legislators
+  quote: which shall consist of the Executive Officers as provided in Article 6, five (5) Legislators elected from
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 7, Section 1
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 7, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: governing-body-selection
-  value: Elected by majority vote, secret ballot
-  quote: shall be elected for a two year term of office and until their successors be qualified and installed in office by a majority vote at an election to be conducted by secret ballot
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Elected by district
+  quote: eight (8) Legislators elected from Legislative
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 12, Section 1
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 7, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: governing-body-term
   value: 2 years
   quote: two Councilmen who shall serve for two year terms and until their successor be qualified and installed in office
@@ -258,29 +249,23 @@ governance:
     version: 1987-text
   note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
 - aspect: general-council
-  value: 'Citizen Band Potawatomi Indian Council: all members 18 or older'
-  quote: The membership of the Citizen Band Potawatomi Indian Council shall be all Citizen Band Potawatomi Indians, 18 years of age or older who have not been adjudged incompetent
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: All citizens 18 or older
+  quote: 18 years of age or older who have not been adjudged
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 5, Section 1
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 5, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: head-of-government
   value: Chairman
-  quote: It shall be the duty of the Chairman to preside at all meetings of the Council and the Business Committee
-  source: constitution-citizen-potawatomi-nation-1987-text
+  quote: Chairman, Vice-Chairman, and a Secretary/Treasurer who shall
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 6, Section 2
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 6, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -290,113 +275,102 @@ governance:
   locator: Citizen Potawatomi Nation, Oklahoma
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 - aspect: head-of-government-selection
-  value: Elected by majority vote, secret ballot
-  quote: The Chairman, Vice-Chairman, Secretary/Treasurer, two Councilmen, and members of the Grievance Committee shall be elected for a two year term of office and until their successors be qualified and installed in office by a majority vote
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Elected by majority vote
+  quote: by a majority vote at an election to be conducted by secret ballot,
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 12, Section 1
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 12, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: head-of-government-term
-  value: 2 years
-  quote: the Chairman, Vice-Chairman, and a Secretary/ Treasurer who shall serve for two year terms of office
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: 4 years
+  quote: elected to a four (4) year term of
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 6, Section 1
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 12, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: other-officers
   value: Vice-Chairman, Secretary/Treasurer
-  quote: The Executive Officers of the Tribe shall be the Chairman, Vice-Chairman, and a Secretary/ Treasurer
-  source: constitution-citizen-potawatomi-nation-1987-text
+  quote: Chairman, Vice-Chairman, and a Secretary/Treasurer who shall
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 6, Section 1
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 6, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: elections
-  value: June of odd-numbered years (Chairman, Councilmen); June of even-numbered years (Vice-Chairman, Secretary/Treasurer)
-  quote: Elections for the Chairman, Councilmen, and Grievance Committee members shall be held as scheduled in June 1985, and in June of each odd numbered year thereafter.
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Annually, at the annual Council meeting
+  quote: with absentee voting, on the date of the annual Citizen Potawatomi
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 12, Section 3
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 12, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: voting-age
+  value: '18'
+  quote: CPN members become eligible to vote at the age of 18
+  source: citizen-potawatomi-nation-website-government-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: election-authority
-  value: Election Board
-  quote: Other special elections shall be conducted by the Election Board as required in Article 10 or Article 13
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Election Committee
+  quote: The Election Committee is an independent board of appointed officials in charge of conducting and certifying all tribal elections.
+  source: citizen-potawatomi-nation-website-government-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Legislative, Executive, Judicial
+  quote: 'branches of Tribal Government: Legislative, Executive Officers'
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 12, Section 6
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 4, Sec. 3
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: judiciary
-  value: Supreme Court of 7 Justices and inferior courts established by Tribal law
-  quote: The judicial power of the Citizen Band Potawatomi Indian Tribe of Oklahoma is hereby vested in one Supreme Court consisting of seven (7) Justices and such inferior courts as may be established by Tribal law.
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Supreme Court and inferior courts
+  quote: Nation is hereby vested in one Supreme Court consisting of seven
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 11, Section 1
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 11, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: judicial-selection
-  value: Selected by Business Committee, confirmed by the Council
-  quote: The Supreme Court Justices and Tribal Court Judges shall be selected by the Business Committee and confirmed by the Citizen Band Potawatomi Indian Council at a general election called for that purpose
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Selected by Legislature, confirmed by Council
+  quote: Judges shall be selected by the Legislature and confirmed by the
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 11, Section 4
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 11, Sec. 4
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: judicial-term
   value: 6 years
-  quote: shall serve six (6) year terms and until their successor be duly confirmed and installed
-  source: constitution-citizen-potawatomi-nation-1987-text
+  quote: shall serve six (6) year terms and until
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 11, Section 4
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 11, Sec. 4
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: amendment
-  value: Proposed by Business Committee majority or 30% petition; referendum majority vote
-  quote: Amendments to this Constitution may be proposed by a majority vote of the Business Committee or by a petition signed by thirty percent (30%) of the adult members of the Tribe
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Two-thirds majority vote of those voting in an election
+  quote: shall be effective if ratified by a 2/3 majority vote of those
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 19
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 19
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: secretarial-approval
   value: Required for amendments
   quote: and if approved by the Secretary of the Interior, shall be submitted to a referendum vote of the members of the Tribe
@@ -410,29 +384,23 @@ governance:
     version: 1987-text
   note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
 - aspect: recall-and-removal
-  value: Recall by two-thirds of those voting after Court finds misconduct
-  quote: a two-thirds majority of those voting in a special election held pursuant to Article 12 (f) shall be necessary to recall the officer from his office
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Recall by two-thirds of those voting in recall election
+  quote: two-thirds (2/3) majority of those voting in an election
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 8, Section 1(a)(2)
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 8, Sec. 1(b)
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: recall-and-removal
-  value: Removal by majority vote of the Business Committee
-  quote: Any elected officer found guilty of a misdemeanor involving moral turpitude, gross neglect of duty, malfeasance in office or misconduct reflecting on the dignity and integrity of the tribal government, may be removed from office by majority vote of the Business Committee.
-  source: constitution-citizen-potawatomi-nation-1987-text
+  value: Removal by unanimous vote of remaining members
+  quote: by a unanimous vote of the remaining
+  source: citizen-potawatomi-nation-website-wp-content-uploads-cpn-constitution-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1987-04-22'
-  locator: Article 15, Section 1
-  document_version:
-    document: citizen-potawatomi-nation-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles the 1985 constitution (with Amendment A of 1989 on membership only), a superseded 1938 constitution and a 1987 corporate charter; facts taken only from the 1985 constitution. Text states the constitution was ratified in 1985, not 1987.'
+  as_of: '2026-11-23'
+  locator: Art. 9, Sec. 1
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 governing_documents:
 - kind: law-code
   title: Court codes and forms

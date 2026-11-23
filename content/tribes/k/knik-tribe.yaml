@@ -182,17 +182,37 @@ governance:
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; only the officer, amendment, adoption and initiative provisions are legible, and the governing body is named only as the Council.'
 - aspect: governing-body
-  value: Council
-  quote: documents approved by the Council. The President may vote in matters before the Council,
-  source: constitution-knik-tribe-1991-text
-  confidence: medium
+  value: Knik Tribal Council
+  quote: We would also like to acknowledge Knik Tribal Council the governing elected body of Knik Tribe
+  source: kniktribe-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1991'
-  locator: Section 1
-  document_version:
-    document: knik-tribe-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; only the officer, amendment, adoption and initiative provisions are legible, and the governing body is named only as the Council.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the About page are left out, and the constitution and bylaws are referred to but not saved.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Our Council consists of five elected Council citizens who serve 2-year staggered terms.
+  source: knik-tribe-website-about-alaska-knik-tribe
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the About page are left out, and the constitution and bylaws are referred to but not saved.'
+- aspect: governing-body-selection
+  value: Chosen by vote of eligible voting citizens at the annual election
+  quote: They are appointed by vote during the Annual election by eligible voting citizens.
+  source: knik-tribe-website-about-alaska-knik-tribe
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the About page are left out, and the constitution and bylaws are referred to but not saved.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: Our Council consists of five elected Council citizens who serve 2-year staggered terms.
+  source: knik-tribe-website-about-alaska-knik-tribe
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the About page are left out, and the constitution and bylaws are referred to but not saved.'
 - aspect: head-of-government
   value: President
   quote: Section 1. President The President shall preside at all meetings of the Tribe and
@@ -225,6 +245,14 @@ governance:
     document: knik-tribe-constitution
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; only the officer, amendment, adoption and initiative provisions are legible, and the governing body is named only as the Council.'
+- aspect: elections
+  value: Annual election
+  quote: They are appointed by vote during the Annual election by eligible voting citizens.
+  source: knik-tribe-website-about-alaska-knik-tribe
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the About page are left out, and the constitution and bylaws are referred to but not saved.'
 - aspect: amendment
   value: Majority vote of eligible voting members in an election
   quote: This Constitution may be amended by a majority vote of the eligible voting members
@@ -238,17 +266,13 @@ governance:
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; only the officer, amendment, adoption and initiative provisions are legible, and the governing body is named only as the Council.'
 - aspect: other
-  value: Initiative by petition of 50% of eligible voting members
-  quote: Upon receipt of a valid petition signed by at least fifty percent (50%) of the eligible
-  source: constitution-knik-tribe-1991-text
-  confidence: medium
+  value: Governed under constitution, bylaws, ordinances and resolutions
+  quote: The Council governs the tribe in accordance with the tribe’s constitution, bylaws, ordinances, and resolutions.
+  source: knik-tribe-website-about-alaska-knik-tribe
+  confidence: high
   verification: read-in-full
-  as_of: '1991'
-  locator: Article XI, Section 1
-  document_version:
-    document: knik-tribe-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; only the officer, amendment, adoption and initiative provisions are legible, and the governing body is named only as the Council.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the About page are left out, and the constitution and bylaws are referred to but not saved.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

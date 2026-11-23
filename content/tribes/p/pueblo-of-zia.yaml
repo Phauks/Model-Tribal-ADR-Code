@@ -208,6 +208,14 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Tribal court of general jurisdiction
+  quote: It is a court of general jurisdiction and oversees criminal and civil hearings.
+  source: pueblo-of-zia-website-tribal-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only next to personal names on page 3, so no office facts were recorded from it.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

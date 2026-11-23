@@ -184,6 +184,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Nenana Native Association
 governance:
+- aspect: form
+  value: Tribal Constitution
+  quote: We adopt this Constitution as a federally recognized tribe, under our inherent sovereign authority.
+  source: nenana-native-association-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution and codes are linked as downloads and are not saved as text; the constitution is only quoted in part on the About page.'
+- aspect: governing-body
+  value: Nenana Native Village Council
+  quote: The governing body shall be the Nenana Native Village Council, also referred to as the "Nenana Tribal Council," "Native Council," or "Council."
+  source: nenana-native-association-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution and codes are linked as downloads and are not saved as text; the constitution is only quoted in part on the About page.'
 - aspect: head-of-government
   value: First Chief
   source: bia-tribal-leaders-directory-2026
@@ -192,6 +208,14 @@ governance:
   as_of: '2026-11-20'
   locator: Nenana Native Association
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Nenana Tribal Court
+  quote: Nenana Tribal Court will hear cases regarding family well-being, protective orders, custody, and adoptions and guardianships.
+  source: nenana-native-association-website-nenanatribalcourt-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution and codes are linked as downloads and are not saved as text; the constitution is only quoted in part on the About page.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

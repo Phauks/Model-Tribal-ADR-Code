@@ -133,6 +133,54 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Shawnee Tribe
 governance:
+- aspect: governing-body
+  value: Shawnee Tribal Council
+  quote: The Supreme Governing body of the Shawnee Tribe is the Shawnee Tribal Council
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
+- aspect: governing-body
+  value: Business Council
+  quote: The Business Council has the power to transact Tribal Business, appoint Committees, enact
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
+- aspect: governing-body-size
+  value: Chief, Second Chief, Secretary, Treasurer, 7 at-large members
+  quote: The officers of the Shawnee Tribe shall be the Chief, Second Chief, Secretary, and Treasurer. In addition, there shall be elected seven (7) Business Council members at-large.
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: there shall be elected seven (7) Business Council members at-large.
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
+- aspect: general-council
+  value: All enrolled Tribal citizens
+  quote: The Tribal Council consists of all Tribal citizens enrolled in accordance with the requirements of
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
+- aspect: head-of-government
+  value: Chief
+  quote: The officers of the Shawnee Tribe shall be the Chief, Second Chief, Secretary, and Treasurer.
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -141,6 +189,30 @@ governance:
   as_of: '2026-11-20'
   locator: Shawnee Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Second Chief, Secretary, Treasurer
+  quote: The officers of the Shawnee Tribe shall be the Chief, Second Chief, Secretary, and Treasurer.
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
+- aspect: voting-age
+  value: '18'
+  quote: Voting Tribal Council Members must be eighteen years of age.
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
+- aspect: other
+  value: Tribal Council may repeal Business Council laws
+  quote: The Tribal Council has the authority to repeal or enact legislation or resolutions binding on the Business Council
+  source: shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Shawnee Tribe Constitution is cited on the government page but its text is not among the saved pages.'
 governing_documents:
 - kind: law-code
   title: Tribal Laws, Titles, Codes, Resolutions and Other Tribal Documents

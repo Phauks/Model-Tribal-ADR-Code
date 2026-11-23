@@ -188,77 +188,53 @@ federal_administration:
   locator: Upper Sioux Community, Minnesota
 governance:
 - aspect: form
-  value: Constitution, renaming the Revisions of Provisions for Governing the Upper Sioux Community
-  quote: for Governing the Upper Sioux Community and rename such documents the
-  source: constitution-upper-sioux-community-1995-text
-  confidence: medium
+  value: Constitution of the Upper Sioux Community
+  quote: the governing document is now called the Constitution of the Upper Sioux Community.
+  source: upper-sioux-community-history
+  confidence: high
   verification: read-in-full
-  as_of: '1995-09-29'
-  locator: Preamble
-  document_version:
-    document: upper-sioux-community-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
 - aspect: governing-body
   value: Board of Trustees
-  quote: The governing body of foe Upper Sioux Community shall be foe Board of
-  source: constitution-upper-sioux-community-1995-text
-  confidence: medium
+  quote: is governed by a five-member Board of Trustees, elected to serve staggered four-year- terms.
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
   verification: read-in-full
-  as_of: '1995-09-29'
-  locator: Provision No. 4
-  document_version:
-    document: upper-sioux-community-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
 - aspect: governing-body-size
   value: 5 members
-  quote: Trustees and shall consist of five (5) members.
-  source: constitution-upper-sioux-community-1995-text
-  confidence: medium
+  quote: a five-member Board of Trustees
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
   verification: read-in-full
-  as_of: '1995-09-29'
-  locator: Provision No. 4
-  document_version:
-    document: upper-sioux-community-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
 - aspect: governing-body-selection
-  value: Elected by the voters
-  quote: Beginning with the 1977 election the voters shall elect a Chairman, a
-  source: constitution-upper-sioux-community-1995-text
-  confidence: medium
+  value: Elected
+  quote: is governed by a five-member Board of Trustees, elected to serve staggered four-year- terms.
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
   verification: read-in-full
-  as_of: '1995-09-29'
-  locator: Provision No. 4(A)
-  document_version:
-    document: upper-sioux-community-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
 - aspect: governing-body-term
-  value: 4 years
-  quote: All members of the Board of Trustees shall serve for a term of four (4)
-  source: constitution-upper-sioux-community-1995-text
-  confidence: medium
+  value: 4 years, staggered
+  quote: elected to serve staggered four-year- terms.
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
   verification: read-in-full
-  as_of: '1995-09-29'
-  locator: Provision No. 4(B)
-  document_version:
-    document: upper-sioux-community-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
 - aspect: head-of-government
-  value: Chairman
-  quote: 'select their officers, tumefy: Chairman, Vice-Chairman, Secretary, and'
-  source: constitution-upper-sioux-community-1995-text
-  confidence: medium
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
   verification: read-in-full
-  as_of: '1995-09-29'
-  locator: Provision No. 4(A)
-  document_version:
-    document: upper-sioux-community-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -340,17 +316,13 @@ governance:
     version: 1995-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
 - aspect: judiciary
-  value: Tribal Court
-  quote: the Tribal Court of the Upper Sioux Community.
-  source: constitution-upper-sioux-community-1995-text
-  confidence: medium
+  value: Upper Sioux Tribal Court
+  quote: The Upper Sioux Court System is committed to upholding justice
+  source: upper-sioux-community-website-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1995-09-29'
-  locator: Provision No. 7(C)
-  document_version:
-    document: upper-sioux-community-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
 - aspect: amendment
   value: 51% of approved voting list members present
   quote: This constitution may be amended by fifty-one (51%) of the approved voting list

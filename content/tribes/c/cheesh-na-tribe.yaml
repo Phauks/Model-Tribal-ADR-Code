@@ -198,6 +198,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Cheesh-Na Tribe
 governance:
+- aspect: governing-body
+  value: Board of Directors
+  quote: Our Board of Directors are at the heart of Cheesh’na Tribal Council, working hard to strengthen our culture and our community.
+  source: cheesh-na-tribe-website-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Board member names are left out, and the site states no council size or selection method.'
+- aspect: head-of-government
+  value: President
+  quote: PRESIDENT
+  source: cheesh-na-tribe-website-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Board member names are left out, and the site states no council size or selection method.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -206,6 +222,14 @@ governance:
   as_of: '2026-11-20'
   locator: Cheesh-Na Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: '3 Year Term: Ends 2027'
+  source: cheesh-na-tribe-website-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Board member names are left out, and the site states no council size or selection method.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

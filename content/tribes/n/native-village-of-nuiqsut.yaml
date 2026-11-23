@@ -182,6 +182,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Native Village of Nuiqsut (aka Nooiksut)
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Native Village of Nuiqsut Tribal Council holds monthly Tribal Council meetings each third Tuesday of the month.
+  source: native-village-of-nuiqsut-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years
+  quote: Tribal Council terms and executive seats are held for three years.
+  source: native-village-of-nuiqsut-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -190,6 +206,14 @@ governance:
   as_of: '2026-11-20'
   locator: Native Village of Nuiqsut (aka Nooiksut)
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: elections
+  value: First Tuesday each October
+  quote: General Elections are held the first Tuesday each October.
+  source: native-village-of-nuiqsut-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

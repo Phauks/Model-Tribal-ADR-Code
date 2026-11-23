@@ -152,41 +152,29 @@ federal_administration:
   locator: Jamul Indian Village of California
 governance:
 - aspect: form
-  value: Indian Reorganization Act
-  quote: privileges and powers provided by the Indian Reorganization
-  source: constitution-jamul-indian-village-of-california-1981-text
-  confidence: medium
+  value: Constitution adopted April 1, 2017
+  quote: The Jamul Indian Village of California is organized pursuant to the Constitution of the Jamul Indian Village of California, adopted on April 1, 2017
+  source: jamul-indian-village-of-california-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1981-07-07'
-  locator: Preamble
-  document_version:
-    document: jamul-indian-village-of-california-constitution
-    version: 1981-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
 - aspect: governing-body
   value: General Council
-  quote: The governing body of the 3amul Indian Village shall be the general council
-  source: constitution-jamul-indian-village-of-california-1981-text
-  confidence: medium
+  quote: The General Council, as the governing body of our Tribe, exercises the governmental authority of our Tribe
+  source: jamul-indian-village-of-california-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1981-07-07'
-  locator: Article IV, Section 1
-  document_version:
-    document: jamul-indian-village-of-california-constitution
-    version: 1981-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
 - aspect: governing-body
-  value: Executive Committee
-  quote: a chairman, vice-chairman, and three (3) committee members
-  source: constitution-jamul-indian-village-of-california-1981-text
-  confidence: medium
+  value: Tribal Council
+  quote: The General Council exercises full authority over all laws, programs, and initiatives undertaken by our Tribe and delegates select authority to the Tribal Council
+  source: jamulindianvillage-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1981-07-07'
-  locator: Article IV, Section 2
-  document_version:
-    document: jamul-indian-village-of-california-constitution
-    version: 1981-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
 - aspect: governing-body-size
   value: 5 members (Executive Committee)
   quote: a chairman, vice-chairman, and three (3) committee members
@@ -200,17 +188,13 @@ governance:
     version: 1981-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
 - aspect: governing-body-selection
-  value: Elected by the General Council from its members
-  quote: elect from its members, by secret ballot, an executive
-  source: constitution-jamul-indian-village-of-california-1981-text
-  confidence: medium
+  value: Elected officials
+  quote: our elected officials, known as the Tribal Council.
+  source: jamulindianvillage-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1981-07-07'
-  locator: Article IV, Section 2
-  document_version:
-    document: jamul-indian-village-of-california-constitution
-    version: 1981-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
 - aspect: governing-body-term
   value: 2 years
   quote: two (2) years or until their successors are duly elected and
@@ -224,17 +208,13 @@ governance:
     version: 1981-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
 - aspect: general-council
-  value: All qualified voters of the village, 18 or older
-  quote: voters of the village who are eighteen (IS) years of age or older.
-  source: constitution-jamul-indian-village-of-california-1981-text
-  confidence: medium
+  value: All qualified voters 18 and older
+  quote: Our Tribe is governed by the General Council, composed of all qualified voters aged 18 and older.
+  source: jamul-indian-village-of-california-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1981-07-07'
-  locator: Article IV, Section 1
-  document_version:
-    document: jamul-indian-village-of-california-constitution
-    version: 1981-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
 - aspect: head-of-government
   value: Chairman
   quote: The chairman shall preside at all meetings of the general council and of the
@@ -327,6 +307,14 @@ governance:
     document: jamul-indian-village-of-california-constitution
     version: 1981-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: judiciary
+  value: Tribal Court planned, Intertribal Court agreement
+  quote: The Tribe is working towards establishing its own Tribal Court, which it plans to debut in 2025. Currently, the Tribe has an Agreement with the
+  source: jamul-indian-village-of-california-website-government-departments-law-enforcement
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
 - aspect: amendment
   value: Majority vote of qualified voters in a Secretary-called election (51% turnout)
   quote: This constitution may be amended by a majority vote of the qualified voters

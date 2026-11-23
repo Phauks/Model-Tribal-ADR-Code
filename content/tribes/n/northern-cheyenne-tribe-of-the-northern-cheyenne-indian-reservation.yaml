@@ -214,40 +214,46 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
 - aspect: governing-body
   value: Tribal Council
-  quote: The Tribal Council shall consist of eleven members
-  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
-  confidence: medium
+  quote: 'The Northern Cheyenne Tribal Council consists of members elected from each of the following districts: Ashland, Birney, Busby, Muddy, and Lame Deer.'
+  source: northern-cheyenne-tribe-of-the-northern-home
+  confidence: high
   verification: read-in-full
-  as_of: '1996-05-31'
-  locator: Article III, Section 2
-  document_version:
-    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
-    version: 1996-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
 - aspect: governing-body-size
   value: 11 members
-  quote: The Tribal Council shall consist of eleven members
-  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  quote: The Tribal Council shall consist of eleven
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1996-05-31'
-  locator: Article III, Section 2
-  document_version:
-    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
-    version: 1996-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+  as_of: '2026-11-23'
+  locator: Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
+- aspect: governing-body-selection
+  value: Elected by district
+  quote: 'The Northern Cheyenne Tribal Council consists of members elected from each of the following districts: Ashland, Birney, Busby, Muddy, and Lame Deer.'
+  source: northern-cheyenne-tribe-of-the-northern-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: shall serve for four years in staggered terms, provided that in the
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 2.e
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
 - aspect: head-of-government
   value: President
-  quote: Section 3. The officers ot the Tribe shall be a President and Vice President who shall
-  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
-  confidence: medium
+  quote: The President and the members of the Tribal Council serve four year staggered terms.
+  source: northern-cheyenne-tribe-of-the-northern-home
+  confidence: high
   verification: read-in-full
-  as_of: '1996-05-31'
-  locator: Article III, Section 3
-  document_version:
-    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
-    version: 1996-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -257,29 +263,59 @@ governance:
   locator: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 - aspect: head-of-government-selection
-  value: Elected at large in general elections
-  quote: large general elections, as follows
-  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  value: Elected at large in primary and general elections
+  quote: President and Trial Judges of the Tribal Court shall each be selected through a primary election
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1996-05-31'
-  locator: Article VI
-  document_version:
-    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
-    version: 1996-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+  as_of: '2026-11-23'
+  locator: Section 4
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
 - aspect: head-of-government-term
   value: 4 years
-  quote: serve for four yearn, and the members
-  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  quote: President and Trial Judges shall each serve for four-year terms
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1996-05-31'
-  locator: Article III, Section 2
-  document_version:
-    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
-    version: 1996-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+  as_of: '2026-11-23'
+  locator: Section 4
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
+- aspect: other-officers
+  value: Vice President
+  quote: Vice President's Seat. One at-large seat held by the Vice President
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 2.a
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
+- aspect: elections
+  value: Every 4 years, on the regular Congressional election date
+  quote: the date set for regular Congressional elections every four years thereafter
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
+- aspect: voting-age
+  value: '18'
+  quote: Tribe who will be 18 years of age or older on the date of the election shall be qualified to vote.
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 10.a
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
+- aspect: election-authority
+  value: Reservation-Wide Election Board
+  quote: The term "Reservation-Wide Election Board" means the board consisting of the
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 1.q
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
 - aspect: separation-of-powers
   value: Stated
   quote: of one branch shall exercise a power
@@ -293,29 +329,41 @@ governance:
     version: 1996-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
 - aspect: judiciary
-  value: Courts established by ordinance
-  quote: all courts established by ordinance under
-  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  value: Tribal Court
+  quote: President and Trial Judges of the Tribal Court shall each be selected through a primary election
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1996-05-31'
-  locator: Article XI
-  document_version:
-    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
-    version: 1996-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+  as_of: '2026-11-23'
+  locator: Section 4
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
+- aspect: judicial-selection
+  value: Elected at large in primary and general elections
+  quote: President and Trial Judges of the Tribal Court shall each be selected through a primary election
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 4
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
+- aspect: judicial-term
+  value: 4 years
+  quote: President and Trial Judges shall each serve for four-year terms
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 4
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
 - aspect: amendment
-  value: Vote of voters at an election, 30% must vote
-  quote: provided that at least thirty (30) percent of thnc
-  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  value: Two-thirds vote of all Tribal Council seats
+  quote: suspended only by affirmative vote of two-thirds of all Tribal Council seats
+  source: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-website-nct-legislative-district-20vote-tribalelection-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1996-05-31'
-  locator: Article X
-  document_version:
-    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
-    version: 1996-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+  as_of: '2026-11-23'
+  locator: Section 24
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the Revised Tribal Election Ordinance is saved as governing text (the constitution itself is not among the pages), its adoption year is unreadable in the scan, and the homepage agrees with it.'
 - aspect: secretarial-approval
   value: Required for amendments
   quote: ecnve until it shall have been approved by the Secretary of the

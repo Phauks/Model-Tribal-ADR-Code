@@ -215,41 +215,45 @@ governance:
     version: 1947-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
 - aspect: governing-body
-  value: Community Council
-  quote: Indian Community shall be the Community Council, which shall be composed
-  source: university-of-oklahoma-indian-reorganization-act-pgcons
-  confidence: medium
+  value: Tribal Council
+  quote: The Port Gamble S’Klallam Tribe is overseen by a six-member Tribal Council that has delegated legislative authority.
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-06'
-  locator: Article III, Section 1
-  document_version:
-    document: port-gamble-sklallam-tribe-constitution
-    version: 1947-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: The Port Gamble S’Klallam Tribe is overseen by a six-member Tribal Council that has delegated legislative authority.
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
 - aspect: governing-body-selection
-  value: All qualified voters of the Band
-  quote: of all qualified voters of the Port Gamble Band of Clallam Indians.
-  source: university-of-oklahoma-indian-reorganization-act-pgcons
-  confidence: medium
+  value: Elected
+  quote: Each Council member serves a two-year term with seats up for election on alternating years.
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-06'
-  locator: Article III, Section 1
-  document_version:
-    document: port-gamble-sklallam-tribe-constitution
-    version: 1947-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: Each Council member serves a two-year term with seats up for election on alternating years.
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
 - aspect: head-of-government
-  value: Chairman
-  quote: The Chairman, or 25 per cent of the qualified
-  source: university-of-oklahoma-indian-reorganization-act-pgcons
-  confidence: medium
+  value: Chairwoman
+  quote: Chairwoman
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-06'
-  locator: Article III, Section 5
-  document_version:
-    document: port-gamble-sklallam-tribe-constitution
-    version: 1947-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -271,17 +275,13 @@ governance:
     version: 1947-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
 - aspect: other-officers
-  value: Vice-chairman, secretary, treasurer (Business Committee)
-  quote: chairman, vice-chairman, secretary, and treasurer of the Community Council,
-  source: university-of-oklahoma-indian-reorganization-act-pgcons
-  confidence: medium
+  value: Vice Chairman
+  quote: Vice Chairman
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-06'
-  locator: Article III, Section 6
-  document_version:
-    document: port-gamble-sklallam-tribe-constitution
-    version: 1947-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
 - aspect: elections
   value: Annually at the July meeting
   quote: successors shall be chosen. Thereafter, officials shall be chosen at the

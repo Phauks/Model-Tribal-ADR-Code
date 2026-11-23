@@ -199,49 +199,37 @@ federal_administration:
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
 governance:
 - aspect: form
-  value: Constitution adopted pursuant to the Indian Reorganization Act of June 18, 1934
-  quote: approve and adopt this Constitution pursuant to the Indian Reorganization Act of June 18, 1934,
-  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
-  confidence: medium
+  value: Constitution adopted by Secretarial election
+  quote: On February 1, 1998 a Secretarial election was held where the qualified voters of the Mechoopda approved and adopted the Constitution of the Mechoopda Indian Tribe of Chico Rancheria, California.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government
+  confidence: high
   verification: read-in-full
-  locator: Preamble
-  document_version:
-    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
 - aspect: governing-body
   value: Tribal Council
-  quote: The governing body of the Mechoopda Indian Tribe will be the Tribal Council of the Mechoopda
-  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
-  confidence: medium
+  quote: The governing body of the Mechoopda Indian Tribe is the Tribal Council.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government-tribal-council
+  confidence: high
   verification: read-in-full
-  locator: Article IV
-  document_version:
-    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
 - aspect: governing-body-size
   value: 7 members
-  quote: The Tribal Council shall consist of seven (7) members elected at-large from the
-  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
-  confidence: medium
+  quote: The Tribal Council is comprised of seven (7) members elected by the General Membership.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government-tribal-council
+  confidence: high
   verification: read-in-full
-  locator: Article IV
-  document_version:
-    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
 - aspect: governing-body-selection
-  value: Elected at large
-  quote: The Tribal Council shall consist of seven (7) members elected at-large from the
-  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
-  confidence: medium
+  value: Elected by the General Membership
+  quote: The Tribal Council is comprised of seven (7) members elected by the General Membership.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government-tribal-council
+  confidence: high
   verification: read-in-full
-  locator: Article IV
-  document_version:
-    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
 - aspect: governing-body-term
   value: 2 years, staggered
   quote: Ail terms of office will be for two (2) years, except that terms shall be
@@ -253,6 +241,14 @@ governance:
     document: mechoopda-indian-tribe-of-chico-rancheria-constitution
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: general-council
+  value: Tribal Members, about 721
+  quote: The General Membership is comprised of approximately 721 Tribal Members.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
 - aspect: head-of-government
   value: Chairperson
   quote: Section 3. Chairperson. The Chairperson shall preside at ail meetings of the Tribal
@@ -284,16 +280,13 @@ governance:
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
 - aspect: other-officers
-  value: Vice-Chairperson, Secretary, Treasurer
-  quote: Section 4. Vice-Chairperson. The Vice-Chairperson shall assist the Chairperson when called
-  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
-  confidence: medium
+  value: Chairperson, Vice-Chairperson, Secretary, Treasurer, Members-At-Large
+  quote: 'There are four officers: Chairperson, Vice-Chairperson, Secretary, Treasurer, and three Members-At-Large.'
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government-tribal-council
+  confidence: high
   verification: read-in-full
-  locator: Article XIV, Section 4
-  document_version:
-    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
 - aspect: elections
   value: Every 2 years, staggered
   quote: The Chairperson, Secretary and two Member-at-large Council positions will be

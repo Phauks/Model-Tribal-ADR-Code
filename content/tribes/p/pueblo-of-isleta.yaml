@@ -179,6 +179,46 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is the legislative authority for the Pueblo.
+  source: pueblo-of-isleta-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Council is made up of seven members, and are elected every two years by popular vote of tribal members.
+  source: pueblo-of-isleta-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by popular vote
+  quote: are elected every two years by popular vote of tribal members
+  source: pueblo-of-isleta-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: are elected every two years by popular vote of tribal members
+  source: pueblo-of-isleta-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: Power is vested in the Pueblo Governor by the people of Isleta.
+  source: pueblo-of-isleta-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -187,6 +227,46 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by popular vote
+  quote: The Governor is elected only from the membership of the Pueblo of Isleta and serve for a period of two (2) years by popular vote of registered Tribal Members.
+  source: pueblo-of-isleta-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: serve for a period of two (2) years
+  source: pueblo-of-isleta-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Lieutenant Governors, Sheriff, Under Sheriff, Secretary, Treasurer
+  quote: The Pueblo of Isleta Administration Branch consists of the Governor, First and Second Lieutenant Governors, Sheriff and Under Sheriff, Secretary and Treasurer.
+  source: pueblo-of-isleta-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court and Appellate Court
+  quote: The Isleta Tribal Court is one of two courts within the Judicial Branch of the Pueblo of Isleta tribal government.
+  source: pueblo-of-isleta-isletapueblo-com-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Advisory committee to the Pueblo
+  quote: The Committee serves as an advisory body to the Pueblo of Isleta as traditional interpreters of land, protection and preservation of environment, language, religious pathways and traditional knowledge.
+  source: pueblo-of-isleta-website-tribal-programs-dept-of-cultural-historic-preservation-dchp
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code

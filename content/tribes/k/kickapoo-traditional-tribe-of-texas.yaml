@@ -195,6 +195,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: TRIBAL COUNCIL
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -203,6 +219,14 @@ governance:
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: KTTT Tribal Court
+  quote: 'We, the staff of the KTTT Tribal Court, take pride in working as a team and pledge to:'
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-operations-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
 governing_documents:
 - kind: law-code
   title: Kickapoo Traditional Tribe of Texas - Tribal Codes and Ordinances

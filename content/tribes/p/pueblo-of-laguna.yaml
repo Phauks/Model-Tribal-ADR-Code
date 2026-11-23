@@ -202,17 +202,13 @@ governance:
     version: 1958-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
-  value: Pueblo Council
-  quote: the Pueblo of Laguna shall be vested in the Pueblo Council. The Council
-  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
-  confidence: medium
+  value: Laguna Tribal Council
+  quote: Laguna Tribal Council
+  source: pueblo-of-laguna-website-elected-officials
+  confidence: high
   verification: read-in-full
-  as_of: '1958-05-29'
-  locator: Article III, Section 1
-  document_version:
-    document: pueblo-of-laguna-constitution
-    version: 1958-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is a 2012 Bureau of Indian Affairs memo about a proposed constitutional amendment, not current text, so no fact is taken from it.'
 - aspect: governing-body-selection
   value: Elections held by Pueblo custom and ordinance; village representatives selected by villages
   quote: of all officials of the Pueblo of Laguna shall be held in accordance with
@@ -343,16 +339,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: judiciary
   value: Pueblo Court
-  quote: shall be vested in a Pueblo Court. The Court shall consist of such number
-  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
-  confidence: medium
+  quote: The Pueblo of Laguna Court is the Judicial branch of the Pueblo of Laguna government.
+  source: pueblo-of-laguna-lagunapueblo-nsn-gov-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1958-05-29'
-  locator: Article V, Section 1
-  document_version:
-    document: pueblo-of-laguna-constitution
-    version: 1958-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is a 2012 Bureau of Indian Affairs memo about a proposed constitutional amendment, not current text, so no fact is taken from it.'
 - aspect: judicial-selection
   value: Appointed by the Council
   quote: appointed by the Council.
@@ -413,6 +405,14 @@ governance:
     document: pueblo-of-laguna-constitution
     version: 1958-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Chief of Operations under Governor
+  quote: In accordance with the current Pueblo organizational structure and approved position description, the Chief of Operations is under the general direction of the Governor.
+  source: pueblo-of-laguna-website-departments-chief-of-operations
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is a 2012 Bureau of Indian Affairs memo about a proposed constitutional amendment, not current text, so no fact is taken from it.'
 governing_documents:
 - kind: law-code
   title: Pueblo of Laguna, New Mexico

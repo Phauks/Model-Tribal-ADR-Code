@@ -171,6 +171,46 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
 governance:
+- aspect: form
+  value: Quinault Indian Nation Constitution
+  quote: The Quinault people adopted the Quinault Indian Nation Constitution on March 22, 1975, which has also been amended over time.
+  source: quinault-indian-nation-website-255-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The Quinault Business Committee, which consists of four executive officers and seven council membersen, is the elected governing body the QIN, entrusted with the executive, business and legislative affairs of the QIN throughout the year.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: governing-body-size
+  value: 4 executive officers and 7 council members
+  quote: The Quinault Business Committee, which consists of four executive officers and seven council membersen, is the elected governing body the QIN, entrusted with the executive, business and legislative affairs of the QIN throughout the year.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Quinault Business Committee, which consists of four executive officers and seven council membersen, is the elected governing body the QIN, entrusted with the executive, business and legislative affairs of the QIN throughout the year.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: head-of-government
+  value: President
+  quote: Under these Bylaws, the voting members of the Quinault Indian Nation established an elective government ruled by the Tribal Council constituting the Business Committee, made up of a President, Vice President, Secretary, Treasurer and seven council members.
+  source: quinault-indian-nation-website-255-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -179,6 +219,38 @@ governance:
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary, Treasurer
+  quote: Under these Bylaws, the voting members of the Quinault Indian Nation established an elective government ruled by the Tribal Council constituting the Business Committee, made up of a President, Vice President, Secretary, Treasurer and seven council members.
+  source: quinault-indian-nation-website-255-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: elections
+  value: Annually, last Saturday in March (General Council)
+  quote: Our General Council meets annually the last Saturday in March to hold elections, accept new tribal members, allocate fishing grounds, and discuss other issues relevant to tribal operations.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: As the first Tribal Court in the region, the Quinault Tribal Court has a long history of serving the Quinault Nation and Community
+  source: quinault-indian-nation-website-157-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: other
+  value: General Council meets annually
+  quote: Our General Council meets annually the last Saturday in March to hold elections, accept new tribal members, allocate fishing grounds, and discuss other issues relevant to tribal operations.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
 governing_documents:
 - kind: law-code
   title: Quinault Indian Nation

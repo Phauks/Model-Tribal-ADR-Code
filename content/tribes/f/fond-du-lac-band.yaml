@@ -133,6 +133,46 @@ federal_administration:
   note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
     taken from its entry.
 governance:
+- aspect: governing-body
+  value: Reservation Business Committee, Tribal Council
+  quote: The governing body of the Fond du Lac Reservation is the Reservation Business Committee, or Tribal Council,
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: which is composed of a Chairperson, Secretary/Treasurer, and Three Representatives; one from District 1, Cloquet;
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: All are elected to four-year terms on a staggered basis
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: All are elected to four-year terms on a staggered basis
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: which is composed of a Chairperson, Secretary/Treasurer, and Three Representatives
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -141,6 +181,22 @@ governance:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: All are elected to four-year terms on a staggered basis
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Secretary/Treasurer
+  quote: which is composed of a Chairperson, Secretary/Treasurer, and Three Representatives
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Codes and ordinances

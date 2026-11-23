@@ -154,6 +154,30 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Village of Solomon
 governance:
+- aspect: governing-body
+  value: Traditional Council
+  quote: The Village of Solomon is governed by a 7 member elected Traditional Council, with staggered annual elections.
+  source: village-of-solomon-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the village''s About and Tribal Court pages; no constitution is among the saved pages.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Village of Solomon is governed by a 7 member elected Traditional Council, with staggered annual elections.
+  source: village-of-solomon-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the village''s About and Tribal Court pages; no constitution is among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Village of Solomon is governed by a 7 member elected Traditional Council, with staggered annual elections.
+  source: village-of-solomon-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the village''s About and Tribal Court pages; no constitution is among the saved pages.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -162,6 +186,30 @@ governance:
   as_of: '2026-11-20'
   locator: Village of Solomon
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: elections
+  value: Staggered annual elections
+  quote: The Village of Solomon is governed by a 7 member elected Traditional Council, with staggered annual elections.
+  source: village-of-solomon-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the village''s About and Tribal Court pages; no constitution is among the saved pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: VOS Tribal Court serves enrolled VOS Tribal Citizens or VOS eligible youth.
+  source: village-of-solomon-website-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the village''s About and Tribal Court pages; no constitution is among the saved pages.'
+- aspect: judicial-selection
+  value: Elected or appointed by the Council
+  quote: Tribal Court Judges will be selected through an election process, or appointed by the Council.
+  source: village-of-solomon-website-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the village''s About and Tribal Court pages; no constitution is among the saved pages.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

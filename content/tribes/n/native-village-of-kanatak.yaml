@@ -129,6 +129,14 @@ governance:
     document: native-village-of-kanatak-constitution
     version: 1941-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Kanatak Tribal Council
+  quote: Kanatak Tribal Council
+  source: native-village-of-kanatak-website-council-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site footer dates to 2009; the officer titles are taken from the Tribal Council page (page 2).'
 - aspect: governing-body-selection
   value: Set by the Village at general meeting
   quote: decide how members and officers of the governing body shall be chosen
@@ -141,6 +149,14 @@ governance:
     document: native-village-of-kanatak-constitution
     version: 1941-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: President
+  source: native-village-of-kanatak-website-council-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site footer dates to 2009; the officer titles are taken from the Tribal Council page (page 2).'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026

@@ -166,6 +166,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Village of Iliamna
 governance:
+- aspect: governing-body
+  value: Iliamna Village Council
+  quote: The Iliamna Village Council is a governing body that represents the interests of the Iliamna Native community in Alaska.
+  source: village-of-iliamna-website-general-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages are general descriptions and give no constitution or election rules.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026

@@ -201,6 +201,38 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Confederated Tribes and Bands of the Yakama Nation
 governance:
+- aspect: governing-body
+  value: General Council
+  quote: The General Council of the Yakama Nation serves as the primary governing body, providing leadership and direction to the tribe.
+  source: confederated-tribes-and-bands-of-the-yakama-nation-website-about-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Two governing bodies are named (General Council and Tribal Council); no constitution saved, facts come from web pages.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Yakama Nation Tribal Council serves as the governing body for the Confederated Tribes of the Yakama Nation, providing leadership and direction for the community.
+  source: confederated-tribes-and-bands-of-the-yakama-nation-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Two governing bodies are named (General Council and Tribal Council); no constitution saved, facts come from web pages.'
+- aspect: governing-body-selection
+  value: Elected representatives
+  quote: This council is composed of elected representatives who advocate for the interests and welfare of the tribal members.
+  source: confederated-tribes-and-bands-of-the-yakama-nation-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Two governing bodies are named (General Council and Tribal Council); no constitution saved, facts come from web pages.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman, Vice-Chairwoman, and Secretary work collaboratively to guide the council's activities and initiatives.
+  source: confederated-tribes-and-bands-of-the-yakama-nation-website-about-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Two governing bodies are named (General Council and Tribal Council); no constitution saved, facts come from web pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -209,6 +241,22 @@ governance:
   as_of: '2026-11-20'
   locator: Confederated Tribes and Bands of the Yakama Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: The leadership of the General Council consists of key officials who are elected to represent the interests of the Yakama Nation.
+  source: confederated-tribes-and-bands-of-the-yakama-nation-website-about-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Two governing bodies are named (General Council and Tribal Council); no constitution saved, facts come from web pages.'
+- aspect: other-officers
+  value: Vice-Chairwoman, Secretary
+  quote: The Chairman, Vice-Chairwoman, and Secretary work collaboratively to guide the council's activities and initiatives.
+  source: confederated-tribes-and-bands-of-the-yakama-nation-website-about-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Two governing bodies are named (General Council and Tribal Council); no constitution saved, facts come from web pages.'
 governing_documents:
 - kind: law-code
   title: Confederated Tribes and Bands of the Yakama Nation - Tribal Codes and Resolutions

@@ -154,53 +154,53 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Adopted by election under Section 16 of the Indian Reorganization Act
-  quote: accordance with sedion 16 of the Indian Reorganization
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  value: Indian Reorganization Act of 1934
+  quote: The Santee Sioux Nation is federally recognized tribe organized pursuant to the Indian Reorganization Act of 1934 as amended in 1935.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Certification of Adoption
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: governing-body
   value: Tribal Council
-  quote: Stated meetings of the tribal council shall be held
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  quote: The Tribal Council governs under the authority of the Santee Sioux Nation constitution with the powers authorized.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Bylaws, Article IV, Section 1
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: governing-body-selection
-  value: Elected by popular assembly of each voting district
-  quote: Eacll voting district shall, in popular assembly
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  value: Officers elected at large; one member per district
+  quote: Each of the 4 districts has one member. The officers run at large.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Article V, Section 2
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Annually one officer and one district representative are elected for four years. The council terms are staggered in order to maintain stability.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: head-of-government
   value: Chairman
-  quote: The chairman of the tribal council shall preside at all
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Bylaws, Article I, Section 1
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -209,30 +209,30 @@ governance:
   as_of: '2026-11-20'
   locator: Santee Sioux Nation, Nebraska
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large
+  quote: The officers run at large.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: other-officers
-  value: Vice chairman, secretary, treasurer
-  quote: The vice chairman shall preside at all meetings of the
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  value: Vice Chairman, Secretary, Treasurer
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Bylaws, Article I, Section 2
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: elections
-  value: Annually, last Tuesday of September
-  quote: annually .elect one
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  value: Annually
+  quote: Annually one officer and one district representative are elected for four years.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Article III, Section 2
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: amendment
   value: Majority vote of qualified voters in an election called by the Secretary
   quote: may be amended by a majority vote

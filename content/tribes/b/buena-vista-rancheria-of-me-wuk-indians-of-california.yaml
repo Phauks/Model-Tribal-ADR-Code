@@ -133,6 +133,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Buena Vista Rancheria of Me-Wuk Indians of California
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Buena Vista Rancheria Tribal Council is the governing body of the Buena Vista Rancheria of Me-Wuk Indians
+  source: buena-vista-rancheria-of-me-wuk-indians-of-california-website-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages state only the governing body name and the court; no council size, selection, term or governing document text is given.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -141,6 +149,14 @@ governance:
   as_of: '2026-11-20'
   locator: Buena Vista Rancheria of Me-Wuk Indians of California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Buena Vista Rancheria Tribal Court was established in 2021 and exercises general civil jurisdiction over our citizens and anyone who has consented to Tribal jurisdiction.
+  source: buena-vista-rancheria-of-me-wuk-indians-of-california-website-tribal-court-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages state only the governing body name and the court; no council size, selection, term or governing document text is given.'
 governing_documents:
 - kind: law-code
   title: Liquor control ordinance

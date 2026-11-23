@@ -170,6 +170,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Cayuga Nation
 governance:
+- aspect: governing-body
+  value: Cayuga Nation Council
+  quote: The Bureau of Indian Affairs recognized the Cayuga Nation Council as the Nation’s legitimate governing body
+  source: cayuganation-nsn-history-culture
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page is mostly business enterprise text, council membership appears only as names, and no constitution text is among the saved pages.'
 - aspect: head-of-government
   value: Nation Representative
   source: bia-tribal-leaders-directory-2026
@@ -178,6 +186,14 @@ governance:
   as_of: '2026-11-20'
   locator: Cayuga Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other
+  value: Clan Mother and two Council Representatives per clan
+  quote: Each clan has its own leadership structure, including a Clan Mother and two Council Representatives
+  source: cayuganation-nsn-history-culture
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page is mostly business enterprise text, council membership appears only as names, and no constitution text is among the saved pages.'
 gaming:
   ordinances:
   - approved: '2003-11-18'

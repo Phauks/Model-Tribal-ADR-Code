@@ -207,16 +207,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
 - aspect: governing-body
   value: Tribal Council
-  quote: Section 1, The legislative powers of the Little River Band shall be invested in the
-  source: constitution-little-river-band-of-ottawa-indians-1998-text
-  confidence: medium
+  quote: The Legislative powers of the Little River Band shall be invested in the Tribal Council (Legislative Branch);
+  source: little-river-band-of-ottawa-indians-website-government-executive-branch-tribal-ogema
+  confidence: high
   verification: read-in-full
-  as_of: '1998-07-10'
-  locator: Article IV, Section 1
-  document_version:
-    document: little-river-band-of-ottawa-indians-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
 - aspect: governing-body-size
   value: 9 members
   quote: The Tribal Council shall consist of nine (9) persons, elected by popular vote of the
@@ -267,16 +263,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
 - aspect: head-of-government
   value: Tribal Ogema
-  quote: Section 4. Election of the Tribal Ogema. The Tribal Ogema shall be the candidate
-  source: constitution-little-river-band-of-ottawa-indians-1998-text
-  confidence: medium
+  quote: the Executive powers of the Little River Band shall be invested in the Tribal Ogema (Executive Branch)
+  source: little-river-band-of-ottawa-indians-website-government-executive-branch-tribal-ogema
+  confidence: high
   verification: read-in-full
-  as_of: '1998-07-10'
-  locator: Article V, Section 4
-  document_version:
-    document: little-river-band-of-ottawa-indians-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
 - aspect: head-of-government
   value: Ogema
   source: bia-tribal-leaders-directory-2026
@@ -357,30 +349,30 @@ governance:
     document: little-river-band-of-ottawa-indians-constitution
     version: 1998-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: branches
+  value: Legislative, executive and judicial
+  quote: The Tribal Government of the Little River Band of Ottawa Indians is a tripartite government consisting of three coequal branches of governance.
+  source: little-river-band-of-ottawa-indians-website-government-executive-branch-tribal-ogema
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
 - aspect: separation-of-powers
   value: Stated
-  quote: legislative and executive functions of the tribal government and no person exercising
-  source: constitution-little-river-band-of-ottawa-indians-1998-text
-  confidence: medium
+  quote: As an independent branch of the government, it makes sure that the separation of powers is respected and provides a system of checks and balances that is vital for any sovereign nation.
+  source: little-river-band-of-ottawa-indians-website-government-tribal-judicial
+  confidence: high
   verification: read-in-full
-  as_of: '1998-07-10'
-  locator: Article VI, Section 9
-  document_version:
-    document: little-river-band-of-ottawa-indians-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
 - aspect: judiciary
-  value: Tribal Court, Court of Appeals, and inferior courts
-  quote: judiciary, which shall consist of the Tribal Court, a Court of Appeals, and such inferior
-  source: constitution-little-river-band-of-ottawa-indians-1998-text
-  confidence: medium
+  value: Tribal Court and Court of Appeals
+  quote: the Judicial power of the Little River Band shall be invested in a Tribal judiciary, which shall consist of the Tribal Court, a Court of Appeals, and such inferior courts as the Tribal Council may from time to time ordain and establish.
+  source: little-river-band-of-ottawa-indians-website-government-executive-branch-tribal-ogema
+  confidence: high
   verification: read-in-full
-  as_of: '1998-07-10'
-  locator: Article VI, Section 1
-  document_version:
-    document: little-river-band-of-ottawa-indians-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
 - aspect: judicial-selection
   value: Appointed by the Tribal Ogema, confirmed by the Tribal Council
   quote: the Tribal Ogema, provided such appointment must be confirmed by the Tribal

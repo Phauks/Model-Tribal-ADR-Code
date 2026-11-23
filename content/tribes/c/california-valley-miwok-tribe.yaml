@@ -136,6 +136,30 @@ federal_administration:
   as_of: '2026-11-20'
   locator: California Valley Miwok Tribe, California
 governance:
+- aspect: form
+  value: Constitution under Indian Reorganization Act, Section 16
+  quote: The governance of the California Valley Miwok Tribe is established under its constitution, ratified through a Secretarial election conducted by the Bureau of Indian Affairs on October 1, 2024, in accordance with Section 16 of the Indian Reorganization Act of June 18, 1934.
+  source: california-valley-miwok-tribe-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Council size appears only as a statistic beside a label, and the constitution text is behind a member sign-in, so none is among the saved pages.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: formally establishing the governance framework under which our elected Tribal Council now serves
+  source: cvmt-nsn-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Council size appears only as a statistic beside a label, and the constitution text is behind a member sign-in, so none is among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: Elected and seated under the constitution adopted October 2024.
+  source: california-valley-miwok-tribe-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Council size appears only as a statistic beside a label, and the constitution text is behind a member sign-in, so none is among the saved pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -144,6 +168,22 @@ governance:
   as_of: '2026-11-20'
   locator: California Valley Miwok Tribe, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Interim Chairwoman”; recorded without the holder's own form of the title.
+- aspect: election-authority
+  value: Election Board
+  quote: The Election Board administers elections of the Tribal Council
+  source: california-valley-miwok-tribe-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Council size appears only as a statistic beside a label, and the constitution text is behind a member sign-in, so none is among the saved pages.'
+- aspect: other
+  value: 5 standing committees under Tribal Council
+  quote: Five standing committees serve our citizens under the authority of the Tribal Council.
+  source: cvmt-nsn-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Council size appears only as a statistic beside a label, and the constitution text is behind a member sign-in, so none is among the saved pages.'
 gaming:
   ordinances:
   - approved: '2000-05-03'

@@ -152,6 +152,38 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pueblo of Taos, New Mexico
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Appointments are given from the Tribal Council.
+  source: pueblo-of-taos-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Former Warchiefs and Governors
+  quote: Council is a collective of men in the community who have served as previous Warchiefs and/or Governors, making council the largest group for a government entity, in the community, they serve life long terms.
+  source: pueblo-of-taos-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: Lifelong terms
+  quote: Council is a collective of men in the community who have served as previous Warchiefs and/or Governors, making council the largest group for a government entity, in the community, they serve life long terms.
+  source: pueblo-of-taos-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: The equivalent to a president or state governor, the Governor and the Warchief hold different roles and responsibilities to and for the community.
+  source: pueblo-of-taos-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -160,6 +192,30 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of Taos, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Appointed by Tribal Council
+  quote: All government positions are appointed one year terms. Appointments are given from the Tribal Council.
+  source: pueblo-of-taos-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: All government positions are appointed one year terms. Appointments are given from the Tribal Council.
+  source: pueblo-of-taos-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Warchief
+  quote: The equivalent to a president or state governor, the Governor and the Warchief hold different roles and responsibilities to and for the community.
+  source: pueblo-of-taos-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -171,6 +171,46 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pulikla Tribe of Yurok People (previously listed as Resighini Rancheria, California)
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -179,6 +219,30 @@ governance:
   as_of: '2026-11-20'
   locator: Pulikla Tribe of Yurok People (previously listed as Resighini Rancheria, California)
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years, staggered
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, Councilperson
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code

@@ -160,77 +160,61 @@ federal_administration:
   locator: Suquamish Indian Tribe of the Port Madison Reservation
 governance:
 - aspect: form
-  value: Constitution and Bylaws approved under Act of June 18, 1934
-  quote: June 18, 1934 (48 Stat. .984), as amended, do hereby app
-  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
-  confidence: medium
+  value: Formal constitution, 1965
+  quote: The Suquamish Tribe enacted a formal constitution in 1965, establishing Tribal Council and became a voting member of the
+  source: suquamish-indian-tribe-of-the-port-madison-reservation-website-home-about-us-history-culture
+  confidence: high
   verification: read-in-full
-  as_of: '1965-07-02'
-  locator: Approval
-  document_version:
-    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
-    version: 1965-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
   value: Suquamish Tribal Council
-  quote: known as the Suquamish Tribal Council.
-  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
-  confidence: medium
+  quote: The Suquamish Tribe is led by a seven member Tribal Council
+  source: suquamish-indian-tribe-of-the-port-madison-reservation-website-home-government
+  confidence: high
   verification: read-in-full
-  as_of: '1965-07-02'
-  locator: Article III, Section 1
-  document_version:
-    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
-    version: 1965-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
-  value: 4 members (Chairman, Vice-Chairman, Secretary, one member)
-  quote: and one member. All shall
-  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
-  confidence: medium
+  value: 7 members
+  quote: The Suquamish Tribe is led by a seven member Tribal Council
+  source: suquamish-indian-tribe-of-the-port-madison-reservation-website-home-government
+  confidence: high
   verification: read-in-full
-  as_of: '1965-07-02'
-  locator: Article V, Section 1
-  document_version:
-    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
-    version: 1965-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
-  value: Elected by secret ballot
-  quote: and votes are to be cast for their election by secret
-  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
-  confidence: medium
+  value: Elected each March by General Council
+  quote: elected each March by the Tribe’s voting body, known as the General Council
+  source: suquamish-indian-tribe-of-the-port-madison-reservation-website-home-government
+  confidence: high
   verification: read-in-full
-  as_of: '1965-07-02'
-  locator: Article V, Section 2
-  document_version:
-    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
-    version: 1965-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Tribal Council officers and members serve three-year staggered terms.
+  source: suquamish-indian-tribe-of-the-port-madison-reservation-website-home-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: general-council
-  value: All tribal members at least 18 years of age
-  quote: The general council shall be composed of all tribal members
-  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
-  confidence: medium
+  value: Tribe's voting body, General Council
+  quote: the Tribe’s voting body, known as the General Council
+  source: suquamish-indian-tribe-of-the-port-madison-reservation-website-home-government
+  confidence: high
   verification: read-in-full
-  as_of: '1965-07-02'
-  locator: Article VIII, Section 3
-  document_version:
-    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
-    version: 1965-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairman
-  quote: The Chairman of the tribal council shall preside over all
-  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
-  confidence: medium
+  quote: The Chairman only votes in case of a tie.
+  source: suquamish-indian-tribe-of-the-port-madison-reservation-website-home-government
+  confidence: high
   verification: read-in-full
-  as_of: '1965-07-02'
-  locator: Article VI, Section 1
-  document_version:
-    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
-    version: 1965-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -240,17 +224,13 @@ governance:
   locator: Suquamish Indian Tribe of the Port Madison Reservation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 - aspect: other-officers
-  value: Vice-Chairman, Secretary, Treasurer
-  quote: The Vice-Chairman of the tribal council shall
-  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
-  confidence: medium
+  value: Vice-Chairman, Treasurer, Secretary
+  quote: The Tribal Council consists of four officers; Chairman, Vice-Chairman, Treasurer, Secretary; and three at-large Council members.
+  source: suquamish-indian-tribe-of-the-port-madison-reservation-website-home-government
+  confidence: high
   verification: read-in-full
-  as_of: '1965-07-02'
-  locator: Article VI, Sections 2-4
-  document_version:
-    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
-    version: 1965-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: elections
   value: Every third year, in January, at annual General Council meeting
   quote: annual general council meeting in January every third
@@ -275,6 +255,14 @@ governance:
     document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
     version: 1965-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Suquamish Tribal Court is the forum where the people of the Suquamish Tribe and the native residents of the Port Madison Indian Reservation can resolve their differences and disputes
+  source: suquamish-tribe-courts-the
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: amendment
   value: Majority vote in Secretarial election, 30% turnout
   quote: This constitution and bylaws may be amended

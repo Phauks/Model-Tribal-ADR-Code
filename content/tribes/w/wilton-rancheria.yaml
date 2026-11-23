@@ -191,29 +191,21 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution adopted under inherent sovereignty
-  quote: We, the people of Wilton Rancheria, pursuant to our inherent sovereignty, in order to
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  value: Constitution adopted November 2011
+  quote: In November 2011, the Tribe adopted its modern constitution.
+  source: wilton-rancheria-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Preamble
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: governing-body
   value: Tribal Council
-  quote: Section 2. Powers of the Tribal Council. The Tribal Council shall make the Tribe’s
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  quote: The Legislative Branch of Wilton Rancheria is represented by the Tribal Council, which serves as the governing body of the Tribe.
+  source: wilton-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article VI, Section 2
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: governing-body-size
   value: 7 members
   quote: Section 1. Composition of the Tribal Council. The Tribal Council shall consist of
@@ -227,29 +219,21 @@ governance:
     version: 2011-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
 - aspect: governing-body-selection
-  value: Elected at large
-  quote: be elected at-large by the Tribe’s eligible voters.
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  value: Elected by majority vote of eligible voters
+  quote: Members of the Tribal Council are elected by a majority vote of Wilton Rancheria’s eligible voters and serve staggered four-year terms
+  source: wilton-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article VI, Section 8
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: governing-body-term
   value: 4 years, staggered
-  quote: Section 5. Terms of Office. Members of the Tribal Council shall serve four year terms
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  quote: Members of the Tribal Council are elected by a majority vote of Wilton Rancheria’s eligible voters and serve staggered four-year terms
+  source: wilton-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article VI, Section 5
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: general-council
   value: All eligible voters
   quote: Rancheria are entitled to participate in the General Council.
@@ -263,17 +247,13 @@ governance:
     version: 2011-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
 - aspect: head-of-government
-  value: Chairperson
-  quote: Section 1. Powers of the Chairperson. The Chairperson shall lead the Tribe based
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  value: Spokesperson
+  quote: Among its members, the Tribal Council selects a Spokesperson and Vice Spokesperson to preside over its meetings.
+  source: wilton-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article V, Section 1
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -283,17 +263,13 @@ governance:
   locator: Wilton Rancheria, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 - aspect: head-of-government-selection
-  value: Selected at the General Election
-  quote: Chairperson, and members of the Tribal Council shall be selected at the General
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  value: Chosen by the Tribal Council from its members
+  quote: Among its members, the Tribal Council selects a Spokesperson and Vice Spokesperson to preside over its meetings.
+  source: wilton-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article IX, Section 1
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: head-of-government-term
   value: 4 years, staggered
   quote: Section 3. Terms of Office. The Chairperson and Vice-Chairperson shall serve
@@ -307,17 +283,13 @@ governance:
     version: 2011-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
 - aspect: other-officers
-  value: Vice-Chairperson
-  quote: 'Section 2. Vice- Chairperson. The Vice-Chairperson shall have the power:'
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  value: Vice Spokesperson
+  quote: Among its members, the Tribal Council selects a Spokesperson and Vice Spokesperson to preside over its meetings.
+  source: wilton-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article V, Section 2
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: elections
   value: Every 2 years on the second weekend in June
   quote: weekend in June of even-numbered years beginning in 2014. General Elections shall be
@@ -355,17 +327,13 @@ governance:
     version: 2011-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
 - aspect: branches
-  value: Chairperson, Tribal Council, General Council and Tribal Court
-  quote: be composed of a Chairperson, a Vice-Chairperson, a Tribal Council, a General Council,
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  value: General Council, Executive, Legislative, Judicial
+  quote: 'Wilton Rancheria’s government is divided into four separate branches: a General Council, an Executive branch, a Legislative branch, and a Judicial branch.'
+  source: wilton-rancheria-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article IV, Section 1
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: separation-of-powers
   value: Stated
   quote: be separate and distinct and shall not exercise the powers and functions delegated to any
@@ -380,40 +348,28 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
 - aspect: judiciary
   value: Tribal Court
-  quote: Section 1. Composition of the Tribal Court. There shall be one Chief Judge of the
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  quote: The Constitution of Wilton Rancheria provides that the judicial power of the Tribe shall be vested in the Tribal Court.
+  source: wilton-rancheria-tribal-court-page
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article VIII, Section 1
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: judicial-selection
   value: Appointed by the Tribal Council
-  quote: Tribal Court judges shall be appointed by the Tribal Council and shall be admitted to
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  quote: These judges are appointed by the Tribal Council to serve four-year terms and must be licensed to practice law in any state.
+  source: wilton-rancheria-tribal-court-page
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article VIII, Section 1
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: judicial-term
   value: 4 years
-  quote: Section 2. Terms of Office. Tribal Court judges shall serve four- year terms.
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  quote: These judges are appointed by the Tribal Council to serve four-year terms and must be licensed to practice law in any state.
+  source: wilton-rancheria-tribal-court-page
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article VIII, Section 2
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 - aspect: judicial-independence
   value: Judges removable for good cause
   quote: Judges, and Traditional Court members may be removed for good cause through the
@@ -451,17 +407,13 @@ governance:
     version: 2011-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
 - aspect: other
-  value: Traditional Court of elders advising the Tribal Court
-  quote: Section 6. Purpose of Traditional Court. The Traditional Court shall exist to assist the
-  source: constitution-wilton-rancheria-2011-text
-  confidence: medium
+  value: Traditional Court of 5 Elders
+  quote: The Traditional Court is comprised of five (5) Wilton Rancheria Elders.
+  source: wilton-rancheria-website-tribal-government-tribal-court-traditional-court
+  confidence: high
   verification: read-in-full
-  as_of: '2011-11-12'
-  locator: Article VIII, Section 6
-  document_version:
-    document: wilton-rancheria-constitution
-    version: 2011-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 2011 constitution as adopted, with no later amendments, though the label says as amended; the ratification vote count is garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 5 (Tribal History) lists the four branches differently (Office of the Chair and Vice Chair, Tribal Council, Tribal Court, General Council); the About Us page wording on page 6 is used for branches.'
 governing_documents:
 - kind: law-code
   title: Tribal code

@@ -192,16 +192,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
   value: Tribal Council
-  quote: The Tribal Council of the Grand Traverse Band shall be composed of seven (7) members of
-  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
-  confidence: medium
+  quote: We, the Tribal Council of the Grand Traverse Band of Ottawa and Chippewa Indians, a Sovereign Nation
+  source: gtbindians-tribal-council-asp
+  confidence: high
   verification: read-in-full
-  as_of: '1988-03-29'
-  locator: Article III, Section 1(a)
-  document_version:
-    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
-    version: 1988-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 7 members
   quote: The Tribal Council of the Grand Traverse Band shall be composed of seven (7) members of
@@ -239,17 +235,13 @@ governance:
     version: 1988-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
-  value: Chairperson
-  quote: 'The Chairperson of the Tribal Council shall:'
-  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
-  confidence: medium
+  value: Chairwoman
+  quote: Chairwoman
+  source: grand-traverse-band-of-ottawa-and-chippewa-indians-website-council-members-asp
+  confidence: high
   verification: read-in-full
-  as_of: '1988-03-29'
-  locator: Article III, Section 3(a)
-  document_version:
-    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
-    version: 1988-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -331,17 +323,13 @@ governance:
     version: 1988-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: branches
-  value: Legislative, executive and judicial
-  quote: independent from the legislative and executive functions of the
-  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
-  confidence: medium
+  value: Judicial, separate branch
+  quote: As a pivotal institution and separate branch of government for the Grand Traverse Band of Ottawa and Chippewa Indians
+  source: grand-traverse-band-of-ottawa-and-chippewa-indians-website-court-judges-asp
+  confidence: high
   verification: read-in-full
-  as_of: '1988-03-29'
-  locator: Article V, Section 6
-  document_version:
-    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
-    version: 1988-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: separation-of-powers
   value: Stated
   quote: no person exercising powers of the legislative or executive functions of
@@ -356,16 +344,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: judiciary
   value: Tribal Court and Tribal Appellate Court
-  quote: The judicial power of the Grand Traverse Band shall be vested in a tribal court system.
-  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
-  confidence: medium
+  quote: The Grand Traverse Band Tribal Court consists of the Tribal Appellate Court, with three Appellate Judges and the Tribal Court, with one full-time Chief Judge and one part-time Associate Judge.
+  source: grand-traverse-band-of-ottawa-and-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1988-03-29'
-  locator: Article V, Section 1
-  document_version:
-    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
-    version: 1988-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: judicial-selection
   value: Appointed by the Tribal Council
   quote: vote of five (5) of the seven (7) members of the Tribal Council for a term of four (4) years.

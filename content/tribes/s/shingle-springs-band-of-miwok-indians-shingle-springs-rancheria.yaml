@@ -222,17 +222,13 @@ governance:
     version: 1976-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
 - aspect: governing-body
-  value: Shingle Springs Tribal Council
-  quote: governing body of the Shingle Springs Band shall be a
-  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
-  confidence: medium
+  value: Tribal Council
+  quote: Explore the official Tribal government website to connect with the Tribal Council, departments, Tribal Court, Tribal TANF, employment opportunities, community resources, and the Tribal Member Portal.
+  source: shinglespringsrancheria-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1976-12-19'
-  locator: Article III
-  document_version:
-    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
-    version: 1976-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 7 members
   quote: The Tribal Council shall consist of seven (7) members elected
@@ -361,6 +357,14 @@ governance:
     document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
     version: 1976-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: In 2009, the Shingle Springs Band of Miwok Indians established a Tribal Court to uphold the Tribe’s codes and ordinances and enforce state court orders.
+  source: shingle-springs-band-of-miwok-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: amendment
   value: Majority vote of all registered voters
   quote: effective if approved by a majority vote of all registered voters

@@ -230,29 +230,21 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under Section 16 of the Indian Reorganization Act
-  quote: in accordance with Section 16 of the Indian Reorganization
-  source: constitution-metlakatla-indian-community-annette-island-reserve-1944-text-2
-  confidence: medium
+  value: Constitution and By-Laws approved under the Indian Reorganization Act
+  quote: The MIC’s Annette Islands Reserve (AIR) was established under its Constitution and By-Laws, approved on August 23, 1944, under the Indian Reorganization Act.
+  source: metlakatla-indian-community-website
+  confidence: high
   verification: read-in-full
-  as_of: '1944-12-19'
-  locator: Certification
-  document_version:
-    document: metlakatla-indian-community-annette-island-reserve-constitution
-    version: 1944-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The OCR is heavily garbled; facts are drawn only from legible passages and the 1944 ratification certificate.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members are listed by surname only, so no size is given; the constitution text itself is not on the pages.'
 - aspect: governing-body
-  value: Council
-  quote: a Council consisting of 12 memebers
-  source: constitution-metlakatla-indian-community-annette-island-reserve-1944-text-2
-  confidence: medium
+  value: MIC Tribal Council
+  quote: The MIC Tribal Council conducts the legislative function of the city, approves the budget, plans for capital improvements, approves major land transactions, and more.
+  source: metlakatla-indian-community-website
+  confidence: high
   verification: read-in-full
-  as_of: '1944-12-19'
-  locator: Article III, Section 1
-  document_version:
-    document: metlakatla-indian-community-annette-island-reserve-constitution
-    version: 1944-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The OCR is heavily garbled; facts are drawn only from legible passages and the 1944 ratification certificate.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members are listed by surname only, so no size is given; the constitution text itself is not on the pages.'
 - aspect: governing-body-size
   value: 12 members
   quote: a Council consisting of 12 memebers

@@ -168,53 +168,53 @@ governance:
     version: 1972-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
 - aspect: governing-body
-  value: General Council
-  quote: The governing body of the Band shall be the General
-  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
-  confidence: medium
+  value: Sycuan Tribal Council
+  quote: The Sycuan Tribal Council consists of seven democratically elected officials who determine and administer laws, conditions and regulations by which Tribal members are to comply.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1972-08-18'
-  locator: 3. Governing Body
-  document_version:
-    document: sycuan-band-of-the-kumeyaay-nation-constitution
-    version: 1972-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Sycuan Tribal Council consists of seven democratically elected officials who determine and administer laws, conditions and regulations by which Tribal members are to comply.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Democratically elected
+  quote: The Sycuan Tribal Council consists of seven democratically elected officials who determine and administer laws, conditions and regulations by which Tribal members are to comply.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
-  value: Business Committee 2 years
-  quote: a term Of two (2) years or until their successors are duly elected and
-  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
-  confidence: medium
+  value: 4 years
+  quote: Members serve a four-year term
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1972-08-18'
-  locator: 3. Governing Body
-  document_version:
-    document: sycuan-band-of-the-kumeyaay-nation-constitution
-    version: 1972-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: general-council
-  value: All adult members 18 or older
-  quote: which shall consist of all adult members eighteen (1G) years of
-  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
-  confidence: medium
+  value: All members over 18
+  quote: The General Council consists of all members over the age of 18.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1972-08-18'
-  locator: 3. Governing Body
-  document_version:
-    document: sycuan-band-of-the-kumeyaay-nation-constitution
-    version: 1972-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
-  value: Spokesman
-  quote: a Business Committee consisting of Spokesman, Secretary and three (3)
-  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
-  confidence: medium
+  value: Tribal Chairperson
+  quote: The head of the Tribe is known as the Tribal Chairperson and also serves a four-year term.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1972-08-18'
-  locator: 3. Governing Body
-  document_version:
-    document: sycuan-band-of-the-kumeyaay-nation-constitution
-    version: 1972-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -235,6 +235,14 @@ governance:
     document: sycuan-band-of-the-kumeyaay-nation-constitution
     version: 1972-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The head of the Tribe is known as the Tribal Chairperson and also serves a four-year term.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: other-officers
   value: Spokesman, Secretary
   quote: a Business Committee consisting of Spokesman, Secretary and three (3)
@@ -249,16 +257,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
 - aspect: voting-age
   value: '18'
-  quote: of age or older, shall have the right to vote and, if duly elected to hold
-  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
-  confidence: medium
+  quote: all Tribal members over the age of 18 are eligible to take part in the election process.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1972-08-18'
-  locator: 4. Elections
-  document_version:
-    document: sycuan-band-of-the-kumeyaay-nation-constitution
-    version: 1972-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: amendment
   value: Majority vote of General Council
   quote: These Articles of Association may be amended by a

@@ -284,41 +284,29 @@ governance:
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
-  value: Board of governors
-  quote: known as the board of governors shall be elected by popular vote of the
-  source: university-of-oklahoma-indian-reorganization-act-neponcons
-  confidence: medium
+  value: Tribal Council
+  quote: Each district has two elected representatives who serve on the Tribal Council.
+  source: ponca-tribe-of-nebraska-website-tribal-council-districts
+  confidence: high
   verification: read-in-full
-  as_of: '1936-01-16'
-  locator: Article III, Section 1
-  document_version:
-    document: ponca-tribe-of-nebraska-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
-  value: 9 members
-  quote: A governing body of nine members, to be
-  source: university-of-oklahoma-indian-reorganization-act-neponcons
-  confidence: medium
+  value: Two per district
+  quote: Each district has two elected representatives who serve on the Tribal Council.
+  source: ponca-tribe-of-nebraska-website-tribal-council-districts
+  confidence: high
   verification: read-in-full
-  as_of: '1936-01-16'
-  locator: Article III, Section 1
-  document_version:
-    document: ponca-tribe-of-nebraska-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
-  value: Elected by popular vote
-  quote: known as the board of governors shall be elected by popular vote of the
-  source: university-of-oklahoma-indian-reorganization-act-neponcons
-  confidence: medium
+  value: Elected by district
+  quote: Each district has two elected representatives who serve on the Tribal Council.
+  source: ponca-tribe-of-nebraska-website-tribal-council-districts
+  confidence: high
   verification: read-in-full
-  as_of: '1936-01-16'
-  locator: Article III, Section 1
-  document_version:
-    document: ponca-tribe-of-nebraska-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
   value: 3 years
   quote: people for a term of three years.
@@ -332,17 +320,13 @@ governance:
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
-  value: President
-  quote: shall elect from their membership one president,
-  source: university-of-oklahoma-indian-reorganization-act-neponcons
-  confidence: medium
+  value: Tribal Chair
+  quote: The Council is led by the Tribal Chair.
+  source: ponca-tribe-of-nebraska-website-tribal-council-districts
+  confidence: high
   verification: read-in-full
-  as_of: '1936-01-16'
-  locator: Article III, Section 4
-  document_version:
-    document: ponca-tribe-of-nebraska-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -376,17 +360,13 @@ governance:
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: other-officers
-  value: Vice president, secretary, treasurer
-  quote: one vice president, one secretary and one treasurer, who shall hold office
-  source: university-of-oklahoma-indian-reorganization-act-neponcons
-  confidence: medium
+  value: Secretary
+  quote: Secretary, District 3 Representative
+  source: ponca-tribe-of-nebraska-home
+  confidence: high
   verification: read-in-full
-  as_of: '1936-01-16'
-  locator: Article III, Section 4
-  document_version:
-    document: ponca-tribe-of-nebraska-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: elections
   value: Annually on the third Tuesday of November
   quote: of governors annually on the third Tuesday of November for a term of three
@@ -411,6 +391,22 @@ governance:
     document: ponca-tribe-of-nebraska-constitution
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Judicial Branch, as created by the Constitution of the Ponca Tribe of Nebraska, holds court at least once a month on a rotating basis in the Ponca Service Area.
+  source: ponca-tribe-of-nebraska-tribal-court-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Independent branch of government
+  quote: Tribal Court is an independent branch of government.
+  source: ponca-tribe-of-nebraska-tribal-court-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: amendment
   value: Majority vote of qualified voters in election called by Secretary of the Interior
   quote: majority vote of the qualified voters of the Ponca Tribe voting at an election

@@ -142,6 +142,23 @@ official_images:
   as_of: '2026-11-21'
   verification: read-in-full
   note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
+governance:
+- aspect: governing-body
+  value: Eastern Pequot Tribal Council
+  quote: The Eastern Pequot Tribal Government is the Eastern Pequot Tribal Council comprised of duly elected members of the Tribe.
+  source: eastern-pequot-tribal-nation-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Eastern Pequot Tribal Government is the Eastern Pequot Tribal Council comprised of duly elected members of the Tribe.
+  source: eastern-pequot-tribal-nation-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

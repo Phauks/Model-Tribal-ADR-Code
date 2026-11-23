@@ -152,66 +152,46 @@ federal_administration:
   as_of: '2026-11-20'
   locator: La Jolla Band of Luiseno Indians, California
 governance:
-- aspect: governing-body
-  value: General Council
-  quote: The governing body of the Band shall be the
-  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
-  confidence: medium
+- aspect: form
+  value: Articles of Association adopted in 1962
+  quote: The tribe is governed by Articles of Association adopted in 1962
+  source: lajolla-nsn-reservation-info
+  confidence: high
   verification: read-in-full
-  as_of: '1962-11-15'
-  locator: Sec. 3
-  document_version:
-    document: la-jolla-band-of-luiseno-indians-constitution
-    version: 1962-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
 - aspect: governing-body
   value: Tribal Council
-  quote: consisting of a Chairman, a Vice-Chairman, a Secretary -Treasurer, and two
-  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
-  confidence: medium
+  quote: Tribal Council
+  source: la-jolla-band-of-luiseno-indians-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1962-11-15'
-  locator: Sec. 3
-  document_version:
-    document: la-jolla-band-of-luiseno-indians-constitution
-    version: 1962-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
 - aspect: governing-body-size
   value: 5 members
-  quote: consisting of a Chairman, a Vice-Chairman, a Secretary -Treasurer, and two
-  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
-  confidence: medium
+  quote: Tribal governance is based in Pauma Valley, California, where the tribe operates under a five-member council elected to two-year terms.
+  source: lajolla-nsn-reservation-info
+  confidence: high
   verification: read-in-full
-  as_of: '1962-11-15'
-  locator: Sec. 3
-  document_version:
-    document: la-jolla-band-of-luiseno-indians-constitution
-    version: 1962-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
 - aspect: governing-body-selection
-  value: Elected by secret ballot
-  quote: All elections of officers shall be by secret ballot.
-  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
-  confidence: medium
+  value: Elected
+  quote: Tribal governance is based in Pauma Valley, California, where the tribe operates under a five-member council elected to two-year terms.
+  source: lajolla-nsn-reservation-info
+  confidence: high
   verification: read-in-full
-  as_of: '1962-11-15'
-  locator: Sec. 4
-  document_version:
-    document: la-jolla-band-of-luiseno-indians-constitution
-    version: 1962-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
 - aspect: governing-body-term
   value: 2 years
-  quote: two (2) years or until their successors are duly elected and installed.
-  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
-  confidence: medium
+  quote: Tribal governance is based in Pauma Valley, California, where the tribe operates under a five-member council elected to two-year terms.
+  source: lajolla-nsn-reservation-info
+  confidence: high
   verification: read-in-full
-  as_of: '1962-11-15'
-  locator: Sec. 3
-  document_version:
-    document: la-jolla-band-of-luiseno-indians-constitution
-    version: 1962-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
 - aspect: general-council
   value: All adult members, 21 or older
   quote: years of age or elder. In addition, there shall be elected a Tribal Council

@@ -61,6 +61,47 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The CBNI Tribal council consists of 9 councilors serving three-year terms (staggered), with elections occurring at the end of December.
+  source: webster-dudley-band-of-chaubunagungamaug-nipmuck-indians-website-people-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officer titles appear only beside names on the leadership page, so no officer facts are given.'
+- aspect: governing-body-size
+  value: 9 councilors
+  quote: The CBNI Tribal council consists of 9 councilors serving three-year terms (staggered), with elections occurring at the end of December.
+  source: webster-dudley-band-of-chaubunagungamaug-nipmuck-indians-website-people-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officer titles appear only beside names on the leadership page, so no officer facts are given.'
+- aspect: governing-body-selection
+  value: 3 elected per family line
+  quote: Each Family has 3 elected councilors who serve their term until election.
+  source: webster-dudley-band-of-chaubunagungamaug-nipmuck-indians-website-people-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officer titles appear only beside names on the leadership page, so no officer facts are given.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The CBNI Tribal council consists of 9 councilors serving three-year terms (staggered), with elections occurring at the end of December.
+  source: webster-dudley-band-of-chaubunagungamaug-nipmuck-indians-website-people-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officer titles appear only beside names on the leadership page, so no officer facts are given.'
+- aspect: elections
+  value: Held at the end of December
+  quote: The CBNI Tribal council consists of 9 councilors serving three-year terms (staggered), with elections occurring at the end of December.
+  source: webster-dudley-band-of-chaubunagungamaug-nipmuck-indians-website-people-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officer titles appear only beside names on the leadership page, so no officer facts are given.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -179,6 +179,38 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: 'Tribal Council Seats: Big Cove, Birdtown, Painttown, Snowbird/Cherokee County, Wolftown/Big Y and Yellowhill'
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 6 seats, by community
+  quote: 'Tribal Council Seats: Big Cove, Birdtown, Painttown, Snowbird/Cherokee County, Wolftown/Big Y and Yellowhill'
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected in tribal election
+  quote: '2027 Tribal Election for:'
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Principal Chief
+  quote: was recently reelected as Principal Chief of the Eastern Band of Cherokee Indians
+  source: eastern-band-of-cherokee-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Principal Chief
   source: bia-tribal-leaders-directory-2026
@@ -187,6 +219,62 @@ governance:
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected in tribal election
+  quote: '2027 Tribal Election for:'
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice Chief
+  quote: has served The Eastern Band of Cherokee as Vice Chief since 2017.
+  source: eastern-band-of-cherokee-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Board of Elections
+  quote: The Eastern Band of Cherokee Indians Board of Elections is dedicated to honoring our Cherokee People and Communities, to oversee, facilitate and ensure free and fair Tribal elections for all Tribal registered voters
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Judicial and two others
+  quote: Codified by Cherokee Code Section 7, the Cherokee Courts make up the Judicial Branch of government, one of the three branches of government of the EBCI.
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Trial court and Supreme Court
+  quote: Consisting of a trial court and an appellate court (Supreme Court), the Courts resolve approximately 1,400 criminal and civil matters each year that arise on trust property.
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Nominated by Principal Chief, confirmed by Council
+  quote: all of whom have been nominated by the Principal Chief and confirmed by the Tribal Council
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: 2/3 Council vote to amend judicial ordinances
+  quote: The Court’s independence is specifically protected under the Code, which requires a 2/3 majority vote of Tribal Council to amend any judicial ordinance.
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Eastern Band of Cherokee Indians

@@ -204,16 +204,13 @@ governance:
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
 - aspect: governing-body
-  value: Village Council
-  quote: Clarks Point Tribal Council, hereinafter
-  source: constitution-village-of-clarks-point-undated-text
-  confidence: medium
+  value: Tribal Council
+  quote: Tribal Council | Clarks Point Village Council
+  source: village-of-clarks-point-website-tribal-council
+  confidence: high
   verification: read-in-full
-  locator: Article IV
-  document_version:
-    document: village-of-clarks-point-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members appear only with names, so no seat count or seat titles are quoted.'
 - aspect: governing-body-size
   value: 5 members
   quote: The Council shall consist of five members who shall be elected by

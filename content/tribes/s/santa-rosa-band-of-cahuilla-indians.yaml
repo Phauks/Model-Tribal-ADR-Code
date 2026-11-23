@@ -168,6 +168,46 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Santa Rosa Band of Cahuilla Indians, California
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Santa Rosa Tribal Council consists of 7 Tribal Members who are elected by the general membership to Tribal Council for two year term.
+  source: santa-rosa-band-of-cahuilla-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Election Committee page linked from the site returned a 404 when fetched, so no page for it was saved.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Santa Rosa Tribal Council consists of 7 Tribal Members who are elected by the general membership to Tribal Council for two year term.
+  source: santa-rosa-band-of-cahuilla-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Election Committee page linked from the site returned a 404 when fetched, so no page for it was saved.'
+- aspect: governing-body-selection
+  value: Elected by the general membership
+  quote: The Santa Rosa Tribal Council consists of 7 Tribal Members who are elected by the general membership to Tribal Council for two year term.
+  source: santa-rosa-band-of-cahuilla-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Election Committee page linked from the site returned a 404 when fetched, so no page for it was saved.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: The Santa Rosa Tribal Council consists of 7 Tribal Members who are elected by the general membership to Tribal Council for two year term.
+  source: santa-rosa-band-of-cahuilla-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Election Committee page linked from the site returned a 404 when fetched, so no page for it was saved.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman, Vice-Chairman, and 5 Tribal Council members are elected by a majority vote of the general membership.
+  source: santa-rosa-band-of-cahuilla-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Election Committee page linked from the site returned a 404 when fetched, so no page for it was saved.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -176,6 +216,22 @@ governance:
   as_of: '2026-11-20'
   locator: Santa Rosa Band of Cahuilla Indians, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of the general membership
+  quote: The Chairman, Vice-Chairman, and 5 Tribal Council members are elected by a majority vote of the general membership.
+  source: santa-rosa-band-of-cahuilla-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Election Committee page linked from the site returned a 404 when fetched, so no page for it was saved.'
+- aspect: other-officers
+  value: Secretary, Treasurer (appointed by Chairman)
+  quote: The positions for Tribal Secretary and Tribal Treasure are appointed by the Tribal Chairman.
+  source: santa-rosa-band-of-cahuilla-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Election Committee page linked from the site returned a 404 when fetched, so no page for it was saved.'
 gaming:
   ordinances:
   - approved: '2023-04-06'

@@ -170,6 +170,30 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pueblo of San Felipe, New Mexico
 governance:
+- aspect: form
+  value: Traditional form of government
+  quote: The Pueblo of San Felipe is a sovereign tribe with a traditional form of government
+  source: pueblo-of-san-felipe-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Governor serves as executive officer of the Pueblo and is tasked at the executive of laws and orders enacted by the Tribal Council.
+  source: pueblo-of-san-felipe-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: Appointed on an annual basis, the Governor serves as the head of the tribal government along with the Lieutenant Governor.
+  source: pueblo-of-san-felipe-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -178,6 +202,22 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of San Felipe, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Appointed annually
+  quote: Appointed on an annual basis
+  source: pueblo-of-san-felipe-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Traditional and Contemporary Tribal Courts
+  quote: it exercises its judicial authority through a two court system, the first being a traditional Tribal Court, in which the Governor of the Pueblo acts as its Chief Judge
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

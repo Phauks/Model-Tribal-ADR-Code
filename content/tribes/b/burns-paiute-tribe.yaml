@@ -195,6 +195,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Burns Paiute Tribe
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: the Burns Paiute Tribe welcomed new and returning leaders to the Tribal Council
+  source: burns-paiute-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name a Tribal Council and a Chairwoman but state no council size, term or selection rule, and no governing document is among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: Newly elected Council members include
+  source: burns-paiute-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name a Tribal Council and a Chairwoman but state no council size, term or selection rule, and no governing document is among the saved pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -203,6 +219,14 @@ governance:
   as_of: '2026-11-20'
   locator: Burns Paiute Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Burns Tribal Agency and Court
+  quote: Burns Tribal Agency and Court
+  source: burns-paiute-tribe-website-burns-tribal-agency-and-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name a Tribal Council and a Chairwoman but state no council size, term or selection rule, and no governing document is among the saved pages.'
 governing_documents:
 - kind: law-code
   title: Tribal code

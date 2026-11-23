@@ -170,6 +170,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pueblo of Sandia, New Mexico
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: There is a Tribal Council that serves a function similar to a state's house or senate.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: The Governor oversees day to day government operations, while the Lt. Governor is the Tribal Court Judge.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -178,6 +194,46 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of Sandia, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Appointed according to cultural tradition
+  quote: A Governor, Lt. Governor, Warchief, and Lt. Warchief are appointed for annual terms according to Sandia's cultural tradition.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: A Governor, Lt. Governor, Warchief, and Lt. Warchief are appointed for annual terms according to Sandia's cultural tradition.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Lt. Governor, Warchief, Lt. Warchief
+  quote: A Governor, Lt. Governor, Warchief, and Lt. Warchief are appointed for annual terms according to Sandia's cultural tradition.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Governor oversees day to day government operations, while the Lt. Governor is the Tribal Court Judge.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Governor and Warchief sit on Tribal Council for life
+  quote: The Governor and Warchief will become Tribal Council members for life.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

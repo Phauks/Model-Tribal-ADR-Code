@@ -205,30 +205,30 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
 governance:
-- aspect: governing-body
-  value: Kiowa Indian Council (KIC)
-  quote: The governing body of the tribe,
-  source: constitution-kiowa-tribe-1982-text
-  confidence: medium
+- aspect: form
+  value: Constitution approved by tribal membership
+  quote: The Kiowa Tribe is organized under the Constitution approved by tribal
+  source: kiowa-tribe-website-sites-default-files-inline-files-kic-cy-0007-2025-kic-20cons
+  confidence: high
   verification: read-in-full
-  as_of: '1982-06-05'
-  locator: Article I, Section 2
-  document_version:
-    document: kiowa-tribe-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
 - aspect: governing-body
-  value: Kiowa Business Committee
-  quote: four (4) officers and four (4) committeemen,
-  source: constitution-kiowa-tribe-1982-text
-  confidence: medium
+  value: Kiowa Indian Council
+  quote: Kiowa Indian Council the power to set policy for the Tribe, and shall have all
+  source: kiowa-tribe-website-sites-default-files-inline-files-kic-cy-0007-2025-kic-20cons
+  confidence: high
   verification: read-in-full
-  as_of: '1982-06-05'
-  locator: Article III, Section 1
-  document_version:
-    document: kiowa-tribe-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
+- aspect: governing-body
+  value: Kiowa Legislative Branch
+  quote: The Kiowa Legislative Branch
+  source: kiowa-tribe-website-legislative
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
 - aspect: governing-body-size
   value: 8 members
   quote: An eight (8) member representative
@@ -358,29 +358,21 @@ governance:
     version: 1982-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
 - aspect: election-authority
-  value: General election board
-  quote: There shall be a general election board composed of five (5) people
-  source: constitution-kiowa-tribe-1982-text
-  confidence: medium
+  value: Election Commission
+  quote: The Election Commission shall call and hold a Special Election to amend the Constitution
+  source: kiowa-tribe-website-sites-default-files-inline-files-kic-cy-0007-2025-kic-20cons
+  confidence: high
   verification: read-in-full
-  as_of: '1982-06-05'
-  locator: Article XIII, Section 1
-  document_version:
-    document: kiowa-tribe-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
 - aspect: amendment
-  value: Majority of eligible voters, in an election with at least 600 voting
-  quote: Such amendment shall be effective if ratified by a majority of the eligible
-  source: constitution-kiowa-tribe-1982-text
-  confidence: medium
+  value: Majority vote in a Special Election
+  quote: The Constitution may be amended by a majority vote of the voters
+  source: kiowa-tribe-website-sites-default-files-inline-files-kic-cy-0007-2025-kic-20cons
+  confidence: high
   verification: read-in-full
-  as_of: '1982-06-05'
-  locator: Article IV, Section 1
-  document_version:
-    document: kiowa-tribe-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
 - aspect: recall-and-removal
   value: Recall by ballot vote of Kiowa Indian Council
   quote: the Kiowa Indian Council.

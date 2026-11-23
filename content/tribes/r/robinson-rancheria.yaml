@@ -151,40 +151,28 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
 - aspect: governing-body
   value: Robinson Rancheria Citizens Business Council
-  quote: The governing body of the Robinson Rancheria shall be the Robinson Rancheria Citizens Business Council.
-  source: constitution-robinson-rancheria-1995-text
-  confidence: medium
+  quote: The Robinson Rancheria Pomo Indians of California are governed by the Robinson Rancheria Citizens Business Council (RRCBC), composed of six elected tribal members.
+  source: robinson-rancheria-website-departments
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-22'
-  locator: Article IV, Section 1
-  document_version:
-    document: robinson-rancheria-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 shows proposed constitutional amendments approved by the Constitution Committee in February 2026 and not yet adopted, so no facts were taken from them; the adopted constitution text is not on the saved pages.'
 - aspect: governing-body-size
   value: 6 members
-  quote: six (6) members elected at-Jarge from the Robinson Rancheria.
-  source: constitution-robinson-rancheria-1995-text
-  confidence: medium
+  quote: composed of six elected tribal members
+  source: robinson-rancheria-website-departments
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-22'
-  locator: Article IV, Section 1
-  document_version:
-    document: robinson-rancheria-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 shows proposed constitutional amendments approved by the Constitution Committee in February 2026 and not yet adopted, so no facts were taken from them; the adopted constitution text is not on the saved pages.'
 - aspect: governing-body-selection
-  value: Elected at large
-  quote: six (6) members elected at-Jarge from the Robinson Rancheria.
-  source: constitution-robinson-rancheria-1995-text
-  confidence: medium
+  value: Elected
+  quote: composed of six elected tribal members
+  source: robinson-rancheria-website-departments
+  confidence: high
   verification: read-in-full
-  as_of: '1995-06-22'
-  locator: Article IV, Section 1
-  document_version:
-    document: robinson-rancheria-constitution
-    version: 1995-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 shows proposed constitutional amendments approved by the Constitution Committee in February 2026 and not yet adopted, so no facts were taken from them; the adopted constitution text is not on the saved pages.'
 - aspect: governing-body-term
   value: 2 years
   quote: Thereafter, all terms of office shall be for two (2) years
@@ -289,6 +277,14 @@ governance:
     document: robinson-rancheria-constitution
     version: 1995-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Robinson Rancheria Tribal Court was created by Tribal Ordinance No. 2009-06-03,
+  source: robinson-rancheria-website-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 shows proposed constitutional amendments approved by the Constitution Committee in February 2026 and not yet adopted, so no facts were taken from them; the adopted constitution text is not on the saved pages.'
 - aspect: amendment
   value: Majority vote in an election called by the Secretary of the Interior
   quote: This constitution may be amended by a majority vote of the qualified voters of the Robinson Rancheria voting in an election called for that purpose by the Secretary of the Interior

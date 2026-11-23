@@ -160,6 +160,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Blue Lake Rancheria, California
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Sets of Tribal Laws, called Ordinances, are drafted and approved by the Tribal Council.
+  source: blue-lake-rancheria-website-departments-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: is an elected member of the Blue Lake Rancheria’s Tribal business council
+  source: blue-lake-rancheria-website-about-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -168,6 +184,30 @@ governance:
   as_of: '2026-11-20'
   locator: Blue Lake Rancheria, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Blue Lake Rancheria (BLR) Tribal Court is an independent judiciary, organized subject to U.S. Code of Federal Regulations (vol. 25).
+  source: blue-lake-rancheria-website-departments-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: Judges are hired and appointed by the BLR Tribal Council
+  source: blue-lake-rancheria-website-departments-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
+- aspect: judicial-independence
+  value: Independent of Tribal interest
+  quote: the Court is mandated to operate impartially based on applicable law, and remain independent of any Tribal interest
+  source: blue-lake-rancheria-website-departments-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
 governing_documents:
 - kind: law-code
   title: BLR Ordinances

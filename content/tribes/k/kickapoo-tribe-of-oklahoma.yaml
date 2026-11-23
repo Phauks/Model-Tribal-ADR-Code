@@ -179,53 +179,29 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and Bylaws pursuant to the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
-  quote: to the Thomas -Rogers Oklahoma Indian Welfare Act of June 26, 1936.
-  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
-  confidence: medium
+  value: Organized under the Indian Welfare Act of 1936
+  quote: The Kickapoo Tribe of Oklahoma was organized under the Indian Welfare Act of 1936.
+  source: kickapootribeofoklahoma-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1977-12-10'
-  locator: Preamble
-  document_version:
-    document: kickapoo-tribe-of-oklahoma-constitution
-    version: 1977-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
-- aspect: governing-body
-  value: Kickapoo Council
-  quote: the Kickapoo Council. The membership of the Council shall be all the
-  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '1977-12-10'
-  locator: Article IV, Section 1
-  document_version:
-    document: kickapoo-tribe-of-oklahoma-constitution
-    version: 1977-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution and Bylaws is linked but its text is not saved, and officer names on the Business Committee page are left out.'
 - aspect: governing-body
   value: Business Committee
-  quote: which have not been reserved to the Kickapoo Council through
-  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
-  confidence: medium
+  quote: is presently governed by a 5-member Business Committee.
+  source: kickapootribeofoklahoma-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1977-12-10'
-  locator: Article V, Section 1(a)
-  document_version:
-    document: kickapoo-tribe-of-oklahoma-constitution
-    version: 1977-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution and Bylaws is linked but its text is not saved, and officer names on the Business Committee page are left out.'
 - aspect: governing-body-size
   value: 5 members
-  quote: The Business Committee shall consist of five (5) members
-  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
-  confidence: medium
+  quote: is presently governed by a 5-member Business Committee.
+  source: kickapootribeofoklahoma-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1977-12-10'
-  locator: Article V, Section 1
-  document_version:
-    document: kickapoo-tribe-of-oklahoma-constitution
-    version: 1977-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution and Bylaws is linked but its text is not saved, and officer names on the Business Committee page are left out.'
 - aspect: governing-body-selection
   value: Elected from the Kickapoo Council membership
   quote: elected from the membership of the Kickapoo Council and shall include
@@ -319,17 +295,13 @@ governance:
     version: 1977-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
 - aspect: judiciary
-  value: Council may create a Tribal court system by ordinance
-  quote: may exercise its judicial powers through the creation of a Tribal court
-  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
-  confidence: medium
+  value: Trial Court, Family Court Division and Supreme Court
+  quote: Over the years, the judicial system has continued to grow and now includes the Trial Court, Family Court Division, and Supreme Court.
+  source: kickapoo-tribe-of-oklahoma-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1977-12-10'
-  locator: Article XVI
-  document_version:
-    document: kickapoo-tribe-of-oklahoma-constitution
-    version: 1977-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution and Bylaws is linked but its text is not saved, and officer names on the Business Committee page are left out.'
 - aspect: amendment
   value: Majority of votes cast in a referendum
   quote: approved by a majority of the votes cast.

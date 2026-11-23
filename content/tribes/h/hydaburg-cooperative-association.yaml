@@ -229,17 +229,13 @@ governance:
     version: 1938-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
 - aspect: governing-body
-  value: Council
-  quote: shall be a Council
-  source: constitution-hydaburg-cooperative-association-1938-text
-  confidence: medium
+  value: Tribal Council
+  quote: TRIBAL COUNCIL
+  source: hydaburgtribe-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1938-04-14'
-  locator: Article III, Section 1(a)
-  document_version:
-    document: hydaburg-cooperative-association-constitution
-    version: 1938-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page lists council officers and members by name only and does not say how the council is set up or chosen.'
 - aspect: governing-body-size
   value: 7 members (President and six other members)
   quote: and six other members

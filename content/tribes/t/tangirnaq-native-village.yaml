@@ -190,15 +190,12 @@ federal_administration:
 governance:
 - aspect: governing-body
   value: Woody Island Tribal Council
-  quote: The governing body of Leisnoi Village (a.k.a. Woody Island) shall be the Woody Island Tribal Council (hereinafter referred to as the Council).
-  source: constitution-tangirnaq-native-village-undated-text
-  confidence: medium
+  quote: Woody Island Tribal Council exists to promote and ensure the social, economic, political, and cultural needs of our citizens.
+  source: woodyisland-home-page
+  confidence: high
   verification: read-in-full
-  locator: Article IV, Section 1
-  document_version:
-    document: tangirnaq-native-village-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages name the Woody Island Tribal Council but describe no council structure, size or selection.'
 - aspect: governing-body-size
   value: 5 members
   quote: The Council shall be composed of five (5) members who shall be elected by a majority vote

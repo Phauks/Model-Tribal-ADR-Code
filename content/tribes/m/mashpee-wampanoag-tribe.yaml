@@ -208,6 +208,14 @@ governance:
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Supreme, District and Peacemaker courts
+  quote: There are three types of courts, Supreme Court, District Court, and Peacemaker Court.
+  source: mashpee-wampanoag-tribe-website-about-the-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Mashpee Wampanoag Indian Tribal Council, Inc. - Corporate Documents and Selected Ordinances

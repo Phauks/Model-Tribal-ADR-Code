@@ -160,6 +160,54 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Torres Martinez Desert Cahuilla Indians, California
 governance:
+- aspect: form
+  value: Constitution and bylaws adopted by general membership
+  quote: The tribe is governed by constitution and bylaws adopted by the general membership.
+  source: torres-martinez-desert-cahuilla-indians-website-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: Under that constitution, the tribal government consists of a “General Council” (all enrolled members) and a “Tribal Council” the latter being the elected governing body.
+  source: torres-martinez-desert-cahuilla-indians-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 8 members
+  quote: There are eight Tribal Council members, who are elected every two years by the general membership.
+  source: torres-martinez-desert-cahuilla-indians-website-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by general membership
+  quote: The Tribal Council is elected every two years by the general membership.
+  source: torres-martinez-desert-cahuilla-indians-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: The Tribal Council is elected every two years by the general membership.
+  source: torres-martinez-desert-cahuilla-indians-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All enrolled members
+  quote: Under that constitution, the tribal government consists of a “General Council” (all enrolled members)
+  source: torres-martinez-desert-cahuilla-indians-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -168,6 +216,14 @@ governance:
   as_of: '2026-11-20'
   locator: Torres Martinez Desert Cahuilla Indians, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: elections
+  value: Every 2 years
+  quote: There are eight Tribal Council members, who are elected every two years by the general membership.
+  source: torres-martinez-desert-cahuilla-indians-website-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Torres Martinez Desert Cahuilla Indian Tribe, Tribal Code
