@@ -107,10 +107,12 @@
 		margin-top: var(--space-1);
 	}
 
+	/* The space below keeps the source marker in "Appeals go to" clear of the court's link under it, so both stay easy to tap (WCAG 2.2, 2.5.8). */
 	.step {
 		display: flex;
 		align-items: center;
 		gap: var(--space-1);
+		margin-bottom: var(--space-1);
 	}
 
 	.first-courts {
