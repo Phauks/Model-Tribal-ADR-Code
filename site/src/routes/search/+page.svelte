@@ -487,6 +487,20 @@
 		padding: 0;
 	}
 
+	/* On a phone the kinds stay on one line that scrolls sideways, so the results start sooner. */
+	@media (max-width: 40rem) {
+		.show-kinds {
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			padding: var(--space-1) var(--space-1) var(--space-2);
+			margin-inline: calc(-1 * var(--space-1));
+		}
+
+		.show-kind {
+			flex: none;
+		}
+	}
+
 	/* Each kind is a radio button drawn as a pill; the circle is hidden but still takes focus. */
 	.show-kind {
 		position: relative;
@@ -523,7 +537,6 @@
 
 	.show-kind .count {
 		font-variant-numeric: tabular-nums;
-		opacity: 0.85;
 	}
 
 	/* Filters beside the results when there is room, above them behind a button when there is not. */
