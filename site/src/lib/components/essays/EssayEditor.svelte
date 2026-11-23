@@ -1922,17 +1922,6 @@
 		padding-left: calc(var(--space-2) + 1.4rem);
 	}
 
-	.count {
-		min-width: 1.3em;
-		padding: 0 0.3em;
-		border-radius: 999px;
-		background: var(--color-action);
-		color: var(--color-paper);
-		font-size: 0.75em;
-		font-weight: var(--font-weight-semibold);
-		text-align: center;
-	}
-
 	.bar-menu {
 		position: relative;
 	}
