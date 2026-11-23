@@ -15,7 +15,7 @@ Anyone who is signed in can send the project documents, pictures, sound recordin
 | Status | Meaning |
 | --- | --- |
 | Sending | Still arriving. Choosing the same file again picks up where it stopped. |
-| Checking | Reserved for the virus scan, which is not built yet. |
+| Checking | Reserved for the virus scan. The scanner is built (site/SCANNING.md); the uploads pages start using it in their own change. |
 | Not accepted | The checks refused it; the reason is shown. |
 | Waiting for review | It arrived and is in the queue. |
 | In review | A reviewer took it. |
@@ -77,7 +77,7 @@ Migration `0018_upload_nation_comments.sql` adds `upload_nation_comments`, the c
 
 ## Not built yet
 
-- A virus scan. Cloudflare's own upload scanning is part of its Enterprise plan, so the plan is ClamAV running in a Cloudflare Container, with files held at "Checking" until it passes. Until then, reviewers see a reminder to open downloaded files with care.
+- Using the virus scan. Cloudflare's own upload scanning is part of its Enterprise plan, so the scanner is ClamAV running in a Cloudflare Container (site/SCANNING.md, decision record 0046). It is built; files will be held at "Checking" until it passes once the uploads code calls it (`requestScan` after a file finishes, `mayServe` before serving). Until then, reviewers see a reminder to open downloaded files with care.
 - Email notices to the sender when a status changes. These wait on the project's domain.
 - Showing filed files on nation, story and essay pages. Today a reviewer files a file and puts its `/files/` address on the page by pull request or in the essay editor.
 - Video in print: a still frame, a caption and a short link or QR code, once the domain exists.
