@@ -133,6 +133,17 @@ The lead author approved the commenting mockup on Nov. 22, 2026: select words in
 - **What is kept.** Each comment is a row in D1 (`essay_comments`) with the version the person was reading, and an entry in the activity log. A comment is never changed or deleted; only a thread's Done state changes.
 - Still to come: comments addressed to a person in the sidebar, and suggested changes.
 
+### Sharing and asking for review
+
+The lead author approved the "Share and review" mockup on Nov. 22, 2026: add people and pick their level, ask for review of a part by a date with a note, show "In review" on the page itself, and list the requests for each reviewer (`site/src/lib/essays/review-requests.ts`).
+
+- **Share.** The Share button in the editor's bar opens a dialog that lists everyone who can open the draft and at what level, from their role and the lead author's grants. Only the lead author changes a level or adds someone from the workspace there, as on the Access page; the change is an ordinary grant on that essay, kept in its history. "Copy link" copies the essay page's address. Readers who follow it see only what is published.
+- **Ask for review.** Anyone with contribute access asks one or more people who can open the essay to review the whole draft or one section, optionally by a date and with a message. The section the cursor is in is chosen to start with.
+- **In review.** Under the section's heading, the editor shows "In review with Ann and Ben, due Friday, November 27", naming whoever has not finished. A request for the whole draft shows above the text. Each person asked has a "Done reviewing" button there; the request closes when all of them have finished, or when the person who asked, or someone with full access, closes it in the Share dialog.
+- **Review requests.** A workspace page lists the requests waiting on each person, soonest due first, and the ones they asked of others; the Overview says how many are waiting. Each link opens the essay page in Commenting mode at the section to review (`?review=<heading id>`).
+- **What is kept.** Each request is a row in D1 (`essay_review_requests`, with one row per person asked in `essay_review_reviewers`), with the version the draft was at, and an entry in the activity log. A request is never changed or deleted; only its done and closed times change.
+- Still to come: an email to each person asked, once the site sends email, and the count of requests in the left sidebar.
+
 ### Pictures, videos and recordings
 
 The lead author asked on Nov. 23, 2026 for pictures as their own block, to "allow digitally to add videos" ("we can figure out how to make that work with the physical book"), to "build with r2, we also might just end up with YouTube linking anyways," and for the website to "also accept just audio files." A figure is a picture, a video or a sound recording set between paragraphs:

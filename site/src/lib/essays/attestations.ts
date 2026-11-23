@@ -166,7 +166,7 @@ function escapeText(text: string): string {
 }
 
 /** "Ann", "Ann and Ben", "Ann, Ben, and Cal" (the style guide uses the serial comma). */
-function joinNames(names: string[]): string {
+export function joinNames(names: string[]): string {
 	if (names.length < 3) return names.join(' and ');
 	return `${names.slice(0, -1).join(', ')}, and ${names.at(-1)}`;
 }

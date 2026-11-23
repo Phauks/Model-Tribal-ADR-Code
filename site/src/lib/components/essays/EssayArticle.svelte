@@ -86,7 +86,20 @@
 		} catch {
 			// Storage can be blocked; the choice is then not remembered.
 		}
+		// A review request's link opens the draft for commenting at its section: ?review=<section>, or ?review for the whole draft.
+		const asked = new URL(location.href).searchParams;
+		if (asked.has('review')) reviewAt = asked.get('review') || null;
 		void loadAccess();
+	});
+
+	let reviewAt = $state<string | null | undefined>(undefined);
+	let openedForReview = false;
+	$effect(() => {
+		if (access && reviewAt !== undefined && !openedForReview) {
+			openedForReview = true;
+			view = 'drafts';
+			mode = 'commenting';
+		}
 	});
 
 	function rememberView(): void {
@@ -139,7 +152,7 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live onsaved={saved} />
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} onsaved={saved} />
 			{/key}
 		{:catch}
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
