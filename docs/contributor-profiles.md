@@ -134,9 +134,16 @@ The public `/contributors` page lists credits that people chose to have on the w
 
 A removed sign-up is deleted, with its answers and every confirmed version, 12 months after the decision (`deleteExpiredDeclinedProfiles` in `site/src/lib/server/contributor-profiles.ts`). The check runs each time the workspace Contributors page opens, like the request purge, so no scheduled job is needed. The history keeps only that a profile was deleted and why.
 
-## Leaving
+## Deleting an account
 
-The person can delete their profile from the profile page at any time. That deletes their answers and every confirmed version at once; the history keeps only that a profile was deleted. A credit already printed cannot be recalled, and the next edition leaves it out (the same rule as [contributions.md](contributions.md#changes-and-withdrawal)). Workspace access is separate and is ended by the lead author on the People page.
+Anyone signed in can delete their own account from the profile page (`/profile/delete-account`), as Trevor asked on Nov. 22, 2026. The page lists what is deleted and what stays, asks one question and needs a ticked box. The code is `deleteAccount` in `site/src/lib/server/account-deletion.ts`.
+
+- **Deleted at once:** the account, its sessions and unused sign-in codes, and the contributor profile with every confirmed version. The person is signed out everywhere.
+- **Workspace members:** the row in `people` stays, because reviews, drafts and the sealed activity log point to it. Its email address and sign-in are removed, its access ends, and its name is kept or replaced by "Former contributor", as the person chose.
+- **Credits:** if the person keeps their name, the credit line they last confirmed is kept in `retained_credits` (migration 0009), with nothing else about them, and still prints and shows where they chose. If they remove it, the credit goes. A credit already printed cannot be recalled; the next edition follows the choice (the same rule as [contributions.md](contributions.md#changes-and-withdrawal)).
+- **Signed forms** stay on file, because they record consent. The person changes or withdraws what they shared with the Change or withdrawal form.
+- **This device:** starred and saved pages live in the browser, not the account, and are cleared in Settings, under Data.
+- The only lead author cannot delete their account until someone else is lead author.
 
 ## How it is built
 
