@@ -20,9 +20,9 @@ import path from 'node:path';
 const output = '.svelte-kit/cloudflare/client';
 const downloadExtensions = new Set(['.csv', '.zip', '.pdf', '.docx', '.odt', '.epub', '.geojson', '.ics']);
 const downloadFolders = ['/help/forms/'];
-const downloadData = new Set(['/nations/recourse/provisions.json', '/glossary/terms.json']);
+const downloadData = new Set(['/nations/recourse/provisions.json', '/nations/timeline/entries.json', '/glossary/terms.json']);
 const chartTable = /^\/nations\/data\/tables\/[a-z0-9-]+\.json$/;
-const nationFile = /^\/nations\/[a-z0-9-]+\/(record\.json|sources\.(json|ris|bib)|contacts\.vcf)$/;
+const nationFile = /^\/nations\/[a-z0-9-]+\/(record\.json|sources\.(json|ris|bib)|timeline\.json|contacts\.vcf)$/;
 const ownFiles = new Set(['/checksums.json', '/checksums.txt', '/checksums/downloads.json']);
 
 /**

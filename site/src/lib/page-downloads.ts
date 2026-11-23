@@ -106,7 +106,7 @@ export interface PageDownloads {
 /** On the map page, the view on screen, whose table the menu offers first. */
 export function pageDownloads(path: string, mapTable?: { file: string; label: string }): PageDownloads {
 	const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
-	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data') {
+	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data' && nation !== 'timeline') {
 		return {
 			citable: true,
 			files: [
@@ -115,6 +115,15 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 					description: 'Every fact on this page with its source, for programs and research',
 					kind: 'data',
 					links: [{ format: 'JSON', link: `/nations/${nation}/record.json` }]
+				},
+				{
+					label: 'This nation’s timeline',
+					description: 'Every dated entry with its citation and link: CSV for a spreadsheet, JSON for programs',
+					kind: 'table',
+					links: [
+						{ format: 'CSV', link: `/nations/${nation}/timeline.csv` },
+						{ format: 'JSON', link: `/nations/${nation}/timeline.json` }
+					]
 				},
 				{
 					label: 'This page’s sources',
@@ -187,6 +196,22 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 					links: [
 						{ format: 'CSV', link: '/nations/recourse/provisions.csv' },
 						{ format: 'JSON', link: '/nations/recourse/provisions.json' }
+					]
+				}
+			]
+		};
+	}
+	if (path === '/nations/timeline') {
+		return {
+			citable: false,
+			files: [
+				{
+					label: 'The timeline',
+					description: 'Every dated entry with its citation and link: CSV for a spreadsheet, JSON for programs',
+					kind: 'table',
+					links: [
+						{ format: 'CSV', link: '/nations/timeline/entries.csv' },
+						{ format: 'JSON', link: '/nations/timeline/entries.json' }
 					]
 				}
 			]

@@ -14,6 +14,7 @@
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
+	import Timeline from '#lib/components/Timeline.svelte';
 	import { unclaimedPage } from '#lib/review-status.ts';
 	import { afterNavigate } from '$app/navigation';
 	import { fillNationSlots } from '#lib/nation-page-slots.ts';
@@ -205,6 +206,21 @@
 		{#if data.ties.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
 				<FactGroups groups={data.ties} />
+			</Collapsible>
+		{/if}
+
+		<!-- 7a'. Timeline: every dated record on the page on one line and in one
+		     list, with federal laws that apply to every nation drawn faintly
+		     for context (Trevor, Nov. 23, 2026; src/lib/components/Timeline.svelte). -->
+		{#if data.timeline}
+			<Collapsible heading="Timeline" identifier="timeline-heading">
+				<Timeline
+					entries={data.timeline.entries}
+					opinions={data.timeline.opinions}
+					opinionsLink={data.timeline.opinionsLink}
+					opinionCitations={data.timeline.opinionCitations}
+					fullLink="/nations/timeline?nation={page.id}"
+				/>
 			</Collapsible>
 		{/if}
 

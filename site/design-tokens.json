@@ -151,6 +151,26 @@
         "$value": "#9A918A",
         "$description": "Borders of buttons in the image viewer (non-text minimum 3:1). 6.0:1 on viewer-background."
       },
+      "timeline-treaty": {
+        "$value": "#8A4B9C",
+        "$description": "Timeline: treaties and land. Always beside its row's name and icon. 5.7:1 on paper."
+      },
+      "timeline-document": {
+        "$value": "#1A6D76",
+        "$description": "Timeline: laws and agreements. Always beside its row's name and icon. 5.8:1 on paper."
+      },
+      "timeline-case": {
+        "$value": "#B4461A",
+        "$description": "Timeline: court decisions. Always beside its row's name and icon. 5.3:1 on paper."
+      },
+      "timeline-opinion": {
+        "$value": "#5E7D1E",
+        "$description": "Timeline: Tribal court opinions. Always beside its row's name and icon. 4.6:1 on paper."
+      },
+      "timeline-federal": {
+        "$value": "#7A6F66",
+        "$description": "Timeline: federal law. Always beside its row's name and icon. 4.7:1 on paper."
+      },
       "chart-series-1": {
         "$value": "#2A78D6",
         "$description": "Chart slice or series 1 (blue), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
@@ -328,6 +348,26 @@
       "viewer-control-border": {
         "$value": "#9A918A",
         "$description": "Borders of buttons in the image viewer (non-text minimum 3:1). 6.0:1 on viewer-background."
+      },
+      "timeline-treaty": {
+        "$value": "#D7A6E3",
+        "$description": "Timeline: treaties and land. Always beside its row's name and icon. 8.5:1 on paper."
+      },
+      "timeline-document": {
+        "$value": "#6CCAD3",
+        "$description": "Timeline: laws and agreements. Always beside its row's name and icon. 9.0:1 on paper."
+      },
+      "timeline-case": {
+        "$value": "#FF9A66",
+        "$description": "Timeline: court decisions. Always beside its row's name and icon. 8.2:1 on paper."
+      },
+      "timeline-opinion": {
+        "$value": "#B5D46A",
+        "$description": "Timeline: Tribal court opinions. Always beside its row's name and icon. 10.3:1 on paper."
+      },
+      "timeline-federal": {
+        "$value": "#9FB0B3",
+        "$description": "Timeline: federal law. Always beside its row's name and icon. 7.6:1 on paper."
       },
       "chart-series-1": {
         "$value": "#3987E5",
