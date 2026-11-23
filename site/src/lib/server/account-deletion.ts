@@ -13,6 +13,8 @@
  * are deleted unless they were filed or kept for reference (docs/uploads.md,
  * "Deleting"). A sponsorship the person managed stays with its other
  * managers, and its history no longer names them (docs/sponsorship.md).
+ * Printed-copy orders stay, unlinked from the account, until their details
+ * are cleared 90 days after shipping (docs/book-orders.md).
  */
 import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { creditOf } from '#lib/contributors.ts';
@@ -96,6 +98,9 @@ export async function deleteAccount(
 		// address goes, and the change stays (docs/sponsorship.md). Being a
 		// manager ends with the account (ON DELETE CASCADE).
 		database.prepare(`UPDATE sponsor_history SET actor = 'A former manager' WHERE account_identifier = ?`).bind(account.subject),
+		// Printed-copy orders stay, for the project's accounts, but no longer
+		// point at the account; each keeps its private link (docs/book-orders.md).
+		database.prepare('UPDATE book_orders SET account_identifier = NULL WHERE account_identifier = ?').bind(account.subject),
 		database.prepare('DELETE FROM sign_in_codes WHERE email = ?').bind(account.email),
 		// Sessions go with the account (ON DELETE CASCADE).
 		database.prepare('DELETE FROM accounts WHERE identifier = ?').bind(account.subject)

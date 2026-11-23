@@ -8,6 +8,7 @@
 		'/profile': data.summaries.profile,
 		'/account/security': data.summaries.security,
 		'/account/email': data.summaries.email,
+		'/account/orders': data.summaries.orders,
 		'/account/sponsorship': data.summaries.sponsorship,
 		'/account/data': data.summaries.data
 	});
