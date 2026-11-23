@@ -1,16 +1,15 @@
 /**
- * The pages inside each section of the site, for the sidebar (SiteSidebar.svelte).
- * Trevor asked on Nov. 23, 2026 for every section to open from any page, so a
- * reader can reach its pages without first going to its home page, and for
- * the sidebar to have every list from the start, with nothing to load. The
- * root layout sends every list with the page (sidebarLists).
+ * The pages inside each section of the site, for the sidebar's second column
+ * (SiteSidebar.svelte). The first column lists only the sections; the second
+ * lists the pages of the section being read, and its long list, such as the
+ * nations or the glossary's terms, with a filter (Trevor, Nov. 23, 2026). The
+ * root layout sends the section's contents with each page, so nothing loads.
  *
  * Most lists are known when the site is built. The essays are published from
- * the database, so a page the Worker renders reads their lists as it renders;
- * a page built ahead of time cannot, and the sidebar reads them from
- * /sidebar/[section].json as the page opens.
+ * the database, and their pages are rendered by the Worker, which reads them.
  */
 import { libraryOutline } from '#lib/library-pages.ts';
+import type { SectionContents } from '#lib/sidebar-outline.ts';
 import type { OutlineItem } from '#lib/site-sections.ts';
 import { publishedGlossary } from './glossary-entries.ts';
 import { storySummaries } from './stories.ts';
@@ -24,71 +23,60 @@ export const nationsPages: OutlineItem[] = [
 	{ label: 'Data and charts', link: '/nations/data' }
 ];
 
-export function storiesPages(): OutlineItem[] {
-	return [
-		{ label: 'All stories', link: '/stories' },
-		...storySummaries()
-			.map((story) => ({ label: story.title, link: `/stories/${story.id}` }))
-			.sort(byLabel)
-	];
-}
-
-export function glossaryPages(): OutlineItem[] {
-	return publishedGlossary()
-		.map((record) => ({ label: record.term, link: `/glossary/${record.id}` }))
-		.sort(byLabel);
-}
-
-/** The lists built with the site, by the section's name (its address without the slash). */
-const builtLists: Record<string, () => OutlineItem[]> = {
-	stories: storiesPages,
-	nations: () => nationsPages,
-	library: () => libraryOutline(),
-	glossary: glossaryPages,
-	events: () => [
-		{ label: 'Upcoming events', link: '/events' },
-		{ label: 'Past events', link: '/events?when=past' }
-	],
-	about: () => [
-		{ label: 'About the project', link: '/about' },
-		{ label: 'Timeline to public review', link: '/about/timeline' }
-	]
+/** The contents of each section built with the site, by the section's name (its address without the slash). */
+const builtContents: Record<string, () => SectionContents> = {
+	nations: () => ({
+		pages: nationsPages,
+		// The nations come from a module the browser keeps (src/lib/section-lists.ts).
+		entries: { noun: 'nations', items: [], list: 'nations' }
+	}),
+	stories: () => ({
+		pages: [{ label: 'All stories', link: '/stories' }],
+		entries: {
+			noun: 'stories',
+			items: storySummaries()
+				.map((story) => ({ label: story.title, link: `/stories/${story.id}` }))
+				.sort(byLabel)
+		}
+	}),
+	glossary: () => ({
+		pages: [],
+		entries: {
+			noun: 'terms',
+			items: publishedGlossary()
+				.map((record) => ({ label: record.term, link: `/glossary/${record.id}` }))
+				.sort(byLabel)
+		}
+	}),
+	library: () => ({ pages: libraryOutline() }),
+	events: () => ({
+		pages: [
+			{ label: 'Upcoming events', link: '/events' },
+			{ label: 'Past events', link: '/events?when=past' }
+		]
+	}),
+	about: () => ({
+		pages: [
+			{ label: 'About the project', link: '/about' },
+			{ label: 'Timeline to public review', link: '/about/timeline' }
+		]
+	})
 };
 
-/** The lists read from the database on request: the published essays of each part. */
+/** The sections whose essays are read from the database. */
 const essayParts = { foundations: 'foundations', essays: 'essays' } as const;
 
-/** The sections whose lists are read from the database. */
-export const essaySections = Object.keys(essayParts);
+/** The sections whose contents are known when the site is built. */
+export const builtSections = Object.keys(builtContents);
 
-/** The pages inside a section, or undefined for a section the sidebar cannot open. */
-export async function sectionContents(section: string): Promise<OutlineItem[] | undefined> {
-	if (Object.hasOwn(builtLists, section)) return builtLists[section]();
+/** A section's contents, or undefined for a section without any. */
+export async function sectionContents(section: string): Promise<SectionContents | undefined> {
+	if (Object.hasOwn(builtContents, section)) return builtContents[section]();
 	if (Object.hasOwn(essayParts, section)) {
-		// Loaded only here, so the section layouts that share these lists do not load the essay pages.
+		// Loaded only here, so pages outside the essays do not load the essay pages.
 		const { essayIndex } = await import('./essay-pages.ts');
 		const index = await essayIndex(essayParts[section as keyof typeof essayParts]);
-		return index.outline.items;
+		return { pages: index.outline.items };
 	}
 	return undefined;
-}
-
-/**
- * Every section's pages, by the section's address. The essays' lists are
- * left out while the site is being built, when there is no database, and
- * when the database cannot be read.
- */
-export async function allSectionLists(building: boolean): Promise<Record<string, OutlineItem[]>> {
-	const lists: Record<string, OutlineItem[]> = {};
-	for (const [section, list] of Object.entries(builtLists)) lists[`/${section}`] = list();
-	if (building) return lists;
-	try {
-		const { essayLists } = await import('./essay-pages.ts');
-		const byPart = await essayLists();
-		for (const [section, part] of Object.entries(essayParts)) lists[`/${section}`] = byPart[part] ?? [];
-	} catch (problem) {
-		// The sidebar then reads these lists in the browser.
-		console.error('Could not list the essays for the sidebar', problem);
-	}
-	return lists;
 }

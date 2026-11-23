@@ -225,17 +225,6 @@ export async function essayHistory(part: EssayPart, slug: string) {
 	};
 }
 
-/** The published essays of every part, as the sidebar lists them, from one read of the database. */
-export async function essayLists(): Promise<Partial<Record<EssayPart, { label: string; link: string }[]>>> {
-	const { database } = storageForPages();
-	const lists: Partial<Record<EssayPart, { label: string; link: string }[]>> = {};
-	for (const essay of await listEssays(database)) {
-		if (!essay.published) continue;
-		(lists[essay.part] ??= []).push({ label: essay.published.title, link: essayPath(essay.identifier, essay.part) });
-	}
-	return lists;
-}
-
 export async function essayIndex(part: EssayPart) {
 	const { database } = storageForPages();
 	const essays = (await listEssays(database))
