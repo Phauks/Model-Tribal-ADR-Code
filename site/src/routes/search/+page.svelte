@@ -7,6 +7,7 @@
 	// those nations (Trevor asked for advanced search on Nov. 23, 2026).
 	// Without scripts it says so and offers the ways to browse.
 	import { onMount } from 'svelte';
+	import CountBadge from '#lib/components/CountBadge.svelte';
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
@@ -324,7 +325,7 @@
 					}}
 				/>
 				{showLabels[kind]}
-				{#if trimmed || browsing}<span class="count">{totals[kind].toLocaleString('en-US')}</span>{/if}
+				{#if trimmed || browsing}<CountBadge count={totals[kind]} />{/if}
 			</label>
 		{/each}
 	</fieldset>
@@ -544,10 +545,6 @@
 		border-color: var(--color-action);
 		color: var(--color-action-text);
 		font-weight: var(--font-weight-semibold);
-	}
-
-	.show-kind .count {
-		font-variant-numeric: tabular-nums;
 	}
 
 	/* Filters beside the results when there is room, above them behind a button when there is not. */

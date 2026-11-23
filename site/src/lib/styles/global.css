@@ -1737,6 +1737,16 @@ sup.citation {
 	vertical-align: baseline;
 }
 
+a.topic-badge {
+	color: var(--color-link);
+	text-decoration: none;
+}
+
+a.topic-badge:hover {
+	border-color: var(--color-link);
+	text-decoration: underline;
+}
+
 .topic-badge {
 	display: inline-block;
 	padding: 0 var(--space-2);
@@ -1746,4 +1756,23 @@ sup.citation {
 	font-size: 0.875em;
 	line-height: 1.6;
 	overflow-wrap: normal;
+}
+
+/* A count beside a heading or label, in a badge rather than a loose number (src/lib/components/CountBadge.svelte; Trevor, Nov. 23, 2026). */
+.count-badge {
+	display: inline-block;
+	min-width: 1.6em;
+	margin-left: 0.4em;
+	padding: 0 0.45em;
+	border: 1px solid var(--color-line);
+	border-radius: 999px;
+	background: var(--color-surface);
+	color: var(--color-ink-muted);
+	font-size: var(--font-size-small);
+	font-weight: normal;
+	font-variant-numeric: tabular-nums;
+	line-height: 1.5;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
 }

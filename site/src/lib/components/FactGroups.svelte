@@ -18,7 +18,7 @@
 		note?: string;
 		citations?: CitationMark[];
 		/** Short tags, such as topics, shown as badges in place of the text. */
-		badges?: string[];
+		badges?: { text: string; link?: string }[];
 	}
 
 	interface FactGroup {
