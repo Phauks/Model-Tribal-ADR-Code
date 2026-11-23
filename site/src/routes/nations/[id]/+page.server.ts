@@ -18,6 +18,7 @@ import { readableDate } from '#lib/readable-date.ts';
 import { documentHeading, documentHistoriesFor } from '#lib/server/document-history.ts';
 import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
+import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
@@ -500,6 +501,8 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: displayName(record.names.official),
 		listedName: record.names.official,
+		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
+		badges: recognitionBadges(record.recognition ?? []),
 		review: {
 			...status,
 			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined

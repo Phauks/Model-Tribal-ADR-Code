@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
+	import type { RecognitionBadge } from '#lib/recognition-badges.ts';
 	import { replaceState } from '$app/navigation';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -102,7 +104,7 @@
 		return () => window.removeEventListener('hashchange', onHashChange);
 	});
 
-	type ListedNation = { id: string; name: string };
+	type ListedNation = { id: string; name: string; badges?: RecognitionBadge[] };
 	const nationsByRow = $derived(
 		new Map<string, ListedNation[]>([
 			...data.stateRows.map((row) => [`state-${row.code}`, row.nations] as const),
@@ -179,7 +181,12 @@
 			{/if}
 			<ul>
 				{#each nations as nation (nation.id)}
-					<li><a href="/nations/{nation.id}">{nation.name}</a></li>
+					<li>
+						<a href="/nations/{nation.id}">{nation.name}</a>{#if nation.badges}{' '}<RecognitionBadges
+								badges={nation.badges}
+								size="small"
+							/>{/if}
+					</li>
 				{/each}
 			</ul>
 		</details>
