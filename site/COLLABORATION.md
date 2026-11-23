@@ -78,7 +78,7 @@ Each Native nation can choose a team of people who keep its own page up to date 
 
 ### Editing the nation's page
 
-A team edits its nation's page at `/workspace/nation-teams/<nation>/edit` (decision record 0041, "Stage 2"). The rules are in `src/lib/nation-page-changes.ts`; the database side is `src/lib/server/nation-page-changes.ts` (migration 0016, table `nation_page_changes`).
+A team edits its nation's page at `/workspace/nation-teams/<nation>/edit` (decision record 0041, "Stage 2"). The rules are in `src/lib/nation-page-changes.ts`; the database side is `src/lib/server/nation-page-changes.ts` (migration 0020, table `nation_page_changes`).
 
 | Part | Who | Goes live |
 | --- | --- | --- |

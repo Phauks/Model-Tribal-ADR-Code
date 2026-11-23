@@ -1,6 +1,6 @@
 /**
  * Storage for the changes a nation's team makes to its own page (decision
- * record 0041, "Stage 2"; migration 0016). Every publish adds a version, and
+ * record 0041, "Stage 2"; migration 0020). Every publish adds a version, and
  * the page shows, for each kind of change, the newest published version
  * whose time to go live has come. Earlier versions stay for restoring and
  * for the project's review; nation pages never get a public history.
