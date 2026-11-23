@@ -1,7 +1,7 @@
 profile: content/tribes/w/webster-dudley-band-of-chaubunagungamaug-nipmuck-indians.yaml
 topic: contacts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -35,3 +35,11 @@ searches:
   query: official website, contact page, general email
   outcome: found
   reason: Claude found the site by web search; a script opened it and found each value on the page named.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.nipmuck.org/
+  query: 'general office email on the nation''s own site: home, contact, about, government, council, office and staff pages, read in a browser'
+  outcome: not-found
+  reason: Read 2 pages in a browser; none showed an email address.
