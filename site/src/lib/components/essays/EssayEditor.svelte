@@ -39,6 +39,26 @@
 	import EssayAttestDialog from '#lib/components/essays/EssayAttestDialog.svelte';
 	import EssayComments from '#lib/components/essays/EssayComments.svelte';
 	import EssayShareDialog from '#lib/components/essays/EssayShareDialog.svelte';
+	import type { Snippet } from 'svelte';
+	import Bold from '@lucide/svelte/icons/bold';
+	import BookOpen from '@lucide/svelte/icons/book-open';
+	import CloudCheck from '@lucide/svelte/icons/cloud-check';
+	import CloudOff from '@lucide/svelte/icons/cloud-off';
+	import CloudUpload from '@lucide/svelte/icons/cloud-upload';
+	import Ellipsis from '@lucide/svelte/icons/ellipsis';
+	import Italic from '@lucide/svelte/icons/italic';
+	import Link from '@lucide/svelte/icons/link';
+	import List from '@lucide/svelte/icons/list';
+	import ListOrdered from '@lucide/svelte/icons/list-ordered';
+	import MessageSquarePlus from '@lucide/svelte/icons/message-square-plus';
+	import MessagesSquare from '@lucide/svelte/icons/messages-square';
+	import Redo2 from '@lucide/svelte/icons/redo-2';
+	import Share2 from '@lucide/svelte/icons/share-2';
+	import SpellCheck from '@lucide/svelte/icons/spell-check';
+	import SquarePlus from '@lucide/svelte/icons/square-plus';
+	import CiteIcon from '@lucide/svelte/icons/quote';
+	import Underline from '@lucide/svelte/icons/underline';
+	import Undo2 from '@lucide/svelte/icons/undo-2';
 	import { inReviewText, openRequestsOn, waitsOn, type ReviewRequest } from '#lib/essays/review-requests.ts';
 	import { commentAt, commentMarks, showCommentMarks, type CommentMark } from '#lib/essays/comment-marks.ts';
 	import { findQuote, quoteAt, type TextQuote } from '#lib/essays/comment-anchors.ts';
@@ -61,6 +81,9 @@
 		autoSave = false,
 		live = false,
 		startAt = null,
+		barStart,
+		barEnd,
+		belowBar,
 		onsaved
 	}: {
 		identifier: string;
@@ -73,6 +96,12 @@
 		live?: boolean;
 		/** A section's heading id to open the editor at, such as one asked to be reviewed. */
 		startAt?: string | null;
+		/** Shown at the start of the bar, such as the page's Reading, Commenting and Editing choice. */
+		barStart?: Snippet;
+		/** Shown at the end of the bar, such as History and Publish. */
+		barEnd?: Snippet;
+		/** Shown under the bar, such as where the draft stands. */
+		belowBar?: Snippet;
 		/** Called with the version number after each save. */
 		onsaved?: (version: number) => void;
 	} = $props();
@@ -565,6 +594,7 @@
 		else if (chosen === 'case' || chosen === 'law') openPicker(chosen);
 		else if (chosen === 'quote') run(addAfterCurrent(schema.node('quote_block', null, schema.node('paragraph'))));
 		else if (chosen === 'analysis') run(addAfterCurrent(schema.node('analysis_block', null, schema.node('paragraph'))));
+		else if (chosen === 'passage') run(addAfterCurrent(schema.node('blockquote', null, schema.node('paragraph'))));
 		else if (chosen === 'figure') void figureDialog?.show();
 		else if (chosen === 'chart') run(addAfterCurrent(newChart()));
 	}
@@ -1250,35 +1280,63 @@
 		{ name: 'code', label: 'Code', keys: 'Ctrl+`' }
 	];
 	const blocks: { name: string; label: string; command: () => Command }[] = [
-		{ name: 'paragraph', label: 'Paragraph', command: () => setBlockType(schema.nodes.paragraph) },
-		{ name: 'h2', label: 'Heading', command: () => setBlockType(schema.nodes.heading, { level: 2 }) },
-		{ name: 'h3', label: 'Subheading', command: () => setBlockType(schema.nodes.heading, { level: 3 }) },
+		{ name: 'paragraph', label: 'Text', command: () => setBlockType(schema.nodes.paragraph) },
+		{ name: 'h2', label: 'Section heading', command: () => setBlockType(schema.nodes.heading, { level: 2 }) },
+		{ name: 'h3', label: 'Subsection heading', command: () => setBlockType(schema.nodes.heading, { level: 3 }) },
 		{ name: 'h4', label: 'Minor heading', command: () => setBlockType(schema.nodes.heading, { level: 4 }) }
 	];
+
+	/* The bar (as in the approved mockups) ----------------------------------- */
+
+	let moreMenu: HTMLDetailsElement | undefined = $state();
+	/** Whether the "Name this version" box is open. */
+	let naming = $state(false);
+	const openThreads = $derived(comments.filter((comment) => comment.threadIdentifier === null && !comment.resolvedAt).length);
+	const statusText = $derived(
+		status || (liveStatus && inRoomShown ? liveText(liveStatus) : joining ? 'Joining the live room…' : dirty ? 'Unsaved changes' : `Saved as version ${basedOn}`)
+	);
+	/** The word beside the saved mark; the whole status is its tooltip. */
+	const shortStatus = $derived(
+		liveStatus?.state === 'offline' ? 'Offline' : saving ? 'Saving…' : joining ? 'Joining…' : dirty || (liveStatus?.state === 'live' && liveStatus.unsaved) ? 'Not saved yet' : 'Saved'
+	);
+
+	function closeMenuThen(action: () => unknown): void {
+		if (moreMenu) moreMenu.open = false;
+		void action();
+	}
+
+	function initials(name: string): string {
+		return name
+			.split(/\s+/)
+			.filter(Boolean)
+			.slice(0, 2)
+			.map((part) => part[0]?.toUpperCase() ?? '')
+			.join('');
+	}
 </script>
 
 <svelte:window onbeforeunload={warnBeforeLeaving} />
 <svelte:document onvisibilitychange={saveWhenHidden} />
 
 <div class="essay-editor">
+	<!--
+		One slim bar, as in the approved mockups (essay-editor-mockups/3 and v2-1):
+		the mode, then icons with tooltips, then the saved mark, who else is
+		here, Share, History and Publish. Tools the mockups leave out sit under
+		More; tools for the box the cursor is in show in a second row only then.
+	-->
 	<div class="editor-bar" role="toolbar" aria-label="Editing">
-		<div class="tabs" role="group" aria-label="View">
-			<button type="button" class="tool" aria-pressed={mode === 'rich'} onclick={() => switchMode('rich')}>Text</button>
-			<button
-				type="button"
-				class="tool"
-				aria-pressed={mode === 'markdown'}
-				disabled={inRoomShown}
-				title={inRoomShown ? 'The Markdown view is off while editing live, so everyone keeps one shared text.' : undefined}
-				onclick={() => switchMode('markdown')}>Markdown</button
-			>
-			<button type="button" class="tool" aria-pressed={mode === 'preview'} onclick={() => switchMode('preview')}>Preview</button>
-		</div>
+		{#if barStart}<div class="bar-group">{@render barStart()}</div>{/if}
 		{#if canEdit && mode === 'rich'}
-			<div role="group" aria-label="Paragraph style">
-				<label class="visually-hidden" for="block-style">Paragraph style</label>
+			<div class="bar-group" role="group" aria-label="Undo">
+				<button type="button" class="tool icon-tool" title="Undo (Ctrl+Z)" aria-label="Undo" onclick={() => run(inRoom ? undoCommand : undo)}><Undo2 size={18} aria-hidden="true" /></button>
+				<button type="button" class="tool icon-tool" title="Redo (Ctrl+Shift+Z)" aria-label="Redo" onclick={() => run(inRoom ? redoCommand : redo)}><Redo2 size={18} aria-hidden="true" /></button>
+			</div>
+			<div class="bar-group" role="group" aria-label="Text">
+				<label class="visually-hidden" for="block-style">Block style</label>
 				<select
 					id="block-style"
+					class="tool-select"
 					value={blocks.some((block) => block.name === active.block) ? active.block : 'paragraph'}
 					onchange={(event) => {
 						const chosen = blocks.find((block) => block.name === event.currentTarget.value);
@@ -1287,104 +1345,126 @@
 				>
 					{#each blocks as block (block.name)}<option value={block.name}>{block.label}</option>{/each}
 				</select>
-			</div>
-			<div role="group" aria-label="Add">
-				<label class="visually-hidden" for="add-block">Add</label>
-				<select
-					id="add-block"
-					value=""
-					title="Adds the block where it belongs: a section after the section you are in, anything else after the paragraph you are in"
-					onchange={(event) => {
-						const chosen = event.currentTarget.value;
-						event.currentTarget.value = '';
-						addChosen(chosen);
-					}}
-				>
-					<option value="" disabled>Add…</option>
-					<option value="section">Section</option>
-					<option value="subsection">Subsection</option>
-					<option value="paragraph">Paragraph</option>
-					<option value="case">Case</option>
-					<option value="law">Law</option>
-					<option value="quote">Quotation box</option>
-					<option value="analysis">Analysis</option>
-					<option value="figure">Picture, video or recording</option>
-					<option value="chart">Chart</option>
-				</select>
-			</div>
-			<div role="group" aria-label="Move">
-				<button type="button" class="tool" title="Move this paragraph, box or section up (Alt+Shift+Up)" onclick={() => run(moveCurrent('up'))}>Move up</button>
-				<button type="button" class="tool" title="Move this paragraph, box or section down (Alt+Shift+Down)" onclick={() => run(moveCurrent('down'))}>Move down</button>
-			</div>
-			<div role="group" aria-label="Text style">
-				{#each marks as mark (mark.name)}
-					<button type="button" class="tool tool-{mark.name}" aria-pressed={active.marks.has(mark.name)} title="{mark.label} ({mark.keys})" onclick={() => run(toggleMark(schema.marks[mark.name]))}>{mark.label}</button>
+				{#each marks.filter((mark) => mark.name !== 'code') as mark (mark.name)}
+					<button type="button" class="tool icon-tool" aria-pressed={active.marks.has(mark.name)} title="{mark.label} ({mark.keys})" aria-label={mark.label} onclick={() => run(toggleMark(schema.marks[mark.name]))}>
+						{#if mark.name === 'strong'}<Bold size={18} aria-hidden="true" />{:else if mark.name === 'em'}<Italic size={18} aria-hidden="true" />{:else}<Underline size={18} aria-hidden="true" />{/if}
+					</button>
 				{/each}
-				<button type="button" class="tool" aria-pressed={active.marks.has('link')} onclick={() => openPicker('link')}>Link</button>
+				<button type="button" class="tool icon-tool" title="Bulleted list" aria-label="Bulleted list" onclick={() => run(wrapInList(schema.nodes.bullet_list))}><List size={18} aria-hidden="true" /></button>
+				<button type="button" class="tool icon-tool" title="Numbered list" aria-label="Numbered list" onclick={() => run(wrapInList(schema.nodes.ordered_list))}><ListOrdered size={18} aria-hidden="true" /></button>
+				<button type="button" class="tool icon-tool" aria-pressed={active.marks.has('link')} title="Link" aria-label="Link" onclick={() => openPicker('link')}><Link size={18} aria-hidden="true" /></button>
 			</div>
-			<div role="group" aria-label="Lists">
-				<button type="button" class="tool" onclick={() => run(wrapInList(schema.nodes.bullet_list))}>Bulleted list</button>
-				<button type="button" class="tool" onclick={() => run(wrapInList(schema.nodes.ordered_list))}>Numbered list</button>
-			</div>
-			<div role="group" aria-label="Boxes">
-				<button type="button" class="tool" onclick={() => openPicker('case')}>{active.box === 'case_block' ? 'Change case' : 'Case'}</button>
-				<button type="button" class="tool" onclick={() => openPicker('law')}>{active.box === 'law_block' ? 'Change law' : 'Law'}</button>
-				{#each missingParts as kind (kind)}
-					<button type="button" class="tool" onclick={() => run(addBoxPart(kind))}>Add {boxParts[kind]}</button>
-				{/each}
-				<button type="button" class="tool" onclick={() => run(insertBlock(schema.nodes.quote_block))}>Quotation box</button>
-				<button type="button" class="tool" onclick={() => run(wrapIn(schema.nodes.blockquote))}>Quoted passage</button>
-				{#if active.inside.has('analysis_block')}
-					<button type="button" class="tool" onclick={() => openPicker('analysis-title')}>Analysis title</button>
-				{:else}
-					<button type="button" class="tool" onclick={() => run(insertBlock(schema.nodes.analysis_block))}>Analysis</button>
-				{/if}
-				<button type="button" class="tool" onclick={() => run(lift)} title="Take the paragraph out of its box or list">Out of box</button>
-			</div>
-			<div role="group" aria-label="Figures">
-				{#if active.inside.has('table')}
-					<button type="button" class="tool" onclick={() => run(addTableRow)}>Add row</button>
-					<button type="button" class="tool" onclick={() => run(removeTableRow)}>Remove row</button>
-				{/if}
-				{#each missingFigureParts as kind (kind)}
-					<button type="button" class="tool" onclick={() => run(addFigurePart(kind))}>Add {figureParts[kind]}</button>
-				{/each}
-			</div>
-			<div role="group" aria-label="References">
-				<button type="button" class="tool" onclick={() => openPicker('citation')}>Cite a source</button>
-				<button type="button" class="tool" onclick={() => openPicker('term')}>Glossary term</button>
-			</div>
-			<div role="group" aria-label="History">
-				<button type="button" class="tool" onclick={() => run(inRoom ? undoCommand : undo)}>Undo</button>
-				<button type="button" class="tool" onclick={() => run(inRoom ? redoCommand : redo)}>Redo</button>
+			<div class="bar-group" role="group" aria-label="References">
+				<button type="button" class="tool" title="Cite a source" onclick={() => openPicker('citation')}><CiteIcon size={18} aria-hidden="true" /> Cite</button>
+				<button type="button" class="tool icon-tool" title="Glossary term" aria-label="Glossary term" onclick={() => openPicker('term')}><BookOpen size={18} aria-hidden="true" /></button>
+				<span class="select-with-icon">
+					<SquarePlus size={18} aria-hidden="true" />
+					<label class="visually-hidden" for="add-block">Add</label>
+					<select
+						id="add-block"
+						class="tool-select"
+						value=""
+						title="Adds the block where it belongs: a section after the section you are in, anything else after the paragraph you are in"
+						onchange={(event) => {
+							const chosen = event.currentTarget.value;
+							event.currentTarget.value = '';
+							addChosen(chosen);
+						}}
+					>
+						<option value="" disabled>Add</option>
+						<option value="section">Section</option>
+						<option value="subsection">Subsection</option>
+						<option value="paragraph">Text</option>
+						<option value="case">Case</option>
+						<option value="law">Law</option>
+						<option value="quote">Quotation box</option>
+						<option value="passage">Quoted passage</option>
+						<option value="analysis">Analysis</option>
+						<option value="figure">Picture, video or recording</option>
+						<option value="chart">Chart</option>
+					</select>
+				</span>
 			</div>
 		{/if}
 		{#if mode === 'rich'}
-			<div role="group" aria-label="Comments">
-				<button type="button" class="tool" onclick={openShare} title="Who can open the draft, and asking for review">Share</button>
-				<button type="button" class="tool" disabled={!active.hasSelection} title="Comment on the selected words (Ctrl+Alt+M)" onclick={startComment}>Comment</button>
-				<button type="button" class="tool" aria-pressed={showComments} onclick={toggleComments}
-					>Comments{#if comments.some((comment) => comment.threadIdentifier === null && !comment.resolvedAt)}{' '}({comments.filter((comment) => comment.threadIdentifier === null && !comment.resolvedAt).length}){/if}</button
-				>
-			</div>
-			<div role="group" aria-label="Checks and Go to">
+			<div class="bar-group" role="group" aria-label="Review">
 				{#if canEdit}
-					<button type="button" class="tool" aria-pressed={showChecks} onclick={toggleChecks}>Checks</button>
+					<button type="button" class="tool" aria-pressed={showChecks} title="Spelling, grammar and definitions" onclick={toggleChecks}><SpellCheck size={18} aria-hidden="true" /> Checks</button>
 				{/if}
-				<button type="button" class="tool" aria-pressed={showGoTo} title="Ctrl+G" onclick={() => (showGoTo = !showGoTo)}>Go to</button>
-				<button
-					type="button"
-					class="tool"
-					aria-pressed={showSources}
-					title="The sources this essay cites, with links to their documents"
-					onclick={() => {
-						showSources = !showSources;
-						if (showSources) void loadLibrary();
-					}}>Sources</button
-				>
+				<button type="button" class="tool icon-tool" disabled={!active.hasSelection} title="Comment on the selected words (Ctrl+Alt+M)" aria-label="Comment" onclick={startComment}><MessageSquarePlus size={18} aria-hidden="true" /></button>
+				<button type="button" class="tool" aria-pressed={showComments} title="Comments" aria-label="Comments ({openThreads} open)" onclick={toggleComments}><MessagesSquare size={18} aria-hidden="true" />{#if openThreads}<span class="count">{openThreads}</span>{/if}</button>
 			</div>
 		{/if}
+		{#if !canEdit && mode === 'rich'}
+			<p class="bar-hint small muted">Select words to comment. The text stays as the authors wrote it.</p>
+		{/if}
+		<details class="bar-menu" bind:this={moreMenu}>
+			<summary class="tool icon-tool" title="More" aria-label="More"><Ellipsis size={18} aria-hidden="true" /></summary>
+			<div class="menu" role="group" aria-label="More">
+				<p class="menu-label small muted">View</p>
+				<button type="button" aria-pressed={mode === 'rich'} onclick={() => closeMenuThen(() => switchMode('rich'))}>Text</button>
+				<button type="button" aria-pressed={mode === 'markdown'} disabled={inRoomShown} title={inRoomShown ? 'The Markdown view is off while editing live, so everyone keeps one shared text.' : undefined} onclick={() => closeMenuThen(() => switchMode('markdown'))}>Markdown</button>
+				<button type="button" aria-pressed={mode === 'preview'} onclick={() => closeMenuThen(() => switchMode('preview'))}>Preview as readers see it</button>
+				{#if mode === 'rich'}
+					<p class="menu-label small muted">Find</p>
+					<button type="button" aria-pressed={showGoTo} onclick={() => closeMenuThen(() => (showGoTo = !showGoTo))}>Go to… <kbd>Ctrl+G</kbd></button>
+					<button type="button" aria-pressed={showSources} onclick={() => closeMenuThen(() => { showSources = !showSources; if (showSources) void loadLibrary(); })}>Sources this essay cites</button>
+				{/if}
+				{#if canEdit && mode === 'rich'}
+					<p class="menu-label small muted">Arrange</p>
+					<button type="button" onclick={() => closeMenuThen(() => run(moveCurrent('up')))}>Move up <kbd>Alt+Shift+↑</kbd></button>
+					<button type="button" onclick={() => closeMenuThen(() => run(moveCurrent('down')))}>Move down <kbd>Alt+Shift+↓</kbd></button>
+					<button type="button" onclick={() => closeMenuThen(() => run(lift))}>Take out of its box or list</button>
+					<button type="button" aria-pressed={active.marks.has('code')} onclick={() => closeMenuThen(() => run(toggleMark(schema.marks.code)))}>Code <kbd>Ctrl+`</kbd></button>
+				{/if}
+				{#if canEdit && autoSave}
+					<p class="menu-label small muted">Versions</p>
+					<button type="button" onclick={() => closeMenuThen(() => (naming = true))}>Name this version…</button>
+				{/if}
+			</div>
+		</details>
+		<div class="bar-end">
+			{#if canEdit || inRoomShown}
+				<span class="saved-mark small" role="status" aria-live="polite" title={statusText}>
+					{#if liveStatus?.state === 'offline'}<CloudOff size={18} aria-hidden="true" />
+					{:else if saving || dirty || joining}<CloudUpload size={18} aria-hidden="true" />
+					{:else}<CloudCheck size={18} aria-hidden="true" />{/if}
+					<span>{shortStatus}</span>
+				</span>
+			{/if}
+			{#if people.length}
+				<span class="people" title="Editing now: {people.join(', ')}">
+					{#each people.slice(0, 4) as name, index (index)}<span class="avatar" aria-hidden="true">{initials(name)}</span>{/each}
+					<span class="visually-hidden">Editing now: {people.join(', ')}</span>
+				</span>
+			{/if}
+			{#if mode === 'rich'}
+				<button type="button" class="tool icon-tool" title="Share and ask for review" aria-label="Share" onclick={openShare}><Share2 size={18} aria-hidden="true" /></button>
+			{/if}
+			{#if barEnd}{@render barEnd()}{/if}
+		</div>
 	</div>
+	{#if canEdit && mode === 'rich' && (active.box || missingParts.length || active.inside.has('analysis_block') || active.inside.has('table') || missingFigureParts.length)}
+		<div class="context-bar small" role="group" aria-label="This box">
+			{#if active.box}<button type="button" class="tool" onclick={() => openPicker(active.box === 'case_block' ? 'case' : 'law')}>Change {active.box === 'law_block' ? 'law' : 'case'}</button>{/if}
+			{#each missingParts as kind (kind)}<button type="button" class="tool" onclick={() => run(addBoxPart(kind))}>Add {boxParts[kind]}</button>{/each}
+			{#if active.inside.has('analysis_block')}<button type="button" class="tool" onclick={() => openPicker('analysis-title')}>Analysis title</button>{/if}
+			{#if active.inside.has('table')}
+				<button type="button" class="tool" onclick={() => run(addTableRow)}>Add row</button>
+				<button type="button" class="tool" onclick={() => run(removeTableRow)}>Remove row</button>
+			{/if}
+			{#each missingFigureParts as kind (kind)}<button type="button" class="tool" onclick={() => run(addFigurePart(kind))}>Add {figureParts[kind]}</button>{/each}
+		</div>
+	{/if}
+	{#if belowBar}{@render belowBar()}{/if}
+	{#if naming}
+		<form class="name-version" onsubmit={(event) => { event.preventDefault(); void save().then(() => (naming = false)); }}>
+			<label for="save-note">Name this version</label>
+			<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
+			<button type="submit" class="button" disabled={saving || !note.trim()}>Name it</button>
+			<button type="button" class="button button-quiet" onclick={() => (naming = false)}>Cancel</button>
+		</form>
+	{/if}
 
 	{#if showGoTo && mode === 'rich'}
 		<EssayGoTo view={() => view} onclose={() => (showGoTo = false)} />
@@ -1426,12 +1506,6 @@
 		</p>
 	{/if}
 
-	{#if inRoomShown}
-		<p class="small live-row" aria-live="polite">
-			<span class="live-dot" class:offline={liveStatus?.state !== 'live'} aria-hidden="true"></span>
-			{#if people.length === 0}Editing live. No one else is here.{:else}Editing live with {people.join(', ')}.{/if}
-		</p>
-	{/if}
 	{#if liveProblem}
 		<div class="notice" role="note"><p>{liveProblem}</p></div>
 	{/if}
@@ -1524,21 +1598,13 @@
 		</div>
 	{/if}
 
-	{#if canEdit}
+	{#if canEdit && !autoSave}
 		<div class="save-bar">
-			{#if autoSave}
-				<label for="save-note">Name this version</label>
-				<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
-				<button type="button" class="button button-quiet" onclick={() => save()} disabled={saving || !note.trim()}>Name it</button>
-			{:else}
-				<label for="save-note">Note for this version (optional)</label>
-				<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
-				<button type="button" class="button" onclick={() => save()} disabled={saving}>Save version</button>
-			{/if}
+			<label for="save-note">Note for this version (optional)</label>
+			<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
+			<button type="button" class="button" onclick={() => save()} disabled={saving}>Save version</button>
 			<span class="small" role="status" aria-live="polite">{status || (liveStatus && inRoomShown ? liveText(liveStatus) : joining ? 'Joining the live room…' : dirty ? 'Unsaved changes' : `Version ${basedOn}`)}</span>
 		</div>
-	{:else}
-		<p class="small muted">The text stays as the authors wrote it here. Select words and choose Comment to comment on them.</p>
 	{/if}
 </div>
 
@@ -1617,52 +1683,229 @@
 		gap: var(--space-3);
 	}
 
+	/* One slim bar (essay-editor-mockups/3 and v2-1). */
 	.editor-bar {
 		position: sticky;
 		top: 0;
-		z-index: 2;
+		z-index: 3;
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--space-2) var(--space-4);
-		padding: var(--space-2) 0;
+		align-items: center;
+		gap: var(--space-1) var(--space-2);
+		padding: var(--space-1) 0;
 		background: var(--color-paper);
 		border-bottom: 1px solid var(--color-line);
 	}
 
-	.editor-bar > div {
+	.bar-group {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--space-1);
+		align-items: center;
+		gap: 2px;
+		padding-right: var(--space-2);
+		border-right: 1px solid var(--color-line);
+	}
+
+	.bar-hint {
+		margin: 0;
+	}
+
+	.bar-end {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		margin-left: auto;
 	}
 
 	.tool {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 		min-height: var(--layout-target-minimum);
 		padding: var(--space-1) var(--space-2);
-		border: 1px solid var(--color-control-border, var(--color-line));
+		border: 1px solid transparent;
 		border-radius: var(--radius-control);
-		background: var(--color-paper);
+		background: transparent;
 		color: var(--color-ink);
 		font: inherit;
 		font-size: var(--font-size-small);
 		cursor: pointer;
 	}
 
+	.tool:hover:not(:disabled) {
+		background: var(--color-surface);
+	}
+
+	.tool:disabled {
+		opacity: 0.45;
+		cursor: default;
+	}
+
+	.icon-tool {
+		justify-content: center;
+		min-width: var(--layout-target-minimum);
+		padding: var(--space-1);
+	}
+
+	.tool-select {
+		width: auto;
+		min-width: 0;
+		max-width: 10rem;
+		min-height: var(--layout-target-minimum);
+		padding-top: var(--space-1);
+		padding-bottom: var(--space-1);
+		font-size: var(--font-size-small);
+	}
+
+	#add-block {
+		width: 6.5rem;
+	}
+
+	#block-style {
+		width: 9rem;
+	}
+
+	.select-with-icon {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.select-with-icon :global(svg) {
+		position: absolute;
+		left: var(--space-2);
+		pointer-events: none;
+	}
+
+	.select-with-icon select {
+		padding-left: calc(var(--space-2) + 1.4rem);
+	}
+
+	.count {
+		min-width: 1.3em;
+		padding: 0 0.3em;
+		border-radius: 999px;
+		background: var(--color-action);
+		color: var(--color-paper);
+		font-size: 0.75em;
+		font-weight: var(--font-weight-semibold);
+		text-align: center;
+	}
+
+	.bar-menu {
+		position: relative;
+	}
+
+	.bar-menu summary {
+		list-style: none;
+	}
+
+	.bar-menu summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.menu {
+		position: absolute;
+		z-index: 4;
+		top: 100%;
+		left: 0;
+		display: grid;
+		min-width: 15rem;
+		padding: var(--space-2);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-paper);
+		box-shadow: 0 4px 16px color-mix(in srgb, var(--color-ink) 18%, transparent);
+	}
+
+	.menu-label {
+		margin: var(--space-1) 0 0;
+		padding: 0 var(--space-2);
+	}
+
+	.menu button {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--space-3);
+		padding: var(--space-1) var(--space-2);
+		border: 0;
+		border-radius: var(--radius-control);
+		background: none;
+		color: var(--color-ink);
+		font: inherit;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.menu button:hover:not(:disabled),
+	.menu button[aria-pressed='true'] {
+		background: var(--color-surface);
+	}
+
+	.menu button:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+
+	.menu kbd {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+	}
+
+	.saved-mark {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		color: var(--color-ink-muted);
+	}
+
+	.people {
+		display: inline-flex;
+	}
+
+	.avatar {
+		display: inline-grid;
+		place-items: center;
+		width: 1.9rem;
+		height: 1.9rem;
+		margin-left: -0.35rem;
+		border: 2px solid var(--color-paper);
+		border-radius: 50%;
+		background: var(--color-link);
+		color: var(--color-paper);
+		font-size: 0.7rem;
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.context-bar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1);
+		padding: var(--space-1) 0;
+		border-bottom: 1px dashed var(--color-line);
+	}
+
+	.context-bar .tool {
+		border-color: var(--color-line);
+	}
+
+	.name-version {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) 0;
+	}
+
+	.name-version input {
+		flex: 1 1 14rem;
+	}
+
 	.tool[aria-pressed='true'] {
 		background: var(--color-surface);
 		border-color: var(--color-link);
 		box-shadow: inset 0 -3px 0 var(--color-link);
-	}
-
-	.tool-strong {
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.tool-em {
-		font-style: italic;
-	}
-
-	.tool-underline {
-		text-decoration: underline;
 	}
 
 	.editor-area {
@@ -1921,24 +2164,6 @@
 
 	.context {
 		margin: 0;
-	}
-
-	.live-row {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		margin: 0 0 var(--space-2);
-	}
-
-	.live-dot {
-		width: 0.6rem;
-		height: 0.6rem;
-		border-radius: 50%;
-		background: var(--color-action);
-	}
-
-	.live-dot.offline {
-		background: var(--color-ink-muted);
 	}
 
 	/* Other people's cursors and selections in the live room (y-prosemirror). */

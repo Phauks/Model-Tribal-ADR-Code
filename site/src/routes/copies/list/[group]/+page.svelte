@@ -33,11 +33,11 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Copies of documents · Model Tribal ADR Code</title>
+	<title>{data.title} · Source documents · Model Tribal ADR Code</title>
 </svelte:head>
 
 <div class="reading">
-	<p class="small"><a href="/copies">Copies of documents</a></p>
+	<p class="small"><a href="/copies">Source documents</a></p>
 	<h1>{data.title}</h1>
 </div>
 

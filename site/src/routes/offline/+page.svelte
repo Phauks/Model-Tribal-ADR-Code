@@ -147,7 +147,7 @@
 	<h2>Files to keep</h2>
 	<p>
 		Saved pages live inside your browser. For files you can open anywhere, such as the list of
-		nations as a spreadsheet, see <a href="/downloads">Downloads</a>.
+		nations as a spreadsheet, see <a href="/downloads">Data sets</a>.
 	</p>
 </div>
 

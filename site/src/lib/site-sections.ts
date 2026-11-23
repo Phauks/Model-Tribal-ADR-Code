@@ -30,7 +30,7 @@ export type PageOutline = {
  * site without following links to pages that are not there yet.
  *
  * A section can gather pages that keep addresses of their own (`gathers`), as
- * the Library gathers Downloads and Copies of documents. On those pages the
+ * the Library gathers Data sets and Source documents. On those pages the
  * section counts as current, and when the page gives no outline of its own the
  * sidebar lists the gathered pages instead.
  *

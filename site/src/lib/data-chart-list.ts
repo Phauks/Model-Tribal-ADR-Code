@@ -23,6 +23,6 @@ export function dataChartNamed(identifier: DataChartIdentifier): { identifier: s
 }
 
 /** Where a chart's table is published. */
-export function dataChartTableLink(identifier: string, extension: 'csv' | 'json'): string {
+export function dataChartTableLink(identifier: string, extension: 'csv' | 'json' | 'xlsx'): string {
 	return `/nations/data/tables/${identifier}.${extension}`;
 }

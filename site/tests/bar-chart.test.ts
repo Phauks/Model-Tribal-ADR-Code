@@ -103,6 +103,8 @@ describe('pieSlices', () => {
 		const slices = pieSlices(bars([9, 8, 7, 6, 5, 4, 3, 2, 1]));
 		expect(slices).toHaveLength(7);
 		expect(slices[6]).toMatchObject({ label: 'Other (3)', value: 6, folded: 3, series: 7 });
+		expect(slices[6].members).toHaveLength(3);
+		expect(slices[0].members).toEqual([slices[0].label]);
 		expect(slices[6].href).toBeUndefined();
 	});
 

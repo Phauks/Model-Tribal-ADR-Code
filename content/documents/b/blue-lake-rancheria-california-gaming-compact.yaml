@@ -17,17 +17,18 @@ versions:
 - id: 2000-original
   label: 2000 compact
   event: original
-  status: superseded
+  status: expired
   dates:
     listed: '2000-05-16'
     published: '2000-05-16'
+    ended: '2023-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
     source: federal-register-00-12322
     locator: 65 Fed. Reg. 31189 (May 16, 2000)
   source: compact-ca-blue-lake-rancheria-2000-05-16
-  confidence: high
+  confidence: medium
   verification: bulk-import
   capture:
     path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_blue_lake_rancheria_tribal_state_gaming_compact_0.pdf
@@ -55,19 +56,20 @@ versions:
 - id: 2022-extension
   label: 2022 extension
   event: extension
-  status: superseded
+  status: expired
   amends:
   - 2000-original
   dates:
     listed: '2022-06-30'
     published: '2022-06-30'
+    ended: '2023-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
     source: federal-register-2022-14054
     locator: 87 Fed. Reg. 39115 (June 30, 2022)
   source: compact-ca-blue-lake-rancheria-2022-06-30
-  confidence: high
+  confidence: medium
   verification: bulk-import
   capture:
     path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_blue_lake_rancheria_tribal_state_gaming_compact.pdf
@@ -82,9 +84,14 @@ versions:
     compared_with: 2000-original
     change: not-compared
     verification: inferred
+  note: The compact's term ran to Dec. 31, 2023, the date this extension set (87 Fed. Reg. 39115 (June 30, 2022));
+    no later extension was found on the Office of Indian Gaming list or in the Federal Register. The Secretarial
+    Procedures say only that the term was extended to Dec. 31, 2023, so an unlisted later extension is possible;
+    if there was one, the procedures' Sec. 17.2 ended the compact on Jan. 31, 2024.
 related:
 - document: blue-lake-rancheria-california-secretarial-procedures
   relation: replaced-by
-  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+  note: Secretarial Procedures prescribed under 25 U.S.C. § 2710(d)(7)(B)(vii) on Jan. 31, 2024 authorize the nation's
+    Class III gaming in place of the compact (Sec. 17.2 of the procedures makes any prior compact null and void).
 found_in:
 - 2026-11-21-gaming-compact-histories

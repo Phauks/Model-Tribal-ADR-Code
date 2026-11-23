@@ -76,7 +76,7 @@ const column = `${wide} .pages-column`;
 	});
 	await page.goto(`${base}/nations/navajo-nation`, { waitUntil: 'networkidle' });
 	check((await page.locator(`${wide} .sections-column .outline`).count()) === 0, 'The first column lists pages inside a section');
-	check((await page.locator(`${wide} .sections-column button.fold`).count()) === 0, 'The first column has carets');
+	check((await page.locator(`${wide} .sections-column .sections button.fold`).count()) === 0, 'The sections in the first column have carets');
 	const pages = await page.locator(`${column} > ul.outline > li > .entry > a`).evaluateAll((list) => list.map((a) => a.getAttribute('href')));
 	check(['/nations', '/nations/map', '/nations/timeline', '/nations/recourse', '/nations/data'].every((link) => pages.includes(link)), `Nations pages missing from the second column: ${pages.join(', ')}`);
 	const nations = await page.locator(`${column} .entries a[href^='/nations/']`).count();
@@ -142,6 +142,25 @@ const column = `${wide} .pages-column`;
 	await page.waitForSelector(`${wide} > nav.sections-column`, { state: 'attached' });
 	const shownEarly = await page.locator(`${wide} > nav.sections-column`).isVisible();
 	check(!shownEarly, 'A hidden sidebar showed before the script ran');
+	await context.close();
+}
+
+// 5b. The sections fold like the Workspace group, and a shut list stays shut from the first paint.
+{
+	const { context, page } = await newPage();
+	await page.goto(`${base}/glossary`, { waitUntil: 'networkidle' });
+	const caret = page.locator(`${wide} .sections-column .group-heading button.fold`);
+	const list = page.locator(`${wide} .sections-column ul.sections`);
+	check((await caret.getAttribute('aria-expanded')) === 'true', 'The sections do not start open');
+	await caret.click();
+	check(!(await list.isVisible()), 'The caret does not shut the sections');
+	await page.reload({ waitUntil: 'commit' });
+	await page.waitForSelector(`${wide} .sections-column ul.sections`, { state: 'attached' });
+	check(!(await list.isVisible()), 'Shut sections showed before the script ran');
+	await page.waitForLoadState('networkidle');
+	check((await caret.getAttribute('aria-expanded')) === 'false', 'The sections did not stay shut on the next page');
+	await caret.click();
+	check(await list.isVisible(), 'The caret does not open the sections again');
 	await context.close();
 }
 

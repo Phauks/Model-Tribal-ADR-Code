@@ -10,12 +10,12 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Copies of documents · Model Tribal ADR Code</title>
+	<title>{data.title} · Source documents · Model Tribal ADR Code</title>
 </svelte:head>
 
 <div class="reading">
 	<p class="small trail">
-		<a href="/copies">Copies of documents</a>{#if details}<span class="separator" aria-hidden="true">›</span><a href="/copies/list/{details.list.slug}"
+		<a href="/copies">Source documents</a>{#if details}<span class="separator" aria-hidden="true">›</span><a href="/copies/list/{details.list.slug}"
 				>{details.list.title}</a
 			>{/if}
 	</p>
