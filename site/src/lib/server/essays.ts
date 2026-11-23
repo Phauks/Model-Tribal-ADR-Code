@@ -32,7 +32,8 @@ export const essayPartLabels: Record<EssayPart, string> = {
  */
 export const aboutPageAddresses: Record<string, string> = {
 	about: '/about',
-	sponsor: '/sponsor'
+	sponsor: '/sponsor',
+	'using-ai': '/using-ai'
 };
 
 /** The parts a new essay can be started in from the workspace. */

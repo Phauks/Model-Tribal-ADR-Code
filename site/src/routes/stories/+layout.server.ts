@@ -1,15 +1,8 @@
-import { storySummaries } from '#lib/server/stories.ts';
+import { storiesPages } from '#lib/server/section-contents.ts';
 import type { PageOutline } from '#lib/site-sections.ts';
 import type { LayoutServerLoad } from './$types';
 
-// The sidebar's outline for the stories: every published story, by title.
+// The sidebar's outline for the stories: every published story, by title (src/lib/server/section-contents.ts).
 export const load: LayoutServerLoad = () => ({
-	outline: {
-		items: [
-			{ label: 'All stories', link: '/stories' },
-			...storySummaries()
-				.map((story) => ({ label: story.title, link: `/stories/${story.id}` }))
-				.sort((first, second) => first.label.localeCompare(second.label, 'en-US'))
-		]
-	} satisfies PageOutline as PageOutline
+	outline: { items: storiesPages() } satisfies PageOutline as PageOutline
 });
