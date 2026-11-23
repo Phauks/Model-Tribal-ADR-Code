@@ -1,7 +1,7 @@
 profile: content/tribes/c/central-council-of-the-tlingit-and-haida-indian-tribes.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -25,5 +25,21 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2025-01-17 has no text layer on most pages (32 of 42 pages have no text
     layer and the readable pages have no candidate section; no OCR available).
-next_steps: Read the scanned amendment listed 2025-01-17 (https://www.nigc.gov/wp-content/uploads/2025/07/2025.01.17-Tlingit-Haida-Ordinance.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/07/2025.01.17-Tlingit-Haida-Ordinance.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-41 of 42 of this amendment listed 2025-01-17 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute. Not seen: page 42 not read
+    (the 40-page budget for this document was used up); the Patron Disputes section continues there, so
+    the item below is medium confidence (dropped out of the reading or unreadable).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#central-council-of-tlingit-and-haida-indian-tribes-of-alaska-amendment-2025-01-17#p1
+next_steps: Read page 42 not read (the 40-page budget for this document was used up); the Patron Disputes
+  section continues there, so the item below is medium confidence of the amendment listed 2025-01-17 (https://www.nigc.gov/wp-content/uploads/2025/07/2025.01.17-Tlingit-Haida-Ordinance.pdf),
+  which dropped out of the page-image reading. The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.
