@@ -5,6 +5,7 @@
 -->
 <script lang="ts">
 	import {
+		ageGroupLabels,
 		availabilityLabels,
 		contactMethodLabels,
 		creditFormLabels,
@@ -12,6 +13,7 @@
 		fullName,
 		interestLabels,
 		nationAnswerLabels,
+		specialtiesShown,
 		type ProfileAnswers
 	} from '#lib/contributors.ts';
 
@@ -57,7 +59,7 @@
 		{/if}
 		<div>
 			<dt>Age</dt>
-			<dd>{answers.thirteenOrOlder ? '13 or older' : 'Not confirmed'}</dd>
+			<dd>{answers.ageGroup ? ageGroupLabels[answers.ageGroup] : 'Not answered'}</dd>
 			<dd class="action">{@render change('about', 'age')}</dd>
 		</div>
 		{#if showContact}
@@ -126,6 +128,14 @@
 			<dt>Organization or school</dt>
 			<dd>{answers.organization ?? notGiven}</dd>
 			<dd class="action">{@render change('your-background', 'organization')}</dd>
+		</div>
+		<div>
+			<dt>Specialties</dt>
+			<dd>
+				{specialtiesShown(answers).join(', ') || notGiven}
+				{#if specialtiesShown(answers).length > 0}<span class="who">Shown with your name if you have a page on the website</span>{/if}
+			</dd>
+			<dd class="action">{@render change('your-background', 'specialties')}</dd>
 		</div>
 		<div>
 			<dt>Would like to help by</dt>
