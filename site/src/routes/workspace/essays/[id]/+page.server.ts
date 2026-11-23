@@ -17,6 +17,7 @@ import {
 import { essayAccess } from '#lib/server/essay-workspace.ts';
 import { renderedVersion } from '#lib/server/essay-pages.ts';
 import { formText } from '#lib/server/workspace.ts';
+import { checkNow } from '#lib/server/following-run.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
@@ -71,6 +72,8 @@ export const actions: Actions = {
 			return fail(400, { problem: `Version ${number} cannot be published yet: ${rendered.problems.join(' ')}` });
 		}
 		const publication = await publishVersion(database, identifier, row.number, person.identifier);
+		// Tell readers who follow the essay (src/lib/server/following-run.ts).
+		await checkNow(database);
 		return { done: `Published version ${row.number} (publication ${publication}). The page shows it now.` };
 	},
 
@@ -106,6 +109,7 @@ export const actions: Actions = {
 		const reason = formText(form, 'reason', 500);
 		if (!listed && !reason) return fail(400, { problem: 'Say why the publication is held back, for the activity log.' });
 		await setPublicationListed(database, identifier, number, listed, person.identifier, reason);
+		await checkNow(database);
 		return { done: listed ? `Publication ${number} is listed again.` : `Publication ${number} is held back from readers.` };
 	}
 };

@@ -1,8 +1,8 @@
 <script lang="ts">
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
 	// site's name, Report a problem and Contribute, then the reader's controls:
-	// search, Star, Print and Download as icons (Star only where the page can
-	// be starred), theme, Settings, and sign-in or the account menu at the far right
+	// search, Star, Follow, Print and Download as icons (Star and Follow only where the page can
+	// be starred or followed), theme, Settings, and sign-in or the account menu at the far right
 	// (Trevor, Nov. 22, 2026). Star, Print and Download act on the page the reader is on;
 	// Download opens a list of what the page offers (DownloadMenu.svelte). The
 	// site's sections are in the sidebar (SiteSidebar.svelte), so the masthead
@@ -24,6 +24,7 @@
 	import ReportProblem from './ReportProblem.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
 	import SiteSearch from './SiteSearch.svelte';
+	import FollowButton from './FollowButton.svelte';
 	import StarButton from './StarButton.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
 
@@ -90,7 +91,7 @@
 				class="more-button"
 				type="button"
 				popovertarget="masthead-more"
-				aria-label="More: report a problem, contribute, star, print, download, settings and sign in"
+				aria-label="More: report a problem, contribute, star, follow, print, download, settings and sign in"
 			>
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
@@ -102,6 +103,7 @@
 			</ul>
 			<div class="masthead-tools">
 				<StarButton />
+				<FollowButton />
 				<PrintOptions bind:this={printOptions} />
 				<DownloadMenu onpdf={() => printOptions?.open()} />
 				<ThemeSetting />

@@ -63,24 +63,24 @@
 
 {#if data.canManage}
 	<section>
-		<h2>Decide</h2>
+		<h2>Sign-up</h2>
 		<form method="post" action="?/decide">
 			<fieldset>
-				<legend>Registration</legend>
+				<legend>Status</legend>
 				<div class="choice">
 					<input type="radio" id="decision-welcomed" name="decision" value="welcomed" checked={profile.status !== 'declined'} />
-					<label for="decision-welcomed">Welcome</label>
+					<label for="decision-welcomed">Signed up</label>
 				</div>
 				<div class="choice">
 					<input type="radio" id="decision-declined" name="decision" value="declined" checked={profile.status === 'declined'} />
-					<label for="decision-declined">Decline</label>
+					<label for="decision-declined">Removed (deleted after 12 months)</label>
 				</div>
 			</fieldset>
 			<div class="field">
-				<label for="note">Note to the person (required when declining; they see it on their profile)</label>
+				<label for="note">Note to the person (required when removing; they see it on their profile)</label>
 				<textarea id="note" name="note" rows="3">{profile.decisionNote ?? ''}</textarea>
 			</div>
-			<p><button class="button" type="submit">Save the decision</button></p>
+			<p><button class="button" type="submit">Save</button></p>
 		</form>
 
 		<h2>Place the credit</h2>

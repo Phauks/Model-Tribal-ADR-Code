@@ -17,10 +17,10 @@ import { permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests'];
+const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests', '/following'];
 
 /** Pages that need to know who is signed in. */
-const signedInPrefixes = ['/workspace', '/profile', '/sign-in'];
+const signedInPrefixes = ['/workspace', '/profile', '/sign-in', '/following'];
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.person = undefined;
