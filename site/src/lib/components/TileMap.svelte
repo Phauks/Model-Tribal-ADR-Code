@@ -30,7 +30,7 @@
 	//
 	// MapLibre and the map's data are loaded only when this component starts, so other pages carry none of it. If the device cannot draw it (no WebGL), the tiles do not load, or the reader is offline, the component calls onfail and the page keeps showing the drawn map, which also stays for printing.
 	//
-	// Ways to zoom and move: the + and - buttons, the keyboard once the map has focus (arrows move, + and - zoom), Ctrl or ⌘ with the scroll wheel, a trackpad pinch, and two fingers on a touch screen. A plain scroll or one-finger drag still scrolls the page, and MapLibre says how to zoom instead, so the map never traps a reader scrolling past it.
+	// Ways to zoom and move: the + and - buttons, the keyboard once the map has focus (arrows move, + and - zoom), the scroll wheel over the map, a trackpad pinch, and two fingers on a touch screen. On a touch screen one finger still scrolls the page, and MapLibre says to use two, so the map never traps a reader scrolling past it.
 	//
 	// Small land areas get a dot until their outline is big enough to see, and nearby dots are grouped into numbered circles when zoomed out. Selecting a place goes to its row in the table.
 	import { onMount } from 'svelte';
@@ -44,12 +44,16 @@
 		data: given,
 		camera = $bindable(),
 		by = 'nation',
+		shape = 'flat',
 		onready,
-		onfail
+		onfail,
+		onselect
 	}: {
 		view: TileMapView;
 		/** For a shaded view: shade each nation's land areas, or each state by the category most of its nations have. */
 		by?: 'nation' | 'state';
+		/** Flat (Web Mercator, which stretches places far from the equator) or a globe, where every place keeps its true size. */
+		shape?: 'flat' | 'globe';
 		/** What the map shows, for screen readers, such as "Nations by State". */
 		label: string;
 		/** One nation's land areas, for its page: the map shows only those, fitted to them, with no place buttons or table to go to. Without it the map shows every nation and fetches its data from /nations/map/tile-map.json. */
@@ -57,9 +61,17 @@
 		camera?: TileMapCamera;
 		onready?: () => void;
 		onfail?: () => void;
+		/** Called with what a selected place goes to: a row's id, or a nation's page (/nations/<id>) for an office with no row. Without it, a row is reached through the address and a page is opened. */
+		onselect?: (anchor: string) => void;
 	} = $props();
 
 	const oneNation = $derived(given !== undefined);
+
+	// The shape can change while the map is open; the style built for each theme carries it too.
+	$effect(() => {
+		const type = shape === 'globe' ? 'globe' : 'mercator';
+		if (ready && map) map.setProjection({ type });
+	});
 
 	let container: HTMLDivElement | undefined = $state();
 	let map: MapLibreMap | undefined;
@@ -313,6 +325,7 @@
 		const origin = location.origin;
 		return {
 			version: 8,
+			projection: { type: shape === 'globe' ? 'globe' : 'mercator' },
 			glyphs: `${origin}/map-tiles/assets/glyphs/{fontstack}/{range}.pbf`,
 			sprite: `${origin}/map-tiles/assets/sprites/${dark ? 'black' : 'white'}`,
 			sources: {
@@ -407,8 +420,9 @@
 	/** Goes to a place's row in the table; the page opens the row and its view (src/routes/nations/map/+page.svelte). */
 	function openRow(anchor: string | undefined): void {
 		if (!anchor) return;
+		if (onselect) onselect(anchor);
 		// An office on a view whose table has no row for it goes to the nation's own page.
-		if (anchor.startsWith('/')) location.assign(anchor);
+		else if (anchor.startsWith('/')) location.assign(anchor);
 		else location.hash = anchor;
 	}
 
@@ -456,7 +470,8 @@
 					...opening,
 					minZoom: 1,
 					maxZoom: 16,
-					cooperativeGestures: true,
+					// The scroll wheel zooms the map whenever the pointer is over it (Trevor, 2026-11-23). On a touch screen one finger still scrolls the page and two move the map, so the map never traps a reader.
+					cooperativeGestures: matchMedia('(pointer: coarse)').matches,
 					dragRotate: false,
 					pitchWithRotate: false,
 					touchPitch: false,
