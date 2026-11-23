@@ -15,10 +15,9 @@
 
 <div class="data-page">
 	<nav aria-label="Breadcrumb" class="small breadcrumb"><a href="/nations">Nations</a> › Data and charts</nav>
-	<h1>Data and charts</h1>
-	<p class="lead">
-		Counts drawn from the nation pages and the laws behind them. Pick any bar to see what it counts: a bar about provisions opens them in <a href="/nations/recourse">Find recourse</a>, and every other bar opens the nations or compacts behind it, each with its source. The buttons at a chart’s top right show it as a table to sort and download.
-	</p>
+	<!-- Title and a one-line lead as the approved mockup has them (design/data-views, Trevor chose it Nov. 23, 2026); the sidebar and breadcrumb keep the page's short name. -->
+	<h1>Dispute resolution in tribal law</h1>
+	<p class="lead">Counts from Native nations’ own laws, courts, constitutions and gaming compacts. Pick a bar to list what it counts.</p>
 	{#each data.charts as chart (chart.identifier)}
 		<BarChart {chart} />
 	{/each}
