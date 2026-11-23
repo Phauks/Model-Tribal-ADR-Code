@@ -110,6 +110,17 @@ The lead author asked on Nov. 22, 2026 that adding an item be easier: "consider 
 
 - **Add.** The "Add…" menu holds Section, Subsection, Paragraph, Case, Law, Quotation box, Analysis, "Picture, video or recording" and Chart. A new section goes after the section the cursor is in, subsections included, with its title selected to type over. A new subsection goes after the subsection the cursor is in, or after the section's opening text. Anything else goes after the paragraph, list or box the cursor is in, never inside it, and takes the place of an empty paragraph. The box buttons in the bar place boxes the same way, and still wrap selected text in a box when text is selected.
 - **Move up and Move down** (Alt+Shift+Up and Alt+Shift+Down) swap the block the cursor is in with its neighbour. On a heading they move the whole section or subsection past the next one of the same level, and a subsection never leaves its section.
+- **Every block is a box.** The lead author asked on Nov. 22, 2026 that no text sit loose: "I don't think we should have any "unboxed text". If the text is just raw, we can put it in a raw text box?" In the editor each top-level block has a dashed frame and a label: Text, Section heading, Subsection heading, List, Numbered list, Table, Quote and Code. Case, law, quotation, analysis and figure boxes keep their own label inside and get the frame only. The block the cursor is in is outlined, and its label carries its number among blocks of its kind, such as "Text · 13", so a writer or reviewer can name it. The frames are drawn by the editor only (`site/src/lib/essays/components.ts`); they change nothing in the essay's Markdown, and readers never see them.
+
+### Attesting to a section
+
+The lead author asked on Nov. 22, 2026 to "allow attestation of authors and editors within sections and sub-sections." Under each section and subsection heading the editor shows who has attested to it, such as "Written by Trevor ✓ Nov. 21, 2026", and an Attest button (`site/src/lib/essays/attestations.ts`, `attestation-lines.ts`).
+
+- **Attesting.** A person chooses "I wrote it", "I edited it" or "I reviewed it", with an optional note. Writing and editing need contribute access to the essay; reviewing needs comment access, so advisors can attest that they reviewed a section. A section's attestation covers its subsections.
+- **What is kept.** Each attestation is a row in D1 (`essay_attestations`) with the section's Markdown as attested and its SHA-256, the person, the role, the note and the time, and an entry in the activity log. Attesting again adds a new row, and the newest per person and role is the one shown. A row is never changed or deleted, except that its person, or someone with full access, can mark it withdrawn.
+- **When the text changes.** The editor hashes each section as it stands. When that no longer matches an attestation, the line keeps the attestation and says "text changed since" with its date, until the person attests again. Undoing the change brings the check mark back.
+- **Which section.** A section is named by its heading's id on the essay page, so renaming a heading starts its attestations afresh; the old ones stay in the record under the old id.
+- Still to come: showing the current attestations to readers under each heading on the published page and in the book.
 
 ### Pictures, videos and recordings
 

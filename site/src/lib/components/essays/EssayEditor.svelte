@@ -31,10 +31,14 @@
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
 	import { boxParts, casePartOrder, citationReferences, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
+	import { componentFrames } from '#lib/essays/components.ts';
 	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
 	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
+	import EssayAttestDialog from '#lib/components/essays/EssayAttestDialog.svelte';
+	import { attestationLines, setAttestationLines } from '#lib/essays/attestation-lines.ts';
+	import { essaySections, sectionText, sha256Hex, type Attestation } from '#lib/essays/attestations.ts';
 	import EssaySources from '#lib/components/essays/EssaySources.svelte';
 	import EssaySourceLinks from '#lib/components/essays/EssaySourceLinks.svelte';
 	import { citationWithoutAddress, type SourceDocuments } from '#lib/essays/source-documents.ts';
@@ -161,6 +165,57 @@
 	}
 	const sourceLabels = $derived(new Map((library?.sources ?? []).map(([key, label]) => [key, citationWithoutAddress(label)])));
 	let showSources = $state(false);
+
+	/* Attesting to sections (attestations.ts) ------------------------------ */
+
+	let attestDialog: ReturnType<typeof EssayAttestDialog> | undefined = $state();
+	let attestations = $state<Attestation[]>([]);
+	let attestationsLoaded = $state(false);
+	let attestingPerson = $state<string | null>(null);
+	let canWriteOrEdit = $state(false);
+	let hashTimer: ReturnType<typeof setTimeout> | undefined;
+
+	async function loadAttestations(): Promise<void> {
+		const response = await fetch(`/workspace/essays/${identifier}/attestations`).catch(() => null);
+		if (!response?.ok) return;
+		const body = (await response.json()) as { attestations: Attestation[]; you: string; canWriteOrEdit: boolean };
+		attestingPerson = body.you;
+		canWriteOrEdit = body.canWriteOrEdit;
+		attestationsChanged(body.attestations);
+	}
+
+	function attestationsChanged(updated: Attestation[]): void {
+		attestations = updated;
+		attestationsLoaded = true;
+		if (view) setAttestationLines(view, { attestations: updated, loaded: true });
+	}
+
+	/** Each section's SHA-256 as the text stands, so the lines can say when it changed since an attestation. */
+	async function sectionHashes(): Promise<Record<string, string>> {
+		if (!view) return {};
+		const doc = view.state.doc;
+		const hashes: Record<string, string> = {};
+		for (const section of essaySections(doc)) hashes[section.slug] = await sha256Hex(sectionText(doc, section));
+		return hashes;
+	}
+
+	function refreshHashesSoon(): void {
+		clearTimeout(hashTimer);
+		hashTimer = setTimeout(async () => {
+			const doc = view?.state.doc;
+			const hashes = await sectionHashes();
+			if (view && view.state.doc === doc) setAttestationLines(view, { hashes });
+		}, 600);
+	}
+
+	async function openAttest(slug: string): Promise<void> {
+		if (!view) return;
+		const doc = view.state.doc;
+		const section = essaySections(doc).find((candidate) => candidate.slug === slug);
+		if (!section) return;
+		const text = sectionText(doc, section);
+		await attestDialog?.show({ slug, title: section.title, level: section.level, text, sha256: await sha256Hex(text) });
+	}
 
 	/* Checks and Go to ------------------------------------------------------- */
 
@@ -562,6 +617,7 @@
 					if (!editorView.state.doc.eq(previous.doc)) {
 						markChanged();
 						revision += 1;
+						refreshHashesSoon();
 					}
 					describe(editorView.state);
 				}
@@ -606,6 +662,8 @@
 					? [ySyncPlugin(room.fragment, { mapping: shared.mapping }), yCursorPlugin(room.awareness), yUndoPlugin()]
 					: [history()]),
 				checkMarks(),
+				componentFrames(),
+				attestationLines((slug) => void openAttest(slug)),
 				tracker
 			]
 		});
@@ -631,6 +689,8 @@
 			}
 		});
 		describe(view.state);
+		if (attestationsLoaded) setAttestationLines(view, { attestations, loaded: true });
+		refreshHashesSoon();
 	}
 
 	/** The body as Markdown, written so untouched paragraphs keep their exact text. */
@@ -977,6 +1037,7 @@
 	onMount(() => {
 		mountEditor(initial.body);
 		dirty = false;
+		void loadAttestations();
 		if (untrack(() => live)) void joinRoom();
 		const kept = canEdit ? localDraft(identifier) : null;
 		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
@@ -992,6 +1053,7 @@
 		closed = true;
 		clearTimeout(autoSaveTimer);
 		clearTimeout(joinTimer);
+		clearTimeout(hashTimer);
 		if (room) {
 			// The room saves 5 seconds after the last person leaves; only text it never received needs a copy.
 			if (inRoom && liveStatus?.state !== 'live' && unsaved()) keepLocalDraft(identifier, currentFile(), basedOn);
@@ -1276,6 +1338,7 @@
 </div>
 
 <EssayFigureDialog bind:this={figureDialog} essay={identifier} onadd={addFigure} />
+<EssayAttestDialog bind:this={attestDialog} essay={identifier} {attestations} you={attestingPerson} {canWriteOrEdit} onchange={attestationsChanged} />
 
 <dialog bind:this={pickerDialog} class="picker" onclose={() => (picker = null)} aria-labelledby="picker-heading">
 	{#if picker}
@@ -1466,6 +1529,76 @@
 
 	.editor-area :global(.essay-term-chip) {
 		text-decoration: underline dotted;
+	}
+
+	/* Every block is a component with a frame and a label (components.ts), so no text sits loose on the page. */
+	.editor-area :global(.ProseMirror > .essay-component) {
+		position: relative;
+		margin-top: calc(2 * var(--space-2) + 1.25rem);
+		outline: 1px dashed var(--color-line);
+		outline-offset: var(--space-2);
+		border-radius: var(--radius-control);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component-boxed) {
+		border-radius: var(--radius-panel);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component.is-current) {
+		outline: 2px solid var(--color-link);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component[data-component]::before) {
+		content: attr(data-component);
+		position: absolute;
+		top: calc(-1 * var(--space-2) - 0.75em);
+		left: var(--space-2);
+		padding: 0 var(--space-1);
+		background: var(--color-paper);
+		font-size: 0.75rem;
+		font-style: normal;
+		font-weight: var(--font-weight-semibold);
+		line-height: 1.5;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		text-indent: 0;
+		color: var(--color-ink-muted);
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component.is-current::before) {
+		color: var(--color-link);
+	}
+
+	/* Who attested to each section, under its heading (attestation-lines.ts). */
+	.editor-area :global(.essay-attestations) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1) var(--space-4);
+		margin: var(--space-3) 0 0;
+		font-size: var(--font-size-small);
+		font-style: normal;
+		text-indent: 0;
+		color: var(--color-ink-muted);
+	}
+
+	.editor-area :global(.essay-attestation strong) {
+		color: var(--color-ink);
+	}
+
+	.editor-area :global(.essay-attestation-date) {
+		color: var(--color-link);
+	}
+
+	.editor-area :global(.essay-attestation.is-changed .essay-attestation-date) {
+		color: var(--color-action);
+	}
+
+	.editor-area :global(.essay-attest-button) {
+		font-size: var(--font-size-small);
+		padding: 0 var(--space-2);
 	}
 
 	.editor-area :global(.ProseMirror-selectednode) {
