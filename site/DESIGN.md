@@ -86,6 +86,7 @@ Addresses reuse the identifiers in the repository, which never change once publi
 | Nation profile | `/nations/<id>` |
 | Native Hawaiian community | `/nations/native-hawaiian` (its own page, never listed as a tribe) |
 | Glossary and entry | `/glossary`, `/glossary/<id>` |
+| Supreme Court and one Court, named for its Chief Justice ("Marshall Court"): the Chief Justice, years and seats; a short history; a chart and table of the Justices; the changes in membership; the cases on this site it decided; References. The Court in a case box links here (Trevor, Nov. 23, 2026) | `/supreme-court`, `/supreme-court/marshall-court` |
 | Sources and source record | `/sources`, `/sources/<key>` |
 | About, charter, methods, credits, licenses, accessibility | `/about/...` |
 | Changelog and requests log | `/changelog`, `/changelog/requests` |
