@@ -32,6 +32,7 @@ Run: python3 scripts/captures/fetch_archived_copies.py REQUEST.json OUT
 Uses only the Python standard library.
 """
 
+import concurrent.futures
 import hashlib
 import json
 import pathlib
@@ -44,7 +45,7 @@ import urllib.request
 
 ALLOWED_HOSTS = {"web.archive.org", "archive.org"}
 HEADERS = {"User-Agent": "model-tribal-adr-code archived-copy fetcher (GitHub Actions)"}
-SECONDS_BETWEEN = 2
+WORKERS = 4
 SECONDS_BETWEEN_SAVES = 20
 MAX_BYTES = 60_000_000
 
@@ -55,9 +56,9 @@ def allowed(url: str) -> bool:
 
 def fetch(url: str) -> tuple[int, bytes, str, str]:
     last = None
-    for attempt in range(3):
+    for attempt in range(2):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=120) as response:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=60) as response:
                 return response.status, response.read(MAX_BYTES + 1), response.headers.get("content-type", ""), response.url
         except urllib.error.HTTPError as error:
             if error.code in (404, 403, 410):
@@ -65,7 +66,7 @@ def fetch(url: str) -> tuple[int, bytes, str, str]:
             last = error
         except Exception as error:  # network trouble: wait and try again
             last = error
-        time.sleep(10 * (attempt + 1))
+        time.sleep(5)
     raise RuntimeError(str(last))
 
 
@@ -77,37 +78,44 @@ def save(url: str) -> dict:
     return {"error": f"Save Page Now answered {status} ({final})"}
 
 
+def fetch_one(item: dict, out: pathlib.Path) -> dict:
+    entry = {"id": item["id"], "address": item.get("url") or item.get("save")}
+    try:
+        if item.get("save"):
+            entry.update(save(item["save"]))
+        elif not allowed(item["url"]):
+            entry["error"] = "not an Internet Archive address; skipped"
+        else:
+            status, body, media, final = fetch(item["url"])
+            entry.update({"status": status, "final": final, "media_type": media, "bytes": len(body)})
+            if len(body) > MAX_BYTES:
+                entry["error"] = "larger than the size limit; not kept"
+            elif status == 200 and body:
+                name = re.sub(r"[^A-Za-z0-9._-]+", "-", item["id"])[:120]
+                (out / "files" / name).write_bytes(body)
+                entry.update({"file": name, "sha256": hashlib.sha256(body).hexdigest()})
+    except Exception as error:
+        entry["error"] = str(error)[:300]
+    print(json.dumps(entry), flush=True)
+    return entry
+
+
 def main() -> None:
     request = json.loads(pathlib.Path(sys.argv[1]).read_text())
     out = pathlib.Path(sys.argv[2])
     (out / "files").mkdir(parents=True, exist_ok=True)
     manifest = []
-    for item in request["items"]:
-        entry = {"id": item["id"]}
-        target = item.get("url") or item.get("save")
-        entry["address"] = target
-        try:
-            if item.get("save"):
-                entry.update(save(item["save"]))
-                time.sleep(SECONDS_BETWEEN_SAVES)
-            else:
-                if not allowed(target):
-                    entry["error"] = "not an Internet Archive address; skipped"
-                else:
-                    status, body, media, final = fetch(target)
-                    entry.update({"status": status, "final": final, "media_type": media, "bytes": len(body)})
-                    if status == 200 and body and len(body) <= MAX_BYTES:
-                        name = re.sub(r"[^A-Za-z0-9._-]+", "-", item["id"])[:120]
-                        (out / "files" / name).write_bytes(body)
-                        entry.update({"file": name, "sha256": hashlib.sha256(body).hexdigest()})
-                    elif len(body) > MAX_BYTES:
-                        entry["error"] = "larger than the size limit; not kept"
-                    time.sleep(SECONDS_BETWEEN)
-        except Exception as error:
-            entry["error"] = str(error)[:300]
-        manifest.append(entry)
-        print(json.dumps(entry))
+    saves = [item for item in request["items"] if item.get("save")]
+    fetches = [item for item in request["items"] if not item.get("save")]
+    # Captures are read a few at a time; Save Page Now requests go one at a time, spaced out.
+    with concurrent.futures.ThreadPoolExecutor(WORKERS) as pool:
+        for entry in pool.map(lambda item: fetch_one(item, out), fetches):
+            manifest.append(entry)
+            (out / "manifest.json").write_text(json.dumps(manifest, indent=1))
+    for item in saves:
+        manifest.append(fetch_one(item, out))
         (out / "manifest.json").write_text(json.dumps(manifest, indent=1))
+        time.sleep(SECONDS_BETWEEN_SAVES)
 
 
 if __name__ == "__main__":

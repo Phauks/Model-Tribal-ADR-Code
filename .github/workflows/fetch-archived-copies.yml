@@ -42,15 +42,24 @@ jobs:
         with:
           python-version: "3.12"
       - name: Fetch the captures each changed request asks for
+        timeout-minutes: 100
         env:
           REQUEST: ${{ inputs.request }}
         run: |
           if [ -n "$REQUEST" ]; then files="$REQUEST"; else
             files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'research/fetch-requests/*.json'); fi
-          mkdir -p sealed
+          echo "$files" > request-files.txt
           for f in $files; do
+            python3 scripts/captures/fetch_archived_copies.py "$f" "out/$(basename "$f" .json)"
+          done
+      # Seals whatever was fetched, even when the fetch step failed or ran out of time.
+      - name: Encrypt the results for the requesting session
+        if: always()
+        run: |
+          mkdir -p sealed
+          for f in $(cat request-files.txt 2>/dev/null); do
             name=$(basename "$f" .json)
-            python3 scripts/captures/fetch_archived_copies.py "$f" "out/$name"
+            [ -d "out/$name" ] || continue
             python3 -c 'import json,sys; open("pub.pem","w").write(json.load(open(sys.argv[1]))["public_key"])' "$f"
             tar -C out -czf "$name.tgz" "$name"
             openssl rand -hex 32 > key.txt
@@ -59,6 +68,7 @@ jobs:
             rm -f key.txt "$name.tgz"
           done
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: archived-copies
           path: sealed/
