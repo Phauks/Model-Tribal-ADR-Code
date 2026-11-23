@@ -4,6 +4,7 @@ import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import { nations } from '#lib/server/content.ts';
 import { glossaryTermSummaries, publishedGlossary } from '#lib/server/glossary-entries.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
+import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { storySummaries } from '#lib/server/stories.ts';
 import type { SearchEntry } from '#lib/site-search.ts';
 import type { RequestHandler } from './$types';
@@ -42,11 +43,13 @@ export const GET: RequestHandler = () => {
 		const showsImage = (record?.official_images ?? []).some(
 			(image) => image.private_copy && imageMayBeShown(image)
 		);
+		const badges = recognitionBadges(record?.recognition ?? []);
 		return {
 			kind: 'nation',
 			title: row.name,
 			...(also.length > 0 ? { also } : {}),
 			detail: [group, row.statesText].filter(Boolean).join(' · '),
+			...(badges.length > 0 ? { badges } : {}),
 			...(showsImage ? { image: imagePath(row.id) } : {}),
 			link: `/nations/${row.id}`
 		};

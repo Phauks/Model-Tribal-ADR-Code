@@ -5,6 +5,7 @@
 	// matches, grouped by kind. Without scripts it says so and offers the
 	// ways to browse.
 	import { onMount } from 'svelte';
+	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
@@ -117,6 +118,7 @@
 						{#if result.matchedName}
 							<span class="small muted">(also called {result.matchedName})</span>
 						{/if}
+						{#if result.badges}<p class="result-badges"><RecognitionBadges badges={result.badges} size="small" /></p>{/if}
 						{#if result.detail}<p class="small muted">{result.detail}</p>{/if}
 					</li>
 				{/each}

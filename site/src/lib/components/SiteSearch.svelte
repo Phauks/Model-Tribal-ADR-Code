@@ -14,6 +14,7 @@
 -->
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import RecognitionBadges from './RecognitionBadges.svelte';
 	import { page } from '$app/state';
 	import { SvelteSet } from 'svelte/reactivity';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
@@ -201,6 +202,7 @@
 												/>{/if}
 											<a href={result.link}>{result.title}</a>
 											{#if result.matchedName}<span class="detail">also called {result.matchedName}</span>{/if}
+											{#if result.badges}<span class="detail"><RecognitionBadges badges={result.badges} size="small" /></span>{/if}
 											{#if result.detail}<span class="detail">{result.detail}</span>{/if}
 										</li>
 									{/each}
