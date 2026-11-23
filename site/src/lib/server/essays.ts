@@ -14,14 +14,29 @@ import { eventStatement } from './events.ts';
 import { now } from './identifiers.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
 
-export const essayParts = ['foundations', 'essays', 'back-matter'] as const;
+export const essayParts = ['foundations', 'essays', 'back-matter', 'about'] as const;
 export type EssayPart = (typeof essayParts)[number];
 
 export const essayPartLabels: Record<EssayPart, string> = {
 	foundations: 'Foundations',
 	essays: 'Essays',
-	'back-matter': 'Back Matter'
+	'back-matter': 'Back Matter',
+	about: 'About the Site'
 };
+
+/**
+ * The pages about the site that are edited like the essays, such as the
+ * About page, by id, with the address each has always had. Each needs its
+ * own route, so new ones are added here and in src/routes, never started in
+ * the workspace (Trevor, Nov. 23, 2026: "Continue with page editing").
+ */
+export const aboutPageAddresses: Record<string, string> = {
+	about: '/about',
+	sponsor: '/sponsor'
+};
+
+/** The parts a new essay can be started in from the workspace. */
+export const startableEssayParts: readonly EssayPart[] = essayParts.filter((part) => part !== 'about');
 
 /** The largest essay file accepted, well above the longest essay (about 250 KB). */
 export const largestEssayBytes = 2_000_000;
@@ -71,11 +86,12 @@ export interface EssaySummary extends EssayRow {
 /**
  * An essay's part, from its id ("i-…" is Part I, the Foundations) or its
  * front matter. Back matter, such as the index of cases by topic, says
- * "part: back-matter".
+ * "part: back-matter", and a page about the site "part: about".
  */
 export function partOf(identifier: string, frontMatter = ''): EssayPart {
 	const part = frontMatterField(frontMatter, 'part');
 	if (part === 'back-matter') return 'back-matter';
+	if (part === 'about') return 'about';
 	if (part === 'i' || identifier.startsWith('i-')) return 'foundations';
 	return 'essays';
 }
@@ -83,6 +99,7 @@ export function partOf(identifier: string, frontMatter = ''): EssayPart {
 /** The address of an essay's page: Part I chapters sit under Foundations, without the "i-". */
 export function essayPath(identifier: string, part: EssayPart): string {
 	if (part === 'foundations') return `/foundations/${identifier.replace(/^i-/, '')}`;
+	if (part === 'about') return aboutPageAddresses[identifier] ?? `/${identifier}`;
 	return part === 'back-matter' ? `/back-matter/${identifier}` : `/essays/${identifier}`;
 }
 
