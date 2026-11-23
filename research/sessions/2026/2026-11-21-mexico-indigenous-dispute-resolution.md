@@ -88,33 +88,14 @@ limits: >-
 
 ## What was searched
 
-Federal Mexican law first, from the Chamber of Deputies' consolidated texts,
-then the Supreme Court's 2022 intercultural protocol and the summaries of the
-cases it relies on, then state Indigenous justice statutes, then the five
-peoples whose lands cross the U.S.-Mexico border (Tohono O'odham, Kickapoo,
-Yaqui, Cocopah/Cucapá, Kumeyaay/Kumiai).
+Federal Mexican law first, from the Chamber of Deputies' consolidated texts, then the Supreme Court's 2022 intercultural protocol and the summaries of the cases it relies on, then state Indigenous justice statutes, then the five peoples whose lands cross the U.S.-Mexico border (Tohono O'odham, Kickapoo, Yaqui, Cocopah/Cucapá, Kumeyaay/Kumiai).
 
 ## What was found
 
-Written up in
-[analyses/2026-11-21-mexico-indigenous-dispute-resolution.md](../../analyses/2026-11-21-mexico-indigenous-dispute-resolution.md).
-In short: article 2 of the Constitution gives Indigenous peoples and
-communities a right to resolve internal conflicts under their own normative
-systems, subject to validation by courts; the national criminal code and the
-2024 general ADR law both defer to community processes; Quintana Roo,
-Chiapas and Yucatán run Indigenous judges with a conciliation-mediation-
-arbitration ladder, while Oaxaca, Puebla and Guerrero validate community
-decisions. Cross-border peoples are governed on the Mexican side through
-traditional authorities and agrarian bodies, with no trust relationship.
+Written up in [analyses/2026-11-21-mexico-indigenous-dispute-resolution.md](../../analyses/2026-11-21-mexico-indigenous-dispute-resolution.md). In short: article 2 of the Constitution gives Indigenous peoples and communities a right to resolve internal conflicts under their own normative systems, subject to validation by courts; the national criminal code and the 2024 general ADR law both defer to community processes; Quintana Roo, Chiapas and Yucatán run Indigenous judges with a conciliation-mediation- arbitration ladder, while Oaxaca, Puebla and Guerrero validate community decisions. Cross-border peoples are governed on the Mexican side through traditional authorities and agrarian bodies, with no trust relationship.
 
 ## What was ruled out or corrected
 
-- A helper first reported the Yaqui aqueduct case as Controversia
-  Constitucional 109/2012 only. Both exist: Amparo en Revisión 631/2012
-  (First Chamber, May 8, 2013) is the tribe's own case, confirmed from the
-  public version of the judgment; CC 109/2012 is the municipality of Cajeme's
-  case.
-- Wikipedia's account of the Mexican Kickapoo and a reported 1985 citizenship
-  option were not used: no primary source was found.
-- The constitution as amended in 2024 has no provision on cross-border
-  peoples; it addresses Indigenous migrants abroad (apartado B, fr. XIII).
+- A helper first reported the Yaqui aqueduct case as Controversia Constitucional 109/2012 only. Both exist: Amparo en Revisión 631/2012 (First Chamber, May 8, 2013) is the tribe's own case, confirmed from the public version of the judgment; CC 109/2012 is the municipality of Cajeme's case.
+- Wikipedia's account of the Mexican Kickapoo and a reported 1985 citizenship option were not used: no primary source was found.
+- The constitution as amended in 2024 has no provision on cross-border peoples; it addresses Indigenous migrants abroad (apartado B, fr. XIII).

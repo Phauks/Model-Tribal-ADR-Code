@@ -24,32 +24,14 @@ sources_added: []
 limits: Pages were read through an automated fetch, which may reformat text; quotations used in docs/contributions.md should be checked against the originals before the forms are approved. The Navajo Nation Human Research Code itself was not read, only the review board's page that cites it. No source records were added because these sources support project documentation, not content.
 ---
 
-Read the Oral History Association's 2018 principles (Best Practices, Statement
-on Ethics, For Participants), the Library of Congress Veterans History Project
-release form, the Society of American Archivists' page on the Protocols for
-Native American Archival Materials, Local Contexts' page on Labels, the
-Reporters Committee's recording guide introduction, the NCAI Policy Research
-Center's 2021 FAQ and research regulation page, 45 C.F.R. § 46.102 and
-16 C.F.R. § 312.2 on eCFR, and UNLV's human subjects rules and SOP 5.02.
+Read the Oral History Association's 2018 principles (Best Practices, Statement on Ethics, For Participants), the Library of Congress Veterans History Project release form, the Society of American Archivists' page on the Protocols for Native American Archival Materials, Local Contexts' page on Labels, the Reporters Committee's recording guide introduction, the NCAI Policy Research Center's 2021 FAQ and research regulation page, 45 C.F.R. § 46.102 and 16 C.F.R. § 312.2 on eCFR, and UNLV's human subjects rules and SOP 5.02.
 
 Findings used in the drafts:
 
-- The OHA separates consent before recording from the legal release, which it
-  prefers "ideally when the interview is completed," and gives narrators the
-  right to review, restrict and redact.
-- The Veterans History Project release is a nonexclusive grant with copyright
-  retained by the veteran, a model for the project's default.
-- 45 C.F.R. § 46.102(l)(1) deems oral history and legal research "that focus
-  directly on the specific individuals" not to be research, but UNLV's rules
-  require researchers to contact its Office of Research Integrity before
-  project activities and give that office the determination. This contradicts
-  the earlier working assumption that no review was needed, so it is flagged
-  as an open question for the lead author.
-- NCAI states that every tribal nation has "the right to tribal approval of
-  research," whatever a university decides.
-- About 11 states primarily require all-party consent to record, so the forms
-  ask everyone present.
+- The OHA separates consent before recording from the legal release, which it prefers "ideally when the interview is completed," and gives narrators the right to review, restrict and redact.
+- The Veterans History Project release is a nonexclusive grant with copyright retained by the veteran, a model for the project's default.
+- 45 C.F.R. § 46.102(l)(1) deems oral history and legal research "that focus directly on the specific individuals" not to be research, but UNLV's rules require researchers to contact its Office of Research Integrity before project activities and give that office the determination. This contradicts the earlier working assumption that no review was needed, so it is flagged as an open question for the lead author.
+- NCAI states that every tribal nation has "the right to tribal approval of research," whatever a university decides.
+- About 11 states primarily require all-party consent to record, so the forms ask everyone present.
 
-Ruled out: copyright assignment as the default (OHA notes some programs ask
-for it; the project prefers that contributors keep their rights, consistent
-with the CARE principle of authority to control).
+Ruled out: copyright assignment as the default (OHA notes some programs ask for it; the project prefers that contributors keep their rights, consistent with the CARE principle of authority to control).

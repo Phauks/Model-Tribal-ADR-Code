@@ -11,7 +11,7 @@ import type { RequestHandler } from './$types';
 export const prerender = false;
 
 export const POST: RequestHandler = async (event) => {
-	await essayAccess(event, 'comment');
+	await essayAccess(event, 'comment', { forData: true });
 	const body = (await event.request.json().catch(() => null)) as { text?: unknown } | null;
 	if (!body || typeof body.text !== 'string' || body.text.length > largestEssayBytes) error(400, 'Send the text to show.');
 	const rendered = await renderWithGenerated(body.text, 'saved');

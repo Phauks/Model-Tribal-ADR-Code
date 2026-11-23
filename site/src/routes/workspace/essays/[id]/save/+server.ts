@@ -13,7 +13,7 @@ import type { RequestHandler } from './$types';
 export const prerender = false;
 
 export const POST: RequestHandler = async (event) => {
-	const { identifier, database, bucket, person } = await essayAccess(event, 'contribute');
+	const { identifier, database, bucket, person } = await essayAccess(event, 'contribute', { forData: true });
 	const body = (await event.request.json().catch(() => null)) as { text?: unknown; basedOn?: unknown; note?: unknown; name?: unknown } | null;
 	if (!body || typeof body.text !== 'string') error(400, 'Send the text to save.');
 	const basedOn = typeof body.basedOn === 'number' ? body.basedOn : null;

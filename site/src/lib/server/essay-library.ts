@@ -11,7 +11,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import CSL from 'citeproc';
 import { escapeHtml, savedCopyLink } from './markdown.ts';
-import { glossary, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
+import { glossary, nationNameVariants, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { sectionWithSymbol } from './citations.ts';
 import { caseItem } from './case-citations.ts';
 import { caseFacts, lawFacts, type CaseRecord, type FactLine } from './case-facts.ts';
@@ -122,6 +122,24 @@ export function caseNames(records: SourceRecord[] = [...sources().values()]): Re
 		names[record.key] = { title: citation.title, date: citation.issued?.['date-parts']?.[0] ?? [] };
 	}
 	return names;
+}
+
+/**
+ * Words the spelling check should know although a general dictionary does
+ * not (src/lib/essays/checks.ts): every word with a capital letter or a
+ * letter outside A to Z in the names of nations, glossary terms and court
+ * cases, such as "Mashantucket" or "Diné".
+ */
+export function spellingWords(records: SourceRecord[] = [...sources().values()]): string[] {
+	const names = [...nationNameVariants(), ...Object.values(glossaryTerms()), ...Object.values(caseNames(records)).map((name) => name.title)];
+	const words = new Set<string>();
+	for (const name of names) {
+		for (const word of name.normalize('NFC').split(/[^\p{L}\p{M}'’]+/u)) {
+			const trimmed = word.replace(/^['’]+|['’]+$/g, '').replace(/['’]s$/, '');
+			if (trimmed.length > 1 && /[\p{Lu}]|[^\p{ASCII}]/u.test(trimmed)) words.add(trimmed);
+		}
+	}
+	return [...words].sort((first, second) => first.localeCompare(second, 'en-US'));
 }
 
 /** Source types a law box can name: statutes, codes, regulations, treaties and bills. */

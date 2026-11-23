@@ -18,6 +18,11 @@ declare module 'virtual:review-subjects' {
 	}[];
 }
 
+declare module 'virtual:public-contacts' {
+	/** The office emails and phones each published nation page shows, with their sources, listed at build time. */
+	export const publicNationContacts: import('#lib/address-book-sync.ts').PublicNationContacts[];
+}
+
 declare module 'virtual:nation-images' {
 	/** The nations' official images the Worker may serve, listed at build time. */
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];
@@ -47,6 +52,8 @@ declare module 'virtual:essay-library' {
 	export const essaysInGit: Record<string, string>;
 	/** Each court case's name and decision date, by source key. */
 	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
+	/** Words the spelling check should accept: names of nations, glossary terms and court cases. */
+	export const essaySpellingWords: string[];
 }
 
 declare module 'virtual:forms' {

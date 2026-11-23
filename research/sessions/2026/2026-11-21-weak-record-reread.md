@@ -40,50 +40,29 @@ limits: >-
 
 ## Result
 
-Of 18 records re-read, 8 were supported as recorded and 10 were corrected.
-Three supported records still changed: two notes or titles were updated, and
-the Yakutat training record was removed because its source does not name the
-Tribe.
+Of 18 records re-read, 8 were supported as recorded and 10 were corrected. Three supported records still changed: two notes or titles were updated, and the Yakutat training record was removed because its source does not name the Tribe.
 
 ## Corrections
 
-- Central Council of the Tlingit & Haida Indian Tribes: the youth forum is the
-  Youth Healing to Wellness Court, cited to the Tribe's own page (new source).
-- Little River Band of Ottawa Indians: the peacemaking forum gains its legal
-  basis, date (May 29, 2008) and locator.
-- Little Traverse Bay Bands of Odawa Indians: the Mnodaawin description now
-  says the circles take civil disputes and other types of cases.
-- Mashpee Wampanoag Tribe: the Peacemaker Court rules are retitled as Chapter 3
-  of the Tribal Judiciary Ordinance; notes on both materials are updated.
-- Minnesota Chippewa Tribe (White Earth Band of Ojibwe): the Panel of Elders
-  forum and provision are dated to the Tribal Council's adoption on Nov. 3,
-  1997, not the 2021 scan.
-- Navajo Nation: the referral form and the plan of operations now cite the
-  Judicial Branch's own copies (two new sources); the brochure title and note
-  are corrected.
-- Snoqualmie Indian Tribe: the Peacemaker Court gains its legal basis and date
-  (Aug. 7, 2013).
-- Tulalip Tribes of Washington: the Alternative Court Code amendment cites
-  Resolution 2024-473 (new source) with its date (Oct. 4, 2024).
+- Central Council of the Tlingit & Haida Indian Tribes: the youth forum is the Youth Healing to Wellness Court, cited to the Tribe's own page (new source).
+- Little River Band of Ottawa Indians: the peacemaking forum gains its legal basis, date (May 29, 2008) and locator.
+- Little Traverse Bay Bands of Odawa Indians: the Mnodaawin description now says the circles take civil disputes and other types of cases.
+- Mashpee Wampanoag Tribe: the Peacemaker Court rules are retitled as Chapter 3 of the Tribal Judiciary Ordinance; notes on both materials are updated.
+- Minnesota Chippewa Tribe (White Earth Band of Ojibwe): the Panel of Elders forum and provision are dated to the Tribal Council's adoption on Nov. 3, 1997, not the 2021 scan.
+- Navajo Nation: the referral form and the plan of operations now cite the Judicial Branch's own copies (two new sources); the brochure title and note are corrected.
+- Snoqualmie Indian Tribe: the Peacemaker Court gains its legal basis and date (Aug. 7, 2013).
+- Tulalip Tribes of Washington: the Alternative Court Code amendment cites Resolution 2024-473 (new source) with its date (Oct. 4, 2024).
 
 ## Superseded source
 
-The source record `web-search-tulalip-alternative-court-2026-11-21`, a search
-result whose link had returned 404, is removed. It shared its address with the
-new Resolution 2024-473 record, which now carries the Tulalip provision.
+The source record `web-search-tulalip-alternative-court-2026-11-21`, a search result whose link had returned 404, is removed. It shared its address with the new Resolution 2024-473 record, which now carries the Tulalip provision.
 
-Each changed fact now states `verification: read-in-full`, as decision record
-0014 requires.
+Each changed fact now states `verification: read-in-full`, as decision record 0014 requires.
 
 ## Removed
 
-The Yakutat Tlingit Tribe training record cited a Native American Rights Fund
-event page that announces a peace circle facilitator training in Yakutat but
-does not name the Tribe. The record was removed from the profile and the
-source no longer lists the Tribe.
+The Yakutat Tlingit Tribe training record cited a Native American Rights Fund event page that announces a peace circle facilitator training in Yakutat but does not name the Tribe. The record was removed from the profile and the source no longer lists the Tribe.
 
 ## For the lead author
 
-The Organized Village of Kake code describes the peacemaking court's ties to a
-named clan. The passage is published law, but the profile could summarize it
-more briefly under the CARE principles; this is left for the lead author.
+The Organized Village of Kake code describes the peacemaking court's ties to a named clan. The passage is published law, but the profile could summarize it more briefly under the CARE principles; this is left for the lead author.

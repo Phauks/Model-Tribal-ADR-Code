@@ -1,7 +1,7 @@
 profile: content/tribes/s/shoshone-paiute-tribes-of-the-duck-valley-reservation.yaml
 topic: gaming-dispute-procedures
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -23,6 +23,37 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2012-07-16 has no text layer on most pages (34 of 34 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned ordinance listed 2012-07-16 (https://www.nigc.gov/wp-content/uploads/2025/03/shoshonepaiutetrb-20120716LtrtoTrefrNIGCreOrdaplShoshonePaiute.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2012-07-16 (https://www.nigc.gov/wp-content/uploads/2025/03/ShoshonePaiute20120716.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/shoshonepaiutetrb-20120716LtrtoTrefrNIGCreOrdaplShoshonePaiute.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-34 of 34 of this ordinance listed 2012-07-16 as page
+    images (it has no text layer) and recorded 4 procedure(s): employee-grievance, licensing-hearing,
+    patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-paiute-tribes-ordinance-2012-07-16#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-paiute-tribes-ordinance-2012-07-16#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-paiute-tribes-ordinance-2012-07-16#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-paiute-tribes-ordinance-2012-07-16#p4
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/ShoshonePaiute20120716.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-34 of 34 of this amendment listed 2012-07-16 as page
+    images (it has no text layer) and recorded 4 procedure(s): employee-grievance, licensing-hearing,
+    patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-paiute-tribes-amendment-2012-07-16#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-paiute-tribes-amendment-2012-07-16#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-paiute-tribes-amendment-2012-07-16#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-paiute-tribes-amendment-2012-07-16#p4
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.
