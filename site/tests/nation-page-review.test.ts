@@ -18,6 +18,8 @@ import {
 	undoneChanges
 } from '#lib/server/nation-page-review.ts';
 import { addPlace } from '#lib/server/nation-teams.ts';
+import { defaultFilters } from '#lib/page-history.ts';
+import { changeDetail, listChanges } from '#lib/server/page-history.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { testDatabase } from './database.ts';
 
@@ -136,5 +138,32 @@ describe('the project’s review in the database', () => {
 		]);
 		await sealNewEntries(database);
 		expect((await checkSeals(database)).intact).toBe(true);
+	});
+
+	it('lists live changes in Recent changes by part and the name the team gave, never the words', async () => {
+		await publishChange(database, about('Our words.'), editor, new Date('2026-11-20T00:00:00Z'));
+		await publishChange(database, about('Undone words.'), editor, new Date('2026-11-21T00:00:00Z'));
+		// Contacts published in 2099 are not live yet, so they are not listed.
+		await publishChange(
+			database,
+			{ nationIdentifier: navajo, kind: 'contacts', content: { contacts: [{ office: 'Courts', kind: 'email', value: 'courts@navajo.example' }] }, credit: 'Navajo Nation' },
+			editor,
+			new Date('2099-01-01T00:00:00Z')
+		);
+		const undone = (await reviewQueue(database)).find((change) => (change.content as { text?: string }).text === 'Undone words.');
+		if (!undone) throw new Error('missing');
+		await undoChange(database, undone, lead, 'Not for the page.');
+
+		const all = { ...defaultFilters, days: 0, showBulk: true };
+		const list = await listChanges(database, all, new Map());
+		const nationChanges = list.changes.filter((change) => change.id.startsWith('nation-'));
+		expect(nationChanges).toHaveLength(1);
+		expect(nationChanges[0]).toMatchObject({ address: `/nations/${navajo}`, kind: 'nation', parts: ['About'], who: 'Navajo Nation', comparable: false });
+		expect(JSON.stringify(nationChanges)).not.toContain('Our words');
+		expect(list.people.map((person) => person.key)).toContain('nation-teams');
+		const onlyTeams = await listChanges(database, { ...all, who: 'nation-teams' }, new Map());
+		expect(onlyTeams.changes.map((change) => change.id)).toEqual([nationChanges[0].id]);
+		const detail = await changeDetail(database, undefined as never, nationChanges[0].id, new Map());
+		expect(detail?.comparison.kind).toBe('parts');
 	});
 });
