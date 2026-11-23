@@ -3,6 +3,7 @@ import { receiveMail } from '#lib/server/mail/inbound.ts';
 import { isMailRun } from '#lib/server/mail/internal-run.ts';
 import { sendNewMailNotice } from '#lib/server/mail/outbound.ts';
 import { mailCarriers, mailContext } from '#lib/server/mail/runtime.ts';
+import { sendAwayReply } from '#lib/server/mail/writing.ts';
 import type { RequestHandler } from './$types';
 
 // One message from Cloudflare Email Routing. The Worker's email handler
@@ -22,6 +23,10 @@ export const POST: RequestHandler = async ({ request, url }) => {
 	if (result.outcome === 'filed' && result.notify) {
 		// A notice that fails is logged; the message is already filed.
 		await sendNewMailNotice(context, mailCarriers(context)).catch((problem) => console.error('The new-mail notice failed', problem));
+	}
+	if (result.outcome === 'filed' && result.answerable) {
+		// The away message, when it is on (src/lib/server/mail/writing.ts); like the notice, a failure only gets logged.
+		await sendAwayReply(context, mailCarriers(context), result).catch((problem) => console.error('The away message failed', problem));
 	}
 	return json(result, { headers: { 'cache-control': 'no-store' } });
 };
