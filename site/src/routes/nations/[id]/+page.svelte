@@ -123,6 +123,13 @@
 			{/if}
 		</Collapsible>
 
+		<!-- 6a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
+		{#if data.ties.length > 0}
+			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
+				<FactGroups groups={data.ties} />
+			</Collapsible>
+		{/if}
+
 		<!-- 7. Other nations in the same states: plain lists, never a ranking -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">

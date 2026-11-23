@@ -236,6 +236,34 @@ gaming:
       as "Fond du Lac Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant. Ordinance
       of the Fond du Lac Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
       only the Minnesota Chippewa Tribe.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Minnesota is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil) extend state jurisdiction to all Indian country within Minnesota. Applies to the nation''s Indian country within Minnesota; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  verification: inferred
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Minnesota"
+  note: Statute is primary; nation placed in Minnesota by the Census Bureau's land areas, so confidence is medium. Cited jointly with us-code-title-28-section-1360. Added on 2026-11-23 where the profile had no fact for this state (for example a band split out of a combined record).
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Wisconsin is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil) extend state jurisdiction to all Indian country within Wisconsin. Applies to the nation''s Indian country within Wisconsin; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  verification: inferred
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
+  note: Statute is primary; nation placed in Wisconsin by the Census Bureau's land areas, so confidence is medium. Cited jointly with us-code-title-28-section-1360. Added on 2026-11-23 where the profile had no fact for this state (for example a band split out of a combined record).
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-05-26'
+  locator: 91 FR 30694 (Tribe column of the designated agent table)
+  note: 'Listed as: Minnesota Chippewa Tribe - Fond du Lac Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands'' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table).'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -1,0 +1,23 @@
+profile: content/tribes/h/houlton-band-of-maliseet-indians.yaml
+topic: jurisdiction
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: federal-list
+  address: https://www.bia.gov/faqs/what-public-law-280-and-where-does-it-apply
+  query: 'scripts/jurisdiction/public_law_280_gaps.py: the nation''s states against the mandatory and optional Public Law 280 states'
+  outcome: found
+  reason: Public Law 280 status recorded for Maine.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.justice.gov/ovw/media/1377361/dl?inline=
+  query: Tribes exercising or funded for special Tribal criminal jurisdiction (Violence Against Women Act)
+  outcome: found
+  reason: Received a Justice Department Tribal Jurisdiction Program grant (fiscal year 2024) for special Tribal criminal jurisdiction.
+  records:
+  - research/raw/2026-11-23/violence-against-women-act-jurisdiction.json#houlton-band-of-maliseet-indians

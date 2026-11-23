@@ -1,0 +1,187 @@
+{
+ "session": "2026-11-23-jurisdiction-and-federal-ties",
+ "facts": [
+  {
+   "profile": "bois-forte-band",
+   "key": "jurisdiction",
+   "fact": {
+    "topic": "indian-child-welfare-act",
+    "value": "designated-agent-listed",
+    "detail": "Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.",
+    "source": "federal-register-2026-indian-child-welfare-act-designated-tribal-agents",
+    "confidence": "medium",
+    "verification": "bulk-import",
+    "as_of": "2026-05-26",
+    "locator": "91 FR 30694 (Tribe column of the designated agent table)",
+    "note": "Listed as: Minnesota Chippewa Tribe - Bois Forte Band (Nett Lake). Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table)."
+   }
+  },
+  {
+   "profile": "fond-du-lac-band",
+   "key": "jurisdiction",
+   "fact": {
+    "topic": "indian-child-welfare-act",
+    "value": "designated-agent-listed",
+    "detail": "Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.",
+    "source": "federal-register-2026-indian-child-welfare-act-designated-tribal-agents",
+    "confidence": "medium",
+    "verification": "bulk-import",
+    "as_of": "2026-05-26",
+    "locator": "91 FR 30694 (Tribe column of the designated agent table)",
+    "note": "Listed as: Minnesota Chippewa Tribe - Fond du Lac Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table)."
+   }
+  },
+  {
+   "profile": "grand-portage-band",
+   "key": "jurisdiction",
+   "fact": {
+    "topic": "indian-child-welfare-act",
+    "value": "designated-agent-listed",
+    "detail": "Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.",
+    "source": "federal-register-2026-indian-child-welfare-act-designated-tribal-agents",
+    "confidence": "medium",
+    "verification": "bulk-import",
+    "as_of": "2026-05-26",
+    "locator": "91 FR 30694 (Tribe column of the designated agent table)",
+    "note": "Listed as: Minnesota Chippewa Tribe - Grand Portage Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table)."
+   }
+  },
+  {
+   "profile": "leech-lake-band",
+   "key": "jurisdiction",
+   "fact": {
+    "topic": "indian-child-welfare-act",
+    "value": "designated-agent-listed",
+    "detail": "Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.",
+    "source": "federal-register-2026-indian-child-welfare-act-designated-tribal-agents",
+    "confidence": "medium",
+    "verification": "bulk-import",
+    "as_of": "2026-05-26",
+    "locator": "91 FR 30694 (Tribe column of the designated agent table)",
+    "note": "Listed as: Minnesota Chippewa Tribe - Leech Lake Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table)."
+   }
+  },
+  {
+   "profile": "mille-lacs-band",
+   "key": "jurisdiction",
+   "fact": {
+    "topic": "indian-child-welfare-act",
+    "value": "designated-agent-listed",
+    "detail": "Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.",
+    "source": "federal-register-2026-indian-child-welfare-act-designated-tribal-agents",
+    "confidence": "medium",
+    "verification": "bulk-import",
+    "as_of": "2026-05-26",
+    "locator": "91 FR 30694 (Tribe column of the designated agent table)",
+    "note": "Listed as: Minnesota Chippewa Tribe - Mille Lacs Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table)."
+   }
+  },
+  {
+   "profile": "white-earth-band",
+   "key": "jurisdiction",
+   "fact": {
+    "topic": "indian-child-welfare-act",
+    "value": "designated-agent-listed",
+    "detail": "Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.",
+    "source": "federal-register-2026-indian-child-welfare-act-designated-tribal-agents",
+    "confidence": "medium",
+    "verification": "bulk-import",
+    "as_of": "2026-05-26",
+    "locator": "91 FR 30694 (Tribe column of the designated agent table)",
+    "note": "Listed as: Minnesota Chippewa Tribe - White Earth Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table)."
+   }
+  }
+ ],
+ "searches": [
+  {
+   "profile": "bois-forte-band",
+   "topic": "jurisdiction",
+   "status": "found",
+   "entry": {
+    "date": "2026-11-23",
+    "searched_by": "Claude (AI assistant)",
+    "method": "ai-review",
+    "place_kind": "federal-register",
+    "address": "https://www.federalregister.gov/documents/2026/05/26/2026-10420/indian-child-welfare-act-designated-tribal-agents-for-service-of-notice",
+    "query": "The band's own row in the designated agent table",
+    "outcome": "found",
+    "reason": "The table lists \"Minnesota Chippewa Tribe - Bois Forte Band (Nett Lake)\" with its own agent (91 FR 30694)."
+   }
+  },
+  {
+   "profile": "fond-du-lac-band",
+   "topic": "jurisdiction",
+   "status": "found",
+   "entry": {
+    "date": "2026-11-23",
+    "searched_by": "Claude (AI assistant)",
+    "method": "ai-review",
+    "place_kind": "federal-register",
+    "address": "https://www.federalregister.gov/documents/2026/05/26/2026-10420/indian-child-welfare-act-designated-tribal-agents-for-service-of-notice",
+    "query": "The band's own row in the designated agent table",
+    "outcome": "found",
+    "reason": "The table lists \"Minnesota Chippewa Tribe - Fond du Lac Band\" with its own agent (91 FR 30694)."
+   }
+  },
+  {
+   "profile": "grand-portage-band",
+   "topic": "jurisdiction",
+   "status": "found",
+   "entry": {
+    "date": "2026-11-23",
+    "searched_by": "Claude (AI assistant)",
+    "method": "ai-review",
+    "place_kind": "federal-register",
+    "address": "https://www.federalregister.gov/documents/2026/05/26/2026-10420/indian-child-welfare-act-designated-tribal-agents-for-service-of-notice",
+    "query": "The band's own row in the designated agent table",
+    "outcome": "found",
+    "reason": "The table lists \"Minnesota Chippewa Tribe - Grand Portage Band\" with its own agent (91 FR 30694)."
+   }
+  },
+  {
+   "profile": "leech-lake-band",
+   "topic": "jurisdiction",
+   "status": "found",
+   "entry": {
+    "date": "2026-11-23",
+    "searched_by": "Claude (AI assistant)",
+    "method": "ai-review",
+    "place_kind": "federal-register",
+    "address": "https://www.federalregister.gov/documents/2026/05/26/2026-10420/indian-child-welfare-act-designated-tribal-agents-for-service-of-notice",
+    "query": "The band's own row in the designated agent table",
+    "outcome": "found",
+    "reason": "The table lists \"Minnesota Chippewa Tribe - Leech Lake Band\" with its own agent (91 FR 30694)."
+   }
+  },
+  {
+   "profile": "mille-lacs-band",
+   "topic": "jurisdiction",
+   "status": "found",
+   "entry": {
+    "date": "2026-11-23",
+    "searched_by": "Claude (AI assistant)",
+    "method": "ai-review",
+    "place_kind": "federal-register",
+    "address": "https://www.federalregister.gov/documents/2026/05/26/2026-10420/indian-child-welfare-act-designated-tribal-agents-for-service-of-notice",
+    "query": "The band's own row in the designated agent table",
+    "outcome": "found",
+    "reason": "The table lists \"Minnesota Chippewa Tribe - Mille Lacs Band\" with its own agent (91 FR 30694)."
+   }
+  },
+  {
+   "profile": "white-earth-band",
+   "topic": "jurisdiction",
+   "status": "found",
+   "entry": {
+    "date": "2026-11-23",
+    "searched_by": "Claude (AI assistant)",
+    "method": "ai-review",
+    "place_kind": "federal-register",
+    "address": "https://www.federalregister.gov/documents/2026/05/26/2026-10420/indian-child-welfare-act-designated-tribal-agents-for-service-of-notice",
+    "query": "The band's own row in the designated agent table",
+    "outcome": "found",
+    "reason": "The table lists \"Minnesota Chippewa Tribe - White Earth Band\" with its own agent (91 FR 30694)."
+   }
+  }
+ ]
+}

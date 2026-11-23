@@ -198,6 +198,22 @@ One court of a group that sources also list as a whole, such as one of the Navaj
 
 A court's `appeals_to` names the court that hears appeals from it, written exactly as that court's `name` is written in the same profile, and carries its own citation: the constitution, court code or court website that says where appeals go. The highest court has no `appeals_to`. The field is filled only from a source that says so and is never worked out from a court's name or kind; when a search finds nothing, the search goes in the nation's search log under the topic `courts` ([decision record 0025](decisions/0025-search-logs.md)). The nation's page uses these facts to show how appeals move, from the court that hears a case first to the highest court, and groups the nation's courts and services under one heading for each kind of service (Courts, Peacemaking, Mediation and so on), so the kind is not repeated after each name.
 
+### Jurisdiction and federal ties
+
+`jurisdiction` holds facts on who has authority over what, each with a `topic`, a short `value` and a plain-English `detail` that ends in, or rests on, its citation. The page groups them by topic in this order:
+
+| Topic | Values |
+| --- | --- |
+| `public-law-280` | `mandatory-state` (18 U.S.C. § 1162(a), 28 U.S.C. § 1360(a)), `excepted` (a reservation the statute leaves out), `optional-state` (a state that chose to take some jurisdiction), `optional-state-consent-not-given`, `assumption-held-invalid`, `retroceded` (returned to the United States and the nation), `concurrent-federal-jurisdiction-accepted` (18 U.S.C. § 1162(d)), `not-a-public-law-280-state` (a state on neither of the Bureau of Indian Affairs' lists) |
+| `state-jurisdiction-statute` | A federal law other than Public Law 280 that gives a state jurisdiction, such as the Kansas Act or a land claims settlement act: `state-criminal-jurisdiction`, `state-civil-jurisdiction`, `state-criminal-and-civil-jurisdiction`, `repealed` |
+| `violence-against-women-act-special-tribal-criminal-jurisdiction` | `exercising`; `implementation-grant` for a Tribal Jurisdiction Program grant, which can fund planning and so never counts as exercising |
+| `tribal-law-and-order-act-enhanced-sentencing` | `implementing` |
+| `indian-child-welfare-act` | `designated-agent-listed`, `reassumed-jurisdiction` |
+
+Public Law 280 facts apply to the nation's Indian country in the state the detail names. When the profile places the nation in a state only by its office address, the fact is medium confidence. A negative (`not-a-public-law-280-state`) is inferred from an official list and says so in its note.
+
+`treaties` lists ratified United States treaties signed by the nation or the tribes and bands it descends from, each with its title as Kappler gives it, the date signed, the Statutes at Large citation and a link to the text in Kappler's *Indian Affairs: Laws and Treaties*. `signatory` copies how the treaty names the party; a link from a historic signatory to a modern nation is a matched fact with its own confidence. `land_establishment` records how a reservation or other land base was set aside (treaty, executive order, act of Congress, agreement, proclamation, purchase) and the instrument. `indian_health_service` records the Indian Health Service Area and, where the Service names it, the service unit and whether the nation or a Tribal organization runs it. The page shows these three under "Treaties and federal ties"; the Bureau of Indian Affairs region stays in At a glance.
+
 ### Names and languages
 
 Names in a nation's own language are kept exactly as the nation writes them,
