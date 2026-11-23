@@ -90,6 +90,11 @@ export function assembleBook({ book, content: records }) {
           .filter(Boolean)
           .join(" "),
       );
+      // A short quotation from a law dictionary; the note names the entry (site/src/lib/server/glossary-entries.ts).
+      for (const quotation of entry.law_dictionary || []) {
+        const dictionary = sources[quotation.source]?.["container-title"] ?? "Law dictionary";
+        text.push(`*${dictionary}:* “${quotation.quote}” [@${quotation.source}]`);
+      }
       if (entry.usage_note) text.push(`*As used here.* ${entry.usage_note}`);
       if (entry.use_instead && entry.use_instead.length) {
         text.push(`*Use instead:* ${entry.use_instead.map((id) => `[[${id}]]`).join(", ")}.`);

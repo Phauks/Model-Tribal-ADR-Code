@@ -304,6 +304,7 @@ function sourceCitations(): Plugin {
 			const keys = new Set<string>();
 			for (const entry of glossary()) {
 				for (const key of entry.sources ?? []) keys.add(key);
+				for (const quotation of entry.law_dictionary ?? []) keys.add(quotation.source);
 				const prose = `${entry.definition} ${entry.usage_note ?? ''}`;
 				for (const match of prose.matchAll(/@([a-z0-9-]+)/g)) keys.add(match[1]);
 			}

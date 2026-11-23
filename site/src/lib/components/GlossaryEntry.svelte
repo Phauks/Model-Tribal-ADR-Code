@@ -1,7 +1,8 @@
 <script lang="ts">
 	// One glossary entry, laid out as a dictionary entry: the headword in bold,
 	// an italic label for the part of speech, the usage label, other forms,
-	// then the senses, each numbered. "As used here" follows as a usage paragraph, then the
+	// then the senses, each numbered, and a short quotation from a law
+	// dictionary where the entry has one. "As used here" follows as a usage paragraph, then the
 	// cross-references in small capitals. The glossary page shows every entry
 	// with it, and each entry's own page shows one
 	// (src/lib/server/glossary-entries.ts). The entry's id is its anchor on the
@@ -77,6 +78,14 @@
 			</li>
 		{/each}
 	</ol>
+
+	{#each entry.lawDictionary as quotation (quotation.headword)}
+		<div class="law-dictionary">
+			<span class="cross-reference-label">{quotation.dictionary}</span>
+			<i class="law-dictionary-headword">{quotation.headword}</i>
+			{@html quotation.quotation}
+		</div>
+	{/each}
 
 	{#if entry.codeDefinition}
 		<aside class="code-definition" aria-label="Definition in the model code">
@@ -244,6 +253,18 @@
 
 	.sense-text :global(p + p) {
 		margin-top: var(--space-3);
+	}
+
+	.law-dictionary {
+		margin: var(--space-2) 0 var(--space-4);
+	}
+
+	.law-dictionary-headword {
+		margin-right: var(--space-1);
+	}
+
+	.law-dictionary :global(p) {
+		display: inline;
 	}
 
 	.code-definition {

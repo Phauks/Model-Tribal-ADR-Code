@@ -29,6 +29,16 @@ export interface GlossarySense {
 	definition: string;
 }
 
+/** A short quotation from a law dictionary's entry for the term, ready to show. */
+export interface LawDictionaryQuotation {
+	/** The dictionary's name, such as "Black's Law Dictionary". */
+	dictionary: string;
+	/** The dictionary's headword, which may differ from the glossary's, such as "Indian reservation". */
+	headword: string;
+	/** The quoted phrase in quotation marks, with its numbered source marker, as HTML. */
+	quotation: string;
+}
+
 /** One entry, ready to show. */
 export interface GlossaryEntryView {
 	id: string;
@@ -46,6 +56,8 @@ export interface GlossaryEntryView {
 	definition: string;
 	/** Every sense, the definition first; each is numbered on the page. */
 	senses: GlossarySense[];
+	/** Short quotations from law dictionaries, each cited; never a dictionary's full entry. */
+	lawDictionary: LawDictionaryQuotation[];
 	/** The model code section that enacts a definition of the term, when one does, such as "§ 1-102". */
 	codeDefinition?: string;
 	/** "As used here", as HTML, when the entry has a usage note. */
@@ -130,11 +142,21 @@ export function glossaryEntryViews(records: GlossaryRecord[]): {
 			citations.part = { term: record.term, text: `sense ${index + 2}` };
 			return { label: sense.label, definition: renderMarkdown(sense.definition, citations) };
 		});
+		const lawDictionary = (record.law_dictionary ?? []).map((quotation): LawDictionaryQuotation => {
+			const source = sources().get(quotation.source);
+			citations.part = { term: record.term, text: source?.citation['container-title'] ?? 'law dictionary' };
+			return {
+				dictionary: source?.citation['container-title'] ?? quotation.source,
+				headword: source?.citation.title ?? record.term,
+				quotation: renderMarkdown(`“${quotation.quote}” [@${quotation.source}]`, citations)
+			};
+		});
 		citations.part = { term: record.term, text: 'as used here' };
 		const usageNote = record.usage_note ? renderMarkdown(record.usage_note, citations) : undefined;
 		const citedInText = [
 			record.definition,
 			...(record.other_senses ?? []).map((sense) => sense.definition),
+			...(record.law_dictionary ?? []).map((quotation) => `@${quotation.source}`),
 			record.usage_note ?? ''
 		].join(' ');
 		for (const key of record.sources ?? []) {
@@ -158,6 +180,7 @@ export function glossaryEntryViews(records: GlossaryRecord[]): {
 			functionalLabel: functionalLabelOf(record),
 			definition,
 			senses: [{ definition }, ...otherSenses],
+			lawDictionary,
 			codeDefinition: record.code_definition ? sectionNumberOf(record.code_definition) : undefined,
 			usageNote,
 			useInstead: termReferences(record.use_instead),
