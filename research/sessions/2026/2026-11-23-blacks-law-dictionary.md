@@ -23,9 +23,12 @@ sources_added:
 - blacks-law-dictionary-2024-indian-reservation
 - blacks-law-dictionary-2024-indian-sovereignty-doctrine
 - blacks-law-dictionary-2024-indian-tribe
+- blacks-law-dictionary-2024-nation
+- blacks-law-dictionary-2024-native
+- blacks-law-dictionary-2024-sovereignty
 - blacks-law-dictionary-2024-tribal-court
 - blacks-law-dictionary-2024-tribe
-limits: 'Covers the first 36 prints Trevor sent. Black''s has no entry for peacemaking (only "peacemaker", in a general sense) and no tribal sense of "recognition"; nation, sovereignty in general, Native American, Native Hawaiian, Alaska Native and indigenous were not among these prints. Arbitration and mediation have prints but no glossary entry of their own. Every reading awaits the lead author''s review.'
+limits: 'Covers the 41 prints Trevor sent. Black''s has no headword for Native American, Native Hawaiian, Alaska Native or indigenous (Trevor searched, Nov. 23, 2026), no entry for peacemaking (only "peacemaker", in a general sense) and no tribal sense of "recognition". Its "aborigine" entry was not used for Indigenous, because Black''s itself notes the word is considered pejorative in Australian usage. Arbitration and mediation have prints but no glossary entry of their own. Every reading awaits the lead author''s review.'
 ---
 
 # Black's Law Dictionary in the glossary: session notes
@@ -46,6 +49,9 @@ Black's Law Dictionary is under copyright (Thomson Reuters), so the glossary doe
 | Tribe | tribe (sense 2) | 17 |
 | reservation | Indian reservation | 15 |
 | Tribal court | tribal court | 20 |
+| Native | native (sense 4) | 13 |
+| nation | nation (sense 2) | 14 |
+| sovereignty | sovereignty (sense 1) | 5 |
 | sovereignty | Indian-sovereignty doctrine | 14 |
 
 Black's defines "tribal court" only under the Indian Child Welfare Act, so the phrase quoted is the one describing Tribal courts generally: not part of any state's judicial system. Its "peacemaker" entry is about anyone who persuades others to stop fighting, not Tribal peacemaking, so the peacemaking entry does not cite it.
