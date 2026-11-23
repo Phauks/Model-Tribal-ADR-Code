@@ -13,6 +13,7 @@
 	import ListChecks from '@lucide/svelte/icons/list-checks';
 	import LayoutTemplate from '@lucide/svelte/icons/layout-template';
 	import Printer from '@lucide/svelte/icons/printer';
+	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import { onMount } from 'svelte';
 	import Modal from './Modal.svelte';
 	import { noteBlock, noteCopy } from '#lib/note-copies.ts';
@@ -80,9 +81,14 @@
 		change(part, checked ? 'on' : 'off');
 	}
 
+	// Read out after Reset, since the icon button has no words of its own on screen.
+	let resetMessage = $state('');
+
 	function reset() {
 		options = { ...defaultPrintOptions };
 		savePrintOptions({ ...defaultPrintOptions });
+		resetMessage = '';
+		setTimeout(() => (resetMessage = 'Print choices reset to the defaults.'), 50);
 	}
 
 	function print() {
@@ -177,7 +183,7 @@
 	<Printer size={24} />
 </button>
 
-<Modal bind:this={modal} bind:selected title="Print this page" {sections} onclose={returnFocus}>
+<Modal bind:this={modal} bind:selected title="Print this page" {sections} onclose={returnFocus} actionsAtEnd>
 	{#snippet section(id: SectionIdentifier)}
 		<h3 class="section-heading">{sections.find((item) => item.id === id)?.label}</h3>
 		{#if id === 'include'}
@@ -238,12 +244,18 @@
 			browser’s own Print command. To save a PDF, choose “Save as PDF” in the print window.
 		</p>
 	{/snippet}
+	<!-- Trevor asked on Nov. 23, 2026 for Reset as an icon beside Close, and Print at the bottom right. -->
+	{#snippet topButtons()}
+		<button class="icon-button" type="button" aria-label="Reset print choices to defaults" title="Reset print choices to defaults" onclick={reset}>
+			<RotateCcw size={24} />
+		</button>
+	{/snippet}
 	{#snippet actions()}
 		<button class="button" type="button" onclick={print}>
 			<Printer size={20} strokeWidth={1.75} />
 			<span>Print</span>
 		</button>
-		<button class="button button-quiet" type="button" onclick={reset}>Reset print choices to defaults</button>
+		<p class="visually-hidden" role="status">{resetMessage}</p>
 	{/snippet}
 </Modal>
 
