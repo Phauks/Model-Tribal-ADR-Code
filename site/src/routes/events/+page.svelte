@@ -21,9 +21,8 @@
 <div class="reading">
 	<h1>{data.past ? 'Past events' : 'Events'}</h1>
 	<nav class="event-views" aria-label="Events">
-		<a href="/events" aria-current={data.past ? undefined : 'page'}>Upcoming</a>
+		<a href="/events" aria-current={data.past ? undefined : 'page'}>Current and upcoming</a>
 		<a href="/events?when=past" aria-current={data.past ? 'page' : undefined}>Past</a>
-		<a href="/rooms">Open video rooms</a>
 	</nav>
 
 	{#if data.yours.length > 0}
@@ -42,26 +41,45 @@
 		</section>
 	{/if}
 
-	{#if data.events.length === 0}
-		<p class="muted">
-			{data.past ? 'No past events yet.' : 'No events are planned right now. New events are listed here first.'}
-		</p>
+	{#if data.past}
+		{#if data.events.length === 0}
+			<p class="muted">No past events yet.</p>
+		{:else}
+			{@render list(data.events, 2)}
+		{/if}
 	{:else}
+		{#if data.current.length > 0}
+			<h2>Current events</h2>
+			{@render list(data.current, 3)}
+		{/if}
+		<h2>Upcoming events</h2>
+		{#if data.events.length === 0}
+			<p class="muted">No events are planned right now. New events are listed here first.</p>
+		{:else}
+			{@render list(data.events, 3)}
+		{/if}
+	{/if}
+
+	{#snippet list(events: typeof data.events, level: number)}
 		<ol class="event-list">
-			{#each data.events as event (event.slug)}
+			{#each events as event (event.slug)}
 				<li class="event-item">
 					<p class="event-day">{event.day}</p>
-					<h2 class="event-title">
-						<a href="/events/{event.slug}">{event.title}</a>
+					<svelte:element this={`h${level}`} class="event-title">
+						{#if event.room}
+							<a href={event.address} target="_blank" rel="noopener">{event.title}<span class="visually-hidden"> (opens in a new tab)</span></a>
+						{:else}
+							<a href={event.address}>{event.title}</a>
+						{/if}
 						{#if event.cancelled}<span class="cancelled-tag">Cancelled</span>{/if}
-					</h2>
+					</svelte:element>
 					<p class="event-detail"><span class="chip">{event.kind}</span> {event.where}</p>
 					<p class="hint event-detail">{event.when}</p>
 					{#if event.summary}<p class="event-summary">{event.summary}</p>{/if}
 				</li>
 			{/each}
 		</ol>
-	{/if}
+	{/snippet}
 
 	<p class="calendar-feed">
 		<a class="button button-quiet" href="/events/calendar.ics">
