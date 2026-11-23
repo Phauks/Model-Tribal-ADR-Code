@@ -188,6 +188,87 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the act of Congress of June 18, 1934, as amended
+  quote: laws, by authority of the act of Congress of June 18, 1934, as amended
+  source: constitution-native-village-of-tetlin-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-03-20'
+  locator: Preamble
+  document_version:
+    document: native-village-of-tetlin-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles I-IV; certification gives March 20, 1940.'
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: governing body it wishes to set up to speak
+  source: constitution-native-village-of-tetlin-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-03-20'
+  locator: Article III, Section 1
+  document_version:
+    document: native-village-of-tetlin-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles I-IV; certification gives March 20, 1940.'
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: The Village shall then choose the members
+  source: constitution-native-village-of-tetlin-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-03-20'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-tetlin-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles I-IV; certification gives March 20, 1940.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Tetlin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: members of the Village 21 years of
+  source: constitution-native-village-of-tetlin-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-03-20'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-tetlin-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles I-IV; certification gives March 20, 1940.'
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members in election called by the Secretary
+  quote: approved by the Secretary of the Interior
+  source: constitution-native-village-of-tetlin-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-03-20'
+  locator: Article VI
+  document_version:
+    document: native-village-of-tetlin-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles I-IV; certification gives March 20, 1940.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior
+  source: constitution-native-village-of-tetlin-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-03-20'
+  locator: Article VI
+  document_version:
+    document: native-village-of-tetlin-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles I-IV; certification gives March 20, 1940.'
 governing_documents:
 - kind: constitution
   title: Constitution

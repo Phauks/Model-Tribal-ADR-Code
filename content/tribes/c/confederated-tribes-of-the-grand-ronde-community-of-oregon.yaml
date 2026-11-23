@@ -201,6 +201,195 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act
+  quote: the Indian Reorganization Act of June 18,1934, as amended June 15, 1935,
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Preamble
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Grand Ronde business committee
+  quote: Grand Ronde business committee.
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: shall consist of a committee of five members
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: shall be by secret ballot and they shall be held in accordance with rules
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article V, Section 4
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: shall be 3 years, except as provided in section 1 (a) of article V.
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: General council meets annually
+  quote: of the general council of the tribes annually, this meeting to be held
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Bylaws, Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman of the business committee shall
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Grand Ronde Community of Oregon
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the committee from its members
+  quote: committee so organized shall elect from within its own number (1) a chairman,
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice chairman, Secretary, Treasurer
+  quote: (2) a vice chairman; and from within or without, (3) a secretary, and (4)
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of age or over and who have maintained legal residence within
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article V, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Reservation court established by ordinance
+  quote: by establishing a reservation court and defining
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article VII, Section 1(l)
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority of voters in election called by Secretary, on 4 committee votes
+  quote: of the qualified voters of the tribes voting thereon; and if at least 30
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article XI
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: submitted to the Secretary of the Interior and if approved by
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article XI
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by four committee votes
+  quote: committee may, by four affirmative votes, expel any member for neglect
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third of the eligible
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article VI, Section 3
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of the Grand Ronde Community of Oregon - Ordinances

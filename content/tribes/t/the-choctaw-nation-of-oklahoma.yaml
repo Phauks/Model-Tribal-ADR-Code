@@ -193,6 +193,279 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Choctaw Nation of Oklahoma
+governance:
+- aspect: form
+  value: Constitution, pursuant to inherent tribal sovereignty
+  quote: do hereby ordain and establish, pursuant to the inherent tribal sovereignty of the Choctaw Nation
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Preamble
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The legislative authority of the Choctaw Nation shall be vested in the Tribal Council.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VIII, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: governing-body-size
+  value: 12 members
+  quote: The Tribal Council shall consist of twelve (12) members, one (1) each to be elected from
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VIII, Section 2
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: governing-body-selection
+  value: Elected by district
+  quote: residents of the district from which they were elected during the tenure of their office.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VIII, Section 3
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Thereafter, terms of office for Council positions shall be for a term of four (4) years and
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VIII, Section 4
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: head-of-government
+  value: Chief
+  quote: The Chief shall perform all duties appertaining to the office of Chief Executive.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VII, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: The Chief shall be elected for a term of four (4) years which shall commence at twelve
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VI, Section 6
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Chief shall be elected for a term of four (4) years which shall commence at twelve
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VI, Section 6
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: other-officers
+  value: Speaker, Secretary
+  quote: Officers to be elected are a Speaker, a Secretary and such other
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article IX, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: voting-age
+  value: '18'
+  quote: All members eighteen (18) years of age and over shall be deemed qualified electors
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article III, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: election-authority
+  value: Election board
+  quote: The Council shall create an election board whose members shall be appointed by the Chief with
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article IX, Section 5
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: branches
+  value: Executive, Legislative and Judicial
+  quote: 'distinct departments: Executive, Legislative and Judicial. No person or collection of persons,'
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article V, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: being one of those departments, shall exercise any power properly attached to either of the others;
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article V, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The judicial authority of the Choctaw Nation shall be vested in a Tribal Court which
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XII, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: judicial-selection
+  value: Appointed by the Chief with advice and consent of the Tribal Council
+  quote: shall consist of a three (3) member Court appointed by the Chief with the advice and consent of
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XII, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: judicial-term
+  value: 3 years
+  quote: Tribal Court members shall be appointed for a term of three (3) years; provided that
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XII, Section 3
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: judicial-independence
+  value: Judges not subject to removal except as provided in Article XV, Section 1
+  quote: Judges shall not be subject to removal except as provided in Article XV, Section 1.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XII, Section 4
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: amendment
+  value: Adoption by 51% of qualified voters voting in last Chief's election
+  quote: Adoption by not less than fifty-one percent (51%) of the total number of qualified voters
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XVIII, Section 2
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: Amendments shall be effective upon approval by the Secretary of the Interior.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XVIII, Section 2
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: recall-and-removal
+  value: Impeachment by 8 Tribal Council votes
+  quote: Eight (8) votes shall be required to impeach the official.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XV, Section 1(g)
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: recall-and-removal
+  value: Recall election, 51% of district voters
+  quote: Recall from office shall require a supporting vote for at least fifty-one percent (51%)
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XV, Section 2(b)
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: other
+  value: Initiative by petition of 30% of registered voters
+  quote: signed by at least thirty percent (30%) of the registered voters. Each such petition shall contain
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XVI, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
 governing_documents:
 - kind: law-code
   title: Tribal code

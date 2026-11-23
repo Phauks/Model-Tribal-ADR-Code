@@ -212,6 +212,219 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Indian Reorganization Act
+  quote: to secure the opportunities offered us under the Indian Reorganization Act,
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Preamble
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: governing-body
+  value: Community Council
+  quote: The governing body of the Community organization shall be called "The Community
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article IV, Section 1
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: and shall be composed of five members who shall be
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article IV, Section 1
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot by qualified voters
+  quote: duly elected by secret ballot by the qualified voters of the Community.
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article IV, Section 1
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: votes shall be elected for a term of four years. The two candidates receiving the fourth and fifth most
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article IV, Section 2A
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Community Council shall preside at all meetings of the Council.
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Bylaws Article 1, Section 1
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lower Sioux Indian Community in the State of Minnesota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its members
+  quote: the members of the Community Council shall meet and shall elect from their membership
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article IV, Section 2A
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: shall hold office for a term of 2 years or until their successors are elected.
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article IV, Section 2A
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: other-officers
+  value: Vice President, Secretary, Treasurer, Assistant Treasurer
+  quote: by secret ballot a President, a Vice President, a Secretary, a Treasurer, and an Assistant Treasurer, who
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article IV, Section 2A
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: elections
+  value: Every 2 years
+  quote: held every 2 years, and not less than 30 days before the expiration of the term of office, of the members
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article VI, Section 1
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: voting-age
+  value: '18'
+  quote: In order to acquire the right of franchise, a voter must qualify by having reached the age of 18
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article VI, Section 5
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: election-authority
+  value: Community Council
+  quote: At a meeting of the Council previous to any election, the Council shall appoint two judges and
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article VI, Section 3
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: judiciary
+  value: Court of Domestic Relations, which the Community Council may establish
+  quote: The Community Council is hereby authorized to establish a Court of Domestic Relations
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article XI, Section 1
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: amendment
+  value: Majority vote of qualified voters at election called by Secretary of the Interior
+  quote: This Constitution and Bylaws may be amended by a majority vote of the qualified voters of the Lower
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article XIII
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article XIII
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: recall-and-removal
+  value: Removal by Council after complaint and hearing
+  quote: the complaint, the Community Council may remove such accused officer.
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article VII, Section 1
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
+- aspect: other
+  value: Referendum on Council actions by petition of 25% of voters
+  quote: subject to a referendum vote of the people upon a written petition signed by not less than 25 percent of
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2007'
+  locator: Article VIII, Section 1
+  document_version:
+    document: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+    version: 2007-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The header says amended through September 19, 2007, but the certified text ends with amendments through November 18, 1998; facts follow the text as printed.'
 governing_documents:
 - kind: law-code
   title: Lower Sioux Indian Community in Minnesota, Judicial Code

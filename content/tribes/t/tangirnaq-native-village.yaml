@@ -187,6 +187,169 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tangirnaq Native Village
+governance:
+- aspect: governing-body
+  value: Woody Island Tribal Council
+  quote: The governing body of Leisnoi Village (a.k.a. Woody Island) shall be the Woody Island Tribal Council (hereinafter referred to as the Council).
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Council shall be composed of five (5) members who shall be elected by a majority vote
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of eligible voting members
+  quote: who shall be elected by a majority vote (fifty percent plus one person) of eligible voting members voting in an election held for such purpose
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Except as necessary to establish and maintain the staggered terms of the Council, all Council members shall serve three year terms.
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: head-of-government
+  value: President
+  quote: The President or a designated Council member shall preside over all meetings of the Tribe and of the Council
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IX, Section 1
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its members
+  quote: who shall be elected annually by the members of the Council from among the elected Council members
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: head-of-government-term
+  value: 1 year, may serve consecutive terms
+  quote: The terms of the President, Vice President and Secretary/Treasurer, elected by the sitting Council, shall be one year but they may serve consecutive terms.
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: other-officers
+  value: Vice President, Secretary/Treasurer
+  quote: The officers shall include a President, Vice President and Secretary/Treasurer
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: voting-age
+  value: '18'
+  quote: Any duly enrolled member of Leisnoi Village (a.k.a. Woody Island), eighteen years of age or older, shall be entitled to vote in all tribal elections.
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 3
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: election-authority
+  value: Election board appointed by the Council
+  quote: There shall be an election board consisting of an independent body appointed by the Council for each tribal election meeting
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 8
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: judiciary
+  value: Council may establish a court or other tribunal
+  quote: and to establish a court or other tribunal to exercise the judicial power of the Tribe;
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 3(j)
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: amendment
+  value: Majority of voters in an election with 30% quorum
+  quote: This Constitution may be amended by a majority (fifty percent plus one person) of the voters attending or voting by mail-in ballot in an election called for that purpose
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XII
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voting members
+  quote: request recall of Council member(s) and vote upon secret ballot to determine whether it will be adopted or rejected. Upon receipt of a valid petition signed by at least thirty percent (30%) of the eligible voting members
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII, Section 1
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+- aspect: recall-and-removal
+  value: Removal by majority of the Council
+  quote: Any Council member found guilty by the Council or a designated judiciary committee of behavior involving gross misconduct in office or neglect of duty shall be removed from office if at least a majority of the Council votes in favor of such removal.
+  source: constitution-tangirnaq-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII, Section 3
+  document_version:
+    document: tangirnaq-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
 governing_documents:
 - kind: constitution
   title: Constitution

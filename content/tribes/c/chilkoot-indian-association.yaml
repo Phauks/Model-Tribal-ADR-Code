@@ -208,6 +208,195 @@ government_structure:
   as_of: '1941'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Act of Congress of June 18, 1934, as amended
+  quote: and by authority of, the Act of Congress of June 18, 1934 (48 Stat.
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Preamble
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: governing-body
+  value: Council
+  quote: Council composed of seven members elected by the Association.
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: Council composed of seven members elected by the Association.
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: secret ballot on the second Thursday after the second Monday in May
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article III, Sec. 2(a)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: following. Thereafter, each member of the Council shall serve two
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article III, Sec. 2(e)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Council shall preside over all
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: By-laws Article I, Sec. 1
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Chilkoot Indian Association (Haines)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its members
+  quote: electing from within its membership a Presi-
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article III, Sec. 2(b)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: shall serve a term of one year.
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article III, Sec. 3(b)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: and from within or without, a Secretary,
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article III, Sec. 2(b)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: elections
+  value: Annually, second Thursday after second Monday in May
+  quote: secret ballot on the second Thursday after the second Monday in May
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article III, Sec. 2(a)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: voting-age
+  value: '21'
+  quote: All members of this Association over the age of 21 years
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article V, Sec. 3
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: amendment
+  value: Secretary approval, then majority of adult voters
+  quote: ciation voting at an election called for the purpose by the Secretary
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article VIII
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: ments, if approved by the Secretary of the Interior, shall be effective
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article VIII
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: recall-and-removal
+  value: Forfeit office on felony or dishonesty conviction
+  quote: victed of a felony? or any other offense involving dishonesty shall
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article VI, Sec. 1(a)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of adult members
+  quote: Upon a petition signed by one-third of the adult members of
+  source: constitution-chilkoot-indian-association-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-12-05'
+  locator: Article VI, Sec. 1(c)
+  document_version:
+    document: chilkoot-indian-association-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
 governing_documents:
 - kind: constitution
   title: Constitution

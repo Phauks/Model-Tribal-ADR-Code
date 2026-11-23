@@ -166,6 +166,207 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Spokane Tribe of the Spokane Reservation
+governance:
+- aspect: form
+  value: Constitution, superseding the 1951 constitution and bylaws
+  quote: do hereby establish this
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Preamble
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: governing-body
+  value: Business Council
+  quote: Section 1. The governing body of the Spokane Tribe shall be Business Council of
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 1
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: 5 members, consisting of a Chairman, Vice Chairman, Secretary, and 2 Members.
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 1
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: All elections shall be by secret ballot.
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 1
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Business Council members shall be elected for 3-year staggered
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 4
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: general-council
+  value: All qualified voters who attend a properly called General Council or Tribal meeting
+  quote: The General Council shall be composed of all the qualified voters of
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 5
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Section 1. Chairman. The Chairman of the Business Council shall preside over
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article XI, Section 1
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Spokane Tribe of the Spokane Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Council as the first order of business after each election
+  quote: the election of officers for the ensuing year.
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 4
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: other-officers
+  value: Vice Chairman, Secretary
+  quote: Section 2. Vice Chairman. The Vice Chairman shall act as Chairman and
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article XI, Section 2
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: elections
+  value: Annually in June
+  quote: officers shall be held annually during the month of June and shall be called by
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 1
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: voting-age
+  value: '18'
+  quote: A qualified voter is any member of the Spokane Tribe, 18 years of
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 4
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: election-authority
+  value: Election Committee of 3 qualified voters
+  quote: All elections shall be conducted by an Election Committee composed
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 2
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: judiciary
+  value: Tribal Court System under the Business Council's law and order code
+  quote: Tribal Court System extending Tribal civil and criminal jurisdiction,
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VIII(a)
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Business Council
+  quote: The Constitution may be amended by a majority vote of the qualified voters of
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article XIV
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: recall-and-removal
+  value: Recall by petition of 250 qualified voters, then hearing and election
+  quote: 'Section 2. Recall: Upon receipt of a written petition signed by 250 qualified'
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 2
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
+- aspect: other
+  value: General Council vote binding on Business Council when quorum is confirmed
+  quote: the General Council on any and all matters shall be final and binding on the
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article XIII, Section 4
+  document_version:
+    document: spokane-tribe-of-the-spokane-reservation-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is dated December 2023 and its amendment notes run to 2021 and later, while the version label says 2021.'
 governing_documents:
 - kind: law-code
   title: Spokane Tribe of the Spokane Reservation

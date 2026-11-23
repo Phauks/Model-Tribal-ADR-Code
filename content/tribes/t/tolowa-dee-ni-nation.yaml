@@ -182,6 +182,243 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tolowa Dee-ni' Nation
+governance:
+- aspect: form
+  value: Constitution of the Tribal Council
+  quote: OF THE TRIBAL COUNCIL
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Title
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Nation shall be the Tribal Council.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article III, Section 1
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: of seven (7) members.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article III, Section 1
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: governing-body-selection
+  value: Elected by registered voters at general elections
+  quote: General elections to vote for Council persons shall be held every year on the third
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article IX, Section 1
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: for one year. Thereafter, each Council member elected shall serve three (3) years.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article III, Section 2
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: general-council
+  value: All members 18 or older registered to vote with the Nation
+  quote: All members of the Nation, eighteen (18) years of age or older and registered to
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article IX, Section 4(a)
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall preside at all meetings of the tribal council.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tolowa Dee-ni' Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its members
+  quote: from among the current Council members. Separate elections shall be held at that time for
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article III, Section 3
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: Officers of the Council shall serve for a period of one year or until their successors are
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article III, Section 4
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: Chairperson, for Vice-Chairperson, for Secretary and for Treasurer.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article III, Section 3
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: elections
+  value: Every year on the third Saturday in May
+  quote: Saturday in May. The voting place shall be as designated in an election ordinance.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article IX, Section 1
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Nation, eighteen (18) years of age or older and registered to
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article IX, Section 4(a)
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: election-authority
+  value: The Council (by ordinance)
+  quote: The Council shall have the power to prescribe ordinances, governing
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article IX, Section 4(a)
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: judiciary
+  value: Nation's courts, rules set by the Council
+  quote: To establish and prescribe rules for governing the Nation's courts.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article IV, Section 1(p)
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: amendment
+  value: Majority vote of registered voters in an election
+  quote: majority of the registered voters of the Nation's voters voting in that election.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article XIII, Section 1
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: secretarial-approval
+  value: Not required
+  quote: Secretary shall not be necessary for this Constitution to be effective.
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article XV, Section 2
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the Council for gross neglect or misconduct
+  quote: removed from her/his position as a member of Council upon passage of a resolution by a 2/3
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article VII, Section 1
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters, then election
+  quote: least thirty percent (30%) of the registered voters. The Council Secretary shall
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article VII, Section 4(a)
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
+- aspect: other
+  value: Referendum on petition of 30% of registered voters
+  quote: Upon petition of at least thirty percent (30%) of the registered voters of the Nation, any enacted or
+  source: constitution-tolowa-dee-ni-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-02-22'
+  locator: Article X
+  document_version:
+    document: tolowa-dee-ni-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Secretarial approval is stated only for the Constitution''s own adoption; the amendment article is silent on it.'
 governing_documents:
 - kind: law-code
   title: Tolowa Dee-ni' Nation

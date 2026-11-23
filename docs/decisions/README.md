@@ -44,5 +44,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0035](0035-follow-pages-with-notices-that-never-quote.md) | Following pages, with notices that never say what changed | Accepted |
 | [0036](0036-show-every-story-in-full.md) | Show every story in full on the website | Accepted |
 | [0037](0037-keep-a-copy-of-every-directly-cited-page.md) | Keep our own copy of every page a record directly cites | Accepted |
+| [0042](0042-governance-facts-from-governing-documents.md) | Record how each nation's government is set up, as plain facts from its own documents | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

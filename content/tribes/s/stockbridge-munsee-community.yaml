@@ -191,6 +191,207 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under section 16 of the Indian Reorganization Act of June 18, 1934
+  quote: in accordance with section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by the Act of June 15, 1935 (49 Stat. 378).
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Certification of Adoption
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Stockbridge Munsee Community shall be a Tribal Council,
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 1
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: composed of a President, a Vice President, a Treasurer and four Councilmen
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 1
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by popular referendum
+  quote: to be elected by popular referendum.
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 1
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: President and Treasurer 2 years; others 1 year
+  quote: The President and Treasurer shall be elected for a term of two years, the Vice President and four councilmen shall be elected for a term of one year.
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 2
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  quote: It shall be the duty of the President to preside over all meetings of the Council
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: By-Laws, Article I, Section 1
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Stockbridge Munsee Community, Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by popular referendum
+  quote: to be elected by popular referendum.
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 1
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The President and Treasurer shall be elected for a term of two years
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 2
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice President, Treasurer
+  quote: a Vice President, a Treasurer and four Councilmen
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 1
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '21'
+  quote: Any member of the Community who is 21 years of age or over shall be entitled to vote
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 5
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Business Committee (first election)
+  quote: The present Business Committee shall call, hold, and supervise the first Tribal Council election
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article IV, Section 6
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote in Secretarial election, 30% turnout
+  quote: This Constitution and By laws may be amended by a majority vote of the qualified voters of the Community at an election called for that purpose by the Secretary of the Interior
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article VIII
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article VIII
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Expulsion by 5 Council votes for neglect or misconduct
+  quote: The Tribal Council may, by an affirmative vote of five, expel any member of the Council
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article V, Section 1
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of last general election voters
+  quote: upon receipt of a petition signed by at least one third of the number of those voting in the last general election
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article V, Section 2(b)
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Referendum on petition of 30% of eligible voters
+  quote: Upon a petition of at least 30 per cent of the eligible voters of the Community,
+  source: constitution-stockbridge-munsee-community-1995-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1995-11-14'
+  locator: Article VI
+  document_version:
+    document: stockbridge-munsee-community-constitution
+    version: 1995-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: constitution
   title: Constitution and By-laws of the Stockbridge-Munsee Community, Wisconsin

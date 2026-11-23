@@ -231,6 +231,62 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Federal corporate charter under the Act of June 18, 1934
+  quote: A FEDERAL CORPORATION CHARTERED UNDER THE ACT OF JUNE 18, 1934
+  source: university-of-oklahoma-indian-reorganization-act-pai-shochtr
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-02-02'
+  document_version:
+    document: fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1936 Corporate Charter with its 1945 Amendment I (to Section 5(g)), not the constitution and by-laws the version label names; the constitution itself is not in the text, so few government facts are available.'
+- aspect: governing-body
+  value: Fort McDermitt Tribal Council
+  quote: The Fort McDermitt Tribal Council established in accordance
+  source: university-of-oklahoma-indian-reorganization-act-pai-shochtr
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-02-02'
+  locator: Sec. 4 (Management)
+  document_version:
+    document: fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1936 Corporate Charter with its 1945 Amendment I (to Section 5(g)), not the constitution and by-laws the version label names; the constitution itself is not in the text, so few government facts are available.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada and Oregon
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: amendment
+  value: Tribal Council resolution, Secretary approval, then majority referendum vote
+  quote: amendments may be proposed by resolutions of the Tribal Council which, if approved by the Secretary of the lnterior
+  source: university-of-oklahoma-indian-reorganization-act-pai-shochtr
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-02-02'
+  locator: Sec. 10 (Amendments)
+  document_version:
+    document: fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1936 Corporate Charter with its 1945 Amendment I (to Section 5(g)), not the constitution and by-laws the version label names; the constitution itself is not in the text, so few government facts are available.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: which, if approved by the Secretary of the lnterior, shall be effective when ratified
+  source: university-of-oklahoma-indian-reorganization-act-pai-shochtr
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-02-02'
+  locator: Sec. 10 (Amendments)
+  document_version:
+    document: fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1936 Corporate Charter with its 1945 Amendment I (to Section 5(g)), not the constitution and by-laws the version label names; the constitution itself is not in the text, so few government facts are available.'
 governing_documents:
 - kind: law-code
   title: Law and Order Code of the Fort McDermitt Paiute and Shoshone Tribe, Nevada

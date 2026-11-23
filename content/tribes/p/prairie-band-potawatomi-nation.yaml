@@ -188,6 +188,291 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Prairie Band Potawatomi Nation
+governance:
+- aspect: form
+  value: Approved under 25 U.S.C. 476
+  quote: 30, 2007 and approved December 6, 2007 pursuant to 25 U.S.C. 476.)
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Note following Bylaws, Article II
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: a seven (7) member governing body, called the Tribal
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article IV, Section 3
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: a seven (7) member governing body, called the Tribal
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article IV, Section 3
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by secret ballot of eligible voters at General Council
+  quote: The General Council of the Prairie Band Potawatomi Nation shall elect from
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article IV, Section 3
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered (some 2 years initially)
+  quote: serve four (4) year terms or until their successors are elected and installed in office.
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VII, Section 5
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All enrolled members aged 18 or older
+  quote: all enrolled members of the Nation who are eighteen (18) years of age or older meeting in a
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article IV, Section 1
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall preside over all meetings of the Tribal Council and of
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VIII, Section 1
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Prairie Band Potawatomi Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by voters at general election
+  quote: the Chairperson, Secretary, and 1 Council Person shall be elected for a
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VII, Section 5
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: term of four (4) years and the Vice-Chairperson, Treasurer and 2 Council Persons shall be
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VII, Section 5
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, three Council Persons
+  quote: composed of a Chairperson, Vice-Chairperson, Secretary, Treasurer, and three
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article IV, Section 3
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 2 years on the fourth Saturday of July
+  quote: A general election shall be held on the fourth Saturday of July every two (2)
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VII, Section 6
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All enrolled members of the Prairie Band Potawatomi Nation who are 18
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VII, Section 1
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: Election results shall be certified by the Election Board three (3) days following the general
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VII, Section 6
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Judicial Council as a separate and independent branch
+  quote: There is established a separate and independent branch of
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VI, Section 1
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: separation-of-powers
+  value: Stated
+  quote: shall possess all judicial authority and no branch of government shall exercise the authority
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VI, Section 1
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: 'Judicial Council: District Court, Court of Appeals, Employment Disputes Tribunal'
+  quote: The Judicial Council shall be comprised of a judge of a
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VI, Section 1
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Nominated by Chairperson, approved by 6 Council members
+  quote: Court of Appeals shall be nominated by the Tribal Council Chairperson and approved by at
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VI, Section 2
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 4 years
+  quote: Council members shall have four (4) year terms.
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VI, Section 2
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Removal only for listed misconduct, by 6 Council votes
+  quote: Judges and justices may be removed by the Tribal Council upon the affirmative vote of at
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article VI, Section 2
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of eligible voters in mail election called by Election Board
+  quote: This Constitution may only be amended through a majority vote of eligible voters in an
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article XV
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by Tribal Council majority of a quorum for misconduct
+  quote: The Tribal Council shall have the power to remove any member of the Tribal
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article XII, Section 2(b)
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 300 adult members
+  quote: Upon receipt of a petition signed by at least 300 adult tribal members, and
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article XIII, Section 1
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Ethics Commission of six elected members
+  quote: Thereafter, it shall be comprised of six (6) members who shall be elected for
+  source: constitution-prairie-band-potawatomi-nation-2007-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2007-12-06'
+  locator: Article IX, Section 1
+  document_version:
+    document: prairie-band-potawatomi-nation-constitution
+    version: 2007-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Prairie Band Potawatomi Nation - Law and Order Code

@@ -172,6 +172,180 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cocopah Tribe of Arizona
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council composed of five (5) members, consisting of the
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Tribal Council composed of five (5) members, consisting of the
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot of the membership
+  quote: own membership, at a meeting called for this purpose, by secret
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: elections shall be held thereafter at two year
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: general-council
+  value: All members 21 or older, qualified to vote at meetings and elections
+  quote: Sec. 4 . All members of the Cocopah Tribe who have reached the age
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Tribal Council shall preside ove
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XI, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cocopah Tribe of Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot of the membership
+  quote: own membership, at a meeting called for this purpose, by secret
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: elections shall be held thereafter at two year
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: Chairman, Vice-Chairman, and three other members. Three of such
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: elections
+  value: Every 2 years, second Friday in July
+  quote: held in even numbered years on the second Friday in July. The meeting
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: voting-age
+  value: '21'
+  quote: Sec. 4 . All members of the Cocopah Tribe who have reached the age
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: amendment
+  value: Majority vote in Secretarial election, 30% turnout
+  quote: This Constitution may be amended by a majority vote of
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: until it shall have been approved by the Secretary of the Interior or
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: recall-and-removal
+  value: Forfeit office for two missed meetings or felony conviction
+  quote: attend two regular meetings, unless excused due to illness or othe
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IX, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
+- aspect: other
+  value: Chairman veto, overridable by majority of those present
+  quote: The Chairman of the Tribal Council may veto resolutions or
+  source: constitution-cocopah-tribe-of-arizona-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: cocopah-tribe-of-arizona-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the preamble cites a June 1958 roll and 1959 approval, and OCR garbles several passages.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

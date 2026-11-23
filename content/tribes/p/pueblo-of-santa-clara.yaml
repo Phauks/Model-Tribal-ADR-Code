@@ -202,6 +202,183 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Pueblo council
+  quote: Clara shall be vested in the pueblo council which shall consist of the
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article III, Section 1
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: governing-body-size
+  value: 8 representatives, plus officers
+  quote: elections eight representatives shall be
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article IV, Section 5
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: governing-body-selection
+  value: Officers elected by secret ballot; representatives chosen by the council
+  quote: and sheriff shall be elected by secret ballot to serve
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article III, Section 2
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: governing-body-term
+  value: 1 year
+  quote: by secret ballot to serve for the ensuing year.
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Amendment I
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: head-of-government
+  value: Governor
+  quote: shall be the executive
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article V
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Santa Clara, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: and sheriff shall be elected by secret ballot to serve
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article III, Section 2
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: by secret ballot to serve for the ensuing year.
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Amendment I
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: other-officers
+  value: Lieutenant Governor, secretary, treasurer, interpreter, sheriff
+  quote: Governor, secretary, treasurer, interpreter, and sheriff shall be elected
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Amendment I
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: elections
+  value: Within the first five days of each year
+  quote: the first five days of each year an election
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Amendment I
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: voting-age
+  value: '18'
+  quote: 18 years of age, may vote at any
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article III, Section 3
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: branches
+  value: Council legislative and judicial; Governor executive
+  quote: The pueblo council shall also adjudicate
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article IV, Section 2
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: judiciary
+  value: Pueblo council itself adjudicates matters
+  quote: The pueblo council shall also adjudicate
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article IV, Section 2
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: amendment
+  value: Decision of the general pueblo, then majority vote of voters 21 or older
+  quote: except by a decision of the general pueblo.
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article VIII
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if he shall approve the same it shall become effective.
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article VIII
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
 governing_documents:
 - kind: law-code
   title: Pueblo of Santa Clara, New Mexico

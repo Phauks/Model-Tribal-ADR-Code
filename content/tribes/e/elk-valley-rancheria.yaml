@@ -177,6 +177,207 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Elk Valley Rancheria, California
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: and adopt this Constitution pursuant to the Indian Reorganization Act
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Preamble
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Elk Valley Tribal Council
+  quote: The governing body of the Tribe shall be the Elk
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article IV, Section 1
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 9 members
+  quote: Composition. The Tribal Council shall consist
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article IV, Section 2
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot of eligible voters
+  quote: (5) additional Council persons elected by secret ballot of the eligible
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article IV, Section 2
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: Tribal Council member shall serve for a term of four (4) years. Selection
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article IV, Section 2
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: Chairperson. The Chairperson shall exercise the following
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article VII, Section 1
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Elk Valley Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Selected by the Council from its membership, absent an election ordinance
+  quote: officers shall be selected by the Council from its membership,
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article IV, Section 2
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: Secretary. The Secretary shall call
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article VII, Sections 2-4
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Held as designated by an election ordinance
+  quote: Election Day. Elections shall be held
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article IX, Section 4
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: (18) years or more of age shall be eligible to vote in tribal elections.
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article IX, Section 2
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Council establishes tribal courts
+  quote: To establish tribal courts and administrative bodies, and to provide
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article V, Section 1(m)
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Method of selection set by the Tribal Council
+  quote: for the courts' jurisdiction, procedures, and a method for the selection
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article V, Section 1(m)
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters in an election called by the Secretary, 30% must vote
+  quote: This Constitution may be amended by a majority vote of the qualified
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article XIII
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: No amendment shall become effective until approved
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article XIII
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: by at least thirty percent (30%) of the qualified voters of the Tribe
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article X, Section 3
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by majority vote of the Tribal Council for neglect of duty or gross misconduct
+  quote: Council may by a majority vote expel any member for neglect of duty
+  source: national-indian-law-library-constitution-constitutions-elk-valley
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-12-27'
+  locator: Article IX, Section 3
+  document_version:
+    document: elk-valley-rancheria-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Ordinances of the Elk Valley Rancheria, California

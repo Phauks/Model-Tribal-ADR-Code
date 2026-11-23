@@ -128,7 +128,7 @@ function earliestDate(version: DocumentVersion): string | undefined {
 	return dates[0];
 }
 
-function labelOf(version: DocumentVersion | undefined, fallback: string): string {
+export function labelOf(version: DocumentVersion | undefined, fallback: string): string {
 	return version?.label ?? fallback;
 }
 

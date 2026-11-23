@@ -151,6 +151,218 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Allakaket Village
+governance:
+- aspect: form
+  value: Traditional Constitution, adopted under the Tribe's inherent sovereign authority
+  quote: TRADITIONAL CONSTITUTION
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Allakak’a Tribal Council
+  quote: The governing body of the Allakak’a Tribe shall be the Allakak’a Tribal
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 4, Section 1
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Allakak’a Tribal Council shall consist of seven (7) members
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 4, Section 2
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified voters
+  quote: who shall be elected by a majority vote of the qualified voters casting their ballots in such
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 4, Section 2
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years (one-year terms may initiate staggering)
+  quote: All Tribal Council members shall hold office for a term of two
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 4, Section 6
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: First Chief
+  quote: The First Chief shall preside over meetings of the Council and of
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 5, Section 2
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Allakaket Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected directly by the people
+  quote: The First and Second Chiefs shall be elected directly by the people.
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 4, Section 3
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 2 years (one-year terms may initiate staggering)
+  quote: All Tribal Council members shall hold office for a term of two
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 4, Section 6
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Second Chief, Secretary/Treasurer
+  quote: Section 3. Officers The Council shall include a First Chief, Second Chief, and a
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 4, Section 3
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Held in October
+  quote: Elections for Tribal Council positions shall be held in
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 8, Section 3
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Any tribal member of the Allakak’a Tribe, eighteen (18)
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 8, Section 1
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election committee appointed by the Council
+  quote: The Council shall appoint an election committee of at
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 8, Section 5
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal courts or other judicial bodies (Council may establish)
+  quote: including the establishment of appropriate tribal courts or other judicial bodies.
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 9, Section 3(j)
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority of qualified voters in an election; 30 percent must vote
+  quote: purpose, provided that at least thirty percent (30%) of those qualified to vote shall vote in
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 14, Section 1
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by at least 5 council members
+  quote: removed from office by the Tribal Council by at least five (5) Tribal Council members
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 7, Section 1
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 30 percent of qualified voters
+  quote: at least thirty percent (30%) of the qualified voters, shall be presented to the Tribal
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 7, Section 2
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Initiative by petition of 30 percent of eligible voters
+  quote: petition signed by at least thirty percent (30%) of the eligible voters.
+  source: constitution-allakaket-village-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-07'
+  locator: Article 11, Section 1
+  document_version:
+    document: allakaket-village-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Tribal code
