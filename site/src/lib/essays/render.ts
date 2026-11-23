@@ -286,7 +286,12 @@ function linkCaseNames(tokens: Token[], library: EssayLibrary, boxesHere: Set<st
 			linked.add(key);
 			const open = new Token('link_open', 'a', 1);
 			open.attrs = [['href', target], ['class', 'case-link'], ['data-case', key]];
-			children.push(open, child, text, close, new Token('link_close', 'a', -1));
+			// The opinion itself opens in a new tab, so the essay stays open; a box is part of the essays.
+			const newTab = !target.startsWith('#');
+			if (newTab) open.attrs.push(['target', '_blank'], ['rel', 'noopener']);
+			const hint = new Token('html_inline', '', 0);
+			hint.content = newTab ? '<span class="visually-hidden"> (opens in a new tab)</span>' : '';
+			children.push(open, child, text, close, hint, new Token('link_close', 'a', -1));
 			index += 2;
 		}
 		token.children = children;
