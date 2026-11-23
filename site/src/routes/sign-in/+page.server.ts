@@ -1,6 +1,7 @@
 import { deviceLabel } from '#lib/device-label.ts';
 import { fail, redirect } from '@sveltejs/kit';
 import {
+	adoptWaitingPassword,
 	cleanEmail,
 	codeLifetimeMinutes,
 	issueCode,
@@ -8,9 +9,12 @@ import {
 	tryPassword,
 	usablePasswordKey,
 	useCode,
-	verifiedAccount
+	verifiedAccount,
+	waitingPassword,
+	type WaitingPassword
 } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
+import { newPasswordProblem } from '#lib/server/password-checks.ts';
 import { emailDelivery } from '#lib/server/sign-in-email.ts';
 import { finishSignIn, safeReturnPath } from '#lib/server/sign-in.ts';
 import { refusalCookie } from './refused/reasons.ts';
@@ -25,6 +29,8 @@ export const load: PageServerLoad = async ({ url, locals }) => {
 		returnTo,
 		// Whether this copy of the site can send codes (src/lib/server/sign-in-email.ts).
 		codesAvailable: emailDelivery(environment, url).kind !== 'none',
+		// "/sign-in?create" opens Create an account.
+		create: url.searchParams.has('create'),
 		signedInAs: locals.account?.email ?? null,
 		databaseReady: Boolean(environment.database)
 	};
@@ -54,12 +60,64 @@ function formText(form: FormData, name: string): string {
 	return typeof value === 'string' ? value : '';
 }
 
+/**
+ * Sends a code and a link to an address, for signing in or, with a new
+ * password, for Create an account. Problems come back to the step the form
+ * was on.
+ */
+async function sendCode(
+	request: Request,
+	url: URL,
+	from: { step: 'email' | 'create'; email: string; returnTo: string; keep: boolean },
+	newPassword?: string
+) {
+	const { step, email, returnTo, keep } = from;
+	const environment = workerEnvironment();
+	const delivery = emailDelivery(environment, url);
+	if (delivery.kind === 'none' || !environment.database) {
+		return fail(503, {
+			step, email, returnTo, keep,
+			problem:
+				step === 'create'
+					? 'This site cannot send email yet, so new accounts cannot be made. Ask the lead author for a sign-in link.'
+					: 'This site cannot send sign-in codes yet. Sign in with your password, or ask the lead author for a sign-in link.'
+		});
+	}
+	if (!(await withinLimit(request, email, 'send'))) return fail(429, { step, email, returnTo, keep, problem: tooMany });
+
+	let waiting: WaitingPassword | undefined;
+	if (newPassword !== undefined) waiting = await waitingPassword(newPassword, usablePasswordKey(environment.PASSWORD_KEY));
+	const issued = await issueCode(environment.database, email, 'email', null, waiting);
+	const link = new URL('/sign-in/link', url.origin);
+	link.searchParams.set('token', issued.linkToken);
+	if (returnTo !== '/workspace') link.searchParams.set('returnTo', returnTo);
+
+	if (delivery.kind === 'email') {
+		try {
+			await delivery.send(email, issued.code!, link.href, step === 'create' ? 'new-account' : 'sign-in');
+		} catch (problem) {
+			console.error('Could not send a sign-in email', problem);
+			return fail(502, { step, email, returnTo, keep, problem: 'The email could not be sent just now. Please try again in a few minutes.' });
+		}
+	}
+	return {
+		step: 'code' as const,
+		email, returnTo, keep,
+		creating: step === 'create',
+		minutes: codeLifetimeMinutes.email,
+		// Only on a copy running on this computer, where no email is sent.
+		shownCode: delivery.kind === 'on-screen' ? issued.code : undefined,
+		shownLink: delivery.kind === 'on-screen' ? link.href : undefined
+	};
+}
+
 export const actions: Actions = {
 	/** Sends a code and a link to the address. */
 	send: async ({ request, url }) => {
 		const form = await request.formData();
 		const email = cleanEmail(formText(form, 'email'));
 		const returnTo = safeReturnPath(formText(form, 'returnTo'));
+		const keep = form.get('keep') === 'yes';
 		if (!looksLikeEmail(email)) {
 			return fail(400, {
 				step: 'email' as const,
@@ -68,43 +126,32 @@ export const actions: Actions = {
 				problem: 'Enter your email address, for example name@example.com.'
 			});
 		}
-		const environment = workerEnvironment();
-		const delivery = emailDelivery(environment, url);
-		if (delivery.kind === 'none' || !environment.database) {
-			return fail(503, {
-				step: 'email' as const,
-				email, returnTo,
-				problem: 'This site cannot send sign-in codes yet. Sign in with your password, or ask the lead author for a sign-in link.'
-			});
-		}
-		if (!(await withinLimit(request, email, 'send'))) return fail(429, { step: 'email' as const, email, returnTo, problem: tooMany });
+		return sendCode(request, url, { step: 'email', email, returnTo, keep });
+	},
 
-		const issued = await issueCode(environment.database, email, 'email');
-		const link = new URL('/sign-in/link', url.origin);
-		link.searchParams.set('token', issued.linkToken);
-		if (returnTo !== '/workspace') link.searchParams.set('returnTo', returnTo);
-
-		if (delivery.kind === 'email') {
-			try {
-				await delivery.send(email, issued.code!, link.href);
-			} catch (problem) {
-				console.error('Could not send a sign-in email', problem);
-				return fail(502, {
-					step: 'email' as const,
-					email, returnTo,
-					problem: 'The email could not be sent just now. Please try again in a few minutes.'
-				});
-			}
-		}
-		return {
-			step: 'code' as const,
-			email, returnTo,
-			keep: form.get('keep') === 'yes',
-			minutes: codeLifetimeMinutes.email,
-			// Only on a copy running on this computer, where no email is sent.
-			shownCode: delivery.kind === 'on-screen' ? issued.code : undefined,
-			shownLink: delivery.kind === 'on-screen' ? link.href : undefined
-		};
+	/**
+	 * Create an account (Trevor, Nov. 23, 2026): an email address and a new
+	 * password. Nothing is made yet. A code goes to the address with the
+	 * password, hashed, kept beside it, and the account is made with that
+	 * password only when the code or the link is used, so every account still
+	 * starts with a confirmed address. The answer is the same whether or not the
+	 * address has an account already, so this form cannot be used to find out
+	 * who has signed up; an account that already has a password keeps it
+	 * (src/lib/server/accounts.ts, adoptWaitingPassword).
+	 */
+	create: async ({ request, url }) => {
+		const form = await request.formData();
+		const email = cleanEmail(formText(form, 'email'));
+		const password = formText(form, 'password');
+		const returnTo = safeReturnPath(formText(form, 'returnTo'));
+		const keep = form.get('keep') === 'yes';
+		const again = (problem: string, field: 'email' | 'new-password' | undefined, status = 400) =>
+			fail(status, { step: 'create' as const, email, returnTo, keep, problem, field });
+		if (!looksLikeEmail(email)) return again('Enter your email address, for example name@example.com.', 'email');
+		if (password === '') return again('Choose a password.', 'new-password');
+		const problem = await newPasswordProblem(password, email);
+		if (problem) return again(problem, 'new-password');
+		return sendCode(request, url, { step: 'create', email, returnTo, keep }, password);
 	},
 
 	/** Checks the code typed from the email. */
@@ -114,8 +161,16 @@ export const actions: Actions = {
 		const code = formText(form, 'code').replace(/\s+/g, '');
 		const returnTo = safeReturnPath(formText(form, 'returnTo'));
 		const environment = workerEnvironment();
+		const creating = form.get('creating') === 'yes';
 		const again = (problem: string, status = 400) =>
-			fail(status, { step: 'code' as const, email, returnTo, keep: form.get('keep') === 'yes', minutes: codeLifetimeMinutes.email, problem, field: 'code' as const });
+			fail(status, {
+				step: 'code' as const,
+				email, returnTo, creating,
+				keep: form.get('keep') === 'yes',
+				minutes: codeLifetimeMinutes.email,
+				problem,
+				field: 'code' as const
+			});
 		if (!environment.database) return again('Sign-in is not available right now.', 503);
 		if (!/^\d{6}$/.test(code)) return again('Enter the six-digit code from the email.');
 		if (!(await withinLimit(request, email, 'code'))) return again(tooMany, 429);
@@ -131,6 +186,7 @@ export const actions: Actions = {
 		}
 
 		const account = await verifiedAccount(environment.database, result.email);
+		if (result.newPassword) await adoptWaitingPassword(environment.database, account.identifier, result.newPassword);
 		const finished = await finishSignIn(environment.database, cookies, account, 'code', returnTo, environment.LEAD_AUTHOR_EMAIL, {
 			device: deviceLabel(request.headers.get('user-agent')),
 			keep: form.get('keep') === 'yes'

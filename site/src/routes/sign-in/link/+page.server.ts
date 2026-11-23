@@ -1,6 +1,6 @@
 import { deviceLabel } from '#lib/device-label.ts';
 import { fail, redirect } from '@sveltejs/kit';
-import { linkStillWorks, useLink, verifiedAccount } from '#lib/server/accounts.ts';
+import { adoptWaitingPassword, linkStillWorks, useLink, verifiedAccount } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { finishSignIn, safeReturnPath } from '#lib/server/sign-in.ts';
 import { refusalCookie } from '../refused/reasons.ts';
@@ -37,6 +37,8 @@ export const actions: Actions = {
 			redirect(303, '/sign-in/refused');
 		}
 		const account = await verifiedAccount(environment.database, result.email);
+		// A link from a Create an account email gives the account the password chosen there.
+		if (result.newPassword) await adoptWaitingPassword(environment.database, account.identifier, result.newPassword);
 		const finished = await finishSignIn(environment.database, cookies, account, 'link', returnTo, environment.LEAD_AUTHOR_EMAIL, {
 			device: deviceLabel(request.headers.get('user-agent'))
 		});

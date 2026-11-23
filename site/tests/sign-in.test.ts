@@ -1,6 +1,8 @@
 import type { Cookies } from '@sveltejs/kit';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
+	accountByEmail,
+	adoptWaitingPassword,
 	checkPassword,
 	failuresBeforeOff,
 	failuresBeforePause,
@@ -17,7 +19,8 @@ import {
 	usablePasswordKey,
 	useCode,
 	useLink,
-	verifiedAccount
+	verifiedAccount,
+	waitingPassword
 } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { emailDelivery, signInMessage } from '#lib/server/sign-in-email.ts';
@@ -89,6 +92,13 @@ describe('codes and passwords', () => {
 		}) as unknown as typeof fetch;
 		expect(await newPasswordProblem('kettle river paper moon', 'a@example.org', broken)).toBeUndefined();
 		warn.mockRestore();
+	});
+
+	it('says in the email when the code is for a new account', () => {
+		const message = signInMessage('123456', 'https://site.example/sign-in/link?token=x', 'new-account');
+		expect(message.subject).toMatch(/^Confirm your email address/);
+		expect(message.subject).toContain('123456');
+		expect(message.text).toContain('Your account is made when you use one.');
 	});
 
 	it('puts the code and link in the email', () => {
@@ -392,5 +402,53 @@ describe('password storage and wrong passwords', () => {
 		expect(provedRecently(codeSession, Date.now() + 11 * 60 * 1000)).toBe(false);
 		expect(provedRecently(await sessionAccount(database, byPassword.token))).toBe(false);
 		expect(provedRecently(undefined)).toBe(false);
+	});
+});
+
+describe('creating an account', () => {
+	let database: ReturnType<typeof testDatabase>;
+	beforeEach(() => {
+		database = testDatabase();
+	});
+
+	it('makes the account, with the chosen password, only when the code is used', async () => {
+		const chosen = await waitingPassword('kettle river paper moon', undefined);
+		const issued = await issueCode(database, 'new@example.org', 'email', null, chosen);
+		expect(await accountByEmail(database, 'new@example.org')).toBeUndefined();
+		const row = await database.prepare('SELECT new_password_hash AS hash FROM sign_in_codes').first<{ hash: string }>();
+		expect(row?.hash).toBe(chosen.hash);
+		expect(row?.hash).not.toContain('kettle');
+
+		const result = await useCode(database, 'new@example.org', issued.code!);
+		expect(result).toEqual({ outcome: 'accepted', email: 'new@example.org', newPassword: chosen });
+		const account = await verifiedAccount(database, 'new@example.org');
+		expect(await adoptWaitingPassword(database, account.identifier, chosen)).toBe(true);
+		expect((await checkPassword(database, 'new@example.org', 'kettle river paper moon'))?.identifier).toBe(account.identifier);
+		// The waiting password went with the code.
+		expect(await database.prepare('SELECT COUNT(*) AS count FROM sign_in_codes').first<{ count: number }>()).toEqual({ count: 0 });
+	});
+
+	it('gives the chosen password through the link in the email too', async () => {
+		const chosen = await waitingPassword('kettle river paper moon', undefined);
+		const issued = await issueCode(database, 'new@example.org', 'email', null, chosen);
+		const result = await useLink(database, issued.linkToken);
+		expect(result).toEqual({ outcome: 'accepted', email: 'new@example.org', origin: 'email', newPassword: chosen });
+	});
+
+	it('never replaces the password an account already has', async () => {
+		const account = await verifiedAccount(database, 'person@example.org');
+		await setPassword(database, account.identifier, 'the old password stays', undefined);
+		const chosen = await waitingPassword('kettle river paper moon', undefined);
+		expect(await adoptWaitingPassword(database, account.identifier, chosen)).toBe(false);
+		expect(await checkPassword(database, 'person@example.org', 'the old password stays')).toBeDefined();
+		expect(await checkPassword(database, 'person@example.org', 'kettle river paper moon')).toBeUndefined();
+	});
+
+	it('drops a waiting password when a plain code is asked for after it', async () => {
+		const chosen = await waitingPassword('kettle river paper moon', undefined);
+		await issueCode(database, 'new@example.org', 'email', null, chosen);
+		const plain = await issueCode(database, 'new@example.org', 'email');
+		const result = await useCode(database, 'new@example.org', plain.code!);
+		expect(result.outcome === 'accepted' && result.newPassword).toBeFalsy();
 	});
 });

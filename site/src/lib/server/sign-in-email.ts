@@ -24,7 +24,7 @@ export interface SignInEmailBinding {
 }
 
 export type EmailDelivery =
-	| { kind: 'email'; send: (to: string, code: string, link: string) => Promise<void> }
+	| { kind: 'email'; send: (to: string, code: string, link: string, purpose?: CodePurpose) => Promise<void> }
 	| { kind: 'on-screen' }
 	| { kind: 'none' };
 
@@ -33,8 +33,26 @@ export function isLocalCopy(url: URL): boolean {
 	return url.hostname === 'localhost' || url.hostname === '127.0.0.1' || url.hostname === '[::1]';
 }
 
-/** The text of a sign-in email. */
-export function signInMessage(code: string, link: string): { subject: string; text: string } {
+/** Why the code was sent: to sign in, or to confirm the address for Create an account. */
+export type CodePurpose = 'sign-in' | 'new-account';
+
+/** The text of a sign-in email, or of the email that confirms a new account's address. */
+export function signInMessage(code: string, link: string, purpose: CodePurpose = 'sign-in'): { subject: string; text: string } {
+	if (purpose === 'new-account') {
+		return {
+			subject: `Confirm your email address for the Model Tribal ADR Code: ${code}`,
+			text: [
+				`Your code is ${code}. Type it where you are creating your account.`,
+				'',
+				'Or open this link in the browser where you are creating it:',
+				link,
+				'',
+				'The code and the link work once and stop working after 15 minutes. Your account is made when you use one.',
+				'',
+				'If you did not ask to create an account, you can ignore this email. Nothing is made without the code.'
+			].join('\n')
+		};
+	}
 	return {
 		subject: `Your sign-in code for the Model Tribal ADR Code: ${code}`,
 		text: [
@@ -58,8 +76,8 @@ export function emailDelivery(environment: WorkerEnvironment, url: URL): EmailDe
 	if (!from || !binding) return { kind: 'none' };
 	return {
 		kind: 'email',
-		send: async (to, code, link) => {
-			const { subject, text } = signInMessage(code, link);
+		send: async (to, code, link, purpose = 'sign-in') => {
+			const { subject, text } = signInMessage(code, link, purpose);
 			await binding.send({ to, from: { email: from, name: 'Model Tribal ADR Code' }, subject, text });
 		}
 	};

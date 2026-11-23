@@ -319,15 +319,47 @@ export interface IssuedCode {
 	expiresAt: string;
 }
 
+/** A password chosen on Create an account, hashed, waiting for the code that confirms the address. */
+export interface WaitingPassword {
+	hash: string;
+	salt: string;
+	iterations: number;
+	keyed: boolean;
+}
+
+interface WaitingPasswordRow {
+	newPasswordHash: string | null;
+	newPasswordSalt: string | null;
+	newPasswordIterations: number | null;
+	newPasswordKeyed: number;
+}
+
+const waitingPasswordColumns = `new_password_hash AS newPasswordHash, new_password_salt AS newPasswordSalt,
+	new_password_iterations AS newPasswordIterations, new_password_keyed AS newPasswordKeyed`;
+
+function toWaitingPassword(row: WaitingPasswordRow): WaitingPassword | undefined {
+	if (!row.newPasswordHash || !row.newPasswordSalt || !row.newPasswordIterations) return undefined;
+	return { hash: row.newPasswordHash, salt: row.newPasswordSalt, iterations: row.newPasswordIterations, keyed: Boolean(row.newPasswordKeyed) };
+}
+
+/** Hashes a password chosen on Create an account, to keep with its code until the code is used. */
+export async function waitingPassword(password: string, key: string | undefined): Promise<WaitingPassword> {
+	const salt = randomToken(16);
+	return { hash: await passwordHash(password, salt, passwordIterations, key), salt, iterations: passwordIterations, keyed: Boolean(key) };
+}
+
 /**
  * Makes a code and a link for an address. Asking again replaces any earlier
- * code of the same kind for that address, so only the newest one works.
+ * code of the same kind for that address, so only the newest one works. A
+ * code sent by Create an account carries the password chosen there, which
+ * the account gets when the code is used.
  */
 export async function issueCode(
 	database: D1Database,
 	email: string,
 	origin: CodeOrigin,
-	createdBy: string | null = null
+	createdBy: string | null = null,
+	newPassword?: WaitingPassword
 ): Promise<IssuedCode> {
 	const address = cleanEmail(email);
 	const code = origin === 'email' ? randomCode() : undefined;
@@ -340,8 +372,9 @@ export async function issueCode(
 			.bind(address, origin, created.toISOString()),
 		database
 			.prepare(
-				`INSERT INTO sign_in_codes (identifier, email, code_hash, link_hash, origin, created_by, created_at, expires_at)
-				 VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+				`INSERT INTO sign_in_codes (identifier, email, code_hash, link_hash, origin, created_by, created_at, expires_at,
+				 new_password_hash, new_password_salt, new_password_iterations, new_password_keyed)
+				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
 			.bind(
 				newIdentifier(),
@@ -351,24 +384,30 @@ export async function issueCode(
 				origin,
 				createdBy,
 				created.toISOString(),
-				expiresAt
+				expiresAt,
+				newPassword?.hash ?? null,
+				newPassword?.salt ?? null,
+				newPassword?.iterations ?? null,
+				newPassword?.keyed ? 1 : 0
 			)
 	]);
 	return { code, linkToken, expiresAt };
 }
 
-export type CodeResult = { outcome: 'accepted'; email: string } | { outcome: 'wrong' | 'expired' | 'too-many' };
+export type CodeResult =
+	| { outcome: 'accepted'; email: string; newPassword?: WaitingPassword }
+	| { outcome: 'wrong' | 'expired' | 'too-many' };
 
 /** Checks a six-digit code typed for an address. A right code works once. */
 export async function useCode(database: D1Database, email: string, code: string): Promise<CodeResult> {
 	const address = cleanEmail(email);
 	const row = await database
 		.prepare(
-			`SELECT identifier, code_hash AS codeHash, wrong_attempts AS wrongAttempts, expires_at AS expiresAt
+			`SELECT identifier, code_hash AS codeHash, wrong_attempts AS wrongAttempts, expires_at AS expiresAt, ${waitingPasswordColumns}
 			 FROM sign_in_codes WHERE email = ? AND origin = 'email' ORDER BY created_at DESC LIMIT 1`
 		)
 		.bind(address)
-		.first<{ identifier: string; codeHash: string; wrongAttempts: number; expiresAt: string }>();
+		.first<{ identifier: string; codeHash: string; wrongAttempts: number; expiresAt: string } & WaitingPasswordRow>();
 	if (!row || row.expiresAt < now()) return { outcome: 'expired' };
 	if (row.wrongAttempts >= maximumWrongAttempts) return { outcome: 'too-many' };
 	const typed = code.replace(/\s+/g, '');
@@ -384,24 +423,42 @@ export async function useCode(database: D1Database, email: string, code: string)
 	// only the one whose delete removes the row signs in.
 	const { meta } = await database.prepare('DELETE FROM sign_in_codes WHERE identifier = ?').bind(row.identifier).run();
 	if (meta.changes !== 1) return { outcome: 'expired' };
-	return { outcome: 'accepted', email: address };
+	return { outcome: 'accepted', email: address, newPassword: toWaitingPassword(row) };
 }
 
-export type LinkResult = { outcome: 'accepted'; email: string; origin: CodeOrigin } | { outcome: 'expired' };
+/**
+ * Gives an account the password chosen on Create an account, once the code
+ * has confirmed the address. An account that already has a password keeps
+ * it, since changing a password has its own page (/profile/password), which
+ * asks for the old one or a recent code. Returns whether the password was set.
+ */
+export async function adoptWaitingPassword(database: D1Database, accountIdentifier: string, password: WaitingPassword): Promise<boolean> {
+	const { meta } = await database
+		.prepare(
+			`UPDATE accounts SET password_hash = ?, password_salt = ?, password_iterations = ?, password_keyed = ?,
+			 password_changed_at = ? WHERE identifier = ? AND password_hash IS NULL`
+		)
+		.bind(password.hash, password.salt, password.iterations, password.keyed ? 1 : 0, now(), accountIdentifier)
+		.run();
+	return meta.changes === 1;
+}
+
+export type LinkResult = { outcome: 'accepted'; email: string; origin: CodeOrigin; newPassword?: WaitingPassword } | { outcome: 'expired' };
 
 /** The address a sign-in link was made for, if it still works. A link works once. */
 export async function useLink(database: D1Database, token: string): Promise<LinkResult> {
 	if (!token || token.length > 100) return { outcome: 'expired' };
 	const row = await database
 		.prepare(
-			`SELECT identifier, email, origin, expires_at AS expiresAt FROM sign_in_codes WHERE link_hash = ?`
+			`SELECT identifier, email, origin, expires_at AS expiresAt, ${waitingPasswordColumns}
+			 FROM sign_in_codes WHERE link_hash = ?`
 		)
 		.bind(await sha256(token))
-		.first<{ identifier: string; email: string; origin: CodeOrigin; expiresAt: string }>();
+		.first<{ identifier: string; email: string; origin: CodeOrigin; expiresAt: string } & WaitingPasswordRow>();
 	if (!row || row.expiresAt < now()) return { outcome: 'expired' };
 	const { meta } = await database.prepare('DELETE FROM sign_in_codes WHERE identifier = ?').bind(row.identifier).run();
 	if (meta.changes !== 1) return { outcome: 'expired' };
-	return { outcome: 'accepted', email: row.email, origin: row.origin };
+	return { outcome: 'accepted', email: row.email, origin: row.origin, newPassword: toWaitingPassword(row) };
 }
 
 /** Whether a link token still works, without using it up (for the confirmation page). */
