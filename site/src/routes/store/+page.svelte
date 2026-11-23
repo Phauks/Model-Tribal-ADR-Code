@@ -186,7 +186,7 @@
 	}
 	.items {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 11.5rem), 1fr));
 		gap: var(--space-4);
 		list-style: none;
 		padding: 0;
@@ -210,6 +210,8 @@
 		margin: var(--space-1) 0 0;
 	}
 	.price {
+		/* Leaves room for the cart button in the card's corner. */
+		padding-right: var(--layout-target-minimum);
 		font-weight: var(--font-weight-semibold);
 		font-variant-numeric: tabular-nums;
 	}
