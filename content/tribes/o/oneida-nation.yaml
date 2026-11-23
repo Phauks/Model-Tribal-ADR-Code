@@ -876,6 +876,73 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+court_practice:
+- kind: bar-admission
+  title: What are the Rules of Admission to Practice Before the Judiciary?
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/wp-content/uploads/2017/02/Rules-of-Admission-Revised-11-2017.pdf
+  detail: Rules of Admission to Practice (revised 11-2017) per file name; the same page links an Application for Admission, professional conduct law for attorneys and advocates, and a Referral Directory (May 2026) of those approved to practice.
+  source: oneida-nation-oneida-nation-admission-to-practice
+  confidence: high
+  verification: read-in-full
+  locator: Admission to Practice
+- kind: bar-admission
+  title: How Do I Apply For Admission To Practice Before the Judiciary?
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/wp-content/uploads/2017/02/Application-for-Admission.pdf
+  detail: Application for Admission to practice before the Judiciary.
+  source: oneida-nation-oneida-nation-admission-to-practice
+  confidence: high
+  verification: read-in-full
+  locator: Admission to Practice
+- kind: filing-fees
+  title: What Does It Cost to File an Action?
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/wp-content/uploads/2024/07/What-Does-It-Cost-to-File-an-Action.pdf
+  detail: Filing cost document (2024 upload); the page also links a 2026-2027 Fee Waiver Request with guidelines.
+  source: oneida-nation-oneida-nation-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Court Fees
+- kind: forms
+  title: Judiciary Forms
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/judiciary/judiciary-forms/
+  detail: Forms in general and family-law groups, including Fee Waiver, Consent to Electronic Service, Motion packet, Transcript Request, Petition for Divorce, Legal Separation or Annulment, and custody and child support motions.
+  source: oneida-nation-oneida-nation-judiciary-forms
+  confidence: high
+  verification: read-in-full
+  locator: Judiciary Forms
+  note: 'The source reads: “File a Motion on an Established Case”.'
+- kind: legal-aid
+  title: Can the General Tribal Council (GTC) Legal Resource Center assist me?
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/wp-content/uploads/2019/06/Contact-the-Oneida-General-Tribal-Council-Legal-Resource-Center.pdf
+  detail: Document on whether the General Tribal Council Legal Resource Center can assist; contents not opened.
+  source: oneida-nation-oneida-nation-admission-to-practice
+  confidence: medium
+  verification: read-in-full
+  locator: Admission to Practice
+  note: Nation's own legal resource office; eligibility not read.
+nearby_state_courts:
+- state: WI
+  county: Outagamie County
+  court: Circuit Court for Outagamie County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Outagamie County holds 60% of the land of Oneida (WI) Reservation (Census GEOID 2560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WI
+  county: Brown County
+  court: Circuit Court for Brown County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Brown County holds 40% of the land of Oneida (WI) Reservation (Census GEOID 2560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Six Nations, 1784
   signed: '1784-10-22'

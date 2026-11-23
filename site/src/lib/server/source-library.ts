@@ -1,5 +1,5 @@
 /**
- * The source library in the workspace (decision record 0049): the text of
+ * The source library in the workspace (decision record 0051): the text of
  * every document in the private bucket, page by page, searchable by the
  * project's writers. It lives in its own D1 database, model-tribal-adr-code-
  * library (binding sourceLibrary), loaded from the library that

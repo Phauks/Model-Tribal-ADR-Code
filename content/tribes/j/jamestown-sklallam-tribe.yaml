@@ -868,6 +868,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section 4, Citation into Tribal Court
   note: 'The source reads: “By adopting selected State criminal law as tribal law and deputizing CCSO deputies as tribal officers”. Year from a handwritten date and a tribal council resolution dated February 4, 2010 in the text. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: WA
+  county: Clallam County
+  court: Superior Court for Clallam County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Clallam County holds 100% of the land of Jamestown S'Klallam Reservation (Census GEOID 1655), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the S'klallam, 1855
   signed: '1855-01-26'

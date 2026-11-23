@@ -730,6 +730,73 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+court_practice:
+- kind: bar-admission
+  title: 2026 Attorney List
+  court: Pueblo of Laguna Tribal Court
+  link: https://www.lagunapueblo-nsn.gov/departments/judicial-services/
+  detail: Page offers a "2026 Attorney List" download of attorneys approved to practice.
+  source: pueblo-of-laguna-lagunapueblo-nsn-gov-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Tribal Court page
+  note: Admission procedure not found on the page.
+- kind: filing-fees
+  title: Adoption of Revised Tribal Court Fee Schedule
+  court: Pueblo of Laguna Tribal Court
+  link: https://www.lagunapueblo-nsn.gov/departments/judicial-services/
+  detail: Page carries a notice titled "Adoption of Revised Tribal Court Fee Schedule"; amounts not read.
+  source: pueblo-of-laguna-lagunapueblo-nsn-gov-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Tribal Court page
+  note: Amounts not read.
+- kind: forms
+  title: Judicial Forms
+  court: Pueblo of Laguna Tribal Court
+  link: https://www.lagunapueblo-nsn.gov/departments/judicial-services/
+  detail: Judicial forms include Criminal Motion, Civil Traffic Motion, Civil Motion and Response, Civil Complaint, Petition for Change of Name (adult) (2026 uploads).
+  source: pueblo-of-laguna-lagunapueblo-nsn-gov-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Court page
+nearby_state_courts:
+- state: NM
+  county: Cibola County
+  court: District Court for Cibola County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cibola County holds 64% of the land of Laguna Pueblo (Census GEOID 1840), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Sandoval County
+  court: District Court for Sandoval County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Sandoval County holds 15% of the land of Laguna Pueblo (Census GEOID 1840), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Valencia County
+  court: District Court for Valencia County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Valencia County holds 12% of the land of Laguna Pueblo (Census GEOID 1840), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Bernalillo County
+  court: District Court for Bernalillo County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Bernalillo County holds 10% of the land of Laguna Pueblo (Census GEOID 1840), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Laguna Pueblo additional lands, New Mexico
   method: executive-order

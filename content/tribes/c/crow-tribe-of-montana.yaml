@@ -851,6 +851,66 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table "State and Tribal Tax Agreements"
   note: 'The source reads: “Crow Tribe Tobacco Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+court_practice:
+- kind: forms
+  title: Crow Tribal Court Forms
+  court: Crow Tribal Court
+  link: https://www.crowtribalcourts.org/crow-tribal-court-forms.html
+  detail: Forms page linked from the home page (civil and general court forms; juvenile and criminal form pages also linked); not opened.
+  source: crow-tribal-court-home
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+- kind: forms
+  title: Civil Court Forms
+  court: Crow Tribal Court
+  link: https://www.crowtribalcourts.org/civil-court-forms.html
+  detail: Forms page linked from the home page (civil and general court forms; juvenile and criminal form pages also linked); not opened.
+  source: crow-tribal-court-home
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+- kind: bar-admission
+  title: Advocate List
+  court: Crow Tribal Court
+  link: https://www.crowtribalcourts.org/advocate-list.html
+  detail: Page linked from home page listing advocates (lay advocates who may appear); not opened.
+  source: crow-tribal-court-home
+  confidence: medium
+  verification: title-only
+  locator: Home page links
+  note: Page not opened; no admission procedure read.
+- kind: legal-aid
+  title: Legal Advice
+  court: Crow Tribal Court
+  link: https://www.crowtribalcourts.org/legal-advice.html
+  detail: Court staff cannot give legal advice; litigants are referred to an attorney or tribal advocate; a "Can/Cannot Do" court clerk notice is linked.
+  source: crow-tribal-court-legal-advice-crow-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Legal Advice page
+  note: 'The source reads: “court staff cannot provide any type of legal advice”. Not a legal aid program; shows referral to advocates only.'
+nearby_state_courts:
+- state: MT
+  county: Big Horn County
+  court: District Court for Big Horn County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Big Horn County holds 89% of the land of Crow Reservation (Census GEOID 0845), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Yellowstone County
+  court: District Court for Yellowstone County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Yellowstone County holds 10% of the land of Crow Reservation (Census GEOID 0845), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Crow Tribe, 1825
   signed: '1825-08-04'

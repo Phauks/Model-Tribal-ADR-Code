@@ -988,6 +988,54 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Comprehensive Tax Collection Agreement"
   note: 'The source reads: “The five Indian tribes with comprehensive tax collection agreements are Cheyenne River Sioux Tribe, Crow Creek Sioux Tribe, Oglala Sioux Tribe, Rosebud Sioux Tribe, and Standing Rock Sioux Tribe.”. Revenue from the tribe''s Special Jurisdiction is remitted on the state return and divided between the state and the tribe under the agreement terms. The page gives no signing date.'
+court_practice:
+- kind: court-rules
+  title: Chapter 1 - Rules of Civil Procedure (Law and Order Code, Title Four Civil Procedures)
+  court: Rosebud Sioux Tribal Court
+  link: https://www.rstcourt.org/law-order-code/title-four-civil-procedures/chapter-1-rules-of-civil-procedure/
+  detail: The court website hosts the Law and Order Code, whose Title Four Civil Procedures includes Chapter 1 Rules of Civil Procedure (Rule 1 Scope of Rules onward).
+  source: rosebud-sioux-tribal-court-constitution-law-and-order-code-p
+  confidence: high
+  verification: title-only
+  locator: Navigation of the court home page
+  note: 'The source reads: “CHAPTER 1 - RULES OF CIVIL PROCEDURE”. Link taken from the home page navigation; the rules page itself was not opened. The home page title mentions Pro Se Forms but no forms link was found in the page.'
+nearby_state_courts:
+- state: SD
+  county: Todd County
+  court: Circuit Court for Todd County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Todd County holds 70% of the land of Rosebud Indian Reservation (Census GEOID 3235), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Mellette County
+  court: Circuit Court for Mellette County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Mellette County holds 22% of the land of Rosebud Indian Reservation (Census GEOID 3235), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Tripp County
+  court: Circuit Court for Tripp County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Tripp County holds 5% of the land of Rosebud Indian Reservation (Census GEOID 3235), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Gregory County
+  court: Circuit Court for Gregory County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Gregory County holds 2% of the land of Rosebud Indian Reservation (Census GEOID 3235), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
   signed: '1868-04-29'

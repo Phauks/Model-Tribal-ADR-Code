@@ -11,6 +11,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import CSL from 'citeproc';
 import { escapeHtml, savedCopyLink } from './markdown.ts';
+import { readingLinksHtml } from '../reading-links.ts';
 import { glossary, nationNameVariants, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { sectionWithSymbol } from './citations.ts';
 import { caseItem } from './case-citations.ts';
@@ -75,7 +76,7 @@ export function everyFullCitation(records: SourceRecord[] = [...sources().values
 			const address = new URL(link);
 			html = `${html} <a href="${escapeHtml(address.href)}">${escapeHtml(address.hostname)}</a>`;
 		}
-		citations[record.key] = html + savedCopyLink(record);
+		citations[record.key] = html + savedCopyLink(record) + readingLinksHtml(record.reading_links);
 	}
 	return citations;
 }

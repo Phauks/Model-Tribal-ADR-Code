@@ -18,6 +18,7 @@ import {
 	type NationPicture
 } from '../nation-page-changes.ts';
 import { eventStatement } from './events.ts';
+import { storeSentFile } from './file-scans.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 import type { UploadedFile } from './request-form.ts';
@@ -43,9 +44,9 @@ export interface ChangeRow<K extends ChangeKind = ChangeKind> {
 	discardedAt: string | null;
 }
 
-type StoredChange = Omit<ChangeRow, 'content'> & { content: string };
+export type StoredChange = Omit<ChangeRow, 'content'> & { content: string };
 
-const changeColumns = `nation_page_changes.identifier, nation_page_changes.nation_identifier AS nationIdentifier,
+export const changeColumns = `nation_page_changes.identifier, nation_page_changes.nation_identifier AS nationIdentifier,
 	nation_page_changes.kind, nation_page_changes.content, nation_page_changes.credit, nation_page_changes.status,
 	nation_page_changes.written_by AS writtenBy, writer.display_name AS writtenByName,
 	nation_page_changes.written_at AS writtenAt, nation_page_changes.published_by AS publishedBy,
@@ -54,12 +55,12 @@ const changeColumns = `nation_page_changes.identifier, nation_page_changes.natio
 	approver.display_name AS approvedByName, nation_page_changes.approved_at AS approvedAt,
 	nation_page_changes.restored_from AS restoredFrom, nation_page_changes.discarded_at AS discardedAt`;
 
-const changeTables = `nation_page_changes
+export const changeTables = `nation_page_changes
 	LEFT JOIN people AS writer ON writer.identifier = nation_page_changes.written_by
 	LEFT JOIN people AS publisher ON publisher.identifier = nation_page_changes.published_by
 	LEFT JOIN people AS approver ON approver.identifier = nation_page_changes.approved_by`;
 
-function fromStored(row: StoredChange): ChangeRow {
+export function fromStored(row: StoredChange): ChangeRow {
 	let raw: unknown = {};
 	try {
 		raw = JSON.parse(row.content);
@@ -294,9 +295,20 @@ export async function picturesEverNamed(database: D1Database, nationIdentifier: 
  * deleted there, so an earlier version can always be restored; only the
  * pictures in the live version are served to readers.
  */
-export async function savePicture(bucket: R2Bucket, nationIdentifier: string, file: UploadedFile): Promise<string> {
+export async function savePicture(
+	database: D1Database,
+	bucket: R2Bucket,
+	nationIdentifier: string,
+	file: UploadedFile
+): Promise<string> {
 	const identifier = newIdentifier();
-	await bucket.put(pictureKey(nationIdentifier, identifier), file.bytes, {
+	// Held until the virus check passes (site/SCANNING.md): readers and the
+	// team see it only once it is clean.
+	await storeSentFile(database, bucket, {
+		objectKey: pictureKey(nationIdentifier, identifier),
+		purpose: 'nation-picture',
+		subject: nationIdentifier,
+		bytes: file.bytes,
 		httpMetadata: { contentType: file.type },
 		customMetadata: { fileName: file.name }
 	});

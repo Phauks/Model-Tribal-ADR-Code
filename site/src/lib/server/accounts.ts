@@ -15,6 +15,8 @@ export interface Account {
 	identifier: string;
 	email: string;
 	hasPassword: boolean;
+	/** Whether an authenticator app is set up (src/lib/server/two-step.ts). */
+	hasTwoStep: boolean;
 }
 
 /** How long each kind of code or link works. */
@@ -27,6 +29,13 @@ export const maximumWrongAttempts = 5;
 /** Sessions end 12 hours after sign-in, or after 4 hours without use. */
 export const sessionHours = 12;
 export const inactivityHours = 4;
+
+/**
+ * A "Keep me signed in" session lasts 30 days, the longest NIST SP
+ * 800-63B-4, section 2.1.3, allows between sign-ins at its first level. Only
+ * accounts without workspace access get one (src/lib/server/sign-in.ts).
+ */
+export const lastingSessionDays = 30;
 
 /**
  * The session cookie. HTTP-only, Secure and SameSite=Lax, and named with the
@@ -58,13 +67,15 @@ interface AccountRow {
 	passwordSalt: string | null;
 	passwordIterations: number | null;
 	passwordKeyed: number;
+	hasTwoStep: number;
 }
 
 const accountColumns = `identifier, email, password_hash AS passwordHash, password_salt AS passwordSalt,
-	password_iterations AS passwordIterations, password_keyed AS passwordKeyed`;
+	password_iterations AS passwordIterations, password_keyed AS passwordKeyed,
+	authenticator_secret IS NOT NULL AS hasTwoStep`;
 
 function toAccount(row: AccountRow): Account {
-	return { identifier: row.identifier, email: row.email, hasPassword: Boolean(row.passwordHash) };
+	return { identifier: row.identifier, email: row.email, hasPassword: Boolean(row.passwordHash), hasTwoStep: Boolean(row.hasTwoStep) };
 }
 
 export async function accountByEmail(database: D1Database, email: string): Promise<Account | undefined> {
@@ -407,26 +418,47 @@ export async function linkStillWorks(database: D1Database, token: string): Promi
 
 export type SessionMethod = 'code' | 'link' | 'password';
 
+/** Whether a session waits for the second step (migrations/20261123T0500_add_two_step_sign_in.sql). */
+export type SecondStep = 'none' | 'waiting' | 'done';
+
+export interface SessionOptions {
+	/** The browser and system, such as "Firefox on Windows" (src/lib/device-label.ts). */
+	device?: string | null;
+	/** 'waiting' when the account has an authenticator app, so the second step comes next. */
+	secondStep?: SecondStep;
+	/** A 30-day "Keep me signed in" session. */
+	lasting?: boolean;
+}
+
 /** Starts a session and returns the token for the cookie. */
 export async function startSession(
 	database: D1Database,
 	accountIdentifier: string,
 	method: SessionMethod,
-	/** The browser and system, such as "Firefox on Windows" (src/lib/device-label.ts). */
-	device: string | null = null
+	{ device = null, secondStep = 'none', lasting = false }: SessionOptions = {}
 ): Promise<{ token: string; expiresAt: Date }> {
 	const token = randomToken();
 	const started = new Date();
-	const expiresAt = new Date(started.getTime() + sessionHours * 60 * 60 * 1000);
+	const expiresAt = new Date(started.getTime() + (lasting ? lastingSessionDays * 24 : sessionHours) * 60 * 60 * 1000);
 	await database.batch([
 		// Ended sessions are removed here, so the table does not grow.
 		database.prepare('DELETE FROM sessions WHERE expires_at < ?').bind(started.toISOString()),
 		database
 			.prepare(
-				`INSERT INTO sessions (token_hash, account_identifier, created_at, last_seen_at, expires_at, method, device)
-				 VALUES (?, ?, ?, ?, ?, ?, ?)`
+				`INSERT INTO sessions (token_hash, account_identifier, created_at, last_seen_at, expires_at, method, device, second_step, lasting)
+				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
-			.bind(await sha256(token), accountIdentifier, started.toISOString(), started.toISOString(), expiresAt.toISOString(), method, device),
+			.bind(
+				await sha256(token),
+				accountIdentifier,
+				started.toISOString(),
+				started.toISOString(),
+				expiresAt.toISOString(),
+				method,
+				device,
+				secondStep,
+				lasting ? 1 : 0
+			),
 		database
 			.prepare('UPDATE accounts SET last_signed_in_at = ? WHERE identifier = ?')
 			.bind(started.toISOString(), accountIdentifier)
@@ -442,6 +474,29 @@ export interface ActiveSession {
 	method: SessionMethod;
 	/** When the session started. */
 	startedAt: string;
+	/** When the session was last used, to within five minutes. */
+	lastSeenAt: string;
+	/** Whether the second step is still to come, done, or not needed. */
+	secondStep: SecondStep;
+	/** A 30-day "Keep me signed in" session. */
+	lasting: boolean;
+}
+
+/**
+ * Whether the person signed in, by any means, in the last few minutes:
+ * needed before turning two-step sign-in on or off, so someone who finds a
+ * browser left signed in cannot.
+ */
+export function signedInRecently(session: ActiveSession | undefined, time = Date.now()): boolean {
+	return Boolean(session) && time - Date.parse(session!.startedAt) <= minutes(recentProofMinutes);
+}
+
+/** Whether a session has run past the limits for workspace access: 12 hours, or 4 hours unused. */
+export function pastWorkspaceLimits(session: ActiveSession, time = Date.now()): boolean {
+	return (
+		time - Date.parse(session.startedAt) > sessionHours * 60 * 60 * 1000 ||
+		time - Date.parse(session.lastSeenAt) > inactivityHours * 60 * 60 * 1000
+	);
 }
 
 /** How long after a code or link sign-in the person may choose a new password without the old one. */
@@ -468,7 +523,8 @@ export async function sessionAccount(database: D1Database, token: string | undef
 		.prepare(
 			`SELECT accounts.identifier, accounts.email, accounts.password_hash AS passwordHash,
 				sessions.last_seen_at AS lastSeenAt, sessions.expires_at AS expiresAt,
-				sessions.method, sessions.created_at AS startedAt
+				sessions.method, sessions.created_at AS startedAt, sessions.second_step AS secondStep, sessions.lasting,
+				accounts.authenticator_secret IS NOT NULL AS hasTwoStep
 			 FROM sessions JOIN accounts ON accounts.identifier = sessions.account_identifier
 			 WHERE sessions.token_hash = ?`
 		)
@@ -481,11 +537,16 @@ export async function sessionAccount(database: D1Database, token: string | undef
 			expiresAt: string;
 			method: SessionMethod;
 			startedAt: string;
+			secondStep: SecondStep;
+			lasting: number;
+			hasTwoStep: number;
 		}>();
 	if (!row) return undefined;
 	const time = Date.now();
 	const idleSince = Date.parse(row.lastSeenAt);
-	if (Date.parse(row.expiresAt) <= time || time - idleSince > inactivityHours * 60 * 60 * 1000) {
+	// A "Keep me signed in" session is not ended for being unused; it ends at its 30 days.
+	const idleLimit = row.lasting ? lastingSessionDays * 24 : inactivityHours;
+	if (Date.parse(row.expiresAt) <= time || time - idleSince > idleLimit * 60 * 60 * 1000) {
 		await database.prepare('DELETE FROM sessions WHERE token_hash = ?').bind(tokenHash).run();
 		return undefined;
 	}
@@ -498,11 +559,14 @@ export async function sessionAccount(database: D1Database, token: string | undef
 			.run();
 	}
 	return {
-		account: { identifier: row.identifier, email: row.email, hasPassword: Boolean(row.passwordHash) },
+		account: { identifier: row.identifier, email: row.email, hasPassword: Boolean(row.passwordHash), hasTwoStep: Boolean(row.hasTwoStep) },
 		tokenHash,
 		expiresAt: row.expiresAt,
 		method: row.method,
-		startedAt: row.startedAt
+		startedAt: row.startedAt,
+		lastSeenAt: row.lastSeenAt,
+		secondStep: row.secondStep,
+		lasting: Boolean(row.lasting)
 	};
 }
 

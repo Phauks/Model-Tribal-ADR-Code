@@ -645,6 +645,35 @@ jurisdiction:
     so nation names were read from images and matched to the roster. Row re-read on 2026-11-22 from the
     page image (the govinfo PDF has no text layer for the table); verification level unchanged because
     the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: filing-fees
+  title: Schedule of Court Costs and Fees
+  court: Bad River Tribal Court
+  link: https://www.badriver-nsn.gov/tribal-court-legal/
+  detail: Revised fee schedule adopted under Sec. 5.11 of the Tribal Court Code, with appellate fees; amounts on the page (not transcribed).
+  source: bad-river-band-of-lake-superior-tribe-of-chippewa-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Court & Legal page
+nearby_state_courts:
+- state: WI
+  county: Ashland County
+  court: Circuit Court for Ashland County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Ashland County holds 95% of the land of Bad River Reservation (Census GEOID 0140), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WI
+  county: Iron County
+  court: Circuit Court for Iron County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Iron County holds 5% of the land of Bad River Reservation (Census GEOID 0140), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1826
   signed: '1826-08-05'

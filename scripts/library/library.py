@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Search the source library: the text of every document in the private
-bucket, page by page (built by build_library.py, decision record 0049).
+bucket, page by page (built by build_library.py, decision record 0051).
 
 Made for Claude first. Each result names the document, the page to cite (the
 PDF page and, when known, the printed page or reporter star page), the

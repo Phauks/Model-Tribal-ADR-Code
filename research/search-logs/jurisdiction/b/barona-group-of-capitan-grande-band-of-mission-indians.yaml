@@ -1,0 +1,13 @@
+profile: content/tribes/b/barona-group-of-capitan-grande-band-of-mission-indians.yaml
+topic: jurisdiction
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: dataset
+  address: https://www2.census.gov/geo/docs/maps-data/data/rel2020/aiannh/tab20_aiannh20_county20_natl.txt
+  query: Counties the nation's Census area lies in, and each state's trial court of general jurisdiction (scripts/jurisdiction/build_nearby_state_courts.py)
+  outcome: found
+  reason: 1 county or counties with at least 1 percent of the area's land.

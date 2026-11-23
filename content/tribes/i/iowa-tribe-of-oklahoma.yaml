@@ -694,6 +694,82 @@ jurisdiction_agreements:
   verification: inferred
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Iowa Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: court-rules
+  title: Rules of the Iowa Tribe of Oklahoma District Court
+  court: Iowa Tribe of Oklahoma District Court
+  link: https://iowanation.org/wp-content/uploads/2014/11/2019-RULES-OF-THE-COURT-CM.pdf
+  detail: Rules of the court, 2019 per file name.
+  source: iowa-tribe-of-oklahoma-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Documents and Forms
+- kind: filing-fees
+  title: Uniform Fee Schedule
+  court: Iowa Tribe of Oklahoma District Court
+  link: https://iowanation.org/wp-content/uploads/2014/11/APPROVED-FEE-SCHEDULE-CM.pdf
+  detail: Approved uniform fee schedule PDF.
+  source: iowa-tribe-of-oklahoma-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Documents and Forms
+- kind: bar-admission
+  title: Bar Association (list)
+  court: Iowa Tribe of Oklahoma District Court
+  link: https://iowanation.org/wp-content/uploads/2014/11/BAR-ASSOCIATION-LIST-CM2022.pdf
+  detail: Bar Association list (2022 per file name); also Instructions for Filing linked.
+  source: iowa-tribe-of-oklahoma-district-court
+  confidence: medium
+  verification: read-in-full
+  locator: Documents and Forms
+  note: 'The source reads: “Bar Association”. List rather than admission rules.'
+- kind: public-defender
+  title: District Court (Public Defender)
+  court: Iowa Tribe of Oklahoma District Court
+  link: https://iowanation.org/government/tribal-court/
+  detail: Page names a Public Defender among court staff; the public defender and the prosecutor are available by appointment only through the Court Administrator.
+  source: iowa-tribe-of-oklahoma-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Contact Information
+  note: 'The source reads: “THE ATTORNEY GENERAL/PROSECUTOR AND PUBLIC DEFENDER ARE AVAILABLE BY APPOINTMENT ONLY.”. Individual names omitted.'
+nearby_state_courts:
+- state: OK
+  county: Lincoln County
+  court: District Court for Lincoln County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Lincoln County holds 63% of the land of Iowa OTSA (Census GEOID 5670), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Logan County
+  court: District Court for Logan County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Logan County holds 26% of the land of Iowa OTSA (Census GEOID 5670), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Payne County
+  court: District Court for Payne County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Payne County holds 6% of the land of Iowa OTSA (Census GEOID 5670), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Oklahoma County
+  court: District Court for Oklahoma County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Oklahoma County holds 5% of the land of Iowa OTSA (Census GEOID 5670), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Iowa, 1815
   signed: '1815-09-16'

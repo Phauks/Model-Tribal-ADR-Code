@@ -749,6 +749,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Numbered agreements, items 5 to 7
   note: 'The source reads: “The TRIBE agrees to issue Hualapai law enforcement commissions to duly authorized DPS deputies who are assigned to work on or near the Hualapai Indian Reservation.”. Agreement text; whether it remains in force is not stated in the document.'
+nearby_state_courts:
+- state: AZ
+  county: Coconino County
+  court: Superior Court for Coconino County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Coconino County holds 56% of the land of Hualapai Indian Reservation (Census GEOID 1545), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AZ
+  county: Mohave County
+  court: Superior Court for Mohave County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Mohave County holds 43% of the land of Hualapai Indian Reservation (Census GEOID 1545), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Hualpai (Walapai) Reserve, Arizona
   method: executive-order

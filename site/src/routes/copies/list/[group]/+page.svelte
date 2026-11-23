@@ -1,5 +1,6 @@
 <script lang="ts">
 	import DataTable from '#lib/components/DataTable.svelte';
+	import { fileName, verifyLink } from '#lib/checksums.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
@@ -11,6 +12,7 @@
 		{ key: 'original', header: 'Published at', sortable: true, searchable: true },
 		{ key: 'captured', header: 'Copy made', type: 'date', sortable: true },
 		{ key: 'size', header: 'Size', type: 'number', sortable: true },
+		{ key: 'verify', header: 'Check', custom: true },
 		{ key: 'removal', header: 'Remove', custom: true }
 	];
 
@@ -23,6 +25,7 @@
 				original: { text: new URL(copy.original).hostname, href: copy.original },
 				captured: { text: copy.capturedText, sortValue: copy.captured },
 				size: { text: copy.size, sortValue: copy.bytes },
+				verify: { text: 'Verify a download', href: verifyLink(copy.sha256, fileName(copy.path)) },
 				removal: { text: 'Ask to remove', href: copy.removal }
 			}
 		}))
@@ -49,5 +52,6 @@
 >
 	{#snippet cell(row: TableRow, column: TableColumn)}
 		{#if column.key === 'removal'}<a href={row.cells.removal.href}>Ask to remove</a>{/if}
+		{#if column.key === 'verify'}<a href={row.cells.verify.href}>Verify a download</a>{/if}
 	{/snippet}
 </DataTable>

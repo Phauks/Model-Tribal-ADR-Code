@@ -1,0 +1,127 @@
+# Settings for scripts/caselaw/reading_links.py: the places a reader can read a
+# case or law that the site cites. Each site gives its label, who can open it
+# (access), the kinds of citation it serves, the address pattern and how the
+# script checks a link before it is shown.
+#
+# access: official (the government's own text), free, subscription (Westlaw,
+# Lexis: needs an account) or background (Wikipedia: not legal authority).
+#
+# check:
+#   get       the address must answer 200 (after redirects)
+#   redirect  the address must answer with a redirect (link services, sign-in pages)
+#   api       the site's own data service confirms the item (see the script)
+#   none      the site turns away automated checks; the link is kept only
+#             because the pattern is the site's documented, stable one, and
+#             it is marked unchecked in the record
+#
+# Placeholders: {volume} {page} {reporter} {docket} {term} {title} {section}
+# {part} {congress} {law} {cite} (the citation as text, web-escaped).
+#
+# The order here is the order links show in.
+
+sites:
+  supremecourt:
+    label: Supreme Court of the United States
+    short: supremecourt.gov
+    access: official
+    for: [supreme-court]
+    check: get
+    note: the official slip opinion or report already recorded in the source record
+  govinfo:
+    label: GovInfo
+    access: official
+    for: [usc, statute, public-law, cfr-section, cfr-part]
+    check: redirect
+    links:
+      usc: https://www.govinfo.gov/link/uscode/{title}/{section}?link-type=html
+      statute: https://www.govinfo.gov/link/statute/{volume}/{page}
+      # GovInfo has public laws from the 104th Congress (1995) on.
+      public-law: https://www.govinfo.gov/link/plaw/{congress}/public/{law}?link-type=html
+      cfr-section: https://www.govinfo.gov/link/cfr/{title}/{part}?sectionnum={section}&year=mostrecent&link-type=pdf
+      cfr-part: https://www.govinfo.gov/link/cfr/{title}/{part}?year=mostrecent&link-type=pdf
+  uscode-house:
+    label: Office of the Law Revision Counsel
+    short: uscode.house.gov
+    access: official
+    for: [usc]
+    check: get
+    # The site runs in a "temporary format" (Nov. 2026); this is its current section address.
+    links:
+      usc: https://uscode.house.gov/us/usc/t{title}/s{section}/
+  ecfr:
+    label: eCFR
+    access: official
+    for: [cfr-section, cfr-part]
+    check: api
+    links:
+      cfr-section: https://www.ecfr.gov/current/title-{title}/section-{part}.{section}
+      cfr-part: https://www.ecfr.gov/current/title-{title}/part-{part}
+  library-of-congress:
+    label: Library of Congress
+    access: official
+    for: [us-reports]
+    check: api
+    note: scan of the printed United States Reports
+    links:
+      us-reports: https://www.loc.gov/item/usrep{volume3}{page3}/
+  courtlistener:
+    label: CourtListener
+    access: free
+    for: [case]
+    check: none
+    note: the opinion matched in CourtListener's bulk data (scripts/caselaw/check_case_citations.py), taken from the record's courtlistener block
+  justia:
+    label: Justia
+    access: free
+    for: [us-reports]
+    check: none
+    links:
+      us-reports: https://supreme.justia.com/cases/federal/us/{volume}/{page}/
+  oyez:
+    label: Oyez
+    access: free
+    for: [supreme-court]
+    check: api
+    note: argument audio and a plain summary
+    links:
+      supreme-court: https://www.oyez.org/cases/{term}/{docket}
+  cornell:
+    label: Cornell Legal Information Institute
+    short: Cornell LII
+    access: free
+    for: [supreme-court, usc, cfr-section, cfr-part]
+    check: get
+    links:
+      supreme-court: https://www.law.cornell.edu/supremecourt/text/{volume}/{page}
+      supreme-court-docket: https://www.law.cornell.edu/supremecourt/text/{docket}
+      usc: https://www.law.cornell.edu/uscode/text/{title}/{section}
+      cfr-section: https://www.law.cornell.edu/cfr/text/{title}/{part}.{section}
+      cfr-part: https://www.law.cornell.edu/cfr/text/{title}/part-{part}
+  google-scholar:
+    label: Google Scholar
+    access: free
+    for: [case]
+    check: none
+    note: a search for the citation, not a fixed page
+    links:
+      case: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22{cite}%22
+  westlaw:
+    label: Westlaw
+    access: subscription
+    for: [case, usc, cfr-section, statute, state-statute]
+    check: redirect
+    links:
+      any: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite={cite}
+  lexis:
+    label: Lexis
+    access: subscription
+    for: [case, usc, cfr-section, statute, state-statute]
+    check: redirect
+    links:
+      any: https://advance.lexis.com/api/search?q={cite}
+  wikipedia:
+    label: Wikipedia
+    access: background
+    for: [case, statute, public-law]
+    check: api
+    note: shown only when the article gives the same citation, so a namesake is never linked

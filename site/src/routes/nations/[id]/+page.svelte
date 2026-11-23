@@ -136,6 +136,7 @@
 				{@render emptySection(data.empty.courts)}
 			{:else}
 				<NationServices categories={data.courts} />
+				{#if data.practice.length > 0}<FactGroups groups={data.practice} />{/if}
 			{/if}
 			<div class="nation-slot" data-nation-slot="courts"></div>
 		</Collapsible>
@@ -182,7 +183,7 @@
 				{/if}
 				<DocumentHistoryList documents={data.documents} />
 				<div class="nation-slot" data-nation-slot="law"></div>
-				<NationDocumentsOffline nation={data.page.id} />
+				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
 			</Collapsible>
 		</div>
 

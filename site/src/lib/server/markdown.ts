@@ -11,7 +11,9 @@
  */
 import { marked } from 'marked';
 import { marksHtml, type CitationMark } from '../citation-marks.ts';
+import { verifyLink, fileName } from '../checksums.ts';
 import { copyPath, mediaLabel } from '../public-copies.ts';
+import { readingLinksHtml } from '../reading-links.ts';
 import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
 
 export function escapeHtml(text: string): string {
@@ -65,7 +67,7 @@ export function formatSource(
 			text += `. <span class="source-links">${original}</span>`;
 		}
 	}
-	return text + savedCopyLink(source);
+	return text + savedCopyLink(source) + readingLinksHtml(source.reading_links);
 }
 
 /**
@@ -78,7 +80,10 @@ export function savedCopyLink(source: SourceRecord | undefined): string {
 	const copy = publicCopyFor(source.original_link) ?? publicCopyFor(source.citation.URL);
 	if (!copy) return '';
 	const saved = copy.captured ? `, saved ${escapeHtml(formatCaptureDate(copy.captured))}` : '';
-	return ` <span class="source-saved">(<a href="${escapeHtml(copyPath(copy))}">copy on this site${saved}, ${mediaLabel(copy.mediaType)}</a>)</span>`;
+	// A link to check a downloaded copy against its SHA-256 (src/lib/checksums.ts), as Trevor asked on Nov. 23, 2026.
+	const path = copyPath(copy);
+	const verify = escapeHtml(verifyLink(copy.sha256, fileName(path)));
+	return ` <span class="source-saved">(<a href="${escapeHtml(path)}">copy on this site${saved}, ${mediaLabel(copy.mediaType)}</a>; <a class="source-verify" href="${verify}">verify a download</a>)</span>`;
 }
 
 function webAddress(link: string | undefined): URL | undefined {

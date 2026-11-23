@@ -944,6 +944,91 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.N, South Dakota
   note: 'The source reads: “the Sisseton-”. The report says "All agreements expired on May 31, 2013"; later agreements are not shown in this source. The roster name is split across a line break in the report ("Sisseton-Wahpeton Oyate of the Lake Traverse Reservation"). Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: public-defender
+  title: Public Defender
+  court: Sisseton Wahpeton Oyate Tribal Court
+  link: https://swo-nsn.gov/departments/justice-department/public-defender/
+  detail: Public Defender page linked from the Tribal Court page; not opened.
+  source: sisseton-wahpeton-oyate-swo-nsn-gov-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page links
+  note: Page not opened.
+- kind: forms
+  title: 'Tribal Court (Forms: Court of Appeals Form, Fee Waiver, adoption petition information)'
+  court: Sisseton Wahpeton Oyate Tribal Court
+  link: https://swo-nsn.gov/departments/justice-department/tribal-court/
+  detail: Forms list includes Court of Appeals Form, Fee Waiver and adoption petition information.
+  source: sisseton-wahpeton-oyate-swo-nsn-gov-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Forms
+  note: 'The source reads: “Fee Waiver”.'
+nearby_state_courts:
+- state: SD
+  county: Roberts County
+  court: Circuit Court for Roberts County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Roberts County holds 61% of the land of Lake Traverse Reservation (Census GEOID 1860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Marshall County
+  court: Circuit Court for Marshall County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Marshall County holds 16% of the land of Lake Traverse Reservation (Census GEOID 1860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Day County
+  court: Circuit Court for Day County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Day County holds 6% of the land of Lake Traverse Reservation (Census GEOID 1860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Grant County
+  court: Circuit Court for Grant County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Grant County holds 6% of the land of Lake Traverse Reservation (Census GEOID 1860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Sargent County
+  court: District Court for Sargent County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Sargent County holds 4% of the land of Lake Traverse Reservation (Census GEOID 1860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Codington County
+  court: Circuit Court for Codington County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Codington County holds 4% of the land of Lake Traverse Reservation (Census GEOID 1860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Richland County
+  court: District Court for Richland County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Richland County holds 3% of the land of Lake Traverse Reservation (Census GEOID 1860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Sauk and Foxes, etc., 1830
   signed: '1830-07-15'

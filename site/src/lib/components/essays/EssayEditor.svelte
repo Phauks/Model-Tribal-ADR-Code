@@ -23,20 +23,28 @@
 	import { keymap } from 'prosemirror-keymap';
 	import type { MarkType, Node as EditorNode, NodeType } from 'prosemirror-model';
 	import { liftListItem, sinkListItem, splitListItem, wrapInList } from 'prosemirror-schema-list';
-	import { EditorState, Plugin, TextSelection, type Command, type Transaction } from 'prosemirror-state';
+	import { EditorState, NodeSelection, Plugin, TextSelection, type Command, type Transaction } from 'prosemirror-state';
 	import { EditorView } from 'prosemirror-view';
 	import { initProseMirrorDoc, redoCommand, undoCommand, yCursorPlugin, ySyncPlugin, yUndoPlugin } from 'y-prosemirror';
 	import { joinEssayRoom, type EssayRoom, type LiveStatus } from '#lib/essays/live.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
-	import { boxParts, casePartOrder, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
+	import { boxParts, casePartOrder, citationReferences, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
+	import { componentFrames } from '#lib/essays/components.ts';
 	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
 	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
+	import EssayAttestDialog from '#lib/components/essays/EssayAttestDialog.svelte';
+	import { attestationLines, setAttestationLines } from '#lib/essays/attestation-lines.ts';
+	import { essaySections, sectionText, sha256Hex, type Attestation } from '#lib/essays/attestations.ts';
+	import EssaySources from '#lib/components/essays/EssaySources.svelte';
+	import EssaySourceLinks from '#lib/components/essays/EssaySourceLinks.svelte';
+	import { citationWithoutAddress, type SourceDocuments } from '#lib/essays/source-documents.ts';
 	import { figurePartOrder, figureParts, figurePartsFor, type FigureKind, type FigurePart, type NewFigure } from '#lib/essays/figures.ts';
 	import { figurePlayers, watchFigureFiles } from '#lib/essays/figure-players.ts';
+	import { addAfterCurrent, addSection, moveCurrent } from '#lib/essays/placement.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
 
 	let {
@@ -93,6 +101,7 @@
 		analysisTitle: string | null;
 		figureParts: Set<string>;
 		figureKind: FigureKind | null;
+		citationKeys: string[];
 	}>({
 		marks: new Set(),
 		block: 'paragraph',
@@ -102,7 +111,8 @@
 		boxParts: new Set(),
 		analysisTitle: null,
 		figureParts: new Set(),
-		figureKind: null
+		figureKind: null,
+		citationKeys: []
 	});
 	/** The parts the box around the cursor can take and does not have yet. */
 	const missingParts = $derived(
@@ -132,7 +142,80 @@
 	let linkAddress = $state('');
 	let shownText = $state('');
 	let editingCitationAt = $state<number | null>(null);
-	let library = $state<{ sources: [string, string][]; terms: [string, string][]; words?: string[] } | null>(null);
+	let library = $state<{
+		sources: [string, string][];
+		terms: [string, string][];
+		words?: string[];
+	} | null>(null);
+	/** Links to the documents of sources looked up so far, by key. */
+	let documents = $state<Record<string, SourceDocuments>>({});
+	const asked = new Set<string>();
+
+	/** Fetches document links for the keys not looked up yet. */
+	async function loadDocuments(keys: string[]): Promise<void> {
+		const wanted = keys.filter((key) => !asked.has(key));
+		if (wanted.length === 0) return;
+		for (const key of wanted) asked.add(key);
+		try {
+			const response = await fetch(`/workspace/essays/source-documents.json?keys=${wanted.join(',')}`);
+			if (response.ok) documents = { ...documents, ...(await response.json()) };
+		} catch {
+			for (const key of wanted) asked.delete(key);
+		}
+	}
+	const sourceLabels = $derived(new Map((library?.sources ?? []).map(([key, label]) => [key, citationWithoutAddress(label)])));
+	let showSources = $state(false);
+
+	/* Attesting to sections (attestations.ts) ------------------------------ */
+
+	let attestDialog: ReturnType<typeof EssayAttestDialog> | undefined = $state();
+	let attestations = $state<Attestation[]>([]);
+	let attestationsLoaded = $state(false);
+	let attestingPerson = $state<string | null>(null);
+	let canWriteOrEdit = $state(false);
+	let hashTimer: ReturnType<typeof setTimeout> | undefined;
+
+	async function loadAttestations(): Promise<void> {
+		const response = await fetch(`/workspace/essays/${identifier}/attestations`).catch(() => null);
+		if (!response?.ok) return;
+		const body = (await response.json()) as { attestations: Attestation[]; you: string; canWriteOrEdit: boolean };
+		attestingPerson = body.you;
+		canWriteOrEdit = body.canWriteOrEdit;
+		attestationsChanged(body.attestations);
+	}
+
+	function attestationsChanged(updated: Attestation[]): void {
+		attestations = updated;
+		attestationsLoaded = true;
+		if (view) setAttestationLines(view, { attestations: updated, loaded: true });
+	}
+
+	/** Each section's SHA-256 as the text stands, so the lines can say when it changed since an attestation. */
+	async function sectionHashes(): Promise<Record<string, string>> {
+		if (!view) return {};
+		const doc = view.state.doc;
+		const hashes: Record<string, string> = {};
+		for (const section of essaySections(doc)) hashes[section.slug] = await sha256Hex(sectionText(doc, section));
+		return hashes;
+	}
+
+	function refreshHashesSoon(): void {
+		clearTimeout(hashTimer);
+		hashTimer = setTimeout(async () => {
+			const doc = view?.state.doc;
+			const hashes = await sectionHashes();
+			if (view && view.state.doc === doc) setAttestationLines(view, { hashes });
+		}, 600);
+	}
+
+	async function openAttest(slug: string): Promise<void> {
+		if (!view) return;
+		const doc = view.state.doc;
+		const section = essaySections(doc).find((candidate) => candidate.slug === slug);
+		if (!section) return;
+		const text = sectionText(doc, section);
+		await attestDialog?.show({ slug, title: section.title, level: section.level, text, sha256: await sha256Hex(text) });
+	}
 
 	/* Checks and Go to ------------------------------------------------------- */
 
@@ -154,7 +237,15 @@
 	}
 	let libraryProblem = $state('');
 
-	async function loadLibrary(): Promise<void> {
+	let libraryLoading: Promise<void> | null = null;
+
+	/** Loads the list of sources once, however often it is asked for. */
+	function loadLibrary(): Promise<void> {
+		libraryLoading ??= fetchLibrary();
+		return libraryLoading;
+	}
+
+	async function fetchLibrary(): Promise<void> {
 		if (library) return;
 		try {
 			const response = await fetch('/workspace/essays/sources.json');
@@ -222,30 +313,15 @@
 	}
 
 	/** Inserts a block, or wraps the selected blocks in it when text is selected. */
+	/**
+	 * Inserts a box after the block the cursor is in (placement.ts), or wraps
+	 * the selected blocks in it when text is selected.
+	 */
 	function insertBlock(type: NodeType, attrs: Record<string, unknown> = {}, content?: () => EditorNode): Command {
 		return (state, dispatch) => {
 			if (!state.selection.empty && wrapIn(type, attrs)(state)) return wrapIn(type, attrs)(state, dispatch);
 			const node = content ? content() : type.create(attrs, schema.node('paragraph'));
-			if (!dispatch) return true;
-			const from = state.selection.from;
-			const transaction = state.tr.replaceSelectionWith(node);
-			// Put the cursor in the new box's first paragraph, selecting any
-			// placeholder words so typing replaces them.
-			let inserted = -1;
-			transaction.doc.nodesBetween(Math.max(0, from - 2), transaction.doc.content.size, (child, position) => {
-				if (inserted >= 0) return false;
-				if (child.type === type && position >= from - 2) inserted = position;
-				return inserted < 0;
-			});
-			if (inserted >= 0) {
-				const inside = TextSelection.findFrom(transaction.doc.resolve(inserted + 1), 1, true);
-				if (inside) {
-					const end = inside.$from.end();
-					transaction.setSelection(TextSelection.create(transaction.doc, inside.from, end));
-				}
-			}
-			dispatch(transaction.scrollIntoView());
-			return true;
+			return addAfterCurrent(node)(state, dispatch);
 		};
 	}
 
@@ -321,28 +397,19 @@
 			...(figure.transcript ? [newFigurePart('transcript', figure.transcript)] : [])
 		];
 		const node = schema.node('figure_block', { kind: figure.kind, address: figure.address }, parts.length ? parts : [schema.node('paragraph')]);
-		run(insertAfterBlock(node, false));
+		run(addAfterCurrent(node, false));
 	}
 
-	/**
-	 * Inserts a block after the top-level block the cursor is in. With
-	 * `selectFirst`, the first words of the new block are selected, so typing
-	 * replaces the placeholder.
-	 */
-	function insertAfterBlock(node: EditorNode, selectFirst: boolean): Command {
-		return (state, dispatch) => {
-			const start = state.selection.$from;
-			const at = start.depth > 0 ? start.after(1) : state.selection.from;
-			if (dispatch) {
-				const transaction = state.tr.insert(at, node);
-				const inside = TextSelection.findFrom(transaction.doc.resolve(at + 1), 1, true);
-				if (inside) {
-					transaction.setSelection(selectFirst ? TextSelection.create(transaction.doc, inside.from, inside.$from.end()) : inside);
-				}
-				dispatch(transaction.scrollIntoView());
-			}
-			return true;
-		};
+	/** Runs a choice from the Add menu. */
+	function addChosen(chosen: string): void {
+		if (chosen === 'section') run(addSection(schema, 2));
+		else if (chosen === 'subsection') run(addSection(schema, 3));
+		else if (chosen === 'paragraph') run(addAfterCurrent(schema.node('paragraph'), false));
+		else if (chosen === 'case' || chosen === 'law') openPicker(chosen);
+		else if (chosen === 'quote') run(addAfterCurrent(schema.node('quote_block', null, schema.node('paragraph'))));
+		else if (chosen === 'analysis') run(addAfterCurrent(schema.node('analysis_block', null, schema.node('paragraph'))));
+		else if (chosen === 'figure') void figureDialog?.show();
+		else if (chosen === 'chart') run(addAfterCurrent(newChart()));
 	}
 
 	function tableRow(cells: string[], header = false): EditorNode {
@@ -496,6 +563,16 @@
 		return kinds;
 	}
 
+	/** The sources named by the citation the cursor is on or next to. */
+	function citationAt(state: EditorState): string[] {
+		const { selection } = state;
+		const node =
+			selection instanceof NodeSelection
+				? selection.node
+				: [selection.$from.nodeAfter, selection.$from.nodeBefore].find((candidate) => candidate?.type.name === 'citation');
+		return node?.type.name === 'citation' ? citationReferences(String(node.attrs.text)).map((reference) => reference.key) : [];
+	}
+
 	function describe(state: EditorState): void {
 		const marks = new Set<string>();
 		for (const name of ['em', 'strong', 'underline', 'code', 'link']) {
@@ -516,8 +593,13 @@
 			boxParts: partsOf(boxFound?.node),
 			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null,
 			figureParts: partsOf(enclosing(state, 'figure_block')?.node, 'figure_part'),
-			figureKind: (enclosing(state, 'figure_block')?.node.attrs.kind as FigureKind | undefined) ?? null
+			figureKind: (enclosing(state, 'figure_block')?.node.attrs.kind as FigureKind | undefined) ?? null,
+			citationKeys: citationAt(state)
 		};
+		if (active.citationKeys.length > 0 || active.boxSource) {
+			void loadLibrary();
+			void loadDocuments(active.boxSource ? [...active.citationKeys, active.boxSource] : active.citationKeys);
+		}
 	}
 
 	function createState(body: string): EditorState {
@@ -535,6 +617,7 @@
 					if (!editorView.state.doc.eq(previous.doc)) {
 						markChanged();
 						revision += 1;
+						refreshHashesSoon();
 					}
 					describe(editorView.state);
 				}
@@ -550,6 +633,8 @@
 				rules,
 				keymap({
 					'Mod-z': undoKey,
+					'Alt-Shift-ArrowUp': moveCurrent('up'),
+					'Alt-Shift-ArrowDown': moveCurrent('down'),
 					'Shift-Mod-z': redoKey,
 					'Mod-y': redoKey,
 					'Mod-b': toggleMark(schema.marks.strong),
@@ -577,6 +662,8 @@
 					? [ySyncPlugin(room.fragment, { mapping: shared.mapping }), yCursorPlugin(room.awareness), yUndoPlugin()]
 					: [history()]),
 				checkMarks(),
+				componentFrames(),
+				attestationLines((slug) => void openAttest(slug)),
 				tracker
 			]
 		});
@@ -602,6 +689,8 @@
 			}
 		});
 		describe(view.state);
+		if (attestationsLoaded) setAttestationLines(view, { attestations, loaded: true });
+		refreshHashesSoon();
 	}
 
 	/** The body as Markdown, written so untouched paragraphs keep their exact text. */
@@ -948,6 +1037,7 @@
 	onMount(() => {
 		mountEditor(initial.body);
 		dirty = false;
+		void loadAttestations();
 		if (untrack(() => live)) void joinRoom();
 		const kept = canEdit ? localDraft(identifier) : null;
 		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
@@ -963,6 +1053,7 @@
 		closed = true;
 		clearTimeout(autoSaveTimer);
 		clearTimeout(joinTimer);
+		clearTimeout(hashTimer);
 		if (room) {
 			// The room saves 5 seconds after the last person leaves; only text it never received needs a copy.
 			if (inRoom && liveStatus?.state !== 'live' && unsaved()) keepLocalDraft(identifier, currentFile(), basedOn);
@@ -1023,6 +1114,34 @@
 					{#each blocks as block (block.name)}<option value={block.name}>{block.label}</option>{/each}
 				</select>
 			</div>
+			<div role="group" aria-label="Add">
+				<label class="visually-hidden" for="add-block">Add</label>
+				<select
+					id="add-block"
+					value=""
+					title="Adds the block where it belongs: a section after the section you are in, anything else after the paragraph you are in"
+					onchange={(event) => {
+						const chosen = event.currentTarget.value;
+						event.currentTarget.value = '';
+						addChosen(chosen);
+					}}
+				>
+					<option value="" disabled>Add…</option>
+					<option value="section">Section</option>
+					<option value="subsection">Subsection</option>
+					<option value="paragraph">Paragraph</option>
+					<option value="case">Case</option>
+					<option value="law">Law</option>
+					<option value="quote">Quotation box</option>
+					<option value="analysis">Analysis</option>
+					<option value="figure">Picture, video or recording</option>
+					<option value="chart">Chart</option>
+				</select>
+			</div>
+			<div role="group" aria-label="Move">
+				<button type="button" class="tool" title="Move this paragraph, box or section up (Alt+Shift+Up)" onclick={() => run(moveCurrent('up'))}>Move up</button>
+				<button type="button" class="tool" title="Move this paragraph, box or section down (Alt+Shift+Down)" onclick={() => run(moveCurrent('down'))}>Move down</button>
+			</div>
 			<div role="group" aria-label="Text style">
 				{#each marks as mark (mark.name)}
 					<button type="button" class="tool tool-{mark.name}" aria-pressed={active.marks.has(mark.name)} title="{mark.label} ({mark.keys})" onclick={() => run(toggleMark(schema.marks[mark.name]))}>{mark.label}</button>
@@ -1049,8 +1168,6 @@
 				<button type="button" class="tool" onclick={() => run(lift)} title="Take the paragraph out of its box or list">Out of box</button>
 			</div>
 			<div role="group" aria-label="Figures">
-				<button type="button" class="tool" onclick={() => figureDialog?.show()} title="A picture, video or sound recording, added after this paragraph">Picture, video or recording</button>
-				<button type="button" class="tool" onclick={() => run(insertAfterBlock(newChart(), true))} title="A bar chart drawn from a small table, added after this paragraph">Chart</button>
 				{#if active.inside.has('table')}
 					<button type="button" class="tool" onclick={() => run(addTableRow)}>Add row</button>
 					<button type="button" class="tool" onclick={() => run(removeTableRow)}>Remove row</button>
@@ -1074,6 +1191,16 @@
 					<button type="button" class="tool" aria-pressed={showChecks} onclick={toggleChecks}>Checks</button>
 				{/if}
 				<button type="button" class="tool" aria-pressed={showGoTo} title="Ctrl+G" onclick={() => (showGoTo = !showGoTo)}>Go to</button>
+				<button
+					type="button"
+					class="tool"
+					aria-pressed={showSources}
+					title="The sources this essay cites, with links to their documents"
+					onclick={() => {
+						showSources = !showSources;
+						if (showSources) void loadLibrary();
+					}}>Sources</button
+				>
 			</div>
 		{/if}
 	</div>
@@ -1085,8 +1212,22 @@
 		<EssayChecks view={() => view} {revision} {identifier} file={currentFile} {library} {canEdit} bind:selected={chosenIssue} />
 	{/if}
 
-	{#if active.boxSource && mode === 'rich'}
-		<p class="small muted context">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</p>
+	{#if showSources && mode === 'rich'}
+		<EssaySources view={() => view} {revision} {library} {documents} {loadDocuments} />
+	{/if}
+
+	{#if active.citationKeys.length > 0 && mode === 'rich'}
+		{#each active.citationKeys as key (key)}
+			<p class="small context">
+				<span class="muted">Cites {sourceLabels.get(key) ?? key}.</span>
+				{#if asked.has(key)}<EssaySourceLinks documents={documents[key]} loading={!(key in documents)} />{/if}
+			</p>
+		{/each}
+	{:else if active.boxSource && mode === 'rich'}
+		<p class="small context">
+			<span class="muted">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</span>
+			{#if asked.has(active.boxSource)}<EssaySourceLinks documents={documents[active.boxSource]} loading={!(active.boxSource in documents)} />{/if}
+		</p>
 	{/if}
 
 	{#if inRoomShown}
@@ -1197,6 +1338,7 @@
 </div>
 
 <EssayFigureDialog bind:this={figureDialog} essay={identifier} onadd={addFigure} />
+<EssayAttestDialog bind:this={attestDialog} essay={identifier} {attestations} you={attestingPerson} {canWriteOrEdit} onchange={attestationsChanged} />
 
 <dialog bind:this={pickerDialog} class="picker" onclose={() => (picker = null)} aria-labelledby="picker-heading">
 	{#if picker}
@@ -1387,6 +1529,76 @@
 
 	.editor-area :global(.essay-term-chip) {
 		text-decoration: underline dotted;
+	}
+
+	/* Every block is a component with a frame and a label (components.ts), so no text sits loose on the page. */
+	.editor-area :global(.ProseMirror > .essay-component) {
+		position: relative;
+		margin-top: calc(2 * var(--space-2) + 1.25rem);
+		outline: 1px dashed var(--color-line);
+		outline-offset: var(--space-2);
+		border-radius: var(--radius-control);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component-boxed) {
+		border-radius: var(--radius-panel);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component.is-current) {
+		outline: 2px solid var(--color-link);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component[data-component]::before) {
+		content: attr(data-component);
+		position: absolute;
+		top: calc(-1 * var(--space-2) - 0.75em);
+		left: var(--space-2);
+		padding: 0 var(--space-1);
+		background: var(--color-paper);
+		font-size: 0.75rem;
+		font-style: normal;
+		font-weight: var(--font-weight-semibold);
+		line-height: 1.5;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		text-indent: 0;
+		color: var(--color-ink-muted);
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component.is-current::before) {
+		color: var(--color-link);
+	}
+
+	/* Who attested to each section, under its heading (attestation-lines.ts). */
+	.editor-area :global(.essay-attestations) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1) var(--space-4);
+		margin: var(--space-3) 0 0;
+		font-size: var(--font-size-small);
+		font-style: normal;
+		text-indent: 0;
+		color: var(--color-ink-muted);
+	}
+
+	.editor-area :global(.essay-attestation strong) {
+		color: var(--color-ink);
+	}
+
+	.editor-area :global(.essay-attestation-date) {
+		color: var(--color-link);
+	}
+
+	.editor-area :global(.essay-attestation.is-changed .essay-attestation-date) {
+		color: var(--color-action);
+	}
+
+	.editor-area :global(.essay-attest-button) {
+		font-size: var(--font-size-small);
+		padding: 0 var(--space-2);
 	}
 
 	.editor-area :global(.ProseMirror-selectednode) {

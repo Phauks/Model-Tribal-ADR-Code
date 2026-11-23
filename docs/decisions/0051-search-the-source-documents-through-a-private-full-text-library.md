@@ -1,4 +1,4 @@
-# 0049. Search the source documents through a private full-text library
+# 0051. Search the source documents through a private full-text library
 
 - **Status:** Accepted
 - **Date:** 2026-11-23
@@ -14,7 +14,7 @@ By 2026-11-23 the private bucket `model-tribal-adr-code-sources` held 19,994 obj
 - Each passage keeps its place: the PDF page, the printed page label where the PDF has one, and, for tribal court opinions from the Caselaw Access Project, the reporter's star page, so a pinpoint citation can be checked. Each document keeps the capture index's title, nations, topic, rights and citing records, and whether the website serves it at `/copies/`.
 - PDF pages without a text layer are read by optical character recognition with Tesseract when the library is built. A passage records whether it came from the text layer or from OCR, since OCR text can misread words and numbers.
 - `scripts/library/build_library.py` builds and publishes the library; `scripts/library/library.py` downloads it and searches it. Claude threads use `library.py` before reading or quoting a source; text it finds is a lead to read in context, and the published source is what gets cited.
-- The library leaves out the website's own files in the bucket, some of which are private to the people who sent them: proof sent with nations' requests, uploads, profile pictures, essay drafts and page versions.
+- The library leaves out the website's own files in the bucket, some of which are private to the people who sent them: proof sent with nations' requests, uploads, profile pictures, sponsor logos, nation page pictures, event recordings, essay drafts and page versions.
 - People search the same library on the workspace's Source library page, open to the lead author, editors, co-authors and advisors. It reads a copy in its own D1 database, `model-tribal-adr-code-library`, kept apart from the site's database. Each build writes the changes since the last one as SQL files under `_library/d1/` in the bucket, and the Worker's hourly run applies them, so no API token is needed to keep the copy current.
 - A nightly scheduled task runs `build_library.py update --ocr`, which lists the bucket and reads only files the published library has not read. Documents keep their numbers from build to build, so the website's copy changes only where a document did.
 

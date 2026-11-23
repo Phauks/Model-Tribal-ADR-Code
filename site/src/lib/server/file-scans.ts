@@ -13,13 +13,23 @@
  * file_scans table (migrations/0021_file_scans.sql), so nothing here needs
  * the scanner to be running. Until it is, files simply wait.
  */
-import type { D1Database } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, R2Bucket, R2HTTPMetadata, R2ObjectBody } from '@cloudflare/workers-types/index.ts';
+import { readableDate } from '#lib/readable-date.ts';
 
 export const scanStatuses = ['waiting', 'scanning', 'retrying', 'clean', 'flagged', 'cannot-scan', 'failed', 'released-by-hand'] as const;
 export type ScanStatus = (typeof scanStatuses)[number];
 
 /** What a file is, so each part of the site can find its own scans. */
-export type ScanPurpose = 'upload' | 'mail-attachment';
+export type ScanPurpose =
+	| 'upload'
+	| 'mail-attachment'
+	| 'mail-outgoing'
+	| 'request-file'
+	| 'nation-picture'
+	| 'nation-team-proof'
+	| 'profile-picture'
+	| 'sponsor-logo'
+	| 'event-recording';
 
 export interface FileScan {
 	objectKey: string;
@@ -145,13 +155,170 @@ export function mayServe(scan: FileScan | null, object?: { etag: string } | null
 	return true;
 }
 
+/**
+ * Stores bytes a person sent and holds them for the scanner in one step. Use
+ * this, not the bucket's put, for any file that came from outside the
+ * project: tests/scan-guard.test.ts fails if site code writes a sent file any
+ * other way. If the file cannot be put in line, it is deleted again, so no
+ * unscanned file is left behind.
+ */
+export async function storeSentFile(
+	database: D1Database,
+	bucket: R2Bucket,
+	file: {
+		objectKey: string;
+		purpose: ScanPurpose;
+		subject?: string | null;
+		bytes: Uint8Array | ArrayBuffer;
+		httpMetadata?: R2HTTPMetadata;
+		customMetadata?: Record<string, string>;
+	},
+	now: Date = new Date()
+): Promise<void> {
+	await bucket.put(file.objectKey, file.bytes, {
+		httpMetadata: file.httpMetadata,
+		customMetadata: file.customMetadata
+	});
+	try {
+		await requestScan(database, { objectKey: file.objectKey, purpose: file.purpose, subject: file.subject }, now);
+	} catch (problem) {
+		await bucket.delete(file.objectKey).catch(() => undefined);
+		throw problem;
+	}
+}
+
+/** A sent file, opened only if its scan lets it out. */
+export type OpenedFile =
+	| { state: 'ready'; object: R2ObjectBody; scan: FileScan }
+	| { state: 'held'; scan: FileScan | null }
+	| { state: 'missing'; scan: FileScan | null };
+
+/**
+ * Opens a sent file for serving, or says why not. The bucket is not even
+ * read unless the scan is clean or a reviewer released the file, and the
+ * object read must be the one that was scanned (its etag). Use this, not the
+ * bucket's get, to serve or open any file that came from outside the
+ * project (tests/scan-guard.test.ts).
+ */
+export async function openScannedFile(database: D1Database, bucket: R2Bucket, objectKey: string): Promise<OpenedFile> {
+	const scan = await fileScan(database, objectKey);
+	if (!mayServe(scan)) return { state: 'held', scan };
+	const object = await bucket.get(objectKey);
+	if (!object) return { state: 'missing', scan };
+	if (!mayServe(scan, object)) {
+		await object.body.cancel().catch(() => undefined);
+		return { state: 'held', scan };
+	}
+	return { state: 'ready', object, scan: scan! };
+}
+
+/** The status and message a route answers with when a sent file cannot be served. */
+export function heldFileAnswer(opened: Exclude<OpenedFile, { state: 'ready' }>): { status: number; message: string } {
+	if (opened.state === 'missing') return { status: 404, message: 'The file is no longer stored.' };
+	const words = scanStatusWords(opened.scan);
+	return { status: 403, message: `${words.label}. ${words.explanation}` };
+}
+
 /** Whether the file is still in line or being scanned, so a page can say "checking" and look again later. */
 export function stillScanning(scan: FileScan | null): boolean {
 	return !scan || scan.status === 'waiting' || scan.status === 'scanning' || scan.status === 'retrying';
 }
 
-/** Plain words for a file's scan, for the people who sent it and the people who review it. */
-export function scanStatusWords(scan: FileScan | null): { label: string; explanation: string } {
+/** What a scanner reports about itself with every result, read from its version string. */
+export interface ScannerVersion {
+	/** The scan engine's own code version, such as "1". */
+	engine: string | null;
+	/** The YARA Forge rules release as a date (2026-11-20), "none" when the engine ran without rules, or null. */
+	yaraRules: string | null;
+	/** ClamAV's signature database number, such as "28191". */
+	clamavDatabase: string | null;
+	/** The date of ClamAV's newest signatures (2026-11-22), when the engine reported it. */
+	clamavDatabaseDate: string | null;
+}
+
+function dashedDate(compact: string): string | null {
+	const match = /^(\d{4})(\d{2})(\d{2})$/.exec(compact);
+	return match ? `${match[1]}-${match[2]}-${match[3]}` : null;
+}
+
+/**
+ * Reads the engine's version string, such as
+ * engine/1+yara-rules/20261120+clamav-db/28191-20261122 (scanner/engine,
+ * compose_engine_version). Parts it does not recognise are left out.
+ */
+export function readScannerVersion(engineVersion: string | null): ScannerVersion | null {
+	if (!engineVersion) return null;
+	const parts = new Map(
+		engineVersion.split('+').map((part) => {
+			const slash = part.indexOf('/');
+			return slash < 0 ? [part, ''] : [part.slice(0, slash), part.slice(slash + 1)];
+		})
+	);
+	const rules = parts.get('yara-rules') ?? null;
+	const [database, databaseDate] = (parts.get('clamav-db') ?? '').split('-');
+	return {
+		engine: parts.get('engine') || null,
+		yaraRules: rules === null ? null : rules === 'none' || rules === 'off' ? 'none' : (dashedDate(rules) ?? rules),
+		clamavDatabase: database || null,
+		clamavDatabaseDate: databaseDate ? dashedDate(databaseDate) : null
+	};
+}
+
+/** Which scanner a provider name stands for, in plain words. */
+export function scannerName(provider: string | null): string {
+	if (provider === 'container') return 'the project’s scanner (ClamAV and YARA)';
+	if (provider === 'http') return 'the outside scanning service';
+	return provider ? `the “${provider}” scanner` : 'an unknown scanner';
+}
+
+/** The versions in one sentence, such as "ClamAV signatures 28191 of Nov. 22, 2026, YARA Forge rules of Nov. 20, 2026, engine 1". */
+export function scannerVersionWords(version: ScannerVersion | null): string | null {
+	if (!version) return null;
+	const words: string[] = [];
+	if (version.clamavDatabase) {
+		words.push(
+			`ClamAV signatures ${version.clamavDatabase}${version.clamavDatabaseDate ? ` of ${readableDate(version.clamavDatabaseDate)}` : ''}`
+		);
+	}
+	if (version.yaraRules === 'none') words.push('no YARA rules');
+	else if (version.yaraRules) words.push(`YARA Forge rules of ${readableDate(version.yaraRules)}`);
+	if (version.engine) words.push(`engine ${version.engine}`);
+	return words.length > 0 ? words.join(', ') : null;
+}
+
+/** A time stamp as "Nov. 23, 2026, 04:51 UTC". */
+export function readableScanTime(stamp: string): string {
+	const date = stamp.slice(0, 10);
+	const time = /T(\d{2}:\d{2})/.exec(stamp)?.[1];
+	return time ? `${readableDate(date)}, ${time} UTC` : readableDate(date);
+}
+
+/**
+ * Which scanner looked at the file, when, and with which signatures, such as
+ * "Checked Nov. 23, 2026, 04:51 UTC by the project’s scanner (ClamAV and
+ * YARA): ClamAV signatures 28191 of Nov. 22, 2026, YARA Forge rules of Nov.
+ * 20, 2026, engine 1." Null when no scanner has looked at it yet.
+ */
+export function scannedByWords(scan: FileScan | null): string | null {
+	if (!scan?.engineVersion || !scan.finishedAt) return null;
+	const versions = scannerVersionWords(readScannerVersion(scan.engineVersion));
+	return `Checked ${readableScanTime(scan.finishedAt)} by ${scannerName(scan.provider)}${versions ? `: ${versions}` : ''}.`;
+}
+
+/** The newest finished scan, so the workspace can show which scanner and signatures are in use. */
+export async function latestScan(database: D1Database): Promise<FileScan | null> {
+	const row = await database
+		.prepare('SELECT * FROM file_scans WHERE finished_at IS NOT NULL AND engine_version IS NOT NULL ORDER BY finished_at DESC LIMIT 1')
+		.first<FileScanRow>();
+	return row ? fileScanFromRow(row) : null;
+}
+
+/** Plain words for a file's scan, for the people who sent it and the people who review it, with who checked it. */
+export function scanStatusWords(scan: FileScan | null): { label: string; explanation: string; checkedBy: string | null } {
+	return { ...statusWords(scan), checkedBy: scannedByWords(scan) };
+}
+
+function statusWords(scan: FileScan | null): { label: string; explanation: string } {
 	if (!scan) return { label: 'Not checked', explanation: 'This file was never put in line for the virus check, so it is held.' };
 	switch (scan.status) {
 		case 'waiting':

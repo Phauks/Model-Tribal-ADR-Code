@@ -11,13 +11,18 @@
 	// Downloads page.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
-	import { pageCitation, pageDownloads, type PageFile } from '#lib/page-downloads.ts';
+	import { pageCitation, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
 	import Check from '@lucide/svelte/icons/check';
 	import Download from '@lucide/svelte/icons/download';
 	import FileBraces from '@lucide/svelte/icons/file-braces';
 	import FileSpreadsheet from '@lucide/svelte/icons/file-spreadsheet';
 	import FileText from '@lucide/svelte/icons/file-text';
 	import HardDriveDownload from '@lucide/svelte/icons/hard-drive-download';
+	import FileCheck from '@lucide/svelte/icons/file-check';
+	import FileCode from '@lucide/svelte/icons/file-code';
+	import FilePen from '@lucide/svelte/icons/file-pen';
+	import ContactRound from '@lucide/svelte/icons/contact-round';
+	import MapIcon from '@lucide/svelte/icons/map';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import Quote from '@lucide/svelte/icons/quote';
 
@@ -27,8 +32,11 @@
 	const fileIcons: Record<PageFile['kind'], typeof FileBraces> = {
 		data: FileBraces,
 		table: FileSpreadsheet,
-		sources: LibraryBig
+		sources: LibraryBig,
+		contact: ContactRound,
+		map: MapIcon
 	};
+	const formatIcons: Record<PageFormat['id'], typeof FileBraces> = { word: FilePen, opendocument: FilePen, markdown: FileCode };
 
 	let open = $state(false);
 	let copied = $state(false);
@@ -88,6 +96,42 @@
 	function savePdf() {
 		close();
 		onpdf();
+	}
+
+	// The page as Word, OpenDocument or Markdown, made in the browser from what is shown, from one
+	// reading of the page (src/lib/page-document.ts); the code loads only when asked for. Trevor asked
+	// for these on Nov. 23, 2026.
+	async function savePage(format: PageFormat) {
+		const main = document.querySelector('#main-content');
+		if (!main) return;
+		try {
+			const { pageFileName, readPage } = await import('#lib/page-document.ts');
+			const versions = page.data.versions as { content?: string } | undefined;
+			const read = readPage(main, {
+				title: pageTitle(),
+				address: location.href.split('#')[0],
+				siteName,
+				contentVersion: versions?.content,
+				made: new Date()
+			});
+			let body: BlobPart;
+			if (format.id === 'markdown') body = (await import('#lib/page-markdown.ts')).pageMarkdown(read);
+			else {
+				const office = await import('#lib/office-documents.ts');
+				body = (format.id === 'word' ? office.pageWord(read) : office.pageOpenDocument(read)) as Uint8Array<ArrayBuffer>;
+			}
+			const link = document.createElement('a');
+			link.href = URL.createObjectURL(new Blob([body], { type: format.mediaType }));
+			link.download = pageFileName(location.pathname, format.extension);
+			document.body.append(link);
+			link.click();
+			link.remove();
+			setTimeout(() => URL.revokeObjectURL(link.href), 10_000);
+			close(true);
+			message = `Saved ${link.download}.`;
+		} catch {
+			message = `The page could not be saved as ${format.format}. Please try again.`;
+		}
 	}
 
 	function pageTitle(): string {
@@ -151,6 +195,18 @@
 					</span>
 				</button>
 			</li>
+			{#each pageFormats as format (format.id)}
+				{@const Icon = formatIcons[format.id]}
+				<li>
+					<button type="button" onclick={() => savePage(format)}>
+						<Icon size={20} strokeWidth={1.75} />
+						<span class="choice">
+							<span class="choice-name"><span class="choice-label">This page</span> <span class="format">{format.format}</span></span>
+							<span class="choice-hint">{format.description}</span>
+						</span>
+					</button>
+				</li>
+			{/each}
 			{#each offers.files as file (file.link)}
 				{@const Icon = fileIcons[file.kind]}
 				<li>
@@ -189,6 +245,15 @@
 					<span class="choice">
 						<span class="choice-name">All downloads</span>
 						<span class="choice-hint">The book and the data behind the site</span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="/verify" onclick={() => close()}>
+					<FileCheck size={20} strokeWidth={1.75} />
+					<span class="choice">
+						<span class="choice-name">Verify a file</span>
+						<span class="choice-hint">Check that a downloaded file is the one published here</span>
 					</span>
 				</a>
 			</li>

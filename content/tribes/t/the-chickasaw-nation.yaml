@@ -950,6 +950,146 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Chickasaw Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: bar-admission
+  title: Bar Association
+  court: Chickasaw Nation Judicial Department
+  link: https://judicial.chickasaw.net/Bar-Association
+  detail: 'Attorneys fill out the Bar Application and take the Oath in front of a Clerk, Judge or Justice; only licensed attorneys in good standing with their state bar may join, and only Bar Association members may practice before Chickasaw Nation Courts and Commissions. Sub pages: Bar Directory, Bar Application, Bylaws.'
+  source: chickasaw-nation-judicial-department-bar-association
+  confidence: high
+  verification: read-in-full
+  locator: Bar Association page
+  note: 'The source reads: “Only Chickasaw Bar Association members are allowed to practice before the Chickasaw Nation Courts and Commissions.”.'
+- kind: court-rules
+  title: 'District Court (Forms and Documents: District Court Rules)'
+  court: Chickasaw Nation District Court
+  link: https://judicial.chickasaw.net/Courts/District-Court
+  detail: The District Court page has a Forms and Documents section linking District Court Rules (a file attachment).
+  source: chickasaw-nation-district-court-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Forms and Documents
+  note: 'The source reads: “District Court Rules”.'
+- kind: forms
+  title: 'District Court (Forms and Documents: Application for Court-Appointed Attorney)'
+  court: Chickasaw Nation District Court
+  link: https://judicial.chickasaw.net/Courts/District-Court
+  detail: The District Court page links an Application for Court-Appointed Attorney.
+  source: chickasaw-nation-district-court-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Forms and Documents
+  note: 'The source reads: “Application for Court-Appointed Attorney”.'
+nearby_state_courts:
+- state: OK
+  county: Grady County
+  court: District Court for Grady County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Grady County holds 12% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Carter County
+  court: District Court for Carter County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Carter County holds 11% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Garvin County
+  court: District Court for Garvin County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Garvin County holds 11% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Pontotoc County
+  court: District Court for Pontotoc County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pontotoc County holds 9% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Stephens County
+  court: District Court for Stephens County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Stephens County holds 9% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Jefferson County
+  court: District Court for Jefferson County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jefferson County holds 9% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Johnston County
+  court: District Court for Johnston County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Johnston County holds 8% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: McClain County
+  court: District Court for McClain County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: McClain County holds 8% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Love County
+  court: District Court for Love County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Love County holds 7% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Murray County
+  court: District Court for Murray County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Murray County holds 6% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Marshall County
+  court: District Court for Marshall County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Marshall County holds 5% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Bryan County
+  court: District Court for Bryan County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Bryan County holds 4% of the land of Chickasaw OTSA (Census GEOID 5580), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chickasaw, 1786
   signed: '1786-01-10'

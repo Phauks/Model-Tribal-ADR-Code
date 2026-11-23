@@ -596,6 +596,16 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 97-429 § 6, 96 Stat. at 2270
   note: 25 U.S.C. § 1300b-15 is "omitted" from the Code. This statute was not on the research brief; found through the Cornell notes.
+nearby_state_courts:
+- state: TX
+  county: Maverick County
+  court: District Court for Maverick County
+  link: https://www.txcourts.gov/about-texas-courts/trial-courts/
+  source: state-trial-court-directory-tx
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Maverick County holds 100% of the land of Kickapoo (TX) Reservation (Census GEOID 1775), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

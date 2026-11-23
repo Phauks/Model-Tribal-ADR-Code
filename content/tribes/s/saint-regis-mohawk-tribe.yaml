@@ -700,6 +700,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.J, New York
   note: 'The source reads: “The agreement was first effective on April 1, 1994, and amended on April 22, 2005.”. Covers reimbursement of administrative and maintenance costs. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: forms
+  title: Court Publications and Forms
+  court: Saint Regis Mohawk Tribal Courts
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts/forms
+  detail: Forms page linked from the Tribal Courts page.
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: high
+  verification: title-only
+  locator: Tribal Courts page
+  note: Forms page not opened.
+- kind: court-rules
+  title: Saint Regis Mohawk Tribe Rules of Appellate Procedure (linked from Tribal Courts page)
+  court: Saint Regis Mohawk Tribal Courts
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts
+  detail: Page directs people who wish to appeal to the Saint Regis Mohawk Tribe Rules of Appellate Procedure and links a Digital Law Library and JOC Rules and Procedures (2001).
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Courts page
+  note: 'The source reads: “please consult the Saint Regis Mohawk Tribe Rules of Appellate Procedure”.'
+- kind: filing-fees
+  title: Tribal Court Fines & Fees
+  court: Saint Regis Mohawk Tribal Courts
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts/tribal-court-fines-fees
+  detail: Pages are fines and fees notices (first, second, third notice), not a filing fee schedule.
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: low
+  verification: inferred
+  locator: Tribal Courts page
+  note: Collection notices, not a filing fee schedule.
+nearby_state_courts:
+- state: NY
+  county: Franklin County
+  court: Supreme Court for Franklin County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Franklin County holds 100% of the land of St. Regis Mohawk Reservation (Census GEOID 3320), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Six Nations, 1784
   signed: '1784-10-22'

@@ -39,7 +39,7 @@ export const roleDescriptions: Record<Role, string> = {
 	'lead-author':
 		'The administrator: full access to every document, and adds, changes and removes people, grants and restricts access, and sees the activity log; welcomes people who register to help. Only the lead author manages access.',
 	editor:
-		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reviews and files the files people send, reads registrations from people who want to help, and signs off on content.',
+		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reviews and files the files people send, reads registrations from people who want to help, runs events, and signs off on content.',
 	'co-author':
 		'Comments on every document unless the lead author grants more or less. Changes to content are still made by pull request.',
 	advisor: 'Signs off on content or asks for changes, as a project advisor, and comments.',
@@ -48,6 +48,18 @@ export const roleDescriptions: Record<Role, string> = {
 	'nation-reviewer':
 		'Reviews the record of one nation, for that nation: approves it, asks for changes or comments, and comments on files people sent about that nation. Sees nothing else.'
 };
+
+/**
+ * Roles that must use two-step sign-in (an authenticator app) before the
+ * workspace opens: those who can change, approve or decide things for the
+ * project or for a nation (the plan Trevor accepted on Nov. 23, 2026;
+ * site/COLLABORATION.md, "Two-step sign-in").
+ */
+export const rolesNeedingTwoStep: readonly Role[] = ['lead-author', 'editor', 'advisor', 'nation-reviewer'];
+
+export function needsTwoStep(role: Role): boolean {
+	return rolesNeedingTwoStep.includes(role);
+}
 
 export type Permission =
 	| 'manage-people'
@@ -73,12 +85,21 @@ export type Permission =
 	| 'manage-mail'
 	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
 	| 'hide-changes'
+	// Reading what nations publish on their own pages, undoing it or pausing it (migrations/20261123T0438_add_nation_page_review.sql).
+	| 'review-nation-pages'
 	// The nonprofit corporation's record and due dates (migrations/20261123T0440_add_nonprofit_records.sql): the lead author only.
 	| 'manage-nonprofit'
 	// Checking the services the site depends on (src/lib/server/service-checks.ts): the lead author only.
 	| 'check-services'
+	// Adding and running events, and seeing who registered (migrations/20261123T0450_add_event_calendar.sql).
+	| 'manage-events'
+	// Seeing every sponsor, their Account page as they see it, and why gifts
+	// work or not, and taking a sponsor off the public pages (docs/sponsorship.md).
+	// The lead author only (Trevor, Nov. 23, 2026: "From admin, make it so I
+	// can see sponsorship page, that way I can fully diagnose").
+	| 'manage-sponsors'
 	// Searching and reading the source library, the text of every document in
-	// the private bucket (decision record 0049). It holds private copies, so
+	// the private bucket (decision record 0051). It holds private copies, so
 	// only the writing team: the lead author, editors, co-authors and advisors.
 	| 'search-source-library';
 
@@ -98,8 +119,11 @@ const grants: Record<Role, readonly Permission[]> = {
 		'send-outreach',
 		'manage-mail',
 		'hide-changes',
+		'review-nation-pages',
 		'manage-nonprofit',
 		'check-services',
+		'manage-events',
+		'manage-sponsors',
 		'search-source-library'
 	],
 	editor: [
@@ -110,6 +134,8 @@ const grants: Record<Role, readonly Permission[]> = {
 		'read-reviews',
 		'comment',
 		'sign-off',
+		'review-nation-pages',
+		'manage-events',
 		'search-source-library'
 	],
 	'co-author': ['read-reviews', 'comment', 'search-source-library'],

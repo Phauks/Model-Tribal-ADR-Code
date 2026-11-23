@@ -433,6 +433,74 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Leech Lake Walker, Cass Lake, and Deer River”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Leech Lake", matched to the roster by name and state.'
+court_practice:
+- kind: bar-admission
+  title: Attorney Procedure
+  court: Leech Lake Tribal Court
+  link: https://www.llojibwe.org/court/attorneyprocedure.html
+  detail: License to practice issued on an affidavit of being licensed before the highest court of a state, with a photocopy of the license, plus an affidavit of familiarity with tribal law; $100 application fee.
+  source: leech-lake-band-of-ojibwe-attorney-procedure
+  confidence: high
+  verification: read-in-full
+  locator: Attorney Procedure
+  note: 'The source reads: “There is a $100 application fee for admission to practice before the Leech Lake Tribal Court.”.'
+- kind: legal-aid
+  title: Attorney Procedure (legal services listing)
+  court: Leech Lake Tribal Court
+  link: https://www.llojibwe.org/court/attorneyprocedure.html
+  detail: The page lists Legal Services of Northwest Minnesota (Bemidji, MN) and Legal Aid Service of Northeastern Minnesota with contact details.
+  source: leech-lake-band-of-ojibwe-attorney-procedure
+  confidence: medium
+  verification: read-in-full
+  locator: Attorney Procedure
+  note: 'The source reads: “Legal Services of Northwest Minnesot a”. Page listing is a court referral; check against LSC service area.'
+- kind: forms
+  title: Court Forms
+  court: Leech Lake Tribal Court
+  link: https://www.llojibwe.org/court/tcForms.html
+  detail: Court Forms page linked from the court menu; also Court Codes (tcCodes.html) and Court Fines (tcFines.html, traffic fine payment instructions).
+  source: leech-lake-band-of-ojibwe-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Court menu
+  note: Pages not opened.
+nearby_state_courts:
+- state: MN
+  county: Cass County
+  court: District Court for Cass County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cass County holds 52% of the land of Leech Lake Reservation (Census GEOID 1940), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Itasca County
+  court: District Court for Itasca County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Itasca County holds 38% of the land of Leech Lake Reservation (Census GEOID 1940), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Beltrami County
+  court: District Court for Beltrami County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Beltrami County holds 8% of the land of Leech Lake Reservation (Census GEOID 1940), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Hubbard County
+  court: District Court for Hubbard County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Hubbard County holds 1% of the land of Leech Lake Reservation (Census GEOID 1940), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Pillager Band of Chippewa Indians, 1847
   signed: '1847-08-21'

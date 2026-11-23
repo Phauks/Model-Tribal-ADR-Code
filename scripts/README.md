@@ -23,6 +23,12 @@ The workflow's final job, `All checks`, passes only when every other check passe
 | --- | --- | --- |
 | `analysis/dispute_resolution_practice.py` | Counts the dispute resolution records in the profiles by kind, evidence tier, recognition and region, and lists data quality flags, as JSON for `research/analyses/` | `scripts/requirements.txt` |
 
+## Model forms
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `forms/build_forms.py` | Builds a Word (.docx) and a PDF copy of each model court form in `content/forms/`, leaving off its front matter and its notes for courts and putting in each placeholder's model text from `content/variables/`, then writes `SHA256SUMS.txt` and `checksums.json` with each file's SHA-256 hash (decision record 0049). `--out DIR` (default `site/static/help/forms`, served at `/help/forms/`), `--no-pdf` | `scripts/requirements.txt`, pandoc, LibreOffice |
+
 ## Native nations dataset
 
 Scripts that built the first profiles in `content/tribes/` from cited facts in `research/raw/` (see [research/raw/README.md](../research/raw/README.md)). They are kept so the first edition can be reproduced; once profiles are edited by hand, add new facts by hand or in a new raw file and review the diff.
@@ -138,7 +144,8 @@ Run by hand, never in continuous integration. Both use free public data with no 
 | --- | --- | --- |
 | `caselaw/check_case_citations.py` | Looks up every case source record's citations in CourtListener's newest quarterly bulk files and compares the case name and year; writes `research/reviews/<date>-case-citations-courtlistener.csv`, and with `--apply` (or later `--apply-report`) a `courtlistener` block (cluster number and link) in each record that matches. About 2.6 GB of downloads, cached for re-runs | `scripts/requirements.txt`, `curl` |
 | `caselaw/tribal_court_opinions.py` | Indexes the tribal court opinions in the Caselaw Access Project reporters named in `research/tribal-court-opinions/sources.yaml`: nations, topics and the case records each opinion cites; with `--file-captures` files each volume as a private capture and each opinion as a page the website serves (decision record 0047) ([README](../research/tribal-court-opinions/README.md)) | `scripts/requirements.txt`, `curl`; R2 keys for `--file-captures` |
-| `caselaw/caselaw_sources.py` | Shared helpers for both: downloads, the newest CourtListener release, citation parsing and case name comparison | |
+| `caselaw/reading_links.py` | Builds and checks the other places to read each case and law record (official texts, free sites, Westlaw and Lexis, Wikipedia) from `research/reading-links/sites.yaml`; writes `research/reviews/<date>-reading-links.csv`, and with `--apply` a `reading_links` block in each record that the website prints after the citation ([README](../research/reading-links/README.md)) | `scripts/requirements.txt`, `curl` |
+| `caselaw/caselaw_sources.py` | Shared helpers for these: downloads, the newest CourtListener release, citation parsing and case name comparison | |
 
 ## Constitutions
 
@@ -180,7 +187,7 @@ Run by hand, in this order, never in continuous integration. They write the `gov
 
 ## Source library
 
-The text of every document in the private bucket, page by page, in one SQLite file with a full-text index, for Claude and other writers to find passages and the page to cite (decision record [0049](../docs/decisions/0049-search-the-source-documents-through-a-private-full-text-library.md)). The library lives in the bucket, never in git.
+The text of every document in the private bucket, page by page, in one SQLite file with a full-text index, for Claude and other writers to find passages and the page to cite (decision record [0051](../docs/decisions/0051-search-the-source-documents-through-a-private-full-text-library.md)). The library lives in the bucket, never in git.
 
 | Script | Does | Needs |
 | --- | --- | --- |

@@ -870,6 +870,46 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.M, Oregon
   note: 'The source reads: “Confederated Tribes of the Grande Ronde Community of Oregon executed in”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: public-defender
+  title: Tribal Court (Indigent Defense Program)
+  court: Grand Ronde Tribal Court
+  link: https://www.grandronde.org/government/tribal-court/
+  detail: The Court has an Indigent Defense Program providing attorneys for parents and children in abuse and neglect cases; parents apply and must qualify as indigent.
+  source: grand-ronde-tribal-court-page
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Court page
+  note: 'The source reads: “The Court has an Indigent Defense Program that provides attorneys for parents and children”. Child welfare defense, not criminal.'
+- kind: forms
+  title: Forms
+  court: Grand Ronde Tribal Court
+  link: https://www.grandronde.org/forms/
+  detail: Forms page linked from the Tribal Court page; not opened.
+  source: grand-ronde-tribal-court-page
+  confidence: medium
+  verification: title-only
+  locator: Tribal Court page
+  note: Page not opened; may be general tribal forms.
+nearby_state_courts:
+- state: OR
+  county: Yamhill County
+  court: Circuit Court for Yamhill County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Yamhill County holds 90% of the land of Grand Ronde Community (Census GEOID 1365), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Polk County
+  court: Circuit Court for Polk County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Polk County holds 9% of the land of Grand Ronde Community (Census GEOID 1365), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Rogue River, 1853
   signed: '1853-09-10'

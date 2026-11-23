@@ -8,7 +8,7 @@ text of every document page by page, so a search result names the document,
 the page to cite and the source records that cite the document. The text is
 never committed to git and never served on the website: the file lives in the
 private bucket at `_library/library.sqlite.gz`, next to the documents
-themselves (decision record 0049). scripts/library/library.py downloads it and
+themselves (decision record 0051). scripts/library/library.py downloads it and
 searches it.
 
 The usual command, after files are added to the bucket:
@@ -85,7 +85,8 @@ SCHEMA_VERSION = 2
 # since the website names its private files that way.
 SKIPPED_PREFIXES = ("map-tiles/", "nation-images/", "scanner-check/", LIBRARY_PREFIX,
                     "requests/", "uploads/", "profile-pictures/", "essays/", "page-versions/", "mail/",
-                    "events/", "offline/", "books/current/")
+                    "events/", "offline/", "books/current/", "event-recordings/", "sponsors/",
+                    "nation-pages/")
 SKIPPED_SUFFIXES = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ico", ".pbf",
                     ".pmtiles", ".zip", ".epub", ".bin", ".ics", ".raw")
 # A fetch record next to a saved Tribal law page ({"link": ..., "status": ...})

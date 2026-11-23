@@ -735,6 +735,46 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Pawnee Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: filing-fees
+  title: Fee Schedule (Uniform Fee Schedule, AD-19-001)
+  court: Pawnee Nation Court
+  link: https://pawneenation.org/wp-content/uploads/2020/12/Signed-AD-19-001-Uniform-Fee-Schedule.pdf
+  detail: Uniform fee schedule file named AD-19-001, uploaded 2020-12; linked from Forms / Documents.
+  source: pawnee-nation-of-oklahoma-court
+  confidence: high
+  verification: read-in-full
+  locator: Forms / Documents (PDFs)
+  note: 'The source reads: “Fee Schedule”.'
+- kind: forms
+  title: Forms / Documents (PDFs)
+  court: Pawnee Nation Court
+  link: https://pawneenation.org/pawnee-nation-court/
+  detail: Forms include Application for Temporary Emergency Custody and Hearing Date, Application for Visitation, Marriage License Application, Divorce Petition and Divorce Waiver. Page states court staff cannot give legal advice or prepare documents.
+  source: pawnee-nation-of-oklahoma-court
+  confidence: high
+  verification: read-in-full
+  locator: Forms / Documents (PDFs)
+- kind: court-rules
+  title: Pawnee Nation of Oklahoma Law and Order Code (PDF)
+  court: Pawnee Nation Court
+  link: https://pawneenation.org/wp-content/uploads/2020/12/Law-Order-Code-1993.2008-Revised-06-11-19-.pdf
+  detail: Law and Order Code, revised 2019-06-11 per file name; the court page links it.
+  source: pawnee-nation-of-oklahoma-court
+  confidence: high
+  verification: read-in-full
+  locator: Court page
+  note: 'The source reads: “PDF - Pawnee Nation of Oklahoma Law and Order Code”. A code, not a stand-alone rules of procedure.'
+nearby_state_courts:
+- state: OK
+  county: Pawnee County
+  court: District Court for Pawnee County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pawnee County holds 100% of the land of Pawnee OTSA (Census GEOID 5780), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Grand Pawnee, 1818
   signed: '1818-06-18'

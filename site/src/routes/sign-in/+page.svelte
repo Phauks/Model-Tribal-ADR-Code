@@ -8,12 +8,15 @@
 
 	const step = $derived(form?.step ?? 'email');
 	const email = $derived(form?.email ?? '');
+	// A form posted to "?/send" or "?/code" loses the address's query, so the page to return to comes back with the form.
+	const returnTo = $derived(form && 'returnTo' in form && form.returnTo ? form.returnTo : data.returnTo);
 	const problem = $derived(form && 'problem' in form ? form.problem : undefined);
 	const field = $derived(form && 'field' in form ? form.field : undefined);
 	const paused = $derived(form && 'paused' in form ? form.paused : undefined);
 	const shownCode = $derived(form && 'shownCode' in form ? form.shownCode : undefined);
 	const shownLink = $derived(form && 'shownLink' in form ? form.shownLink : undefined);
 	const minutes = $derived(form && 'minutes' in form ? form.minutes : 15);
+	const keep = $derived(Boolean(form && 'keep' in form && form.keep));
 	const problems = $derived(problem ? [{ field, message: problem }] : []);
 
 	/** The ids that describe a field: its hint, and its error when it has one. */
@@ -27,6 +30,16 @@
 	<title>{problem ? 'Error: ' : ''}{step === 'code' ? 'Check your email' : 'Sign in'} · Model Tribal ADR Code</title>
 </svelte:head>
 
+{#snippet keepSignedIn(id: string, checked: boolean)}
+	<div class="choice">
+		<input type="checkbox" {id} name="keep" value="yes" {checked} aria-describedby="{id}-hint" />
+		<div>
+			<label for={id}>Keep me signed in for 30 days</label>
+			<p class="hint" id="{id}-hint">Only on a device you do not share. The workspace still signs you out after 12 hours.</p>
+		</div>
+	</div>
+{/snippet}
+
 {#snippet fieldError(name: string)}
 	{#if field === name && problem}
 		<p class="field-error" id="{name}-error"><span class="visually-hidden">Error:</span> {problem}</p>
@@ -35,7 +48,7 @@
 
 <div class="reading">
 	{#if step === 'code'}
-		<p class="small"><a href="/sign-in?returnTo={encodeURIComponent(data.returnTo)}">Back to sign in</a></p>
+		<p class="small"><a href="/sign-in?returnTo={encodeURIComponent(returnTo)}">Back to sign in</a></p>
 		<h1>Check your email</h1>
 	{:else}
 		<h1>Sign in</h1>
@@ -64,7 +77,7 @@
 		{/if}
 		<form method="post" action="?/code" class="panel">
 			<input type="hidden" name="email" value={email} />
-			<input type="hidden" name="returnTo" value={data.returnTo} />
+			<input type="hidden" name="returnTo" value={returnTo} />
 			<div class="field">
 				<label for="code">Code from the email</label>
 				<p class="hint" id="code-hint">For example, 482 913</p>
@@ -83,15 +96,16 @@
 					required
 				/>
 			</div>
+			{@render keepSignedIn('keep-code', keep)}
 			<button class="button" type="submit">Sign in</button>
 		</form>
 		<form method="post" action="?/send">
 			<input type="hidden" name="email" value={email} />
-			<input type="hidden" name="returnTo" value={data.returnTo} />
+			<input type="hidden" name="returnTo" value={returnTo} />
 			<p class="small">
 				No email after a minute? Check your spam or junk folder, or
 				<button class="button-link" type="submit">send a new code</button>.
-				<a href="/sign-in?returnTo={encodeURIComponent(data.returnTo)}">Use a different email address</a>.
+				<a href="/sign-in?returnTo={encodeURIComponent(returnTo)}">Use a different email address</a>.
 			</p>
 		</form>
 	{:else if paused}
@@ -135,7 +149,7 @@
 			access. You do not need an account to read the site or to send a request.
 		</p>
 		<form method="post" action="?/password" class="panel">
-			<input type="hidden" name="returnTo" value={data.returnTo} />
+			<input type="hidden" name="returnTo" value={returnTo} />
 			<div class="field">
 				<label for="email">Email address</label>
 				{@render fieldError('email')}
@@ -153,7 +167,7 @@
 			<div class="field">
 				<div class="label-row">
 					<label for="password">Password</label>
-					<a href="/sign-in/forgot?returnTo={encodeURIComponent(data.returnTo)}">Forgot your password?</a>
+					<a href="/sign-in/forgot?returnTo={encodeURIComponent(returnTo)}">Forgot your password?</a>
 				</div>
 				<p class="hint" id="password-hint">
 					{data.codesAvailable
@@ -169,6 +183,7 @@
 					aria-invalid={field === 'password' && problem ? 'true' : undefined}
 				/>
 			</div>
+			{@render keepSignedIn('keep', keep)}
 			<button class="button wide" type="submit">Sign in</button>
 			{#if data.codesAvailable}
 				<p class="or">or</p>
@@ -194,6 +209,28 @@
 <style>
 	.panel {
 		max-width: 30rem;
+	}
+
+	.choice {
+		display: flex;
+		gap: var(--space-3);
+		align-items: flex-start;
+		margin: 0 0 var(--space-4);
+	}
+
+	.choice input {
+		margin-top: 0.2em;
+		width: 1.25rem;
+		height: 1.25rem;
+		flex: none;
+	}
+
+	.choice label {
+		font-weight: var(--font-weight-regular);
+	}
+
+	.choice .hint {
+		margin: 0;
 	}
 
 	.code-field {

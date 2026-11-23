@@ -10,7 +10,7 @@ import {
 import { requirePermission } from '#lib/server/workspace.ts';
 import type { PageServerLoad } from './$types';
 
-// Search the source library (decision record 0049): every passage of every
+// Search the source library (decision record 0051): every passage of every
 // document in the private bucket. The writing team only, since the library
 // holds private copies.
 export const load: PageServerLoad = async (event) => {

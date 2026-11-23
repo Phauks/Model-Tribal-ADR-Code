@@ -805,6 +805,46 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: Application Form to Practice in the Menominee Tribal Courts
+  court: Menominee Tribal Courts
+  link: http://courts.menominee-nsn.gov/ViewDocument.aspx?DocumentID=16
+  detail: Application form to practice in the Menominee Tribal Courts, first item under General Forms.
+  source: menominee-tribal-courts-forms
+  confidence: high
+  verification: read-in-full
+  locator: General Forms
+- kind: forms
+  title: Forms
+  court: Menominee Tribal Courts
+  link: http://courts.menominee-nsn.gov/Forms.aspx
+  detail: Forms page lists general forms (motion for transfer, voluntary placement agreement, power of attorney delegating parental power, motion and summons, affidavit of service, eviction packet, grandparent rights petition, probate forms, remedial forfeiture petition).
+  source: menominee-tribal-courts-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms page
+  note: 'The source reads: “General Forms”.'
+- kind: filing-fees
+  title: Fines and Fees
+  court: Menominee Tribal Courts
+  link: http://courts.menominee-nsn.gov/FinesFees.aspx
+  detail: Fines and Fees page linked from the court home page; not opened.
+  source: menominee-tribal-courts-menominee-tribal-courts
+  confidence: medium
+  verification: title-only
+  locator: Home page navigation
+  note: Page not opened.
+nearby_state_courts:
+- state: WI
+  county: Menominee County
+  court: Circuit Court for Menominee County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Menominee County holds 99% of the land of Menominee Reservation (Census GEOID 2175), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Menominee, 1817
   signed: '1817-03-30'

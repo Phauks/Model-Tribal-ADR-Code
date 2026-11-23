@@ -124,6 +124,22 @@ Child welfare agreements come from the Association on American Indian Affairs' 2
 
 Washington's cigarette tax statutes (RCW 43.06.460, .465 and .466) and New Mexico's list of nations eligible for tax-sharing agreements authorize agreements without saying which nations signed, so the nations they name got a search-log lead instead of a fact. Not covered: the Administration for Children and Families list of Title IV-E plans (behind a bot check), the Oklahoma Secretary of State's compact list (built by script), the Oklahoma Tax Commission and Washington Department of Revenue pages (not found), Wisconsin's county-tribal law enforcement reports (connection dropped), Nevada, Idaho, Utah, Colorado, Kansas and North Dakota tax agreements, the state cross-deputization statutes, and the Alaska agreements made through regional nonprofit corporations.
 
+## Court cases
+
+The nation page now lists the court cases in the project's sources whose source record names the nation in `tribes`, oldest first, with the reporter citation and year. No profile data was added for this; the list is read from the case source records.
+
+## Nearby state courts
+
+`scripts/jurisdiction/build_nearby_state_courts.py` recorded 896 state trial courts for 551 federally recognized nations in the new `nearby_state_courts` list (`research/jurisdiction/nearby-state-courts.json`). It takes the counties each nation's 2020 Census area lies in from the Census Bureau's area-to-county relationship file (source `census-2020-tribal-area-to-county-relationship-file`), keeps a county when it holds at least 1 percent of the area's land, and names the state's trial court of general jurisdiction for that county from `research/jurisdiction/state-trial-courts.tsv`, which gives the court and the judiciary page that lists those courts for each of the 36 states. Each fact cites that state page; its note gives the county's share of the land and names the Census file.
+
+The facts are medium confidence: the court for a county is inferred from the state's court structure, not read from a list that names the county, and in several states one district court sits for several counties. Seven state pages (Kansas, Utah, Minnesota, Nevada, Oklahoma, New Mexico and New York) were behind a bot check, so their address and title come from a search listing and their facts are marked title-only. Nations with no Census area, and Alaska Native villages whose statistical area was not matched to a profile, have no entry.
+
+## Using the courts
+
+`scripts/jurisdiction/build_court_practice.py` recorded 163 pages and documents for 58 nations in the new `court_practice` list (`research/raw/2026-11-23/court-practice.json`): 38 form lists, 37 admission-to-practice pages, 35 court rules, 29 fee schedules, 16 public defender pages and 8 legal aid pages. A Sonnet agent read the court sites of the first 109 nations in the court list, about 135 page fetches, following up to three pages per court; the remaining nations were not reached and have no search log for this topic yet. A page that already had a source record is cited under that record's key.
+
+Thirty-two courts gave nothing: the Navajo court site is a frame shell whose frames did not load, and the Blackfeet, Sac and Fox, Puyallup, Red Lake, Shoshone-Bannock, Southern Ute, Confederated Salish and Kootenai, Kenaitze, Agua Caliente, Orutsararmiut, Poarch Creek and Wyandotte sites were blocked or dead. Each is in the court-practice search log. Legal aid is thin: no Legal Services Corporation list ties its Native American grantees to nations, so the legal aid facts come only from nations' own pages. Many facts are links seen in a court's menu or document list whose target was not opened; those are marked title-only. The Wind River Tribal Court serves both the Eastern Shoshone and Northern Arapaho, so its facts are on both profiles.
+
 ## Output
 
 Batches in `research/jurisdiction/`; the Violence Against Women Act research is in `research/raw/2026-11-23/violence-against-women-act-jurisdiction.json`.
