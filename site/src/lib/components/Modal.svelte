@@ -146,14 +146,30 @@
 		max-height: calc(100% - 2 * var(--space-4));
 	}
 
+	/* Opening fades the dialog in as it rises into place (site/DESIGN.md, section 6, "Motion"). */
 	.modal[open] {
 		display: flex;
 		flex-direction: column;
+		transition:
+			opacity var(--motion-duration-medium) var(--motion-easing-enter),
+			translate var(--motion-duration-medium) var(--motion-easing-enter);
+
+		@starting-style {
+			opacity: 0;
+			translate: 0 var(--space-2);
+		}
 	}
 
 	.modal::backdrop {
 		background: var(--color-band);
 		opacity: 0.6;
+		transition: opacity var(--motion-duration-medium) var(--motion-easing-enter);
+	}
+
+	.modal[open]::backdrop {
+		@starting-style {
+			opacity: 0;
+		}
 	}
 
 	.modal :global(label) {

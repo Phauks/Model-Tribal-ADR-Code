@@ -237,11 +237,15 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Cow Creek Tribal Court
+  link: https://www.courts.oregon.gov/programs/jcip/Documents/Tribal%20contact%20info.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oregon section, entry 'Cow Creek Band of Umpqua Tribe of Indians'
+  note: Link is the entry in the Oregon Judicial Department's “Oregon Tribal Court Contact Information”
+    list; no page of the court's own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json,
+    service-070).
 dispute_resolution:
   training_programs:
   - name: First Cow Creek Band of Umpqua Indians Peacemaking Training (Canyonville, Oregon, April 21-23,

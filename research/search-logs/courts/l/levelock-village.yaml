@@ -1,7 +1,7 @@
 profile: content/tribes/l/levelock-village.yaml
 topic: courts
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -165,6 +165,38 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: fetch.py returns no text for the directory PDF, so the Levelock entry could not be checked.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'scripts/review/service_links.py second: the village''s name'
+  outcome: not-found
+  reason: 'Second search: “Levelock Tribal Court”: Status 200; fetched again to see whether a newer directory
+    has replaced the 2022 one: it is still the 2022 Alaska Tribal Court Directory that the Nov. 22 court
+    review read, so that review''s reading of this village''s entry (or of its absence) stands.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: “Levelock Tribal Court”: The association''s site shows programs, membership
+    and regions; it publishes no directory of tribal courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Levelock Tribal Court”: Claude weighed what the second search found against
+    the lead author''s order (own page, then directory entry): none-found; the link stays empty and the
+    service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-131
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Levelock Tribal
   Court (court-095, cannot-tell). No page or official directory entry was found on 2026-11-22 for “Levelock
-  Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+  Tribal Court” (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23 (web
+  searches and state court lists) found no page or official directory entry for “Levelock Tribal Court”;
+  a call to the nation''s office could say whether the court has a page.'

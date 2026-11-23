@@ -1,7 +1,7 @@
 profile: content/tribes/c/confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -58,4 +58,43 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Nation's Tribal Court & Peacegiving Court page (status 200) names the tribal court, Peacegiving Court and Healing to Wellness Court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Coos Lower Umpqua Siuslaw tribal court wellness court ctclusi
+  outcome: found
+  reason: 'Second search: “Wellness Court”: The results included the nation''s Tribal Court & Peacegiving
+    Court page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://ctclusi.org/tribal-court-peacegiving/
+  query: 'scripts/review/service_links.py second: Wellness'
+  outcome: found
+  reason: 'Second search: “Wellness Court”: Status 200; the nation''s "Tribal Court & Peacegiving Court"
+    page names the Healing to Wellness Court as one of the court''s problem-solving programs and says
+    who may take part; now the service''s link.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: “Wellness Court”: The association''s site shows programs, membership and regions;
+    it publishes no directory of tribal courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Wellness Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): own-page, https://ctclusi.org/tribal-court-peacegiving/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-061
 next_steps: No page or official directory entry was found on 2026-11-22 for “Wellness Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 linked “Wellness Court” (research/reviews/2026-11-22-service-links.json).

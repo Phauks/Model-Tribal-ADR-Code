@@ -1,7 +1,7 @@
 profile: content/tribes/k/kickapoo-traditional-tribe-of-texas.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -221,5 +221,36 @@ searches:
     order (own page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-119
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Kickapoo Traditional Tribe of Texas peacemaker program tribal court Eagle Pass
+  outcome: not-found
+  reason: 'Second search: “Peacemaker Program / Peacemaker System”: Results were the Tribe''s code files,
+    code databases and a legal-aid guide; no page about the Peacemaker program came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://kickapootexas.org/tribal-operations/probation/
+  query: 'scripts/review/service_links.py second: peacemak'
+  outcome: dead-link
+  reason: 'Second search: “Peacemaker Program / Peacemaker System”: The nation''s Probation page from
+    the results returned status 404.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Peacemaker Program / Peacemaker System”: Claude weighed what the second search
+    found against the lead author''s order (own page, then directory entry): none-found; the link stays
+    empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-119
 next_steps: No page or official directory entry was found on 2026-11-22 for “Peacemaker Program / Peacemaker
-  System” (research/reviews/2026-11-22-service-links.json).
+  System” (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23 (web searches
+  and state court lists) found no page or official directory entry for “Peacemaker Program / Peacemaker
+  System”; a call to the nation's office could say whether the court has a page.

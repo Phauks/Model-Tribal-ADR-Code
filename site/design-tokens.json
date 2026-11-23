@@ -476,5 +476,69 @@
       },
       "$description": "Smallest size of a button or menu item. WCAG 2.2 requires 24 px; the project uses 44 px."
     }
+  },
+  "motion": {
+    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
+    "duration": {
+      "$type": "duration",
+      "short": {
+        "$value": {
+          "value": 120,
+          "unit": "ms"
+        },
+        "$description": "Small changes in place: an arrow turning, a button's state."
+      },
+      "medium": {
+        "$value": {
+          "value": 200,
+          "unit": "ms"
+        },
+        "$description": "Something appearing or moving: a citation window, a dialog, a folding section, the map gliding to a new zoom, a page change."
+      },
+      "long": {
+        "$value": {
+          "value": 320,
+          "unit": "ms"
+        },
+        "$description": "Larger movements, such as chart bars moving to new values."
+      },
+      "highlight": {
+        "$value": {
+          "value": 1600,
+          "unit": "ms"
+        },
+        "$description": "How long the mark on a source or note a link has just gone to takes to fade to its resting color."
+      }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "standard": {
+        "$value": [
+          0.2,
+          0,
+          0,
+          1
+        ],
+        "$description": "Movement within the page, starting quickly and settling gently."
+      },
+      "enter": {
+        "$value": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "$description": "Something appearing: it arrives quickly and slows to a stop."
+      },
+      "exit": {
+        "$value": [
+          0.3,
+          0,
+          1,
+          1
+        ],
+        "$description": "Something leaving: it starts slowly and speeds away."
+      }
+    }
   }
 }

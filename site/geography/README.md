@@ -48,7 +48,7 @@ The script downloads the Census Bureau's file, sorts the areas into kinds by the
 
 ## Building the map tiles
 
-The website draws its map with MapLibre from two tile sets kept in the private bucket ([decision record 0035](../../docs/decisions/0035-website-map-uses-maplibre-and-our-own-tiles.md)): the Census Bureau's land areas and states at full detail, and a Protomaps basemap of OpenStreetMap data (towns, roads, water) cut to the United States and its territories up to zoom 12, about 2.2 GB. The drawn map above stays for print, the book and offline reading.
+The website draws its map with MapLibre from two tile sets kept in the private bucket ([decision record 0038](../../docs/decisions/0038-website-map-uses-maplibre-and-our-own-tiles.md)): the Census Bureau's land areas and states at full detail, and a Protomaps basemap of OpenStreetMap data (towns, roads, water) cut to the United States and its territories up to zoom 12, about 2.2 GB. The drawn map above stays for print, the book and offline reading.
 
 The build needs [tippecanoe](https://github.com/felt/tippecanoe) and the [pmtiles tool](https://github.com/protomaps/go-pmtiles) (`go install github.com/protomaps/go-pmtiles@latest`) on the PATH. From `site/`:
 

@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Phones are linked on purpose (tel:); without this, some phone browsers also turn fax numbers and other digits into call links (Trevor, Nov. 23, 2026). -->
+		<meta name="format-detection" content="telephone=no" />
 		<meta name="text-scale" content="scale" />
 		<script>
 			// Apply the reader's settings before the page paints, so nothing jumps
@@ -24,7 +26,8 @@
 						'contrast',
 						'noteDisplay',
 						'sourceLinks',
-						'glossaryCards'
+						'glossaryCards',
+						'motion'
 					].forEach(function (name) {
 						var value = settings && settings[name];
 						if (typeof value === 'string' && /^[a-z0-9.-]+$/.test(value)) root.dataset[name] = value;

@@ -83,9 +83,26 @@
 	// SIGN_IN_EMAIL_FROM below. While that is empty, the site sends no email
 	// and people sign in with a password or a link from the lead author
 	// (COLLABORATION.md, "Setting up sign-in").
-	"send_email": [{ "name": "signInEmail" }],
+	//
+	// The second binding sends summaries of updates to pages readers follow,
+	// from UPDATE_EMAIL_FROM. That address is the switch for those emails:
+	// while it is empty, nothing is sent and readers see notices on the site
+	// only. Set it once the domain is onboarded (docs/domain-to-do.md;
+	// COLLABORATION.md, "Following pages"). SITE_ADDRESS is the site's public
+	// address, for the links in those emails; change it when the site moves
+	// to the domain.
+	"send_email": [{ "name": "signInEmail" }, { "name": "updateEmail" }],
 	"vars": {
-		"SIGN_IN_EMAIL_FROM": ""
+		"SIGN_IN_EMAIL_FROM": "",
+		"UPDATE_EMAIL_FROM": "",
+		"SITE_ADDRESS": "https://model-tribal-adr-code.trevordgoldsmith.workers.dev"
+	},
+	// Every hour, at 17 minutes past: find updates to followed pages and send
+	// the summary emails that are due. tools/add-scheduled-run.mjs adds the
+	// Worker's scheduled handler after the build, since the SvelteKit adapter
+	// makes only a fetch handler.
+	"triggers": {
+		"crons": ["17 * * * *"]
 	}
 	// One setting is made in the Cloudflare dashboard (Worker > Settings >
 	// Variables and Secrets) rather than here, because this file is public:
