@@ -1,7 +1,7 @@
 profile: content/tribes/p/pit-river-tribe.yaml
 topic: dispute-resolution
 status: none-found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -23,5 +23,36 @@ searches:
     stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-291
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Pit River Tribe Youth Reclamation Program Peacemaker
+  outcome: not-found
+  reason: 'Second search: “Youth Reclamation Program – The Peacemaker Program”: Results were copies of
+    the code chapter that creates the program and grant pages; no page about the program came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pitrivertribe.gov/?p=199
+  query: 'scripts/review/service_links.py second: Youth Reclamation; peacemak'
+  outcome: not-found
+  reason: 'Second search: “Youth Reclamation Program – The Peacemaker Program”: Status 200; a 2016 youth
+    camp notice on the nation''s site that does not name the program; not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Youth Reclamation Program – The Peacemaker Program”: Claude weighed what the
+    second search found against the lead author''s order (own page, then directory entry): none-found;
+    the link stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-291
 next_steps: No page or official directory entry was found on 2026-11-22 for “Youth Reclamation Program
-  – The Peacemaker Program” (research/reviews/2026-11-22-service-links.json).
+  – The Peacemaker Program” (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23
+  (web searches and state court lists) found no page or official directory entry for “Youth Reclamation
+  Program – The Peacemaker Program”; a call to the nation's office could say whether the court has a page.
