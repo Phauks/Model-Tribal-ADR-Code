@@ -194,101 +194,85 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution adopted under the Oklahoma Indian Welfare Act of June 26, 1936
-  quote: promulgated pursuant to Section 3 of the Oklahoma Indian
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
-  confidence: medium
+  value: Constitution
+  quote: The Absentee Shawnee Tribe of Oklahoma is governed by a constitution.
+  source: absentee-shawnee-tribe-of-indians-of-oklahoma-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1988-08-09'
-  locator: Article XIX
-  document_version:
-    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
-- aspect: governing-body
-  value: General Council
-  quote: shall be the General Council consisting of all members of the tribe
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '1988-08-09'
-  locator: Article IV, Section 1
-  document_version:
-    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
   value: Executive Committee
-  quote: Committee consisting of five (5) representatives including
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: There shall be an Executive Committee consisting of five (5)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 2(a)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: governing-body-size
   value: 5 members
-  quote: Committee consisting of five (5) representatives including
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: There shall be an Executive Committee consisting of five (5)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 2(a)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: governing-body-selection
   value: Elected by referendum
-  quote: Representative, all of which shall be elected by referendum.
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: All members of the Executive Committee shall be elected by referendum
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 2(a)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: governing-body-term
-  value: 2 years
-  quote: all terms shall be two (2) years in length.
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: 4 years
+  quote: The term of office for Executive Committee members shall be four (4)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 2(b)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: general-council
-  value: All members 18 or older who are duly registered to vote
-  quote: eighteen (18) years of age or older who are duly registered to vote
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: All tribal members 18 or older
+  quote: SECTION 1. The General Council of the Absentee Shawnee Tribe shall consist of all members of
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 1
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: head-of-government
   value: Governor
-  quote: The Governor shall call and preside over all meetings of
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: The Governor shall call and preside over all meetings of the General Council and
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article XIII, Section 1
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -299,52 +283,52 @@ governance:
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 - aspect: head-of-government-selection
   value: Elected by referendum
-  quote: Representative, all of which shall be elected by referendum.
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: All members of the Executive Committee shall be elected by referendum
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 2(a)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: head-of-government-term
-  value: 2 years
-  quote: Secretary shall each be filled for a two (2) year term,
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: 4 years
+  quote: The term of office for Executive Committee members shall be four (4)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 2(b)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: other-officers
   value: Lt. Governor, Secretary, Treasurer, Representative
-  quote: Governor, Lt. Governor, Secretary, Treasurer and a
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: representatives including Governor, Lt. Governor, Secretary, Treasurer and a
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 2(a)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: elections
-  value: Annually in June
-  quote: Thereafter, there shall be annual elections in June
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: Annual, third Saturday in June
+  quote: 'Annual Election: Held on the third Saturday in June primarily for the purpose of electing'
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
-  locator: Article IV, Section 2(b)
+  as_of: '2026-11-23'
+  locator: Article VI, Section 7(a)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: voting-age
   value: '18'
   quote: eighteen (18) years of age or older who are duly registered to vote
@@ -359,112 +343,112 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
 - aspect: election-authority
   value: Election Commission
-  quote: There shall be an Election Commission
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: There shall be an Election Commission consisting of five (5)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article VI, Section 2
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: branches
-  value: Judicial Branch; Legislative/Executive Branch
-  quote: two (2) separate branches, i.e. , the Judicial Branch and the Legislative/
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: Legislative/Executive and Judicial
+  quote: The tribal government, as described in this Article, is composed of two (2) separate branches, i.e.,
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: judiciary
-  value: Tribal Court and Appeals Court
-  quote: consisting of a Tribal Court and an Appeals Court.
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: Supreme Court and inferior courts
+  quote: hereby vested in one Supreme Court consisting of seven (7) Justices and such inferior courts as
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article IV, Section 3
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: judicial-selection
   value: Selected by the Executive Committee
-  quote: be selected by the Executive Committee and shall serve six (6) year
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: The Supreme Court Justices and Tribal Court Judges shall be selected by the Executive
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
-  locator: Article IV, Section 3(c) (Amendment B)
+  as_of: '2026-11-23'
+  locator: Article IV, Section 3(c)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: judicial-term
   value: 6 years
-  quote: be selected by the Executive Committee and shall serve six (6) year
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  quote: shall serve six (6) year terms and until their successor be duly installed.
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
-  locator: Article IV, Section 3(c) (Amendment B)
+  as_of: '2026-11-23'
+  locator: Article IV, Section 3(c)
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: amendment
-  value: Majority of ballots cast in referendum; 20 percent of voters must vote
-  quote: Amendments to this Constitution may be proposed by a resolution of the
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: Majority of ballots cast in referendum, 20% turnout required
+  quote: ratified by a majority of those who cast ballots, provided at least twenty percent (20%) of
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article XII
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: secretarial-approval
-  value: Required for amendments
-  quote: Secretary of the Interior, shall be submitted to a referendum vote
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: Requirement removed
+  quote: eliminated the authority of the Secretary of Interior over the
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article XII
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: recall-and-removal
-  value: Removal by 3 members of the elected body for justifiable cause
-  quote: by an affirmative vote of three (3) of its members.
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  value: Recall by petition of 30% of eligible voters
+  quote: Upon receipt of a valid petition signed by at least thirty percent (30%) of the
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
   confidence: medium
   verification: read-in-full
-  as_of: '1988-08-09'
-  locator: Article VII, Section 1
-  document_version:
-    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
-- aspect: recall-and-removal
-  value: Recall by petition of 30 percent of registered voters
-  quote: thirty percent (30%) of the registered voters of the tribe, it shall be
-  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '1988-08-09'
+  as_of: '2026-11-23'
   locator: Article VII, Section 2
   document_version:
     document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
-    version: 1988-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: recall-and-removal
+  value: Removal by affirmative vote of 3 members of the body
+  quote: of its members for a justifiable cause by an affirmative vote of three (3) members.
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 1
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
 - aspect: other
   value: Initiative by petition of 20 percent of registered voters
   quote: signed by at least twenty percent (20%) of the registered voters, it

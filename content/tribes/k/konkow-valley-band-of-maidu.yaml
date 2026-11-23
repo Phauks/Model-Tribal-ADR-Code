@@ -50,6 +50,23 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council Contact Information
+  source: konkow-valley-band-of-maidu-website-view-konkowvalleybandofmaiduindians-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: This is a Google Sites page; the constitution appears only as a draft PDF link and council members are listed by name, so only two facts are stated.'
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: Tribal Chairperson
+  source: konkow-valley-band-of-maidu-website-view-konkowvalleybandofmaiduindians-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: This is a Google Sites page; the constitution appears only as a draft PDF link and council members are listed by name, so only two facts are stated.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

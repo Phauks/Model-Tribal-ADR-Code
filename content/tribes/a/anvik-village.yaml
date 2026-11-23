@@ -179,6 +179,22 @@ indian_health_service:
   note: 'The source''s words: "Anvik Village".'
   operator: tribal
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council Member
+  source: anvik-village-website-council-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear beside personal names on the page; only the titles are quoted.'
+- aspect: head-of-government
+  value: First Chief
+  quote: First Chief
+  source: anvik-village-website-council-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear beside personal names on the page; only the titles are quoted.'
 - aspect: head-of-government
   value: First Chief
   source: bia-tribal-leaders-directory-2026

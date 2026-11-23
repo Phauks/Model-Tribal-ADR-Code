@@ -6,8 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: central-council-of-the-tlingit-and-haida-indian-tribes
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2013-04-20.
-  Versions are only those found; others may exist.'
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: one dated version, of 2013-04-20. Versions are only those found; others may exist.'
 versions:
 - id: 2013-text
   label: 2013 constitution, as amended
@@ -25,8 +24,7 @@ versions:
     path: research/captures/constitutions/central-council-of-the-tlingit-and-haida-indian-tribes/9fd5119d5fffee5d.pdf
     sha256: 9fd5119d5fffee5d567f37be0571010dc3f0ab4ce35561c7e4415be05f40737a
     pages: 12
-  note: 'Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
-    author. Marked superseded on 2026-11-22: the 2014 constitution, as amended (2014-text) is newer.'
+  note: 'Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author. Marked superseded on 2026-11-22: the 2014 constitution, as amended (2014-text) is newer.'
   clauses:
   - topic: judicial-power
     locator: Article III (Member Citizenship)
@@ -35,8 +33,7 @@ versions:
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: judicial-power
     locator: Article IV (Delegates to the Tribal Assembly)
-    summary: Article headed "Delegates to the Tribal Assembly"; an AI reviewer confirmed it covers this
-      topic.
+    summary: Article headed "Delegates to the Tribal Assembly"; an AI reviewer confirmed it covers this topic.
     verification: read-in-full
     reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
   - topic: election-disputes
@@ -52,7 +49,7 @@ versions:
 - id: 2014-text
   label: 2014 constitution, as amended
   event: edition
-  status: in-effect
+  status: superseded
   dates:
     adopted: '2014-04-12'
   supersedes:
@@ -64,10 +61,7 @@ versions:
     path: research/captures/constitutions/central-council-of-the-tlingit-and-haida-indian-tribes/195d1ad173922ef3.pdf
     sha256: 195d1ad173922ef3ceb02113999b6125b0bc766367f5a9134717fb5749c6a8a6
     pages: 11
-  note: Scanned. Adopted by the Tribal Assembly on Apr. 12, 2014; the last page lists Assembly changes
-    of 2004, 2007, 2008, 2013 and 2014. Marked in effect because it is the newest dated text found; a
-    later amendment may not be posted. Version, status and dates read from the copy by the project (Claude),
-    not yet checked by the lead author.
+  note: Scanned. Adopted by the Tribal Assembly on Apr. 12, 2014; the last page lists Assembly changes of 2004, 2007, 2008, 2013 and 2014. Version, status and dates read from the copy by the project (Claude), not yet checked by the lead author. Marked superseded because a later text (2025-text) was found on the nation's own site on 2026-11-23 (project inference).
   changes:
   - topic: election-disputes
     compared_with: 2013-text
@@ -79,8 +73,23 @@ versions:
     change: not-compared
     verification: inferred
     note: 'Not compared: added from a hand-pulled copy on 2026-11-22; compare the two texts by hand.'
+- id: 2025-text
+  label: 2025 constitution, as revised
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2025-04-18'
+  supersedes:
+  - 2014-text
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/central-council-of-the-tlingit-and-haida-indian-tribes/3189ca3ff424bdf0.pdf
+    sha256: 3189ca3ff424bdf09523503642beaa22a80fb7cbdc8fda71216385944ad04592
+    pages: 17
+  note: The first page reads "Revised April 18, 2025". Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-23; a later amendment may not be posted. Version, status and dates read from the text's first page by the project (Claude), not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
 - 2026-11-22-hand-pulled-documents
-notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
-  events and changes are project inferences from the texts found; see the catalog README.
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses, events and changes are project inferences from the texts found; see the catalog README.

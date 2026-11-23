@@ -231,17 +231,13 @@ governance:
     version: 1935-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
-  value: Cheyenne River Sioux Tribal Council
-  quote: Sioux Tribe shall consist of a council, known as the Cheyenne River Sioux
-  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
-  confidence: medium
+  value: Tribal Council
+  quote: Tribal Council Representatives
+  source: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-website-councilrepresentatives
+  confidence: high
   verification: read-in-full
-  as_of: '1935-10-29'
-  locator: Article III, Section 1
-  document_version:
-    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
-    version: 1935-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and council representatives by name and do not state the constitutional structure, so only title-level facts are given.'
 - aspect: governing-body-size
   value: 15 councilmen plus 3 officers
   quote: also fifteen (15) councilmen and
@@ -279,17 +275,13 @@ governance:
     version: 1935-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
-  value: Tribal chairman
-  quote: It shall be the duty of the chairman to
-  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
-  confidence: medium
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-website-executives-council
+  confidence: high
   verification: read-in-full
-  as_of: '1935-10-29'
-  locator: By-laws, Article I, Section 1
-  document_version:
-    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
-    version: 1935-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and council representatives by name and do not state the constitutional structure, so only title-level facts are given.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -323,17 +315,13 @@ governance:
     version: 1935-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: other-officers
-  value: Tribal secretary, tribal treasurer, assistant chairman
-  quote: one assistant chairman from their own membership.
-  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
-  confidence: medium
+  value: Tribal Vice-Chairman, Tribal Secretary, Tribal Treasurer
+  quote: Tribal Vice-Chairman
+  source: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-website-executives-council
+  confidence: high
   verification: read-in-full
-  as_of: '1935-10-29'
-  locator: Article III, Section 6
-  document_version:
-    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
-    version: 1935-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and council representatives by name and do not state the constitutional structure, so only title-level facts are given.'
 - aspect: elections
   value: Every 2 years on the first Tuesday after the first Monday in September
   quote: general elections will be held every two years on the first Tuesday

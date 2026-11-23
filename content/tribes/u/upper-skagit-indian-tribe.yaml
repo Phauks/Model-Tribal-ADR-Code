@@ -173,16 +173,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
 - aspect: governing-body
   value: Upper Skagit Tribal Council
-  quote: The governing body of the Upper Skagit Indij
-  source: constitution-upper-skagit-indian-tribe-1977-text
-  confidence: medium
+  quote: The Upper Skagit Tribal Council is the governing body of the Upper Skagit Indian Tribe.
+  source: upper-skagit-indian-tribe-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1977-03-26'
-  locator: Article III, Section 1
-  document_version:
-    document: upper-skagit-indian-tribe-constitution
-    version: 1977-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name the Tribal Council as governing body but give no size, selection, term or constitution text.'
 - aspect: governing-body-size
   value: 7 members
   quote: The tribal council shall consist of seven (7)

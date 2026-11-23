@@ -199,40 +199,21 @@ indian_health_service:
   note: Listed as "Apache Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
 - aspect: form
-  value: Constitution, as ratified February 5, 1972 and amended
-  quote: As ratified February 5, 1972,
-  source: constitution-apache-tribe-of-oklahoma-1987-text-2
-  confidence: medium
+  value: Organized by constitution
+  quote: The historic Ka-ta-kas are organized by constitution as the Apache Tribe of Oklahoma.
+  source: apache-tribe-of-oklahoma-website-history
+  confidence: high
   verification: read-in-full
-  as_of: '1987-06-20'
-  document_version:
-    document: apache-tribe-of-oklahoma-constitution
-    version: 1987-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
-- aspect: governing-body
-  value: Tribal Council
-  quote: The supreme governing body of the Apache Tribe of Oklahoma shall be the
-  source: constitution-apache-tribe-of-oklahoma-1987-text-2
-  confidence: medium
-  verification: read-in-full
-  as_of: '1987-06-20'
-  locator: Article III
-  document_version:
-    document: apache-tribe-of-oklahoma-constitution
-    version: 1987-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is a linked PDF whose text is not among the saved pages, and the Business Committee page lists officers with names.'
 - aspect: governing-body
   value: Business Committee
-  quote: There shall be a business committee which shall consist of the officers as
-  source: constitution-apache-tribe-of-oklahoma-1987-text-2
-  confidence: medium
+  quote: Apache Tribe Business Committee
+  source: apache-tribe-of-oklahoma-website-tribal-departments-abc
+  confidence: high
   verification: read-in-full
-  as_of: '1987-06-20'
-  locator: Article V
-  document_version:
-    document: apache-tribe-of-oklahoma-constitution
-    version: 1987-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is a linked PDF whose text is not among the saved pages, and the Business Committee page lists officers with names.'
 - aspect: governing-body-size
   value: All members 18 and older
   quote: The tribal council shall consist of all members of the
@@ -294,17 +275,13 @@ governance:
     version: 1987-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
 - aspect: head-of-government
-  value: Chairman
-  quote: The officers of the tribe shall be the chairman, vice-chairman and
-  source: constitution-apache-tribe-of-oklahoma-1987-text-2
-  confidence: medium
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: apache-tribe-of-oklahoma-website-tribal-departments-abc
+  confidence: high
   verification: read-in-full
-  as_of: '1987-06-20'
-  locator: Article IV
-  document_version:
-    document: apache-tribe-of-oklahoma-constitution
-    version: 1987-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is a linked PDF whose text is not among the saved pages, and the Business Committee page lists officers with names.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -338,17 +315,13 @@ governance:
     version: 1987-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
 - aspect: other-officers
-  value: Vice-Chairman, Secretary-Treasurer
-  quote: The officers of the tribe shall be the chairman, vice-chairman and
-  source: constitution-apache-tribe-of-oklahoma-1987-text-2
-  confidence: medium
+  value: Vice-Chairman, Secretary/Treasurer
+  quote: Secretary/Treasurer
+  source: apache-tribe-of-oklahoma-website-tribal-departments-abc
+  confidence: high
   verification: read-in-full
-  as_of: '1987-06-20'
-  locator: Article IV
-  document_version:
-    document: apache-tribe-of-oklahoma-constitution
-    version: 1987-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is a linked PDF whose text is not among the saved pages, and the Business Committee page lists officers with names.'
 - aspect: elections
   value: Every 2 years, on the 3rd Saturday of the month of the initial election
   quote: Thereafter, the general election shall be held at two (2)

@@ -1,6 +1,6 @@
 profile: content/tribes/p/piscataway-conoy-tribe.yaml
 topic: governance
-status: partly-searched
+status: found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-23'
@@ -19,4 +19,14 @@ searches:
   query: jobtitle of the nation's row
   outcome: not-found
   reason: The directory lists federally recognized nations only.
-next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.piscatawaytribe.org/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 3 pages (home, government, council, election, court and constitution pages); kept 3 facts whose quoted words were found on the page.
+  records:
+  - piscataway-conoy-tribe-website-piscataway-conoy-elections-2026-html
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

@@ -11,7 +11,9 @@ import { nations } from '#lib/server/content.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { displayName, regionAnchor, stateName } from '#lib/nation-labels.ts';
 import {
+	agreementCategories,
 	courtCategories,
+	otherJurisdictionLawCategories,
 	healthServiceAreaShades,
 	publicLaw280Categories,
 	shadedMapViews,
@@ -368,13 +370,48 @@ function courtsOf(record: NationRecord) {
 	return { peacemaking, wellness, federal, tribal, count: institutions.length + forums.length };
 }
 
-function courtCategory(record: NationRecord): string | undefined {
-	const courts = courtsOf(record);
-	if (courts.peacemaking) return 'peacemaking';
-	if (courts.wellness) return 'wellness';
-	if (courts.tribal) return 'court';
-	if (courts.federal) return 'federal';
-	return undefined;
+/**
+ * Views whose table shows every kind a nation has, one Yes column each, since the map can shade only one. Each kind is one of the view's categories (src/lib/shaded-map-views.ts), and a nation is shaded by the first it has. `section` is the part of the nation's page that cites the facts.
+ */
+const kindViews: Partial<Record<ShadedMapView, { categories: ShadeCategory[]; headers: Record<string, string>; section: string; has: (record: NationRecord) => Record<string, boolean> }>> = {
+	'courts-and-peacemaking': {
+		categories: courtCategories,
+		headers: { peacemaking: 'Peacemaking or traditional forum', wellness: 'Wellness court', court: 'Tribal court', federal: 'Court of Indian Offenses' },
+		section: 'courts-heading',
+		has: (record) => {
+			const courts = courtsOf(record);
+			return { peacemaking: courts.peacemaking, wellness: courts.wellness, court: courts.tribal, federal: courts.federal };
+		}
+	},
+	'other-jurisdiction-laws': {
+		categories: otherJurisdictionLawCategories,
+		headers: { 'state-statute': 'State jurisdiction under another law', 'child-welfare-reassumed': 'Child welfare jurisdiction reassumed', 'enhanced-sentencing': 'Enhanced sentencing' },
+		section: 'jurisdiction-heading',
+		has: (record) => ({
+			'state-statute': factsOn(record, 'state-jurisdiction-statute').some((fact) => (fact.value ?? '').startsWith('state-')),
+			'child-welfare-reassumed': factsOn(record, 'indian-child-welfare-act').some((fact) => fact.value === 'reassumed-jurisdiction'),
+			'enhanced-sentencing': factsOn(record, 'tribal-law-and-order-act-enhanced-sentencing').some((fact) => fact.value === 'implementing')
+		})
+	},
+	'agreements-with-states': {
+		categories: agreementCategories,
+		headers: { 'cross-deputization': 'Cross-deputization', 'child-welfare-agreement': 'Child welfare', 'tax-agreement': 'Tax', other: 'Other' },
+		section: 'jurisdiction-heading',
+		has: (record) => {
+			const kinds = new Set((record.jurisdiction_agreements ?? []).map((agreement) => agreement.kind));
+			return Object.fromEntries(agreementCategories.map((category) => [category.key, kinds.has(category.key)]));
+		}
+	}
+};
+
+/** The first kind the record has, in the view's order. */
+function firstKind(view: ShadedMapView) {
+	const entry = kindViews[view];
+	return (record: NationRecord): string | undefined => {
+		if (!entry) return undefined;
+		const has = entry.has(record);
+		return entry.categories.find((category) => has[category.key])?.key;
+	};
 }
 
 const healthServiceArea = (record: NationRecord): string | undefined => record.indian_health_service?.find((fact) => fact.area)?.area;
@@ -410,12 +447,17 @@ function buildShadedView(view: ShadedMapView) {
 		categoryOf = healthServiceArea;
 		rowOf = (_record, category) => shadedRowAnchor(view, category);
 	} else {
-		const chosen = {
-			'courts-and-peacemaking': [courtCategories, courtCategory],
-			'public-law-280': [publicLaw280Categories, publicLaw280Category],
-			'violence-against-women-act': [violenceAgainstWomenActCategories, violenceAgainstWomenActCategory]
-		} as const;
-		[categories, categoryOf] = chosen[view];
+		const kinds = kindViews[view];
+		if (kinds) {
+			categories = kinds.categories;
+			categoryOf = firstKind(view);
+		} else if (view === 'public-law-280') {
+			categories = publicLaw280Categories;
+			categoryOf = publicLaw280Category;
+		} else {
+			categories = violenceAgainstWomenActCategories;
+			categoryOf = violenceAgainstWomenActCategory;
+		}
 		rowOf = (record) => shadedRowAnchor(view, record.id);
 	}
 	const order = categories.map((category) => category.key);
@@ -536,28 +578,25 @@ export function shadedView(view: ShadedMapView) {
 				states: [...new Set(members.flatMap(statesOf))].sort((first, second) => first.localeCompare(second, 'en'))
 			};
 		});
-		return { view, legend, drawn, offices, labels: built.categories.map((category) => ({ name: category.key, identifiers: built.areas.filter((area) => area.category === category.key).map((area) => area.code) })), nationRows: [], areaRows: rows };
+		return { view, legend, drawn, offices, kindColumns: [], section: 'ties-heading', labels: built.categories.map((category) => ({ name: category.key, identifiers: built.areas.filter((area) => area.category === category.key).map((area) => area.code) })), nationRows: [], areaRows: rows };
 	}
 
+	const kinds = kindViews[view];
 	const nationRows = built.records
 		.map((record) => ({ record, category: built.categoryOf(record) }))
 		.filter((entry): entry is { record: NationRecord; category: string } => entry.category !== undefined)
-		.map(({ record, category }) => {
-			const courts = view === 'courts-and-peacemaking' ? courtsOf(record) : undefined;
-			return {
-				anchor: shadedRowAnchor(view, record.id),
-				id: record.id,
-				name: displayName(record.names.official),
-				states: statesOf(record),
-				category: labelOf.get(category) ?? category,
-				// The courts table says which kinds each nation has, since the map shows only the first.
-				...(courts
-					? { tribalCourt: courts.tribal, peacemaking: courts.peacemaking, wellnessCourt: courts.wellness, federalCourt: courts.federal }
-					: {})
-			};
-		})
+		.map(({ record, category }) => ({
+			anchor: shadedRowAnchor(view, record.id),
+			id: record.id,
+			name: displayName(record.names.official),
+			states: statesOf(record),
+			category: labelOf.get(category) ?? category,
+			kinds: kinds ? kinds.has(record) : {}
+		}))
 		.sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
-	return { view, legend, drawn, offices, labels: [], nationRows, areaRows: [] };
+	// A table that shows every kind has one Yes column per kind, in the map's order.
+	const kindColumns = kinds ? kinds.categories.map((category) => ({ key: category.key, header: kinds.headers[category.key] ?? category.label })) : [];
+	return { view, legend, drawn, offices, labels: [], nationRows, areaRows: [], kindColumns, section: kinds?.section ?? 'jurisdiction-heading' };
 }
 
 export type ShadedViewData = ReturnType<typeof shadedView>;
@@ -570,6 +609,13 @@ function addShadedViewSources(records: NationRecord[], sources: SourceUses): voi
 		}
 		for (const fact of factsOn(record, violenceAgainstWomenActTopic)) {
 			if (fact.source) sources.add(fact.source, { section: 'Violence Against Women Act jurisdiction', text: 'nations exercising special Tribal criminal jurisdiction, and implementation grants' });
+		}
+		for (const fact of record.jurisdiction ?? []) {
+			if (fact.source && ['state-jurisdiction-statute', 'tribal-law-and-order-act-enhanced-sentencing'].includes(fact.topic)) sources.add(fact.source, { section: 'Other jurisdiction laws', text: 'each nation’s facts on state jurisdiction under other federal laws and on enhanced sentencing' });
+			if (fact.source && fact.topic === 'indian-child-welfare-act' && fact.value === 'reassumed-jurisdiction') sources.add(fact.source, { section: 'Other jurisdiction laws', text: 'nations that reassumed jurisdiction under the Indian Child Welfare Act' });
+		}
+		for (const fact of record.jurisdiction_agreements ?? []) {
+			if (fact.source) sources.add(fact.source, { section: 'Agreements with states', text: 'each nation’s agreements with a state, county, city or federal agency' });
 		}
 		for (const fact of record.indian_health_service ?? []) {
 			if (fact.source) sources.add(fact.source, { section: 'Indian Health Service Areas', text: 'the Area that serves each nation' });

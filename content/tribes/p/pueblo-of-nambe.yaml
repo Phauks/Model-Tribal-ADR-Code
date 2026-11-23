@@ -203,6 +203,22 @@ indian_health_service:
   locator: Direct Service Tribes by IHS Area > Albuquerque Area
   note: Listed as "Pueblo of Nambe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
+- aspect: form
+  value: Indian Reorganization Act of June 18, 1934
+  quote: The Pueblo of Nambé is an Indian Tribe organized under the Indian Reorganization Act of June 18, 1934 (25 U.S.C).
+  source: pueblo-of-nambe-website-nambe-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and leadership lists give names with titles, and no sentence states the council''s size or terms.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: 2026 Nambé Pueblo Tribal Council Members
+  source: pueblo-of-nambe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and leadership lists give names with titles, and no sentence states the council''s size or terms.'
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -211,6 +227,14 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of Nambe, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Tribal Court
+  quote: will provide efficient case management and processing from the filing to disposition of each case before the Court
+  source: pueblo-of-nambe-website-tribal-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and leadership lists give names with titles, and no sentence states the council''s size or terms.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

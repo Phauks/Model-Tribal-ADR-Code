@@ -1,0 +1,435 @@
+/**
+ * The scan guard (site/SCANNING.md, "The scan guard"). No file that came from
+ * outside the project may be stored or served without the virus check. This
+ * test reads every Worker's code with the TypeScript checker and finds, by
+ * type rather than by name:
+ *
+ * 1. every place that reads the bytes of a file or a request body (a File, a
+ *    Blob, or a Request's body), which is how a file arrives; and
+ * 2. every place that writes to or reads from an R2 bucket.
+ *
+ * Each one must be listed below with what it is. A file from outside must be
+ * written with storeSentFile (or in a module that calls requestScan) and
+ * served with openScannedFile (or in a function that checks mayServe), and
+ * the test checks that. Anything new that is not listed fails the test, so a
+ * new way in or out is looked at before it ships.
+ */
+import { readFileSync, readdirSync } from "node:fs";
+import path from "node:path";
+import ts from "typescript";
+import { beforeAll, describe, expect, it } from "vitest";
+
+const site = path.resolve(import.meta.dirname, "..");
+
+/** What a bucket call is for. */
+type BucketUse =
+  /** Writes a file that came from outside the project. */
+  | { kind: "sent-file-store" }
+  /** Serves or opens a file that came from outside the project. */
+  | { kind: "sent-file-open" }
+  /** The scanner reading a file in order to scan it. */
+  | { kind: "scanner" }
+  /** A file the project made or chose itself, never one sent from outside. */
+  | { kind: "project-file"; why: string }
+  /** A sent file read or kept for a reason that never hands it to anyone. */
+  | { kind: "kept-not-served"; why: string };
+
+/**
+ * Every bucket write and read in site code, by file, function and call. The
+ * first argument (the object's key) is part of the name, so two calls in one
+ * function can differ.
+ */
+const bucketCalls: Record<string, BucketUse> = {
+  // The two doors for files from outside (src/lib/server/file-scans.ts).
+  "src/lib/server/file-scans.ts storeSentFile put(file.objectKey)": {
+    kind: "sent-file-store",
+  },
+  "src/lib/server/file-scans.ts openScannedFile get(objectKey)": {
+    kind: "sent-file-open",
+  },
+
+  // Uploads (docs/uploads.md): written piece by piece into a multipart
+  // object, put in line by finishUpload, served by serveUploadFile.
+  "src/lib/server/uploads.ts startUpload createMultipartUpload(originalKey)": {
+    kind: "sent-file-store",
+  },
+  "src/lib/server/uploads.ts receivePiece resumeMultipartUpload(upload.original_key)":
+    { kind: "sent-file-store" },
+  "src/lib/server/uploads.ts finishUpload resumeMultipartUpload(upload.original_key)":
+    { kind: "sent-file-store" },
+  "src/lib/server/uploads.ts refuseFile resumeMultipartUpload(upload.original_key)":
+    { kind: "sent-file-store" },
+  "src/lib/server/uploads.ts deleteBytes resumeMultipartUpload(upload.original_key)":
+    { kind: "sent-file-store" },
+  "src/lib/server/uploads.ts finishUpload put(previewKey)": {
+    kind: "sent-file-store",
+  },
+  "src/lib/server/uploads.ts finishUpload get(upload.original_key)": {
+    kind: "kept-not-served",
+    why: "Reads a sent picture to make its copy without location details; both are put in line for the scan, and neither is served until it passes.",
+  },
+  "src/lib/server/upload-serving.ts serveUploadFile get(file.key)": {
+    kind: "sent-file-open",
+  },
+
+  // The project inbox (site/MAIL.md). Attachments both ways go through
+  // storeSentFile and openScannedFile, in inbound.ts and outbound.ts.
+  "src/lib/server/mail/inbound.ts receiveMail put(rawKey)": {
+    kind: "kept-not-served",
+    why: "The whole message as it arrived, kept as a record. Nothing reads it back; its attachments are stored and scanned on their own.",
+  },
+  "src/lib/server/mail/inbound.ts receiveMail put(htmlKey)": {
+    kind: "kept-not-served",
+    why: 'The HTML version of a message, not a file: shown only in a sandboxed frame that runs no scripts and loads nothing from outside (site/MAIL.md, "Reading HTML mail").',
+  },
+  "src/routes/workspace/inbox/messages/[message]/html/+server.ts GET get(key)":
+    {
+      kind: "kept-not-served",
+      why: "The HTML version of a message, shown only in a sandboxed frame that runs no scripts and loads nothing from outside.",
+    },
+  "src/lib/server/mail/outbound.ts sendMessage put(rawKey)": {
+    kind: "project-file",
+    why: "A copy of a message the project sent, built by the site after its attachments passed the check.",
+  },
+
+  // The scanner.
+  "src/lib/server/scanning/scan-desk.ts scanOne get(due.objectKey)": {
+    kind: "scanner",
+  },
+
+  // Files the project makes or chooses itself.
+  "src/lib/server/essays.ts readVersionText get(row.object_key)": {
+    kind: "project-file",
+    why: "Essay text written in the site editor.",
+  },
+  "src/lib/server/essays.ts saveVersion put(objectKey)": {
+    kind: "project-file",
+    why: "Essay text written in the site editor.",
+  },
+  "src/lib/server/essay-git-sync.ts syncOne put(gitSnapshotKey(identifier, essay.sha256))":
+    {
+      kind: "project-file",
+      why: "Essay text from the project repository.",
+    },
+  "src/lib/server/page-history.ts recordBuildChanges put(versionKey(page))": {
+    kind: "project-file",
+    why: "Page text from the site build.",
+  },
+  "src/lib/server/page-history.ts readText get(key)": {
+    kind: "project-file",
+    why: "Page text from the site build.",
+  },
+  "src/lib/server/request-store.ts saveRequest put(copyKey)": {
+    kind: "project-file",
+    why: "The filled form as Markdown, written by the site from the answers typed on the form, not a file someone sent.",
+  },
+  "src/routes/workspace/requests/[reference]/forms/[submission]/copy/+server.ts GET get(submission.filledCopyKey)":
+    {
+      kind: "project-file",
+      why: "The filled form as Markdown, written by the site.",
+    },
+  "src/lib/server/book-orders.ts readFileSet get(`books/${identifier}/details.json`)":
+    { kind: "project-file", why: "The book files the project builds." },
+  "src/routes/book/files/[...path]/+server.ts GET get(`books/${fileSet}/${file}`)":
+    { kind: "project-file", why: "The book files the project builds." },
+  "src/lib/server/map-tile-serving.ts getBytes get(this.key)": {
+    kind: "project-file",
+    why: "Map tiles the project builds.",
+  },
+  "src/lib/server/map-tile-serving.ts serveMapAsset get(key)": {
+    kind: "project-file",
+    why: "Map fonts and symbols the project builds.",
+  },
+  "src/lib/server/public-copy-serving.ts servePublicCopy get(copy.key)": {
+    kind: "project-file",
+    why: "Copies of government documents and constitutions the project saved from their official sources.",
+  },
+  "src/lib/server/public-copy-serving.ts servePublicCopy put(copy.key)": {
+    kind: "project-file",
+    why: "Copies of government documents and constitutions the project saved from their official sources.",
+  },
+  "src/routes/nations/[id]/image/+server.ts GET get(image.key)": {
+    kind: "project-file",
+    why: "Nation seals and images the project collected from official sources.",
+  },
+  "src/routes/nations/[id]/image/+server.ts GET put(image.key)": {
+    kind: "project-file",
+    why: "Nation seals and images the project collected from official sources.",
+  },
+};
+
+/** Every place site code reads the bytes of a file or a request body, and where they go. */
+const fileIntakes: Record<string, string> = {
+  "src/lib/server/request-form.ts readFile File.arrayBuffer":
+    "Files sent with requests and forms, proof for a nation team, and nation page pictures. Stored with storeSentFile by saveRequest, saveApplication and savePicture.",
+  "src/routes/profile/+page.server.ts picture File.arrayBuffer":
+    "Profile pictures. Stored with storeSentFile by savePicture (profile-pictures.ts).",
+  "src/routes/mail/internal/arrive/+server.ts POST Request.arrayBuffer":
+    "Mail arriving from the email Worker. receiveMail stores each attachment with storeSentFile.",
+  "src/routes/workspace/inbox/compose.ts readAttachments File.arrayBuffer":
+    "Files the team attaches to outgoing mail. queueMessage stores them with storeSentFile, and sendMessage waits until they pass.",
+  "src/routes/uploads/pieces/[reference]/[number]/+server.ts PUT Request.arrayBuffer":
+    "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",
+};
+
+interface Found {
+  name: string;
+  file: string;
+  line: number;
+  functionText: string;
+  moduleText: string;
+}
+
+const bucketMethods = new Set([
+  "get",
+  "put",
+  "createMultipartUpload",
+  "resumeMultipartUpload",
+]);
+const bodyMethods = new Set([
+  "arrayBuffer",
+  "bytes",
+  "stream",
+  "text",
+  "blob",
+  "formData",
+  "json",
+]);
+
+/** The main file of every Worker in the site folder (wrangler.jsonc "main"), so a new Worker is checked too. */
+function workerMains(): string[] {
+  const mains: string[] = [];
+  const visit = (folder: string) => {
+    for (const entry of readdirSync(folder, { withFileTypes: true })) {
+      if (entry.name === "node_modules" || entry.name.startsWith(".")) continue;
+      const full = path.join(folder, entry.name);
+      if (entry.isDirectory()) visit(full);
+      else if (/^wrangler\.jsonc?$/.test(entry.name)) {
+        const main = /"main"\s*:\s*"([^"]+)"/.exec(
+          readFileSync(full, "utf8"),
+        )?.[1];
+        if (main && !main.startsWith(".svelte-kit"))
+          mains.push(path.resolve(folder, main));
+      }
+    }
+  };
+  visit(site);
+  return mains;
+}
+
+function enclosingFunction(node: ts.Node): { name: string; node: ts.Node } {
+  for (
+    let current: ts.Node | undefined = node.parent;
+    current;
+    current = current.parent
+  ) {
+    if (
+      (ts.isFunctionDeclaration(current) || ts.isMethodDeclaration(current)) &&
+      current.name
+    ) {
+      return { name: current.name.getText(), node: current };
+    }
+    if (
+      (ts.isArrowFunction(current) || ts.isFunctionExpression(current)) &&
+      current.parent
+    ) {
+      const holder = current.parent;
+      if (ts.isVariableDeclaration(holder) || ts.isPropertyAssignment(holder))
+        return { name: holder.name.getText(), node: current };
+    }
+  }
+  return { name: "(module)", node: node.getSourceFile() };
+}
+
+let bucketFound: Found[] = [];
+let intakesFound: Found[] = [];
+let untyped: string[] = [];
+
+beforeAll(() => {
+  const parsed = ts.getParsedCommandLineOfConfigFile(
+    path.join(site, "tsconfig.json"),
+    {},
+    {
+      ...ts.sys,
+      onUnRecoverableConfigFileDiagnostic: (problem) => {
+        throw new Error(
+          ts.flattenDiagnosticMessageText(problem.messageText, "\n"),
+        );
+      },
+    },
+  );
+  if (!parsed)
+    throw new Error(
+      "Could not read tsconfig.json. Run `npx svelte-kit sync` first.",
+    );
+  const roots = [
+    ...parsed.fileNames.filter(
+      (file) => !file.includes(`${path.sep}tests${path.sep}`),
+    ),
+    ...workerMains(),
+  ];
+  const program = ts.createProgram(roots, { ...parsed.options, noEmit: true });
+  const checker = program.getTypeChecker();
+  const typeName = (expression: ts.Expression) =>
+    checker.typeToString(
+      checker.getNonNullableType(checker.getTypeAtLocation(expression)),
+    );
+
+  for (const source of program.getSourceFiles()) {
+    const relative = path.relative(site, source.fileName);
+    if (
+      relative.startsWith("..") ||
+      relative.includes("node_modules") ||
+      relative.startsWith(".svelte-kit")
+    )
+      continue;
+    const record = (list: Found[], node: ts.Node, name: string) => {
+      const holder = enclosingFunction(node);
+      list.push({
+        name: `${relative} ${holder.name} ${name}`,
+        file: relative,
+        line: source.getLineAndCharacterOfPosition(node.getStart()).line + 1,
+        functionText: holder.node.getText(),
+        moduleText: source.getFullText(),
+      });
+    };
+    const visit = (node: ts.Node) => {
+      if (
+        ts.isCallExpression(node) &&
+        ts.isPropertyAccessExpression(node.expression)
+      ) {
+        const method = node.expression.name.text;
+        const receiver = node.expression.expression;
+        const type = typeName(receiver);
+        if (bucketMethods.has(method)) {
+          if (type === "R2Bucket")
+            record(
+              bucketFound,
+              node,
+              `${method}(${node.arguments[0]?.getText() ?? ""})`,
+            );
+          else if (
+            type === "any" &&
+            /bucket|documents|storage/i.test(receiver.getText())
+          ) {
+            untyped.push(
+              `${relative}:${source.getLineAndCharacterOfPosition(node.getStart()).line + 1} ${node.getText().slice(0, 80)}`,
+            );
+          }
+        }
+        if (
+          bodyMethods.has(method) &&
+          (type === "File" ||
+            type === "Blob" ||
+            (type === "Request" &&
+              method !== "formData" &&
+              method !== "json" &&
+              method !== "text"))
+        ) {
+          record(intakesFound, node, `${type}.${method}`);
+        }
+      }
+      // A request body read as a stream.
+      if (
+        ts.isPropertyAccessExpression(node) &&
+        node.name.text === "body" &&
+        typeName(node.expression) === "Request"
+      ) {
+        record(intakesFound, node, "Request.body");
+      }
+      ts.forEachChild(node, visit);
+    };
+    visit(source);
+  }
+}, 120_000);
+
+describe("the scan guard", () => {
+  it("finds the bucket calls it knows are there", () => {
+    const names = bucketFound.map((found) => found.name);
+    expect(names.some((name) => name.includes("storeSentFile put("))).toBe(
+      true,
+    );
+    expect(names.some((name) => name.includes("openScannedFile get("))).toBe(
+      true,
+    );
+  });
+
+  it("finds no bucket that has lost its type", () => {
+    expect(
+      untyped,
+      "Give these a bucket type (R2Bucket) so the scan guard can see them",
+    ).toEqual([]);
+  });
+
+  it("knows every bucket call in site code", () => {
+    const unknown = bucketFound
+      .filter((found) => !(found.name in bucketCalls))
+      .map((found) => `${found.file}:${found.line}  '${found.name}'`);
+    expect(
+      unknown,
+      "A bucket call the scan guard does not know. If it stores or serves a file from outside, use storeSentFile or openScannedFile (src/lib/server/file-scans.ts); then list it in tests/scan-guard.test.ts",
+    ).toEqual([]);
+  });
+
+  it("lists no bucket call that is gone", () => {
+    const names = new Set(bucketFound.map((found) => found.name));
+    expect(Object.keys(bucketCalls).filter((name) => !names.has(name))).toEqual(
+      [],
+    );
+  });
+
+  it("stores every file from outside through the scanner", () => {
+    const wrong = bucketFound.filter((found) => {
+      if (bucketCalls[found.name]?.kind !== "sent-file-store") return false;
+      const isStoreSentFile =
+        found.file === "src/lib/server/file-scans.ts" &&
+        found.name.includes(" storeSentFile ");
+      return !isStoreSentFile && !/\brequestScan\(/.test(found.moduleText);
+    });
+    expect(wrong.map((found) => found.name)).toEqual([]);
+  });
+
+  it("serves every file from outside only after its scan", () => {
+    const wrong = bucketFound.filter((found) => {
+      if (bucketCalls[found.name]?.kind !== "sent-file-open") return false;
+      return !/\bmayServe\(/.test(found.functionText);
+    });
+    expect(wrong.map((found) => found.name)).toEqual([]);
+  });
+
+  it("lets only the scanner read files to scan them", () => {
+    const wrong = bucketFound.filter(
+      (found) =>
+        bucketCalls[found.name]?.kind === "scanner" &&
+        !found.file.startsWith("src/lib/server/scanning/"),
+    );
+    expect(wrong.map((found) => found.name)).toEqual([]);
+  });
+
+  it("knows every place a file arrives", () => {
+    const unknown = intakesFound
+      .filter((found) => !(found.name in fileIntakes))
+      .map((found) => `${found.file}:${found.line}  '${found.name}'`);
+    expect(
+      unknown,
+      "A new place where file bytes arrive. Store them with storeSentFile (src/lib/server/file-scans.ts), then list it in tests/scan-guard.test.ts",
+    ).toEqual([]);
+    const names = new Set(intakesFound.map((found) => found.name));
+    expect(Object.keys(fileIntakes).filter((name) => !names.has(name))).toEqual(
+      [],
+    );
+  });
+
+  it("keeps no file in the database, where the guard cannot see it", () => {
+    const folder = path.join(site, "migrations");
+    const withBlobs = readdirSync(folder).filter((name) =>
+      /\bBLOB\b/i.test(
+        readFileSync(path.join(folder, name), "utf8").replace(/--.*$/gm, ""),
+      ),
+    );
+    expect(
+      withBlobs,
+      "Files go in the bucket, through storeSentFile, never in a BLOB column",
+    ).toEqual([]);
+  });
+});

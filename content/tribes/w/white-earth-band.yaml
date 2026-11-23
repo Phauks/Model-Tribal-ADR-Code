@@ -138,6 +138,14 @@ indian_health_service:
   locator: Direct Service Tribes by IHS Area > Bemidji Area
   note: Listed as "White Earth Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
+- aspect: governing-body
+  value: Reservation Business Committee
+  quote: The White Earth Reservation Business Committee and its programs are committed to preserving traditions while working to address contemporary challenges, including economic development, education, and the preservation of language and culture.
+  source: whiteearth-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is the By-Laws of a single community council (Rice Lake), not the nation''s constitution; no facts were taken from it.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -146,6 +154,22 @@ governance:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: White Earth District Court
+  quote: The White Earth District Court consists of a Chief Judge and two associate judges.
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is the By-Laws of a single community council (Rice Lake), not the nation''s constitution; no facts were taken from it.'
+- aspect: judiciary
+  value: White Earth Appellate Court
+  quote: The White Earth Appellate Court consists of a Chief Justice and two associate justices.
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is the By-Laws of a single community council (Rice Lake), not the nation''s constitution; no facts were taken from it.'
 governing_documents:
 - kind: law-code
   title: White Earth Nation

@@ -1,0 +1,26 @@
+id: meherrin-tribe-of-north-carolina-constitution
+kind: constitution
+title: Constitution and Bylaws of the Meherrin Indian Tribe
+nations:
+- meherrin-tribe-of-north-carolina
+jurisdictions:
+- level: tribal
+  tribe: meherrin-tribe-of-north-carolina
+summary: 'Texts of the nation''s constitution found online on 2026-11-23: 1 dated version. Versions are only those found; others may exist.'
+versions:
+- id: 1996-text
+  label: 1996 constitution and bylaws, with later amendments
+  event: original
+  status: in-effect
+  dates:
+    adopted: '1996-05-11'
+  source: constitution-meherrin-tribe-of-north-carolina-1996-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/meherrin-tribe-of-north-carolina/cc9f603f666f4918.pdf
+    sha256: cc9f603f666f49183e0797e7ebe3ea7583af63549ba7d65a300b417002dd1318
+    pages: 14
+  note: The first page gives adoption on May 11, 1996; an editor's note says later amendments are reproduced as they appear in the source document. Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-23; a later amendment may not be posted. Version, status and dates read from the text's first page by the project (Claude), not yet checked by the lead author.
+found_in:
+- 2026-11-23-governance

@@ -231,6 +231,22 @@ indian_health_service:
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Confederated Tribes of the Chehalis Reservation".
 governance:
+- aspect: governing-body
+  value: Business Committee
+  quote: serves as Tribal Secretary on the Chehalis Tribe’s Business Committee
+  source: confederated-tribes-of-the-chehalis-reservation-website-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; Business Committee facts come from staff biography text.'
+- aspect: head-of-government
+  value: Chairman
+  quote: serves as Vice-Chairman on the Chehalis Tribe’s Business Committee and has previously served multiple terms as Chairman.
+  source: confederated-tribes-of-the-chehalis-reservation-website-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; Business Committee facts come from staff biography text.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
