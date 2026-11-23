@@ -18,6 +18,7 @@ import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type
 import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
 import { isProjectAddress } from './settings.ts';
 import { factsFor, ruleAddressForms, runRules } from './rules.ts';
+import { holdAttachments } from './scans.ts';
 import { suppress } from './suppressions.ts';
 import { readToken, unsubscribeAddressToken } from './tokens.ts';
 
@@ -394,6 +395,8 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 		);
 	}
 	await database.batch(statements);
+	// Every attachment is held until the virus check says clean (src/lib/server/mail/scans.ts).
+	await holdAttachments(context, attachmentRows.map((row) => ({ identifier: row.id, key: row.key })));
 
 	if (report) await applyDeliveryReport(context, report, identifier);
 

@@ -10,6 +10,7 @@
 	import OctagonAlert from '@lucide/svelte/icons/octagon-alert';
 	import Paperclip from '@lucide/svelte/icons/paperclip';
 	import Plus from '@lucide/svelte/icons/plus';
+	import ShieldEllipsis from '@lucide/svelte/icons/shield-ellipsis';
 	import ForwardIcon from '@lucide/svelte/icons/forward';
 	import ReplyIcon from '@lucide/svelte/icons/reply';
 	import ReplyAll from '@lucide/svelte/icons/reply-all';
@@ -218,11 +219,27 @@
 						<ul class="attachments">
 							{#each message.attachments.filter((item) => !item.inline) as attachment (attachment.identifier)}
 								<li>
-									<a href="/workspace/inbox/attachments/{attachment.identifier}" download>
-										<Paperclip size={16} aria-hidden="true" />
-										<span class="file">{attachment.filename}</span>
-										<span class="small muted">{size(attachment.size)}</span>
-									</a>
+									{#if attachment.check?.held}
+										<span class="held" title={attachment.check.explanation}>
+											<ShieldEllipsis size={16} aria-hidden="true" />
+											<span class="file">{attachment.filename}</span>
+											<span class="small muted">{attachment.check.label}</span>
+										</span>
+										{#if attachment.check.releasable && data.canManage}
+											<form method="post" action="?/release" class="release small">
+												<input type="hidden" name="attachment" value={attachment.identifier} />
+												<label for="release-{attachment.identifier}" class="visually-hidden">Why it is safe to release</label>
+												<input id="release-{attachment.identifier}" name="note" placeholder="Why it is safe (for the history)" />
+												<button class="button button-quiet small" type="submit">Release anyway</button>
+											</form>
+										{/if}
+									{:else}
+										<a href="/workspace/inbox/attachments/{attachment.identifier}" download>
+											<Paperclip size={16} aria-hidden="true" />
+											<span class="file">{attachment.filename}</span>
+											<span class="small muted">{size(attachment.size)}</span>
+										</a>
+									{/if}
 								</li>
 							{/each}
 						</ul>
@@ -598,6 +615,25 @@
 		border-radius: var(--radius-control);
 		background: var(--color-paper);
 		text-decoration: none;
+	}
+	.attachments .held {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-3);
+		border: 1px dashed var(--color-control-border);
+		border-radius: var(--radius-control);
+		color: var(--color-ink-muted);
+	}
+	.release {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-top: var(--space-1);
+	}
+	.release input {
+		font-size: var(--font-size-small);
 	}
 	.attachments a:hover .file {
 		text-decoration: underline;
