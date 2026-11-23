@@ -193,6 +193,279 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Standing Rock Sioux Tribe of North & South Dakota
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: 'Listed as "Standing Rock Sioux Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Great Plains
+  service_unit: Standing Rock Service Unit
+  source: indian-health-service-great-plains-standing-rock-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Fort Yates Hospital, located near the Missouri River on the Standing Rock Sioux Reservation".'
+- area: Great Plains
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Standing Rock Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Not an Indian Reorganization Act constitution
+  quote: This Constitution is not a Constitution pursuant to Section 16 of the Indian
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article X
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: governing-body
+  value: Standing Rock Sioux Tribal Council
+  quote: known as the Standing Rock Sioux Tribal Council. The Tribal Council shall
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article III, Section 1
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: governing-body-size
+  value: '17 members: Chairman, Vice-Chairman, Secretary and 14 councilmen'
+  quote: consist of a Chairman, Vice-Chairman, a Secretary, and fourteen additional
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article III, Section 1
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: governing-body-selection
+  value: Six elected at large and eight elected by district
+  quote: shall each be elected by the qualified voters of the Tribe at large for a term of four
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 3
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: each for a term of four years beginning in 1987
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 3
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Section 4. The Chairman, Vice-Chairman and Secretary of the Tribal Council
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 4
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Standing Rock Sioux Tribe of North & South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by qualified voters
+  quote: shall each be elected by the qualified voters of the Tribe at large for a term of four
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 4
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: shall each be elected by the qualified voters of the Tribe at large for a term of four
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 4
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary
+  quote: consist of a Chairman, Vice-Chairman, a Secretary, and fourteen additional
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article III, Section 1
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: elections
+  value: Every odd-numbered year
+  quote: Tribal elections shall be held in 1984 and thereafter in each odd
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 2
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member of the Tribe at least eighteen (18) years of
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 1
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: election-authority
+  value: Tribal Council, by ordinance
+  quote: with rules and regulations to be prescribed by ordinance adopted by the Tribal
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 2
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: judiciary
+  value: Supreme Court and Tribal Court
+  quote: The judicial power of the Tribe shall be vested in one Supreme Court and one
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article XII
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: judicial-selection
+  value: Appointed by two-thirds Council vote, then retention vote by the voters
+  quote: initially be appointed by a two-thirds majority vote of the Tribal Council to serve
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article XII
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: judicial-term
+  value: 4 years after retention
+  quote: retained in office by a majority of the votes cast, he shall serve a four-
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article XII
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: judicial-independence
+  value: Removal only for specific misconduct or medical inability, by two-thirds Council vote after hearing
+  quote: office except upon written charge of specific misconduct in office, or medical
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article XII
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Chairman
+  quote: This Constitution may be amended or rewritten by a majority vote of the
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article VIII
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the Tribal Council
+  quote: Tribal Council by a vote of two-thirds (2/3) of the members of the Tribal
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article III, Section 8
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: recall-and-removal
+  value: Recall by petition of 50% of prior voter turnout
+  quote: other member of the Tribal Council shall be subject to recall from office.
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article III, Section 11
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
+- aspect: other
+  value: Local District Councils, advisory
+  quote: Each district recognized under Article III, Section 2, hereof, may organize local
+  source: constitution-standing-rock-sioux-tribe-of-north-and-south-dakota-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article VII
+  document_version:
+    document: standing-rock-sioux-tribe-of-north-and-south-dakota-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1959 constitution with amendments through June 11, 2008, which fits the version label.'
 governing_documents:
 - kind: law-code
   title: Standing Rock Sioux - Tribal Code of Justice
@@ -578,6 +851,125 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Standing Rock Sioux Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: South Dakota's 1957 act (S.D. Codified Laws §§ 1-1-12 to 1-1-16) offered to assume civil and criminal jurisdiction if the affected tribes consented; the Eighth Circuit found consent was not given, so jurisdiction was never assumed under it. (Rosebud Sioux Tribe v. South Dakota, 900 F.2d 1164, 1166 (8th Cir. 1990).)
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166; S.D. Codified Laws §§ 1-1-12, 1-1-13 (SL 1957, ch. 319)
+  note: 'Section 1-1-13 says a tribe that took no action within one year of Oct. 1, 1957 is deemed to consent; the court nevertheless held consent was not given. The sections are still printed in the code. The related 1959 highway statute (§ 1-1-17) also never took effect because its condition (roads jointly maintained by State and United States) was never met (900 F.2d at 1166). Shakopee, Northern Cheyenne and Turtle Mountain have only trust-land presence in SD in the roster and are not mapped. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-13.'
+- topic: public-law-280
+  value: not-assumed
+  detail: South Dakota's 1961 act (S.D. Codified Laws §§ 1-1-18 to 1-1-21) declared a general assumption of jurisdiction in Indian country, but it takes effect only on a gubernatorial proclamation, which was never issued; the general assumption never occurred. (S.D. Codified Laws § 1-1-21; 900 F.2d at 1167.)
+  source: south-dakota-codified-laws-1-1-18
+  confidence: high
+  verification: read-in-full
+  locator: S.D. Codified Laws § 1-1-21 (SL 1961, ch. 464, § 4); 900 F.2d at 1167
+  note: 'Quote is from Rosebud. A 1963 attempt to assume full jurisdiction (1963 S.D. Laws ch. 467) was defeated 3 to 1 in a referendum (900 F.2d at 1167). Statute text in § 1-1-21: highways are excepted from the proclamation requirement. Also cites: south-dakota-codified-laws-1-1-21, rosebud-sioux-tribe-v-south-dakota-1990.'
+- topic: public-law-280
+  value: assumption-held-invalid
+  detail: 'South Dakota''s 1961 highway-only assumption was held invalid by the South Dakota Supreme Court in 1964 (In re Hankins) and, after that court revived it in State v. Onihan (1988), by the Eighth Circuit in 1990: without tribal consent the State has no civil or criminal jurisdiction over highways through Indian lands. (Rosebud, 900 F.2d at 1166-67, 1172.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166
+  note: 'Hankins: 80 S.D. 435, 442-43, 125 N.W.2d 839, 842-43 (state cannot assume jurisdiction over highways alone; the Eighth Circuit describes this at 900 F.2d at 1167). Rosebud''s further holding (at 1170-72): the highway-only scheme does not meet Public Law 280, and the 1968 consent requirement bars later nonconsensual assumption. Cert. history not checked. Parties: Rosebud, Cheyenne River, Oglala, Standing Rock; the holding is about "Indian lands in the state" generally. Also cites: in-re-hankins-petition-1964.'
+- topic: public-law-280
+  value: not-assumed
+  detail: 'Today South Dakota holds no Public Law 280 jurisdiction over any of its reservations: the 1957 act was never consented to, the 1961 general act never took effect, and the 1961 highway piece is invalid; the statutes stay in the code. (Rosebud, 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12 to 1-1-21.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: medium
+  verification: read-in-full
+  locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
+  note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: North Dakota's ch. 27-19 extends state civil jurisdiction over a reservation only on acceptance by its Indian citizens, and the Legislative Council staff reported in 2004 that no tribe had voted to consent after 1968. (N.D. Legis. Council Memo. 59215, at 3 (2004).)
+  source: north-dakota-legislative-council-indian-jurisdictional-issues-2004
+  confidence: medium
+  verification: read-in-full
+  locator: N.D. Legis. Council Memo. 59215, Conclusion (p. 3)
+  note: 'Secondary source (legislative staff memo, 2004); the research has no later source. "This amendment" is the 1968 consent amendment. The 1946 Devils Lake act (separate fact) is a separate criminal grant. Also cites: three-affiliated-tribes-v-wold-engineering-1984.'
+treaties:
+- title: Treaty with the Teton, etc., Sioux, 1825
+  signed: '1825-06-22'
+  statutes_at_large: 7 Stat. 250
+  kappler:
+    volume: 2
+    page: 227
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-teton-etc-sioux-1825-0227
+  signatory: Yanktonai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 227 (Treaty with the Teton, etc., Sioux, 1825; Kappler header "June 22, 1825. | 7 Stat., 250. | Proclamation, Feb. 6, 1826.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Yanktonai -> Standing Rock The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Hunkpapa Band of the Sioux Tribe, 1825
+  signed: '1825-07-16'
+  statutes_at_large: 7 Stat. 257
+  kappler:
+    volume: 2
+    page: 235
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-hunkpapa-band-of-the-sioux-tribe-1825-0235
+  signatory: Hunkpapa Sioux
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 235 (Treaty with the Hunkpapa Band of the Sioux Tribe, 1825; Kappler header "July 16, 1825. | 7 Stat., 257. | Proclamation, Feb. 6, 1826.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Hunkpapa band -> Standing Rock Sioux Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Hunkpapa Band, 1865
+  signed: '1865-10-20'
+  statutes_at_large: 14 Stat. 739
+  kappler:
+    volume: 2
+    page: 901
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-hunkpapa-band-1865-0901
+  signatory: Hunkpapa Sioux
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 901 (Treaty with the Sioux-Hunkpapa Band, 1865; Kappler header "Oct. 20, 1865. | 14 Stat., 739. | Ratified Mar. 5, 1866. | Proclaimed, Mar. 17, 1866.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Hunkpapa band -> Standing Rock Sioux Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Yanktonai Band, 1865
+  signed: '1865-10-20'
+  statutes_at_large: 14 Stat. 735
+  kappler:
+    volume: 2
+    page: 903
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-yanktonai-band-1865-0903
+  signatory: Yanktonai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 903 (Treaty with the Sioux-Yanktonai Band, 1865; Kappler header "Oct. 20, 1865. | 14 Stat., 735. | Ratified, Mar. 5, 1866. | Proclaimed, Mar. 17, 1866.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Yanktonai -> Standing Rock The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Upper Yanktonai Band, 1865
+  signed: '1865-10-28'
+  statutes_at_large: 14 Stat. 743
+  kappler:
+    volume: 2
+    page: 905
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-upper-yanktonai-band-1865-0905
+  signatory: Upper Yanktonai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 905 (Treaty with the Sioux-Upper Yanktonai Band, 1865; Kappler header "Oct. 28, 1865. | 14 Stats., 743. | Ratified Mar. 5, 1866. | Proclaimed, Mar. 17, 1866.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Yanktonai -> Standing Rock The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Yanktonai; Hunkpapa Sioux; Hunkpapa, Yanktonai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Yanktonai -> Standing Rock The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

@@ -177,6 +177,323 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Grand Traverse Band of Ottawa and Chippewa Indians, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Grand Traverse Band of Ottawa and Chippewa Indians of Michigan (1994)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934
+  quote: under the authority of the Indian Reorganization
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Preamble
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council of the Grand Traverse Band shall be composed of seven (7) members of
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Tribal Council of the Grand Traverse Band shall be composed of seven (7) members of
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: elected at large by popular vote of the registered voters of the Band.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: office shall be four (4) years.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: 'The Chairperson of the Tribal Council shall:'
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article III, Section 3(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the registered voters
+  quote: The Chairperson of the Tribal Council shall be elected by the registered voters of the Band
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article III, Section 1(e)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: for a term of four (4) years in the manner described in Article VII.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article III, Section 1(e)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: The executive officers of the Tribal Council shall be a chairperson, vice-chairperson,
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article III, Section 1(d)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Each May, date set by the Tribal Council
+  quote: May, the date to be set by the Tribal Council.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article VII, Section 2(a)(1)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Any member duly enrolled in the Grand Traverse Band who is at least eighteen (18) years
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article VII, Section 3(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Board
+  quote: The Tribal Council shall appoint an Election Board, composed of five (5) registered voters of
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article VII, Section 5(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: branches
+  value: Legislative, executive and judicial
+  quote: independent from the legislative and executive functions of the
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 6
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: separation-of-powers
+  value: Stated
+  quote: no person exercising powers of the legislative or executive functions of
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 6
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court and Tribal Appellate Court
+  quote: The judicial power of the Grand Traverse Band shall be vested in a tribal court system.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 1
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: vote of five (5) of the seven (7) members of the Tribal Council for a term of four (4) years.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 4(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: 4 years (Tribal Court)
+  quote: vote of five (5) of the seven (7) members of the Tribal Council for a term of four (4) years.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 4(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: 6 years (Tribal Appellate Court)
+  quote: term of six (6) years.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 4(b)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Pay may not be diminished during term
+  quote: shall not be diminished during his/her appointment.
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 4(c)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judges removed only by Judiciary vote for listed causes
+  quote: The Tribal Judiciary may remove any judge by an affirmative vote of a majority of all other
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 8
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judiciary independent of legislative and executive
+  quote: independent from the legislative and executive functions of the
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article V, Section 6
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote in an election called by the Secretary of the Interior
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the Grand
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article XV, Section 1
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of registered voters
+  quote: in number to twenty-five percent (25%) of the number of persons registered to vote in tribal
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article VIII, Section 1(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Council refers removal by 5 votes; Tribal Judiciary removes
+  quote: by an affirmative vote of five (5) members of the Council, refer to
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article VIII, Section 2(a)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Initiative on petition of 25% of registered voters
+  quote: Initiative petitions must be signed by at least twenty-five percent (25%) of the registered
+  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-03-29'
+  locator: Article IX, Section 1(b)(4)
+  document_version:
+    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
@@ -429,6 +746,51 @@ jurisdiction:
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Grand Traverse Band of Ottawa and Chippewa Indians". Also on the NCAI implementing
     tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.51)
+  note: Listed as "GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+treaties:
+- title: Treaty with the Ottawa, etc., 1836
+  signed: '1836-03-28'
+  statutes_at_large: 7 Stat. 491
+  kappler:
+    volume: 2
+    page: 450
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1836-0450
+  signatory: Ottawa, Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 450 (Treaty with the Ottawa, etc., 1836; Kappler header "Mar. 28, 1836. | 7 Stat., 491. | Proclamation, May 27, 1836.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaties of Washington (1836) and Detroit (1855) with the Ottawa and Chippewa of Michigan; Grand Traverse, Little River and Little Traverse Bay are the Ottawa/Odawa successors The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ottawa and Chippewa, 1855
+  signed: '1855-07-31'
+  statutes_at_large: 11 Stat. 621
+  kappler:
+    volume: 2
+    page: 725
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-and-chippewa-1855-0725
+  signatory: Ottawa, Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 725 (Treaty with the Ottawa and Chippewa, 1855; Kappler header "July 31, 1855. | 11 Stat., 621. | Ratified April 15, 1856. | Proclaimed Sept. 10, 1856.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaties of Washington (1836) and Detroit (1855) with the Ottawa and Chippewa of Michigan; Grand Traverse, Little River and Little Traverse Bay are the Ottawa/Odawa successors The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

@@ -194,6 +194,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Kickapoo Traditional Tribe of Texas".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kickapoo Traditional Tribe of Texas
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Kickapoo Traditional Tribe of Texas - Tribal Codes and Ordinances
@@ -538,6 +555,23 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Texas is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Texas. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Texas by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: Texas exercises civil and criminal jurisdiction over the Kickapoo band's trust lands in Maverick County as if it had assumed it under the 1968 Act, and may receive retrocession under § 403. (Pub. L. No. 97-429, § 6, 96 Stat. at 2270.)
+  source: texas-band-of-kickapoo-act-1983
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 97-429 § 6, 96 Stat. at 2270
+  note: 25 U.S.C. § 1300b-15 is "omitted" from the Code. This statute was not on the research brief; found through the Cornell notes.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

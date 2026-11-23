@@ -9,6 +9,12 @@
 	// goes on, and when the tab is hidden or the editor closes. Those
 	// versions carry the note "Auto-saved"; "Name this version" saves the
 	// text as it stands as a version with a note of its own.
+	//
+	// With `live`, the editor first joins the essay's live editing room
+	// (src/lib/essays/live.ts): everyone in the room edits one shared text,
+	// sees each other's cursors, and the room saves versions itself, so the
+	// editor stops saving by itself. If the room cannot be reached in a few
+	// seconds, the editor opens as before and saves by itself.
 	import 'prosemirror-view/style/prosemirror.css';
 	import { onDestroy, onMount, tick, untrack } from 'svelte';
 	import { baseKeymap, lift, setBlockType, toggleMark, wrapIn } from 'prosemirror-commands';
@@ -19,6 +25,8 @@
 	import { liftListItem, sinkListItem, splitListItem, wrapInList } from 'prosemirror-schema-list';
 	import { EditorState, Plugin, TextSelection, type Command, type Transaction } from 'prosemirror-state';
 	import { EditorView } from 'prosemirror-view';
+	import { initProseMirrorDoc, redoCommand, undoCommand, yCursorPlugin, ySyncPlugin, yUndoPlugin } from 'y-prosemirror';
+	import { joinEssayRoom, type EssayRoom, type LiveStatus } from '#lib/essays/live.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
 	import { boxParts, casePartOrder, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
@@ -34,6 +42,7 @@
 		version,
 		canEdit,
 		autoSave = false,
+		live = false,
 		onsaved
 	}: {
 		identifier: string;
@@ -42,6 +51,8 @@
 		canEdit: boolean;
 		/** Save by itself as the person types (on an essay page). */
 		autoSave?: boolean;
+		/** Join the essay's live editing room when it can be reached. */
+		live?: boolean;
 		/** Called with the version number after each save. */
 		onsaved?: (version: number) => void;
 	} = $props();
@@ -180,7 +191,7 @@
 	/* Commands -------------------------------------------------------------- */
 
 	function run(command: Command): void {
-		if (!view || !canEdit) return;
+		if (!view || !editable()) return;
 		command(view.state, view.dispatch, view);
 		view.focus();
 	}
@@ -395,14 +406,18 @@
 				}
 			})
 		});
+		// In the live room the text comes from the room, and undo takes back only this person's changes.
+		const shared = inRoom && room ? initProseMirrorDoc(room.fragment, schema) : null;
+		const undoKey = shared ? undoCommand : undo;
+		const redoKey = shared ? redoCommand : redo;
 		return EditorState.create({
-			doc: parseEssay(body),
+			doc: shared ? shared.doc : parseEssay(body),
 			plugins: [
 				rules,
 				keymap({
-					'Mod-z': undo,
-					'Shift-Mod-z': redo,
-					'Mod-y': redo,
+					'Mod-z': undoKey,
+					'Shift-Mod-z': redoKey,
+					'Mod-y': redoKey,
 					'Mod-b': toggleMark(schema.marks.strong),
 					'Mod-i': toggleMark(schema.marks.em),
 					'Mod-u': toggleMark(schema.marks.underline),
@@ -424,7 +439,9 @@
 					}
 				}),
 				keymap(baseKeymap),
-				history(),
+				...(shared && room
+					? [ySyncPlugin(room.fragment, { mapping: shared.mapping }), yCursorPlugin(room.awareness), yUndoPlugin()]
+					: [history()]),
 				checkMarks(),
 				tracker
 			]
@@ -436,7 +453,7 @@
 		if (!host) return;
 		view = new EditorView(host, {
 			state: createState(body),
-			editable: () => canEdit,
+			editable,
 			attributes: { class: 'essay-editor-text essay-text', 'aria-label': 'Essay text', role: 'textbox', 'aria-multiline': 'true' },
 			handleClick: (editorView, position) => {
 				const issue = issueAt(editorView, position);
@@ -487,6 +504,121 @@
 		mode = next;
 	}
 
+	/* The live editing room ------------------------------------------------- */
+
+	let room: EssayRoom | null = null;
+	/** Whether the editor shows the room's shared text (non-reactive: read while building plugins). */
+	let inRoom = false;
+	/** The same, for the page to show. */
+	let inRoomShown = $state(false);
+	let liveStatus = $state<LiveStatus | null>(null);
+	let liveProblem = $state('');
+	let people = $state<string[]>([]);
+	let joining = $state(false);
+	let joinTimer: ReturnType<typeof setTimeout> | undefined;
+	/** How long to wait for the room before opening the editor on its own. */
+	const joinWaitMilliseconds = 6_000;
+	/** Cursor colors come from the design tokens, read from the page so each theme gets its own. */
+	const cursorTokens = ['--color-action', '--color-link', '--color-danger', '--color-focus'];
+
+	function cursorColor(): string {
+		const token = cursorTokens[Math.floor(Math.random() * cursorTokens.length)];
+		return getComputedStyle(document.documentElement).getPropertyValue(token).trim() || 'currentColor';
+	}
+
+	function editable(): boolean {
+		if (!canEdit || joining) return false;
+		if (!inRoom) return true;
+		return liveStatus?.state === 'live' ? liveStatus.canEdit : liveStatus?.state === 'offline';
+	}
+
+	async function joinRoom(): Promise<void> {
+		joining = true;
+		view?.setProps({});
+		const joined = joinEssayRoom(identifier, {
+			basedOn,
+			user: { name: 'Someone', color: cursorColor() }
+		});
+		room = joined;
+		joined.subscribe((next) => {
+			liveStatus = next;
+			if (next.state === 'refused' && inRoom) {
+				// Cut off for good: keep what this tab has, and stop typing into a room that will not take it.
+				keepLocalDraft(identifier, currentFile(), basedOn);
+				liveProblem = `${next.reason} Your text is kept in this browser.`;
+			}
+			view?.setProps({});
+		});
+		const waited = await Promise.race([
+			joined.whenSynced.then(() => 'synced' as const, () => 'refused' as const),
+			new Promise<'late'>((resolve) => {
+				joinTimer = setTimeout(() => resolve('late'), joinWaitMilliseconds);
+			})
+		]);
+		clearTimeout(joinTimer);
+		if (closed || room !== joined) return;
+		if (waited !== 'synced') {
+			// Open the editor on its own, saving by itself as before.
+			const reason = joined.status.state === 'refused' ? joined.status.reason : 'The live room did not answer.';
+			joined.destroy();
+			room = null;
+			liveStatus = null;
+			liveProblem = `${reason} Editing on your own; your changes save by themselves.`;
+			joining = false;
+			view?.setProps({});
+			return;
+		}
+		inRoom = true;
+		inRoomShown = true;
+		joining = false;
+		status = '';
+		liveProblem = '';
+		frontMatter = joined.frontMatter.toString();
+		savedFrontMatter = frontMatter;
+		joined.frontMatter.observe(() => {
+			frontMatter = joined.frontMatter.toString();
+		});
+		const showPeople = () => {
+			people = [...joined.awareness.getStates().entries()]
+				.filter(([client]) => client !== joined.document.clientID)
+				.map(([, state]) => (state.user as { name?: string } | undefined)?.name ?? 'Someone');
+		};
+		joined.awareness.on('change', showPeople);
+		showPeople();
+		joined.onSaved(({ version }) => {
+			basedOn = version;
+			dirty = false;
+			onsaved?.(version);
+		});
+		if (joined.status.state === 'live') basedOn = joined.status.version;
+		mountEditor('');
+		dirty = false;
+	}
+
+	/** The front matter box writes into the room's shared copy. */
+	function frontMatterEdited(): void {
+		if (inRoom && room) {
+			const shared = room.frontMatter;
+			if (shared.toString() !== frontMatter) {
+				room.document.transact(() => {
+					shared.delete(0, shared.length);
+					shared.insert(0, frontMatter);
+				});
+			}
+			return;
+		}
+		markChanged();
+	}
+
+	function liveText(state: LiveStatus): string {
+		if (state.state === 'connecting') return 'Joining the live room…';
+		if (state.state === 'offline') return 'Offline. Your changes stay here and go to the room when the connection is back.';
+		if (state.state === 'refused') return state.reason;
+		if (!state.canEdit) return `Live, reading only. Version ${state.version}.`;
+		// The room reports unsaved changes only on joining and saving, so changes seen since count too.
+		return state.unsaved || dirty ? 'Live. The room saves a version a minute after typing stops.' : `Live. Saved as version ${state.version}.`;
+	}
+
 	/* Saving by itself ------------------------------------------------------ */
 
 	const autoSaveIdleMilliseconds = 4_000;
@@ -505,7 +637,8 @@
 	let closed = false;
 
 	function scheduleAutoSave(): void {
-		if (!autoSave || !canEdit || conflict || closed) return;
+		// In the live room, the room saves versions.
+		if (!autoSave || !canEdit || conflict || closed || inRoom) return;
 		firstUnsavedEdit ??= Date.now();
 		clearTimeout(autoSaveTimer);
 		const untilLongest = firstUnsavedEdit + autoSaveLongestMilliseconds - Date.now();
@@ -525,7 +658,7 @@
 
 	async function autoSaveNow(): Promise<void> {
 		clearTimeout(autoSaveTimer);
-		if (!autoSave || !canEdit || conflict || !unsaved()) return;
+		if (!autoSave || !canEdit || conflict || inRoom || !unsaved()) return;
 		if (saving) {
 			scheduleAutoSave();
 			return;
@@ -535,7 +668,13 @@
 
 	/** The tab is being hidden, maybe closed: keep the text here and send it while the page may still go away. */
 	function saveWhenHidden(): void {
-		if (document.visibilityState !== 'hidden' || !autoSave || !canEdit || conflict || !unsaved()) return;
+		if (document.visibilityState !== 'hidden') return;
+		// Cut off from the room, changes wait in this tab; keep a copy in case it closes.
+		if (inRoom) {
+			if (liveStatus?.state !== 'live' && unsaved()) keepLocalDraft(identifier, currentFile(), basedOn);
+			return;
+		}
+		if (!autoSave || !canEdit || conflict || !unsaved()) return;
 		const file = currentFile();
 		keepLocalDraft(identifier, file, basedOn);
 		void (inFlight ?? Promise.resolve()).then(() => save(false, true, { file, last: true }));
@@ -640,6 +779,17 @@
 	function bringBack(): void {
 		if (!recovered) return;
 		const split = splitFrontMatter(recovered.text);
+		if (inRoom && view) {
+			// In the room, the kept text replaces the shared text, as one change others see.
+			const kept = parseEssay(split.body);
+			view.dispatch(view.state.tr.replaceWith(0, view.state.doc.content.size, kept.content));
+			frontMatter = split.frontMatter;
+			frontMatterEdited();
+			recovered = null;
+			dropLocalDraft(identifier);
+			status = 'Brought back the text kept in this browser.';
+			return;
+		}
 		frontMatter = split.frontMatter;
 		// The version it started from, so a newer save by someone else still shows as a conflict.
 		basedOn = recovered.basedOn;
@@ -656,12 +806,15 @@
 	}
 
 	function warnBeforeLeaving(event: BeforeUnloadEvent): void {
+		// Connected to the room, the room already has every change.
+		if (inRoom && liveStatus?.state === 'live') return;
 		if (dirty || frontMatter !== savedFrontMatter) event.preventDefault();
 	}
 
 	onMount(() => {
 		mountEditor(initial.body);
 		dirty = false;
+		if (untrack(() => live)) void joinRoom();
 		const kept = canEdit ? localDraft(identifier) : null;
 		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
 		else if (kept) recovered = kept;
@@ -675,6 +828,13 @@
 	onDestroy(() => {
 		closed = true;
 		clearTimeout(autoSaveTimer);
+		clearTimeout(joinTimer);
+		if (room) {
+			// The room saves 5 seconds after the last person leaves; only text it never received needs a copy.
+			if (inRoom && liveStatus?.state !== 'live' && unsaved()) keepLocalDraft(identifier, currentFile(), basedOn);
+			room.destroy();
+			room = null;
+		}
 		// Closing the editor on an essay page saves what is not saved yet, after any save on its way.
 		if (autoSave && canEdit && !conflict && unsaved()) {
 			const file = currentFile();
@@ -705,7 +865,14 @@
 	<div class="editor-bar" role="toolbar" aria-label="Editing">
 		<div class="tabs" role="group" aria-label="View">
 			<button type="button" class="tool" aria-pressed={mode === 'rich'} onclick={() => switchMode('rich')}>Text</button>
-			<button type="button" class="tool" aria-pressed={mode === 'markdown'} onclick={() => switchMode('markdown')}>Markdown</button>
+			<button
+				type="button"
+				class="tool"
+				aria-pressed={mode === 'markdown'}
+				disabled={inRoomShown}
+				title={inRoomShown ? 'The Markdown view is off while editing live, so everyone keeps one shared text.' : undefined}
+				onclick={() => switchMode('markdown')}>Markdown</button
+			>
 			<button type="button" class="tool" aria-pressed={mode === 'preview'} onclick={() => switchMode('preview')}>Preview</button>
 		</div>
 		{#if canEdit && mode === 'rich'}
@@ -752,8 +919,8 @@
 				<button type="button" class="tool" onclick={() => openPicker('term')}>Glossary term</button>
 			</div>
 			<div role="group" aria-label="History">
-				<button type="button" class="tool" onclick={() => run(undo)}>Undo</button>
-				<button type="button" class="tool" onclick={() => run(redo)}>Redo</button>
+				<button type="button" class="tool" onclick={() => run(inRoom ? undoCommand : undo)}>Undo</button>
+				<button type="button" class="tool" onclick={() => run(inRoom ? redoCommand : redo)}>Redo</button>
 			</div>
 		{/if}
 		{#if mode === 'rich'}
@@ -777,6 +944,15 @@
 		<p class="small muted context">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</p>
 	{/if}
 
+	{#if inRoomShown}
+		<p class="small live-row" aria-live="polite">
+			<span class="live-dot" class:offline={liveStatus?.state !== 'live'} aria-hidden="true"></span>
+			{#if people.length === 0}Editing live. No one else is here.{:else}Editing live with {people.join(', ')}.{/if}
+		</p>
+	{/if}
+	{#if liveProblem}
+		<div class="notice" role="note"><p>{liveProblem}</p></div>
+	{/if}
 	{#if recovered}
 		<div class="notice" role="note">
 			<p>
@@ -824,7 +1000,7 @@
 		<summary>Details (front matter)</summary>
 		<p class="small">The title, part and status, in YAML. The title shown on the page comes from here.</p>
 		<label class="visually-hidden" for="front-matter">Front matter</label>
-		<textarea id="front-matter" class="front-matter" bind:value={frontMatter} readonly={!canEdit} rows="6" oninput={markChanged}></textarea>
+		<textarea id="front-matter" class="front-matter" bind:value={frontMatter} readonly={!editable()} rows="6" oninput={frontMatterEdited}></textarea>
 	</details>
 
 	{#if conflict}
@@ -856,7 +1032,7 @@
 				<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
 				<button type="button" class="button" onclick={() => save()} disabled={saving}>Save version</button>
 			{/if}
-			<span class="small" role="status" aria-live="polite">{status || (dirty ? 'Unsaved changes' : `Version ${basedOn}`)}</span>
+			<span class="small" role="status" aria-live="polite">{status || (liveStatus && inRoomShown ? liveText(liveStatus) : joining ? 'Joining the live room…' : dirty ? 'Unsaved changes' : `Version ${basedOn}`)}</span>
 		</div>
 	{:else}
 		<p class="small muted">You can read this essay. Ask the lead author for contribute access to edit it.</p>
@@ -1132,5 +1308,47 @@
 
 	.context {
 		margin: 0;
+	}
+
+	.live-row {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		margin: 0 0 var(--space-2);
+	}
+
+	.live-dot {
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: 50%;
+		background: var(--color-action);
+	}
+
+	.live-dot.offline {
+		background: var(--color-ink-muted);
+	}
+
+	/* Other people's cursors and selections in the live room (y-prosemirror). */
+	:global(.ProseMirror-yjs-cursor) {
+		position: relative;
+		margin-left: -1px;
+		margin-right: -1px;
+		border-left: 2px solid;
+		word-break: normal;
+		pointer-events: none;
+	}
+
+	:global(.ProseMirror-yjs-cursor > div) {
+		position: absolute;
+		top: -1.15em;
+		left: -2px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.2;
+		white-space: nowrap;
+		color: var(--color-action-text);
+		padding: 0 0.3em;
+		border-radius: 0.25em 0.25em 0.25em 0;
+		user-select: none;
 	}
 </style>

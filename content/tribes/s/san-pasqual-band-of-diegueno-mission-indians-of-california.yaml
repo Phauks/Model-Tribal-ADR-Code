@@ -179,6 +179,215 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: San Pasqual Band of Diegueno Mission Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "San Pasqual Band of Diegueno Mission Indians of California".
+governance:
+- aspect: form
+  value: Organized under Section 16 of the Indian Reorganization Act
+  quote: provisions of Section 16 of the Indian Reorganization Act of June 18,
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Preamble
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of the band shall
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The general council shall elect from
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article IV, Section 2
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: governing-body-size
+  value: 5 members (spokesman, vice spokesman, secretary-treasurer, 2 delegates)
+  quote: secretary-treasurer and two (2) delegates to serve as the business
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article IV, Section 2
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: governing-body-selection
+  value: Elected by the General Council from its membership
+  quote: its membership, by secret ballot, a spokesman, a vice spokesman, a
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article IV, Section 2
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: general-council
+  value: All members 19 years of age or over
+  quote: shall consist of all members nineteen
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: head-of-government
+  value: Spokesman
+  quote: The spokesman shall preside at all meetings of the
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: head-of-government
+  value: Spokesman
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: San Pasqual Band of Diegueno Mission Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Council from its membership
+  quote: its membership, by secret ballot, a spokesman, a vice spokesman, a
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article IV, Section 2
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: other-officers
+  value: Vice spokesman, secretary-treasurer, two delegates
+  quote: a spokesman, a vice spokesman, a
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article IV, Section 2
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: elections
+  value: Each odd-numbered year, at the January general council meeting
+  quote: of the general council during each odd numbered year in accordance
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article V, Section 7
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: voting-age
+  value: '19'
+  quote: members of the band nineteen (19) years of age or over shall be entitled to vote in band elections;
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article V, Section 2
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: election-authority
+  value: Five-member election board
+  quote: Such ordinance shall provide for a five (5) mem-
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article V, Section 4
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: amendment
+  value: Majority vote of members 21 or over in an election authorized by the Secretary
+  quote: This constitution and bylaws, may be amended by the majority vote of
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article X
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: have been approved by the Secretary of the Interior,
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article X
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters, then general council vote
+  quote: least thirty (30) percent of the registered voters calling for the
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article VII, Section 4
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
+- aspect: recall-and-removal
+  value: Impeachment decided by general council majority vote
+  quote: shall decide by majority vote (secret ballot) whether he shall be
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: Article VII, Section 2
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise throughout the scan; the governing-body term and head-of-government term are not stated in readable text, so they are omitted.'
 governing_documents:
 - kind: law-code
   title: San Pasqual Band of Mission Indians Ordinances

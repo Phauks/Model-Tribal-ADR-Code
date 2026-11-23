@@ -1,0 +1,62 @@
+profile: content/tribes/l/leech-lake-band.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Leech Lake Band BaMeNim peacemaker tribunal video
+  outcome: not-found
+  reason: Results were newsletters and contact pages, plus one video on the US Office for Victims of Crime site (ovc.ojp.gov/media/video/7111) whose subject was not confirmed.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.llojibwe.org/court/bamenim.html
+  query: embedded video, channel, podcast or photo on the BaMeNim page
+  outcome: not-found
+  reason: The page has no video, channel or podcast, only logos and icons, and the copyright line reads '© 2018 Leech Lake Band of Ojibwe. All Rights Reserved'.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Leech Lake Band peacemaking podcast youtube
+  outcome: not-found
+  reason: Results were national podcasts and Minnesota Native News pages, none made by the band about its court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.llojibwe.org/court/court.html
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.llojibwe.org/court/bamenim.html
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: federal-agency
+  address: https://ovc.ojp.gov/media/video/7111
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found embedded YouTube video(s) ejIUZJM8rb0; links to https://www.youtube.com/user/OJPOCOM.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=ejIUZJM8rb0
+  query: title and channel of the video
+  outcome: found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "Leech Lake Tribal Court: Care for the People" on the Office for Victims of Crime channel, public and embeddable on 2026-11-23.'
+next_steps: Open the OVC video at https://ovc.ojp.gov/media/video/7111 to see whether it is about the Leech Lake peacemaking tribunal. Also check the Leech Lake court page (llojibwe.org/court/court.html), which was not opened. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

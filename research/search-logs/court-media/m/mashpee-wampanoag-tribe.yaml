@@ -1,0 +1,46 @@
+profile: content/tribes/m/mashpee-wampanoag-tribe.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Mashpee Wampanoag Peacemakers Court video youtube
+  outcome: not-found
+  reason: Results were the tribe's Peacemakers Court pages and a brochure PDF, plus NARF pages and a Vimeo link (vimeo.com/293866929) that I did not open.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://mashpeewampanoagtribe-nsn.gov/about-peacemakers-court
+  query: 'About Peacemakers Court: embedded video, photos, podcast, copyright'
+  outcome: not-found
+  reason: The page has no embedded videos or podcast and no copyright line, but it has a main Peacemakers Court photo (mashpee_wampanoag_cropped-peacemakers.jpg) and footer links to the tribe's YouTube channel.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Mashpee Wampanoag tribal court peacemaking podcast
+  outcome: not-found
+  reason: Results were the tribe's own pages, a Peacemakers Court brochure and NARF pages, with no tribal podcast.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://mashpeewampanoagtribe-nsn.gov/about-peacemakers-court
+  query: photo, video, rights line
+  outcome: found
+  reason: Fetched with curl. Page has a peacemakers photo (mashpee_wampanoag_cropped-peacemakers.jpg) and no video; no copyright line found in the page text. Footer links a YouTube channel (UCw4VlhwvDlpjY0d0ks3AQEA) not opened.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: vimeo
+  address: https://vimeo.com/293866929
+  query: video title and owner (oEmbed)
+  outcome: not-found
+  reason: Fetched with curl. Titled '#StandWithMashpee' by a Department of Water Protection account, not the Tribe's court; dropped.
+next_steps: Open the Tribe's YouTube channel https://www.youtube.com/channel/UCw4VlhwvDlpjY0d0ks3AQEA by hand for Peacemakers Court videos, and ask the Tribe for permission for the photo. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

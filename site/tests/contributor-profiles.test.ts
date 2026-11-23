@@ -26,7 +26,7 @@ const ready: ProfileAnswers = {
 	givenName: 'Ada',
 	familyName: 'Lovelace',
 	nativeName: 'Sample Name',
-	thirteenOrOlder: true,
+	ageGroup: '18-or-older',
 	interests: ['write', 'review'],
 	creditForm: 'name-and-nation',
 	nationAnswer: 'listed',

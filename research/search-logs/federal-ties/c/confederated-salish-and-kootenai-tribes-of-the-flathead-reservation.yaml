@@ -1,0 +1,25 @@
+profile: content/tribes/c/confederated-salish-and-kootenai-tribes-of-the-flathead-reservation.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/selfgovernance/tribes/
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Billings Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 2 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#confederated-salish-and-kootenai-tribes-of-the-flathead-reservation

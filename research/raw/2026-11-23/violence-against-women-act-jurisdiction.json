@@ -1,0 +1,2166 @@
+{
+ "sources": [
+  {
+   "key_suggestion": "tlpi-implementing-tribes-chart",
+   "title": "Special Tribal Criminal Jurisdiction Chart (Implementation Chart, PDF linked from 'Implementing Tribes')",
+   "publisher": "Tribal Law and Policy Institute (TribalVAWA.org; DOJ/OVW-funded technical assistance provider)",
+   "url": "https://www.tribalvawa.org/_files/ugd/1af47f_5e7c4fbbc75f4befbab5ea0ae68c760d.pdf",
+   "as_of": "Undated chart; file Last-Modified 2026-08-11 (HTTP header); latest dated entry in chart is 2025",
+   "accessed": "2026-11-23",
+   "kind": "organization-page",
+   "how_read": "curl with browser UA; pdftotext -layout for names/dates; page rendered with pdftoppm and read as an image to read the check-mark columns (checks are not in the text layer). 1 page, 39 numbered rows."
+  },
+  {
+   "key_suggestion": "tlpi-implementing-tribes-page",
+   "title": "Implementing Tribes (TribalVAWA.org)",
+   "publisher": "Tribal Law and Policy Institute",
+   "url": "https://www.tribalvawa.org/implementing-tribes",
+   "as_of": "Page text on home page says map 'As of June 2026'; embedded map image text says 'As of January 2023' (image file named 'version-8-2026'); inconsistent",
+   "accessed": "2026-11-23",
+   "kind": "organization-page",
+   "how_read": "curl; text extracted; embedded map JPEG downloaded and read as image: 39 numbered tribes titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'."
+  },
+  {
+   "key_suggestion": "tribalvawa-home",
+   "title": "Tribal VAWA home page ('Tribes Exercising VAWA 2022' map caption)",
+   "publisher": "Tribal Law and Policy Institute",
+   "url": "https://www.tribalvawa.org/",
+   "as_of": "'As of June 2026' (caption)",
+   "accessed": "2026-11-23",
+   "kind": "organization-page",
+   "how_read": "curl; text extracted."
+  },
+  {
+   "key_suggestion": "ncai-about-stcj",
+   "title": "About STCJ - Implementing Tribes (31 Tribes)",
+   "publisher": "National Congress of American Indians",
+   "url": "https://www.ncai.org/section/vawa/about-vawa-and-stcj/about-stcj",
+   "as_of": "List and map updated May 2022 (stated on page)",
+   "accessed": "2026-11-23",
+   "kind": "organization-page",
+   "how_read": "curl with browser UA; HTML text; 31 numbered-by-order entries under 'There are currently 31 Tribes implementing VAWA Special Tribal Criminal Jurisdiction (STCJ)'."
+  },
+  {
+   "key_suggestion": "ncai-archive-currently-implementing",
+   "title": "Currently Implementing Tribes (archive site; same 31 names, calls it SDVCJ)",
+   "publisher": "National Congress of American Indians",
+   "url": "https://archive.ncai.org/tribal-vawa/get-started/currently-implementing-tribes",
+   "as_of": "List and map updated May 2022 (stated on page)",
+   "accessed": "2026-11-23",
+   "kind": "organization-page",
+   "how_read": "curl; HTML text; identical 31 names to ncai-about-stcj."
+  },
+  {
+   "key_suggestion": "ncai-five-year-report",
+   "title": "Five Year Report - Implementing Tribes: The First 5 Years",
+   "publisher": "National Congress of American Indians",
+   "url": "https://www.ncai.org/section/vawa/about-vawa-and-stcj/five-year-report",
+   "as_of": "As of the 5-year anniversary of VAWA 2013 (March 2018): 18 tribes",
+   "accessed": "2026-11-23",
+   "kind": "report",
+   "how_read": "curl; HTML text."
+  },
+  {
+   "key_suggestion": "ncai-key-statistics",
+   "title": "VAW Resource Center: Key Statistics (28 tribes implementing)",
+   "publisher": "National Congress of American Indians",
+   "url": "https://www.ncai.org/section/vawa/overview/key-statistics",
+   "as_of": "Oct 2021 (as cited in DOJ Journal); page says 28 tribes",
+   "accessed": "2026-11-23",
+   "kind": "organization-page",
+   "how_read": "curl; count only, no names."
+  },
+  {
+   "key_suggestion": "doj-vawa-2013-pilot-project",
+   "title": "VAWA 2013 Pilot Project",
+   "publisher": "U.S. Department of Justice, Tribal Justice and Safety (Office of Tribal Justice)",
+   "url": "https://www.justice.gov/tribal/vawa-2013-pilot-project",
+   "as_of": "Page updated April 7, 2023; grants made before March 7, 2015",
+   "accessed": "2026-11-23",
+   "kind": "government-page",
+   "how_read": "curl; HTML text; 5 pilot tribes."
+  },
+  {
+   "key_suggestion": "doj-vawa-2022-alaska-pilot",
+   "title": "Violence Against Women Act 2022 Reauthorization - Alaska Pilot Program",
+   "publisher": "U.S. Department of Justice, Tribal Justice and Safety",
+   "url": "https://www.justice.gov/tribal/vawa-2022-alaska-pilot-program",
+   "as_of": "Page updated August 9, 2024",
+   "accessed": "2026-11-23",
+   "kind": "government-page",
+   "how_read": "curl; HTML text. Names no designated Alaska tribe."
+  },
+  {
+   "key_suggestion": "ovw-2024-update-tribal-consultation",
+   "title": "2024 Update on the Status of Tribal Consultation Recommendations (2023 consultation) incl. Appendix C/D award lists",
+   "publisher": "U.S. DOJ, Office on Violence Against Women",
+   "url": "https://www.justice.gov/ovw/media/1377361/dl?inline=",
+   "as_of": "Prepared Nov-Dec 2024; text states 'As of mid-November 2024'; Appendix D lists FY2024 awards",
+   "accessed": "2026-11-23",
+   "kind": "report",
+   "how_read": "curl; pdftotext -layout; 58 pp. Appendix D (PDF pp. 51-54) lists 'OVW TJ TRP FY 2024' reimbursement awards to the 14 Tribes (text p.14: first reimbursements May 2024 to 14 Tribes for exercising STCJ)."
+  },
+  {
+   "key_suggestion": "ovw-2025-update-tribal-consultation",
+   "title": "Update on the Status of Tribal Consultation Recommendations (prepared for 20th Annual VAWA Tribal Consultation, Jan 21-23, 2026) incl. Appendix C",
+   "publisher": "U.S. DOJ, Office on Violence Against Women",
+   "url": "https://www.justice.gov/ovw/media/1460186/dl?inline",
+   "as_of": "Prepared for Jan 21-23, 2026 consultation; Appendix C = FY2025 awards",
+   "accessed": "2026-11-23",
+   "kind": "report",
+   "how_read": "curl; pdftotext -layout; 39 pp. Appendix C (PDF pp. 31-34) lists FY2025 grants and 'OVW TRP Waiver CY24' awards."
+  },
+  {
+   "key_suggestion": "ovw-2026-brief-update",
+   "title": "2026 Brief Update on Status of Tribal Recommendations (21st consultation, Tulalip, Sept 9-11, 2026)",
+   "publisher": "U.S. DOJ, Office on Violence Against Women",
+   "url": "https://www.justice.gov/ovw/media/1460361/dl?inline",
+   "as_of": "Sept 2026",
+   "accessed": "2026-11-23",
+   "kind": "report",
+   "how_read": "curl; pdftotext; says Alaska Pilot still at tracks 1-2 with track 3 (designation) the 'ultimate goal'; no tribe designated named."
+  },
+  {
+   "key_suggestion": "ovw-trp-page",
+   "title": "Special Tribal Criminal Jurisdiction Reimbursement Program",
+   "publisher": "U.S. DOJ, Office on Violence Against Women",
+   "url": "https://www.justice.gov/ovw/special-tribal-criminal-jurisdiction-reimbursement-program",
+   "as_of": "Page updated September 14, 2026",
+   "accessed": "2026-11-23",
+   "kind": "government-page",
+   "how_read": "curl; HTML text. Eligibility: must exercise STCJ over at least one covered crime in the calendar year; planning-phase tribes not eligible. No tribe list on page."
+  },
+  {
+   "key_suggestion": "ovw-fy2025-awards-program",
+   "title": "OVW Fiscal Year 2025 Grant Awards by Program (STCJ Grant Program)",
+   "publisher": "U.S. DOJ, Office on Violence Against Women",
+   "url": "https://www.justice.gov/ovw/awards/fy-2025-ovw-grant-awards-program",
+   "as_of": "FY2025",
+   "accessed": "2026-11-23",
+   "kind": "government-page",
+   "how_read": "curl; HTML text; 8 STCJ grant awards."
+  },
+  {
+   "key_suggestion": "doj-journal-aug-2025",
+   "title": "Department of Justice Journal of Federal Law and Practice, Vol. 73 (Aug 2025), article on tribal jurisdiction",
+   "publisher": "U.S. DOJ, Executive Office for U.S. Attorneys",
+   "url": "https://www.justice.gov/usao/media/1412011/dl?inline=",
+   "as_of": "August 2025 (cites NCAI page last visited June 24, 2025)",
+   "accessed": "2026-11-23",
+   "kind": "report",
+   "how_read": "curl; pdftotext; says 'by 2022, 31 Tribes had implemented'; secondary, count only."
+  },
+  {
+   "key_suggestion": "kosu-kiowa-2026",
+   "title": "Kiowa Tribe begins exercising criminal jurisdiction over certain non-Indian defendants",
+   "publisher": "KOSU (public radio)",
+   "url": "https://www.kosu.org/kiowa-tribe-criminal-jurisdiction",
+   "as_of": "Published 2026-07-20",
+   "accessed": "2026-11-23",
+   "kind": "organization-page",
+   "how_read": "curl; HTML text. Quotes Kiowa official; says tribe 'is using a $1.5 million federal grant to implement' STCJ; headline says begins exercising."
+  },
+  {
+   "key_suggestion": "nws-mha-2025",
+   "title": "Fort Berthold District Court now has jurisdiction over non-enrolled members for domestic and sexual violence cases",
+   "publisher": "Native Womens Society",
+   "url": "https://www.nativewomenssociety.org/post/fort-berthold-district-court-now-has-jurisdiction-over-non-enrolled-members-for-domestic-and-sexual",
+   "as_of": "Code effective July 1, 2025",
+   "accessed": "2026-11-23",
+   "kind": "organization-page",
+   "how_read": "curl; HTML text. Says 'The Tribe will be exercising Special Tribal Criminal Jurisdiction over non-Indians for covered crimes in accordance with VAWA 2022.'"
+  }
+ ],
+ "nations": [
+  {
+   "roster_id": "confederated-tribes-of-the-umatilla-indian-reservation",
+   "name_as_listed": "Confederated Tribes of the Umatilla Indian Reservation",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 1",
+   "quote": "Confederated Tribes of the Umatilla Indian Reservation",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: Pilot Project 2/20/14. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "confederated-tribes-of-the-umatilla-indian-reservation",
+   "name_as_listed": "Confederated Tribes of the Umatilla Indian Reservation",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Confederated Tribes of the Umatilla Indian Reservation",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "pascua-yaqui-tribe-of-arizona",
+   "name_as_listed": "Pascua Yaqui Tribe",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 2",
+   "quote": "Pascua Yaqui Tribe",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: Pilot Project 2/20/14. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "pascua-yaqui-tribe-of-arizona",
+   "name_as_listed": "Pascua Yaqui Tribe",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Pascua Yaqui Tribe",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "tulalip-tribes-of-washington",
+   "name_as_listed": "Tulalip Tribes Of Washington",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 3",
+   "quote": "Tulalip Tribes Of Washington",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: Pilot Project 2/20/14. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "tulalip-tribes-of-washington",
+   "name_as_listed": "Tulalip Tribes Of Washington",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Tulalip Tribes Of Washington",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation",
+   "name_as_listed": "Fort Peck Assiniboine & Sioux Tribes",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 4",
+   "quote": "Fort Peck Assiniboine & Sioux Tribes",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: Pilot Project 3/6/15. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation",
+   "name_as_listed": "Fort Peck Assiniboine & Sioux Tribes",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Fort Peck Assiniboine & Sioux Tribes",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "sisseton-wahpeton-oyate-of-the-lake-traverse-reservation",
+   "name_as_listed": "Sisseton-Wahpeton Oyate",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 5",
+   "quote": "Sisseton-Wahpeton Oyate",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: Pilot Project 3/6/15. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "sisseton-wahpeton-oyate-of-the-lake-traverse-reservation",
+   "name_as_listed": "Sisseton-Wahpeton Oyate",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Sisseton-Wahpeton Oyate",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "little-traverse-bay-bands-of-odawa-indians",
+   "name_as_listed": "Little Traverse Bay Band of Odawa Indians",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 6",
+   "quote": "Little Traverse Bay Band of Odawa Indians",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 3/7/2015. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "little-traverse-bay-bands-of-odawa-indians",
+   "name_as_listed": "Little Traverse Bay Band of Odawa Indians",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Little Traverse Bay Band of Odawa Indians",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "alabama-coushatta-tribe-of-texas",
+   "name_as_listed": "Alabama-Coushatta Tribe of Texas",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 7",
+   "quote": "Alabama-Coushatta Tribe of Texas",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 3/7/2015. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "alabama-coushatta-tribe-of-texas",
+   "name_as_listed": "Alabama-Coushatta Tribe of Texas",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Alabama-Coushatta Tribe of Texas",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "the-choctaw-nation-of-oklahoma",
+   "name_as_listed": "Choctaw Nation of Oklahoma",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 8",
+   "quote": "Choctaw Nation of Oklahoma",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 5/9/2015. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "the-choctaw-nation-of-oklahoma",
+   "name_as_listed": "Choctaw Nation of Oklahoma",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Choctaw Nation of Oklahoma",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "eastern-band-of-cherokee-indians",
+   "name_as_listed": "Eastern Band of Cherokee Indians",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 9",
+   "quote": "Eastern Band of Cherokee Indians",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 6/8/2015. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "eastern-band-of-cherokee-indians",
+   "name_as_listed": "Eastern Band of Cherokee Indians",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Eastern Band of Cherokee Indians",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "the-seminole-nation-of-oklahoma",
+   "name_as_listed": "Seminole Nation of Oklahoma",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 10",
+   "quote": "Seminole Nation of Oklahoma",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 7/6/2015. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "the-seminole-nation-of-oklahoma",
+   "name_as_listed": "Seminole Nation of Oklahoma",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Seminole Nation of Oklahoma",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "sac-and-fox-nation",
+   "name_as_listed": "Sac and Fox Nation",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 11",
+   "quote": "Sac and Fox Nation",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 3/1/2016. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "sac-and-fox-nation",
+   "name_as_listed": "Sac and Fox Nation",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Sac and Fox Nation",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "kickapoo-tribe-of-oklahoma",
+   "name_as_listed": "Kickapoo Tribe of Oklahoma",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 12",
+   "quote": "Kickapoo Tribe of Oklahoma",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 3/15/2016. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "kickapoo-tribe-of-oklahoma",
+   "name_as_listed": "Kickapoo Tribe of Oklahoma",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Kickapoo Tribe of Oklahoma",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "nottawaseppi-huron-band-of-the-potawatomi",
+   "name_as_listed": "Nottawaseppi Huron Band of the Potawatomi",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 13",
+   "quote": "Nottawaseppi Huron Band of the Potawatomi",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 3/18/2016. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "nottawaseppi-huron-band-of-the-potawatomi",
+   "name_as_listed": "Nottawaseppi Huron Band of the Potawatomi",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Nottawaseppi Huron Band of the Potawatomi",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "the-muscogee-nation",
+   "name_as_listed": "Muscogee Creek Nation",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 14",
+   "quote": "Muscogee Creek Nation",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 3/28/2016. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "the-muscogee-nation",
+   "name_as_listed": "Muscogee Creek Nation",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Muscogee Creek Nation",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "standing-rock-sioux-tribe-of-north-and-south-dakota",
+   "name_as_listed": "Standing Rock Sioux Tribe",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 15",
+   "quote": "Standing Rock Sioux Tribe",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 5/1/2016. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "standing-rock-sioux-tribe-of-north-and-south-dakota",
+   "name_as_listed": "Standing Rock Sioux Tribe",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Standing Rock Sioux Tribe",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "sault-ste-marie-tribe-of-chippewa-indians",
+   "name_as_listed": "Sault Ste. Marie Tribe of Chippewa",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 16",
+   "quote": "Sault Ste. Marie Tribe of Chippewa",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 12/13/2016. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "sault-ste-marie-tribe-of-chippewa-indians",
+   "name_as_listed": "Sault Ste. Marie Tribe of Chippewa",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Sault Ste. Marie Tribe of Chippewa",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "chitimacha-tribe-of-louisiana",
+   "name_as_listed": "Chitimacha Tribe of Louisiana",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 17",
+   "quote": "Chitimacha Tribe of Louisiana",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 2/1/2017. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "chitimacha-tribe-of-louisiana",
+   "name_as_listed": "Chitimacha Tribe of Louisiana",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Chitimacha Tribe of Louisiana",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "lower-elwha-tribal-community",
+   "name_as_listed": "Lower Elwha Klallam Tribe",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 18",
+   "quote": "Lower Elwha Klallam Tribe",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 6/5/2017. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "lower-elwha-tribal-community",
+   "name_as_listed": "Lower Elwha Klallam Tribe",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Lower Elwha Klallam Tribe",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "quinault-indian-nation",
+   "name_as_listed": "Quinault Indian Nation",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 19",
+   "quote": "Quinault Indian Nation",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 5/1/2018. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "quinault-indian-nation",
+   "name_as_listed": "Quinault Indian Nation",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Quinault Indian Nation",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "cherokee-nation",
+   "name_as_listed": "Cherokee Nation of Oklahoma",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 20",
+   "quote": "Cherokee Nation of Oklahoma",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 5/17/2018. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "cherokee-nation",
+   "name_as_listed": "Cherokee Nation of Oklahoma",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Cherokee Nation of Oklahoma",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "gila-river-indian-community-of-the-gila-river-indian-reservation",
+   "name_as_listed": "Gila River Indian Community",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 21",
+   "quote": "Gila River Indian Community",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 8/1/2018. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "gila-river-indian-community-of-the-gila-river-indian-reservation",
+   "name_as_listed": "Gila River Indian Community",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Gila River Indian Community",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "port-gamble-sklallam-tribe",
+   "name_as_listed": "Port Gamble S'Klallam Tribe",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 22",
+   "quote": "Port Gamble S'Klallam Tribe",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 9/17/2018. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "port-gamble-sklallam-tribe",
+   "name_as_listed": "Port Gamble S'Klallam Tribe",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Port Gamble S'Klallam Tribe",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "confederated-tribes-of-the-chehalis-reservation",
+   "name_as_listed": "Confederated Tribes of the Chehalis Reservation",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 23",
+   "quote": "Confederated Tribes of the Chehalis Reservation",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 10/24/2018. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "confederated-tribes-of-the-chehalis-reservation",
+   "name_as_listed": "Confederated Tribes of the Chehalis Reservation",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Confederated Tribes of the Chehalis Reservation",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "grand-traverse-band-of-ottawa-and-chippewa-indians",
+   "name_as_listed": "Grand Traverse Band of Ottawa & Chippewa Indians",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 24",
+   "quote": "Grand Traverse Band of Ottawa & Chippewa Indians",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 10/31/2018. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "grand-traverse-band-of-ottawa-and-chippewa-indians",
+   "name_as_listed": "Grand Traverse Band of Ottawa & Chippewa Indians",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Grand Traverse Band of Ottawa & Chippewa Indians",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "suquamish-indian-tribe-of-the-port-madison-reservation",
+   "name_as_listed": "The Suquamish Tribe",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 25",
+   "quote": "The Suquamish Tribe",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 4/10/2019. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "suquamish-indian-tribe-of-the-port-madison-reservation",
+   "name_as_listed": "The Suquamish Tribe",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "The Suquamish Tribe",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "quapaw-nation",
+   "name_as_listed": "Quapaw Tribe",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 26",
+   "quote": "Quapaw Tribe",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 3/2/2020. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "quapaw-nation",
+   "name_as_listed": "Quapaw Tribe",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Quapaw Tribe",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "penobscot-nation",
+   "name_as_listed": "Penobscot Nation",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 27",
+   "quote": "Penobscot Nation",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 5/7/2020. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "penobscot-nation",
+   "name_as_listed": "Penobscot Nation",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Penobscot Nation",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "pueblo-of-santa-clara",
+   "name_as_listed": "Pueblo of Santa Clara",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 28",
+   "quote": "Pueblo of Santa Clara",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 8/24/2020. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "pueblo-of-santa-clara",
+   "name_as_listed": "Pueblo of Santa Clara",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Pueblo of Santa Clara",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "swinomish-indian-tribal-community",
+   "name_as_listed": "Swinomish Indian Tribal Community",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 29",
+   "quote": "Swinomish Indian Tribal Community",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 12/15/2020. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "swinomish-indian-tribal-community",
+   "name_as_listed": "Swinomish Indian Tribal Community",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Swinomish Indian Tribal Community",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "the-chickasaw-nation",
+   "name_as_listed": "Chickasaw Nation",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 30",
+   "quote": "Chickasaw Nation",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 3/17/2021. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "the-chickasaw-nation",
+   "name_as_listed": "Chickasaw Nation",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Chickasaw Nation",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation",
+   "name_as_listed": "Salt River Pima Maricopa Indian Community",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 31",
+   "quote": "Salt River Pima Maricopa Indian Community",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column NOT checked; 'Implemented VAWA SDVCJ' column: 5/1/2022. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation",
+   "name_as_listed": "Salt River Pima Maricopa Indian Community",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Salt River Pima Maricopa Indian Community",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "bois-forte-band",
+   "name_as_listed": "Bois Forte Band of Chippewa",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 32",
+   "quote": "Bois Forte Band of Chippewa",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 2020. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "bois-forte-band",
+   "name_as_listed": "Bois Forte Band of Chippewa",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Bois Forte Band of Chippewa",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "nez-perce-tribe",
+   "name_as_listed": "Nez Perce Tribe",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 33",
+   "quote": "Nez Perce Tribe",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 2024. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "nez-perce-tribe",
+   "name_as_listed": "Nez Perce Tribe",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Nez Perce Tribe",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "pueblo-of-acoma",
+   "name_as_listed": "Pueblo of Acoma",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 34",
+   "quote": "Pueblo of Acoma",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column blank. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "pueblo-of-acoma",
+   "name_as_listed": "Pueblo of Acoma",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Pueblo of Acoma",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "pueblo-of-santa-ana",
+   "name_as_listed": "Pueblo of Santa Ana",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 35",
+   "quote": "Pueblo of Santa Ana",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column blank. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "pueblo-of-santa-ana",
+   "name_as_listed": "Pueblo of Santa Ana",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Pueblo of Santa Ana",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "pueblo-of-pojoaque",
+   "name_as_listed": "Pueblo of Pojoaque",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 36",
+   "quote": "Pueblo of Pojoaque",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column blank. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "pueblo-of-pojoaque",
+   "name_as_listed": "Pueblo of Pojoaque",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Pueblo of Pojoaque",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "mississippi-band-of-choctaw-indians",
+   "name_as_listed": "Mississippi Band of Choctaw",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 37",
+   "quote": "Mississippi Band of Choctaw",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column blank. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "mississippi-band-of-choctaw-indians",
+   "name_as_listed": "Mississippi Band of Choctaw",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Mississippi Band of Choctaw",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "three-affiliated-tribes-of-the-fort-berthold-reservation",
+   "name_as_listed": "Mandan, Hidatsa and Arikara Nation",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 38",
+   "quote": "Mandan, Hidatsa and Arikara Nation",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "medium",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column: 2025. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF. Roster id assumed: Mandan, Hidatsa and Arikara Nation = Three Affiliated Tribes of the Fort Berthold Reservation (same nation, current self-name; the Native Womens Society article is about the Fort Berthold Tribal Code)."
+  },
+  {
+   "roster_id": "three-affiliated-tribes-of-the-fort-berthold-reservation",
+   "name_as_listed": "Mandan, Hidatsa and Arikara Nation",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Mandan, Hidatsa and Arikara Nation",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "medium",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "kiowa-tribe",
+   "name_as_listed": "Kiowa Tribe",
+   "source_key": "tlpi-implementing-tribes-chart",
+   "locator": "Chart row 39",
+   "quote": "Kiowa Tribe",
+   "what": "listed as a Tribe that has implemented VAWA 2013 SDVCJ and/or VAWA 2022 STCJ (TLPI chart); map lists it as 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "chart undated (file modified 2026-08-11)",
+   "match_confidence": "high",
+   "note": "'Implemented VAWA STCJ' column checked; 'Implemented VAWA SDVCJ' column blank. Chart is undated; the TLPI map titled 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians' lists all 39 names. Check marks read visually from rendered PDF."
+  },
+  {
+   "roster_id": "kiowa-tribe",
+   "name_as_listed": "Kiowa Tribe",
+   "source_key": "tlpi-implementing-tribes-page",
+   "locator": "Embedded map image, numbered list (39 entries)",
+   "quote": "Kiowa Tribe",
+   "what": "listed on TLPI map 'Tribes Exercising VAWA 2022 Criminal Jurisdiction over Non-Indians'",
+   "as_of": "image text 'As of January 2023'; page caption 'As of June 2026'",
+   "match_confidence": "high",
+   "note": "Image-only list (read visually). Caption/date conflict noted in sources."
+  },
+  {
+   "roster_id": "alabama-coushatta-tribe-of-texas",
+   "name_as_listed": "Alabama-Coushatta Tribe of Texas (TX)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 1 of 31",
+   "quote": "Alabama-Coushatta Tribe of Texas (TX)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation",
+   "name_as_listed": "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation (MT)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 2 of 31",
+   "quote": "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation (MT)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "cherokee-nation",
+   "name_as_listed": "Cherokee Nation of Oklahoma (OK)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 3 of 31",
+   "quote": "Cherokee Nation of Oklahoma (OK)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "the-chickasaw-nation",
+   "name_as_listed": "Chickasaw Nation (OK)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 4 of 31",
+   "quote": "Chickasaw Nation (OK)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "chitimacha-tribe-of-louisiana",
+   "name_as_listed": "Chitimacha Tribe of Louisiana (LA)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 5 of 31",
+   "quote": "Chitimacha Tribe of Louisiana (LA)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "the-choctaw-nation-of-oklahoma",
+   "name_as_listed": "Choctaw Nation in Oklahoma (OK)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 6 of 31",
+   "quote": "Choctaw Nation in Oklahoma (OK)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "confederated-tribes-of-the-chehalis-reservation",
+   "name_as_listed": "Confederated Tribes of the Chehalis Reservation (WA)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 7 of 31",
+   "quote": "Confederated Tribes of the Chehalis Reservation (WA)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "confederated-tribes-of-the-umatilla-indian-reservation",
+   "name_as_listed": "Confederated Tribes of the Umatilla Indian Reservation (CTUIR) (OR)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 8 of 31",
+   "quote": "Confederated Tribes of the Umatilla Indian Reservation (CTUIR) (OR)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "eastern-band-of-cherokee-indians",
+   "name_as_listed": "Eastern Band of Cherokee Indians (NC)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 9 of 31",
+   "quote": "Eastern Band of Cherokee Indians (NC)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "gila-river-indian-community-of-the-gila-river-indian-reservation",
+   "name_as_listed": "Gila River Indian Community (AZ)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 10 of 31",
+   "quote": "Gila River Indian Community (AZ)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "grand-traverse-band-of-ottawa-and-chippewa-indians",
+   "name_as_listed": "Grand Traverse Band of Ottawa and Chippewa Indians (MI)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 11 of 31",
+   "quote": "Grand Traverse Band of Ottawa and Chippewa Indians (MI)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "kickapoo-tribe-of-oklahoma",
+   "name_as_listed": "Kickapoo Tribe of Oklahoma (OK)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 12 of 31",
+   "quote": "Kickapoo Tribe of Oklahoma (OK)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "little-traverse-bay-bands-of-odawa-indians",
+   "name_as_listed": "Little Traverse Bay Band of Odawa Indians (MI)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 13 of 31",
+   "quote": "Little Traverse Bay Band of Odawa Indians (MI)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "lower-elwha-tribal-community",
+   "name_as_listed": "Lower Elwha Klallam Tribe (WA)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 14 of 31",
+   "quote": "Lower Elwha Klallam Tribe (WA)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "the-muscogee-nation",
+   "name_as_listed": "Muscogee (Creek) Nation (OK)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 15 of 31",
+   "quote": "Muscogee (Creek) Nation (OK)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "nottawaseppi-huron-band-of-the-potawatomi",
+   "name_as_listed": "Nottawaseppi Huron Band of Potawatomi (MI)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 16 of 31",
+   "quote": "Nottawaseppi Huron Band of Potawatomi (MI)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "pascua-yaqui-tribe-of-arizona",
+   "name_as_listed": "Pascua Yaqui Tribe (AZ)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 17 of 31",
+   "quote": "Pascua Yaqui Tribe (AZ)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "penobscot-nation",
+   "name_as_listed": "Penobscot Nation (ME)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 18 of 31",
+   "quote": "Penobscot Nation (ME)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "port-gamble-sklallam-tribe",
+   "name_as_listed": "Port Gamble S’Klallam Tribe (WA)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 19 of 31",
+   "quote": "Port Gamble S’Klallam Tribe (WA)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "quapaw-nation",
+   "name_as_listed": "Quapaw Nation (OK)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 20 of 31",
+   "quote": "Quapaw Nation (OK)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "quinault-indian-nation",
+   "name_as_listed": "Quinault Nation (WA)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 21 of 31",
+   "quote": "Quinault Nation (WA)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "sac-and-fox-nation",
+   "name_as_listed": "Sac and Fox Nation of Oklahoma (OK)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 22 of 31",
+   "quote": "Sac and Fox Nation of Oklahoma (OK)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation",
+   "name_as_listed": "Salt River Pima Maricopa Indian Community (AZ)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 23 of 31",
+   "quote": "Salt River Pima Maricopa Indian Community (AZ)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "pueblo-of-santa-clara",
+   "name_as_listed": "Santa Clara Pueblo (NM)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 24 of 31",
+   "quote": "Santa Clara Pueblo (NM)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "sault-ste-marie-tribe-of-chippewa-indians",
+   "name_as_listed": "Sault Ste. Marie Tribe of Chippewa (MI)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 25 of 31",
+   "quote": "Sault Ste. Marie Tribe of Chippewa (MI)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "the-seminole-nation-of-oklahoma",
+   "name_as_listed": "Seminole Nation of Oklahoma (OK)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 26 of 31",
+   "quote": "Seminole Nation of Oklahoma (OK)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "sisseton-wahpeton-oyate-of-the-lake-traverse-reservation",
+   "name_as_listed": "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation (ND/SD)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 27 of 31",
+   "quote": "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation (ND/SD)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "standing-rock-sioux-tribe-of-north-and-south-dakota",
+   "name_as_listed": "Standing Rock Sioux Tribe (ND/SD)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 28 of 31",
+   "quote": "Standing Rock Sioux Tribe (ND/SD)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "suquamish-indian-tribe-of-the-port-madison-reservation",
+   "name_as_listed": "Suquamish Tribe (WA)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 29 of 31",
+   "quote": "Suquamish Tribe (WA)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "swinomish-indian-tribal-community",
+   "name_as_listed": "Swinomish Indian Tribal Community (WA)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 30 of 31",
+   "quote": "Swinomish Indian Tribal Community (WA)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "tulalip-tribes-of-washington",
+   "name_as_listed": "Tulalip Tribes in Washington (WA)",
+   "source_key": "ncai-about-stcj",
+   "locator": "Implementing Tribes list, entry 31 of 31",
+   "quote": "Tulalip Tribes in Washington (WA)",
+   "what": "implementing VAWA special tribal criminal jurisdiction (NCAI: 'currently implementing')",
+   "as_of": "May 2022",
+   "match_confidence": "high",
+   "note": "NCAI states it is 'implementing', not strictly that cases were prosecuted. Same entry on archive.ncai.org currently-implementing-tribes."
+  },
+  {
+   "roster_id": "assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation",
+   "name_as_listed": "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation (in Montana)",
+   "source_key": "doj-vawa-2013-pilot-project",
+   "locator": "Pilot project list, entry 1 of 5",
+   "quote": "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation (in Montana)",
+   "what": "VAWA 2013 Pilot Project application granted by DOJ before March 7, 2015 (SDVCJ pilot; historical, not a current-exercise statement)",
+   "as_of": "April 7, 2023 (page); grants before March 7, 2015",
+   "match_confidence": "high",
+   "note": "Historical pilot participation under VAWA 2013 only."
+  },
+  {
+   "roster_id": "confederated-tribes-of-the-umatilla-indian-reservation",
+   "name_as_listed": "Confederated Tribes of the Umatilla Indian Reservation (in Oregon)",
+   "source_key": "doj-vawa-2013-pilot-project",
+   "locator": "Pilot project list, entry 2 of 5",
+   "quote": "Confederated Tribes of the Umatilla Indian Reservation (in Oregon)",
+   "what": "VAWA 2013 Pilot Project application granted by DOJ before March 7, 2015 (SDVCJ pilot; historical, not a current-exercise statement)",
+   "as_of": "April 7, 2023 (page); grants before March 7, 2015",
+   "match_confidence": "high",
+   "note": "Historical pilot participation under VAWA 2013 only."
+  },
+  {
+   "roster_id": "pascua-yaqui-tribe-of-arizona",
+   "name_as_listed": "Pascua Yaqui Tribe of Arizona",
+   "source_key": "doj-vawa-2013-pilot-project",
+   "locator": "Pilot project list, entry 3 of 5",
+   "quote": "Pascua Yaqui Tribe of Arizona",
+   "what": "VAWA 2013 Pilot Project application granted by DOJ before March 7, 2015 (SDVCJ pilot; historical, not a current-exercise statement)",
+   "as_of": "April 7, 2023 (page); grants before March 7, 2015",
+   "match_confidence": "high",
+   "note": "Historical pilot participation under VAWA 2013 only."
+  },
+  {
+   "roster_id": "sisseton-wahpeton-oyate-of-the-lake-traverse-reservation",
+   "name_as_listed": "Sisseton Wahpeton Oyate of the Lake Traverse Reservation (in South Dakota)",
+   "source_key": "doj-vawa-2013-pilot-project",
+   "locator": "Pilot project list, entry 4 of 5",
+   "quote": "Sisseton Wahpeton Oyate of the Lake Traverse Reservation (in South Dakota)",
+   "what": "VAWA 2013 Pilot Project application granted by DOJ before March 7, 2015 (SDVCJ pilot; historical, not a current-exercise statement)",
+   "as_of": "April 7, 2023 (page); grants before March 7, 2015",
+   "match_confidence": "high",
+   "note": "Historical pilot participation under VAWA 2013 only."
+  },
+  {
+   "roster_id": "tulalip-tribes-of-washington",
+   "name_as_listed": "Tulalip Tribes of Washington",
+   "source_key": "doj-vawa-2013-pilot-project",
+   "locator": "Pilot project list, entry 5 of 5",
+   "quote": "Tulalip Tribes of Washington",
+   "what": "VAWA 2013 Pilot Project application granted by DOJ before March 7, 2015 (SDVCJ pilot; historical, not a current-exercise statement)",
+   "as_of": "April 7, 2023 (page); grants before March 7, 2015",
+   "match_confidence": "high",
+   "note": "Historical pilot participation under VAWA 2013 only."
+  },
+  {
+   "roster_id": "bois-forte-band",
+   "name_as_listed": "BOIS FORTE RESERVATION TRIBAL COUNCIL",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.51), row 'OVW TJ TRP FY 2024' $1",
+   "quote": "BOIS FORTE RESERVATION TRIBAL COUNCIL  $1  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": "Initial allocation of $1: page 15 text says tribes exercising in 2023 with no expenses got $1; roster match is by tribe (Bois Forte Band, Nett Lake) - the awardee name is the tribal council."
+  },
+  {
+   "roster_id": "cherokee-nation",
+   "name_as_listed": "CHEROKEE NATION",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.51), row 'OVW TJ TRP FY 2024' $50,000",
+   "quote": "CHEROKEE NATION  $50,000  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "the-chickasaw-nation",
+   "name_as_listed": "CHICKASAW NATION",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.51), row 'OVW TJ TRP FY 2024' $30,565",
+   "quote": "CHICKASAW NATION  $30,565  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "eastern-band-of-cherokee-indians",
+   "name_as_listed": "EASTERN BAND OF CHEROKEE INDIANS",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.51), row 'OVW TJ TRP FY 2024' $66,071",
+   "quote": "EASTERN BAND OF CHEROKEE INDIANS  $66,071  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "grand-traverse-band-of-ottawa-and-chippewa-indians",
+   "name_as_listed": "GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.51), row 'OVW TJ TRP FY 2024' $66,071",
+   "quote": "GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS  $66,071  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "the-muscogee-nation",
+   "name_as_listed": "MUSCOGEE CREEK NATION",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.52), row 'OVW TJ TRP FY 2024' $66,071",
+   "quote": "MUSCOGEE CREEK NATION  $66,071  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "nez-perce-tribe",
+   "name_as_listed": "NEZ PERCE TRIBE",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.53), row 'OVW TJ TRP FY 2024' $33,425",
+   "quote": "NEZ PERCE TRIBE  $33,425  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": "Text p.15: allocations for tribes newly implementing STCJ were based on estimated 2024 expenses."
+  },
+  {
+   "roster_id": "pascua-yaqui-tribe-of-arizona",
+   "name_as_listed": "PASCUA YAQUI TRIBE",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.53), row 'OVW TJ TRP FY 2024' $66,071",
+   "quote": "PASCUA YAQUI TRIBE  $66,071  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "quapaw-nation",
+   "name_as_listed": "QUAPAW NATION",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.53), row 'OVW TJ TRP FY 2024' $17,260",
+   "quote": "QUAPAW NATION  $17,260  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation",
+   "name_as_listed": "SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.53), row 'OVW TJ TRP FY 2024' $18,554",
+   "quote": "SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY  $18,554  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "sault-ste-marie-tribe-of-chippewa-indians",
+   "name_as_listed": "SAULT STE MARIE TRIBE OF CHIPPEWA INDIANS",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.54), row 'OVW TJ TRP FY 2024' $13,592",
+   "quote": "SAULT STE MARIE TRIBE OF CHIPPEWA INDIANS  $13,592  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "the-seminole-nation-of-oklahoma",
+   "name_as_listed": "SEMINOLE NATION OF OKLAHOMA, THE",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.54), row 'OVW TJ TRP FY 2024' $66,071",
+   "quote": "SEMINOLE NATION OF OKLAHOMA, THE  $66,071  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "suquamish-indian-tribe-of-the-port-madison-reservation",
+   "name_as_listed": "SUQUAMISH INDIAN TRIBE OF THE PORT MADISON RESERVATION",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.54), row 'OVW TJ TRP FY 2024' $1",
+   "quote": "SUQUAMISH INDIAN TRIBE OF THE PORT MADISON RESERVATION  $1  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": "Awardee name wraps across two lines in the PDF. $1 allocation = exercised STCJ in 2023 with no expenses (text p.15)."
+  },
+  {
+   "roster_id": "tulalip-tribes-of-washington",
+   "name_as_listed": "TULALIP TRIBES OF WASHINGTON",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.54), row 'OVW TJ TRP FY 2024' $66,071",
+   "quote": "TULALIP TRIBES OF WASHINGTON  $66,071  OVW TJ TRP FY 2024",
+   "what": "received first-round Tribal Reimbursement Program allocation (May 2024), which by statute/regulation is for expenses of EXERCISING STCJ (one of 14 tribes)",
+   "as_of": "calendar year 2023 exercise (allocations based on 2023 expenses); report as of mid-Nov 2024",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "eastern-band-of-cherokee-indians",
+   "name_as_listed": "EASTERN BAND OF CHEROKEE INDIANS",
+   "source_key": "ovw-2025-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.31), row 'OVW TRP Waiver CY24' $22,691",
+   "quote": "EASTERN BAND OF CHEROKEE INDIANS  $22,691  OVW TRP Waiver CY24",
+   "what": "received CY2024 Tribal Reimbursement Program waiver reimbursement for actual 2024 expenses exercising STCJ (one of 5 of the 14 tribes that applied)",
+   "as_of": "calendar year 2024 expenses (report prepared for Jan 2026 consultation)",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "the-muscogee-nation",
+   "name_as_listed": "MUSCOGEE CREEK NATION",
+   "source_key": "ovw-2025-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.33), row 'OVW TRP Waiver CY24' $3,088,649",
+   "quote": "MUSCOGEE CREEK NATION  $3,088,649  OVW TRP Waiver CY24",
+   "what": "received CY2024 Tribal Reimbursement Program waiver reimbursement for actual 2024 expenses exercising STCJ (one of 5 of the 14 tribes that applied)",
+   "as_of": "calendar year 2024 expenses (report prepared for Jan 2026 consultation)",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "quapaw-nation",
+   "name_as_listed": "QUAPAW NATION",
+   "source_key": "ovw-2025-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.33), row 'OVW TRP Waiver CY24' $4,952",
+   "quote": "QUAPAW NATION  $4,952  OVW TRP Waiver CY24",
+   "what": "received CY2024 Tribal Reimbursement Program waiver reimbursement for actual 2024 expenses exercising STCJ (one of 5 of the 14 tribes that applied)",
+   "as_of": "calendar year 2024 expenses (report prepared for Jan 2026 consultation)",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "the-seminole-nation-of-oklahoma",
+   "name_as_listed": "SEMINOLE NATION OF OKLAHOMA, THE",
+   "source_key": "ovw-2025-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.33), row 'OVW TRP Waiver CY24' $17,902",
+   "quote": "SEMINOLE NATION OF OKLAHOMA, THE  $17,902  OVW TRP Waiver CY24",
+   "what": "received CY2024 Tribal Reimbursement Program waiver reimbursement for actual 2024 expenses exercising STCJ (one of 5 of the 14 tribes that applied)",
+   "as_of": "calendar year 2024 expenses (report prepared for Jan 2026 consultation)",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "tulalip-tribes-of-washington",
+   "name_as_listed": "TULALIP TRIBES OF WASHINGTON",
+   "source_key": "ovw-2025-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.34), row 'OVW TRP Waiver CY24' $5,982",
+   "quote": "TULALIP TRIBES OF WASHINGTON  $5,982  OVW TRP Waiver CY24",
+   "what": "received CY2024 Tribal Reimbursement Program waiver reimbursement for actual 2024 expenses exercising STCJ (one of 5 of the 14 tribes that applied)",
+   "as_of": "calendar year 2024 expenses (report prepared for Jan 2026 consultation)",
+   "match_confidence": "high",
+   "note": ""
+  },
+  {
+   "roster_id": "kiowa-tribe",
+   "name_as_listed": "Kiowa Tribe",
+   "source_key": "kosu-kiowa-2026",
+   "locator": "Headline and article body",
+   "quote": "Kiowa Tribe begins exercising criminal jurisdiction over certain non-Indian defendants",
+   "what": "news report: tribe 'begins exercising' STCJ, using a $1.5 million federal grant to implement it",
+   "as_of": "2026-07-20",
+   "match_confidence": "medium",
+   "note": "Body text says the tribe 'is using a $1.5 million federal grant to implement' STCJ; wording is mixed (begins exercising vs implementing). Treat start date as mid-2026 and confirm with tribe/DOJ before a hard 'exercising' claim. TLPI chart (undated, Aug 2026) shows STCJ checked."
+  },
+  {
+   "roster_id": "three-affiliated-tribes-of-the-fort-berthold-reservation",
+   "name_as_listed": "Fort Berthold District Court / Three Affiliated Tribes (MHA Nation)",
+   "source_key": "nws-mha-2025",
+   "locator": "Article body, Title III Criminal Code paragraph",
+   "quote": "The Tribe will be exercising Special Tribal Criminal Jurisdiction over non-Indians for covered crimes in accordance with VAWA 2022.",
+   "what": "Tribal code revised, effective July 1, 2025, to exercise STCJ over non-Indians",
+   "as_of": "2025-07-01",
+   "match_confidence": "medium",
+   "note": "Advocacy-organization article, not a DOJ page; consistent with TLPI chart row 38 (2025). Roster match assumed (MHA Nation = Three Affiliated Tribes)."
+  },
+  {
+   "roster_id": "chickaloon-native-village",
+   "name_as_listed": "CHICKALOON NATIVE VILLAGE",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.47)",
+   "quote": "CHICKALOON NATIVE VILLAGE ... OVW TJ AK FY 2023 $1,500,000",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2023",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "kickapoo-tribe-of-oklahoma",
+   "name_as_listed": "KICKAPOO TRIBE OF OKLAHOMA",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.47)",
+   "quote": "KICKAPOO TRIBE OF OKLAHOMA ... OVW TJ FY 2023 $1,500,000",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2023",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "pascua-yaqui-tribe-of-arizona",
+   "name_as_listed": "PASCUA YAQUI TRIBE",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.48)",
+   "quote": "PASCUA YAQUI TRIBE ... OVW TJ FY 2023 $1,500,000",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2023",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "tolowa-dee-ni-nation",
+   "name_as_listed": "TOLOWA DEE-NI NATION",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.49)",
+   "quote": "TOLOWA DEE-NI NATION ... OVW TJ FY 2023 $1,500,000",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2023",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "tulalip-tribes-of-washington",
+   "name_as_listed": "TULALIP TRIBES OF WASHINGTON",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.49)",
+   "quote": "TULALIP TRIBES OF WASHINGTON ... OVW TJ FY 2023 $1,500,000",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2023",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "village-of-dot-lake",
+   "name_as_listed": "VILLAGE OF DOT LAKE",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix C (PDF p.50)",
+   "quote": "VILLAGE OF DOT LAKE ... OVW TJ AK FY 2023 $1,500,000",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2023",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "houlton-band-of-maliseet-indians",
+   "name_as_listed": "HOULTON BAND OF MALISEET INDIANS",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.52)",
+   "quote": "HOULTON BAND OF MALISEET INDIANS ... OVW TJ FY 2024 $1,000,000",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2024",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere. Awardee for Houlton is in Maine; Maine tribes are covered by VAWA 2022 STCJ text but this grant alone does not show exercise."
+  },
+  {
+   "roster_id": "lummi-tribe-of-the-lummi-reservation",
+   "name_as_listed": "LUMMI INDIAN BUSINESS COUNCIL",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.52)",
+   "quote": "LUMMI INDIAN BUSINESS COUNCIL ... OVW TJ FY 2024 $863,977",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2024",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere. Lummi match: awardee 'Lummi Indian Business Council' (governing body of the Lummi Tribe of the Lummi Reservation)."
+  },
+  {
+   "roster_id": "organized-village-of-kake",
+   "name_as_listed": "ORGANIZED VILLAGE OF KAKE",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.53)",
+   "quote": "ORGANIZED VILLAGE OF KAKE ... OVW TJ AK FY 2024 $1,500,000",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2024",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "quileute-tribe-of-the-quileute-reservation",
+   "name_as_listed": "QUILEUTE INDIAN TRIBE OF THE QUILEUTE INDIAN RESERVATION",
+   "source_key": "ovw-2024-update-tribal-consultation",
+   "locator": "Appendix D (PDF p.53)",
+   "quote": "QUILEUTE INDIAN TRIBE OF THE QUILEUTE INDIAN RESERVATION ... OVW TJ FY 2024 $1,710,078",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2024",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere. Quileute match: awardee name 'Quileute Indian Tribe of the Quileute Indian Reservation'."
+  },
+  {
+   "roster_id": "craig-tribal-association",
+   "name_as_listed": "CRAIG TRIBAL ASSOCIATION",
+   "source_key": "ovw-fy2025-awards-program",
+   "locator": "STCJ Grant Program list",
+   "quote": "CRAIG TRIBAL ASSOCIATION ... OVW TJ FY 2025",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2025",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "native-village-of-port-heiden",
+   "name_as_listed": "NATIVE VILLAGE OF PORT HEIDEN",
+   "source_key": "ovw-fy2025-awards-program",
+   "locator": "STCJ Grant Program list",
+   "quote": "NATIVE VILLAGE OF PORT HEIDEN ... OVW TJ FY 2025",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2025",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "tohono-oodham-nation-of-arizona",
+   "name_as_listed": "TOHONO O'ODHAM NATION",
+   "source_key": "ovw-fy2025-awards-program",
+   "locator": "STCJ Grant Program list",
+   "quote": "TOHONO O'ODHAM NATION ... OVW TJ FY 2025",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2025",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "kiowa-tribe",
+   "name_as_listed": "KIOWA TRIBE OF OKLAHOMA",
+   "source_key": "ovw-fy2025-awards-program",
+   "locator": "STCJ Grant Program list",
+   "quote": "KIOWA TRIBE OF OKLAHOMA ... OVW TJ FY 2025",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2025",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "grand-traverse-band-of-ottawa-and-chippewa-indians",
+   "name_as_listed": "GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS",
+   "source_key": "ovw-fy2025-awards-program",
+   "locator": "STCJ Grant Program list",
+   "quote": "GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS ... OVW TJ FY 2025",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2025",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "quapaw-nation",
+   "name_as_listed": "QUAPAW NATION",
+   "source_key": "ovw-fy2025-awards-program",
+   "locator": "STCJ Grant Program list",
+   "quote": "QUAPAW NATION ... OVW TJ FY 2025",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2025",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "port-gamble-sklallam-tribe",
+   "name_as_listed": "PORT GAMBLE S'KLALLAM TRIBE",
+   "source_key": "ovw-fy2025-awards-program",
+   "locator": "STCJ Grant Program list",
+   "quote": "PORT GAMBLE S'KLALLAM TRIBE ... OVW TJ FY 2025",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2025",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  },
+  {
+   "roster_id": "quinault-indian-nation",
+   "name_as_listed": "QUINAULT INDIAN NATION",
+   "source_key": "ovw-fy2025-awards-program",
+   "locator": "STCJ Grant Program list",
+   "quote": "QUINAULT INDIAN NATION ... OVW TJ FY 2025",
+   "what": "received OVW Tribal Jurisdiction (STCJ) grant - supports planning OR exercising; NOT evidence of exercising",
+   "as_of": "FY2025",
+   "match_confidence": "high",
+   "note": "Grant only. OVW says Tribal Jurisdiction Program eligibility includes tribes 'at any stage of exploring STCJ'. Do not count as exercising unless also listed elsewhere."
+  }
+ ],
+ "places_searched": [
+  {
+   "place": "https://www.justice.gov/tribal/vawa-2013-pilot-project",
+   "outcome": "found",
+   "why": "DOJ list of 5 pilot tribes"
+  },
+  {
+   "place": "https://www.ncai.org/section/vawa/about-vawa-and-stcj/about-stcj",
+   "outcome": "found",
+   "why": "NCAI list of 31 tribes, updated May 2022"
+  },
+  {
+   "place": "https://archive.ncai.org/tribal-vawa/get-started/currently-implementing-tribes",
+   "outcome": "found",
+   "why": "same 31, May 2022"
+  },
+  {
+   "place": "https://www.justice.gov/tribal/special-tribal-criminal-jurisdiction",
+   "outcome": "dead-link",
+   "why": "404 (guessed URL)"
+  },
+  {
+   "place": "https://www.justice.gov/tribal/tribal-nations-exercising-special-tribal-criminal-jurisdiction",
+   "outcome": "dead-link",
+   "why": "404 (guessed URL)"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/special-tribal-criminal-jurisdiction",
+   "outcome": "dead-link",
+   "why": "404 (guessed URL)"
+  },
+  {
+   "place": "https://www.justice.gov/tribal/violence-against-women-act-vawa",
+   "outcome": "dead-link",
+   "why": "404 (guessed URL)"
+  },
+  {
+   "place": "https://www.justice.gov/tribal/media/1355251/dl",
+   "outcome": "dead-link",
+   "why": "404"
+  },
+  {
+   "place": "https://www.ncai.org/section/vawa/overview/key-statistics",
+   "outcome": "found",
+   "why": "count only (28 tribes, Oct 2021)"
+  },
+  {
+   "place": "https://www.ncai.org/section/vawa",
+   "outcome": "found",
+   "why": "landing page, no list"
+  },
+  {
+   "place": "https://www.ncai.org/section/vawa/about-vawa-and-stcj/five-year-report",
+   "outcome": "found",
+   "why": "18 tribes as of March 2018"
+  },
+  {
+   "place": "https://www.ncai.org/section/vawa/about-vawa-and-stcj/implementing-stcj",
+   "outcome": "found",
+   "why": "how-to page with per-tribe profiles of early implementers, no current list"
+  },
+  {
+   "place": "https://www.ncai.org/section/vawa/about-vawa-and-stcj",
+   "outcome": "dead-link",
+   "why": "404; same for /resources-partners"
+  },
+  {
+   "place": "https://www.ncai.org/section/vawa/about-vawa-and-stcj/tribal-law-and-order-act",
+   "outcome": "found",
+   "why": "not a tribe list"
+  },
+  {
+   "place": "https://archive.ncai.org/tribal-vawa/get-started/itwg",
+   "outcome": "found",
+   "why": "ITWG page, no tribe roster"
+  },
+  {
+   "place": "https://www.justice.gov/tribal/vawa-2022-alaska-pilot-program",
+   "outcome": "found",
+   "why": "updated Aug 9, 2024; no designated tribes named"
+  },
+  {
+   "place": "https://www.justice.gov/d9/2023-08/Alaska_Pilot_Program_Public_Update.pdf",
+   "outcome": "found",
+   "why": "downloaded, not read in detail for designations; search showed no designations"
+  },
+  {
+   "place": "https://www.justice.gov/tribal/awards",
+   "outcome": "found",
+   "why": "DOJ tribal awards page; no STCJ roster"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/tribal-affairs",
+   "outcome": "found",
+   "why": "links only"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/special-tribal-criminal-jurisdiction-reimbursement-program",
+   "outcome": "found",
+   "why": "program rules; no tribe list; updated Sept 14, 2026"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/tribal-jurisdiction-program-fact-sheet",
+   "outcome": "found",
+   "why": "no tribe list"
+  },
+  {
+   "place": "https://www.justice.gov/tribal/2013-and-2022-reauthorizations-violence-against-women-act-vawa",
+   "outcome": "found",
+   "why": "FAQ; no tribe list"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/reports-congress",
+   "outcome": "found",
+   "why": "no STCJ report listed by name"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/tribal-consultation",
+   "outcome": "found",
+   "why": "index of consultation reports"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/media/1377361/dl?inline=",
+   "outcome": "found",
+   "why": "2024 update; TRP FY2024 awards for 14 tribes"
+  },
+  {
+   "place": "https://justice.gov/ovw/media/1389696/dl?inline=",
+   "outcome": "found",
+   "why": "18th consultation report (Dec 2024): testimony only, no list"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/media/1416641/dl",
+   "outcome": "found",
+   "why": "19th consultation report: testimony; says 17 Alaska tribes joined pilot ITWG; no roster"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/media/1444071/dl?inline=",
+   "outcome": "found",
+   "why": "FY2025 consultation proceedings: testimony, no roster"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/media/1460186/dl?inline",
+   "outcome": "found",
+   "why": "Update for Jan 2026 consultation; TRP CY24 waivers"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/media/1460361/dl?inline",
+   "outcome": "found",
+   "why": "2026 brief update; Alaska Pilot no designations stated"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/media/1440211/dl?inline and https://www.justice.gov/ovw/page/file/1578451/download",
+   "outcome": "found",
+   "why": "consultation invitations; no tribe counts/lists"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/media/1329671/dl?inline, 1329996, 1443301",
+   "outcome": "found",
+   "why": "TRP terms, post-award guide, summary data sheet template: no list"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/media/1442246/dl?inline",
+   "outcome": "found",
+   "why": "xlsx template, not read"
+  },
+  {
+   "place": "https://www.justice.gov/ovw/awards (and /awards/fy-2024|2025|2026-ovw-grant-awards-program)",
+   "outcome": "found",
+   "why": "FY2025 and FY2024 STCJ grant lists read; FY2026 page has no STCJ/reimbursement heading"
+  },
+  {
+   "place": "https://www.justice.gov/usao/media/1412011/dl?inline=",
+   "outcome": "found",
+   "why": "DOJ Journal Aug 2025: 31 tribes by 2022; count only"
+  },
+  {
+   "place": "https://www.federalregister.gov/documents/2023/04/11/2023-07519/special-tribal-criminal-jurisdiction-reimbursement",
+   "outcome": "found",
+   "why": "TRP final rule (not read for lists; rule text only, no roster)"
+  },
+  {
+   "place": "https://www.atjrc.org/wp-content/uploads/2023/09/Tribal-Criminal-Jurisdiction-over-Non-Indians-September-2023.pdf",
+   "outcome": "blocked",
+   "why": "502 from proxy; same TLPI guide was reached via tribalvawa.org mirror (not tribe-list source)"
+  },
+  {
+   "place": "https://www.tlpi.org/vawa",
+   "outcome": "dead-link",
+   "why": "no connection"
+  },
+  {
+   "place": "https://www.home.tlpi.org/projects/vawa-2022-enhanced-tribal-jurisdiction",
+   "outcome": "found",
+   "why": "no list; points to tribalvawa.org"
+  },
+  {
+   "place": "https://www.tribal-institute.org/lists/VAWA2022.htm",
+   "outcome": "found",
+   "why": "no tribe list"
+  },
+  {
+   "place": "https://www.tribalvawa.org/",
+   "outcome": "found",
+   "why": "caption 'Tribes Exercising VAWA 2022 ... As of June 2026'"
+  },
+  {
+   "place": "https://www.tribalvawa.org/implementing-tribes",
+   "outcome": "found",
+   "why": "39-tribe chart PDF + map image; best current list"
+  },
+  {
+   "place": "https://www.tribalvawa.org/_files/ugd/1af47f_5e7c4fbbc75f4befbab5ea0ae68c760d.pdf",
+   "outcome": "found",
+   "why": "Implementation Chart, 39 rows, Last-Modified 2026-08-11"
+  },
+  {
+   "place": "https://static.wixstatic.com/media/1af47f_834614130aa24d3fb382e3ee002d0134~mv2.jpg",
+   "outcome": "found",
+   "why": "map image, 39 names, text says 'As of January 2023'"
+  },
+  {
+   "place": "https://www.kosu.org/kiowa-tribe-criminal-jurisdiction",
+   "outcome": "found",
+   "why": "Kiowa, 2026-07-20; also says ~6% of tribal nations implement (per TribalVAWA.org)"
+  },
+  {
+   "place": "https://www.nativewomenssociety.org/post/fort-berthold-district-court-now-has-jurisdiction-over-non-enrolled-members-for-domestic-and-sexual",
+   "outcome": "found",
+   "why": "MHA July 1, 2025"
+  },
+  {
+   "place": "https://nondoc.com/2026/02/26/choctaw-nation-revises-criminal-code-to-note-limited-jurisdiction-over-non-indians/",
+   "outcome": "blocked",
+   "why": "403 even with browser UA; not needed"
+  },
+  {
+   "place": "https://walkingoncommonground.org/.../Workshop-1-Overview-of-the-Violence-Against-Women-Act-VAWA-2022...pdf",
+   "outcome": "found",
+   "why": "slides; no tribe list"
+  },
+  {
+   "place": "https://tribalprotectionorder.org/special-domestic-violence-criminal-jurisdiction/",
+   "outcome": "found",
+   "why": "explainer, no list"
+  },
+  {
+   "place": "https://www.doi.gov/ocl/vawa-provisions",
+   "outcome": "found",
+   "why": "DOI summary, not read for list"
+  },
+  {
+   "place": "https://www.home.tlpi.org/violenceagainstwomenact2022",
+   "outcome": "found",
+   "why": "TLPI info page, no list"
+  },
+  {
+   "place": "web.archive.org",
+   "outcome": "blocked",
+   "why": "not reachable per instructions; not attempted"
+  },
+  {
+   "place": "WebSearch: tribes exercising STCJ VAWA 2022 list 2025",
+   "outcome": "found",
+   "why": "led to NCAI, DOJ Journal"
+  },
+  {
+   "place": "WebSearch: Alaska Pilot designated tribes",
+   "outcome": "not-found",
+   "why": "no designation announcement found; DOJ Sept 2026 brief update still describes designation as ultimate goal"
+  },
+  {
+   "place": "WebSearch: NCAI currently implementing tribes 2024/2025",
+   "outcome": "not-found",
+   "why": "NCAI list never updated after May 2022"
+  },
+  {
+   "place": "WebSearch: DOJ report to Congress STCJ section 804",
+   "outcome": "not-found",
+   "why": "no standalone DOJ annual STCJ report to Congress found; OVW tribal consultation update reports serve this role"
+  },
+  {
+   "place": "WebSearch: OVW 2025 update / TRP pages",
+   "outcome": "found",
+   "why": "led to 2025 update and TRP pages"
+  },
+  {
+   "place": "WebSearch: TLPI list Bois Forte Nez Perce",
+   "outcome": "found",
+   "why": "led to TLPI and tribalvawa.org"
+  },
+  {
+   "place": "WebSearch: MHA, Kiowa, Miss. Choctaw, Pueblos individual tribes",
+   "outcome": "found",
+   "why": "MHA and Kiowa corroborated; Mississippi Choctaw, Acoma, Santa Ana, Pojoaque NOT independently corroborated (only TLPI chart/map)"
+  },
+  {
+   "place": "WebSearch: tribe now exercising STCJ 2026",
+   "outcome": "found",
+   "why": "Kiowa; Fort Peck press release 2024 (not used)"
+  },
+  {
+   "place": "Federal Register search for Alaska designations",
+   "outcome": "not-found",
+   "why": "only the 2023 TRP rule exists; no designation notices found"
+  }
+ ]
+}

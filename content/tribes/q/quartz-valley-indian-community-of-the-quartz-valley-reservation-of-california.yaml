@@ -120,6 +120,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Quartz Valley Indian Community of the Quartz Valley Reservation of California".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "Quartz Valley Indian Community, California" among organizations under constitutions
@@ -144,6 +152,147 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: Reorganization Act of June 18, 1934 (48 Stat. 984). as amended by
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Certification of Adoption
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: governing-body
+  value: General Community Council
+  quote: munity shall be the General Community Council which
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article III, Section 1
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: general-council
+  value: All qualified members of the Community
+  quote: composed of all qualified members of the Community.
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article III, Section 1
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: head-of-government
+  value: Chairman
+  quote: by secret ballot, a Chairman
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article III, Section 3
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Community Council from its members
+  quote: The General Community Council shall elect from its mem
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article III, Section 3
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: a Vice-Chairman; and a Secretary
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article III, Section 3
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: elections
+  value: Annually, at the June meeting
+  quote: the annual election shall he held at the June meeting.
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article III, Section 7
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: voting-age
+  value: '21'
+  quote: Any enrolled member of the Community who is twenty-one
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article III, Section 2
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: amendment
+  value: Proposed by majority vote of the Council, ratified as the Constitution is
+  quote: a majority vote of the Quartz Valley Community Council and may
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article VI
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: secretarial-approval
+  value: Required for ordinances
+  quote: to review by the Secretary of the Interior, providing for the regula
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article V, Section 1(f)
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
+- aspect: other
+  value: Referendum on petition of a majority of resident voters
+  quote: voter- of the Quartz Valley Indian Community, any enacted or pro-
+  source: constitution-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-06-15'
+  locator: Article IV
+  document_version:
+    document: quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 original with reading errors in several passages; the text is the superseded 1939 version.'
 governing_documents:
 - kind: constitution
   title: Constitution

@@ -181,6 +181,287 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Lac Vieux Desert Band of Lake Superior Chippewa Indians, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+governance:
+- aspect: form
+  value: Constitution under the Indian Reorganization Act of 1934
+  quote: in the Indian Reorganization Act of 1934 (43 Stat. 984) , as amended.
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article XVI
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: (a) The Tribal Council of the Lac Vieux Desert Band shall be composed
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: of nine (9) members of the Band, consisting of the executive
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: governing-body-selection
+  value: Elected in tribal election
+  quote: getters in the tribal election for council members.
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article III, Section 1(e)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: two (2) years.
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article III, Section 1(b)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: '(a) The Chairperson of the Tribal Council shall:'
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected in tribal election, most votes for the office
+  quote: (d) The executive officers shall be the members of the Band who receive
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article III, Section 1(d)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two (2) years.
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article III, Section 1(b)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: Chairperson, Vice-Chairperson, Secretary and Treasurer.
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article III, Section 1(c)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: elections
+  value: Regular election on month and day set by Tribal Council
+  quote: Tribal Council. The Council shall set the date as near as possible
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article VII, Section 2(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member of the Lac Vieux Desert Band who is eighteen
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article VII, Section 3(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: election-authority
+  value: Election Board
+  quote: The Tribal Council shall appoint an Election Board, composed of
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article VII, Section 5(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: branches shall exercise powers properly belonging to the judicial branch.
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article V, Section 6
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: judiciary
+  value: Tribal Court and Court of Appeals
+  quote: Tribal Court, whose judges may by designation sit as a Court of Appeals, and
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article V, Section 1
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: (a) Each judge shall be appointed by an affirmative vote of six (6) of
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article V, Section 4(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: judicial-term
+  value: 6 years
+  quote: six (6) years.
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article V, Section 4(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: judicial-independence
+  value: Judiciary independent of legislative and executive functions
+  quote: independent from the legislative and executive functions of the tribal
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article V, Section 6
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: compensation for each judge which shall not be diminished during
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article V, Section 4(b)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: amendment
+  value: Majority vote of qualified voters at election called by Secretary of the Interior
+  quote: This Constitution may be amended by a majority vote of the qualified voters
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article XV
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior. The Secretary shall approve the
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article XV
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of eligible voters
+  quote: signed by electors equal in number to fifty-one percent (51\) of
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article VIII, Section 1(a)
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
+- aspect: recall-and-removal
+  value: Removal by 7 of 8 Council votes, referred to Tribal Judiciary
+  quote: The Tribal Council may by an affirmative vote of seven (7) of the eight (8)
+  source: constitution-lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-1992-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1992-06-24'
+  locator: Article VIII, Section 2
+  document_version:
+    document: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the document is the 1992 constitution as approved by the Bureau of Indian Affairs on June 24, 1992.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -314,6 +595,55 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+treaties:
+- title: Treaty with the Chippewa, 1842
+  signed: '1842-10-04'
+  statutes_at_large: 7 Stat. 591
+  kappler:
+    volume: 2
+    page: 542
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1842-0542
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of the Mississippi and Lake Superior, 1847
+  signed: '1847-08-02'
+  statutes_at_large: 9 Stat. 904
+  kappler:
+    volume: 2
+    page: 567
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 567 (Treaty with the Chippewa of the Mississippi and Lake Superior, 1847; Kappler header "Aug. 2. 1847. | 9 Stat., 904. | Ratified Apr. 3, 1848. | Proclaimed, Apr. 7, 1848.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1854
+  signed: '1854-09-30'
+  statutes_at_large: 10 Stat. 1109
+  kappler:
+    volume: 2
+    page: 648
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1854-0648
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

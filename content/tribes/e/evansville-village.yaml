@@ -145,6 +145,31 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Evansville Village (aka Bettles Field)
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: 'Listed as "Evansville Village (aka Bettles Field)". Name on Indian Health Service profile differs from roster name (roster: "Evansville Village"); matched manually. Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).'
+- area: Alaska
+  service_unit: Interior Alaska Service Area
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: 'The source''s words: "Evansville Village (aka Bettles Field)".'
+governance:
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Evansville Village (aka Bettles Field)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “1st Chief”; recorded without the holder's own form of the title.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

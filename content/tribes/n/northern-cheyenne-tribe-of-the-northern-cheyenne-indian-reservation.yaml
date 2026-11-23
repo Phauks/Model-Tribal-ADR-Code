@@ -175,6 +175,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-billings-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Montana and Wyoming" list'
+  note: 'Listed as "Northern Cheyenne". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Billings
+  service_unit: Northern Cheyenne Service Unit
+  source: indian-health-service-billings-northern-cheyenne-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "The Northern Cheyenne Indian Reservation is located in present-day southeastern Montana".'
+- area: Billings
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Billings Area
+  note: Listed as "Northern Cheyenne Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Northern Cheyenne Tribe, Montana" among organizations under constitutions approved
@@ -200,6 +224,146 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Tongue River Reservation is the former name of the Northern Cheyenne Indian Reservation. Historical
     constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws adopted in 1935, as amended
+  quote: Constitution and Bylaws adopted in 1935. as amended
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council shall consist of eleven members
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article III, Section 2
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: governing-body-size
+  value: 11 members
+  quote: The Tribal Council shall consist of eleven members
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article III, Section 2
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: head-of-government
+  value: President
+  quote: Section 3. The officers ot the Tribe shall be a President and Vice President who shall
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article III, Section 3
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large in general elections
+  quote: large general elections, as follows
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article VI
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: serve for four yearn, and the members
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article III, Section 2
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: of one branch shall exercise a power
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article XI
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: judiciary
+  value: Courts established by ordinance
+  quote: all courts established by ordinance under
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article XI
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: amendment
+  value: Vote of voters at an election, 30% must vote
+  quote: provided that at least thirty (30) percent of thnc
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article X
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: ecnve until it shall have been approved by the Secretary of the
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article X
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the Tribal Council
+  quote: tods (2/3) vote of the Tribal Council
+  source: constitution-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-05-31'
+  locator: Article VII, Section 2
+  document_version:
+    document: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text_path is a Wayback Machine page of a ''US Tribal Constitutions - Rocky Mountains'' collection (folder named for the Eastern Shoshone); the Northern Cheyenne 1996 constitution is embedded in it with site navigation, and the OCR is heavily garbled.'
 governing_documents:
 - kind: law-code
   title: Northern Cheyenne Tribe
@@ -545,6 +709,62 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Montana's 2024 legislative staff summary states that the Flathead Reservation is the only reservation in Montana under Public Law 280; no other Montana reservation is under state jurisdiction by the 1963 act. (Mont. Legis. Servs. Div., Montana & Public Law 280, at 1 (Apr. 2024).)
+  source: montana-legislative-services-division-public-law-280-2024
+  confidence: medium
+  verification: read-in-full
+  locator: Mont. Legis. Servs. Div. memo p. 1; Mont. Code Ann. § 2-1-301
+  note: 'Secondary source (legislative staff). Statutory text names only Flathead in § 2-1-301. Little Shell has no reservation in the roster data. Turtle Mountain (ND-based) has MT presence only. Fort Peck: a state court allowed divorce under a 1938 tribal enactment (State ex rel. Iron Bear v. Dist. Ct., 162 Mont. 335, 512 P.2d 1292 (1973)); that is tribal consent in a domestic-relations setting, not Public Law 280; the research read only the opening. Also cites: montana-code-annotated-2-1-301.'
+- topic: public-law-280
+  value: optional-state
+  detail: Montana law lets any other tribe request state jurisdiction by resolution to the governor, who must proclaim it within 60 days, but only after the tribe's own approval and the consent of each affected county commission. (Mont. Code Ann. § 2-1-302.)
+  source: montana-code-annotated-2-1-301
+  confidence: high
+  verification: read-in-full
+  locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
+  note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
+treaties:
+- title: Treaty with the Cheyenne Tribe, 1825
+  signed: '1825-07-06'
+  statutes_at_large: 7 Stat. 255
+  kappler:
+    volume: 2
+    page: 232
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cheyenne-tribe-1825-0232
+  signatory: Cheyenne
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 232 (Treaty with the Cheyenne Tribe, 1825; Kappler header "July 6, 1825. | 7 Stat., 255. | Proclamation, Feb. 6, 1826.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Northern band The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty of Fort Laramie with Sioux, etc., 1851
+  signed: '1851-09-17'
+  statutes_at_large: 11 Stat. 749
+  kappler:
+    volume: 2
+    page: 594
+    link: https://treaties.okstate.edu/treaties/treaty-of-fort-laramie-with-sioux-etc-1851-0594
+  signatory: Cheyenne
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 594 (Treaty of Fort Laramie with Sioux, etc., 1851; Kappler header "Sept. 17, 1851. | 11 Stats., p. 749.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Northern band The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Northern Cheyenne and Northern Arapaho, 1868
+  signed: '1868-05-10'
+  statutes_at_large: 15 Stat. 655
+  kappler:
+    volume: 2
+    page: 1012
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-northern-cheyenne-and-northern-arapaho-1868-1012
+  signatory: Cheyenne; Northern Cheyenne
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 1012 (Treaty with the Northern Cheyenne and Northern Arapaho, 1868; Kappler header "May 10, 1868, | 15 Stats., 655.| Ratified July 25, 1868.| Proclaimed Aug. 25, 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty with the Northern Cheyenne and Northern Arapaho The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

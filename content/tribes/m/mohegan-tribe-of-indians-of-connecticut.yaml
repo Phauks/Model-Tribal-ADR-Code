@@ -139,6 +139,31 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Mohegan Tribe of Indians of Connecticut". Also listed under the same Area in: indian-health-service-nashville-careers-brochure, indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Mohegan Tribe of Indians of Connecticut (2001)); the list does not say which service unit or programs the compact covers.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Mohegan Tribe of Indians of Connecticut".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mohegan Tribe of Indians of Connecticut
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Mohegan Tribe of Indians of Connecticut - Code of Ordinances
@@ -326,6 +351,23 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Connecticut is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Connecticut. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Connecticut by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-jurisdiction
+  detail: Congress consented to Connecticut's assumption of criminal jurisdiction over offenses by or against Indians on the Mohegan reservation, without waiving federal jurisdiction under 18 U.S.C. § 1153 or ending the Tribe's concurrent jurisdiction. (Pub. L. No. 103-377, § 6, 108 Stat. at 3505.)
+  source: public-law-103-377
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 103-377 § 6(a), (b), 108 Stat. at 3505
+  note: Criminal only. Quote skips the words "Subject to subsection (b)," at the start of § 6(a). 25 U.S.C. § 1775d (omitted from the Code).
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

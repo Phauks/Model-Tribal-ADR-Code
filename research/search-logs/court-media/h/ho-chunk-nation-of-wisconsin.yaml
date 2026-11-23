@@ -1,0 +1,70 @@
+profile: content/tribes/h/ho-chunk-nation-of-wisconsin.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Ho-Chunk Nation healing to wellness court video
+  outcome: not-found
+  reason: Results were the nation's wellness court pages, code and policy PDFs, and an agency video page whose content was not checked for Ho-Chunk.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Ho-Chunk Nation peacemaking judicial youtube video
+  outcome: not-found
+  reason: Results were news pages and NARF pages; a NARF 2016 video page appeared but was not confirmed as involving Ho-Chunk.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ho-chunknation.com/government/judicial-branch/courts/healing-to-wellness-court/
+  query: embedded video, gallery, podcast on the healing to wellness court
+  outcome: error
+  reason: Fetch was refused because the session's web-fetch budget was used up, so the page was not read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ho-chunknation.com/government/judicial-branch/
+  query: media about the judicial branch, courts or peacemaking
+  outcome: error
+  reason: Fetch was refused because the session's web-fetch budget was used up, so the page was not read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ho-chunknation.com/government/judicial-branch/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found links to http://youtube.com/@HoChunkNation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ho-chunknation.com/government/judicial-branch/courts/healing-to-wellness-court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found embedded YouTube video(s) ikXb9BNVX_8; links to http://youtube.com/@HoChunkNation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ho-chunknation.com/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found links to http://youtube.com/@HoChunkNation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=ikXb9BNVX_8
+  query: title and channel of the video
+  outcome: found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "Making the case for treatment courts - WATCP, Whitford/Landecker promo" on the Wisconsin Assoc. of Treatment Court Prof. channel, public and embeddable on 2026-11-23.'
+next_steps: Re-check the judicial branch and healing to wellness court pages once the fetch budget resets, looking for embedded video. Also check https://peacemaking.narf.org/2016/12/video-peacemaking-in-the-courts-and-community/ to see whether it involves Ho-Chunk speakers, and https://madison365.com/ho-chunk-community-leaders-gather-for-indigenous-solutions-in-the-justice-system/ for an embedded video. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

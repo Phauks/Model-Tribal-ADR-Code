@@ -1,67 +1,72 @@
 <script lang="ts">
+	// Find recourse (site/DESIGN.md, section 6): the dispute resolution
+	// provisions in Native nations' own laws, with the site's shared filter
+	// panel (the same one as the advanced search). The page is built with the
+	// first rows; in the browser it loads every row and reads the words and
+	// filters from the address.
 	import { onMount } from 'svelte';
 	import Download from '@lucide/svelte/icons/download';
 	import Link from '@lucide/svelte/icons/link';
 	import ListFilter from '@lucide/svelte/icons/list-filter';
 	import X from '@lucide/svelte/icons/x';
+	import FilterPanel from '#lib/components/FilterPanel.svelte';
 	import { newTabNoteId, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
 	import {
-		emptyRecourseQuery,
 		entryLabels,
-		facetChoices,
-		matchRecourse,
 		outcomeLabels,
+		recourseAddress,
 		recourseCsv,
 		recourseFacets,
 		recoursePageSize,
-		recourseQueryFromParameters,
-		recourseQueryToParameters,
+		recourseQueryFromAddress,
+		rowsWithWords,
 		settingLabels,
-		type RecourseQuery,
 		type RecourseRow
 	} from '#lib/recourse.ts';
+	import {
+		activeChoices,
+		facetCounts,
+		filterRows,
+		toggleChoice,
+		type ActiveChoice,
+		type FilterChoices
+	} from '#lib/search-filters.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	/** Filters with more choices than this show the first few and a "Show all" button. */
-	const shortList = 8;
-
 	let allRows = $state<RecourseRow[] | undefined>(undefined);
 	let loadFailed = $state(false);
-	let query = $state<RecourseQuery>(structuredClone(emptyRecourseQuery));
+	let text = $state('');
+	let choices = $state<FilterChoices>({});
 	let shown = $state(recoursePageSize);
 	let filtersOpen = $state(false);
-	let openLists = $state<Record<string, boolean>>({});
 	let copyStatus = $state('');
 
-	const matched = $derived(allRows ? matchRecourse(allRows, query) : undefined);
+	const facets = $derived(allRows ? recourseFacets(allRows) : []);
+	const withWords = $derived(allRows ? rowsWithWords(allRows, text) : undefined);
+	const counts = $derived(withWords ? facetCounts(withWords, facets, choices) : {});
+	const matched = $derived(withWords ? filterRows(withWords, facets, choices) : undefined);
 	const rows = $derived(matched ? matched.slice(0, shown) : data.firstRows);
 	const matchedNations = $derived(matched ? new Set(matched.map((row) => row.nation.id)).size : data.nationCount);
-	const pickedCount = $derived(Object.values(query.picked).reduce((sum, values) => sum + values.length, 0));
-	const narrowed = $derived(pickedCount > 0 || query.text.trim() !== '');
+	const chips = $derived(activeChoices(facets, choices));
+	const narrowed = $derived(chips.length > 0 || text.trim() !== '');
 	const count = $derived(
 		`${(matched?.length ?? data.total).toLocaleString('en-US')} ${(matched?.length ?? data.total) === 1 ? 'provision' : 'provisions'} in ${matchedNations.toLocaleString('en-US')} ${matchedNations === 1 ? 'nation' : 'nations'}`
 	);
-	const chips = $derived(
-		recourseFacets.flatMap((facet) =>
-			(query.picked[facet.key] ?? []).map((value) => ({ facet, value, words: facet.words(value) }))
-		)
-	);
 
-	function toggle(key: string, value: string, on: boolean) {
-		const current = query.picked[key] ?? [];
-		const next = on ? [...new Set([...current, value])] : current.filter((entry) => entry !== value);
-		const picked = { ...query.picked };
-		if (next.length > 0) picked[key] = next;
-		else delete picked[key];
-		query = { ...query, picked };
+	function choose(next: FilterChoices) {
+		choices = next;
 		shown = recoursePageSize;
 	}
 
+	function removeChip(chip: ActiveChoice) {
+		choose(toggleChoice(choices, chip.key, chip.value, false));
+	}
+
 	function clearAll() {
-		query = structuredClone(emptyRecourseQuery);
-		shown = recoursePageSize;
+		text = '';
+		choose({});
 	}
 
 	function saveCsv() {
@@ -88,7 +93,7 @@
 	// The choices go into the page address as the reader makes them, so a copied link opens the same list.
 	$effect(() => {
 		if (!allRows) return;
-		const search = recourseQueryToParameters(query).toString();
+		const search = recourseAddress({ text, choices }, facets).toString();
 		const next = `${location.pathname}${search ? `?${search}` : ''}${location.hash}`;
 		if (next !== `${location.pathname}${location.search}${location.hash}`) {
 			history.replaceState(history.state, '', next);
@@ -97,13 +102,15 @@
 	});
 
 	onMount(() => {
-		query = recourseQueryFromParameters(new URLSearchParams(location.search));
 		fetch('/nations/recourse/provisions.json')
 			.then((response) => {
 				if (!response.ok) throw new Error(String(response.status));
 				return response.json() as Promise<RecourseRow[]>;
 			})
 			.then((body) => {
+				const query = recourseQueryFromAddress(new URLSearchParams(location.search), recourseFacets(body));
+				text = query.text;
+				choices = query.choices;
 				allRows = body;
 			})
 			.catch(() => {
@@ -147,7 +154,7 @@
 				aria-controls="recourse-filters"
 				onclick={() => (filtersOpen = !filtersOpen)}
 			>
-				<ListFilter aria-hidden="true" size="1.1em" strokeWidth={1.75} />Filters{pickedCount > 0 ? ` (${pickedCount})` : ''}
+				<ListFilter aria-hidden="true" size="1.1em" strokeWidth={1.75} />Filters{chips.length > 0 ? ` (${chips.length})` : ''}
 			</button>
 		</div>
 	{/if}
@@ -161,44 +168,11 @@
 						id="recourse-search"
 						type="search"
 						autocomplete="off"
-						bind:value={query.text}
+						bind:value={text}
 						oninput={() => (shown = recoursePageSize)}
 					/>
 				</div>
-				{#each recourseFacets as facet (facet.key)}
-					{@const choices = facetChoices(allRows, query, facet)}
-					{@const long = choices.length > shortList + 2}
-					{@const visible = long && !openLists[facet.key] ? choices.filter((choice, index) => index < shortList || choice.picked) : choices}
-					{#if choices.length > 0}
-						<fieldset class="facet">
-							<legend>{facet.label}</legend>
-							<ul>
-								{#each visible as choice (choice.value)}
-									<li>
-										<label class:empty={choice.count === 0}>
-											<input
-												type="checkbox"
-												checked={choice.picked}
-												onchange={(event) => toggle(facet.key, choice.value, event.currentTarget.checked)}
-											/>
-											<span class="choice-words">{choice.words}</span>
-											<span class="choice-count">{choice.count.toLocaleString('en-US')}</span>
-										</label>
-									</li>
-								{/each}
-							</ul>
-							{#if long}
-								<button
-									type="button"
-									class="link-button small"
-									onclick={() => (openLists = { ...openLists, [facet.key]: !openLists[facet.key] })}
-								>
-									{openLists[facet.key] ? 'Show fewer' : `Show all ${choices.length}`}
-								</button>
-							{/if}
-						</fieldset>
-					{/if}
-				{/each}
+				<FilterPanel identifier="recourse" {facets} {choices} {counts} onchange={choose} />
 			</aside>
 		{/if}
 
@@ -207,15 +181,10 @@
 			{#if allRows}
 				{#if chips.length > 0}
 					<ul class="chips no-print" aria-label="Filters in use">
-						{#each chips as chip (`${chip.facet.key}:${chip.value}`)}
+						{#each chips as chip (`${chip.key}=${chip.value}`)}
 							<li>
-								<button
-									type="button"
-									class="chip-button"
-									aria-label="Remove {chip.facet.label}: {chip.words}"
-									onclick={() => toggle(chip.facet.key, chip.value, false)}
-								>
-									{chip.facet.label}: <strong>{chip.words}</strong>
+								<button type="button" class="chip-button" aria-label="Remove filter {chip.label}" onclick={() => removeChip(chip)}>
+									{chip.label}
 									<X aria-hidden="true" size="1em" />
 								</button>
 							</li>
@@ -303,70 +272,6 @@
 
 	.search-field input {
 		width: 100%;
-	}
-
-	.facet {
-		border: 0;
-		border-top: 1px solid var(--color-line);
-		margin: 0;
-		padding: var(--space-3) 0;
-		min-width: 0;
-	}
-
-	.facet legend {
-		font-weight: var(--font-weight-semibold);
-		padding: 0;
-		margin-bottom: var(--space-1);
-		float: left;
-		width: 100%;
-	}
-
-	.facet ul {
-		clear: both;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	.facet label {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: 2rem;
-		font-size: var(--font-size-small);
-		cursor: pointer;
-	}
-
-	.facet label.empty {
-		color: var(--color-ink-muted);
-	}
-
-	.facet input {
-		flex: none;
-		width: 1.1rem;
-		height: 1.1rem;
-		margin: 0;
-		accent-color: var(--color-link);
-	}
-
-	.choice-words {
-		flex: 1;
-	}
-
-	.choice-count {
-		color: var(--color-ink-muted);
-		font-variant-numeric: tabular-nums;
-	}
-
-	.link-button {
-		border: 0;
-		padding: var(--space-1) 0;
-		background: transparent;
-		color: var(--color-link);
-		text-decoration: underline;
-		font: inherit;
-		font-size: var(--font-size-small);
-		cursor: pointer;
 	}
 
 	.chips {

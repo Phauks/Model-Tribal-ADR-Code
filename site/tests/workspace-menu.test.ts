@@ -10,16 +10,19 @@ import {
 const names = (pages: { name: string }[]) => pages.map((item) => item.name);
 
 describe('the workspace pages in the left sidebar', () => {
-	it('lists all nine pages for the lead author', () => {
+	it('lists all ten pages for the lead author', () => {
 		expect(names(workspacePagesFor(permissionsOf('lead-author')))).toEqual([
 			'overview',
 			'essays',
 			'requests',
+			'uploads',
 			'reviews',
 			'contributors',
 			'people',
+			'nation-teams',
 			'access',
 			'address-book',
+			'changes',
 			'activity'
 		]);
 	});
@@ -29,6 +32,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'overview',
 			'essays',
 			'requests',
+			'uploads',
 			'reviews',
 			'contributors'
 		]);

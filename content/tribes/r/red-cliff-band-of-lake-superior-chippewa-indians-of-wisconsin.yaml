@@ -199,6 +199,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Red Cliff Band of Lake Superior Chippewa Indians, Wisconsin" among organizations
@@ -224,6 +232,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under Section 16 of the Indian Reorganization Act
+  quote: accordance with Section 16 of the Indian Reorganization Act of June
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Certification of Adoption (1.17)
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: shall be a Tribal Council composed of nine (9) members
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article III, Section 1
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: composed of nine (9) members
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article III, Section 1
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: governing-body-selection
+  value: Elected by popular vote; 5 seats elected at large
+  quote: five (5) Council seats shall be elected at large.
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article III, Section 2
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: shall serve two (2) year term beginning with the first election.
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article III, Section 2
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: The offices of Tribal Chairperson, Tribal Vice-Chairperson, Tribal Secretary and Tribal Treasurer
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article III, Section 2
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Popularly elected
+  quote: and shall be popularly elected.
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article III, Section 2
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: other-officers
+  value: Tribal Vice-Chairperson, Tribal Secretary, Tribal Treasurer
+  quote: Tribal Vice-Chairperson, Tribal Secretary and Tribal Treasurer
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article III, Section 2
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: elections
+  value: Every year, first Tuesday after the first Monday in July
+  quote: Elections shall be held every year on the first Tuesday after the first
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the tribe who eighteen (18) years of or is over and
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article IV, Section 3
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: election-authority
+  value: Tribal Council, or a board it appoints
+  quote: The Tribal Council, or a board appointed by the Tribal Council, shall
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article IV, Section 6
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: judiciary
+  value: Council may establish a reservation court
+  quote: by establishing a reservation court and defining its duties and powers.
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article VI, Section 1(p)
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: amendment
+  value: Majority vote of eligible voters
+  quote: This Constitution and Bylaws may only be amended through a majority vote
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article IX, Section 3
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon receipt of a petition signed by one-third (1/3) of the eligible
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article V, Section 1
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: recall-and-removal
+  value: Expulsion by six Council votes
+  quote: The Tribal Council may by an affirmative vote of six (6) members
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article V, Section 2
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
+- aspect: other
+  value: Referendum on petition of 25% of voters
+  quote: be subject to referendum vote to the people upon a written petition signed by not
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-02-15'
+  locator: Article VII, Section 1
+  document_version:
+    document: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned text with reading errors; the voting-age sentence in Article IV, Section 3 is garbled in the extract.'
 governing_documents:
 - kind: law-code
   title: Red Cliff Band of Lake Superior Chippewa Indians, Code of Laws
@@ -569,6 +778,59 @@ jurisdiction:
   confidence: high
   verification: read-in-full
   as_of: '1996-01-23'
+treaties:
+- title: Treaty with the Chippewa, 1826
+  signed: '1826-08-05'
+  statutes_at_large: 7 Stat. 290
+  kappler:
+    volume: 2
+    page: 268
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1826-0268
+  signatory: La Pointe
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 268 (Treaty with the Chippewa, 1826; Kappler header "Aug. 5, 1826. | 7 Stat., 290. | Proclamation, Feb. 7, 1827.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. La Pointe (Madeline Island) band -> Bad River and Red Cliff The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1842
+  signed: '1842-10-04'
+  statutes_at_large: 7 Stat. 591
+  kappler:
+    volume: 2
+    page: 542
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1842-0542
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of the Mississippi and Lake Superior, 1847
+  signed: '1847-08-02'
+  statutes_at_large: 9 Stat. 904
+  kappler:
+    volume: 2
+    page: 567
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 567 (Treaty with the Chippewa of the Mississippi and Lake Superior, 1847; Kappler header "Aug. 2. 1847. | 9 Stat., 904. | Ratified Apr. 3, 1848. | Proclaimed, Apr. 7, 1848.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1854
+  signed: '1854-09-30'
+  statutes_at_large: 10 Stat. 1109
+  kappler:
+    volume: 2
+    page: 648
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1854-0648
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

@@ -144,6 +144,211 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Cantwell
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Native Village of Cantwell". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Native Village of Cantwell".'
+governance:
+- aspect: form
+  value: Constitutions and Bylaws
+  quote: CONSTITUTIONS AND BY-LAWS
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Title
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: governing-body
+  value: Council
+  quote: six members elected by the adult members of the Association who will
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 1
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: six members elected by the adult members of the Association who will
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 1
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Members of the Council shall be elected by secret ballot
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 2(b)
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: serve for a term of two years.
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 3(c)
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: head-of-government
+  value: President
+  quote: (b) The President shall be elected by the Council membership
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Cantwell
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council membership
+  quote: (b) The President shall be elected by the Council membership
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: and shall serve for a term of one year.
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: Secretary, a Treasurer, and such other officers as it
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 2(c)
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: elections
+  value: Every year in January
+  quote: in the month of January each year, on a day fixed
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 2(b)
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: voting-age
+  value: '19'
+  quote: Section 1, All members of the Association* 19 years of age or over
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: amendment
+  value: Ratified by at least 30% of adult members
+  quote: shall become effective when ratified by at least 30 per cent of
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article VII
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: secretarial-approval
+  value: Required for amendments affecting members' rights
+  quote: rights of members must receive subsequent approval from the office
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article VII
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: recall-and-removal
+  value: Loss of office on felony or dishonesty conviction
+  quote: offense involving dishonesty shall lose his office.
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article VI, Section 1
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
+- aspect: other
+  value: 'Board of Directors: Council President and six members'
+  quote: There shall be a Board of Directors composed of the Council
+  source: constitution-native-village-of-cantwell-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-01-04'
+  locator: Article III, Section 4(a)
+  document_version:
+    document: native-village-of-cantwell-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR noise in Articles II and III; quotes are taken from legible lines.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

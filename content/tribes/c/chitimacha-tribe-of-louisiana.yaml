@@ -185,6 +185,235 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Chitimacha Tribe of Louisiana". Also listed under the same Area in: indian-health-service-nashville-careers-brochure, indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Chitimacha Tribe of Louisiana (1998)); the list does not say which service unit or programs the compact covers.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Chitimacha Tribe of Louisiana".
+governance:
+- aspect: form
+  value: Indian Reorganization Act of June 18, 1934, Section 16
+  quote: such approval in accordance with Section 16 of the Indian Reorganization Act of June 18, 1934
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article III (Adoption)
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: governing-body
+  value: Chitimacha Tribal Council
+  quote: The governing body of the Chitimacha Tribe shall be the Chitimacha
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article V, Section 1
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Tribal Council, a five-member body composed of a chairman, vice-chairman and secretary-
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article V, Section 1
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: governing-body-selection
+  value: Elected at large by qualified voters
+  quote: be elected at large by the qualified voters of the Chitimacha Tribe.
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article V, Section 1
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: and shall hold office for a term of two (2) years
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article VI, Section 5
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: general-council
+  value: Annual general tribal meeting of adult members
+  quote: A regular general tribal meeting shall be held each year on the
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article II, Section 2
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Section 1. The chairman shall preside over all meetings of the council.
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Bylaws Article I, Section 1
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Chitimacha Tribe of Louisiana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the voters by secret ballot
+  quote: members of the tribal council, shall be elected by secret ballot. A
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article VI, Section 1
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: and shall hold office for a term of two (2) years
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article VI, Section 5
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: other-officers
+  value: Vice-chairman, Secretary-treasurer
+  quote: Tribal Council, a five-member body composed of a chairman, vice-chairman and secretary-
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article V, Section 1
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: elections
+  value: Annually, second Saturday in June
+  quote: Annual elections shall be held on the second Saturday in June to fill vacancies on the
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article VI, Section 1
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: voting-age
+  value: '18'
+  quote: Sec. 2. Entitlement to vote. Any tribal member, male or female, eighteen (18) years of age or
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article VI, Section 2
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: judiciary
+  value: Chitimacha Tribal Court
+  quote: The Chitimacha Tribal Court shall have jurisdiction to review a Petition for
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article V, Section 3(A)(2)(c)
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: amendment
+  value: Majority of registered voters in authorized election, 30% turnout
+  quote: This constitution may be amended by a majority of the registered voters of the
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article X, Section 1
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: of the Interior for his approval and is in force from the date of such approval, that being July
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article III (amendment certificates)
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: recall-and-removal
+  value: Automatic removal on felony or fraud conviction
+  quote: Is convicted during his or her term of office in tribal, parish, state, or federal court
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article V, Section 3(B)(1)(a)
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of registered voters, then majority vote
+  quote: signed by twenty at least percent (20%) of the
+  source: constitution-chitimacha-tribe-of-louisiana-2018-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2018'
+  locator: Article V, Section 3(C)(1)
+  document_version:
+    document: chitimacha-tribe-of-louisiana-constitution
+    version: 2018-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text carries amendment certificates dated to June 2019, later than the 2018 label; facts follow the text as printed.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -498,6 +727,15 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Chitimacha Tribe of Louisiana". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Louisiana is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Louisiana. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Louisiana by the Census Bureau's land areas.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

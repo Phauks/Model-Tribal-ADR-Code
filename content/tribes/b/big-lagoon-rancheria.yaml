@@ -119,6 +119,239 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Big Lagoon Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Big Lagoon Rancheria, California".
+governance:
+- aspect: governing-body
+  value: General Council
+  quote: governing body of the tribe shall be the general council
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article V
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Business Council
+  quote: general council a business council known as the BIG LAGOON RANCHERIA
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VII, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: business council shall consist of five (5) members duly elected to serve
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VIII, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected from the General Council
+  quote: general council a business council known as the BIG LAGOON RANCHERIA
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VII, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years
+  quote: two (2) year terms.
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VIII, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All duly enrolled tribal members 18 or older
+  quote: duly enrolled tribal members eighteen (18) years of age or older shall
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VI, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: shall exercise the following powers as the chief executive officer of
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article X, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Big Lagoon Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the business council from its members
+  quote: tribal council shall elect from its membership a chairperson
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VIII, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two (2) year terms.
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VIII, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary-Treasurer
+  quote: tribal council shall elect from its membership a chairperson, a vice-chairperson,
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VIII, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every year on the first Thursday of November
+  quote: shall be held each year on the first Thursday of November.
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article IX, Section 2
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: duly enrolled tribal members eighteen (18) years of age or older shall
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VI, Section 1
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Business Council (by ordinance)
+  quote: business council shall enact an ordinance prescribing the form of ballot,
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article IX, Section 4
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal courts or courts of Indian offenses, established by the Business Council
+  quote: establish tribal courts or courts of Indian offenses, from time to
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VII, Section 2(o)
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the chairperson
+  quote: constitution may be amended by a majority vote of the qualified voters
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article XII
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Not required
+  quote: shall be submitted to the Secretary of the the Interior as a courtesy.
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article XII
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by 4 of 5 Business Council members
+  quote: a vote of at least four (4) of the (5) members of
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article VIII, Section 3(a)(iii)
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: Upon receipt of a petition signed by at least thirty percent (30%)
+  source: constitution-big-lagoon-rancheria-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-05-05'
+  locator: Article IX, Section 5(c)
+  document_version:
+    document: big-lagoon-rancheria-constitution
+    version: 1985-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Tribal code

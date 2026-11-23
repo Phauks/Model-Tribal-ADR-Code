@@ -177,6 +177,103 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Alutiiq Tribe of Old Harbor
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Village of Old Harbor". Name on Indian Health Service profile differs from roster name; matched by name tokens. Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Village of Old Harbor".'
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council shall be the governing body of the Native Village of
+  source: constitution-alutiiq-tribe-of-old-harbor-1970-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1970'
+  locator: Article IV, Section I
+  document_version:
+    document: alutiiq-tribe-of-old-harbor-constitution
+    version: 1970-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: composed of seven (7) members elected by
+  source: constitution-alutiiq-tribe-of-old-harbor-1970-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1970'
+  locator: Article IV, Section II
+  document_version:
+    document: alutiiq-tribe-of-old-harbor-constitution
+    version: 1970-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
+- aspect: governing-body-selection
+  value: Elected by adult village members (30 percent must vote)
+  quote: at least thirty per cent (30%) of the adult members of the Native Village
+  source: constitution-alutiiq-tribe-of-old-harbor-1970-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1970'
+  locator: Article IV, Section II
+  document_version:
+    document: alutiiq-tribe-of-old-harbor-constitution
+    version: 1970-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: Each member of the Tribal Council shall serve for a three (3) year term,
+  source: constitution-alutiiq-tribe-of-old-harbor-1970-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1970'
+  locator: Article IV, Section IV
+  document_version:
+    document: alutiiq-tribe-of-old-harbor-constitution
+    version: 1970-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Alutiiq Tribe of Old Harbor
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '18'
+  quote: Any Native person who is eighteen (18) years of age or older will be
+  source: constitution-alutiiq-tribe-of-old-harbor-1970-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1970'
+  locator: Article III, Section III
+  document_version:
+    document: alutiiq-tribe-of-old-harbor-constitution
+    version: 1970-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
+- aspect: amendment
+  value: Majority vote of village members voting; 30 percent must take part
+  quote: by a majority vote of the village members voting
+  source: constitution-alutiiq-tribe-of-old-harbor-1970-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1970'
+  locator: Article VI, Section I
+  document_version:
+    document: alutiiq-tribe-of-old-harbor-constitution
+    version: 1970-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

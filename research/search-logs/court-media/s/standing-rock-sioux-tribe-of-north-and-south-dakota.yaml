@@ -1,0 +1,38 @@
+profile: content/tribes/s/standing-rock-sioux-tribe-of-north-and-south-dakota.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Standing Rock Sioux tribal court peacemaking video
+  outcome: not-found
+  reason: Results were protest footage, documentaries and a judiciary excerpt in text form; no Tribe court video appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Standing Rock tribal court judge interview youtube
+  outcome: not-found
+  reason: Results were news and court coverage of the pipeline case; no Tribe court video or interview appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.standingrock.org/
+  query: court, video
+  outcome: not-found
+  reason: Fetched with curl. Home page has no court or video links; only feeds and a menu.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.ndcourts.gov/other-courts/tribal
+  query: tribal court links
+  outcome: not-found
+  reason: Fetched with curl. State list of tribal courts with contact links; no media.
+next_steps: The Tribe's own court pages were not found from the home page; a person could search the site for the Standing Rock Sioux Tribal Court.

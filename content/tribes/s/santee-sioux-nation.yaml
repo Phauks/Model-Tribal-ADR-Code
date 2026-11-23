@@ -128,6 +128,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santee Sioux Nation, Nebraska
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: Listed as "Santee Sioux Nation".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Santee Sioux Tribe of Nebraska" among organizations under constitutions approved
@@ -152,6 +160,111 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted by election under Section 16 of the Indian Reorganization Act
+  quote: accordance with sedion 16 of the Indian Reorganization
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Certification of Adoption
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Stated meetings of the tribal council shall be held
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Bylaws, Article IV, Section 1
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: governing-body-selection
+  value: Elected by popular assembly of each voting district
+  quote: Eacll voting district shall, in popular assembly
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article V, Section 2
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman of the tribal council shall preside at all
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Santee Sioux Nation, Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice chairman, secretary, treasurer
+  quote: The vice chairman shall preside at all meetings of the
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Bylaws, Article I, Section 2
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: elections
+  value: Annually, last Tuesday of September
+  quote: annually .elect one
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article III, Section 2
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: amendment
+  value: Majority vote of qualified voters in an election called by the Secretary
+  quote: may be amended by a majority vote
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article IX
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: other
+  value: Referendum on petition of 25% of voters
+  quote: subject to a referendum vqte of the people
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article VII, Section 1
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
 governing_documents:
 - kind: law-code
   title: Santee Sioux Nation, Nebraska
@@ -318,6 +431,72 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Wahpekuta; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Wahpekute among Santee Sioux Nation ancestors The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux, 1836
+  signed: '1836-11-30'
+  statutes_at_large: 7 Stat. 527
+  kappler:
+    volume: 2
+    page: 481
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0481
+  signatory: Wahpekuta; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 481 (Treaty with the Sioux, 1836; Kappler header "Nov. 30, 1836. | 7 Stat., 527. | Proclamation, Feb 18, 1837.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Wahpekute among Santee Sioux Nation ancestors The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Mdewakanton and Wahpakoota Bands, 1851
+  signed: '1851-08-05'
+  statutes_at_large: 10 Stat. 954
+  kappler:
+    volume: 2
+    page: 591
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-mdewakanton-and-wahpakoota-bands-1851-0591
+  signatory: Mdewakanton; Wahpekuta
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 591 (Treaty with the Sioux-Mdewakanton and Wahpakoota Bands, 1851; Kappler header "Aug. 5. 1851. | 10 Stats., 954. | Proclamation Feb. 24, 1853.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Santee Sioux Nation (Nebraska) includes Mdewakanton descendants The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux, 1858
+  signed: '1858-06-19'
+  statutes_at_large: 12 Stat. 1031
+  kappler:
+    volume: 2
+    page: 781
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1858-0781
+  signatory: Wahpekute; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 781 (Treaty with the Sioux, 1858; Kappler header "June 19, 1858. | 12 Stats., 1031. | Ratified Mar. 9, 1859. | Proclaimed Mar. 31, 1859.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Wahpekute among Santee Sioux Nation ancestors The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Santee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Fort Laramie Treaty 1868 (Great Sioux Reservation); band-to-nation attribution from historical band names The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

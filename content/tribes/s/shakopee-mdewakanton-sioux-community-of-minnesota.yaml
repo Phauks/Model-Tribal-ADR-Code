@@ -214,6 +214,179 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shakopee Mdewakanton Sioux Community of Minnesota
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Shakopee Mdewakanton Sioux Community of Minnesota". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Shakopee Mdewakanton Sioux Community (2004)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Act of June 18, 1934 (48 Stat. 984), as amended
+  quote: by the Act of June 18, 1934 (48 Stat. 984), as amended, do hereby
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Approval
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: governing-body
+  value: General council
+  quote: be a general council, composed of all persons qualified to vote in
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article III
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: governing-body
+  value: Business council
+  quote: There shall be a business council consisting
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article III
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: governing-body-size
+  value: 3 members
+  quote: of the chairman, vice-cha irman , and a secretary- treasurer , which
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article III
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Members of the business council shall hold office for four (4) years
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article III
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: general-council
+  value: All persons qualified to vote in community elections
+  quote: composed of all persons qualified to vote in
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article III
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: head-of-government
+  value: Chairman
+  quote: of the chairman, vice-cha irman , and a secretary- treasurer , which
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article III
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Shakopee Mdewakanton Sioux Community of Minnesota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-chairman, secretary-treasurer
+  quote: of the chairman, vice-cha irman , and a secretary- treasurer , which
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article III
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: voting-age
+  value: '18'
+  quote: Community members eighteen (18) years of age or over
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article IV
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: election-authority
+  value: General council prescribes election rules
+  quote: conducted under rules and regulations prescribed by the general
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article IV
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: amendment
+  value: Majority vote of qualified voters in Secretary-authorized election
+  quote: This constitution may be amended by a majority vote of the qualified
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article VII
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Article VII
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
+- aspect: other
+  value: General council may delegate powers to business council
+  quote: may delegate such powers to the elected business council, subject to
+  source: constitution-shakopee-mdewakanton-sioux-community-of-minnesota-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-05-22'
+  locator: Amendment I, Article V, Section 1
+  document_version:
+    document: shakopee-mdewakanton-sioux-community-of-minnesota-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1969 constitution with Amendment I (1980) replacing Article V; the Article V facts are taken from the amended text.'
 governing_documents:
 - kind: law-code
   title: Shakopee Mdewakanton Sioux Community of Minnesota
@@ -454,6 +627,59 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+treaties:
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Mdewakanton communities in Minnesota are successors of the Mdewakanton Dakota The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux, 1836
+  signed: '1836-11-30'
+  statutes_at_large: 7 Stat. 527
+  kappler:
+    volume: 2
+    page: 481
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0481
+  signatory: Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 481 (Treaty with the Sioux, 1836; Kappler header "Nov. 30, 1836. | 7 Stat., 527. | Proclamation, Feb 18, 1837.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Mdewakanton communities in Minnesota are successors of the Mdewakanton Dakota The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Mdewakanton and Wahpakoota Bands, 1851
+  signed: '1851-08-05'
+  statutes_at_large: 10 Stat. 954
+  kappler:
+    volume: 2
+    page: 591
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-mdewakanton-and-wahpakoota-bands-1851-0591
+  signatory: Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 591 (Treaty with the Sioux-Mdewakanton and Wahpakoota Bands, 1851; Kappler header "Aug. 5. 1851. | 10 Stats., 954. | Proclamation Feb. 24, 1853.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Mdewakanton communities in Minnesota are successors of the Mdewakanton Dakota The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux, 1858
+  signed: '1858-06-19'
+  statutes_at_large: 12 Stat. 1031
+  kappler:
+    volume: 2
+    page: 781
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1858-0781
+  signatory: Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 781 (Treaty with the Sioux, 1858; Kappler header "June 19, 1858. | 12 Stats., 1031. | Ratified Mar. 9, 1859. | Proclaimed Mar. 31, 1859.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Mdewakanton communities in Minnesota are successors of the Mdewakanton Dakota The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
